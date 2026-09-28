@@ -1,0 +1,21 @@
+# Regenerable local caches only; do not delete provenance or snapshots.
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.env
+.venv/
+env-job-fit/
+*.tgz
+*.zip
+.vscode/
+.idea/
+
+# Raw API data stays local (full API responses, recruiter contact details in some JDs)
+data/raw/
+data/interim/jsearch_records.jsonl
+data/interim/snapshots/*/jsearch_records.jsonl
+
+#Environment Local
+env-job-fit

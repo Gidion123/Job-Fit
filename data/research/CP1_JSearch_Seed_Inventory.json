@@ -1,0 +1,378 @@
+{
+  "generated_at_utc": "2026-09-26T03:46:07+00:00",
+  "input_files": 34,
+  "raw_result_slots": 175,
+  "unique_provider_job_ids": 175,
+  "unique_normalized_apply_urls": 158,
+  "unique_company_title_city_keys": 154,
+  "quality_flags": {
+    "descriptions_under_500_chars": 39,
+    "structured_posted_time_missing": 156,
+    "city_or_country_missing": 135
+  },
+  "exact_key_collisions": [
+    {
+      "type": "normalized_apply_url",
+      "first": "B02_CONT_AIE_ID_P02.json#7",
+      "again": "B02_CONT_GEN_JAK_P02.json#1"
+    },
+    {
+      "type": "company_title_city",
+      "first": "B02_CONT_AIE_ID_P02.json#7",
+      "again": "B02_CONT_GEN_JAK_P02.json#1"
+    },
+    {
+      "type": "normalized_apply_url",
+      "first": "B02_CONT_AIE_ID_P02.json#8",
+      "again": "B02_CONT_MLE_JAK_P02.json#2"
+    },
+    {
+      "type": "company_title_city",
+      "first": "B02_CONT_AIE_ID_P02.json#8",
+      "again": "B02_CONT_MLE_JAK_P02.json#2"
+    },
+    {
+      "type": "company_title_city",
+      "first": "B02_ID_AIE_SUR_P01.json#5",
+      "again": "B02_ID_AIE_SUR_P01.json#7"
+    },
+    {
+      "type": "normalized_apply_url",
+      "first": "B02_CONT_AIE_ID_P02.json#4",
+      "again": "B02_ID_BAI_JAK_P01.json#5"
+    },
+    {
+      "type": "company_title_city",
+      "first": "B02_CONT_AIE_ID_P02.json#4",
+      "again": "B02_ID_BAI_JAK_P01.json#5"
+    },
+    {
+      "type": "company_title_city",
+      "first": "B02_ID_LLM_JAK_P01.json#1",
+      "again": "B02_ID_LLM_JAK_P01.json#2"
+    },
+    {
+      "type": "normalized_apply_url",
+      "first": "B02_ID_AIE_BAN_P01.json#2",
+      "again": "B02_ID_MLE_BAN_P01.json#2"
+    },
+    {
+      "type": "company_title_city",
+      "first": "B02_ID_AIE_BAN_P01.json#2",
+      "again": "B02_ID_MLE_BAN_P01.json#2"
+    },
+    {
+      "type": "company_title_city",
+      "first": "B02_ID_BAI_JAK_P01.json#10",
+      "again": "GLOBAL_SG_BAI_SENIOR_P01.json#6"
+    },
+    {
+      "type": "normalized_apply_url",
+      "first": "B02_ID_AIE_BAN_P01.json#1",
+      "again": "ID_AIE_BAN_SENIOR_P01.json#1"
+    },
+    {
+      "type": "company_title_city",
+      "first": "B02_ID_AIE_BAN_P01.json#1",
+      "again": "ID_AIE_BAN_SENIOR_P01.json#1"
+    },
+    {
+      "type": "normalized_apply_url",
+      "first": "B02_ID_AIE_BAN_P01.json#3",
+      "again": "ID_AIE_BAN_SENIOR_P01.json#3"
+    },
+    {
+      "type": "company_title_city",
+      "first": "B02_ID_AIE_BAN_P01.json#3",
+      "again": "ID_AIE_BAN_SENIOR_P01.json#3"
+    },
+    {
+      "type": "normalized_apply_url",
+      "first": "B02_ID_AIE_BAN_P01.json#4",
+      "again": "ID_AIE_BAN_SENIOR_P01.json#4"
+    },
+    {
+      "type": "company_title_city",
+      "first": "B02_ID_AIE_BAN_P01.json#4",
+      "again": "ID_AIE_BAN_SENIOR_P01.json#4"
+    },
+    {
+      "type": "normalized_apply_url",
+      "first": "B02_ID_AIE_BAN_P01.json#6",
+      "again": "ID_AIE_BAN_SENIOR_P01.json#5"
+    },
+    {
+      "type": "company_title_city",
+      "first": "B02_ID_AIE_BAN_P01.json#6",
+      "again": "ID_AIE_BAN_SENIOR_P01.json#5"
+    },
+    {
+      "type": "normalized_apply_url",
+      "first": "B02_ID_AIE_BAN_P01.json#9",
+      "again": "ID_AIE_BAN_SENIOR_P01.json#6"
+    },
+    {
+      "type": "company_title_city",
+      "first": "B02_ID_AIE_BAN_P01.json#9",
+      "again": "ID_AIE_BAN_SENIOR_P01.json#6"
+    },
+    {
+      "type": "normalized_apply_url",
+      "first": "CONTROL_ANL_BAN_P01.json#9",
+      "again": "CP1_JSearch_COL01_DataScientist_Bandung_ID_Response.json#2"
+    },
+    {
+      "type": "company_title_city",
+      "first": "CONTROL_ANL_BAN_P01.json#9",
+      "again": "CP1_JSearch_COL01_DataScientist_Bandung_ID_Response.json#2"
+    },
+    {
+      "type": "normalized_apply_url",
+      "first": "CONTROL_ANL_BAN_P01.json#4",
+      "again": "CP1_JSearch_COL01_DataScientist_Bandung_ID_Response.json#4"
+    },
+    {
+      "type": "company_title_city",
+      "first": "CONTROL_ANL_BAN_P01.json#4",
+      "again": "CP1_JSearch_COL01_DataScientist_Bandung_ID_Response.json#4"
+    },
+    {
+      "type": "normalized_apply_url",
+      "first": "B02_ID_AIE_SUR_P01.json#4",
+      "again": "CP1_JSearch_JS02_AIEngineer_ID_id_Screenshot.json#1"
+    },
+    {
+      "type": "company_title_city",
+      "first": "B02_ID_AIE_SUR_P01.json#4",
+      "again": "CP1_JSearch_JS02_AIEngineer_ID_id_Screenshot.json#1"
+    },
+    {
+      "type": "normalized_apply_url",
+      "first": "CP1_JSearch_JS02_AIEngineer_ID_id_Screenshot.json#2",
+      "again": "CP1_JSearch_JS03D_MLEngineer_Jakarta_ID_Response.json#1"
+    },
+    {
+      "type": "company_title_city",
+      "first": "CP1_JSearch_JS02_AIEngineer_ID_id_Screenshot.json#2",
+      "again": "CP1_JSearch_JS03D_MLEngineer_Jakarta_ID_Response.json#1"
+    },
+    {
+      "type": "normalized_apply_url",
+      "first": "CP1_JSearch_JS02_AIEngineer_ID_id_Screenshot.json#10",
+      "again": "CP1_JSearch_JS03D_MLEngineer_Jakarta_ID_Response.json#6"
+    },
+    {
+      "type": "company_title_city",
+      "first": "CP1_JSearch_JS02_AIEngineer_ID_id_Screenshot.json#10",
+      "again": "CP1_JSearch_JS03D_MLEngineer_Jakarta_ID_Response.json#6"
+    },
+    {
+      "type": "normalized_apply_url",
+      "first": "CP1_JSearch_JS03D_MLEngineer_Jakarta_ID_Response.json#9",
+      "again": "CP1_JSearch_JS05_GenAIEngineer_Jakarta_ID_Response.json#2"
+    },
+    {
+      "type": "company_title_city",
+      "first": "CP1_JSearch_JS03D_MLEngineer_Jakarta_ID_Response.json#9",
+      "again": "CP1_JSearch_JS05_GenAIEngineer_Jakarta_ID_Response.json#2"
+    },
+    {
+      "type": "normalized_apply_url",
+      "first": "CP1_JSearch_JS02_AIEngineer_ID_id_Screenshot.json#4",
+      "again": "CP1_JSearch_JS05_GenAIEngineer_Jakarta_ID_Response.json#3"
+    },
+    {
+      "type": "company_title_city",
+      "first": "CP1_JSearch_JS02_AIEngineer_ID_id_Screenshot.json#4",
+      "again": "CP1_JSearch_JS05_GenAIEngineer_Jakarta_ID_Response.json#3"
+    },
+    {
+      "type": "normalized_apply_url",
+      "first": "B02_CONT_MLE_JAK_P02.json#8",
+      "again": "CP1_JSearch_JS05_GenAIEngineer_Jakarta_ID_Response.json#4"
+    },
+    {
+      "type": "company_title_city",
+      "first": "B02_CONT_MLE_JAK_P02.json#8",
+      "again": "CP1_JSearch_JS05_GenAIEngineer_Jakarta_ID_Response.json#4"
+    },
+    {
+      "type": "company_title_city",
+      "first": "CP1_JSearch_JS03D_MLEngineer_Jakarta_ID_Response.json#8",
+      "again": "CP1_JSearch_JS05_GenAIEngineer_Jakarta_ID_Response.json#7"
+    }
+  ],
+  "files": [
+    {
+      "file": "data/raw/jsearch/B02_CONT_AIE_ID_P02.json",
+      "slots": 10,
+      "query": "AI Engineer in Indonesia"
+    },
+    {
+      "file": "data/raw/jsearch/B02_CONT_DAS_JAK_P02.json",
+      "slots": 8,
+      "query": "Data Scientist in Jakarta"
+    },
+    {
+      "file": "data/raw/jsearch/B02_CONT_GEN_JAK_P02.json",
+      "slots": 4,
+      "query": "Generative AI Engineer in Jakarta"
+    },
+    {
+      "file": "data/raw/jsearch/B02_CONT_MLE_JAK_P02.json",
+      "slots": 9,
+      "query": "Machine Learning Engineer in Jakarta"
+    },
+    {
+      "file": "data/raw/jsearch/B02_ID_AIE_BAN_P01.json",
+      "slots": 10,
+      "query": "AI Engineer in Bandung"
+    },
+    {
+      "file": "data/raw/jsearch/B02_ID_AIE_SUR_P01.json",
+      "slots": 10,
+      "query": "AI Engineer in Surabaya"
+    },
+    {
+      "file": "data/raw/jsearch/B02_ID_BAI_JAK_P01.json",
+      "slots": 10,
+      "query": "Backend Engineer AI in Jakarta"
+    },
+    {
+      "file": "data/raw/jsearch/B02_ID_DAS_YOG_P01.json",
+      "slots": 5,
+      "query": "Data Scientist in Yogyakarta"
+    },
+    {
+      "file": "data/raw/jsearch/B02_ID_GEN_YOG_P01.json",
+      "slots": 1,
+      "query": "Generative AI Engineer in Yogyakarta"
+    },
+    {
+      "file": "data/raw/jsearch/B02_ID_LLM_JAK_P01.json",
+      "slots": 10,
+      "query": "LLM Engineer in Jakarta"
+    },
+    {
+      "file": "data/raw/jsearch/B02_ID_MLE_BAN_P01.json",
+      "slots": 3,
+      "query": "Machine Learning Engineer in Bandung"
+    },
+    {
+      "file": "data/raw/jsearch/B02_REMOTE_MLE_P01.json",
+      "slots": 0,
+      "query": "Remote Machine Learning Engineer in Indonesia"
+    },
+    {
+      "file": "data/raw/jsearch/CONTROL_ANL_BAN_P01.json",
+      "slots": 10,
+      "query": "Data Analyst in Bandung"
+    },
+    {
+      "file": "data/raw/jsearch/CONTROL_CNT_JAK_P01.json",
+      "slots": 9,
+      "query": "AI Content Creator in Jakarta"
+    },
+    {
+      "file": "data/raw/jsearch/GLOBAL_SG_BAI_SENIOR_P01.json",
+      "slots": 10,
+      "query": "Senior Backend Engineer AI in Singapore"
+    },
+    {
+      "file": "data/raw/jsearch/GLOBAL_US_AIE_JUNIOR_P01.json",
+      "slots": 10,
+      "query": "Junior AI Engineer in United States"
+    },
+    {
+      "file": "data/raw/jsearch/ID_AIE_BAN_SENIOR_P01.json",
+      "slots": 7,
+      "query": "Senior AI Engineer in Bandung"
+    },
+    {
+      "file": "data/raw/jsearch/ID_BAI_JAK_MID_P01.json",
+      "slots": 0,
+      "query": "Mid Level Backend Engineer AI in Jakarta"
+    },
+    {
+      "file": "data/raw/jsearch/ID_DAS_SUR_MID_P01.json",
+      "slots": 0,
+      "query": "Mid Level Data Scientist in Surabaya"
+    },
+    {
+      "file": "data/raw/jsearch/ID_GEN_YOG_JUNIOR_P01.json",
+      "slots": 0,
+      "query": "Junior Generative AI Engineer in Yogyakarta"
+    },
+    {
+      "file": "data/raw/jsearch/ID_MLE_JAK_JUNIOR_P01.json",
+      "slots": 1,
+      "query": "Junior Machine Learning Engineer in Jakarta"
+    },
+    {
+      "file": "data/raw/jsearch/REMOTE_DAS_MID_P01.json",
+      "slots": 0,
+      "query": "Remote Mid Level Data Scientist in Indonesia"
+    },
+    {
+      "file": "data/raw/jsearch/REMOTE_GEN_SENIOR_P01.json",
+      "slots": 0,
+      "query": "Remote Senior Generative AI Engineer in Indonesia"
+    },
+    {
+      "file": "data/raw/jsearch/REMOTE_MLE_JUNIOR_P01.json",
+      "slots": 0,
+      "query": "Remote Junior Machine Learning Engineer in Indonesia"
+    },
+    {
+      "file": "evidence/checkpoint_1/corpus_collection/CP1_JSearch_COL01_DataScientist_Bandung_ID_Response.json",
+      "slots": 4,
+      "query": "Data Scientist in Bandung"
+    },
+    {
+      "file": "evidence/checkpoint_1/corpus_collection/CP1_JSearch_COL02_DataScientist_Surabaya_ID_Response.json",
+      "slots": 4,
+      "query": "Data Scientist in Surabaya"
+    },
+    {
+      "file": "evidence/checkpoint_1/provider_benchmark/jsearch/CP1_JSearch_JS01_AIEngineer_ID_EN_Response.json",
+      "slots": 0,
+      "query": "AI Engineer in Indonesia"
+    },
+    {
+      "file": "evidence/checkpoint_1/provider_benchmark/jsearch/CP1_JSearch_JS02_AIEngineer_ID_id_Screenshot.json",
+      "slots": 10,
+      "query": "AI Engineer in Indonesia"
+    },
+    {
+      "file": "evidence/checkpoint_1/provider_benchmark/jsearch/CP1_JSearch_JS03A_MLEngineerExact_ID_Response.json",
+      "slots": 0,
+      "query": "Machine Learning Engineer in Indonesia"
+    },
+    {
+      "file": "evidence/checkpoint_1/provider_benchmark/jsearch/CP1_JSearch_JS03B_MLEngineerAlias_ID_Response.json",
+      "slots": 0,
+      "query": "ML Engineer in Indonesia"
+    },
+    {
+      "file": "evidence/checkpoint_1/provider_benchmark/jsearch/CP1_JSearch_JS03C_MLJobsBroad_ID_Response.json",
+      "slots": 0,
+      "query": "Machine Learning jobs in Indonesia"
+    },
+    {
+      "file": "evidence/checkpoint_1/provider_benchmark/jsearch/CP1_JSearch_JS03D_MLEngineer_Jakarta_ID_Response.json",
+      "slots": 10,
+      "query": "Machine Learning Engineer in Jakarta"
+    },
+    {
+      "file": "evidence/checkpoint_1/provider_benchmark/jsearch/CP1_JSearch_JS04_DataScientist_Jakarta_ID_Response.json",
+      "slots": 10,
+      "query": "Data Scientist in Jakarta"
+    },
+    {
+      "file": "evidence/checkpoint_1/provider_benchmark/jsearch/CP1_JSearch_JS05_GenAIEngineer_Jakarta_ID_Response.json",
+      "slots": 10,
+      "query": "Generative AI Engineer in Jakarta"
+    }
+  ],
+  "caveat": "Inventory only. Distinct keys are not confirmed distinct usable vacancies; fuzzy cross-source duplicates, role, seniority, provenance, and JD quality still require review."
+}

@@ -1,0 +1,25 @@
+{
+  "purpose": "Additional integrity record for frozen derived inputs; original manifest and snapshot files unchanged. Verified against offline raw rebuild during audit.",
+  "inputs": [
+    {
+      "path": "data/interim/snapshots/CP1_20260926/CP1_Corpus_Progress.json",
+      "sha256": "3072765ee7db738c11a8931e8632aeca25052c7c82f468c44cf15bf784677662"
+    },
+    {
+      "path": "data/interim/snapshots/CP1_20260926/dedup_decisions.csv",
+      "sha256": "7db35513a7bd57fcf0b2f17d5d10360a1b5891456c6c6b406a1f6e20b3ea3a61"
+    },
+    {
+      "path": "data/interim/snapshots/CP1_20260926/jsearch_canonical.csv",
+      "sha256": "9debc9bee44b6fd8495605d94b0b9e53262bf812df1a98fd4031e8f3302ab7a0"
+    },
+    {
+      "path": "data/interim/snapshots/CP1_20260926/jsearch_probable_duplicates_review.csv",
+      "sha256": "e78e01460a41491f51172ca192d8d6078300ef716e9dc3e46c05afdf51263d46"
+    },
+    {
+      "path": "data/interim/snapshots/CP1_20260926/jsearch_records.jsonl",
+      "sha256": "14eddfe7acabf07770e3c94c7824d61c59a7a469757b0bb8074fdc0a1c59cc0b"
+    }
+  ]
+}

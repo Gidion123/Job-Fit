@@ -1,0 +1,134 @@
+{
+  "batch": "B01",
+  "alias": "Pilot 01",
+  "version": 1,
+  "record_type": "retrospective manifest",
+  "created_at": "2026-09-26",
+  "executed_at_utc": "2026-09-26T01:35–01:37 (see .meta.json files)",
+  "max_requests": 12,
+  "free_only": false,
+  "note": "Pilot 01 was run via scripts/run_jsearch_pilot.py (jsearch_collection.py collect --pilot), selecting these 12 query IDs from CP1_JSearch_Query_Plan.csv. Raw files keep their original names without a B01_ prefix (data/raw/jsearch/<query_id>_P01.json); they are NOT renamed so checksums, metadata and audit links stay valid. This manifest is written after execution for naming consistency only; do not re-run it (the collector skips existing files anyway).",
+  "audit": "evidence/checkpoint_1/corpus_collection/CP1_JSearch_Pilot01_Audit.md",
+  "queries": [
+    {
+      "query_id": "ID_MLE_JAK_JUNIOR",
+      "bucket": "indonesia",
+      "role_probe": "Machine Learning Engineer",
+      "seniority_probe": "junior",
+      "query": "Junior Machine Learning Engineer in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "ID_DAS_SUR_MID",
+      "bucket": "indonesia",
+      "role_probe": "Data Scientist",
+      "seniority_probe": "mid",
+      "query": "Mid Level Data Scientist in Surabaya",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "ID_AIE_BAN_SENIOR",
+      "bucket": "indonesia",
+      "role_probe": "AI Engineer",
+      "seniority_probe": "senior",
+      "query": "Senior AI Engineer in Bandung",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "ID_GEN_YOG_JUNIOR",
+      "bucket": "indonesia",
+      "role_probe": "Generative AI Engineer",
+      "seniority_probe": "junior",
+      "query": "Junior Generative AI Engineer in Yogyakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "ID_BAI_JAK_MID",
+      "bucket": "indonesia",
+      "role_probe": "Backend Engineer AI",
+      "seniority_probe": "mid",
+      "query": "Mid Level Backend Engineer AI in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "REMOTE_MLE_JUNIOR",
+      "bucket": "remote_candidate",
+      "role_probe": "Machine Learning Engineer",
+      "seniority_probe": "junior",
+      "query": "Remote Junior Machine Learning Engineer in Indonesia",
+      "country": "id",
+      "language": "en",
+      "work_from_home": "true"
+    },
+    {
+      "query_id": "REMOTE_DAS_MID",
+      "bucket": "remote_candidate",
+      "role_probe": "Data Scientist",
+      "seniority_probe": "mid",
+      "query": "Remote Mid Level Data Scientist in Indonesia",
+      "country": "id",
+      "language": "en",
+      "work_from_home": "true"
+    },
+    {
+      "query_id": "REMOTE_GEN_SENIOR",
+      "bucket": "remote_candidate",
+      "role_probe": "Generative AI Engineer",
+      "seniority_probe": "senior",
+      "query": "Remote Senior Generative AI Engineer in Indonesia",
+      "country": "id",
+      "language": "en",
+      "work_from_home": "true"
+    },
+    {
+      "query_id": "GLOBAL_US_AIE_JUNIOR",
+      "bucket": "foreign_comparison",
+      "role_probe": "AI Engineer",
+      "seniority_probe": "junior",
+      "query": "Junior AI Engineer in United States",
+      "country": "us",
+      "language": "en",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "GLOBAL_SG_BAI_SENIOR",
+      "bucket": "foreign_comparison",
+      "role_probe": "Backend Engineer AI",
+      "seniority_probe": "senior",
+      "query": "Senior Backend Engineer AI in Singapore",
+      "country": "sg",
+      "language": "en",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "CONTROL_ANL_BAN",
+      "bucket": "role_contrast",
+      "role_probe": "Data Analyst",
+      "seniority_probe": "unspecified",
+      "query": "Data Analyst in Bandung",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "CONTROL_CNT_JAK",
+      "bucket": "role_contrast",
+      "role_probe": "AI Content Creator",
+      "seniority_probe": "unspecified",
+      "query": "AI Content Creator in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    }
+  ]
+}

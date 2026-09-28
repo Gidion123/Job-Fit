@@ -1,0 +1,166 @@
+{
+  "date": "2026-09-26",
+  "scope": "offline CP1 research audit; no API calls",
+  "tests": {
+    "passed": 24,
+    "failed": 0,
+    "command": "python -m pytest -q tests"
+  },
+  "notebook": {
+    "path": "notebooks/01_research.ipynb",
+    "code_cells_executed": 30,
+    "execution_counts": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "error_outputs": 0,
+    "sha256": "5f6945033b0234698d47d39baf2169ea753cc2fbac6d6e1c46e1ce143623e534"
+  },
+  "rebuild": {
+    "checks": {
+      "jsearch_records.jsonl": true,
+      "jsearch_canonical.csv": true,
+      "jsearch_probable_duplicates_review.csv": true
+    },
+    "counts": {
+      "raw_slots": 1314,
+      "distinct_exact_clusters": 937,
+      "distinct_final": 910,
+      "auditable_candidates_full_jd": 632
+    }
+  },
+  "structure_check": {
+    "file_types": {
+      ".md": 29,
+      "": 8,
+      ".txt": 1,
+      ".docx": 1,
+      ".yaml": 1,
+      ".py": 16,
+      ".ipynb": 1,
+      ".png": 41,
+      ".json": 478,
+      ".csv": 9,
+      ".jsonl": 5
+    },
+    "parse_issues": [],
+    "metadata_count": 225,
+    "metadata_hash_mismatches": []
+  },
+  "figures_reviewed": 14,
+  "runtime": {
+    "python": "3.13.9",
+    "pandas": "2.3.3",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.6",
+    "PyYAML": "6.0.3",
+    "nbformat": "5.10.4",
+    "nbclient": "0.10.2"
+  },
+  "removed_cache_files": [
+    ".DS_Store",
+    "project-job-fit/.DS_Store",
+    "project-job-fit/.pytest_cache/.gitignore",
+    "project-job-fit/.pytest_cache/CACHEDIR.TAG",
+    "project-job-fit/.pytest_cache/README.md",
+    "project-job-fit/.pytest_cache/v/cache/nodeids",
+    "project-job-fit/data/.DS_Store",
+    "project-job-fit/data/raw/.DS_Store",
+    "project-job-fit/evidence/.DS_Store",
+    "project-job-fit/evidence/checkpoint_1/.DS_Store",
+    "project-job-fit/evidence/checkpoint_1/provider_benchmark/.DS_Store",
+    "project-job-fit/evidence/checkpoint_1/provider_benchmark/techmap/.DS_Store",
+    "project-job-fit/scripts/__pycache__/jsearch_collection.cpython-310.pyc",
+    "project-job-fit/scripts/__pycache__/jsearch_collection.cpython-313.pyc",
+    "project-job-fit/scripts/__pycache__/jsearch_collection.cpython-314.pyc",
+    "project-job-fit/scripts/__pycache__/run_jsearch_pilot.cpython-314.pyc",
+    "project-job-fit/src/__pycache__/__init__.cpython-310.pyc",
+    "project-job-fit/src/__pycache__/__init__.cpython-313.pyc",
+    "project-job-fit/src/jobs/__pycache__/__init__.cpython-310.pyc",
+    "project-job-fit/src/jobs/__pycache__/__init__.cpython-313.pyc",
+    "project-job-fit/src/jobs/__pycache__/cleaning.cpython-310.pyc",
+    "project-job-fit/src/jobs/__pycache__/cleaning.cpython-313.pyc",
+    "project-job-fit/src/jobs/__pycache__/corpus.cpython-310.pyc",
+    "project-job-fit/src/jobs/__pycache__/corpus.cpython-313.pyc",
+    "project-job-fit/src/jobs/__pycache__/research.cpython-313.pyc",
+    "project-job-fit/src/jobs/__pycache__/skills.cpython-310.pyc",
+    "project-job-fit/src/jobs/__pycache__/skills.cpython-313.pyc",
+    "project-job-fit/src/jobs/__pycache__/transform.cpython-310.pyc",
+    "project-job-fit/src/jobs/__pycache__/transform.cpython-313.pyc",
+    "project-job-fit/src/viz/__pycache__/__init__.cpython-310.pyc",
+    "project-job-fit/src/viz/__pycache__/__init__.cpython-313.pyc",
+    "project-job-fit/src/viz/__pycache__/style.cpython-310.pyc",
+    "project-job-fit/src/viz/__pycache__/style.cpython-313.pyc",
+    "project-job-fit/tests/__pycache__/test_collection_guards.cpython-313-pytest-8.4.2.pyc",
+    "project-job-fit/tests/__pycache__/test_jobs_rules.cpython-310-pytest-9.1.1.pyc",
+    "project-job-fit/tests/__pycache__/test_jobs_rules.cpython-313-pytest-8.4.2.pyc",
+    "project-job-fit/tests/__pycache__/test_research.cpython-313-pytest-8.4.2.pyc"
+  ],
+  "preserved": "raw, snapshots, decisions, historical reports, screenshots, original source-of-truth copies",
+  "artifacts_sha256": {
+    "data/processed/CP1_human_review_queue.jsonl": "a096b2fdd5d1e32d9bd0fa8518bd4524d7f4b5d65853b3be472453c9c7c4aefd",
+    "data/processed/CP1_research_summary.json": "046ec2bc7f14329e2af12d891d0570ceaa2a31d06deedbd0169b4f0e34a7a0a4",
+    "data/processed/jobs_clean.jsonl": "5d305d0142a6f6bddd38d6e1d70c6f79e325785f9cf07ca3acffd42558e9a842",
+    "data/processed/jobs_clean_meta.csv": "557579dd9f51dd5fd69a579f438c1c29d2e10208b7e08b71da1304adf16c2c80",
+    "data/processed/jobs_features.csv": "f9a626fb1aee33580320b4f07fc4b0ae724de7599553d3c3c6de1c0eed178c64",
+    "data/processed/jobs_features.jsonl": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194"
+  },
+  "user_rerun_checks": [
+    {
+      "checked_at_utc": "2026-09-26T13:09:22.128813+00:00",
+      "user_runtime": {
+        "python": "3.11.16",
+        "pandas": "2.3.3",
+        "numpy": "2.3.5",
+        "matplotlib": "3.10.6",
+        "PyYAML": "6.0.3",
+        "nbformat": "5.10.4",
+        "nbclient": "0.10.2"
+      },
+      "summary_change_only_runtime": true,
+      "processed_data_unchanged": true,
+      "code_unchanged": true,
+      "code_cells_executed": 30,
+      "errors": 0,
+      "narrative_cells_refined": [
+        4,
+        11,
+        41,
+        47,
+        49,
+        51,
+        53,
+        59
+      ],
+      "findings": "All principal numerical interpretations remain consistent; softened leftover introductory overclaims only. No rerun needed for Markdown edits."
+    }
+  ]
+}

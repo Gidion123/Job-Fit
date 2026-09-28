@@ -1,0 +1,128 @@
+{
+  "batch": "B02",
+  "max_requests": 12,
+  "free_only": true,
+  "rationale": "10 Indonesia role queries and 2 remote queries; remove seniority prefixes for five matched probes and two remote probes. Keep country/language/remote filter for paired comparisons. Other five queries widen role/location coverage. Results may differ over time; this is diagnostic, not a controlled causal experiment. No new contrast/foreign queries this batch because pilot already returned 19 contrast-query and 20 foreign-query slots. All seniorities retained for JD-based review.",
+  "queries": [
+    {
+      "query_id": "B02_ID_MLE_JAK",
+      "bucket": "indonesia",
+      "role_probe": "Machine Learning Engineer",
+      "seniority_probe": "unspecified",
+      "query": "Machine Learning Engineer in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B02_ID_DAS_SUR",
+      "bucket": "indonesia",
+      "role_probe": "Data Scientist",
+      "seniority_probe": "unspecified",
+      "query": "Data Scientist in Surabaya",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B02_ID_AIE_BAN",
+      "bucket": "indonesia",
+      "role_probe": "AI Engineer",
+      "seniority_probe": "unspecified",
+      "query": "AI Engineer in Bandung",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B02_ID_GEN_YOG",
+      "bucket": "indonesia",
+      "role_probe": "Generative AI Engineer",
+      "seniority_probe": "unspecified",
+      "query": "Generative AI Engineer in Yogyakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B02_ID_BAI_JAK",
+      "bucket": "indonesia",
+      "role_probe": "Backend Engineer AI",
+      "seniority_probe": "unspecified",
+      "query": "Backend Engineer AI in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B02_ID_DAS_YOG",
+      "bucket": "indonesia",
+      "role_probe": "Data Scientist",
+      "seniority_probe": "unspecified",
+      "query": "Data Scientist in Yogyakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B02_ID_MLE_BAN",
+      "bucket": "indonesia",
+      "role_probe": "Machine Learning Engineer",
+      "seniority_probe": "unspecified",
+      "query": "Machine Learning Engineer in Bandung",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B02_ID_AIE_SUR",
+      "bucket": "indonesia",
+      "role_probe": "AI Engineer",
+      "seniority_probe": "unspecified",
+      "query": "AI Engineer in Surabaya",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B02_ID_LLM_JAK",
+      "bucket": "indonesia",
+      "role_probe": "LLM Engineer",
+      "seniority_probe": "unspecified",
+      "query": "LLM Engineer in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B02_ID_MLE_ID",
+      "bucket": "indonesia",
+      "role_probe": "Machine Learning Engineer",
+      "seniority_probe": "unspecified",
+      "query": "Machine Learning Engineer in Indonesia",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B02_REMOTE_MLE",
+      "bucket": "remote_candidate",
+      "role_probe": "Machine Learning Engineer",
+      "seniority_probe": "unspecified",
+      "query": "Remote Machine Learning Engineer in Indonesia",
+      "country": "id",
+      "language": "en",
+      "work_from_home": "true"
+    },
+    {
+      "query_id": "B02_REMOTE_DAS",
+      "bucket": "remote_candidate",
+      "role_probe": "Data Scientist",
+      "seniority_probe": "unspecified",
+      "query": "Remote Data Scientist in Indonesia",
+      "country": "id",
+      "language": "en",
+      "work_from_home": "true"
+    }
+  ]
+}

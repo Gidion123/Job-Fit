@@ -1,0 +1,103 @@
+{
+  "generated_at_utc": "2026-09-26T05:01:36+00:00",
+  "counting_rule": "distinct_exact = exact-key clusters; distinct_final = exact clusters after merging reviewed SAME pairs (UNSURE/undecided pairs stay separate). auditable_candidates = final canonical record with full JD (>= 700 chars) and no generic external form. Strata are provisional title/query rules, not final labels.",
+  "raw_slots": 1314,
+  "distinct_exact_clusters": 937,
+  "probable_duplicate_pairs": 40,
+  "pairs_reviewed": 40,
+  "pairs_merged_same": 29,
+  "distinct_final": 910,
+  "auditable_candidates_full_jd": 632,
+  "jd_quality_canonical": {
+    "full": 667,
+    "summary_only": 236,
+    "insufficient": 7
+  },
+  "geo_canonical": {
+    "indonesia": 565,
+    "foreign": 285,
+    "remote_unverified": 60
+  },
+  "role_canonical_provisional": {
+    "target_family": 685,
+    "adjacent": 157,
+    "other": 41,
+    "wrong_role_content": 27
+  },
+  "seniority_canonical_provisional": {
+    "unspecified": 556,
+    "senior_lead": 258,
+    "junior_entry": 52,
+    "intern": 44
+  },
+  "auditable_by_geo": {
+    "indonesia": 373,
+    "foreign": 199,
+    "remote_unverified": 60
+  },
+  "auditable_by_role_provisional": {
+    "target_family": 456,
+    "adjacent": 119,
+    "other": 35,
+    "wrong_role_content": 22
+  },
+  "auditable_by_seniority_provisional": {
+    "unspecified": 398,
+    "senior_lead": 170,
+    "junior_entry": 33,
+    "intern": 31
+  },
+  "structured_posted_at_present_canonical": 275,
+  "by_batch_first_seen": {
+    "BENCHMARK": {
+      "responses": 8,
+      "slots": 40,
+      "new_clusters": 35
+    },
+    "COL": {
+      "responses": 2,
+      "slots": 8,
+      "new_clusters": 8
+    },
+    "B01": {
+      "responses": 12,
+      "slots": 47,
+      "new_clusters": 43
+    },
+    "B02": {
+      "responses": 12,
+      "slots": 80,
+      "new_clusters": 62
+    },
+    "B03": {
+      "responses": 23,
+      "slots": 131,
+      "new_clusters": 90
+    },
+    "B04": {
+      "responses": 34,
+      "slots": 208,
+      "new_clusters": 130
+    },
+    "B05A": {
+      "responses": 1,
+      "slots": 27,
+      "new_clusters": 24
+    },
+    "B05": {
+      "responses": 80,
+      "slots": 469,
+      "new_clusters": 332
+    },
+    "B06": {
+      "responses": 31,
+      "slots": 228,
+      "new_clusters": 136
+    },
+    "B07": {
+      "responses": 32,
+      "slots": 76,
+      "new_clusters": 50
+    }
+  }
+}

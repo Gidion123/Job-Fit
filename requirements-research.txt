@@ -1,0 +1,12 @@
+# CP1 research, Python >=3.11. Versions verified in the audit environment.
+# Collection scripts use the standard library only; no API calls are needed for research.
+pandas==2.3.3
+numpy==2.3.5
+matplotlib==3.10.6
+PyYAML==6.0.3
+nbformat==5.10.4
+nbclient==0.10.2
+jupyter
+nbconvert
+ipykernel
+pytest==8.4.2

@@ -1,0 +1,237 @@
+{
+  "batch": "B03",
+  "version": 1,
+  "created_at": "2026-09-26",
+  "max_requests": 24,
+  "free_only": true,
+  "rationale": "Driven by B02 evidence: saved cursors were still valid and page 2 of productive queries returned 28 strictly-new slots from 31; no-prefix Indonesia probes were far more productive than prefixed pilot probes; remote probes with country=id + work_from_home returned 0 in 4/4 attempts. B03 therefore (1) deepens productive probes via cursor, (2) adds entry-level vocabulary (Intern/Magang) to fill the junior stratum, (3) adds role vocabulary seen in real titles (AI Developer, MLOps, CV, NLP) and new cities, (4) tests two remote strategies outside country=id. Remote results require Indonesia-eligibility evidence from the JD; a remote flag is not eligibility.",
+  "queries": [
+    {
+      "query_id": "B03_ID_AIE_INTERN_JAK",
+      "bucket": "indonesia",
+      "role_probe": "AI Engineer",
+      "seniority_probe": "intern",
+      "query": "AI Engineer Intern in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B03_ID_DAS_INTERN_JAK",
+      "bucket": "indonesia",
+      "role_probe": "Data Scientist",
+      "seniority_probe": "intern",
+      "query": "Data Scientist Intern in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B03_ID_DS_MAGANG_JAK",
+      "bucket": "indonesia",
+      "role_probe": "Data Scientist",
+      "seniority_probe": "intern",
+      "query": "Magang Data Science in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B03_ID_AIDEV_JAK",
+      "bucket": "indonesia",
+      "role_probe": "AI Developer",
+      "seniority_probe": "unspecified",
+      "query": "AI Developer in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B03_ID_MLOPS_JAK",
+      "bucket": "indonesia",
+      "role_probe": "MLOps Engineer",
+      "seniority_probe": "unspecified",
+      "query": "MLOps Engineer in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B03_ID_CV_JAK",
+      "bucket": "indonesia",
+      "role_probe": "Computer Vision Engineer",
+      "seniority_probe": "unspecified",
+      "query": "Computer Vision Engineer in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B03_ID_NLP_JAK",
+      "bucket": "indonesia",
+      "role_probe": "NLP Engineer",
+      "seniority_probe": "unspecified",
+      "query": "NLP Engineer in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B03_ID_AIE_TGR",
+      "bucket": "indonesia",
+      "role_probe": "AI Engineer",
+      "seniority_probe": "unspecified",
+      "query": "AI Engineer in Tangerang",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B03_ID_AIE_BALI",
+      "bucket": "indonesia",
+      "role_probe": "AI Engineer",
+      "seniority_probe": "unspecified",
+      "query": "AI Engineer in Bali",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B03_ID_DAS_TGR",
+      "bucket": "indonesia",
+      "role_probe": "Data Scientist",
+      "seniority_probe": "unspecified",
+      "query": "Data Scientist in Tangerang",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B03_ID_AIE_SMG",
+      "bucket": "indonesia",
+      "role_probe": "AI Engineer",
+      "seniority_probe": "unspecified",
+      "query": "AI Engineer in Semarang",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B03_ID_AIE_MDN",
+      "bucket": "indonesia",
+      "role_probe": "AI Engineer",
+      "seniority_probe": "unspecified",
+      "query": "AI Engineer in Medan",
+      "country": "id",
+      "language": "id",
+      "work_from_home": ""
+    },
+    {
+      "query_id": "B03_REMOTE_AIE_SG",
+      "bucket": "remote_candidate",
+      "role_probe": "AI Engineer",
+      "seniority_probe": "unspecified",
+      "query": "Remote AI Engineer APAC",
+      "country": "sg",
+      "language": "en",
+      "work_from_home": "true"
+    },
+    {
+      "query_id": "B03_REMOTE_MLE_US",
+      "bucket": "remote_candidate",
+      "role_probe": "Machine Learning Engineer",
+      "seniority_probe": "unspecified",
+      "query": "Machine Learning Engineer remote worldwide",
+      "country": "us",
+      "language": "en",
+      "work_from_home": "true"
+    },
+    {
+      "query_id": "B03_CONT_AIE_ID",
+      "bucket": "indonesia",
+      "role_probe": "AI Engineer",
+      "seniority_probe": "unspecified",
+      "query": "AI Engineer in Indonesia",
+      "country": "id",
+      "language": "id",
+      "work_from_home": "",
+      "start_cursor_file": "data/raw/jsearch/B02_CONT_AIE_ID_P02.json",
+      "start_page": 3,
+      "max_pages": 2
+    },
+    {
+      "query_id": "B03_CONT_MLE_JAK",
+      "bucket": "indonesia",
+      "role_probe": "Machine Learning Engineer",
+      "seniority_probe": "unspecified",
+      "query": "Machine Learning Engineer in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": "",
+      "start_cursor_file": "data/raw/jsearch/B02_CONT_MLE_JAK_P02.json",
+      "start_page": 3,
+      "max_pages": 2
+    },
+    {
+      "query_id": "B03_CONT_DAS_JAK",
+      "bucket": "indonesia",
+      "role_probe": "Data Scientist",
+      "seniority_probe": "unspecified",
+      "query": "Data Scientist in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": "",
+      "start_cursor_file": "data/raw/jsearch/B02_CONT_DAS_JAK_P02.json",
+      "start_page": 3,
+      "max_pages": 2
+    },
+    {
+      "query_id": "B03_CONT_AIE_BAN",
+      "bucket": "indonesia",
+      "role_probe": "AI Engineer",
+      "seniority_probe": "unspecified",
+      "query": "AI Engineer in Bandung",
+      "country": "id",
+      "language": "id",
+      "work_from_home": "",
+      "start_cursor_file": "data/raw/jsearch/B02_ID_AIE_BAN_P01.json",
+      "start_page": 2
+    },
+    {
+      "query_id": "B03_CONT_AIE_SUR",
+      "bucket": "indonesia",
+      "role_probe": "AI Engineer",
+      "seniority_probe": "unspecified",
+      "query": "AI Engineer in Surabaya",
+      "country": "id",
+      "language": "id",
+      "work_from_home": "",
+      "start_cursor_file": "data/raw/jsearch/B02_ID_AIE_SUR_P01.json",
+      "start_page": 2
+    },
+    {
+      "query_id": "B03_CONT_BAI_JAK",
+      "bucket": "indonesia",
+      "role_probe": "Backend Engineer AI",
+      "seniority_probe": "unspecified",
+      "query": "Backend Engineer AI in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": "",
+      "start_cursor_file": "data/raw/jsearch/B02_ID_BAI_JAK_P01.json",
+      "start_page": 2
+    },
+    {
+      "query_id": "B03_CONT_LLM_JAK",
+      "bucket": "indonesia",
+      "role_probe": "LLM Engineer",
+      "seniority_probe": "unspecified",
+      "query": "LLM Engineer in Jakarta",
+      "country": "id",
+      "language": "id",
+      "work_from_home": "",
+      "start_cursor_file": "data/raw/jsearch/B02_ID_LLM_JAK_P01.json",
+      "start_page": 2
+    }
+  ]
+}

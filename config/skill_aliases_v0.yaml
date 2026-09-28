@@ -1,0 +1,69 @@
+# JobFit skill alias taxonomy v0 — deterministic matching for EDA and baseline keyword overlap.
+# Each canonical skill has: category, aliases (case-insensitive, word-boundary), optional regex (overrides aliases),
+# optional case_sensitive. Ambiguous short names (R, Go) use restrictive regexes to avoid false matches.
+version: v0
+skills:
+  python: {category: language, aliases: [python]}
+  sql: {category: language, aliases: [sql, t-sql, pl/sql]}
+  r: {category: language, regex: '(?<![\w/&])R(?![\w/&+#.-])(?=\s*(?:,|/|\)|and\b|or\b|dan\b|programming|language|studio))', case_sensitive: true}
+  java: {category: language, regex: '\bjava\b(?!\s*script)'}
+  scala: {category: language, aliases: [scala]}
+  golang: {category: language, regex: '\bgolang\b|\bGo\b(?=\s*(?:,|/|\)|and\b|or\b|dan\b|language|developer|engineer))', case_sensitive: false}
+  javascript_typescript: {category: language, aliases: [javascript, typescript, node.js, nodejs]}
+  cpp: {category: language, regex: 'c\+\+'}
+  machine_learning: {category: ml_concept, aliases: [machine learning, pembelajaran mesin, ml models, ml model]}
+  deep_learning: {category: ml_concept, aliases: [deep learning, neural network, neural networks]}
+  nlp: {category: ml_concept, aliases: [nlp, natural language processing]}
+  computer_vision: {category: ml_concept, aliases: [computer vision, image recognition, object detection]}
+  statistics: {category: ml_concept, aliases: [statistics, statistical, statistik]}
+  ab_testing: {category: ml_concept, aliases: [a/b test, a/b testing, ab testing, experimentation]}
+  time_series: {category: ml_concept, aliases: [time series, forecasting]}
+  recommender_systems: {category: ml_concept, aliases: [recommender, recommendation system, recommendation systems, recsys]}
+  llm: {category: genai, aliases: [llm, llms, large language model, large language models]}
+  generative_ai: {category: genai, aliases: [generative ai, genai, gen ai]}
+  rag: {category: genai, aliases: [rag, retrieval-augmented generation, retrieval augmented generation]}
+  prompt_engineering: {category: genai, aliases: [prompt engineering, prompting, prompt design]}
+  fine_tuning: {category: genai, aliases: [fine-tuning, fine tuning, finetuning, lora, peft]}
+  ai_agents: {category: genai, aliases: [ai agent, ai agents, agentic, multi-agent, langgraph, crewai, autogen]}
+  langchain: {category: genai, aliases: [langchain]}
+  llamaindex: {category: genai, aliases: [llamaindex, llama index, llama-index]}
+  huggingface_transformers: {category: genai, aliases: [hugging face, huggingface, transformers]}
+  openai_api: {category: genai, aliases: [openai, gpt-4, gpt-4o, chatgpt, gpt]}
+  vector_database: {category: genai, aliases: [vector database, vector db, vector store, pinecone, weaviate, milvus, qdrant, chroma, chromadb, pgvector, faiss]}
+  embeddings: {category: genai, aliases: [embedding, embeddings]}
+  pytorch: {category: ml_framework, aliases: [pytorch, torch]}
+  tensorflow: {category: ml_framework, aliases: [tensorflow, keras]}
+  scikit_learn: {category: ml_framework, aliases: [scikit-learn, sklearn, scikit learn]}
+  gradient_boosting: {category: ml_framework, aliases: [xgboost, lightgbm, catboost]}
+  pandas_numpy: {category: ml_framework, aliases: [pandas, numpy]}
+  opencv_yolo: {category: ml_framework, aliases: [opencv, yolo]}
+  spark: {category: data_platform, aliases: [spark, pyspark, apache spark]}
+  hadoop: {category: data_platform, aliases: [hadoop, hive]}
+  airflow: {category: data_platform, aliases: [airflow]}
+  dbt: {category: data_platform, aliases: [dbt]}
+  kafka: {category: data_platform, aliases: [kafka]}
+  bigquery: {category: data_platform, aliases: [bigquery, big query]}
+  snowflake: {category: data_platform, aliases: [snowflake]}
+  databricks: {category: data_platform, aliases: [databricks]}
+  postgresql: {category: database, aliases: [postgresql, postgres]}
+  mysql: {category: database, aliases: [mysql]}
+  mongodb: {category: database, aliases: [mongodb, mongo]}
+  redis: {category: database, aliases: [redis]}
+  elasticsearch: {category: database, aliases: [elasticsearch, opensearch]}
+  docker: {category: mlops_devops, aliases: [docker, container, containers, containerization]}
+  kubernetes: {category: mlops_devops, aliases: [kubernetes, k8s]}
+  mlops: {category: mlops_devops, aliases: [mlops, ml ops, model deployment, model monitoring]}
+  mlflow_kubeflow: {category: mlops_devops, aliases: [mlflow, kubeflow]}
+  ci_cd: {category: mlops_devops, aliases: [ci/cd, cicd, ci cd, github actions, gitlab ci, jenkins]}
+  git: {category: mlops_devops, aliases: [git, github, gitlab]}
+  linux: {category: mlops_devops, aliases: [linux, unix, bash]}
+  aws: {category: cloud, aliases: [aws, amazon web services, sagemaker, bedrock]}
+  gcp: {category: cloud, aliases: [gcp, google cloud, vertex ai, vertex]}
+  azure: {category: cloud, aliases: [azure, azure openai]}
+  fastapi_flask_django: {category: backend, aliases: [fastapi, flask, django]}
+  rest_api: {category: backend, aliases: [rest api, restful, rest apis, api development, api integration, web api, web apis]}
+  microservices: {category: backend, aliases: [microservice, microservices]}
+  power_bi: {category: bi, aliases: [power bi, powerbi]}
+  tableau: {category: bi, aliases: [tableau]}
+  looker: {category: bi, aliases: [looker, looker studio, google data studio]}
+  excel: {category: bi, aliases: [excel, spreadsheet, spreadsheets, google sheets]}

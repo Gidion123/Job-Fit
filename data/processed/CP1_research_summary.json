@@ -1,0 +1,1467 @@
+{
+  "snapshot": "CP1_20260926",
+  "cleaning_version": "cleaning_v0.1_audited",
+  "taxonomy_version": "role_taxonomy_v0.1_audited",
+  "skill_alias_version": "v0",
+  "funnel": {
+    "Raw API slots": 1314,
+    "Exact-key clusters": 937,
+    "Final clusters (estimated jobs)": 910,
+    "EDA candidates (JD length + source filter)": 632
+  },
+  "completeness_auditable_pct": {
+    "employer": 100.0,
+    "title": 100.0,
+    "JD text": 100.0,
+    "apply URL": 100.0,
+    "location text": 99.1,
+    "employment type": 96.8,
+    "relative posting text": 63.9,
+    "structured country": 44.8,
+    "structured posted_at": 30.2,
+    "structured city": 20.4,
+    "salary": 2.7,
+    "job_highlights": 0.0
+  },
+  "jd_quality": {
+    "full": 667,
+    "summary_only": 236,
+    "insufficient": 7
+  },
+  "jd_language_by_geo": {
+    "foreign": {
+      "en": 285,
+      "id": 0,
+      "mixed": 0,
+      "other_script": 0,
+      "unknown": 0
+    },
+    "indonesia": {
+      "en": 438,
+      "id": 122,
+      "mixed": 2,
+      "other_script": 1,
+      "unknown": 2
+    },
+    "remote_unverified": {
+      "en": 60,
+      "id": 0,
+      "mixed": 0,
+      "other_script": 0,
+      "unknown": 0
+    }
+  },
+  "posted_at_source": {
+    "relative_text": 357,
+    "unknown": 278,
+    "provider_structured": 275
+  },
+  "dedup_decisions": {
+    "SAME": 29,
+    "DIFFERENT": 8,
+    "UNSURE": 3
+  },
+  "populations": {
+    "AUD": 632,
+    "TGT": 428,
+    "ID_T": 175,
+    "FOR_T": 186,
+    "REM_T": 57,
+    "UNKNOWN_T": 10
+  },
+  "role_family_auditable": {
+    "ai_ml_engineering": 222,
+    "data_science": 131,
+    "software_general": 54,
+    "data_analytics": 51,
+    "genai_llm": 50,
+    "business_product": 33,
+    "software_ai": 25,
+    "content_marketing": 21,
+    "data_engineering": 19,
+    "other": 13,
+    "other_tech": 7,
+    "annotation_labeling": 6
+  },
+  "ai_title_not_target": {
+    "all": 49,
+    "all_jobs_denominator": 910,
+    "ai_title_denominator": 463,
+    "auditable": 29
+  },
+  "experience_bucket_ID_T": {
+    "entry": 14,
+    "1-2y": 35,
+    "3-4y": 38,
+    "5y+": 31,
+    "not_stated": 57
+  },
+  "title_unspecified_3plus": {
+    "n": 128,
+    "of": 405
+  },
+  "top_skills_ID_T_pct": {
+    "python": 65.1,
+    "machine_learning": 42.3,
+    "llm": 35.4,
+    "sql": 35.4,
+    "aws": 24.6,
+    "statistics": 24.0,
+    "ai_agents": 23.4,
+    "azure": 22.9,
+    "docker": 22.3,
+    "git": 21.1,
+    "gcp": 21.1,
+    "rag": 21.1,
+    "generative_ai": 18.3,
+    "rest_api": 17.7,
+    "tensorflow": 17.1,
+    "pytorch": 16.0,
+    "javascript_typescript": 14.3,
+    "openai_api": 13.7,
+    "postgresql": 13.1,
+    "mlops": 12.0
+  },
+  "genai_any_pct": {
+    "ID_T": 49.1,
+    "FOR_T": 59.7
+  },
+  "experience_screen_pool_ID": {
+    "n": 49,
+    "of": 175,
+    "companies": 49,
+    "definition": "entry/1-2y experience signal only, not verified eligibility or qualification",
+    "role_family": {
+      "ai_ml_engineering": 26,
+      "data_science": 15,
+      "software_ai": 6,
+      "genai_llm": 2
+    },
+    "title_seniority": {
+      "unspecified": 37,
+      "intern": 6,
+      "junior": 5,
+      "mid": 1
+    },
+    "record_ids": [
+      "CP1_JSearch_JS02_AIEngineer_ID_id_Screenshot#1",
+      "CP1_JSearch_JS03D_MLEngineer_Jakarta_ID_Response#1",
+      "B03_CONT_MLE_JAK_P04#4",
+      "CP1_JSearch_JS05_GenAIEngineer_Jakarta_ID_Response#7",
+      "CP1_JSearch_JS04_DataScientist_Jakarta_ID_Response#1",
+      "CP1_JSearch_JS04_DataScientist_Jakarta_ID_Response#4",
+      "B06_AI_ENGINEER_STARTUP_JAKARTA_P01#10",
+      "CP1_JSearch_JS05_GenAIEngineer_Jakarta_ID_Response#9",
+      "CP1_JSearch_COL01_DataScientist_Bandung_ID_Response#1",
+      "B06_DATA_SCIENTIST_E_COMMERCE_JAKARTA_P01#1",
+      "B06_CONT_ARTIFICIAL_INTELLIGENCE_IN_JAKARTA_P02#4",
+      "B04_ID_AIE_JAK_P02#5",
+      "ID_AIE_BAN_SENIOR_P01#4",
+      "B05_MACHINE_LEARNING_ENGINEER_IN_SURAB_P01#2",
+      "B05_MACHINE_LEARNING_ENGINEER_IN_SURAB_P01#1",
+      "B05_PYTHON_DEVELOPER_AI_IN_JAKARTA_P01#1",
+      "B06_LOWONGAN_AI_ENGINEER_JAKARTA_P01#1",
+      "B02_ID_DAS_YOG_P01#5",
+      "B06_LOWONGAN_AI_ENGINEER_JAKARTA_P01#7",
+      "ID_MLE_JAK_JUNIOR_P01#1",
+      "B06_LOWONGAN_DATA_SCIENTIST_JAKARTA_P01#2",
+      "B05_DATA_SCIENCE_IN_JAKARTA_P01#10",
+      "B06_CONT_AI_CONSULTANT_IN_JAKARTA_P02#7",
+      "B06_CONT_ARTIFICIAL_INTELLIGENCE_IN_JAKARTA_P02#9",
+      "B03_ID_DAS_INTERN_JAK_P01#2",
+      "B03_ID_AIE_TGR_P01#3",
+      "B03_ID_AIE_TGR_P01#4",
+      "B03_ID_CV_JAK_P01#2",
+      "B03_ID_DS_MAGANG_JAK_P01#1",
+      "B04_ID_DAS_JUNIOR_JAK_P01#9",
+      "B07_AI_DEVELOPER_IN_TANGERANG_P01#5",
+      "B07_AI_DEVELOPER_IN_TANGERANG_P01#3",
+      "B06_CONT_ARTIFICIAL_INTELLIGENCE_IN_JAKARTA_P02#2",
+      "B06_LOWONGAN_DATA_SCIENTIST_JAKARTA_P01#7",
+      "B06_LOWONGAN_AI_ENGINEER_JAKARTA_P01#3",
+      "B06_AI_ENGINEER_REMOTE_INDONESIA_P01#10",
+      "B06_LOWONGAN_DATA_SCIENTIST_JAKARTA_P01#6",
+      "B05_AI_ENGINEER_IN_BOGOR_P01#2",
+      "B05_CONT_DATA_ENGINEER_IN_JAKARTA_P03#6",
+      "B05_DATA_SCIENTIST_CONTRACT_JAKARTA_P01#2",
+      "B06_CONT_AI_SPECIALIST_IN_JAKARTA_P02#1",
+      "B06_CONT_AI_SPECIALIST_IN_JAKARTA_P02#6",
+      "B06_CONT_ARTIFICIAL_INTELLIGENCE_IN_JAKARTA_P02#10",
+      "B06_DATA_SCIENTIST_BANKING_JAKARTA_P01#8",
+      "B06_MACHINE_LEARNING_ENGINEER_IN_BEKAS_P01#1",
+      "B07_AI_DEVELOPER_IN_SEMARANG_P01#2",
+      "B07_AI_DEVELOPER_IN_SURABAYA_P01#2",
+      "B07_AI_DEVELOPER_IN_TANGERANG_P01#7",
+      "B07_COMPUTER_VISION_ENGINEER_IN_SURABA_P01#1"
+    ],
+    "skills": {
+      "ab_testing": {
+        "n": 3,
+        "of": 49,
+        "pct": 6.122448979591836
+      },
+      "ai_agents": {
+        "n": 11,
+        "of": 49,
+        "pct": 22.448979591836736
+      },
+      "airflow": {
+        "n": 3,
+        "of": 49,
+        "pct": 6.122448979591836
+      },
+      "aws": {
+        "n": 9,
+        "of": 49,
+        "pct": 18.367346938775512
+      },
+      "azure": {
+        "n": 11,
+        "of": 49,
+        "pct": 22.448979591836736
+      },
+      "bigquery": {
+        "n": 1,
+        "of": 49,
+        "pct": 2.0408163265306123
+      },
+      "ci_cd": {
+        "n": 5,
+        "of": 49,
+        "pct": 10.204081632653061
+      },
+      "computer_vision": {
+        "n": 7,
+        "of": 49,
+        "pct": 14.285714285714285
+      },
+      "cpp": {
+        "n": 1,
+        "of": 49,
+        "pct": 2.0408163265306123
+      },
+      "databricks": {
+        "n": 2,
+        "of": 49,
+        "pct": 4.081632653061225
+      },
+      "deep_learning": {
+        "n": 2,
+        "of": 49,
+        "pct": 4.081632653061225
+      },
+      "docker": {
+        "n": 14,
+        "of": 49,
+        "pct": 28.57142857142857
+      },
+      "elasticsearch": {
+        "n": 1,
+        "of": 49,
+        "pct": 2.0408163265306123
+      },
+      "embeddings": {
+        "n": 6,
+        "of": 49,
+        "pct": 12.244897959183673
+      },
+      "excel": {
+        "n": 5,
+        "of": 49,
+        "pct": 10.204081632653061
+      },
+      "fastapi_flask_django": {
+        "n": 5,
+        "of": 49,
+        "pct": 10.204081632653061
+      },
+      "fine_tuning": {
+        "n": 2,
+        "of": 49,
+        "pct": 4.081632653061225
+      },
+      "gcp": {
+        "n": 8,
+        "of": 49,
+        "pct": 16.3265306122449
+      },
+      "generative_ai": {
+        "n": 10,
+        "of": 49,
+        "pct": 20.408163265306122
+      },
+      "git": {
+        "n": 15,
+        "of": 49,
+        "pct": 30.612244897959183
+      },
+      "golang": {
+        "n": 2,
+        "of": 49,
+        "pct": 4.081632653061225
+      },
+      "gradient_boosting": {
+        "n": 1,
+        "of": 49,
+        "pct": 2.0408163265306123
+      },
+      "hadoop": {
+        "n": 3,
+        "of": 49,
+        "pct": 6.122448979591836
+      },
+      "huggingface_transformers": {
+        "n": 3,
+        "of": 49,
+        "pct": 6.122448979591836
+      },
+      "java": {
+        "n": 2,
+        "of": 49,
+        "pct": 4.081632653061225
+      },
+      "javascript_typescript": {
+        "n": 9,
+        "of": 49,
+        "pct": 18.367346938775512
+      },
+      "kafka": {
+        "n": 4,
+        "of": 49,
+        "pct": 8.16326530612245
+      },
+      "kubernetes": {
+        "n": 3,
+        "of": 49,
+        "pct": 6.122448979591836
+      },
+      "langchain": {
+        "n": 7,
+        "of": 49,
+        "pct": 14.285714285714285
+      },
+      "linux": {
+        "n": 2,
+        "of": 49,
+        "pct": 4.081632653061225
+      },
+      "llamaindex": {
+        "n": 5,
+        "of": 49,
+        "pct": 10.204081632653061
+      },
+      "llm": {
+        "n": 18,
+        "of": 49,
+        "pct": 36.734693877551024
+      },
+      "looker": {
+        "n": 2,
+        "of": 49,
+        "pct": 4.081632653061225
+      },
+      "machine_learning": {
+        "n": 18,
+        "of": 49,
+        "pct": 36.734693877551024
+      },
+      "microservices": {
+        "n": 5,
+        "of": 49,
+        "pct": 10.204081632653061
+      },
+      "mlflow_kubeflow": {
+        "n": 1,
+        "of": 49,
+        "pct": 2.0408163265306123
+      },
+      "mlops": {
+        "n": 5,
+        "of": 49,
+        "pct": 10.204081632653061
+      },
+      "mongodb": {
+        "n": 2,
+        "of": 49,
+        "pct": 4.081632653061225
+      },
+      "mysql": {
+        "n": 5,
+        "of": 49,
+        "pct": 10.204081632653061
+      },
+      "nlp": {
+        "n": 4,
+        "of": 49,
+        "pct": 8.16326530612245
+      },
+      "openai_api": {
+        "n": 10,
+        "of": 49,
+        "pct": 20.408163265306122
+      },
+      "opencv_yolo": {
+        "n": 2,
+        "of": 49,
+        "pct": 4.081632653061225
+      },
+      "pandas_numpy": {
+        "n": 4,
+        "of": 49,
+        "pct": 8.16326530612245
+      },
+      "postgresql": {
+        "n": 7,
+        "of": 49,
+        "pct": 14.285714285714285
+      },
+      "power_bi": {
+        "n": 5,
+        "of": 49,
+        "pct": 10.204081632653061
+      },
+      "prompt_engineering": {
+        "n": 10,
+        "of": 49,
+        "pct": 20.408163265306122
+      },
+      "python": {
+        "n": 34,
+        "of": 49,
+        "pct": 69.38775510204081
+      },
+      "pytorch": {
+        "n": 8,
+        "of": 49,
+        "pct": 16.3265306122449
+      },
+      "r": {
+        "n": 3,
+        "of": 49,
+        "pct": 6.122448979591836
+      },
+      "rag": {
+        "n": 13,
+        "of": 49,
+        "pct": 26.53061224489796
+      },
+      "recommender_systems": {
+        "n": 1,
+        "of": 49,
+        "pct": 2.0408163265306123
+      },
+      "redis": {
+        "n": 3,
+        "of": 49,
+        "pct": 6.122448979591836
+      },
+      "rest_api": {
+        "n": 13,
+        "of": 49,
+        "pct": 26.53061224489796
+      },
+      "scala": {
+        "n": 2,
+        "of": 49,
+        "pct": 4.081632653061225
+      },
+      "scikit_learn": {
+        "n": 5,
+        "of": 49,
+        "pct": 10.204081632653061
+      },
+      "snowflake": {
+        "n": 1,
+        "of": 49,
+        "pct": 2.0408163265306123
+      },
+      "spark": {
+        "n": 6,
+        "of": 49,
+        "pct": 12.244897959183673
+      },
+      "sql": {
+        "n": 24,
+        "of": 49,
+        "pct": 48.97959183673469
+      },
+      "statistics": {
+        "n": 12,
+        "of": 49,
+        "pct": 24.489795918367346
+      },
+      "tableau": {
+        "n": 5,
+        "of": 49,
+        "pct": 10.204081632653061
+      },
+      "tensorflow": {
+        "n": 10,
+        "of": 49,
+        "pct": 20.408163265306122
+      },
+      "time_series": {
+        "n": 1,
+        "of": 49,
+        "pct": 2.0408163265306123
+      },
+      "vector_database": {
+        "n": 8,
+        "of": 49,
+        "pct": 16.3265306122449
+      }
+    },
+    "education_mentions": {
+      "diploma": {
+        "n": 3,
+        "of": 49
+      },
+      "bachelor": {
+        "n": 28,
+        "of": 49
+      },
+      "master": {
+        "n": 6,
+        "of": 49
+      },
+      "phd": {
+        "n": 0,
+        "of": 49
+      }
+    },
+    "education_unknown_n": 19,
+    "review_flagged_n": 30
+  },
+  "jabodetabek_pct_ID": 79.6,
+  "work_mode_unclear_pct_ID": 76.3,
+  "publishers": {
+    "n": 109,
+    "top5_pct": 54.4
+  },
+  "input_verification": {
+    "raw_inputs_verified": 460,
+    "frozen_derived_inputs_verified": 5,
+    "input_hashes": [
+      {
+        "path": "data/interim/snapshots/CP1_20260926/CP1_Corpus_Progress.json",
+        "sha256": "3072765ee7db738c11a8931e8632aeca25052c7c82f468c44cf15bf784677662"
+      },
+      {
+        "path": "data/interim/snapshots/CP1_20260926/dedup_decisions.csv",
+        "sha256": "7db35513a7bd57fcf0b2f17d5d10360a1b5891456c6c6b406a1f6e20b3ea3a61"
+      },
+      {
+        "path": "data/interim/snapshots/CP1_20260926/jsearch_canonical.csv",
+        "sha256": "9debc9bee44b6fd8495605d94b0b9e53262bf812df1a98fd4031e8f3302ab7a0"
+      },
+      {
+        "path": "data/interim/snapshots/CP1_20260926/jsearch_probable_duplicates_review.csv",
+        "sha256": "e78e01460a41491f51172ca192d8d6078300ef716e9dc3e46c05afdf51263d46"
+      },
+      {
+        "path": "data/interim/snapshots/CP1_20260926/jsearch_records.jsonl",
+        "sha256": "14eddfe7acabf07770e3c94c7824d61c59a7a469757b0bb8074fdc0a1c59cc0b"
+      }
+    ]
+  },
+  "analysis_geo_auditable": {
+    "indonesia": 372,
+    "foreign": 190,
+    "remote_unverified": 60,
+    "unknown": 10
+  },
+  "geo_by_role_group": {
+    "foreign": {
+      "adjacent": 3,
+      "non_target": 1,
+      "target": 186
+    },
+    "indonesia": {
+      "adjacent": 126,
+      "non_target": 71,
+      "target": 175
+    },
+    "remote_unverified": {
+      "adjacent": 2,
+      "non_target": 1,
+      "target": 57
+    },
+    "unknown": {
+      "adjacent": 0,
+      "non_target": 0,
+      "target": 10
+    }
+  },
+  "experience_by_population": {
+    "ID_T": {
+      "not_stated": 57,
+      "3-4y": 38,
+      "1-2y": 35,
+      "5y+": 31,
+      "entry": 14
+    },
+    "FOR_T": {
+      "not_stated": 70,
+      "5y+": 43,
+      "3-4y": 36,
+      "entry": 20,
+      "1-2y": 17
+    },
+    "REM_T": {
+      "not_stated": 21,
+      "5y+": 17,
+      "entry": 7,
+      "3-4y": 7,
+      "1-2y": 5
+    },
+    "UNKNOWN_T": {
+      "not_stated": 5,
+      "3-4y": 2,
+      "5y+": 2,
+      "1-2y": 1
+    }
+  },
+  "title_by_experience": {
+    "intern": {
+      "entry": 30,
+      "1-2y": 0,
+      "3-4y": 0,
+      "5y+": 0,
+      "not_stated": 0
+    },
+    "junior": {
+      "entry": 13,
+      "1-2y": 4,
+      "3-4y": 5,
+      "5y+": 2,
+      "not_stated": 9
+    },
+    "mid": {
+      "entry": 0,
+      "1-2y": 2,
+      "3-4y": 2,
+      "5y+": 1,
+      "not_stated": 1
+    },
+    "senior": {
+      "entry": 1,
+      "1-2y": 5,
+      "3-4y": 17,
+      "5y+": 35,
+      "not_stated": 30
+    },
+    "lead_plus": {
+      "entry": 0,
+      "1-2y": 3,
+      "3-4y": 10,
+      "5y+": 40,
+      "not_stated": 17
+    },
+    "unspecified": {
+      "entry": 25,
+      "1-2y": 88,
+      "3-4y": 83,
+      "5y+": 45,
+      "not_stated": 164
+    }
+  },
+  "skills_by_role": {
+    "data_science": {
+      "ai_agents": {
+        "n": 16,
+        "of": 131,
+        "pct": 12.213740458015266
+      },
+      "aws": {
+        "n": 33,
+        "of": 131,
+        "pct": 25.190839694656486
+      },
+      "azure": {
+        "n": 28,
+        "of": 131,
+        "pct": 21.374045801526716
+      },
+      "docker": {
+        "n": 10,
+        "of": 131,
+        "pct": 7.633587786259542
+      },
+      "generative_ai": {
+        "n": 26,
+        "of": 131,
+        "pct": 19.84732824427481
+      },
+      "git": {
+        "n": 11,
+        "of": 131,
+        "pct": 8.396946564885496
+      },
+      "llm": {
+        "n": 33,
+        "of": 131,
+        "pct": 25.190839694656486
+      },
+      "machine_learning": {
+        "n": 100,
+        "of": 131,
+        "pct": 76.33587786259542
+      },
+      "python": {
+        "n": 115,
+        "of": 131,
+        "pct": 87.78625954198473
+      },
+      "pytorch": {
+        "n": 26,
+        "of": 131,
+        "pct": 19.84732824427481
+      },
+      "rag": {
+        "n": 11,
+        "of": 131,
+        "pct": 8.396946564885496
+      },
+      "sql": {
+        "n": 85,
+        "of": 131,
+        "pct": 64.8854961832061
+      },
+      "statistics": {
+        "n": 102,
+        "of": 131,
+        "pct": 77.86259541984732
+      },
+      "tensorflow": {
+        "n": 30,
+        "of": 131,
+        "pct": 22.900763358778626
+      }
+    },
+    "ai_ml_engineering": {
+      "ai_agents": {
+        "n": 79,
+        "of": 222,
+        "pct": 35.585585585585584
+      },
+      "aws": {
+        "n": 53,
+        "of": 222,
+        "pct": 23.873873873873876
+      },
+      "azure": {
+        "n": 48,
+        "of": 222,
+        "pct": 21.62162162162162
+      },
+      "docker": {
+        "n": 50,
+        "of": 222,
+        "pct": 22.52252252252252
+      },
+      "generative_ai": {
+        "n": 49,
+        "of": 222,
+        "pct": 22.07207207207207
+      },
+      "git": {
+        "n": 46,
+        "of": 222,
+        "pct": 20.72072072072072
+      },
+      "llm": {
+        "n": 95,
+        "of": 222,
+        "pct": 42.792792792792795
+      },
+      "machine_learning": {
+        "n": 119,
+        "of": 222,
+        "pct": 53.6036036036036
+      },
+      "python": {
+        "n": 144,
+        "of": 222,
+        "pct": 64.86486486486487
+      },
+      "pytorch": {
+        "n": 61,
+        "of": 222,
+        "pct": 27.47747747747748
+      },
+      "rag": {
+        "n": 56,
+        "of": 222,
+        "pct": 25.225225225225223
+      },
+      "sql": {
+        "n": 43,
+        "of": 222,
+        "pct": 19.36936936936937
+      },
+      "statistics": {
+        "n": 35,
+        "of": 222,
+        "pct": 15.765765765765765
+      },
+      "tensorflow": {
+        "n": 56,
+        "of": 222,
+        "pct": 25.225225225225223
+      }
+    },
+    "genai_llm": {
+      "ai_agents": {
+        "n": 32,
+        "of": 50,
+        "pct": 64.0
+      },
+      "aws": {
+        "n": 13,
+        "of": 50,
+        "pct": 26.0
+      },
+      "azure": {
+        "n": 13,
+        "of": 50,
+        "pct": 26.0
+      },
+      "docker": {
+        "n": 18,
+        "of": 50,
+        "pct": 36.0
+      },
+      "generative_ai": {
+        "n": 27,
+        "of": 50,
+        "pct": 54.0
+      },
+      "git": {
+        "n": 10,
+        "of": 50,
+        "pct": 20.0
+      },
+      "llm": {
+        "n": 41,
+        "of": 50,
+        "pct": 82.0
+      },
+      "machine_learning": {
+        "n": 18,
+        "of": 50,
+        "pct": 36.0
+      },
+      "python": {
+        "n": 39,
+        "of": 50,
+        "pct": 78.0
+      },
+      "pytorch": {
+        "n": 6,
+        "of": 50,
+        "pct": 12.0
+      },
+      "rag": {
+        "n": 33,
+        "of": 50,
+        "pct": 66.0
+      },
+      "sql": {
+        "n": 7,
+        "of": 50,
+        "pct": 14.000000000000002
+      },
+      "statistics": {
+        "n": 1,
+        "of": 50,
+        "pct": 2.0
+      },
+      "tensorflow": {
+        "n": 4,
+        "of": 50,
+        "pct": 8.0
+      }
+    },
+    "software_ai": {
+      "ai_agents": {
+        "n": 7,
+        "of": 25,
+        "pct": 28.000000000000004
+      },
+      "aws": {
+        "n": 5,
+        "of": 25,
+        "pct": 20.0
+      },
+      "azure": {
+        "n": 6,
+        "of": 25,
+        "pct": 24.0
+      },
+      "docker": {
+        "n": 10,
+        "of": 25,
+        "pct": 40.0
+      },
+      "generative_ai": {
+        "n": 1,
+        "of": 25,
+        "pct": 4.0
+      },
+      "git": {
+        "n": 12,
+        "of": 25,
+        "pct": 48.0
+      },
+      "llm": {
+        "n": 11,
+        "of": 25,
+        "pct": 44.0
+      },
+      "machine_learning": {
+        "n": 6,
+        "of": 25,
+        "pct": 24.0
+      },
+      "python": {
+        "n": 16,
+        "of": 25,
+        "pct": 64.0
+      },
+      "pytorch": {
+        "n": 1,
+        "of": 25,
+        "pct": 4.0
+      },
+      "rag": {
+        "n": 4,
+        "of": 25,
+        "pct": 16.0
+      },
+      "sql": {
+        "n": 6,
+        "of": 25,
+        "pct": 24.0
+      },
+      "statistics": {
+        "n": 0,
+        "of": 25,
+        "pct": 0.0
+      },
+      "tensorflow": {
+        "n": 1,
+        "of": 25,
+        "pct": 4.0
+      }
+    }
+  },
+  "genai_bundle": {
+    "with_llm": {
+      "rag": {
+        "n": 95,
+        "of": 180,
+        "pct": 52.77777777777778
+      },
+      "ai_agents": {
+        "n": 104,
+        "of": 180,
+        "pct": 57.77777777777777
+      },
+      "prompt_engineering": {
+        "n": 66,
+        "of": 180,
+        "pct": 36.666666666666664
+      },
+      "langchain": {
+        "n": 49,
+        "of": 180,
+        "pct": 27.22222222222222
+      },
+      "openai_api": {
+        "n": 35,
+        "of": 180,
+        "pct": 19.444444444444446
+      },
+      "vector_database": {
+        "n": 30,
+        "of": 180,
+        "pct": 16.666666666666664
+      },
+      "fine_tuning": {
+        "n": 26,
+        "of": 180,
+        "pct": 14.444444444444443
+      },
+      "docker": {
+        "n": 54,
+        "of": 180,
+        "pct": 30.0
+      },
+      "python": {
+        "n": 146,
+        "of": 180,
+        "pct": 81.11111111111111
+      },
+      "machine_learning": {
+        "n": 90,
+        "of": 180,
+        "pct": 50.0
+      },
+      "sql": {
+        "n": 56,
+        "of": 180,
+        "pct": 31.11111111111111
+      },
+      "statistics": {
+        "n": 40,
+        "of": 180,
+        "pct": 22.22222222222222
+      }
+    },
+    "without_llm": {
+      "rag": {
+        "n": 9,
+        "of": 248,
+        "pct": 3.6290322580645165
+      },
+      "ai_agents": {
+        "n": 30,
+        "of": 248,
+        "pct": 12.096774193548388
+      },
+      "prompt_engineering": {
+        "n": 7,
+        "of": 248,
+        "pct": 2.82258064516129
+      },
+      "langchain": {
+        "n": 9,
+        "of": 248,
+        "pct": 3.6290322580645165
+      },
+      "openai_api": {
+        "n": 11,
+        "of": 248,
+        "pct": 4.435483870967742
+      },
+      "vector_database": {
+        "n": 2,
+        "of": 248,
+        "pct": 0.8064516129032258
+      },
+      "fine_tuning": {
+        "n": 8,
+        "of": 248,
+        "pct": 3.225806451612903
+      },
+      "docker": {
+        "n": 34,
+        "of": 248,
+        "pct": 13.709677419354838
+      },
+      "python": {
+        "n": 168,
+        "of": 248,
+        "pct": 67.74193548387096
+      },
+      "machine_learning": {
+        "n": 153,
+        "of": 248,
+        "pct": 61.693548387096776
+      },
+      "sql": {
+        "n": 85,
+        "of": 248,
+        "pct": 34.274193548387096
+      },
+      "statistics": {
+        "n": 98,
+        "of": 248,
+        "pct": 39.516129032258064
+      }
+    }
+  },
+  "geo_skills_raw_and_length_band": [
+    {
+      "skill": "pytorch",
+      "Indonesia": 16.0,
+      "Foreign": 25.806451612903224,
+      "difference": -9.806451612903224,
+      "difference_similar_length": -6.357142857142858
+    },
+    {
+      "skill": "tensorflow",
+      "Indonesia": 17.142857142857142,
+      "Foreign": 24.731182795698924,
+      "difference": -7.588325652841782,
+      "difference_similar_length": -4.464285714285715
+    },
+    {
+      "skill": "generative_ai",
+      "Indonesia": 18.285714285714285,
+      "Foreign": 27.956989247311824,
+      "difference": -9.67127496159754,
+      "difference_similar_length": -9.250000000000004
+    },
+    {
+      "skill": "rag",
+      "Indonesia": 21.142857142857142,
+      "Foreign": 25.806451612903224,
+      "difference": -4.663594470046082,
+      "difference_similar_length": -8.357142857142861
+    },
+    {
+      "skill": "git",
+      "Indonesia": 21.142857142857142,
+      "Foreign": 16.666666666666664,
+      "difference": 4.476190476190478,
+      "difference_similar_length": 6.214285714285715
+    },
+    {
+      "skill": "docker",
+      "Indonesia": 22.285714285714285,
+      "Foreign": 20.43010752688172,
+      "difference": 1.8556067588325647,
+      "difference_similar_length": 5.0
+    },
+    {
+      "skill": "azure",
+      "Indonesia": 22.857142857142858,
+      "Foreign": 21.50537634408602,
+      "difference": 1.3517665130568375,
+      "difference_similar_length": 3.0
+    },
+    {
+      "skill": "ai_agents",
+      "Indonesia": 23.42857142857143,
+      "Foreign": 33.87096774193548,
+      "difference": -10.44239631336405,
+      "difference_similar_length": -7.357142857142858
+    },
+    {
+      "skill": "statistics",
+      "Indonesia": 24.0,
+      "Foreign": 41.39784946236559,
+      "difference": -17.397849462365592,
+      "difference_similar_length": -12.0
+    },
+    {
+      "skill": "aws",
+      "Indonesia": 24.571428571428573,
+      "Foreign": 22.043010752688172,
+      "difference": 2.528417818740401,
+      "difference_similar_length": 2.1071428571428577
+    },
+    {
+      "skill": "sql",
+      "Indonesia": 35.42857142857142,
+      "Foreign": 29.03225806451613,
+      "difference": 6.396313364055292,
+      "difference_similar_length": 5.821428571428573
+    },
+    {
+      "skill": "llm",
+      "Indonesia": 35.42857142857142,
+      "Foreign": 46.236559139784944,
+      "difference": -10.80798771121352,
+      "difference_similar_length": -12.392857142857146
+    },
+    {
+      "skill": "machine_learning",
+      "Indonesia": 42.285714285714285,
+      "Foreign": 66.66666666666666,
+      "difference": -24.380952380952372,
+      "difference_similar_length": -27.25
+    },
+    {
+      "skill": "python",
+      "Indonesia": 65.14285714285715,
+      "Foreign": 77.41935483870968,
+      "difference": -12.276497695852527,
+      "difference_similar_length": -6.25
+    }
+  ],
+  "geo_skills_standardized": {
+    "method": "role_x_length_direct_standardization",
+    "status": "descriptive_only",
+    "min_cell_per_region": 3,
+    "eligible_n": {
+      "ID": 175,
+      "foreign": 186
+    },
+    "retained_n": {
+      "ID": 151,
+      "foreign": 172
+    },
+    "strata": [
+      {
+        "role_family": "ai_ml_engineering",
+        "length_bin": "<1500",
+        "ID": 20,
+        "foreign": 8,
+        "weight": 0.08668730650154799
+      },
+      {
+        "role_family": "ai_ml_engineering",
+        "length_bin": "1500-2499",
+        "ID": 31,
+        "foreign": 21,
+        "weight": 0.1609907120743034
+      },
+      {
+        "role_family": "ai_ml_engineering",
+        "length_bin": "2500-3999",
+        "ID": 25,
+        "foreign": 25,
+        "weight": 0.15479876160990713
+      },
+      {
+        "role_family": "ai_ml_engineering",
+        "length_bin": "4000-5999",
+        "ID": 9,
+        "foreign": 22,
+        "weight": 0.09597523219814241
+      },
+      {
+        "role_family": "ai_ml_engineering",
+        "length_bin": ">=6000",
+        "ID": 7,
+        "foreign": 15,
+        "weight": 0.06811145510835913
+      },
+      {
+        "role_family": "data_science",
+        "length_bin": "<1500",
+        "ID": 7,
+        "foreign": 3,
+        "weight": 0.030959752321981424
+      },
+      {
+        "role_family": "data_science",
+        "length_bin": "1500-2499",
+        "ID": 13,
+        "foreign": 12,
+        "weight": 0.07739938080495357
+      },
+      {
+        "role_family": "data_science",
+        "length_bin": "2500-3999",
+        "ID": 19,
+        "foreign": 19,
+        "weight": 0.11764705882352941
+      },
+      {
+        "role_family": "data_science",
+        "length_bin": "4000-5999",
+        "ID": 4,
+        "foreign": 19,
+        "weight": 0.07120743034055728
+      },
+      {
+        "role_family": "data_science",
+        "length_bin": ">=6000",
+        "ID": 6,
+        "foreign": 9,
+        "weight": 0.04643962848297214
+      },
+      {
+        "role_family": "genai_llm",
+        "length_bin": "1500-2499",
+        "ID": 7,
+        "foreign": 8,
+        "weight": 0.04643962848297214
+      },
+      {
+        "role_family": "genai_llm",
+        "length_bin": "2500-3999",
+        "ID": 3,
+        "foreign": 11,
+        "weight": 0.043343653250773995
+      }
+    ],
+    "skills": {
+      "ai_agents": {
+        "ID_pct": 24.97424776362158,
+        "foreign_pct": 28.264656152060425,
+        "difference_pp": -3.290408388438845
+      },
+      "aws": {
+        "ID_pct": 26.5336472841716,
+        "foreign_pct": 20.288172937268588,
+        "difference_pp": 6.245474346903013
+      },
+      "azure": {
+        "ID_pct": 24.812052024675612,
+        "foreign_pct": 20.674021812200074,
+        "difference_pp": 4.138030212475538
+      },
+      "docker": {
+        "ID_pct": 19.33840585992788,
+        "foreign_pct": 18.07999452614085,
+        "difference_pp": 1.2584113337870306
+      },
+      "generative_ai": {
+        "ID_pct": 21.768236091615698,
+        "foreign_pct": 24.812250510881764,
+        "difference_pp": -3.044014419266066
+      },
+      "git": {
+        "ID_pct": 16.514193331331047,
+        "foreign_pct": 14.347392192837852,
+        "difference_pp": 2.166801138493195
+      },
+      "llm": {
+        "ID_pct": 39.109541600802956,
+        "foreign_pct": 41.217092477887654,
+        "difference_pp": -2.107550877084698
+      },
+      "machine_learning": {
+        "ID_pct": 45.497499770444946,
+        "foreign_pct": 69.19340110761,
+        "difference_pp": -23.695901337165054
+      },
+      "python": {
+        "ID_pct": 67.11613486106646,
+        "foreign_pct": 75.70749100446021,
+        "difference_pp": -8.591356143393753
+      },
+      "pytorch": {
+        "ID_pct": 16.748756531039565,
+        "foreign_pct": 27.313104037888138,
+        "difference_pp": -10.564347506848573
+      },
+      "rag": {
+        "ID_pct": 25.11188934238969,
+        "foreign_pct": 21.935077984858005,
+        "difference_pp": 3.1768113575316868
+      },
+      "sql": {
+        "ID_pct": 39.307400989214635,
+        "foreign_pct": 30.472291409638647,
+        "difference_pp": 8.835109579575988
+      },
+      "statistics": {
+        "ID_pct": 30.723455112749033,
+        "foreign_pct": 42.15883784891444,
+        "difference_pp": -11.435382736165405
+      },
+      "tensorflow": {
+        "ID_pct": 16.451555590674737,
+        "foreign_pct": 26.16852255885986,
+        "difference_pp": -9.716966968185123
+      }
+    }
+  },
+  "cities_ID": {
+    "Jakarta": 267,
+    "Bandung": 28,
+    "Tangerang": 25,
+    "Yogyakarta": 15,
+    "Surabaya": 13,
+    "country/province only": 12,
+    "Semarang": 5,
+    "Bali": 3,
+    "Bekasi": 2,
+    "Depok": 1,
+    "Bogor": 1
+  },
+  "work_mode_pct": {
+    "indonesia": {
+      "onsite": 14.24731182795699,
+      "hybrid": 5.376344086021505,
+      "remote": 4.032258064516129,
+      "unclear": 76.34408602150538
+    },
+    "foreign": {
+      "onsite": 4.2105263157894735,
+      "hybrid": 14.210526315789473,
+      "remote": 1.5789473684210527,
+      "unclear": 80.0
+    },
+    "remote_unverified": {
+      "onsite": 1.6666666666666667,
+      "hybrid": 3.3333333333333335,
+      "remote": 91.66666666666666,
+      "unclear": 3.3333333333333335
+    },
+    "unknown": {
+      "onsite": 10.0,
+      "hybrid": 0.0,
+      "remote": 70.0,
+      "unclear": 20.0
+    }
+  },
+  "education_mentions_pct": {
+    "pool": {
+      "diploma": 6.122448979591836,
+      "bachelor": 57.14285714285714,
+      "master": 12.244897959183673,
+      "phd": 0.0,
+      "no_level_mentioned": 38.775510204081634
+    },
+    "ID_T": {
+      "diploma": 3.428571428571429,
+      "bachelor": 44.0,
+      "master": 15.428571428571427,
+      "phd": 4.571428571428571,
+      "no_level_mentioned": 48.57142857142857
+    },
+    "FOR_T": {
+      "diploma": 3.225806451612903,
+      "bachelor": 43.54838709677419,
+      "master": 26.881720430107524,
+      "phd": 12.903225806451612,
+      "no_level_mentioned": 43.54838709677419
+    },
+    "ID_3plus": {
+      "diploma": 2.898550724637681,
+      "bachelor": 47.82608695652174,
+      "master": 23.18840579710145,
+      "phd": 7.246376811594203,
+      "no_level_mentioned": 40.57971014492754
+    }
+  },
+  "review_flags_auditable": {
+    "location_conflict": 1,
+    "cluster_location_conflict": 5,
+    "dedup_unsure": 2,
+    "experience_entry_conflict": 2,
+    "experience_title_conflict": 9,
+    "experience_preferred_or_alternative": 251
+  },
+  "review_queue_n": 260,
+  "language_auditable": {
+    "en": 564,
+    "id": 65,
+    "mixed": 2,
+    "other_script": 1
+  },
+  "language_ID_T": {
+    "en": 149,
+    "id": 25,
+    "other_script": 1
+  },
+  "cluster_estimate_not_gold": true,
+  "runtime": {
+    "python": "3.11.15",
+    "pandas": "2.3.3",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.6",
+    "PyYAML": "6.0.3",
+    "nbformat": "5.10.4",
+    "nbclient": "0.10.2"
+  },
+  "analysis_code_sha256": {
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/jobs/__init__.py": "7c63b024a777a1bb3dc4b8efd74fe4288cdad36df42ffb652576c039ca5679af",
+    "src/jobs/cleaning.py": "9522b46eda6708655d9eacaeef5de7e67d4505d6ef11e0928637d8c394870de6",
+    "src/jobs/corpus.py": "a2a5cec98f796323d61e149982fa49355fd9d5acc23a167158aef4fb0a9a6646",
+    "src/jobs/research.py": "b7404fdc3cc9f4ab7da9281206f1b15d7746055fb75da1edbd35037e6f8c8627",
+    "src/jobs/skills.py": "29e1efb0d4d13248e47da8c117557c87ccf10d53a8b0dad8edb284f33d7f7e4b",
+    "src/jobs/transform.py": "2063b97ffb5dd232f797a54267f0f3c795009df615214b1d31826ea5016187cc",
+    "src/viz/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/viz/style.py": "b5966098fb8ac47a32811a5c296f4521b0e392b7de3bd4c1cc608d4f250003f9",
+    "config/skill_aliases_v0.yaml": "13392810e9847c33b96edcf87c6c871bf39cd75cff8daed45cd16f23698a8fb1"
+  },
+  "notebook_code_sha256": "5b19e440ec9d9891ee438bd02851a2c26c610812d8c5127421775037002b3681"
+}

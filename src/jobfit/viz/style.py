@@ -18,7 +18,7 @@ INK_2 = "#52514e"
 MUTED = "#898781"
 GRID = "#e1e0d9"
 BASELINE = "#c3c2b7"
-SERIES = ["#2a78d6", "#eb6834", "#1baf7a"]  # blue, orange, aqua — max 3 series per chart
+SERIES = ["#2a78d6", "#eb6834", "#1baf7a"]  # blue, orange, aqua; max 3 series per chart
 NEUTRAL = "#c3c2b7"                           # de-emphasis / "unknown" category
 SEQ = ["#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5", "#256abf", "#184f95"]
 

@@ -1,6 +1,6 @@
 # JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis
 
-JobFit helps early-career job seekers in AI and data find jobs that fit their real profile. It compares a CV with job postings, shows which requirements are met, partly met, or missing, and points to the exact CV text behind each result. The goal is honest matching: no match claim without evidence.
+JobFit helps early-career job seekers in AI and data find jobs that fit their real profile. From a CV, it gives a ranked list of jobs best supported by the CV evidence, shows which requirements are met, partly met, or missing, and points to the exact CV text behind each result. The goal is honest matching: no match claim without evidence.
 
 Final project for the Data Science and Machine Learning bootcamp at Dibimbing (Batch 42).
 
@@ -14,7 +14,7 @@ Final project for the Data Science and Machine Learning bootcamp at Dibimbing (B
 | Checkpoint | Focus | Dates | Status |
 | --- | --- | --- | --- |
 | CP1 | Data collection, cleaning, feature transformation, EDA | until 27 Sep 2026 | Done |
-| CP2 | Gold set, retrieval baselines, evidence matching, evaluation | 28 Sep to 4 Oct 2026 | In progress |
+| CP2 | Guideline and gold set, search baselines, evidence matching, recommendation list, evaluation | 28 Sep to 4 Oct 2026 | In progress: CP2.1 started 29 Sep (schemas, scoring rules, budget guard done; labeling pilot next) |
 | CP3 | API, database, app, testing, deployment | 5 to 11 Oct 2026 | Planned |
 
 This README is updated at the end of every checkpoint.
@@ -60,38 +60,63 @@ Full reports: [CP1.1 to CP1.6](docs/checkpoint_1/README.md).
 
 ## Roadmap
 
-### CP2: Matching and evaluation (next)
+The CP2 and CP3 plan follows the design update after the CP1 mentor feedback. Every decision is in the [decision log](docs/decisions.md), and every stage has a report in [docs/](docs/README.md).
 
-- Build a gold set with an annotation guideline for requirement and evidence labels.
-- Compare retrieval baselines: keyword, full-text search, dense embeddings, and hybrid search (RRF).
-- Build a vertical slice: one CV and one pasted job description in, per-requirement results with CV evidence out.
-- Evaluate with Evidence Macro-F1, NDCG@10 and P@5 for retrieval, and safety checks (citation accuracy, zero unsupported claims).
+### CP2: Matching and evaluation (in progress)
+
+- Write an annotation guideline, run a timed labeling pilot, and build development and held-out test sets.
+- Compare search baselines for the first stage: keyword, full-text search, dense embeddings, and hybrid search (RRF).
+- Build the vertical slice: one CV and one pasted job description in, per-requirement results with CV evidence out.
+- Extend it to a ranked recommendation list: search first, then evidence matching on the top K candidates.
+- Evaluate with NDCG@10 and P@5 for the list, Evidence Macro-F1 for matching accuracy, and safety checks (quote validity, zero unsupported claims), with cost and latency.
 
 ### CP3: Product and deployment
 
 - Backend API with FastAPI and PostgreSQL with pgvector.
-- Streamlit app for the full flow: filter jobs, pick jobs, compare with a CV, see match results and gaps.
+- Streamlit app for the full flow: upload a CV, check the parsing summary, set optional filters, see recommendations, open the evidence, compare a pasted JD.
 - End-to-end tests and CI/CD.
-- Deployment and final presentation.
+- Deployment with a demo path that uses synthetic CVs, and the final presentation.
 
 ## Repository structure
 
 ```text
 project-job-fit/
-├── config/          Skill alias list (v0)
+├── config/               Skill alias list (v0) and the OpenRouter model registry
 ├── data/
-│   ├── raw/         JSearch API responses (collection provenance)
-│   ├── interim/     Dedup output and the frozen snapshot CP1_20260926
-│   ├── processed/   Clean corpus, features, and the CP1 summary
-│   └── research/    Collection batch plans
-├── docs/            Checkpoint reports and the data contract
-├── evidence/        Collection evidence, provider benchmark, related work
-├── notebooks/       CP1 research notebook
-├── reports/figures/ EDA charts
-├── scripts/         Collection scripts and the doc refresh script
-├── src/             Python modules (jobs: cleaning, corpus, features, skills; viz: chart style)
-└── tests/           Tests for data rules and collection guards
+│   ├── raw/              JSearch API responses (kept locally, not in the public repo)
+│   ├── interim/          Dedup output and the frozen snapshot CP1_20260926
+│   ├── processed/        Clean corpus, features, and the CP1 summary
+│   ├── research/         Collection batch plans
+│   └── synthetic_cvs/    Synthetic CVs for evaluation and the demo
+├── docs/
+│   ├── checkpoint_1/ … checkpoint_3/   One report per bootcamp checkpoint
+│   ├── decisions.md      Decision log (source, reason, status of every decision)
+│   ├── experiments.md    Experiment matrix and runs
+│   ├── failures.md       Failure log and regression cases
+│   ├── master-plan.md    CP2 and CP3 plan, dates, and budget
+│   └── …                 Data contract, repo structure, privacy threat model
+├── evals/                Annotation guideline, fixtures, pilot, gold labels, splits, results
+├── evidence/             CP1 collection evidence, provider benchmark, related work
+├── migrations/           Database migrations
+├── notebooks/            CP1 research notebook
+├── prompts/              Versioned LLM prompts
+├── reports/              Figures (CP1 to CP3) and the API usage ledger
+├── scripts/              CP1 collection scripts and CP2/CP3 batch, experiment, and evaluation scripts
+├── src/jobfit/           The Python package
+│   ├── jobs/             CP1 job-corpus rules (cleaning, dedup, skills, transforms)
+│   ├── schemas/ scoring/ matching/ llm/ …   Application modules (CP2 and CP3)
+│   └── viz/              Chart style
+├── tests/                Unit, API, and end-to-end tests
+├── ui/                   Streamlit app (calls the API only)
+├── .env.example          Environment variable names (copy to .env; never commit .env)
+├── docker-compose.yml    Local PostgreSQL with pgvector (API and UI added in CP3)
+├── Dockerfile.api, Dockerfile.ui
+├── pyproject.toml        Package metadata and pytest settings
+├── requirements*.txt     App, dev, and CP1 research dependencies
+└── LICENSE               MIT (code only)
 ```
+
+Most CP2 and CP3 files are still placeholders with a one-line note of their purpose and planned stage; [docs/repo-structure.md](docs/repo-structure.md) lists what each one is for and when it is filled.
 
 ## Getting started
 
@@ -103,7 +128,21 @@ cd project-job-fit
 
 python3.11 -m venv env-job-fit
 source env-job-fit/bin/activate        # Windows: env-job-fit\Scripts\activate
-python -m pip install -r requirements-research.txt
+python -m pip install -r requirements.txt -r requirements-dev.txt -r requirements-research.txt
+python -m pip install -e .             # installs the jobfit package from src/
+```
+
+Run the tests (no API key needed):
+
+```bash
+python -m pytest -q
+```
+
+For CP2 work that calls models or the database:
+
+```bash
+cp .env.example .env                   # then fill OPENROUTER_API_KEY and the budget values yourself
+docker compose up -d db                # local PostgreSQL with pgvector
 ```
 
 Reproduce CP1 (runs offline, no API key needed). The notebook needs the raw JSearch snapshot, which is not included in this public repository (see [Data](#data)). All notebook outputs, processed files, and figures are already committed, so the results can be read without running anything.
@@ -111,7 +150,6 @@ Reproduce CP1 (runs offline, no API key needed). The notebook needs the raw JSea
 ```bash
 python -m jupyter nbconvert --to notebook --execute --inplace notebooks/01_research.ipynb
 python scripts/refresh_cp1_docs.py
-python -m pytest -q tests/
 ```
 
 The notebook reads the frozen snapshot in `data/interim/snapshots/CP1_20260926/` and checks its hashes before running, so the outputs stay the same across runs. More details are in [notebooks/README.md](notebooks/README.md).
@@ -131,8 +169,13 @@ The collection scripts in `scripts/` are kept for provenance. They are not neede
 ## Tech stack
 
 - CP1: Python, pandas, NumPy, matplotlib, Jupyter, pytest
-- Planned for CP2 and CP3: sentence embeddings, PostgreSQL with pgvector, FastAPI, Streamlit, GitHub Actions
+- CP2 (in progress): Pydantic, OpenRouter (LLM and embedding gateway), PostgreSQL with pgvector in Docker
+- Planned for CP3: FastAPI, Streamlit, GitHub Actions, Railway
 
 ## Author
 
 Gidion Depari, Dibimbing Data Science and Machine Learning Batch 42
+
+## License
+
+The code is released under the [MIT License](LICENSE). The license does not cover the job posting content in `data/` and `evidence/` (it belongs to the original publishers) or the third-party screenshots in `evidence/`. The CVs in `data/synthetic_cvs/` are fictional.

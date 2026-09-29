@@ -1,0 +1,81 @@
+# CP2.7: CP2 Presentation and Mentoring
+
+**Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
+**Bootcamp checkpoint:** 14. PPT Check Point 2 + Mentoring · official date 4 Oct 2026  
+**JobFit version of this checkpoint:** Same as the template: CP2 presentation and mentoring.  
+**Planned work:** 3-4 Oct 2026 (deck draft on 3 Oct) · **Actual:** not run yet  
+**Status:** PLANNED / NOT RUN · design basis: System Design v1.3
+
+> This report is a plan. It contains no results yet. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
+
+## 1. Goal of this stage
+
+Show the model and system selection, tuning, and evaluation, and get the mentor's feedback on the CV-first flow and the deployment scope.
+
+## 2. Inputs and prerequisites
+
+- Checkpoints 8 to 13 results
+- Playbook section 6 (CP2 minimum content)
+
+## 3. Planned method
+
+1. Build the deck following Playbook section 6.
+2. Include the CV-first flow with optional filters as a proposal, and the reason import link is out of v1.
+3. Show real metrics, failures, and limitations; missing results are shown as missing, not estimated.
+4. Rehearse once with timing.
+5. Present, then write down the mentor's feedback.
+6. Upload the deck to the LMS (Dion).
+
+## 4. Planned outputs
+
+- CP2 deck in `04_Checkpoint_2/`
+- LMS upload proof
+- mentor feedback summary
+- this stage report
+
+## 5. Acceptance criteria
+
+- The mentor sees a measurable selection, tuning, and evaluation process.
+- The mentor's feedback is recorded in docs/decisions.md as new entries.
+
+## 6. Evidence to keep
+
+- deck file
+- LMS proof
+- feedback notes
+
+## 7. Estimate and dependencies
+
+- **Estimate:** About half a day for the deck, plus the session.
+- **Depends on:** Checkpoints 11 to 13.
+
+## 8. Fallback if blocked
+
+If a result is not ready, present the method and what is missing, with the reason.
+
+## 9. Checklist
+
+- [ ] Build the deck following Playbook section 6.
+- [ ] Include the CV-first flow with optional filters as a proposal, and the reason import link is out of v1.
+- [ ] Show real metrics, failures, and limitations; missing results are shown as missing, not estimated.
+- [ ] Rehearse once with timing.
+- [ ] Present, then write down the mentor's feedback.
+- [ ] Upload the deck to the LMS (Dion).
+- [ ] Acceptance: The mentor sees a measurable selection, tuning, and evaluation process.
+- [ ] Acceptance: The mentor's feedback is recorded in docs/decisions.md as new entries.
+
+## 10. Results
+
+Not run yet.
+
+## 11. Interpretation and limitations
+
+Not run yet.
+
+## 12. Decisions from this stage
+
+None yet. Decisions are recorded in [decision log](../decisions.md) when they are made.
+
+## 13. Next step
+
+CP3.1 (checkpoint 15): FastAPI service.

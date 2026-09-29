@@ -1,0 +1,128 @@
+{
+  "fixture_id": "dev_06_ambiguous_importance",
+  "synthetic": true,
+  "note": "Synthetic development fixture for the deterministic rules. Hand-written, not model output. Not part of the test set.",
+  "analysis_date": "2026-09-29",
+  "cv_parse_status": "ok",
+  "case": "Two units are unclear (required or preferred). They stay out of the denominator and the score is provisional.",
+  "extraction": {
+    "job_id": "FIX-06",
+    "units": [
+      {
+        "unit_id": "u1",
+        "text": "Python",
+        "importance": "required",
+        "field": "skill",
+        "source_quotes": [
+          "Python"
+        ]
+      },
+      {
+        "unit_id": "u2",
+        "text": "Statistics",
+        "importance": "required",
+        "field": "domain",
+        "source_quotes": [
+          "Statistics"
+        ]
+      },
+      {
+        "unit_id": "u3",
+        "text": "SQL",
+        "importance": "required",
+        "field": "skill",
+        "source_quotes": [
+          "SQL"
+        ]
+      },
+      {
+        "unit_id": "u4",
+        "text": "Familiarity with LLM APIs",
+        "importance": "unknown",
+        "field": "skill",
+        "source_quotes": [
+          "Familiarity with LLM APIs"
+        ]
+      },
+      {
+        "unit_id": "u5",
+        "text": "Good communication",
+        "importance": "unknown",
+        "field": "soft_skill",
+        "source_quotes": [
+          "Good communication"
+        ]
+      },
+      {
+        "unit_id": "u6",
+        "text": "Airflow",
+        "importance": "preferred",
+        "field": "tool",
+        "source_quotes": [
+          "Airflow"
+        ]
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "u1",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python for regression analysis"
+      ]
+    },
+    {
+      "unit_id": "u2",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "S1 Statistika"
+      ]
+    },
+    {
+      "unit_id": "u3",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Skills: SQL"
+      ]
+    },
+    {
+      "unit_id": "u4",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": []
+    },
+    {
+      "unit_id": "u5",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Presented findings to the marketing team"
+      ]
+    },
+    {
+      "unit_id": "u6",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": []
+    }
+  ],
+  "experience": {
+    "min_years": null,
+    "cv_entries": []
+  },
+  "expected": {
+    "score_pct": 83.33,
+    "status": "provisional",
+    "required_total": 3,
+    "matched": 2,
+    "partial": 1,
+    "unknown_importance_total": 2,
+    "preferred_total": 1,
+    "preferred_met": 0,
+    "constraint_state": "unknown"
+  }
+}

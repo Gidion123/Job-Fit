@@ -1,0 +1,88 @@
+# CP2.3: System Tuning
+
+**Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
+**Bootcamp checkpoint:** 10. Hyperparameter Tuning · official date 30 Sep 2026  
+**JobFit version of this checkpoint:** Tuning means choosing system settings with measurements: stage-1 search method, K, prompt version, LLM model, and the PARTIAL weight.  
+**Planned work:** 2 Oct 2026 · **Actual:** not run yet  
+**Status:** PLANNED / NOT RUN · design basis: System Design v1.3
+
+> This report is a plan. It contains no results yet. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
+
+## 1. Goal of this stage
+
+Choose the configuration with measurements on the development set, not by changing settings without a metric.
+
+## 2. Inputs and prerequisites
+
+- Checkpoint 9 outputs
+- Development labels reviewed by Dion
+- Locked test split (not used here)
+
+## 3. Planned method
+
+1. Compare the stage-1 methods (B0, B1, B2, hybrid RRF) with Recall@K on the development pool.
+2. Choose K for stage 2 from 10, 20, 30 by recall, latency, and cost.
+3. Compare extraction prompt v1 and v2.
+4. LLM comparison round 1 (D-029) on about 30 development cases: `deepseek-flash`, GPT-6 Luna, Gemini 3.5 Flash-Lite, Claude Haiku 4.5, all through OpenRouter, with GPT-6 Sol on at most 10 hard cases as the quality reference. Choose with the fixed selection rule. Round 2 only if the rule asks for it.
+5. Audit the PARTIAL weight (0.5) against the relevance labels.
+6. Build the recommendation list end to end: filters, filter status, UNKNOWN option, ordering rules, statuses for not analyzed and failed jobs.
+7. Keep labeling the test set (Dion).
+
+## 4. Planned outputs
+
+- experiment table in docs/experiments.md with config snapshots
+- quality vs latency vs cost table
+- working recommendation list (script or endpoint)
+- this stage report
+
+## 5. Acceptance criteria
+
+- Every change has a before/after on the development set, and the keep/remove decision is written.
+- The test set is not used for tuning.
+- Spend stays within the budget guard.
+- The chosen stage-1 method, K, prompt, and model are recorded in docs/decisions.md, with the D-029 rule applied as written.
+
+## 6. Evidence to keep
+
+- docs/experiments.md entries
+- config snapshots
+- ledger totals
+
+## 7. Estimate and dependencies
+
+- **Estimate:** About 1 working day. LLM cost: under US$2 for round 1 and the prompt comparison.
+- **Depends on:** Development labels reviewed; checkpoint 9 pipeline working.
+
+## 8. Fallback if blocked
+
+If time is short, cut the LLM comparison to 15 cases and test only K = 10 and 20. If a comparison is not complete, record the choice as provisional, not proven.
+
+## 9. Checklist
+
+- [ ] Compare the stage-1 methods (B0, B1, B2, hybrid RRF) with Recall@K on the development pool.
+- [ ] Choose K for stage 2 from 10, 20, 30 by recall, latency, and cost.
+- [ ] Compare extraction prompt v1 and v2.
+- [ ] LLM comparison round 1 (D-029) on about 30 development cases: `deepseek-flash`, GPT-6 Luna, Gemini 3.5 Flash-Lite, Claude Haiku 4.5, all through OpenRouter, with GPT-6 Sol on at most 10 hard cases as the quality reference. Choose with the fixed selection rule. Round 2 only if the rule asks for it.
+- [ ] Audit the PARTIAL weight (0.5) against the relevance labels.
+- [ ] Build the recommendation list end to end: filters, filter status, UNKNOWN option, ordering rules, statuses for not analyzed and failed jobs.
+- [ ] Keep labeling the test set (Dion).
+- [ ] Acceptance: Every change has a before/after on the development set, and the keep/remove decision is written.
+- [ ] Acceptance: The test set is not used for tuning.
+- [ ] Acceptance: Spend stays within the budget guard.
+- [ ] Acceptance: The chosen stage-1 method, K, prompt, and model are recorded in docs/decisions.md, with the D-029 rule applied as written.
+
+## 10. Results
+
+Not run yet.
+
+## 11. Interpretation and limitations
+
+Not run yet.
+
+## 12. Decisions from this stage
+
+None yet. Decisions are recorded in the [decision log](../decisions.md) when they are made.
+
+## 13. Next step
+
+CP2.4 (checkpoint 11): run the chosen configuration on the held-out test set.

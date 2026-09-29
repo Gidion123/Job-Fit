@@ -4,9 +4,9 @@ Cases come from real failure modes seen in the CP1 corpus and the JobSentinel ob
 Run: python3 -m pytest -q tests/
 """
 
-from src.jobs.cleaning import clean_description, derive_posted_at, normalize_employment_type
-from src.jobs.skills import extract_skills
-from src.jobs.transform import education_levels, experience_bucket, extract_years, role_family, role_group, title_seniority
+from jobfit.jobs.cleaning import clean_description, derive_posted_at, normalize_employment_type
+from jobfit.jobs.skills import extract_skills
+from jobfit.jobs.transform import education_levels, experience_bucket, extract_years, role_family, role_group, title_seniority
 
 
 def test_wrong_role_titles_with_ai_are_not_target():
@@ -90,7 +90,7 @@ def test_experience_range_and_open_upper_bound():
 
 
 def test_country_query_cannot_override_publisher_country():
-    from src.jobs.transform import normalize_location
+    from jobfit.jobs.transform import normalize_location
     loc = normalize_location('Los Angeles, CA, Amerika Serikat', 'US', 'id', 'indonesia')
     assert loc['country_code'] == 'US' and loc['location_conflict']
     assert normalize_location(None, None, 'id', 'indonesia')['country_code'] is None
@@ -106,6 +106,6 @@ def test_relative_date_uses_its_own_observation_and_valid_dates():
 
 
 def test_other_language_does_not_become_english():
-    from src.jobs.cleaning import detect_language
+    from jobfit.jobs.cleaning import detect_language
     assert detect_language('開発経験機械学習日本語要件' * 15 + 'AI engineer and ML') == 'other_script'
     assert detect_language('') == 'unknown'

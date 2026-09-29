@@ -1,0 +1,82 @@
+# CP3.4: End-to-End Testing
+
+**Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
+**Bootcamp checkpoint:** 18. Testing End-to-End Application · official date 8 Oct 2026  
+**JobFit version of this checkpoint:** Same as the template, on the deployed app.  
+**Planned work:** 8 Oct 2026 (feature freeze at the end of the day) · **Actual:** not run yet  
+**Status:** PLANNED / NOT RUN · design basis: System Design v1.3
+
+> This report is a plan. It contains no results yet. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
+
+## 1. Goal of this stage
+
+Test the real user journey and the critical failure paths on the deployed app, then freeze features.
+
+## 2. Inputs and prerequisites
+
+- Deployed app from checkpoints 16 and 17
+
+## 3. Planned method
+
+1. End-to-end run on the deployed app for each synthetic CV.
+2. Provider failure: a clear error or an explicit demo-mode offer.
+3. Prompt-injection fixtures in pasted JDs.
+4. PII check of the logs.
+5. p50/p95 latency and cost per run, live and cached separately.
+6. Record the feature freeze.
+
+## 4. Planned outputs
+
+- E2E checklist
+- security and reliability results
+- performance snapshot
+- this stage report
+
+## 5. Acceptance criteria
+
+- The happy path and the critical failure paths pass on the deployed app.
+- No raw CV in the logs.
+- The feature freeze is recorded.
+
+## 6. Evidence to keep
+
+- checklist
+- test outputs
+- latency and cost table
+
+## 7. Estimate and dependencies
+
+- **Estimate:** About 1 working day.
+- **Depends on:** Checkpoint 17.
+
+## 8. Fallback if blocked
+
+If the deployment is unstable, record a backup demo video and fix only critical bugs.
+
+## 9. Checklist
+
+- [ ] End-to-end run on the deployed app for each synthetic CV.
+- [ ] Provider failure: a clear error or an explicit demo-mode offer.
+- [ ] Prompt-injection fixtures in pasted JDs.
+- [ ] PII check of the logs.
+- [ ] p50/p95 latency and cost per run, live and cached separately.
+- [ ] Record the feature freeze.
+- [ ] Acceptance: The happy path and the critical failure paths pass on the deployed app.
+- [ ] Acceptance: No raw CV in the logs.
+- [ ] Acceptance: The feature freeze is recorded.
+
+## 10. Results
+
+Not run yet.
+
+## 11. Interpretation and limitations
+
+Not run yet.
+
+## 12. Decisions from this stage
+
+None yet. Decisions are recorded in [decision log](../decisions.md) when they are made.
+
+## 13. Next step
+
+CP3.5 (checkpoint 19): final deck and portfolio.

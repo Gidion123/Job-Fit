@@ -1,0 +1,55 @@
+{
+  "fixture_id": "dev_07_no_assessable_requirement",
+  "synthetic": true,
+  "note": "Synthetic development fixture for the deterministic rules. Hand-written, not model output. Not part of the test set.",
+  "analysis_date": "2026-09-29",
+  "cv_parse_status": "ok",
+  "case": "JD has only preferred and unclear items. No required unit, so no score is shown.",
+  "extraction": {
+    "job_id": "FIX-07",
+    "units": [
+      {
+        "unit_id": "u1",
+        "text": "Kaggle experience",
+        "importance": "preferred",
+        "field": "other",
+        "source_quotes": [
+          "Kaggle experience"
+        ]
+      },
+      {
+        "unit_id": "u2",
+        "text": "Passion for AI",
+        "importance": "unknown",
+        "field": "soft_skill",
+        "source_quotes": [
+          "Passion for AI"
+        ]
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "u1",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": []
+    },
+    {
+      "unit_id": "u2",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": []
+    }
+  ],
+  "experience": {
+    "min_years": null,
+    "cv_entries": []
+  },
+  "expected": {
+    "score_pct": null,
+    "status": "no_score",
+    "required_total": 0,
+    "constraint_state": "unknown"
+  }
+}

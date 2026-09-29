@@ -1,0 +1,76 @@
+# CP2.5: Evaluation Result Visualization
+
+**Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
+**Bootcamp checkpoint:** 12. Visualisasi Evaluation Result · official date 2 Oct 2026  
+**JobFit version of this checkpoint:** Same as the template: charts of the evaluation results.  
+**Planned work:** 3 Oct 2026 · **Actual:** not run yet  
+**Status:** PLANNED / NOT RUN · design basis: System Design v1.3
+
+> This report is a plan. It contains no results yet. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
+
+## 1. Goal of this stage
+
+Make the experiment and evaluation results easy for the mentor and recruiters to understand.
+
+## 2. Inputs and prerequisites
+
+- Checkpoint 10 and 11 results
+
+## 3. Planned method
+
+1. Stage-1 comparison chart (Recall@K per method).
+2. NDCG@10 and P@5: stage-1 order vs final order.
+3. Evidence confusion matrix.
+4. Quality vs cost vs latency chart.
+5. Hard-negative and failure examples as short cases.
+
+## 4. Planned outputs
+
+- `reports/figures/cp2/`
+- PPT-ready assets
+- this stage report
+
+## 5. Acceptance criteria
+
+- Every chart shows its configuration, version, and denominator.
+- The comparisons are correct (same split, same labels).
+
+## 6. Evidence to keep
+
+- figure files
+- the script that makes them
+
+## 7. Estimate and dependencies
+
+- **Estimate:** About 2-3 hours.
+- **Depends on:** Checkpoint 11 results.
+
+## 8. Fallback if blocked
+
+Use clear tables instead of polished charts.
+
+## 9. Checklist
+
+- [ ] Stage-1 comparison chart (Recall@K per method).
+- [ ] NDCG@10 and P@5: stage-1 order vs final order.
+- [ ] Evidence confusion matrix.
+- [ ] Quality vs cost vs latency chart.
+- [ ] Hard-negative and failure examples as short cases.
+- [ ] Acceptance: Every chart shows its configuration, version, and denominator.
+- [ ] Acceptance: The comparisons are correct (same split, same labels).
+
+## 10. Results
+
+Not run yet.
+
+## 11. Interpretation and limitations
+
+Not run yet.
+
+## 12. Decisions from this stage
+
+None yet. Decisions are recorded in [decision log](../decisions.md) when they are made.
+
+## 13. Next step
+
+CP2.6 (checkpoint 13): error analysis and freezing the v1 architecture.

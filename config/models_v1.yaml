@@ -1,0 +1,47 @@
+# Model registry for OpenRouter (DECISIONS D-029, D-030).
+# Prices are USD per 1M tokens from the OpenRouter model pages, checked 29 Sep 2026.
+# They are used only for the budget guard estimate before a call. The ledger stores the
+# cost OpenRouter reports for each call when it is present.
+# Before each experiment round: open the model page, confirm the id and price, and update this file.
+# To try a new model: add it here AND add a row in docs/experiments.md first.
+gateway: openrouter
+base_url: https://openrouter.ai/api/v1
+fee_note: OpenRouter adds a fee when credit is bought (about 5.5%); it is not part of these per-token prices.
+
+models:
+  deepseek-flash:
+    id: deepseek/deepseek-v4.1-flash   # confirm exact id; the OpenRouter page lists several flash versions
+    role: round1_baseline
+    input_per_m: 0.30                  # conservative: highest listed flash price, until confirmed
+    output_per_m: 1.20
+  gpt-6-luna:
+    id: openai/gpt-6-luna              # dated id seen in the API list: openai/gpt-6-luna-20260922
+    role: round1
+    input_per_m: 0.10
+    output_per_m: 0.50
+  gemini-3.5-flash-lite:
+    id: google/gemini-3.5-flash-lite
+    role: round1
+    input_per_m: 0.30
+    output_per_m: 2.50
+  claude-haiku-4.5:
+    id: anthropic/claude-haiku-4.5
+    role: round1
+    input_per_m: 1.00
+    output_per_m: 5.00
+  gpt-6-sol:
+    id: openai/gpt-6-sol               # quality reference only, at most 10 hard cases
+    role: reference
+    input_per_m: 2.00
+    output_per_m: 10.00
+  deepseek-v4-pro:
+    id: deepseek/deepseek-v4-pro       # confirm version (0423 or 0813) before round 2
+    role: round2
+    input_per_m: 0.66
+    output_per_m: 3.96
+
+embeddings:
+  text-embedding-3-small:
+    id: openai/text-embedding-3-small
+    dimensions: 1536
+    input_per_m: 0.02

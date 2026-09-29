@@ -1,0 +1,85 @@
+# CP3.3: Streamlit UI
+
+**Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
+**Bootcamp checkpoint:** 17. Build Streamlit UI · official date 7 Oct 2026  
+**JobFit version of this checkpoint:** Same as the template.  
+**Planned work:** 7 Oct 2026 · **Actual:** not run yet  
+**Status:** PLANNED / NOT RUN · design basis: System Design v1.3
+
+> This report is a plan. It contains no results yet. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
+
+## 1. Goal of this stage
+
+Build a demo that shows the value in under 3 minutes, without moving business logic into the UI.
+
+## 2. Inputs and prerequisites
+
+- Deployed API from checkpoint 16
+
+## 3. Planned method
+
+1. Demo CV or upload, then the parsing summary with the location suggestion.
+2. Optional filters with the UNKNOWN option.
+3. Recommendations with statuses and the text "K candidates from the search were analyzed".
+4. Job detail with evidence per requirement.
+5. Paste JD compare.
+6. Minimal market insight and CV suggestions.
+7. Delete session and feedback.
+8. The "Demo with saved results" label.
+
+## 4. Planned outputs
+
+- Streamlit app
+- screenshots
+- demo script
+- this stage report
+
+## 5. Acceptance criteria
+
+- A mentor can understand the value in under 3 minutes.
+- The synthetic demo works.
+- No business logic in the UI.
+
+## 6. Evidence to keep
+
+- screenshots
+- short screen recording
+
+## 7. Estimate and dependencies
+
+- **Estimate:** About 1 working day.
+- **Depends on:** Checkpoint 16 deployment.
+
+## 8. Fallback if blocked
+
+Build the core flow first; the minimal features and styling come last.
+
+## 9. Checklist
+
+- [ ] Demo CV or upload, then the parsing summary with the location suggestion.
+- [ ] Optional filters with the UNKNOWN option.
+- [ ] Recommendations with statuses and the text "K candidates from the search were analyzed".
+- [ ] Job detail with evidence per requirement.
+- [ ] Paste JD compare.
+- [ ] Minimal market insight and CV suggestions.
+- [ ] Delete session and feedback.
+- [ ] The "Demo with saved results" label.
+- [ ] Acceptance: A mentor can understand the value in under 3 minutes.
+- [ ] Acceptance: The synthetic demo works.
+- [ ] Acceptance: No business logic in the UI.
+
+## 10. Results
+
+Not run yet.
+
+## 11. Interpretation and limitations
+
+Not run yet.
+
+## 12. Decisions from this stage
+
+None yet. Decisions are recorded in the [decision log](../decisions.md) when they are made.
+
+## 13. Next step
+
+CP3.4 (checkpoint 18): end-to-end testing and feature freeze.

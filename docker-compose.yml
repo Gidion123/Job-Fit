@@ -1,0 +1,24 @@
+# Local database for development (System Design v1.3, section 13).
+# Start:  docker compose up -d db      Stop: docker compose down
+# The vector extension is created by the snapshot load script (CREATE EXTENSION IF NOT EXISTS vector).
+# The api and ui services are added in CP3 (Dockerfile.api, Dockerfile.ui).
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    container_name: jobfit-db
+    environment:
+      POSTGRES_USER: jobfit
+      POSTGRES_PASSWORD: jobfit      # local development only; production uses the Railway database
+      POSTGRES_DB: jobfit
+    ports:
+      - "5432:5432"
+    volumes:
+      - jobfit_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U jobfit -d jobfit"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  jobfit_pgdata:

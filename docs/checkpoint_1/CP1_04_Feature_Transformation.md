@@ -2,7 +2,7 @@
 
 **Status:** baseline features saved; labels are rule-based v0 (their accuracy will be measured against the CP2 gold set).  
 **Version:** `role_taxonomy_v0.1_audited`, skill aliases `v0`.  
-**Implementation:** notebook section 3 and the `src/jobs/` modules.
+**Implementation:** notebook section 3 and the `src/jobfit/jobs/` modules (moved from `src/jobs/` on 29 Sep 2026).
 
 ## 1. Goal of this stage
 

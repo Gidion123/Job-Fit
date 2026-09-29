@@ -1,0 +1,13 @@
+# JobFit app (API, pipeline, UI). Python >= 3.11.
+# No deep learning training dependencies: JobFit does not train a model (DECISIONS D-001).
+pydantic>=2.7
+python-dotenv>=1.0
+PyYAML>=6.0
+openai>=1.40            # OpenAI-compatible SDK, pointed at OpenRouter (D-030)
+psycopg[binary]>=3.1
+SQLAlchemy>=2.0
+pgvector>=0.3
+fastapi>=0.110
+uvicorn[standard]>=0.29
+streamlit>=1.35
+httpx>=0.27

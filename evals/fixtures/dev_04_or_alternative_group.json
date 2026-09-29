@@ -1,0 +1,118 @@
+{
+  "fixture_id": "dev_04_or_alternative_group",
+  "synthetic": true,
+  "note": "Synthetic development fixture for the deterministic rules. Hand-written, not model output. Not part of the test set.",
+  "analysis_date": "2026-09-29",
+  "cv_parse_status": "ok",
+  "case": "'Python or Java' resolves to MATCH through one branch; 'S1 or equivalent experience' resolves to PARTIAL. Each group counts once.",
+  "extraction": {
+    "job_id": "FIX-04",
+    "units": [
+      {
+        "unit_id": "g1",
+        "text": "Python or Java",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill",
+        "source_quotes": [
+          "Python or Java"
+        ],
+        "branches": [
+          {
+            "branch_id": "g1a",
+            "text": "Python",
+            "field": "skill"
+          },
+          {
+            "branch_id": "g1b",
+            "text": "Java",
+            "field": "skill"
+          }
+        ]
+      },
+      {
+        "unit_id": "g2",
+        "text": "Bachelor's degree in Computer Science or equivalent experience",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "source_quotes": [
+          "Bachelor's degree in Computer Science or equivalent experience"
+        ],
+        "branches": [
+          {
+            "branch_id": "g2a",
+            "text": "Bachelor's degree in Computer Science",
+            "field": "education"
+          },
+          {
+            "branch_id": "g2b",
+            "text": "Equivalent experience",
+            "field": "experience"
+          }
+        ]
+      },
+      {
+        "unit_id": "u3",
+        "text": "REST API development",
+        "importance": "required",
+        "field": "skill",
+        "source_quotes": [
+          "REST API development"
+        ]
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "g1",
+      "branches": [
+        {
+          "branch_id": "g1a",
+          "label": "MATCH",
+          "cv_quotes": [
+            "FastAPI service in Python"
+          ]
+        },
+        {
+          "branch_id": "g1b",
+          "label": "NO_MATCH"
+        }
+      ]
+    },
+    {
+      "unit_id": "g2",
+      "branches": [
+        {
+          "branch_id": "g2a",
+          "label": "PARTIAL",
+          "cv_quotes": [
+            "S1 Sistem Informasi"
+          ]
+        },
+        {
+          "branch_id": "g2b",
+          "label": "NO_MATCH"
+        }
+      ]
+    },
+    {
+      "unit_id": "u3",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": []
+    }
+  ],
+  "experience": {
+    "min_years": null,
+    "cv_entries": []
+  },
+  "expected": {
+    "score_pct": 50.0,
+    "status": "final",
+    "required_total": 3,
+    "matched": 1,
+    "partial": 1,
+    "constraint_state": "unknown"
+  }
+}

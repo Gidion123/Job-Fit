@@ -1,7 +1,7 @@
 # CP1.3: Data Cleaning and Handling Missing Values
 
 **Status:** the pipeline has been run and audited.  
-**Implementation:** notebook section 2, `src/jobs/cleaning.py`, and the dedup snapshot.  
+**Implementation:** notebook section 2, `src/jobfit/jobs/cleaning.py` (moved from `src/jobs/` on 29 Sep 2026), and the dedup snapshot.  
 **Version:** `cleaning_v0.1_audited`.
 
 ## 1. Goal and principles

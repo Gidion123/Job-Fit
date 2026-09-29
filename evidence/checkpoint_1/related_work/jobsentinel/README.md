@@ -1,7 +1,7 @@
 # JobSentinel test evidence (related work)
 
 **Test date:** 23 September 2026 (±16:45-21:35 WIB), macOS desktop app, personal CV · **Job source verified:** 26 September 2026
-**Used in:** `JobFit_Research_References_and_Findings_v2_Standardized.md` §3.3 · **Label:** exploratory observation (not a formal benchmark)
+**Used in:** `JobFit_Research_References_and_Findings_v2.md` §3.3 · **Label:** exploratory observation (not a formal benchmark)
 The original screenshots are in `~/Documents/Screenshoot/`, named `Screenshot 2026-09-23 at HH.MM.SS.png`.
 
 ## Main evidence (5 files in this folder)

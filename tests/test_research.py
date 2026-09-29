@@ -1,7 +1,7 @@
 from pathlib import Path
 import pandas as pd
 import pytest
-from src.jobs.research import analysis_geo, standardized_skill_comparison, verify_snapshot
+from jobfit.jobs.research import analysis_geo, standardized_skill_comparison, verify_snapshot
 
 
 def test_remote_cohort_is_disjoint_and_missing_country_unknown():

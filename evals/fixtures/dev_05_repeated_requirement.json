@@ -1,0 +1,90 @@
+{
+  "fixture_id": "dev_05_repeated_requirement",
+  "synthetic": true,
+  "note": "Synthetic development fixture for the deterministic rules. Hand-written, not model output. Not part of the test set.",
+  "analysis_date": "2026-09-29",
+  "cv_parse_status": "ok",
+  "case": "SQL is written twice in the JD. It is counted once and both quotes are kept.",
+  "extraction": {
+    "job_id": "FIX-05",
+    "units": [
+      {
+        "unit_id": "u1",
+        "text": "SQL",
+        "importance": "required",
+        "field": "skill",
+        "source_quotes": [
+          "Strong SQL skills"
+        ],
+        "normalized_name": "sql"
+      },
+      {
+        "unit_id": "u2",
+        "text": "Python",
+        "importance": "required",
+        "field": "skill",
+        "source_quotes": [
+          "Python"
+        ],
+        "normalized_name": "python"
+      },
+      {
+        "unit_id": "u3",
+        "text": "SQL",
+        "importance": "required",
+        "field": "skill",
+        "source_quotes": [
+          "Experience writing complex SQL queries"
+        ],
+        "normalized_name": "sql"
+      },
+      {
+        "unit_id": "u4",
+        "text": "Tableau",
+        "importance": "required",
+        "field": "tool",
+        "source_quotes": [
+          "Tableau"
+        ],
+        "normalized_name": "tableau"
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "u1",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "SQL queries for weekly sales dashboard"
+      ]
+    },
+    {
+      "unit_id": "u2",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python scripts for data cleaning"
+      ]
+    },
+    {
+      "unit_id": "u4",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": []
+    }
+  ],
+  "experience": {
+    "min_years": null,
+    "cv_entries": []
+  },
+  "expected": {
+    "score_pct": 66.67,
+    "status": "final",
+    "required_total": 3,
+    "matched": 2,
+    "partial": 0,
+    "merged_quotes_for_u1": 2,
+    "constraint_state": "unknown"
+  }
+}

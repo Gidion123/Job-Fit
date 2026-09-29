@@ -1,0 +1,102 @@
+{
+  "fixture_id": "dev_01_clear_match",
+  "synthetic": true,
+  "note": "Synthetic development fixture for the deterministic rules. Hand-written, not model output. Not part of the test set.",
+  "analysis_date": "2026-09-29",
+  "cv_parse_status": "ok",
+  "case": "Clear match: 3 MATCH and 1 PARTIAL (skill only in the skills list).",
+  "extraction": {
+    "job_id": "FIX-01",
+    "units": [
+      {
+        "unit_id": "u1",
+        "text": "Python",
+        "importance": "required",
+        "field": "skill",
+        "source_quotes": [
+          "Python"
+        ]
+      },
+      {
+        "unit_id": "u2",
+        "text": "SQL",
+        "importance": "required",
+        "field": "skill",
+        "source_quotes": [
+          "SQL"
+        ]
+      },
+      {
+        "unit_id": "u3",
+        "text": "Machine learning model development",
+        "importance": "required",
+        "field": "domain",
+        "source_quotes": [
+          "Machine learning model development"
+        ]
+      },
+      {
+        "unit_id": "u4",
+        "text": "Docker",
+        "importance": "required",
+        "field": "tool",
+        "source_quotes": [
+          "Docker"
+        ]
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "u1",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Built churn model in Python (pandas, scikit-learn)"
+      ]
+    },
+    {
+      "unit_id": "u2",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Wrote SQL queries for weekly sales dashboard"
+      ]
+    },
+    {
+      "unit_id": "u3",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Trained and evaluated a churn classification model"
+      ]
+    },
+    {
+      "unit_id": "u4",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Skills: Python, SQL, Docker"
+      ]
+    }
+  ],
+  "experience": {
+    "min_years": 1,
+    "cv_entries": [
+      {
+        "title": "Data Science Intern",
+        "start": "2025-02-01",
+        "end": "2026-04-30"
+      }
+    ]
+  },
+  "expected": {
+    "score_pct": 87.5,
+    "status": "final",
+    "required_total": 4,
+    "matched": 3,
+    "partial": 1,
+    "met_display": "3.5 of 4 required requirements",
+    "constraint_state": "compatible"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "fixture_id": "dev_03_duration_unknown",
+  "synthetic": true,
+  "note": "Synthetic development fixture for the deterministic rules. Hand-written, not model output. Not part of the test set.",
+  "analysis_date": "2026-09-29",
+  "cv_parse_status": "ok",
+  "case": "Python project with no dates: PARTIAL with needs_clarification; duration unknown, not a conflict.",
+  "extraction": {
+    "job_id": "FIX-03",
+    "units": [
+      {
+        "unit_id": "u1",
+        "text": "2+ years of Python experience",
+        "importance": "required",
+        "field": "experience",
+        "source_quotes": [
+          "2+ years of Python experience"
+        ],
+        "kind": "qualified",
+        "min_years": 2
+      },
+      {
+        "unit_id": "u2",
+        "text": "Pandas",
+        "importance": "required",
+        "field": "tool",
+        "source_quotes": [
+          "Pandas"
+        ]
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "u1",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "Personal project: sentiment analysis in Python"
+      ]
+    },
+    {
+      "unit_id": "u2",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Cleaned 50k rows with pandas"
+      ]
+    }
+  ],
+  "experience": {
+    "min_years": 2,
+    "cv_entries": [
+      {
+        "title": "Personal project: sentiment analysis"
+      }
+    ]
+  },
+  "expected": {
+    "score_pct": 75.0,
+    "status": "final",
+    "required_total": 2,
+    "matched": 1,
+    "partial": 1,
+    "constraint_state": "unknown"
+  }
+}

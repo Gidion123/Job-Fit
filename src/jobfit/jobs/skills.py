@@ -1,7 +1,7 @@
 """Deterministic skill extraction from JD text using the versioned alias file (config/skill_aliases_v0.yaml).
 
 This is a transparent keyword baseline for EDA and market counts. It detects *mentions*, not whether a
-skill is required or preferred — that distinction is the LLM extractor's job (CP2).
+skill is required or preferred, because that distinction is the LLM extractor's job (CP2).
 """
 
 from __future__ import annotations
@@ -12,7 +12,7 @@ from pathlib import Path
 
 import yaml
 
-DEFAULT_ALIAS_FILE = Path(__file__).resolve().parents[2] / "config/skill_aliases_v0.yaml"
+DEFAULT_ALIAS_FILE = Path(__file__).resolve().parents[3] / "config/skill_aliases_v0.yaml"
 
 
 @lru_cache(maxsize=4)

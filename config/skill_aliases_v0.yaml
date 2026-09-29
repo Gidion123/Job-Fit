@@ -1,4 +1,4 @@
-# JobFit skill alias taxonomy v0 — deterministic matching for EDA and baseline keyword overlap.
+# JobFit skill alias taxonomy v0: deterministic matching for EDA and baseline keyword overlap.
 # Each canonical skill has: category, aliases (case-insensitive, word-boundary), optional regex (overrides aliases),
 # optional case_sensitive. Ambiguous short names (R, Go) use restrictive regexes to avoid false matches.
 version: v0

@@ -1,21 +1,31 @@
-# Regenerable local caches only; do not delete provenance or snapshots.
-.DS_Store
+# Secrets: only .env.example is committed (D-028)
+.env
+.env.*
+!.env.example
+
+# Python environments and build output
+env-job-fit/
+.venv/
 __pycache__/
 *.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Tool caches
 .pytest_cache/
 .ipynb_checkpoints/
-.env
-.venv/
-env-job-fit/
-*.tgz
-*.zip
+
+# OS and editor files
+.DS_Store
 .vscode/
 .idea/
+
+# Archives
+*.tgz
+*.zip
 
 # Raw API data stays local (full API responses, recruiter contact details in some JDs)
 data/raw/
 data/interim/jsearch_records.jsonl
 data/interim/snapshots/*/jsearch_records.jsonl
-
-#Environment Local
-env-job-fit

@@ -10,8 +10,9 @@ services:
       POSTGRES_USER: jobfit
       POSTGRES_PASSWORD: jobfit      # local development only; production uses the Railway database
       POSTGRES_DB: jobfit
+    # Bound to 127.0.0.1 only (not reachable from the network). Host port 5434 because 5432 was in use on Dion's Mac.
     ports:
-      - "5432:5432"
+      - "127.0.0.1:5434:5432"
     volumes:
       - jobfit_pgdata:/var/lib/postgresql/data
     healthcheck:

@@ -12,7 +12,7 @@
         "unit_id": "u1",
         "text": "At least 3 years of experience using Python",
         "importance": "required",
-        "field": "experience",
+        "field": "experience_duration",
         "source_quotes": [
           "At least 3 years of experience using Python"
         ],
@@ -23,7 +23,7 @@
         "unit_id": "u2",
         "text": "SQL",
         "importance": "required",
-        "field": "skill",
+        "field": "skill_tool",
         "source_quotes": [
           "SQL"
         ]
@@ -32,7 +32,7 @@
         "unit_id": "u3",
         "text": "Git",
         "importance": "required",
-        "field": "tool",
+        "field": "skill_tool",
         "source_quotes": [
           "Git"
         ]

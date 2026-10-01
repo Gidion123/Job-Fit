@@ -4,17 +4,17 @@ JobFit helps early-career job seekers in AI and data find jobs that fit their re
 
 Final project for the Data Science and Machine Learning bootcamp at Dibimbing (Batch 42).
 
-![Status](https://img.shields.io/badge/status-CP1%20complete-brightgreen)
+![Status](https://img.shields.io/badge/status-CP2.1%20complete-brightgreen)
 ![Next](https://img.shields.io/badge/next-CP2%20in%20progress-blue)
 ![Python](https://img.shields.io/badge/python-3.11-blue)
-![Tests](https://img.shields.io/badge/tests-24%20passing-brightgreen)
+![Tests](https://img.shields.io/badge/tests-80%20passing-brightgreen)
 
 ## Project status
 
 | Checkpoint | Focus | Dates | Status |
 | --- | --- | --- | --- |
 | CP1 | Data collection, cleaning, feature transformation, EDA | until 27 Sep 2026 | Done |
-| CP2 | Guideline and gold set, search baselines, evidence matching, recommendation list, evaluation | 28 Sep to 4 Oct 2026 | In progress: CP2.1 started 29 Sep (schemas, scoring rules, budget guard done; labeling pilot next) |
+| CP2 | Guideline and gold set, search baselines, evidence matching, recommendation list, evaluation | 28 Sep to 4 Oct 2026 | In progress: CP2.1 done on 1 Oct (guideline, scoring, pilot labels, database, baselines); CP2.2 next |
 | CP3 | API, database, app, testing, deployment | 5 to 11 Oct 2026 | Planned |
 
 This README is updated at the end of every checkpoint.
@@ -76,6 +76,10 @@ The CP2 and CP3 plan follows the design update after the CP1 mentor feedback. Ev
 - Streamlit app for the full flow: upload a CV, check the parsing summary, set optional filters, see recommendations, open the evidence, compare a pasted JD.
 - End-to-end tests and CI/CD.
 - Deployment with a demo path that uses synthetic CVs, and the final presentation.
+
+### Planned upgrade: CV coach
+
+After matching is complete, a CV coach asks the user about real projects behind each gap and turns the answers into CV bullet points, without inventing anything. A minimal version is planned for v1 if time allows; the full coach comes later. See [docs/cv-coach-plan.md](docs/cv-coach-plan.md).
 
 ## Repository structure
 

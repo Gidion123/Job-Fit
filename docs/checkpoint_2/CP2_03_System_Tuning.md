@@ -20,7 +20,7 @@ Choose the configuration with measurements on the development set, not by changi
 
 ## 3. Planned method
 
-1. Compare the stage-1 methods (B0, B1, B2, hybrid RRF) with Recall@K on the development pool.
+1. Compare the stage-1 methods (B0, B1, B2, hybrid RRF) and, if D-044 option A is approved, the two embedding models with Recall@K on the development pool (silver labels, D-044). With option B, use hybrid RRF and K = 20 as the default and only measure the methods in CP2.4.
 2. Choose K for stage 2 from 10, 20, 30 by recall, latency, and cost.
 3. Compare extraction prompt v1 and v2.
 4. LLM comparison round 1 (D-029) on about 30 development cases: `deepseek-flash`, GPT-6 Luna, Gemini 3.5 Flash-Lite, Claude Haiku 4.5, all through OpenRouter, with GPT-6 Sol on at most 10 hard cases as the quality reference. Choose with the fixed selection rule. Round 2 only if the rule asks for it.
@@ -59,7 +59,7 @@ If time is short, cut the LLM comparison to 15 cases and test only K = 10 and 20
 
 ## 9. Checklist
 
-- [ ] Compare the stage-1 methods (B0, B1, B2, hybrid RRF) with Recall@K on the development pool.
+- [ ] Compare the stage-1 methods (B0, B1, B2, hybrid RRF) and, if D-044 option A is approved, the two embedding models with Recall@K on the development pool (silver labels, D-044). With option B, use hybrid RRF and K = 20 as the default and only measure the methods in CP2.4.
 - [ ] Choose K for stage 2 from 10, 20, 30 by recall, latency, and cost.
 - [ ] Compare extraction prompt v1 and v2.
 - [ ] LLM comparison round 1 (D-029) on about 30 development cases: `deepseek-flash`, GPT-6 Luna, Gemini 3.5 Flash-Lite, Claude Haiku 4.5, all through OpenRouter, with GPT-6 Sol on at most 10 hard cases as the quality reference. Choose with the fixed selection rule. Round 2 only if the rule asks for it.

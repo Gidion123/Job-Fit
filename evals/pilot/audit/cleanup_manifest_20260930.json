@@ -1,0 +1,179 @@
+{
+  "task": "T02_workbook_cleanup",
+  "date": "2026-09-30",
+  "verified_at": "2026-09-30T23:33:10.269532+07:00",
+  "input_sha256": "cc7d477be6bca324b42e1389a394f7f013294e456feb9489018422d643963368",
+  "output_sha256": "a6122bc8e85dec2a83dc9f1d0a42662f47139ace1e2121847f8059f5b59bbeef",
+  "backup_file": "JobFit_Pilot_Labeling_v0.1.backup_20260930.xlsx",
+  "row_counts": {
+    "A_Extraction": {
+      "before_records_including_placeholders": 63,
+      "before_filled_labels": 61,
+      "after_records": 69,
+      "label_source": {
+        "model_draft": 56,
+        "annotator": 13
+      },
+      "review_status": {
+        "pending": 52,
+        "approved": 17
+      }
+    },
+    "B_Evidence": {
+      "before_records_including_placeholders": 32,
+      "before_filled_labels": 32,
+      "after_records": 32,
+      "label_source": {
+        "model_draft": 32
+      },
+      "review_status": {
+        "pending": 32
+      }
+    },
+    "C_Relevance": {
+      "before_records_including_placeholders": 10,
+      "before_filled_labels": 10,
+      "after_records": 10,
+      "label_source": {
+        "model_draft": 10
+      },
+      "review_status": {
+        "pending": 10
+      }
+    }
+  },
+  "J4_units": {
+    "before": 13,
+    "after": 21,
+    "removed_empty_placeholders": 2,
+    "new_units": 8,
+    "pending_unchanged": [
+      "J4-U08",
+      "J4-U09",
+      "J4-U10",
+      "J4-U11"
+    ]
+  },
+  "outside_part2_label_content": {
+    "A_Extraction": {
+      "unchanged_rows_checked": 58,
+      "label_columns": [
+        "pilot_id",
+        "job_id",
+        "unit_no",
+        "unit_text",
+        "source_quote",
+        "importance",
+        "category",
+        "group_id",
+        "min_years"
+      ],
+      "differences": 0
+    },
+    "B_Evidence": {
+      "unchanged_rows_checked": 32,
+      "label_columns": [
+        "cv_id",
+        "job_id",
+        "unit_no",
+        "unit_text",
+        "label",
+        "check_status",
+        "cv_quote",
+        "cv_section"
+      ],
+      "differences": 0
+    },
+    "C_Relevance": {
+      "unchanged_rows_checked": 10,
+      "label_columns": [
+        "cv_id",
+        "cv_target",
+        "pilot_id",
+        "job_id",
+        "job_title",
+        "relevance_0_3",
+        "main_reason",
+        "constraint_note"
+      ],
+      "differences": 0
+    }
+  },
+  "source_quote_checks": {
+    "A_exact_matches": 69,
+    "A_failures": 0,
+    "B_nonempty_exact_matches": 21,
+    "B_empty_quotes_preserved": 11,
+    "B_failures": 0
+  },
+  "source_sheets": {
+    "JDs": {
+      "cell_values_identical": true,
+      "formatting_identical": true,
+      "cell_values_sha256": "81ba2ec0236d9d1dbc0de1f36fbab0b57fcb92379686dde9326cdf41a9216744",
+      "worksheet_xml_byte_identical": true
+    },
+    "CVs": {
+      "cell_values_identical": true,
+      "formatting_identical": true,
+      "cell_values_sha256": "8e3ea6fcfc31fe296ff2ae7ca97d1f3e627ab179f313299aad7834c3f68dd44e",
+      "worksheet_xml_byte_identical": true
+    }
+  },
+  "neutral_wording": {
+    "scope": "Provenance wording only; source JDs/CVs including formatting and technical source content in other sheets are exempt, per user clarification.",
+    "nonexempt_hits": [],
+    "exempt_source_hits": [
+      {
+        "sheet": "CVs",
+        "cell": "D3",
+        "terms": [
+          "OpenAI"
+        ]
+      }
+    ],
+    "technical_label_content_unchanged_except_part2": true
+  },
+  "formatting": {
+    "non_source_sheets": "Arial 10; white bold headers on 1F4E79; wrapped text; data headers frozen",
+    "validation_extension_empty_rows": 30,
+    "conditional_formatting": "pending FFF2CC; approved E2EFDA; rejected EDEDED whole row, first priority",
+    "source_sheets_exempt": true,
+    "native_excel_visual_verification": false,
+    "conditional_format_rules_and_colors_verified": true,
+    "preview_limitation": "The renderer did not display conditional status fills; exported rule formulas, priorities, ranges and exact colors were verified. No native Excel session was opened."
+  },
+  "timing": {
+    "times_preserved": true,
+    "formulas_preserved": true,
+    "original_cached_results_preserved": true,
+    "J4_minutes": 60,
+    "independent_time_arithmetic_matches": true,
+    "native_timing_table_preserved": true
+  },
+  "formula_check": {
+    "saved_workbook_cached_errors": [],
+    "artifact_tool_time_formula_error": "Artifact Tool returned VALUE for the existing TIMEVALUE(TEXT(time)) expression. Original Excel formula and cached result (60) were preserved; duration verified independently.",
+    "native_excel_recalculation_performed": false
+  },
+  "QA_Log": {
+    "closed": 14,
+    "open": [
+      "D1"
+    ],
+    "status_mapping": "Applied exactly as T02 requested. Closing D7 does not approve pending label rows.",
+    "annotator_decisions_and_notes_preserved": true
+  },
+  "files_changed": [
+    "JobFit_Pilot_Labeling_v0.1.xlsx",
+    "JobFit_Pilot_Labeling_v0.1.backup_20260930.xlsx",
+    "cleanup_manifest_20260930.json"
+  ],
+  "not_performed": [
+    "new labeling decisions",
+    "changes to source sheets",
+    "changes to other project files",
+    "git commands",
+    "external API calls"
+  ]
+}

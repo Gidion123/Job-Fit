@@ -16,6 +16,13 @@ class Importance(str, Enum):
     UNKNOWN = "unknown"  # not forced into required; kept out of the denominator
 
 
+class LabelSource(str, Enum):
+    """Where a unit or label came from (annotation guideline v1.2, section 0)."""
+
+    MODEL_DRAFT = "model_draft"  # produced by a language model
+    ANNOTATOR = "annotator"  # written by the annotator
+
+
 class UnitKind(str, Enum):
     SIMPLE = "simple"
     ALTERNATIVE_GROUP = "alternative_group"  # "Python or Java", "S1 or equivalent experience"
@@ -23,15 +30,23 @@ class UnitKind(str, Enum):
 
 
 class RequirementField(str, Enum):
-    SKILL = "skill"
-    TOOL = "tool"
-    EXPERIENCE = "experience"
+    """Categories from annotation guideline v1.2, section A5."""
+
+    SKILL_TOOL = "skill_tool"
+    KNOWLEDGE_AREA = "knowledge_area"
+    EXPERIENCE_DURATION = "experience_duration"
     EDUCATION = "education"
     LANGUAGE = "language"
     CERTIFICATION = "certification"
-    DOMAIN = "domain"
-    SOFT_SKILL = "soft_skill"
+    SOFT_SKILL = "soft_skill"  # shown separately, not in the match % (D-032)
+    LOCATION = "location"  # constraint, not in the match % (D-033)
+    WORK_AUTHORIZATION = "work_authorization"  # constraint, not in the match % (D-033)
     OTHER = "other"
+
+
+# Categories that never enter the match % denominator.
+CONSTRAINT_FIELDS = frozenset({RequirementField.LOCATION, RequirementField.WORK_AUTHORIZATION})
+SEPARATE_FIELDS = frozenset({RequirementField.SOFT_SKILL})
 
 
 class JDQuality(str, Enum):
@@ -59,7 +74,7 @@ class RequirementUnit(BaseModel):
     branches: list[RequirementBranch] = Field(default_factory=list)
     source_quotes: list[str] = Field(default_factory=list)  # word for word from the JD
     needs_review: bool = False
-    ai_suggested: bool = False
+    label_source: LabelSource = LabelSource.MODEL_DRAFT
 
     @model_validator(mode="after")
     def _check_kind(self) -> "RequirementUnit":

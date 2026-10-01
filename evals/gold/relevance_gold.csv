@@ -1,0 +1,11 @@
+split,snapshot_id,cv_id,pilot_id,job_id,relevance,label_source,review_action,guideline_version
+development,CP1_20260926,CV1,J1,F00022,3,model_draft,accepted,v1.2
+development,CP1_20260926,CV1,J2,F00073,1,model_draft,accepted,v1.2
+development,CP1_20260926,CV1,J3,F00034,1,model_draft,accepted,v1.2
+development,CP1_20260926,CV1,J4,F00016,1,model_draft,accepted,v1.2
+development,CP1_20260926,CV1,J5,F00114,0,model_draft,accepted,v1.2
+development,CP1_20260926,CV2,J1,F00022,2,model_draft,accepted,v1.2
+development,CP1_20260926,CV2,J2,F00073,1,model_draft,accepted,v1.2
+development,CP1_20260926,CV2,J3,F00034,1,model_draft,accepted,v1.2
+development,CP1_20260926,CV2,J4,F00016,1,model_draft,accepted,v1.2
+development,CP1_20260926,CV2,J5,F00114,1,model_draft,accepted,v1.2

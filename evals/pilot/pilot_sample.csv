@@ -1,6 +1,6 @@
 pilot_id,job_id,title,company,v0_experience_bucket,jd_language,role_family,split,used_in
 J1,F00022,Jr. Data Scientist,IlmuOne Data,entry,en,data_science,development,"A,B,C"
-J2,F00073,AI Developer,PT WPH Digital,3-4y,en,ai_ml_engineering,development,"A(ai_suggested),B,C"
+J2,F00073,AI Developer,PT WPH Digital,3-4y,en,ai_ml_engineering,development,"A(model_draft),B,C"
 J3,F00034,AI Engineer,PT IP Network Solusindo,1-2y,id,ai_ml_engineering,development,"A,C"
 J4,F00016,Artificial Intelligence Engineer,Pinhome,1-2y,en,ai_ml_engineering,development,C
 J5,F00114,AI Engineer (AI Agent & RAG),MyConnect,not_stated,en,genai_llm,development,C

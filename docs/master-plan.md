@@ -14,27 +14,32 @@ This is the single work plan for CP2 and CP3. Each checkpoint also has its own r
 
 ---
 
-## 1. Where the project stands (29 September 2026)
+## 1. Where the project stands (1 October 2026)
 
-**Done (CP1), and reused in CP2:**
+**Done in CP1, reused in CP2:**
 
 - Snapshot `CP1_20260926`: 910 estimated unique jobs, 632 EDA candidates, 428 in the target role families.
-- Cleaning and features: `role_family`, `experience_bucket`, location, `work_mode`, `posted_at`, v0 skills, `content_hash`. These become the filters, the stage-1 keyword baseline, and the cache keys.
-- Research notebook, 24 passing tests, CP1 reports, CP1 presentation.
-- Design package: System Design v1.3, docs/decisions.md (D-001 to D-031), Canonical and Playbook v2.1, this plan, stage report plans, and the empty repository structure for the application (`docs/repo-structure.md`).
+- Cleaning and features: `role_family`, `experience_bucket`, location, `work_mode`, `posted_at`, v0 skills, `content_hash`. These are the filters, the stage-1 keyword baseline, and the cache keys.
+- Research notebook, CP1 reports, CP1 presentation, design package (System Design v1.3, Canonical and Playbook v2.1).
 
-**Not done yet (all of CP2 and CP3):**
+**Done in CP2.1 (29 Sep to 1 Oct), details in the [CP2.1 report](checkpoint_2/CP2_01_Model_and_System_Selection.md):**
+
+- Annotation guideline v1.2, labeling workflow, and decisions D-032 to D-042 from the pilot.
+- Schemas, scoring rules (score v1), constraint rules, ordering, and the 8 development fixtures; 79 tests pass (1 database test runs on demand).
+- Pilot labels approved by Dion and exported as the development split: 71 extraction units, 34 evidence rows, 10 relevance labels.
+- OpenRouter client, usage ledger, and budget guard (no paid call made yet).
+- PostgreSQL 17 with pgvector in Docker; 632 jobs loaded; baselines B0 and B1 run (EXP-20261001-01).
+
+**Open:**
 
 | Area | Status |
 | --- | --- |
-| Annotation guideline, schemas, scoring rules, development fixtures | Not started |
-| Synthetic CVs and the labeling pilot | Not started |
-| CV parser, JD extraction, evidence matching, paste JD path | Not started |
-| Stage-1 baselines (keyword, FTS, dense, hybrid) and the recommendation list | Not started |
-| Gold sets, splits, evaluation scripts | Not started |
-| Usage ledger and budget guard | Not started |
-| docs/experiments.md and docs/failures.md entries | Files exist, no entries yet |
-| FastAPI, PostgreSQL/pgvector migrations, Streamlit, CI, Docker, deployment | Not started |
+| Gold-set sizes and test pool (D-043) | Waiting for Dion's approval |
+| Benchmark protocol and second embedding candidate (D-044) | Waiting for Dion's choice (option A or B) |
+| Privacy design for real CVs (five open questions: rule-based redaction, keeping the city, session time limit, preview of what is sent to the model, upload with consent) | Waiting for Dion; written into `docs/privacy-threat-model.md` once decided |
+| CV parser, JD extraction, evidence matching, paste JD path | CP2.2, not started |
+| Dense and hybrid search, test labels, tuning, evaluation | CP2.2 to CP2.4, not started |
+| FastAPI, migrations, Streamlit, CI, Docker images, deployment | CP3, not started |
 
 **Out of scope for v1 (D-025):** import link, auto-apply, cover letter, Strong/Realistic/Stretch labels.
 **Deferred:** second job-data provider, reranker, automatic refresh, official support for adjacent roles.
@@ -46,8 +51,8 @@ This is the single work plan for CP2 and CP3. Each checkpoint also has its own r
 
 | # | Stage | Template name | JobFit report | Official | Planned work | Actual | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 8 | CP2.1 | Model Selection (CNN/LSTM/DNN sesuai use case) | [Model and System Selection](checkpoint_2/CP2_01_Model_and_System_Selection.md) | 28 Sep 2026 | 29-30 Sep 2026 (labeling pilot on the evening of 29 Sep) | started 29 Sep 2026 | IN PROGRESS |
-| 9 | CP2.2 | Modeling Deep Learning | [Modeling the Extraction, Search, and Evidence Pipeline](checkpoint_2/CP2_02_Modeling_Pipeline.md) | 29 Sep 2026 | 30 Sep-1 Oct 2026 | not run yet | PLANNED / NOT RUN |
+| 8 | CP2.1 | Model Selection (CNN/LSTM/DNN sesuai use case) | [Model and System Selection](checkpoint_2/CP2_01_Model_and_System_Selection.md) | 28 Sep 2026 | 29-30 Sep 2026 (labeling pilot on the evening of 29 Sep) | 29 Sep to 1 Oct 2026 | DONE |
+| 9 | CP2.2 | Modeling Deep Learning | [Modeling the Extraction, Search, and Evidence Pipeline](checkpoint_2/CP2_02_Modeling_Pipeline.md) | 29 Sep 2026 | 1-2 Oct 2026 (moved: CP2.1 ended on 1 Oct) | not run yet | PLANNED / NOT RUN |
 | 10 | CP2.3 | Hyperparameter Tuning | [System Tuning](checkpoint_2/CP2_03_System_Tuning.md) | 30 Sep 2026 | 2 Oct 2026 | not run yet | PLANNED / NOT RUN |
 | 11 | CP2.4 | Modeling + Evaluation Metrics | [Evaluation Metrics](checkpoint_2/CP2_04_Evaluation_Metrics.md) | 1 Oct 2026 | 3 Oct 2026 | not run yet | PLANNED / NOT RUN |
 | 12 | CP2.5 | Visualisasi Evaluation Result | [Evaluation Result Visualization](checkpoint_2/CP2_05_Evaluation_Visualization.md) | 2 Oct 2026 | 3 Oct 2026 | not run yet | PLANNED / NOT RUN |
@@ -71,12 +76,13 @@ This is the single work plan for CP2 and CP3. Each checkpoint also has its own r
 
 | What | Owner | Needed by | Blocks | Status |
 | --- | --- | --- | --- | --- |
-| OpenRouter account, credit, privacy settings, and `OPENROUTER_API_KEY` in `.env` (D-028, D-030) | Dion | 30 Sep | Every LLM and embedding step | Key and credit done (US$9.22); privacy settings and key limit to confirm |
-| Docker Engine starts and runs a container | Dion (run), Claude (check) | 30 Sep | Local PostgreSQL, FTS baseline | Done: `hello-world` ran on 29 Sep |
-| Review of the synthetic CVs | Dion | Evening of 29 Sep, before the pilot | Pilot, gold labels | Open |
-| Labeling pilot (timed) | Dion | Evening of 29 Sep | Gold sizes, guideline v1 | Open |
+| OpenRouter account, credit, privacy settings, and `OPENROUTER_API_KEY` in `.env` (D-028, D-030) | Dion | 30 Sep | Every LLM and embedding step | Done: credit US$9.22, key limit US$8.50, settings checked |
+| Docker Engine starts and runs a container | Dion | 30 Sep | Local PostgreSQL, FTS baseline | Done: `hello-world` ran on 29 Sep |
+| Review of the synthetic CVs | Dion | Evening of 29 Sep, before the pilot | Pilot, gold labels | Done |
+| Labeling pilot (timed) | Dion | Evening of 29 Sep | Gold sizes, guideline v1 | Done on 1 Oct (guideline v1.2) |
+| Gold sizes (D-043) and benchmark protocol (D-044) | Dion | 2 Oct morning | Test pool, CP2.3 | Waiting for approval |
 | Railway account on the Trial credit (D-023 approved) | Dion | 1 Oct | Smoke deploy, checkpoint 16 | Approved; account not created yet |
-| Development labels reviewed (gold) | Dion | 2 Oct morning | Checkpoint 10 | Open |
+| Development labels reviewed (gold) | Dion | 2 Oct morning | Checkpoint 10 | Done: pilot labels approved and exported on 1 Oct |
 | Test labels reviewed (gold) | Dion | 3 Oct morning | Checkpoint 11 | Open |
 | Mentor feedback at CP2 | Mentor | 4 Oct | CP3 scope confirmation | Open |
 
@@ -119,7 +125,8 @@ Labeling is the longest chain and depends on one person. It starts on day one an
   | --- | --- |
   | CP2.2 prompt v1 on development cases, about 3 rounds of fixes | about US$0.25 |
   | Batch extraction of 428 target JDs, twice (baseline, then the chosen model) | about US$0.50 to 1.00 |
-  | Embeddings for all 632 jobs and the CVs | under US$0.02 |
+  | Embeddings for all 632 jobs and the CVs (about 0.5M tokens) | under US$0.02 |
+  | Second embedding model for the comparison, if D-044 option A is approved | under US$0.01 |
   | CP2.3 model comparison round 1, run twice (4 models x 30 cases, GPT-6 Sol on 10) | about US$1.60 |
   | CP2.3 round 2 (`deepseek-v4-pro`, only if needed) | about US$0.25 |
   | CP2.3 K experiment and CP2.4 prompt v2 | about US$0.50 |
@@ -133,14 +140,14 @@ Labeling is the longest chain and depends on one person. It starts on day one an
 
 ## 7. Labeling plan (D-015, D-016)
 
-1. **Evening of 29 Sep:** guideline v0.1, then a pilot. For example: 5 JDs for extraction, about 20 requirement-evidence pairs, 2 CVs × 5 jobs for relevance. Dion records the time per item.
-2. **After the pilot:** propose realistic gold sizes and a daily labeling load from the measured time, in a new docs/decisions.md entry. If sizes are below the Canonical targets, record the original and revised targets, the reason, the mandatory case coverage, and the impact on the conclusions.
-3. **Freeze the split:** at the job-cluster level; development first, then the test set.
+1. **Evening of 29 Sep:** guideline v0.1, then a pilot. For example: 5 JDs for extraction, about 20 requirement-evidence pairs, 2 CVs × 5 jobs for relevance. Dion records the time per item. *Done 29 Sep to 1 Oct: 4 JDs (71 units), 34 evidence rows, 10 relevance labels; guideline v1.2.*
+2. **After the pilot:** propose realistic gold sizes and a daily labeling load from the measured time, in a new docs/decisions.md entry. If sizes are below the Canonical targets, record the original and revised targets, the reason, the mandatory case coverage, and the impact on the conclusions. *Proposed in D-043 (pending approval): 1 JD, 1 CV-job pair, and 30 relevance labels for the test set.*
+3. **Freeze the split:** at the job-cluster level; development first, then the test set. *Development split written on 1 Oct (`evals/splits/dev_job_ids.txt`, the 5 pilot jobs). The test pool is picked after the embeddings exist and locked before CP2.3 (D-043, D-044).*
 4. **Continue during implementation:** development labels by 2 Oct morning, test labels by 3 Oct morning.
 5. **Rules:**
-   - AI may suggest labels (`ai_suggested = true`).
+   - A language model may draft labels (`label_source = model_draft`), following [annotation-workflow.md](annotation-workflow.md).
    - Only labels that Dion reviewed become gold.
-   - Unreviewed labels stay provisional.
+   - Unreviewed labels stay pending and are never used for evaluation.
    - No inter-annotator agreement is reported.
    - The single-annotator limitation is written in the evaluation report.
 
@@ -156,17 +163,17 @@ JobFit version: For an LLM and retrieval system, model selection means comparing
 
 1. **Goal.** Set the rules, the baselines, and the experiment matrix before the full system is built, so every later choice is measured against something.
 2. **Inputs and prerequisites.**
-   - System Design v1.3 and docs/decisions.md (D-001 to D-031)
+   - System Design v1.3 and docs/decisions.md (D-001 to D-037)
    - CP1 processed data: 632 EDA candidates, 428 in the target role families
    - `OPENROUTER_API_KEY` in the git-ignored local `.env` that Dion fills himself (D-028, D-030, D-031); never in chat or commits
    - Docker Engine running on the Mac (CLI 29.4.3, Compose v5.1.3; `docker run --rm hello-world` succeeded on 29 Sep 2026)
 3. **Steps.**
-   1. Write the annotation guideline v0.1: requirement units, evidence labels, constraint states (compatible / unknown / explicit conflict), relevance 0-3, and label record fields (`ai_suggested`, `status`, `reviewed_by`, `guideline_version`).
+   1. Write the annotation guideline v0.1: requirement units, evidence labels, constraint states (compatible / unknown / explicit conflict), relevance 0-3, and label record fields (`label_source`, `review_status`, `review_action`, `guideline_version`).
    2. Define the Pydantic schemas for JD requirement units and CV evidence units, with example outputs.
    3. Implement the deterministic scoring rules: match %, score status (final / provisional / on hold / no score), constraint states, ordering, and stable tie-break.
    4. Write the 8 development fixtures from System Design v1.3 section 15 and run them as tests.
    5. Draft 2-3 synthetic CVs (at least one in Indonesian); Dion checks that they are realistic.
-   6. Labeling pilot: a small development sample (for example 5 JDs, about 20 requirement-evidence pairs, 2 CVs x 5 jobs). AI may suggest provisional labels; Dion decides and records the time per item. Then revise the guideline to v1.
+   6. Labeling pilot: a small development sample (for example 5 JDs, about 20 requirement-evidence pairs, 2 CVs x 5 jobs). A language model may draft labels; Dion decides and records the time per item. Then revise the guideline to v1.
    7. Start local PostgreSQL with pgvector (Docker Compose) and load the 632 EDA candidates.
    8. Run Baseline 0 (keyword/skill overlap with the CP1 v0 skill list) and Baseline 1 (PostgreSQL FTS) on the pilot pool.
    9. Write the experiment matrix in docs/experiments.md (stage-1 methods, K, LLM candidates, prompt versions), each with a hypothesis and a metric.
@@ -182,7 +189,7 @@ JobFit version: For an LLM and retrieval system, model selection means comparing
 6. **Evidence to keep.** pytest output; pilot timing table; docs/experiments.md matrix; ledger total for the stage; commit links (Dion pushes).
 7. **Estimate and dependencies.** About 1.5 working days. Dion: about 30 minutes to review the synthetic CVs and about 1.5-2 hours for the pilot. LLM cost: under US$0.50. Depends on: Docker Engine (checked: `hello-world` ran on 29 Sep); OpenRouter key in `.env`; Dion's review of the synthetic CVs before the pilot.
 8. **Fallback.** If Docker does not start, use Postgres.app on the Mac and note it. If the pilot takes too long, cut it to 3 JDs and 1 CV, but still time it. Guideline v1 is finished by the end of 30 Sep in any case.
-9. **Status and next step.** PLANNED / NOT RUN. Next: CP2.2 (checkpoint 9): CV parser, extraction prompt v1, evidence matcher, and the 1 CV + 1 JD report.
+9. **Status and next step.** DONE (29 Sep to 1 Oct 2026). Every acceptance criterion is met except that no LLM call has been made yet, so the ledger is still empty (the guard is tested with mocked calls). Two changes from the plan: the pilot took until 1 Oct because the review raised 21 rule questions (D-032 to D-042), and Recall@K for B0 and B1 could not be computed because the pilot has only one job labeled 3 (EXP-20261001-01). Carried over: D-043 and D-044 approval, test labels (about 2 hours of Dion's time). Next: CP2.2 (checkpoint 9): CV parser, extraction prompt v1, evidence matcher, and the 1 CV + 1 JD report.
 
 ### CP2.2: Modeling the Extraction, Search, and Evidence Pipeline (checkpoint 9)
 
@@ -194,7 +201,8 @@ JobFit version: The "deep learning modeling" of JobFit is the pipeline of pretra
 2. **Inputs and prerequisites.**
    - Checkpoint 8 outputs (guideline v1, schemas, scoring rules, fixtures, local database, ledger)
    - OpenRouter credit available (D-030)
-   - Synthetic CVs reviewed by Dion
+   - Synthetic CVs reviewed by Dion (done)
+   - D-043 and D-044 approved before the test pool is picked
 3. **Steps.**
    1. CV text extraction (PyMuPDF, python-docx) and LLM parsing into evidence units with a parsing summary.
    2. JD extraction prompt v1 with Pydantic validation and at most 1 repair attempt.
@@ -203,8 +211,8 @@ JobFit version: The "deep learning modeling" of JobFit is the pipeline of pretra
    5. Paste JD path end to end: clean, quality signals, extract, preview, match report.
    6. Run the 8 development cases and check them by hand.
    7. Batch extraction of the 428 target JDs into the versioned cache with the baseline `deepseek-flash`, estimated first. It is re-run if another model is chosen in CP2.3.
-   8. Embeddings (model per D-020), Baseline 2 dense, and the hybrid FTS + dense search with RRF.
-   9. Freeze the development / held-out test split at the job-cluster level.
+   8. Embeddings (model per D-020, plus the second candidate if D-044 option A is approved), Baseline 2 dense, and the hybrid FTS + dense search with RRF.
+   9. Pick the test pool from the top results of every stage-1 method plus entry-level jobs and hard negatives (D-043, D-044), then lock `evals/splits/test_job_ids.txt`. The development split is already fixed (the 5 pilot jobs).
 4. **Files and outputs.** prompt files v1 in `prompts/`; CV parser, extractor, matcher modules and tests; extraction cache; an example report for a synthetic CV; `evals/splits/`; this stage report.
 5. **Tests and acceptance criteria.**
    - One CV and one pasted JD produce a structured report whose quotes exist in the CV.
@@ -229,7 +237,7 @@ JobFit version: Tuning means choosing system settings with measurements: stage-1
    - Development labels reviewed by Dion
    - Locked test split (not used here)
 3. **Steps.**
-   1. Compare the stage-1 methods (B0, B1, B2, hybrid RRF) with Recall@K on the development pool.
+   1. Compare the stage-1 methods (B0, B1, B2, hybrid RRF) and, if D-044 option A is approved, the two embedding models with Recall@K on the development pool (silver labels, D-044). With option B, use hybrid RRF and K = 20 as the default and only measure the methods in CP2.4.
    2. Choose K for stage 2 from 10, 20, 30 by recall, latency, and cost.
    3. Compare extraction prompt v1 and v2.
    4. LLM comparison round 1 (D-029) on about 30 development cases: `deepseek-flash`, GPT-6 Luna, Gemini 3.5 Flash-Lite, Claude Haiku 4.5, all through OpenRouter, with GPT-6 Sol on at most 10 hard cases as the quality reference. Choose with the fixed selection rule. Round 2 only if the rule asks for it.
@@ -534,4 +542,4 @@ JobFit version: Same as the template.
 1. Set the stage status and the actual date in section 2 of this plan and in the stage report.
 2. Fill the report's results, interpretation, limitations, and decisions with real outcomes. Link to the [experiment log](experiments.md) instead of copying numbers.
 3. Add any new decision to the [decision log](decisions.md).
-4. Dion commits and pushes (Claude never runs git), then puts the link to the stage report in the "Real" column of the Timeline file as proof of work.
+4. Dion commits and pushes (only Dion runs git), then puts the link to the stage report in the "Real" column of the Timeline file as proof of work.

@@ -44,3 +44,12 @@ def test_no_constraints_means_unknown_not_compatible():
     a.constraints = [ConstraintResult(kind=ConstraintKind.EXPERIENCE, state=ConstraintState.COMPATIBLE),
                      ConstraintResult(kind=ConstraintKind.LOCATION, state=ConstraintState.UNKNOWN)]
     assert a.overall_constraint_state == ConstraintState.UNKNOWN
+
+
+def test_label_source_defaults_to_model_draft_and_accepts_annotator():
+    from jobfit.schemas.requirements import LabelSource
+
+    unit = RequirementUnit(unit_id="U1", text="Python", importance="required")
+    assert unit.label_source is LabelSource.MODEL_DRAFT
+    assessment = UnitAssessment(unit_id="U1", label="NO_MATCH", label_source="annotator")
+    assert assessment.label_source is LabelSource.ANNOTATOR

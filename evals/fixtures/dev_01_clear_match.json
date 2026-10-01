@@ -12,7 +12,7 @@
         "unit_id": "u1",
         "text": "Python",
         "importance": "required",
-        "field": "skill",
+        "field": "skill_tool",
         "source_quotes": [
           "Python"
         ]
@@ -21,7 +21,7 @@
         "unit_id": "u2",
         "text": "SQL",
         "importance": "required",
-        "field": "skill",
+        "field": "skill_tool",
         "source_quotes": [
           "SQL"
         ]
@@ -30,7 +30,7 @@
         "unit_id": "u3",
         "text": "Machine learning model development",
         "importance": "required",
-        "field": "domain",
+        "field": "knowledge_area",
         "source_quotes": [
           "Machine learning model development"
         ]
@@ -39,7 +39,7 @@
         "unit_id": "u4",
         "text": "Docker",
         "importance": "required",
-        "field": "tool",
+        "field": "skill_tool",
         "source_quotes": [
           "Docker"
         ]

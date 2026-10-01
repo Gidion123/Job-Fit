@@ -3,7 +3,7 @@
 **Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
 **Bootcamp checkpoint:** 9. Modeling Deep Learning · official date 29 Sep 2026  
 **JobFit version of this checkpoint:** The "deep learning modeling" of JobFit is the pipeline of pretrained models: LLM extraction, embeddings, search, and evidence matching (D-001). No neural network is trained.  
-**Planned work:** 30 Sep-1 Oct 2026 · **Actual:** not run yet  
+**Planned work:** 1-2 Oct 2026 (moved: CP2.1 ended on 1 Oct) · **Actual:** not run yet  
 **Status:** PLANNED / NOT RUN · design basis: System Design v1.3
 
 > This report is a plan. It contains no results yet. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
@@ -16,7 +16,9 @@ Build the vertical slice: one CV and one JD produce a structured, checkable evid
 
 - Checkpoint 8 outputs (guideline v1, schemas, scoring rules, fixtures, local database, ledger)
 - OpenRouter credit available (D-030)
-- Synthetic CVs reviewed by Dion
+- Synthetic CVs reviewed by Dion (done)
+- D-043 and D-044 approved before the test pool is picked
+- Rules the prompts and code must follow: guideline v1.2 (D-032 to D-042). In particular, the experience constraint uses only `required` experience units, never `unknown` or conditional ones (pilot J2-U07 versus J2-U08)
 
 ## 3. Planned method
 
@@ -27,8 +29,8 @@ Build the vertical slice: one CV and one JD produce a structured, checkable evid
 5. Paste JD path end to end: clean, quality signals, extract, preview, match report.
 6. Run the 8 development cases and check them by hand.
 7. Batch extraction of the 428 target JDs into the versioned cache with the baseline `deepseek-flash`, estimated first. It is re-run if another model is chosen in CP2.3.
-8. Embeddings (model per D-020), Baseline 2 dense, and the hybrid FTS + dense search with RRF.
-9. Freeze the development / held-out test split at the job-cluster level.
+8. Embeddings (model per D-020, plus the second candidate if D-044 option A is approved), Baseline 2 dense, and the hybrid FTS + dense search with RRF.
+9. Pick the test pool from the top results of every stage-1 method plus entry-level jobs and hard negatives (D-043, D-044), then lock `evals/splits/test_job_ids.txt`. The development split is already fixed (the 5 pilot jobs).
 
 ## 4. Planned outputs
 
@@ -73,8 +75,8 @@ If the OpenAI embedding fails on the Indonesian-CV cases, use the local `multili
 - [ ] Paste JD path end to end: clean, quality signals, extract, preview, match report.
 - [ ] Run the 8 development cases and check them by hand.
 - [ ] Batch extraction of the 428 target JDs into the versioned cache with the baseline `deepseek-flash`, estimated first. It is re-run if another model is chosen in CP2.3.
-- [ ] Embeddings (model per D-020), Baseline 2 dense, and the hybrid FTS + dense search with RRF.
-- [ ] Freeze the development / held-out test split at the job-cluster level.
+- [ ] Embeddings (model per D-020, plus the second candidate if D-044 option A is approved), Baseline 2 dense, and the hybrid FTS + dense search with RRF.
+- [ ] Pick the test pool from the top results of every stage-1 method plus entry-level jobs and hard negatives (D-043, D-044), then lock `evals/splits/test_job_ids.txt`. The development split is already fixed (the 5 pilot jobs).
 - [ ] Acceptance: One CV and one pasted JD produce a structured report whose quotes exist in the CV.
 - [ ] Acceptance: The 8 development cases pass the manual check.
 - [ ] Acceptance: Cache keys include schema, prompt, model, preprocessing, and guideline versions.

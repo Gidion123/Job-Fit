@@ -13,8 +13,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 # Versions written into every stored output, so results can be traced (System Design v1.3 section 12).
 SNAPSHOT_ID = "CP1_20260926"
 SCHEMA_VERSION = "v1"
-SCORE_VERSION = "v0"  # PARTIAL weight 0.5
-GUIDELINE_VERSION = "v0.1"
+SCORE_VERSION = "v1"  # PARTIAL weight 0.5; soft skills and constraints outside the % (D-032, D-033)
+GUIDELINE_VERSION = "v1.2"
 PROMPT_VERSION = "v1"
 
 
@@ -29,7 +29,7 @@ def _load_dotenv() -> None:
 @dataclass(frozen=True)
 class Settings:
     openrouter_api_key: str | None = field(default=None, repr=False)
-    database_url: str = "postgresql://jobfit:jobfit@localhost:5432/jobfit"
+    database_url: str = "postgresql://jobfit:jobfit@localhost:5434/jobfit"
     # Budget values come from .env (D-019, D-031). These defaults match .env.example.
     api_budget_usd: float = 5.0
     api_hard_stop_usd: float = 4.5

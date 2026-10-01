@@ -1,0 +1,147 @@
+{
+  "operation": "Record Dion decisions for statistics, ML and experience; preserve quote/status metadata",
+  "before_sha256": "28c33cf18460abfca86e8d9920bd5200f490a4abd6d8d5567747da6d9ea0c6b2",
+  "changes": [
+    {
+      "unit_no": "J2-U07",
+      "before": {
+        "A": "CV2",
+        "B": "F00073",
+        "C": "J2-U07",
+        "D": "At least 3 years of relevant work experience for the senior position",
+        "E": "PARTIAL",
+        "F": "done",
+        "G": "**Document Q&A Assistant (RAG)** · August 2026",
+        "H": "Projects",
+        "I": "model_draft",
+        "J": "approved",
+        "K": "accepted",
+        "L": "A terbaru: importance = unknown; category = experience_duration. Syarat 3 tahun berlaku untuk posisi senior, bukan otomatis untuk semua pelamar. Related recent AI project only; 3 years marketing analysis is not 3 years AI development. Senior-track condition stays unknown.",
+        "M": "",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV2",
+        "B": "F00073",
+        "C": "J2-U07",
+        "D": "At least 3 years of relevant work experience for the senior position",
+        "E": "PARTIAL",
+        "F": "done",
+        "G": "**Document Q&A Assistant (RAG)** · August 2026",
+        "H": "Projects",
+        "I": "model_draft",
+        "J": "approved",
+        "K": "accepted",
+        "L": "A terbaru: importance = unknown; category = experience_duration. Syarat 3 tahun berlaku untuk posisi senior, bukan otomatis untuk semua pelamar. Periksa bukti aktivitas relevan dan durasinya. Pengalaman marketing tidak otomatis sama dengan AI development. Ketentuan 3 tahun khusus jalur senior.",
+        "M": "Keputusan Dion: PARTIAL karena ada bukti proyek AI, tetapi CV belum membuktikan minimum 3 tahun untuk jalur senior. Label menilai keterbatasan bukti yang tertulis; done berarti review label selesai, bukan durasi aktual sudah dipastikan. Agustus 2026 adalah tanggal proyek RAG, bukan bukti awal seluruh pengalaman AI. CV juga memuat classifier Juli 2026 dan forecasting 2025; tidak ada rentang durasi lengkap. Jangan menghitung bulan pengalaman atau menyimpulkan explicit_conflict durasi hanya dari tanggal proyek. Syarat senior tetap conditional/unknown di A.",
+        "N": "v0.1"
+      }
+    },
+    {
+      "unit_no": "J2-U08",
+      "before": {
+        "A": "CV2",
+        "B": "F00073",
+        "C": "J2-U08",
+        "D": "1 year of AI Developer experience",
+        "E": "PARTIAL",
+        "F": "done",
+        "G": "**Document Q&A Assistant (RAG)** · August 2026",
+        "H": "Projects",
+        "I": "model_draft",
+        "J": "approved",
+        "K": "accepted",
+        "L": "A terbaru: importance = required; category = experience_duration. Keputusan A: pengalaman AI Developer minimum 1 tahun adalah required karena ditandai Required secara eksplisit. Fresh graduate welcome tidak membatalkannya menurut keputusan reviewer untuk J2. Periksa aktivitas AI Developer dan durasi relevan di CV; pengalaman kerja umum atau daftar skill tidak otomatis memenuhi satu tahun. Label yang terisi tetap draf untuk Anda review.",
+        "M": "",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV2",
+        "B": "F00073",
+        "C": "J2-U08",
+        "D": "1 year of AI Developer experience",
+        "E": "PARTIAL",
+        "F": "done",
+        "G": "**Document Q&A Assistant (RAG)** · August 2026",
+        "H": "Projects",
+        "I": "model_draft",
+        "J": "approved",
+        "K": "accepted",
+        "L": "A terbaru: importance = required; category = experience_duration. Keputusan A: pengalaman AI Developer minimum 1 tahun adalah required karena ditandai Required secara eksplisit. Fresh graduate welcome tidak membatalkannya menurut keputusan reviewer untuk J2. Periksa aktivitas AI Developer dan durasi relevan di CV; pengalaman kerja umum atau daftar skill tidak otomatis memenuhi satu tahun. Label PARTIAL telah disetujui reviewer; batas kepastian durasi dijelaskan pada review_note.",
+        "M": "Keputusan Dion: PARTIAL karena ada bukti proyek AI, tetapi CV belum membuktikan minimum 1 tahun sebagai AI Developer. Label menilai keterbatasan bukti yang tertulis; done berarti review label selesai, bukan durasi aktual sudah dipastikan. Agustus 2026 adalah tanggal proyek RAG, bukan bukti awal seluruh pengalaman AI. CV juga memuat classifier Juli 2026 dan forecasting 2025; tidak ada rentang durasi lengkap. Jangan menghitung bulan pengalaman atau menyimpulkan explicit_conflict durasi hanya dari tanggal proyek. Importance tetap required sesuai keputusan A.",
+        "N": "v0.1"
+      }
+    },
+    {
+      "unit_no": "J1-U20",
+      "before": {
+        "A": "CV1",
+        "B": "F00022",
+        "C": "J1-U20",
+        "D": "Intermediate statistical skills, including their real-world advantages/drawbacks",
+        "E": "MATCH",
+        "F": "done",
+        "G": "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+        "H": "Experience",
+        "I": "model_draft",
+        "J": "approved",
+        "K": "edited",
+        "L": "A terbaru: importance = required; category = knowledge_area. Nilai statistika saja, terpisah dari Matematika (J1-U04) dan ML (J1-U21). Cari bukti penggunaan metode statistika dengan konteks serta pemahaman kelebihan/kekurangan penerapannya. Level intermediate tidak diukur pada v1. Label dan kutipan telah diisi reviewer. Catatan ini menjelaskan syarat, bukan menetapkan label.",
+        "M": "Kutipan diganti menjadi satu kalimat persis dari pengalaman praktikum regresi. Kutipan lama menggabungkan bagian Experience dan Projects. Label MATCH saat ini dipertahankan sambil menunggu diskusi pemenuhan unsur advantages/drawbacks.",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV1",
+        "B": "F00022",
+        "C": "J1-U20",
+        "D": "Intermediate statistical skills, including their real-world advantages/drawbacks",
+        "E": "MATCH",
+        "F": "done",
+        "G": "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+        "H": "Experience",
+        "I": "model_draft",
+        "J": "approved",
+        "K": "edited",
+        "L": "A terbaru: importance = required; category = knowledge_area. Nilai statistika saja, terpisah dari Matematika (J1-U04) dan ML (J1-U21). Cari bukti penggunaan metode statistika dengan konteks serta pemahaman kelebihan/kekurangan penerapannya. Level intermediate tidak diukur pada v1. Label dan kutipan telah diisi reviewer. Catatan ini menjelaskan syarat, bukan menetapkan label.",
+        "M": "Keputusan Dion: MATCH berdasarkan bukti mengajar praktikum regresi menggunakan R. Kutipan diperbaiki menjadi satu kalimat persis dari Experience. Ini penilaian bukti penggunaan statistika pada v1, bukan verifikasi tingkat intermediate. CV belum secara eksplisit menjelaskan kelebihan/kekurangan metode; reviewer tetap menerima bukti penggunaan sebagai dasar MATCH untuk unit ini. Interpretasi tersebut dicatat agar tidak dianggap bukti pemenuhan seluruh rincian JD.",
+        "N": "v0.1"
+      }
+    },
+    {
+      "unit_no": "J1-U21",
+      "before": {
+        "A": "CV1",
+        "B": "F00022",
+        "C": "J1-U21",
+        "D": "Intermediate machine learning skills, including their real-world advantages/drawbacks",
+        "E": "MATCH",
+        "F": "done",
+        "G": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+        "H": "Projects",
+        "I": "model_draft",
+        "J": "approved",
+        "K": "edited",
+        "L": "A terbaru: importance = required; category = knowledge_area. Nilai machine learning saja, terpisah dari Matematika (J1-U04) dan Statistika (J1-U20). Cari bukti penggunaan ML dengan konteks serta pemahaman kelebihan/kekurangan penerapannya. Level intermediate tidak diukur pada v1. Label dan kutipan telah diisi reviewer. Catatan ini menjelaskan syarat, bukan menetapkan label.",
+        "M": "Reviewer mengisi label dan kutipan proyek churn setelah unit ML dipisahkan; bukan menerima label draf yang kosong. Label MATCH saat ini dipertahankan sambil menunggu diskusi pemenuhan unsur advantages/drawbacks.",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV1",
+        "B": "F00022",
+        "C": "J1-U21",
+        "D": "Intermediate machine learning skills, including their real-world advantages/drawbacks",
+        "E": "MATCH",
+        "F": "done",
+        "G": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+        "H": "Projects",
+        "I": "model_draft",
+        "J": "approved",
+        "K": "edited",
+        "L": "A terbaru: importance = required; category = knowledge_area. Nilai machine learning saja, terpisah dari Matematika (J1-U04) dan Statistika (J1-U20). Cari bukti penggunaan ML dengan konteks serta pemahaman kelebihan/kekurangan penerapannya. Level intermediate tidak diukur pada v1. Label dan kutipan telah diisi reviewer. Catatan ini menjelaskan syarat, bukan menetapkan label.",
+        "M": "Keputusan Dion: MATCH berdasarkan proyek churn dengan regresi logistik, random forest, evaluasi F1, SMOTE, dan SHAP. Reviewer mengisi bukti setelah unit ML dipisahkan. Ini penilaian bukti penggunaan ML pada v1, bukan verifikasi tingkat intermediate. Kelebihan/kekurangan metode belum dijelaskan secara eksplisit; reviewer tetap menerima bukti penerapan sebagai dasar MATCH untuk unit ini. Interpretasi tersebut dicatat agar tidak dianggap bukti pemenuhan seluruh rincian JD.",
+        "N": "v0.1"
+      }
+    }
+  ],
+  "after_sha256": "d5e17d32a939d3dfbc10814248228120ced408afccd17403c41069bac743acf2"
+}

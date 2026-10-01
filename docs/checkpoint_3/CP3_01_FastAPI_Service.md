@@ -20,6 +20,7 @@ Make the business logic callable through a consistent, tested API.
 ## 3. Planned method
 
 1. Endpoints: `/health`, `/cv/parse`, `/recommendations`, `/jobs/{job_id}`, `/jobs/paste`, `/analyze`, `/tailor` (minimal), `/market/query` (minimal), `DELETE /session`, `/feedback`.
+   `/tailor` follows the CV coach plan (D-036, [cv-coach-plan.md](../cv-coach-plan.md)) and is built only after matching is complete.
 2. Request and response schemas.
 3. Session storage with a TTL.
 4. Timeouts, error mapping, and the rate/cost guard.

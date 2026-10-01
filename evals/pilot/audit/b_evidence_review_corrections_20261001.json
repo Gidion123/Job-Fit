@@ -1,0 +1,112 @@
+{
+  "operation": "Quote and review metadata corrections; substantive labels unchanged",
+  "before_sha256": "51de75a2ee87dbb3e54e7547f2826d169044bc819e8a660ec855f8f1fe996bcf",
+  "changes": [
+    {
+      "unit_no": "J1-U04",
+      "before": {
+        "A": "CV1",
+        "B": "F00022",
+        "C": "J1-U04",
+        "D": "Intermediate mathematical skills, including their real-world advantages/drawbacks",
+        "E": "PARTIAL",
+        "F": "done",
+        "G": "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+        "H": "Education",
+        "I": "model_draft",
+        "J": "approved",
+        "K": "edited",
+        "L": "A terbaru: importance = required; category = knowledge_area. Nilai matematika saja, terpisah dari Statistika (J1-U20) dan ML (J1-U21). Cari bukti matematika dengan konteks serta pemahaman kelebihan/kekurangan penerapannya. Bukti statistika atau ML tidak otomatis membuktikan seluruh syarat matematika. Level intermediate tidak diukur pada v1. Label dan kutipan masih kosong untuk penilaian Anda.",
+        "M": "Pendidikan dan mata kuliah statistika mendukung kemampuan matematika secara tidak langsung. CV belum menjelaskan kemampuan matematika secara spesifik serta kelebihan/kekurangan penerapannya. Tingkat intermediate tidak dinilai pada v1.",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV1",
+        "B": "F00022",
+        "C": "J1-U04",
+        "D": "Intermediate mathematical skills, including their real-world advantages/drawbacks",
+        "E": "PARTIAL",
+        "F": "done",
+        "G": "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+        "H": "Education",
+        "I": "model_draft",
+        "J": "approved",
+        "K": "edited",
+        "L": "A terbaru: importance = required; category = knowledge_area. Nilai matematika saja, terpisah dari Statistika (J1-U20) dan ML (J1-U21). Cari bukti matematika dengan konteks serta pemahaman kelebihan/kekurangan penerapannya. Bukti statistika atau ML tidak otomatis membuktikan seluruh syarat matematika. Level intermediate tidak diukur pada v1. Label dan kutipan telah diisi reviewer. Catatan ini menjelaskan syarat, bukan menetapkan label.",
+        "M": "Pendidikan dan mata kuliah statistika mendukung kemampuan matematika secara tidak langsung. CV belum menjelaskan kemampuan matematika secara spesifik serta kelebihan/kekurangan penerapannya. Tingkat intermediate tidak dinilai pada v1.",
+        "N": "v0.1"
+      }
+    },
+    {
+      "unit_no": "J1-U20",
+      "before": {
+        "A": "CV1",
+        "B": "F00022",
+        "C": "J1-U20",
+        "D": "Intermediate statistical skills, including their real-world advantages/drawbacks",
+        "E": "MATCH",
+        "F": "done",
+        "G": "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.\n\nAnalisis Sentimen Ulasan Aplikasi · Oktober 2025\nMengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.\n\n",
+        "H": "Projects",
+        "I": "model_draft",
+        "J": "approved",
+        "K": "accepted",
+        "L": "A terbaru: importance = required; category = knowledge_area. Nilai statistika saja, terpisah dari Matematika (J1-U04) dan ML (J1-U21). Cari bukti penggunaan metode statistika dengan konteks serta pemahaman kelebihan/kekurangan penerapannya. Level intermediate tidak diukur pada v1. Label dan kutipan masih kosong untuk penilaian Anda.",
+        "M": "",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV1",
+        "B": "F00022",
+        "C": "J1-U20",
+        "D": "Intermediate statistical skills, including their real-world advantages/drawbacks",
+        "E": "MATCH",
+        "F": "done",
+        "G": "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+        "H": "Experience",
+        "I": "model_draft",
+        "J": "approved",
+        "K": "edited",
+        "L": "A terbaru: importance = required; category = knowledge_area. Nilai statistika saja, terpisah dari Matematika (J1-U04) dan ML (J1-U21). Cari bukti penggunaan metode statistika dengan konteks serta pemahaman kelebihan/kekurangan penerapannya. Level intermediate tidak diukur pada v1. Label dan kutipan telah diisi reviewer. Catatan ini menjelaskan syarat, bukan menetapkan label.",
+        "M": "Kutipan diganti menjadi satu kalimat persis dari pengalaman praktikum regresi. Kutipan lama menggabungkan bagian Experience dan Projects. Label MATCH saat ini dipertahankan sambil menunggu diskusi pemenuhan unsur advantages/drawbacks.",
+        "N": "v0.1"
+      }
+    },
+    {
+      "unit_no": "J1-U21",
+      "before": {
+        "A": "CV1",
+        "B": "F00022",
+        "C": "J1-U21",
+        "D": "Intermediate machine learning skills, including their real-world advantages/drawbacks",
+        "E": "MATCH",
+        "F": "done",
+        "G": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+        "H": "Projects",
+        "I": "model_draft",
+        "J": "approved",
+        "K": "accepted",
+        "L": "A terbaru: importance = required; category = knowledge_area. Nilai machine learning saja, terpisah dari Matematika (J1-U04) dan Statistika (J1-U20). Cari bukti penggunaan ML dengan konteks serta pemahaman kelebihan/kekurangan penerapannya. Level intermediate tidak diukur pada v1. Label dan kutipan masih kosong untuk penilaian Anda.",
+        "M": "",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV1",
+        "B": "F00022",
+        "C": "J1-U21",
+        "D": "Intermediate machine learning skills, including their real-world advantages/drawbacks",
+        "E": "MATCH",
+        "F": "done",
+        "G": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+        "H": "Projects",
+        "I": "model_draft",
+        "J": "approved",
+        "K": "edited",
+        "L": "A terbaru: importance = required; category = knowledge_area. Nilai machine learning saja, terpisah dari Matematika (J1-U04) dan Statistika (J1-U20). Cari bukti penggunaan ML dengan konteks serta pemahaman kelebihan/kekurangan penerapannya. Level intermediate tidak diukur pada v1. Label dan kutipan telah diisi reviewer. Catatan ini menjelaskan syarat, bukan menetapkan label.",
+        "M": "Reviewer mengisi label dan kutipan proyek churn setelah unit ML dipisahkan; bukan menerima label draf yang kosong. Label MATCH saat ini dipertahankan sambil menunggu diskusi pemenuhan unsur advantages/drawbacks.",
+        "N": "v0.1"
+      }
+    }
+  ],
+  "after_sha256": "28c33cf18460abfca86e8d9920bd5200f490a4abd6d8d5567747da6d9ea0c6b2"
+}

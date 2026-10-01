@@ -13,7 +13,7 @@
         "text": "Python or Java",
         "kind": "alternative_group",
         "importance": "required",
-        "field": "skill",
+        "field": "skill_tool",
         "source_quotes": [
           "Python or Java"
         ],
@@ -21,12 +21,12 @@
           {
             "branch_id": "g1a",
             "text": "Python",
-            "field": "skill"
+            "field": "skill_tool"
           },
           {
             "branch_id": "g1b",
             "text": "Java",
-            "field": "skill"
+            "field": "skill_tool"
           }
         ]
       },
@@ -48,7 +48,7 @@
           {
             "branch_id": "g2b",
             "text": "Equivalent experience",
-            "field": "experience"
+            "field": "experience_duration"
           }
         ]
       },
@@ -56,7 +56,7 @@
         "unit_id": "u3",
         "text": "REST API development",
         "importance": "required",
-        "field": "skill",
+        "field": "skill_tool",
         "source_quotes": [
           "REST API development"
         ]

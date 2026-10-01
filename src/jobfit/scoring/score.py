@@ -1,6 +1,10 @@
-"""Deterministic score v0 (System Design v1.3, section 8; DECISIONS D-006).
+"""Deterministic score v1 (System Design v1.3, section 8; DECISIONS D-006, D-032, D-033).
 
 Required-requirement match = (MATCH + 0.5 x PARTIAL) / required units x 100
+
+Required units with category soft_skill are counted separately and shown under the score (D-032).
+Units with category location or work_authorization never enter the score; they feed the
+constraint line (D-033).
 
 This is CV evidence coverage of the required units that were identified.
 It is not a chance of being hired and not a measure of real ability.
@@ -20,7 +24,15 @@ from jobfit.schemas.analysis import (
     UnitAssessment,
 )
 from jobfit.schemas.cv import ParseStatus
-from jobfit.schemas.requirements import Importance, JDExtraction, JDQuality, RequirementUnit, UnitKind
+from jobfit.schemas.requirements import (
+    CONSTRAINT_FIELDS,
+    SEPARATE_FIELDS,
+    Importance,
+    JDExtraction,
+    JDQuality,
+    RequirementUnit,
+    UnitKind,
+)
 
 PARTIAL_WEIGHT = 0.5  # hypothesis H-weight, audited on the development set (section 21)
 
@@ -98,6 +110,7 @@ def compute_score(
     extraction: JDExtraction,
     assessments: Iterable[UnitAssessment],
     cv_parse_status: ParseStatus = ParseStatus.OK,
+    soft_skills_in_score: bool = False,
 ) -> ScoreResult:
     """Apply the section 8 status table, in this order:
 
@@ -113,9 +126,16 @@ def compute_score(
     units, _ = merge_duplicate_units(extraction.units)
     by_id = {a.unit_id: a for a in assessments}
 
+    constraint_units = [u for u in units if u.field in CONSTRAINT_FIELDS]
+    units = [u for u in units if u.field not in CONSTRAINT_FIELDS]
+    soft_required = [u for u in units if u.field in SEPARATE_FIELDS and u.importance == Importance.REQUIRED]
+    if not soft_skills_in_score:
+        units = [u for u in units if u.field not in SEPARATE_FIELDS]
+
     required = [u for u in units if u.importance == Importance.REQUIRED]
     preferred = [u for u in units if u.importance == Importance.PREFERRED]
     unknown_total = sum(1 for u in units if u.importance == Importance.UNKNOWN)
+    soft_labels = [effective_label(u, by_id.get(u.unit_id))[0] for u in soft_required]
 
     preferred_met = sum(
         1 for u in preferred if effective_label(u, by_id.get(u.unit_id))[0] == EvidenceLabel.MATCH
@@ -125,6 +145,11 @@ def compute_score(
         "preferred_met": preferred_met,
         "preferred_total": len(preferred),
         "unknown_importance_total": unknown_total,
+        "soft_skill_total": len(soft_required),
+        "soft_skill_matched": soft_labels.count(EvidenceLabel.MATCH),
+        "soft_skill_partial": soft_labels.count(EvidenceLabel.PARTIAL),
+        "constraint_units_total": len(constraint_units),
+        "soft_skills_in_score": soft_skills_in_score,
     }
 
     if cv_parse_status == ParseStatus.FAILED:

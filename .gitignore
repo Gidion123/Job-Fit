@@ -18,6 +18,9 @@ dist/
 
 # OS and editor files
 .DS_Store
+.fuse_hidden*
+~$*
+*.backup_*.xlsx
 .vscode/
 .idea/
 
@@ -29,3 +32,4 @@ dist/
 data/raw/
 data/interim/jsearch_records.jsonl
 data/interim/snapshots/*/jsearch_records.jsonl
+

@@ -100,3 +100,38 @@ def test_overlapping_experience_not_counted_twice():
         ExperienceEntry(title="B", start=date(2025, 7, 1), end=date(2026, 6, 30)),
     ]
     assert experience_years(entries, date(2026, 9, 29)) == 1.5
+
+
+def _unit(uid, field, importance="required"):
+    return {"unit_id": uid, "text": uid, "importance": importance, "field": field, "source_quote": [uid]}
+
+
+def _pilot_like_case():
+    """Mirrors the pilot CV1 x J1 model draft: 5 technical and 9 soft-skill required units, plus a location unit."""
+    tech = [("t1", "MATCH"), ("t2", "MATCH"), ("t3", "PARTIAL"), ("t4", "MATCH"), ("t5", "MATCH")]
+    soft = [("s1", "MATCH"), ("s2", "NO_MATCH"), ("s3", "PARTIAL"), ("s4", "NO_MATCH"), ("s5", "MATCH"),
+            ("s6", "NO_MATCH"), ("s7", "PARTIAL"), ("s8", "NO_MATCH"), ("s9", "NO_MATCH")]
+    units = [_unit(u, "skill_tool") for u, _ in tech] + [_unit(u, "soft_skill") for u, _ in soft]
+    units.append(_unit("loc", "location"))
+    extraction = JDExtraction.model_validate({"job_id": "PILOT-LIKE", "units": [
+        {k: v for k, v in u.items() if k != "source_quote"} | {"source_quotes": u["source_quote"]} for u in units]})
+    labels = tech + soft + [("loc", "PARTIAL")]
+    assessments = [UnitAssessment(unit_id=u, label=lab, cv_quotes=["q"] if lab != "NO_MATCH" else []) for u, lab in labels]
+    return extraction, assessments
+
+
+def test_soft_skills_and_location_stay_out_of_the_percentage():
+    extraction, assessments = _pilot_like_case()
+    result = compute_score(extraction, assessments)
+    assert result.required_total == 5
+    assert result.score_pct == pytest.approx(90.0)
+    assert (result.soft_skill_total, result.soft_skill_matched, result.soft_skill_partial) == (9, 2, 2)
+    assert result.constraint_units_total == 1
+    assert result.soft_skill_display.startswith("Soft skills asked: 9. With evidence in the CV: 3 points")
+
+
+def test_comparison_run_with_soft_skills_in_the_score():
+    extraction, assessments = _pilot_like_case()
+    result = compute_score(extraction, assessments, soft_skills_in_score=True)
+    assert result.required_total == 14
+    assert result.score_pct == pytest.approx(53.57, abs=0.01)

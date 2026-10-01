@@ -1,0 +1,387 @@
+{
+  "operation": "Evidence-grounded ordinal relevance drafts; not arithmetic gold labels",
+  "before_sha256": "d5e17d32a939d3dfbc10814248228120ced408afccd17403c41069bac743acf2",
+  "changes": [
+    {
+      "pair": [
+        "CV1",
+        "J1"
+      ],
+      "before": {
+        "A": "CV1",
+        "B": "Data science; Indonesia (Jakarta); entry level",
+        "C": "J1",
+        "D": "F00022",
+        "E": "Jr. Data Scientist",
+        "F": "2",
+        "G": "Strong Python/SQL data work, statistics/ML projects and dashboards; intermediate trade-offs and several character requirements lack evidence.",
+        "H": "Experience is ambiguous: 1-2 years versus fresh graduates welcome; no hard experience conflict assigned.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "",
+        "M": "",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV1",
+        "B": "Data science; Indonesia (Jakarta); entry level",
+        "C": "J1",
+        "D": "F00022",
+        "E": "Jr. Data Scientist",
+        "F": 3,
+        "G": "Label B approved mendukung Python, SQL, dataset, visualisasi, Statistika, dan ML; matematika PARTIAL. Mayoritas syarat teknis didukung tanpa konflik eksplisit yang terbukti.",
+        "H": "Pengalaman 1–2 tahun berimportance unknown karena fresh graduate juga diterima. Durasi internship 4 bulan tidak dijadikan penolakan otomatis.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "Penilaian ordinal menurut guideline v1.1 Part D (automatic mode, D-037), bukan konversi match %. Sumber: B_Evidence CV1/F00022; A J1-U01/U02/U03/U04/U05/U09/U20/U21. Ketidakpastian durasi tidak dipakai sebagai konflik pasti; soft skill dan lokasi tidak menurunkan skor sendiri. Nilai ini draf AI, belum gold manusia.",
+        "M": "",
+        "N": "v1.1"
+      }
+    },
+    {
+      "pair": [
+        "CV1",
+        "J2"
+      ],
+      "before": {
+        "A": "CV1",
+        "B": "Data science; Indonesia (Jakarta); entry level",
+        "C": "J2",
+        "D": "F00073",
+        "E": "AI Developer",
+        "F": "0",
+        "G": "AI engineering is outside the stated Data Science target; CV also lacks the named DL frameworks, cloud and computer vision evidence.",
+        "H": "Bandung commute/relocation unconfirmed; do not infer willingness. Education equivalence not stated.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "",
+        "M": "",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV1",
+        "B": "Data science; Indonesia (Jakarta); entry level",
+        "C": "J2",
+        "D": "F00073",
+        "E": "AI Developer",
+        "F": 2,
+        "G": "Python, penggunaan ML dan NLP, serta tingkat S1 didukung CV; gap terdapat pada bidang pendidikan CS/IT, framework yang dinamai, cloud, Computer Vision, dan bukti durasi AI Developer.",
+        "H": "S1 Statistika bukan bidang CS/IT yang disebut. Minimum 1 tahun AI Developer required belum terbukti; tidak menyimpulkan durasi total dari satu tanggal. Syarat 3 tahun khusus senior; commute belum dikonfirmasi.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "Penilaian ordinal menurut guideline v1.1 Part D (automatic mode, D-037), bukan konversi match %. Sumber: CV1: Python/SQL internship, churn, TF-IDF/Naive Bayes, S1 Statistika; A J2. Ketidakpastian durasi tidak dipakai sebagai konflik pasti; soft skill dan lokasi tidak menurunkan skor sendiri. Nilai ini draf AI, belum gold manusia.",
+        "M": "",
+        "N": "v1.1"
+      }
+    },
+    {
+      "pair": [
+        "CV1",
+        "J3"
+      ],
+      "before": {
+        "A": "CV1",
+        "B": "Data science; Indonesia (Jakarta); entry level",
+        "C": "J3",
+        "D": "F00034",
+        "E": "AI Engineer",
+        "F": "0",
+        "G": "AI Engineer is outside the stated Data Science target; no demonstrated LLM engineering and under two years relevant engineering.",
+        "H": "Explicit 2-year relevant engineering minimum is not supported; do not count all student time as employment.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "",
+        "M": "",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV1",
+        "B": "Data science; Indonesia (Jakarta); entry level",
+        "C": "J3",
+        "D": "F00034",
+        "E": "AI Engineer",
+        "F": 2,
+        "G": "Python dan scikit-learn digunakan pada proyek ML; latar Statistika terkait data science. Pengalaman LLM tidak ditemukan dan minimum 2 tahun di role AI/ML belum terbukti.",
+        "H": "Durasi pengalaman di role AI/ML tidak lengkap; tidak menganggap masa kuliah sebagai pengalaman kerja. Statistika sebagai related field masih perlu interpretasi reviewer. Lokasi CV bukan konfirmasi kesiapan kerja.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "Penilaian ordinal menurut guideline v1.1 Part D (automatic mode, D-037), bukan konversi match %. Sumber: CV1: S1 Statistika, internship, churn/scikit-learn; A J3-U01/U02/U03/U04/U05. Ketidakpastian durasi tidak dipakai sebagai konflik pasti; soft skill dan lokasi tidak menurunkan skor sendiri. Nilai ini draf AI, belum gold manusia.",
+        "M": "",
+        "N": "v1.1"
+      }
+    },
+    {
+      "pair": [
+        "CV1",
+        "J4"
+      ],
+      "before": {
+        "A": "CV1",
+        "B": "Data science; Indonesia (Jakarta); entry level",
+        "C": "J4",
+        "D": "F00016",
+        "E": "Artificial Intelligence Engineer",
+        "F": "0",
+        "G": "Production AI engineering is outside the stated Data Science target, with missing LLM/deployment evidence.",
+        "H": "2-5 years building software or AI/ML applications not established; academic dates are incomplete.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "",
+        "M": "",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV1",
+        "B": "Data science; Indonesia (Jakarta); entry level",
+        "C": "J4",
+        "D": "F00016",
+        "E": "Artificial Intelligence Engineer",
+        "F": 1,
+        "G": "Python, konsep ML, SQL, dan NLP didukung sebagian, tetapi bukti LLM/framework LLM, Computer Vision, recommendation systems, GenAI, Docker, REST API, CI/CD, dan NoSQL tidak ditemukan.",
+        "H": "Minimum 2 tahun membangun software/AI belum dibuktikan rentang aktivitas yang jelas. Statistika mungkin terkait bidang yang diterima; jangan menyatakan pendidikan pasti konflik. Kekurangan bukti teknis yang luas mendasari skor 1.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "Penilaian ordinal menurut guideline v1.1 Part D (automatic mode, D-037), bukan konversi match %. Sumber: CV1 dan seluruh A J4; gunakan empat area terpisah sesuai D-040. Ketidakpastian durasi tidak dipakai sebagai konflik pasti; soft skill dan lokasi tidak menurunkan skor sendiri. Nilai ini draf AI, belum gold manusia.",
+        "M": "",
+        "N": "v1.1"
+      }
+    },
+    {
+      "pair": [
+        "CV1",
+        "J5"
+      ],
+      "before": {
+        "A": "CV1",
+        "B": "Data science; Indonesia (Jakarta); entry level",
+        "C": "J5",
+        "D": "F00114",
+        "E": "AI Engineer (AI Agent & RAG)",
+        "F": "0",
+        "G": "Agent/RAG engineering is outside the stated Data Science target and key production requirements lack evidence.",
+        "H": "5+ engineering years and 2+ production LLM years are not supported; legacy not_stated is incorrect.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "",
+        "M": "",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV1",
+        "B": "Data science; Indonesia (Jakarta); entry level",
+        "C": "J5",
+        "D": "F00114",
+        "E": "AI Engineer (AI Agent & RAG)",
+        "F": 0,
+        "G": "Hampir tidak ada dukungan untuk inti production agent/RAG: bukti Python umum ada, tetapi FastAPI, agent framework, tool calling, production RAG, vector DB, evaluasi LLM, dan keamanan LLM tidak ditemukan.",
+        "H": "5+ tahun engineer dan 2+ tahun production LLM tidak terbukti. Nilai 0 didasarkan pada minim bukti inti, bukan karena GenAI berbeda dari preferensi Data Science CV.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "Penilaian ordinal menurut guideline v1.1 Part D (automatic mode, D-037), bukan konversi match %. Sumber: CV1 lengkap dibandingkan Requirements J5; A/B J5 belum tersedia. Ketidakpastian durasi tidak dipakai sebagai konflik pasti; soft skill dan lokasi tidak menurunkan skor sendiri. Nilai ini draf AI, belum gold manusia.",
+        "M": "",
+        "N": "v1.1"
+      }
+    },
+    {
+      "pair": [
+        "CV2",
+        "J1"
+      ],
+      "before": {
+        "A": "CV2",
+        "B": "AI/ML engineering or GenAI; Indonesia; entry or 1-2 years",
+        "C": "J1",
+        "D": "F00022",
+        "E": "Jr. Data Scientist",
+        "F": "0",
+        "G": "Dedicated Data Science role is outside the stated AI/ML engineering or GenAI target, despite useful Python/SQL and ML evidence.",
+        "H": "Strict target interpretation; if DS is an accepted adjacent role, review separately rather than silently widening the target.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "",
+        "M": "",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV2",
+        "B": "AI/ML engineering or GenAI; Indonesia; entry or 1-2 years",
+        "C": "J1",
+        "D": "F00022",
+        "E": "Jr. Data Scientist",
+        "F": 2,
+        "G": "Penggunaan Python/SQL, analisis data, forecasting, dan klasifikasi ML mendukung beberapa syarat utama; matematika tidak eksplisit, visualisasi hanya tercantum pada Skills, dan bukti rincian metode terbatas.",
+        "H": "Pengalaman DS 1–2 tahun ambigu karena fresh graduate diterima. Marketing analytics tidak otomatis sama dengan seluruh syarat DS. Tidak memberi nilai 0 hanya karena preferensi CV AI/ML.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "Penilaian ordinal menurut guideline v1.1 Part D (automatic mode, D-037), bukan konversi match %. Sumber: CV2: Python automation, BigQuery, A/B tests, Prophet, classifier, Skills; A J1. Ketidakpastian durasi tidak dipakai sebagai konflik pasti; soft skill dan lokasi tidak menurunkan skor sendiri. Nilai ini draf AI, belum gold manusia.",
+        "M": "",
+        "N": "v1.1"
+      }
+    },
+    {
+      "pair": [
+        "CV2",
+        "J2"
+      ],
+      "before": {
+        "A": "CV2",
+        "B": "AI/ML engineering or GenAI; Indonesia; entry or 1-2 years",
+        "C": "J2",
+        "D": "F00073",
+        "E": "AI Developer",
+        "F": "1",
+        "G": "AI target and Python/ML/NLP evidence fit partly, but the explicit CS/IT/Computer Engineering degree field is unsupported and vision/framework gaps remain.",
+        "H": "Communication degree conflicts with listed fields; senior experience is conditional/ambiguous, not a universal 3-year gate; commute unknown.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "",
+        "M": "",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV2",
+        "B": "AI/ML engineering or GenAI; Indonesia; entry or 1-2 years",
+        "C": "J2",
+        "D": "F00073",
+        "E": "AI Developer",
+        "F": 2,
+        "G": "B approved menunjukkan MATCH untuk ML, NLP, Python, dan tingkat S1; PARTIAL untuk cloud dan pengalaman AI. Gap utama: bidang pendidikan CS/IT, framework yang dinamai, dan Computer Vision.",
+        "H": "Gelar Komunikasi tidak memenuhi bidang CS/IT yang disebut, walaupun tingkat S1 MATCH. Minimum 1 tahun AI required belum terbukti; senior 3 tahun conditional/unknown. Commute needs_clarification. Tidak menganggap gap bukti durasi sebagai konflik durasi pasti.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "Penilaian ordinal menurut guideline v1.1 Part D (automatic mode, D-037), bukan konversi match %. Sumber: B_Evidence CV2/F00073; A J2; keputusan Dion J2-U08/U12. Ketidakpastian durasi tidak dipakai sebagai konflik pasti; soft skill dan lokasi tidak menurunkan skor sendiri. Nilai ini draf AI, belum gold manusia.",
+        "M": "",
+        "N": "v1.1"
+      }
+    },
+    {
+      "pair": [
+        "CV2",
+        "J3"
+      ],
+      "before": {
+        "A": "CV2",
+        "B": "AI/ML engineering or GenAI; Indonesia; entry or 1-2 years",
+        "C": "J3",
+        "D": "F00034",
+        "E": "AI Engineer",
+        "F": "1",
+        "G": "Relevant Python/RAG/LLM projects, but recent projects do not establish two years as an AI/ML engineer.",
+        "H": "2-year relevant role minimum unmet on supplied history; Communication degree equivalence is not established.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "",
+        "M": "",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV2",
+        "B": "AI/ML engineering or GenAI; Indonesia; entry or 1-2 years",
+        "C": "J3",
+        "D": "F00034",
+        "E": "AI Engineer",
+        "F": 2,
+        "G": "Python, proyek transformer/LLM, LangChain/RAG, FastAPI, dan Docker relevan; framework yang dinamai dan minimal 2 tahun role AI/ML belum didukung, bidang gelar formal juga tidak jelas memenuhi JD.",
+        "H": "Bootcamp bukan bukti gelar S1 di bidang terkait. Durasi AI/ML belum dibuktikan rentang lengkap; proyek 2025 tidak otomatis dihitung satu tahun. Lokasi Bandung tidak otomatis menjadi konflik dengan Jakarta tanpa konfirmasi user.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "Penilaian ordinal menurut guideline v1.1 Part D (automatic mode, D-037), bukan konversi match %. Sumber: CV2 lengkap; A J3; sertifikat/kursus tidak dianggap pengalaman kerja. Ketidakpastian durasi tidak dipakai sebagai konflik pasti; soft skill dan lokasi tidak menurunkan skor sendiri. Nilai ini draf AI, belum gold manusia.",
+        "M": "",
+        "N": "v1.1"
+      }
+    },
+    {
+      "pair": [
+        "CV2",
+        "J4"
+      ],
+      "before": {
+        "A": "CV2",
+        "B": "AI/ML engineering or GenAI; Indonesia; entry or 1-2 years",
+        "C": "J4",
+        "D": "F00016",
+        "E": "Artificial Intelligence Engineer",
+        "F": "1",
+        "G": "LangChain, FastAPI, Docker and ML projects fit parts of the role, but production breadth and required degree-field evidence are weak.",
+        "H": "Marketing Python automation does not automatically prove 2-5 years building software/AI applications; related degree not established.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "",
+        "M": "",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV2",
+        "B": "AI/ML engineering or GenAI; Indonesia; entry or 1-2 years",
+        "C": "J4",
+        "D": "F00016",
+        "E": "Artificial Intelligence Engineer",
+        "F": 2,
+        "G": "Python, ML/NLP, LLM/LangChain, FastAPI, Docker, dan SQL didukung; Git hanya Skills. Gap: Computer Vision, recommendation systems, framework yang dinamai, CI/CD, NoSQL, serta bukti durasi dan bidang pendidikan.",
+        "H": "Marketing Python automation dapat relevan sebagian tetapi tidak otomatis memenuhi 2–5 tahun software/AI. Gelar Komunikasi belum terbukti sebagai related field. Tidak mengubah absennya bukti menjadi konflik durasi pasti.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "Penilaian ordinal menurut guideline v1.1 Part D (automatic mode, D-037), bukan konversi match %. Sumber: CV2 lengkap dan A J4; D-040 empat area terpisah. Ketidakpastian durasi tidak dipakai sebagai konflik pasti; soft skill dan lokasi tidak menurunkan skor sendiri. Nilai ini draf AI, belum gold manusia.",
+        "M": "",
+        "N": "v1.1"
+      }
+    },
+    {
+      "pair": [
+        "CV2",
+        "J5"
+      ],
+      "before": {
+        "A": "CV2",
+        "B": "AI/ML engineering or GenAI; Indonesia; entry or 1-2 years",
+        "C": "J5",
+        "D": "F00114",
+        "E": "AI Engineer (AI Agent & RAG)",
+        "F": "1",
+        "G": "RAG/FastAPI/FAISS prototype experience is relevant, but agent tools, production RAG and senior engineering scope are unsupported.",
+        "H": "5+ engineering years and 2+ production LLM years are not met by recent prototypes; marketing tenure is not engineering tenure.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "",
+        "M": "",
+        "N": "v0.1"
+      },
+      "after": {
+        "A": "CV2",
+        "B": "AI/ML engineering or GenAI; Indonesia; entry or 1-2 years",
+        "C": "J5",
+        "D": "F00114",
+        "E": "AI Engineer (AI Agent & RAG)",
+        "F": 1,
+        "G": "Prototipe RAG, FastAPI, LangChain, FAISS, dan evaluasi 30 pertanyaan relevan; belum ada bukti production RAG, tool/function calling, operasi LLM aman, atau pengalaman engineer sesuai level senior.",
+        "H": "CV tidak membuktikan 5+ tahun engineer atau 2+ tahun shipping production LLM. Prototipe yang dideploy belum otomatis production. Tanggal proyek tidak cukup untuk menghitung durasi pasti.",
+        "I": "model_draft",
+        "J": "pending",
+        "K": "",
+        "L": "Penilaian ordinal menurut guideline v1.1 Part D (automatic mode, D-037), bukan konversi match %. Sumber: CV2 RAG/classifier/Skills; Requirements J5; A/B J5 belum tersedia. Ketidakpastian durasi tidak dipakai sebagai konflik pasti; soft skill dan lokasi tidak menurunkan skor sendiri. Nilai ini draf AI, belum gold manusia.",
+        "M": "",
+        "N": "v1.1"
+      }
+    }
+  ],
+  "after_sha256": "2339332d0b9812c83dbbe9dbe97ed062c2450822ec7d27dcce30595d07a8eba9"
+}

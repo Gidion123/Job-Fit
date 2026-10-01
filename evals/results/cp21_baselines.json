@@ -1,0 +1,1173 @@
+{
+  "date": "2026-10-01",
+  "snapshot_id": "CP1_20260926",
+  "pool": "role_group = target",
+  "top_k": 20,
+  "methods": {
+    "B0": "skill overlap, skills_v0",
+    "B1": "PostgreSQL FTS, simple config, ts_rank_cd"
+  },
+  "cvs": {
+    "CV1": {
+      "cv_skills_v0": [
+        "excel",
+        "git",
+        "looker",
+        "machine_learning",
+        "pandas_numpy",
+        "postgresql",
+        "python",
+        "r",
+        "scikit_learn",
+        "sql"
+      ],
+      "B0_top": [
+        {
+          "job_id": "F00520",
+          "score": 1.0,
+          "matched": [
+            "machine_learning",
+            "python",
+            "sql"
+          ],
+          "job_skill_count": 3,
+          "title": "Data Science & AI Internship"
+        },
+        {
+          "job_id": "F00686",
+          "score": 1.0,
+          "matched": [
+            "machine_learning",
+            "python",
+            "sql"
+          ],
+          "job_skill_count": 3,
+          "title": "Data Scientist, Payments"
+        },
+        {
+          "job_id": "F00127",
+          "score": 1.0,
+          "matched": [
+            "excel",
+            "python"
+          ],
+          "job_skill_count": 2,
+          "title": "Data Scientist / Data Analyst (Network Operation Team)"
+        },
+        {
+          "job_id": "F00930",
+          "score": 1.0,
+          "matched": [
+            "python",
+            "r"
+          ],
+          "job_skill_count": 2,
+          "title": "Junior AI​/ML Engineer Federal Data Solutions"
+        },
+        {
+          "job_id": "F00178",
+          "score": 1.0,
+          "matched": [
+            "sql"
+          ],
+          "job_skill_count": 1,
+          "title": "AI Developer (Using n8n) - WFO Karawaci Tangerang"
+        },
+        {
+          "job_id": "F00330",
+          "score": 1.0,
+          "matched": [
+            "git"
+          ],
+          "job_skill_count": 1,
+          "title": "Senior Applied AI Specialist"
+        },
+        {
+          "job_id": "F00438",
+          "score": 1.0,
+          "matched": [
+            "excel"
+          ],
+          "job_skill_count": 1,
+          "title": "Business Process & AI Automation Specialist"
+        },
+        {
+          "job_id": "F00549",
+          "score": 1.0,
+          "matched": [
+            "machine_learning"
+          ],
+          "job_skill_count": 1,
+          "title": "AI/ML Engineer"
+        },
+        {
+          "job_id": "F00348",
+          "score": 0.8333,
+          "matched": [
+            "excel",
+            "machine_learning",
+            "python",
+            "r",
+            "sql"
+          ],
+          "job_skill_count": 6,
+          "title": "2027 Future Talent Program - Medical Data Scientist - Intern"
+        },
+        {
+          "job_id": "F00505",
+          "score": 0.8,
+          "matched": [
+            "machine_learning",
+            "python",
+            "r",
+            "sql"
+          ],
+          "job_skill_count": 5,
+          "title": "Lead Data Scientist - Mining Sector (SaaS)"
+        },
+        {
+          "job_id": "F00517",
+          "score": 0.8,
+          "matched": [
+            "machine_learning",
+            "python",
+            "r",
+            "sql"
+          ],
+          "job_skill_count": 5,
+          "title": "Head of Data Science"
+        },
+        {
+          "job_id": "F00332",
+          "score": 0.75,
+          "matched": [
+            "excel",
+            "python",
+            "sql"
+          ],
+          "job_skill_count": 4,
+          "title": "Data Scientist - Risk Analytics & Modelling"
+        },
+        {
+          "job_id": "F00601",
+          "score": 0.6667,
+          "matched": [
+            "git",
+            "machine_learning",
+            "pandas_numpy",
+            "python",
+            "scikit_learn",
+            "sql"
+          ],
+          "job_skill_count": 9,
+          "title": "Data Scientist (Based in / Relocation to Bali)"
+        },
+        {
+          "job_id": "F00022",
+          "score": 0.6667,
+          "matched": [
+            "looker",
+            "machine_learning",
+            "python",
+            "sql"
+          ],
+          "job_skill_count": 6,
+          "title": "Jr. Data Scientist"
+        },
+        {
+          "job_id": "F00188",
+          "score": 0.6667,
+          "matched": [
+            "excel",
+            "machine_learning",
+            "python",
+            "r"
+          ],
+          "job_skill_count": 6,
+          "title": "Junior Data Scientist"
+        },
+        {
+          "job_id": "F00316",
+          "score": 0.6667,
+          "matched": [
+            "machine_learning",
+            "pandas_numpy",
+            "python",
+            "scikit_learn"
+          ],
+          "job_skill_count": 6,
+          "title": "AP Data Scientist - Financial Crime"
+        },
+        {
+          "job_id": "F00515",
+          "score": 0.6667,
+          "matched": [
+            "machine_learning",
+            "python",
+            "r",
+            "sql"
+          ],
+          "job_skill_count": 6,
+          "title": "Demand Planning Data Scientist"
+        },
+        {
+          "job_id": "F00693",
+          "score": 0.6667,
+          "matched": [
+            "excel",
+            "machine_learning",
+            "python",
+            "sql"
+          ],
+          "job_skill_count": 6,
+          "title": "Junior Data Scientist/data Engineer/Analyst - Junior (Remote)"
+        },
+        {
+          "job_id": "F00806",
+          "score": 0.6667,
+          "matched": [
+            "git",
+            "machine_learning",
+            "python",
+            "sql"
+          ],
+          "job_skill_count": 6,
+          "title": "AI Engineer (Hybrid)"
+        },
+        {
+          "job_id": "F00850",
+          "score": 0.6667,
+          "matched": [
+            "git",
+            "machine_learning",
+            "python",
+            "sql"
+          ],
+          "job_skill_count": 6,
+          "title": "Junior Machine Learning Engineer-remote"
+        }
+      ],
+      "B1_top": [
+        {
+          "job_id": "F00556",
+          "score": 8.2,
+          "title": "Machine Learning Engineer, Intern - MoneyLion"
+        },
+        {
+          "job_id": "F00813",
+          "score": 6.6,
+          "title": "Senior Data Scientist / Machine Learning Engineer"
+        },
+        {
+          "job_id": "F00557",
+          "score": 6.2,
+          "title": "Machine Learning Operation Analyst"
+        },
+        {
+          "job_id": "F00655",
+          "score": 6.2,
+          "title": "Machine Learning Engineer"
+        },
+        {
+          "job_id": "F00208",
+          "score": 5.8,
+          "title": "Principal AI & Machine Learning Engineer - U.S. Based Hybrid Opportunity"
+        },
+        {
+          "job_id": "F00090",
+          "score": 5.4,
+          "title": "Backend Engineer (Python & AI Integration)"
+        },
+        {
+          "job_id": "F00206",
+          "score": 5.4,
+          "title": "Open-Source Machine Learning Engineer - US Remote"
+        },
+        {
+          "job_id": "F00212",
+          "score": 5.4,
+          "title": "Machine Learning Engineer"
+        },
+        {
+          "job_id": "F00366",
+          "score": 5.4,
+          "title": "Data Science Engineer (AI / Machine Learning)"
+        },
+        {
+          "job_id": "F00369",
+          "score": 5.4,
+          "title": "Machine Learning Engineer Classical ML and Predictive Analytics"
+        },
+        {
+          "job_id": "F00374",
+          "score": 5.4,
+          "title": "Machine Learning Engineering"
+        },
+        {
+          "job_id": "F00654",
+          "score": 5.4,
+          "title": "Machine Learning Engineer | Manila"
+        },
+        {
+          "job_id": "F00310",
+          "score": 5.2,
+          "title": "Enterprise Data Scientist"
+        },
+        {
+          "job_id": "F00354",
+          "score": 5.0,
+          "title": "Intern (TGI - Machine Learning/ AI Engineering)"
+        },
+        {
+          "job_id": "F00313",
+          "score": 4.8,
+          "title": "Head of Marketplace Data Science - CONFIDENTIAL HIRE"
+        },
+        {
+          "job_id": "F00207",
+          "score": 4.6,
+          "title": "Senior Machine Learning Engineer (Remote)"
+        },
+        {
+          "job_id": "F00358",
+          "score": 4.6,
+          "title": "Machine Learning Engineer - Risk Data Experienced (Individual Contributor) Singapore Data Science"
+        },
+        {
+          "job_id": "F00555",
+          "score": 4.6,
+          "title": "Algorithm / Machine Learning Engineer (Junior to Senior)"
+        },
+        {
+          "job_id": "F00656",
+          "score": 4.6,
+          "title": "Machine Learning (ML) Operations Engineer"
+        },
+        {
+          "job_id": "F00851",
+          "score": 4.6,
+          "title": "Senior Machine Learning Engineer - Remote - USA"
+        }
+      ],
+      "B1_matching_jobs": 373,
+      "overlap_at_10": 0,
+      "pilot_job_ranks": {
+        "J1": {
+          "job_id": "F00022",
+          "B0": 14,
+          "B1": 75
+        },
+        "J2": {
+          "job_id": "F00073",
+          "B0": 293,
+          "B1": 275
+        },
+        "J3": {
+          "job_id": "F00034",
+          "B0": 265,
+          "B1": 105
+        },
+        "J4": {
+          "job_id": "F00016",
+          "B0": 238,
+          "B1": 103
+        },
+        "J5": {
+          "job_id": "F00114",
+          "B0": 315,
+          "B1": 278
+        }
+      }
+    },
+    "CV2": {
+      "cv_skills_v0": [
+        "aws",
+        "bigquery",
+        "deep_learning",
+        "docker",
+        "embeddings",
+        "excel",
+        "fastapi_flask_django",
+        "git",
+        "huggingface_transformers",
+        "langchain",
+        "llm",
+        "looker",
+        "machine_learning",
+        "mlops",
+        "openai_api",
+        "pandas_numpy",
+        "postgresql",
+        "prompt_engineering",
+        "python",
+        "rag",
+        "scikit_learn",
+        "sql",
+        "vector_database"
+      ],
+      "B0_top": [
+        {
+          "job_id": "F00205",
+          "score": 1.0,
+          "matched": [
+            "llm",
+            "machine_learning",
+            "mlops"
+          ],
+          "job_skill_count": 3,
+          "title": "Machine Learning Engineer - Fully Remote | Upto $85/hr"
+        },
+        {
+          "job_id": "F00364",
+          "score": 1.0,
+          "matched": [
+            "deep_learning",
+            "machine_learning",
+            "mlops"
+          ],
+          "job_skill_count": 3,
+          "title": "AI/ML Engineer (Industrial / Manufacturing) - Semiconductor"
+        },
+        {
+          "job_id": "F00520",
+          "score": 1.0,
+          "matched": [
+            "machine_learning",
+            "python",
+            "sql"
+          ],
+          "job_skill_count": 3,
+          "title": "Data Science & AI Internship"
+        },
+        {
+          "job_id": "F00686",
+          "score": 1.0,
+          "matched": [
+            "machine_learning",
+            "python",
+            "sql"
+          ],
+          "job_skill_count": 3,
+          "title": "Data Scientist, Payments"
+        },
+        {
+          "job_id": "F00797",
+          "score": 1.0,
+          "matched": [
+            "llm",
+            "python",
+            "rag"
+          ],
+          "job_skill_count": 3,
+          "title": "Research Engineer (LLM for Construction Safety)"
+        },
+        {
+          "job_id": "F00127",
+          "score": 1.0,
+          "matched": [
+            "excel",
+            "python"
+          ],
+          "job_skill_count": 2,
+          "title": "Data Scientist / Data Analyst (Network Operation Team)"
+        },
+        {
+          "job_id": "F00213",
+          "score": 1.0,
+          "matched": [
+            "llm",
+            "machine_learning"
+          ],
+          "job_skill_count": 2,
+          "title": "Lead Artificial Intelligence/Machine Learning Engineer"
+        },
+        {
+          "job_id": "F00444",
+          "score": 1.0,
+          "matched": [
+            "llm",
+            "rag"
+          ],
+          "job_skill_count": 2,
+          "title": "Artificial Intelligence Transformation Lead - Business Intelligence"
+        },
+        {
+          "job_id": "F00809",
+          "score": 1.0,
+          "matched": [
+            "machine_learning",
+            "mlops"
+          ],
+          "job_skill_count": 2,
+          "title": "Senior ML OPs Engineer"
+        },
+        {
+          "job_id": "F00178",
+          "score": 1.0,
+          "matched": [
+            "sql"
+          ],
+          "job_skill_count": 1,
+          "title": "AI Developer (Using n8n) - WFO Karawaci Tangerang"
+        },
+        {
+          "job_id": "F00330",
+          "score": 1.0,
+          "matched": [
+            "git"
+          ],
+          "job_skill_count": 1,
+          "title": "Senior Applied AI Specialist"
+        },
+        {
+          "job_id": "F00421",
+          "score": 1.0,
+          "matched": [
+            "llm"
+          ],
+          "job_skill_count": 1,
+          "title": "AI Systems & Automation Engineer"
+        },
+        {
+          "job_id": "F00438",
+          "score": 1.0,
+          "matched": [
+            "excel"
+          ],
+          "job_skill_count": 1,
+          "title": "Business Process & AI Automation Specialist"
+        },
+        {
+          "job_id": "F00549",
+          "score": 1.0,
+          "matched": [
+            "machine_learning"
+          ],
+          "job_skill_count": 1,
+          "title": "AI/ML Engineer"
+        },
+        {
+          "job_id": "F00019",
+          "score": 0.8889,
+          "matched": [
+            "embeddings",
+            "git",
+            "langchain",
+            "llm",
+            "prompt_engineering",
+            "python",
+            "rag",
+            "sql"
+          ],
+          "job_skill_count": 9,
+          "title": "Junior Data Scientist"
+        },
+        {
+          "job_id": "F00074",
+          "score": 0.8333,
+          "matched": [
+            "docker",
+            "embeddings",
+            "fastapi_flask_django",
+            "git",
+            "llm",
+            "openai_api",
+            "postgresql",
+            "python",
+            "rag",
+            "vector_database"
+          ],
+          "job_skill_count": 12,
+          "title": "AI Application Engineer (LLM, RAG & Agentic Systems)"
+        },
+        {
+          "job_id": "F00066",
+          "score": 0.8333,
+          "matched": [
+            "fastapi_flask_django",
+            "git",
+            "llm",
+            "openai_api",
+            "python"
+          ],
+          "job_skill_count": 6,
+          "title": "Artificial Intelligence Developer"
+        },
+        {
+          "job_id": "F00316",
+          "score": 0.8333,
+          "matched": [
+            "deep_learning",
+            "machine_learning",
+            "pandas_numpy",
+            "python",
+            "scikit_learn"
+          ],
+          "job_skill_count": 6,
+          "title": "AP Data Scientist - Financial Crime"
+        },
+        {
+          "job_id": "F00666",
+          "score": 0.8333,
+          "matched": [
+            "llm",
+            "machine_learning",
+            "python",
+            "rag",
+            "sql"
+          ],
+          "job_skill_count": 6,
+          "title": "Senior Machine Learning Engineer"
+        },
+        {
+          "job_id": "F00730",
+          "score": 0.8333,
+          "matched": [
+            "excel",
+            "langchain",
+            "llm",
+            "openai_api",
+            "python"
+          ],
+          "job_skill_count": 6,
+          "title": "AI Engineer (Malaysian only!)"
+        }
+      ],
+      "B1_top": [
+        {
+          "job_id": "F00798",
+          "score": 28.4,
+          "title": "GenAI Application Engineer (LLM / RAG / Agentic AI)"
+        },
+        {
+          "job_id": "F00698",
+          "score": 17.6,
+          "title": "[Remote] Gen AI Engineer - Wilmington, DE, Fairfax, VA, Washington, DC, Silver Spring, MD, Philadelphia, PA"
+        },
+        {
+          "job_id": "F00290",
+          "score": 16.0,
+          "title": "AI Engineer Jr/Sr (MALAYSIAN)"
+        },
+        {
+          "job_id": "F00018",
+          "score": 14.8,
+          "title": "Lowongan Kerja Senior ML Engineer LLMs, AWS"
+        },
+        {
+          "job_id": "F00071",
+          "score": 14.0,
+          "title": "AI Engineer - DX Orchestration & Intelligence"
+        },
+        {
+          "job_id": "F00535",
+          "score": 14.0,
+          "title": "Data Scientist, Platform AI Squad, Group Data Office (AVP/VP)"
+        },
+        {
+          "job_id": "F00624",
+          "score": 14.0,
+          "title": "Generative AI Engineer"
+        },
+        {
+          "job_id": "F00650",
+          "score": 12.2,
+          "title": "Senior AI/LLM Engineer (Python) - Remote"
+        },
+        {
+          "job_id": "F00651",
+          "score": 11.8,
+          "title": "AI Engineer - LLM & AI Agent"
+        },
+        {
+          "job_id": "F00310",
+          "score": 11.2,
+          "title": "Enterprise Data Scientist"
+        },
+        {
+          "job_id": "F00680",
+          "score": 11.2,
+          "title": "[Remote] AI Engineer III"
+        },
+        {
+          "job_id": "F00074",
+          "score": 10.8,
+          "title": "AI Application Engineer (LLM, RAG & Agentic Systems)"
+        },
+        {
+          "job_id": "F00420",
+          "score": 10.8,
+          "title": "Senior LLM Engineer / LLM Architect"
+        },
+        {
+          "job_id": "F00815",
+          "score": 10.8,
+          "title": "Artificial Intelligence Engineer"
+        },
+        {
+          "job_id": "F00208",
+          "score": 10.6,
+          "title": "Principal AI & Machine Learning Engineer - U.S. Based Hybrid Opportunity"
+        },
+        {
+          "job_id": "F00303",
+          "score": 10.4,
+          "title": "AI / LLM Engineer – RAG & Agentic AI"
+        },
+        {
+          "job_id": "F00556",
+          "score": 10.2,
+          "title": "Machine Learning Engineer, Intern - MoneyLion"
+        },
+        {
+          "job_id": "F00682",
+          "score": 10.0,
+          "title": "AI Engineer - Remote"
+        },
+        {
+          "job_id": "F00206",
+          "score": 9.8,
+          "title": "Open-Source Machine Learning Engineer - US Remote"
+        },
+        {
+          "job_id": "F00052",
+          "score": 9.2,
+          "title": "AI Developer"
+        }
+      ],
+      "B1_matching_jobs": 392,
+      "overlap_at_10": 0,
+      "pilot_job_ranks": {
+        "J1": {
+          "job_id": "F00022",
+          "B0": 77,
+          "B1": 208
+        },
+        "J2": {
+          "job_id": "F00073",
+          "B0": 345,
+          "B1": 302
+        },
+        "J3": {
+          "job_id": "F00034",
+          "B0": 149,
+          "B1": 61
+        },
+        "J4": {
+          "job_id": "F00016",
+          "B0": 306,
+          "B1": 107
+        },
+        "J5": {
+          "job_id": "F00114",
+          "B0": 61,
+          "B1": 21
+        }
+      }
+    },
+    "CV3": {
+      "cv_skills_v0": [
+        "airflow",
+        "aws",
+        "docker",
+        "embeddings",
+        "fastapi_flask_django",
+        "git",
+        "gradient_boosting",
+        "linux",
+        "machine_learning",
+        "mlflow_kubeflow",
+        "postgresql",
+        "python",
+        "pytorch",
+        "rest_api",
+        "scikit_learn",
+        "sql",
+        "vector_database"
+      ],
+      "B0_top": [
+        {
+          "job_id": "F00520",
+          "score": 1.0,
+          "matched": [
+            "machine_learning",
+            "python",
+            "sql"
+          ],
+          "job_skill_count": 3,
+          "title": "Data Science & AI Internship"
+        },
+        {
+          "job_id": "F00573",
+          "score": 1.0,
+          "matched": [
+            "fastapi_flask_django",
+            "python",
+            "rest_api"
+          ],
+          "job_skill_count": 3,
+          "title": "Senior Backend Engineer (Python) - AI image"
+        },
+        {
+          "job_id": "F00686",
+          "score": 1.0,
+          "matched": [
+            "machine_learning",
+            "python",
+            "sql"
+          ],
+          "job_skill_count": 3,
+          "title": "Data Scientist, Payments"
+        },
+        {
+          "job_id": "F00005",
+          "score": 1.0,
+          "matched": [
+            "linux"
+          ],
+          "job_skill_count": 1,
+          "title": "AI Infrastructure Hardware Support Engineer-Onsite"
+        },
+        {
+          "job_id": "F00178",
+          "score": 1.0,
+          "matched": [
+            "sql"
+          ],
+          "job_skill_count": 1,
+          "title": "AI Developer (Using n8n) - WFO Karawaci Tangerang"
+        },
+        {
+          "job_id": "F00330",
+          "score": 1.0,
+          "matched": [
+            "git"
+          ],
+          "job_skill_count": 1,
+          "title": "Senior Applied AI Specialist"
+        },
+        {
+          "job_id": "F00549",
+          "score": 1.0,
+          "matched": [
+            "machine_learning"
+          ],
+          "job_skill_count": 1,
+          "title": "AI/ML Engineer"
+        },
+        {
+          "job_id": "F00806",
+          "score": 0.8333,
+          "matched": [
+            "git",
+            "machine_learning",
+            "python",
+            "rest_api",
+            "sql"
+          ],
+          "job_skill_count": 6,
+          "title": "AI Engineer (Hybrid)"
+        },
+        {
+          "job_id": "F00849",
+          "score": 0.8,
+          "matched": [
+            "embeddings",
+            "machine_learning",
+            "python",
+            "pytorch"
+          ],
+          "job_skill_count": 5,
+          "title": "[Remote] Staff Machine Learning Engineer, Risk Signals & Controls"
+        },
+        {
+          "job_id": "F00601",
+          "score": 0.7778,
+          "matched": [
+            "docker",
+            "git",
+            "gradient_boosting",
+            "machine_learning",
+            "python",
+            "scikit_learn",
+            "sql"
+          ],
+          "job_skill_count": 9,
+          "title": "Data Scientist (Based in / Relocation to Bali)"
+        },
+        {
+          "job_id": "F00103",
+          "score": 0.75,
+          "matched": [
+            "airflow",
+            "embeddings",
+            "python",
+            "rest_api",
+            "sql",
+            "vector_database"
+          ],
+          "job_skill_count": 8,
+          "title": "Consulting - Internship - AI & Data Science (Start ASAP)"
+        },
+        {
+          "job_id": "F00368",
+          "score": 0.75,
+          "matched": [
+            "machine_learning",
+            "python",
+            "pytorch"
+          ],
+          "job_skill_count": 4,
+          "title": "Speech / Applied ML Engineer"
+        },
+        {
+          "job_id": "F00556",
+          "score": 0.6923,
+          "matched": [
+            "aws",
+            "docker",
+            "git",
+            "gradient_boosting",
+            "machine_learning",
+            "mlflow_kubeflow",
+            "python",
+            "scikit_learn",
+            "sql"
+          ],
+          "job_skill_count": 13,
+          "title": "Machine Learning Engineer, Intern - MoneyLion"
+        },
+        {
+          "job_id": "F00161",
+          "score": 0.6875,
+          "matched": [
+            "aws",
+            "docker",
+            "git",
+            "gradient_boosting",
+            "machine_learning",
+            "mlflow_kubeflow",
+            "postgresql",
+            "python",
+            "pytorch",
+            "scikit_learn",
+            "sql"
+          ],
+          "job_skill_count": 16,
+          "title": "AI Engineer Lead"
+        },
+        {
+          "job_id": "F00001",
+          "score": 0.6667,
+          "matched": [
+            "docker",
+            "fastapi_flask_django",
+            "git",
+            "postgresql",
+            "python",
+            "rest_api"
+          ],
+          "job_skill_count": 9,
+          "title": "Backend Engineer (AI Engineer)"
+        },
+        {
+          "job_id": "F00010",
+          "score": 0.6667,
+          "matched": [
+            "aws",
+            "git",
+            "machine_learning",
+            "python",
+            "pytorch",
+            "scikit_learn"
+          ],
+          "job_skill_count": 9,
+          "title": "Senior AI ML Engineer (Computer Vision)"
+        },
+        {
+          "job_id": "F00077",
+          "score": 0.6667,
+          "matched": [
+            "aws",
+            "docker",
+            "fastapi_flask_django",
+            "git",
+            "postgresql",
+            "python"
+          ],
+          "job_skill_count": 9,
+          "title": "Software Engineer, AI Platform (AI/LLM)"
+        },
+        {
+          "job_id": "F00202",
+          "score": 0.6667,
+          "matched": [
+            "git",
+            "linux",
+            "machine_learning",
+            "python",
+            "rest_api",
+            "sql"
+          ],
+          "job_skill_count": 9,
+          "title": "Claude AI Engineer Technical Mentor - Independent Contractor (US Canada, Europe, MENA, India & APAC Timezones)"
+        },
+        {
+          "job_id": "F00066",
+          "score": 0.6667,
+          "matched": [
+            "fastapi_flask_django",
+            "git",
+            "python",
+            "rest_api"
+          ],
+          "job_skill_count": 6,
+          "title": "Artificial Intelligence Developer"
+        },
+        {
+          "job_id": "F00850",
+          "score": 0.6667,
+          "matched": [
+            "git",
+            "machine_learning",
+            "python",
+            "sql"
+          ],
+          "job_skill_count": 6,
+          "title": "Junior Machine Learning Engineer-remote"
+        }
+      ],
+      "B1_top": [
+        {
+          "job_id": "F00290",
+          "score": 11.6,
+          "title": "AI Engineer Jr/Sr (MALAYSIAN)"
+        },
+        {
+          "job_id": "F00698",
+          "score": 11.6,
+          "title": "[Remote] Gen AI Engineer - Wilmington, DE, Fairfax, VA, Washington, DC, Silver Spring, MD, Philadelphia, PA"
+        },
+        {
+          "job_id": "F00556",
+          "score": 10.2,
+          "title": "Machine Learning Engineer, Intern - MoneyLion"
+        },
+        {
+          "job_id": "F00535",
+          "score": 9.6,
+          "title": "Data Scientist, Platform AI Squad, Group Data Office (AVP/VP)"
+        },
+        {
+          "job_id": "F00018",
+          "score": 9.0,
+          "title": "Lowongan Kerja Senior ML Engineer LLMs, AWS"
+        },
+        {
+          "job_id": "F00624",
+          "score": 8.8,
+          "title": "Generative AI Engineer"
+        },
+        {
+          "job_id": "F00090",
+          "score": 8.6,
+          "title": "Backend Engineer (Python & AI Integration)"
+        },
+        {
+          "job_id": "F00207",
+          "score": 7.8,
+          "title": "Senior Machine Learning Engineer (Remote)"
+        },
+        {
+          "job_id": "F00557",
+          "score": 7.8,
+          "title": "Machine Learning Operation Analyst"
+        },
+        {
+          "job_id": "F00650",
+          "score": 7.8,
+          "title": "Senior AI/LLM Engineer (Python) - Remote"
+        },
+        {
+          "job_id": "F00208",
+          "score": 7.4,
+          "title": "Principal AI & Machine Learning Engineer - U.S. Based Hybrid Opportunity"
+        },
+        {
+          "job_id": "F00310",
+          "score": 7.2,
+          "title": "Enterprise Data Scientist"
+        },
+        {
+          "job_id": "F00680",
+          "score": 7.2,
+          "title": "[Remote] AI Engineer III"
+        },
+        {
+          "job_id": "F00813",
+          "score": 7.0,
+          "title": "Senior Data Scientist / Machine Learning Engineer"
+        },
+        {
+          "job_id": "F00071",
+          "score": 6.8,
+          "title": "AI Engineer - DX Orchestration & Intelligence"
+        },
+        {
+          "job_id": "F00212",
+          "score": 6.6,
+          "title": "Machine Learning Engineer"
+        },
+        {
+          "job_id": "F00655",
+          "score": 6.6,
+          "title": "Machine Learning Engineer"
+        },
+        {
+          "job_id": "F00284",
+          "score": 6.4,
+          "title": "Data Scientist (Up to 16k)"
+        },
+        {
+          "job_id": "F00679",
+          "score": 6.4,
+          "title": "AI Engineer with health Care Experience : Remote"
+        },
+        {
+          "job_id": "F00815",
+          "score": 6.4,
+          "title": "Artificial Intelligence Engineer"
+        }
+      ],
+      "B1_matching_jobs": 381,
+      "overlap_at_10": 0,
+      "pilot_job_ranks": {
+        "J1": {
+          "job_id": "F00022",
+          "B0": 91,
+          "B1": 165
+        },
+        "J2": {
+          "job_id": "F00073",
+          "B0": 136,
+          "B1": 203
+        },
+        "J3": {
+          "job_id": "F00034",
+          "B0": 129,
+          "B1": 55
+        },
+        "J4": {
+          "job_id": "F00016",
+          "B0": 130,
+          "B1": 67
+        },
+        "J5": {
+          "job_id": "F00114",
+          "B0": 133,
+          "B1": 70
+        }
+      }
+    }
+  }
+}

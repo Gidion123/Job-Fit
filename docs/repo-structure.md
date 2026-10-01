@@ -1,6 +1,6 @@
 # Repository Structure
 
-Created on 29 September 2026 for CP2 and CP3. Every file below starts as a placeholder (a docstring or comment that states its purpose and planned stage) and is filled in the stage shown. Data files such as the gold labels and splits start empty. On 29 September 2026 the CP1 modules moved from `src/jobs/` and `src/viz/` into the application package as `src/jobfit/jobs/` and `src/jobfit/viz/`, so all code lives in one package (only the import paths changed, not the logic). The other CP1 parts (`notebooks/`, `data/raw|interim|processed|research/`, `evidence/`, `reports/figures/cp1/`, and the CP1 scripts and tests) are unchanged.
+Created on 29 September 2026 for CP2 and CP3. Every file below starts as a placeholder (a docstring or comment that states its purpose and planned stage) and is filled in the stage shown. Data files such as the gold labels and splits start empty and are filled when the labels are approved. On 29 September 2026 the CP1 modules moved from `src/jobs/` and `src/viz/` into the application package as `src/jobfit/jobs/` and `src/jobfit/viz/`, so all code lives in one package (only the import paths changed, not the logic). The other CP1 parts (`notebooks/`, `data/raw|interim|processed|research/`, `evidence/`, `reports/figures/cp1/`, and the CP1 scripts and tests) are unchanged.
 
 Stage codes: CP2.1 to CP2.7 are bootcamp checkpoints 8 to 14; CP3.1 to CP3.7 are checkpoints 15 to 21. See the [master plan](master-plan.md).
 
@@ -121,7 +121,7 @@ Why the layout looks like this:
 
 | Path | Purpose | Filled in |
 | --- | --- | --- |
-| `evals/annotation_guideline_v1.md` | Annotation guideline (v0.1 first, v1 after the pilot) | CP2.1 |
+| `evals/annotation_guideline_v1.md` | Annotation guideline v1.2 (v0.1 first, v1.0 to v1.2 after the pilot) | CP2.1 |
 | `evals/fixtures/dev_01_clear_match.json` | Development case 1: clear match | CP2.1 |
 | `evals/fixtures/dev_02_experience_too_short.json` | Development case 2: experience too short | CP2.1 |
 | `evals/fixtures/dev_03_duration_unknown.json` | Development case 3: duration not written | CP2.1 |
@@ -131,14 +131,16 @@ Why the layout looks like this:
 | `evals/fixtures/dev_07_no_assessable_requirement.json` | Development case 7: no requirement can be assessed | CP2.1 |
 | `evals/fixtures/dev_08_parsing_failure.json` | Development case 8: parsing failure | CP2.1 |
 | `evals/pilot/pilot_sample.csv` | Items chosen for the labeling pilot | CP2.1 |
-| `evals/pilot/pilot_labels.csv` | Pilot labels (provisional until reviewed) | CP2.1 |
-| `evals/pilot/pilot_timing.csv` | Time per item, used to set gold sizes | CP2.1 |
-| `evals/gold/extraction_gold.jsonl` | Requirement extraction labels | CP2.2 |
-| `evals/gold/evidence_gold.jsonl` | Requirement-evidence labels (MATCH, PARTIAL, NO_MATCH) | CP2.2 |
-| `evals/gold/relevance_gold.csv` | Relevance 0-3 per CV profile and job | CP2.2 |
-| `evals/splits/dev_job_ids.txt` | Development jobs (cluster level) | CP2.2 |
-| `evals/splits/test_job_ids.txt` | Held-out test jobs, locked before CP2.3 | CP2.2 |
-| `evals/results/.gitkeep` | Evaluation outputs | CP2.3 |
+| `evals/pilot/JobFit_Pilot_Labeling_v0.1.xlsx` | Pilot labeling workbook: JDs, CVs, extraction, evidence, relevance, timing, rule questions, QA log | CP2.1 |
+| `evals/pilot/audit/` | Audit records of the pilot: blind-sample snapshot, draft review, cleanup manifest, review corrections (kept unchanged as evidence) | CP2.1 |
+| `evals/gold/README.md` | Format and current content of the gold files | CP2.1 |
+| `evals/gold/extraction_gold.jsonl` | Requirement extraction labels (development rows exported 1 Oct) | CP2.1 (dev), CP2.3 (test) |
+| `evals/gold/evidence_gold.jsonl` | Requirement-evidence labels (MATCH, PARTIAL, NO_MATCH) | CP2.1 (dev), CP2.3 (test) |
+| `evals/gold/relevance_gold.csv` | Relevance 0-3 per CV profile and job | CP2.1 (dev), CP2.3 (test) |
+| `evals/splits/README.md` | How the splits are made | CP2.1 |
+| `evals/splits/dev_job_ids.txt` | Development jobs (the 5 pilot jobs) | CP2.1 |
+| `evals/splits/test_job_ids.txt` | Held-out test jobs, locked before any tuning in CP2.3 | CP2.2 |
+| `evals/results/cp21_baselines.json` | Output of the B0 and B1 baselines (EXP-20261001-01) | CP2.1 |
 
 ## Synthetic CVs `data/synthetic_cvs/`
 
@@ -153,6 +155,7 @@ Why the layout looks like this:
 | Path | Purpose | Filled in |
 | --- | --- | --- |
 | `scripts/load_snapshot_to_db.py` | Loads the snapshot into the local database | CP2.1 |
+| `scripts/run_baselines.py` | Runs B0 (skill overlap) and B1 (FTS) for the synthetic CVs; writes `evals/results/cp21_baselines.json` | CP2.1 |
 | `scripts/run_batch_extraction.py` | Batch JD extraction with a cost estimate first | CP2.2 |
 | `scripts/build_embeddings.py` | Embeddings for jobs, requirement units, and CV evidence | CP2.2 |
 | `scripts/run_experiment.py` | Runs one experiment configuration and writes a draft entry for `docs/experiments.md` | CP2.3 |
@@ -160,6 +163,7 @@ Why the layout looks like this:
 | `scripts/make_eval_figures.py` | Charts for CP2.5 | CP2.5 |
 | `scripts/precompute_demo.py` | Saved demo results for the synthetic CVs (D-022) | CP3.2 |
 | `scripts/usage_report.py` | Summary of the usage ledger | CP2.1 |
+| `scripts/export_pilot_gold.py` | Exports approved pilot labels to `evals/gold/` (development split) | CP2.1 |
 
 ## Tests `tests/` (new files)
 
@@ -171,6 +175,7 @@ Why the layout looks like this:
 | `tests/test_budget_guard.py` | Budget guard and ledger (no CV text written) | CP2.1 |
 | `tests/test_quote_check.py` | Quote validity | CP2.2 |
 | `tests/test_constraints.py` | Constraint states | CP2.1 |
+| `tests/test_baselines.py` | Baselines B0 and B1 (the database test runs only with `JOBFIT_DB_TESTS=1`) | CP2.1 |
 | `tests/test_filters.py` | Filter status, UNKNOWN option, no silent relaxation | CP2.3 |
 | `tests/test_api.py` | API tests | CP3.1 |
 | `tests/test_prompt_injection.py` | Pasted JDs with injected instructions | CP3.4 |
@@ -185,6 +190,11 @@ Why the layout looks like this:
 | `reports/usage/.gitkeep` | Usage ledger (`usage_ledger.jsonl`) | CP2.1 |
 | `docs/privacy-threat-model.md` | Provider data policies, PII handling, threat model | CP3.4 |
 | `docs/decisions.md` | Decision log (D-001 onward) | Ongoing |
+| `docs/cv-coach-plan.md` | CV coach plan (D-036) | CP3, after matching |
+| `docs/annotation-workflow.md` | Labeling process and roles (D-038) | CP2.1 |
+| `evals/annotation_tasks/` | Written task prompts for the drafting model (D-038) | CP2.1 onward |
+| `evals/annotation_guideline_v0.1.md` | Guideline used in the first pilot draft, kept for provenance (superseded) | CP2.1 |
+| `docs/checkpoint_2/supporting/` | Supporting records for CP2 reports | CP2.1 onward |
 | `docs/experiments.md` | Experiment matrix and runs | CP2.1 onward |
 | `docs/failures.md` | Failure cases and fixes | CP2.2 onward |
 | `docs/master-plan.md` | CP2 and CP3 plan, dates, and budget | CP2.1 |

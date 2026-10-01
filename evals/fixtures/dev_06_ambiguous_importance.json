@@ -4,7 +4,7 @@
   "note": "Synthetic development fixture for the deterministic rules. Hand-written, not model output. Not part of the test set.",
   "analysis_date": "2026-09-29",
   "cv_parse_status": "ok",
-  "case": "Two units are unclear (required or preferred). They stay out of the denominator and the score is provisional.",
+  "case": "Two units are unclear (required or preferred). The technical one stays out of the denominator and makes the score provisional. The unclear soft skill is not part of the score at all (D-032).",
   "extraction": {
     "job_id": "FIX-06",
     "units": [
@@ -12,7 +12,7 @@
         "unit_id": "u1",
         "text": "Python",
         "importance": "required",
-        "field": "skill",
+        "field": "skill_tool",
         "source_quotes": [
           "Python"
         ]
@@ -21,7 +21,7 @@
         "unit_id": "u2",
         "text": "Statistics",
         "importance": "required",
-        "field": "domain",
+        "field": "knowledge_area",
         "source_quotes": [
           "Statistics"
         ]
@@ -30,7 +30,7 @@
         "unit_id": "u3",
         "text": "SQL",
         "importance": "required",
-        "field": "skill",
+        "field": "skill_tool",
         "source_quotes": [
           "SQL"
         ]
@@ -39,7 +39,7 @@
         "unit_id": "u4",
         "text": "Familiarity with LLM APIs",
         "importance": "unknown",
-        "field": "skill",
+        "field": "skill_tool",
         "source_quotes": [
           "Familiarity with LLM APIs"
         ]
@@ -57,7 +57,7 @@
         "unit_id": "u6",
         "text": "Airflow",
         "importance": "preferred",
-        "field": "tool",
+        "field": "skill_tool",
         "source_quotes": [
           "Airflow"
         ]
@@ -120,7 +120,7 @@
     "required_total": 3,
     "matched": 2,
     "partial": 1,
-    "unknown_importance_total": 2,
+    "unknown_importance_total": 1,
     "preferred_total": 1,
     "preferred_met": 0,
     "constraint_state": "unknown"

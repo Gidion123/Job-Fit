@@ -5,6 +5,8 @@ from enum import Enum
 
 from pydantic import BaseModel, Field, model_validator
 
+from jobfit.schemas.requirements import LabelSource
+
 
 class EvidenceLabel(str, Enum):
     MATCH = "MATCH"
@@ -50,7 +52,7 @@ class UnitAssessment(BaseModel):
     check_status: CheckStatus = CheckStatus.DONE
     cv_quotes: list[str] = Field(default_factory=list)  # word for word from the CV
     branches: list[BranchAssessment] = Field(default_factory=list)
-    ai_suggested: bool = False
+    label_source: LabelSource = LabelSource.MODEL_DRAFT
 
     @model_validator(mode="after")
     def _quote_rule(self) -> "UnitAssessment":
@@ -77,11 +79,23 @@ class ScoreResult(BaseModel):
     preferred_met: int = 0
     preferred_total: int = 0
     unknown_importance_total: int = 0
+    # Soft skills are shown under the score, not in it (D-032).
+    soft_skill_total: int = 0
+    soft_skill_matched: int = 0
+    soft_skill_partial: int = 0
+    # Location and work-authorization units feed the constraint line (D-033).
+    constraint_units_total: int = 0
+    soft_skills_in_score: bool = False  # True only for the D-032 comparison run
     reasons: list[str] = Field(default_factory=list)
 
     @property
     def weighted_points(self) -> float:
         return self.matched + 0.5 * self.partial
+
+    @property
+    def soft_skill_display(self) -> str:
+        pts = self.soft_skill_matched + 0.5 * self.soft_skill_partial
+        return f"Soft skills asked: {self.soft_skill_total}. With evidence in the CV: {pts:g} points. Not part of the percentage."
 
     @property
     def met_display(self) -> str:

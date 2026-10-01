@@ -12,7 +12,7 @@
         "unit_id": "u1",
         "text": "2+ years of Python experience",
         "importance": "required",
-        "field": "experience",
+        "field": "experience_duration",
         "source_quotes": [
           "2+ years of Python experience"
         ],
@@ -23,7 +23,7 @@
         "unit_id": "u2",
         "text": "Pandas",
         "importance": "required",
-        "field": "tool",
+        "field": "skill_tool",
         "source_quotes": [
           "Pandas"
         ]

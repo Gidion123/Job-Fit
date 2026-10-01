@@ -12,7 +12,7 @@
         "unit_id": "u1",
         "text": "Python",
         "importance": "required",
-        "field": "skill",
+        "field": "skill_tool",
         "source_quotes": [
           "Python"
         ]
@@ -21,7 +21,7 @@
         "unit_id": "u2",
         "text": "PyTorch",
         "importance": "required",
-        "field": "tool",
+        "field": "skill_tool",
         "source_quotes": [
           "PyTorch"
         ]
@@ -30,7 +30,7 @@
         "unit_id": "u3",
         "text": "MLOps",
         "importance": "required",
-        "field": "domain",
+        "field": "knowledge_area",
         "source_quotes": [
           "MLOps"
         ]

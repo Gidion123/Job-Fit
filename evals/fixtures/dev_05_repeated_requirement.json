@@ -12,7 +12,7 @@
         "unit_id": "u1",
         "text": "SQL",
         "importance": "required",
-        "field": "skill",
+        "field": "skill_tool",
         "source_quotes": [
           "Strong SQL skills"
         ],
@@ -22,7 +22,7 @@
         "unit_id": "u2",
         "text": "Python",
         "importance": "required",
-        "field": "skill",
+        "field": "skill_tool",
         "source_quotes": [
           "Python"
         ],
@@ -32,7 +32,7 @@
         "unit_id": "u3",
         "text": "SQL",
         "importance": "required",
-        "field": "skill",
+        "field": "skill_tool",
         "source_quotes": [
           "Experience writing complex SQL queries"
         ],
@@ -42,7 +42,7 @@
         "unit_id": "u4",
         "text": "Tableau",
         "importance": "required",
-        "field": "tool",
+        "field": "skill_tool",
         "source_quotes": [
           "Tableau"
         ],

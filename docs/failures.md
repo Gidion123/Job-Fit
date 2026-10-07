@@ -290,6 +290,13 @@ The recovery helper refuses any failure that is not a timeout, so it cannot retr
 - **Effect:** none on the CP2 results; the D-087 freeze check still verifies the split hashes, and the Phase A results are saved. But CI is not green on this snapshot, so the earlier note that CI is ready (CP3.2) is wrong for now.
 - **Fix (CP3.2, not done yet):** skip the split tests when the raw snapshot is missing, and pass the budget values to the Phase A test or to CI explicitly. No frozen file is involved.
 - **CP3 status (7 Oct 2026):** still OPEN on `cp3-development-20261007`. A working fix exists on an old side branch. It will be re-applied cleanly as the first implementation batch (Phase 1, [CP3 execution plan](checkpoint_3/CP3_Execution_Plan.md)), not merged from that branch.
+- **Resolved (7 Oct 2026, CP3 Phase 1, commit `33c5584`):**
+  - The two split tests skip with the reason "requires git-ignored raw snapshot data/interim/snapshots/CP1_20260926/jsearch_records.jsonl" when that file is absent. They still run unchanged when it exists.
+  - The Phase A budget test sets the approved budget (`API_BUDGET_USD=19`, `API_HARD_STOP_USD=18.5`) itself. `.env` loading does not override existing variables, so a local `.env` no longer matters.
+  - Only tests changed; no production default or frozen file.
+  - Full offline suite: 672 passed, 11 skipped, 0 failed (683 tests).
+  - GitHub Actions run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567) succeeded (lint-and-test and docker-build).
+- **Status:** RESOLVED.
 
 ### FAIL-36. Live matching in the app runs one model call at a time
 

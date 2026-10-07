@@ -4,7 +4,7 @@
 **Bootcamp checkpoint:** 16. Integrasi Database & GitHub Actions CI/CD · official date 6 Oct 2026  
 **JobFit version of this checkpoint:** PostgreSQL with pgvector, and GitHub Actions for CI/CD.  
 **Planned work:** 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) · **Actual:** 6 Oct 2026  
-**Status:** PARTIAL · Docker and compose work locally; CI red (FAIL-35); SumoPod VPS, Alembic and job sync PLANNED (D-095, D-098); nothing deployed · design basis: System Design v1.3
+**Status:** PARTIAL · Docker and compose work locally; CI green since Phase 1 (7 Oct, FAIL-35 resolved); SumoPod VPS, Alembic and job sync PLANNED (D-095, D-098); nothing deployed · design basis: System Design v1.3
 
 > Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
 
@@ -13,12 +13,28 @@
 **JobFit scope:** production corpus, job sync, VPS and delivery. Everything in this section is **PLANNED / NOT YET VALIDATED** unless marked otherwise. Stage definition: [master plan](../master-plan.md#cp32-database-integration-and-cicd-checkpoint-16). Tasks: [CP3 execution plan](CP3_Execution_Plan.md). Corpus design: [production-corpus.md](../production-corpus.md).
 
 - **Hosting change:** Railway (D-023) is replaced by a SumoPod VPS: Singapore, Ubuntu 24.04 LTS, 2 vCPU / 8 GB / 80 GB (D-095). Dion and Codex buy and configure it; this repository provides the deploy files and runbook. No Railway account was created.
-- **Already done:** see "Results (6 Oct 2026)" below. Correction: CI is **red** because of FAIL-35, so "CI ready" below holds only once FAIL-35 is fixed.
+- **Already done:** see "Results (6 Oct 2026)" below. CI was red because of FAIL-35 until Phase 1.
+- **Phase 1 result (7 Oct 2026, commit `33c5584`, DONE):**
+  - **FAIL-35 resolved (tests only):** the two raw-snapshot split tests skip when that git-ignored file is absent; the Phase A budget test sets its own budget values.
+  - **CI workflow (`.github/workflows/tests.yml`):**
+    - ruff pinned to 0.16.8;
+    - the existing `E9,F63,F7,F82` check on `src scripts ui tests` kept;
+    - a new `ruff check --select F src ui`;
+    - a new CP2 freeze verify step (`prepare_cp23_freeze.py --verify`, which exits 2 on drift);
+    - pytest, the Docker builds and the `/health` smoke check unchanged.
+  - **Pyflakes fixes:** 6 behaviour-preserving fixes (5 unused imports and 1 f-string without placeholders) in `eval/development_gold.py`, `eval/run_eval.py`, `pipeline.py`, `support/cv_coach.py` and `viz/style.py`.
+  - **Frozen-file exemption:** the two unused imports in the D-087 frozen files `cv/parser.py` and `llm/client.py` stay. `pyproject.toml` exempts F401 for exactly those two files, never globally.
+  - **Not in scope:** `scripts/` and `tests/` still have 37 Pyflakes findings; they remain covered by the narrower `E9,F63,F7,F82` check.
+  - **Results:**
+    - offline pytest 672 passed / 11 skipped / 0 failed (683 tests);
+    - ruff clean;
+    - freeze verify `"ok": true`;
+    - GitHub Actions run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567) green (lint-and-test and docker-build).
 - **Planned scope:**
   - **CI:**
-    - re-apply FAIL-35 cleanly;
-    - pin `ruff` plus `F`;
-    - freeze verify;
+    - re-apply FAIL-35 cleanly (DONE, Phase 1);
+    - pin `ruff` plus `F` (DONE, Phase 1);
+    - freeze verify (DONE, Phase 1);
     - prod compose config;
     - a pgvector service job (Alembic up, down/up where reversible, database-gated tests);
     - the internal `e2e_check` against compose.

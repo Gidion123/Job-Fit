@@ -17,7 +17,7 @@ Everything below for CP3.1-CP3.7 is **PLANNED** unless a line says it is done lo
 | Stage (official name) | JobFit scope | Status |
 | --- | --- | --- |
 | CP3.1 API Deployment with FastAPI | Public live API, safety controls and instrumentation | PARTIAL: demo flow done locally; public path PLANNED |
-| CP3.2 Database Integration and CI/CD | Production corpus, job sync, VPS and delivery | PARTIAL: CI red (FAIL-35); not deployed |
+| CP3.2 Database Integration and CI/CD | Production corpus, job sync, VPS and delivery | PARTIAL: CI green after Phase 1 (FAIL-35 resolved); not deployed |
 | CP3.3 Streamlit UI | Public upload flow, waiting experience and coach | PARTIAL: demo flow done locally |
 | CP3.4 End-to-End Testing | Deployed validation, privacy release gate and feature freeze | PARTIAL: local 27/27; deployed checks PLANNED |
 | CP3.5 Final Presentation and Portfolio | Final evidence, D-045, privacy and latency reports, deck and video | PLANNED |
@@ -144,7 +144,7 @@ This section is kept as it was on 2 October. For the current state, see [Current
 | 13 | CP2.6 | Recommendation & Summary | [Recommendation and Summary](checkpoint_2/CP2_06_Recommendation_and_Summary.md) | 3 Oct 2026 | 3 Oct 2026 | 4 Oct: provisional development summary; 7 Oct: final summary after the held-out test | DONE |
 | 14 | CP2.7 | PPT Check Point 2 + Mentoring | [CP2 Presentation and Mentoring](checkpoint_2/CP2_07_Presentation_and_Mentoring.md) | 4 Oct 2026 | 3-4 Oct 2026 (deck draft on 3 Oct) | Deck v3 on 4 Oct; presented and mentored 4 Oct; feedback written up 7 Oct (D-093) | DONE |
 | 15 | CP3.1 | Deployment API menggunakan Flask/FastAPI | [API Deployment with FastAPI](checkpoint_3/CP3_01_FastAPI_Service.md) | 5 Oct 2026 | 5 Oct 2026 | 6 Oct: all endpoints, privacy controls and tests (local); 7 Oct: public live scope planned (D-095 to D-097) | PARTIAL (demo flow done locally; public path PLANNED) |
-| 16 | CP3.2 | Integrasi Database & GitHub Actions CI/CD | [Database Integration and CI/CD](checkpoint_3/CP3_02_Database_and_CICD.md) | 6 Oct 2026 | 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) | 6 Oct: Docker and compose work locally; CI red (FAIL-35); 7 Oct: SumoPod VPS, Alembic and job sync planned (D-095, D-098) | PARTIAL |
+| 16 | CP3.2 | Integrasi Database & GitHub Actions CI/CD | [Database Integration and CI/CD](checkpoint_3/CP3_02_Database_and_CICD.md) | 6 Oct 2026 | 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) | 6 Oct: Docker and compose work locally; 7 Oct: SumoPod VPS, Alembic and job sync planned (D-095, D-098); 7 Oct Phase 1: FAIL-35 resolved, CI green (run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567)) | PARTIAL |
 | 17 | CP3.3 | Build Streamlit UI | [Streamlit UI](checkpoint_3/CP3_03_Streamlit_UI.md) | 7 Oct 2026 | 7 Oct 2026 | 6 Oct: full UI with privacy UX (local); public upload flow and mentor refinements planned | PARTIAL (demo flow done locally) |
 | 18 | CP3.4 | Testing End-to-End Application | [End-to-End Testing](checkpoint_3/CP3_04_End_to_End_Testing.md) | 8 Oct 2026 | 9 Oct 2026 (formal feature freeze at the end of 9 Oct, D-100) | 6 Oct: local end-to-end 27/27; deployed and live checks planned | PARTIAL |
 | 19 | CP3.5 | PPT Final Project / Portfolio | [Final Presentation and Portfolio](checkpoint_3/CP3_05_Final_Presentation_and_Portfolio.md) | 9 Oct 2026 | 10 Oct 2026 | 7 Oct: D-045 blind candidates selected (IDs only) | PLANNED / NOT RUN |
@@ -559,7 +559,7 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
    - Every upload failure path is safe, including the 6 DOCX gate tests, with canaries.
    - `prepare_cp23_freeze.py --verify` stays `"ok": true`.
 6. **Evidence to keep.** Test output; the OpenAPI screenshot (taken locally, since `/docs` is off in production); the phase-bound config record.
-7. **Estimate and dependencies.** Core changes on 8 Oct. Depends on: Phase 1 green CI (FAIL-35); the CP3.2 Alembic schema for the cache, quota and reservation tables.
+7. **Estimate and dependencies.** Core changes on 8 Oct. Depends on: Phase 1 green CI (FAIL-35, done 7 Oct); the CP3.2 Alembic schema for the cache, quota and reservation tables.
 8. **Fallback.** If the public path is not ready by the freeze, public live stays off. The VPS then serves the saved demo, plus owner-token live runs, and the report says so.
 9. **Status and next step.** PARTIAL: DONE LOCALLY for the demo-CV flow (6 Oct, EXP-20261006-CP3); the public live path and safety controls are PLANNED / NOT YET VALIDATED. Next: Phase 2 hardening after the Phase 1 green baseline.
 10. **Definition of Done.**
@@ -586,11 +586,11 @@ Template name: Integrasi Database & GitHub Actions CI/CD · Official: 6 Oct 2026
      - idempotent snapshot load;
      - Docker images and compose (local);
      - the GitHub Actions workflow.
-     - The workflow is red because of FAIL-35.
+     - The workflow was red because of FAIL-35 until Phase 1 (7 Oct, commit `33c5584`); it is now green.
    - **Planned, CI (P0/P1):**
-     - re-apply the FAIL-35 fix cleanly;
-     - pin `ruff` and add `F`;
-     - freeze verify;
+     - re-apply the FAIL-35 fix cleanly (DONE, Phase 1);
+     - pin `ruff` and add `F` for `src` and `ui`, with the two D-087 frozen files exempted for F401 (DONE, Phase 1);
+     - freeze verify (DONE, Phase 1);
      - `docker compose … config`;
      - a pgvector service job (Alembic up, and down/up where reversible; database-gated tests);
      - the internal `e2e_check` against the composed stack.
@@ -637,7 +637,7 @@ Template name: Integrasi Database & GitHub Actions CI/CD · Official: 6 Oct 2026
 6. **Evidence to keep.** CI links; the row-count table; the restore log; sync reports; deploy-tag notes.
 7. **Estimate and dependencies.** CI on 7 Oct; schema and packaging on 8 Oct; sync on 9 Oct. Depends on: VPS provisioning, DNS, SMTP, and the production OpenRouter key (Dion and Codex).
 8. **Fallback.** If the scheduled sync is not on `main` before the presentation, the sync is shown with a manual SSH-triggered run. If the VPS is blocked, the saved demo runs locally and the report states the limit.
-9. **Status and next step.** PARTIAL. Docker, compose and the CI workflow exist; CI is red (FAIL-35); nothing is deployed; the production corpus and sync are PLANNED. Next: Phase 1 (FAIL-35), then Alembic and packaging.
+9. **Status and next step.** PARTIAL. Docker, compose and the CI workflow exist; CI is green after Phase 1 (FAIL-35 resolved; run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567)); nothing is deployed; the production corpus and sync are PLANNED. Next: Alembic and packaging (Phase 2 onward).
 10. **Definition of Done.**
     - CI green.
     - The production stack deployed and checked through both validation layers.

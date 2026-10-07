@@ -36,9 +36,9 @@ What each document is for:
 
 | Task | Pri | Depends on | Owner | Status | Validation | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Re-apply the FAIL-35 test fix cleanly (no merge of the old branch, no attribution trailers) | P0 | Phase 0 review | Dion (AI-assisted) | TODO | Offline pytest 0 failed; CI green | CI run link |
-| Pyflakes `F` fixes in `src/` and `ui/`, then add `F` to CI | P1 | FAIL-35 | Dion (AI-assisted) | TODO | `ruff` clean | CI |
-| Freeze verify in CI | P1 | — | Dion (AI-assisted) | TODO | `"ok": true` | CI |
+| Re-apply the FAIL-35 test fix cleanly (no merge of the old branch, no attribution trailers) | P0 | Phase 0 review | Dion (AI-assisted) | DONE | Offline pytest 672 passed / 11 skipped / 0 failed (683 tests); GitHub Actions green | Commit `33c5584`; CI run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567) (lint-and-test and docker-build both succeeded) |
+| Pyflakes `F` fixes in `src/` and `ui/`, then add `F` to CI | P1 | FAIL-35 | Dion (AI-assisted) | DONE | `ruff check --select F src ui` clean; 6 issues fixed in non-frozen files; 2 F401 in D-087 frozen files exempted in `pyproject.toml`; ruff pinned to 0.16.8 | Commit `33c5584`; CI run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567) |
+| Freeze verify in CI | P1 | — | Dion (AI-assisted) | DONE | `"ok": true` locally and in CI | Commit `33c5584`; CI run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567) |
 
 ## Phase 2. P0 production hardening (8 Oct)
 

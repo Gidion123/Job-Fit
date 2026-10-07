@@ -7,7 +7,7 @@ Every report starts as a plan (status PLANNED / NOT RUN). Results, interpretatio
 | Stage | Bootcamp checkpoint (template name) | JobFit scope | Report | Official date | Planned work | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | CP3.1 | 15. Deployment API menggunakan Flask/FastAPI | Public live API, safety controls and instrumentation | [API Deployment with FastAPI](CP3_01_FastAPI_Service.md) | 5 Oct 2026 | 5 Oct; CP3 additions 8 Oct | PARTIAL (demo flow done locally; public path PLANNED) |
-| CP3.2 | 16. Integrasi Database & GitHub Actions CI/CD | Production corpus, job sync, VPS and delivery | [Database Integration and CI/CD](CP3_02_Database_and_CICD.md) | 6 Oct 2026 | 6 Oct; CP3 additions 8-9 Oct | PARTIAL (CI red, FAIL-35; not deployed) |
+| CP3.2 | 16. Integrasi Database & GitHub Actions CI/CD | Production corpus, job sync, VPS and delivery | [Database Integration and CI/CD](CP3_02_Database_and_CICD.md) | 6 Oct 2026 | 6 Oct; CP3 additions 8-9 Oct | PARTIAL (CI green after Phase 1; not deployed) |
 | CP3.3 | 17. Build Streamlit UI | Public upload flow, waiting experience and coach | [Streamlit UI](CP3_03_Streamlit_UI.md) | 7 Oct 2026 | 7 Oct; CP3 additions 8-9 Oct | PARTIAL (demo flow done locally) |
 | CP3.4 | 18. Testing End-to-End Application | Deployed validation, privacy release gate and feature freeze | [End-to-End Testing](CP3_04_End_to_End_Testing.md) | 8 Oct 2026 | 9 Oct (formal freeze at the end of 9 Oct, D-100) | PARTIAL (local checks passed) |
 | CP3.5 | 19. PPT Final Project / Portfolio | Final evidence, D-045, privacy and latency reports, deck and video | [Final Presentation and Portfolio](CP3_05_Final_Presentation_and_Portfolio.md) | 9 Oct 2026 | 10 Oct | PLANNED / NOT RUN |
@@ -35,7 +35,7 @@ How the documents divide the work:
 | CP3.1-CP3.7 reports (this folder) | Evidence and results |
 | [Production corpus](../production-corpus.md) | Design of the mutable production job database and the sync |
 | [Decision log](../decisions.md) | Why each choice was made |
-| [Failure log](../failures.md) | Known defects (FAIL-35 to FAIL-38 are open) |
+| [Failure log](../failures.md) | Known defects (FAIL-35 resolved in Phase 1; FAIL-36 to FAIL-38 are open) |
 | [Runbook, 6 Oct](Runbook_Freeze_Test_Deploy_20261006.md) | Freeze and held-out test steps. Its Railway deploy section is superseded by D-095 |
 
 **Inputs from CP2 (closed 7 Oct 2026, D-094):** the frozen configuration D-087 with evidence prompt v1.1 (D-090), and two follow-ups from CP2. First, the mentor feedback in [D-093](../decisions.md): a clear waiting state for the long LLM analysis (check the existing progress bar and spinner first), and vacancy-specific CV guidance once the core flow is stable (part of the [CV coach plan](../cv-coach-plan.md)). Second, the privacy work deferred by [D-092](../decisions.md): privacy is implemented and covered by component tests only, so CP3.4 runs the end-to-end privacy checks and the original-vs-masked comparison, and CP3.5 reports them. Full list: [CP2 closeout audit, section 11](../checkpoint_2/CP2_Closeout_Audit_20261007.md#11-what-cp3-inherits).

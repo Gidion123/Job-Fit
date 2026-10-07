@@ -636,8 +636,9 @@ JobFit version: Same as the template.
 
 1. Set the stage status and the actual date in section 2 of this plan and in the stage report.
 2. Fill the report's results, interpretation, limitations, and decisions with real outcomes. Link to the [experiment log](experiments.md) instead of copying numbers.
-3. Add any new decision to the [decision log](decisions.md).
-4. Dion commits and pushes (only Dion runs git), then puts the link to the stage report in the "Real" column of the Timeline file as proof of work.
+3. Add any new decision to the [decision log](decisions.md), and any new failure to the [failure log](failures.md).
+4. If the public project state changed (a checkpoint closed, a major feature or deployment milestone, a new headline result), update the current-status parts of the root `README.md` in the same change. The README is the public progress snapshot; it summarizes and links, and never claims more than the stage reports.
+5. Dion commits and pushes (only Dion runs git), then puts the link to the stage report in the "Real" column of the Timeline file as proof of work.
 
 
 ## Historical execution note: 2 October 2026

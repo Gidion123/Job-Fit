@@ -2,12 +2,13 @@
 
 ## Current outcome, 7 October 2026 (CP2 closeout audit)
 
-**CP2 is NOT YET CLOSED.** Source: [CP2 closeout audit](checkpoint_2/CP2_Closeout_Audit_20261007.md), which checks every CP2.1-CP2.7 acceptance criterion against saved files.
+**CP2 is NOT YET CLOSED: one evidence item is open (CP2.7 LMS upload proof).** Source: [CP2 closeout audit](checkpoint_2/CP2_Closeout_Audit_20261007.md) (second pass, 7 Oct), which checks every CP2.1-CP2.7 acceptance criterion against saved files and every CP2.1-CP2.8 report for completeness.
 
-- **Done with evidence:** CP2.1; CP2.2 (under D-050); CP2.3 development tuning and the D-053 freeze, approved as D-087 on 6 Oct; CP2.4 held-out evaluation (7 Oct, `evals/results/cp24/heldout_report_v1.json`, contract `cp24-report-contract-v1`); CP2.5 figures 1-11; CP2.6 final summary. CP2.8 Phase A closed on 7 Oct with KEEP BASELINE (D-090). It is post-test development work and does not change CP2.4.
+- **Done with evidence:** CP2.1; CP2.2 (under D-050); CP2.3 development tuning and the D-053 freeze, approved as D-087 on 6 Oct; CP2.4 held-out evaluation (7 Oct, `evals/results/cp24/heldout_report_v1.json`, contract `cp24-report-contract-v1`); CP2.5 figures 1-11; CP2.6 final summary; CP2.7 presentation and mentoring session on 4 Oct 2026 (confirmed by Dion; feedback recorded as D-093). CP2.8 Phase A closed on 7 Oct with KEEP BASELINE (D-090). It is post-test development work and does not change CP2.4.
 - **Frozen system (D-087):** Hybrid FTS + Qwen3 dense with RRF, seniority rule over the stage-1 top 30, K = 10 analyzed, DeepSeek Flash JD extraction (JD prompt v1.4 experimental), GPT-6 Sol matching with GPT-6 Luna fallback, evidence prompt v1.1, quote check v1.1 with G1/G2, H2v2 holds, PARTIAL weight 0.5, experience block, product order.
 - **Held-out headline (CV3-CV5 only):** P@5 0.533 -> 0.733 (3/3 CVs). NDCG@10 0.805 -> 0.960 for **CV3 and CV4 only** (2/3 CVs); CV5 final NDCG is unavailable because F00070 is unjudged, never 0. CV1-CV2 are a separate familiar-profile diagnostic and are never pooled. Labels are AI-assisted, human-reviewed by one reviewer and blind to ranking (D-088); the labeling assistant and the matcher are both OpenAI-family models, so correlated preferences may inflate apparent agreement, with direction and size not measured.
-- **What blocks closure (Dion):** (1) CP2.7 has no saved rehearsal, mentor-session record, mentor feedback, mentor-sourced decision entry or LMS proof. (2) Two CP2.3 carry-overs have no approved disposition: D-050 broad development extraction (52 of 214 development JDs executed) and the D-051 paired masked comparison. Checklist: audit section 9.
+- **Resolved on 7 Oct (second pass):** D-091 accepts the 52-JD development extraction scope used for CP2.3 and defers exhaustive extraction of the other 162 development JDs (closes the D-050 carry-over). D-092 records privacy as implemented and component/unit tested only, and defers end-to-end privacy validation and the paired masked-vs-original quality comparison to CP3.4 (run) and CP3.5 (report); privacy is not claimed validated end-to-end (closes the CP2.3 D-051 item). D-093 records the mentor feedback and hands it to CP3: a waiting-state UX for the ~95 s LLM wait, and vacancy-specific CV improvement guidance after the core flow is stable. None of these changes D-087 or the CP2.4 result.
+- **What still blocks closure (Dion):** CP2.7 "Evidence to keep" lists LMS proof, and the status rule below requires saved evidence for DONE. Name where the LMS proof is kept, or record that no LMS upload was required for checkpoint 14. Rehearsal is a plan step only and does not block. First-pass blockers and their resolution: audit section 4.
 - **Ledger:** US$10.53 (including US$0.25 uncertain reservations) against the US$18.5 hard stop.
 
 The status notes below are dated snapshots, kept for provenance. Where they disagree with this section, this section and the linked evidence are current.
@@ -53,6 +54,8 @@ Detailed source: [privacy-threat-model.md](privacy-threat-model.md). Design appr
 | CP3.2 | Volatile private state, no database/backup persistence, safe hosting/logs/secrets/TLS | Storage and deployment inspection |
 | CP3.3 | Notices, masked preview, consent, stop/delete, browser liveness and honest reload/expiry UX | Browser checks |
 | CP3.4 | PR-01-PR-10 deployed privacy acceptance | Two-user isolation, payload/log checks and measured deletion timing |
+
+**CP2.3 outcome (7 Oct, D-092):** masking, consent and session primitives are implemented and component/unit tested (API tests use a fake run, not a deployed host). End-to-end privacy validation and the paired masked-vs-original quality comparison are **not performed** and are deferred: CP3.4 runs them, CP3.5 reports the final privacy evaluation and matching-quality impact.
 
 Keep real-CV processing disabled until release gates and separate consent. This adds a defined implementation workstream to CP2.3; it does not reopen CP2.2, change metrics/model-selection rules or authorize new inference. Report schedule impact rather than silently dropping core evaluation or security.
 
@@ -100,11 +103,11 @@ This section is kept as it was on 2 October. The current state is in [Current ou
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 8 | CP2.1 | Model Selection (CNN/LSTM/DNN sesuai use case) | [Model and System Selection](checkpoint_2/CP2_01_Model_and_System_Selection.md) | 28 Sep 2026 | 29-30 Sep 2026 (labeling pilot on the evening of 29 Sep) | 29 Sep to 1 Oct 2026 | DONE |
 | 9 | CP2.2 | Modeling Deep Learning | [Modeling the Extraction, Search, and Evidence Pipeline](checkpoint_2/CP2_02_Modeling_Pipeline.md) | 29 Sep 2026 | 1-2 Oct 2026 (moved: CP2.1 ended on 1 Oct) | 1 to 3 Oct 2026; closed under D-050 | DONE |
-| 10 | CP2.3 | Hyperparameter Tuning | [System Tuning](checkpoint_2/CP2_03_System_Tuning.md) | 30 Sep 2026 | 2 Oct 2026 | 3 to 6 Oct: gold r4, D-078/D-084 applied, freeze candidate v4 (D-086); freeze approved 6 Oct (D-087) | DONE for development and freeze · D-050 and D-051 carry-overs need a disposition |
+| 10 | CP2.3 | Hyperparameter Tuning | [System Tuning](checkpoint_2/CP2_03_System_Tuning.md) | 30 Sep 2026 | 2 Oct 2026 | 3 to 6 Oct: gold r4, D-078/D-084 applied, freeze candidate v4 (D-086); freeze approved 6 Oct (D-087); carry-overs resolved 7 Oct (D-091, D-092) | DONE |
 | 11 | CP2.4 | Modeling + Evaluation Metrics | [Evaluation Metrics](checkpoint_2/CP2_04_Evaluation_Metrics.md) | 1 Oct 2026 | 3 Oct 2026 | 6-7 Oct: test run after the D-087 freeze, labels D-088, report `heldout_report_v1.json` on 7 Oct | DONE |
 | 12 | CP2.5 | Visualisasi Evaluation Result | [Evaluation Result Visualization](checkpoint_2/CP2_05_Evaluation_Visualization.md) | 2 Oct 2026 | 3 Oct 2026 | 4 Oct: development figures 1-8; 7 Oct: held-out figures 9-11 (notebook 02) | DONE |
 | 13 | CP2.6 | Recommendation & Summary | [Recommendation and Summary](checkpoint_2/CP2_06_Recommendation_and_Summary.md) | 3 Oct 2026 | 3 Oct 2026 | 4 Oct: provisional development summary; 7 Oct: final summary after the held-out test | DONE |
-| 14 | CP2.7 | PPT Check Point 2 + Mentoring | [CP2 Presentation and Mentoring](checkpoint_2/CP2_07_Presentation_and_Mentoring.md) | 4 Oct 2026 | 3-4 Oct 2026 (deck draft on 3 Oct) | 4 Oct: deck v3 prepared (outside the repository). Owner-reported "presented and mentored 4-5 Oct"; no rehearsal, mentor feedback, decision entry or LMS proof saved (closeout audit, 7 Oct) | IN PROGRESS · blocks CP2 closure |
+| 14 | CP2.7 | PPT Check Point 2 + Mentoring | [CP2 Presentation and Mentoring](checkpoint_2/CP2_07_Presentation_and_Mentoring.md) | 4 Oct 2026 | 3-4 Oct 2026 (deck draft on 3 Oct) | 4 Oct: deck v3 prepared (outside the repository); presented and mentored on 4 Oct (confirmed by Dion, dated by repository traces); feedback recorded 7 Oct as D-093. Rehearsal not recorded (non-blocking); LMS proof not saved | Acceptance criteria met · LMS proof open (blocks CP2 closure) |
 | 15 | CP3.1 | Deployment API menggunakan Flask/FastAPI | [API Deployment with FastAPI](checkpoint_3/CP3_01_FastAPI_Service.md) | 5 Oct 2026 | 5 Oct 2026 | 6 Oct: all endpoints, privacy controls and tests (local) | DONE LOCALLY |
 | 16 | CP3.2 | Integrasi Database & GitHub Actions CI/CD | [Database Integration and CI/CD](checkpoint_3/CP3_02_Database_and_CICD.md) | 6 Oct 2026 | 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) | 6 Oct: Docker, compose and CI ready; hosting deploy waits for Dion | PARTIAL |
 | 17 | CP3.3 | Build Streamlit UI | [Streamlit UI](checkpoint_3/CP3_03_Streamlit_UI.md) | 7 Oct 2026 | 7 Oct 2026 | 6 Oct: full UI with privacy UX (local) | DONE LOCALLY |
@@ -115,7 +118,7 @@ This section is kept as it was on 2 October. The current state is in [Current ou
 
 **CP2.8 (not a bootcamp checkpoint):** Phase A post-test quality optimization on development data, 7 Oct 2026, CLOSED with KEEP BASELINE (D-089, D-090); [report](checkpoint_2/CP2_08_Post_Test_Quality_Optimization.md). It never changes the CP2.4 result.
 
-**CP2 closure (7 Oct 2026):** NOT YET CLOSED; see the [closeout audit](checkpoint_2/CP2_Closeout_Audit_20261007.md).
+**CP2 closure (7 Oct 2026):** NOT YET CLOSED; one evidence item open (CP2.7 LMS proof); see the [closeout audit](checkpoint_2/CP2_Closeout_Audit_20261007.md).
 
 **Tightest day: 3 October** (checkpoints 11, 12, 13, and the deck draft). If it slips, the checks of the minimal features move to checkpoint 18. Core evaluation is not cut.
 
@@ -137,7 +140,7 @@ This section is kept as it was on 2 October. The current state is in [Current ou
 | Development labels reviewed (gold) | Dion | 2 Oct morning | Checkpoint 10 | Reviewed-record bundle exported and validated; only compatible complete references may be used for each metric; held/unjudged records remain explicit |
 | Test relevance labels, blind (D-045 phase 2) | Dion | 3 Oct | Checkpoint 11 | Done 7 Oct: D-053 top-10 union, 68 pairs over CV1-CV5, 67 judged + 1 held (F00070); AI-assisted, human-reviewed, blind to ranking (D-088, `test_v13_cp24_r1`) |
 | Test extraction and evidence (D-045 phase 3) | Dion | 7 Oct | Final report (CP3.5) | Open: D-088 imported only the relevance sheet; no test extraction or evidence gold exists |
-| Mentor feedback at CP2 | Mentor | 4 Oct | CP3 scope confirmation; CP2 closure | Open: no feedback or decision entry saved (closeout audit, 7 Oct) |
+| Mentor feedback at CP2 | Mentor | 4 Oct | CP3 scope confirmation; CP2 closure | Done: session 4 Oct; feedback recorded 7 Oct as D-093 (CP3 input: waiting-state UX; vacancy-specific CV guidance) |
 
 ---
 
@@ -334,7 +337,7 @@ JobFit version: Tuning means choosing system settings with measurements: stage-1
 6. **Evidence to keep.** docs/experiments.md entries; config snapshots; ledger totals.
 7. **Estimate and dependencies.** Historical estimate: about 1 working day and under US$2 for round 1 and the prompt comparison. This excludes D-050 broad development extraction; the current 214-JD conservative upper bound is US$21.0576 and cannot be dispatched under the US$8.50 guard. Re-estimate each comparison and any later batch with current prices, repair allowance, ledger headroom, compatible references and quality stop rules. Depends on reviewed development gold and the CP2.2 pipeline.
 8. **Fallback.** Follow the approved D-045 fallback and report its scope; no silent change to review sizes/K. Historical proposal was15cases and K10/20 only, not current authorization. Incomplete comparisons cannot establish a winner.
-9. **Status and next step.** DONE for development tuning and the freeze. Gold r4 imported (D-085); the D-078 rule chose K 10, weight 0.5 and the seniority rule; Hybrid Qwen stays under D-084; GPT-6 Sol matches with Luna fallback (D-083); the experience block joins the freeze (D-086). Dion approved freeze receipt `evals/freeze/cp23_freeze_draft_v2/` on 6 Oct (D-087; v1 superseded). **Two acceptance items have no approved disposition** (closeout audit, 7 Oct): the D-050 carried extraction (per-JD status exists for the executed 52-JD development scope; 162 development JDs were never extracted) and the D-051 paired masked comparison (prepared, not run). Next: Dion decides both dispositions.
+9. **Status and next step.** DONE. Gold r4 imported (D-085); the D-078 rule chose K 10, weight 0.5 and the seniority rule; Hybrid Qwen stays under D-084; GPT-6 Sol matches with Luna fallback (D-083); the experience block joins the freeze (D-086). Dion approved freeze receipt `evals/freeze/cp23_freeze_draft_v2/` on 6 Oct (D-087; v1 superseded). The two acceptance items the first closeout pass found without a disposition are resolved by explicit decisions on 7 Oct: D-091 accepts the executed 52-JD development extraction scope (162 development JDs never extracted; exhaustive extraction optional future work), and D-092 defers end-to-end privacy validation and the paired masked comparison to CP3.4/CP3.5 (privacy implemented and component/unit tested only). Next: CP2.4 (done).
 
 ### CP2.4: Evaluation Metrics (checkpoint 11)
 
@@ -437,7 +440,7 @@ JobFit version: Same as the template: CP2 presentation and mentoring.
 6. **Evidence to keep.** deck file; LMS proof; feedback notes.
 7. **Estimate and dependencies.** About half a day for the deck, plus the session. Depends on: Checkpoints 11 to 13.
 8. **Fallback.** If a result is not ready, present the method and what is missing, with the reason.
-9. **Status and next step.** IN PROGRESS; blocks CP2 closure. The deck (v3, 4 Oct) was prepared outside the repository. An earlier version of this line said "DONE (presented and mentored 4-5 Oct). Mentor notes to be added"; that statement has no saved source, and no rehearsal record, mentor feedback, decision entry or LMS proof exists in the repository (closeout audit, 7 Oct). Next: Dion adds the session record, feedback (as decision entries) and LMS proof, or records why an item does not apply; then CP2 can close and CP3.1 takes the mentor feedback as input.
+9. **Status and next step.** Presentation and mentoring held on 4 Oct 2026; both acceptance criteria met (mentor saw the measured process; feedback recorded as D-093). Rehearsal not recorded (a step, not an acceptance or evidence item; non-blocking). **LMS proof (evidence to keep) is not saved and blocks CP2 closure** until Dion names its location or records that no upload was required. Historical: on 7 Oct the first closeout pass found no session record; an earlier version of this line said "DONE (presented and mentored 4-5 Oct). Mentor notes to be added" without a source. Next: CP3.1 takes D-093 as its checkpoint-14 input.
 
 ### CP3.1: API Deployment with FastAPI (checkpoint 15)
 

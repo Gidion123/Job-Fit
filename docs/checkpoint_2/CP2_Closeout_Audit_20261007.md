@@ -1,30 +1,33 @@
 # CP2 Closeout Audit
 
-**Date:** 7 October 2026. **Branch:** `cp2-closeout-20261007`, audited at commit `8ca6b41`. **Model calls:** none. **Scope:** CP2.1 to CP2.7 acceptance against the [master plan](../master-plan.md), plus the CP2.8 post-test extension. Frozen artifacts were read and hash-checked, never edited.
+**Date:** 7 October 2026. **Branch:** `cp2-closeout-20261007`. **First pass:** audited at commit `8ca6b41`, results committed as `de53544`. **Second pass:** same day, after Dion supplied the mentor-session confirmation, the mentor feedback and two decisions (D-091, D-092; feedback recorded as D-093). **Model calls:** none in either pass. **Scope:** CP2.1 to CP2.7 acceptance against the [master plan](../master-plan.md), plus the CP2.8 post-test extension. Frozen artifacts were read and hash-checked, never edited.
 
 ## 1. Verdict
 
-**CP2 — NOT YET CLOSED.**
+**Second pass (current): CP2 — NOT YET CLOSED, one evidence item open.**
 
-The technical work of CP2 is complete and reproducible: the configuration was frozen (D-087), the held-out test ran, its report reproduces exactly from the saved labels, and the figures and tables match their receipts byte for byte. CP2 cannot be marked closed for two reasons, and both need Dion:
+Every CP2.1-CP2.7 acceptance criterion now passes or is resolved by an explicit, approved decision, and every CP2.1-CP2.8 primary report is current (section 13). The only open item is the **CP2.7 LMS upload proof**:
 
-1. **CP2.7 has no saved evidence** of a rehearsal, the mentor session, mentor feedback, a decision entry sourced from that feedback, or LMS upload proof (section 5).
-2. **Two CP2.3 carry-overs have no approved disposition**: the D-050 broad development extraction and the D-051 paired masked-input comparison. Both are written as acceptance items, and no decision accepts their reduced scope (section 4). Closing either one by doing the work would need paid inference, which this offline closeout must not run. Closing it by decision is Dion's call.
+- The master plan lists "LMS proof" under CP2.7 "Evidence to keep", and its status rule says "A stage is DONE only when its acceptance criteria are met **and its evidence is saved**" (master plan, near the top).
+- No LMS proof exists in the repository, and Dion has not confirmed an upload. This audit does not invent one.
+- One owner statement resolves it: either the location of the LMS proof (screenshot or receipt), or a record that the bootcamp did not require an LMS upload for checkpoint 14. With that, CP2 can be marked CLOSED without further work.
 
-The short human checklist is in section 9.
+Rehearsal is not a closure item: it is only a plan step, not an acceptance criterion or evidence item (section 5).
+
+**First pass (historical):** CP2 — NOT YET CLOSED, because CP2.7 had no saved evidence of the session or feedback, and the D-050 and D-051 CP2.3 carry-overs had no approved disposition.
 
 ## 2. Status of each stage
 
-| Stage | Status after the audit | Basis |
-| --- | --- | --- |
-| CP2.1 Model and System Selection | DONE | Section 3 |
-| CP2.2 Modeling Pipeline | DONE under D-050 | Section 3 |
-| CP2.3 System Tuning | DONE for development tuning and freeze (D-086, D-087); two carry-overs without an approved disposition | Section 4 |
-| CP2.4 Evaluation Metrics | DONE (`cp24-report-contract-v1`) | Section 6 |
-| CP2.5 Evaluation Visualization | DONE | Section 7 |
-| CP2.6 Recommendation and Summary | DONE | Section 3 |
-| CP2.7 Presentation and Mentoring | IN PROGRESS, blocks closure | Section 5 |
-| CP2.8 Phase A (post-test, development only) | CLOSED, KEEP BASELINE (D-090) | Section 8 |
+| Stage | First pass | Second pass (current) | Basis |
+| --- | --- | --- | --- |
+| CP2.1 Model and System Selection | DONE | DONE | Section 3 |
+| CP2.2 Modeling Pipeline | DONE under D-050 | DONE under D-050; carry-over resolved by D-091 | Section 3 |
+| CP2.3 System Tuning | DONE for tuning and freeze; two carry-overs without a disposition | DONE: D-087 freeze; D-050 scope accepted (D-091); privacy implemented and component/unit tested, end-to-end validation and paired comparison deferred to CP3.4/CP3.5 (D-092) | Section 4 |
+| CP2.4 Evaluation Metrics | DONE | DONE (`cp24-report-contract-v1`) | Section 6 |
+| CP2.5 Evaluation Visualization | DONE | DONE | Section 7 |
+| CP2.6 Recommendation and Summary | DONE | DONE | Section 3 |
+| CP2.7 Presentation and Mentoring | IN PROGRESS, blocks closure | Session held 4 Oct; both acceptance criteria PASS (D-093); **LMS proof open** | Section 5 |
+| CP2.8 Phase A (post-test, development only) | CLOSED, KEEP BASELINE | CLOSED, KEEP BASELINE (D-090), unchanged | Section 8 |
 
 ## 3. Requirements-to-evidence matrix
 
@@ -49,7 +52,7 @@ Requirement source: `docs/master-plan.md` section 8, the "Tests and acceptance c
 | One CV and one pasted JD give a structured report with exact CV quotes | PASS | `evals/results/cp22_extraction_repair_v13_20261003_04_semantic_repair.json`, `cp22_repair_semantic_review_20261003.json` | Assisted operational acceptance after three bounded repairs, not unattended quality | No |
 | 8 development cases pass the manual check | PASS | `evals/fixtures/v1_3/`, [acceptance review](supporting/CP22_Acceptance_Review_20261002.md) | Delegated review, not eight independent human approvals (stated in the report) | No |
 | Cache keys include schema, prompt, model, preprocessing and guideline versions | PASS | CP2.2 report section 3; cache tests in the offline suite | | No |
-| Planned-scale development extraction | NOT REQUIRED for CP2.2 by D-050 | D-050 moved it to CP2.3 as an explicit carry-over | See CP2.3 | No (for CP2.2) |
+| Planned-scale development extraction | NOT REQUIRED for CP2.2 by D-050 | D-050 moved it to CP2.3 as an explicit carry-over; resolved there by D-091 | See CP2.3 | No |
 | Test split locked before checkpoint 10 | PASS | `evals/splits/dev_job_ids.txt`, `test_job_ids.txt` (214 / 214, T03 1 Oct); both hashes are in the D-087 receipt and verify | | No |
 
 ### CP2.3 (checkpoint 10)
@@ -61,8 +64,8 @@ Requirement source: `docs/master-plan.md` section 8, the "Tests and acceptance c
 | Spend within the budget guard | PASS | Ledger US$10.53 against the US$18.5 hard stop (D-070) | | No |
 | Stage-1 method, K, prompt and model recorded under the D-029 rule (as amended by D-066) | PASS | D-044 (Qwen), D-083 (Sol matching, Luna fallback), D-077 (DeepSeek Flash extraction), D-078/D-086 (K 10, weight 0.5, seniority rule), D-084 (Hybrid Qwen kept), D-087 (freeze) | Earlier provisional choices D-068 (DeepSeek matching, K 20) were superseded, not deleted | No |
 | Freeze prepared and approved (D-053) | PASS | `evals/freeze/cp23_freeze_draft_v2/` (57 file hashes; receipt sha256 `18c1d17c…`), D-087 | | No |
-| D-050 carried extraction: auditable per-JD status and executed scope, or an approved revised disposition | **PARTIAL** | Per-JD inventory for all 214 development JDs on 3 Oct (`evals/results/cp22_development_extraction_plan_20261003.json`, 212 not run); per-JD status for the executed scope of 52 JDs (Hybrid Qwen top 30 of CV1/CV2: 51 attempted, 48 process-valid; `evals/results/cp23/pipeline_v11/coverage_summary_v2.json`) | 162 development JDs were never extracted. The frozen design extracts only the analyzed top K, so full materialization was not needed for CP2.4, but no decision accepts this reduced scope. The CP2.3 report itself said not to mark DONE until this is satisfied or accepted | **Yes**: needs Dion's decision |
-| D-051 CP2.3 privacy work: masking/consent boundary, session primitives, synthetic CV1/CV2 masking impact | **PARTIAL** | `src/jobfit/privacy/masking.py`; `tests/test_privacy_controls.py`, `test_cp23_masking_quotes.py`, `test_cp23_masking_pairs_preflight.py`; mechanical quote check `evals/results/cp23_masking_quote_compatibility_20261004_v1.json` (13 changed rows, all traceable) | The paired original-versus-masked matching comparison ("versioned tests/paired results" in the master-plan privacy table) was prepared but not run; the CP2.3 report calls it "deferred" without a decision. Real-CV processing stays disabled (`/cv/parse` answers 403), so no privacy claim depends on it | **Yes**: needs Dion's decision |
+| D-050 carried extraction: auditable per-JD status and executed scope, or an approved revised disposition | **PASS (approved disposition, D-091)**; first pass: PARTIAL | 214-JD inventory of 3 Oct (`evals/results/cp22_development_extraction_plan_20261003.json`); per-JD status of the executed 52-JD scope (`evals/results/cp23/pipeline_v11/coverage_summary_v2.json`: 51 attempted, 48 process-valid); [D-091](../decisions.md) | 162 development JDs never extracted; exhaustive extraction is optional future work. The criterion's own alternative ("or an explicitly approved revised scope/budget disposition") is met | No |
+| D-051 CP2.3 privacy work: masking/consent boundary, session primitives, synthetic CV1/CV2 masking impact | **PASS (approved deferral, D-092)**; first pass: PARTIAL | Implemented: masking, consent binding, session controls; all CP2.4 parses masked. Component/unit tested: `test_privacy_controls.py`, `test_cp23_masking_quotes.py`, `test_api_privacy.py` (fake run, PR-01 to PR-07 and PR-09, not a deployed host), mechanical quote receipt; [D-092](../decisions.md) | End-to-end privacy validation: **not performed**. Original-vs-masked comparison: **not performed**. Both deferred to CP3.4 (run) and CP3.5 (report). No end-to-end or no-quality-effect claim; real-CV processing stays disabled | No |
 
 ### CP2.4 (checkpoint 11)
 
@@ -105,27 +108,44 @@ Requirement source: `docs/master-plan.md` section 8, the "Tests and acceptance c
 
 ### CP2.7 (checkpoint 14)
 
-| Requirement | Status | Evidence | Note, limitation | Blocks closure |
+| Requirement | Type in the master plan | First pass | Second pass (current) | Evidence | Blocks closure |
+| --- | --- | --- | --- | --- | --- |
+| Deck built (Playbook section 6) | Step 1; "deck file" in evidence to keep | PARTIAL | PASS (stored outside the repository by plan design) | CP2.7 report: deck v3 recorded on 4 Oct at `04_Checkpoint_2/`; session confirmed by Dion | No |
+| Rehearse once with timing | Step 4 only | MISSING | Not recorded; **non-blocking** | None | No: not an acceptance criterion and not an evidence item |
+| Present, then write down mentor feedback | Step 5; "feedback notes" in evidence to keep | MISSING | PASS | Session on 4 Oct 2026 (D-069 amendment note; 4 Oct audit report opens "After the CP2 presentation"); Dion's confirmation and feedback on 7 Oct; CP2.7 section 10 | No |
+| Upload the deck to the LMS | Step 6; "LMS proof" in evidence to keep | MISSING | **MISSING** | None; not confirmed by Dion | **Yes**: the plan's status rule requires saved evidence for DONE |
+| Acceptance: mentor sees a measurable process | Acceptance criterion | MISSING | PASS | Dion's confirmation of the session; the deck presented the measured CP2.1-CP2.3 development comparisons | No |
+| Acceptance: mentor feedback recorded in `docs/decisions.md` as new entries | Acceptance criterion | MISSING | PASS | [D-093](../decisions.md) | No |
+
+## 4. Resolution of the first-pass blockers
+
+| Blocker | Previous status (first pass) | New evidence or decision | Final status | Rationale |
 | --- | --- | --- | --- | --- |
-| Deck built (Playbook section 6) | PARTIAL | CP2.7 report: 12-slide deck v3 prepared 4 Oct, stored outside the repository in `04_Checkpoint_2/` as planned; [one-page summary](supporting/CP2_Presentation_Summary_20261004.md) in the repository | The deck file cannot be checked from the repository. Its content predates CP2.4 and uses development results only (allowed by the CP2.7 fallback) | Needs Dion to confirm |
-| Rehearse once with timing | MISSING | None | | **Yes** |
-| Present, then write down mentor feedback | MISSING | The master plan says "presented and mentored 4-5 Oct; mentor notes to be added". That line first appears in the 7 Oct snapshot commit, has no source, and the same master plan lists "Mentor feedback at CP2" as Open. The CP2.7 report says the session was not recorded | Owner-reported, not evidenced. Not counted as false or as true | **Yes** |
-| Upload the deck to the LMS | MISSING | None | | **Yes** |
-| Acceptance: mentor sees a measurable process | MISSING | No session record | | **Yes** |
-| Acceptance: mentor feedback recorded in `docs/decisions.md` as new entries | MISSING | D-001 to D-090 contain no entry sourced from the CP2 mentor session | | **Yes** |
+| CP2.3: D-050 carried extraction | PARTIAL, blocking: 52 of 214 development JDs extracted, no approved revised scope | [D-091](../decisions.md), approved by Dion on 7 Oct | PASS (approved disposition) | The master-plan criterion explicitly allows "an explicitly approved revised scope/budget disposition". Every K/weight/order cell of D-078 lies inside the reordered top 30, which the 52-JD scope covers; failed or held JDs stayed holds. No test data was used. The 162 unextracted JDs are not claimed extracted |
+| CP2.3: D-051 privacy work (paired comparison; end-to-end validation) | PARTIAL, blocking: paired comparison prepared, not run, no decision | [D-092](../decisions.md), approved by Dion on 7 Oct, with his clarification that privacy has not been validated end-to-end | PASS (approved deferral) | Status by level: implemented; component/unit tested (API tests with a fake run, not a deployed host); end-to-end validated **no**; paired comparison **no**. Both open items feed no frozen setting and are deferred to CP3.4 (run) and CP3.5 (report); the master-plan privacy table already places deployed privacy acceptance in CP3.4. CP2 makes no end-to-end or no-quality-effect claim; real-CV processing stays disabled |
+| CP2.7: session and mentor feedback | MISSING, blocking | Dion confirmed the session and supplied the feedback (7 Oct); repository traces date it to 4 Oct; feedback recorded as [D-093](../decisions.md) | PASS | Both CP2.7 acceptance criteria are met; feedback notes are saved in CP2.7 section 10 and D-093 |
+| CP2.7: rehearsal | MISSING, listed as blocking | Plan re-read | Non-blocking (not recorded) | Step 4 of the method only; it is neither an acceptance criterion nor an evidence item. The first pass over-weighted it |
+| CP2.7: LMS proof | MISSING, blocking | None | **Still open** | "LMS proof" is an evidence item and the plan's status rule requires saved evidence for DONE. No proof exists and no owner statement covers it |
 
-## 4. The two CP2.3 carry-overs
+Neither D-091 nor D-092 changes D-087, the CP2.4 result or any frozen file, and neither came from a new run.
 
-Both were open on 4 October and the later DONE status did not resolve them.
+## 5. CP2.7 evidence and the rehearsal/LMS determination
 
-- **D-050 broad development extraction.** D-050 moved full development extraction "after CP2.3 configuration evaluation". The executed scope is the 52-JD development union used by Part B and pipeline v1.1. The frozen product extracts JDs per analyzed job and caches them, and CP2.4 extracted its 26 analyzed test jobs the same way. A decision is needed that either accepts the executed scope as the CP2 extraction scope (with full materialization deferred or dropped), or schedules a budgeted run.
-- **D-051 paired masked comparison.** The masking code, consent binding, session controls and a mechanical quote check exist; the paired quality comparison on CV1/CV2 did not run. A decision is needed that either defers it to CP3 with real-CV processing kept off, or schedules it.
+**First pass (historical):** searched all Markdown, JSON, YAML and text files for mentor, LMS, rehearsal, deck and "presented". Found the one-page summary, the CP2.7 report and the unsourced master-plan line; no session record. That search missed two dated traces because it did not search for "presentation".
 
-This audit does not decide either item. Writing a decision for Dion would invent an approval.
+**Second pass:** a search for "presentation" found:
 
-## 5. CP2.7 evidence search
+- `evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/cap_and_deadline_amendment_v2.json` (D-069): "At 08:13 WIB Dion said the presentation was in about six hours" on 4 October 2026.
+- [`supporting/CP23_Audit_Fixes_20261004.md`](supporting/CP23_Audit_Fixes_20261004.md), dated 4 October 2026: "After the CP2 presentation I audited all CP2 work."
 
-Searched the whole repository (all Markdown, JSON, YAML and text files, `evidence/`, `docs/`, `evals/`) for mentor, LMS, rehearsal, deck and presentation records. Found: the 4 October one-page summary, the CP2.7 report, the planned-only CP3 reports, and the unsourced master-plan line. Not found: any deck file, rehearsal timing, mentor notes, LMS screenshot or receipt, or a CP2 mentor decision.
+Together with Dion's confirmation and the feedback he supplied, these date the session to **4 October 2026**, early afternoon WIB by the D-069 note; the exact time and attendees were not captured. The earlier master-plan wording "4-5 Oct" is not supported beyond 4 October.
+
+**Rehearsal and LMS, read literally from the master plan (CP2.7, section 8):**
+
+| Item | Where it appears | Acceptance criterion? | Evidence to keep? | Determination |
+| --- | --- | --- | --- | --- |
+| Rehearsal with timing | Step 4 ("Rehearse once with timing") | No | No | Non-blocking; not recorded |
+| LMS upload proof | Step 6 ("Upload the deck to the LMS (Dion)"), outputs ("LMS upload proof"), evidence to keep ("LMS proof") | No | **Yes** | Required by the status rule "DONE only when its acceptance criteria are met and its evidence is saved"; **missing** |
 
 ## 6. Held-out result verification
 
@@ -162,11 +182,9 @@ Verified KEEP BASELINE (D-090). Evidence prompt v1.1 stays. Baseline repeated tw
 
 ## 9. Human closeout checklist (Dion)
 
-1. **CP2.7:** add the deck file reference or copy (or confirm the v3 path), the rehearsal timing if it happened, the mentor-session date and notes, and the LMS upload proof. If the session did not happen or the LMS upload is not required by the bootcamp, record that explicitly.
-2. **CP2.7:** record the mentor feedback as new decision entries (D-091 onward), or record that the mentor gave no feedback that changes scope.
-3. **CP2.3:** decide the D-050 broad-extraction disposition (accept the executed 52-JD development scope, or schedule a budgeted run).
-4. **CP2.3:** decide the D-051 paired masked comparison (defer to CP3 with real-CV processing kept off, or schedule it).
-5. Then update the CP2.7 status, the master plan section 2 row 14, and the CP2 index, and mark CP2 closed.
+First-pass items 1 to 4 are resolved (D-091, D-092, D-093 and the confirmed session). One item remains:
+
+1. **LMS proof for checkpoint 14:** name where the LMS upload proof is kept (screenshot or receipt), or record that the bootcamp did not require an LMS upload for checkpoint 14. Then mark CP2.7 DONE and CP2 CLOSED in the CP2.7 report, the CP2 index, the master plan (current outcome, section 2 row 14, CP2.7 item 9) and this audit.
 
 ## 10. Validation run in this audit
 
@@ -179,8 +197,11 @@ Environment: Python 3.11 virtual environment in the session scratchpad with `req
 | `API_BUDGET_USD=19 API_HARD_STOP_USD=18.5 python -m pytest -q` (public `.env.example` values) | 672 passed, 9 skipped, 2 failed |
 | `ruff check --select E9,F63,F7,F82 src scripts ui tests` (CI lint) | All checks passed |
 | Receipt hash checks (cp25 tables, Phase A figures) | 21 of 21 match |
+| Second pass: same freeze verify, full suite and lint after all second-pass edits | `"ok": true`; 671 passed, 9 skipped, 3 failed (same FAIL-35 tests); lint clean |
+| Second pass: `API_BUDGET_USD=19 API_HARD_STOP_USD=18.5 python -m pytest -q tests/test_heldout_report.py tests/test_qa_phase_a.py tests/test_product_order.py tests/test_privacy_controls.py tests/test_cp23_masking_quotes.py tests/test_api_privacy.py tests/test_scoring.py tests/test_cp24_parse_recovery.py` | 117 passed |
+| Second pass: receipt hashes; `git diff --name-only 8ca6b41` outside `docs/` and `README.md` | 21 of 21 match; no file outside documentation changed |
 
-The 3 failures are environmental and not caused by CP2 evidence (FAIL-35): `tests/test_splits.py` (2 tests) read the git-ignored raw snapshot `data/interim/snapshots/CP1_20260926/jsearch_records.jsonl` without a skip guard, and `tests/test_qa_phase_a.py::test_budget_plan_stays_below_hard_stop_and_covers_need` uses the code default hard stop US$4.5 when `.env` is absent. CI is therefore red on this snapshot. This is a CP3.2 (CI) fix and was not changed here.
+**CP2 evidence validation: PASS.** Repository CI has known environment/test-hygiene failures tracked as FAIL-35; the full suite is not green. The 3 failures are environmental and not caused by CP2 evidence (FAIL-35): `tests/test_splits.py` (2 tests) read the git-ignored raw snapshot `data/interim/snapshots/CP1_20260926/jsearch_records.jsonl` without a skip guard, and `tests/test_qa_phase_a.py::test_budget_plan_stays_below_hard_stop_and_covers_need` uses the code default hard stop US$4.5 when `.env` is absent. CI is therefore red on this snapshot. This is a CP3.2 (CI) fix and was not changed here.
 
 ## 11. Freeze integrity
 
@@ -188,4 +209,29 @@ The 3 failures are environmental and not caused by CP2 evidence (FAIL-35): `test
 
 ## 12. CP2 to CP3 handoff
 
-After the checklist in section 9 is done, CP3 continues from the master plan: CP3.1 needs the frozen checkpoint-13 modules (D-087) and the checkpoint-14 mentor feedback. CP3.1 and CP3.3 are already done locally and CP3.2/CP3.4 are partial, so the next CP3 work is the CP3.2 CI fix (FAIL-35), the hosting deploy, and the deployed CP3.4 checks before the 8 October feature freeze. The deployed demo uses the D-087 configuration with evidence prompt v1.1 (D-090). The CP3.5 final report owes the D-045 test extraction and evidence results, which are not yet labeled.
+CP3 starts from the master plan's CP3.1 prerequisites: the modules frozen in checkpoint 13 (D-087, with evidence prompt v1.1 kept by D-090) and the mentor feedback from checkpoint 14 (D-093). CP3.1 and CP3.3 are already done locally and CP3.2/CP3.4 are partial, so CP3 continues with:
+
+1. **Mentor item A, latency UX (D-093 A):** the mentor saw about 95 s of LLM wait in the 4 October presentation. CP3 makes the waiting state explicit (progress, current step, a "thinking" indicator). The UI already has a per-job progress bar and a spinner (`ui/streamlit_app.py`); CP3 checks them against the feedback instead of building a duplicate. This mitigates perceived wait; no latency reduction is claimed unless measured.
+2. **Mentor item B, vacancy-specific CV improvement guidance (D-093 B), after the core flow is stable:** extends the existing CV coach plan ([D-036](../decisions.md), [cv-coach-plan.md](../cv-coach-plan.md)) and CV coach v1 (EXP-20261006-CP3). Suggestions are grounded in the actual CV evidence, the actual JD requirements and the identified gaps; they never invent experience or encourage misrepresenting skills, and they do not promise a higher true suitability.
+3. The CP3.2 CI fix (FAIL-35), the hosting deploy and the deployed CP3.4 checks before the 8 October feature freeze.
+4. Privacy validation deferred by D-092 (privacy is implemented and component/unit tested only, not validated end-to-end). **CP3.4:** end-to-end privacy validation of the integrated system (leakage, log and output checks, consent and session behavior, PR-01 to PR-10 including the PR-08 provider policy check) and the original-vs-masked matching comparison. **CP3.5:** the final privacy evaluation and report with the matching-quality impact analysis. Both must pass before any claim that privacy is validated end-to-end or that masking does not affect matching quality, and before real-CV processing is enabled.
+5. The CP3.5 final report owes the D-045 test extraction and evidence results; those labels do not exist yet.
+
+None of these items changes the CP2.4 evaluation or the D-087 freeze.
+
+## 13. Per-stage report completeness (second pass)
+
+Each CP2 point has one current primary report. "Updated" means changed in this closeout (first or second pass); historical text in each report is labeled with its date.
+
+| Stage | Primary report | Final status | Evidence current | Report complete | Changed in second pass |
+| --- | --- | --- | --- | --- | --- |
+| CP2.1 | [CP2_01_Model_and_System_Selection.md](CP2_01_Model_and_System_Selection.md) | DONE | Yes | Yes (REPORT UPDATED: final reconciled status; D-043/D-044 pending statements resolved) | Yes |
+| CP2.2 | [CP2_02_Modeling_Pipeline.md](CP2_02_Modeling_Pipeline.md) | DONE under D-050 | Yes | Yes (REPORT UPDATED: D-091 resolution of the carry-over; JD prompt v1.4 in the freeze) | Yes |
+| CP2.3 | [CP2_03_System_Tuning.md](CP2_03_System_Tuning.md), with [CP2_03_Model_Comparison.md](CP2_03_Model_Comparison.md) | DONE (D-087; D-091; D-092) | Yes | Yes (REPORT UPDATED: objective, scope, method, final table, D-091/D-092 with privacy status by level, figures, audit trail; comparison report carries a supersession note) | System Tuning yes; Model Comparison no |
+| CP2.4 | [CP2_04_Evaluation_Metrics.md](CP2_04_Evaluation_Metrics.md) | DONE | Yes | Yes (REPORT UPDATED: figures 9-10 embedded with coverage captions; final status) | Yes |
+| CP2.5 | [CP2_05_Evaluation_Visualization.md](CP2_05_Evaluation_Visualization.md) | DONE | Yes | Yes (REPORT COMPLETE: updated in the first pass) | No |
+| CP2.6 | [CP2_06_Recommendation_and_Summary.md](CP2_06_Recommendation_and_Summary.md) | DONE | Yes | Yes (REPORT UPDATED: final status and CP3 handoff) | Yes |
+| CP2.7 | [CP2_07_Presentation_and_Mentoring.md](CP2_07_Presentation_and_Mentoring.md) | Session and acceptance DONE; LMS proof open | Yes | Yes (REPORT UPDATED: session, feedback, D-093, audit trail) | Yes |
+| CP2.8 | [CP2_08_Post_Test_Quality_Optimization.md](CP2_08_Post_Test_Quality_Optimization.md) | CLOSED, KEEP BASELINE | Yes | Yes (REPORT UPDATED: figures A1-A4 embedded with denominators; historical plan sections labeled; claim boundary) | Yes |
+
+Result: the documentation condition for closure is met; no primary report is missing or partial.

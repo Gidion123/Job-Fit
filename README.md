@@ -1,4 +1,4 @@
-> Current status (7 October 2026): CP2 technical work is done (freeze D-087, held-out evaluation CP2.4, figures, final summary, Phase A closed with KEEP BASELINE). CP2 is **not yet closed**: the CP2.7 mentor/LMS evidence and two CP2.3 carry-over decisions are missing. [CP2 closeout audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md).
+> Current status (7 October 2026): CP2 work is done (freeze D-087, held-out evaluation CP2.4, figures, final summary, CP2 presentation and mentoring on 4 Oct with feedback recorded as D-093, Phase A closed with KEEP BASELINE; CP2.3 carry-overs resolved by D-091 and D-092). CP2 is **not yet closed** only because the CP2.7 LMS upload proof is not recorded. [CP2 closeout audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md).
 
 # JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis
 
@@ -16,7 +16,7 @@ Final project for the Data Science and Machine Learning bootcamp at Dibimbing (B
 | Checkpoint | Focus | Dates | Status |
 | --- | --- | --- | --- |
 | CP1 | Data collection, cleaning, feature transformation, EDA | until 27 Sep 2026 | Done |
-| CP2 | Guideline and gold set, search baselines, evidence matching, recommendation list, evaluation | 28 Sep to 7 Oct 2026 | Technical work done: freeze D-087 (Hybrid Qwen, seniority rule, K 10, DeepSeek Flash extraction, GPT-6 Sol matching with Luna fallback, evidence prompt v1.1, H2v2, experience block), held-out evaluation done (CP2.4). Not yet closed: CP2.7 mentor/LMS evidence and two CP2.3 carry-over decisions ([audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md)) |
+| CP2 | Guideline and gold set, search baselines, evidence matching, recommendation list, evaluation | 28 Sep to 7 Oct 2026 | Technical work done: freeze D-087 (Hybrid Qwen, seniority rule, K 10, DeepSeek Flash extraction, GPT-6 Sol matching with Luna fallback, evidence prompt v1.1, H2v2, experience block), held-out evaluation done (CP2.4). CP2.7 presentation and mentoring done (D-093); carry-overs resolved (D-091, D-092). Not yet closed: CP2.7 LMS proof not recorded ([audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md)) |
 | CP3 | API, database, app, testing, deployment | 5 to 11 Oct 2026 | API, UI, CV coach, Docker and CI done locally; hosting deploy and deployed checks pending |
 
 This README is updated at the end of every checkpoint.
@@ -73,6 +73,8 @@ The configuration was frozen before any test processing (D-087). Headline on thr
 - Familiar development CVs (CV1-CV2) on held-out jobs are a separate diagnostic and are never pooled with the headline.
 - Three CVs and one run per CV: the result is indicative, not a general accuracy claim. Details: [CP2.4](docs/checkpoint_2/CP2_04_Evaluation_Metrics.md), [figures](docs/checkpoint_2/CP2_05_Evaluation_Visualization.md), [summary](docs/checkpoint_2/CP2_06_Recommendation_and_Summary.md).
 - After the test, a development-only prompt optimization (Phase A) found no eligible challenger, so evidence prompt v1.1 stays (D-090). It does not change the held-out result.
+- Privacy: CV masking, consent and session controls are implemented and component/unit tested. End-to-end privacy validation and the original-vs-masked matching comparison have **not** been performed; they are deferred to CP3.4 and CP3.5 (D-092). Real-CV processing stays disabled.
+- CP2 mentor feedback (D-093) goes to CP3: a clear waiting state for long LLM analyses, and vacancy-specific CV improvement guidance grounded in real CV evidence once the core flow is stable.
 
 ## Roadmap
 

@@ -105,6 +105,16 @@ The NDCG 0.960 is NOT a CV3-CV5 number. It covers CV3 and CV4 only, and the stag
 
 **Supplementary diagnostic, CV1-CV2 (familiar development profiles on held-out jobs).** Never pooled with the headline. P@5 0.30 -> 0.70, NDCG@10 0.688 -> 0.892 (2/2 CV). CV1 0.4 -> 0.6 and 0.845 -> 0.899; CV2 0.2 -> 0.8 and 0.530 -> 0.884.
 
+**Figures** (from `notebooks/02_cp2_heldout_evaluation.ipynb`; hashes in `evals/results/cp24/cp25_tables_v1/receipt.json`):
+
+![Fig 9: CP2.4 headline, CV3-CV5, P@5 3/3 CVs, NDCG@10 2/3 CVs (CV5 unavailable)](../../reports/figures/cp2/fig09_cp24_heldout_primary_v1.png)
+
+Figure 9, held-out headline: CV3-CV5 on held-out jobs. P@5 covers 3/3 CVs; NDCG@10 covers CV3 and CV4 only, and CV5's final bar is shown as unavailable, not 0.
+
+![Fig 10: supplementary CV1-CV2, familiar profiles on held-out jobs, never pooled](../../reports/figures/cp2/fig10_cp24_supplementary_familiar_v1.png)
+
+Figure 10, supplementary only: CV1-CV2 (development profiles) on held-out jobs. Not part of the headline. The post-hoc order decomposition (figure 11) is in [CP2.5](CP2_05_Evaluation_Visualization.md#held-out-test-figures-cp24-7-october-2026).
+
 **Test size:** 3 synthetic held-out CVs in the headline; 68 pooled pairs over CV1-CV5 (D-053 top-10 union), 67 judged and 1 unjudged (CV5/F00070, source-quality hold).
 
 ## 10b. Supplementary descriptive results (master-plan steps 4-6)
@@ -170,6 +180,9 @@ One-CV wall time (matching, K = 10, parallel): median 80.6 s (min 37.2, max 87.2
 None. The result is reported as is under D-087 and D-088; no model, prompt, K, weight, rule or metric was changed. Decisions are recorded in the [decision log](../decisions.md) when they are made.
 
 ## 13. Next step
+
+Final status (7 October 2026): DONE; acceptance evidence is checked in the [CP2 closeout audit](CP2_Closeout_Audit_20261007.md). Later CP2 work did not change this result: Phase A (CP2.8, D-089, D-090) is development-only, and the CP2 mentor feedback (D-093) is CP3 input.
+
 
 Done: CP2.5 figures 9-11 and the CP2.6 summary. CP2.4 stays locked from optimization (D-089).
 

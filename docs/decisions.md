@@ -18,7 +18,7 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 
 ## Sources
 
-- **Mentor:** feedback from the CP1 mentoring session on 27 September 2026, as passed on by Dion.
+- **Mentor:** feedback from the CP1 mentoring session on 27 September 2026, as passed on by Dion; feedback from the CP2 mentoring session on 4 October 2026, as passed on by Dion on 7 October (D-093).
 - **Dion:** decisions Dion made in design sessions.
 - **Implementation:** technical decisions made to carry out an approved decision.
 
@@ -116,6 +116,9 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-088 | 7 Oct 2026 | CP2.4 test labels: AI-assisted, human-reviewed provenance; import test_v13_cp24_r1 | Approved by Dion; written |
 | D-089 | 7 Oct 2026 | Phase A (post-test quality optimization) started; CP2.4 locked from optimization | Approved by Dion; closed by D-090 |
 | D-090 | 7 Oct 2026 | Phase A closed: keep the baseline prompt v1.1 | Decided by the locked rule; confirmed by Dion |
+| D-091 | 7 Oct 2026 | Accept the evaluated development extraction scope for CP2.3; defer exhaustive corpus extraction (closes the D-050 carry-over) | Approved by Dion |
+| D-092 | 7 Oct 2026 | Privacy status for CP2: implemented and component/unit tested only; end-to-end privacy validation and the paired masked-vs-original comparison deferred to CP3.4/CP3.5 (closes the CP2.3 D-051 item) | Approved by Dion |
+| D-093 | 7 Oct 2026 | CP2 mentor feedback recorded and accepted as CP3 input: waiting-state UX for long LLM latency; vacancy-specific CV improvement guidance | Approved by Dion |
 
 ---
 
@@ -1304,3 +1307,44 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 - **Cost:** Phase A paid calls US$2.38 (R1 0.50, R2 0.37, E01 0.99, E02 Stage A 0.50, probes under 0.001). Adaptive stopping avoided about US$3.41 (upper US$4.62): E02 Stage B, E03, the finalist repeat and the two confirmation runs. Ledger total US$10.53; `API_HARD_STOP_USD` 18.5 unchanged.
 - **Claim boundary:** post-test development optimization only. CP2.4, D-087, D-088 and their files are unchanged.
 - **Status:** Closed.
+
+## D-091. Accept the evaluated development extraction scope for CP2.3 and defer exhaustive corpus extraction
+
+- **Date/source:** 7 October 2026. Dion explicitly approved this disposition after reading the [CP2 closeout audit](checkpoint_2/CP2_Closeout_Audit_20261007.md), which listed the D-050 carry-over as an open CP2.3 acceptance item.
+- **Original carry-over:** D-050 (3 Oct) closed CP2.2 and moved the planned all-target development extraction "after CP2.3 configuration evaluation". The master-plan CP2.3 criterion asks for an auditable per-JD status and executed scope, or an explicitly approved revised scope.
+- **Actual coverage:** the development split has 214 JDs. A per-JD inventory of all 214 exists from 3 October (`evals/results/cp22_development_extraction_plan_20261003.json`; 2 source-reviewed outputs, 212 not run at that date). Extraction for configuration selection then ran on the 52 distinct JDs in the Hybrid Qwen top 30 of CV1 and CV2: 51 attempted, 48 process-valid, 47 with acceptable JD quality, F00369 source-held (`evals/results/cp23/pipeline_v11/coverage_summary_v2.json`, per-JD records). The seven-JD extraction reference comparison (D-068) and the reviewed development gold (r3, r4) are separate inputs. 162 development JDs were never extracted. This decision does not claim otherwise.
+- **Why that scope was enough:** every configuration choice that depends on extraction was made inside the stage-1 top 30. D-078 compares K in {10, 20, 30} inside the reordered top 30, and the seniority rule only reorders those 30; a job outside the top 30 cannot enter any evaluated cell. Failed or held extractions inside that scope stayed holds (never zeros) under D-052/D-073. Model choice used the fixed seven-JD and four-pair references (D-068, D-077, D-083). Exhaustive extraction of the remaining JDs would not change any D-086 input.
+- **Why exhaustive extraction is not needed to close CP2:** the frozen product extracts each analyzed JD and caches it, so the pipeline does not require a pre-built corpus cache; CP2.4 extracted its 26 analyzed test JDs the same way. The full 214-JD conservative bound (US$21.0576 in the CP2.2 plan) was never needed for an evaluation claim.
+- **Isolation:** no test data, test label or test result was used for this decision or for tuning. The test split was opened only after D-087.
+- **Unchanged:** D-087 and its 57 frozen hashes, the CP2.4 result, gold, split, prompts, models, K, weight and rules. No inference is authorized.
+- **Future:** extraction of the remaining development corpus stays optional future work, to be planned with its own budget if production caching, a broader evaluation or another stage needs it.
+- **Status:** Approved. The D-050 carry-over is resolved for CP2.
+
+## D-092. Privacy status for CP2 and deferral of end-to-end privacy validation and the paired masked-vs-original comparison
+
+- **Date/source:** 7 October 2026. Dion explicitly approved deferring the paired comparison after reading the CP2 closeout audit, and the same day clarified that privacy/masking has **not** been validated end-to-end in the integrated JobFit system and must not be described as fully validated, fully tested, proven safe end-to-end or proven to have no impact on matching quality.
+- **Status by level (repository evidence):**
+  1. **Implemented:** local masking (`src/jobfit/privacy/masking.py`), editable preview with consent bound to the exact masked text, owner-scoped session state with lease, idle and absolute expiry and delete, upload cleanup, and the 403 gate that keeps real-CV provider processing off (CP3.1 API). The frozen pipeline parses masked text: all five CP2.4 parse records carry masking counts.
+  2. **Component/unit tested:** `tests/test_privacy_controls.py` (12 tests), `tests/test_cp23_masking_quotes.py` (1), `tests/test_cp23_masking_pairs_preflight.py` (2, offline preflight only), and `tests/test_api_privacy.py` (8 tests at the FastAPI layer with a fake run, mapped to PR-01 to PR-07 and PR-09; the file states that a pass "covers this measured scope only, not a deployed host"). The mechanical masked-quote receipt (`evals/results/cp23_masking_quote_compatibility_20261004_v1.json`, 13 changed rows, all traceable) checks quote traceability only. A local scripted API check with synthetic canaries is reported in EXP-20261006-CP3 (CP3 work, no saved output file); it is not end-to-end privacy validation.
+  3. **End-to-end validated: NOT PERFORMED.** No integrated or deployed check of PR-01 to PR-10 (two-user isolation, browser liveness and expiry, provider payload spies, log/database/backup inspection, measured deletion timing), and no PR-08 provider endpoint-policy check.
+  4. **Original-vs-masked matching quality comparison (PR-10): NOT PERFORMED.**
+- **Disposition:** both open items are deferred to CP3. **CP3.4:** end-to-end privacy validation, leakage/log/output checks, consent and session behavior, and the original-vs-masked comparison. **CP3.5:** the final privacy evaluation and report, including the matching-quality impact analysis.
+- **Why CP2 is not reopened:** these items validate preprocessing and the deployed privacy boundary; they are not configuration choices and feed none of D-078, D-084 or D-087. The CP2.4 result was produced with the masking the product uses. The master-plan privacy table already assigns integrated privacy acceptance to CP3.1-CP3.4; this decision moves the CP2.3 paired comparison there too.
+- **Claim limits:** CP2 documentation reports privacy only as implemented and component/unit tested. It makes no claim that privacy is validated end-to-end, safe end-to-end, or without effect on matching quality. Real-CV processing stays disabled (`/cv/parse` answers 403) until the D-051 release gates, the CP3.4 validation and separate consent are met.
+- **Unchanged:** the D-051 design, D-087, the CP2.4 held-out result and all frozen files. No privacy experiment or paid call is run or authorized by this entry.
+- **Status:** Approved (deferred to CP3.4 and CP3.5).
+
+## D-093. CP2 mentor feedback recorded and accepted as CP3 input
+
+- **Date/source:** the CP2 presentation and mentoring session took place on 4 October 2026 (the D-069 amendment records that Dion expected the presentation about six hours after 08:13 WIB that day, and the 4 October audit report opens "After the CP2 presentation"). The exact time was not captured. On 7 October 2026 Dion confirmed the session and supplied the mentor's feedback, recorded here in his words:
+  > "Latency LLM nya cukup tinggi yaitu 95 s, maka dibuat semacam UI atau animasi menunggu seperti Claude thinking agar user tidak bosan.
+  > Jika core fitur sudah jadi, tambahkan fitur utk memperbaiki CV atau saran perbaikan CV utk lowongan tersebut, sehingga menaikkan matching nya."
+- **English rendering:**
+  1. LLM latency is high, about 95 seconds. Add a waiting-state UX, such as a progress or "thinking" animation, so the user sees that processing is ongoing and does not get bored.
+  2. Once the core features are done, add CV improvement guidance for the target vacancy, so the user can raise the match.
+- **Context:** the 4 October deck used development results; the reported DeepSeek Flash matching request p95 was about 91 seconds (D-068). The ~95 s figure is the mentor's. The frozen configuration later moved matching to GPT-6 Sol; on the held-out run the one-CV matching wall time was 37.2 to 87.2 s, median 80.6 s (CP2.4 section 10b).
+- **Decision A, latency UX (CP3):** CP3 shows a clear waiting state for long analyses (progress, current step, a "thinking" indicator). This is a perceived-wait mitigation; it does not reduce model latency, and no latency reduction is claimed unless later engineering measures one. The CP3 Streamlit UI already has a per-job progress bar and a spinner (`ui/streamlit_app.py`); CP3 checks them against this feedback rather than starting a duplicate feature.
+- **Decision B, vacancy-specific CV improvement guidance (CP3, after the core flow is stable):** suggestions are grounded in the user's actual CV evidence, the target JD requirements and the identified gaps. They never invent experience or encourage misrepresenting skills. Editing a CV can raise the evidence-coverage percentage only when it adds truthful evidence; it does not guarantee a higher true suitability. This extends the existing CV coach plan (D-036, [cv-coach-plan.md](cv-coach-plan.md)) and CV coach v1 (EXP-20261006-CP3); no second feature is created.
+- **Boundary:** neither item changes the CP2.4 evaluation, D-087, the held-out result, evaluation thresholds or CP2 tuning, and neither authorizes paid inference.
+- **Status:** Approved. Satisfies the CP2.7 acceptance criterion "the mentor's feedback is recorded in docs/decisions.md as new entries".
+

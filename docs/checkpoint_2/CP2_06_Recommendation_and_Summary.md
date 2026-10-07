@@ -124,3 +124,7 @@ Source: `evals/results/cp24/supplementary_v2/summary.json`, `evals/results/cp24/
 | Quote grounding | 266/266 positive items quote the CV exactly | 253/253 |
 
 Top three error sources: (1) holds, which put 3, 1 and 5 of the final top 10 of CV3, CV4 and CV5 in the "not fully analyzed" block, four of CV5's five from the run cap and extraction; (2) incomplete or failed JD extraction; (3) role fit: the match percentage measures evidence coverage, so an adjacent role (F00501) can score high.
+
+### Final status and handoff (7 October 2026)
+
+CP2.6 is DONE: the final architecture, keep/remove decisions and error analysis above trace to D-083, D-086, D-087 and D-090, and acceptance is checked in the [CP2 closeout audit](CP2_Closeout_Audit_20261007.md). Carry-overs resolved after the test: the D-050 extraction scope is accepted (D-091) and privacy is implemented and component/unit tested only, with end-to-end privacy validation and the paired masking comparison deferred to CP3.4/CP3.5 (D-092). The CP2 mentor feedback (D-093, [CP2.7](CP2_07_Presentation_and_Mentoring.md#10-results)) adds two CP3 items: a waiting-state UX for long analyses, and vacancy-specific CV improvement guidance grounded in real CV evidence. Neither changes this recommendation or the frozen configuration.

@@ -6,6 +6,8 @@
 **Status:** DONE for implementation and evidenced acceptance, 3 October 2026, under explicit user-approved scope decision D-050. Broad extraction is deferred until CP2.3 configuration evaluation; it has not been run.  
 **Design:** System Design v1.3; annotation guideline v1.3 (D-049); checkpoint scope D-050.
 
+> **Final reconciled status (7 October 2026):** DONE under D-050. The broad development extraction that D-050 carried into CP2.3 is resolved by [D-091](../decisions.md): the 52-JD development scope used for configuration selection is accepted and exhaustive extraction of the other 162 development JDs is optional future work. The frozen system (D-087) uses JD prompt v1.4 experimental, not the v1.2 default named below. The rest of this report is the 3 October record; its "next steps" in section 11 were carried out in CP2.3 ([final status](CP2_03_System_Tuning.md#final-status-closeout-audit-7-october-2026)). Acceptance evidence: [CP2 closeout audit](CP2_Closeout_Audit_20261007.md).
+
 ## 1. Executive summary
 
 The backend can read a synthetic CV, require confirmation of its parsing summary, extract a pasted JD, match requirement units with quoted CV evidence, and produce an evidence-coverage report with separate constraints. Text PDF, DOCX and plain-text paths, dated experience rules, versioned caches, budget controls, two embedding models, and development retrieval are implemented.

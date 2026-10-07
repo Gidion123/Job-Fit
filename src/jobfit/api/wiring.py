@@ -11,13 +11,12 @@ from __future__ import annotations
 
 from datetime import date
 import json
-import os
 import threading
 
 import yaml
 
 from jobfit.api.main import AppDeps
-from jobfit.config import REPO_ROOT, get_settings
+from jobfit.config import REPO_ROOT, get_production_settings, get_settings
 from jobfit.cv.parser import ParsedCV
 from jobfit.extraction.saved_records import load_record
 from jobfit.llm.runtime import build_runtime_client
@@ -71,9 +70,9 @@ class LiveUnavailable(RuntimeError):
 
 
 def live_enabled() -> bool:
-    # Off in the Docker image: a fresh container has an empty usage ledger, so the
-    # project budget guard would not see earlier spending (key limit still applies).
-    return os.getenv('JOBFIT_LIVE_ENABLED', '1') == '1'
+    # Fail closed (FAIL-38, D-096): off unless JOBFIT_LIVE_ENABLED=1 and the production settings
+    # are complete. Invalid or contradictory settings raise ConfigurationError instead of guessing.
+    return get_production_settings().live_enabled
 
 
 def build_deps() -> AppDeps:

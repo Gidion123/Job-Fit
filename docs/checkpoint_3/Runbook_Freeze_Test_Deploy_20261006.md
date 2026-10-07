@@ -62,6 +62,12 @@ python scripts/e2e_check.py --live --write
 
 ## 4. Deployment (Railway, D-023)
 
+> **Superseded (7 Oct 2026):** D-095 replaces Railway with a SumoPod VPS, so this section is kept only as history. The VPS runbook is written in CP3 Phase 6 ([CP3 execution plan](CP3_Execution_Plan.md)). It will contain:
+> - the provisioning checklist;
+> - the production compose and Caddy setup;
+> - backup-before-migrate and restore-based recovery;
+> - the exact two-layer validation commands: **A**, external public smoke through Caddy and Streamlit; **B**, the internal API `e2e_check.py` inside the VPS Docker network or through an SSH tunnel. FastAPI is never exposed publicly.
+
 1. Confirm the monthly cost and set a hard usage limit in Railway.
 2. Push the repository to GitHub yourself; the CI workflow (`.github/workflows/tests.yml`) must be green.
 3. In Railway create two services from the repository: one with `Dockerfile.api`, one with `Dockerfile.ui`. On the UI service set `JOBFIT_API_URL` to the API's private URL. Railway sets `PORT`; both images use it.

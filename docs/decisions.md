@@ -48,7 +48,7 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-020 | 29 Sep 2026 | Embedding model: OpenAI `text-embedding-3-small` | Approved (called through OpenRouter, D-030) |
 | D-021 | 29 Sep 2026 | Synthetic CVs by default; real CV only after explicit confirmation | Approved |
 | D-022 | 29 Sep 2026 | Demo path with saved results, honestly labeled | Approved |
-| D-023 | 29 Sep 2026 | Hosting: Railway | Approved (paid plan confirmed before subscribing) |
+| D-023 | 29 Sep 2026 | Hosting: Railway | Superseded by D-095 (SumoPod VPS) |
 | D-024 | 29 Sep 2026 | Local development database with Docker Compose | Approved |
 | D-025 | 29 Sep 2026 | Feature status and the rule for removing minimal features | Approved |
 | D-026 | 29 Sep 2026 | Definition of Done v1 and the cut order | Approved |
@@ -120,6 +120,12 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-092 | 7 Oct 2026 | Privacy is implemented and component/unit tested only; end-to-end validation and the original-vs-masked comparison move to CP3.4/CP3.5 | Approved by Dion |
 | D-093 | 7 Oct 2026 | CP2 mentor feedback taken into CP3: waiting-state UX for the long LLM wait; vacancy-specific CV guidance | Approved by Dion |
 | D-094 | 7 Oct 2026 | CP2 closed: acceptance work complete, reports current, freeze verified; handoff to CP3 | Approved by Dion |
+| D-095 | 7 Oct 2026 | CP3 deployment target (SumoPod VPS), full public live product scope and branch lifecycle | Approved by Dion and Codex; planned, not deployed |
+| D-096 | 7 Oct 2026 | Public live cost and abuse controls: US$5 validation budget, US$2/day cap, deterministic phase bounds, 1 analysis per IP per 24 h, one live analysis at a time | Approved by Dion and Codex; planned |
+| D-097 | 7 Oct 2026 | CP3 runtime changes go through non-frozen adapters; the D-087 files stay byte-identical | Approved by Dion and Codex; planned |
+| D-098 | 7 Oct 2026 | Mutable production job corpus: twice-monthly JSearch sync, dedupe, lifecycle, lazy extraction cache, minimal Alembic baseline | Approved by Dion and Codex; planned |
+| D-099 | 7 Oct 2026 | CP3 observability: Prometheus and Grafana with email alerts, Langfuse Cloud (Japan) metadata only | Approved by Dion and Codex; planned |
+| D-100 | 7 Oct 2026 | CP3 evaluation obligations and feature freeze: D-045 to be completed with option B, PR-10, freeze at the end of 9 Oct | Approved by Dion and Codex; planned, not completed |
 
 ---
 
@@ -1351,3 +1357,161 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 - **Moves to CP3 (not CP2 gaps):** privacy validation and the original-vs-masked comparison (CP3.4) and their report (CP3.5), both from D-092; D-093 items A and B; the D-045 test extraction and evidence results (CP3.5); FAIL-35, the three environment-dependent tests that keep the full suite and CI red without affecting CP2 results.
 - **Unchanged:** D-087, the CP2.4 result and its frozen files, and D-090. The CP2 claims stay as reported: CV3-CV5 headline P@5 0.5333 -> 0.7333 (3/3 CVs), NDCG@10 0.8047 -> 0.9604 for CV3-CV4 only, F00070 unjudged, CV1-CV2 supplementary, privacy not validated end to end.
 - **Status:** Approved. CP2 is closed; CP3 starts from section 11 of the closeout audit.
+
+## D-095. CP3 deployment target, public product scope and branch lifecycle
+
+- **Date/source:** 7 October 2026. Dion and Codex approved the CP3 final execution plan after three review rounds.
+- **Hosting (replaces D-023):** a SumoPod VPS in Singapore, Ubuntu Server 24.04 LTS, 2 vCPU / 8 GB RAM / 80 GB storage.
+  - Dion and Codex buy and configure the machine (SSH keys, ufw, Docker, DNS, secrets).
+  - The repository provides the production compose file, the Caddyfile, the runbook and scripts.
+  - Railway is no longer the target.
+- **Reverse proxy:** Caddy with automatic HTTPS.
+  - Only Caddy publishes ports (80/443). FastAPI, PostgreSQL, Prometheus and Grafana stay on internal Docker networks.
+  - FastAPI is never exposed publicly, including for testing. Grafana is reached through an SSH tunnel.
+  - The domain is a placeholder (`JOBFIT_PUBLIC_HOST`) until VPS setup.
+- **Product scope: full public live JobFit.** Anyone can upload a real CV:
+  - safe parsing, local masking with reviewed identifiers, explicit consent bound to the exact masked text;
+  - runtime query embedding, hybrid retrieval, lazy JD extraction with a cache, evidence matching, the experience and seniority rules, scoring and ranking;
+  - recommendations and the CV coach.
+
+  The saved demo stays as the zero-cost demo and as the fallback for the presentation and for any time live mode is unavailable.
+- **Release gate:**
+  - Public real-CV live mode (`JOBFIT_PUBLIC_LIVE=1`) is switched on only after the CP3.4 privacy release gate passes on the deployed stack. That gate includes the recorded OpenRouter per-route privacy configuration and a configured `full_analysis_upper_bound` within the daily cap (D-096).
+  - Until then the VPS is "deployed dark": saved demo for the public, and owner-token live runs for validation.
+- **Deployment:** manual tagged deploys (SSH, check out a tag, `docker compose up -d --build`). Automatic CD stays optional.
+- **Validation layers:**
+  - A, external public checks through Caddy and Streamlit;
+  - B, an internal API `e2e_check.py` run inside the VPS Docker network or through an SSH tunnel.
+- **Branch lifecycle:** `cp3-development-20261007` → implementation → validation → feature freeze → review by Dion and Codex → squash or merge into `main` (Dion) → release. Scheduled production workflows run from `main` after that merge. No CP3 implementation reaches `main` before the final review and freeze.
+- **Status:** Approved. Planned; nothing is deployed yet.
+
+## D-096. Public live cost and abuse controls
+
+- **Date/source:** 7 October 2026, Dion and Codex.
+- **Two budgets:**
+  - **CP3 validation:** US$5 in total (live E2E checks, latency measurements, PR-10, the D-045 blind run). I report the reason, cost, benefit and a no-spend alternative before anything would cross it.
+  - **Production:** a US$2/day global hard cap (Asia/Jakarta calendar day, configurable).
+  - The D-070 project hard stop of US$18.5 covers the development and validation ledger. Production spend is separate and limited by the production key and the daily cap.
+- **Deterministic phase bounds:** computed by a non-frozen module from versioned configuration only: allowed model ids, prices in `config/models_v1.yaml`, maximum input and output tokens per task, and maximum call counts including repairs and allowed fallbacks.
+  - `parse_max`
+  - `recommendation_upper_bound = embed_max + extraction_max + matching_max + fallback_max`
+  - `full_analysis_upper_bound = parse_max + recommendation_upper_bound`
+
+  A missing price, limit or count fails closed. `full_analysis_upper_bound` must be at most the daily cap before `JOBFIT_PUBLIC_LIVE=1`. If it is higher, that is a production configuration blocker, reported to Dion and Codex; the bound is never quietly reduced. The planning estimate (about US$0.25-0.6 per run) is never used for enforcement.
+- **Separate phase reservations:**
+  - `/cv/parse` reserves `parse_max`.
+  - `/recommendations` reserves `recommendation_upper_bound`. Query embedding, extraction, matching and fallback are charged only to this reservation, never to the parse reservation.
+  - Each reservation is settled from the ledger and the unused part is released at completion, failure or cancel.
+  - Admission rule: `settled_spend_today + outstanding_reservations + new_phase_bound <= daily_cap`.
+  - No billable provider call runs without an active reservation of its phase.
+  - Reservations are persisted. A stale reservation from a crashed process counts in full until the end of the day. If the ledger or reservation state can't be trusted, live admission is refused.
+- **Authority:** the persistent production ledger is authoritative, with the provider-side credit limit of a dedicated OpenRouter production key as the outer fail-safe. Prometheus and Langfuse cost figures are telemetry only.
+- **Per IP:**
+  - One full live CV analysis per IP per 24 hours (rolling). One ticket covers the parse, one recommendation run and up to three pasted-JD analyses in that session.
+  - The ticket is consumed at the first billable provider operation (the parse). Refusals before that point (disabled, busy, budget, invalid file, consent failure, preflight failure) do not consume it.
+  - A busy or budget refusal of the recommendation keeps the ticket valid for a retry in the same session.
+  - IPs are stored only as `HMAC-SHA256(key, ip)` (IPv6 by /64), with rows deleted after 48 hours.
+  - The client IP comes from Caddy through Streamlit and is forwarded to the internal API with an internal service token.
+- **Global concurrency:** one live analysis at a time (calls inside a run may run in parallel).
+- **Other controls:**
+  - session creation is rate-limited per IP pseudonym;
+  - an owner override token bypasses only the per-IP limit (for a shared presentation network), never the cap, the gate or consent;
+  - live and public live are off by default.
+- **Status:** Approved. Planned, not implemented.
+
+## D-097. CP3 runtime changes outside the D-087 freeze
+
+- **Date/source:** 7 October 2026, Dion and Codex.
+- **Rule:** CP3 production changes go through non-frozen modules and the dependency-injection seams that already exist (`recommend(..., retrieve, extraction_for, client, matcher)`, `api/wiring.py`). The 57 D-087 files stay byte-identical, and `prepare_cp23_freeze.py --verify` must stay `"ok": true`. No change to the model, prompt, K, weights or retrieval configuration.
+- **Planned adapters:**
+  1. **A concurrency-safe app client** (F2): the frozen client holds a file lock for the whole network call, so live matching runs one call at a time. The adapter keeps request semantics, matching inputs and the model, prompt and config unchanged. It makes the network call outside the long lock, does reservation and in-flight accounting, writes one ledger entry per call and has telemetry hooks. Fake-SDK tests compare serial and concurrent `Recommendation` outputs, and live timing is measured before any latency claim. The mentor's 95 s is not attributed to serialization unless measurement shows it.
+  2. **The CP3 consent compatibility adapter around the frozen CP2 parser.**
+     - The frozen `parse_cv` uses `is_synthetic` as its real-CV guard.
+     - The adapter has no raw-text interface. It is entered only through `SessionStore.dispatch(handle, lease, op)`, passes only the exact consented masked text to the frozen parse logic, and relabels the profile `is_synthetic=False`.
+     - Seven required tests: no lease means no call; a changed preview means no call; raw text can't be passed; the payload equals the consented text; `is_synthetic` is False; a late result after expiry or delete is not stored; frozen files are unchanged.
+     - If inspection finds another semantic dependency on `is_synthetic`, I stop and report instead of forcing the design.
+  3. Runtime query embedding of the consented masked text with the frozen profile.
+  4. A production retriever over active, canonical, target-role DB jobs.
+  5. A lazy JD extraction provider with a persistent cache and parallel prefetch.
+  6. The public recommendation API contract: `cv_source = demo | upload`. The uploaded CV is resolved from the owner's session and never posted back by the browser.
+- **Frozen-file edits:** any edit to a frozen file needs a new decision labelled "POST-FREEZE CP3 PRODUCTION CHANGE", with a new freeze-receipt version.
+- **Status:** Approved. Planned, not implemented.
+
+## D-098. Mutable production job corpus
+
+- **Date/source:** 7 October 2026, Dion and Codex.
+- **Separation:**
+  - The frozen CP2 evaluation corpus (the snapshot `CP1_20260926`, splits, gold, freeze receipts and the local CP2 database built by the unchanged loader and `SCHEMA_SQL`) is never touched by production code.
+  - The mutable CP3 production corpus lives only in the VPS database. See [production-corpus.md](production-corpus.md).
+- **Seed:** a restore-tested dump of the verified local database, 632 rows with Qwen vectors.
+  - The 428 target-role rows (dev and test) are active and retrievable.
+  - The 204 non-target rows are kept but excluded from retrieval.
+  - Serving historical test jobs is allowed, but **CP2 held-out and test labels are never used** for prompt, threshold, ranking, model-selection or retrieval tuning (D-046 rule 4, D-089).
+- **Refresh:** JSearch, twice a month (about every two weeks; GitHub cron on the 1st and 15th, not an exact 14-day schedule).
+  - GitHub Actions is only the scheduler and SSH trigger: a forced-command key for a dedicated VPS user.
+  - JSearch and database credentials stay on the VPS.
+  - A versioned production query manifest is required, capped at 80 requests per sync.
+- **Identity and dedupe:**
+  - Provider identity is `job_sources(source, source_job_id)`, unique on that pair.
+  - New IDs are `J` plus 16 hex characters of SHA-256.
+  - Exact duplicates map to the one canonical job with no new row (a `duplicate_exact` report counter).
+  - Fuzzy probable duplicates (the CP1 rules) are not merged automatically. They become `dedupe_status='review_required'` and inactive, so they are excluded from retrieval until a small review command resolves them.
+  - Production retrieval uses only `is_active AND dedupe_status='canonical' AND role_group='target'` with a current embedding.
+  - The same vacancy must never appear twice in retrieval.
+- **Classification:**
+  - NEW;
+  - CONTENT_CHANGED (embedding or extraction inputs changed: re-embed, and the extraction cache is invalidated);
+  - METADATA_CHANGED (row updated, no re-embedding);
+  - UNCHANGED;
+  - STALE / INACTIVE.
+- **Lifecycle (coverage-aware):**
+  - A job counts as missed only when a query that previously found it completed.
+  - It becomes inactive after two covered misses, 30 days without being seen, or a trusted provider expiration (none observed so far).
+  - It is hard-deleted after 60 days inactive.
+  - Embeddings are incremental. There is no extraction during the sync.
+- **JD extraction:** lazy with a persistent Postgres cache keyed by the existing extraction cache key (content hash, model, prompt, schema, guideline, scope, context), with a 7-day negative cache for failures. It is seeded from the development saved records only. CP2 extraction evidence stays separate and historical.
+- **Database:** a minimal Alembic baseline (raw-SQL revisions): `0001` = the current `SCHEMA_SQL`, so restored databases can be stamped; `0002` = lifecycle, dedupe, sources, sync runs, extraction cache, quota and reservations.
+  - Production deploys upgrade only after a verified backup.
+  - Downgrade is not a recovery strategy; recovery is the previous app tag plus a database restore.
+  - The CP2 `SCHEMA_SQL` and loader stay unchanged.
+- **Status:** Approved. Planned, not implemented.
+
+## D-099. CP3 observability
+
+- **Date/source:** 7 October 2026, Dion and Codex.
+- **Prometheus and Grafana:** RED metrics for the API, USE metrics for the VPS (node_exporter), and app counters with bounded labels only (no job, session, request or run IDs as labels).
+  - Sync results are exposed as gauges from the latest sync run.
+  - Two dashboards: service with a small corpus/sync row, and VPS.
+  - No cAdvisor in the MVP. The only restart alert is the API restart loop (`process_start_time_seconds`).
+- **Alerts:** Grafana-managed alerts sent by email through an SMTP contact point. The settings are `GRAFANA_SMTP_HOST`, `GRAFANA_SMTP_PORT`, `GRAFANA_SMTP_USER`, `GRAFANA_SMTP_PASSWORD`, `GRAFANA_ALERT_FROM` and `GRAFANA_ALERT_TO`; Dion and Codex choose the account during VPS setup.
+- **Langfuse Cloud:** Japan region, Hobby plan, metadata only.
+  - Input and output capture is off, with a mask function as a backup and a metadata allow-list (run id, stage, model, provider, duration, tokens, cost, retry/fallback, error code, hold status, public job id).
+  - Never sent: CV text, names, contacts, addresses, identifying employer history, evidence quotes, pasted JDs or session tokens.
+- **Logs:** JSON lines with `request_id`, `run_id`, a session hash, route, status, duration and error code, with Docker log rotation. No CV content, quotes, raw IPs or tokens.
+- **Cost figures:** Prometheus and Langfuse cost numbers are not authoritative (D-096).
+- **No CORS:** the browser only talks to Streamlit, so no cross-origin call to FastAPI exists.
+- **Status:** Approved. Planned, not implemented.
+
+## D-100. CP3 evaluation obligations and feature freeze
+
+- **Date/source:** 7 October 2026, Dion and Codex.
+- **Feature freeze:** the formal CP3 feature freeze is at the end of 9 October 2026.
+  - Plan for 8 October: core engineering and the dark deployment substantially complete.
+  - Plan for 9 October: deployed validation, the privacy release gate, public-live enablement, PR-10 and the freeze.
+  - Plan for 10 October: reports, README, deck, video and rehearsal.
+  - The presentation stays on 11 October.
+  - Freeze criteria: 0 unexpected offline failures, freeze verify ok, the privacy gate status recorded, no P3 work before the presentation.
+- **PR-10 (original-vs-masked):** development CV1/CV2 only, on the frozen configuration. It is executed in CP3.4 and reported in CP3.5. Acceptance proposal:
+  - quote validity 1.0;
+  - no canary in any payload;
+  - masked-vs-original agreement within the original-vs-original noise band;
+  - macro-F1 drop of at most 0.02.
+
+  A failure is reported, not tuned away.
+- **D-045 will be completed as originally written, using option B:**
+  - 2 blind test extraction JDs and 1 blind CV3 evidence pair. Dion labels them first, and the frozen pipeline output is produced and shown only after the blind labels are locked (file hash recorded).
+  - The existing CP2.4 workbook (A_Extraction, B_Evidence) stays **MODEL-ASSISTED, HUMAN-REVIEWED** and is never relabelled as blind. It covers the model-draft portion.
+  - The two groups are reported separately in CP3.5.
+  - Later paid inference is about US$0.10, inside the US$5 validation budget.
+  - **Phase 0 stop condition:** if 2 eligible unseen test JDs and 1 eligible unseen CV3 pair could not be verified, the work stops and is reported; no seen item is used, no non-blind item is substituted, and D-045 is not redefined. Phase 0 found eligible candidates (see the [CP3.5 report](checkpoint_3/CP3_05_Final_Presentation_and_Portfolio.md)).
+- **Status:** Approved. PLANNED / NOT YET COMPLETED.

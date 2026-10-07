@@ -5,10 +5,10 @@ JobFit ranks AI and data job postings for an early-career candidate's CV and sho
 Final project for the Data Science and Machine Learning bootcamp at Dibimbing (Batch 42).
 
 ![Status](https://img.shields.io/badge/status-CP3%20in%20progress-blue)
-![Next](https://img.shields.io/badge/next-deploy%20%2B%20CP3.4%20E2E%20checks-blue)
+![Next](https://img.shields.io/badge/next-CP3%20implementation%20(plan%20frozen)-blue)
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 
-> **Current status (7 October 2026):** CP1 and CP2 are closed ([D-094](docs/decisions.md), [CP2 closeout audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md)). CP3 is in progress: the API, the Streamlit app and Docker run locally, but the app is not deployed yet and privacy has not been validated end to end.
+> **Current status (7 October 2026):** CP1 and CP2 are closed ([D-094](docs/decisions.md), [CP2 closeout audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md)). CP3 is in progress: the API, the Streamlit app and Docker run locally, but the app is not deployed yet and privacy has not been validated end to end. On 7 October the CP3 plan was frozen ([D-095 to D-100](docs/decisions.md)): full public live JobFit on a VPS, behind a privacy release gate, is **planned**, not built.
 
 ## Project status
 
@@ -107,11 +107,11 @@ Details: [D-092](docs/decisions.md) and the [privacy threat model](docs/privacy-
 
 | Stage | Status | Evidence and what is pending |
 | --- | --- | --- |
-| CP3.1 FastAPI service | Done locally | All planned endpoints, privacy controls and API tests ([report](docs/checkpoint_3/CP3_01_FastAPI_Service.md)) |
-| CP3.2 Database and CI/CD | Partial | Docker images and compose work locally; PostgreSQL + pgvector holds the corpus and embeddings. The GitHub Actions workflow exists but is currently red because of three environment-dependent tests ([FAIL-35](docs/failures.md)). No hosted deployment yet ([report](docs/checkpoint_3/CP3_02_Database_and_CICD.md)) |
-| CP3.3 Streamlit UI | Done locally | Full flow with privacy UX; screenshots and recording pending ([report](docs/checkpoint_3/CP3_03_Streamlit_UI.md)) |
-| CP3.4 End-to-end testing | Partial | Local scripted check passed 27 of 27 (6 Oct). Pending: deployed run, live run, privacy end-to-end validation, original-vs-masked comparison, latency/cost on the deployed app, feature freeze ([report](docs/checkpoint_3/CP3_04_End_to_End_Testing.md)) |
-| CP3.5-CP3.7 Final report, rehearsal, presentation | Not started | Includes the final privacy report and the test extraction/evidence results still owed by D-045 |
+| CP3.1 FastAPI service | Partial | Demo-CV flow done locally: all original endpoints, privacy controls and API tests. Planned: the public live path (real-CV parse through a consent adapter, runtime embedding, extraction cache), budget and abuse controls, upload hardening ([report](docs/checkpoint_3/CP3_01_FastAPI_Service.md)) |
+| CP3.2 Database and CI/CD | Partial | Docker images and compose work locally; PostgreSQL + pgvector holds the corpus and embeddings. The GitHub Actions workflow exists but is currently red because of three environment-dependent tests ([FAIL-35](docs/failures.md)). No hosted deployment yet. Planned: SumoPod VPS (replaces Railway), Alembic, and a production job corpus refreshed from JSearch twice a month ([report](docs/checkpoint_3/CP3_02_Database_and_CICD.md), [production corpus](docs/production-corpus.md)) |
+| CP3.3 Streamlit UI | Partial | Demo flow with privacy UX done locally. Planned: public upload flow, waiting UX and coach refinements; screenshots and recording pending ([report](docs/checkpoint_3/CP3_03_Streamlit_UI.md)) |
+| CP3.4 End-to-end testing | Partial | Local scripted check passed 27 of 27 (6 Oct). Pending: deployed run, live run, privacy end-to-end validation, original-vs-masked comparison, latency/cost on the deployed app, the privacy release gate for public live, and the feature freeze at the end of 9 Oct ([report](docs/checkpoint_3/CP3_04_End_to_End_Testing.md)) |
+| CP3.5-CP3.7 Final report, rehearsal, presentation | Not started | Includes the final privacy report and the D-045 test extraction/evidence results (option B: blind items labeled first; planned) |
 
 CP3 also picks up the mentor feedback from the CP2 presentation (D-093):
 
@@ -212,19 +212,20 @@ Folder-by-folder detail: [docs/repo-structure.md](docs/repo-structure.md).
 | [Decision log](docs/decisions.md) | Every decision, who made it and why |
 | [CP1 reports](docs/checkpoint_1/README.md) | Data collection and EDA |
 | [CP2 reports](docs/checkpoint_2/README.md) and [CP2 closeout audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md) | Model selection, tuning, held-out evaluation, closure evidence |
-| [CP3 reports](docs/checkpoint_3/README.md) | API, app, deployment, testing |
+| [CP3 reports](docs/checkpoint_3/README.md) and [CP3 execution plan](docs/checkpoint_3/CP3_Execution_Plan.md) | API, app, deployment, testing; daily CP3 checklist |
 
 ## Tech stack
 
 - **In use:** Python 3.11, pandas, NumPy, matplotlib, Jupyter, Pydantic, PostgreSQL 17 with pgvector, OpenRouter (LLM and embedding gateway), FastAPI, Streamlit, Docker and Docker Compose, pytest, ruff, GitHub Actions.
-- **Pending:** hosting on Railway (D-023).
+- **Planned (D-095, D-099):** hosting on a SumoPod VPS behind Caddy, Prometheus and Grafana with email alerts, Langfuse Cloud (metadata only).
 
 ## Next steps
 
-1. Repair the three environment-dependent tests so CI can pass (FAIL-35), then deploy to Railway with live analysis off.
-2. Run the CP3.4 checks on the deployed app, including end-to-end privacy validation and the original-vs-masked comparison, then record the feature freeze.
-3. Address the CP2 mentor feedback (waiting-state UX; vacancy-specific CV guidance) within the feature freeze.
-4. Final report, rehearsal and presentation (CP3.5-CP3.7).
+1. Repair the three environment-dependent tests so CI can pass (FAIL-35).
+2. Harden the API and build the public live path (budget caps, upload hardening, consent adapter, runtime embedding, extraction cache), then deploy to the VPS with public live off.
+3. Run the CP3.4 checks on the deployed app, including the privacy release gate and the original-vs-masked comparison. Switch public live on only if the gate passes, then record the feature freeze (end of 9 Oct).
+4. Address the CP2 mentor feedback (waiting-state UX; vacancy-specific CV guidance) within the feature freeze.
+5. Final report, rehearsal and presentation (CP3.5-CP3.7).
 
 This README is the public progress snapshot. It is updated at every checkpoint closeout and at major implementation or deployment milestones, and it never claims more than the stage reports.
 

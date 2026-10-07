@@ -2,7 +2,7 @@
 
 **Version:** privacy-design-v1, 3 October 2026.  
 **Decision:** [D-051](decisions.md#d-051-session-only-cv-privacy-and-security).  
-**Status:** Design approved by Dion; implementation and security acceptance NOT RUN. CP2.3 adds synthetic development implementation/testing; public API/UI integration and deployment checks remain CP3. This document is the detailed source for privacy behavior. It is not a security certification or permission to send a real CV.
+**Status:** Design approved by Dion; implementation and security acceptance NOT RUN. **CP3 update (7 Oct 2026):** full public live analysis of real CVs is planned (D-095). It may be enabled only after the CP3.4 release gate in section 11 passes on the deployed stack. Under D-092, privacy remains implemented and component/unit tested only; end-to-end validation and the original-vs-masked comparison are NOT performed yet. CP2.3 adds synthetic development implementation/testing; public API/UI integration and deployment checks remain CP3. This document is the detailed source for privacy behavior. It is not a security certification or permission to send a real CV.
 
 ## 1. Scope and trust boundaries
 
@@ -120,3 +120,28 @@ Log only counts/statuses and synthetic fixtures in test evidence. An acceptance 
 - [MDN beforeunload](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event): unreliable departure notification.
 - [OpenRouter ZDR](https://openrouter.ai/docs/guides/features/zdr) and [data collection](https://openrouter.ai/docs/guides/privacy/data-collection): endpoint policies, routing and caching caveats.
 - [Presidio](https://github.com/data-privacy-stack/presidio): automated PII detection has incomplete coverage; no library choice is implied.
+
+## 11. CP3 public live privacy model (7 Oct 2026, D-095 to D-099): PLANNED / NOT YET VALIDATED
+
+This section adds the controls for full public live analysis of arbitrary CVs. Every row is a plan. A row is marked validated only when its CP3.4 evidence exists.
+
+| Area | Planned control | Validation (CP3.4) | Status |
+| --- | --- | --- | --- |
+| Raw CV lifecycle | Upload → hardened text extraction in memory → original bytes deleted → local masking → editable preview → consent → session-only results. Nothing CV-derived is written to the database | Temp-directory scan; database dump grep for canaries | PLANNED |
+| Upload hardening | Only the formats the current extractor supports: `.pdf` (text only, ≤ 30 pages, not encrypted), `.docx`, `.txt`, `.md`; ≤ 10 MB; ≤ 100,000 characters. Extension allow-list and signature check; size limit while streaming, before buffering (Caddy, Streamlit, API); **DOCX decompression gate** (central-directory metadata only, bounded entry count, uncompressed size and compression ratio, `word/document.xml` required); extraction timeout; safe errors with no file content. No new formats | Failure-path tests with canaries, including the 6 DOCX gate tests; a deployed rejected-file check | PLANNED |
+| Masking boundary | Regex masking (email, phone, ID numbers, profile URLs) plus **user-entered name (required) and address (optional)** as reviewed identifiers. The UI lists exactly what is masked, fixing FAIL-37. Employer, institution and city names stay, because matching needs them, and the consent text says so | Canary tests; UI text test | PLANNED |
+| Consent binding | Consent is bound to the exact masked digest. The lease is stored server-side and never sent to the browser. Every provider call for an uploaded CV runs inside `SessionStore.dispatch(handle, lease, op)` and receives only the consented text. The consent compatibility adapter around the frozen parser has no raw-text interface (D-097) | The 7 adapter tests; PR-02 | PLANNED |
+| Embedding-provider boundary | Query embedding (Qwen3-Embedding-8B through OpenRouter) receives only the consented masked text, in the recommendation phase | Spy-client payload test; PR-02/PR-08 | PLANNED |
+| LLM-provider boundary | CV parse (DeepSeek Flash), JD extraction (DeepSeek Flash, public JD text only) and evidence matching (GPT-6 Sol, Luna fallback) receive only the consented masked CV representation | Spy-client payload test; PR-02/PR-08 | PLANNED |
+| OpenRouter routing record | Before public live, Dion and Codex record the actual account privacy settings and the observed upstream routing for each of the four routes. If a promised mode such as zero data retention can't be guaranteed for a route, that is reported before public live and never fixed by changing the model, prompt, K or weights | A written record in this document and the CP3.4 report | PLANNED |
+| Logs | JSON logs with an allow-list of fields (request id, run id, session hash, route, status, duration, error code). No CV text, quotes, raw IPs or tokens. Docker log rotation | `docker compose logs` grep | PLANNED |
+| Prometheus | Bounded labels only; no job, session, request or run IDs; no content | `/metrics` grep | PLANNED |
+| Grafana | Reads Prometheus only; reached through an SSH tunnel | Configuration inspection | PLANNED |
+| Langfuse | Cloud, Japan region, Hobby plan. `capture_input/output=False`, a mask function as a backstop, a metadata allow-list. Never sent: CV text, names, contacts, addresses, identifying employer history, quotes, pasted JDs, session tokens | Exported trace JSON grep | PLANNED |
+| Database | Only public job data, the extraction cache for public JDs, HMAC quota rows, budget reservations and sync runs | `pg_dump` grep | PLANNED |
+| Error paths | The error taxonomy returns codes. `StageFailure` text and file content are never returned or logged raw | Error-path canary tests | PLANNED |
+| Retention | CV session data: lease 2 min, idle 30 min, absolute 2 h (existing), deleted on request. Quota rows: 48 h. Langfuse: plan default (no CV content) | Fake-clock tests; deployed timing (PR-04/05) | PLANNED |
+| IP pseudonymisation | `HMAC-SHA256(JOBFIT_IP_HMAC_KEY, ip)`, IPv6 by /64; raw IPs never stored. The client IP is taken from Caddy's `X-Forwarded-For` by Streamlit and passed to the internal API with a service token. Caddy access logs are off or exclude the client IP | Quota tests; configuration inspection | PLANNED |
+| Release gate | `JOBFIT_PUBLIC_LIVE=1` only after PR-01 to PR-10 pass on the deployed stack with canaries in every sink above, the OpenRouter record exists, and `full_analysis_upper_bound` is at most the daily cap (D-096) | The CP3.4 gate record | PLANNED |
+
+Until the gate passes, the VPS serves the saved demo, plus owner-token live runs for validation. The CP3.5 report holds the final privacy evaluation and the PR-10 matching-quality impact (D-092).

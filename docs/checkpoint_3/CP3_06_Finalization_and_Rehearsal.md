@@ -8,6 +8,18 @@
 
 > This report is a plan. It contains no results yet. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
 
+## CP3 final plan for this stage (7 Oct 2026, D-095 to D-100)
+
+**JobFit scope:** regression, rehearsal and release tag. PLANNED.
+- **Regression:** the final validation table in the [CP3 execution plan](CP3_Execution_Plan.md) and the [master plan](../master-plan.md#cp36-finalization-and-rehearsal-checkpoint-20):
+  - offline and database-gated pytest; ruff; freeze verify; both Docker builds; prod compose config;
+  - Alembic; restore;
+  - validation layers A (external public) and B (internal API);
+  - the canary scan; sync idempotency; phase bounds within the cap;
+  - green GitHub Actions.
+- **Rehearsal:** includes the owner-token step for a shared presentation network.
+- **After review:** Dion merges the CP3 work into `main` (D-095).
+
 ## 1. Goal of this stage
 
 Reduce the risk of the demo or the presentation failing.

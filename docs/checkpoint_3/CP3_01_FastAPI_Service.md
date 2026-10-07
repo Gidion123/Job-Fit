@@ -4,9 +4,66 @@
 **Bootcamp checkpoint:** 15. Deployment API menggunakan Flask/FastAPI · official date 5 Oct 2026  
 **JobFit version of this checkpoint:** FastAPI (Flask is not used).  
 **Planned work:** 5 Oct 2026 · **Actual:** 6 Oct 2026  
-**Status:** DONE LOCALLY · deployed check pending (CP3.4) · design basis: System Design v1.3
+**Status:** PARTIAL · demo-CV flow DONE LOCALLY (6 Oct); public live path and safety controls PLANNED / NOT YET VALIDATED (D-095 to D-097) · design basis: System Design v1.3
 
 > Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
+
+## CP3 final plan for this stage (7 Oct 2026, D-095 to D-100)
+
+**JobFit scope:** public live API, safety controls and instrumentation. Everything in this section is **PLANNED / NOT YET VALIDATED** unless marked otherwise. The stage definition is in the [master plan](../master-plan.md#cp31-api-deployment-with-fastapi-checkpoint-15), and the task list is in the [CP3 execution plan](CP3_Execution_Plan.md).
+
+- **Objective:** move from "demo CVs only" to safe public analysis of arbitrary uploaded CVs (D-095), without changing any D-087 frozen file (D-097).
+- **Already done (local, 6 Oct):** see "Results (6 Oct 2026)" below. Evidence: `tests/test_api*.py`, `scripts/e2e_check.py`, EXP-20261006-CP3.
+- **Planned scope:**
+  - **Settings and budget (D-096, FAIL-38):**
+    - fail-closed settings;
+    - a persistent production ledger;
+    - deterministic phase bounds: `parse_max`, `recommendation_upper_bound` and `full_analysis_upper_bound`, which must be at most the US$2/day cap, otherwise a blocker;
+    - separate parse and recommendation reservations (reserve, settle, release; embedding is charged only to the recommendation reservation; no billable call without an active reservation);
+    - one live analysis at a time;
+    - one ticket per IP per 24 h (HMAC, consumed at the first billable call);
+    - an internal service token;
+    - an owner override for the per-IP limit only;
+    - a session rate limit.
+  - **Public path (D-097):**
+    - the consent lease stored server-side;
+    - the **consent compatibility adapter around the frozen CP2 parser**, entered only through `SessionStore.dispatch`, with 7 required tests (stop and report if `is_synthetic` has another dependency);
+    - the `cv_source = demo | upload` contract;
+    - runtime query embedding of the consented masked text;
+    - a production retriever (active, canonical, target-role jobs);
+    - a lazy extraction cache with parallel prefetch;
+    - a concurrency-safe app client (FAIL-36).
+  - **Privacy:**
+    - name and address hints with correct masking text (FAIL-37);
+    - upload hardening, limited to the formats the current extractor supports: `.pdf` (text only, ≤ 30 pages, not encrypted), `.docx`, `.txt`, `.md`; ≤ 10 MB; ≤ 100,000 characters;
+    - an allow-list and a signature check;
+    - a streamed size limit before buffering;
+    - a **DOCX decompression gate** (entry count, total uncompressed size, compression ratio, `word/document.xml` required);
+    - an extraction timeout;
+    - safe errors.
+  - **Operations:**
+    - `/docs` off; proxy headers;
+    - readiness with a database check;
+    - an error taxonomy;
+    - request IDs and JSON logs;
+    - `/metrics`;
+    - a Langfuse Japan adapter, metadata only (D-099);
+    - stage events for the waiting UX (D-093 A).
+- **Architecture:** Browser → Caddy → Streamlit → (internal token and client IP) → FastAPI → PostgreSQL / OpenRouter / Langfuse. FastAPI is never public.
+- **Tests to add:**
+  - settings fail closed;
+  - phase bounds and reservations;
+  - quota fairness;
+  - the 7 adapter tests;
+  - upload failure paths, including the 6 DOCX gate tests;
+  - canaries in logs, metrics and the Langfuse payload;
+  - serial and concurrent `Recommendation` outputs identical on a fake SDK, with one ledger line per call;
+  - freeze verify.
+- **Costs:** no paid calls in this stage's development (fake SDKs only). Live measurement happens in CP3.4 inside the US$5 validation budget.
+- **Failures:** FAIL-36, FAIL-37 and FAIL-38 are OPEN and are fixed in this stage. FAIL-35 is fixed first (Phase 1).
+- **Acceptance:** see the master plan, CP3.1 points 5 and 10.
+- **Limitations:** one API process with in-memory sessions; latency is not claimed until measured.
+- **Status:** PARTIAL. Next: Phase 1 (FAIL-35), then Phase 2 hardening.
 
 ## 1. Goal of this stage
 

@@ -3,10 +3,42 @@
 **Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
 **Bootcamp checkpoint:** 18. Testing End-to-End Application · official date 8 Oct 2026  
 **JobFit version of this checkpoint:** Same as the template, on the deployed app.  
-**Planned work:** 8 Oct 2026 (feature freeze at the end of the day) · **Actual:** 6 Oct 2026 (local part)  
-**Status:** PARTIAL · local checks passed; deployed and live checks pending · design basis: System Design v1.3
+**Planned work:** 8 Oct 2026 (feature freeze at the end of the day); moved to 9 Oct with the formal freeze at the end of 9 Oct (D-100) · **Actual:** 6 Oct 2026 (local part)\
+**Status:** PARTIAL · local checks passed (27/27); deployed validation, privacy release gate and freeze PLANNED for 9 Oct (D-100) · design basis: System Design v1.3
 
 > Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
+
+## CP3 final plan for this stage (7 Oct 2026, D-095 to D-100)
+
+**JobFit scope:** deployed validation, privacy release gate and feature freeze. Everything in this section is **PLANNED / NOT YET VALIDATED**. Stage definition: [master plan](../master-plan.md#cp34-end-to-end-testing-checkpoint-18). Tasks: [CP3 execution plan](CP3_Execution_Plan.md).
+
+- **Date change:** the formal feature freeze moves to the **end of 9 October 2026** (D-100). The presentation stays on 11 October.
+- **Two-layer deployed validation:**
+  - **A, external public:** Internet → Caddy → Streamlit. Checks HTTPS, page availability, the saved demo, the real-CV UI journey once enabled, and user-visible failure states.
+  - **B, internal API:** `scripts/e2e_check.py` against the private FastAPI, run inside the VPS Docker network or through an SSH tunnel to a localhost-only port. FastAPI is never exposed publicly for testing.
+- **Privacy release gate** (for public real-CV live, D-095):
+  - PR-01 to PR-10 with synthetic canaries in every sink: responses, provider payloads, logs, database dump, temporary files, `/metrics`, Langfuse export and upload failure paths (including DOCX gate rejections);
+  - PR-08 fail-closed;
+  - the **OpenRouter per-route privacy record** (CV parse, query embedding, JD extraction, evidence matching). A gap is reported before public live and never fixed by changing the model, prompt, K or weights.
+  - `JOBFIT_PUBLIC_LIVE=1` only after the gate passes.
+- **Cost and abuse checks:**
+  - the configured `full_analysis_upper_bound` is at most the US$2/day cap;
+  - quota fairness (refusals before billing don't consume the ticket);
+  - the daily cap;
+  - the busy gate.
+- **Paid owner runs (inside the US$5 validation budget):**
+  - public-live E2E;
+  - a latency baseline with stage timings;
+  - FAIL-36 confirmation (an offline fake-SDK proof first, then a live measurement; no claim about the mentor's 95 s without a measurement);
+  - PR-10, original vs masked on CV1/CV2 (about US$2, D-100 thresholds).
+- **Other checks:**
+  - a sync test on the VPS (an idempotent re-run; no duplicate vacancy in retrieval);
+  - one test alert email;
+  - dashboard screenshots;
+  - mentor A/B checks on the deployed app.
+- **Feature freeze record:** the final validation table (command, passed, skipped, failed, reason for each skip), 0 unexpected offline failures, freeze verify ok, the gate status.
+- **Fallback:** if the gate is not green by the freeze, public live stays off and the presentation uses owner-token live plus the saved demo, stated in this report.
+- **Status:** PARTIAL (local 27/27 only).
 
 ## 1. Goal of this stage
 

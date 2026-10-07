@@ -4,9 +4,39 @@
 **Bootcamp checkpoint:** 17. Build Streamlit UI · official date 7 Oct 2026  
 **JobFit version of this checkpoint:** Same as the template.  
 **Planned work:** 7 Oct 2026 · **Actual:** 6 Oct 2026  
-**Status:** DONE LOCALLY · screenshots and recording pending · design basis: System Design v1.3
+**Status:** PARTIAL · demo flow DONE LOCALLY (6 Oct); public upload flow and mentor refinements PLANNED / NOT YET VALIDATED · design basis: System Design v1.3
 
 > Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
+
+## CP3 final plan for this stage (7 Oct 2026, D-095 to D-100)
+
+**JobFit scope:** public upload flow, waiting experience and coach. Everything in this section is **PLANNED / NOT YET VALIDATED** unless marked otherwise. Stage definition: [master plan](../master-plan.md#cp33-streamlit-ui-checkpoint-17). Tasks: [CP3 execution plan](CP3_Execution_Plan.md).
+
+- **Already done (local, 6 Oct):** see "Results (6 Oct 2026)" below.
+- **Known defect:** FAIL-37. The upload text says names are masked, but uploads get no name or address masking today.
+- **Public upload flow:**
+  - a required name field and an optional address field (passed as reviewed identifiers);
+  - masking text that lists exactly what is masked;
+  - consent text naming OpenRouter and the routed providers, as recorded in CP3.4;
+  - the upload allow-list `pdf`, `docx`, `txt`, `md` (unchanged from today);
+  - `server.maxUploadSize` plus the Caddy body limit;
+  - safe messages for unsupported, oversized, encrypted, scanned and malformed files, including rejected DOCX archives;
+  - quota, busy and budget messages with a saved-demo fallback;
+  - the client IP forwarded from Caddy's `X-Forwarded-For` with the internal token.
+- **Mentor A (D-093), waiting UX:**
+  - stage text (parsing, searching, reading job requirements i of N, checking evidence j of K);
+  - elapsed time;
+  - a measured typical range (after the CP3.4 baseline);
+  - graceful timeout and error states;
+  - cancel where safe (calls already in flight still finish and are billed, and the UI says so);
+  - no fake percentages.
+- **Mentor B (D-093), coach v1 refinement:**
+  - each item shows the JD requirement and the CV evidence status (missing, or partial with the quoted line);
+  - no-invention and no-guarantee wording;
+  - no LLM coach.
+- **Tests:** Streamlit test-runner cases for the upload states, waiting states and coach wording; coach checks (0 invented items; "not done" gives no bullet).
+- **Acceptance:** see the master plan, CP3.3 points 5 and 10.
+- **Status:** PARTIAL (demo flow done locally).
 
 ## 1. Goal of this stage
 

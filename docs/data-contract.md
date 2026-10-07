@@ -91,6 +91,8 @@ Unit of analysis: **1 final job posting** = 1 cluster after dedup. Each cluster 
 | dedup_unsure | cluster linked to an UNSURE pair |
 | taxonomy_version, skill_alias_version | feature versions used |
 
+**CP3 production corpus (7 Oct 2026, D-098, PLANNED):** this contract describes the frozen CP1 snapshot and stays unchanged. The mutable production database adds its own fields: `job_sources` identity, lifecycle (`first_seen_at`, `last_seen_at`, `is_active`, `missed_syncs`), `dedupe_status`, sync runs and the extraction cache. They are defined in [production-corpus.md](production-corpus.md), not here.
+
 `CP1_human_review_queue.jsonl` holds review candidates only, not gold labels. `CP1_research_summary.json` stores the populations, numerators/denominators, tables per role/bundle, the role × length standardization, runtime and input/code hashes.
 
 ### Lineage flow

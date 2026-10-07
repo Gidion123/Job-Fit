@@ -8,6 +8,13 @@
 
 > This report is a plan. It contains no results yet. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
 
+## CP3 final plan for this stage (7 Oct 2026, D-095 to D-100)
+
+**JobFit scope:** present the deployed public JobFit, with the saved demo as the safe fallback. PLANNED.
+- **Live demo:** public live if the CP3.4 privacy gate passed, otherwise owner-token live. The saved demo is the safe option.
+- **Presentation:** the planned-versus-validated status of every CP3 item is explained honestly.
+- **Afterwards:** the mentor's final feedback is recorded as a decision.
+
 ## 1. Goal of this stage
 
 Present the value, the process, and the trade-offs, and submit the project and portfolio links.

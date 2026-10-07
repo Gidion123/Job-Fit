@@ -289,3 +289,32 @@ The recovery helper refuses any failure that is not a timeout, so it cannot retr
 - **What happens:** `tests/test_splits.py` (two tests) opens the git-ignored raw snapshot `data/interim/snapshots/CP1_20260926/jsearch_records.jsonl` and has no skip guard when it is missing. `tests/test_qa_phase_a.py::test_budget_plan_stays_below_hard_stop_and_covers_need` reads the budget from the environment; without the git-ignored `.env` the code default hard stop is US$4.5, so the Phase A budget plan is not covered. With the `.env.example` values (19 / 18.5) that test passes.
 - **Effect:** none on the CP2 results; the D-087 freeze check still verifies the split hashes, and the Phase A results are saved. But CI is not green on this snapshot, so the earlier note that CI is ready (CP3.2) is wrong for now.
 - **Fix (CP3.2, not done yet):** skip the split tests when the raw snapshot is missing, and pass the budget values to the Phase A test or to CI explicitly. No frozen file is involved.
+- **CP3 status (7 Oct 2026):** still OPEN on `cp3-development-20261007`. A working fix exists on an old side branch. It will be re-applied cleanly as the first implementation batch (Phase 1, [CP3 execution plan](checkpoint_3/CP3_Execution_Plan.md)), not merged from that branch.
+
+### FAIL-36. Live matching in the app runs one model call at a time
+
+- **Found:** 7 October 2026, offline code reading during CP3 planning (no run).
+- **What happens:** `OpenRouterClient.chat_structured` holds an exclusive file lock (`ledger.exclusive()`, `fcntl.flock`) for the whole network call (`src/jobfit/llm/client.py:110-112`), and `RuntimeClient` does not override it. So the 10 matching workers in `recommend()` (`src/jobfit/recommend/service.py:200`) queue on the lock. The CP2.4 test scripts used `CappedClient` with real parallelism, so the app's live latency is probably closer to the sum of the per-job times than to their maximum.
+- **Effect:** impact on wall time not measured yet. It is not claimed to explain the mentor's 95 s figure. No CP2 result changes; CP2.4 ran in parallel through the scripts.
+- **Fix (CP3.1, planned):** a non-frozen concurrency-safe app client with budget reservations (D-096, D-097), proven first offline with a fake SDK (serial versus concurrent, identical outputs), then measured live.
+- **Status:** OPEN.
+
+### FAIL-37. The upload screen says names are masked, but uploads get no name or address masking
+
+- **Found:** 7 October 2026, offline code reading during CP3 planning.
+- **What happens:** `_set_preview` calls `mask_local(raw)` without `reviewed_identifiers` (`src/jobfit/api/main.py:195`), so only emails, phone numbers, ID numbers and profile links are masked. The UI says "Names, emails, phone numbers, profile links and ID numbers are then masked locally" (`ui/streamlit_app.py:251`).
+- **Effect:** no data reached a provider, because `/cv/parse` is gated (403). The preview wording, though, is a privacy claim the code does not keep.
+- **Fix (CP3.1/CP3.3, planned, P0):** a required name field and an optional address field passed as reviewed identifiers, and UI text that lists exactly what is masked. Canary tests cover it.
+- **Status:** OPEN.
+
+### FAIL-38. The budget guard does not protect live runs inside a container
+
+- **Found:** 7 October 2026, offline code reading during CP3 planning.
+- **What happens:**
+  - `reports/` is in `.dockerignore`, so a fresh container starts with an empty usage ledger.
+  - Without `.env`, the code defaults are a US$5 budget and a US$4.5 hard stop (`src/jobfit/config.py:52-53`).
+  - `JOBFIT_LIVE_ENABLED` defaults to on in code (`src/jobfit/api/wiring.py:76`); the Docker image sets it to 0.
+  - There is no daily cap, no per-run cap and no global limit on live runs across sessions.
+- **Effect:** none so far, because live mode is off in the image. A public deployment with live mode on would not be protected.
+- **Fix (CP3.1, planned, P0):** fail-closed settings with live off by default, a persistent production ledger on a volume, the US$2/day cap with deterministic phase bounds and persisted reservations, a per-IP ticket and a global live gate (D-096).
+- **Status:** OPEN.

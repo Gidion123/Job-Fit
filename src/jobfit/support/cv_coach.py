@@ -39,7 +39,7 @@ def bullet(requirement: str, done: bool, answers: dict | None) -> dict:
     if not done:
         return {'bullet': None, 'parts': [],
                 'ideas': [f'Learn the basics of: {requirement}.',
-                          f'Build a small project that uses it, then describe that project on your CV.',
+                          'Build a small project that uses it, then describe that project on your CV.',
                           'Run the matching again after you update your CV; answers never change the score.']}
     a = {k: _clean((answers or {}).get(k)) for k in QUESTIONS}
     if not a['own_part'] or not a['what_when']:

@@ -10,7 +10,6 @@ from __future__ import annotations
 from pathlib import Path
 
 import matplotlib as mpl
-import matplotlib.pyplot as plt
 
 SURFACE = "#fcfcfb"
 INK = "#0b0b0b"

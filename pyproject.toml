@@ -17,3 +17,8 @@ where = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src", "."]
+
+[tool.ruff.lint.per-file-ignores]
+# D-087 frozen files stay byte-identical to the CP2 freeze receipt, so their unused imports remain.
+"src/jobfit/cv/parser.py" = ["F401"]
+"src/jobfit/llm/client.py" = ["F401"]

@@ -16,9 +16,13 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - run: pip install -r requirements.txt -r requirements-dev.txt ruff
-      # Lint: syntax errors and undefined names only (the codebase uses a compact style).
+      - run: pip install -r requirements.txt -r requirements-dev.txt ruff==0.16.8
+      # Lint: syntax errors and undefined names everywhere (the codebase uses a compact style).
       - run: ruff check --select E9,F63,F7,F82 src scripts ui tests
+      # Lint: all Pyflakes checks for the application code. D-087 frozen files are exempted in pyproject.toml.
+      - run: ruff check --select F src ui
+      # CP2 freeze: every D-087 file must still match its frozen hash (exit 2 on drift).
+      - run: python scripts/prepare_cp23_freeze.py --verify evals/freeze/cp23_freeze_draft_v2
       - run: python -m pytest -q
   docker-build:
     runs-on: ubuntu-latest

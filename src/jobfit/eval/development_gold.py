@@ -5,9 +5,9 @@ Human approval provenance comes from stored review receipts, not export timestam
 """
 from pathlib import Path
 from datetime import datetime,timezone
-from collections import defaultdict,Counter
+from collections import defaultdict
 from copy import deepcopy
-import hashlib,io,json,os,re
+import hashlib,io,json,os
 import openpyxl
 from jobfit.eval.review_export import identity,dependency_token,digest,SHEETS
 

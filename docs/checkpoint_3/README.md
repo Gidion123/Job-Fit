@@ -15,3 +15,5 @@ Every report starts as a plan (status PLANNED / NOT RUN). Results, interpretatio
 | CP3.7 | 21. Final Project Presentation + Pemberian Tugas Portofolio | [Final Presentation and Submission](CP3_07_Final_Presentation_and_Submission.md) | 11 Oct 2026 | 11 Oct 2026 | PLANNED / NOT RUN |
 
 The plan behind these reports is the [CP2-CP3 master plan](../master-plan.md).
+
+**Inputs from CP2 (closed 7 Oct 2026, D-094):** the frozen configuration D-087 with evidence prompt v1.1 (D-090), and two follow-ups from CP2. First, the mentor feedback in [D-093](../decisions.md): a clear waiting state for the long LLM analysis (check the existing progress bar and spinner first), and vacancy-specific CV guidance once the core flow is stable (part of the [CV coach plan](../cv-coach-plan.md)). Second, the privacy work deferred by [D-092](../decisions.md): privacy is implemented and covered by component tests only, so CP3.4 runs the end-to-end privacy checks and the original-vs-masked comparison, and CP3.5 reports them. Full list: [CP2 closeout audit, section 11](../checkpoint_2/CP2_Closeout_Audit_20261007.md#11-what-cp3-inherits).

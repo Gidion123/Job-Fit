@@ -1,6 +1,45 @@
 # CP2.3: System Tuning
 
-**Final update, 6 October 2026:** **Status:** DONE for development; the freeze receipt waits for Dion's approval. Gold r4 (D-085) completed the judgments. The D-078 rule chose K 10, PARTIAL weight 0.5 and the seniority rule; Hybrid Qwen stays under D-084; GPT-6 Sol matches (D-083); the experience block joins the freeze (D-086). Final product order on development: macro P@5 0.70, NDCG@10 0.552 (0.568 with the experience block). With the seniority rule, stage 1 alone reaches P@5 0.70 and NDCG@10 0.550, so stage 2 adds explanations rather than ranking gain on these two CVs. Details: [EXP-20261006-R4](../experiments.md).
+## Final status (7 October 2026)
+
+**Status:** DONE. The configuration was chosen on development data and frozen before the held-out test (D-087), and the two items left open at the end of CP2.3 are settled (D-091, D-092).
+
+**Goal.** Pick every setting by measurement on the development split (retriever, embedding, K, PARTIAL weight, models, prompts, hold and order rules), then freeze the configuration and the test protocol (D-053), so that nothing in CP2.4 is tuned on test data.
+
+**Data.** Development split only: 214 target-role JDs, synthetic CV1 (Indonesian) and CV2 (English), reviewed development gold (r3, then r4 with 46 gap labels, D-085), seven extraction reference JDs and four evidence pairs (73 units). I did not touch the 214 test JDs, CV3-CV5 or any test label.
+
+**Method.** For each component I fixed the selection rule before computing the deciding numbers: D-044 (embedding), D-029 as amended by D-066 (models), D-078 (K, weight, seniority rule) and D-084 (retriever change). Metrics follow D-052 and D-073: original positions, unjudged jobs never counted as 0, and held jobs kept in the product order. D-075 adds bootstrap intervals.
+
+| Setting | Final choice | Evidence |
+| --- | --- | --- |
+| Stage-1 retriever | Hybrid FTS + Qwen3 dense, RRF k 60 (Qwen won the D-044 rule; D-084 kept hybrid against every challenger on gold r4) | `evals/results/cp23/post_labeling_development_v13_reviewed_20261004_gap_r4_v1/summary.json` |
+| Seniority rule | `seniority-demote-3y-v1` over the stage-1 top 30 (D-074, D-078) | same summary |
+| K and PARTIAL weight | K = 10, weight 0.5, from the D-078 rule (D-086) | same summary |
+| JD extraction | DeepSeek Flash, JD prompt v1.4 experimental (D-068, kept by D-077 and D-083) | [Model comparison](CP2_03_Model_Comparison.md) |
+| Evidence matching | GPT-6 Sol with Luna fallback (D-083), evidence prompt v1.1, quote check v1.1, G1/G2 | D-079, D-082, D-083 |
+| Holds and order | H2v2 (D-072), experience block (D-086), product order (D-073) | D-086 |
+| Freeze | Receipt `evals/freeze/cp23_freeze_draft_v2/`, approved as D-087 on 6 Oct (57 file hashes; v1 superseded) | `freeze_receipt_APPROVED.json`; `prepare_cp23_freeze.py --verify` ok on 7 Oct |
+| Development result | Final order macro P@5 0.70, NDCG@10 0.552 (0.568 with the experience block). Stage 1 with the seniority rule alone already reaches P@5 0.70, NDCG@10 0.550 | D-086 |
+
+**Extraction scope (D-091).** D-050 had moved full development extraction into CP2.3. In the end I only extracted the 52 JDs that appear in the Hybrid Qwen top 30 for CV1 or CV2: 51 were attempted, 48 came back process-valid, and F00369 is held at source (`evals/results/cp23/pipeline_v11/coverage_summary_v2.json`). The other 162 development JDs were never extracted; the 3 October per-JD inventory of all 214 is in `evals/results/cp22_development_extraction_plan_20261003.json`. I did not run them because they could not change any CP2 choice: every K, weight and order cell in D-078 sits inside the reordered top 30. I recorded this scope as D-091. Extracting the rest stays optional.
+
+**Privacy (D-092).** Local masking, consent tied to the exact masked text and the session controls are implemented, and all CP2.4 parses ran on masked text. They are covered by component/unit tests: the privacy-control and masked-quote tests, and API-level tests with a fake run (PR-01 to PR-07 and PR-09, not a deployed host). The masked-quote receipt (`evals/results/cp23_masking_quote_compatibility_20261004_v1.json`) only shows that quotes can still be traced. I have not validated privacy end to end, and the original-vs-masked quality comparison did not run (only the offline preflight `tests/test_cp23_masking_pairs_preflight.py` exists). Both move to CP3: CP3.4 runs them and CP3.5 reports them. Until then there is no claim that masking has no effect on matching, and real-CV processing stays off.
+
+**Test leakage.** None. The test split was opened only after D-087.
+
+**Figures (development, two CVs).** [Retrieval methods](../../reports/figures/cp2/fig01_retrieval_methods.png), [embedding rule](../../reports/figures/cp2/fig02_embedding_recall20.png), [LLM quality](../../reports/figures/cp2/fig03_llm_quality.png), [cost and latency](../../reports/figures/cp2/fig06_cost_latency.png) and [pipeline v1.1 coverage](../../reports/figures/cp2/fig08_pipeline_v11_coverage_20261004_v3.png). Denominators and limits are in [CP2.5](CP2_05_Evaluation_Visualization.md).
+
+**Limitations.** Only two development CVs; labels are assisted and come from one reviewer; most of the development ranking gain came from the seniority rule (D-086); privacy is not validated end to end (D-092).
+
+**Reproducibility.** `scripts/run_post_labeling.py` produces the D-078/D-084 result. `python scripts/prepare_cp23_freeze.py --verify evals/freeze/cp23_freeze_draft_v2` checks the 57 frozen hashes.
+
+**Next.** CP2.4 ran the D-087 configuration once on the held-out split, unchanged.
+
+Everything below is the 3-6 October record, kept as written. Its provisional statements (DeepSeek matching, K = 20, "not DONE", open D-050/D-051) were replaced later by D-083, D-086, D-087, D-091 and D-092.
+
+## Historical record (3-6 October 2026)
+
+**Update, 6 October 2026:** **Status:** DONE for development; the freeze receipt waits for Dion's approval (approved later the same day as D-087). Gold r4 (D-085) completed the judgments. The D-078 rule chose K 10, PARTIAL weight 0.5 and the seniority rule; Hybrid Qwen stays under D-084; GPT-6 Sol matches (D-083); the experience block joins the freeze (D-086). Final product order on development: macro P@5 0.70, NDCG@10 0.552 (0.568 with the experience block). With the seniority rule, stage 1 alone reaches P@5 0.70 and NDCG@10 0.550, so stage 2 adds explanations rather than ranking gain on these two CVs. Details: [EXP-20261006-R4](../experiments.md).
 
 **Earlier status (3 to 4 October 2026):** IN PROGRESS. D-068 records a provisional development configuration. The later pipeline v1.1 experiment has 42 of 60 development pairs with a final or explicitly provisional score under D-071, below its 54 of 60 target. It cannot confirm H4, K, the PARTIAL weight or full one-CV latency. D-050 extraction and D-051 privacy impact remain open. The frozen test set has not been used.
 
@@ -62,7 +101,7 @@ Hybrid retrieval finds more known relevant candidates at depth, while B0 ranks t
 - The Part B score-order diagnostic is not the full D-013 product order. Saved stages do not carry confirmed constraint context. The offline [quote mapping receipt](../../evals/results/cp23_masking_quote_compatibility_20261004_v1.json) found 13 changed evidence rows, all mechanically traceable after masking; semantic compatibility and city policy remain open.
 - Held-out CP2.4 evaluation has not been performed and must not be used to choose prompt, model, K or weight.
 
-## Decisions
+## Decisions (as of 4 October; final decisions are in the table at the top)
 
 - D-044 selects Qwen on development using the pre-registered Recall@20 rule.
 - D-065 approves bounded G1/G2 guardrails. D-066 revises D-029 for v1 safety reporting and per-task selection. D-067 records the consistent SQL example reference.
@@ -72,6 +111,6 @@ Hybrid retrieval finds more known relevant candidates at depth, while B0 ranks t
 
 The development comparison needed a repair-framing correction, source-bound quote validation and a reviewed SQL reference before model choice. GPT-6 Sol remained a quality reference. Broad JD extraction was carried from CP2.2 under D-050 and is now planned as quality-gated, resumable development work. It cannot be reported complete from a small probe or from the top-30 Part B subset. The historical schedule and the full sequence of changes remain in the [progress log](supporting/CP23_Progress_Log.md).
 
-## Next step
+## Historical next step (4 October 2026)
 
 Use the [pipeline v1.1 report](supporting/CP23_Pipeline_v11_20261004.md) as a measured coverage finding, not a full quality benchmark. It reached 42/60 H2 scores against the 54/60 target, with zero complete final-order cells and unresolved semantic disagreements. K and weight remain provisional. D-050 broad extraction and any further retry plan need a separate quality and budget decision. The four-pair D-051 masked comparison remains deferred. Freeze the full test protocol under D-053 before CP2.4. Do not mark CP2.3 DONE until these acceptance items are satisfied or Dion explicitly accepts a documented carry-over.

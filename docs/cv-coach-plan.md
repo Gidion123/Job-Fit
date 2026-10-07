@@ -2,6 +2,8 @@
 
 **Decision:** [D-036](decisions.md) · **Status:** planned, built only after the matching feature is complete · **Proposed by:** Dion, 30 September 2026
 
+**CP2 mentor feedback (D-093, 4 Oct 2026):** the mentor asked for CV improvement suggestions for the target vacancy once the core features work. This plan covers that request, so there is no separate feature. Suggestions come from the user's real CV evidence, the JD requirements and the gaps found, and they do not promise a better real fit.
+
 ## Why
 
 Matching tells the user which requirements have no clear evidence in the CV. The CV coach helps the user fix that honestly: it asks about real work the user has done and turns the answers into stronger CV bullet points. It never invents experience.

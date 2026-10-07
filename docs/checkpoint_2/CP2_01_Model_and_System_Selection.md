@@ -6,6 +6,8 @@
 **Planned work:** 29 to 30 Sep 2026 · **Actual:** 29 Sep to 1 Oct 2026  
 **Status:** DONE · two items carried over (section 11) · design basis: System Design v1.3
 
+> **Status on 7 October 2026:** DONE, and both carry-overs are settled. D-043 was replaced by D-045 and D-044 was approved with option A, both on 1 October; Qwen later won the D-044 Recall@20 rule in CP2.3. The test labels in section 11 were made after the D-087 freeze (D-053, D-088; see CP2.4). The rest of this report is as I closed it on 1 October, so "pending" and "empty ledger" describe that day (the ledger was US$10.53 on 7 October). The [CP2 closeout audit](CP2_Closeout_Audit_20261007.md) checks the acceptance evidence. Next: [CP2.2](CP2_02_Modeling_Pipeline.md).
+
 ## Summary
 
 - The rules of the system are now written and tested: annotation guideline v1.2, Pydantic schemas, score v1, constraint states, and ordering. 80 tests, including the 8 development fixtures.

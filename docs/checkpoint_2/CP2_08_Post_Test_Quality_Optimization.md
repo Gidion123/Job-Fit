@@ -61,6 +61,10 @@ Not observed in the anchor errors: AND/OR mistakes and education mismatches. Not
 
 Reading: the matching prompt can only reach group A. Groups B and C are mostly caused by inputs and rules that stay fixed (extraction, unverified durations, H2v2, role fit). So a prompt win should show up mainly in unit quality, and a large ranking gain from a prompt alone would be suspicious. Extraction-side hypotheses (needs_review units, over-splitting long lists) are candidates for a later wave and need an extraction benchmark first.
 
+Figure A1 (development only; three separate denominators: 73 anchor units, 60 saved pairs, 20 analyzed pairs; never pooled):
+
+![Fig A1 failure taxonomy, development](../../reports/figures/phase_a/figA1_failure_taxonomy_v1.png)
+
 ## 6. Hypotheses
 
 | ID | Hypothesis | Evidence | Prompt |
@@ -69,7 +73,9 @@ Reading: the matching prompt can only reach group A. Groups B and C are mostly c
 | QA-H02 | v1.1 accepts neighbouring or umbrella evidence as direct evidence and infers soft skills | 3 + 1 overclaims in A | `evidence_matching_v1_2_qa_e02.md` |
 | QA-H03 | Dense unordered instructions cause label changes between identical runs | 9/73 run-to-run changes | `evidence_matching_v1_2_qa_e03.md` |
 
-## 7. Experiment table (Wave 1, proposed)
+## 7. Experiment table (Wave 1, as proposed before any run; historical plan)
+
+The final runs and costs are in sections 8 and 11. QA-E03, QA-E03-R and the finalist repeat in this table never ran, and QA-E02 ran Stage A only (20 calls).
 
 | ID | Prompt | Data | Calls | Estimate (upper), US$ |
 | --- | --- | --- | --- | --- |
@@ -108,6 +114,10 @@ Same prompt (v1.1), same 20 optimization pairs, two runs. Computed offline (`pyt
 - Finalist bars that follow from D-089: macro-F1 above 0.7143 + 0.02 = 0.7343; unsupported positives at most 59; failed pairs at most 1; quote validity 1.0.
 
 Observation for the record (taxonomy and order unchanged, as approved): on this optimization subset the baseline errs mostly by overclaiming (67-68 over vs 19-20 under; 59 unsupported positives, mainly knowledge_area 34-35 and soft_skill 15). The anchor taxonomy that motivated QA-H01 showed more underclaims (5 vs 4). QA-E01 pushes toward MATCH, so it carries a real risk of failing the unsupported-positive gate; QA-E02 points in the direction of the dominant error.
+
+Figure A2 (development only; 411 optimization units per run; location has a single unit, so its full bar is one unit):
+
+![Fig A2 baseline repeatability, development](../../reports/figures/phase_a/figA2_baseline_repeatability_v1.png)
 
 ### 8.2 Challengers
 
@@ -154,11 +164,19 @@ Run by Dion (Stage A only: 20 calls, US$0.50, 0 repairs, median 20.7 s / p95 25.
 - Trade-off: the direct-evidence check removes most unsupported claims (gold NO_MATCH labeled MATCH 7 vs 19/16; labeled PARTIAL 30 vs 40/43) but also removes some true evidence (gold MATCH labeled PARTIAL 12 vs 9; gold PARTIAL labeled NO_MATCH 17 vs 10/9; gold MATCH labeled NO_MATCH 4 vs 1). The new underclaims sit mostly in knowledge_area (20) and soft_skill (7).
 - Reading: QA-E02 is the most useful finding of Phase A. It points at the main baseline error and fixes most of it, but it is too strict for knowledge areas and partial evidence. Under the rule it is not eligible; it is recorded as a future direction (QA-H04), not as a plain failure.
 
+Figures A3 and A4 (development only; QA-DEV-FI-v1 optimization subset, 411 units per run; the A3 ranking panel exists only for QA-E01 because QA-E02 stopped at Stage A; the A3 macro-F1 axis starts at 0, so use the table values):
+
+![Fig A3 Wave 1 comparison, development](../../reports/figures/phase_a/figA3_wave1_comparison_v1.png)
+
+![Fig A4 QA-E02 precision/recall trade-off against the baseline mean, development](../../reports/figures/phase_a/figA4_e02_precision_recall_tradeoff_v1.png)
+
 #### Final selection
 
 `python scripts/qa_phase_a.py select` -> no provisional finalist (`analysis/wave1_selection_v1.json`). QA-E03 not run (adaptive stopping); no finalist repeat; confirmation subset sealed and unused.
 
-### 8.3 Budget plan for the rest of Phase A (`python scripts/qa_phase_a.py budget-plan`)
+### 8.3 Budget plan for the rest of Phase A (historical)
+
+Computed with `python scripts/qa_phase_a.py budget-plan` after the two baseline runs and before QA-E01 (spend US$9.03). Most of it was never spent; see section 11.
 
 | Item | US$ |
 | --- | --- |
@@ -205,3 +223,5 @@ Future hypothesis QA-H04 (Phase A2, not created, not run): keep QA-E02's direct-
 ## 12. Next phase
 
 Deployment and the final deck use the D-087 baseline. Phase A2 (QA-H04) is optional and only with its own decision; Phase B (efficiency) can start from the baseline because Phase A selected it.
+
+**What Phase A does not change.** Phase A ran after the held-out test, on development data only. It never read the CP2.4 labels or results, CV3-CV5 or any test job (`LeakageError`, tested), so the CP2.4 result stands as reported. Phase A is closed with KEEP BASELINE, and QA-H04 / Phase A2 was neither created nor run. The figure and notebook hashes were rechecked in the [CP2 closeout audit](CP2_Closeout_Audit_20261007.md#7-notebooks).

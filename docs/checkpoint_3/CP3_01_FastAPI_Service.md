@@ -60,10 +60,10 @@
   - serial and concurrent `Recommendation` outputs identical on a fake SDK, with one ledger line per call;
   - freeze verify.
 - **Costs:** no paid calls in this stage's development (fake SDKs only). Live measurement happens in CP3.4 inside the US$5 validation budget.
-- **Failures:** FAIL-36, FAIL-37 and FAIL-38 are OPEN and are fixed in this stage. FAIL-35 is fixed first (Phase 1).
+- **Failures:** FAIL-36, FAIL-37 and FAIL-38 are OPEN and are fixed in this stage; FAIL-38 is partly addressed in Phase 2A. FAIL-35 was resolved in Phase 1.
 - **Acceptance:** see the master plan, CP3.1 points 5 and 10.
 - **Limitations:** one API process with in-memory sessions; latency is not claimed until measured.
-- **Status:** PARTIAL. Next: Phase 1 (FAIL-35), then Phase 2 hardening.
+- **Status:** PARTIAL. Phase 1 is done (FAIL-35 resolved). Phase 2A (fail-closed settings and phase bounds) is done; see "Results (7 Oct 2026, Phase 2A)" below. The full bound is above the cap, so public live is not eligible. Next: a decision by Dion and Codex, then Phase 2B.
 
 ## 1. Goal of this stage
 
@@ -156,3 +156,83 @@ CP3.2 (checkpoint 16): database migrations, CI, and deployment of the database.
 - **Kept closed on purpose:** provider processing of uploaded real CVs (`/cv/parse` answers 403). D-051 still has open items (city and company policy, verified zero-retention endpoints), so only the synthetic demo CVs are analyzed.
 - **Budget guard:** every model call goes through the OpenRouter client and its project guard; live runs are limited to 3 per session and 1 at a time; the Docker image starts with live analysis off.
 - **Limits:** v1 runs one API process with in-memory sessions; more replicas need a shared session store and a new privacy review.
+
+## Results (7 Oct 2026, Phase 2A)
+
+Local and CI only. Nothing is deployed, no paid call was made, and no D-087 frozen file changed (freeze verify `"ok": true`).
+
+### Fail-closed production settings (commit `1574e31`)
+
+- **Code:** `get_production_settings()` and `ProductionSettings` in `src/jobfit/config.py`. `Settings` and `get_settings()` are unchanged, so CP2 scripts and runners behave as before. `live_enabled()` in `src/jobfit/api/wiring.py` now reads these settings, and live mode is **off by default** (FAIL-38 found it on by default in code).
+- **Rules:** any violation raises `ConfigurationError`, and error messages never contain the value.
+  - `JOBFIT_ENV` must be `dev` or `prod`, and both flags must be `0` or `1`.
+  - `JOBFIT_PUBLIC_LIVE=1` requires `JOBFIT_LIVE_ENABLED=1` and `JOBFIT_ENV=prod`.
+  - `prod` always requires an explicit `DATABASE_URL` that is not the development default, plus `JOBFIT_INTERNAL_TOKEN` (at least 32 characters), even when live is off.
+  - Live mode requires `OPENROUTER_API_KEY`.
+  - Live mode in `prod` also requires:
+    - `JOBFIT_OWNER_TOKEN`;
+    - `JOBFIT_USAGE_LEDGER`, which must not be the repository ledger;
+    - `JOBFIT_DAILY_BUDGET_USD`, `API_BUDGET_USD` and `API_HARD_STOP_USD`, each finite and above 0, with daily cap ≤ hard stop ≤ budget.
+  - Public live also requires `JOBFIT_IP_HMAC_KEY`.
+  - Secrets are hidden from `repr`.
+- **Two budgets, two enforcers:**
+  - `API_BUDGET_USD` and `API_HARD_STOP_USD` are the lifetime ceiling of the production ledger, enforced by the frozen `BudgetGuard` through `client_settings()`.
+  - `JOBFIT_DAILY_BUDGET_USD` is the D-096 calendar-day cap. Nothing enforces it yet: the Phase 2B reservation adapter will.
+- **Tests:** 29 in `tests/test_production_settings.py`. `.env.example` documents the variables, all off.
+- **Validation:** pytest 701 passed / 11 skipped / 0 failed; ruff clean; freeze verify `"ok": true`; CI run [37647812660](https://github.com/Gidion123/Job-Fit/actions/runs/37647812660) green.
+
+### Deterministic phase cost bounds (commit `9286fd9`)
+
+- **Code:** `src/jobfit/llm/phase_bounds.py`, with the CP3 assumptions in `config/cp3/phase_bounds_v1.yaml`.
+- **Frozen sources (read only):**
+  - from the D-087 v4 pipeline config: the models, `stage1_k` = 10, one validation repair and one length continuation;
+  - prices from `config/models_v1.yaml`, with Sol and Luna priced at the request-rule ceilings in `route_rules_cp23_v1.json`, as the runtime client does;
+  - the output policy (`output_allowance`, C = `MODEL_OUTPUT_LIMIT` = 131,072);
+  - the prompts, guideline and schemas;
+  - the CV character limit (100,000) and the frozen `extract_jd` length limit (100,000, checked at load).
+- **The CP3 config holds only what has no frozen source:**
+  - the parse model `deepseek-flash`. At runtime it is resolved through `config/models_v1.yaml` only. In tests only, it is checked against the frozen CP2.4 runner constant and the CP2.4 ledger rows (`deepseek/deepseek-v4.1-flash`).
+  - input envelopes: 120 requirement units, 120 inventory items, 131,072 bytes of extraction JSON, 4,096 bytes per appended message, 64 characters per identifier. Phase 2B must enforce them at admission.
+- **Method:**
+  - **Per call:** the frozen client's own guard estimate: (message bytes + strict-schema bytes + 512) × input price + `max_tokens` × output price. Characters are padded to their worst-case escaped size.
+  - **Per chain:** the frozen `validated_call` state machine. If L < C, both reachable orders are costed (L, M, M and L, L, M with M = min(2L, C)) and the larger is used. If L = C, only initial + repair (C, C) is reachable.
+  - **Per job:** the Luna chain is added to the Sol chain, because the frozen `analyze_job` runs Luna only after a failed Sol chain.
+  - **If a unit envelope is missing,** a 3C accounting envelope replaces the derived chain. It is labelled as not reachable, and public live becomes ineligible.
+- **Result** (`bound_basis = derived`; config SHA-256 `374672a6…fd8d`):
+
+| Bound | US$ | How it is made |
+| --- | ---: | --- |
+| `parse_max` | 0.4718478 | `deepseek-flash`, initial + repair at 16,000 tokens each (parse uses the non-dynamic limit, as in CP2.4); input 0.4334478, output 0.0384 |
+| `embed_max` | 0.0040010 | `qwen3-embedding-8b`, 4 bytes × 100,000 characters + 100 |
+| `extraction_max` | 11.9100480 | K = 10 × 1.1910048 (`deepseek-flash`, derived L = C, so C + C) |
+| `matching_max` | 68.9330400 | K = 10 × 6.893304 (Sol, C + C; per chain: input 4.271864, output 2.62144) |
+| `fallback_max` | 3.4466520 | K = 10 × 0.3446652 (Luna, C + C) |
+| `recommendation_upper_bound` | 84.2937410 | embed + extraction + matching + fallback |
+| `full_analysis_upper_bound` | **84.7655888** | parse + recommendation |
+| Daily cap (D-096) | 2.0000000 | `JOBFIT_DAILY_BUDGET_USD` |
+| Difference from the cap | **+82.7655888** | full bound − cap |
+
+- **What this means:**
+  - The full-analysis bound is about 42× the US$2/day cap, so `public_live_eligible()` returns false and public live stays **ineligible** under D-096 as written.
+  - The bound is a deterministic worst case:
+    - every character at its largest escaped size;
+    - all K jobs uncached;
+    - every chain failing and repaired at the maximum allowance;
+    - every Sol chain followed by Luna.
+  - It is not a typical or measured cost. Typical cost will be measured in CP3.4.
+  - D-096, the cap, the output limits and the admission rules are **unchanged**. Dion and Codex decide the next step before Phase 2B (reservations) starts.
+- **Tests:** 37 in `tests/test_phase_bounds.py`:
+  - every failure script of the real `validated_call` at L < C/2, L = C/2, C/2 < L < C and L = C stays inside the modelled sequences, with at most one repair and one continuation;
+  - Luna only after a Sol failure;
+  - exact Decimal arithmetic, matching the frozen guard estimate;
+  - fail-closed handling of a missing or invalid model, price, limit or envelope;
+  - the 3C envelope is never a reachable sequence;
+  - requests built by the frozen `extract_jd` and `match_evidence` at the envelope limits fit the modelled bytes;
+  - the real breakdown above is pinned.
+- **Validation:** pytest 738 passed / 11 skipped / 0 failed; ruff clean; freeze verify `"ok": true`; CI run [37649258348](https://github.com/Gidion123/Job-Fit/actions/runs/37649258348).
+- **Still open (FAIL-38 stays OPEN):**
+  - the production ledger volume;
+  - enforcing the daily cap with persisted reservations;
+  - the global live gate and the per-IP ticket.
+
+All of these are Phase 2B. The Alembic migrations are design only and wait for separate approval.

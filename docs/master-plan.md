@@ -16,7 +16,7 @@ Everything below for CP3.1-CP3.7 is **PLANNED** unless a line says it is done lo
 
 | Stage (official name) | JobFit scope | Status |
 | --- | --- | --- |
-| CP3.1 API Deployment with FastAPI | Public live API, safety controls and instrumentation | PARTIAL: demo flow done locally; public path PLANNED |
+| CP3.1 API Deployment with FastAPI | Public live API, safety controls and instrumentation | PARTIAL: demo flow done locally; Phase 2A fail-closed settings and phase bounds done (7 Oct; the full bound is above the US$2/day cap, so public live is not eligible); public path PLANNED |
 | CP3.2 Database Integration and CI/CD | Production corpus, job sync, VPS and delivery | PARTIAL: CI green after Phase 1 (FAIL-35 resolved); not deployed |
 | CP3.3 Streamlit UI | Public upload flow, waiting experience and coach | PARTIAL: demo flow done locally |
 | CP3.4 End-to-End Testing | Deployed validation, privacy release gate and feature freeze | PARTIAL: local 27/27; deployed checks PLANNED |
@@ -507,10 +507,12 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
      - upload cleanup;
      - per-session run limits;
      - API tests covering PR-01 to PR-07 and PR-09 with a fake run.
+   - **Completed (7 Oct, Phase 2A, local and CI; see the [CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-7-oct-2026-phase-2a)):**
+     - fail-closed settings, with live and public live off by default (commit `1574e31`);
+     - deterministic phase bounds from versioned config (commit `9286fd9`). `full_analysis_upper_bound` = US$84.7655888, which is US$82.7655888 above the US$2/day cap, so public live is **not eligible** under D-096. D-096 is unchanged; Dion and Codex decide the next step.
    - **Owner additions, planned (D-095, D-096):**
-     - fail-closed settings, with live and public live off by default;
      - a persistent production ledger;
-     - **deterministic phase bounds** (`parse_max`, `recommendation_upper_bound`, `full_analysis_upper_bound` ≤ US$2/day cap) from versioned config;
+     - the D-096 condition `full_analysis_upper_bound` ≤ US$2/day cap. The bounds now exist (see Completed above), and the condition is **not met**;
      - **separate parse and recommendation reservations** (reserve, settle, release; embedding only in the recommendation reservation; no billable call without a reservation);
      - one live analysis at a time;
      - one ticket per IP per 24 h (HMAC, consumed at the first billable call);
@@ -561,7 +563,11 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
 6. **Evidence to keep.** Test output; the OpenAPI screenshot (taken locally, since `/docs` is off in production); the phase-bound config record.
 7. **Estimate and dependencies.** Core changes on 8 Oct. Depends on: Phase 1 green CI (FAIL-35, done 7 Oct); the CP3.2 Alembic schema for the cache, quota and reservation tables.
 8. **Fallback.** If the public path is not ready by the freeze, public live stays off. The VPS then serves the saved demo, plus owner-token live runs, and the report says so.
-9. **Status and next step.** PARTIAL: DONE LOCALLY for the demo-CV flow (6 Oct, EXP-20261006-CP3); the public live path and safety controls are PLANNED / NOT YET VALIDATED. Next: Phase 2 hardening after the Phase 1 green baseline.
+9. **Status and next step.** PARTIAL.
+   - DONE LOCALLY: the demo-CV flow (6 Oct, EXP-20261006-CP3).
+   - DONE (7 Oct, Phase 2A): fail-closed settings and the deterministic phase bounds. The full bound (US$84.7655888) is above the US$2/day cap, so public live is not eligible.
+   - PLANNED / NOT YET VALIDATED: the rest of the public live path and the safety controls.
+   - Next: Dion and Codex decide on the bound result, then Phase 2B (reservations, quota, upload hardening, adapter). Alembic needs its own approval.
 10. **Definition of Done.**
     - All P0 items implemented with their tests.
     - Offline suite: 0 unexpected failures.

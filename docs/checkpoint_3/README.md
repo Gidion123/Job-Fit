@@ -6,7 +6,7 @@ Every report starts as a plan (status PLANNED / NOT RUN). Results, interpretatio
 
 | Stage | Bootcamp checkpoint (template name) | JobFit scope | Report | Official date | Planned work | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| CP3.1 | 15. Deployment API menggunakan Flask/FastAPI | Public live API, safety controls and instrumentation | [API Deployment with FastAPI](CP3_01_FastAPI_Service.md) | 5 Oct 2026 | 5 Oct; CP3 additions 8 Oct | PARTIAL (demo flow done locally; public path PLANNED) |
+| CP3.1 | 15. Deployment API menggunakan Flask/FastAPI | Public live API, safety controls and instrumentation | [API Deployment with FastAPI](CP3_01_FastAPI_Service.md) | 5 Oct 2026 | 5 Oct; CP3 additions 8 Oct | PARTIAL (demo flow done locally; Phase 2A settings and bounds done, full bound above the cap; public path PLANNED) |
 | CP3.2 | 16. Integrasi Database & GitHub Actions CI/CD | Production corpus, job sync, VPS and delivery | [Database Integration and CI/CD](CP3_02_Database_and_CICD.md) | 6 Oct 2026 | 6 Oct; CP3 additions 8-9 Oct | PARTIAL (CI green after Phase 1; not deployed) |
 | CP3.3 | 17. Build Streamlit UI | Public upload flow, waiting experience and coach | [Streamlit UI](CP3_03_Streamlit_UI.md) | 7 Oct 2026 | 7 Oct; CP3 additions 8-9 Oct | PARTIAL (demo flow done locally) |
 | CP3.4 | 18. Testing End-to-End Application | Deployed validation, privacy release gate and feature freeze | [End-to-End Testing](CP3_04_End_to_End_Testing.md) | 8 Oct 2026 | 9 Oct (formal freeze at the end of 9 Oct, D-100) | PARTIAL (local checks passed) |

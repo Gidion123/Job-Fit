@@ -324,4 +324,8 @@ The recovery helper refuses any failure that is not a timeout, so it cannot retr
   - There is no daily cap, no per-run cap and no global limit on live runs across sessions.
 - **Effect:** none so far, because live mode is off in the image. A public deployment with live mode on would not be protected.
 - **Fix (CP3.1, planned, P0):** fail-closed settings with live off by default, a persistent production ledger on a volume, the US$2/day cap with deterministic phase bounds and persisted reservations, a per-IP ticket and a global live gate (D-096).
+- **Progress (7 Oct 2026, CP3 Phase 2A):** partly addressed.
+  - Commit `1574e31`: fail-closed production settings. Live mode is now off by default in code. `prod` requires an explicit database URL and tokens. Live in `prod` requires a non-repository ledger and explicit budgets.
+  - Commit `9286fd9`: deterministic phase bounds. `full_analysis_upper_bound` = US$84.7655888, above the US$2/day cap, so public live is not eligible under D-096 ([CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-7-oct-2026-phase-2a)).
+  - Still missing: the ledger volume, daily-cap enforcement with persisted reservations, the per-IP ticket and the global live gate (Phase 2B).
 - **Status:** OPEN.

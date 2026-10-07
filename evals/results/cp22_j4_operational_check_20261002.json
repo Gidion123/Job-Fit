@@ -1,0 +1,13 @@
+{
+  "job_id": "F00016",
+  "result_sha256": "b626e79dcd853b527b22eeebe9870ae76436a547e658174937bd6f9a89c10381",
+  "checked_by": "execution-role",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "pass",
+    "qualifiers": "pass",
+    "importance": "pass"
+  },
+  "notes": "Reviewed full source and all 21 model/gold A units by meaning. 10 qualification bullets covered; responsibilities/team text not promoted. Degree and framework alternatives preserved; four experience areas split under D-040; AND tool/database items separate. Required importance and 2-year minimum retained. Nonblocking differences: LLM field knowledge_area versus approved skill_tool; Strong and databases wording shortened in unit text but retained in exact source quotes, with no added depth rule. First attempt failed schema validation; one allowed repair succeeded. Operational pass only, not human alignment or evidence approval."
+}

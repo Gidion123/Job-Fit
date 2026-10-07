@@ -1,0 +1,173 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00060",
+  "model": "gpt-6-sol",
+  "status": "done",
+  "error_code": null,
+  "wall_ms": 6475,
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+        "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ],
+  "scores": {
+    "H1": {
+      "score": {
+        "score_pct": null,
+        "status": "on_hold",
+        "matched": 4,
+        "partial": 1,
+        "required_total": 5,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 1,
+        "soft_skill_total": 3,
+        "soft_skill_matched": 1,
+        "soft_skill_partial": 1,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "1 requirement(s) not clearly required or preferred",
+          "Requirement structure needs review; identified denominator is not validated."
+        ]
+      },
+      "excluded": []
+    },
+    "H2": {
+      "score": {
+        "score_pct": 90.0,
+        "status": "provisional",
+        "matched": 4,
+        "partial": 1,
+        "required_total": 5,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 3,
+        "soft_skill_matched": 1,
+        "soft_skill_partial": 1,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Some requirements need checking; excluded unresolved units are listed separately."
+        ]
+      },
+      "excluded": [
+        {
+          "unit_id": "U09",
+          "text": "Masters in a quantitative discipline (good to have; experienced Bachelor acceptable)",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "unknown",
+          "source_quotes": [
+            "Masters in a quantitative discipline (good to have - Experienced - Bachelor)"
+          ]
+        }
+      ]
+    },
+    "H2v2": {
+      "score": {
+        "score_pct": 90.0,
+        "status": "provisional",
+        "matched": 4,
+        "partial": 1,
+        "required_total": 5,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 1,
+        "soft_skill_total": 3,
+        "soft_skill_matched": 1,
+        "soft_skill_partial": 1,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "1 requirement(s) not clearly required or preferred"
+        ]
+      },
+      "excluded": []
+    }
+  }
+}

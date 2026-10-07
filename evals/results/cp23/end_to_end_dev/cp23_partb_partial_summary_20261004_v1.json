@@ -1,0 +1,64 @@
+{
+  "schema_version": "cp23-partb-partial-run-v1",
+  "run_id": "cp23_end_to_end_dev_20261004_v1",
+  "status": "stopped_after_second_transport_timeout",
+  "scope": "development_only",
+  "plan_sha256": "54c0d5d1cec7ebf08b983083aaad785f0ec5d6347bb85909d24f698e904647ec",
+  "extraction_receipt_sha256": "ec7f621eea4c7657b32a5f5f3b9cf6cb1e5d1a1bae625848d14adba4a3117e00",
+  "evaluation_sha256": "fbc8ddbdbca11edeb15218c4b7c9c9a4e65253f4e186eb3a3e9bfb6de7ed40d3",
+  "unique_jds": 52,
+  "jd_attempted": 51,
+  "jd_held_source": 1,
+  "pairs_planned": 60,
+  "pairs_saved": 29,
+  "pairs_not_attempted": 31,
+  "match_status_counts": {
+    "done": 16,
+    "failed_extraction": 8,
+    "failed": 3,
+    "held_source": 1,
+    "held_extraction": 1
+  },
+  "score_status_counts": {
+    "final": 10,
+    "no_score": 2,
+    "none": 10,
+    "on_hold": 7
+  },
+  "match_error_counts": {
+    "APITimeoutError": 2,
+    "invalid_structured_output_or_source": 1
+  },
+  "matching_done_stage_wall_ms": {
+    "n": 16,
+    "p50_nearest_rank": 51830,
+    "p95_nearest_rank": 125951,
+    "boundary": "per completed matching stage, includes repair if any; not one-CV end-to-end wall"
+  },
+  "ledger": {
+    "calls": 102,
+    "matching_calls": 25,
+    "run_total_usd_including_uncertain": 0.9906384191999998,
+    "run_uncertain_upper_bound_usd": 0.0646905,
+    "run_settled_or_reported_usd": 0.9259479191999999,
+    "project_total_usd_including_uncertain": 2.2621552034000008,
+    "approved_shared_cap_usd": 2.0,
+    "remaining_cap_usd": 1.0093615808000003,
+    "latest_call_ts_utc": "2026-10-04T00:54:55+00:00"
+  },
+  "transport_failure_ids": [
+    [
+      "CV1",
+      "F00601"
+    ],
+    [
+      "CV1",
+      "F00650"
+    ]
+  ],
+  "no_new_dispatch_pending_review": true,
+  "quality_limit": "Saved extraction/matching validity is not full semantic correctness; incomplete and unjudged outputs are not negatives.",
+  "one_cv_k20_end_to_end_wall_measured": false,
+  "test_access": false,
+  "gold_written": false
+}

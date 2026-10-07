@@ -1,0 +1,1728 @@
+{
+  "status": "pending_alignment_review",
+  "human_verified": false,
+  "rows": [
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U01"
+      ],
+      "model_ids": [
+        "U01"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped DS employment duration; fresh-graduate exception remains unknown importance.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U01",
+          "unit_text": "1-2 years of professional Data Science experience",
+          "source_quote": "1-2 years of professional experiences in Data Science fields. Fresh graduate are welcome to apply.",
+          "importance": "unknown",
+          "category": "experience_duration",
+          "group_id": null,
+          "min_years": 1.0,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": "JD menyebut pengalaman DS 1–2 tahun, tetapi fresh graduate juga boleh melamar. Karena itu, minimum pengalaman belum dapat dianggap wajib.",
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U01",
+          "text": "1-2 years of professional experience in Data Science fields; fresh graduates welcome",
+          "kind": "qualified",
+          "importance": "unknown",
+          "field": "experience_duration",
+          "normalized_name": "data_science_experience",
+          "min_years": 1.0,
+          "branches": [],
+          "source_quotes": [
+            "1-2 years of professional experiences in Data Science fields. Fresh graduate are welcome to apply."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U01",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quote": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+          "cv_section": "Experience",
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U01",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari\n2026 - Mei 2026 (4 bulan)"
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U02"
+      ],
+      "model_ids": [
+        "U02"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Python requirement; compare qualification wording, not only the shared clause.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U02",
+          "unit_text": "Python for manipulating and analyzing large datasets",
+          "source_quote": "Mandatory: Experienced using programming languages (at least Python and SQL) to manipulate data and draw insights from large data sets.",
+          "importance": "required",
+          "category": "skill_tool",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U02",
+          "text": "Experience using Python to manipulate data and draw insights from large data sets",
+          "kind": "simple",
+          "importance": "required",
+          "field": "skill_tool",
+          "normalized_name": "python",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Mandatory: Experienced using programming languages (at least Python and SQL) to manipulate data and draw insights from large data sets."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U02",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quote": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+          "cv_section": "Experience",
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U02",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membersihkan dan menggabungkan data transaksi 1,2 juta baris\ndengan Python (pandas) dan SQL (PostgreSQL)."
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U03"
+      ],
+      "model_ids": [
+        "U03"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "SQL requirement; shared Python/SQL clause is not an automatic merge.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U03",
+          "unit_text": "SQL for manipulating and analyzing large datasets",
+          "source_quote": "Mandatory: Experienced using programming languages (at least Python and SQL) to manipulate data and draw insights from large data sets.",
+          "importance": "required",
+          "category": "skill_tool",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U03",
+          "text": "Experience using SQL to manipulate data and draw insights from large data sets",
+          "kind": "simple",
+          "importance": "required",
+          "field": "skill_tool",
+          "normalized_name": "sql",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Mandatory: Experienced using programming languages (at least Python and SQL) to manipulate data and draw insights from large data sets."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U03",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quote": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+          "cv_section": "Experience",
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U03",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membersihkan dan menggabungkan data transaksi 1,2 juta baris\ndengan Python (pandas) dan SQL (PostgreSQL)."
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U04"
+      ],
+      "model_ids": [
+        "U04"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Math: model drops Intermediate depth wording; inspect qualifier preservation without inventing a new depth label rule.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U04",
+          "unit_text": "Intermediate mathematical skills, including their real-world advantages/drawbacks",
+          "source_quote": "Intermediate Mathematical, Statistical, and/or Machine Learning skills required, and their real-world advantages/drawbacks.",
+          "importance": "required",
+          "category": "knowledge_area",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "edited",
+          "review_note": "Disetujui sebagai tiga unit required: Matematika, Statistika, dan Machine Learning. Pemisahan mengikuti interpretasi reviewer atas frasa “skills required”; hubungan “and/or” pada JD tetap ambigu.",
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U04",
+          "text": "Mathematical skills, including real-world advantages/drawbacks",
+          "kind": "simple",
+          "importance": "required",
+          "field": "knowledge_area",
+          "normalized_name": "mathematical_skills",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Intermediate Mathematical, Statistical, and/or Machine Learning skills required, and their real-world advantages/drawbacks."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U04",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quote": "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+          "cv_section": "Education",
+          "label_source": "model_draft",
+          "review_action": "edited",
+          "review_note": "Pendidikan dan mata kuliah statistika mendukung kemampuan matematika secara tidak langsung. CV belum menjelaskan kemampuan matematika secara spesifik serta kelebihan/kekurangan penerapannya. Tingkat intermediate tidak dinilai pada v1.",
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U04",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 -\nAgustus 2026",
+            "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian,\nBasis Data"
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U20"
+      ],
+      "model_ids": [
+        "U05"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Statistics: model drops Intermediate depth wording; same qualifier review as math.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U20",
+          "unit_text": "Intermediate statistical skills, including their real-world advantages/drawbacks",
+          "source_quote": "Intermediate Mathematical, Statistical, and/or Machine Learning skills required, and their real-world advantages/drawbacks.",
+          "importance": "required",
+          "category": "knowledge_area",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "annotator",
+          "review_action": "added",
+          "review_note": "Disetujui sebagai tiga unit required: Matematika, Statistika, dan Machine Learning. Pemisahan mengikuti interpretasi reviewer atas frasa “skills required”; hubungan “and/or” pada JD tetap ambigu.",
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U05",
+          "text": "Statistical skills, including real-world advantages/drawbacks",
+          "kind": "simple",
+          "importance": "required",
+          "field": "knowledge_area",
+          "normalized_name": "statistical_skills",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Intermediate Mathematical, Statistical, and/or Machine Learning skills required, and their real-world advantages/drawbacks."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U20",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quote": "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+          "cv_section": "Experience",
+          "label_source": "annotator",
+          "review_action": "added",
+          "review_note": "Keputusan Dion: MATCH berdasarkan bukti mengajar praktikum regresi menggunakan R. Kutipan diperbaiki menjadi satu kalimat persis dari Experience. Ini penilaian bukti penggunaan statistika pada v1, bukan verifikasi tingkat intermediate. CV belum secara eksplisit menjelaskan kelebihan/kekurangan metode; reviewer tetap menerima bukti penggunaan sebagai dasar MATCH untuk unit ini. Interpretasi tersebut dicatat agar tidak dianggap bukti pemenuhan seluruh rincian JD.",
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U05",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 -\nAgustus 2026",
+            "Melakukan analisis cohort retensi pelanggan dan mempresentasikan\nhasilnya ke manajer divisi."
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U21"
+      ],
+      "model_ids": [
+        "U06"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Machine learning: model drops Intermediate depth wording; same qualifier review as math.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U21",
+          "unit_text": "Intermediate machine learning skills, including their real-world advantages/drawbacks",
+          "source_quote": "Intermediate Mathematical, Statistical, and/or Machine Learning skills required, and their real-world advantages/drawbacks.",
+          "importance": "required",
+          "category": "knowledge_area",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "annotator",
+          "review_action": "added",
+          "review_note": "Disetujui sebagai tiga unit required: Matematika, Statistika, dan Machine Learning. Pemisahan mengikuti interpretasi reviewer atas frasa “skills required”; hubungan “and/or” pada JD tetap ambigu.",
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U06",
+          "text": "Machine Learning skills, including real-world advantages/drawbacks",
+          "kind": "simple",
+          "importance": "required",
+          "field": "knowledge_area",
+          "normalized_name": "machine_learning_skills",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Intermediate Mathematical, Statistical, and/or Machine Learning skills required, and their real-world advantages/drawbacks."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U21",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quote": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+          "cv_section": "Projects",
+          "label_source": "annotator",
+          "review_action": "added",
+          "review_note": "Keputusan Dion: MATCH berdasarkan proyek churn dengan regresi logistik, random forest, evaluasi F1, SMOTE, dan SHAP. Reviewer mengisi bukti setelah unit ML dipisahkan. Ini penilaian bukti penggunaan ML pada v1, bukan verifikasi tingkat intermediate. Kelebihan/kekurangan metode belum dijelaskan secara eksplisit; reviewer tetap menerima bukti penerapan sebagai dasar MATCH untuk unit ini. Interpretasi tersebut dicatat agar tidak dianggap bukti pemenuhan seluruh rincian JD.",
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U06",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membangun model regresi logistik dan random forest dengan\nscikit-learn; F1-score 0,78 pada data uji.",
+            "Mengumpulkan 5.000 ulasan berbahasa Indonesia dan\nmengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes."
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U05"
+      ],
+      "model_ids": [
+        "U07"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Gold required structured/unstructured alternative G2; model unknown simple unresolved. Gold MATCH versus model failed/null is not NO_MATCH. Main denominator changes.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U05",
+          "unit_text": "Knowledge or experience with structured | unstructured datasets",
+          "source_quote": "Knowledge and/or experience in working with structured and/or unstructured data sets.",
+          "importance": "required",
+          "category": "knowledge_area",
+          "group_id": "G2",
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U07",
+          "text": "Knowledge and/or experience in working with structured and/or unstructured data sets",
+          "kind": "simple",
+          "importance": "unknown",
+          "field": "knowledge_area",
+          "normalized_name": "structured_unstructured_data_sets",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Knowledge and/or experience in working with structured and/or unstructured data sets."
+          ],
+          "needs_review": true,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U05",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quote": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+          "cv_section": "Experience",
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U07",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "model_merge",
+      "gold_ids": [
+        "J1-U06",
+        "J1-U07"
+      ],
+      "model_ids": [
+        "U08"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Model combines architecture AND engineering, unresolved. Gold has two preferred units with NO_MATCH and PARTIAL. Not one comparable label.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U06",
+          "unit_text": "Data architecture knowledge or experience",
+          "source_quote": "Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform.",
+          "importance": "preferred",
+          "category": "knowledge_area",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        },
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U07",
+          "unit_text": "Data engineering knowledge or experience",
+          "source_quote": "Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform.",
+          "importance": "preferred",
+          "category": "knowledge_area",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U08",
+          "text": "Knowledge and/or experience in Data Architecture and Engineering",
+          "kind": "simple",
+          "importance": "preferred",
+          "field": "knowledge_area",
+          "normalized_name": "data_architecture_engineering",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform."
+          ],
+          "needs_review": true,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U06",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quote": null,
+          "cv_section": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        },
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U07",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quote": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+          "cv_section": "Experience",
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U08",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U08"
+      ],
+      "model_ids": [
+        "U09"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "GCP preferred requirement.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U08",
+          "unit_text": "Google Cloud Platform knowledge or experience",
+          "source_quote": "Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform.",
+          "importance": "preferred",
+          "category": "skill_tool",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U09",
+          "text": "Google Cloud Platform",
+          "kind": "simple",
+          "importance": "preferred",
+          "field": "skill_tool",
+          "normalized_name": "google_cloud_platform",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U08",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quote": null,
+          "cv_section": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U09",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U09"
+      ],
+      "model_ids": [
+        "U10"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Visualization tools required; preserve tool-versus-example distinction.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U09",
+          "unit_text": "Familiarity with data visualization tools",
+          "source_quote": "Familiar with Data Visualization Tools, Google Data Studio is a plus.",
+          "importance": "required",
+          "category": "skill_tool",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U10",
+          "text": "Familiarity with Data Visualization Tools",
+          "kind": "simple",
+          "importance": "required",
+          "field": "skill_tool",
+          "normalized_name": "data_visualization_tools",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Familiar with Data Visualization Tools, Google Data Studio is a plus."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U09",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quote": "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+          "cv_section": "Experience",
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U10",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membuat dashboard penjualan mingguan di Looker Studio untuk tim\nmarketing."
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U10"
+      ],
+      "model_ids": [
+        "U11"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Google Data Studio preferred example.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U10",
+          "unit_text": "Google Data Studio familiarity",
+          "source_quote": "Familiar with Data Visualization Tools, Google Data Studio is a plus.",
+          "importance": "preferred",
+          "category": "skill_tool",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U11",
+          "text": "Google Data Studio",
+          "kind": "simple",
+          "importance": "preferred",
+          "field": "skill_tool",
+          "normalized_name": "google_data_studio",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Familiar with Data Visualization Tools, Google Data Studio is a plus."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U10",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quote": "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+          "cv_section": "Experience",
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U11",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membuat dashboard penjualan mingguan di Looker Studio untuk tim\nmarketing."
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U11"
+      ],
+      "model_ids": [
+        "U12"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Problem solving: model NO_MATCH versus approved MATCH; review meaning of source evidence.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U11",
+          "unit_text": "Problem solving",
+          "source_quote": "Problem-solving skills, structured thinking and scientific approach required.",
+          "importance": "required",
+          "category": "soft_skill",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U12",
+          "text": "Problem-solving skills",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "problem_solving",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Problem-solving skills, structured thinking and scientific approach required."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U11",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quote": "Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+          "cv_section": "Projects",
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U12",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U12"
+      ],
+      "model_ids": [
+        "U13"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Structured thinking: both NO_MATCH; agreement is not a new annotation approval.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U12",
+          "unit_text": "Structured thinking",
+          "source_quote": "Problem-solving skills, structured thinking and scientific approach required.",
+          "importance": "required",
+          "category": "soft_skill",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U13",
+          "text": "Structured thinking",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "structured_thinking",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Problem-solving skills, structured thinking and scientific approach required."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U12",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quote": null,
+          "cv_section": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U13",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U13"
+      ],
+      "model_ids": [
+        "U14"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Scientific approach: model NO_MATCH versus approved PARTIAL.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U13",
+          "unit_text": "Scientific approach",
+          "source_quote": "Problem-solving skills, structured thinking and scientific approach required.",
+          "importance": "required",
+          "category": "soft_skill",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U14",
+          "text": "Scientific approach",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "scientific_approach",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Problem-solving skills, structured thinking and scientific approach required."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U13",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quote": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+          "cv_section": "Projects",
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U14",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U14"
+      ],
+      "model_ids": [
+        "U15"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Minimal supervision: both NO_MATCH.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U14",
+          "unit_text": "Work with minimal supervision",
+          "source_quote": "Ability to work with minimal supervision and keep supervisors informed.",
+          "importance": "required",
+          "category": "soft_skill",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U15",
+          "text": "Ability to work with minimal supervision",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "minimal_supervision",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Ability to work with minimal supervision and keep supervisors informed."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U14",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quote": null,
+          "cv_section": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U15",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U15"
+      ],
+      "model_ids": [
+        "U16"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Keeping supervisor informed: model NO_MATCH versus approved MATCH.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U15",
+          "unit_text": "Keep supervisors informed",
+          "source_quote": "Ability to work with minimal supervision and keep supervisors informed.",
+          "importance": "required",
+          "category": "soft_skill",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U16",
+          "text": "Ability to keep supervisors informed",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "keep_supervisors_informed",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Ability to work with minimal supervision and keep supervisors informed."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U15",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quote": "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+          "cv_section": "Experience",
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U16",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U16"
+      ],
+      "model_ids": [
+        "U17"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Teamwork: both NO_MATCH.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U16",
+          "unit_text": "Teamwork",
+          "source_quote": "Ability to work well in a team environment.",
+          "importance": "required",
+          "category": "soft_skill",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U17",
+          "text": "Ability to work well in a team environment",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "teamwork",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Ability to work well in a team environment."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U16",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quote": null,
+          "cv_section": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U17",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U17"
+      ],
+      "model_ids": [
+        "U18"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Communication: model MATCH versus approved PARTIAL. Preserve pilot v0.1 precedent; any clarification remains a human decision.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U17",
+          "unit_text": "Clear and concise communication",
+          "source_quote": "Ability to communicate in clear and concise terms.",
+          "importance": "required",
+          "category": "soft_skill",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U18",
+          "text": "Ability to communicate in clear and concise terms",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "clear_communication",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Ability to communicate in clear and concise terms."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U17",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quote": "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+          "cv_section": "Experience",
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U18",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Melakukan analisis cohort retensi pelanggan dan mempresentasikan\nhasilnya ke manajer divisi."
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "model_split",
+      "gold_ids": [
+        "J1-U18"
+      ],
+      "model_ids": [
+        "U19",
+        "U20"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Model splits willingness to learn and independent learning; gold keeps one scoped unit. Do not count one gold label twice.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U18",
+          "unit_text": "Learn new skills independently",
+          "source_quote": "Willing to learn new skills and able to do so independently.",
+          "importance": "required",
+          "category": "soft_skill",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U19",
+          "text": "Willing to learn new skills",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "willingness_to_learn",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Willing to learn new skills and able to do so independently."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U20",
+          "text": "Able to learn new skills independently",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "independent_learning",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Willing to learn new skills and able to do so independently."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U18",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quote": null,
+          "cv_section": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U19",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U20",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J1-U19"
+      ],
+      "model_ids": [
+        "U21"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Initiative: both NO_MATCH.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J1",
+          "job_id": "F00022",
+          "unit_no": "J1-U19",
+          "unit_text": "Take initiative",
+          "source_quote": "Ability to take initiative.",
+          "importance": "required",
+          "category": "soft_skill",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U21",
+          "text": "Ability to take initiative",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "initiative",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Ability to take initiative."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true,
+      "gold_evidence": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "cv_id": "CV1",
+          "job_id": "F00022",
+          "unit_no": "J1-U19",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quote": null,
+          "cv_section": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v0.1"
+        }
+      ],
+      "model_evidence": [
+        {
+          "unit_id": "U21",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ]
+    }
+  ],
+  "unmapped_gold": [],
+  "unmapped_model": [],
+  "metrics": null,
+  "metric_gate": "No F1/Macro-F1: alignment and split/merge treatment require explicit verification. Equal IDs/counts or shared source quotes do not establish equivalence.",
+  "job_id": "F00022",
+  "cv_id": "CV1",
+  "split": "development",
+  "analysis_date": "2026-09-30",
+  "source_sha256": "5096de1762a4d7d373d8df4780441a254189e009e03927c9945a56c858a54345",
+  "sources": {
+    "evals/gold/extraction_gold.jsonl": "f43d4d029f82a392ebc4796fc4bfafc5275ac1afae3a686bee5e4ca2a3da9a7d",
+    "evals/gold/evidence_gold.jsonl": "d0e10f01bf3cefa69d227316ed561c02ecc31f009a497eb7508dec44b3d5f6e0",
+    "evals/results/cp22_live_cv1_j1_20261002_06.json": "436e5287f3ca9e94c490508a5ecb3a60ef8d75c26031380c7d142c31a8c80f77"
+  },
+  "coverage": {
+    "gold_A": 21,
+    "model_A": 21,
+    "gold_B": 21,
+    "model_B": 21,
+    "proposed_groups": 20,
+    "relations": {
+      "one_to_one": 18,
+      "model_merge": 1,
+      "model_split": 1
+    }
+  },
+  "saved_model_score": {
+    "score_pct": 91.67,
+    "status": "provisional",
+    "matched": 5,
+    "partial": 1,
+    "required_total": 6,
+    "preferred_met": 1,
+    "preferred_total": 3,
+    "unknown_importance_total": 2,
+    "soft_skill_total": 10,
+    "soft_skill_matched": 1,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+      "2 requirement(s) not clearly required or preferred"
+    ]
+  },
+  "approved_pilot_score_reference": {
+    "score_pct": 92.86,
+    "required_total": 7,
+    "note": "Existing pilot v1 result, not recalculated or changed here."
+  },
+  "J4_eligibility": {
+    "job_id": "F00016",
+    "in_frozen_development": true,
+    "approved_development_A": 21,
+    "approved_B_rows": 0,
+    "measurement_limit": "Eligible for extraction review only. No J4 evidence accuracy claim; no new model run."
+  },
+  "api_calls": 0,
+  "cost_usd": 0,
+  "workbook_read": false,
+  "gold_written": false
+}

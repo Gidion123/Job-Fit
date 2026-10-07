@@ -1,0 +1,19 @@
+{
+  "job_id": "F00034",
+  "result_sha256": "04aa96129e6ac7f6fffa36cfed7ec9d4d017fed36ed8b12dcc9814613f60b54c",
+  "checked_by": "delegated source reviewer",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "pass",
+    "qualifiers": "pass",
+    "importance": "pass"
+  },
+  "notes": [
+    "All nine qualification bullets represented as16units, excluding responsibilities; source quotes exact.",
+    "Required degree,2year role alternatives,Python,framework andLLM experience preserved. Shared degrees and2years retained in each alternative branch.",
+    "RAG,prompt/vector concepts and Git/Docker/REST/cloud retain preferred scope. Three soft skills remain separate. Portfolio-or-AI-experience remains one preferredOR.",
+    "Semantic repair restores REST API experience and named-model branch categories; no missing or invented obligations identified in this narrow source inspection.",
+    "Operational acceptance only, no F1 or independent gold approval; preserve both attempts."
+  ]
+}

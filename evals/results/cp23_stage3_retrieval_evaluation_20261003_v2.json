@@ -1,0 +1,2688 @@
+{
+  "status": "development_retrieval_comparison_complete",
+  "execution_kind": "saved_retrieval",
+  "metrics": [
+    {
+      "method": "B0",
+      "cv_id": "CV1",
+      "metrics": [
+        {
+          "k": 5,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 3,
+            "denominator": 13,
+            "value": 0.23076923076923078
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 3,
+            "denominator": 5,
+            "value": 0.6
+          },
+          "ndcg_at_k": 0.36581272002646614,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 19.09180260321758,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 15,
+            "unjudged_ranked": 15,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 5,
+            "returned_at_metric_cutoff": 5
+          }
+        },
+        {
+          "k": 10,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 7,
+            "denominator": 13,
+            "value": 0.5384615384615384
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 7,
+            "denominator": 10,
+            "value": 0.7
+          },
+          "ndcg_at_k": 0.6279432771172868,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 23.87710326084444,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 15,
+            "unjudged_ranked": 15,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 10,
+            "returned_at_metric_cutoff": 10
+          }
+        },
+        {
+          "k": 20,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 8,
+            "denominator": 13,
+            "value": 0.6153846153846154
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 8,
+            "denominator": 20,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 15,
+            "unjudged_ranked": 15,
+            "unjudged_original_top_k": 7,
+            "unjudged_original_top_k_ids": [
+              "F00693",
+              "F00806",
+              "F00850",
+              "F00352",
+              "F00610",
+              "F00690",
+              "F00187"
+            ],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 13,
+            "returned_at_metric_cutoff": 20
+          }
+        },
+        {
+          "k": 30,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 9,
+            "denominator": 13,
+            "value": 0.6923076923076923
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 9,
+            "denominator": 30,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 15,
+            "unjudged_ranked": 15,
+            "unjudged_original_top_k": 15,
+            "unjudged_original_top_k_ids": [
+              "F00693",
+              "F00806",
+              "F00850",
+              "F00352",
+              "F00610",
+              "F00690",
+              "F00187",
+              "F00059",
+              "F00767",
+              "F00527",
+              "F00689",
+              "F00311",
+              "F00542",
+              "F00666",
+              "F00017"
+            ],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 15,
+            "returned_at_metric_cutoff": 30
+          }
+        }
+      ],
+      "model": null,
+      "retrieval_config": {
+        "preprocessing_version": "title-clean-jd-cv-body-v1",
+        "rrf_k": 60,
+        "branch_depth": 30,
+        "batch_size": 16,
+        "max_batch_tokens": 64000,
+        "requested_top_k": 30
+      },
+      "cost_usd": 0,
+      "latency_ms": 0.35820800985675305,
+      "provenance": {
+        "split_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+        "corpus_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+        "development_content_sha256": "4f3fe0a3c842db6819b6905baeeceda73e6e8fe3aac1c92bbb91ddbe0bb6157a",
+        "eligible_ids_sha256": "83d4d3f90eb72cb9319406b60d655b1a642ad316817bbcdf393c1dbf253373d4",
+        "config_sha256": "15f5ccd75661d1f5fd82353c859d08eaa3492c92c4336140a1a41ad74a26f4de",
+        "cv_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+        "query_body_sha256": "f18917bae86c76003636a7e0480017070a5d21264cec41dd56a47584f0f8c585",
+        "skill_query_sha256": "f0e2779cc5a5a95d6440eaf92d4dcf66b8594b74ad2e57ed421ba622391bfd36",
+        "fts_query_sha256": "8d8a43a73575f121b31434c0287e0fa8cc9ee4f28774edef9443af058058ca7e",
+        "query_input_sha256": "f0e2779cc5a5a95d6440eaf92d4dcf66b8594b74ad2e57ed421ba622391bfd36",
+        "preprocessing_sha256": "3eeb6b575e39b22afc9e48c9af22aece3066c71fc05b57b8c5356e17f4099289",
+        "judgments_sha256": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4"
+      }
+    },
+    {
+      "method": "B1",
+      "cv_id": "CV1",
+      "metrics": [
+        {
+          "k": 5,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 1,
+            "denominator": 13,
+            "value": 0.07692307692307693
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 1,
+            "denominator": 5,
+            "value": 0.2
+          },
+          "ndcg_at_k": 0.22053017797872754,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 19.09180260321758,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 18,
+            "unjudged_ranked": 12,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 5,
+            "returned_at_metric_cutoff": 5
+          }
+        },
+        {
+          "k": 10,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 3,
+            "denominator": 13,
+            "value": 0.23076923076923078
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 3,
+            "denominator": 10,
+            "value": 0.3
+          },
+          "ndcg_at_k": 0.2971869239984233,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 23.87710326084444,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 18,
+            "unjudged_ranked": 12,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 10,
+            "returned_at_metric_cutoff": 10
+          }
+        },
+        {
+          "k": 20,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 3,
+            "denominator": 13,
+            "value": 0.23076923076923078
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 3,
+            "denominator": 20,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 18,
+            "unjudged_ranked": 12,
+            "unjudged_original_top_k": 7,
+            "unjudged_original_top_k_ids": [
+              "F00851",
+              "F00351",
+              "F00650",
+              "F00818",
+              "F00023",
+              "F00052",
+              "F00694"
+            ],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 13,
+            "returned_at_metric_cutoff": 20
+          }
+        },
+        {
+          "k": 30,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 4,
+            "denominator": 13,
+            "value": 0.3076923076923077
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 4,
+            "denominator": 30,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 18,
+            "unjudged_ranked": 12,
+            "unjudged_original_top_k": 12,
+            "unjudged_original_top_k_ids": [
+              "F00851",
+              "F00351",
+              "F00650",
+              "F00818",
+              "F00023",
+              "F00052",
+              "F00694",
+              "F00850",
+              "F00847",
+              "F00609",
+              "F00638",
+              "F00682"
+            ],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 18,
+            "returned_at_metric_cutoff": 30
+          }
+        }
+      ],
+      "model": null,
+      "retrieval_config": {
+        "preprocessing_version": "title-clean-jd-cv-body-v1",
+        "rrf_k": 60,
+        "branch_depth": 30,
+        "batch_size": 16,
+        "max_batch_tokens": 64000,
+        "requested_top_k": 30
+      },
+      "cost_usd": 0,
+      "latency_ms": 26.59029200731311,
+      "provenance": {
+        "split_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+        "corpus_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+        "development_content_sha256": "4f3fe0a3c842db6819b6905baeeceda73e6e8fe3aac1c92bbb91ddbe0bb6157a",
+        "eligible_ids_sha256": "83d4d3f90eb72cb9319406b60d655b1a642ad316817bbcdf393c1dbf253373d4",
+        "config_sha256": "15f5ccd75661d1f5fd82353c859d08eaa3492c92c4336140a1a41ad74a26f4de",
+        "cv_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+        "query_body_sha256": "f18917bae86c76003636a7e0480017070a5d21264cec41dd56a47584f0f8c585",
+        "skill_query_sha256": "f0e2779cc5a5a95d6440eaf92d4dcf66b8594b74ad2e57ed421ba622391bfd36",
+        "fts_query_sha256": "8d8a43a73575f121b31434c0287e0fa8cc9ee4f28774edef9443af058058ca7e",
+        "query_input_sha256": "8d8a43a73575f121b31434c0287e0fa8cc9ee4f28774edef9443af058058ca7e",
+        "preprocessing_sha256": "376ab59eaf947f989aa488f33bfaa5fed679d2c3850f1c3f05513ab61675fee5",
+        "judgments_sha256": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4"
+      }
+    },
+    {
+      "method": "dense_openai",
+      "cv_id": "CV1",
+      "metrics": [
+        {
+          "k": 5,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 1,
+            "denominator": 13,
+            "value": 0.07692307692307693
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 1,
+            "denominator": 5,
+            "value": 0.2
+          },
+          "ndcg_at_k": 0.19797198549035508,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 19.09180260321758,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 17,
+            "unjudged_ranked": 13,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 5,
+            "returned_at_metric_cutoff": 5
+          }
+        },
+        {
+          "k": 10,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 2,
+            "denominator": 13,
+            "value": 0.15384615384615385
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 2,
+            "denominator": 10,
+            "value": 0.2
+          },
+          "ndcg_at_k": 0.3146104168391627,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 23.87710326084444,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 17,
+            "unjudged_ranked": 13,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 10,
+            "returned_at_metric_cutoff": 10
+          }
+        },
+        {
+          "k": 20,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 2,
+            "denominator": 13,
+            "value": 0.15384615384615385
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 2,
+            "denominator": 20,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 17,
+            "unjudged_ranked": 13,
+            "unjudged_original_top_k": 6,
+            "unjudged_original_top_k_ids": [
+              "F00060",
+              "F00059",
+              "F00129",
+              "F00029",
+              "F00436",
+              "F00559"
+            ],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 14,
+            "returned_at_metric_cutoff": 20
+          }
+        },
+        {
+          "k": 30,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 3,
+            "denominator": 13,
+            "value": 0.23076923076923078
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 3,
+            "denominator": 30,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 17,
+            "unjudged_ranked": 13,
+            "unjudged_original_top_k": 13,
+            "unjudged_original_top_k_ids": [
+              "F00060",
+              "F00059",
+              "F00129",
+              "F00029",
+              "F00436",
+              "F00559",
+              "F00856",
+              "F00315",
+              "F00183",
+              "F00702",
+              "F00378",
+              "F00003",
+              "F00066"
+            ],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 17,
+            "returned_at_metric_cutoff": 30
+          }
+        }
+      ],
+      "model": "openai/text-embedding-3-small",
+      "retrieval_config": {
+        "preprocessing_version": "title-clean-jd-cv-body-v1",
+        "rrf_k": 60,
+        "branch_depth": 30,
+        "batch_size": 16,
+        "max_batch_tokens": 64000,
+        "requested_top_k": 30
+      },
+      "cost_usd": 0,
+      "latency_ms": 5.281457997625694,
+      "provenance": {
+        "split_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+        "corpus_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+        "development_content_sha256": "4f3fe0a3c842db6819b6905baeeceda73e6e8fe3aac1c92bbb91ddbe0bb6157a",
+        "eligible_ids_sha256": "83d4d3f90eb72cb9319406b60d655b1a642ad316817bbcdf393c1dbf253373d4",
+        "config_sha256": "15f5ccd75661d1f5fd82353c859d08eaa3492c92c4336140a1a41ad74a26f4de",
+        "cv_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+        "query_body_sha256": "f18917bae86c76003636a7e0480017070a5d21264cec41dd56a47584f0f8c585",
+        "skill_query_sha256": "f0e2779cc5a5a95d6440eaf92d4dcf66b8594b74ad2e57ed421ba622391bfd36",
+        "fts_query_sha256": "8d8a43a73575f121b31434c0287e0fa8cc9ee4f28774edef9443af058058ca7e",
+        "preprocessing_sha256": "73896bce4211a5cd36275afe0f5730b41680ba526f88b425c745c17e008764a0",
+        "query_input_sha256": "4cf316f674675b751b4636d96a6b355cab2ffd903dece9883f5098f801769685",
+        "query_cache_sha256": "3dd957a3bbf648257ec2115df179fea90c70f83a7c59c648069f4eac04e587b4",
+        "judgments_sha256": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4"
+      }
+    },
+    {
+      "method": "hybrid_openai",
+      "cv_id": "CV1",
+      "metrics": [
+        {
+          "k": 5,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 0,
+            "denominator": 13,
+            "value": 0.0
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 0,
+            "denominator": 5,
+            "value": 0.0
+          },
+          "ndcg_at_k": 0.12138871396655633,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 19.09180260321758,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 24,
+            "unjudged_ranked": 6,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 5,
+            "returned_at_metric_cutoff": 5
+          }
+        },
+        {
+          "k": 10,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 0,
+            "denominator": 13,
+            "value": 0.0
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 0,
+            "denominator": 10,
+            "value": 0.0
+          },
+          "ndcg_at_k": 0.1638653375065445,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 23.87710326084444,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 24,
+            "unjudged_ranked": 6,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 10,
+            "returned_at_metric_cutoff": 10
+          }
+        },
+        {
+          "k": 20,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 4,
+            "denominator": 13,
+            "value": 0.3076923076923077
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 4,
+            "denominator": 20,
+            "value": 0.2
+          },
+          "ndcg_at_k": 0.33771722255780967,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 27.997473574910888,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 24,
+            "unjudged_ranked": 6,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 20,
+            "returned_at_metric_cutoff": 20
+          }
+        },
+        {
+          "k": 30,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 5,
+            "denominator": 13,
+            "value": 0.38461538461538464
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 5,
+            "denominator": 30,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 24,
+            "unjudged_ranked": 6,
+            "unjudged_original_top_k": 6,
+            "unjudged_original_top_k_ids": [
+              "F00851",
+              "F00060",
+              "F00059",
+              "F00351",
+              "F00129",
+              "F00650"
+            ],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 24,
+            "returned_at_metric_cutoff": 30
+          }
+        }
+      ],
+      "model": "openai/text-embedding-3-small",
+      "retrieval_config": {
+        "preprocessing_version": "title-clean-jd-cv-body-v1",
+        "rrf_k": 60,
+        "branch_depth": 30,
+        "batch_size": 16,
+        "max_batch_tokens": 64000,
+        "requested_top_k": 30
+      },
+      "cost_usd": 0,
+      "latency_ms": 23.248290992341936,
+      "provenance": {
+        "split_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+        "corpus_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+        "development_content_sha256": "4f3fe0a3c842db6819b6905baeeceda73e6e8fe3aac1c92bbb91ddbe0bb6157a",
+        "eligible_ids_sha256": "83d4d3f90eb72cb9319406b60d655b1a642ad316817bbcdf393c1dbf253373d4",
+        "config_sha256": "15f5ccd75661d1f5fd82353c859d08eaa3492c92c4336140a1a41ad74a26f4de",
+        "cv_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+        "query_body_sha256": "f18917bae86c76003636a7e0480017070a5d21264cec41dd56a47584f0f8c585",
+        "skill_query_sha256": "f0e2779cc5a5a95d6440eaf92d4dcf66b8594b74ad2e57ed421ba622391bfd36",
+        "fts_query_sha256": "8d8a43a73575f121b31434c0287e0fa8cc9ee4f28774edef9443af058058ca7e",
+        "preprocessing_sha256": "73896bce4211a5cd36275afe0f5730b41680ba526f88b425c745c17e008764a0",
+        "query_input_sha256": "4cf316f674675b751b4636d96a6b355cab2ffd903dece9883f5098f801769685",
+        "query_cache_sha256": "3dd957a3bbf648257ec2115df179fea90c70f83a7c59c648069f4eac04e587b4",
+        "judgments_sha256": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4"
+      }
+    },
+    {
+      "method": "dense_qwen",
+      "cv_id": "CV1",
+      "metrics": [
+        {
+          "k": 5,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 2,
+            "denominator": 13,
+            "value": 0.15384615384615385
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 2,
+            "denominator": 5,
+            "value": 0.4
+          },
+          "ndcg_at_k": 0.4866742218311627,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 19.09180260321758,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 17,
+            "unjudged_ranked": 13,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 5,
+            "returned_at_metric_cutoff": 5
+          }
+        },
+        {
+          "k": 10,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 4,
+            "denominator": 13,
+            "value": 0.3076923076923077
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 4,
+            "denominator": 10,
+            "value": 0.4
+          },
+          "ndcg_at_k": 0.6153497016768482,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 23.87710326084444,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 17,
+            "unjudged_ranked": 13,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 10,
+            "returned_at_metric_cutoff": 10
+          }
+        },
+        {
+          "k": 20,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 5,
+            "denominator": 13,
+            "value": 0.38461538461538464
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 5,
+            "denominator": 20,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 17,
+            "unjudged_ranked": 13,
+            "unjudged_original_top_k": 7,
+            "unjudged_original_top_k_ids": [
+              "F00060",
+              "F00527",
+              "F00129",
+              "F00768",
+              "F00126",
+              "F00059",
+              "F00021"
+            ],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 13,
+            "returned_at_metric_cutoff": 20
+          }
+        },
+        {
+          "k": 30,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 7,
+            "denominator": 13,
+            "value": 0.5384615384615384
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 7,
+            "denominator": 30,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 17,
+            "unjudged_ranked": 13,
+            "unjudged_original_top_k": 13,
+            "unjudged_original_top_k_ids": [
+              "F00060",
+              "F00527",
+              "F00129",
+              "F00768",
+              "F00126",
+              "F00059",
+              "F00021",
+              "F00339",
+              "F00767",
+              "F00315",
+              "F00845",
+              "F00018",
+              "F00528"
+            ],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 17,
+            "returned_at_metric_cutoff": 30
+          }
+        }
+      ],
+      "model": "qwen/qwen3-embedding-8b",
+      "retrieval_config": {
+        "preprocessing_version": "title-clean-jd-cv-body-v1",
+        "rrf_k": 60,
+        "branch_depth": 30,
+        "batch_size": 16,
+        "max_batch_tokens": 64000,
+        "requested_top_k": 30
+      },
+      "cost_usd": 0,
+      "latency_ms": 6.990666995989159,
+      "provenance": {
+        "split_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+        "corpus_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+        "development_content_sha256": "4f3fe0a3c842db6819b6905baeeceda73e6e8fe3aac1c92bbb91ddbe0bb6157a",
+        "eligible_ids_sha256": "83d4d3f90eb72cb9319406b60d655b1a642ad316817bbcdf393c1dbf253373d4",
+        "config_sha256": "15f5ccd75661d1f5fd82353c859d08eaa3492c92c4336140a1a41ad74a26f4de",
+        "cv_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+        "query_body_sha256": "f18917bae86c76003636a7e0480017070a5d21264cec41dd56a47584f0f8c585",
+        "skill_query_sha256": "f0e2779cc5a5a95d6440eaf92d4dcf66b8594b74ad2e57ed421ba622391bfd36",
+        "fts_query_sha256": "8d8a43a73575f121b31434c0287e0fa8cc9ee4f28774edef9443af058058ca7e",
+        "preprocessing_sha256": "fcbc8c4acc40d6d5db4d47219361c8fdbad4e0525cee36126f7f0185d1414bdd",
+        "query_input_sha256": "4cf316f674675b751b4636d96a6b355cab2ffd903dece9883f5098f801769685",
+        "query_cache_sha256": "5e3830c228c3fc39673f64759e9626c7bb68327cf89e7487ab56ef174931399e",
+        "judgments_sha256": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4"
+      }
+    },
+    {
+      "method": "hybrid_qwen",
+      "cv_id": "CV1",
+      "metrics": [
+        {
+          "k": 5,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 1,
+            "denominator": 13,
+            "value": 0.07692307692307693
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 1,
+            "denominator": 5,
+            "value": 0.2
+          },
+          "ndcg_at_k": 0.2261457157838146,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 19.09180260321758,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 24,
+            "unjudged_ranked": 6,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 5,
+            "returned_at_metric_cutoff": 5
+          }
+        },
+        {
+          "k": 10,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 3,
+            "denominator": 13,
+            "value": 0.23076923076923078
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 3,
+            "denominator": 10,
+            "value": 0.3
+          },
+          "ndcg_at_k": 0.354820491386454,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 23.87710326084444,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 24,
+            "unjudged_ranked": 6,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 10,
+            "returned_at_metric_cutoff": 10
+          }
+        },
+        {
+          "k": 20,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 6,
+            "denominator": 13,
+            "value": 0.46153846153846156
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 6,
+            "denominator": 20,
+            "value": 0.3
+          },
+          "ndcg_at_k": 0.4800123800912618,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 27.997473574910888,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 24,
+            "unjudged_ranked": 6,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 20,
+            "returned_at_metric_cutoff": 20
+          }
+        },
+        {
+          "k": 30,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 8,
+            "denominator": 13,
+            "value": 0.6153846153846154
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 8,
+            "denominator": 30,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 24,
+            "unjudged_ranked": 6,
+            "unjudged_original_top_k": 6,
+            "unjudged_original_top_k_ids": [
+              "F00851",
+              "F00060",
+              "F00351",
+              "F00527",
+              "F00650",
+              "F00129"
+            ],
+            "judged_pool": 38,
+            "judged_after_filter": 38,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 24,
+            "returned_at_metric_cutoff": 30
+          }
+        }
+      ],
+      "model": "qwen/qwen3-embedding-8b",
+      "retrieval_config": {
+        "preprocessing_version": "title-clean-jd-cv-body-v1",
+        "rrf_k": 60,
+        "branch_depth": 30,
+        "batch_size": 16,
+        "max_batch_tokens": 64000,
+        "requested_top_k": 30
+      },
+      "cost_usd": 0,
+      "latency_ms": 26.16275000036694,
+      "provenance": {
+        "split_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+        "corpus_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+        "development_content_sha256": "4f3fe0a3c842db6819b6905baeeceda73e6e8fe3aac1c92bbb91ddbe0bb6157a",
+        "eligible_ids_sha256": "83d4d3f90eb72cb9319406b60d655b1a642ad316817bbcdf393c1dbf253373d4",
+        "config_sha256": "15f5ccd75661d1f5fd82353c859d08eaa3492c92c4336140a1a41ad74a26f4de",
+        "cv_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+        "query_body_sha256": "f18917bae86c76003636a7e0480017070a5d21264cec41dd56a47584f0f8c585",
+        "skill_query_sha256": "f0e2779cc5a5a95d6440eaf92d4dcf66b8594b74ad2e57ed421ba622391bfd36",
+        "fts_query_sha256": "8d8a43a73575f121b31434c0287e0fa8cc9ee4f28774edef9443af058058ca7e",
+        "preprocessing_sha256": "fcbc8c4acc40d6d5db4d47219361c8fdbad4e0525cee36126f7f0185d1414bdd",
+        "query_input_sha256": "4cf316f674675b751b4636d96a6b355cab2ffd903dece9883f5098f801769685",
+        "query_cache_sha256": "5e3830c228c3fc39673f64759e9626c7bb68327cf89e7487ab56ef174931399e",
+        "judgments_sha256": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4"
+      }
+    },
+    {
+      "method": "B0",
+      "cv_id": "CV2",
+      "metrics": [
+        {
+          "k": 5,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 2,
+            "denominator": 11,
+            "value": 0.18181818181818182
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 2,
+            "denominator": 5,
+            "value": 0.4
+          },
+          "ndcg_at_k": 0.5733697430514892,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 8.845377356638178,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 14,
+            "unjudged_ranked": 16,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 5,
+            "returned_at_metric_cutoff": 5
+          }
+        },
+        {
+          "k": 10,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 4,
+            "denominator": 11,
+            "value": 0.36363636363636365
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 4,
+            "denominator": 10,
+            "value": 0.4
+          },
+          "ndcg_at_k": 0.5795575024228476,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 13.630678014265039,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 14,
+            "unjudged_ranked": 16,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 10,
+            "returned_at_metric_cutoff": 10
+          }
+        },
+        {
+          "k": 20,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 4,
+            "denominator": 11,
+            "value": 0.36363636363636365
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 4,
+            "denominator": 20,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 14,
+            "unjudged_ranked": 16,
+            "unjudged_original_top_k": 9,
+            "unjudged_original_top_k_ids": [
+              "F00077",
+              "F00856",
+              "F00153",
+              "F00645",
+              "F00060",
+              "F00300",
+              "F00332",
+              "F00370",
+              "F00436"
+            ],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 11,
+            "returned_at_metric_cutoff": 20
+          }
+        },
+        {
+          "k": 30,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 5,
+            "denominator": 11,
+            "value": 0.45454545454545453
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 5,
+            "denominator": 30,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 14,
+            "unjudged_ranked": 16,
+            "unjudged_original_top_k": 16,
+            "unjudged_original_top_k_ids": [
+              "F00077",
+              "F00856",
+              "F00153",
+              "F00645",
+              "F00060",
+              "F00300",
+              "F00332",
+              "F00370",
+              "F00436",
+              "F00442",
+              "F00571",
+              "F00354",
+              "F00363",
+              "F00533",
+              "F00320",
+              "F00638"
+            ],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 14,
+            "returned_at_metric_cutoff": 30
+          }
+        }
+      ],
+      "model": null,
+      "retrieval_config": {
+        "preprocessing_version": "title-clean-jd-cv-body-v1",
+        "rrf_k": 60,
+        "branch_depth": 30,
+        "batch_size": 16,
+        "max_batch_tokens": 64000,
+        "requested_top_k": 30
+      },
+      "cost_usd": 0,
+      "latency_ms": 0.42462500277906656,
+      "provenance": {
+        "split_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+        "corpus_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+        "development_content_sha256": "4f3fe0a3c842db6819b6905baeeceda73e6e8fe3aac1c92bbb91ddbe0bb6157a",
+        "eligible_ids_sha256": "83d4d3f90eb72cb9319406b60d655b1a642ad316817bbcdf393c1dbf253373d4",
+        "config_sha256": "15f5ccd75661d1f5fd82353c859d08eaa3492c92c4336140a1a41ad74a26f4de",
+        "cv_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+        "query_body_sha256": "e50f93087fd0d2eeec6fc409aa4bd216cd5c1a2ba8334670c55a771d7464d0e1",
+        "skill_query_sha256": "e43be6782b805f65dc84b93a6ce5ec657a43ffc47461da327b3e1e28af133fd1",
+        "fts_query_sha256": "4397292c3fc4c49c19242091e8a9e9e2af8e70d278f2b60645fc73f6b4f2b397",
+        "query_input_sha256": "e43be6782b805f65dc84b93a6ce5ec657a43ffc47461da327b3e1e28af133fd1",
+        "preprocessing_sha256": "3eeb6b575e39b22afc9e48c9af22aece3066c71fc05b57b8c5356e17f4099289",
+        "judgments_sha256": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4"
+      }
+    },
+    {
+      "method": "B1",
+      "cv_id": "CV2",
+      "metrics": [
+        {
+          "k": 5,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 3,
+            "denominator": 11,
+            "value": 0.2727272727272727
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 3,
+            "denominator": 5,
+            "value": 0.6
+          },
+          "ndcg_at_k": 0.6765142965891182,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 8.845377356638178,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 17,
+            "unjudged_ranked": 13,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 5,
+            "returned_at_metric_cutoff": 5
+          }
+        },
+        {
+          "k": 10,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 4,
+            "denominator": 11,
+            "value": 0.36363636363636365
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 4,
+            "denominator": 10,
+            "value": 0.4
+          },
+          "ndcg_at_k": 0.6023217777339952,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 13.630678014265039,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 17,
+            "unjudged_ranked": 13,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 10,
+            "returned_at_metric_cutoff": 10
+          }
+        },
+        {
+          "k": 20,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 5,
+            "denominator": 11,
+            "value": 0.45454545454545453
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 5,
+            "denominator": 20,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 17,
+            "unjudged_ranked": 13,
+            "unjudged_original_top_k": 7,
+            "unjudged_original_top_k_ids": [
+              "F00556",
+              "F00682",
+              "F00212",
+              "F00554",
+              "F00558",
+              "F00699",
+              "F00629"
+            ],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 13,
+            "returned_at_metric_cutoff": 20
+          }
+        },
+        {
+          "k": 30,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 7,
+            "denominator": 11,
+            "value": 0.6363636363636364
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 7,
+            "denominator": 30,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 17,
+            "unjudged_ranked": 13,
+            "unjudged_original_top_k": 13,
+            "unjudged_original_top_k_ids": [
+              "F00556",
+              "F00682",
+              "F00212",
+              "F00554",
+              "F00558",
+              "F00699",
+              "F00629",
+              "F00210",
+              "F00679",
+              "F00287",
+              "F00825",
+              "F00363",
+              "F00645"
+            ],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 17,
+            "returned_at_metric_cutoff": 30
+          }
+        }
+      ],
+      "model": null,
+      "retrieval_config": {
+        "preprocessing_version": "title-clean-jd-cv-body-v1",
+        "rrf_k": 60,
+        "branch_depth": 30,
+        "batch_size": 16,
+        "max_batch_tokens": 64000,
+        "requested_top_k": 30
+      },
+      "cost_usd": 0,
+      "latency_ms": 44.55908399540931,
+      "provenance": {
+        "split_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+        "corpus_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+        "development_content_sha256": "4f3fe0a3c842db6819b6905baeeceda73e6e8fe3aac1c92bbb91ddbe0bb6157a",
+        "eligible_ids_sha256": "83d4d3f90eb72cb9319406b60d655b1a642ad316817bbcdf393c1dbf253373d4",
+        "config_sha256": "15f5ccd75661d1f5fd82353c859d08eaa3492c92c4336140a1a41ad74a26f4de",
+        "cv_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+        "query_body_sha256": "e50f93087fd0d2eeec6fc409aa4bd216cd5c1a2ba8334670c55a771d7464d0e1",
+        "skill_query_sha256": "e43be6782b805f65dc84b93a6ce5ec657a43ffc47461da327b3e1e28af133fd1",
+        "fts_query_sha256": "4397292c3fc4c49c19242091e8a9e9e2af8e70d278f2b60645fc73f6b4f2b397",
+        "query_input_sha256": "4397292c3fc4c49c19242091e8a9e9e2af8e70d278f2b60645fc73f6b4f2b397",
+        "preprocessing_sha256": "376ab59eaf947f989aa488f33bfaa5fed679d2c3850f1c3f05513ab61675fee5",
+        "judgments_sha256": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4"
+      }
+    },
+    {
+      "method": "dense_openai",
+      "cv_id": "CV2",
+      "metrics": [
+        {
+          "k": 5,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 1,
+            "denominator": 11,
+            "value": 0.09090909090909091
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 1,
+            "denominator": 5,
+            "value": 0.2
+          },
+          "ndcg_at_k": 0.42080338500822784,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 8.845377356638178,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 17,
+            "unjudged_ranked": 13,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 5,
+            "returned_at_metric_cutoff": 5
+          }
+        },
+        {
+          "k": 10,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 2,
+            "denominator": 11,
+            "value": 0.18181818181818182
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 2,
+            "denominator": 10,
+            "value": 0.2
+          },
+          "ndcg_at_k": 0.4423609244135308,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 13.630678014265039,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 17,
+            "unjudged_ranked": 13,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 10,
+            "returned_at_metric_cutoff": 10
+          }
+        },
+        {
+          "k": 20,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 3,
+            "denominator": 11,
+            "value": 0.2727272727272727
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 3,
+            "denominator": 20,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 17,
+            "unjudged_ranked": 13,
+            "unjudged_original_top_k": 5,
+            "unjudged_original_top_k_ids": [
+              "F00059",
+              "F00108",
+              "F00442",
+              "F00082",
+              "F00436"
+            ],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 15,
+            "returned_at_metric_cutoff": 20
+          }
+        },
+        {
+          "k": 30,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 3,
+            "denominator": 11,
+            "value": 0.2727272727272727
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 3,
+            "denominator": 30,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 17,
+            "unjudged_ranked": 13,
+            "unjudged_original_top_k": 13,
+            "unjudged_original_top_k_ids": [
+              "F00059",
+              "F00108",
+              "F00442",
+              "F00082",
+              "F00436",
+              "F00123",
+              "F00702",
+              "F00856",
+              "F00183",
+              "F00001",
+              "F00681",
+              "F00638",
+              "F00189"
+            ],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 17,
+            "returned_at_metric_cutoff": 30
+          }
+        }
+      ],
+      "model": "openai/text-embedding-3-small",
+      "retrieval_config": {
+        "preprocessing_version": "title-clean-jd-cv-body-v1",
+        "rrf_k": 60,
+        "branch_depth": 30,
+        "batch_size": 16,
+        "max_batch_tokens": 64000,
+        "requested_top_k": 30
+      },
+      "cost_usd": 0,
+      "latency_ms": 4.1381250048289075,
+      "provenance": {
+        "split_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+        "corpus_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+        "development_content_sha256": "4f3fe0a3c842db6819b6905baeeceda73e6e8fe3aac1c92bbb91ddbe0bb6157a",
+        "eligible_ids_sha256": "83d4d3f90eb72cb9319406b60d655b1a642ad316817bbcdf393c1dbf253373d4",
+        "config_sha256": "15f5ccd75661d1f5fd82353c859d08eaa3492c92c4336140a1a41ad74a26f4de",
+        "cv_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+        "query_body_sha256": "e50f93087fd0d2eeec6fc409aa4bd216cd5c1a2ba8334670c55a771d7464d0e1",
+        "skill_query_sha256": "e43be6782b805f65dc84b93a6ce5ec657a43ffc47461da327b3e1e28af133fd1",
+        "fts_query_sha256": "4397292c3fc4c49c19242091e8a9e9e2af8e70d278f2b60645fc73f6b4f2b397",
+        "preprocessing_sha256": "73896bce4211a5cd36275afe0f5730b41680ba526f88b425c745c17e008764a0",
+        "query_input_sha256": "891e97708668612c36c8b9abef2095677d61ef11dd72684171692886f0425e13",
+        "query_cache_sha256": "c168c153002c18ffde271bf094a90390006654b1090d24bc0936864cde9053a6",
+        "judgments_sha256": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4"
+      }
+    },
+    {
+      "method": "hybrid_openai",
+      "cv_id": "CV2",
+      "metrics": [
+        {
+          "k": 5,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 2,
+            "denominator": 11,
+            "value": 0.18181818181818182
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 2,
+            "denominator": 5,
+            "value": 0.4
+          },
+          "ndcg_at_k": 0.656819036744215,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 8.845377356638178,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 24,
+            "unjudged_ranked": 6,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 5,
+            "returned_at_metric_cutoff": 5
+          }
+        },
+        {
+          "k": 10,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 3,
+            "denominator": 11,
+            "value": 0.2727272727272727
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 3,
+            "denominator": 10,
+            "value": 0.3
+          },
+          "ndcg_at_k": 0.5955189330975375,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 13.630678014265039,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 24,
+            "unjudged_ranked": 6,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 10,
+            "returned_at_metric_cutoff": 10
+          }
+        },
+        {
+          "k": 20,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 7,
+            "denominator": 11,
+            "value": 0.6363636363636364
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 7,
+            "denominator": 20,
+            "value": 0.35
+          },
+          "ndcg_at_k": 0.7601443463129401,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 16.685272949402464,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 24,
+            "unjudged_ranked": 6,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 20,
+            "returned_at_metric_cutoff": 20
+          }
+        },
+        {
+          "k": 30,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 7,
+            "denominator": 11,
+            "value": 0.6363636363636364
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 7,
+            "denominator": 30,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 24,
+            "unjudged_ranked": 6,
+            "unjudged_original_top_k": 6,
+            "unjudged_original_top_k_ids": [
+              "F00556",
+              "F00682",
+              "F00059",
+              "F00108",
+              "F00212",
+              "F00442"
+            ],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 24,
+            "returned_at_metric_cutoff": 30
+          }
+        }
+      ],
+      "model": "openai/text-embedding-3-small",
+      "retrieval_config": {
+        "preprocessing_version": "title-clean-jd-cv-body-v1",
+        "rrf_k": 60,
+        "branch_depth": 30,
+        "batch_size": 16,
+        "max_batch_tokens": 64000,
+        "requested_top_k": 30
+      },
+      "cost_usd": 0,
+      "latency_ms": 48.63029200350866,
+      "provenance": {
+        "split_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+        "corpus_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+        "development_content_sha256": "4f3fe0a3c842db6819b6905baeeceda73e6e8fe3aac1c92bbb91ddbe0bb6157a",
+        "eligible_ids_sha256": "83d4d3f90eb72cb9319406b60d655b1a642ad316817bbcdf393c1dbf253373d4",
+        "config_sha256": "15f5ccd75661d1f5fd82353c859d08eaa3492c92c4336140a1a41ad74a26f4de",
+        "cv_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+        "query_body_sha256": "e50f93087fd0d2eeec6fc409aa4bd216cd5c1a2ba8334670c55a771d7464d0e1",
+        "skill_query_sha256": "e43be6782b805f65dc84b93a6ce5ec657a43ffc47461da327b3e1e28af133fd1",
+        "fts_query_sha256": "4397292c3fc4c49c19242091e8a9e9e2af8e70d278f2b60645fc73f6b4f2b397",
+        "preprocessing_sha256": "73896bce4211a5cd36275afe0f5730b41680ba526f88b425c745c17e008764a0",
+        "query_input_sha256": "891e97708668612c36c8b9abef2095677d61ef11dd72684171692886f0425e13",
+        "query_cache_sha256": "c168c153002c18ffde271bf094a90390006654b1090d24bc0936864cde9053a6",
+        "judgments_sha256": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4"
+      }
+    },
+    {
+      "method": "dense_qwen",
+      "cv_id": "CV2",
+      "metrics": [
+        {
+          "k": 5,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 1,
+            "denominator": 11,
+            "value": 0.09090909090909091
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 1,
+            "denominator": 5,
+            "value": 0.2
+          },
+          "ndcg_at_k": 0.48811138193756815,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 8.845377356638178,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 20,
+            "unjudged_ranked": 10,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 5,
+            "returned_at_metric_cutoff": 5
+          }
+        },
+        {
+          "k": 10,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 2,
+            "denominator": 11,
+            "value": 0.18181818181818182
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 2,
+            "denominator": 10,
+            "value": 0.2
+          },
+          "ndcg_at_k": 0.47794317854379453,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 13.630678014265039,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 20,
+            "unjudged_ranked": 10,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 10,
+            "returned_at_metric_cutoff": 10
+          }
+        },
+        {
+          "k": 20,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 5,
+            "denominator": 11,
+            "value": 0.45454545454545453
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 5,
+            "denominator": 20,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 20,
+            "unjudged_ranked": 10,
+            "unjudged_original_top_k": 4,
+            "unjudged_original_top_k_ids": [
+              "F00418",
+              "F00436",
+              "F00343",
+              "F00059"
+            ],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 16,
+            "returned_at_metric_cutoff": 20
+          }
+        },
+        {
+          "k": 30,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 7,
+            "denominator": 11,
+            "value": 0.6363636363636364
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 7,
+            "denominator": 30,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 20,
+            "unjudged_ranked": 10,
+            "unjudged_original_top_k": 10,
+            "unjudged_original_top_k_ids": [
+              "F00418",
+              "F00436",
+              "F00343",
+              "F00059",
+              "F00108",
+              "F00067",
+              "F00645",
+              "F00697",
+              "F00574",
+              "F00629"
+            ],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 20,
+            "returned_at_metric_cutoff": 30
+          }
+        }
+      ],
+      "model": "qwen/qwen3-embedding-8b",
+      "retrieval_config": {
+        "preprocessing_version": "title-clean-jd-cv-body-v1",
+        "rrf_k": 60,
+        "branch_depth": 30,
+        "batch_size": 16,
+        "max_batch_tokens": 64000,
+        "requested_top_k": 30
+      },
+      "cost_usd": 0,
+      "latency_ms": 6.633917000726797,
+      "provenance": {
+        "split_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+        "corpus_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+        "development_content_sha256": "4f3fe0a3c842db6819b6905baeeceda73e6e8fe3aac1c92bbb91ddbe0bb6157a",
+        "eligible_ids_sha256": "83d4d3f90eb72cb9319406b60d655b1a642ad316817bbcdf393c1dbf253373d4",
+        "config_sha256": "15f5ccd75661d1f5fd82353c859d08eaa3492c92c4336140a1a41ad74a26f4de",
+        "cv_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+        "query_body_sha256": "e50f93087fd0d2eeec6fc409aa4bd216cd5c1a2ba8334670c55a771d7464d0e1",
+        "skill_query_sha256": "e43be6782b805f65dc84b93a6ce5ec657a43ffc47461da327b3e1e28af133fd1",
+        "fts_query_sha256": "4397292c3fc4c49c19242091e8a9e9e2af8e70d278f2b60645fc73f6b4f2b397",
+        "preprocessing_sha256": "fcbc8c4acc40d6d5db4d47219361c8fdbad4e0525cee36126f7f0185d1414bdd",
+        "query_input_sha256": "891e97708668612c36c8b9abef2095677d61ef11dd72684171692886f0425e13",
+        "query_cache_sha256": "0091aeb5ed5de5e11da8b27b4dc0ccd48a3a9c373d3b42213c821b79409e9cea",
+        "judgments_sha256": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4"
+      }
+    },
+    {
+      "method": "hybrid_qwen",
+      "cv_id": "CV2",
+      "metrics": [
+        {
+          "k": 5,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 2,
+            "denominator": 11,
+            "value": 0.18181818181818182
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 2,
+            "denominator": 5,
+            "value": 0.4
+          },
+          "ndcg_at_k": 0.6724935386069494,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 8.845377356638178,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 22,
+            "unjudged_ranked": 8,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 5,
+            "returned_at_metric_cutoff": 5
+          }
+        },
+        {
+          "k": 10,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 5,
+            "denominator": 11,
+            "value": 0.45454545454545453
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 5,
+            "denominator": 10,
+            "value": 0.5
+          },
+          "ndcg_at_k": 0.688917722133214,
+          "ndcg_reason": null,
+          "ndcg_ideal_dcg": 13.630678014265039,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 22,
+            "unjudged_ranked": 8,
+            "unjudged_original_top_k": 0,
+            "unjudged_original_top_k_ids": [],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 10,
+            "returned_at_metric_cutoff": 10
+          }
+        },
+        {
+          "k": 20,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 7,
+            "denominator": 11,
+            "value": 0.6363636363636364
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 7,
+            "denominator": 20,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 22,
+            "unjudged_ranked": 8,
+            "unjudged_original_top_k": 2,
+            "unjudged_original_top_k_ids": [
+              "F00629",
+              "F00645"
+            ],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 18,
+            "returned_at_metric_cutoff": 20
+          }
+        },
+        {
+          "k": 30,
+          "scope": "labeled_pool_only",
+          "ranking_protocol": "D-052_original_positions",
+          "recall_protocol": "original_top_k_declared_judged_eligible_pool",
+          "recall_at_k": {
+            "numerator": 8,
+            "denominator": 11,
+            "value": 0.7272727272727273
+          },
+          "filter_recall": {
+            "value": null,
+            "status": "not_measured",
+            "reason": "No optional filter implementation/condition in this run"
+          },
+          "precision_at_k": {
+            "numerator": 8,
+            "denominator": 30,
+            "value": null,
+            "reason": "missing_original_position_judgment"
+          },
+          "ndcg_at_k": null,
+          "ndcg_reason": "missing_original_position_judgment",
+          "ndcg_ideal_dcg": null,
+          "ndcg_ideal_scope": "all_eligible_judged_pool",
+          "ndcg_gain": "exponential",
+          "coverage": {
+            "ranked": 30,
+            "judged_ranked": 22,
+            "unjudged_ranked": 8,
+            "unjudged_original_top_k": 8,
+            "unjudged_original_top_k_ids": [
+              "F00629",
+              "F00645",
+              "F00556",
+              "F00418",
+              "F00682",
+              "F00436",
+              "F00343",
+              "F00212"
+            ],
+            "judged_pool": 40,
+            "judged_after_filter": 40,
+            "eligible_jobs": 214,
+            "judged_at_metric_cutoff": 22,
+            "returned_at_metric_cutoff": 30
+          }
+        }
+      ],
+      "model": "qwen/qwen3-embedding-8b",
+      "retrieval_config": {
+        "preprocessing_version": "title-clean-jd-cv-body-v1",
+        "rrf_k": 60,
+        "branch_depth": 30,
+        "batch_size": 16,
+        "max_batch_tokens": 64000,
+        "requested_top_k": 30
+      },
+      "cost_usd": 0,
+      "latency_ms": 46.785875005298294,
+      "provenance": {
+        "split_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+        "corpus_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+        "development_content_sha256": "4f3fe0a3c842db6819b6905baeeceda73e6e8fe3aac1c92bbb91ddbe0bb6157a",
+        "eligible_ids_sha256": "83d4d3f90eb72cb9319406b60d655b1a642ad316817bbcdf393c1dbf253373d4",
+        "config_sha256": "15f5ccd75661d1f5fd82353c859d08eaa3492c92c4336140a1a41ad74a26f4de",
+        "cv_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+        "query_body_sha256": "e50f93087fd0d2eeec6fc409aa4bd216cd5c1a2ba8334670c55a771d7464d0e1",
+        "skill_query_sha256": "e43be6782b805f65dc84b93a6ce5ec657a43ffc47461da327b3e1e28af133fd1",
+        "fts_query_sha256": "4397292c3fc4c49c19242091e8a9e9e2af8e70d278f2b60645fc73f6b4f2b397",
+        "preprocessing_sha256": "fcbc8c4acc40d6d5db4d47219361c8fdbad4e0525cee36126f7f0185d1414bdd",
+        "query_input_sha256": "891e97708668612c36c8b9abef2095677d61ef11dd72684171692886f0425e13",
+        "query_cache_sha256": "0091aeb5ed5de5e11da8b27b4dc0ccd48a3a9c373d3b42213c821b79409e9cea",
+        "judgments_sha256": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4"
+      }
+    }
+  ],
+  "winner": null,
+  "scope": "labeled_pool_only",
+  "configuration_selected": false,
+  "primary_publication_blocked_by_unjudged": false,
+  "schema_version": "cp23-stage3-retrieval-comparison-v1",
+  "run_id": "cp23_stage3_retrieval_evaluation_20261003_v2",
+  "aggregate": [
+    {
+      "method": "B0",
+      "query_count": 2,
+      "p_at_5_macro": 0.5,
+      "ndcg_at_10_macro": 0.6037503897700672,
+      "recall_labeled_pool": {
+        "10": 0.45104895104895104,
+        "20": 0.48951048951048953,
+        "30": 0.5734265734265734
+      },
+      "judged_original_top_k": {
+        "10": 20,
+        "20": 24,
+        "30": 29
+      },
+      "original_top_k_positions": {
+        "10": 20,
+        "20": 40,
+        "30": 60
+      },
+      "local_invocation_ms": {
+        "CV1": 0.35820800985675305,
+        "CV2": 0.42462500277906656
+      }
+    },
+    {
+      "method": "B1",
+      "query_count": 2,
+      "p_at_5_macro": 0.4,
+      "ndcg_at_10_macro": 0.44975435086620924,
+      "recall_labeled_pool": {
+        "10": 0.2972027972027972,
+        "20": 0.34265734265734266,
+        "30": 0.47202797202797203
+      },
+      "judged_original_top_k": {
+        "10": 20,
+        "20": 26,
+        "30": 35
+      },
+      "original_top_k_positions": {
+        "10": 20,
+        "20": 40,
+        "30": 60
+      },
+      "local_invocation_ms": {
+        "CV1": 26.59029200731311,
+        "CV2": 44.55908399540931
+      }
+    },
+    {
+      "method": "dense_openai",
+      "query_count": 2,
+      "p_at_5_macro": 0.2,
+      "ndcg_at_10_macro": 0.37848567062634675,
+      "recall_labeled_pool": {
+        "10": 0.16783216783216784,
+        "20": 0.21328671328671328,
+        "30": 0.2517482517482518
+      },
+      "judged_original_top_k": {
+        "10": 20,
+        "20": 29,
+        "30": 34
+      },
+      "original_top_k_positions": {
+        "10": 20,
+        "20": 40,
+        "30": 60
+      },
+      "local_invocation_ms": {
+        "CV1": 5.281457997625694,
+        "CV2": 4.1381250048289075
+      }
+    },
+    {
+      "method": "dense_qwen",
+      "query_count": 2,
+      "p_at_5_macro": 0.30000000000000004,
+      "ndcg_at_10_macro": 0.5466464401103214,
+      "recall_labeled_pool": {
+        "10": 0.24475524475524477,
+        "20": 0.4195804195804196,
+        "30": 0.5874125874125874
+      },
+      "judged_original_top_k": {
+        "10": 20,
+        "20": 29,
+        "30": 37
+      },
+      "original_top_k_positions": {
+        "10": 20,
+        "20": 40,
+        "30": 60
+      },
+      "local_invocation_ms": {
+        "CV1": 6.990666995989159,
+        "CV2": 6.633917000726797
+      }
+    },
+    {
+      "method": "hybrid_openai",
+      "query_count": 2,
+      "p_at_5_macro": 0.2,
+      "ndcg_at_10_macro": 0.379692135302041,
+      "recall_labeled_pool": {
+        "10": 0.13636363636363635,
+        "20": 0.47202797202797203,
+        "30": 0.5104895104895105
+      },
+      "judged_original_top_k": {
+        "10": 20,
+        "20": 40,
+        "30": 48
+      },
+      "original_top_k_positions": {
+        "10": 20,
+        "20": 40,
+        "30": 60
+      },
+      "local_invocation_ms": {
+        "CV1": 23.248290992341936,
+        "CV2": 48.63029200350866
+      }
+    },
+    {
+      "method": "hybrid_qwen",
+      "query_count": 2,
+      "p_at_5_macro": 0.30000000000000004,
+      "ndcg_at_10_macro": 0.521869106759834,
+      "recall_labeled_pool": {
+        "10": 0.34265734265734266,
+        "20": 0.548951048951049,
+        "30": 0.6713286713286714
+      },
+      "judged_original_top_k": {
+        "10": 20,
+        "20": 38,
+        "30": 46
+      },
+      "original_top_k_positions": {
+        "10": 20,
+        "20": 40,
+        "30": 60
+      },
+      "local_invocation_ms": {
+        "CV1": 26.16275000036694,
+        "CV2": 46.785875005298294
+      }
+    }
+  ],
+  "input_hashes": {
+    "evals/results/cp23_stage1_readiness_20261003_v4.json": "dc32fb228cd399046fc80edc551b3d494238d502acee87299987eb74d263ccf4",
+    "evals/results/cp23_metric_contract_D052_D054_20261003_v1.json": "09e78c1be3e496322a3f5e5847b297a570f9ea4375aa1a90d04a8776a183a924",
+    "evals/results/cp22_retrieval_top30_20261002_03.json": "32d99ff3dbfe4ec8b1ba37ce0d6fb51e3449b7e508c0bc2786d51658e52569eb",
+    "src/jobfit/eval/retrieval_evaluation.py": "bc044b992a3f8710dea62b2958752168f1ef5681c4139a5bca3c2f495adfa0d7",
+    "src/jobfit/eval/run_eval.py": "c1cc6a56c09d2d63980bb2fa304ee5eab03b8050640a126b0881eb5dc299fb71",
+    "src/jobfit/eval/metrics.py": "0073894ad06ab04bccc74f6060376794a80b6eb93c52b635dfc29d60c8305c22",
+    "src/jobfit/eval/contract.py": "befb09623a29dbaacb549c8d57f91293dcfa20873e413bfe016383989490fbae",
+    "scripts/evaluate_cp23_retrieval.py": "a80cba85a1426bc5547f607dd9799145e310dc681cab7529d1c0b725a4c3e19f",
+    "evals/results/cp23_stage1_case_candidates_20261003_v4.json": "e09ea5b67ef8050c52905a5cde23d404cd18682ef5af4c64ef7e81071e15df08",
+    "evals/results/cp23_F00332_alignment_approval_20261003_v1.json": "ef484a55703c78b0489d53ef3f9702df8cab568c9d4e0a25eff57db8b2d88ee0",
+    "evals/results/cp23_stage1_top10_gaps_20261003_v4.json": "4ad29f18955162fa99b7d3db30da90607ef6c13e9e00e57895bc3019d500a60e",
+    "evals/results/cp23_stage1_post_amendment_validation_20261003_v1.json": "90d3cfa58c71ff9f4a860de3f558d1a73c0edf4a9bf28de44a116643d686cf5a",
+    "evals/results/cp23_stage1_D054_offline_tests_20261003_v1.xml": "d040ddf84ebbbae3e6d4e9b7f8a961c087740fd6a473643f0f09eb87bbb6a7ee",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/manifest.json": "6c814e0fff729bbedcdc301fceed591e523ba0c31766e5d83b3a40c8c9b193ec",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/extraction_gold.jsonl": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/evidence_gold.jsonl": "510bbe15bd02ed370b2a94982582169c6c9d38f62b5e6e27311bb55a0f3ef49e",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/relevance_gold.jsonl": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/logical_units.json": "49aa3b438470de8897a3b17b315da4190dd33f2e78f3f73f9065753250fffaf5",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/excluded_records.json": "e72c7f8214b6474b4fd648d25a4c36f8c374f1662eac5909e60d5deeeb16d93e",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/JD_coverage.json": "55312dce477c8f620a8db72067d92f3c1d76abdbe615c85d78db1bed40ffd511",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/pair_coverage.json": "b2a1339e4a9de6c4b8cf4d55b7ebb8f21fc2d3bde58557ac26de96135ba0bd58",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/held_records.json": "2ebab10a5a7ee76ad2ed4f4ef2285d980ef0211f5c9cb3435c485534b6842a37",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/resolved_held_C_records.json": "c73ce803dc75daeef888cf7cb0135913db4366f9e98ca08c98e7674f065906b8",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/amendment_receipt.json": "15fedf3af6655452f52a182bbe582014681107562a4afa20395c9775fe8f5efe",
+    "evals/splits/dev_job_ids.txt": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+    "config/retrieval_v1.yaml": "c54422081f79d3d9031367344de7b4813407410f911c849ae7721e7219495d7a",
+    "config/models_v1.yaml": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+    "config/tokenizers_v1.json": "bacd0aa6b68e6e356d86d4008bcb1e510d775f8a6d6298059a21f0a8d788d922",
+    "config/pipeline_v1.yaml": "ba44704f573f9fabb24ff45a2b0142b5c00ac93af55902429500c020a3cd1dc8",
+    "src/jobfit/eval/retrieval_run.py": "b131b3be43e78b200c1f74eb4588a93b44840b613a4ef3b767d697b075fc080a",
+    "src/jobfit/search/keyword.py": "fa1912585420c3b6a7902840bfb49b2c90fa6b93693c0b23aa9955b402d028df",
+    "src/jobfit/search/fts.py": "8fd9ee6eabe58293033dbef69b59e9f2e9b5e18c93ba88de75943231f47e75a5",
+    "src/jobfit/search/dense.py": "7b036e3e325789e32486a9c74e95fd357101e7a53851103df72296516b83a761",
+    "src/jobfit/search/hybrid.py": "9b4c0333b5a9138e06f43cfee7d9e4282257505a918446de341f96a89a1aa3d1",
+    "src/jobfit/search/embeddings.py": "3e5c11a1776a0239a5b8c69f902a70fc30fc8bf317fb7083cefe20dd0a171dab",
+    "src/jobfit/db/models.py": "aa363d821346202f34bb0cd5e817eed21088c457dd1c1fdae4dad83458da5f09",
+    "config/skill_aliases_v0.yaml": "28b922f6fe606a3b8aaf8c6140c54e9db4c7fe81284f2925a636d8452318fbe3",
+    "data/processed/jobs_features.jsonl": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+    "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+    "reports/embedding_queries/e724116bcd1b2fff640972dfef66eebf435a11ed5119437b7b76b4087590d38b.json": "3dd957a3bbf648257ec2115df179fea90c70f83a7c59c648069f4eac04e587b4",
+    "reports/embedding_queries/2d5fb8fa6f988783a7659f5661111ae17f6073c846635c126dcaf7531c1e8e8f.json": "5e3830c228c3fc39673f64759e9626c7bb68327cf89e7487ab56ef174931399e",
+    "data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+    "reports/embedding_queries/eba7a5f117978bc3d272f0b077c570f1c1e43e998cd1c65b1e0bfa4ac4edb1d9.json": "c168c153002c18ffde271bf094a90390006654b1090d24bc0936864cde9053a6",
+    "reports/embedding_queries/57a041f66115f7a405a2f2ae784e4d0d877457552ca5923fb68c3987ff5b01e3.json": "0091aeb5ed5de5e11da8b27b4dc0ccd48a3a9c373d3b42213c821b79409e9cea"
+  },
+  "judgment_inventory": {
+    "CV1": {
+      "judged": 38,
+      "relevant_2_3": 13,
+      "grade_counts": {
+        "2": 9,
+        "1": 24,
+        "3": 4,
+        "0": 1
+      }
+    },
+    "CV2": {
+      "judged": 40,
+      "relevant_2_3": 11,
+      "grade_counts": {
+        "0": 1,
+        "2": 11,
+        "1": 28
+      }
+    }
+  },
+  "filter_comparison": {
+    "status": "deferred",
+    "filter_recall": null
+  },
+  "source_limited_cases": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "basis": "Dion-approved direct C on archived truncated JD; A/B still held"
+    }
+  ],
+  "interpretation_limits": [
+    "Two familiar development CVs only; no statistical superiority or held-out claim.",
+    "Recall is relative to the declared reviewed eligible pool, not all 214 development jobs.",
+    "Top20/top30 include unjudged positions; these are not automatically irrelevant.",
+    "Only stage-1 retrieval is measured, not final evidence-based recommendation quality.",
+    "Single fixed-order local invocation latency excludes embedding, LLM, connection and preparation.",
+    "Hybrid used branch depth30/RRF60 for this run; active default depth20 is unchanged.",
+    "F00369 C is approved on a truncated source; its A/B remain held.",
+    "Model, embedding, method and K selection require the later configuration decision."
+  ],
+  "api_calls": 0,
+  "cost_usd": 0,
+  "gold_written": false,
+  "workbook_read": false,
+  "test_access": false
+}

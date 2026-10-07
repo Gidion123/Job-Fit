@@ -1,0 +1,13 @@
+{
+  "job_id": "gpt-6-luna/F00036",
+  "result_sha256": "2b44c795b218bf8916e902ebcde24f5790da541462eee330009f070307e0c774",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "uncertain",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "uncertain"
+  },
+  "notes": "Full Indonesian source and 17 logical references reviewed against 20 final units. All quotes are exact. Opening paragraph analytics/statistical-modelling and work-location units require the same unresolved umbrella/intro interpretation retained for DeepSeek; no gold mutation or TP is inferred. U11 makes EDA contingent on Tableau/Power BI/Matplotlib even though the source and reviewed reference preserve EDA separately from the visualization-tool alternative; this attaches an inappropriate tool qualifier to EDA. U16 represents technical-to-nontechnical explanation as soft_skill rather than the reviewed other obligation. Preferred database/big-data scope and explicit two-year minimum are retained. Grouping/qualifier comparison fails; candidate alignment stays pending.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

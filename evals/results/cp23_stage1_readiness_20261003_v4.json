@@ -1,0 +1,66 @@
+{
+  "schema_version": "cp23-stage1-readiness-v4",
+  "status": "ready",
+  "scope": "development_stage1_prerequisites_only; seven JD extraction references, four fixed-input matcher pairs, CV1/CV2 original-top10 ranking C coverage",
+  "gates": {
+    "contract": true,
+    "references": true,
+    "alignment": true,
+    "coverage": true,
+    "implementation": true
+  },
+  "gate_reasons": {
+    "contract": "D-052 + D-054 evaluation-contract-v1.1 approved and offline validated",
+    "references": "Seven full-source A references and four A/B-complete pairs in current amended gold; future candidate outputs need their own source/mapping verification",
+    "alignment": "Dion verified all 16 one-to-one F00332 mappings for the saved assisted artifact; D-054 strict split/merge rule approved; future model outputs still require separate alignment",
+    "coverage": "All 70 original-top10 union CV/JD pairs have reviewed eligible C. Three C-only direct reviews are case-scoped, with F00369 source truncation disclosed; A/B remain held",
+    "implementation": "78 targeted offline tests pass; no DB/live comparison in this receipt"
+  },
+  "receipts": {
+    "contract_sha256": "09e78c1be3e496322a3f5e5847b297a570f9ea4375aa1a90d04a8776a183a924",
+    "reference_sha256": "e09ea5b67ef8050c52905a5cde23d404cd18682ef5af4c64ef7e81071e15df08",
+    "alignment_sha256": "ef484a55703c78b0489d53ef3f9702df8cab568c9d4e0a25eff57db8b2d88ee0",
+    "coverage_sha256": "4ad29f18955162fa99b7d3db30da90607ef6c13e9e00e57895bc3019d500a60e",
+    "post_amendment_verification_sha256": "90d3cfa58c71ff9f4a860de3f558d1a73c0edf4a9bf28de44a116643d686cf5a",
+    "offline_tests_sha256": "d040ddf84ebbbae3e6d4e9b7f8a961c087740fd6a473643f0f09eb87bbb6a7ee",
+    "gold_manifest_sha256": "6c814e0fff729bbedcdc301fceed591e523ba0c31766e5d83b3a40c8c9b193ec"
+  },
+  "receipt_paths": {
+    "contract": "evals/results/cp23_metric_contract_D052_D054_20261003_v1.json",
+    "reference": "evals/results/cp23_stage1_case_candidates_20261003_v4.json",
+    "alignment": "evals/results/cp23_F00332_alignment_approval_20261003_v1.json",
+    "coverage": "evals/results/cp23_stage1_top10_gaps_20261003_v4.json",
+    "post_amendment_verification": "evals/results/cp23_stage1_post_amendment_validation_20261003_v1.json",
+    "offline_tests": "evals/results/cp23_stage1_D054_offline_tests_20261003_v1.xml",
+    "gold_bundle": "evals/gold/development_v13_reviewed_20261003_stage1_r3"
+  },
+  "held_reference_ids": [],
+  "held_outside_selected_reference_scope": {
+    "A": 45,
+    "B": 39,
+    "C": 2
+  },
+  "original_top10_union": {
+    "pairs": 70,
+    "eligible_judged": 70,
+    "held": 0,
+    "unjudged": 0,
+    "source_limited": [
+      {
+        "cv_id": "CV1",
+        "job_id": "F00369",
+        "basis": "Dion-approved direct C on archived truncated JD; A/B still held"
+      }
+    ]
+  },
+  "future_alignment_requirement": "Each Stage-2 candidate output and any new split/merge relation must be aligned/verified independently; this receipt does not pre-approve outputs",
+  "formal_tuning": "NOT_RUN",
+  "winner": null,
+  "quality_metrics": null,
+  "api_calls": 0,
+  "actual_api_cost_usd_session": 0,
+  "paid_dispatch_gate": "Official model availability/prices/privacy, guard and ledger preflight; batches above US$1 need Dion approval",
+  "test_access": false,
+  "broad_extraction": false,
+  "workbook_write": false
+}

@@ -1,0 +1,58 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00055",
+  "status": "done",
+  "error_code": null,
+  "source": "reused_v1_matching",
+  "jd_source": "reused_v1",
+  "score_H1": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 6,
+    "partial": 1,
+    "required_total": 15,
+    "preferred_met": 1,
+    "preferred_total": 7,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+      "Required units not judged yet: U02",
+      "Requirement structure needs review; identified denominator is not validated."
+    ]
+  },
+  "score_H2": {
+    "score_pct": 46.43,
+    "status": "provisional",
+    "matched": 6,
+    "partial": 1,
+    "required_total": 14,
+    "preferred_met": 1,
+    "preferred_total": 7,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+      "Some requirements need checking; excluded unresolved units are listed separately."
+    ]
+  },
+  "excluded_needs_review": [
+    {
+      "unit_id": "U02",
+      "text": "3–6 years of hands-on data science or applied AI experience, with demonstrable work in text analytics, conversational data, or LLM-based systems",
+      "reason": "model marked the requirement structure needs_review",
+      "importance": "required",
+      "source_quotes": [
+        "3–6 years of hands-on data science or applied AI experience, with demonstrable work in text analytics, conversational data, or LLM-based systems"
+      ]
+    }
+  ],
+  "wall_ms": 5,
+  "assessments": []
+}

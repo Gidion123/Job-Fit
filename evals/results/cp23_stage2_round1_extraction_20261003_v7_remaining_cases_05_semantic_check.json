@@ -1,0 +1,13 @@
+{
+  "job_id": "claude-haiku-4.5/F00309",
+  "result_sha256": "2aaa17e7e54b14103bc74b4c67dcafc90711e9dc5cb20f3e89f7ce970d20aa63",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "fail",
+    "qualifiers": "pass",
+    "importance": "pass"
+  },
+  "notes": "All three preferred qualification clauses checked; nine units. Python/SQL and five knowledge domains are atomized with correct proficiency and concept/tool categories; the experience minimum is one year and every unit is preferred. U09 preserves diploma/degree/equivalent-practical-experience wording and shared discipline in text, but stores explicit alternatives as a simple education unit without assessable OR branches. This logical representation differs from the approved alternative group and needs alignment; exact quotes and retained qualifiers pass. No gold change or automatic F1.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

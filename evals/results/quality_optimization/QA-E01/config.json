@@ -1,0 +1,41 @@
+{
+ "experiment_id": "QA-E01",
+ "model": "gpt-6-sol",
+ "prompt": {
+  "prompt_file": "prompts/evidence_matching_v1_2_qa_e01.md",
+  "prompt_sha256": "3fae757a2b6eb5283d05b0d157b67ed3b5e97af7d7958428fad5f07acedfe0d6",
+  "experiment_id": "QA-E01",
+  "parent_prompt": "prompts/evidence_matching_v1_1.md",
+  "parent_prompt_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+  "prompt_version": "evidence-prompt-v1.2-qa-e01",
+  "hypothesis": "QA-H01",
+  "created_at": "2026-10-07",
+  "intended_change": "Calibrate MATCH versus PARTIAL toward guideline B1/B2 (D-042): clear contextual use in work, project, study or research is MATCH; PARTIAL only for the listed reasons.",
+  "change_scope": "v1.1 text kept word for word (title line renamed); one paragraph added at the end"
+ },
+ "subsets": [
+  "optimization"
+ ],
+ "ranking": true,
+ "config_file": "config/versions/pipeline_cp23_freeze_candidate_v4_20261006.yaml",
+ "validator": "quote-check-v1.1",
+ "guardrails": [
+  "G1",
+  "G2"
+ ],
+ "hold_policy": "H2v2",
+ "partial_weight": 0.5,
+ "k": 10,
+ "fallback": "not used",
+ "measurement_scope": "primary GPT-6 Sol prompt behavior; not production fallback reliability (Sol then Luna), which a later integration run checks",
+ "reference_provenance": "evals/results/quality_optimization/benchmark_v1/provenance.json",
+ "versions": {
+  "python": "3.11.16",
+  "pydantic": "2.13.5",
+  "openai": "3.20.0",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3",
+  "matplotlib": "3.10.6",
+  "pyyaml": "6.0.3"
+ }
+}

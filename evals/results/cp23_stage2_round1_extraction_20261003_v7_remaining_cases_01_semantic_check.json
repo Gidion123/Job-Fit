@@ -1,0 +1,13 @@
+{
+  "job_id": "gemini-3.5-flash-lite/F00010",
+  "result_sha256": "99f2cebec9c7b832f04df00cc2fe535cc259d74b2dab5e26f86c80af89e06557",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "pass"
+  },
+  "notes": "All seven qualification clauses checked; nine units. Minimum eight years remains, but its AI/ML/Data Science OR route is stored as one qualified unit without assessable alternative branches. U04 framework branches lose strong proficiency; U05 AWS/GCP/Azure branches lose familiarity with ML deployment. Parent text alone does not preserve these qualifiers in independently matched branches. Similar framework/cloud options and preferred coding assistants remain represented. Citizenship and importance pass. No gold or approved alignment change.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

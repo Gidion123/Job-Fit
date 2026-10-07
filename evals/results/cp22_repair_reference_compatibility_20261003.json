@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-03",
+  "scope": "operational compatibility review under user delegation; no metric/gold edits",
+  "selected_job_id": "F00332",
+  "cv_id": "CV1",
+  "development_only": true,
+  "selection_before_inference": true,
+  "A_rows": 16,
+  "B_rows": 16,
+  "qualification_bullets": 8,
+  "gold_manifest_sha256": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+  "rejected_initial_candidate": {
+    "job_id": "F00505",
+    "reason": "P39-U10 explicit communication skill classified other; could affect score denominator. Not used for this acceptance chain; gold not changed."
+  },
+  "source_mapping": {
+    "Q01": [
+      "P30-U01"
+    ],
+    "Q02": [
+      "P30-U02",
+      "P30-U03",
+      "P30-U04"
+    ],
+    "Q03": [
+      "P30-U05",
+      "P30-U06"
+    ],
+    "Q04": [
+      "P30-U07",
+      "P30-U08"
+    ],
+    "Q05": [
+      "P30-U09",
+      "P30-U10"
+    ],
+    "Q06": [
+      "P30-U11",
+      "P30-U12",
+      "P30-U13"
+    ],
+    "Q07": [
+      "P30-U14",
+      "P30-U15"
+    ],
+    "Q08": [
+      "P30-U16"
+    ]
+  },
+  "checks": {
+    "AND_children": "Tools/soft skills and data activities are separately represented; no and/or cardinality problem",
+    "importance": "First seven qualification bullets required; credit-scoring exposure preferred",
+    "categories": "Named tools in skill_tool; data activities knowledge_area; direct soft skills separate",
+    "source": "All 16 A source quotes and B positive quotes are exact substrings; prior approval retained",
+    "evidence": "Related quantitative education and applied Python/SQL supported. Excel list-only PARTIAL. No anomaly/credit-scoring evidence. No labor-duration inference needed."
+  },
+  "limits": [
+    "Shared scope qualifiers must remain in model text/quotes and be reviewed after generation",
+    "Current reference is reviewed assisted gold, not independent blind annotation",
+    "Soft-skill equivalence is a case judgment, not a universal rule",
+    "No model alignment or F1 is certified before actual model output exists"
+  ]
+}

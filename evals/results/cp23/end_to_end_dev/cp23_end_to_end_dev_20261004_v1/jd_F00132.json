@@ -1,0 +1,11 @@
+{
+  "job_id": "F00132",
+  "status": "failed",
+  "attempts": 2,
+  "cache_hit": false,
+  "error_code": "IncompleteStructuredResponse",
+  "key": "399a1ed3b341a4443a21bd5db3551b9d4f1dc13f68b2e965c2c76703b46ba1ac",
+  "wall_ms": 89599,
+  "coverage": {},
+  "extraction": null
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "cp23-dependent-C-review-v1",
+  "cv_id": "CV1",
+  "job_id": "F00332",
+  "decision": "retain_existing_C_after_B_recheck",
+  "relevance_0_3": 3,
+  "reason_retained": true,
+  "reviewer": "Dion",
+  "review_date": "2026-10-03",
+  "reviewed_at": null,
+  "review_channel": "current_project_chat",
+  "exact_reply_text": "Ya, C=3 dan alasan tetap",
+  "original_C_row_sha256": "fc3017938b5f009478261c53e5c00af924230f8655157e7d8069be5ef0a0ca66",
+  "base_gold_manifest_sha256": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+  "user_review_receipt_sha256": "a90dcd15be04abadf61fa1a204feb4c2c47b94803de75f4e97a72077b8681bfb",
+  "dependent_B_unit_changes": {
+    "P30-U08": "MATCH -> PARTIAL",
+    "P30-U15": "MATCH -> PARTIAL"
+  },
+  "qa_note": "Old reason cites statistics degree, Python/SQL internship, large transaction dataset and cohort analysis. These remain supported after two B changes; soft-skill learning is outside match percentage. Reviewer retained ordinal C=3.",
+  "independent_annotation_claim": false
+}

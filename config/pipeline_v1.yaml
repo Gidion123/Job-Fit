@@ -1,0 +1,11 @@
+# Fixed development reference date. Uploaded CV metadata never overrides it.
+analysis_date: '2026-09-30'
+model: deepseek-flash
+schema_version: cv-v1.1-precision
+guideline_version: v1.3
+guideline_file: evals/annotation_guideline_v1_3.md
+jd_prompt_file: prompts/jd_extraction_v1_2.md
+jd_prompt_version: jd-prompt-v1.2
+evidence_prompt_file: prompts/evidence_matching_v1_1.md
+evidence_prompt_version: evidence-prompt-v1.1
+# A verification baseline, not the model chosen by CP2.3.

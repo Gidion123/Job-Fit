@@ -1,0 +1,494 @@
+{
+ "job_id": "F00346",
+ "status": "done",
+ "attempts": 2,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "not_assessed",
+  "bullet_count": 0,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 0,
+  "inventory_mappings": [],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00346",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Minimum 2 years of professional experience in data science, analytics, or a related field",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "Minimum 2 years of professional experience in data science, analytics, or a related field",
+    "min_years": 2.0,
+    "branches": [
+     {
+      "branch_id": "U01-B1",
+      "text": "Minimum 2 years of professional experience in data science",
+      "field": "education",
+      "min_years": 2.0
+     },
+     {
+      "branch_id": "U01-B2",
+      "text": "Minimum 2 years of professional experience in analytics",
+      "field": "experience_duration",
+      "min_years": 2.0
+     },
+     {
+      "branch_id": "U01-B3",
+      "text": "Minimum 2 years of professional experience in a related field",
+      "field": "experience_duration",
+      "min_years": 2.0
+     }
+    ],
+    "source_quotes": [
+     "Minimum 2 years of professional experience in data science, analytics, or a related field, preferably within a retail or e‑commerce environment."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "Preferably within a retail or e-commerce environment",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "other",
+    "normalized_name": "Preference for experience in a retail or e-commerce environment",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "preferably within a retail or e‑commerce environment."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Proficiency in SQL",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Proficiency in SQL",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Proficiency in SQL"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Experience with cloud data platforms such as reputed company or Azure SQL",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Experience with cloud data platforms (reputed company or Azure SQL)",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "U04-B1",
+      "text": "Experience with cloud data platforms such as reputed company",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "U04-B2",
+      "text": "Experience with cloud data platforms such as Azure SQL",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "experience with cloud data platforms such as reputed company or Azure SQL."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Strong programming skills in Python (pandas, scikit-learn, TensorFlow/PyTorch) and/or R for statistical analysis",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Strong programming skills in Python and/or R for statistical analysis",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong programming skills in Python (pandas, scikit‑learn, TensorFlow/PyTorch) and/or R for statistical analysis."
+    ],
+    "needs_review": true,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Hands-on experience with data pipeline tools (e.g., Airflow, DBT, reputed company, reputed company)",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Hands-on experience with data pipeline tools (e.g., Airflow, DBT, reputed company, reputed company)",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "U06-B1",
+      "text": "Hands-on experience with data pipeline tool Airflow",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "U06-B2",
+      "text": "Hands-on experience with data pipeline tool DBT",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "U06-B3",
+      "text": "Hands-on experience with data pipeline tool reputed company",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "U06-B4",
+      "text": "Hands-on experience with data pipeline tool reputed company",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Hands‑on experience with data pipeline tools (e.g., Airflow, DBT, reputed company, reputed company)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Hands-on experience with ETL processes",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Hands-on experience with ETL processes",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "and ETL processes."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Solid understanding of machine learning algorithms",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Solid understanding of machine learning algorithms",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Solid understanding of machine learning algorithms"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Solid understanding of model evaluation metrics",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Solid understanding of model evaluation metrics",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "model evaluation metrics"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "Solid understanding of deployment strategies",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Solid understanding of deployment strategies",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "deployment strategies."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "Excellent communication skills, with the ability to translate complex technical concepts into business-friendly language",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Excellent communication skills, with the ability to translate complex technical concepts into business-friendly language",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Excellent communication skills, with the ability to translate complex technical concepts into business‑friendly language."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "Strong problem-solving mindset",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Strong problem-solving mindset",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong problem‑solving mindset"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U13",
+    "text": "Track record of delivering actionable insights that influence business outcomes",
+    "kind": "simple",
+    "importance": "required",
+    "field": "other",
+    "normalized_name": "Track record of delivering actionable insights that influence business outcomes",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "a track record of delivering actionable insights that influence business outcomes."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U14",
+    "text": "Advanced degree (MS or PhD) in Data Science, Statistics, Computer Science, or a related discipline",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "education",
+    "normalized_name": "Advanced degree (MS or PhD) in Data Science, Statistics, Computer Science, or a related discipline",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "U14-B1",
+      "text": "Advanced degree (MS or PhD) in Data Science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "U14-B2",
+      "text": "Advanced degree (MS or PhD) in Statistics",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "U14-B3",
+      "text": "Advanced degree (MS or PhD) in Computer Science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "U14-B4",
+      "text": "Advanced degree (MS or PhD) in a related discipline",
+      "field": "education",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Advanced degree (MS or PhD) in Data Science, Statistics, Computer Science, or a related discipline."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U15",
+    "text": "Experience with AI/ML frameworks such as TensorFlow, PyTorch, or reputed company",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Experience with AI/ML frameworks such as TensorFlow, PyTorch, or reputed company",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "U15-B1",
+      "text": "Experience with AI/ML framework TensorFlow",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "U15-B2",
+      "text": "Experience with AI/ML framework PyTorch",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "U15-B3",
+      "text": "Experience with AI/ML framework reputed company",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience with AI/ML frameworks such as TensorFlow, PyTorch, or reputed company."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U16",
+    "text": "Knowledge of causal inference techniques",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Knowledge of causal inference techniques",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Knowledge of causal inference techniques and experimental design (A/B testing, randomized controlled trials)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U17",
+    "text": "Knowledge of experimental design (A/B testing, randomized controlled trials)",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Knowledge of experimental design (A/B testing, randomized controlled trials)",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "experimental design (A/B testing, randomized controlled trials)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U18",
+    "text": "Familiarity with agile methodologies (Scrum, Kanban)",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Familiarity with agile methodologies (Scrum, Kanban)",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "U18-B1",
+      "text": "Familiarity with agile methodology Scrum",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "U18-B2",
+      "text": "Familiarity with agile methodology Kanban",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Familiarity with agile methodologies (Scrum, Kanban) and experience working in fast‑paced, iterative environments."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U19",
+    "text": "Experience working in fast-paced, iterative environments",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "other",
+    "normalized_name": "Experience working in fast-paced, iterative environments",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "experience working in fast‑paced, iterative environments."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U20",
+    "text": "Exposure to cloud services beyond reputed company, such as AWS or GCP",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Exposure to cloud services beyond reputed company, such as AWS or GCP",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "U20-B1",
+      "text": "Exposure to cloud services beyond reputed company: AWS",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "U20-B2",
+      "text": "Exposure to cloud services beyond reputed company: GCP",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Exposure to cloud services beyond reputed company, such as AWS or GCP"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U21",
+    "text": "Experience with containerization tools like Docker or Kubernetes",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Experience with containerization tools like Docker or Kubernetes",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "U21-B1",
+      "text": "Experience with containerization tool Docker",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "U21-B2",
+      "text": "Experience with containerization tool Kubernetes",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "containerization tools like Docker or Kubernetes."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U22",
+    "text": "Prior mentorship or leadership experience within data science",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "other",
+    "normalized_name": "Prior mentorship or leadership experience within data science (source truncated)",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Prior mentorship or leadership experience within data scien"
+    ],
+    "needs_review": true,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

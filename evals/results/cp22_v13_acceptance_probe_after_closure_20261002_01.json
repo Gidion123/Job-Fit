@@ -1,0 +1,96 @@
+{
+  "job_id": "F00034",
+  "run_id": "cp22_v13_acceptance_probe_after_closure_20261002",
+  "provenance": {
+    "config/models_v1.yaml": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+    "config/pipeline_v1.yaml": "ba44704f573f9fabb24ff45a2b0142b5c00ac93af55902429500c020a3cd1dc8",
+    "evals/annotation_guideline_v1_3.md": "3d964a28fd105e16b24ad51b8b0a22b34bb9255e438b51e4e6e0eda551c57645",
+    "prompts/jd_extraction_v1_2.md": "35525ee62f8aa7f79307d8d8b95141e85c7d30fa06b359a9dcb48c3a6cad1836",
+    "prompts/evidence_matching_v1_1.md": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+    "prompts/cv_parsing_v1.md": "1847ef471c4d72b20b27c9f8f276a28a833d28e15f4aad28100494cf026dc341",
+    "src/jobfit/llm/probe.py": "7c0a1bcebd6637344408fff1a2d849b8186ba4f0b63e588ebdba0d5b69dbc81c",
+    "src/jobfit/llm/closure_probe.py": "b022ec3faa240d6bc3401f192545169e08c58ed67611eee2aad83edd3e27d55e",
+    "src/jobfit/llm/client.py": "a3d8491668027932acf6819481af56bf7eb3687ac51460ce36a064a48d29c63d",
+    "src/jobfit/llm/structured.py": "6a218a40daf4cc4a712fcec55b94a0311eb43e38e1595f101761dd9ca7941312",
+    "src/jobfit/pipeline.py": "41ee7b7c40f1ab911f8449dcc0c344d0b3e9a08793cbebe277fd307ad85881b2",
+    "src/jobfit/cv/parser.py": "02641bdca155315c6ccbb5a0b33cea65488164c2586297ddfa648207858b30e1",
+    "src/jobfit/extraction/jd_extractor.py": "9aa25ad2c929d0e50b5a753c0734d27ca2b9a72bb9f7a89173eacc1a085e00b4",
+    "src/jobfit/matching/evidence_matcher.py": "8dc55863d6da608c6b92915d910c4c89e0991ece4effdcb6d866143a53de462f",
+    "scripts/run_cp22_closure_probe.py": "46854780a796a87a502200b58f9606b40fe861bad82c325be5089e78547a0f77",
+    "F00022": "5096de1762a4d7d373d8df4780441a254189e009e03927c9945a56c858a54345",
+    "F00034": "8cdbfad2b5803545eb155c346253249dd72d4015024018e34706e3ddf9552826",
+    "CV1": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a"
+  },
+  "versions": {
+    "guideline_version": "v1.3",
+    "jd_prompt_version": "jd-prompt-v1.2",
+    "evidence_prompt_version": "evidence-prompt-v1.1",
+    "schema_version": "v1",
+    "score_version": "v1",
+    "guideline_file": "evals/annotation_guideline_v1_3.md",
+    "jd_prompt_file": "prompts/jd_extraction_v1_2.md",
+    "evidence_prompt_file": "prompts/evidence_matching_v1_1.md",
+    "guideline_sha256": "3d964a28fd105e16b24ad51b8b0a22b34bb9255e438b51e4e6e0eda551c57645",
+    "jd_prompt_sha256": "35525ee62f8aa7f79307d8d8b95141e85c7d30fa06b359a9dcb48c3a6cad1836",
+    "evidence_prompt_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f"
+  },
+  "status": "done",
+  "extraction": {
+    "job_id": "F00034",
+    "units": [
+      {
+        "unit_id": "U1",
+        "text": "Bachelor's degree (S1) in Informatics Engineering, Computer Science, Data Science, Artificial Intelligence, or a related field.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "bachelor_degree_informatics_computer_science_data_science_ai_or_related",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Informatics Engineering",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Data Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Artificial Intelligence",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "related field",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Minimal S1 Teknik Informatika, Ilmu Komputer, Data Science, Artificial Intelligence, atau bidang terkait."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.2/deepseek-flash"
+  },
+  "attempts": 1,
+  "error_code": null,
+  "cache_hit": false,
+  "latency_ms": 62279,
+  "result_sha256": "64b3d8d9ac0f937c0a960e3162a2f6df3d994bf4be7d5c536798be5b99881b18"
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": "cp23-stage1-held-C-direct-review-v1",
+  "status": "pending_human_review_not_gold",
+  "approval_scope": "Dion approved preparing a C-only review path on 2026-10-03; no held C label value was approved by that choice",
+  "source_limitation_F00369": "Archived JD ends at incomplete portfolio fragment; no reconstructed sentence used",
+  "automatic_mode": true,
+  "evaluation_reference_date": "2026-09-30",
+  "guideline": "evals/annotation_guideline_v1_3.md",
+  "base_gold_manifest_sha256": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+  "held_file_sha256": "bb7393e9264bda74967042e846a1c9b67090b0ca92255a815037f97de94321aa",
+  "rows": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00022",
+      "job_title": "Jr. Data Scientist",
+      "source_record_id": "CP1_JSearch_JS04_DataScientist_Jakarta_ID_Response#4",
+      "jd_text": "Work Responsibilities:\n\n• Assist in methodology research, data processing, and documentation to conduct independent self-guided exploration of research and frame open-ended industry questions, including, but not limited to:\n\n• Conducts statistical analyses to develop strategies,\n\n• Builds predictive models and machine-learning algorithms,\n\n• Identifies data patterns and trends,\n\n• Proposes solutions and strategies to business challenges,\n\n• Presents information using data visualization techniques, and\n\n• Documents all processes and research.\n\n• Discover new opportunities to optimize the business through machine learning and/or statistical modelling.\n\n• Assist the design and development of analytical projects designed to understand key business behaviors that drive customer acquisition, retention, and engagement through machine learning and/or statistical modelling.\n\n• Develop and maintain client analytics reports.\n\n• Assist the data science team with project management, including marketing, non-marketing, and custom solution projects.\n\nLeadership Responsibilities:\n\n• Commits to personal learning and growth.\n\n• A drive to learn and master new technologies and techniques.\n\nQualifications and Requirements:\n\n(Tangibles).\n\n• 1-2 years of professional experiences in Data Science fields. Fresh graduate are welcome to apply.\n\n• Mandatory: Experienced using programming languages (at least Python and SQL) to manipulate data and draw insights from large data sets.\n\n• Intermediate Mathematical, Statistical, and/or Machine Learning skills required, and their real-world advantages/drawbacks.\n\n• Knowledge and/or experience in working with structured and/or unstructured data sets.\n\n• Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform.\n\n• Familiar with Data Visualization Tools, Google Data Studio is a plus.\n\nCharacter:\n\n• Problem-solving skills, structured thinking and scientific approach required.\n\n• Ability to work with minimal supervision and keep supervisors informed.\n\n• Ability to work well in a team environment.\n\n• Ability to communicate in clear and concise terms.\n\n• Willing to learn new skills and able to do so independently.\n\n• Ability to take initiative.",
+      "jd_sha256": "5096de1762a4d7d373d8df4780441a254189e009e03927c9945a56c858a54345",
+      "cv_source_path": "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md",
+      "cv_source_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "exact_jd_excerpt": "Mandatory: Experienced using programming languages (at least Python and SQL) to manipulate data and draw insights from large data sets.",
+      "exact_cv_excerpt": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "historical_held_C_value": 3,
+      "historical_hold_reasons": [
+        "C_reason_depends_on_unresolved_D049_J1_units"
+      ],
+      "source_limitation": "Historical C=3 is held because its reason depended on the incompatible and/or units; this is a fresh source-based draft.",
+      "draft": {
+        "relevance_0_3": 3,
+        "main_reason": "The statistics degree, Python/SQL internship with a large transaction dataset, visualization work and ML projects support most core junior Data Scientist needs in the visible JD. This direct JD/CV assessment does not rely on the held historical A/B decomposition.",
+        "constraint_note": "The same qualification says fresh graduates are welcome; the four-month internship is not an automatic 1–2-year rejection. Data architecture/engineering and Google Cloud Platform are pluses, not proven work experience.",
+        "label_source": "model_draft",
+        "review_status": "pending",
+        "review_action": null,
+        "guideline_version": "v1.3",
+        "assessment_scope": "case_scoped_direct_C_from_archived_JD_and_CV; A_B_remain_held"
+      },
+      "human_review": {
+        "relevance_0_3": null,
+        "review_action": null,
+        "review_note": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00114",
+      "job_title": "AI Engineer (AI Agent & RAG)",
+      "source_record_id": "B02_ID_LLM_JAK_P01#10",
+      "jd_text": "Overview\n\nHow would it feel to be an integral part of the next LinkedIn or SalesForce from an early stage? Would you like to work with an international team led by Harvard alumni on cutting-edge technology that will transform the future of work around the globe? Our company recently launched our products to global institutions, and we are continuing to scale. The best candidates will have opportunity to become key players on our international team that is led by American and Indonesian executives.\n\nJob Description\n\nWe're looking for an AI Engineer with hands-on experience building agentic AI systems and RAG pipelines. You'll design, build, and maintain the LLM-powered features at the core of our product — multi-step agents, retrieval pipelines, and tool-using assistants integrated into our backend.\n\nResponsibilities\n\n• Design and build AI agents with tool/function calling and multi-step orchestration.\n\n• Build and maintain RAG pipelines end-to-end: chunking, embeddings, hybrid retrieval, reranking, grounded generation.\n\n• Integrate LLMs into backend services via clean APIs.\n\n• Own prompt engineering as a discipline — versioned, structured outputs, consistent behavior across providers.\n\n• Build evaluation harnesses (golden datasets, LLM-as-judge, regression tests).\n\n• Implement observability for LLM calls — tokens, latency, tool-call traces.\n\n• Optimize for cost, latency, and reliability: caching, streaming, model routing, retries.\n\n• Harden agents against prompt injection, tool misuse, and unsafe outputs.\n\n• Collaborate within backend, frontend, and product teams to integrate AI features.\n\nRequirements\n\n• 5+ Years as an Engineer\n\n• 2+ years shipping production LLM features (not just prototypes).\n\n• Strong Python (FastAPI) and/or TypeScript / Node.js for backend AI services.\n\n• Hands-on with at least one agent framework: LangChain / LangGraph, LlamaIndex, LangSmith, CrewAI, or n8n.\n\n• Practical experience with native tool/function calling across major providers.\n\n• Real RAG production experience: chunking trade-offs, embedding selection, hybrid retrieval, reranking, and how to measure retrieval quality.\n\n• Working knowledge of vector databases: pgvector, Pinecone, Qdrant, Weaviate, or equivalent.\n\n• Experience designing evaluation pipelines for LLM features.\n\n• Comfortable with PostgreSQL and RESTful API design.\n\n• Awareness of prompt injection, PII handling, and safe tool exposure.",
+      "jd_sha256": "9142b5e96143a367f19583a241180844e43bbc1cfb62198c22aafa75f8a4f0f8",
+      "cv_source_path": "data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md",
+      "cv_source_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+      "exact_jd_excerpt": "2+ years shipping production LLM features (not just prototypes).",
+      "exact_cv_excerpt": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "historical_held_C_value": 1,
+      "historical_hold_reasons": [
+        "Reviewer_requested_BC_hold_for_unresolved_composite"
+      ],
+      "source_limitation": "Historical C=1 is held because the reviewer requested B/C recheck of the and/or clause; this is a fresh source-based draft.",
+      "draft": {
+        "relevance_0_3": 1,
+        "main_reason": "The CV shows a relevant RAG chatbot and FastAPI prototype, but not production agent systems, production RAG or backend AI engineering breadth requested by the JD. This direct role-fit assessment does not decide the held Python/TypeScript and/or grouping.",
+        "constraint_note": "Explicit conflict: the complete work history is marketing, while the JD requires 5+ years as an engineer and 2+ years shipping production LLM features. A prototype or bootcamp does not count as employment or production tenure.",
+        "label_source": "model_draft",
+        "review_status": "pending",
+        "review_action": null,
+        "guideline_version": "v1.3",
+        "assessment_scope": "case_scoped_direct_C_from_archived_JD_and_CV; A_B_remain_held"
+      },
+      "human_review": {
+        "relevance_0_3": null,
+        "review_action": null,
+        "review_note": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "job_title": "Machine Learning Engineer Classical ML and Predictive Analytics",
+      "source_record_id": "B05A_TEST_NUMPAGES3_SG_MLE_P01#21",
+      "jd_text": "Overview Keysight is at the forefront of technology innovation, delivering breakthroughs and trusted insights in electronic design, simulation, prototyping, test, manufacturing, and optimization. Our 15,000 employees create world-class solutions in communications, 5G, automotive, energy, quantum, aerospace, defense, and semiconductor markets for customers in over 100 countries. Learn more about what we do. Our award-winning culture embraces a bold vision of where technology can take us and a passion for tackling challenging problems with industry-first solutions. We believe that when people feel a sense of belonging, they can be more creative, innovative, and thrive at all points in their careers. Responsibilities We are looking for a talented and motivated Machine Learning Engineer with a strong foundation in classical machine learning techniques to join our innovative team in the manufacturing and semiconductor sectors. This role focuses on developing robust, data-driven solutions to detect anomalies, predict maintenance needs, and monitor market dynamics, ensuring our clients maintain operational excellence and competitive edge. As part of our analytics engineering group, you will tackle real-world problems using numerical datasets from sensors and tests, while also applying NLP methods to extract insights from unstructured data sources. This position is ideal for an early-career professional eager to contribute to high-impact projects in a collaborative, fast-paced environment, where precision and reliability are paramount. Design and implement anomaly detection systems to monitor sensor and test data in real-time, identifying deviations that could indicate equipment issues or process inefficiencies in semiconductor manufacturing environments. Develop predictive maintenance models using classical machine learning algorithms, leveraging numerical datasets to forecast potential failures and provide actionable recommendations to customers, thereby minimizing downtime and optimizing resource allocation. Build and maintain monitoring pipelines for competitor pricing data scraped from online sources, incorporating drift detection mechanisms to ensure model reliability over time and alert on significant market shifts. Tackle a variety of classical ML challenges, including regression, classification, and clustering tasks, utilizing libraries such as XGBoost and Scikit-learn to deliver scalable, interpretable solutions. Address NLP-related problems by applying innovative approaches, including classical recurrent architectures like RNNs or LSTMs, to process and analyze textual data (e.g., from market reports or operational logs) alongside traditional ML workflows. Collaborate with data engineers, domain experts, and product teams in an Agile framework to iterate on models, conduct thorough validation, and deploy solutions into production. Perform rigorous model evaluation, hyperparameter tuning, and feature engineering to enhance accuracy and generalizability, with a focus on handling imbalanced datasets and ensuring ethical AI practices. Contribute to data pipeline improvements, potentially using tools like Apache Spark for large-scale processing, and stay current with evolving ML methodologies to propose enhancements. Qualifications Must-have qualifications Bachelor's or Master's degree in Machine Learning, Computer Science, Data Science, Statistics, or a related quantitative field. 2-4 years of hands-on experience in classical machine learning (including deep learning) or data science roles, with demonstrated ability to build, train, and validate models from scratch. Proficiency in classical ML frameworks and libraries, including Scikit-learn for core algorithms, XGBoost for gradient boosting, and experience with NLP techniques using RNNs/LSTMs (e.g., via TensorFlow or PyTorch). Strong programming skills in Python, with a focus on clean, maintainable code, version control (Git), and basic data manipulation using Pandas and NumPy. Familiarity with anomaly detection, predictive modeling, and concept drift monitoring in numerical datasets. Experience working in Agile/Scrum environments, including sprint-based development and cross-functional collaboration. Solid understanding of model evaluation metrics, cross-validation, and QA processes for ML systems. Strongly preferred Fluency in English. Exposure to industrial domains such as manufacturing, semiconductors, or sensor-based analytics. Knowledge of big data tools like Apache Spark for distributed processing and handling large-scale datasets. Prior work on NLP tasks integrated with classical ML, such as sentiment analysis or entity recognition in unstructured data. A portfolio of pro",
+      "jd_sha256": "86ed12356cc5d1b910b7b7750a1e8335a807380da15a8e1ac5570b81198dac8b",
+      "cv_source_path": "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md",
+      "cv_source_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "exact_jd_excerpt": "2-4 years of hands-on experience in classical machine learning (including deep learning) or data science roles, with demonstrated ability to build, train, and validate models from scratch.",
+      "exact_cv_excerpt": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "historical_held_C_value": 1,
+      "historical_hold_reasons": [
+        "source_provenance_hold_whole_job"
+      ],
+      "source_limitation": "Original archived text is truncated at “A portfolio of pro”. A similar posting is not an authenticated continuation; A/B and the historical C remain held.",
+      "draft": {
+        "relevance_0_3": 1,
+        "main_reason": "The visible archived JD and CV overlap on statistics, Python/scikit-learn and ML projects, but the CV lacks the specified ML/DS employment duration and recurrent-model experience. This draft uses only the archived text and does not infer the truncated portfolio clause.",
+        "constraint_note": "Explicit conflict: the complete work history does not show 2–4 years in ML/DS roles. Academic projects are not employment duration. The original JD ends at an incomplete portfolio fragment.",
+        "label_source": "model_draft",
+        "review_status": "pending",
+        "review_action": null,
+        "guideline_version": "v1.3",
+        "assessment_scope": "case_scoped_direct_C_from_archived_JD_and_CV; A_B_remain_held"
+      },
+      "human_review": {
+        "relevance_0_3": null,
+        "review_action": null,
+        "review_note": null,
+        "reviewed_at": null
+      }
+    }
+  ],
+  "approved_count": 0,
+  "api_calls": 0
+}

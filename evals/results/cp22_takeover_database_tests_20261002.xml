@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="5" time="0.112" timestamp="2026-10-02T23:05:22.941913+07:00" hostname="Gidions-MacBook-Pro.local"><testcase classname="tests.test_baselines" name="test_b0_scores_share_of_job_skills_and_breaks_ties_by_job_id" time="0.000" /><testcase classname="tests.test_baselines" name="test_b1_query_uses_aliases_and_skips_regex_only_skills" time="0.014" /><testcase classname="tests.test_baselines" name="test_b1_needs_at_least_one_phrase" time="0.000" /><testcase classname="tests.test_baselines" name="test_snapshot_load_matches_cp1_numbers" time="0.006"><failure message="psycopg.OperationalError: connection is bad: connection to server at &quot;127.0.0.1&quot;, port 5434 failed: Operation not permitted&#10;&#09;Is the server running on that host and accepting TCP/IP connections?&#10;Multiple connection attempts failed. All failures were:&#10;- host: 'localhost', port: '5434', hostaddr: '::1': connection is bad: connection to server at &quot;::1&quot;, port 5434 failed: Operation not permitted&#10;&#09;Is the server running on that host and accepting TCP/IP connections?&#10;- host: 'localhost', port: '5434', hostaddr: '127.0.0.1': connection is bad: connection to server at &quot;127.0.0.1&quot;, port 5434 failed: Operation not permitted&#10;&#09;Is the server running on that host and accepting TCP/IP connections?">@pytest.mark.skipif(not os.getenv("JOBFIT_DB_TESTS"), reason="set JOBFIT_DB_TESTS=1 with a running database")
+    def test_snapshot_load_matches_cp1_numbers():
+        from jobfit.db.load_snapshot import load, read_candidates
+        from jobfit.db.session import connect
+    
+&gt;       with connect() as conn:
+             ^^^^^^^^^
+
+tests/test_baselines.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/jobfit/db/session.py:10: in connect
+    return psycopg.connect(url or get_settings().database_url, autocommit=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = &lt;class 'psycopg.Connection'&gt;
+conninfo = 'user=jobfit password=jobfit dbname=jobfit host=localhost port=5434 hostaddr=127.0.0.1'
+autocommit = False, prepare_threshold = 5, context = None, row_factory = None
+cursor_factory = None, kwargs = {}
+params = {'dbname': 'jobfit', 'host': 'localhost', 'password': 'jobfit', 'port': '5434', ...}
+timeout = 130
+
+    @classmethod
+    def connect(
+        cls,
+        conninfo: str = "",
+        *,
+        autocommit: bool = False,
+        prepare_threshold: int | None = 5,
+        context: AdaptContext | None = None,
+        row_factory: RowFactory[Row] | None = None,
+        cursor_factory: type[Cursor[Row]] | None = None,
+        **kwargs: ConnParam,
+    ) -&gt; Self:
+        """
+        Connect to a database server and return a new `Connection` instance.
+        """
+    
+        params = cls._get_connection_params(conninfo, **kwargs)
+        timeout = timeout_from_conninfo(params)
+        rv = None
+        attempts = conninfo_attempts(params)
+        conn_errors: list[tuple[e.Error, str]] = []
+        for attempt in attempts:
+            tdescr = (attempt.get("host"), attempt.get("port"), attempt.get("hostaddr"))
+            descr = "host: %r, port: %r, hostaddr: %r" % tdescr
+            logger.debug("connection attempt: %s", descr)
+            try:
+                conninfo = make_conninfo("", **attempt)
+                gen = cls._connect_gen(conninfo)
+                rv = waiting.wait_conn(gen, interval=_WAIT_INTERVAL, timeout=timeout)
+            except e._WaitTimeout:
+                tex = e.ConnectionTimeout("connection timeout expired")
+                logger.debug("connection failed: %s: %s", descr, str(tex))
+                conn_errors.append((tex, descr))
+            except e.Error as ex:
+                logger.debug("connection failed: %s: %s", descr, str(ex))
+                conn_errors.append((ex, descr))
+            except e._NO_TRACEBACK as ex:
+                raise ex.with_traceback(None)
+            else:
+                logger.debug("connection succeeded: %s", descr)
+                break
+    
+        if not rv:
+            last_ex = conn_errors[-1][0]
+            if len(conn_errors) == 1:
+                raise last_ex.with_traceback(None)
+    
+            # Create a new exception with the same type as the last one, containing
+            # all attempt errors while preserving backward compatibility.
+            lines = [str(last_ex)]
+            lines.append("Multiple connection attempts failed. All failures were:")
+            lines.extend((f"- {descr}: {error}" for error, descr in conn_errors))
+            new_ex = type(last_ex)("\n".join(lines), pgconn=last_ex.pgconn)
+&gt;           raise new_ex.with_traceback(None)
+E           psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 5434 failed: Operation not permitted
+E           	Is the server running on that host and accepting TCP/IP connections?
+E           Multiple connection attempts failed. All failures were:
+E           - host: 'localhost', port: '5434', hostaddr: '::1': connection is bad: connection to server at "::1", port 5434 failed: Operation not permitted
+E           	Is the server running on that host and accepting TCP/IP connections?
+E           - host: 'localhost', port: '5434', hostaddr: '127.0.0.1': connection is bad: connection to server at "127.0.0.1", port 5434 failed: Operation not permitted
+E           	Is the server running on that host and accepting TCP/IP connections?
+
+env-job-fit/lib/python3.11/site-packages/psycopg/connection.py:134: OperationalError</failure></testcase><testcase classname="tests.test_embedding_db" name="test_real_pgvector_isolation_filters_stale_hashes_and_batch_rollback" time="0.001"><failure message="psycopg.OperationalError: connection is bad: connection to server at &quot;127.0.0.1&quot;, port 5434 failed: Operation not permitted&#10;&#09;Is the server running on that host and accepting TCP/IP connections?&#10;Multiple connection attempts failed. All failures were:&#10;- host: 'localhost', port: '5434', hostaddr: '::1': connection is bad: connection to server at &quot;::1&quot;, port 5434 failed: Operation not permitted&#10;&#09;Is the server running on that host and accepting TCP/IP connections?&#10;- host: 'localhost', port: '5434', hostaddr: '127.0.0.1': connection is bad: connection to server at &quot;127.0.0.1&quot;, port 5434 failed: Operation not permitted&#10;&#09;Is the server running on that host and accepting TCP/IP connections?">def test_real_pgvector_isolation_filters_stale_hashes_and_batch_rollback():
+        spec = EmbeddingSpec('fixture/model',2,'fixture-v1',100,'fixture','1')
+        doc = lambda name, source: prepare(name,'python sql '+name,spec,Tokenizer(),source)
+&gt;       with connect() as conn:
+             ^^^^^^^^^
+
+tests/test_embedding_db.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/jobfit/db/session.py:10: in connect
+    return psycopg.connect(url or get_settings().database_url, autocommit=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = &lt;class 'psycopg.Connection'&gt;
+conninfo = 'user=jobfit password=jobfit dbname=jobfit host=localhost port=5434 hostaddr=127.0.0.1'
+autocommit = False, prepare_threshold = 5, context = None, row_factory = None
+cursor_factory = None, kwargs = {}
+params = {'dbname': 'jobfit', 'host': 'localhost', 'password': 'jobfit', 'port': '5434', ...}
+timeout = 130
+
+    @classmethod
+    def connect(
+        cls,
+        conninfo: str = "",
+        *,
+        autocommit: bool = False,
+        prepare_threshold: int | None = 5,
+        context: AdaptContext | None = None,
+        row_factory: RowFactory[Row] | None = None,
+        cursor_factory: type[Cursor[Row]] | None = None,
+        **kwargs: ConnParam,
+    ) -&gt; Self:
+        """
+        Connect to a database server and return a new `Connection` instance.
+        """
+    
+        params = cls._get_connection_params(conninfo, **kwargs)
+        timeout = timeout_from_conninfo(params)
+        rv = None
+        attempts = conninfo_attempts(params)
+        conn_errors: list[tuple[e.Error, str]] = []
+        for attempt in attempts:
+            tdescr = (attempt.get("host"), attempt.get("port"), attempt.get("hostaddr"))
+            descr = "host: %r, port: %r, hostaddr: %r" % tdescr
+            logger.debug("connection attempt: %s", descr)
+            try:
+                conninfo = make_conninfo("", **attempt)
+                gen = cls._connect_gen(conninfo)
+                rv = waiting.wait_conn(gen, interval=_WAIT_INTERVAL, timeout=timeout)
+            except e._WaitTimeout:
+                tex = e.ConnectionTimeout("connection timeout expired")
+                logger.debug("connection failed: %s: %s", descr, str(tex))
+                conn_errors.append((tex, descr))
+            except e.Error as ex:
+                logger.debug("connection failed: %s: %s", descr, str(ex))
+                conn_errors.append((ex, descr))
+            except e._NO_TRACEBACK as ex:
+                raise ex.with_traceback(None)
+            else:
+                logger.debug("connection succeeded: %s", descr)
+                break
+    
+        if not rv:
+            last_ex = conn_errors[-1][0]
+            if len(conn_errors) == 1:
+                raise last_ex.with_traceback(None)
+    
+            # Create a new exception with the same type as the last one, containing
+            # all attempt errors while preserving backward compatibility.
+            lines = [str(last_ex)]
+            lines.append("Multiple connection attempts failed. All failures were:")
+            lines.extend((f"- {descr}: {error}" for error, descr in conn_errors))
+            new_ex = type(last_ex)("\n".join(lines), pgconn=last_ex.pgconn)
+&gt;           raise new_ex.with_traceback(None)
+E           psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 5434 failed: Operation not permitted
+E           	Is the server running on that host and accepting TCP/IP connections?
+E           Multiple connection attempts failed. All failures were:
+E           - host: 'localhost', port: '5434', hostaddr: '::1': connection is bad: connection to server at "::1", port 5434 failed: Operation not permitted
+E           	Is the server running on that host and accepting TCP/IP connections?
+E           - host: 'localhost', port: '5434', hostaddr: '127.0.0.1': connection is bad: connection to server at "127.0.0.1", port 5434 failed: Operation not permitted
+E           	Is the server running on that host and accepting TCP/IP connections?
+
+env-job-fit/lib/python3.11/site-packages/psycopg/connection.py:134: OperationalError</failure></testcase></testsuite></testsuites>

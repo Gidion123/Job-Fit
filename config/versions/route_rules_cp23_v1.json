@@ -1,0 +1,48 @@
+{
+ "version": "route-rules-cp23-v1",
+ "source": "evals/results/cp23/model_sweep_v1/plan_v1.json",
+ "source_sha256": "574fcc7b9b252a9b28c2b3f0ed757ad164800eb084deb22b88b33ab8b5eaf881",
+ "note": "Frozen copy of the D-079 per-model request rules used by the Sol coverage run. Runtime reads this file, not the network.",
+ "models": {
+  "gpt-6-sol": {
+   "model_id": "openai/gpt-6-sol",
+   "ceiling_in": 2.0,
+   "ceiling_out": 10.0,
+   "role": "quality reference",
+   "metadata": {
+    "found": true,
+    "endpoints": 7,
+    "structured_endpoints": 7,
+    "min_output_limit": 128000,
+    "temperature_supported": false,
+    "response_aliases": [
+     "openai/gpt-6-sol-20260922"
+    ],
+    "cheapest_structured_price_per_m": [
+     1.0,
+     5.0
+    ]
+   }
+  },
+  "gpt-6-luna": {
+   "model_id": "openai/gpt-6-luna",
+   "ceiling_in": 0.1,
+   "ceiling_out": 0.5,
+   "role": "selected D-077",
+   "metadata": {
+    "found": true,
+    "endpoints": 7,
+    "structured_endpoints": 7,
+    "min_output_limit": 128000,
+    "temperature_supported": false,
+    "response_aliases": [
+     "openai/gpt-6-luna-20260922"
+    ],
+    "cheapest_structured_price_per_m": [
+     0.049999999999999996,
+     0.25
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,180 @@
+{
+ "job_id": "F00069",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "not_assessed",
+  "bullet_count": 0,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 0,
+  "inventory_mappings": [],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00069",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Python or JavaScript — enough to build and ship something",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Python or JavaScript — enough to build and ship something",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Python — enough to build and ship something",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "JavaScript — enough to build and ship something",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Python or JavaScript — enough to build and ship something"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "Built something with Claude Code, Codex, Cursor or similar",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Built something with Claude Code, Codex, Cursor or similar",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Built something with Claude Code",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Built something with Codex",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Built something with Cursor",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "Built something with a similar tool",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "You've built something with Claude Code, Codex, Cursor or similar"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Comfortable with APIs",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Comfortable with APIs",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Comfortable with APIs and Git"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Comfortable with Git",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Comfortable with Git",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Comfortable with APIs and Git"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Curious, asks questions, not afraid to try things",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Curious, asks questions, not afraid to try things",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Curious, ask questions, not afraid to try things"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Conversational English",
+    "kind": "simple",
+    "importance": "required",
+    "field": "language",
+    "normalized_name": "Conversational English",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Conversational English"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Student or fresh graduate welcome",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "other",
+    "normalized_name": "Student or fresh graduate welcome",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Student welcome",
+      "field": "other",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Fresh graduate welcome",
+      "field": "other",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Students and fresh graduates welcome"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

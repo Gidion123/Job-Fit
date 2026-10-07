@@ -1,0 +1,32 @@
+{
+  "run_id": "cp23_luna_matching_20261004_v1",
+  "phases": [
+    {
+      "phase": "A_luna_cv1_top20",
+      "model": "gpt-6-luna",
+      "workers": 20,
+      "pairs": 20,
+      "called": 18,
+      "phase_wall_ms": 504,
+      "pair_wall_ms_p50": 433.5,
+      "pair_wall_ms_max": 482,
+      "done": 0,
+      "stop": null
+    },
+    {
+      "phase": "B_deepseek_cv1_top20",
+      "model": "deepseek-flash",
+      "workers": 20,
+      "pairs": 20,
+      "called": 18,
+      "phase_wall_ms": 112650,
+      "pair_wall_ms_p50": 9422.5,
+      "pair_wall_ms_max": 112646,
+      "done": 8,
+      "stop": "RunCapReached"
+    }
+  ],
+  "run_cost_usd": 0.12189183599999999,
+  "ledger_total_usd": 3.209027,
+  "completed": false
+}

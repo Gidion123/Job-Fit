@@ -50,6 +50,11 @@ def _quote_ok(quote: str | None, text: str) -> bool:
 
 
 def main() -> int:
+    # This pre-split exporter also writes development IDs. It must never run on
+    # the frozen CP2 partition, even if all pilot rows are still approved.
+    if (SPLITS / "split_manifest.json").exists():
+        print("Stopped: the split is frozen. Use a reviewed export plan into a new staging directory; this legacy exporter is disabled.", file=sys.stderr)
+        return 1
     wb = openpyxl.load_workbook(WORKBOOK, data_only=True)
     jds = {r["job_id"]: r for r in _rows(wb["JDs"], "job_id")}
     cvs = {r["cv_id"]: r for r in _rows(wb["CVs"], "cv_id")}

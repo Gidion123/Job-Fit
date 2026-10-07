@@ -1,0 +1,68 @@
+{
+ "label_version": "test_v13_cp24_r1",
+ "decision": "D-088",
+ "script": "scripts/import_test_labels_cp24_r1.py",
+ "source_workbooks": {
+  "final": {
+   "path": "evals/labeling/test_relevance_cp24_test_v1_v1/JobFit_Test_Relevance_Final_.xlsx",
+   "sha256_before": "346a7fa9aa884f25c9f2c9cf458c6eff434d33bef128ad1af34388112082e2ef",
+   "sha256_after": "346a7fa9aa884f25c9f2c9cf458c6eff434d33bef128ad1af34388112082e2ef",
+   "unchanged": true
+  },
+  "blind_original": {
+   "path": "evals/labeling/test_relevance_cp24_test_v1_v1/JobFit_Test_Relevance.xlsx",
+   "sha256": "d40b81d462afd65dda22a30cee02cbc736a3ade883d1250c6aad314637174a60",
+   "matches_manifest_at_creation": true
+  }
+ },
+ "labeling_manifest_sha256": "4180d88c9ffe664e984b5be4e38714b8b4c5fe02d9d0706fb08953df61668ca0",
+ "change_summary": {
+  "relevance_label_changes": {
+   "count": 1,
+   "items": [
+    {
+     "item_id": "T68",
+     "before": 2,
+     "after": "UNJUDGED"
+    }
+   ]
+  },
+  "text_only_corrections": {
+   "count": 5,
+   "items": [
+    "T17",
+    "T21",
+    "T23",
+    "T43",
+    "T50"
+   ],
+   "field": "main_reason",
+   "score_changed": false
+  },
+  "other_relevance_or_score_changes": {
+   "count": 0,
+   "items": []
+  },
+  "statement": "1 relevance-label change (T68 2 -> UNJUDGED); 5 text-only corrections (T17, T21, T23, T43, T50); 0 other relevance/score changes."
+ },
+ "supersedes": {
+  "superseded_bundle": "evals/gold/test_v13_cp24_r1 (metadata v1, 7 Oct 2026)",
+  "archived_as": "evals/gold/archive/test_v13_cp24_r1_metadata_v1",
+  "reason": "Audit wording fix requested by Dion: metadata said \"other_score_changes: none\" and docs said \"no score changed\" while T68 changed 2 -> UNJUDGED. Labels and text unchanged; only summary wording/structure changed.",
+  "previous_files_sha256": {
+   "correction_diff.json": "fd65efc85014c1135d0caf6a28ba06d7a6bfec9cb515ce4b328ad1aefc5e9e05",
+   "held_test_r1.json": "45c8e2921967224e658a4fd414a7725b18baa3d4196ce78eaded1410cf7db513",
+   "import_receipt.json": "ebd599c1523536df04f38a74a477e5b2c04e95bb58104f624c5ccbfd1db33e45",
+   "provenance_manifest.json": "aa095f41a5117e0d513621253cc8e5c3794384cd97b961757cf708bfc15a498f",
+   "relevance_before_correction.jsonl": "fcd14f0a4920b7551eda2917ed2f56368ad49b817e793affdd4fa3cada2d7f95",
+   "relevance_gold.jsonl": "cc3efd3f0cd5805c4aee7c7be8ca6650487b30fac86974c7a4333c9c5821bc33"
+  }
+ },
+ "output_files_sha256": {
+  "correction_diff.json": "6fb1fb8db2b2a5eec3ac5369cf37a120f05b3933d265542cd04e389506bc29bc",
+  "held_test_r1.json": "45c8e2921967224e658a4fd414a7725b18baa3d4196ce78eaded1410cf7db513",
+  "provenance_manifest.json": "e6c1c1c698fcde401f2bebb48258e4395728c8c5b6e513aa32f63ecd79ae4f19",
+  "relevance_before_correction.jsonl": "fcd14f0a4920b7551eda2917ed2f56368ad49b817e793affdd4fa3cada2d7f95",
+  "relevance_gold.jsonl": "cc3efd3f0cd5805c4aee7c7be8ca6650487b30fac86974c7a4333c9c5821bc33"
+ }
+}

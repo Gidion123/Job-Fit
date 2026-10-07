@@ -13,6 +13,8 @@ class ModelPrice:
     model_id: str
     input_per_m: float
     output_per_m: float = 0.0
+    response_model_aliases: tuple[str, ...] = ()
+    reasoning: dict | None = None
 
 
 def load_prices(path: Path) -> dict[str, ModelPrice]:
@@ -21,7 +23,8 @@ def load_prices(path: Path) -> dict[str, ModelPrice]:
     prices: dict[str, ModelPrice] = {}
     for section in ("models", "embeddings"):
         for key, m in (data.get(section) or {}).items():
-            p = ModelPrice(key, m["id"], float(m["input_per_m"]), float(m.get("output_per_m", 0.0)))
+            p = ModelPrice(key, m["id"], float(m["input_per_m"]), float(m.get("output_per_m", 0.0)),
+                           tuple(m.get("response_model_aliases", ())), m.get("reasoning"))
             prices[key] = p
             prices[m["id"]] = p
     return prices

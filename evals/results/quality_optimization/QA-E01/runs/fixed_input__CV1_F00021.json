@@ -1,0 +1,158 @@
+{
+ "set": "fixed_input",
+ "cv_id": "CV1",
+ "job_id": "F00021",
+ "model": "gpt-6-sol",
+ "experiment_id": "QA-E01",
+ "wall_ms": 10162,
+ "status": "done",
+ "error_code": null,
+ "attempts": 1,
+ "assessments": [
+  {
+   "unit_id": "G26-U01",
+   "label": "PARTIAL",
+   "check_status": "needs_clarification",
+   "cv_quotes": [
+    "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G26-U02",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G26-U03",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G26-U04",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G26-U05",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G26-U06",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G26-U07",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G26-U08",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G26-U09",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  }
+ ],
+ "source_flags": [
+  {
+   "unit_id": "G26-U01",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+   "cv_span": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+   "start": 623,
+   "end": 720,
+   "flags": []
+  },
+  {
+   "unit_id": "G26-U01",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "G26-U02",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+   "cv_span": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+   "start": 317,
+   "end": 400,
+   "flags": []
+  },
+  {
+   "unit_id": "G26-U03",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "G26-U04",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "G26-U05",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+   "cv_span": "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+   "start": 829,
+   "end": 905,
+   "flags": []
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+  "job_id": "gemini-3.5-flash-lite/F00309",
+  "result_sha256": "25d4f9b689f7dc93348ad52d3389748ab93e59dd3413f2ee6f2c61182e865532",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "uncertain",
+    "qualifiers": "pass",
+    "importance": "pass"
+  },
+  "notes": "All three source clauses and nine logical obligations checked. Every unit correctly remains preferred, one-to-three years is retained, and the diploma/degree/equivalent-practical-experience OR group preserves shared relevant discipline context. No AND/OR grouping loss observed. However U07 data visualization and U08 data storytelling are classified skill_tool, despite being unnamed concepts/methods and reviewed knowledge_area under Rule3. The uncertain grouping/representation flag denotes this logical-type compatibility issue, not an invented conjunction error. Exact quotes and proficiency qualifiers pass; source-based taxonomy compatibility must be resolved before approved candidate alignment/F1. No gold amendment.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

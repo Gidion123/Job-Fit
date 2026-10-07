@@ -1,0 +1,27 @@
+{
+ "fields": "labeling_mode | label_source | review_status | review_action | annotator | review_kind",
+ "fixed_input_answers (evidence_gold_gap_v2.jsonl)": {
+  "model_draft_assisted_human_accepted | annotator | approved | accepted | Dion | None": 826
+ },
+ "fixed_input_units (extraction_gold_gap_v2.jsonl)": {
+  "model_draft_assisted_human_accepted | annotator | approved | accepted | Dion | None": 747,
+  "model_draft_assisted_human_accepted | annotator | approved | edited | Dion | None": 7,
+  "model_draft_assisted_human_accepted | annotator | approved | rejected | Dion | None": 5
+ },
+ "r3_anchor (evidence_gold.jsonl)": {
+  "None | model_draft | approved | accepted | None | user_review_with_delegated_followup_QA": 1225,
+  "None | model_draft | approved | edited | None | user_review_with_delegated_followup_QA": 107,
+  "None | model_draft | approved | edited | None | case_specific_user_edit_after_model_assisted_review": 2,
+  "None | annotator | approved | added | None | user_review_with_delegated_followup_QA": 17,
+  "None | model_draft | approved | accepted | None | historical_approved_pilot": 13
+ },
+ "ranking_relevance (relevance_gold.jsonl)": {
+  "None | model_draft | approved | accepted | None | user_review_with_delegated_followup_QA": 63,
+  "None | model_draft | approved | edited | None | user_review_with_delegated_followup_QA": 1,
+  "None | model_draft | approved | accepted | None | historical_approved_pilot": 5,
+  "None | model_draft | approved | accepted | None | user_review_of_model_assisted_draft": 6,
+  "None | model_draft | approved | accepted | None | case_scoped_user_review_of_model_assisted_draft": 3,
+  "model_draft_assisted_human_accepted | annotator | approved | accepted | Dion | None": 45
+ },
+ "statement": "Development references are model-draft-assisted and human-reviewed (gap_v2: drafted with model help, accepted by Dion, D-085). They are not independent human ground truth. If a draft came from a model of the same family as the matcher, agreement can be inflated by correlated model preferences; this risk is not measured. Phase A never edits these labels."
+}

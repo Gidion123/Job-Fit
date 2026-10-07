@@ -1,0 +1,1060 @@
+{
+  "schema_version": "cp23-pipeline-v11-diagnosis-v1",
+  "scope": "development_only",
+  "source_run_id": "cp23_end_to_end_dev_20261004_v1",
+  "pairs": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00366",
+      "stage": "extraction",
+      "cause": "extraction_schema_or_mapping_failure",
+      "pair_status": "failed_extraction",
+      "score_status": null,
+      "error_code": "qualification_inventory_unsupported_mapping",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [
+        13511,
+        5030
+      ],
+      "call_input_tokens": [
+        7821,
+        9674
+      ],
+      "call_error_types": [
+        null,
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00601",
+      "stage": "matching",
+      "cause": "transport_timeout",
+      "pair_status": "failed",
+      "score_status": "on_hold",
+      "error_code": "APITimeoutError",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": "ok",
+      "required_total": 18,
+      "call_output_tokens": [
+        16000,
+        0
+      ],
+      "call_input_tokens": [
+        9400,
+        0
+      ],
+      "call_error_types": [
+        "IncompleteStructuredResponse",
+        "APITimeoutError"
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00132",
+      "stage": "extraction",
+      "cause": "extraction_output_limit_suspected",
+      "pair_status": "failed_extraction",
+      "score_status": null,
+      "error_code": "IncompleteStructuredResponse",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [
+        16000,
+        16000
+      ],
+      "call_input_tokens": [
+        8006,
+        8058
+      ],
+      "call_error_types": [
+        "IncompleteStructuredResponse",
+        "IncompleteStructuredResponse"
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The client did not persist finish_reason; output at 16000 tokens plus IncompleteStructuredResponse strongly suggests truncation but does not prove provider finish_reason."
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00022",
+      "stage": "scoring",
+      "cause": "needs_review_structure_hold",
+      "pair_status": "done",
+      "score_status": "on_hold",
+      "error_code": null,
+      "needs_review_unit_ids": [
+        "U01",
+        "U04",
+        "U05",
+        "U06"
+      ],
+      "needs_review_count": 4,
+      "jd_quality": "ok",
+      "required_total": 6,
+      "call_output_tokens": [
+        6215
+      ],
+      "call_input_tokens": [
+        8852
+      ],
+      "call_error_types": [
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00556",
+      "stage": "scoring",
+      "cause": "needs_review_structure_hold",
+      "pair_status": "done",
+      "score_status": "on_hold",
+      "error_code": null,
+      "needs_review_unit_ids": [
+        "U10"
+      ],
+      "needs_review_count": 1,
+      "jd_quality": "ok",
+      "required_total": 5,
+      "call_output_tokens": [
+        10210
+      ],
+      "call_input_tokens": [
+        8687
+      ],
+      "call_error_types": [
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00655",
+      "stage": "extraction",
+      "cause": "looks_incomplete",
+      "pair_status": "held_extraction",
+      "score_status": null,
+      "error_code": null,
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": "looks_incomplete",
+      "required_total": null,
+      "call_output_tokens": [
+        13363
+      ],
+      "call_input_tokens": [
+        7811
+      ],
+      "call_error_types": [
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00208",
+      "stage": "extraction",
+      "cause": "extraction_output_limit_suspected",
+      "pair_status": "failed_extraction",
+      "score_status": null,
+      "error_code": "IncompleteStructuredResponse",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [
+        16000,
+        16000
+      ],
+      "call_input_tokens": [
+        8851,
+        8903
+      ],
+      "call_error_types": [
+        "IncompleteStructuredResponse",
+        "IncompleteStructuredResponse"
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The client did not persist finish_reason; output at 16000 tokens plus IncompleteStructuredResponse strongly suggests truncation but does not prove provider finish_reason."
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00090",
+      "stage": "extraction",
+      "cause": "extraction_output_limit_suspected",
+      "pair_status": "failed_extraction",
+      "score_status": null,
+      "error_code": "IncompleteStructuredResponse",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [
+        16000,
+        16000
+      ],
+      "call_input_tokens": [
+        7997,
+        8049
+      ],
+      "call_error_types": [
+        "IncompleteStructuredResponse",
+        "IncompleteStructuredResponse"
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The client did not persist finish_reason; output at 16000 tokens plus IncompleteStructuredResponse strongly suggests truncation but does not prove provider finish_reason."
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00103",
+      "stage": "extraction",
+      "cause": "extraction_output_limit_suspected",
+      "pair_status": "failed_extraction",
+      "score_status": null,
+      "error_code": "IncompleteStructuredResponse",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [
+        16000,
+        16000
+      ],
+      "call_input_tokens": [
+        7905,
+        7957
+      ],
+      "call_error_types": [
+        "IncompleteStructuredResponse",
+        "IncompleteStructuredResponse"
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The client did not persist finish_reason; output at 16000 tokens plus IncompleteStructuredResponse strongly suggests truncation but does not prove provider finish_reason."
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00189",
+      "stage": "extraction",
+      "cause": "extraction_output_limit_suspected",
+      "pair_status": "failed_extraction",
+      "score_status": null,
+      "error_code": "IncompleteStructuredResponse",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [
+        16000,
+        16000
+      ],
+      "call_input_tokens": [
+        7798,
+        7850
+      ],
+      "call_error_types": [
+        "IncompleteStructuredResponse",
+        "IncompleteStructuredResponse"
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The client did not persist finish_reason; output at 16000 tokens plus IncompleteStructuredResponse strongly suggests truncation but does not prove provider finish_reason."
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "stage": "source",
+      "cause": "source_hold",
+      "pair_status": "held_source",
+      "score_status": null,
+      "error_code": null,
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [],
+      "call_input_tokens": [],
+      "call_error_types": [],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00654",
+      "stage": "matching",
+      "cause": "matching_invalid_output_unclassified",
+      "pair_status": "failed",
+      "score_status": "on_hold",
+      "error_code": "invalid_structured_output_or_source",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": "ok",
+      "required_total": 3,
+      "call_output_tokens": [
+        7428,
+        1909
+      ],
+      "call_input_tokens": [
+        8128,
+        8814
+      ],
+      "call_error_types": [
+        null,
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The final generic validator error did not retain its exact rule or raw first draft."
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00309",
+      "stage": "scoring",
+      "cause": "zero_assessable_required_denominator",
+      "pair_status": "done",
+      "score_status": "no_score",
+      "error_code": null,
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": "ok",
+      "required_total": 0,
+      "call_output_tokens": [
+        7872
+      ],
+      "call_input_tokens": [
+        8101
+      ],
+      "call_error_types": [
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00310",
+      "stage": "extraction",
+      "cause": "extraction_output_limit_suspected",
+      "pair_status": "failed_extraction",
+      "score_status": null,
+      "error_code": "IncompleteStructuredResponse",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [
+        16000,
+        16000
+      ],
+      "call_input_tokens": [
+        9177,
+        9229
+      ],
+      "call_error_types": [
+        "IncompleteStructuredResponse",
+        "IncompleteStructuredResponse"
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The client did not persist finish_reason; output at 16000 tokens plus IncompleteStructuredResponse strongly suggests truncation but does not prove provider finish_reason."
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00055",
+      "stage": "scoring",
+      "cause": "needs_review_structure_hold",
+      "pair_status": "done",
+      "score_status": "on_hold",
+      "error_code": null,
+      "needs_review_unit_ids": [
+        "U02"
+      ],
+      "needs_review_count": 1,
+      "jd_quality": "ok",
+      "required_total": 15,
+      "call_output_tokens": [
+        8765
+      ],
+      "call_input_tokens": [
+        9957
+      ],
+      "call_error_types": [
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00060",
+      "stage": "scoring",
+      "cause": "needs_review_structure_hold",
+      "pair_status": "done",
+      "score_status": "on_hold",
+      "error_code": null,
+      "needs_review_unit_ids": [
+        "U09"
+      ],
+      "needs_review_count": 1,
+      "jd_quality": "ok",
+      "required_total": 5,
+      "call_output_tokens": [
+        7850
+      ],
+      "call_input_tokens": [
+        7761
+      ],
+      "call_error_types": [
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00351",
+      "stage": "scoring",
+      "cause": "zero_assessable_required_denominator",
+      "pair_status": "done",
+      "score_status": "no_score",
+      "error_code": null,
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": "ok",
+      "required_total": 0,
+      "call_output_tokens": [
+        2488
+      ],
+      "call_input_tokens": [
+        6951
+      ],
+      "call_error_types": [
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00527",
+      "stage": "extraction",
+      "cause": "extraction_output_limit_suspected",
+      "pair_status": "failed_extraction",
+      "score_status": null,
+      "error_code": "IncompleteStructuredResponse",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [
+        16000,
+        16000
+      ],
+      "call_input_tokens": [
+        8064,
+        8116
+      ],
+      "call_error_types": [
+        "IncompleteStructuredResponse",
+        "IncompleteStructuredResponse"
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The client did not persist finish_reason; output at 16000 tokens plus IncompleteStructuredResponse strongly suggests truncation but does not prove provider finish_reason."
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00650",
+      "stage": "matching",
+      "cause": "transport_timeout",
+      "pair_status": "failed",
+      "score_status": "on_hold",
+      "error_code": "APITimeoutError",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": "ok",
+      "required_total": 15,
+      "call_output_tokens": [
+        0
+      ],
+      "call_input_tokens": [
+        0
+      ],
+      "call_error_types": [
+        "APITimeoutError"
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00018",
+      "stage": "scoring",
+      "cause": "needs_review_structure_hold",
+      "pair_status": "done",
+      "score_status": "on_hold",
+      "error_code": null,
+      "needs_review_unit_ids": [
+        "U11",
+        "U22"
+      ],
+      "needs_review_count": 2,
+      "jd_quality": "ok",
+      "required_total": 14,
+      "call_output_tokens": [
+        9916
+      ],
+      "call_input_tokens": [
+        9277
+      ],
+      "call_error_types": [
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00463",
+      "stage": "extraction",
+      "cause": "extraction_output_limit_suspected",
+      "pair_status": "failed_extraction",
+      "score_status": null,
+      "error_code": "IncompleteStructuredResponse",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [
+        16000,
+        16000
+      ],
+      "call_input_tokens": [
+        7744,
+        7796
+      ],
+      "call_error_types": [
+        "IncompleteStructuredResponse",
+        "IncompleteStructuredResponse"
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The client did not persist finish_reason; output at 16000 tokens plus IncompleteStructuredResponse strongly suggests truncation but does not prove provider finish_reason."
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00074",
+      "stage": "extraction",
+      "cause": "extraction_schema_or_mapping_failure",
+      "pair_status": "failed_extraction",
+      "score_status": null,
+      "error_code": "qualification_inventory_incomplete",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [
+        16000,
+        10961
+      ],
+      "call_input_tokens": [
+        8360,
+        8412
+      ],
+      "call_error_types": [
+        "IncompleteStructuredResponse",
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00029",
+      "stage": "extraction",
+      "cause": "extraction_output_limit_suspected",
+      "pair_status": "failed_extraction",
+      "score_status": null,
+      "error_code": "IncompleteStructuredResponse",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [
+        16000,
+        16000
+      ],
+      "call_input_tokens": [
+        8217,
+        8269
+      ],
+      "call_error_types": [
+        "IncompleteStructuredResponse",
+        "IncompleteStructuredResponse"
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The client did not persist finish_reason; output at 16000 tokens plus IncompleteStructuredResponse strongly suggests truncation but does not prove provider finish_reason."
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00176",
+      "stage": "extraction",
+      "cause": "extraction_output_limit_suspected",
+      "pair_status": "failed_extraction",
+      "score_status": null,
+      "error_code": "IncompleteStructuredResponse",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [
+        16000,
+        16000
+      ],
+      "call_input_tokens": [
+        7859,
+        7911
+      ],
+      "call_error_types": [
+        "IncompleteStructuredResponse",
+        "IncompleteStructuredResponse"
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The client did not persist finish_reason; output at 16000 tokens plus IncompleteStructuredResponse strongly suggests truncation but does not prove provider finish_reason."
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00559",
+      "stage": "scoring",
+      "cause": "zero_assessable_required_denominator",
+      "pair_status": "done",
+      "score_status": "no_score",
+      "error_code": null,
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": "ok",
+      "required_total": 0,
+      "call_output_tokens": [],
+      "call_input_tokens": [],
+      "call_error_types": [],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00629",
+      "stage": "scoring",
+      "cause": "needs_review_structure_hold",
+      "pair_status": "done",
+      "score_status": "on_hold",
+      "error_code": null,
+      "needs_review_unit_ids": [
+        "U21"
+      ],
+      "needs_review_count": 1,
+      "jd_quality": "ok",
+      "required_total": 25,
+      "call_output_tokens": [
+        3742
+      ],
+      "call_input_tokens": [
+        9728
+      ],
+      "call_error_types": [
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00645",
+      "stage": "matching",
+      "cause": "matching_invalid_output_unclassified",
+      "pair_status": "failed",
+      "score_status": "on_hold",
+      "error_code": "invalid_structured_output_or_source",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": "ok",
+      "required_total": 13,
+      "call_output_tokens": [
+        10888,
+        6521
+      ],
+      "call_input_tokens": [
+        9669,
+        11656
+      ],
+      "call_error_types": [
+        null,
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The final generic validator error did not retain its exact rule or raw first draft."
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00698",
+      "stage": "extraction",
+      "cause": "extraction_output_limit_suspected",
+      "pair_status": "failed_extraction",
+      "score_status": null,
+      "error_code": "IncompleteStructuredResponse",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [
+        16000,
+        16000
+      ],
+      "call_input_tokens": [
+        7850,
+        7902
+      ],
+      "call_error_types": [
+        "IncompleteStructuredResponse",
+        "IncompleteStructuredResponse"
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The client did not persist finish_reason; output at 16000 tokens plus IncompleteStructuredResponse strongly suggests truncation but does not prove provider finish_reason."
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00034",
+      "stage": "matching",
+      "cause": "matching_invalid_output_unclassified",
+      "pair_status": "failed",
+      "score_status": "on_hold",
+      "error_code": "invalid_structured_output_or_source",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": "ok",
+      "required_total": 5,
+      "call_output_tokens": [
+        8414,
+        5538
+      ],
+      "call_input_tokens": [
+        9919,
+        11689
+      ],
+      "call_error_types": [
+        null,
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The final generic validator error did not retain its exact rule or raw first draft."
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00310",
+      "stage": "extraction",
+      "cause": "extraction_output_limit_suspected",
+      "pair_status": "failed_extraction",
+      "score_status": null,
+      "error_code": "IncompleteStructuredResponse",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [
+        16000,
+        16000
+      ],
+      "call_input_tokens": [
+        9177,
+        9229
+      ],
+      "call_error_types": [
+        "IncompleteStructuredResponse",
+        "IncompleteStructuredResponse"
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The client did not persist finish_reason; output at 16000 tokens plus IncompleteStructuredResponse strongly suggests truncation but does not prove provider finish_reason."
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00055",
+      "stage": "scoring",
+      "cause": "needs_review_structure_hold",
+      "pair_status": "done",
+      "score_status": "on_hold",
+      "error_code": null,
+      "needs_review_unit_ids": [
+        "U02"
+      ],
+      "needs_review_count": 1,
+      "jd_quality": "ok",
+      "required_total": 15,
+      "call_output_tokens": [
+        11512
+      ],
+      "call_input_tokens": [
+        9927
+      ],
+      "call_error_types": [
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00126",
+      "stage": "scoring",
+      "cause": "needs_review_structure_hold",
+      "pair_status": "done",
+      "score_status": "on_hold",
+      "error_code": null,
+      "needs_review_unit_ids": [
+        "Q01"
+      ],
+      "needs_review_count": 1,
+      "jd_quality": "ok",
+      "required_total": 3,
+      "call_output_tokens": [
+        3569
+      ],
+      "call_input_tokens": [
+        7259
+      ],
+      "call_error_types": [
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00208",
+      "stage": "extraction",
+      "cause": "extraction_output_limit_suspected",
+      "pair_status": "failed_extraction",
+      "score_status": null,
+      "error_code": "IncompleteStructuredResponse",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [
+        16000,
+        16000
+      ],
+      "call_input_tokens": [
+        8851,
+        8903
+      ],
+      "call_error_types": [
+        "IncompleteStructuredResponse",
+        "IncompleteStructuredResponse"
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The client did not persist finish_reason; output at 16000 tokens plus IncompleteStructuredResponse strongly suggests truncation but does not prove provider finish_reason."
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00303",
+      "stage": "scoring",
+      "cause": "needs_review_structure_hold",
+      "pair_status": "done",
+      "score_status": "on_hold",
+      "error_code": null,
+      "needs_review_unit_ids": [
+        "U02"
+      ],
+      "needs_review_count": 1,
+      "jd_quality": "ok",
+      "required_total": 16,
+      "call_output_tokens": [
+        3693
+      ],
+      "call_input_tokens": [
+        10395
+      ],
+      "call_error_types": [
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00556",
+      "stage": "scoring",
+      "cause": "needs_review_structure_hold",
+      "pair_status": "done",
+      "score_status": "on_hold",
+      "error_code": null,
+      "needs_review_unit_ids": [
+        "U10"
+      ],
+      "needs_review_count": 1,
+      "jd_quality": "ok",
+      "required_total": 5,
+      "call_output_tokens": [
+        8931
+      ],
+      "call_input_tokens": [
+        8657
+      ],
+      "call_error_types": [
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00418",
+      "stage": "scoring",
+      "cause": "needs_review_structure_hold",
+      "pair_status": "done",
+      "score_status": "on_hold",
+      "error_code": null,
+      "needs_review_unit_ids": [
+        "U20"
+      ],
+      "needs_review_count": 1,
+      "jd_quality": "ok",
+      "required_total": 20,
+      "call_output_tokens": [
+        1990
+      ],
+      "call_input_tokens": [
+        9160
+      ],
+      "call_error_types": [
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00682",
+      "stage": "matching",
+      "cause": "matching_invalid_output_unclassified",
+      "pair_status": "failed",
+      "score_status": "on_hold",
+      "error_code": "invalid_structured_output_or_source",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": "ok",
+      "required_total": 21,
+      "call_output_tokens": [
+        6183,
+        3381
+      ],
+      "call_input_tokens": [
+        11006,
+        13145
+      ],
+      "call_error_types": [
+        null,
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": "The final generic validator error did not retain its exact rule or raw first draft."
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00436",
+      "stage": "extraction",
+      "cause": "extraction_schema_or_mapping_failure",
+      "pair_status": "failed_extraction",
+      "score_status": null,
+      "error_code": "qualification_inventory_incomplete",
+      "needs_review_unit_ids": [],
+      "needs_review_count": 0,
+      "jd_quality": null,
+      "required_total": null,
+      "call_output_tokens": [
+        15471,
+        13436
+      ],
+      "call_input_tokens": [
+        8669,
+        8722
+      ],
+      "call_error_types": [
+        null,
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00114",
+      "stage": "scoring",
+      "cause": "needs_review_structure_hold",
+      "pair_status": "done",
+      "score_status": "on_hold",
+      "error_code": null,
+      "needs_review_unit_ids": [
+        "U03"
+      ],
+      "needs_review_count": 1,
+      "jd_quality": "ok",
+      "required_total": 17,
+      "call_output_tokens": [
+        7153
+      ],
+      "call_input_tokens": [
+        9161
+      ],
+      "call_error_types": [
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00343",
+      "stage": "extraction",
+      "cause": "looks_incomplete",
+      "pair_status": "held_extraction",
+      "score_status": null,
+      "error_code": null,
+      "needs_review_unit_ids": [
+        "U01"
+      ],
+      "needs_review_count": 1,
+      "jd_quality": "looks_incomplete",
+      "required_total": null,
+      "call_output_tokens": [
+        12868
+      ],
+      "call_input_tokens": [
+        8043
+      ],
+      "call_error_types": [
+        null
+      ],
+      "finish_reason_persisted": false,
+      "diagnostic_limit": null
+    }
+  ],
+  "cause_counts": {
+    "extraction_schema_or_mapping_failure": 3,
+    "transport_timeout": 2,
+    "extraction_output_limit_suspected": 13,
+    "needs_review_structure_hold": 12,
+    "looks_incomplete": 2,
+    "source_hold": 1,
+    "matching_invalid_output_unclassified": 4,
+    "zero_assessable_required_denominator": 3
+  },
+  "technical_limit": "Old client saved error type and token use, not finish_reason or first invalid matching draft. Unknown rules cannot be reconstructed as exact causes.",
+  "gold_or_source_changed": false
+}

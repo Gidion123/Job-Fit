@@ -1,0 +1,285 @@
+{
+  "model": "gemini-3.8-flash",
+  "model_id": "google/gemini-3.8-flash",
+  "cv_id": "CV1",
+  "job_id": "F00036",
+  "status": "done",
+  "error_code": null,
+  "attempts": 1,
+  "wall_ms": 48615,
+  "assessments": [
+    {
+      "unit_id": "P09-U01",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P09-U01/B01",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+          ]
+        },
+        {
+          "branch_id": "P09-U01/B02",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P09-U01/B03",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P09-U01/B04",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P09-U01/B05",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U02",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U03",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P09-U03/B01",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+          ]
+        },
+        {
+          "branch_id": "P09-U03/B02",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+          ]
+        },
+        {
+          "branch_id": "P09-U03/B03",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U04",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U05",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U06",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U07",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P09-U07/B01",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+          ]
+        },
+        {
+          "branch_id": "P09-U07/B02",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+          ]
+        },
+        {
+          "branch_id": "P09-U07/B03",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P09-U07/B04",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U08",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U09",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P09-U09/B01",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P09-U09/B02",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P09-U09/B03",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U10",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U11",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "statistika inferensial"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U12",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U13",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U14",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U15",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P09-U15/B01",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P09-U15/B02",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P09-U15/B03",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U16",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U17",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ]
+}

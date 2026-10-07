@@ -1,0 +1,28 @@
+{
+  "version": "evaluation-contract-v1.1",
+  "decision_id": "D-052+D-054",
+  "review_status": "approved_conventions",
+  "approval_provenance": "docs/decisions.md#D-052 and #D-054; Dion explicitly approved strict split/merge 3 October 2026",
+  "source_document": "docs/evaluation.md",
+  "source_sha256": "74aacb8b6f56fc94a72d538f6f29d0ff2f1f1b525f671fe9acfc65ae5e765e94",
+  "policy": {
+    "relevant_grades": [
+      2,
+      3
+    ],
+    "ndcg_gain": "exponential",
+    "ranking_positions": "original",
+    "p_at_5": "five_present_and_judged_denominator_5",
+    "ndcg_at_10": "ten_present_and_judged_else_unavailable",
+    "short_ranking": "unavailable_pending_convention",
+    "recall": "original_top_k_judged_eligible_pool",
+    "failed_evidence": "all_reference_not_assessed_false_negative",
+    "macro_f1": "all_three_aggregate_gold_classes_required",
+    "extraction_split_merge": "D-054_strict_independently_assessable_1_to_many_or_many_to_1;many_to_many_unavailable"
+  },
+  "reference_readiness": "not_implied",
+  "alignment_approval": "only_16_F00332_proposals_separately_approved;future_alignments_not_implied",
+  "benchmark_execution": "not_run",
+  "api_calls": 0,
+  "historical_predecessor": "evals/results/cp23_metric_contract_D052_20261003_v2.json"
+}

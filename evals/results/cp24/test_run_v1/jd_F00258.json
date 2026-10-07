@@ -1,0 +1,126 @@
+{
+ "job_id": "F00258",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "not_assessed",
+  "bullet_count": 0,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 0,
+  "inventory_mappings": [],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00258",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "S1/D4 degree in one of: Teknik Informatika, Ilmu Komputer, Statistika, Matematika, Sistem Informasi, Data Science, or a related relevant field",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "education",
+    "normalized_name": "S1/D4 degree in relevant major",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "U01-B1",
+      "text": "S1/D4 degree in Teknik Informatika",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "U01-B2",
+      "text": "S1/D4 degree in Ilmu Komputer",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "U01-B3",
+      "text": "S1/D4 degree in Statistika",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "U01-B4",
+      "text": "S1/D4 degree in Matematika",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "U01-B5",
+      "text": "S1/D4 degree in Sistem Informasi",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "U01-B6",
+      "text": "S1/D4 degree in Data Science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "U01-B7",
+      "text": "S1/D4 degree in a related relevant field",
+      "field": "education",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Lulusan S1/D4 dari jurusan Teknik Informatika, Ilmu Komputer, Statistika, Matematika, Sistem Informasi, Data Science, atau bidang terkait yang relevan."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "Must have one or more of: experience in data analysis & processing and basic understanding of statistics; ability to design machine learning and predictive modeling; data visualization skills (such as Tableau, Power BI, or related libraries); critical thinking in formulating data-driven insights and recommendations",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "other",
+    "normalized_name": "Special skills (one or more)",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "U02-B1",
+      "text": "Experience in data analysis & processing and basic understanding of statistics",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "U02-B2",
+      "text": "Ability to design machine learning and predictive modeling",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "U02-B3",
+      "text": "Data visualization skills (such as Tableau, Power BI, or related libraries)",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "U02-B4",
+      "text": "Critical thinking in formulating data-driven insights and recommendations",
+      "field": "soft_skill",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Keahlian Khusus (Wajib memiliki salah satu atau lebih dari poin berikut):",
+     "Pengalaman dalam analisis & pengolahan data serta pemahaman dasar statistika.",
+     "Kemampuan merancang machine learning dan predictive modeling.",
+     "Keterampilan data visualization (seperti Tableau, Power BI, atau library terkait).",
+     "Kemampuan berpikir kritis dalam penyusunan insight dan rekomendasi berbasis data."
+    ],
+    "needs_review": true,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

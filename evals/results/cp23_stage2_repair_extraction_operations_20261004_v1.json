@@ -1,0 +1,182 @@
+{
+  "A": {
+    "deepseek/deepseek-v4.1-flash": {
+      "live": {
+        "records": 10,
+        "cost_usd": 0.09099477379999998,
+        "latency_observed": 10,
+        "latency_missing": 0,
+        "p50_ms": 62352,
+        "p95_ms": 453486,
+        "percentile_method": "nearest_rank",
+        "failures": 2
+      },
+      "cached": {
+        "records": 0,
+        "cost_usd": 0,
+        "latency_observed": 0,
+        "latency_missing": 0,
+        "p50_ms": null,
+        "p95_ms": null,
+        "percentile_method": "nearest_rank",
+        "failures": 0
+      }
+    },
+    "openai/gpt-6-luna": {
+      "live": {
+        "records": 8,
+        "cost_usd": 0.01729669,
+        "latency_observed": 8,
+        "latency_missing": 0,
+        "p50_ms": 31166,
+        "p95_ms": 50922,
+        "percentile_method": "nearest_rank",
+        "failures": 1
+      },
+      "cached": {
+        "records": 0,
+        "cost_usd": 0,
+        "latency_observed": 0,
+        "latency_missing": 0,
+        "p50_ms": null,
+        "p95_ms": null,
+        "percentile_method": "nearest_rank",
+        "failures": 0
+      }
+    },
+    "google/gemini-3.5-flash-lite": {
+      "live": {
+        "records": 8,
+        "cost_usd": 0.06307243,
+        "latency_observed": 8,
+        "latency_missing": 0,
+        "p50_ms": 6463,
+        "p95_ms": 13260,
+        "percentile_method": "nearest_rank",
+        "failures": 1
+      },
+      "cached": {
+        "records": 0,
+        "cost_usd": 0,
+        "latency_observed": 0,
+        "latency_missing": 0,
+        "p50_ms": null,
+        "p95_ms": null,
+        "percentile_method": "nearest_rank",
+        "failures": 0
+      }
+    },
+    "anthropic/claude-haiku-4.5": {
+      "live": {
+        "records": 7,
+        "cost_usd": 0.144538,
+        "latency_observed": 7,
+        "latency_missing": 0,
+        "p50_ms": 11158,
+        "p95_ms": 16404,
+        "percentile_method": "nearest_rank",
+        "failures": 0
+      },
+      "cached": {
+        "records": 0,
+        "cost_usd": 0,
+        "latency_observed": 0,
+        "latency_missing": 0,
+        "p50_ms": null,
+        "p95_ms": null,
+        "percentile_method": "nearest_rank",
+        "failures": 0
+      }
+    }
+  },
+  "B": {
+    "deepseek/deepseek-v4.1-flash": {
+      "live": {
+        "records": 10,
+        "cost_usd": 0.09099477379999998,
+        "latency_observed": 10,
+        "latency_missing": 0,
+        "p50_ms": 62352,
+        "p95_ms": 453486,
+        "percentile_method": "nearest_rank",
+        "failures": 2
+      },
+      "cached": {
+        "records": 0,
+        "cost_usd": 0,
+        "latency_observed": 0,
+        "latency_missing": 0,
+        "p50_ms": null,
+        "p95_ms": null,
+        "percentile_method": "nearest_rank",
+        "failures": 0
+      }
+    },
+    "openai/gpt-6-luna": {
+      "live": {
+        "records": 8,
+        "cost_usd": 0.01729669,
+        "latency_observed": 8,
+        "latency_missing": 0,
+        "p50_ms": 31166,
+        "p95_ms": 50922,
+        "percentile_method": "nearest_rank",
+        "failures": 1
+      },
+      "cached": {
+        "records": 0,
+        "cost_usd": 0,
+        "latency_observed": 0,
+        "latency_missing": 0,
+        "p50_ms": null,
+        "p95_ms": null,
+        "percentile_method": "nearest_rank",
+        "failures": 0
+      }
+    },
+    "google/gemini-3.5-flash-lite": {
+      "live": {
+        "records": 9,
+        "cost_usd": 0.07072363,
+        "latency_observed": 9,
+        "latency_missing": 0,
+        "p50_ms": 6463,
+        "p95_ms": 13260,
+        "percentile_method": "nearest_rank",
+        "failures": 1
+      },
+      "cached": {
+        "records": 0,
+        "cost_usd": 0,
+        "latency_observed": 0,
+        "latency_missing": 0,
+        "p50_ms": null,
+        "p95_ms": null,
+        "percentile_method": "nearest_rank",
+        "failures": 0
+      }
+    },
+    "anthropic/claude-haiku-4.5": {
+      "live": {
+        "records": 7,
+        "cost_usd": 0.144538,
+        "latency_observed": 7,
+        "latency_missing": 0,
+        "p50_ms": 11158,
+        "p95_ms": 16404,
+        "percentile_method": "nearest_rank",
+        "failures": 0
+      },
+      "cached": {
+        "records": 0,
+        "cost_usd": 0,
+        "latency_observed": 0,
+        "latency_missing": 0,
+        "p50_ms": null,
+        "p95_ms": null,
+        "percentile_method": "nearest_rank",
+        "failures": 0
+      }
+    }
+  }
+}

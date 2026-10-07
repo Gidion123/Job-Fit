@@ -1,0 +1,260 @@
+{
+  "schema_version": "cp23-partb-complete-receipt-v3",
+  "created_at_utc": "2026-10-04T01:32:32.907673+00:00",
+  "scope": "development_only",
+  "run_id": "cp23_end_to_end_dev_20261004_v1",
+  "status": "all_planned_pair_records_saved_not_all_semantically_valid",
+  "original_plan_sha256": "54c0d5d1cec7ebf08b983083aaad785f0ec5d6347bb85909d24f698e904647ec",
+  "amendment_sha256": "2a66ab01039957748868222093e79df287ac0846430035c708fe2c3d00ede1c3",
+  "a3_snapshot_sha256": "d21c9a5181efc03151949bf93ea9d33ecddc5403c0a290aab8c686a0beb36050",
+  "evaluation_sha256": "a54b16a7de92478eb78b147feb873810e74937685303ca8f4d90e42c93984237",
+  "pairs_planned": 60,
+  "pairs_saved_before_resume": 29,
+  "pairs_added_on_resume": 31,
+  "pairs_saved_final": 60,
+  "pairs_unattempted_final": 0,
+  "status_counts": {
+    "done": 35,
+    "failed_extraction": 16,
+    "held_extraction": 2,
+    "failed": 6,
+    "held_source": 1
+  },
+  "score_status_counts": {
+    "final": 20,
+    "no_score": 3,
+    "no_score_object": 19,
+    "on_hold": 18
+  },
+  "failed_pairs": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00650",
+      "error_code": "APITimeoutError"
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00682",
+      "error_code": "invalid_structured_output_or_source"
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00601",
+      "error_code": "APITimeoutError"
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00645",
+      "error_code": "invalid_structured_output_or_source"
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00654",
+      "error_code": "invalid_structured_output_or_source"
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00034",
+      "error_code": "invalid_structured_output_or_source"
+    }
+  ],
+  "prior_timeout_pairs": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00650"
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00601"
+    }
+  ],
+  "new_timeout_count": 0,
+  "matching_done_wall_ms": {
+    "n": 35,
+    "p50_nearest_rank": 35215,
+    "p95_nearest_rank": 120212,
+    "limit": "Stage only; not full one-CV K20 wall time"
+  },
+  "ledger": {
+    "entries": 129,
+    "run_accounted_usd": "1.1875181592",
+    "new_accounted_usd": "0.1968797400",
+    "uncertain_reservations_usd": "0.0646905",
+    "settled_or_reported_usd": "1.1228276592",
+    "project_accounted_usd": "2.4590349434",
+    "approved_total_cap_usd": "2.50",
+    "remaining_total_cap_usd": "1.3124818408"
+  },
+  "metric_cells": [
+    {
+      "cv_id": "CV1",
+      "K": 10,
+      "partial_weight": 0.25,
+      "scored": 5,
+      "held_or_failed": 5,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV1",
+      "K": 10,
+      "partial_weight": 0.5,
+      "scored": 5,
+      "held_or_failed": 5,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV1",
+      "K": 10,
+      "partial_weight": 0.75,
+      "scored": 5,
+      "held_or_failed": 5,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV1",
+      "K": 20,
+      "partial_weight": 0.25,
+      "scored": 8,
+      "held_or_failed": 12,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV1",
+      "K": 20,
+      "partial_weight": 0.5,
+      "scored": 8,
+      "held_or_failed": 12,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV1",
+      "K": 20,
+      "partial_weight": 0.75,
+      "scored": 8,
+      "held_or_failed": 12,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV1",
+      "K": 30,
+      "partial_weight": 0.25,
+      "scored": 11,
+      "held_or_failed": 19,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV1",
+      "K": 30,
+      "partial_weight": 0.5,
+      "scored": 11,
+      "held_or_failed": 19,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV1",
+      "K": 30,
+      "partial_weight": 0.75,
+      "scored": 11,
+      "held_or_failed": 19,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV2",
+      "K": 10,
+      "partial_weight": 0.25,
+      "scored": 5,
+      "held_or_failed": 5,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV2",
+      "K": 10,
+      "partial_weight": 0.5,
+      "scored": 5,
+      "held_or_failed": 5,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV2",
+      "K": 10,
+      "partial_weight": 0.75,
+      "scored": 5,
+      "held_or_failed": 5,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV2",
+      "K": 20,
+      "partial_weight": 0.25,
+      "scored": 7,
+      "held_or_failed": 13,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV2",
+      "K": 20,
+      "partial_weight": 0.5,
+      "scored": 7,
+      "held_or_failed": 13,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV2",
+      "K": 20,
+      "partial_weight": 0.75,
+      "scored": 7,
+      "held_or_failed": 13,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV2",
+      "K": 30,
+      "partial_weight": 0.25,
+      "scored": 9,
+      "held_or_failed": 21,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV2",
+      "K": 30,
+      "partial_weight": 0.5,
+      "scored": 9,
+      "held_or_failed": 21,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    },
+    {
+      "cv_id": "CV2",
+      "K": 30,
+      "partial_weight": 0.75,
+      "scored": 9,
+      "held_or_failed": 21,
+      "final_p5_available": false,
+      "final_ndcg10_available": false
+    }
+  ],
+  "H4_primary_available_cells": 0,
+  "K_or_partial_weight_selected": false,
+  "one_cv_k20_end_to_end_wall_measured": false,
+  "model_quality_semantically_validated_on_all_pairs": false,
+  "test_access": false,
+  "gold_written": false,
+  "correction_note": "The previous v2 new-cost field carried floating-point noise from the historical receipt. The ledger total and all stage counts are unchanged.",
+  "corrected_from_sha256": "2557125b491433dd1b4d816c0f7fa667c4335b8903a527dcc245843e4a580f47"
+}

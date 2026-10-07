@@ -1,0 +1,224 @@
+{
+  "cv_id": "CV2",
+  "job_id": "F00020",
+  "model": "gpt-6-sol",
+  "status": "done",
+  "error_code": null,
+  "wall_ms": 7641,
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "- Managed social media campaigns and monthly budget reports in Excel."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+          ]
+        },
+        {
+          "branch_id": "B4",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+          ]
+        },
+        {
+          "branch_id": "B5",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+            "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+            "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "**Document Q&A Assistant (RAG)** · August 2026",
+            "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+            "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Ran A/B tests for ad creatives and explained results to account managers."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Ran A/B tests for ad creatives and explained results to account managers."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    }
+  ],
+  "scores": {
+    "H1": {
+      "score": {
+        "score_pct": 50.0,
+        "status": "final",
+        "matched": 2,
+        "partial": 0,
+        "required_total": 4,
+        "preferred_met": 0,
+        "preferred_total": 1,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 4,
+        "soft_skill_matched": 1,
+        "soft_skill_partial": 1,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    },
+    "H2": {
+      "score": {
+        "score_pct": 50.0,
+        "status": "final",
+        "matched": 2,
+        "partial": 0,
+        "required_total": 4,
+        "preferred_met": 0,
+        "preferred_total": 1,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 4,
+        "soft_skill_matched": 1,
+        "soft_skill_partial": 1,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    },
+    "H2v2": {
+      "score": {
+        "score_pct": 50.0,
+        "status": "final",
+        "matched": 2,
+        "partial": 0,
+        "required_total": 4,
+        "preferred_met": 0,
+        "preferred_total": 1,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 4,
+        "soft_skill_matched": 1,
+        "soft_skill_partial": 1,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    }
+  }
+}

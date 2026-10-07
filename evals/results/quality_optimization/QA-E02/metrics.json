@@ -1,0 +1,166 @@
+{
+ "experiment_id": "QA-E02",
+ "fixed_input_optimization": {
+  "pairs": 20,
+  "units": 411,
+  "macro_f1": 0.7396855936729252,
+  "failure_classes": {},
+  "prompt_induced_failed_pairs": 0,
+  "per_class_f1": {
+   "MATCH": 0.9010989010989011,
+   "PARTIAL": 0.46808510638297873,
+   "NO_MATCH": 0.8498727735368957
+  },
+  "accuracy_all_units": 0.7858880778588808,
+  "accuracy_answered": 0.8156565656565656,
+  "confusion": {
+   "MATCH": {
+    "MATCH": 123,
+    "PARTIAL": 12,
+    "NO_MATCH": 4,
+    "not_assessed": 1
+   },
+   "PARTIAL": {
+    "MATCH": 3,
+    "PARTIAL": 33,
+    "NO_MATCH": 17,
+    "not_assessed": 13
+   },
+   "NO_MATCH": {
+    "MATCH": 7,
+    "PARTIAL": 30,
+    "NO_MATCH": 167,
+    "not_assessed": 1
+   }
+  },
+  "overclaim": 40,
+  "underclaim": 33,
+  "unsupported_positive": 37,
+  "unsupported_positive_by_field": {
+   "knowledge_area": 28,
+   "skill_tool": 1,
+   "soft_skill": 4,
+   "other": 1,
+   "education": 3
+  },
+  "fabricated_experience_proxy": 0,
+  "fabricated_skill_proxy": 29,
+  "fabricated_education_proxy": 3,
+  "unassessed_units": 15,
+  "failed_pairs": [],
+  "error_codes": {},
+  "repair_count": 0,
+  "guardrail_changes": 0,
+  "latency_ms_p50": 20651.5,
+  "latency_ms_p95": 25300,
+  "per_pair": {
+   "CV1/F00021": {
+    "units": 9,
+    "agree": 7
+   },
+   "CV1/F00029": {
+    "units": 29,
+    "agree": 26
+   },
+   "CV1/F00052": {
+    "units": 28,
+    "agree": 27
+   },
+   "CV1/F00059": {
+    "units": 24,
+    "agree": 17
+   },
+   "CV1/F00187": {
+    "units": 12,
+    "agree": 11
+   },
+   "CV1/F00351": {
+    "units": 9,
+    "agree": 7
+   },
+   "CV1/F00610": {
+    "units": 25,
+    "agree": 18
+   },
+   "CV1/F00690": {
+    "units": 8,
+    "agree": 6
+   },
+   "CV1/F00806": {
+    "units": 17,
+    "agree": 13
+   },
+   "CV1/F00818": {
+    "units": 36,
+    "agree": 34
+   },
+   "CV2/F00059": {
+    "units": 24,
+    "agree": 16
+   },
+   "CV2/F00082": {
+    "units": 9,
+    "agree": 5
+   },
+   "CV2/F00108": {
+    "units": 21,
+    "agree": 12
+   },
+   "CV2/F00332": {
+    "units": 16,
+    "agree": 12
+   },
+   "CV2/F00343": {
+    "units": 9,
+    "agree": 8
+   },
+   "CV2/F00442": {
+    "units": 37,
+    "agree": 21
+   },
+   "CV2/F00554": {
+    "units": 31,
+    "agree": 26
+   },
+   "CV2/F00558": {
+    "units": 25,
+    "agree": 18
+   },
+   "CV2/F00645": {
+    "units": 12,
+    "agree": 11
+   },
+   "CV2/F00682": {
+    "units": 30,
+    "agree": 28
+   }
+  },
+  "leave_one_pair_out_accuracy": {
+   "CV1/F00021": 0.7860696517412935,
+   "CV1/F00029": 0.7774869109947644,
+   "CV1/F00052": 0.7728459530026109,
+   "CV1/F00059": 0.7906976744186046,
+   "CV1/F00187": 0.7819548872180451,
+   "CV1/F00351": 0.7860696517412935,
+   "CV1/F00610": 0.7901554404145078,
+   "CV1/F00690": 0.7866004962779156,
+   "CV1/F00806": 0.7868020304568528,
+   "CV1/F00818": 0.7706666666666667,
+   "CV2/F00059": 0.7932816537467701,
+   "CV2/F00082": 0.7910447761194029,
+   "CV2/F00108": 0.7974358974358975,
+   "CV2/F00332": 0.7873417721518987,
+   "CV2/F00343": 0.7835820895522388,
+   "CV2/F00442": 0.8074866310160428,
+   "CV2/F00554": 0.781578947368421,
+   "CV2/F00558": 0.7901554404145078,
+   "CV2/F00645": 0.7819548872180451,
+   "CV2/F00682": 0.7742782152230971
+  }
+ },
+ "grounding": {
+  "positive_items": 222,
+  "invalid_quote_items": 0,
+  "quote_validity": 1.0
+ }
+}

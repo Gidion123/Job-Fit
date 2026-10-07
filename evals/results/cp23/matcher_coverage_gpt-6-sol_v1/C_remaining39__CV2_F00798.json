@@ -1,0 +1,80 @@
+{
+  "cv_id": "CV2",
+  "job_id": "F00798",
+  "model": "gpt-6-sol",
+  "status": "done",
+  "error_code": null,
+  "wall_ms": 3728,
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+        "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ],
+  "scores": {
+    "H1": {
+      "score": {
+        "score_pct": 50.0,
+        "status": "final",
+        "matched": 0,
+        "partial": 1,
+        "required_total": 1,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    },
+    "H2": {
+      "score": {
+        "score_pct": 50.0,
+        "status": "final",
+        "matched": 0,
+        "partial": 1,
+        "required_total": 1,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    },
+    "H2v2": {
+      "score": {
+        "score_pct": 50.0,
+        "status": "final",
+        "matched": 0,
+        "partial": 1,
+        "required_total": 1,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    }
+  }
+}

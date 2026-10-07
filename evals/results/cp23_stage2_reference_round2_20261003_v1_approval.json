@@ -1,0 +1,17 @@
+{
+  "decision_id": "D-064",
+  "approved_by": "Dion",
+  "date": "2026-10-03",
+  "approval_text": "Setuju protokol dan batas tambahan US$6,40",
+  "scope": "cp23_stage2_reference_round2_20261003_v1",
+  "ceiling_usd": "6.40",
+  "plan_sha256": "3d4d54d2df17f99932c1f20d33fc729b657cbf7a473d310a12d2c279da62b67b",
+  "proposal_sha256": "d43d306c05f6d1c1e648a2edceeeb24b9d898880105670d5c8f317c65b662b37",
+  "implementation_note": "Frozen executor implements the accepted proposal, with only exact public dated response IDs; no runtime default changes",
+  "exclusions": [
+    "test set",
+    "mass extraction",
+    "gold/prediction correction",
+    "automatic winner"
+  ]
+}

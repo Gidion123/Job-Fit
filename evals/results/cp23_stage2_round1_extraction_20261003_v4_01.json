@@ -1,0 +1,359 @@
+{
+  "job_id": "deepseek-flash/F00332",
+  "source_job_id": "F00332",
+  "model": "deepseek-flash",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "plan_sha256": "b901bad9176e33d45845dcd9748d2c3eb05bbf627b592655e174d697b2e9a0c2",
+  "source_sha256": "9113fae9a5efa7be34c475f2ddca9a2adc34a2edd2b57f7a78da494ef1381619",
+  "prompt_version": "jd-prompt-v1.4-experimental",
+  "status": "done",
+  "attempts": 2,
+  "error_code": null,
+  "extraction": {
+    "job_id": "F00332",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Fresh graduate or bachelor's degree in an analytical or quantitative discipline (e.g., math, statistics, engineering, computer science); other disciplines will be considered.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "education_degree_analytical_quantitative",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Fresh graduate",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Bachelor's degree in an analytical or quantitative discipline (e.g., math, statistics, engineering, computer science)",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Fresh Graduate or Bachelor's degree in an analytical or quantitative discipline (e.g., math, statistics, engineering, computer science); other disciplines will be considered."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Experience using statistical computer languages such as Python.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience using statistical computer languages such as Python, SQL, and MS Excel."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Experience using statistical computer languages such as SQL.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "sql",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience using statistical computer languages such as Python, SQL, and MS Excel."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Experience using statistical computer languages such as MS Excel.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "ms_excel",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience using statistical computer languages such as Python, SQL, and MS Excel."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Good communication skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "communication_skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good communication skills and ability to work collaboratively in a team."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Ability to work collaboratively in a team.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "teamwork",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good communication skills and ability to work collaboratively in a team."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Excellent problem-solving skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "problem_solving",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Excellent problem-solving skills with a drive to learn and master new technologies and techniques."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Drive to learn and master new technologies and techniques.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "learning_drive",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Excellent problem-solving skills with a drive to learn and master new technologies and techniques."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Willingness to learn new skills independently.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "independent_learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Willingness to learn new skills independently and strong sense of project ownership."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Strong sense of project ownership.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "project_ownership",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Willingness to learn new skills independently and strong sense of project ownership."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Comfortable exploring data.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "data_exploration",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Comfortable exploring data, investigating anomalies, and building SQL-based analyses."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Comfortable investigating anomalies.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "anomaly_investigation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Comfortable exploring data, investigating anomalies, and building SQL-based analyses."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Comfortable building SQL-based analyses.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "sql_based_analyses",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Comfortable exploring data, investigating anomalies, and building SQL-based analyses."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Experience working with large tabular datasets to detect trends.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "large_tabular_datasets_trend_detection",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience working with large tabular datasets to detect trends and anomalies and communicate findings as actionable recommendations."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Experience working with large tabular datasets to detect anomalies.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "large_tabular_datasets_anomaly_detection",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience working with large tabular datasets to detect trends and anomalies and communicate findings as actionable recommendations."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Experience working with large tabular datasets to communicate findings as actionable recommendations.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "large_tabular_datasets_communication",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience working with large tabular datasets to detect trends and anomalies and communicate findings as actionable recommendations."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Exposure to credit scoring modelling concepts.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "credit_scoring_modelling_concepts",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Exposure to credit scoring modelling concepts is a plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  },
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 8,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02",
+          "U03",
+          "U04"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U05",
+          "U06"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U07",
+          "U08"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U09",
+          "U10"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U11",
+          "U12",
+          "U13"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U14",
+          "U15",
+          "U16"
+        ]
+      },
+      {
+        "source_id": "Q08",
+        "unit_ids": [
+          "U17"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "cache_hit": false,
+  "latency_ms": 93293,
+  "result_sha256": "809739d5c67c6ae09fb99b6bca9f789fad1863a294878d656f7675caaa806e25"
+}

@@ -1,0 +1,891 @@
+{
+ "job_id": "F00032",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "review_required",
+  "bullet_count": 5,
+  "uncovered_bullet_indices": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 0,
+  "inventory_mappings": [],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00032",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Bachelor's degree in Computer science, Engineering, or a related field",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "education",
+    "normalized_name": "Bachelor's degree in Computer science, Engineering, or a related field",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Bachelor's degree in Computer science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Bachelor's degree in Engineering",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Bachelor's degree in a related field",
+      "field": "education",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Bachelor's degree in Computer science, Engineering, or a related field."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "2-5 years of experience in AI Engineering, Full-Stack Development, Backend Engineering, or related roles",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "2-5 years of experience in AI Engineering, Full-Stack Development, Backend Engineering, or related roles",
+    "min_years": 2.0,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "2-5 years of experience in AI Engineering",
+      "field": "experience_duration",
+      "min_years": 2.0
+     },
+     {
+      "branch_id": "B2",
+      "text": "2-5 years of experience in Full-Stack Development",
+      "field": "experience_duration",
+      "min_years": 2.0
+     },
+     {
+      "branch_id": "B3",
+      "text": "2-5 years of experience in Backend Engineering",
+      "field": "experience_duration",
+      "min_years": 2.0
+     },
+     {
+      "branch_id": "B4",
+      "text": "2-5 years of experience in related roles",
+      "field": "experience_duration",
+      "min_years": 2.0
+     }
+    ],
+    "source_quotes": [
+     "2-5 years of experience in AI Engineering, Full-Stack Development, Backend Engineering, or related roles."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Fluent bilingual communication (Listening/Speaking/Reading/Writing) in Mandarin or English",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "language",
+    "normalized_name": "Fluent bilingual communication (Listening/Speaking/Reading/Writing) in Mandarin or English",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Fluent bilingual communication (Listening/Speaking/Reading/Writing) in Mandarin",
+      "field": "language",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Fluent bilingual communication (Listening/Speaking/Reading/Writing) in English",
+      "field": "language",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Fluent bilingual communication (Listening/Speaking/Reading/Writing) in Mandarin or English."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Strong proficiency in Node.js/TypeScript or Python",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Strong proficiency in Node.js/TypeScript or Python",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Strong proficiency in Node.js/TypeScript",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Strong proficiency in Python",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Strong proficiency in Node.js/TypeScript or Python."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Experience with modern frontend frameworks such as React, Next.js, or similar",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Experience with modern frontend frameworks such as React, Next.js, or similar",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Experience with modern frontend frameworks such as React",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Experience with modern frontend frameworks such as Next.js",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Experience with modern frontend frameworks such as similar",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience with modern frontend frameworks such as React, Next.js, or similar."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Hands-on experience integrating LLM/Generative AI APIs such as OpenAI, Claude, Gemini, or similar",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Hands-on experience integrating LLM/Generative AI APIs such as OpenAI, Claude, Gemini, or similar",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Hands-on experience integrating LLM/Generative AI APIs such as OpenAI",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Hands-on experience integrating LLM/Generative AI APIs such as Claude",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Hands-on experience integrating LLM/Generative AI APIs such as Gemini",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "Hands-on experience integrating LLM/Generative AI APIs such as similar",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Hands-on experience integrating LLM/Generative AI APIs such as OpenAI, Claude, Gemini, or similar."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Practical experience building AI Agents, agentic workflows, or AI-powered automation",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Practical experience building AI Agents, agentic workflows, or AI-powered automation",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Practical experience building AI Agents",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Practical experience building agentic workflows",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Practical experience building AI-powered automation",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Practical experience building AI Agents, agentic workflows, or AI-powered automation."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Strong understanding of RAG",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Strong understanding of RAG",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong understanding of RAG, embeddings, vector search, tokens, LLM cost, context management, and hallucination mitigation."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Strong understanding of embeddings",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Strong understanding of embeddings",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong understanding of RAG, embeddings, vector search, tokens, LLM cost, context management, and hallucination mitigation."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "Strong understanding of vector search",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Strong understanding of vector search",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong understanding of RAG, embeddings, vector search, tokens, LLM cost, context management, and hallucination mitigation."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "Strong understanding of tokens",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Strong understanding of tokens",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong understanding of RAG, embeddings, vector search, tokens, LLM cost, context management, and hallucination mitigation."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "Strong understanding of LLM cost",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Strong understanding of LLM cost",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong understanding of RAG, embeddings, vector search, tokens, LLM cost, context management, and hallucination mitigation."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U13",
+    "text": "Strong understanding of context management",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Strong understanding of context management",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong understanding of RAG, embeddings, vector search, tokens, LLM cost, context management, and hallucination mitigation."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U14",
+    "text": "Strong understanding of hallucination mitigation",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Strong understanding of hallucination mitigation",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong understanding of RAG, embeddings, vector search, tokens, LLM cost, context management, and hallucination mitigation."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U15",
+    "text": "Experience with REST APIs",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience with REST APIs",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience with REST APIs, SQL/NoSQL databases, caching, queues, and third-party integrations."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U16",
+    "text": "Experience with SQL/NoSQL databases",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Experience with SQL/NoSQL databases",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience with REST APIs, SQL/NoSQL databases, caching, queues, and third-party integrations."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U17",
+    "text": "Experience with caching",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience with caching",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience with REST APIs, SQL/NoSQL databases, caching, queues, and third-party integrations."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U18",
+    "text": "Experience with queues",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience with queues",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience with REST APIs, SQL/NoSQL databases, caching, queues, and third-party integrations."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U19",
+    "text": "Experience with third-party integrations",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience with third-party integrations",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience with REST APIs, SQL/NoSQL databases, caching, queues, and third-party integrations."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U20",
+    "text": "Familiarity with AWS, GCP, Azure, or similar cloud platforms",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Familiarity with AWS, GCP, Azure, or similar cloud platforms",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Familiarity with AWS",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Familiarity with GCP",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Familiarity with Azure",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "Familiarity with similar cloud platforms",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Familiarity with AWS, GCP, Azure, or similar cloud platforms."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U21",
+    "text": "Strong software engineering practices including testing",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Strong software engineering practices including testing",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong software engineering practices including testing, debugging, logging, monitoring, documentation, and version control."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U22",
+    "text": "Strong software engineering practices including debugging",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Strong software engineering practices including debugging",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong software engineering practices including testing, debugging, logging, monitoring, documentation, and version control."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U23",
+    "text": "Strong software engineering practices including logging",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Strong software engineering practices including logging",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong software engineering practices including testing, debugging, logging, monitoring, documentation, and version control."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U24",
+    "text": "Strong software engineering practices including monitoring",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Strong software engineering practices including monitoring",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong software engineering practices including testing, debugging, logging, monitoring, documentation, and version control."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U25",
+    "text": "Strong software engineering practices including documentation",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Strong software engineering practices including documentation",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong software engineering practices including testing, debugging, logging, monitoring, documentation, and version control."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U26",
+    "text": "Strong software engineering practices including version control",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Strong software engineering practices including version control",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong software engineering practices including testing, debugging, logging, monitoring, documentation, and version control."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U27",
+    "text": "Strong problem-solving skills",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Strong problem-solving skills",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong problem-solving skills and ability to work independently in a fast-paced environment."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U28",
+    "text": "Ability to work independently in a fast-paced environment",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Ability to work independently in a fast-paced environment",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong problem-solving skills and ability to work independently in a fast-paced environment."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U29",
+    "text": "Experience with LangChain, LlamaIndex, or custom AI orchestration",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Experience with LangChain, LlamaIndex, or custom AI orchestration",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Experience with LangChain",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Experience with LlamaIndex",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Experience with custom AI orchestration",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience with LangChain, LlamaIndex, or custom AI orchestration."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U30",
+    "text": "Experience with vector databases such as pgvector, Pinecone, Qdrant, or Weaviate",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Experience with vector databases such as pgvector, Pinecone, Qdrant, or Weaviate",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Experience with vector databases such as pgvector",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Experience with vector databases such as Pinecone",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Experience with vector databases such as Qdrant",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "Experience with vector databases such as Weaviate",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience with vector databases such as pgvector, Pinecone, Qdrant, or Weaviate."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U31",
+    "text": "Experience with n8n, Zapier, or other workflow automation tools",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Experience with n8n, Zapier, or other workflow automation tools",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Experience with n8n",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Experience with Zapier",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Experience with other workflow automation tools",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience with n8n, Zapier, or other workflow automation tools."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U32",
+    "text": "Familiarity with MLOps/LLMOps",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Familiarity with MLOps/LLMOps",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Familiarity with MLOps/LLMOps and observability tools such as OpenTelemetry, Prometheus/Grafana, or Sentry."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U33",
+    "text": "Familiarity with observability tools such as OpenTelemetry, Prometheus/Grafana, or Sentry",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Familiarity with observability tools such as OpenTelemetry, Prometheus/Grafana, or Sentry",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Familiarity with observability tools such as OpenTelemetry",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Familiarity with observability tools such as Prometheus/Grafana",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Familiarity with observability tools such as Sentry",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Familiarity with MLOps/LLMOps and observability tools such as OpenTelemetry, Prometheus/Grafana, or Sentry."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U34",
+    "text": "Understanding of microservices architecture",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Understanding of microservices architecture",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Understanding of microservices architecture."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U35",
+    "text": "Experience with STT/TTS or audio AI pipelines",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Experience with STT/TTS or audio AI pipelines",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Experience with STT/TTS",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Experience with audio AI pipelines",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience with STT/TTS or audio AI pipelines."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U36",
+    "text": "Experience building AI products for e-commerce, procurement, recruitment, or business workflow platforms",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Experience building AI products for e-commerce, procurement, recruitment, or business workflow platforms",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Experience building AI products for e-commerce",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Experience building AI products for procurement",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Experience building AI products for recruitment",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "Experience building AI products for business workflow platforms",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience building AI products for e-commerce, procurement, recruitment, or business workflow platforms."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U37",
+    "text": "Previous experience in a startup or fast-paced product environment",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "other",
+    "normalized_name": "Previous experience in a startup or fast-paced product environment",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Previous experience in a startup",
+      "field": "other",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Previous experience in a fast-paced product environment",
+      "field": "other",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Previous experience in a startup or fast-paced product environment."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U38",
+    "text": "Position based in South Jakarta, Jakarta",
+    "kind": "simple",
+    "importance": "required",
+    "field": "location",
+    "normalized_name": "Position based in South Jakarta, Jakarta",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "This is a full-time position based in South Jakarta, Jakarta, offering you the opportunity to develop your skills and gain valuable experience in a dynamic, fast-paced technology environment."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "looks_incomplete",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

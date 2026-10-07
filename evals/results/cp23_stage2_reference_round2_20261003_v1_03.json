@@ -1,0 +1,432 @@
+{
+  "stage_id": "gpt-6-sol/extraction/F00815",
+  "model": "gpt-6-sol",
+  "kind": "extraction",
+  "job_id": "F00815",
+  "extraction": {
+    "job_id": "F00815",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Proven experience as an AI Engineer or Machine Learning Engineer",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "U01-B1",
+            "text": "Proven experience as an AI Engineer",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "U01-B2",
+            "text": "Proven experience as a Machine Learning Engineer",
+            "field": "other",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Proven experience as an AI Engineer / Machine Learning Engineer"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Strong programming skills in Python",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong programming skills in Python"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Experience with LLM frameworks, with OpenAI, LangChain and LlamaIndex given as examples",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "LLM frameworks",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with LLM frameworks (e.g. OpenAI, LangChain, LlamaIndex), Prompt engineering and RAG architectures"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Experience with prompt engineering",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Prompt engineering",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with LLM frameworks (e.g. OpenAI, LangChain, LlamaIndex), Prompt engineering and RAG architectures"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Experience with RAG architectures",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "RAG architectures",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with LLM frameworks (e.g. OpenAI, LangChain, LlamaIndex), Prompt engineering and RAG architectures"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Solid understanding of machine learning fundamentals",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Machine learning fundamentals",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Solid understanding of machine learning fundamentals, data pipelines and ETL processes"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Solid understanding of data pipelines",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Data pipelines",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Solid understanding of machine learning fundamentals, data pipelines and ETL processes"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Solid understanding of ETL processes",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "ETL processes",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Solid understanding of machine learning fundamentals, data pipelines and ETL processes"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Experience building APIs with FastAPI, Flask, or a similar framework",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "U09-B1",
+            "text": "Experience building APIs with FastAPI",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U09-B2",
+            "text": "Experience building APIs with Flask",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U09-B3",
+            "text": "Experience building APIs with a similar framework",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience building and deploying APIs (FastAPI, Flask, etc.)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Experience deploying APIs with FastAPI, Flask, or a similar framework",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "U10-B1",
+            "text": "Experience deploying APIs with FastAPI",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U10-B2",
+            "text": "Experience deploying APIs with Flask",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U10-B3",
+            "text": "Experience deploying APIs with a similar framework",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience building and deploying APIs (FastAPI, Flask, etc.)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Familiarity with SQL databases, such as PostgreSQL",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "SQL databases",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with databases such as SQL (PostgreSQL) and Vector databases (e.g. Pinecone, FAISS, Weaviate)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Familiarity with vector databases, with Pinecone, FAISS and Weaviate given as examples",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Vector databases",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with databases such as SQL (PostgreSQL) and Vector databases (e.g. Pinecone, FAISS, Weaviate)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Experience with AWS or another cloud platform",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "U13-B1",
+            "text": "Experience with AWS",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U13-B2",
+            "text": "Experience with another cloud platform",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience with AWS or other cloud platforms"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Understanding of Git as a software engineering practice",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Git",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Understanding of software engineering best practices (Git, testing, CI/CD)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Understanding of software testing practices",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Software testing practices",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Understanding of software engineering best practices (Git, testing, CI/CD)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Understanding of CI/CD practices",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "CI/CD practices",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Understanding of software engineering best practices (Git, testing, CI/CD)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Bachelor's degree in Computer Science, Engineering, or a related field",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "Bachelor's degree",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "U17-B1",
+            "text": "Bachelor's degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "U17-B2",
+            "text": "Bachelor's degree in Engineering",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "U17-B3",
+            "text": "Bachelor's degree in a related field",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Bachelor's degree in Computer Science, Engineering, or related field"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/gpt-6-sol"
+  },
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 9,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 9,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U03",
+          "U04",
+          "U05"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U06",
+          "U07",
+          "U08"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U09",
+          "U10"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U11",
+          "U12"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U13"
+        ]
+      },
+      {
+        "source_id": "Q08",
+        "unit_ids": [
+          "U14",
+          "U15",
+          "U16"
+        ]
+      },
+      {
+        "source_id": "Q09",
+        "unit_ids": [
+          "U17"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "prompt_version": "jd-prompt-v1.4-experimental",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "stage_wall_ms": 23438,
+  "semantic_review": "pending",
+  "metrics": null
+}

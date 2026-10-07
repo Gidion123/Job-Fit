@@ -1,0 +1,15 @@
+{
+  "scope": "development_only",
+  "run_id": "cp23_end_to_end_dev_20261004_v1",
+  "plan_sha256": "54c0d5d1cec7ebf08b983083aaad785f0ec5d6347bb85909d24f698e904647ec",
+  "counts": {
+    "matching_done": 35,
+    "units": 584,
+    "jd_quotes": 585,
+    "assessments": 584,
+    "cv_quotes": 508
+  },
+  "faults": [],
+  "semantic_entailment_approved": false,
+  "limit": "Exact occurrence and identity only; a quote may still fail to support a model label."
+}

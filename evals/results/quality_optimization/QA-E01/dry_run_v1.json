@@ -1,0 +1,203 @@
+{
+ "created_at": "2026-10-07T07:33:14+00:00",
+ "plan": {
+  "experiment_id": "QA-E01",
+  "hypothesis": "QA-H01",
+  "parent": "QA-E00-FI-R1",
+  "prompt": "prompts/evidence_matching_v1_2_qa_e01.md",
+  "subsets": [
+   "optimization"
+  ],
+  "ranking": true,
+  "replicate_of": null,
+  "purpose": "MATCH/PARTIAL calibration toward guideline B1/B2.",
+  "prompt_record": {
+   "prompt_file": "prompts/evidence_matching_v1_2_qa_e01.md",
+   "prompt_sha256": "3fae757a2b6eb5283d05b0d157b67ed3b5e97af7d7958428fad5f07acedfe0d6",
+   "experiment_id": "QA-E01",
+   "parent_prompt": "prompts/evidence_matching_v1_1.md",
+   "parent_prompt_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+   "prompt_version": "evidence-prompt-v1.2-qa-e01",
+   "hypothesis": "QA-H01",
+   "created_at": "2026-10-07",
+   "intended_change": "Calibrate MATCH versus PARTIAL toward guideline B1/B2 (D-042): clear contextual use in work, project, study or research is MATCH; PARTIAL only for the listed reasons.",
+   "change_scope": "v1.1 text kept word for word (title line renamed); one paragraph added at the end"
+  },
+  "fixed_input_pairs": [
+   [
+    "CV1",
+    "F00021"
+   ],
+   [
+    "CV1",
+    "F00029"
+   ],
+   [
+    "CV1",
+    "F00052"
+   ],
+   [
+    "CV1",
+    "F00059"
+   ],
+   [
+    "CV1",
+    "F00187"
+   ],
+   [
+    "CV1",
+    "F00351"
+   ],
+   [
+    "CV1",
+    "F00610"
+   ],
+   [
+    "CV1",
+    "F00690"
+   ],
+   [
+    "CV1",
+    "F00806"
+   ],
+   [
+    "CV1",
+    "F00818"
+   ],
+   [
+    "CV2",
+    "F00059"
+   ],
+   [
+    "CV2",
+    "F00082"
+   ],
+   [
+    "CV2",
+    "F00108"
+   ],
+   [
+    "CV2",
+    "F00332"
+   ],
+   [
+    "CV2",
+    "F00343"
+   ],
+   [
+    "CV2",
+    "F00442"
+   ],
+   [
+    "CV2",
+    "F00554"
+   ],
+   [
+    "CV2",
+    "F00558"
+   ],
+   [
+    "CV2",
+    "F00645"
+   ],
+   [
+    "CV2",
+    "F00682"
+   ]
+  ],
+  "ranking_pairs": [
+   [
+    "CV1",
+    "F00020"
+   ],
+   [
+    "CV1",
+    "F00022"
+   ],
+   [
+    "CV1",
+    "F00036"
+   ],
+   [
+    "CV1",
+    "F00090"
+   ],
+   [
+    "CV1",
+    "F00103"
+   ],
+   [
+    "CV1",
+    "F00312"
+   ],
+   [
+    "CV1",
+    "F00332"
+   ],
+   [
+    "CV1",
+    "F00556"
+   ],
+   [
+    "CV1",
+    "F00655"
+   ],
+   [
+    "CV2",
+    "F00018"
+   ],
+   [
+    "CV2",
+    "F00020"
+   ],
+   [
+    "CV2",
+    "F00052"
+   ],
+   [
+    "CV2",
+    "F00074"
+   ],
+   [
+    "CV2",
+    "F00176"
+   ],
+   [
+    "CV2",
+    "F00559"
+   ],
+   [
+    "CV2",
+    "F00629"
+   ],
+   [
+    "CV2",
+    "F00645"
+   ],
+   [
+    "CV2",
+    "F00650"
+   ],
+   [
+    "CV2",
+    "F00815"
+   ]
+  ],
+  "calls": 39,
+  "split_sha256": "8a6c9e73dcae31d90e88ef6b27f2054e4a396e684a269f9a415613e8d88403a8",
+  "run_id": "qa_phase_a_w1_qa-e01"
+ },
+ "estimate": {
+  "observed_sol_calls": 91,
+  "median_cost_per_call": 0.028697,
+  "p90_cost_per_call": 0.040157,
+  "prompt_input_factor": 1.0249,
+  "estimate_usd": 1.147,
+  "upper_estimate_usd": 1.6051,
+  "wave1_cap_usd": 7.0,
+  "wave1_spent_usd": 0,
+  "ledger_total_usd": 8.152683,
+  "project_hard_stop_usd": 18.5
+ },
+ "api_calls": 0
+}

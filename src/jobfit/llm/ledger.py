@@ -5,6 +5,9 @@ One line per API call. Prompts, CV text, and keys are never stored here.
 from __future__ import annotations
 
 import json
+import os
+import fcntl
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -25,6 +28,11 @@ class UsageRecord(BaseModel):
     latency_ms: int | None = None
     ok: bool = True
     error_type: str | None = None
+    request_id: str | None = None
+    dimensions: int | None = None
+    batch_size: int | None = None
+    max_tokens: int | None = None
+    finish_reason: str | None = None
 
 
 class UsageLedger:
@@ -35,6 +43,19 @@ class UsageLedger:
         self.path.parent.mkdir(parents=True, exist_ok=True)
         with self.path.open("a", encoding="utf-8") as f:
             f.write(record.model_dump_json() + "\n")
+            f.flush()
+            os.fsync(f.fileno())
+
+    @contextmanager
+    def exclusive(self):
+        """Serialize embedding budget checks and paid attempts across local workers."""
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        with self.path.with_suffix(self.path.suffix + ".lock").open("a") as lock:
+            fcntl.flock(lock.fileno(), fcntl.LOCK_EX)
+            try:
+                yield
+            finally:
+                fcntl.flock(lock.fileno(), fcntl.LOCK_UN)
 
     def records(self) -> list[UsageRecord]:
         if not self.path.exists():

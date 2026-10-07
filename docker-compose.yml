@@ -1,7 +1,8 @@
 # Local database for development (System Design v1.3, section 13).
 # Start:  docker compose up -d db      Stop: docker compose down
 # The vector extension is created by the snapshot load script (CREATE EXTENSION IF NOT EXISTS vector).
-# The api and ui services are added in CP3 (Dockerfile.api, Dockerfile.ui).
+# Full app:  docker compose up -d --build   (UI on http://127.0.0.1:8501)
+# The api service starts with live analysis off (saved demo only). See Dockerfile.api.
 services:
   db:
     image: pgvector/pgvector:pg17
@@ -20,6 +21,35 @@ services:
       interval: 5s
       timeout: 3s
       retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: jobfit-api
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://jobfit:jobfit@db:5432/jobfit
+      JOBFIT_LIVE_ENABLED: "0"
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    container_name: jobfit-ui
+    restart: unless-stopped
+    environment:
+      JOBFIT_API_URL: http://api:8000
+    ports:
+      - "127.0.0.1:8501:8501"
+    depends_on:
+      api:
+        condition: service_healthy
 
 volumes:
   jobfit_pgdata:

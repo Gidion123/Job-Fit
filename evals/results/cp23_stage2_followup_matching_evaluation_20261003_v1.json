@@ -1,0 +1,3286 @@
+{
+  "schema_version": "cp23-followup-evidence-v1",
+  "scope": "same four reviewed development pairs;73 fixed units/model",
+  "fixed_adapter_acceptance": "D-063",
+  "verification_method": "human_acceptance_of_assisted_source_QA; not independent human annotation",
+  "extraction_metrics": null,
+  "extraction_gate": "D-064 new candidate alignment acceptance required",
+  "evidence_support": {
+    "MATCH": 35,
+    "PARTIAL": 22,
+    "NO_MATCH": 16
+  },
+  "by_model": {
+    "gpt-6-sol": {
+      "metrics": {
+        "classes": [
+          "MATCH",
+          "PARTIAL",
+          "NO_MATCH"
+        ],
+        "confusion": {
+          "MATCH": {
+            "MATCH": 31,
+            "PARTIAL": 3,
+            "NO_MATCH": 1,
+            "not_assessed": 0
+          },
+          "PARTIAL": {
+            "MATCH": 2,
+            "PARTIAL": 15,
+            "NO_MATCH": 5,
+            "not_assessed": 0
+          },
+          "NO_MATCH": {
+            "MATCH": 0,
+            "PARTIAL": 1,
+            "NO_MATCH": 15,
+            "not_assessed": 0
+          }
+        },
+        "per_class": {
+          "MATCH": {
+            "tp": 31,
+            "fp": 2,
+            "fn": 4,
+            "support": 35,
+            "precision": 0.9393939393939394,
+            "recall": 0.8857142857142857,
+            "f1": 0.9117647058823529
+          },
+          "PARTIAL": {
+            "tp": 15,
+            "fp": 4,
+            "fn": 7,
+            "support": 22,
+            "precision": 0.7894736842105263,
+            "recall": 0.6818181818181818,
+            "f1": 0.7317073170731707
+          },
+          "NO_MATCH": {
+            "tp": 15,
+            "fp": 6,
+            "fn": 1,
+            "support": 16,
+            "precision": 0.7142857142857143,
+            "recall": 0.9375,
+            "f1": 0.8108108108108109
+          }
+        },
+        "class_support_complete": true,
+        "macro_f1": 0.8180942779221115,
+        "selection_blocker": null,
+        "coverage": {
+          "numerator": 73,
+          "denominator": 73,
+          "value": 1.0
+        },
+        "protocol": "D-052_all_reference_not_assessed_FN"
+      },
+      "process_valid_matching": 4,
+      "original_matching_cases": 4,
+      "operations_all_extraction_and_matching": {
+        "live": {
+          "records": 9,
+          "cost_usd": 0.31770410000000004,
+          "latency_observed": 9,
+          "latency_missing": 0,
+          "p50_ms": 16134,
+          "p95_ms": 23381,
+          "percentile_method": "nearest_rank",
+          "failures": 0
+        },
+        "cached": {
+          "records": 0,
+          "cost_usd": 0,
+          "latency_observed": 0,
+          "latency_missing": 0,
+          "p50_ms": null,
+          "p95_ms": null,
+          "percentile_method": "nearest_rank",
+          "failures": 0
+        }
+      },
+      "operations_by_task": {
+        "jd_extraction": {
+          "live": {
+            "records": 4,
+            "cost_usd": 0.1501824,
+            "latency_observed": 4,
+            "latency_missing": 0,
+            "p50_ms": 21960,
+            "p95_ms": 23381,
+            "percentile_method": "nearest_rank",
+            "failures": 0
+          },
+          "cached": {
+            "records": 0,
+            "cost_usd": 0,
+            "latency_observed": 0,
+            "latency_missing": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "percentile_method": "nearest_rank",
+            "failures": 0
+          }
+        },
+        "evidence_matching": {
+          "live": {
+            "records": 5,
+            "cost_usd": 0.1675217,
+            "latency_observed": 5,
+            "latency_missing": 0,
+            "p50_ms": 15737,
+            "p95_ms": 16134,
+            "percentile_method": "nearest_rank",
+            "failures": 0
+          },
+          "cached": {
+            "records": 0,
+            "cost_usd": 0,
+            "latency_observed": 0,
+            "latency_missing": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "percentile_method": "nearest_rank",
+            "failures": 0
+          }
+        }
+      },
+      "matching_cost_usd": "0.1675217",
+      "safety_findings": {
+        "interpretation_question": 2,
+        "unsupported_positive_fixed_scope": 1
+      }
+    },
+    "deepseek-v4-pro": {
+      "metrics": {
+        "classes": [
+          "MATCH",
+          "PARTIAL",
+          "NO_MATCH"
+        ],
+        "confusion": {
+          "MATCH": {
+            "MATCH": 21,
+            "PARTIAL": 0,
+            "NO_MATCH": 4,
+            "not_assessed": 10
+          },
+          "PARTIAL": {
+            "MATCH": 6,
+            "PARTIAL": 3,
+            "NO_MATCH": 10,
+            "not_assessed": 3
+          },
+          "NO_MATCH": {
+            "MATCH": 0,
+            "PARTIAL": 0,
+            "NO_MATCH": 12,
+            "not_assessed": 4
+          }
+        },
+        "per_class": {
+          "MATCH": {
+            "tp": 21,
+            "fp": 6,
+            "fn": 14,
+            "support": 35,
+            "precision": 0.7777777777777778,
+            "recall": 0.6,
+            "f1": 0.6774193548387096
+          },
+          "PARTIAL": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 19,
+            "support": 22,
+            "precision": 1.0,
+            "recall": 0.13636363636363635,
+            "f1": 0.24
+          },
+          "NO_MATCH": {
+            "tp": 12,
+            "fp": 14,
+            "fn": 4,
+            "support": 16,
+            "precision": 0.46153846153846156,
+            "recall": 0.75,
+            "f1": 0.5714285714285714
+          }
+        },
+        "class_support_complete": true,
+        "macro_f1": 0.4962826420890936,
+        "selection_blocker": null,
+        "coverage": {
+          "numerator": 56,
+          "denominator": 73,
+          "value": 0.7671232876712328
+        },
+        "protocol": "D-052_all_reference_not_assessed_FN"
+      },
+      "process_valid_matching": 3,
+      "original_matching_cases": 4,
+      "operations_all_extraction_and_matching": {
+        "live": {
+          "records": 16,
+          "cost_usd": 0.08771413740000002,
+          "latency_observed": 16,
+          "latency_missing": 0,
+          "p50_ms": 124280,
+          "p95_ms": 235535,
+          "percentile_method": "nearest_rank",
+          "failures": 2
+        },
+        "cached": {
+          "records": 0,
+          "cost_usd": 0,
+          "latency_observed": 0,
+          "latency_missing": 0,
+          "p50_ms": null,
+          "p95_ms": null,
+          "percentile_method": "nearest_rank",
+          "failures": 0
+        }
+      },
+      "operations_by_task": {
+        "jd_extraction": {
+          "live": {
+            "records": 10,
+            "cost_usd": 0.07097368440000001,
+            "latency_observed": 10,
+            "latency_missing": 0,
+            "p50_ms": 175358,
+            "p95_ms": 235535,
+            "percentile_method": "nearest_rank",
+            "failures": 2
+          },
+          "cached": {
+            "records": 0,
+            "cost_usd": 0,
+            "latency_observed": 0,
+            "latency_missing": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "percentile_method": "nearest_rank",
+            "failures": 0
+          }
+        },
+        "evidence_matching": {
+          "live": {
+            "records": 6,
+            "cost_usd": 0.016740453,
+            "latency_observed": 6,
+            "latency_missing": 0,
+            "p50_ms": 122388,
+            "p95_ms": 140562,
+            "percentile_method": "nearest_rank",
+            "failures": 0
+          },
+          "cached": {
+            "records": 0,
+            "cost_usd": 0,
+            "latency_observed": 0,
+            "latency_missing": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "percentile_method": "nearest_rank",
+            "failures": 0
+          }
+        }
+      },
+      "matching_cost_usd": "0.0167404530",
+      "safety_findings": {
+        "interpretation_question": 2,
+        "insufficient_cited_context": 1,
+        "unsupported_positive_fixed_scope": 2,
+        "unsupported_positive": 2
+      }
+    }
+  },
+  "cases": [
+    {
+      "stage_id": "gpt-6-sol/matching/CV1/F00332",
+      "model": "gpt-6-sol",
+      "status": "done",
+      "attempts": 1,
+      "error_code": null,
+      "stage_wall_ms": 11688,
+      "reviewed_logical_units": 16,
+      "rows": [
+        {
+          "unit_id": "P30-U01",
+          "requirement": "Fresh graduate | bachelor in quantitative/analytical or other considered discipline",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U01",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P30-U01/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+                ]
+              },
+              {
+                "branch_id": "P30-U01/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+                ]
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U02",
+          "requirement": "Python",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U02",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U03",
+          "requirement": "SQL",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U03",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U04",
+          "requirement": "Microsoft Excel",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U04",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U05",
+          "requirement": "Communication",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U05",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U06",
+          "requirement": "Team collaboration",
+          "gold_label": "NO_MATCH",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U06",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "interpretation_question",
+          "note": "Dashboard delivery for a marketing team is not explicit collaboration; PARTIAL versus reviewed NO_MATCH is kept as a rubric question."
+        },
+        {
+          "unit_id": "P30-U07",
+          "requirement": "Problem solving",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U07",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U08",
+          "requirement": "Learning new techniques",
+          "gold_label": "PARTIAL",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U08",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U09",
+          "requirement": "Independent learning",
+          "gold_label": "PARTIAL",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U09",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U10",
+          "requirement": "Project ownership",
+          "gold_label": "PARTIAL",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U10",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U11",
+          "requirement": "Data exploration",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U11",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U12",
+          "requirement": "Anomaly investigation",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U12",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U13",
+          "requirement": "SQL-based analysis",
+          "gold_label": "MATCH",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U13",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+              "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U14",
+          "requirement": "Large tabular-data trend/anomaly analysis",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U14",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+              "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U15",
+          "requirement": "Communicating actionable findings",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U15",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U16",
+          "requirement": "Credit-scoring modelling",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U16",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        }
+      ],
+      "typed_attempt_diagnostics": [
+        {
+          "attempt": 1,
+          "offline_validation": "passed",
+          "first_observed_trigger": null,
+          "quote_occurrences": 14,
+          "invalid_quote_occurrences": 0
+        }
+      ],
+      "result_file": "evals/results/cp23_stage2_reference_round2_20261003_v1_05.json",
+      "result_sha256": "c18006ffb6f9448e886c880f4be2eba2cf8aa353cd3e4153a6d295c09a8e3103"
+    },
+    {
+      "stage_id": "gpt-6-sol/matching/CV1/F00036",
+      "model": "gpt-6-sol",
+      "status": "done",
+      "attempts": 1,
+      "error_code": null,
+      "stage_wall_ms": 16045,
+      "reviewed_logical_units": 17,
+      "rows": [
+        {
+          "unit_id": "P09-U01",
+          "requirement": "Bachelor Statistics | Mathematics | CS | Informatics | DS",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U01",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P09-U01/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+                ]
+              },
+              {
+                "branch_id": "P09-U01/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U01/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U01/B04",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U01/B05",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P09-U02",
+          "requirement": "At least 2-3 years professional DS or similar work",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U02",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+              "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P09-U03",
+          "requirement": "Python | R | SQL for data manipulation and analysis",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U03",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P09-U03/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+                ]
+              },
+              {
+                "branch_id": "P09-U03/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+                ]
+              },
+              {
+                "branch_id": "P09-U03/B03",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+                ]
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P09-U04",
+          "requirement": "Supervised ML",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U04",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P09-U05",
+          "requirement": "Unsupervised ML",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U05",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P09-U06",
+          "requirement": "Deep learning",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U06",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P09-U07",
+          "requirement": "pandas | scikit-learn | TensorFlow | PyTorch",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U07",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P09-U07/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+                ]
+              },
+              {
+                "branch_id": "P09-U07/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+                ]
+              },
+              {
+                "branch_id": "P09-U07/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U07/B04",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P09-U08",
+          "requirement": "Exploratory data analysis",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U08",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P09-U09",
+          "requirement": "Tableau | Power BI | Matplotlib",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U09",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P09-U09/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U09/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U09/B03",
+                "label": "PARTIAL",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+                ]
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P09-U10",
+          "requirement": "Descriptive statistics",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U10",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+              "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P09-U11",
+          "requirement": "Inferential statistics",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U11",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P09-U12",
+          "requirement": "Research methodology",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U12",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\"",
+              "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P09-U13",
+          "requirement": "Explaining technical analysis to nontechnical stakeholders",
+          "gold_label": "MATCH",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U13",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P09-U14",
+          "requirement": "Database management",
+          "gold_label": "MATCH",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U14",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+              "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P09-U15",
+          "requirement": "Hadoop | Spark | cloud big-data experience",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U15",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P09-U15/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U15/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U15/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P09-U16",
+          "requirement": "Problem solving",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U16",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P09-U17",
+          "requirement": "Attention to detail",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P09-U17",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        }
+      ],
+      "typed_attempt_diagnostics": [
+        {
+          "attempt": 1,
+          "offline_validation": "passed",
+          "first_observed_trigger": null,
+          "quote_occurrences": 20,
+          "invalid_quote_occurrences": 0
+        }
+      ],
+      "result_file": "evals/results/cp23_stage2_reference_round2_20261003_v1_06.json",
+      "result_sha256": "c8a367c0abb5a7d9affd0a6c51c4deb175e9c71206d09614cb71c9f387223e29"
+    },
+    {
+      "stage_id": "gpt-6-sol/matching/CV2/F00815",
+      "model": "gpt-6-sol",
+      "status": "done",
+      "attempts": 1,
+      "error_code": null,
+      "stage_wall_ms": 15814,
+      "reviewed_logical_units": 16,
+      "rows": [
+        {
+          "unit_id": "P52-U01",
+          "requirement": "Professional AI/ML engineer experience",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U01",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Marketing analyst moving into AI engineering. Three years of data work in digital marketing, followed by an intensive data science and AI bootcamp. Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+              "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U02",
+          "requirement": "Python",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U02",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U03",
+          "requirement": "OpenAI | LangChain | LlamaIndex LLM framework",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U03",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P52-U03/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+                ]
+              },
+              {
+                "branch_id": "P52-U03/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+                ]
+              },
+              {
+                "branch_id": "P52-U03/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U04",
+          "requirement": "Prompt engineering",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U04",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U05",
+          "requirement": "RAG",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U05",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "**Document Q&A Assistant (RAG)** · August 2026",
+              "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+              "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U06",
+          "requirement": "ML fundamentals",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U06",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+              "- Forecasted monthly ad spend with Prophet for internal planning."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U07",
+          "requirement": "Data pipelines",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U07",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U08",
+          "requirement": "ETL",
+          "gold_label": "PARTIAL",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U08",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U09",
+          "requirement": "FastAPI | Flask | equivalent API deployment",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U09",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P52-U09/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+                  "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+                ]
+              },
+              {
+                "branch_id": "P52-U09/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P52-U09/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U10",
+          "requirement": "SQL/PostgreSQL",
+          "gold_label": "PARTIAL",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U10",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "unsupported_positive_fixed_scope",
+          "note": "Quoted BigQuery SQL activity does not demonstrate PostgreSQL in context. Full MATCH exceeds the accepted SQL/PostgreSQL obligation; original JD example wording remains a reference-interpretation limitation."
+        },
+        {
+          "unit_id": "P52-U11",
+          "requirement": "Pinecone | FAISS | Weaviate vector technology",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U11",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P52-U11/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P52-U11/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+                ]
+              },
+              {
+                "branch_id": "P52-U11/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U12",
+          "requirement": "AWS | other cloud platform",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U12",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P52-U12/B01",
+                "label": "PARTIAL",
+                "check_status": "done",
+                "cv_quotes": [
+                  "- AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+                ]
+              },
+              {
+                "branch_id": "P52-U12/B02",
+                "label": "PARTIAL",
+                "check_status": "done",
+                "cv_quotes": [
+                  "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+                ]
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U13",
+          "requirement": "Git",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U13",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U14",
+          "requirement": "Testing",
+          "gold_label": "MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U14",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U15",
+          "requirement": "CI/CD",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U15",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U16",
+          "requirement": "Technical bachelor",
+          "gold_label": "PARTIAL",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U16",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        }
+      ],
+      "typed_attempt_diagnostics": [
+        {
+          "attempt": 1,
+          "offline_validation": "passed",
+          "first_observed_trigger": null,
+          "quote_occurrences": 19,
+          "invalid_quote_occurrences": 0
+        }
+      ],
+      "result_file": "evals/results/cp23_stage2_reference_round2_20261003_v1_07.json",
+      "result_sha256": "3cbd65227e811e9bf1384856f45da114c716429661ee2dd2f94cc06d0d4caa0d"
+    },
+    {
+      "stage_id": "gpt-6-sol/matching/CV2/F00018",
+      "model": "gpt-6-sol",
+      "status": "done",
+      "attempts": 2,
+      "error_code": null,
+      "stage_wall_ms": 29045,
+      "reviewed_logical_units": 24,
+      "rows": [
+        {
+          "unit_id": "P04-U01",
+          "requirement": "Standard ML algorithms",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U01",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+              "- Forecasted monthly ad spend with Prophet for internal planning."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U02",
+          "requirement": "Mathematical basis of ML algorithms",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U02",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U03",
+          "requirement": "LLMs in production",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U03",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+              "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U04",
+          "requirement": "RAG architecture",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U04",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+              "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U05",
+          "requirement": "Agentic systems",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U05",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U06",
+          "requirement": "AWS Bedrock",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U06",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U07",
+          "requirement": "Classification",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U07",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U08",
+          "requirement": "Regression",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U08",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Forecasted monthly ad spend with Prophet for internal planning."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U09",
+          "requirement": "Feature engineering",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U09",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U10",
+          "requirement": "Practical experience with ML models in production",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U10",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+              "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U11",
+          "requirement": "Experience with at least one of:\nNLP | LLM | Recommendation systems",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U11",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P04-U11/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+                ]
+              },
+              {
+                "branch_id": "P04-U11/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+                  "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+                ]
+              },
+              {
+                "branch_id": "P04-U11/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U12",
+          "requirement": "Software engineering beyond notebooks, with structured modules",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U12",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U13",
+          "requirement": "Python",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U13",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U14",
+          "requirement": "Docker",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U14",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U15",
+          "requirement": "English at strong upper-intermediate level",
+          "gold_label": "PARTIAL",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U15",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Indonesian (native), English (professional working proficiency)"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "interpretation_question",
+          "note": "Professional working proficiency is not an explicit strong-upper-intermediate level or standardized test result; no automatic CEFR conversion."
+        },
+        {
+          "unit_id": "P04-U16",
+          "requirement": "Communication",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U16",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Ran A/B tests for ad creatives and explained results to account managers."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U17",
+          "requirement": "Problem solving",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U17",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U18",
+          "requirement": "Practical experience with cloud platforms",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U18",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U19",
+          "requirement": "Deep learning models",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U19",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U20",
+          "requirement": "Taxonomies | ontologies",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U20",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P04-U20/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P04-U20/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U21",
+          "requirement": "ML pipeline orchestration",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U21",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U22",
+          "requirement": "Spark | Dask distributed processing",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U22",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P04-U22/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P04-U22/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U23",
+          "requirement": "Great Expectations",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U23",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U18-AWS",
+          "requirement": "Experience with the AWS cloud stack",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U18-AWS",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "- AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        }
+      ],
+      "typed_attempt_diagnostics": [
+        {
+          "attempt": 1,
+          "offline_validation": "failed",
+          "first_observed_trigger": "invalid_structured_output_or_source",
+          "quote_occurrences": 23,
+          "invalid_quote_occurrences": 0
+        },
+        {
+          "attempt": 2,
+          "offline_validation": "passed",
+          "first_observed_trigger": null,
+          "quote_occurrences": 22,
+          "invalid_quote_occurrences": 0
+        }
+      ],
+      "result_file": "evals/results/cp23_stage2_reference_round2_20261003_v1_08.json",
+      "result_sha256": "ac992daae27003f5439dd60222426e61b3833397440ddeccbdcba9efda6dd9d9"
+    },
+    {
+      "stage_id": "deepseek-v4-pro/matching/CV1/F00332",
+      "model": "deepseek-v4-pro",
+      "status": "done",
+      "attempts": 2,
+      "error_code": null,
+      "stage_wall_ms": 139879,
+      "reviewed_logical_units": 16,
+      "rows": [
+        {
+          "unit_id": "P30-U01",
+          "requirement": "Fresh graduate | bachelor in quantitative/analytical or other considered discipline",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U01",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P30-U01/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+                ]
+              },
+              {
+                "branch_id": "P30-U01/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+                ]
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U02",
+          "requirement": "Python",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U02",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U03",
+          "requirement": "SQL",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U03",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U04",
+          "requirement": "Microsoft Excel",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U04",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U05",
+          "requirement": "Communication",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U05",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U06",
+          "requirement": "Team collaboration",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U06",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U07",
+          "requirement": "Problem solving",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U07",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U08",
+          "requirement": "Learning new techniques",
+          "gold_label": "PARTIAL",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U08",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U09",
+          "requirement": "Independent learning",
+          "gold_label": "PARTIAL",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U09",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U10",
+          "requirement": "Project ownership",
+          "gold_label": "PARTIAL",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U10",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "- Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\""
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "interpretation_question",
+          "note": "A thesis title does not expressly establish project ownership; trait inference is kept separate from a confirmed technical unsupported claim."
+        },
+        {
+          "unit_id": "P30-U11",
+          "requirement": "Data exploration",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U11",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "insufficient_cited_context",
+          "note": "The MATCH agrees with the reference, but its cleaning/joining quote does not explicitly describe exploration; cohort analysis elsewhere is not cited."
+        },
+        {
+          "unit_id": "P30-U12",
+          "requirement": "Anomaly investigation",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U12",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U13",
+          "requirement": "SQL-based analysis",
+          "gold_label": "MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U13",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P30-U14",
+          "requirement": "Large tabular-data trend/anomaly analysis",
+          "gold_label": "PARTIAL",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U14",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "unsupported_positive_fixed_scope",
+          "note": "Cohort analysis is cited, but no anomaly detection is described anywhere in the CV. Full MATCH exceeds the combined reviewed trend/anomaly obligation."
+        },
+        {
+          "unit_id": "P30-U15",
+          "requirement": "Communicating actionable findings",
+          "gold_label": "PARTIAL",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U15",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "unsupported_positive",
+          "note": "Presenting cohort findings does not state actionable recommendations; full MATCH exceeds the quoted and full-CV evidence, as in the retained round-one error."
+        },
+        {
+          "unit_id": "P30-U16",
+          "requirement": "Credit-scoring modelling",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P30-U16",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        }
+      ],
+      "typed_attempt_diagnostics": [
+        {
+          "attempt": 1,
+          "offline_validation": "failed",
+          "first_observed_trigger": "invalid_source_quote",
+          "quote_occurrences": 11,
+          "invalid_quote_occurrences": 2
+        },
+        {
+          "attempt": 2,
+          "offline_validation": "passed",
+          "first_observed_trigger": null,
+          "quote_occurrences": 11,
+          "invalid_quote_occurrences": 0
+        }
+      ],
+      "result_file": "evals/results/cp23_stage2_reference_round2_20261003_v1_16.json",
+      "result_sha256": "8ff280872c4b61e15f92f79fec72e02438d9003373c845fafa0a670a6e57dc3e"
+    },
+    {
+      "stage_id": "deepseek-v4-pro/matching/CV1/F00036",
+      "model": "deepseek-v4-pro",
+      "status": "failed",
+      "attempts": 2,
+      "error_code": "invalid_source_quote",
+      "stage_wall_ms": 246838,
+      "reviewed_logical_units": 0,
+      "rows": [],
+      "typed_attempt_diagnostics": [
+        {
+          "attempt": 1,
+          "offline_validation": "failed",
+          "first_observed_trigger": "invalid_source_quote",
+          "quote_occurrences": 14,
+          "invalid_quote_occurrences": 3
+        },
+        {
+          "attempt": 2,
+          "offline_validation": "failed",
+          "first_observed_trigger": "invalid_source_quote",
+          "quote_occurrences": 13,
+          "invalid_quote_occurrences": 2
+        }
+      ],
+      "result_file": "evals/results/cp23_stage2_reference_round2_20261003_v1_17.json",
+      "result_sha256": "8abcbbeecc9372479d33e6292d81b7d9cc9841d4f769405d63fa37cf3eb03add"
+    },
+    {
+      "stage_id": "deepseek-v4-pro/matching/CV2/F00815",
+      "model": "deepseek-v4-pro",
+      "status": "done",
+      "attempts": 1,
+      "error_code": null,
+      "stage_wall_ms": 140662,
+      "reviewed_logical_units": 16,
+      "rows": [
+        {
+          "unit_id": "P52-U01",
+          "requirement": "Professional AI/ML engineer experience",
+          "gold_label": "PARTIAL",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U01",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U02",
+          "requirement": "Python",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U02",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U03",
+          "requirement": "OpenAI | LangChain | LlamaIndex LLM framework",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U03",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P52-U03/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P52-U03/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+                ]
+              },
+              {
+                "branch_id": "P52-U03/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U04",
+          "requirement": "Prompt engineering",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U04",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "prompt engineering"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U05",
+          "requirement": "RAG",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U05",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U06",
+          "requirement": "ML fundamentals",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U06",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U07",
+          "requirement": "Data pipelines",
+          "gold_label": "PARTIAL",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U07",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U08",
+          "requirement": "ETL",
+          "gold_label": "PARTIAL",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U08",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U09",
+          "requirement": "FastAPI | Flask | equivalent API deployment",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U09",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P52-U09/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Served it with FastAPI in a Docker container"
+                ]
+              },
+              {
+                "branch_id": "P52-U09/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P52-U09/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U10",
+          "requirement": "SQL/PostgreSQL",
+          "gold_label": "PARTIAL",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U10",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "unsupported_positive_fixed_scope",
+          "note": "BigQuery SQL activity does not demonstrate PostgreSQL use in context. Keep the accepted fixed reference and disclose the example-like original wording as an interpretation limitation."
+        },
+        {
+          "unit_id": "P52-U11",
+          "requirement": "Pinecone | FAISS | Weaviate vector technology",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U11",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P52-U11/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P52-U11/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "using LangChain, OpenAI embeddings, and a FAISS vector store"
+                ]
+              },
+              {
+                "branch_id": "P52-U11/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U12",
+          "requirement": "AWS | other cloud platform",
+          "gold_label": "PARTIAL",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U12",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P52-U12/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P52-U12/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U13",
+          "requirement": "Git",
+          "gold_label": "PARTIAL",
+          "effective_label": "PARTIAL",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U13",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Git"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U14",
+          "requirement": "Testing",
+          "gold_label": "MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U14",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U15",
+          "requirement": "CI/CD",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U15",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P52-U16",
+          "requirement": "Technical bachelor",
+          "gold_label": "PARTIAL",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P52-U16",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        }
+      ],
+      "typed_attempt_diagnostics": [
+        {
+          "attempt": 1,
+          "offline_validation": "passed",
+          "first_observed_trigger": null,
+          "quote_occurrences": 9,
+          "invalid_quote_occurrences": 0
+        }
+      ],
+      "result_file": "evals/results/cp23_stage2_reference_round2_20261003_v1_18.json",
+      "result_sha256": "5943505483984c35290a657e1b44ccd4ebfec9153fc06dc398d594bd25684e05"
+    },
+    {
+      "stage_id": "deepseek-v4-pro/matching/CV2/F00018",
+      "model": "deepseek-v4-pro",
+      "status": "done",
+      "attempts": 1,
+      "error_code": null,
+      "stage_wall_ms": 122956,
+      "reviewed_logical_units": 24,
+      "rows": [
+        {
+          "unit_id": "P04-U01",
+          "requirement": "Standard ML algorithms",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U01",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Forecasted monthly ad spend with Prophet for internal planning."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U02",
+          "requirement": "Mathematical basis of ML algorithms",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U02",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U03",
+          "requirement": "LLMs in production",
+          "gold_label": "PARTIAL",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U03",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U04",
+          "requirement": "RAG architecture",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U04",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U05",
+          "requirement": "Agentic systems",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U05",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U06",
+          "requirement": "AWS Bedrock",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U06",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U07",
+          "requirement": "Classification",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U07",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U08",
+          "requirement": "Regression",
+          "gold_label": "MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U08",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U09",
+          "requirement": "Feature engineering",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U09",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U10",
+          "requirement": "Practical experience with ML models in production",
+          "gold_label": "PARTIAL",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U10",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U11",
+          "requirement": "Experience with at least one of:\nNLP | LLM | Recommendation systems",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U11",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P04-U11/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+                ]
+              },
+              {
+                "branch_id": "P04-U11/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+                ]
+              },
+              {
+                "branch_id": "P04-U11/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U12",
+          "requirement": "Software engineering beyond notebooks, with structured modules",
+          "gold_label": "PARTIAL",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U12",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "unsupported_positive",
+          "note": "FastAPI deployment and an answer-accuracy evaluation do not describe well-structured software modules; full MATCH exceeds the source evidence."
+        },
+        {
+          "unit_id": "P04-U13",
+          "requirement": "Python",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U13",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U14",
+          "requirement": "Docker",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U14",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Served it with FastAPI in a Docker container"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U15",
+          "requirement": "English at strong upper-intermediate level",
+          "gold_label": "PARTIAL",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U15",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "English (professional working proficiency)"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "interpretation_question",
+          "note": "Professional working proficiency does not explicitly establish the specified strong-upper-intermediate threshold."
+        },
+        {
+          "unit_id": "P04-U16",
+          "requirement": "Communication",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U16",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "explained results to account managers"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U17",
+          "requirement": "Problem solving",
+          "gold_label": "MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U17",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U18",
+          "requirement": "Practical experience with cloud platforms",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U18",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U19",
+          "requirement": "Deep learning models",
+          "gold_label": "MATCH",
+          "effective_label": "MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U19",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U20",
+          "requirement": "Taxonomies | ontologies",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U20",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P04-U20/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P04-U20/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U21",
+          "requirement": "ML pipeline orchestration",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U21",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U22",
+          "requirement": "Spark | Dask distributed processing",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U22",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P04-U22/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P04-U22/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U23",
+          "requirement": "Great Expectations",
+          "gold_label": "NO_MATCH",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U23",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        },
+        {
+          "unit_id": "P04-U18-AWS",
+          "requirement": "Experience with the AWS cloud stack",
+          "gold_label": "PARTIAL",
+          "effective_label": "NO_MATCH",
+          "check_status": "done",
+          "assessment": {
+            "unit_id": "P04-U18-AWS",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          "semantic_status": "checked_no_additional_source_entailment_issue",
+          "note": "Full CV, fixed obligation and each OR branch reviewed; disagreement alone is not proof of an unsupported claim."
+        }
+      ],
+      "typed_attempt_diagnostics": [
+        {
+          "attempt": 1,
+          "offline_validation": "passed",
+          "first_observed_trigger": null,
+          "quote_occurrences": 12,
+          "invalid_quote_occurrences": 0
+        }
+      ],
+      "result_file": "evals/results/cp23_stage2_reference_round2_20261003_v1_19.json",
+      "result_sha256": "a929ed8626848686e8adaabbf31c63455896c8b482afbb59afb1ef1ea4a0d7c6"
+    }
+  ],
+  "reviewed_final_logical_units": 129,
+  "source_QA_provenance": "delegated source QA; no independent human annotation of predictions",
+  "api_calls": 25,
+  "run_cost_usd": "0.4054182374",
+  "ledger_accounted_usd": "1.1735639842",
+  "historical_uncertain_cost_usd": "0.0210861",
+  "paid_scope": {
+    "original_stages": 19,
+    "maximum_calls": 38,
+    "cap_usd": "6.40",
+    "hard_stop_usd": "8.50"
+  },
+  "hashes": {
+    "evals/results/cp23_stage2_reference_round2_20261003_v1_plan.json": "3d4d54d2df17f99932c1f20d33fc729b657cbf7a473d310a12d2c279da62b67b",
+    "reports/quality_probe/cp23_stage2_reference_round2_20261003_v1.json": "6ab4737c3aca60b94b86def315bf00f384b394f7d894bf6b36cc440e01934ba4"
+  },
+  "winner": null,
+  "gold_changed": false,
+  "workbook_written": false,
+  "limits": [
+    "Evidence is measured on fixed reviewed requirements, not end-to-end extraction outputs.",
+    "Reference model is a comparator, not truth or an automatic runtime default.",
+    "Original SQL/PostgreSQL wording is example-like; fixed gold asks PostgreSQL-specific context. Any reference correction needs explicit adjudication/versioning.",
+    "Valid source quotes do not by themselves prove the whole claimed requirement.",
+    "New extraction mappings remain pending; unlike73/120-unit aggregate scopes cannot be compared.",
+    "Small development set, no production latency benchmark or independent test confirmation."
+  ]
+}

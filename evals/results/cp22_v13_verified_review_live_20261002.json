@@ -1,0 +1,237 @@
+{
+  "preflight": {
+    "mode": "live",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "reasoning": {
+      "effort": "low",
+      "exclude": true
+    },
+    "max_output_tokens": 16000,
+    "analysis_date": "2026-09-30",
+    "cv": "CV1",
+    "job_id": "F00022",
+    "split": "development",
+    "maximum_calls": 6,
+    "conservative_bound_usd": 0.2952,
+    "ledger_before_usd": 0.191615,
+    "remaining_guard_usd": 8.308385
+  },
+  "cv_source_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+  "pdf_sha256": "3cb6ab26acfe2cc94aa8c49cab828e32e377a2675ab0d683d23216b00f46cc37",
+  "jd_sha256": "5096de1762a4d7d373d8df4780441a254189e009e03927c9945a56c858a54345",
+  "fixture_results": [
+    {
+      "fixture_id": "dev_01_clear_match",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 87.5,
+        "status": "final",
+        "matched": 3,
+        "partial": 1,
+        "required_total": 4,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "compatible",
+        "met_display": "3.5 of 4 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_02_experience_too_short",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 83.33,
+        "status": "final",
+        "matched": 2,
+        "partial": 1,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "explicit_conflict",
+        "met_display": "2.5 of 3 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_03_duration_unknown",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 75.0,
+        "status": "final",
+        "matched": 1,
+        "partial": 1,
+        "required_total": 2,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "unknown",
+        "met_display": "1.5 of 2 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_04_or_alternative_group",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 50.0,
+        "status": "final",
+        "matched": 1,
+        "partial": 1,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "unknown",
+        "met_display": "1.5 of 3 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_05_repeated_requirement",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 66.67,
+        "status": "final",
+        "matched": 2,
+        "partial": 0,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "unknown",
+        "met_display": "2 of 3 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_06_ambiguous_importance",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 83.33,
+        "status": "provisional",
+        "matched": 2,
+        "partial": 1,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 1,
+        "unknown_importance_total": 1,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "1 requirement(s) not clearly required or preferred"
+        ],
+        "constraint_state": "unknown",
+        "met_display": "2.5 of 3 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_07_no_assessable_requirement",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": null,
+        "status": "no_score",
+        "matched": 0,
+        "partial": 0,
+        "required_total": 0,
+        "preferred_met": 0,
+        "preferred_total": 1,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Not enough information to compute"
+        ],
+        "constraint_state": "unknown",
+        "met_display": "0 of 0 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_08_parsing_failure",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": null,
+        "status": "on_hold",
+        "matched": 1,
+        "partial": 0,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Required units not judged yet: u2"
+        ],
+        "constraint_state": "unknown",
+        "met_display": "1 of 3 required requirements"
+      }
+    }
+  ],
+  "status": "started",
+  "limits": [
+    "Synthetic development plumbing check, not a held-out quality metric.",
+    "Configured baseline is not selected by tuning. No human label approval is granted."
+  ],
+  "versions": {
+    "guideline_version": "v1.3",
+    "jd_prompt_version": "jd-prompt-v1.2",
+    "evidence_prompt_version": "evidence-prompt-v1.1",
+    "schema_version": "v1",
+    "score_version": "v1",
+    "guideline_file": "evals/annotation_guideline_v1_3.md",
+    "jd_prompt_file": "prompts/jd_extraction_v1_2.md",
+    "evidence_prompt_file": "prompts/evidence_matching_v1_1.md",
+    "guideline_sha256": "3d964a28fd105e16b24ad51b8b0a22b34bb9255e438b51e4e6e0eda551c57645",
+    "jd_prompt_sha256": "35525ee62f8aa7f79307d8d8b95141e85c7d30fa06b359a9dcb48c3a6cad1836",
+    "evidence_prompt_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f"
+  },
+  "jd_prompt_file": "jd_extraction_v1_2.md",
+  "jd_prompt_sha256": "35525ee62f8aa7f79307d8d8b95141e85c7d30fa06b359a9dcb48c3a6cad1836",
+  "calls": 1,
+  "run_cost_usd": 0.0210861,
+  "ledger_after_usd": 0.212701
+}

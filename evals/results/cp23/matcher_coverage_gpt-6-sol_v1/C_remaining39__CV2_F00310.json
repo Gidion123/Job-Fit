@@ -1,0 +1,10 @@
+{
+  "cv_id": "CV2",
+  "job_id": "F00310",
+  "model": "gpt-6-sol",
+  "status": "held_extraction",
+  "error_code": null,
+  "wall_ms": 0,
+  "assessments": [],
+  "scores": {}
+}

@@ -1,0 +1,13 @@
+{
+  "job_id": "gemini-3.5-flash-lite/F00036",
+  "result_sha256": "e8f5a8336b30c6e44040d7eed6da2d965d844bbf58895232543a05a5b14b1948",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "fail",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "pass"
+  },
+  "notes": "All ten Persyaratan clauses checked against 17 logical references and 14 outputs; quotes and required/preferred scope are valid. U13 converts independent database-management AND big-data experience into one OR group containing database management/Hadoop/Spark/cloud, and miscategorizes generic database management as a tool. U08 merges EDA and visualization/tool requirements, whereas references retain EDA independently. U14 merges independently reviewed problem-solving and attention-to-detail obligations. Python/R/SQL and library/tool branches are bare names rather than assessable shared proficiency/analysis/experience statements; the source data-manipulation/analysis qualifier is lost. Education OR and two-year minimum are retained. These are substantive grouping/coverage/qualifier failures; no candidate alignment approval.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

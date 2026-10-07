@@ -1,0 +1,338 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00333",
+  "model": "gpt-6-luna",
+  "status": "done",
+  "error_code": null,
+  "wall_ms": 29781,
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B6",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B7",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": "NO_MATCH",
+      "check_status": "needs_clarification",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh · Februari 2025 - Juni 2025",
+        "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\"",
+        "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U10",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U11",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U12",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U13",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U14",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U15",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U16",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U17",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U18",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U19",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U20",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U21",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U22",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U23",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U24",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U25",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "Jakarta Selatan, Indonesia · [EMAIL] · [PHONE] · [PROFILE]"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ],
+  "scores": {
+    "H1": {
+      "score": {
+        "score_pct": 44.44,
+        "status": "final",
+        "matched": 6,
+        "partial": 4,
+        "required_total": 18,
+        "preferred_met": 0,
+        "preferred_total": 4,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 2,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 1,
+        "constraint_units_total": 1,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    },
+    "H2": {
+      "score": {
+        "score_pct": 44.44,
+        "status": "final",
+        "matched": 6,
+        "partial": 4,
+        "required_total": 18,
+        "preferred_met": 0,
+        "preferred_total": 4,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 2,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 1,
+        "constraint_units_total": 1,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    },
+    "H2v2": {
+      "score": {
+        "score_pct": 44.44,
+        "status": "final",
+        "matched": 6,
+        "partial": 4,
+        "required_total": 18,
+        "preferred_met": 0,
+        "preferred_total": 4,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 2,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 1,
+        "constraint_units_total": 1,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    }
+  }
+}

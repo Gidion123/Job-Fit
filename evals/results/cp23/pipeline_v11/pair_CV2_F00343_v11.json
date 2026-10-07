@@ -1,0 +1,9 @@
+{
+  "cv_id": "CV2",
+  "job_id": "F00343",
+  "status": "held_extraction",
+  "reason": "looks_incomplete",
+  "score_H1": null,
+  "score_H2": null,
+  "wall_ms": 0
+}

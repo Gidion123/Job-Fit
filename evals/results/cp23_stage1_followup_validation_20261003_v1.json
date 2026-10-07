@@ -1,0 +1,151 @@
+{
+  "schema_version": "cp23-stage1-followup-validation-v1",
+  "status": "technical_checks_pass_human_review_pending",
+  "review_packet": "evals/labeling/drafts/cp23_stage1_relevance_review_20261003_v1.json",
+  "review_packet_sha256": "f2b00f0d66ee7fb0b966ce856c15fa319343a513305e6d5275fef041d0507bcf",
+  "gap_manifest_sha256": "0147a8e58435db1dce96f14422ec5aae5237c90e90deeec4edcd8e0f1c082fef",
+  "hold_review_sha256": "4f89bf56d1e0a4270bbbb8708919ca2ed6c1fe3d17eb2a22e0c801891f593394",
+  "new_C_checks": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00010",
+      "checks": {
+        "in_new_gap_set": true,
+        "not_in_existing_gold": true,
+        "development_id": true,
+        "corpus_text_exact": true,
+        "corpus_record_exact": true,
+        "jd_text_hash_exact": true,
+        "cv_file_hash_exact": true,
+        "jd_quote_exact": true,
+        "cv_quote_exact": true,
+        "pending_not_approved": true
+      },
+      "pass": true
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00132",
+      "checks": {
+        "in_new_gap_set": true,
+        "not_in_existing_gold": true,
+        "development_id": true,
+        "corpus_text_exact": true,
+        "corpus_record_exact": true,
+        "jd_text_hash_exact": true,
+        "cv_file_hash_exact": true,
+        "jd_quote_exact": true,
+        "cv_quote_exact": true,
+        "pending_not_approved": true
+      },
+      "pass": true
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00284",
+      "checks": {
+        "in_new_gap_set": true,
+        "not_in_existing_gold": true,
+        "development_id": true,
+        "corpus_text_exact": true,
+        "corpus_record_exact": true,
+        "jd_text_hash_exact": true,
+        "cv_file_hash_exact": true,
+        "jd_quote_exact": true,
+        "cv_quote_exact": true,
+        "pending_not_approved": true
+      },
+      "pass": true
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00312",
+      "checks": {
+        "in_new_gap_set": true,
+        "not_in_existing_gold": true,
+        "development_id": true,
+        "corpus_text_exact": true,
+        "corpus_record_exact": true,
+        "jd_text_hash_exact": true,
+        "cv_file_hash_exact": true,
+        "jd_quote_exact": true,
+        "cv_quote_exact": true,
+        "pending_not_approved": true
+      },
+      "pass": true
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00090",
+      "checks": {
+        "in_new_gap_set": true,
+        "not_in_existing_gold": true,
+        "development_id": true,
+        "corpus_text_exact": true,
+        "corpus_record_exact": true,
+        "jd_text_hash_exact": true,
+        "cv_file_hash_exact": true,
+        "jd_quote_exact": true,
+        "cv_quote_exact": true,
+        "pending_not_approved": true
+      },
+      "pass": true
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00559",
+      "checks": {
+        "in_new_gap_set": true,
+        "not_in_existing_gold": true,
+        "development_id": true,
+        "corpus_text_exact": true,
+        "corpus_record_exact": true,
+        "jd_text_hash_exact": true,
+        "cv_file_hash_exact": true,
+        "jd_quote_exact": true,
+        "cv_quote_exact": true,
+        "pending_not_approved": true
+      },
+      "pass": true
+    }
+  ],
+  "held_original_top10_pairs": [
+    [
+      "CV1",
+      "F00022"
+    ],
+    [
+      "CV1",
+      "F00369"
+    ],
+    [
+      "CV2",
+      "F00114"
+    ]
+  ],
+  "held_source_checks": 3,
+  "protected_file_count": 24,
+  "protected_changes": [],
+  "ledger_records": 117,
+  "ledger_total_usd_including_historical_uncertain_reservation": 0.290770384,
+  "ledger_sha256": "2870f7530090192a0618a0b6ae77e68e483d011201f03b912e0bd4316f123d70",
+  "api_calls_session": 0,
+  "actual_api_cost_usd_session": 0,
+  "gold_or_workbook_writes": false,
+  "stage2_started": false,
+  "gate_status": {
+    "contract": "ready",
+    "source_reference": "source_checked",
+    "model_alignment": "blocked_human_verification",
+    "original_top10_C_coverage": "blocked_six_pending_three_held",
+    "evaluator": "ready_offline"
+  },
+  "offline_tests": {
+    "junit_file": "evals/results/cp23_stage1_followup_offline_tests_20261003_v1.xml",
+    "junit_sha256": "74b9c27c8910dcf96c433eef5f5080bab011b48c0def64beada588f6ae381e0d",
+    "passed": 72,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "six selected evaluator/alignment/retrieval/readiness modules; offline only"
+  }
+}

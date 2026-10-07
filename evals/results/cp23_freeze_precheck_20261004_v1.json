@@ -1,0 +1,27 @@
+{
+  "schema_version": "cp23-freeze-precheck-v1",
+  "date": "2026-10-03",
+  "api_calls_in_precheck": 0,
+  "full_suite": {
+    "passed": 433,
+    "skipped": 2,
+    "failed": 0,
+    "note": "PyMuPDF/SWIG deprecation warning is nonfatal"
+  },
+  "protected_snapshot_count": 601,
+  "protected_unchanged_count": 598,
+  "protected_changed_tests": [
+    "tests/test_bundle_readiness.py",
+    "tests/test_cp23_stage1_prep.py",
+    "tests/test_cv_upload_pipeline.py"
+  ],
+  "protected_changed_non_tests": [],
+  "ledger_total_usd": "1.2715167842",
+  "repair_run_usd": "0.09795280",
+  "repair_cap_usd": "0.65",
+  "historical_uncertain_usd": "0.0210861",
+  "new_or_updated_doc_links_checked": 7,
+  "missing_local_links": [],
+  "staging_size_bytes": 14664273,
+  "staging_disposition": "Unchanged; ask Dion whether to archive or ignore."
+}

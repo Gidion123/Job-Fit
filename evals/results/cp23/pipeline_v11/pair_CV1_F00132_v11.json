@@ -1,0 +1,347 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00132",
+  "status": "failed",
+  "error_code": "unbounded_required_duration_needs_clarification",
+  "source": "v11_matching",
+  "jd_source": "v11",
+  "score_H1": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 0,
+    "partial": 0,
+    "required_total": 31,
+    "preferred_met": 0,
+    "preferred_total": 5,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+      "Required units not judged yet: U01, U02, U03, U04, U05, U06, U07, U08, U09, U10, U11, U12, U13, U14, U15, U16, U17, U18, U19, U20, U21, U22, U23, U24, U25, U26, U27, U28, U29, U30, U31",
+      "Requirement structure needs review; identified denominator is not validated."
+    ]
+  },
+  "score_H2": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 0,
+    "partial": 0,
+    "required_total": 30,
+    "preferred_met": 0,
+    "preferred_total": 5,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+      "Required units not judged yet: U01, U02, U03, U04, U05, U06, U07, U08, U09, U10, U11, U12, U13, U14, U15, U16, U17, U18, U19, U20, U21, U23, U24, U25, U26, U27, U28, U29, U30, U31"
+    ]
+  },
+  "excluded_needs_review": [
+    {
+      "unit_id": "U22",
+      "text": "Solid experience with ETL tools such as Talend or SSIS",
+      "reason": "model marked the requirement structure needs_review",
+      "importance": "required",
+      "source_quotes": [
+        "Solid experience with ETL tools such as Talend (preferred) or SSIS."
+      ]
+    }
+  ],
+  "wall_ms": 66630,
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U10",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U11",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U12",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U13",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U14",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U15",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U16",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U17",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U18",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U19",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U20",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U21",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U22",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U23",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U24",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U25",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U26",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U27",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U28",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U29",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U30",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U31",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U32",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U33",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U34",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U35",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U36",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "job_id": "F00126",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "ad5db34c742a61b5622e6e987421dae4584d138784bfa78f5a7ae049c28290d8",
+  "wall_ms": 93219,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00126",
+    "units": [
+      {
+        "unit_id": "Q01",
+        "text": "Fresh graduate (Bachelor's or Master's) in a quantitative field (Statistics, Computer Science, Math, Engineering, Physics) or maximum 2 years professional experience",
+        "kind": "simple",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Fresh graduate (Bachelor's or Master's) in a quantitative field: Statistics, Computer Science, Math, Engineering, Physics or have maximum 2 years professional experience"
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "Q02",
+        "text": "Strong Python fundamentals",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong Python fundamentals"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "Q03",
+        "text": "Experience building something with LLMs (through thesis, internship, projects, or hackathon)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Have experience on building something with LLMs (through Thesis, internship, projects, or hackathon)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "Q04",
+        "text": "Can explain the concept and objective of an LLM project in a simple way",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "and can explain the concept and its objective in a simple way"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

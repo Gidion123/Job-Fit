@@ -1,0 +1,33 @@
+{
+ "cv_id": "CV5",
+ "status": "failed",
+ "masking_counts": {
+  "name": 1,
+  "email": 1
+ },
+ "masked_digest": "6dce6a429fca97df4f30b2dbe6a84da5ac7d4c320275bbc193e02a9d717e9a70",
+ "parsed": {
+  "profile": {
+   "cv_id": "CV5",
+   "is_synthetic": true,
+   "language": null,
+   "parse_status": "failed",
+   "raw_text": "# [NAME] Mahendra Prasetya\n\nJakarta, Indonesia · [EMAIL]\n\nCV as of 30 September 2026. \"Present\" refers to this date.\n\n## Summary\n\nMachine learning engineer with three years of experience across two software companies, building NLP services and an internal RAG assistant.\n\n## Experience\n\n**Machine Learning Engineer**, PT Contoh Solusi Bahasa, Jakarta · April 2025 - present\n- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents.\n- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout.\n- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks.\n- Added pytest checks and a GitHub Actions pipeline for tests and container builds. Production releases still require manual approval.\n\n**Junior Machine Learning Engineer**, PT Contoh Layanan Digital, Jakarta · October 2023 - March 2025\n- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week.\n- Used Python and SQL to prepare training data and review mislabeled examples with support agents.\n- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review.\n\n## Education\n\n**Bachelor of Informatics (S1 Informatika)**, Institut Teknologi Contoh Jakarta · September 2019 - August 2023\n- Thesis: \"Text Classification for Customer Support Requests\"\n\n## Projects\n\n**Batch Prediction Monitor** · 2024 (personal project)\n- Built a local Python report to flag missing predictions and unusually slow batches using synthetic CSV inputs. It was not connected to a production service.\n\n## Skills\n\nPython, SQL, scikit-learn, PyTorch, Hugging Face Transformers, FastAPI, PostgreSQL pgvector, Docker, AWS (EC2, S3), Git, GitHub Actions, pytest, Kubernetes (basic), Terraform (basic)\n\n## Courses\n\n- Introduction to Computer Vision, Contoh Learning Studio · June 2026 (course completed, no certificate)\n\n## Languages\n\nIndonesian (native), English (professional working proficiency)",
+   "sections": {},
+   "experience": [],
+   "skills_list": [],
+   "confirmed_location": null
+  },
+  "evidence": [],
+  "source_work": [],
+  "location_suggestion": null,
+  "analysis_date": "2026-09-30",
+  "schema_version": "cv-v1.1-precision",
+  "warnings": [
+   "cv_parsing: APITimeoutError (1 attempt(s))"
+  ],
+  "attempts": 1,
+  "review_required": true
+ },
+ "attempts": 1
+}

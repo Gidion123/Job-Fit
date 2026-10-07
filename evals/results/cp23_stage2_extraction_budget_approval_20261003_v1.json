@@ -1,0 +1,15 @@
+{
+  "decision": "approved",
+  "approved_by": "Dion",
+  "review_date": "2026-10-03",
+  "review_time_exact": null,
+  "source": "explicit reply in current project chat to the exact US$3.20 Stage-2 extraction batch question",
+  "scope": "cp23_stage2_round1_extraction_20261003_v3",
+  "plan_file": "evals/results/cp23_stage2_round1_extraction_20261003_v3_preflight.json",
+  "plan_sha256": "85aa59ec9abfe7d80db9f5e3b704faa80517a3ac097cde28bd09d7f02d22f47c",
+  "aggregate_cap_usd": "3.20",
+  "covers": "Four D-029 round-one models x seven fixed development JD extraction cases, at most one automatic repair per case; aggregate includes failed and uncertain calls",
+  "excludes": ["four evidence-matching pairs", "GPT-6 Sol reference", "broad development extraction", "test data", "configuration selection"],
+  "project_hard_stop_usd": "8.50",
+  "no_budget_evasion": true
+}

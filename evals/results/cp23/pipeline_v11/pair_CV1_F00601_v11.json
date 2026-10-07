@@ -1,0 +1,240 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00601",
+  "status": "done",
+  "error_code": null,
+  "source": "v11_matching",
+  "jd_source": "reused_v1",
+  "score_H1": {
+    "score_pct": 47.22,
+    "status": "final",
+    "matched": 6,
+    "partial": 5,
+    "required_total": 18,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+  },
+  "score_H2": {
+    "score_pct": 47.22,
+    "status": "final",
+    "matched": 6,
+    "partial": 5,
+    "required_total": 18,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+  },
+  "excluded_needs_review": [],
+  "wall_ms": 57647,
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "PARTIAL",
+          "check_status": "needs_clarification",
+          "cv_quotes": [
+            "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "PARTIAL",
+          "check_status": "needs_clarification",
+          "cv_quotes": [
+            "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python (pandas, NumPy, scikit-learn, matplotlib)"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "F1-score 0,78 pada data uji."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U10",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "F1-score 0,78 pada data uji."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U11",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U12",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U13",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U14",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U15",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Git"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U16",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U17",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U18",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ]
+}

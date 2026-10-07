@@ -1,0 +1,106 @@
+{
+ "compared": [
+  "QA-E00-FI-R1",
+  "QA-E00-FI-R2"
+ ],
+ "subset": "QA-DEV-FI-v1 optimization",
+ "api_calls": 0,
+ "created_at": "2026-10-07T08:20:45+00:00",
+ "prompt_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+ "units": 411,
+ "same": 382,
+ "changed": 29,
+ "agreement": 0.9294403892944039,
+ "transitions": {
+  "PARTIAL->NO_MATCH": 7,
+  "NO_MATCH->PARTIAL": 7,
+  "MATCH->PARTIAL": 7,
+  "PARTIAL->MATCH": 4,
+  "NO_MATCH->MATCH": 2,
+  "UNASSESSED(needs_clarification)->NO_MATCH": 1,
+  "MATCH->NO_MATCH": 1
+ },
+ "changed_by_field": {
+  "certification": {
+   "changed": 0,
+   "units": 1,
+   "rate": 0.0
+  },
+  "education": {
+   "changed": 2,
+   "units": 17,
+   "rate": 0.11764705882352941
+  },
+  "experience_duration": {
+   "changed": 0,
+   "units": 14,
+   "rate": 0.0
+  },
+  "knowledge_area": {
+   "changed": 17,
+   "units": 203,
+   "rate": 0.08374384236453201
+  },
+  "language": {
+   "changed": 0,
+   "units": 6,
+   "rate": 0.0
+  },
+  "location": {
+   "changed": 1,
+   "units": 1,
+   "rate": 1.0
+  },
+  "other": {
+   "changed": 1,
+   "units": 12,
+   "rate": 0.08333333333333333
+  },
+  "skill_tool": {
+   "changed": 4,
+   "units": 81,
+   "rate": 0.04938271604938271
+  },
+  "soft_skill": {
+   "changed": 4,
+   "units": 76,
+   "rate": 0.05263157894736842
+  }
+ },
+ "changed_by_pair": {
+  "CV2/F00059": 5,
+  "CV2/F00442": 4,
+  "CV2/F00558": 4,
+  "CV1/F00052": 3,
+  "CV2/F00682": 3,
+  "CV2/F00645": 2,
+  "CV1/F00021": 1,
+  "CV1/F00029": 1,
+  "CV1/F00059": 1,
+  "CV1/F00610": 1,
+  "CV1/F00818": 1,
+  "CV2/F00082": 1,
+  "CV2/F00108": 1,
+  "CV2/F00332": 1
+ },
+ "changed_by_cv": {
+  "CV1": 8,
+  "CV2": 21
+ },
+ "changed_by_importance": {
+  "required": 23,
+  "preferred": 6
+ },
+ "which_run_matches_gold": {
+  "second_run_matches_gold": 12,
+  "first_run_matches_gold": 11,
+  "neither_matches_gold": 6
+ },
+ "metric_gap": {
+  "macro_f1": 0.0007730793980473827,
+  "accuracy_all_units": 0.0024330900243308973,
+  "overclaim": 1,
+  "underclaim": 1,
+  "unsupported_positive": 0
+ }
+}

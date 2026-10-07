@@ -1,0 +1,485 @@
+{
+ "set": "fixed_input",
+ "cv_id": "CV2",
+ "job_id": "F00558",
+ "model": "gpt-6-sol",
+ "experiment_id": "QA-E00-FI-R1",
+ "wall_ms": 21816,
+ "status": "done",
+ "error_code": null,
+ "attempts": 1,
+ "assessments": [
+  {
+   "unit_id": "G05-U01",
+   "label": "PARTIAL",
+   "check_status": "needs_clarification",
+   "cv_quotes": [
+    "Three years of data work in digital marketing, followed by an intensive data science and AI bootcamp.",
+    "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+    "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U02",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U03",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U04",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+    "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U06",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U07",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U08",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U09",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+    "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U10",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U11",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+    "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U12",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U13",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U14",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U15",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+    "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U16",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U17",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U18",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U19",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Ran A/B tests for ad creatives and explained results to account managers."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U20",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Ran A/B tests for ad creatives and explained results to account managers."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U21",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U22",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U23",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U24",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Ran A/B tests for ad creatives and explained results to account managers."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U25",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G05-U26",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  }
+ ],
+ "source_flags": [
+  {
+   "unit_id": "G05-U01",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Three years of data work in digital marketing, followed by an intensive data science and AI bootcamp.",
+   "cv_span": "Three years of data work in digital marketing, followed by an intensive data science and AI bootcamp.",
+   "start": 136,
+   "end": 237,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U01",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "cv_span": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "start": 520,
+   "end": 633,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U01",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "cv_span": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "start": 1333,
+   "end": 1446,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U02",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "cv_span": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "start": 520,
+   "end": 633,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U03",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "cv_span": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "start": 520,
+   "end": 633,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U04",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "cv_span": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "start": 1213,
+   "end": 1332,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U04",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "cv_span": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "start": 1333,
+   "end": 1446,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U07",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "cv_span": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "start": 1213,
+   "end": 1332,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U09",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "cv_span": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "start": 1213,
+   "end": 1332,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U09",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "cv_span": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "start": 1333,
+   "end": 1446,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U11",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "cv_span": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "start": 1213,
+   "end": 1332,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U11",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "cv_span": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "start": 1333,
+   "end": 1446,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U12",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio",
+   "cv_span": "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio",
+   "start": 1719,
+   "end": 1888,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U13",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "cv_span": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "start": 1213,
+   "end": 1332,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U14",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "cv_span": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "start": 1213,
+   "end": 1332,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U15",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+   "cv_span": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+   "start": 238,
+   "end": 323,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U15",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "cv_span": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "start": 520,
+   "end": 633,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U16",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "cv_span": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "start": 1213,
+   "end": 1332,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U18",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "cv_span": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "start": 1213,
+   "end": 1332,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U19",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "cv_span": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "start": 634,
+   "end": 709,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U20",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "cv_span": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "start": 634,
+   "end": 709,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U23",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "cv_span": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "start": 1333,
+   "end": 1446,
+   "flags": []
+  },
+  {
+   "unit_id": "G05-U24",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "cv_span": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "start": 634,
+   "end": 709,
+   "flags": []
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+  "job_id": "gpt-6-luna/F00010",
+  "result_sha256": "84d070f66312433aaf22154d38e2c38b361b0a4cf758e137a7d4d31cdee12124",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "uncertain",
+    "qualifiers": "pass",
+    "importance": "pass"
+  },
+  "notes": "All seven qualifications and nine logical obligations reviewed; exact quotes and source importance are retained. The eight-year minimum is correctly present in every AI/ML/DS branch (parent min_years is null, not a lost branch duration). ML-framework and cloud-deployment alternatives retain proficiency/deployment and similar-platform routes. U08 leaves the named AI-assistant example list as an unresolved simple composite with needs_review instead of the reviewed alternative group. This is a guarded representation, but not a compatible approved alternative alignment; grouping remains uncertain and score-hold consequences remain visible. No responsibilities, duration, citizenship or English qualification invented; no gold edits or candidate F1.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

@@ -1,0 +1,178 @@
+{
+  "recorded_at": "2026-10-02T10:16:11.468197+00:00",
+  "stage": "CP2.2 IN PROGRESS",
+  "adoption": "implemented and tested offline; no v1.3 model run",
+  "versions": {
+    "guideline_version": "v1.3",
+    "jd_prompt_version": "jd-prompt-v1.2",
+    "evidence_prompt_version": "evidence-prompt-v1.1",
+    "schema_version": "v1",
+    "score_version": "v1",
+    "guideline_file": "evals/annotation_guideline_v1_3.md",
+    "jd_prompt_file": "prompts/jd_extraction_v1_2.md",
+    "evidence_prompt_file": "prompts/evidence_matching_v1_1.md",
+    "guideline_sha256": "3d964a28fd105e16b24ad51b8b0a22b34bb9255e438b51e4e6e0eda551c57645",
+    "jd_prompt_sha256": "35525ee62f8aa7f79307d8d8b95141e85c7d30fa06b359a9dcb48c3a6cad1836",
+    "evidence_prompt_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f"
+  },
+  "authorization": "User steering after D-049: align prompts, runtime versions and tests before adoption; preserve historical evidence and human review",
+  "final_tests": {
+    "passed": 213,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 5,
+    "seconds": 0.61,
+    "scope": "selected offline suite; fake model clients; database not rerun",
+    "xml": "evals/results/cp22_v13_final_tests_20261002.xml"
+  },
+  "previous_session_test_artifacts": [
+    "cp22_probe_guard_tests_20261002.xml",
+    "cp23_tools_probe_tests_20261002.xml",
+    "cp22_probe_cp23_final_tests_20261002.xml",
+    "cp22_v13_adoption_tests_20261002.xml"
+  ],
+  "probe_version": "guideline v1.2, JD prompt v1.1; baseline probe completed before runtime adoption",
+  "probe_result": "stopped_semantic_issue after F00034; F00073 not attempted",
+  "probe_artifact": "evals/results/cp22_pilot_probe_review_20261002.json",
+  "v13_api_calls": 0,
+  "session_api_calls": 3,
+  "session_cost_usd": "0.01996632",
+  "ledger_total_usd": "0.191615340",
+  "ledger_records": 108,
+  "workbook_read": false,
+  "workbook_written": false,
+  "gold_written": false,
+  "new_dependencies": 0,
+  "git_commands": 0,
+  "test_data_used": false,
+  "protected_checks": [
+    {
+      "path": "evals/labeling/JobFit_Development_Labeling_v0.1.xlsx",
+      "before": "7a1321180ae7785d3ab018b9317acf76f97769404e06375ad8370753cc195bc1",
+      "after": "d8d5759ee1013e97f0eb564648f3a82e1a07d59fb4d92a5563b1629a1629a278",
+      "change_attribution": "external human review save, not written by execution"
+    },
+    {
+      "path": "evals/gold/extraction_gold.jsonl",
+      "before": "f43d4d029f82a392ebc4796fc4bfafc5275ac1afae3a686bee5e4ca2a3da9a7d",
+      "after": "f43d4d029f82a392ebc4796fc4bfafc5275ac1afae3a686bee5e4ca2a3da9a7d",
+      "change_attribution": "unchanged"
+    },
+    {
+      "path": "evals/gold/evidence_gold.jsonl",
+      "before": "d0e10f01bf3cefa69d227316ed561c02ecc31f009a497eb7508dec44b3d5f6e0",
+      "after": "d0e10f01bf3cefa69d227316ed561c02ecc31f009a497eb7508dec44b3d5f6e0",
+      "change_attribution": "unchanged"
+    },
+    {
+      "path": "evals/gold/relevance_gold.csv",
+      "before": "144a185ca867c04816e791d4e5c5d849554216708f517b05824a69ba4ffe3011",
+      "after": "144a185ca867c04816e791d4e5c5d849554216708f517b05824a69ba4ffe3011",
+      "change_attribution": "unchanged"
+    },
+    {
+      "path": "evals/splits/dev_job_ids.txt",
+      "before": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+      "after": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+      "change_attribution": "unchanged"
+    },
+    {
+      "path": "evals/splits/test_job_ids.txt",
+      "before": "b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435",
+      "after": "b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435",
+      "change_attribution": "unchanged"
+    },
+    {
+      "path": "evals/splits/split_manifest.json",
+      "before": "f21741eb93c959b8d39f4c0227f7d9106aef4e815d51ecd379f68015ba1a39c2",
+      "after": "f21741eb93c959b8d39f4c0227f7d9106aef4e815d51ecd379f68015ba1a39c2",
+      "change_attribution": "unchanged"
+    },
+    {
+      "path": "data/processed/jobs_features.jsonl",
+      "before": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+      "after": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+      "change_attribution": "unchanged"
+    },
+    {
+      "path": "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md",
+      "before": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "after": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "change_attribution": "unchanged"
+    },
+    {
+      "path": "data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md",
+      "before": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+      "after": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+      "change_attribution": "unchanged"
+    },
+    {
+      "path": "docs/decisions.md",
+      "before": "4381bbae7f8565e0cb86c87a30f04a0a5360d4b660ba179cfcebe81729d583e6",
+      "after": "78faa929bc08629628756245285a447bad781b1c98f39cebeadc2dd02c0937fa",
+      "change_attribution": "external D-049 update reported by user"
+    },
+    {
+      "path": "evals/annotation_guideline_v1.md",
+      "before": "5939c9e69ffacf28dcba9588b8fbfc8d124a8a240e8e84e1f234d463b7f760db",
+      "after": "5939c9e69ffacf28dcba9588b8fbfc8d124a8a240e8e84e1f234d463b7f760db",
+      "change_attribution": "unchanged"
+    },
+    {
+      "path": "config/models_v1.yaml",
+      "before": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+      "after": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+      "change_attribution": "unchanged"
+    },
+    {
+      "path": "config/pipeline_v1.yaml",
+      "before": "a8f219e74952c18451b93e469a1c3750e8f631f88e40ca387bc51a9ea690a4f8",
+      "after": "ba44704f573f9fabb24ff45a2b0142b5c00ac93af55902429500c020a3cd1dc8",
+      "change_attribution": "authorized v1.3 runtime adoption; original archived with entry hash"
+    },
+    {
+      "path": "config/retrieval_v1.yaml",
+      "before": "c54422081f79d3d9031367344de7b4813407410f911c849ae7721e7219495d7a",
+      "after": "c54422081f79d3d9031367344de7b4813407410f911c849ae7721e7219495d7a",
+      "change_attribution": "unchanged"
+    }
+  ],
+  "code_sha256": {
+    "src/jobfit/config.py": "1352a6722bb71c600ca7d75403deee539c929a06d1195c7adc7b951ca4e8baae",
+    "config/pipeline_v1.yaml": "ba44704f573f9fabb24ff45a2b0142b5c00ac93af55902429500c020a3cd1dc8",
+    "src/jobfit/extraction/jd_extractor.py": "9aa25ad2c929d0e50b5a753c0734d27ca2b9a72bb9f7a89173eacc1a085e00b4",
+    "src/jobfit/matching/evidence_matcher.py": "8dc55863d6da608c6b92915d910c4c89e0991ece4effdcb6d866143a53de462f",
+    "src/jobfit/pipeline.py": "41ee7b7c40f1ab911f8449dcc0c344d0b3e9a08793cbebe277fd307ad85881b2",
+    "src/jobfit/llm/probe.py": "fdf8c6bd1d1f7a73b2d87fddec827aee83ceb78d9fc995488fec90c39390133e",
+    "scripts/run_pilot_probe.py": "99ce7ad54da294baba78d92b321e058a8b6f0c6ff44afd375a6c4e578c8fbf9d",
+    "scripts/run_batch_extraction.py": "f906eb005f2461d0c0787ec9a6b5736b1ff68cba4682392ee4bd28768bd01a24",
+    "scripts/run_cp22_example.py": "0de10f1d4fd38310a559e777ee60f6f1bc1e306a3cbd1fdbd5994de1f8fb87fc",
+    "src/jobfit/eval/metrics.py": "bb4b6199d8971cf3c5f415bee6fa3430732f176205ebc0190960f0a5c846d38c",
+    "src/jobfit/eval/run_eval.py": "fc137bf6463f0f9ebc02494a90caa9c164e8e47c47175c0a49c6e85e9533f4ef",
+    "scripts/run_evaluation.py": "f3bd59ecc57f7646fce824a7230e01ae685fcaf4c1eefc642fdee3b39cd0fbfe",
+    "tests/test_pilot_probe.py": "9f09f46de2f77b66cce74a2a71c57d7cc0a43d9e3182c8c53695c4dfcb5dd63e",
+    "tests/test_evaluation_tools.py": "727ba5669d969d8a18ef5aca020eb88588bf9d2b236b3a611e7a112615491c6d",
+    "tests/test_guideline_v13_runtime.py": "9a57b337dd7934ece919dce71066301941081b45bfcfe2d075d3c9b9801407b8",
+    "prompts/jd_extraction_v1_2.md": "35525ee62f8aa7f79307d8d8b95141e85c7d30fa06b359a9dcb48c3a6cad1836",
+    "prompts/evidence_matching_v1_1.md": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f"
+  },
+  "historical_preservation": {
+    "evals/annotation_guideline_v1.md": "5939c9e69ffacf28dcba9588b8fbfc8d124a8a240e8e84e1f234d463b7f760db",
+    "prompts/jd_extraction_v1_1.md": "8c91296b0861a82654ede5bec46f60d324cc08dcee3d62bc690d7a36136052d0",
+    "prompts/evidence_matching_v1.md": "bbaaddea09a4364d5365376dc51ade462ffab9487149d0d6a9753991f5757816",
+    "config/archive/pipeline_v1_pre_D049_20261002.yaml": "a8f219e74952c18451b93e469a1c3750e8f631f88e40ca387bc51a9ea690a4f8",
+    "evals/results/cp22_pilot_probe_review_20261002.json": "9ff1c96ac5511403ad69a6d7cb20329a5008604aa4c41dcfb554e35785b6c3e3"
+  },
+  "public_extraction_cache_files": {
+    "d2a4f6e62610f612b2ef9202dfb18f05d45f3fbb897e71bf7d6718f6143f9e5c.json": "005bd8c784399ae41470b7b644abd4a11cadac76366aff3b40b682f6c1f75057",
+    "6f41439331cce82a1711d89944f46faf6e5b8eaea3e093e12915b52b2ad05894.json": "c523b4efb64c2ffa922f7c3c0d760d2d1e11575c9e57b4829e32debb4be375f5"
+  },
+  "current_readiness": "evals/results/cp23_readiness_v13_20261002.json",
+  "limits": [
+    "Prompt rules tested for wiring and hold behavior, not real model semantic adherence",
+    "Requirement and scoring schemas/formula unchanged; comparison-report metadata and structural hold are additive",
+    "Historical pilot gold remains under original versions; compatibility review blocks model-quality metrics",
+    "CLI evaluation prepares prerequisites only; metric functions tested with synthetic manually computable examples; no winner",
+    "Gold inventory describes exported files, not current Excel review progress"
+  ]
+}

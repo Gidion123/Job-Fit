@@ -1,0 +1,1530 @@
+{
+  "preflight": {
+    "mode": "live",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "reasoning": {
+      "effort": "low",
+      "exclude": true
+    },
+    "max_output_tokens": 16000,
+    "analysis_date": "2026-09-30",
+    "cv": "CV1",
+    "job_id": "F00022",
+    "split": "development",
+    "maximum_calls": 6,
+    "conservative_bound_usd": 0.2952,
+    "ledger_before_usd": 0.148481,
+    "remaining_guard_usd": 8.351519
+  },
+  "cv_source_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+  "pdf_sha256": "3cb6ab26acfe2cc94aa8c49cab828e32e377a2675ab0d683d23216b00f46cc37",
+  "jd_sha256": "5096de1762a4d7d373d8df4780441a254189e009e03927c9945a56c858a54345",
+  "fixture_results": [
+    {
+      "fixture_id": "dev_01_clear_match",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 87.5,
+        "status": "final",
+        "matched": 3,
+        "partial": 1,
+        "required_total": 4,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "compatible",
+        "met_display": "3.5 of 4 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_02_experience_too_short",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 83.33,
+        "status": "final",
+        "matched": 2,
+        "partial": 1,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "explicit_conflict",
+        "met_display": "2.5 of 3 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_03_duration_unknown",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 75.0,
+        "status": "final",
+        "matched": 1,
+        "partial": 1,
+        "required_total": 2,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "unknown",
+        "met_display": "1.5 of 2 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_04_or_alternative_group",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 50.0,
+        "status": "final",
+        "matched": 1,
+        "partial": 1,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "unknown",
+        "met_display": "1.5 of 3 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_05_repeated_requirement",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 66.67,
+        "status": "final",
+        "matched": 2,
+        "partial": 0,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "unknown",
+        "met_display": "2 of 3 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_06_ambiguous_importance",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 83.33,
+        "status": "provisional",
+        "matched": 2,
+        "partial": 1,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 1,
+        "unknown_importance_total": 1,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "1 requirement(s) not clearly required or preferred"
+        ],
+        "constraint_state": "unknown",
+        "met_display": "2.5 of 3 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_07_no_assessable_requirement",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": null,
+        "status": "no_score",
+        "matched": 0,
+        "partial": 0,
+        "required_total": 0,
+        "preferred_met": 0,
+        "preferred_total": 1,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Not enough information to compute"
+        ],
+        "constraint_state": "unknown",
+        "met_display": "0 of 0 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_08_parsing_failure",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": null,
+        "status": "on_hold",
+        "matched": 1,
+        "partial": 0,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Required units not judged yet: u2"
+        ],
+        "constraint_state": "unknown",
+        "met_display": "1 of 3 required requirements"
+      }
+    }
+  ],
+  "status": "done",
+  "limits": [
+    "Synthetic development plumbing check, not a held-out quality metric.",
+    "Configured baseline is not selected by tuning. No human label approval is granted."
+  ],
+  "jd_prompt_file": "jd_extraction_v1_1.md",
+  "jd_prompt_sha256": "8c91296b0861a82654ede5bec46f60d324cc08dcee3d62bc690d7a36136052d0",
+  "cv_resume_source": "cp22_live_cv1_j1_20261002_04.json",
+  "parsed_cv": {
+    "profile": {
+      "cv_id": "CV1",
+      "is_synthetic": true,
+      "language": "id",
+      "parse_status": "ok",
+      "raw_text": "# Rina Aprilia Putri\nJakarta Selatan, Indonesia · rina.putri@example.com · +62\n800-0000-0001 · github.com/example-rina\n## Ringkasan\nLulusan S1 Statistika yang tertarik pada data science dan machine\nlearning. Terbiasa mengolah data dengan Python dan SQL, membuat\nmodel prediksi sederhana, dan menyajikan hasil analisis dalam\ndashboard.\n## Pendidikan\n**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 -\nAgustus 2026\n- IPK 3,62 / 4,00\n- Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan\nRegresi Logistik dan Random Forest\"\n- Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian,\nBasis Data\n## Pengalaman\n**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari\n2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris\ndengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim\nmarketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan\nhasilnya ke manajer divisi.\n**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh ·\nFebruari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.\n## Proyek\n**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan\nscikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur\npenting dengan SHAP.\n**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025\n- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan\nmengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.\n## Keahlian\nPython (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio,\nExcel, Git, statistika inferensial, machine learning dasar\n## Sertifikasi\n- Google Data Analytics Professional Certificate (2025)\n## Bahasa\nIndonesia (native), Inggris (menengah, TOEFL ITP 540)",
+      "sections": {
+        "Summary": "Lulusan S1 Statistika yang tertarik pada data science dan machine\nlearning. Terbiasa mengolah data dengan Python dan SQL, membuat\nmodel prediksi sederhana, dan menyajikan hasil analisis dalam\ndashboard.",
+        "Education": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 -\nAgustus 2026\n- IPK 3,62 / 4,00\n- Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan\nRegresi Logistik dan Random Forest\"\n- Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian,\nBasis Data",
+        "Experience": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari\n2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris\ndengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim\nmarketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan\nhasilnya ke manajer divisi.\n**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh ·\nFebruari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+        "Projects": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan\nscikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur\npenting dengan SHAP.\n**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025\n- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan\nmengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+        "Skills": "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio,\nExcel, Git, statistika inferensial, machine learning dasar",
+        "Certifications": "- Google Data Analytics Professional Certificate (2025)",
+        "Other": "Indonesia (native), Inggris (menengah, TOEFL ITP 540)"
+      },
+      "experience": [
+        {
+          "title": "Data Analyst Intern",
+          "organization": "PT Contoh Retail Nusantara",
+          "start": null,
+          "end": null,
+          "is_present": false,
+          "description": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari\n2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris\ndengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim\nmarketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan\nhasilnya ke manajer divisi.",
+          "start_partial": {
+            "year": 2026,
+            "month": 2
+          },
+          "end_partial": {
+            "year": 2026,
+            "month": 5
+          },
+          "start_text": "Februari\n2026",
+          "end_text": "Mei 2026"
+        },
+        {
+          "title": "Asisten Praktikum Analisis Regresi",
+          "organization": "Universitas Negeri Contoh",
+          "start": null,
+          "end": null,
+          "is_present": false,
+          "description": "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh ·\nFebruari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+          "start_partial": {
+            "year": 2025,
+            "month": 2
+          },
+          "end_partial": {
+            "year": 2025,
+            "month": 6
+          },
+          "start_text": "Februari 2025",
+          "end_text": "Juni 2025"
+        }
+      ],
+      "skills_list": [
+        "Python (pandas, NumPy, scikit-learn, matplotlib)",
+        "SQL",
+        "R",
+        "Looker Studio",
+        "Excel",
+        "Git",
+        "statistika inferensial",
+        "machine learning dasar"
+      ],
+      "confirmed_location": null
+    },
+    "evidence": [
+      {
+        "fact_id": "employment_1",
+        "section": "Experience",
+        "quote": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari\n2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris\ndengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim\nmarketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan\nhasilnya ke manajer divisi."
+      },
+      {
+        "fact_id": "employment_2",
+        "section": "Experience",
+        "quote": "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh ·\nFebruari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+      },
+      {
+        "fact_id": "education_1",
+        "section": "Education",
+        "quote": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 -\nAgustus 2026\n- IPK 3,62 / 4,00\n- Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan\nRegresi Logistik dan Random Forest\"\n- Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian,\nBasis Data"
+      },
+      {
+        "fact_id": "project_1",
+        "section": "Projects",
+        "quote": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan\nscikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur\npenting dengan SHAP."
+      },
+      {
+        "fact_id": "project_2",
+        "section": "Projects",
+        "quote": "**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025\n- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan\nmengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes."
+      },
+      {
+        "fact_id": "certification_1",
+        "section": "Certifications",
+        "quote": "Google Data Analytics Professional Certificate (2025)"
+      },
+      {
+        "fact_id": "language_1",
+        "section": "Other",
+        "quote": "Indonesia (native)"
+      },
+      {
+        "fact_id": "language_2",
+        "section": "Other",
+        "quote": "Inggris (menengah, TOEFL ITP 540)"
+      }
+    ],
+    "source_work": [
+      {
+        "title": "Data Analyst Intern",
+        "organization": "PT Contoh Retail Nusantara",
+        "source_quote": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari\n2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris\ndengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim\nmarketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan\nhasilnya ke manajer divisi.",
+        "start_text": "Februari\n2026",
+        "end_text": "Mei 2026",
+        "is_present": false
+      },
+      {
+        "title": "Asisten Praktikum Analisis Regresi",
+        "organization": "Universitas Negeri Contoh",
+        "source_quote": "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh ·\nFebruari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+        "start_text": "Februari 2025",
+        "end_text": "Juni 2025",
+        "is_present": false
+      }
+    ],
+    "location_suggestion": "Jakarta Selatan, Indonesia",
+    "analysis_date": "2026-09-30",
+    "schema_version": "cv-v1.1-precision",
+    "warnings": [
+      "Check PDF reading order and every experience/date in the parsing preview.",
+      "Check that employment, projects, education, dates and skills match the source before analysis."
+    ],
+    "attempts": 2,
+    "review_required": true
+  },
+  "parsing_summary": {
+    "parse_status": "ok",
+    "analysis_date": "2026-09-30",
+    "sections_found": [
+      "Summary",
+      "Education",
+      "Experience",
+      "Projects",
+      "Skills",
+      "Certifications",
+      "Other"
+    ],
+    "evidence_count": 8,
+    "skills": [
+      "Python (pandas, NumPy, scikit-learn, matplotlib)",
+      "SQL",
+      "R",
+      "Looker Studio",
+      "Excel",
+      "Git",
+      "statistika inferensial",
+      "machine learning dasar"
+    ],
+    "employment": [
+      {
+        "title": "Data Analyst Intern",
+        "organization": "PT Contoh Retail Nusantara",
+        "start": null,
+        "end": null,
+        "is_present": false,
+        "description": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari\n2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris\ndengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim\nmarketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan\nhasilnya ke manajer divisi.",
+        "start_partial": {
+          "year": 2026,
+          "month": 2
+        },
+        "end_partial": {
+          "year": 2026,
+          "month": 5
+        },
+        "start_text": "Februari\n2026",
+        "end_text": "Mei 2026"
+      },
+      {
+        "title": "Asisten Praktikum Analisis Regresi",
+        "organization": "Universitas Negeri Contoh",
+        "start": null,
+        "end": null,
+        "is_present": false,
+        "description": "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh ·\nFebruari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+        "start_partial": {
+          "year": 2025,
+          "month": 2
+        },
+        "end_partial": {
+          "year": 2025,
+          "month": 6
+        },
+        "start_text": "Februari 2025",
+        "end_text": "Juni 2025"
+      }
+    ],
+    "location_suggestion": "Jakarta Selatan, Indonesia",
+    "location_confirmed": null,
+    "review_required": true,
+    "warnings": [
+      "Check PDF reading order and every experience/date in the parsing preview.",
+      "Check that employment, projects, education, dates and skills match the source before analysis."
+    ]
+  },
+  "parsing_confirmation": {
+    "kind": "synthetic_fixture_check",
+    "passed": true,
+    "human_confirmation": false
+  },
+  "synthetic_wire_outputs": [
+    {
+      "task": "jd_extraction",
+      "output": {
+        "job_id": "PASTE-5096de1762a4d7d373d8",
+        "units": [
+          {
+            "unit_id": "U01",
+            "text": "1-2 years of professional experience in Data Science fields; fresh graduates welcome",
+            "kind": "qualified",
+            "importance": "unknown",
+            "field": "experience_duration",
+            "normalized_name": "data_science_experience",
+            "min_years": 1.0,
+            "branches": [],
+            "source_quotes": [
+              "1-2 years of professional experiences in Data Science fields. Fresh graduate are welcome to apply."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U02",
+            "text": "Experience using Python to manipulate data and draw insights from large data sets",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "python",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Mandatory: Experienced using programming languages (at least Python and SQL) to manipulate data and draw insights from large data sets."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U03",
+            "text": "Experience using SQL to manipulate data and draw insights from large data sets",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "sql",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Mandatory: Experienced using programming languages (at least Python and SQL) to manipulate data and draw insights from large data sets."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U04",
+            "text": "Mathematical skills, including real-world advantages/drawbacks",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "mathematical_skills",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Intermediate Mathematical, Statistical, and/or Machine Learning skills required, and their real-world advantages/drawbacks."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U05",
+            "text": "Statistical skills, including real-world advantages/drawbacks",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "statistical_skills",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Intermediate Mathematical, Statistical, and/or Machine Learning skills required, and their real-world advantages/drawbacks."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U06",
+            "text": "Machine Learning skills, including real-world advantages/drawbacks",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "machine_learning_skills",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Intermediate Mathematical, Statistical, and/or Machine Learning skills required, and their real-world advantages/drawbacks."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U07",
+            "text": "Knowledge and/or experience in working with structured and/or unstructured data sets",
+            "kind": "simple",
+            "importance": "unknown",
+            "field": "knowledge_area",
+            "normalized_name": "structured_unstructured_data_sets",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Knowledge and/or experience in working with structured and/or unstructured data sets."
+            ],
+            "needs_review": true,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U08",
+            "text": "Knowledge and/or experience in Data Architecture and Engineering",
+            "kind": "simple",
+            "importance": "preferred",
+            "field": "knowledge_area",
+            "normalized_name": "data_architecture_engineering",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform."
+            ],
+            "needs_review": true,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U09",
+            "text": "Google Cloud Platform",
+            "kind": "simple",
+            "importance": "preferred",
+            "field": "skill_tool",
+            "normalized_name": "google_cloud_platform",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U10",
+            "text": "Familiarity with Data Visualization Tools",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "data_visualization_tools",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Familiar with Data Visualization Tools, Google Data Studio is a plus."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U11",
+            "text": "Google Data Studio",
+            "kind": "simple",
+            "importance": "preferred",
+            "field": "skill_tool",
+            "normalized_name": "google_data_studio",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Familiar with Data Visualization Tools, Google Data Studio is a plus."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U12",
+            "text": "Problem-solving skills",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "problem_solving",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Problem-solving skills, structured thinking and scientific approach required."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U13",
+            "text": "Structured thinking",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "structured_thinking",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Problem-solving skills, structured thinking and scientific approach required."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U14",
+            "text": "Scientific approach",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "scientific_approach",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Problem-solving skills, structured thinking and scientific approach required."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U15",
+            "text": "Ability to work with minimal supervision",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "minimal_supervision",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Ability to work with minimal supervision and keep supervisors informed."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U16",
+            "text": "Ability to keep supervisors informed",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "keep_supervisors_informed",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Ability to work with minimal supervision and keep supervisors informed."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U17",
+            "text": "Ability to work well in a team environment",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "teamwork",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Ability to work well in a team environment."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U18",
+            "text": "Ability to communicate in clear and concise terms",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "clear_communication",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Ability to communicate in clear and concise terms."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U19",
+            "text": "Willing to learn new skills",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "willingness_to_learn",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Willing to learn new skills and able to do so independently."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U20",
+            "text": "Able to learn new skills independently",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "independent_learning",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Willing to learn new skills and able to do so independently."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U21",
+            "text": "Ability to take initiative",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "initiative",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Ability to take initiative."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          }
+        ],
+        "jd_quality": "ok",
+        "extractor_version": "jd-prompt-v1.1"
+      }
+    },
+    {
+      "task": "evidence_matching",
+      "output": {
+        "assessments": [
+          {
+            "unit_id": "U01",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari\n2026 - Mei 2026 (4 bulan)"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U02",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membersihkan dan menggabungkan data transaksi 1,2 juta baris\ndengan Python (pandas) dan SQL (PostgreSQL)."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U03",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membersihkan dan menggabungkan data transaksi 1,2 juta baris\ndengan Python (pandas) dan SQL (PostgreSQL)."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U04",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 -\nAgustus 2026",
+              "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian,\nBasis Data"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U05",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 -\nAgustus 2026",
+              "Melakukan analisis cohort retensi pelanggan dan mempresentasikan\nhasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U06",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membangun model regresi logistik dan random forest dengan\nscikit-learn; F1-score 0,78 pada data uji.",
+              "Mengumpulkan 5.000 ulasan berbahasa Indonesia dan\nmengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U07",
+            "label": null,
+            "check_status": "failed",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U08",
+            "label": null,
+            "check_status": "failed",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U09",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U10",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membuat dashboard penjualan mingguan di Looker Studio untuk tim\nmarketing."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U11",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membuat dashboard penjualan mingguan di Looker Studio untuk tim\nmarketing."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U12",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U13",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U14",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U15",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U16",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U17",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U18",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Melakukan analisis cohort retensi pelanggan dan mempresentasikan\nhasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U19",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U20",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U21",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          }
+        ]
+      }
+    }
+  ],
+  "report": {
+    "job_id": "PASTE-5096de1762a4d7d373d8",
+    "cv_id": "CV1",
+    "analysis_date": "2026-09-30",
+    "status": "done",
+    "extraction": {
+      "job_id": "PASTE-5096de1762a4d7d373d8",
+      "units": [
+        {
+          "unit_id": "U01",
+          "text": "1-2 years of professional experience in Data Science fields; fresh graduates welcome",
+          "kind": "qualified",
+          "importance": "unknown",
+          "field": "experience_duration",
+          "normalized_name": "data_science_experience",
+          "min_years": 1.0,
+          "branches": [],
+          "source_quotes": [
+            "1-2 years of professional experiences in Data Science fields. Fresh graduate are welcome to apply."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U02",
+          "text": "Experience using Python to manipulate data and draw insights from large data sets",
+          "kind": "simple",
+          "importance": "required",
+          "field": "skill_tool",
+          "normalized_name": "python",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Mandatory: Experienced using programming languages (at least Python and SQL) to manipulate data and draw insights from large data sets."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U03",
+          "text": "Experience using SQL to manipulate data and draw insights from large data sets",
+          "kind": "simple",
+          "importance": "required",
+          "field": "skill_tool",
+          "normalized_name": "sql",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Mandatory: Experienced using programming languages (at least Python and SQL) to manipulate data and draw insights from large data sets."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U04",
+          "text": "Mathematical skills, including real-world advantages/drawbacks",
+          "kind": "simple",
+          "importance": "required",
+          "field": "knowledge_area",
+          "normalized_name": "mathematical_skills",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Intermediate Mathematical, Statistical, and/or Machine Learning skills required, and their real-world advantages/drawbacks."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U05",
+          "text": "Statistical skills, including real-world advantages/drawbacks",
+          "kind": "simple",
+          "importance": "required",
+          "field": "knowledge_area",
+          "normalized_name": "statistical_skills",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Intermediate Mathematical, Statistical, and/or Machine Learning skills required, and their real-world advantages/drawbacks."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U06",
+          "text": "Machine Learning skills, including real-world advantages/drawbacks",
+          "kind": "simple",
+          "importance": "required",
+          "field": "knowledge_area",
+          "normalized_name": "machine_learning_skills",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Intermediate Mathematical, Statistical, and/or Machine Learning skills required, and their real-world advantages/drawbacks."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U07",
+          "text": "Knowledge and/or experience in working with structured and/or unstructured data sets",
+          "kind": "simple",
+          "importance": "unknown",
+          "field": "knowledge_area",
+          "normalized_name": "structured_unstructured_data_sets",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Knowledge and/or experience in working with structured and/or unstructured data sets."
+          ],
+          "needs_review": true,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U08",
+          "text": "Knowledge and/or experience in Data Architecture and Engineering",
+          "kind": "simple",
+          "importance": "preferred",
+          "field": "knowledge_area",
+          "normalized_name": "data_architecture_engineering",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform."
+          ],
+          "needs_review": true,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U09",
+          "text": "Google Cloud Platform",
+          "kind": "simple",
+          "importance": "preferred",
+          "field": "skill_tool",
+          "normalized_name": "google_cloud_platform",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U10",
+          "text": "Familiarity with Data Visualization Tools",
+          "kind": "simple",
+          "importance": "required",
+          "field": "skill_tool",
+          "normalized_name": "data_visualization_tools",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Familiar with Data Visualization Tools, Google Data Studio is a plus."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U11",
+          "text": "Google Data Studio",
+          "kind": "simple",
+          "importance": "preferred",
+          "field": "skill_tool",
+          "normalized_name": "google_data_studio",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Familiar with Data Visualization Tools, Google Data Studio is a plus."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U12",
+          "text": "Problem-solving skills",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "problem_solving",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Problem-solving skills, structured thinking and scientific approach required."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U13",
+          "text": "Structured thinking",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "structured_thinking",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Problem-solving skills, structured thinking and scientific approach required."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U14",
+          "text": "Scientific approach",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "scientific_approach",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Problem-solving skills, structured thinking and scientific approach required."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U15",
+          "text": "Ability to work with minimal supervision",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "minimal_supervision",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Ability to work with minimal supervision and keep supervisors informed."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U16",
+          "text": "Ability to keep supervisors informed",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "keep_supervisors_informed",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Ability to work with minimal supervision and keep supervisors informed."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U17",
+          "text": "Ability to work well in a team environment",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "teamwork",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Ability to work well in a team environment."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U18",
+          "text": "Ability to communicate in clear and concise terms",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "clear_communication",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Ability to communicate in clear and concise terms."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U19",
+          "text": "Willing to learn new skills",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "willingness_to_learn",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Willing to learn new skills and able to do so independently."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U20",
+          "text": "Able to learn new skills independently",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "independent_learning",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Willing to learn new skills and able to do so independently."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "U21",
+          "text": "Ability to take initiative",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "initiative",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Ability to take initiative."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "jd_quality": "ok",
+      "extractor_version": "jd-prompt-v1.1/deepseek-flash"
+    },
+    "assessments": [
+      {
+        "unit_id": "U01",
+        "label": "PARTIAL",
+        "check_status": "done",
+        "cv_quotes": [
+          "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari\n2026 - Mei 2026 (4 bulan)"
+        ],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Membersihkan dan menggabungkan data transaksi 1,2 juta baris\ndengan Python (pandas) dan SQL (PostgreSQL)."
+        ],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Membersihkan dan menggabungkan data transaksi 1,2 juta baris\ndengan Python (pandas) dan SQL (PostgreSQL)."
+        ],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "label": "PARTIAL",
+        "check_status": "done",
+        "cv_quotes": [
+          "S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 -\nAgustus 2026",
+          "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian,\nBasis Data"
+        ],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 -\nAgustus 2026",
+          "Melakukan analisis cohort retensi pelanggan dan mempresentasikan\nhasilnya ke manajer divisi."
+        ],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Membangun model regresi logistik dan random forest dengan\nscikit-learn; F1-score 0,78 pada data uji.",
+          "Mengumpulkan 5.000 ulasan berbahasa Indonesia dan\nmengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes."
+        ],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "label": null,
+        "check_status": "failed",
+        "cv_quotes": [],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "label": null,
+        "check_status": "failed",
+        "cv_quotes": [],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "label": "NO_MATCH",
+        "check_status": "done",
+        "cv_quotes": [],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Membuat dashboard penjualan mingguan di Looker Studio untuk tim\nmarketing."
+        ],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Membuat dashboard penjualan mingguan di Looker Studio untuk tim\nmarketing."
+        ],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "label": "NO_MATCH",
+        "check_status": "done",
+        "cv_quotes": [],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "label": "NO_MATCH",
+        "check_status": "done",
+        "cv_quotes": [],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "label": "NO_MATCH",
+        "check_status": "done",
+        "cv_quotes": [],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "label": "NO_MATCH",
+        "check_status": "done",
+        "cv_quotes": [],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "label": "NO_MATCH",
+        "check_status": "done",
+        "cv_quotes": [],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "label": "NO_MATCH",
+        "check_status": "done",
+        "cv_quotes": [],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Melakukan analisis cohort retensi pelanggan dan mempresentasikan\nhasilnya ke manajer divisi."
+        ],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "label": "NO_MATCH",
+        "check_status": "done",
+        "cv_quotes": [],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "label": "NO_MATCH",
+        "check_status": "done",
+        "cv_quotes": [],
+        "branches": [],
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "label": "NO_MATCH",
+        "check_status": "done",
+        "cv_quotes": [],
+        "branches": [],
+        "label_source": "model_draft"
+      }
+    ],
+    "constraints": [
+      {
+        "kind": "experience",
+        "state": "unknown",
+        "message": "The JD states no experience minimum"
+      },
+      {
+        "kind": "location",
+        "state": "unknown",
+        "message": "No confirmed user location"
+      }
+    ],
+    "score": {
+      "score_pct": 91.67,
+      "status": "provisional",
+      "matched": 5,
+      "partial": 1,
+      "required_total": 6,
+      "preferred_met": 1,
+      "preferred_total": 3,
+      "unknown_importance_total": 2,
+      "soft_skill_total": 10,
+      "soft_skill_matched": 1,
+      "soft_skill_partial": 0,
+      "constraint_units_total": 0,
+      "soft_skills_in_score": false,
+      "reasons": [
+        "2 requirement(s) not clearly required or preferred"
+      ]
+    },
+    "warnings": [
+      "Some units require interpretation review before a final decision."
+    ],
+    "operations": {
+      "extraction": {
+        "attempts": 1,
+        "cache_hit": false,
+        "key": "f80e05a1ad46dba5fc3836806cb088e890a36d3d2803bc67bb3872e299add873"
+      },
+      "matching": {
+        "attempts": 1,
+        "cache_hit": false,
+        "error_code": null
+      },
+      "configured_analysis_date": "2026-09-30",
+      "duration_bounds": {
+        "U01": 0.75
+      },
+      "complete_work_history_confirmed": true,
+      "scoped_work_links": {}
+    },
+    "scope": "session_only",
+    "interpretation": "CV evidence coverage, not a hiring probability; retrieval scores are not match percentages."
+  },
+  "calls": 2,
+  "run_cost_usd": 0.023168232,
+  "ledger_after_usd": 0.171649
+}

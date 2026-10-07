@@ -1,0 +1,16 @@
+{
+  "decision": "approved",
+  "approved_by": "Dion",
+  "review_date": "2026-10-03",
+  "review_time_exact": null,
+  "source": "Dion's explicit answer 'Ya, setujui plan v5 dan plafon US$3,16' to the exact plan-hash, 27-case and changed-semantic-stop-policy question in the current project chat",
+  "scope": "cp23_stage2_round1_extraction_20261003_v5_continuation",
+  "plan_file": "evals/results/cp23_stage2_round1_extraction_20261003_v5_continuation_preflight.json",
+  "plan_sha256": "e6c4e899d49a82f7c4573957c49fff0195a93512d21c36796330a3bcc429fd71",
+  "aggregate_cap_usd": "3.16",
+  "covers": "The 27 remaining four-model/seven-development-JD extraction cases on fixed experimental prompt v1.4, with at most one automatic repair per case. A reviewed source-semantic failure is retained as failure and does not end the entire comparison; each next call still waits for case-specific source review. Aggregate includes failed and uncertain charges.",
+  "prior_case": "DeepSeek/F00332 from terminal v4 is retained as an external failed observation, without a repeat call or cap transfer",
+  "excludes": ["four evidence-matching pairs", "GPT-6 Sol reference", "broad development extraction", "test data", "configuration selection"],
+  "project_hard_stop_usd": "8.50",
+  "no_budget_evasion": true
+}

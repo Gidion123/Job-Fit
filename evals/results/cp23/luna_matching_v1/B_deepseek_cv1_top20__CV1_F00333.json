@@ -1,0 +1,355 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00333",
+  "model": "deepseek-flash",
+  "status": "done",
+  "error_code": null,
+  "wall_ms": 112646,
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+            "Lulusan S1 Statistika yang tertarik pada data science dan machine learning."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B6",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B7",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "Terbiasa mengolah data dengan Python dan SQL, membuat model prediksi sederhana, dan menyajikan hasil analisis dalam dashboard.",
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": "NO_MATCH",
+      "check_status": "needs_clarification",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+        "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh · Februari 2025 - Juni 2025",
+        "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\"",
+        "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U10",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U11",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U12",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Terbiasa mengolah data dengan Python dan SQL, membuat model prediksi sederhana, dan menyajikan hasil analisis dalam dashboard.",
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+        "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U13",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Terbiasa mengolah data dengan Python dan SQL, membuat model prediksi sederhana, dan menyajikan hasil analisis dalam dashboard.",
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+        "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U14",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U15",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "menyajikan hasil analisis dalam dashboard.",
+        "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U16",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "menyajikan hasil analisis dalam dashboard.",
+        "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+        "mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U17",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "mempresentasikan hasilnya ke manajer divisi.",
+        "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U18",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U19",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U20",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U21",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "mempresentasikan hasilnya ke manajer divisi.",
+        "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+        "Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\""
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U22",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U23",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U24",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U25",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "Jakarta Selatan, Indonesia"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ],
+  "scores": {
+    "H1": {
+      "score": {
+        "score_pct": 52.78,
+        "status": "final",
+        "matched": 8,
+        "partial": 3,
+        "required_total": 18,
+        "preferred_met": 0,
+        "preferred_total": 4,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 2,
+        "soft_skill_matched": 1,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 1,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    },
+    "H2": {
+      "score": {
+        "score_pct": 52.78,
+        "status": "final",
+        "matched": 8,
+        "partial": 3,
+        "required_total": 18,
+        "preferred_met": 0,
+        "preferred_total": 4,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 2,
+        "soft_skill_matched": 1,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 1,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    },
+    "H2v2": {
+      "score": {
+        "score_pct": 52.78,
+        "status": "final",
+        "matched": 8,
+        "partial": 3,
+        "required_total": 18,
+        "preferred_met": 0,
+        "preferred_total": 4,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 2,
+        "soft_skill_matched": 1,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 1,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    }
+  }
+}

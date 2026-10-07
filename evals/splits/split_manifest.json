@@ -1,0 +1,211 @@
+{
+  "snapshot_id": "CP1_20260926",
+  "seed": 20261001,
+  "created_at_utc": "2026-10-01T11:56:02.773056+00:00",
+  "algorithm": "seeded component greedy with move/swap stratum balancing v1",
+  "input_hashes": {
+    "data/processed/jobs_features.jsonl": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+    "data/interim/dedup_decisions.csv": "7db35513a7bd57fcf0b2f17d5d10360a1b5891456c6c6b406a1f6e20b3ea3a61",
+    "data/interim/jsearch_probable_duplicates_review.csv": "e78e01460a41491f51172ca192d8d6078300ef716e9dc3e46c05afdf51263d46",
+    "data/interim/snapshots/CP1_20260926/jsearch_records.jsonl": "14eddfe7acabf07770e3c94c7824d61c59a7a469757b0bb8074fdc0a1c59cc0b"
+  },
+  "total": 428,
+  "development": 214,
+  "test": 214,
+  "pilot_ids": [
+    "F00016",
+    "F00022",
+    "F00034",
+    "F00073",
+    "F00114"
+  ],
+  "strata": {
+    "ai_ml_engineering / 1-2y": {
+      "total": 33,
+      "development": 16,
+      "test": 17
+    },
+    "ai_ml_engineering / 3-4y": {
+      "total": 36,
+      "development": 18,
+      "test": 18
+    },
+    "ai_ml_engineering / 5y+": {
+      "total": 41,
+      "development": 21,
+      "test": 20
+    },
+    "ai_ml_engineering / entry": {
+      "total": 22,
+      "development": 11,
+      "test": 11
+    },
+    "ai_ml_engineering / not_stated": {
+      "total": 90,
+      "development": 45,
+      "test": 45
+    },
+    "data_science / 1-2y": {
+      "total": 14,
+      "development": 7,
+      "test": 7
+    },
+    "data_science / 3-4y": {
+      "total": 31,
+      "development": 16,
+      "test": 15
+    },
+    "data_science / 5y+": {
+      "total": 37,
+      "development": 18,
+      "test": 19
+    },
+    "data_science / entry": {
+      "total": 16,
+      "development": 8,
+      "test": 8
+    },
+    "data_science / not_stated": {
+      "total": 33,
+      "development": 16,
+      "test": 17
+    },
+    "genai_llm / 1-2y": {
+      "total": 6,
+      "development": 3,
+      "test": 3
+    },
+    "genai_llm / 3-4y": {
+      "total": 11,
+      "development": 6,
+      "test": 5
+    },
+    "genai_llm / 5y+": {
+      "total": 12,
+      "development": 6,
+      "test": 6
+    },
+    "genai_llm / not_stated": {
+      "total": 21,
+      "development": 10,
+      "test": 11
+    },
+    "software_ai / 1-2y": {
+      "total": 5,
+      "development": 2,
+      "test": 3
+    },
+    "software_ai / 3-4y": {
+      "total": 5,
+      "development": 3,
+      "test": 2
+    },
+    "software_ai / 5y+": {
+      "total": 3,
+      "development": 2,
+      "test": 1
+    },
+    "software_ai / entry": {
+      "total": 3,
+      "development": 1,
+      "test": 2
+    },
+    "software_ai / not_stated": {
+      "total": 9,
+      "development": 5,
+      "test": 4
+    }
+  },
+  "duplicate_pairs": [
+    [
+      "F00002",
+      "F00002"
+    ],
+    [
+      "F00011",
+      "F00011"
+    ],
+    [
+      "F00012",
+      "F00012"
+    ],
+    [
+      "F00014",
+      "F00812"
+    ],
+    [
+      "F00019",
+      "F00019"
+    ],
+    [
+      "F00021",
+      "F00021"
+    ],
+    [
+      "F00030",
+      "F00030"
+    ],
+    [
+      "F00032",
+      "F00032"
+    ],
+    [
+      "F00104",
+      "F00104"
+    ],
+    [
+      "F00105",
+      "F00105"
+    ],
+    [
+      "F00127",
+      "F00127"
+    ],
+    [
+      "F00201",
+      "F00201"
+    ],
+    [
+      "F00272",
+      "F00272"
+    ],
+    [
+      "F00308",
+      "F00308"
+    ],
+    [
+      "F00310",
+      "F00310"
+    ],
+    [
+      "F00330",
+      "F00330"
+    ],
+    [
+      "F00341",
+      "F00341"
+    ],
+    [
+      "F00364",
+      "F00364"
+    ],
+    [
+      "F00650",
+      "F00650"
+    ]
+  ],
+  "duplicate_audit": {
+    "different_rows_excluded": 16,
+    "rows_outside_target_pool": 16
+  },
+  "multi_job_components": [
+    [
+      "F00014",
+      "F00812"
+    ]
+  ],
+  "output_hashes": {
+    "dev_job_ids.txt": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+    "test_job_ids.txt": "b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435"
+  }
+}

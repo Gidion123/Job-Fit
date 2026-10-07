@@ -1,0 +1,372 @@
+{
+  "job_id": "claude-haiku-4.5/F00018",
+  "source_job_id": "F00018",
+  "model": "claude-haiku-4.5",
+  "model_id": "anthropic/claude-haiku-4.5",
+  "plan_sha256": "888a2cfd1219c6615cf5941c47d20db2fbe40edc5f97018eb14e271c6dbc9192",
+  "source_sha256": "f409e9a55d3bc70109c69b1ee7aa779e5e866428ca42e6439a4901fa3187d3d4",
+  "prompt_version": "jd-prompt-v1.4-experimental",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "extraction": {
+    "job_id": "F00018",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Comfortable with standard ML algorithms and underlying math",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Comfortable with standard ML algorithms and underlying math."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Strong hands-on experience with LLMs in production",
+        "kind": "simple",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong hands-on experience with LLMs in production, RAG architecture, and agentic systems"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Experience with RAG architecture",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong hands-on experience with LLMs in production, RAG architecture, and agentic systems"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Experience with agentic systems",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong hands-on experience with LLMs in production, RAG architecture, and agentic systems"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "AWS Bedrock experience",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "AWS Bedrock experience strongly preferred"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Practical experience with solving classification tasks",
+        "kind": "simple",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with solving classification and regression tasks in general, feature engineering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Practical experience with solving regression tasks",
+        "kind": "simple",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with solving classification and regression tasks in general, feature engineering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Practical experience with feature engineering",
+        "kind": "simple",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with solving classification and regression tasks in general, feature engineering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Practical experience with ML models in production",
+        "kind": "simple",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with ML models in production."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Practical experience with NLP",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with one or more use cases from the following: NLP, LLMs, and Recommendation engines."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Practical experience with LLMs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with one or more use cases from the following: NLP, LLMs, and Recommendation engines."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Practical experience with Recommendation engines",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with one or more use cases from the following: NLP, LLMs, and Recommendation engines."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Solid software engineering skills including ability to produce well-structured modules",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Solid software engineering skills (i.e., ability to produce well-structured modules, not only notebook scripts)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Python expertise",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Python expertise, Docker."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Docker",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Python expertise, Docker."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "English level strong upper-intermediate",
+        "kind": "simple",
+        "importance": "required",
+        "field": "language",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "English level - strong upper- intermediate."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Excellent communication skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Excellent communication and problem-solving skills."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Excellent problem-solving skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Excellent communication and problem-solving skills."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/claude-haiku-4.5"
+  },
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 10,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 10,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02",
+          "U03",
+          "U04"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U05"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U06",
+          "U07",
+          "U08"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U09"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U10",
+          "U11",
+          "U12"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U13"
+        ]
+      },
+      {
+        "source_id": "Q08",
+        "unit_ids": [
+          "U14",
+          "U15"
+        ]
+      },
+      {
+        "source_id": "Q09",
+        "unit_ids": [
+          "U16"
+        ]
+      },
+      {
+        "source_id": "Q10",
+        "unit_ids": [
+          "U17",
+          "U18"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "cache_hit": false,
+  "latency_ms": 10677,
+  "result_sha256": "ca6ce54fa540a8fbb186600419ea4f300c2499b2e43ab3d2b6681338a844a651"
+}

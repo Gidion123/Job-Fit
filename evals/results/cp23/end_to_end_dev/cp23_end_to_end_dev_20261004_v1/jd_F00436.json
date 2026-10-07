@@ -1,0 +1,11 @@
+{
+  "job_id": "F00436",
+  "status": "failed",
+  "attempts": 2,
+  "cache_hit": false,
+  "error_code": "qualification_inventory_incomplete",
+  "key": "7a29c59e997695089976e03b61c96eaa4b622f472dfdba63a1d049741b44b1cb",
+  "wall_ms": 118655,
+  "coverage": {},
+  "extraction": null
+}

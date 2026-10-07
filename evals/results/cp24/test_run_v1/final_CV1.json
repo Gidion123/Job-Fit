@@ -1,0 +1,4815 @@
+{
+ "cv_id": "CV1",
+ "order": [
+  "F00599",
+  "F00771",
+  "F00313",
+  "F00236",
+  "F00206",
+  "F00813",
+  "F00374",
+  "F00258",
+  "F00139",
+  "F00842"
+ ],
+ "analyzed_ids": [
+  "F00599",
+  "F00236",
+  "F00813",
+  "F00258",
+  "F00139",
+  "F00206",
+  "F00374",
+  "F00313",
+  "F00842",
+  "F00771"
+ ],
+ "stage1_ids": [
+  "F00599",
+  "F00267",
+  "F00236",
+  "F00597",
+  "F00813",
+  "F00258",
+  "F00557",
+  "F00139",
+  "F00206",
+  "F00027",
+  "F00374",
+  "F00313",
+  "F00842",
+  "F00207",
+  "F00771",
+  "F00101",
+  "F00358",
+  "F00215",
+  "F00555",
+  "F00100",
+  "F00656",
+  "F00272",
+  "F00296",
+  "F00127",
+  "F00355",
+  "F00662",
+  "F00781",
+  "F00193",
+  "F00513",
+  "F00596"
+ ],
+ "held_ids": [
+  "F00139"
+ ],
+ "fallback_ids": [
+  "F00842",
+  "F00771"
+ ],
+ "versions": {
+  "service": "recommend-service-v1",
+  "pipeline": "pipeline-cp23-freeze-candidate-v4",
+  "seniority_rule": "seniority-demote-3y-v1",
+  "matching_model": "gpt-6-sol",
+  "matching_fallback_model": "gpt-6-luna",
+  "hold_policy": "H2v2",
+  "partial_weight": 0.5,
+  "k": 10,
+  "experience_conflict_rule": "experience-upper-bound-v1",
+  "history_confirmed": true
+ },
+ "wall_s": 87.2,
+ "jobs": {
+  "F00139": {
+   "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 0,
+    "partial": 0,
+    "required_total": 0,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "JD extraction not available: jd_quality_looks_incomplete"
+    ]
+   },
+   "assessments": [],
+   "constraints": [],
+   "hold_reason": "JD extraction not available: jd_quality_looks_incomplete",
+   "matcher_model": null,
+   "attempts": []
+  },
+  "F00258": {
+   "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 1,
+    "partial": 0,
+    "required_total": 2,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "Required units not judged yet: U02",
+     "More than 20 percent of scored required units need checking."
+    ]
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "U01-B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "U01-B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "U01-B3",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+       ]
+      },
+      {
+       "branch_id": "U01-B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "U01-B5",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "U01-B6",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "U01-B7",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00206": {
+   "score": {
+    "score_pct": 25.0,
+    "status": "final",
+    "matched": 1,
+    "partial": 3,
+    "required_total": 10,
+    "preferred_met": 0,
+    "preferred_total": 5,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 4,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Indonesia (native), Inggris (menengah, TOEFL ITP 540)"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00374": {
+   "score": {
+    "score_pct": 55.0,
+    "status": "final",
+    "matched": 4,
+    "partial": 3,
+    "required_total": 10,
+    "preferred_met": 0,
+    "preferred_total": 1,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 1,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 1,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B01",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B02",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B03",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B04",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "NO_MATCH",
+     "check_status": "needs_clarification",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B05",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B06",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B07",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B08",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B09",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh · Februari 2025 - Juni 2025",
+      "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+      "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [
+    {
+     "kind": "experience",
+     "state": "explicit_conflict",
+     "message": "U02: the JD asks for at least 5 years; the whole CV work history is about 0.75 years. JD: Minimum 5 strong years of software engineering practices and experiences in data science, machine learning, generative AI."
+    },
+    {
+     "kind": "experience",
+     "state": "explicit_conflict",
+     "message": "U03: the JD asks for at least 5 years; the whole CV work history is about 0.75 years. JD: Minimum 5 strong years of software engineering practices and experiences in data science, machine learning, generative AI."
+    },
+    {
+     "kind": "experience",
+     "state": "explicit_conflict",
+     "message": "U04: the JD asks for at least 5 years; the whole CV work history is about 0.75 years. JD: Minimum 5 strong years of software engineering practices and experiences in data science, machine learning, generative AI."
+    }
+   ],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00813": {
+   "score": {
+    "score_pct": 62.5,
+    "status": "final",
+    "matched": 5,
+    "partial": 5,
+    "required_total": 12,
+    "preferred_met": 0,
+    "preferred_total": 8,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+      "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+      "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+      "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+       ]
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U20",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [
+    {
+     "kind": "experience",
+     "state": "explicit_conflict",
+     "message": "U01: the JD asks for at least 3 years; the whole CV work history is about 0.75 years. JD: Shall have at least three (3) years of implementation and deployment experience in machine learning and statistical data analysis on large datasets."
+    },
+    {
+     "kind": "experience",
+     "state": "explicit_conflict",
+     "message": "U02: the JD asks for at least 3 years; the whole CV work history is about 0.75 years. JD: Shall have at least three (3) years of implementation and deployment experience in machine learning and statistical data analysis on large datasets."
+    }
+   ],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00599": {
+   "score": {
+    "score_pct": 90.0,
+    "status": "provisional",
+    "matched": 8,
+    "partial": 2,
+    "required_total": 10,
+    "preferred_met": 1,
+    "preferred_total": 8,
+    "unknown_importance_total": 4,
+    "soft_skill_total": 2,
+    "soft_skill_matched": 2,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "4 requirement(s) not clearly required or preferred"
+    ]
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U20",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U21",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U22",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U23",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U24",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+      "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00771": {
+   "score": {
+    "score_pct": 66.67,
+    "status": "final",
+    "matched": 8,
+    "partial": 0,
+    "required_total": 12,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 3,
+    "soft_skill_matched": 2,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B5",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B6",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+       ]
+      },
+      {
+       "branch_id": "B7",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-luna",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "failed",
+     "error": "RunCapReached"
+    },
+    {
+     "model": "gpt-6-luna",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00236": {
+   "score": {
+    "score_pct": 47.73,
+    "status": "final",
+    "matched": 10,
+    "partial": 1,
+    "required_total": 22,
+    "preferred_met": 1,
+    "preferred_total": 2,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B01",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B02",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B03",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B04",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B05",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B01",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+       ]
+      },
+      {
+       "branch_id": "B02",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B01",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+       ]
+      },
+      {
+       "branch_id": "B02",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+       ]
+      },
+      {
+       "branch_id": "B03",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+       ]
+      },
+      {
+       "branch_id": "B04",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B01",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+       ]
+      },
+      {
+       "branch_id": "B02",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U20",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U21",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U22",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U23",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+      "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U24",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00313": {
+   "score": {
+    "score_pct": 60.0,
+    "status": "provisional",
+    "matched": 4,
+    "partial": 4,
+    "required_total": 10,
+    "preferred_met": 0,
+    "preferred_total": 4,
+    "unknown_importance_total": 2,
+    "soft_skill_total": 5,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 4,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "2 requirement(s) not clearly required or preferred"
+    ]
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B5",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B6",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+        "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+       ]
+      },
+      {
+       "branch_id": "B3",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+       ]
+      },
+      {
+       "branch_id": "B4",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+       ]
+      },
+      {
+       "branch_id": "B5",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+      "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+      "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+      "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B5",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B6",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B7",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B5",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U20",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U21",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U22",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+      "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U23",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00842": {
+   "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 6,
+    "partial": 4,
+    "required_total": 29,
+    "preferred_met": 0,
+    "preferred_total": 3,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 2,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "Required units not judged yet: U28, U30",
+     "An experience, level or education requirement needs checking: U28."
+    ]
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "Lulusan S1 Statistika"
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+       ]
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "Jakarta Selatan, Indonesia"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "Jakarta Selatan, Indonesia"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "needs_clarification",
+       "cv_quotes": [
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+        "Februari 2026 - Mei 2026 (4 bulan)"
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U20",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U21",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U22",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U23",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U24",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U25",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U26",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U27",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U28",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U29",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U30",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U31",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+       ]
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U32",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U33",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U34",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [
+    {
+     "kind": "experience",
+     "state": "explicit_conflict",
+     "message": "U28: the JD asks for at least 2 years; the whole CV work history is about 0.75 years. JD: Pengalaman minimal 2 tahun di bidang predictive dan prescriptive analytics (advanced analytics) atau kemampuan setara."
+    }
+   ],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-luna",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "failed",
+     "error": "RunCapReached"
+    },
+    {
+     "model": "gpt-6-luna",
+     "status": "done",
+     "error": null
+    }
+   ]
+  }
+ },
+ "presented": {
+  "cv_id": "CV1",
+  "note": "Match % is CV evidence coverage of the required items, not a hiring probability.",
+  "blocks": [
+   {
+    "title": "Target-role jobs",
+    "filter_state": null,
+    "groups": {
+     "matches": [
+      {
+       "job_id": "F00599",
+       "title": "Data Scientist",
+       "company": "PT. Quad Sinergi Teknologi",
+       "location": null,
+       "url": null,
+       "score_pct": 90.0,
+       "status": "provisional",
+       "scored": true,
+       "matched": 8,
+       "partial": 2,
+       "required_total": 10,
+       "soft_skills": {
+        "total": 2,
+        "matched": 2,
+        "partial": 0
+       },
+       "reasons": [
+        "4 requirement(s) not clearly required or preferred"
+       ],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "For Junior level: Fresh Graduate with approximately 2 years of experience in Data Science",
+         "importance": "unknown",
+         "field": "experience_duration",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "For Junior level: Fresh Graduate with approximately 2 years of experience in Machine Learning",
+         "importance": "unknown",
+         "field": "experience_duration",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "For Junior level: Fresh Graduate with approximately 2 years of experience in Data Analytics",
+         "importance": "unknown",
+         "field": "experience_duration",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "For Mid-Level: 2–4 years of experience as Data Scientist, Machine Learning Engineer, Data Analyst, or related roles",
+         "importance": "unknown",
+         "field": "experience_duration",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Experience handling AI/Data projects for enterprise or customers",
+         "importance": "preferred",
+         "field": "other",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+         ]
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Python",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "SQL",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Pandas",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "NumPy",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+         ]
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Scikit-learn",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Machine Learning fundamentals",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Statistics",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+         ]
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Data analysis",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+         ]
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Database fundamentals",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Analytical skills",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+         ]
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Problem-solving skills",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+         ]
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Experience with Generative AI / LLM",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "RAG",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Vector Database",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U20",
+         "requirement": "Experience with PyTorch or TensorFlow",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U21",
+         "requirement": "Experience with Docker or MLflow",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U22",
+         "requirement": "Experience with cloud platforms (AWS, Azure, or GCP)",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U23",
+         "requirement": "Experience with Power BI, Tableau, or Streamlit",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U24",
+         "requirement": "Ability to turn business problems into data, analysis, model, AI solution, and business impact",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+          "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+         ]
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00771",
+       "title": "Data Scientist Intern",
+       "company": "Maxis",
+       "location": null,
+       "url": null,
+       "score_pct": 66.67,
+       "status": "final",
+       "scored": true,
+       "matched": 8,
+       "partial": 0,
+       "required_total": 12,
+       "soft_skills": {
+        "total": 3,
+        "matched": 2,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Current students or graduates with a Bachelor’s degree in Computer Science, Software Engineering, Artificial Intelligence, Data Science, Mathematics, Statistics, or related quantitative fields.",
+         "importance": "required",
+         "field": "education",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Strong foundational knowledge of machine learning concepts.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+         ]
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Strong foundational knowledge of model development.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Strong foundational knowledge of evaluation.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+         ]
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Proficiency in Python for data manipulation, scripting, and model development.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Proficiency in SQL for data manipulation, scripting, and model development.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Skills in exploratory data analysis.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+         ]
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Skills in feature engineering.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Skills in interpreting complex datasets.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+          "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+         ]
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Interest or experience in prompt engineering.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Interest or experience in large language models.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Interest or experience in generative AI applications.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Strong analytical abilities to develop structured solutions.",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+         ]
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Strong problem-solving abilities to develop structured solutions.",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+         ]
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Ability to collaborate effectively within cross-functional technical teams in a fast-paced environment.",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-luna",
+       "used_fallback": true,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00313",
+       "title": "Head of Marketplace Data Science - CONFIDENTIAL HIRE",
+       "company": "Gravitas Recruitment Group (Global) Ltd",
+       "location": null,
+       "url": null,
+       "score_pct": 60.0,
+       "status": "provisional",
+       "scored": true,
+       "matched": 4,
+       "partial": 4,
+       "required_total": 10,
+       "soft_skills": {
+        "total": 5,
+        "matched": 0,
+        "partial": 4
+       },
+       "reasons": [
+        "2 requirement(s) not clearly required or preferred"
+       ],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Advanced academic qualification in a quantitative discipline such as statistics, computer science, economics, operations research, data science, or a closely related field.",
+         "importance": "required",
+         "field": "education",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Extensive professional experience in data science, machine learning, applied research, quantitative modelling, or algorithm development within technically sophisticated environments.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Demonstrated experience taking machine learning or statistical models from research through to reliable production deployment.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Strong programming and data analysis capability, including Python.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Strong programming and data analysis capability, including SQL.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Experience working with scalable computing or cloud-based technology environments.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Deep understanding of statistical inference.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+          "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+         ]
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Deep understanding of experimental methodology.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+          "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+         ]
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Deep understanding of quantitative model evaluation.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+         ]
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Experience leading technically complex data science initiatives with meaningful commercial or operational impact.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Ability to operate effectively across technical and non-technical stakeholder groups.",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+          "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Ability to translate complex analytical concepts into practical business decisions.",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+          "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+         ]
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Experience working on problems involving dynamic pricing, marketplace optimisation, matching, allocation, logistics, capacity planning, or other highly dynamic operational systems.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Exposure to two-sided or multi-participant platforms where supply, demand, capacity, and customer behaviour interact continuously.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Experience applying causal inference, reinforcement learning, econometric modelling, optimisation, or operations research to real-world decision systems.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Experience operating machine learning models in environments requiring high availability, substantial transaction volumes, and rapid decision-making.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Experience mentoring senior technical professionals.",
+         "importance": "preferred",
+         "field": "soft_skill",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+         ]
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "Experience influencing data science strategy beyond an individual project or team.",
+         "importance": "preferred",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Established data science or quantitative modelling leader who combines research depth with strong production experience.",
+         "importance": "unknown",
+         "field": "other",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U20",
+         "requirement": "Candidates should be comfortable addressing ambiguous, high-dimensional problems.",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U21",
+         "requirement": "Candidates should be comfortable challenging existing assumptions through empirical analysis.",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+         ]
+        },
+        {
+         "unit_id": "U22",
+         "requirement": "Candidates should be comfortable taking ownership from mathematical formulation through deployment and measurable business outcomes.",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+          "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+         ]
+        },
+        {
+         "unit_id": "U23",
+         "requirement": "Relevant backgrounds may include advanced data science, machine learning, algorithmic decision-making, quantitative research, econometrics, operations research, optimisation, or applied computational research in large-scale technology environments.",
+         "importance": "unknown",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00236",
+       "title": "AI ENGINEER (AI & POWER BI)",
+       "company": "PT Mitra Transformasi Digital",
+       "location": null,
+       "url": null,
+       "score_pct": 47.73,
+       "status": "final",
+       "scored": true,
+       "matched": 10,
+       "partial": 1,
+       "required_total": 22,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Minimum bachelor's degree (S1) in Informatics Engineering, Computer Science, Data Science, Information Systems, or a related field.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Experience or understanding in Artificial Intelligence / Machine Learning.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Python.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "AI/ML libraries such as Pandas, NumPy, Scikit-learn, or similar frameworks.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "LLM (Large Language Model) concepts.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "AI implementation.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Understanding RAG (Retrieval-Augmented Generation) and/or AI Agent.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Use of APIs for AI application integration.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "SQL.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Database processing.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Microsoft Power BI for creating dashboards and data visualization.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Processing data from various sources.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Portfolio/project in AI or Power BI.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Machine Learning.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+         ]
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "RAG (Retrieval-Augmented Generation).",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "AI Agent / Agentic AI.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Vector Database.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "Embeddings.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "DAX.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U20",
+         "requirement": "Power Query.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U21",
+         "requirement": "Data Modeling.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U22",
+         "requirement": "Dashboard.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+         ]
+        },
+        {
+         "unit_id": "U23",
+         "requirement": "Reporting.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+          "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+         ]
+        },
+        {
+         "unit_id": "U24",
+         "requirement": "Power BI Service.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00206",
+       "title": "Open-Source Machine Learning Engineer - US Remote",
+       "company": "Hugging Face",
+       "location": null,
+       "url": null,
+       "score_pct": 25.0,
+       "status": "final",
+       "scored": true,
+       "matched": 1,
+       "partial": 3,
+       "required_total": 10,
+       "soft_skills": {
+        "total": 4,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Public track record of open-source work/contributions, reviewable on GitHub",
+         "importance": "required",
+         "field": "other",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Enjoy collaborating with a community out in the open on GitHub",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Love open source",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Passionate about making complex technology more accessible",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Want to contribute to one of the fastest-growing ML ecosystems",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Strong Python skills, with experience writing clean, well-tested, maintainable library code",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Deep hands-on experience with a modern deep-learning framework, especially PyTorch",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "JAX or TensorFlow a plus",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Practical experience with the Hugging Face open-source stack (Transformers, Datasets, Accelerate) or comparable ML libraries",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Solid understanding of modern machine learning",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+          "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Solid understanding of deep learning",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Solid understanding of transformer architectures",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Experience collaborating with a technical community in the open (GitHub issues and reviews, forums, Slack or Discord)",
+         "importance": "required",
+         "field": "other",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Fluent written English for asynchronous collaboration across a distributed, global community",
+         "importance": "required",
+         "field": "language",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Indonesia (native), Inggris (menengah, TOEFL ITP 540)"
+         ]
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Experience maintaining an open-source project",
+         "importance": "preferred",
+         "field": "other",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Prior contributions to Transformers, Datasets, Accelerate, or similar libraries",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Familiarity with distributed training, inference optimization, or GPU/accelerator performance work",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "Experience training or fine-tuning models at scale",
+         "importance": "preferred",
+         "field": "other",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Provide a cover letter mentioning why you would like to work in open-source at Hugging Face",
+         "importance": "required",
+         "field": "other",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      }
+     ],
+     "conflicts": [
+      {
+       "job_id": "F00813",
+       "title": "Senior Data Scientist / Machine Learning Engineer",
+       "company": "Singapore Technologies Engineering Ltd",
+       "location": null,
+       "url": null,
+       "score_pct": 62.5,
+       "status": "final",
+       "scored": true,
+       "matched": 5,
+       "partial": 5,
+       "required_total": 12,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [
+        "U01: the JD asks for at least 3 years; the whole CV work history is about 0.75 years. JD: Shall have at least three (3) years of implementation and deployment experience in machine learning and statistical data analysis on large datasets.",
+        "U02: the JD asks for at least 3 years; the whole CV work history is about 0.75 years. JD: Shall have at least three (3) years of implementation and deployment experience in machine learning and statistical data analysis on large datasets."
+       ],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "At least 3 years of implementation and deployment experience in machine learning on large datasets.",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+          "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+         ]
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "At least 3 years of implementation and deployment experience in statistical data analysis on large datasets.",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+          "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+         ]
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Experience translating business questions into analytical problems.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+          "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Experience using statistical techniques to derive actionable insights using statistical software (Python, R, SAS).",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Experience using statistical techniques to derive actionable insights using database languages (SQL).",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+          "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+         ]
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Experience using statistical techniques to derive actionable insights using visualization tools (Qlik Sense).",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Experience using statistical techniques to derive actionable insights using deep learning framework (TensorFlow, PyTorch).",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Data Wrangling.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Data Visualization.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+         ]
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "DBMS.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "SQL.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Python.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Completed at least one project using Scrum or equivalent Agile development framework.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Experience with MS Access (Front-end).",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Experience with SharePoint (Back-end).",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Experience with Power BI (Visualisation).",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Experience with Kubernetes.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "Experience with Docker/Podman.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Experience with Microservices Architecture.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U20",
+         "requirement": "Experience with DevSecOps Methodology.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00374",
+       "title": "Machine Learning Engineering",
+       "company": "Technosoft SEA Pte Ltd",
+       "location": null,
+       "url": null,
+       "score_pct": 55.0,
+       "status": "final",
+       "scored": true,
+       "matched": 4,
+       "partial": 3,
+       "required_total": 10,
+       "soft_skills": {
+        "total": 1,
+        "matched": 0,
+        "partial": 1
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [
+        "U02: the JD asks for at least 5 years; the whole CV work history is about 0.75 years. JD: Minimum 5 strong years of software engineering practices and experiences in data science, machine learning, generative AI.",
+        "U03: the JD asks for at least 5 years; the whole CV work history is about 0.75 years. JD: Minimum 5 strong years of software engineering practices and experiences in data science, machine learning, generative AI.",
+        "U04: the JD asks for at least 5 years; the whole CV work history is about 0.75 years. JD: Minimum 5 strong years of software engineering practices and experiences in data science, machine learning, generative AI."
+       ],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Bachelor's Degree in Computer Science, Electrical Engineering, Math, or related field.",
+         "importance": "required",
+         "field": "education",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Minimum 5 years of software engineering practices and experience in data science.",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Minimum 5 years of software engineering practices and experience in machine learning.",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Minimum 5 years of software engineering practices and experience in generative AI.",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "NO_MATCH",
+         "check_status": "needs_clarification",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Deep understanding of different types of machine learning algorithms (e.g., CNN, RNN, LSTM, Reinforcement Learning).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+         ]
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Experience training deep-learning models in an end-to-end fashion.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Project experience working with Azure Machine Learning, Azure Open AI, or other modern deep learning frameworks.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Proficient in Python.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Additional knowledge of C++ or C#.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Working knowledge of statistics (e.g., Monte Carlo, hypothesis testing, confidence intervals, maximum likelihood, bootstrap, Bayesian inference).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh · Februari 2025 - Juni 2025",
+          "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Working knowledge in machine learning algorithms: logistic regression, random forest, gradient boosted trees, neural networks, k-means, and more.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Excellent verbal and written communication skills.",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+          "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+         ]
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      }
+     ],
+     "not_fully_analyzed": [
+      {
+       "job_id": "F00258",
+       "title": "IT Data Scientist",
+       "company": "PT Teknologi Weldim Indonesia",
+       "location": null,
+       "url": null,
+       "score_pct": null,
+       "status": "on_hold",
+       "scored": false,
+       "matched": 1,
+       "partial": 0,
+       "required_total": 2,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [
+        "Required units not judged yet: U02",
+        "More than 20 percent of scored required units need checking."
+       ],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "S1/D4 degree in one of: Teknik Informatika, Ilmu Komputer, Statistika, Matematika, Sistem Informasi, Data Science, or a related relevant field",
+         "importance": "required",
+         "field": "education",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Must have one or more of: experience in data analysis & processing and basic understanding of statistics; ability to design machine learning and predictive modeling; data visualization skills (such as Tableau, Power BI, or related libraries); critical thinking in formulating data-driven insights and recommendations",
+         "importance": "required",
+         "field": "other",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00139",
+       "title": "Data Scientist Credit Scoring",
+       "company": "PT Sharing Vision Indonesia",
+       "location": null,
+       "url": null,
+       "score_pct": null,
+       "status": "on_hold",
+       "scored": false,
+       "matched": 0,
+       "partial": 0,
+       "required_total": 0,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [
+        "JD extraction not available: jd_quality_looks_incomplete"
+       ],
+       "hold_reason": "JD extraction not available: jd_quality_looks_incomplete",
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [],
+       "matcher_model": null,
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00842",
+       "title": "Database Administrator / Data Engineer / Data Scientist / Data Analyst",
+       "company": "PT EVOLUSI TEKNOLOGI SOLUSI",
+       "location": null,
+       "url": null,
+       "score_pct": null,
+       "status": "on_hold",
+       "scored": false,
+       "matched": 6,
+       "partial": 4,
+       "required_total": 29,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [
+        "Required units not judged yet: U28, U30",
+        "An experience, level or education requirement needs checking: U28."
+       ],
+       "hold_reason": null,
+       "explicit_conflicts": [
+        "U28: the JD asks for at least 2 years; the whole CV work history is about 0.75 years. JD: Pengalaman minimal 2 tahun di bidang predictive dan prescriptive analytics (advanced analytics) atau kemampuan setara."
+       ],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Minimum bachelor's degree (S1) in Computer Science, Information Systems, or other major",
+         "importance": "required",
+         "field": "education",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Proficiency in database administration for Oracle Database, Microsoft SQL Server, PostgreSQL, or MariaDB",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Experience in performance tuning",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Experience in backup & recovery",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Experience in troubleshooting",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Experience in database security",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Ability to handle incident/escalation from monitoring team",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Ability to perform daily database maintenance",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Willingness to work on-site in Jakarta Pusat",
+         "importance": "required",
+         "field": "location",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "Jakarta Selatan, Indonesia"
+         ]
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Willingness to work shifting in Jakarta Pusat",
+         "importance": "required",
+         "field": "location",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "Jakarta Selatan, Indonesia"
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Experience in banking",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Supporting certification (Oracle/SQL/etc.)",
+         "importance": "required",
+         "field": "certification",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Ability to join quickly",
+         "importance": "preferred",
+         "field": "other",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Minimum 1 year experience in related field or equivalent ability",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Experience using SSIS (SQL Server Integration Service)",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Experience using IBM Infosphere Family (Datastage, IA, BPM, RAD (workbench), PME, DB2)",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Experience using Data Engineering Integration Informatica",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "Experience in Apache Spark for data processing using PySpark/Spark R/Scala",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Experience in creating ETL processes for data processing",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U20",
+         "requirement": "Experience in data modeling",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U21",
+         "requirement": "Experience in data architecture",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U22",
+         "requirement": "Experience in data warehousing",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U23",
+         "requirement": "Knowledge in data flow automation on various platforms",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U24",
+         "requirement": "Knowledge in data integration on various platforms",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U25",
+         "requirement": "Knowledge in information management on various platforms",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U26",
+         "requirement": "Knowledge in data processing on various platforms",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U27",
+         "requirement": "Experience in developing data reporting or data visualization using BI tools (e.g., Tableau, QlikView, Microsoft PowerBI, SSRS, IBM Cognos, etc.)",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U28",
+         "requirement": "Minimum 2 years in predictive and prescriptive analytics (advanced analytics) or equivalent ability",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U29",
+         "requirement": "Experience in SQL/NoSQL processing languages and similar",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+         ]
+        },
+        {
+         "unit_id": "U30",
+         "requirement": "Experience in programming languages Python and/or R for machine learning modeling, statistical modeling, and operation research",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U31",
+         "requirement": "Experience in modeling techniques: machine learning, statistical model, or operation research",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U32",
+         "requirement": "Experience or capability to deploy modeling results to production environment",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U33",
+         "requirement": "Experience in big data technologies (Spark, Hive, Impala, Kafka, etc.)",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U34",
+         "requirement": "Experience in implementing advanced analytics on projects",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+          "Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes."
+         ]
+        }
+       ],
+       "matcher_model": "gpt-6-luna",
+       "used_fallback": true,
+       "filter_state": null
+      }
+     ]
+    }
+   }
+  ],
+  "active_filters": [],
+  "empty_message": null,
+  "analyzed": 10,
+  "held": 1,
+  "demoted_by_seniority_rule": [],
+  "versions": {
+   "service": "recommend-service-v1",
+   "pipeline": "pipeline-cp23-freeze-candidate-v4",
+   "seniority_rule": "seniority-demote-3y-v1",
+   "matching_model": "gpt-6-sol",
+   "matching_fallback_model": "gpt-6-luna",
+   "hold_policy": "H2v2",
+   "partial_weight": 0.5,
+   "k": 10,
+   "experience_conflict_rule": "experience-upper-bound-v1",
+   "history_confirmed": true
+  }
+ }
+}

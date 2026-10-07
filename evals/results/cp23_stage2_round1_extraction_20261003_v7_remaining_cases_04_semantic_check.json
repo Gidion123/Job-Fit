@@ -1,0 +1,13 @@
+{
+  "job_id": "claude-haiku-4.5/F00036",
+  "result_sha256": "30f6458cc160d7a18d561332f85b01cb586956d6b79fcc17340428e59eb3ec6b",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "uncertain",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "uncertain"
+  },
+  "notes": "All ten Persyaratan clauses and introductory work-location context checked; 18 units. Python/R/SQL, library alternatives and visualization-tool alternatives are converted into independent required AND units. Education and DS-or-similar experience routes have no alternative branches. ML concepts, descriptive/inferential statistics/research methodology, and problem-solving/detail remain merged. Libraries gain data-analysis qualification not explicitly stated in their source clause. Bandung full-time introductory context is added as a required location unit outside the reviewed qualification scope; its inclusion/importance needs alignment rather than silently altering the reference. The preferred big-data clause retains preferred importance but merges database AND technology alternatives. Exact quotes pass; no gold change.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

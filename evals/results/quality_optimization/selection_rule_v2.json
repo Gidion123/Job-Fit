@@ -1,0 +1,61 @@
+{
+ "version": "selection-rule-v2 (D-089 amendment 1)",
+ "baseline_runs": [
+  "QA-E00-FI-R1",
+  "QA-E00-FI-R2"
+ ],
+ "baseline": {
+  "macro_f1_mean": 0.7142573357027836,
+  "accuracy_mean": 0.7530413625304135,
+  "unsupported_positive_max": 59,
+  "overclaim_min": 67,
+  "underclaim_max": 20,
+  "unassessed_max": 15,
+  "prompt_induced_failed_pairs_max": 0,
+  "leave_one_pair_out_accuracy_mean": {
+   "CV1/F00021": 0.753731343283582,
+   "CV1/F00029": 0.743455497382199,
+   "CV1/F00052": 0.7389033942558747,
+   "CV1/F00059": 0.7596899224806202,
+   "CV1/F00187": 0.7481203007518797,
+   "CV1/F00351": 0.75,
+   "CV1/F00610": 0.7616580310880829,
+   "CV1/F00690": 0.7531017369727047,
+   "CV1/F00806": 0.7474619289340101,
+   "CV1/F00818": 0.736,
+   "CV2/F00059": 0.7596899224806202,
+   "CV2/F00082": 0.7562189054726368,
+   "CV2/F00108": 0.7628205128205128,
+   "CV2/F00332": 0.7556962025316456,
+   "CV2/F00343": 0.75,
+   "CV2/F00442": 0.767379679144385,
+   "CV2/F00554": 0.7539473684210527,
+   "CV2/F00558": 0.7616580310880829,
+   "CV2/F00645": 0.7506265664160401,
+   "CV2/F00682": 0.7506561679790026
+  },
+  "ranking_p_at_5": 0.7,
+  "ranking_ndcg_at_10": 0.5673440876050528
+ },
+ "hard_gates": {
+  "quote_validity": "must be 1.0 with 0 invalid quotes",
+  "unsupported_positive_max": 59,
+  "prompt_induced_failed_pairs_max": "baseline max (no worsening); transient failures excluded after recovery",
+  "ranking_p_at_5_min": 0.7,
+  "ranking_ndcg_at_10_min": 0.5473440876050528
+ },
+ "practical_improvement_reference_macro_f1": 0.7342573357027836,
+ "eligibility": {
+  "path_A_quality": "macro-F1 >= reference AND accuracy >= baseline mean AND, with any single pair left out, accuracy >= the baseline mean on the same remaining pairs",
+  "path_B_product_errors": "unsupported positives <= 0.9 x baseline max AND overclaims <= 0.9 x baseline min AND macro-F1 >= baseline mean AND accuracy >= baseline mean AND the unsupported-positive reduction is spread over at least 3 pairs",
+  "no_other_regression": "underclaims <= baseline max + 5 AND unassessed units <= baseline max + 2"
+ },
+ "path_B_limits": {
+  "unsupported_positive_max": 53,
+  "overclaim_max": 60
+ },
+ "finalist_choice": "exactly one provisional finalist among eligible challengers: lowest unsupported positives; challengers within 2 of that lowest count stay; among them highest macro-F1, then highest accuracy, then lowest experiment ID. None eligible: keep the baseline.",
+ "repeat": "the finalist runs once more on the same optimization subset as <ID>-R2; the repeat must pass every hard gate except ranking (not rerun) and be eligible on path A or B; only then the confirmation subset opens",
+ "error_categories": "over/under/unassessed by field are reported for every challenger and read with the decision",
+ "locked_at": "2026-10-07T08:27:59+00:00"
+}

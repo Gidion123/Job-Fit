@@ -1,0 +1,147 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00020",
+  "model": "gpt-6-luna",
+  "status": "failed",
+  "error_code": "NotFoundError",
+  "wall_ms": 434,
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ],
+  "scores": {
+    "H1": {
+      "score": {
+        "score_pct": null,
+        "status": "on_hold",
+        "matched": 0,
+        "partial": 0,
+        "required_total": 4,
+        "preferred_met": 0,
+        "preferred_total": 1,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 4,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Required units not judged yet: U01, U02, U07, U08"
+        ]
+      },
+      "excluded": []
+    },
+    "H2": {
+      "score": {
+        "score_pct": null,
+        "status": "on_hold",
+        "matched": 0,
+        "partial": 0,
+        "required_total": 4,
+        "preferred_met": 0,
+        "preferred_total": 1,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 4,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Required units not judged yet: U01, U02, U07, U08"
+        ]
+      },
+      "excluded": []
+    },
+    "H2v2": {
+      "score": {
+        "score_pct": null,
+        "status": "on_hold",
+        "matched": 0,
+        "partial": 0,
+        "required_total": 4,
+        "preferred_met": 0,
+        "preferred_total": 1,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 4,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Required units not judged yet: U01, U02, U07, U08"
+        ]
+      },
+      "excluded": []
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "fixture_id": "dev_07_no_assessable_requirement",
+  "synthetic": true,
+  "note": "Synthetic development fixture for the deterministic rules. Hand-written, not model output. Not part of the test set.",
+  "analysis_date": "2026-09-29",
+  "cv_parse_status": "ok",
+  "case": "JD has only preferred and unclear items. No required unit, so no score is shown.",
+  "extraction": {
+    "job_id": "FIX-07",
+    "units": [
+      {
+        "unit_id": "u1",
+        "text": "Kaggle experience",
+        "importance": "preferred",
+        "field": "other",
+        "source_quotes": [
+          "Kaggle experience is preferred."
+        ]
+      },
+      {
+        "unit_id": "u2",
+        "text": "Passion for AI",
+        "importance": "unknown",
+        "field": "soft_skill",
+        "source_quotes": [
+          "Passion for AI is required.",
+          "Passion for AI is optional, not a requirement."
+        ]
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "u1",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": []
+    },
+    {
+      "unit_id": "u2",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": []
+    }
+  ],
+  "experience": {
+    "min_years": null,
+    "cv_entries": []
+  },
+  "expected": {
+    "score_pct": null,
+    "status": "no_score",
+    "required_total": 0,
+    "constraint_state": "unknown"
+  },
+  "fixture_version": "v1.3-r1",
+  "guideline_version": "v1.3",
+  "revision": {
+    "source_file": "evals/fixtures/dev_07_no_assessable_requirement.json",
+    "source_sha256": "59cc3813c261afef305ef573759075acb0df00ac21b18d8d9a10ebb96efaefbc",
+    "reason": "Supply explicit preferred softener and conflicting soft-skill importance; no technical required denominator.",
+    "scope": "Synthetic fixture revision only; no real JD/CV or approved label edited",
+    "review_kind": "delegated technical and semantic examination under user instruction",
+    "human_independent_approval": false
+  },
+  "synthetic_jd_context": "Requirements and explicitly marked optional items:\nKaggle experience is preferred.\nPassion for AI is required.\nPassion for AI is optional, not a requirement.",
+  "synthetic_cv_context": "",
+  "semantic_review_status": "delegated_checked"
+}

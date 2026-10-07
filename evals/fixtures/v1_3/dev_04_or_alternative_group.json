@@ -1,0 +1,131 @@
+{
+  "fixture_id": "dev_04_or_alternative_group",
+  "synthetic": true,
+  "note": "Synthetic development fixture for the deterministic rules. Hand-written, not model output. Not part of the test set.",
+  "analysis_date": "2026-09-29",
+  "cv_parse_status": "ok",
+  "case": "Explicit OR groups count once; an unfinished CS degree supports only PARTIAL, without a new related-degree equivalence rule.",
+  "extraction": {
+    "job_id": "FIX-04",
+    "units": [
+      {
+        "unit_id": "g1",
+        "text": "Python or Java",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "source_quotes": [
+          "Python or Java"
+        ],
+        "branches": [
+          {
+            "branch_id": "g1a",
+            "text": "Python",
+            "field": "skill_tool"
+          },
+          {
+            "branch_id": "g1b",
+            "text": "Java",
+            "field": "skill_tool"
+          }
+        ]
+      },
+      {
+        "unit_id": "g2",
+        "text": "Bachelor's degree in Computer Science or equivalent experience",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "source_quotes": [
+          "Bachelor's degree in Computer Science or equivalent experience"
+        ],
+        "branches": [
+          {
+            "branch_id": "g2a",
+            "text": "Bachelor's degree in Computer Science",
+            "field": "education"
+          },
+          {
+            "branch_id": "g2b",
+            "text": "Equivalent experience",
+            "field": "experience_duration"
+          }
+        ]
+      },
+      {
+        "unit_id": "u3",
+        "text": "REST API development",
+        "importance": "required",
+        "field": "knowledge_area",
+        "source_quotes": [
+          "REST API development"
+        ]
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "g1",
+      "branches": [
+        {
+          "branch_id": "g1a",
+          "label": "MATCH",
+          "cv_quotes": [
+            "FastAPI service in Python"
+          ]
+        },
+        {
+          "branch_id": "g1b",
+          "label": "NO_MATCH"
+        }
+      ]
+    },
+    {
+      "unit_id": "g2",
+      "branches": [
+        {
+          "branch_id": "g2a",
+          "label": "PARTIAL",
+          "cv_quotes": [
+            "Completed two years of a Computer Science bachelor's degree; degree not completed."
+          ]
+        },
+        {
+          "branch_id": "g2b",
+          "label": "NO_MATCH"
+        }
+      ]
+    },
+    {
+      "unit_id": "u3",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": []
+    }
+  ],
+  "experience": {
+    "min_years": null,
+    "cv_entries": []
+  },
+  "expected": {
+    "score_pct": 50.0,
+    "status": "final",
+    "required_total": 3,
+    "matched": 1,
+    "partial": 1,
+    "constraint_state": "unknown"
+  },
+  "fixture_version": "v1.3-r1",
+  "guideline_version": "v1.3",
+  "revision": {
+    "source_file": "evals/fixtures/dev_04_or_alternative_group.json",
+    "source_sha256": "dc4aa7c879685d7f9c40b0ccc6dc01259c9c97c72b6ee0ed577605ad56abed41",
+    "reason": "REST API development is knowledge_area. Replace unresolved cross-degree equivalence with an explicitly incomplete CS degree in this synthetic fixture; retain OR as one obligation.",
+    "scope": "Synthetic fixture revision only; no real JD/CV or approved label edited",
+    "review_kind": "delegated technical and semantic examination under user instruction",
+    "human_independent_approval": false
+  },
+  "synthetic_jd_context": "Required qualifications:\nPython or Java\nBachelor's degree in Computer Science or equivalent experience\nREST API development",
+  "synthetic_cv_context": "FastAPI service in Python\nCompleted two years of a Computer Science bachelor's degree; degree not completed.",
+  "semantic_review_status": "delegated_checked"
+}

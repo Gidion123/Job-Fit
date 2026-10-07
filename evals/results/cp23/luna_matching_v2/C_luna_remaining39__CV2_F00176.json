@@ -1,0 +1,609 @@
+{
+  "cv_id": "CV2",
+  "job_id": "F00176",
+  "model": "gpt-6-luna",
+  "status": "done",
+  "error_code": null,
+  "wall_ms": 27323,
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "B5",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B6",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U10",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U11",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U12",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U13",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U14",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U15",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U16",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U17",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U18",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Managed social media campaigns and monthly budget reports in Excel."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U19",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U20",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "B3",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "B6",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B7",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B8",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B9",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B10",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U21",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U22",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U23",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U24",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U25",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U26",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U27",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U28",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U29",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B6",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U30",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U31",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U32",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U33",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U34",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U35",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U36",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U37",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U38",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U39",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    }
+  ],
+  "scores": {
+    "H1": {
+      "score": {
+        "score_pct": 21.15,
+        "status": "final",
+        "matched": 3,
+        "partial": 5,
+        "required_total": 26,
+        "preferred_met": 1,
+        "preferred_total": 13,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    },
+    "H2": {
+      "score": {
+        "score_pct": 21.15,
+        "status": "final",
+        "matched": 3,
+        "partial": 5,
+        "required_total": 26,
+        "preferred_met": 1,
+        "preferred_total": 13,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    },
+    "H2v2": {
+      "score": {
+        "score_pct": 21.15,
+        "status": "final",
+        "matched": 3,
+        "partial": 5,
+        "required_total": 26,
+        "preferred_met": 1,
+        "preferred_total": 13,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    }
+  }
+}

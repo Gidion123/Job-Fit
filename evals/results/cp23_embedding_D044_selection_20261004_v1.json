@@ -1,0 +1,14 @@
+{
+  "decision": "D-044",
+  "selected_embedding": "qwen/qwen3-embedding-8b",
+  "basis": "pre-registered Recall@20 improvement at least 0.05 in both comparisons",
+  "dense_delta": 0.2062937062937063,
+  "hybrid_delta": 0.07692307692307693,
+  "query_count": 2,
+  "scope": "development labeled pool, CV1/CV2",
+  "runtime_changed": false,
+  "method_selected": null,
+  "api_calls": 0,
+  "source": "evals/results/cp23_stage3_retrieval_evaluation_20261003_v2.json",
+  "source_sha256": "5fa00107cc1aba94915131299eff95c0858d5efecab137cfddf535e52644227c"
+}

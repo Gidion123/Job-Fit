@@ -1,0 +1,13 @@
+{
+  "job_id": "claude-haiku-4.5/F00815",
+  "result_sha256": "41842684032f9c9ea30530235d2207f4dd62a2f268e13e666e60a3d3b3bdf777",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "fail",
+    "grouping": "uncertain",
+    "qualifiers": "fail",
+    "importance": "pass"
+  },
+  "notes": "All nine qualification clauses checked; 16 units. U09 makes FastAPI/Flask a closed alternative but omits the source etc./other-framework route retained in the reviewed reference. Data pipelines and ETL are strengthened from solid understanding to experience. Proven professional-role experience is classified experience_duration despite no numerical duration. LLM and vector-framework examples represented as closed alternatives also need source-compatible alignment; explicit AWS-or-other-cloud and degree branches retain their experience/degree qualifiers. Importance is correct and source quotes are exact. No reference amendment or F1 inferred.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

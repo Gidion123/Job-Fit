@@ -1,0 +1,3840 @@
+{
+  "run_id": "cp23_stage2_repair_rerun_20261004_v1",
+  "fingerprint": "ca5a8bb3239b8a8908ce0bac0f5fcee7831ec0d4fb5a7f1f8c0c3b0855d58e0c",
+  "jobs": [
+    "gemini-3.5-flash-lite/CV1/F00332",
+    "gemini-3.5-flash-lite/CV1/F00036",
+    "gemini-3.5-flash-lite/CV2/F00815",
+    "gemini-3.5-flash-lite/CV2/F00018",
+    "claude-haiku-4.5/CV1/F00332",
+    "claude-haiku-4.5/CV1/F00036",
+    "claude-haiku-4.5/CV2/F00018",
+    "gemini-3.5-flash-lite/F00815"
+  ],
+  "ceiling": "0.65",
+  "status": "complete",
+  "results": [
+    {
+      "stage_id": "gemini-3.5-flash-lite/CV1/F00332",
+      "status": "failed",
+      "error_code": "invalid_source_quote",
+      "attempts": 1,
+      "original_first_reused": true,
+      "typed_repair": {
+        "assessments": [
+          {
+            "unit_id": "P30-U01",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P30-U01/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Lulusan S1 Statistika yang tertarik pada data science dan machine learning."
+                ]
+              },
+              {
+                "branch_id": "P30-U01/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "S1 Statistika, Universitas Negeri Contoh, Jakarta part Agustus 2022 - Agustus 2026"
+                ]
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P30-U02",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P30-U03",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P30-U04",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P30-U05",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P30-U06",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P30-U07",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P30-U08",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Terbiasa mengolah data dengan Python dan SQL, membuat model prediksi sederhana, dan menyajikan hasil analisis dalam dashboard."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P30-U09",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P30-U10",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\""
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P30-U11",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Terbiasa mengolah data dengan Python dan SQL"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P30-U12",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Melakukan analisis cohort retensi pelanggan"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P30-U13",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P30-U14",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P30-U15",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P30-U16",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          }
+        ]
+      },
+      "stage_wall_ms": 4911,
+      "draft_sha256": "d7962810204dbd9077a7e8816d89929b20d3aa2bc5db699d4beb8d046fe69bd2",
+      "semantic_review": "pending",
+      "transport_or_unknown_failure": false,
+      "assessments": [
+        {
+          "unit_id": "P30-U01",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U02",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U03",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U04",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U05",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U06",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U07",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U08",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U09",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U10",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U11",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U12",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U13",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U14",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U15",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U16",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ],
+      "result_file": "evals/results/cp23_stage2_repair_rerun_20261004_v1_01.json",
+      "result_sha256": "bc1c50a4dbc9f85ec63c858cadb95b7564b45a962116af2ae53ab9bb13b5ad53"
+    },
+    {
+      "stage_id": "gemini-3.5-flash-lite/CV1/F00036",
+      "status": "done",
+      "error_code": null,
+      "attempts": 1,
+      "original_first_reused": true,
+      "typed_repair": {
+        "assessments": [
+          {
+            "unit_id": "P09-U01",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P09-U01/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+                ]
+              },
+              {
+                "branch_id": "P09-U01/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U01/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U01/B04",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U01/B05",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U02",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U03",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P09-U03/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+                ]
+              },
+              {
+                "branch_id": "P09-U03/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+                ]
+              },
+              {
+                "branch_id": "P09-U03/B03",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+                ]
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U04",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U05",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "machine learning dasar"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U06",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U07",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P09-U07/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas)"
+                ]
+              },
+              {
+                "branch_id": "P09-U07/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+                ]
+              },
+              {
+                "branch_id": "P09-U07/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U07/B04",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U08",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U09",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P09-U09/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U09/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U09/B03",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Python (pandas, NumPy, scikit-learn, matplotlib)"
+                ]
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U10",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U11",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "statistika inferensial"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U12",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\""
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U13",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U14",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U15",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P09-U15/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U15/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U15/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U16",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U17",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          }
+        ]
+      },
+      "stage_wall_ms": 5923,
+      "draft_sha256": "5e7e90a5ec2560966cc06d8cc51f96b7625ffe66e19054aced621874f5f4574c",
+      "semantic_review": "pending",
+      "transport_or_unknown_failure": false,
+      "assessments": [
+        {
+          "unit_id": "P09-U01",
+          "label": null,
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [
+            {
+              "branch_id": "P09-U01/B01",
+              "label": "MATCH",
+              "check_status": "done",
+              "cv_quotes": [
+                "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+              ]
+            },
+            {
+              "branch_id": "P09-U01/B02",
+              "label": "NO_MATCH",
+              "check_status": "done",
+              "cv_quotes": []
+            },
+            {
+              "branch_id": "P09-U01/B03",
+              "label": "NO_MATCH",
+              "check_status": "done",
+              "cv_quotes": []
+            },
+            {
+              "branch_id": "P09-U01/B04",
+              "label": "NO_MATCH",
+              "check_status": "done",
+              "cv_quotes": []
+            },
+            {
+              "branch_id": "P09-U01/B05",
+              "label": "NO_MATCH",
+              "check_status": "done",
+              "cv_quotes": []
+            }
+          ],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U02",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)"
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U03",
+          "label": null,
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [
+            {
+              "branch_id": "P09-U03/B01",
+              "label": "MATCH",
+              "check_status": "done",
+              "cv_quotes": [
+                "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+              ]
+            },
+            {
+              "branch_id": "P09-U03/B02",
+              "label": "MATCH",
+              "check_status": "done",
+              "cv_quotes": [
+                "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+              ]
+            },
+            {
+              "branch_id": "P09-U03/B03",
+              "label": "MATCH",
+              "check_status": "done",
+              "cv_quotes": [
+                "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+              ]
+            }
+          ],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U04",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U05",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "machine learning dasar"
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U06",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U07",
+          "label": null,
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [
+            {
+              "branch_id": "P09-U07/B01",
+              "label": "MATCH",
+              "check_status": "done",
+              "cv_quotes": [
+                "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas)"
+              ]
+            },
+            {
+              "branch_id": "P09-U07/B02",
+              "label": "MATCH",
+              "check_status": "done",
+              "cv_quotes": [
+                "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+              ]
+            },
+            {
+              "branch_id": "P09-U07/B03",
+              "label": "NO_MATCH",
+              "check_status": "done",
+              "cv_quotes": []
+            },
+            {
+              "branch_id": "P09-U07/B04",
+              "label": "NO_MATCH",
+              "check_status": "done",
+              "cv_quotes": []
+            }
+          ],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U08",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U09",
+          "label": null,
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [
+            {
+              "branch_id": "P09-U09/B01",
+              "label": "NO_MATCH",
+              "check_status": "done",
+              "cv_quotes": []
+            },
+            {
+              "branch_id": "P09-U09/B02",
+              "label": "NO_MATCH",
+              "check_status": "done",
+              "cv_quotes": []
+            },
+            {
+              "branch_id": "P09-U09/B03",
+              "label": "MATCH",
+              "check_status": "done",
+              "cv_quotes": [
+                "Python (pandas, NumPy, scikit-learn, matplotlib)"
+              ]
+            }
+          ],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U10",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data"
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U11",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "statistika inferensial"
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U12",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\""
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U13",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U14",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data"
+          ],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U15",
+          "label": null,
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [
+            {
+              "branch_id": "P09-U15/B01",
+              "label": "NO_MATCH",
+              "check_status": "done",
+              "cv_quotes": []
+            },
+            {
+              "branch_id": "P09-U15/B02",
+              "label": "NO_MATCH",
+              "check_status": "done",
+              "cv_quotes": []
+            },
+            {
+              "branch_id": "P09-U15/B03",
+              "label": "NO_MATCH",
+              "check_status": "done",
+              "cv_quotes": []
+            }
+          ],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U16",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U17",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ],
+      "result_file": "evals/results/cp23_stage2_repair_rerun_20261004_v1_02.json",
+      "result_sha256": "370d9f7d75685ede982367e112922bb9835f7c8e0cddb8c255298bcb9baba72e"
+    },
+    {
+      "stage_id": "gemini-3.5-flash-lite/CV2/F00815",
+      "status": "failed",
+      "error_code": "invalid_source_quote",
+      "attempts": 1,
+      "original_first_reused": true,
+      "typed_repair": {
+        "assessments": [
+          {
+            "unit_id": "P52-U01",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Marketing analyst moving into AI engineering. Three years of data work in digital marketing, followed by an intensive data science and AI bootcamp. Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P52-U02",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P52-U03",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P52-U03/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+                ]
+              },
+              {
+                "branch_id": "P52-U03/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+                ]
+              },
+              {
+                "branch_id": "P52-U03/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P52-U04",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "prompt engineering"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P52-U05",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P52-U06",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Data Science and AI Bootcamp, Contoh Academy (online) \u0014 June 2026 - present"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P52-U07",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P52-U08",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P52-U09",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P52-U09/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+                ]
+              },
+              {
+                "branch_id": "P52-U09/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P52-U09/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P52-U10",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P52-U11",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P52-U11/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P52-U11/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+                ]
+              },
+              {
+                "branch_id": "P52-U11/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P52-U12",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P52-U12/B01",
+                "label": "PARTIAL",
+                "check_status": "done",
+                "cv_quotes": [
+                  "AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+                ]
+              },
+              {
+                "branch_id": "P52-U12/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P52-U13",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Git"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P52-U14",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P52-U15",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P52-U16",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Bachelor of Communication (S1 Ilmu Komunikasi), Universitas Contoh Bandung \u0014 2016 - 2020"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          }
+        ]
+      },
+      "stage_wall_ms": 5463,
+      "draft_sha256": "c7cc369486784b607c53e14abc2c1980419f56e927441d6b2a629e655ef2862b",
+      "semantic_review": "pending",
+      "transport_or_unknown_failure": false,
+      "assessments": [
+        {
+          "unit_id": "P52-U01",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P52-U02",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P52-U03",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P52-U04",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P52-U05",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P52-U06",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P52-U07",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P52-U08",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P52-U09",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P52-U10",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P52-U11",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P52-U12",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P52-U13",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P52-U14",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P52-U15",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P52-U16",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ],
+      "result_file": "evals/results/cp23_stage2_repair_rerun_20261004_v1_03.json",
+      "result_sha256": "f93b957feb52c75e448cbc21be5462f7797448c4d8a5df6c36754cd3ff2d712a"
+    },
+    {
+      "stage_id": "gemini-3.5-flash-lite/CV2/F00018",
+      "status": "failed",
+      "error_code": "invalid_source_quote",
+      "attempts": 1,
+      "original_first_reused": true,
+      "typed_repair": {
+        "assessments": [
+          {
+            "unit_id": "P04-U01",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U02",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U03",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U04",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "**Document Q&A Assistant (RAG)** p August 2026\n- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U05",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U06",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "- AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U07",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U08",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U09",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U10",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U11",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P04-U11/B01",
+                "label": "PARTIAL",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+                ]
+              },
+              {
+                "branch_id": "P04-U11/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+                ]
+              },
+              {
+                "branch_id": "P04-U11/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U12",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U13",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U14",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U15",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "English (professional working proficiency)"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U16",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U17",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U18",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U19",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U20",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P04-U20/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P04-U20/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U21",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U22",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P04-U22/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P04-U22/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U23",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P04-U18-AWS",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "- AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          }
+        ]
+      },
+      "stage_wall_ms": 5891,
+      "draft_sha256": "3f3ea23d1db5d494cc038db4f95dbb1c2492078fcc22471fcb2cd088d29947bf",
+      "semantic_review": "pending",
+      "transport_or_unknown_failure": false,
+      "assessments": [
+        {
+          "unit_id": "P04-U01",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U02",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U03",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U04",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U05",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U06",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U07",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U08",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U09",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U10",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U11",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U12",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U13",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U14",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U15",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U16",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U17",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U18",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U19",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U20",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U21",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U22",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U23",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U18-AWS",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ],
+      "result_file": "evals/results/cp23_stage2_repair_rerun_20261004_v1_04.json",
+      "result_sha256": "e1a338229e54174ed1c39ca2729a976c715f8893ec705f2f5bcfd98a0a5127ee"
+    },
+    {
+      "stage_id": "claude-haiku-4.5/CV1/F00332",
+      "status": "failed",
+      "error_code": "invalid_structured_output_or_source",
+      "attempts": 1,
+      "original_first_reused": true,
+      "typed_repair": {
+        "assessments": [
+          {
+            "unit_id": "P30-U01",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P30-U01/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P30-U01/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "S1 Statistika, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+                ]
+              }
+            ],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P30-U02",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+              "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P30-U03",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P30-U04",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Excel"
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P30-U05",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "mempresentasikan hasilnya ke manajer divisi"
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P30-U06",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P30-U07",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P30-U08",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P30-U09",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Google Data Analytics Professional Certificate (2025)"
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P30-U10",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\""
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P30-U11",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P30-U12",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P30-U13",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P30-U14",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+              "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P30-U15",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "mempresentasikan hasilnya ke manajer divisi"
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P30-U16",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "annotator"
+          }
+        ]
+      },
+      "stage_wall_ms": 6615,
+      "draft_sha256": "4da4abee34547e45c6d6ee4a0961bcc2582fac94ea63a53b41137bd8f8179f7d",
+      "semantic_review": "pending",
+      "transport_or_unknown_failure": false,
+      "assessments": [
+        {
+          "unit_id": "P30-U01",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U02",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U03",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U04",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U05",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U06",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U07",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U08",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U09",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U10",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U11",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U12",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U13",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U14",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U15",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P30-U16",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ],
+      "result_file": "evals/results/cp23_stage2_repair_rerun_20261004_v1_05.json",
+      "result_sha256": "15eb534958ecd7bab3c4a62614527d0b966db6db2f15dca1a3b9b42742222429"
+    },
+    {
+      "stage_id": "claude-haiku-4.5/CV1/F00036",
+      "status": "failed",
+      "error_code": "group_label_must_be_resolved_by_scorer",
+      "attempts": 1,
+      "original_first_reused": true,
+      "typed_repair": {
+        "assessments": [
+          {
+            "unit_id": "P09-U01",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Lulusan S1 Statistika"
+            ],
+            "branches": [
+              {
+                "branch_id": "P09-U01/B01",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U01/B02",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U01/B03",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U01/B04",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U01/B05",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U02",
+            "label": null,
+            "check_status": "needs_clarification",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U03",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+            ],
+            "branches": [
+              {
+                "branch_id": "P09-U03/B01",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U03/B02",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U03/B03",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U04",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U05",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U06",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U07",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+              "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+            ],
+            "branches": [
+              {
+                "branch_id": "P09-U07/B01",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U07/B02",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U07/B03",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U07/B04",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U08",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U09",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+            ],
+            "branches": [
+              {
+                "branch_id": "P09-U09/B01",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U09/B02",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U09/B03",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U10",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U11",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U12",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\""
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U13",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U14",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U15",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P09-U15/B01",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U15/B02",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P09-U15/B03",
+                "label": null,
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U16",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "P09-U17",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "IPK 3,62 / 4,00"
+            ],
+            "branches": [],
+            "label_source": "model_draft"
+          }
+        ]
+      },
+      "stage_wall_ms": 7698,
+      "draft_sha256": "aa03730f52b1ac6ac98d835c5bc73052f7cc8d9f0df7ac960e3646df8ff8b78a",
+      "semantic_review": "pending",
+      "transport_or_unknown_failure": false,
+      "assessments": [
+        {
+          "unit_id": "P09-U01",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U02",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U03",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U04",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U05",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U06",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U07",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U08",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U09",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U10",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U11",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U12",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U13",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U14",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U15",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U16",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P09-U17",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ],
+      "result_file": "evals/results/cp23_stage2_repair_rerun_20261004_v1_06.json",
+      "result_sha256": "ff959a4867c4fd33730dbb6a679dd99210406fc6930adae307ddedf9a7579dac"
+    },
+    {
+      "stage_id": "claude-haiku-4.5/CV2/F00018",
+      "status": "failed",
+      "error_code": "invalid_structured_output_or_source",
+      "attempts": 1,
+      "original_first_reused": true,
+      "typed_repair": {
+        "assessments": [
+          {
+            "unit_id": "P04-U01",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U02",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U03",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+              "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U04",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U05",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U06",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U07",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U08",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U09",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U10",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+              "Forecasted monthly ad spend with Prophet for internal planning."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U11",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P04-U11/B01",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+                ]
+              },
+              {
+                "branch_id": "P04-U11/B02",
+                "label": "MATCH",
+                "check_status": "done",
+                "cv_quotes": [
+                  "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+                ]
+              },
+              {
+                "branch_id": "P04-U11/B03",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U12",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+              "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U13",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+              "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U14",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+              "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U15",
+            "label": "PARTIAL",
+            "check_status": "needs_clarification",
+            "cv_quotes": [
+              "English (professional working proficiency)"
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U16",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U17",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U18",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U19",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U20",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P04-U20/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P04-U20/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U21",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U22",
+            "label": null,
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [
+              {
+                "branch_id": "P04-U22/B01",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              },
+              {
+                "branch_id": "P04-U22/B02",
+                "label": "NO_MATCH",
+                "check_status": "done",
+                "cv_quotes": []
+              }
+            ],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U23",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": [],
+            "branches": [],
+            "label_source": "annotator"
+          },
+          {
+            "unit_id": "P04-U18-AWS",
+            "label": "PARTIAL",
+            "check_status": "done",
+            "cv_quotes": [
+              "AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+            ],
+            "branches": [],
+            "label_source": "annotator"
+          }
+        ]
+      },
+      "stage_wall_ms": 8553,
+      "draft_sha256": "beac21886ce14da9fe79933ec263e16606e8ae19a3b7bbed430120ba31224279",
+      "semantic_review": "pending",
+      "transport_or_unknown_failure": false,
+      "assessments": [
+        {
+          "unit_id": "P04-U01",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U02",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U03",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U04",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U05",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U06",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U07",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U08",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U09",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U10",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U11",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U12",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U13",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U14",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U15",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U16",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U17",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U18",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U19",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U20",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U21",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U22",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U23",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        },
+        {
+          "unit_id": "P04-U18-AWS",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": [],
+          "branches": [],
+          "label_source": "model_draft"
+        }
+      ],
+      "result_file": "evals/results/cp23_stage2_repair_rerun_20261004_v1_07.json",
+      "result_sha256": "f7aa00b67acaa6966b22304920c69539cdfc263c75670156ac00642b1257cef4"
+    },
+    {
+      "stage_id": "gemini-3.5-flash-lite/F00815",
+      "status": "done",
+      "error_code": null,
+      "attempts": 1,
+      "original_first_reused": true,
+      "typed_repair": {
+        "job_id": "F00815",
+        "units": [
+          {
+            "unit_id": "U01",
+            "text": "Experience as an AI Engineer or Machine Learning Engineer",
+            "kind": "simple",
+            "importance": "required",
+            "field": "experience_duration",
+            "normalized_name": "AI Engineer / Machine Learning Engineer experience",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Proven experience as an AI Engineer / Machine Learning Engineer"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U02",
+            "text": "Programming skills in Python",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Python",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Strong programming skills in Python"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U03",
+            "text": "Experience with LLM frameworks",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "LLM frameworks",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "B1",
+                "text": "OpenAI",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B2",
+                "text": "LangChain",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B3",
+                "text": "LlamaIndex",
+                "field": "skill_tool",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Experience with LLM frameworks (e.g. OpenAI, LangChain, LlamaIndex), Prompt engineering and RAG architectures"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U04",
+            "text": "Experience with Prompt engineering",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "Prompt engineering",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Experience with LLM frameworks (e.g. OpenAI, LangChain, LlamaIndex), Prompt engineering and RAG architectures"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U05",
+            "text": "Experience with RAG architectures",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "RAG architecture",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Experience with LLM frameworks (e.g. OpenAI, LangChain, LlamaIndex), Prompt engineering and RAG architectures"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U06",
+            "text": "Understanding of machine learning fundamentals",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "Machine learning fundamentals",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Solid understanding of machine learning fundamentals, data pipelines and ETL processes"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U07",
+            "text": "Understanding of data pipelines",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "Data pipelines",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Solid understanding of machine learning fundamentals, data pipelines and ETL processes"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U08",
+            "text": "Understanding of ETL processes",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "ETL processes",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Solid understanding of machine learning fundamentals, data pipelines and ETL processes"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U09",
+            "text": "Experience building APIs",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "API building",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "B1",
+                "text": "FastAPI",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B2",
+                "text": "Flask",
+                "field": "skill_tool",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Experience building and deploying APIs (FastAPI, Flask, etc.)"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U10",
+            "text": "Experience deploying APIs",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "API deployment",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "B1",
+                "text": "FastAPI",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B2",
+                "text": "Flask",
+                "field": "skill_tool",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Experience building and deploying APIs (FastAPI, Flask, etc.)"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U11",
+            "text": "Familiarity with SQL databases",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "SQL database",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "B1",
+                "text": "SQL",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B2",
+                "text": "PostgreSQL",
+                "field": "skill_tool",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Familiarity with databases such as SQL (PostgreSQL) and Vector databases (e.g. Pinecone, FAISS, Weaviate)"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U12",
+            "text": "Familiarity with Vector databases",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Vector database",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "B1",
+                "text": "Pinecone",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B2",
+                "text": "FAISS",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B3",
+                "text": "Weaviate",
+                "field": "skill_tool",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Familiarity with databases such as SQL (PostgreSQL) and Vector databases (e.g. Pinecone, FAISS, Weaviate)"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U13",
+            "text": "Experience with AWS cloud platforms",
+            "kind": "simple",
+            "importance": "preferred",
+            "field": "skill_tool",
+            "normalized_name": "AWS",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Experience with AWS or other cloud platforms"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U14",
+            "text": "Experience with other cloud platforms",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Cloud platforms",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Experience with AWS or other cloud platforms"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U15",
+            "text": "Understanding of Git",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Git",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Understanding of software engineering best practices (Git, testing, CI/CD)"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U16",
+            "text": "Understanding of testing practices",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "Testing practices",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Understanding of software engineering best practices (Git, testing, CI/CD)"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U17",
+            "text": "Understanding of CI/CD practices",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "CI/CD practices",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Understanding of software engineering best practices (Git, testing, CI/CD)"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U18",
+            "text": "Bachelor's degree in Computer Science, Engineering, or related field",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "education",
+            "normalized_name": "Bachelor degree",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "B1",
+                "text": "Computer Science",
+                "field": "education",
+                "min_years": null
+              },
+              {
+                "branch_id": "B2",
+                "text": "Engineering",
+                "field": "education",
+                "min_years": null
+              },
+              {
+                "branch_id": "B3",
+                "text": "related field",
+                "field": "education",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Bachelor's degree in Computer Science, Engineering, or related field"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          }
+        ],
+        "jd_quality": "ok",
+        "extractor_version": "jd-prompt-v1.4-experimental",
+        "qualification_coverage": [
+          {
+            "source_id": "Q01",
+            "unit_ids": [
+              "U01"
+            ]
+          },
+          {
+            "source_id": "Q02",
+            "unit_ids": [
+              "U02"
+            ]
+          },
+          {
+            "source_id": "Q03",
+            "unit_ids": [
+              "U03",
+              "U04",
+              "U05"
+            ]
+          },
+          {
+            "source_id": "Q04",
+            "unit_ids": [
+              "U06",
+              "U07",
+              "U08"
+            ]
+          },
+          {
+            "source_id": "Q05",
+            "unit_ids": [
+              "U09",
+              "U10"
+            ]
+          },
+          {
+            "source_id": "Q06",
+            "unit_ids": [
+              "U11",
+              "U12"
+            ]
+          },
+          {
+            "source_id": "Q07",
+            "unit_ids": [
+              "U13",
+              "U14"
+            ]
+          },
+          {
+            "source_id": "Q08",
+            "unit_ids": [
+              "U15",
+              "U16",
+              "U17"
+            ]
+          },
+          {
+            "source_id": "Q09",
+            "unit_ids": [
+              "U18"
+            ]
+          }
+        ]
+      },
+      "stage_wall_ms": 5084,
+      "draft_sha256": "70ed77d4ffaa854732f0dfe92224ea99d92cbbc938aeb10d1aab0c48b8259ec4",
+      "semantic_review": "pending",
+      "transport_or_unknown_failure": false,
+      "extraction": {
+        "job_id": "F00815",
+        "units": [
+          {
+            "unit_id": "U01",
+            "text": "Experience as an AI Engineer or Machine Learning Engineer",
+            "kind": "simple",
+            "importance": "required",
+            "field": "experience_duration",
+            "normalized_name": "AI Engineer / Machine Learning Engineer experience",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Proven experience as an AI Engineer / Machine Learning Engineer"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U02",
+            "text": "Programming skills in Python",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Python",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Strong programming skills in Python"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U03",
+            "text": "Experience with LLM frameworks",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "LLM frameworks",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "B1",
+                "text": "OpenAI",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B2",
+                "text": "LangChain",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B3",
+                "text": "LlamaIndex",
+                "field": "skill_tool",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Experience with LLM frameworks (e.g. OpenAI, LangChain, LlamaIndex), Prompt engineering and RAG architectures"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U04",
+            "text": "Experience with Prompt engineering",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "Prompt engineering",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Experience with LLM frameworks (e.g. OpenAI, LangChain, LlamaIndex), Prompt engineering and RAG architectures"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U05",
+            "text": "Experience with RAG architectures",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "RAG architecture",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Experience with LLM frameworks (e.g. OpenAI, LangChain, LlamaIndex), Prompt engineering and RAG architectures"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U06",
+            "text": "Understanding of machine learning fundamentals",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "Machine learning fundamentals",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Solid understanding of machine learning fundamentals, data pipelines and ETL processes"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U07",
+            "text": "Understanding of data pipelines",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "Data pipelines",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Solid understanding of machine learning fundamentals, data pipelines and ETL processes"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U08",
+            "text": "Understanding of ETL processes",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "ETL processes",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Solid understanding of machine learning fundamentals, data pipelines and ETL processes"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U09",
+            "text": "Experience building APIs",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "API building",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "B1",
+                "text": "FastAPI",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B2",
+                "text": "Flask",
+                "field": "skill_tool",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Experience building and deploying APIs (FastAPI, Flask, etc.)"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U10",
+            "text": "Experience deploying APIs",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "API deployment",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "B1",
+                "text": "FastAPI",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B2",
+                "text": "Flask",
+                "field": "skill_tool",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Experience building and deploying APIs (FastAPI, Flask, etc.)"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U11",
+            "text": "Familiarity with SQL databases",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "SQL database",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "B1",
+                "text": "SQL",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B2",
+                "text": "PostgreSQL",
+                "field": "skill_tool",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Familiarity with databases such as SQL (PostgreSQL) and Vector databases (e.g. Pinecone, FAISS, Weaviate)"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U12",
+            "text": "Familiarity with Vector databases",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Vector database",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "B1",
+                "text": "Pinecone",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B2",
+                "text": "FAISS",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B3",
+                "text": "Weaviate",
+                "field": "skill_tool",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Familiarity with databases such as SQL (PostgreSQL) and Vector databases (e.g. Pinecone, FAISS, Weaviate)"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U13",
+            "text": "Experience with AWS cloud platforms",
+            "kind": "simple",
+            "importance": "preferred",
+            "field": "skill_tool",
+            "normalized_name": "AWS",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Experience with AWS or other cloud platforms"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U14",
+            "text": "Experience with other cloud platforms",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Cloud platforms",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Experience with AWS or other cloud platforms"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U15",
+            "text": "Understanding of Git",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Git",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Understanding of software engineering best practices (Git, testing, CI/CD)"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U16",
+            "text": "Understanding of testing practices",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "Testing practices",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Understanding of software engineering best practices (Git, testing, CI/CD)"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U17",
+            "text": "Understanding of CI/CD practices",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "CI/CD practices",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Understanding of software engineering best practices (Git, testing, CI/CD)"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U18",
+            "text": "Bachelor's degree in Computer Science, Engineering, or related field",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "education",
+            "normalized_name": "Bachelor degree",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "B1",
+                "text": "Computer Science",
+                "field": "education",
+                "min_years": null
+              },
+              {
+                "branch_id": "B2",
+                "text": "Engineering",
+                "field": "education",
+                "min_years": null
+              },
+              {
+                "branch_id": "B3",
+                "text": "related field",
+                "field": "education",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Bachelor's degree in Computer Science, Engineering, or related field"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          }
+        ],
+        "jd_quality": "ok",
+        "extractor_version": "jd-prompt-v1.4-experimental/gemini-3.5-flash-lite"
+      },
+      "result_file": "evals/results/cp23_stage2_repair_rerun_20261004_v1_08.json",
+      "result_sha256": "ae031d0aed8745bdec1d5d783e078c600aa3a2a2c50d556c93ae2a14662a82ab"
+    }
+  ],
+  "reservations": [],
+  "active_job": "gemini-3.5-flash-lite/F00815"
+}

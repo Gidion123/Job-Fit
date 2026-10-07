@@ -1,0 +1,13 @@
+{
+  "job_id": "gemini-3.5-flash-lite/F00332",
+  "result_sha256": "9621790aa05ab52b7bf78fa6e0b50bc9a6953db28e7643d5297d13a78781d890",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "fail",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "pass"
+  },
+  "notes": "Complete eight-clause source reviewed against 16 logical gold requirements and 19 outputs. Exact quotes, Python/SQL/Excel AND units, preferred credit-scoring exposure and joint trend/anomaly obligation are retained. U01-U04 incorrectly turn the education example disciplines into four independent required degrees. The fresh-graduate route and other-disciplines-considered route are not represented. This loses explicit OR/admission structure and inflates the denominator. U16 SQL-based analysis is skill_tool rather than reviewed knowledge_area; U18 actionable communication is other and loses the shared large-tabular-data experience context. No gold changes or candidate F1 approval; retain semantic failure.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

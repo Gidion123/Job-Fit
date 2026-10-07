@@ -1,0 +1,54 @@
+{
+  "schema_version": "development-gold-amendment-v2",
+  "bundle": "development_v13_reviewed_20261004_gap_r4",
+  "base_bundle": "development_v13_reviewed_20261003_stage1_r3",
+  "base_manifest_sha256": "6c814e0fff729bbedcdc301fceed591e523ba0c31766e5d83b3a40c8c9b193ec",
+  "decisions": [
+    "D-080",
+    "D-085"
+  ],
+  "added_relevance_rows": 45,
+  "relevance_rows": 123,
+  "gap_unit_set": "gap_v2",
+  "gap_extraction_units": 759,
+  "gap_evidence_rows": 826,
+  "held_records": 2,
+  "overlap_jobs_with_r3_extraction_kept_separate": [
+    "F00029",
+    "F00052",
+    "F00126",
+    "F00212",
+    "F00332",
+    "F00556",
+    "F00650"
+  ],
+  "labeling_mode": "model_draft_assisted_human_accepted",
+  "workbook_sha256": "2bdebb6393f1418071c80f0e0dc5c32525068d00cdc71b28b270707e2a8eadcb",
+  "files": {
+    "relevance_gold.jsonl": "35abd0e1bcb09e8395ba4d9d8d3a0e99086e7a648366c72ca26943f63cb9993e",
+    "evidence_gold_gap_v2.jsonl": "0e624ef893270ef237ed837bfb5b52e24f537904980f7b62bc7fb6175eb90edf",
+    "resolved_held_C_records.json": "c73ce803dc75daeef888cf7cb0135913db4366f9e98ca08c98e7674f065906b8",
+    "extraction_gold.jsonl": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+    "JD_coverage.json": "55312dce477c8f620a8db72067d92f3c1d76abdbe615c85d78db1bed40ffd511",
+    "evidence_gold.jsonl": "510bbe15bd02ed370b2a94982582169c6c9d38f62b5e6e27311bb55a0f3ef49e",
+    "extraction_gold_gap_v2.jsonl": "cea1fa4bc53c1c565862b7a53aa656453348e468353f1f8822007bc0dccc7d57",
+    "amendment_receipt.json": "15fedf3af6655452f52a182bbe582014681107562a4afa20395c9775fe8f5efe",
+    "held_gap_v2.json": "eee062ac58ccb176b075a4ab73d7b604b1e4052a3e9938a4979136f350548bf4",
+    "excluded_records.json": "e72c7f8214b6474b4fd648d25a4c36f8c374f1662eac5909e60d5deeeb16d93e",
+    "logical_units.json": "49aa3b438470de8897a3b17b315da4190dd33f2e78f3f73f9065753250fffaf5",
+    "pair_coverage.json": "b2a1339e4a9de6c4b8cf4d55b7ebb8f21fc2d3bde58557ac26de96135ba0bd58",
+    "held_records.json": "2ebab10a5a7ee76ad2ed4f4ef2285d980ef0211f5c9cb3435c485534b6842a37"
+  },
+  "test_used": false,
+  "unchanged_files_copied_from_base": [
+    "JD_coverage.json",
+    "amendment_receipt.json",
+    "evidence_gold.jsonl",
+    "excluded_records.json",
+    "extraction_gold.jsonl",
+    "held_records.json",
+    "logical_units.json",
+    "pair_coverage.json",
+    "resolved_held_C_records.json"
+  ]
+}

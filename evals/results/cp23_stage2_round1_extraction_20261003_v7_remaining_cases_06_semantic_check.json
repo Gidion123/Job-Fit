@@ -1,0 +1,13 @@
+{
+  "job_id": "claude-haiku-4.5/F00354",
+  "result_sha256": "f24218930f9b7b66765ceb36b1208e821c1e7a393adce54146d3fcdf286a5afa",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "fail"
+  },
+  "notes": "All ten success-qualification clauses checked; 34 units. U18-U34 are preferred without any source softener or preferred section; these requirements should retain required importance under Rule2. Education and Git-or-existing-codebase explicit OR routes are simple units without alternative branches. Interest is split into six technical requirements despite reviewed single interest soft-skill unit; experiment design/critical interpretation are miscategorized soft_skill and unnamed experiment-tracking frameworks/containers as skill_tool. Libraries are strengthened from familiarity to experience, and validation loses time-series context. Quotes and clause-level representation pass; they do not certify semantic completeness. No gold change.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

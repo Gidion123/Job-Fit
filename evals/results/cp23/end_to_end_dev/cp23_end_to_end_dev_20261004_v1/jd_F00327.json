@@ -1,0 +1,385 @@
+{
+  "job_id": "F00327",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "de0f3425eee9d229787c2edec789db8c8167575426c956acf5a3378efa8e2622",
+  "wall_ms": 81965,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 3,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00327",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "3+ years in performance/digital marketing analytics",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "performance/digital marketing analytics",
+        "min_years": 3.0,
+        "branches": [],
+        "source_quotes": [
+          "• 3+ years in performance/digital marketing analytics and marketing automation with hands-on experience in AI engineering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "3+ years in marketing automation",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "marketing automation",
+        "min_years": 3.0,
+        "branches": [],
+        "source_quotes": [
+          "• 3+ years in performance/digital marketing analytics and marketing automation with hands-on experience in AI engineering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Hands-on experience in AI engineering",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "AI engineering",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• 3+ years in performance/digital marketing analytics and marketing automation with hands-on experience in AI engineering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Deep understanding of paid/performance marketing KPIs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "paid/performance marketing KPIs",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Deep understanding of paid/performance marketing KPIs, how media platforms work (campaign structure, auction mechanics, targeting, measurement) and their APIs (Meta, Google Ads, TikTok), and MMP tooling (AppsFlyer, Adjust)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Deep understanding of how media platforms work (campaign structure, auction mechanics, targeting, measurement)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "media platform mechanics",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Deep understanding of paid/performance marketing KPIs, how media platforms work (campaign structure, auction mechanics, targeting, measurement) and their APIs (Meta, Google Ads, TikTok), and MMP tooling (AppsFlyer, Adjust)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Deep understanding of media platform APIs (Meta, Google Ads, TikTok)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "media platform APIs",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Deep understanding of paid/performance marketing KPIs, how media platforms work (campaign structure, auction mechanics, targeting, measurement) and their APIs (Meta, Google Ads, TikTok), and MMP tooling (AppsFlyer, Adjust)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Deep understanding of MMP tooling (AppsFlyer, Adjust)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "MMP tooling",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Deep understanding of paid/performance marketing KPIs, how media platforms work (campaign structure, auction mechanics, targeting, measurement) and their APIs (Meta, Google Ads, TikTok), and MMP tooling (AppsFlyer, Adjust)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Proven experience building end-to-end campaign automation systems including programmatic campaign creation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "programmatic campaign creation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Proven experience building end-to-end campaign automation systems including programmatic campaign creation, ML-driven optimization, and automated actions via ad platform APIs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Proven experience building end-to-end campaign automation systems including ML-driven optimization",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "ML-driven optimization",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Proven experience building end-to-end campaign automation systems including programmatic campaign creation, ML-driven optimization, and automated actions via ad platform APIs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Proven experience building end-to-end campaign automation systems including automated actions via ad platform APIs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "automated actions via ad platform APIs",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Proven experience building end-to-end campaign automation systems including programmatic campaign creation, ML-driven optimization, and automated actions via ad platform APIs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Advanced SQL",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "SQL",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Advanced SQL and Python."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Python",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Advanced SQL and Python."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Proven experience building configuration-driven architectures or rules engines (e.g., headless CMS integrations, dynamic creative optimization tools)",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "configuration-driven architectures or rules engines",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "configuration-driven architectures",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "rules engines",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "• Proven experience building configuration-driven architectures or rules engines (e.g., headless CMS integrations, dynamic creative optimization tools), attribution models, and activation workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Proven experience building attribution models",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "attribution models",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Proven experience building configuration-driven architectures or rules engines (e.g., headless CMS integrations, dynamic creative optimization tools), attribution models, and activation workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Proven experience building activation workflows",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "activation workflows",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Proven experience building configuration-driven architectures or rules engines (e.g., headless CMS integrations, dynamic creative optimization tools), attribution models, and activation workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Proficiency building AI agents using foundational LLMs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "building AI agents with foundational LLMs",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Proficiency building and orchestrating AI agents using foundational LLMs; integrating LLMs and AI agents with external tools and APIs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Proficiency orchestrating AI agents using foundational LLMs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "orchestrating AI agents with foundational LLMs",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Proficiency building and orchestrating AI agents using foundational LLMs; integrating LLMs and AI agents with external tools and APIs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Integrating LLMs with external tools and APIs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "integrating LLMs with external tools and APIs",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Proficiency building and orchestrating AI agents using foundational LLMs; integrating LLMs and AI agents with external tools and APIs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Integrating AI agents with external tools and APIs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "integrating AI agents with external tools and APIs",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Proficiency building and orchestrating AI agents using foundational LLMs; integrating LLMs and AI agents with external tools and APIs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Extreme flexibility: understands that marketing strategies pivot quickly and intentionally designs technical solutions to accommodate fluid business requirements",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "extreme flexibility",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Extreme flexibility and comfort with ambiguity: Understands that marketing strategies pivot quickly and intentionally designs technical solutions to accommodate fluid business requirements."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Comfort with ambiguity: understands that marketing strategies pivot quickly and intentionally designs technical solutions to accommodate fluid business requirements",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "comfort with ambiguity",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Extreme flexibility and comfort with ambiguity: Understands that marketing strategies pivot quickly and intentionally designs technical solutions to accommodate fluid business requirements."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Strong product mindset: views the marketing team as core users and builds tools that empower them to self-serve safely",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "product mindset",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Strong product mindset: Views the marketing team as your core \"users\" and builds tools that empower them to self-serve safely."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Excellent communication skills to seamlessly bridge technical architectures with creative marketing strategies",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "communication skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Excellent communication skills to seamlessly bridge technical architectures with creative marketing strategies."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

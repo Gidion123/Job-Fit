@@ -1,0 +1,44 @@
+{
+  "run_id": "cp23_matcher_coverage_gpt-6-sol_20261004_v1",
+  "phases": [
+    {
+      "phase": "P0_canary",
+      "model": "gpt-6-sol",
+      "workers": 1,
+      "pairs": 1,
+      "called": 1,
+      "phase_wall_ms": 14595,
+      "pair_wall_ms_p50": 14594,
+      "pair_wall_ms_max": 14594,
+      "done": 1,
+      "stop": null
+    },
+    {
+      "phase": "A_cv1_top20",
+      "model": "gpt-6-sol",
+      "workers": 9,
+      "pairs": 20,
+      "called": 18,
+      "phase_wall_ms": 35397,
+      "pair_wall_ms_p50": 15069.0,
+      "pair_wall_ms_max": 22698,
+      "done": 18,
+      "stop": null
+    },
+    {
+      "phase": "C_remaining39",
+      "model": "gpt-6-sol",
+      "workers": 8,
+      "pairs": 39,
+      "called": 35,
+      "phase_wall_ms": 75059,
+      "pair_wall_ms_p50": 16176,
+      "pair_wall_ms_max": 24340,
+      "done": 35,
+      "stop": null
+    }
+  ],
+  "run_cost_usd": 1.4807958,
+  "ledger_total_usd": 6.71051,
+  "completed": true
+}

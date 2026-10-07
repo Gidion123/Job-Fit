@@ -1,0 +1,315 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00129",
+  "status": "done",
+  "attempts": 2,
+  "error_code": null,
+  "wall_ms": 22460,
+  "score": {
+    "score_pct": 87.5,
+    "status": "final",
+    "matched": 3,
+    "partial": 1,
+    "required_total": 4,
+    "preferred_met": 1,
+    "preferred_total": 1,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 1,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 1,
+    "soft_skills_in_score": false,
+    "reasons": []
+  },
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+          ]
+        },
+        {
+          "branch_id": "B6",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B7",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh · Februari 2025 - Juni 2025",
+        "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+        "**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025",
+        "- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+          ]
+        },
+        {
+          "branch_id": "B4",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+          ]
+        },
+        {
+          "branch_id": "B5",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B6",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+        "**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "Jakarta Selatan, Indonesia · [EMAIL] · [PHONE] · [PROFILE]"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ],
+  "source_flags": [
+    {
+      "unit_id": "U01",
+      "branch_id": "B5",
+      "kind": "quote_exact",
+      "model_quote": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "cv_span": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "start": 317,
+      "end": 400,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh · Februari 2025 - Juni 2025",
+      "cv_span": "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh · Februari 2025 - Juni 2025",
+      "start": 1002,
+      "end": 1095,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+      "cv_span": "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+      "start": 1096,
+      "end": 1160,
+      "flags": []
+    },
+    {
+      "unit_id": "U03",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+      "cv_span": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+      "start": 1173,
+      "end": 1225,
+      "flags": []
+    },
+    {
+      "unit_id": "U03",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "cv_span": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "start": 1226,
+      "end": 1328,
+      "flags": []
+    },
+    {
+      "unit_id": "U03",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025",
+      "cv_span": "**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025",
+      "start": 1418,
+      "end": 1470,
+      "flags": []
+    },
+    {
+      "unit_id": "U03",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+      "cv_span": "- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+      "start": 1471,
+      "end": 1581,
+      "flags": []
+    },
+    {
+      "unit_id": "U04",
+      "branch_id": "B3",
+      "kind": "quote_exact",
+      "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "start": 721,
+      "end": 828,
+      "flags": []
+    },
+    {
+      "unit_id": "U04",
+      "branch_id": "B4",
+      "kind": "quote_exact",
+      "model_quote": "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+      "cv_span": "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+      "start": 1096,
+      "end": 1160,
+      "flags": []
+    },
+    {
+      "unit_id": "U04",
+      "branch_id": "B6",
+      "kind": "quote_exact",
+      "model_quote": "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+      "cv_span": "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+      "start": 829,
+      "end": 905,
+      "flags": []
+    },
+    {
+      "unit_id": "U05",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+      "cv_span": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+      "start": 1173,
+      "end": 1225,
+      "flags": []
+    },
+    {
+      "unit_id": "U05",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025",
+      "cv_span": "**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025",
+      "start": 1418,
+      "end": 1470,
+      "flags": []
+    },
+    {
+      "unit_id": "U07",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Jakarta Selatan, Indonesia · [EMAIL] · [PHONE] · [PROFILE]",
+      "cv_span": "Jakarta Selatan, Indonesia · [EMAIL] · [PHONE] · [PROFILE]",
+      "start": 24,
+      "end": 82,
+      "flags": []
+    }
+  ]
+}

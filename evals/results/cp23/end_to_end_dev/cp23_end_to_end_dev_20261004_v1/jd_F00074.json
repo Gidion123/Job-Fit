@@ -1,0 +1,11 @@
+{
+  "job_id": "F00074",
+  "status": "failed",
+  "attempts": 2,
+  "cache_hit": false,
+  "error_code": "qualification_inventory_incomplete",
+  "key": "2d821eeecb5ca9b082d5dc2212b63b420d55d9caa2b4d250a5771adfd33b4ad2",
+  "wall_ms": 122433,
+  "coverage": {},
+  "extraction": null
+}

@@ -1,0 +1,5891 @@
+{
+ "cv_id": "CV2",
+ "order": [
+  "F00306",
+  "F00599",
+  "F00069",
+  "F00853",
+  "F00236",
+  "F00071",
+  "F00019",
+  "F00290",
+  "F00651",
+  "F00032"
+ ],
+ "analyzed_ids": [
+  "F00071",
+  "F00651",
+  "F00032",
+  "F00236",
+  "F00853",
+  "F00306",
+  "F00599",
+  "F00019",
+  "F00290",
+  "F00069"
+ ],
+ "stage1_ids": [
+  "F00071",
+  "F00420",
+  "F00651",
+  "F00032",
+  "F00236",
+  "F00680",
+  "F00853",
+  "F00737",
+  "F00306",
+  "F00599",
+  "F00019",
+  "F00289",
+  "F00290",
+  "F00733",
+  "F00069",
+  "F00535",
+  "F00206",
+  "F00293",
+  "F00701",
+  "F00048",
+  "F00105",
+  "F00557",
+  "F00771",
+  "F00326",
+  "F00473",
+  "F00156",
+  "F00780",
+  "F00207",
+  "F00374",
+  "F00070"
+ ],
+ "held_ids": [
+  "F00032"
+ ],
+ "fallback_ids": [
+  "F00019",
+  "F00290",
+  "F00069"
+ ],
+ "versions": {
+  "service": "recommend-service-v1",
+  "pipeline": "pipeline-cp23-freeze-candidate-v4",
+  "seniority_rule": "seniority-demote-3y-v1",
+  "matching_model": "gpt-6-sol",
+  "matching_fallback_model": "gpt-6-luna",
+  "hold_policy": "H2v2",
+  "partial_weight": 0.5,
+  "k": 10,
+  "experience_conflict_rule": "experience-upper-bound-v1",
+  "history_confirmed": true
+ },
+ "wall_s": 80.6,
+ "jobs": {
+  "F00032": {
+   "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 0,
+    "partial": 0,
+    "required_total": 0,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "JD extraction not available: jd_quality_looks_incomplete"
+    ]
+   },
+   "assessments": [],
+   "constraints": [],
+   "hold_reason": "JD extraction not available: jd_quality_looks_incomplete",
+   "matcher_model": null,
+   "attempts": []
+  },
+  "F00069": {
+   "score": {
+    "score_pct": 66.67,
+    "status": "final",
+    "matched": 3,
+    "partial": 2,
+    "required_total": 6,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 1,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Indonesian (native), English (professional working proficiency)"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "Data Science and AI Bootcamp**, Contoh Academy (online) · June 2026 - present"
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-luna",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "failed",
+     "error": "RunCapReached"
+    },
+    {
+     "model": "gpt-6-luna",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00853": {
+   "score": {
+    "score_pct": 65.38,
+    "status": "final",
+    "matched": 6,
+    "partial": 5,
+    "required_total": 13,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 1,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "**Document Q&A Assistant (RAG)** · August 2026",
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [
+    {
+     "kind": "experience",
+     "state": "unknown",
+     "message": "U01: total history covers it, but years in the asked role are not verified. JD: Pengalaman 2–4 tahun sebagai software/backend developer"
+    },
+    {
+     "kind": "experience",
+     "state": "unknown",
+     "message": "U02: total history covers it, but years in the asked role are not verified. JD: minimal 1 tahun menyentuh proyek berbasis LLM/AI agent"
+    }
+   ],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00306": {
+   "score": {
+    "score_pct": 100.0,
+    "status": "final",
+    "matched": 4,
+    "partial": 0,
+    "required_total": 4,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 5,
+    "soft_skill_matched": 2,
+    "soft_skill_partial": 1,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "**Data Science and AI Bootcamp**, Contoh Academy (online) · June 2026 - present",
+        "- Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+       ]
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B5",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "**Digital Marketing Analyst**, PT Contoh Media Digital, Bandung · March 2023 - May 2026",
+        "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+        "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "**Data Science and AI Bootcamp**, Contoh Academy (online) · June 2026 - present",
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "**Data Science and AI Bootcamp**, Contoh Academy (online) · June 2026 - present",
+      "- Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Ran A/B tests for ad creatives and explained results to account managers."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00599": {
+   "score": {
+    "score_pct": 75.0,
+    "status": "provisional",
+    "matched": 6,
+    "partial": 3,
+    "required_total": 10,
+    "preferred_met": 3,
+    "preferred_total": 8,
+    "unknown_importance_total": 4,
+    "soft_skill_total": 2,
+    "soft_skill_matched": 2,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "4 requirement(s) not clearly required or preferred"
+    ]
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Ran A/B tests for ad creatives and explained results to account managers."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+      "- Ran A/B tests for ad creatives and explained results to account managers."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Ran A/B tests for ad creatives and explained results to account managers."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U20",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U21",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U22",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U23",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U24",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00236": {
+   "score": {
+    "score_pct": 63.64,
+    "status": "final",
+    "matched": 14,
+    "partial": 0,
+    "required_total": 22,
+    "preferred_met": 1,
+    "preferred_total": 2,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B01",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B02",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B03",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B04",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B05",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B01",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+       ]
+      },
+      {
+       "branch_id": "B02",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B01",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+       ]
+      },
+      {
+       "branch_id": "B02",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B03",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+       ]
+      },
+      {
+       "branch_id": "B04",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "**Document Q&A Assistant (RAG)** · August 2026",
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B01",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "**Document Q&A Assistant (RAG)** · August 2026",
+        "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+       ]
+      },
+      {
+       "branch_id": "B02",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "**Document Q&A Assistant (RAG)** · August 2026",
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U20",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U21",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U22",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U23",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+      "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U24",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00019": {
+   "score": {
+    "score_pct": 55.0,
+    "status": "final",
+    "matched": 4,
+    "partial": 3,
+    "required_total": 10,
+    "preferred_met": 1,
+    "preferred_total": 7,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 10,
+    "soft_skill_matched": 1,
+    "soft_skill_partial": 3,
+    "constraint_units_total": 1,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "Bandung, Indonesia"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "G1-B01",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "G1-B02",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "G1-B03",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "G1-B04",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "G1-B05",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "G1-B06",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "G1-B07",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Indonesian (native), English (professional working proficiency)"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "Three years of data work in digital marketing, followed by an intensive data science and AI bootcamp."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Ran A/B tests for ad creatives and explained results to account managers."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Ran A/B tests for ad creatives and explained results to account managers."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U20",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U21",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Summary\n\nMarketing analyst moving into AI engineering. Three years of data work in digital marketing, followed by an intensive data science and AI bootcamp. Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U22",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U23",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "G2-B01",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+       ]
+      },
+      {
+       "branch_id": "G2-B02",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "G2-B03",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U24",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U25",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U26",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U27",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U28",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "G3-B01",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "G3-B02",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U29",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "G4-B01",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "G4-B02",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [
+    {
+     "kind": "experience",
+     "state": "unknown",
+     "message": "U04: total history covers it, but years in the asked role are not verified. JD: 0–4 years of relevant experience"
+    }
+   ],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-luna",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "failed",
+     "error": "RunCapReached"
+    },
+    {
+     "model": "gpt-6-luna",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00071": {
+   "score": {
+    "score_pct": 63.16,
+    "status": "final",
+    "matched": 9,
+    "partial": 6,
+    "required_total": 19,
+    "preferred_met": 7,
+    "preferred_total": 16,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B01",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B02",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B03",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B04",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B05",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": null,
+     "check_status": "needs_clarification",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B06",
+       "label": "PARTIAL",
+       "check_status": "needs_clarification",
+       "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+       ]
+      },
+      {
+       "branch_id": "B07",
+       "label": "PARTIAL",
+       "check_status": "needs_clarification",
+       "cv_quotes": [
+        "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+       ]
+      },
+      {
+       "branch_id": "B08",
+       "label": "PARTIAL",
+       "check_status": "needs_clarification",
+       "cv_quotes": [
+        "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+       ]
+      },
+      {
+       "branch_id": "B09",
+       "label": "PARTIAL",
+       "check_status": "needs_clarification",
+       "cv_quotes": [
+        "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B10",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+        "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+       ]
+      },
+      {
+       "branch_id": "B11",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B12",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+       ]
+      },
+      {
+       "branch_id": "B13",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B14",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B15",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B16",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B17",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "- Forecasted monthly ad spend with Prophet for internal planning."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B18",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+       ]
+      },
+      {
+       "branch_id": "B19",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B20",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U20",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B21",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+       ]
+      },
+      {
+       "branch_id": "B22",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B23",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B24",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B25",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U21",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U22",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U23",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U24",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B26",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+       ]
+      },
+      {
+       "branch_id": "B27",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B28",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B29",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B30",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B31",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+       ]
+      },
+      {
+       "branch_id": "B32",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U25",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U26",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U27",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U28",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+      "- Ran A/B tests for ad creatives and explained results to account managers."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U29",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Managed social media campaigns and monthly budget reports in Excel."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U30",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Managed social media campaigns and monthly budget reports in Excel.",
+      "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U31",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U32",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U33",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U34",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U35",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Ran A/B tests for ad creatives and explained results to account managers."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U36",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U37",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Ran A/B tests for ad creatives and explained results to account managers."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U38",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Forecasted monthly ad spend with Prophet for internal planning."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00290": {
+   "score": {
+    "score_pct": 34.78,
+    "status": "final",
+    "matched": 6,
+    "partial": 4,
+    "required_total": 23,
+    "preferred_met": 3,
+    "preferred_total": 15,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 1,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U20",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U21",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U22",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U23",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U24",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U25",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U26",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U27",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U28",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U29",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U30",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U31",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U32",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U33",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U34",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U35",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U36",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U37",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U38",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U39",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-luna",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "failed",
+     "error": "RunCapReached"
+    },
+    {
+     "model": "gpt-6-luna",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00651": {
+   "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 8,
+    "partial": 4,
+    "required_total": 17,
+    "preferred_met": 4,
+    "preferred_total": 15,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 2,
+    "soft_skill_matched": 1,
+    "soft_skill_partial": 1,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "Required units not judged yet: U01",
+     "An experience, level or education requirement needs checking: U01."
+    ]
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": null,
+     "check_status": "needs_clarification",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "needs_clarification",
+       "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "PARTIAL",
+       "check_status": "needs_clarification",
+       "cv_quotes": [
+        "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+       ]
+      },
+      {
+       "branch_id": "B3",
+       "label": "PARTIAL",
+       "check_status": "needs_clarification",
+       "cv_quotes": [
+        "**Document Q&A Assistant (RAG)** · August 2026",
+        "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+       ]
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "needs_clarification",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B5",
+       "label": "PARTIAL",
+       "check_status": "needs_clarification",
+       "cv_quotes": [
+        "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+       ]
+      },
+      {
+       "branch_id": "B6",
+       "label": "PARTIAL",
+       "check_status": "needs_clarification",
+       "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+       ]
+      },
+      {
+       "branch_id": "B4",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+       ]
+      },
+      {
+       "branch_id": "B5",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+       ]
+      },
+      {
+       "branch_id": "B6",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+       ]
+      },
+      {
+       "branch_id": "B5",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+       ]
+      },
+      {
+       "branch_id": "B6",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+        "**Document Q&A Assistant (RAG)** · August 2026",
+        "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+       ]
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Ran A/B tests for ad creatives and explained results to account managers."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Ran A/B tests for ad creatives and explained results to account managers."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U20",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B5",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B6",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U21",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B5",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B6",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B7",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U22",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+       ]
+      },
+      {
+       "branch_id": "B5",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U23",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U24",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U25",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U26",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U27",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U28",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+       ]
+      },
+      {
+       "branch_id": "B3",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+       ]
+      },
+      {
+       "branch_id": "B4",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U29",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U30",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U31",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U32",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U33",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U34",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "Indonesian (native), English (professional working proficiency)"
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  }
+ },
+ "presented": {
+  "cv_id": "CV2",
+  "note": "Match % is CV evidence coverage of the required items, not a hiring probability.",
+  "blocks": [
+   {
+    "title": "Target-role jobs",
+    "filter_state": null,
+    "groups": {
+     "matches": [
+      {
+       "job_id": "F00306",
+       "title": "AI Engineer (Generative AI, Data & Optimisation)",
+       "company": "EtonHouse Singapore",
+       "location": null,
+       "url": null,
+       "score_pct": 100.0,
+       "status": "final",
+       "scored": true,
+       "matched": 4,
+       "partial": 0,
+       "required_total": 4,
+       "soft_skills": {
+        "total": 5,
+        "matched": 2,
+        "partial": 1
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Relevant qualification in IT, Computer Science, Data/Analytics, Engineering, or equivalent practical experience",
+         "importance": "required",
+         "field": "education",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Basic programming language",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+         ]
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Basic SQL",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Interest in AI / GenAI",
+         "importance": "required",
+         "field": "other",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "**Data Science and AI Bootcamp**, Contoh Academy (online) · June 2026 - present",
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Willingness to learn fast",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "**Data Science and AI Bootcamp**, Contoh Academy (online) · June 2026 - present",
+          "- Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+         ]
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Able to explain work clearly",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Ran A/B tests for ad creatives and explained results to account managers."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Document what you did",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+         ]
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Responsible attitude toward data privacy",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Willingness to work as a team",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00599",
+       "title": "Data Scientist",
+       "company": "PT. Quad Sinergi Teknologi",
+       "location": null,
+       "url": null,
+       "score_pct": 75.0,
+       "status": "provisional",
+       "scored": true,
+       "matched": 6,
+       "partial": 3,
+       "required_total": 10,
+       "soft_skills": {
+        "total": 2,
+        "matched": 2,
+        "partial": 0
+       },
+       "reasons": [
+        "4 requirement(s) not clearly required or preferred"
+       ],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "For Junior level: Fresh Graduate with approximately 2 years of experience in Data Science",
+         "importance": "unknown",
+         "field": "experience_duration",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "For Junior level: Fresh Graduate with approximately 2 years of experience in Machine Learning",
+         "importance": "unknown",
+         "field": "experience_duration",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "For Junior level: Fresh Graduate with approximately 2 years of experience in Data Analytics",
+         "importance": "unknown",
+         "field": "experience_duration",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "For Mid-Level: 2–4 years of experience as Data Scientist, Machine Learning Engineer, Data Analyst, or related roles",
+         "importance": "unknown",
+         "field": "experience_duration",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Experience handling AI/Data projects for enterprise or customers",
+         "importance": "preferred",
+         "field": "other",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Python",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "SQL",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+         ]
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Pandas",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+         ]
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "NumPy",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Scikit-learn",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Machine Learning fundamentals",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Statistics",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Ran A/B tests for ad creatives and explained results to account managers."
+         ]
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Data analysis",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+          "- Ran A/B tests for ad creatives and explained results to account managers."
+         ]
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Database fundamentals",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+         ]
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Analytical skills",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Ran A/B tests for ad creatives and explained results to account managers."
+         ]
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Problem-solving skills",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+         ]
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Experience with Generative AI / LLM",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "RAG",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+          "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+         ]
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Vector Database",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U20",
+         "requirement": "Experience with PyTorch or TensorFlow",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U21",
+         "requirement": "Experience with Docker or MLflow",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U22",
+         "requirement": "Experience with cloud platforms (AWS, Azure, or GCP)",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U23",
+         "requirement": "Experience with Power BI, Tableau, or Streamlit",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U24",
+         "requirement": "Ability to turn business problems into data, analysis, model, AI solution, and business impact",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00069",
+       "title": "AI Engineer Intern",
+       "company": "Biks.AI",
+       "location": null,
+       "url": null,
+       "score_pct": 66.67,
+       "status": "final",
+       "scored": true,
+       "matched": 3,
+       "partial": 2,
+       "required_total": 6,
+       "soft_skills": {
+        "total": 1,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Python or JavaScript — enough to build and ship something",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Built something with Claude Code, Codex, Cursor or similar",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Comfortable with APIs",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Comfortable with Git",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+         ]
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Curious, asks questions, not afraid to try things",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Conversational English",
+         "importance": "required",
+         "field": "language",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Indonesian (native), English (professional working proficiency)"
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Student or fresh graduate welcome",
+         "importance": "required",
+         "field": "other",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-luna",
+       "used_fallback": true,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00853",
+       "title": "AI Agent Developer",
+       "company": "Erela",
+       "location": null,
+       "url": null,
+       "score_pct": 65.38,
+       "status": "final",
+       "scored": true,
+       "matched": 6,
+       "partial": 5,
+       "required_total": 13,
+       "soft_skills": {
+        "total": 1,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "2–4 years of experience as a software/backend developer",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+         ]
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "At least 1 year of experience touching LLM/AI agent projects",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "**Document Q&A Assistant (RAG)** · August 2026",
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Strong in Python",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Familiar with FastAPI or another Python web framework",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Understand modern LLM concepts: prompt engineering",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+         ]
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Understand modern LLM concepts: function/tool calling",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Understand modern LLM concepts: RAG",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Understand modern LLM concepts: context management",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Experience with at least one agent/LLM framework (e.g., LangChain, LlamaIndex, OpenAI/Anthropic SDK, or equivalent)",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Able to work with REST API",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Able to work with SQL database",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Able to work with system integration",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+          "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+         ]
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Familiar with Git",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+         ]
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Familiar with collaborative workflow",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00236",
+       "title": "AI ENGINEER (AI & POWER BI)",
+       "company": "PT Mitra Transformasi Digital",
+       "location": null,
+       "url": null,
+       "score_pct": 63.64,
+       "status": "final",
+       "scored": true,
+       "matched": 14,
+       "partial": 0,
+       "required_total": 22,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Minimum bachelor's degree (S1) in Informatics Engineering, Computer Science, Data Science, Information Systems, or a related field.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Experience or understanding in Artificial Intelligence / Machine Learning.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Python.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "AI/ML libraries such as Pandas, NumPy, Scikit-learn, or similar frameworks.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "LLM (Large Language Model) concepts.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "AI implementation.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+          "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Understanding RAG (Retrieval-Augmented Generation) and/or AI Agent.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Use of APIs for AI application integration.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "**Document Q&A Assistant (RAG)** · August 2026",
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+          "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+         ]
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "SQL.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+         ]
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Database processing.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Microsoft Power BI for creating dashboards and data visualization.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Processing data from various sources.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+          "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+         ]
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Portfolio/project in AI or Power BI.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Machine Learning.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+         ]
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "RAG (Retrieval-Augmented Generation).",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "**Document Q&A Assistant (RAG)** · August 2026",
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "AI Agent / Agentic AI.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Vector Database.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "Embeddings.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "DAX.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U20",
+         "requirement": "Power Query.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U21",
+         "requirement": "Data Modeling.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U22",
+         "requirement": "Dashboard.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U23",
+         "requirement": "Reporting.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+          "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+         ]
+        },
+        {
+         "unit_id": "U24",
+         "requirement": "Power BI Service.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00071",
+       "title": "AI Engineer - DX Orchestration & Intelligence",
+       "company": "Tech Troops",
+       "location": null,
+       "url": null,
+       "score_pct": 63.16,
+       "status": "final",
+       "scored": true,
+       "matched": 9,
+       "partial": 6,
+       "required_total": 19,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Bachelor's degree in Computer Science, Information Technology, Artificial Intelligence, Data Science, or a related field.",
+         "importance": "required",
+         "field": "education",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "2–5 years of experience in AI Engineering, Machine Learning, Data Engineering, or Backend Development.",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": null,
+         "check_status": "needs_clarification",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Strong programming skills in Python.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Strong programming skills in SQL.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+         ]
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Experience developing RESTful APIs using FastAPI or Flask.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Hands-on experience with Large Language Models (LLMs).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Hands-on experience with Prompt Engineering.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+         ]
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Hands-on experience with Retrieval-Augmented Generation (RAG).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Experience with vector databases such as FAISS, Milvus, Qdrant, Pinecone, Weaviate, or pgvector.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Knowledge of machine learning fundamentals.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+          "- Forecasted monthly ad spend with Prophet for internal planning."
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Knowledge of model evaluation.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+          "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Knowledge of AI workflow development.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+         ]
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Experience working with Docker.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+         ]
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Experience working with Git.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+         ]
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Experience working with cloud deployment.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Experience working with CI/CD practices.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Strong data processing skills using Pandas, Polars, or PySpark.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "Experience integrating AI solutions with enterprise systems.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Experience integrating AI solutions with APIs.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+         ]
+        },
+        {
+         "unit_id": "U20",
+         "requirement": "Experience with OpenAI, Azure OpenAI, Google Gemini, Anthropic Claude, or other enterprise LLM platforms.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U21",
+         "requirement": "Familiarity with LangChain.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U22",
+         "requirement": "Familiarity with LlamaIndex.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U23",
+         "requirement": "Familiarity with AI orchestration frameworks.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U24",
+         "requirement": "Experience with PostgreSQL, MySQL, Redis, Elasticsearch/OpenSearch, Airflow, BigQuery, or other data platforms.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U25",
+         "requirement": "Understanding of payment systems.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U26",
+         "requirement": "Understanding of reconciliation.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U27",
+         "requirement": "Understanding of settlement processes.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U28",
+         "requirement": "Understanding of customer journey analytics.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+          "- Ran A/B tests for ad creatives and explained results to account managers."
+         ]
+        },
+        {
+         "unit_id": "U29",
+         "requirement": "Understanding of campaign management.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Managed social media campaigns and monthly budget reports in Excel."
+         ]
+        },
+        {
+         "unit_id": "U30",
+         "requirement": "Understanding of digital business operations.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Managed social media campaigns and monthly budget reports in Excel.",
+          "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+         ]
+        },
+        {
+         "unit_id": "U31",
+         "requirement": "Knowledge of AI governance.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U32",
+         "requirement": "Knowledge of monitoring.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U33",
+         "requirement": "Knowledge of prompt versioning.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U34",
+         "requirement": "Knowledge of LLMOps practices.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+         ]
+        },
+        {
+         "unit_id": "U35",
+         "requirement": "Excellent analytical skills.",
+         "importance": "preferred",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Ran A/B tests for ad creatives and explained results to account managers."
+         ]
+        },
+        {
+         "unit_id": "U36",
+         "requirement": "Excellent problem-solving skills.",
+         "importance": "preferred",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+         ]
+        },
+        {
+         "unit_id": "U37",
+         "requirement": "Excellent communication skills.",
+         "importance": "preferred",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Ran A/B tests for ad creatives and explained results to account managers."
+         ]
+        },
+        {
+         "unit_id": "U38",
+         "requirement": "Ability to translate business requirements into scalable AI solutions.",
+         "importance": "preferred",
+         "field": "other",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Forecasted monthly ad spend with Prophet for internal planning."
+         ]
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00019",
+       "title": "Junior Data Scientist",
+       "company": "Royal HaskoningDHV",
+       "location": null,
+       "url": null,
+       "score_pct": 55.0,
+       "status": "final",
+       "scored": true,
+       "matched": 4,
+       "partial": 3,
+       "required_total": 10,
+       "soft_skills": {
+        "total": 10,
+        "matched": 1,
+        "partial": 3
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Work location: South Jakarta",
+         "importance": "required",
+         "field": "location",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "Bandung, Indonesia"
+         ]
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Master's degree in Data Science & AI, Business Analytics, Operations Research, Computer Science, Econometrics, Artificial Intelligence, or a related field",
+         "importance": "required",
+         "field": "education",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Excellent communication skills in English",
+         "importance": "required",
+         "field": "language",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Indonesian (native), English (professional working proficiency)"
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "0–4 years of relevant experience",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "Three years of data work in digital marketing, followed by an intensive data science and AI bootcamp."
+         ]
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Programming experience in Python",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+         ]
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Programming experience in SQL",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Strong analytical skills",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Ran A/B tests for ad creatives and explained results to account managers."
+         ]
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Strong problem-solving skills",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Understanding of data pipelines",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Understanding of data modelling concepts",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Knowledge of LLM prompting concepts",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Knowledge of LLM embeddings concepts",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Knowledge of Retrieval-Augmented Generation (RAG)",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Proactive attitude",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Eagerness to learn",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Eagerness to inspire",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Enthusiastic early-career professional",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "Enjoys building solutions",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Enjoys explaining solutions to others",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Ran A/B tests for ad creatives and explained results to account managers."
+         ]
+        },
+        {
+         "unit_id": "U20",
+         "requirement": "Curious about new technologies",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U21",
+         "requirement": "Motivated to translate innovative ideas into practical applications",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Summary\n\nMarketing analyst moving into AI engineering. Three years of data work in digital marketing, followed by an intensive data science and AI bootcamp. Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+         ]
+        },
+        {
+         "unit_id": "U22",
+         "requirement": "Experience with Azure cloud services",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U23",
+         "requirement": "Experience with LLM frameworks such as LangChain, Semantic Kernel, or similar technologies",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U24",
+         "requirement": "Experience with Git",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+         ]
+        },
+        {
+         "unit_id": "U25",
+         "requirement": "Experience with software development best practices",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U26",
+         "requirement": "Experience with supply chain analytics",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U27",
+         "requirement": "Experience with logistics analytics",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U28",
+         "requirement": "Experience with mathematical optimization or operations research techniques",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U29",
+         "requirement": "Experience with facilitating workshops or delivering training sessions",
+         "importance": "preferred",
+         "field": "soft_skill",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-luna",
+       "used_fallback": true,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00290",
+       "title": "AI Engineer Jr/Sr (MALAYSIAN)",
+       "company": "Aurous Consultancy Sdn Bhd",
+       "location": null,
+       "url": null,
+       "score_pct": 34.78,
+       "status": "final",
+       "scored": true,
+       "matched": 6,
+       "partial": 4,
+       "required_total": 23,
+       "soft_skills": {
+        "total": 1,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Proficiency in Python.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+         ]
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Proficiency in ML frameworks/algorithms (e.g. scikit-learn, XGBoost, PyTorch, TensorFlow).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+         ]
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Strong grasp of prompt engineering.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Strong grasp of structured extraction.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Strong grasp of RAG.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Strong grasp of embeddings.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Strong grasp of integrating hosted models (Anthropic Claude, Amazon Bedrock).",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Experience training and operationalizing custom ML models end to end (data prep, training, evaluation, deployment, monitoring).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+         ]
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Experience designing and deploying on AWS.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+         ]
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Hands-on with core AWS services: Lambda, API Gateway, Step Functions, SageMaker, Bedrock, Textract, DynamoDB, S3, ECR, SSM Parameter Store, CloudWatch, VPC/IAM.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Infrastructure as Code with Terraform — modules, per-environment state backends, plan/apply workflows.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "AWS CDK (a plus).",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Solid MLOps understanding: CI/CD.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Solid MLOps understanding: model registration.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Solid MLOps understanding: monitoring.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Solid MLOps understanding: drift detection.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Proven ability to own solution architecture.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "Proven ability to mentor engineers, including leading design and code reviews.",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Familiarity with event-driven architectures.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U20",
+         "requirement": "Familiarity with serverless architectures (Lambda / Step Functions).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U21",
+         "requirement": "Container skills: Docker (Python slim base images, Lambda container images).",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+         ]
+        },
+        {
+         "unit_id": "U22",
+         "requirement": "Container skills: image lifecycle management in ECR.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U23",
+         "requirement": "CI/CD with GitHub Actions.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U24",
+         "requirement": "CI/CD with GitHub Actions: OIDC federation to AWS (no long-lived credentials).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U25",
+         "requirement": "CI/CD with GitHub Actions: environment-gated promotion.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U26",
+         "requirement": "OCR experience.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U27",
+         "requirement": "Document-intelligence experience (AWS Textract, IDP pipelines).",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U28",
+         "requirement": "Computer vision / object detection experience (e.g. training and deploying detection models).",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U29",
+         "requirement": "Vector search / RAG with a vector store (e.g. pgvector).",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U30",
+         "requirement": "Data warehouse familiarity such as Amazon Redshift.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+         ]
+        },
+        {
+         "unit_id": "U31",
+         "requirement": "Testing and quality tooling: pytest.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U32",
+         "requirement": "Testing and quality tooling: property-based testing (Hypothesis / fast-check).",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U33",
+         "requirement": "Testing and quality tooling: SAST/dependency scanning.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U34",
+         "requirement": "API contract discipline with OpenAPI specs.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U35",
+         "requirement": "Full-stack awareness for AI applications: FastAPI backends.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+         ]
+        },
+        {
+         "unit_id": "U36",
+         "requirement": "Full-stack awareness for AI applications: React/Vite/MUI frontends.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U37",
+         "requirement": "Exposure to Responsible AI practices.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U38",
+         "requirement": "Exposure to LLM guardrails (content filtering, confidence scoring, human review).",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U39",
+         "requirement": "AWS certifications (AI/ML Specialty, Solutions Architect) or equivalent.",
+         "importance": "preferred",
+         "field": "certification",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+         ]
+        }
+       ],
+       "matcher_model": "gpt-6-luna",
+       "used_fallback": true,
+       "filter_state": null
+      }
+     ],
+     "conflicts": [],
+     "not_fully_analyzed": [
+      {
+       "job_id": "F00651",
+       "title": "AI Engineer - LLM & AI Agent",
+       "company": "COMTECNOVA PTE. LTD.",
+       "location": null,
+       "url": null,
+       "score_pct": null,
+       "status": "on_hold",
+       "scored": false,
+       "matched": 8,
+       "partial": 4,
+       "required_total": 17,
+       "soft_skills": {
+        "total": 2,
+        "matched": 1,
+        "partial": 1
+       },
+       "reasons": [
+        "Required units not judged yet: U01",
+        "An experience, level or education requirement needs checking: U01."
+       ],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Bachelor's degree or above in Computer Science, AI, Machine Learning, NLP, Data Science, Engineering, or a related field",
+         "importance": "required",
+         "field": "education",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "At least 2 years of relevant experience in LLM applications, information retrieval, RAG, AI agents, NLP, or AI application development",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": null,
+         "check_status": "needs_clarification",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Strong Python programming skills",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Experience developing maintainable applications or backend services",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Hands-on experience with LLM APIs, open-source LLMs, embeddings, vector databases, semantic search, or retrieval systems",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Practical understanding of RAG architecture",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+          "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Practical understanding of prompt engineering",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+         ]
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Practical understanding of retrieval strategies",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+         ]
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Practical understanding of evaluation",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+         ]
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Practical understanding of hallucination mitigation",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Experience with tool calling, function calling, agent workflows, APIs, databases, or backend integration",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Ability to independently design and deliver end-to-end LLM, RAG, AI agent, or AI application projects",
+         "importance": "required",
+         "field": "other",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Familiarity with Git",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+         ]
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Familiarity with automated testing",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Familiarity with documentation",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Familiarity with CI/CD",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Familiarity with containerized deployment",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+          "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+         ]
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "Good communication skills",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Ran A/B tests for ad creatives and explained results to account managers."
+         ]
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Ability to work with technical and non-technical stakeholders",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Ran A/B tests for ad creatives and explained results to account managers."
+         ]
+        },
+        {
+         "unit_id": "U20",
+         "requirement": "Experience with LangChain, LangGraph, LlamaIndex, Haystack, Semantic Kernel, or similar frameworks",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U21",
+         "requirement": "Experience with Qdrant, Milvus, Elasticsearch, OpenSearch, pgvector, Neo4j, or similar technologies",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U22",
+         "requirement": "Experience with hybrid search, reranking, knowledge graphs, document intelligence, or GraphRAG",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U23",
+         "requirement": "Experience with agent frameworks, MCP-compatible integration, workflow orchestration, or multi-agent systems",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U24",
+         "requirement": "Understanding of secure RAG",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U25",
+         "requirement": "Understanding of access control",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U26",
+         "requirement": "Understanding of data privacy",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U27",
+         "requirement": "Understanding of enterprise AI governance",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U28",
+         "requirement": "Experience deploying LLM applications in cloud, private, on-premises, or hybrid environments",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U29",
+         "requirement": "Familiarity with Docker",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+         ]
+        },
+        {
+         "unit_id": "U30",
+         "requirement": "Familiarity with Kubernetes",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U31",
+         "requirement": "Familiarity with observability",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U32",
+         "requirement": "Familiarity with tracing",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U33",
+         "requirement": "Familiarity with evaluation tools",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U34",
+         "requirement": "Professional proficiency in English, Mandarin, or Cantonese",
+         "importance": "preferred",
+         "field": "language",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00032",
+       "title": "Applied AI / Full-Stack AI Engineer (Mandarin / English Speaker)",
+       "company": "HITHINK TECHNOLOGY INDONESIA",
+       "location": null,
+       "url": null,
+       "score_pct": null,
+       "status": "on_hold",
+       "scored": false,
+       "matched": 0,
+       "partial": 0,
+       "required_total": 0,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [
+        "JD extraction not available: jd_quality_looks_incomplete"
+       ],
+       "hold_reason": "JD extraction not available: jd_quality_looks_incomplete",
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [],
+       "matcher_model": null,
+       "used_fallback": false,
+       "filter_state": null
+      }
+     ]
+    }
+   }
+  ],
+  "active_filters": [],
+  "empty_message": null,
+  "analyzed": 10,
+  "held": 1,
+  "demoted_by_seniority_rule": [],
+  "versions": {
+   "service": "recommend-service-v1",
+   "pipeline": "pipeline-cp23-freeze-candidate-v4",
+   "seniority_rule": "seniority-demote-3y-v1",
+   "matching_model": "gpt-6-sol",
+   "matching_fallback_model": "gpt-6-luna",
+   "hold_policy": "H2v2",
+   "partial_weight": 0.5,
+   "k": 10,
+   "experience_conflict_rule": "experience-upper-bound-v1",
+   "history_confirmed": true
+  }
+ }
+}

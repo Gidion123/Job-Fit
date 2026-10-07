@@ -1,0 +1,368 @@
+{
+ "created_at": "2026-10-07T09:00:15+00:00",
+ "api_calls": 0,
+ "scope": "descriptive supplement to cp24-report-contract-v1; headline unchanged; no choice is made from these numbers",
+ "per_cv": {
+  "CV3": {
+   "group": "primary_heldout",
+   "wall_s": 37.2,
+   "analyzed": 10,
+   "score_status": {
+    "final": 6,
+    "provisional": 1,
+    "on_hold": 3
+   },
+   "held_or_unscored": 3,
+   "luna_fallback": 4,
+   "sol_attempt_errors": {
+    "RunCapReached": 1
+   },
+   "quote_validity": {
+    "positive_items": 75,
+    "invalid": 0,
+    "rate": 1.0
+   },
+   "labeled_pool_recall_at_10": {
+    "stage1": {
+     "value": 1.0,
+     "numerator": 2,
+     "denominator": 2,
+     "reason": null
+    },
+    "final": {
+     "value": 1.0,
+     "numerator": 2,
+     "denominator": 2,
+     "reason": null
+    }
+   },
+   "hard_negatives_rel0_in_final_top10": [
+    {
+     "position": 5,
+     "job_id": "F00501"
+    }
+   ],
+   "relevance_0_1_in_final_top5": [
+    {
+     "position": 3,
+     "job_id": "F00290",
+     "relevance": 1
+    },
+    {
+     "position": 4,
+     "job_id": "F00374",
+     "relevance": 1
+    },
+    {
+     "position": 5,
+     "job_id": "F00501",
+     "relevance": 0
+    }
+   ],
+   "relevant_jobs_held_or_unscored": []
+  },
+  "CV4": {
+   "group": "primary_heldout",
+   "wall_s": 39.6,
+   "analyzed": 10,
+   "score_status": {
+    "provisional": 2,
+    "final": 7,
+    "on_hold": 1
+   },
+   "held_or_unscored": 1,
+   "luna_fallback": 5,
+   "sol_attempt_errors": {
+    "RunCapReached": 5
+   },
+   "quote_validity": {
+    "positive_items": 129,
+    "invalid": 0,
+    "rate": 1.0
+   },
+   "labeled_pool_recall_at_10": {
+    "stage1": {
+     "value": 1.0,
+     "numerator": 6,
+     "denominator": 6,
+     "reason": null
+    },
+    "final": {
+     "value": 1.0,
+     "numerator": 6,
+     "denominator": 6,
+     "reason": null
+    }
+   },
+   "hard_negatives_rel0_in_final_top10": [],
+   "relevance_0_1_in_final_top5": [],
+   "relevant_jobs_held_or_unscored": []
+  },
+  "CV5": {
+   "group": "primary_heldout",
+   "wall_s": 84.6,
+   "analyzed": 10,
+   "score_status": {
+    "final": 5,
+    "no_score": 1,
+    "on_hold": 4
+   },
+   "held_or_unscored": 5,
+   "luna_fallback": 4,
+   "sol_attempt_errors": {
+    "RunCapReached": 3
+   },
+   "quote_validity": {
+    "positive_items": 62,
+    "invalid": 0,
+    "rate": 1.0
+   },
+   "labeled_pool_recall_at_10": {
+    "stage1": {
+     "value": 0.6363636363636364,
+     "numerator": 7,
+     "denominator": 11,
+     "reason": null
+    },
+    "final": {
+     "value": 0.7272727272727273,
+     "numerator": 8,
+     "denominator": 11,
+     "reason": null
+    }
+   },
+   "hard_negatives_rel0_in_final_top10": [],
+   "relevance_0_1_in_final_top5": [
+    {
+     "position": 5,
+     "job_id": "F00290",
+     "relevance": 1
+    }
+   ],
+   "relevant_jobs_held_or_unscored": [
+    {
+     "job_id": "F00032",
+     "relevance": 2,
+     "status": "on_hold"
+    },
+    {
+     "job_id": "F00071",
+     "relevance": 3,
+     "status": "on_hold"
+    },
+    {
+     "job_id": "F00599",
+     "relevance": 2,
+     "status": "on_hold"
+    },
+    {
+     "job_id": "F00651",
+     "relevance": 2,
+     "status": "on_hold"
+    }
+   ]
+  },
+  "CV1": {
+   "group": "supplementary_familiar",
+   "wall_s": 87.2,
+   "analyzed": 10,
+   "score_status": {
+    "provisional": 2,
+    "final": 5,
+    "on_hold": 3
+   },
+   "held_or_unscored": 3,
+   "luna_fallback": 3,
+   "sol_attempt_errors": {
+    "RunCapReached": 2
+   },
+   "quote_validity": {
+    "positive_items": 96,
+    "invalid": 0,
+    "rate": 1.0
+   },
+   "labeled_pool_recall_at_10": {
+    "stage1": {
+     "value": 0.75,
+     "numerator": 3,
+     "denominator": 4,
+     "reason": null
+    },
+    "final": {
+     "value": 1.0,
+     "numerator": 4,
+     "denominator": 4,
+     "reason": null
+    }
+   },
+   "hard_negatives_rel0_in_final_top10": [],
+   "relevance_0_1_in_final_top5": [
+    {
+     "position": 3,
+     "job_id": "F00313",
+     "relevance": 1
+    },
+    {
+     "position": 5,
+     "job_id": "F00206",
+     "relevance": 1
+    }
+   ],
+   "relevant_jobs_held_or_unscored": [
+    {
+     "job_id": "F00258",
+     "relevance": 3,
+     "status": "on_hold"
+    }
+   ]
+  },
+  "CV2": {
+   "group": "supplementary_familiar",
+   "wall_s": 80.6,
+   "analyzed": 10,
+   "score_status": {
+    "final": 7,
+    "provisional": 1,
+    "on_hold": 2
+   },
+   "held_or_unscored": 2,
+   "luna_fallback": 4,
+   "sol_attempt_errors": {
+    "RunCapReached": 3
+   },
+   "quote_validity": {
+    "positive_items": 157,
+    "invalid": 0,
+    "rate": 1.0
+   },
+   "labeled_pool_recall_at_10": {
+    "stage1": {
+     "value": 0.6,
+     "numerator": 3,
+     "denominator": 5,
+     "reason": null
+    },
+    "final": {
+     "value": 1.0,
+     "numerator": 5,
+     "denominator": 5,
+     "reason": null
+    }
+   },
+   "hard_negatives_rel0_in_final_top10": [],
+   "relevance_0_1_in_final_top5": [
+    {
+     "position": 4,
+     "job_id": "F00853",
+     "relevance": 1
+    }
+   ],
+   "relevant_jobs_held_or_unscored": []
+  }
+ },
+ "cases": [
+  {
+   "cv_id": "CV3",
+   "job_id": "F00501",
+   "kind": "hard negative (relevance 0) in final top 10",
+   "position": 5,
+   "score_status": "final",
+   "score_pct": 58.33
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00032",
+   "kind": "relevant job held or unscored",
+   "relevance": 2,
+   "score_status": "on_hold",
+   "reasons": [
+    "JD extraction not available: jd_quality_looks_incomplete"
+   ]
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00071",
+   "kind": "relevant job held or unscored",
+   "relevance": 3,
+   "score_status": "on_hold",
+   "reasons": [
+    "Evidence matching did not finish: unbounded_required_duration_needs_clarification"
+   ]
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00599",
+   "kind": "relevant job held or unscored",
+   "relevance": 2,
+   "score_status": "on_hold",
+   "reasons": [
+    "Evidence matching did not finish: RunCapReached"
+   ]
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00651",
+   "kind": "relevant job held or unscored",
+   "relevance": 2,
+   "score_status": "on_hold",
+   "reasons": [
+    "Evidence matching did not finish: unbounded_required_duration_needs_clarification"
+   ]
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00258",
+   "kind": "relevant job held or unscored",
+   "relevance": 3,
+   "score_status": "on_hold",
+   "reasons": [
+    "Required units not judged yet: U02",
+    "More than 20 percent of scored required units need checking."
+   ]
+  }
+ ],
+ "totals": {
+  "quote_validity_all_cvs": 1.0,
+  "positive_items": 519,
+  "luna_fallback_jobs": 20,
+  "analyzed_jobs": 50,
+  "one_cv_wall_s": {
+   "min": 37.2,
+   "median": 80.6,
+   "max": 87.2
+  }
+ },
+ "cost_by_phase": {
+  "cp24_test_extraction_v1": {
+   "calls": 31,
+   "usd": 0.464729,
+   "latency_p50_s": 41.9,
+   "latency_p95_s": 165.3
+  },
+  "cp24_test_matching_v1": {
+   "calls": 46,
+   "usd": 0.940073,
+   "latency_p50_s": 27.6,
+   "latency_p95_s": 44.4
+  },
+  "cp24_test_parse_v1": {
+   "calls": 6,
+   "usd": 0.036976,
+   "latency_p50_s": 38.8,
+   "latency_p95_s": 77.7
+  },
+  "cp24_test_queries_v1": {
+   "calls": 1,
+   "usd": 1.5e-05,
+   "latency_p50_s": 2.7,
+   "latency_p95_s": 2.7
+  }
+ },
+ "cost_total_usd": 1.441793,
+ "not_measured": {
+  "evidence_macro_f1_on_test": "test A/B sheets were AI-assisted drafts that were not imported (D-088 imports C only) and pipeline units differ from gold units; development values stand (CP2.3)",
+  "extraction_f1_on_test": "same reason; extraction schema validity is in process status (FAIL-33)",
+  "unsupported_claims_on_test": "needs unit-level gold evidence on test; not available",
+  "filter_recall": "no optional filter used in the test run"
+ }
+}

@@ -1,0 +1,318 @@
+{
+  "stage_id": "claude-haiku-4.5/CV1/F00332",
+  "status": "failed",
+  "error_code": "invalid_structured_output_or_source",
+  "attempts": 1,
+  "original_first_reused": true,
+  "typed_repair": {
+    "assessments": [
+      {
+        "unit_id": "P30-U01",
+        "label": null,
+        "check_status": "done",
+        "cv_quotes": [],
+        "branches": [
+          {
+            "branch_id": "P30-U01/B01",
+            "label": "NO_MATCH",
+            "check_status": "done",
+            "cv_quotes": []
+          },
+          {
+            "branch_id": "P30-U01/B02",
+            "label": "MATCH",
+            "check_status": "done",
+            "cv_quotes": [
+              "S1 Statistika, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+            ]
+          }
+        ],
+        "label_source": "annotator"
+      },
+      {
+        "unit_id": "P30-U02",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+          "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+        ],
+        "branches": [],
+        "label_source": "annotator"
+      },
+      {
+        "unit_id": "P30-U03",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+        ],
+        "branches": [],
+        "label_source": "annotator"
+      },
+      {
+        "unit_id": "P30-U04",
+        "label": "PARTIAL",
+        "check_status": "done",
+        "cv_quotes": [
+          "Excel"
+        ],
+        "branches": [],
+        "label_source": "annotator"
+      },
+      {
+        "unit_id": "P30-U05",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "mempresentasikan hasilnya ke manajer divisi"
+        ],
+        "branches": [],
+        "label_source": "annotator"
+      },
+      {
+        "unit_id": "P30-U06",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+        ],
+        "branches": [],
+        "label_source": "annotator"
+      },
+      {
+        "unit_id": "P30-U07",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+        ],
+        "branches": [],
+        "label_source": "annotator"
+      },
+      {
+        "unit_id": "P30-U08",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+        ],
+        "branches": [],
+        "label_source": "annotator"
+      },
+      {
+        "unit_id": "P30-U09",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Google Data Analytics Professional Certificate (2025)"
+        ],
+        "branches": [],
+        "label_source": "annotator"
+      },
+      {
+        "unit_id": "P30-U10",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\""
+        ],
+        "branches": [],
+        "label_source": "annotator"
+      },
+      {
+        "unit_id": "P30-U11",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+        ],
+        "branches": [],
+        "label_source": "annotator"
+      },
+      {
+        "unit_id": "P30-U12",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+        ],
+        "branches": [],
+        "label_source": "annotator"
+      },
+      {
+        "unit_id": "P30-U13",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+        ],
+        "branches": [],
+        "label_source": "annotator"
+      },
+      {
+        "unit_id": "P30-U14",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+          "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+        ],
+        "branches": [],
+        "label_source": "annotator"
+      },
+      {
+        "unit_id": "P30-U15",
+        "label": "MATCH",
+        "check_status": "done",
+        "cv_quotes": [
+          "mempresentasikan hasilnya ke manajer divisi"
+        ],
+        "branches": [],
+        "label_source": "annotator"
+      },
+      {
+        "unit_id": "P30-U16",
+        "label": "NO_MATCH",
+        "check_status": "done",
+        "cv_quotes": [],
+        "branches": [],
+        "label_source": "annotator"
+      }
+    ]
+  },
+  "stage_wall_ms": 6615,
+  "draft_sha256": "4da4abee34547e45c6d6ee4a0961bcc2582fac94ea63a53b41137bd8f8179f7d",
+  "semantic_review": "pending",
+  "transport_or_unknown_failure": false,
+  "assessments": [
+    {
+      "unit_id": "P30-U01",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U02",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U03",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U04",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U05",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U06",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U07",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U08",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U09",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U10",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U11",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U12",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U13",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U14",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U15",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U16",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ]
+}

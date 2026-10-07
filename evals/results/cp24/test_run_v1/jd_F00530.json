@@ -1,0 +1,293 @@
+{
+ "job_id": "F00530",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "not_assessed",
+  "bullet_count": 0,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 0,
+  "inventory_mappings": [],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00530",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Commitment to ongoing learning and thriving in environments that value collaboration, empathy, and communal growth leadership.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Commitment to ongoing learning and thriving in environments that value collaboration, empathy, and communal growth leadership.",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "You are committed to ongoing learning—embracing training opportunities—and thrive within environments that value collaboration, empathy and communal growth leadership."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "Bachelor's or Master's degree in Data Science, Computer Science, Statistics, Mathematics or a related field.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "education",
+    "normalized_name": "Bachelor's or Master's degree in Data Science, Computer Science, Statistics, Mathematics or a related field.",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Bachelor's or Master's degree in Data Science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Bachelor's or Master's degree in Computer Science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Bachelor's or Master's degree in Statistics",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "Bachelor's or Master's degree in Mathematics",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B5",
+      "text": "Bachelor's or Master's degree in a related field",
+      "field": "education",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Bachelor's or Master's degree in Data Science, Computer Science, Statistics, Mathematics or a related field demonstrating foundational knowledge essential for success."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "2–3 years of proven experience applying data science methodologies within a commercial setting.",
+    "kind": "qualified",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "2–3 years of proven experience applying data science methodologies within a commercial setting.",
+    "min_years": 2.0,
+    "branches": [],
+    "source_quotes": [
+     "2–3 years of proven experience applying data science methodologies within a commercial setting."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Strong programming skills in Python enabling efficient analysis of complex datasets.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Strong programming skills in Python enabling efficient analysis of complex datasets.",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong programming skills in Python enabling efficient analysis of complex datasets."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Comprehensive understanding of statistical analysis techniques including hypothesis testing.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Comprehensive understanding of statistical analysis techniques including hypothesis testing.",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Comprehensive understanding of statistical analysis techniques including hypothesis testing which supports rigorous evaluation of business initiatives."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Experience developing predictive models or conducting forecasting activities that directly influence organisational strategy.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience developing predictive models or conducting forecasting activities that directly influence organisational strategy.",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Experience developing predictive models that directly influence organisational strategy",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Experience conducting forecasting activities that directly influence organisational strategy",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience developing predictive models or conducting forecasting activities that directly influence organisational strategy."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Basic familiarity with A/B testing or experimentation allowing for effective assessment of new approaches.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Basic familiarity with A/B testing or experimentation allowing for effective assessment of new approaches.",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Basic familiarity with A/B testing allowing for effective assessment of new approaches",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Basic familiarity with experimentation allowing for effective assessment of new approaches",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Basic familiarity with A/B testing or experimentation allowing for effective assessment of new approaches."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Hands-on experience with Databricks or similar platforms facilitating scalable data processing workflows.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Hands-on experience with Databricks or similar platforms facilitating scalable data processing workflows.",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Hands-on experience with Databricks facilitating scalable data processing workflows",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Hands-on experience with similar platforms facilitating scalable data processing workflows",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Hands-on experience with Databricks or similar platforms facilitating scalable data processing workflows."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Familiarity with visualisation tools such as Power BI, Tableau or Qlik supporting clear communication of insights.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Familiarity with visualisation tools such as Power BI, Tableau or Qlik supporting clear communication of insights.",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Familiarity with visualisation tool Power BI supporting clear communication of insights",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Familiarity with visualisation tool Tableau supporting clear communication of insights",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Familiarity with visualisation tool Qlik supporting clear communication of insights",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Familiarity with visualisation tools such as Power BI, Tableau or Qlik supporting clear communication of insights."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "Excellent analytical skills ensuring thorough investigation of business questions.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Excellent analytical skills ensuring thorough investigation of business questions.",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Excellent analytical skills paired with dependable problem-solving abilities ensuring thorough investigation of business questions."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "Dependable problem-solving abilities ensuring thorough investigation of business questions.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Dependable problem-solving abilities ensuring thorough investigation of business questions.",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Excellent analytical skills paired with dependable problem-solving abilities ensuring thorough investigation of business questions."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "Outstanding communication skills enabling translation of technical findings into actionable recommendations for diverse audiences.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Outstanding communication skills enabling translation of technical findings into actionable recommendations for diverse audiences.",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Outstanding communication skills enabling translation of technical findings into actionable recommendations for diverse audiences."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

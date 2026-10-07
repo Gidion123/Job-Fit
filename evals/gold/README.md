@@ -1,5 +1,15 @@
 # Gold Labels
 
+## Current authoritative development export
+
+Use [`development_v13_reviewed_20261002_r2/manifest.json`](development_v13_reviewed_20261002_r2/manifest.json): 1,058 extraction rows, 1,364 evidence rows and 69 relevance judgments. Review provenance, original guideline versions, rejected/held records, logical OR mappings and coverage sidecars are retained. The workbook is unchanged.
+
+**Do not concatenate this bundle with root pilot files.** Non-overlapping pilot records were included once; conflicting/held items were excluded explicitly. Record gold is not automatically a complete JD reference or approved model alignment. No test labels were exported.
+
+The root files and remaining paragraphs below describe the historical 1 October pilot. Do not rebuild them: `export_pilot_gold.py` refuses to run after the split freeze. Current export uses `scripts/export_development_gold.py` with a new bundle identity and explicit authorized promotion. The existing bundle is immutable; inspect it without regenerating it.
+
+Current readiness command and limitations are documented in the [CP2.2 report](../../docs/checkpoint_2/CP2_02_Modeling_Pipeline.md). Documentation hashes in the manifest describe export-time metadata; subsequent README clarification does not change any label/source hashes.
+
 Labels approved by the annotator, used as ground truth (D-016, D-038). Only rows with `review_status = approved` are written here. Rejected rows are left out.
 
 | File | One record per | Main fields |

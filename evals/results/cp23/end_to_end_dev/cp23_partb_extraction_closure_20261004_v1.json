@@ -1,0 +1,103 @@
+{
+  "schema_version": "cp23-partb-extraction-closure-v1",
+  "run_id": "cp23_end_to_end_dev_20261004_v1",
+  "scope": "development_only",
+  "plan_sha256": "54c0d5d1cec7ebf08b983083aaad785f0ec5d6347bb85909d24f698e904647ec",
+  "model": "deepseek-flash",
+  "prompt": "jd-prompt-v1.4-experimental",
+  "jd_total_in_top30_union": 52,
+  "jd_held_source_ids": [
+    "F00369"
+  ],
+  "jd_attempted": 51,
+  "status_counts": {
+    "done": 37,
+    "failed": 14
+  },
+  "error_counts": {
+    "IncompleteStructuredResponse": 11,
+    "qualification_inventory_incomplete": 2,
+    "qualification_inventory_unsupported_mapping": 1
+  },
+  "attempt_counts": {
+    "2": 23,
+    "1": 28
+  },
+  "done_quality_counts": {
+    "ok": 35,
+    "looks_incomplete": 2
+  },
+  "done_needs_review_ids": [
+    "F00018",
+    "F00022",
+    "F00055",
+    "F00060",
+    "F00114",
+    "F00126",
+    "F00303",
+    "F00343",
+    "F00418",
+    "F00556",
+    "F00629"
+  ],
+  "done_coverage_counts": {
+    "no_uncovered_bullets": 15,
+    "not_assessed": 21,
+    "review_required": 1
+  },
+  "stage_sha256": {
+    "jd_F00018.json": "e5b01d302db384834a5edee64ee61d8338a779fd24677929759f8c6d250a28f3",
+    "jd_F00020.json": "adfc0f2103377327cc66bc61474ad3ebd545c5ee0165170db8310836fe0b5408",
+    "jd_F00022.json": "bc576db4b1f9db4323c57bf1079ba2f9dacea4dc24840e4d21564957a7f5bd7c",
+    "jd_F00029.json": "55a2b1c5abe5fa4fc0f336a8a6dac28a11757606d56519a640015bf7fbe6c98d",
+    "jd_F00034.json": "a4aa4525f5362c96fee5ea6e6fc7d75e9fa1ab5f84cadbd92d8ff0d4a5651d41",
+    "jd_F00036.json": "ed74c0842fb9103249aff01a3beb1798c08b878a93da5ce74253ae197b7fd81d",
+    "jd_F00052.json": "b52cdb6a028baa38d532e30a74a47dceb89430d24d3d90572f6f6edbf63e819a",
+    "jd_F00055.json": "7a1a9fb8c38eb43a1e34831f1eef0915fd53e1a15c75bc02d473076a6d566923",
+    "jd_F00060.json": "b460b57e93ec3d8ee65a7728fb9b15048b8a65c371b98504b555d625f46629e0",
+    "jd_F00074.json": "ec2f3349717cb5e1f2b88c799110ff5421270a46dd59175256a6e4fcfdf4b403",
+    "jd_F00090.json": "75e6ce95234a6327e9a88d7f2d80dff22a5f93d76a2ba3b308d28fecd8287809",
+    "jd_F00103.json": "44f99b778e5b20b16ea38bb2745650c75128308c0370e3126cef0f90925bf244",
+    "jd_F00114.json": "01a03b64b9df11afd934dd8cea242168bf24f5c94dfbc4b377a4e3e83ee46357",
+    "jd_F00126.json": "61f024651420524bd1595a5470785498ff6540afd7fcf9bb99143d679f6d851c",
+    "jd_F00129.json": "a703c40ad312e4264eb83bbd4ccb43e363cbd3b487601e629df51b93fb2fad32",
+    "jd_F00132.json": "3c9d89a910405c47a57e427e970e0d98b1dcda0284f6c862c25052e65524b97f",
+    "jd_F00176.json": "b091d2ed8b35800d75141191747acc20794e3ddcfe8676202d82f38f16b196ce",
+    "jd_F00189.json": "b11d69ae525629537a93352e3bbd8e3216ad3df1058be448e717e75913a51f1d",
+    "jd_F00208.json": "f7cdff300545cd714a74649e0bebf41344f5b6bb19b9d12191e5bdd9540f467a",
+    "jd_F00212.json": "067f8a4a336653d6c03881684c06d1bffc9cd3f1ea7d4b8ec7a26191aeb056ac",
+    "jd_F00284.json": "912d86af4d5a7ec2bfd060093d7d6a4f11702cc2ac8c96e4a9ebe990e7df9d24",
+    "jd_F00303.json": "d20aa82dfccfdf4ca7a1d4dfee65c3b4ab55297a7c311efc842d18b33bd12899",
+    "jd_F00309.json": "30ef4ebb6d74cfd4fd7147fa13ebff8d4fada86f1d536936a0947bed7d4a6fec",
+    "jd_F00310.json": "638adde49d62d1e6220e64632755557fc8adc576ff4faa908c3b659e966634f0",
+    "jd_F00312.json": "7ae4f6466f39acc2d0399d96bcf7d92c82d4c2f091d630a30720d0782f6d0f9e",
+    "jd_F00327.json": "281b341421f5d55eee7e32783b260fd4e96e3f7ef82414e011f3768d6719d648",
+    "jd_F00332.json": "e80f4142d3d4c4dd93ca6cfe64966c56d165c26669d6ba1bb5846b861b3e1536",
+    "jd_F00333.json": "98a9a97f6b76fd433bade899ac47710ae6562dbc64897bd1be0edd571d39a184",
+    "jd_F00343.json": "018de4d2016b824522cb9b6cab60dc30e2e04066eaa6ac9b495f52131a879efc",
+    "jd_F00351.json": "caba8dab059b95c1fcb639b92678e61b23a2429460198fe4549d571b9111082a",
+    "jd_F00354.json": "9ff36eed55772e12c305f5b4e6887da7142dd529865ec25537a6a38ef4a700c9",
+    "jd_F00366.json": "f1a0260501628c0f39df3f54c310e731e9b0e752cb042122fbf0481ef075286b",
+    "jd_F00418.json": "b79a4d78ed910f4864132da22e8e01a98fab67f65481cd6c1969f294d39008c1",
+    "jd_F00436.json": "0af9da540a38e0b2db63564e81addf12f6e6afafe5d46c979d56447aae048d9b",
+    "jd_F00463.json": "30d2d476c353e979ab13839e5bdeb1cc3b97e1ef5c88409a4e040070bb776405",
+    "jd_F00527.json": "30602256238184ebb2b931675e556f2fa1c9830367f7a3cf80276c1a7e5ba859",
+    "jd_F00556.json": "6022be5f8829c942305be44e9b25775e39477d77ac7771f6595a53bb9c0c59b2",
+    "jd_F00559.json": "ec127f62458ffe56512150f177460bd128ee0f71f8625d80b551e9f018805b65",
+    "jd_F00601.json": "2fac462077ff9032e5790bf54d4c0f836c4c067509fdf36aab6a2b6fc6179d8a",
+    "jd_F00624.json": "40aa9913d506f7c20e48c678bbba35742f4ed41dd3b9d1d11839b7eb11185176",
+    "jd_F00629.json": "1e822b98a22173051aab2d62990860b4231b1dd1d6c57d940a3e78176a25a4ed",
+    "jd_F00645.json": "98d4f6da57e51c006c92e67ff548a1af5965365895994863626efe58f3568429",
+    "jd_F00650.json": "b05dca77e35412b45a21e52cfca42e1d7918d0cdf8187631232f4613f6155fa5",
+    "jd_F00654.json": "7ef0f2b4e25219a044c0a4843d1e3af9aed77be1ddb52c77bfebad7c6ab00d72",
+    "jd_F00655.json": "e2aa0ae557ff8b7d9c3b9b0364f2e5fea4d3e2907f7535c0cca7e6edcdd310c3",
+    "jd_F00663.json": "787e71a406b55b5604cf8bbec17e0cca83233703cfd6df610acc23ac4339b3b0",
+    "jd_F00682.json": "b576b58e9a2e2dca6596115bbd1434e04e0de52981a243ae8012278d41e9ac2d",
+    "jd_F00698.json": "9c935e2ed946cefe432c3767cd09360ddd75f5b8b992b6d15dbb0def4d99428c",
+    "jd_F00798.json": "9d88e6d8bd1eb57ac3c47c69c2c72d29e8a71ed7d42b5e766a73c2637fc4410f",
+    "jd_F00815.json": "0427005711fbe924e8f6d90aad96bd9f7f9321dfa9b5dda04fb068de2c09ab69",
+    "jd_F00851.json": "5ebd960de5fdaa8246ca3f574c2700976c1a5ae2245078e14750248a4e6257cd"
+  },
+  "semantic_completeness_approved": false,
+  "note": "Process-valid extraction and exact quote checks do not prove complete or correct JD semantics. Failed and unresolved records are not score-ready."
+}

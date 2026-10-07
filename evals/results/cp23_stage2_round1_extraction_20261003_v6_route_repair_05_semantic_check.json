@@ -1,0 +1,13 @@
+{
+  "job_id": "gpt-6-luna/F00815",
+  "result_sha256": "030fcba4219a7522fa547882c36470e91b53e6912b042d794f953310ab2807de",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "fail",
+    "qualifiers": "uncertain",
+    "importance": "pass"
+  },
+  "notes": "All nine requirement bullets reviewed against 16 logical references and 17 outputs. Quotes and shared experience/understanding qualifiers are retained. The reviewed API building/deployment obligation is split into U09 and U10, with repeated FastAPI/Flask alternatives; under D-054 this is a split relation, not two TPs. The source example-list etc permits other API frameworks, while explicit branches list only FastAPI/Flask: unresolved alternative coverage, not a new gold decision. U01 professional role experience is other instead of reviewed knowledge_area. LLM frameworks, prompt engineering, RAG, SQL/vector technology, cloud, Git/testing/CI/CD and education clauses are present; no source duty-only addition. Retain failed/uncertain semantics and pending alignment.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

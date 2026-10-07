@@ -1,0 +1,11 @@
+{
+  "job_id": "F00090",
+  "status": "failed",
+  "attempts": 2,
+  "cache_hit": false,
+  "error_code": "IncompleteStructuredResponse",
+  "key": "4ae0bb8de46ed77bd976401c2c2c1f34068941785801a7da1b9495ab1acbf778",
+  "wall_ms": 77821,
+  "coverage": {},
+  "extraction": null
+}

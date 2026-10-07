@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="41" time="0.319" timestamp="2026-10-03T16:30:01.585552+07:00" hostname="Gidions-MacBook-Pro.local"><testcase classname="tests.test_cp23_stage2_extraction" name="test_preflight_fixes_exact_cases_models_attempts_and_gates" time="0.039" /><testcase classname="tests.test_cp23_stage2_extraction" name="test_changed_source_or_scope_cannot_reuse_plan" time="0.050" /><testcase classname="tests.test_cp23_stage2_extraction" name="test_paid_approval_requires_exact_run_plan_and_full_bound" time="0.043"><failure message="AssertionError: assert Decimal('3.20') &gt;= 3.2&#10; +  where Decimal('3.20') = &lt;function approved_receipt at 0x107a72b60&gt;(PosixPath('/private/var/folders/7j/1_v4mdn15nn4ry80ckw0xy9w0000gn/T/pytest-of-gidion/pytest-68/test_paid_approval_requires_ex0/approval.json'), {'actual_cost_usd': 0, 'api_calls': 0, 'comparison_protocol': 'same JD source and experimental JD prompt v1.3; first attempt and automatic repair reported separately', 'conservative_upper_usd': '3.1919290', ...}, plan_sha256=('a' * 64))&#10; +    where &lt;function approved_receipt at 0x107a72b60&gt; = cli.approved_receipt">tmp_path = PosixPath('/private/var/folders/7j/1_v4mdn15nn4ry80ckw0xy9w0000gn/T/pytest-of-gidion/pytest-68/test_paid_approval_requires_ex0')
+
+    def test_paid_approval_requires_exact_run_plan_and_full_bound(tmp_path):
+        plan = build_plan(REPO_ROOT, sources(), run_id=cli.RUN_ID)
+        receipt = {'decision': 'approved', 'approved_by': 'Dion', 'scope': cli.RUN_ID,
+                   'plan_sha256': 'f'*64, 'aggregate_cap_usd': '3.20'}
+        p = tmp_path/'approval.json'
+        p.write_text(json.dumps(receipt))
+        with pytest.raises(ValueError, match='match frozen'):
+            cli.approved_receipt(p, plan, plan_sha256='a'*64)
+        receipt['plan_sha256'] = 'a'*64
+        receipt['aggregate_cap_usd'] = '1.00'
+        p.write_text(json.dumps(receipt))
+        with pytest.raises(ValueError, match='conservative batch'):
+            cli.approved_receipt(p, plan, plan_sha256='a'*64)
+        receipt['aggregate_cap_usd'] = '3.20'
+        p.write_text(json.dumps(receipt))
+&gt;       assert cli.approved_receipt(p, plan, plan_sha256='a'*64) &gt;= 3.2
+E       AssertionError: assert Decimal('3.20') &gt;= 3.2
+E        +  where Decimal('3.20') = &lt;function approved_receipt at 0x107a72b60&gt;(PosixPath('/private/var/folders/7j/1_v4mdn15nn4ry80ckw0xy9w0000gn/T/pytest-of-gidion/pytest-68/test_paid_approval_requires_ex0/approval.json'), {'actual_cost_usd': 0, 'api_calls': 0, 'comparison_protocol': 'same JD source and experimental JD prompt v1.3; first attempt and automatic repair reported separately', 'conservative_upper_usd': '3.1919290', ...}, plan_sha256=('a' * 64))
+E        +    where &lt;function approved_receipt at 0x107a72b60&gt; = cli.approved_receipt
+
+tests/test_cp23_stage2_extraction.py:64: AssertionError</failure></testcase><testcase classname="tests.test_cp23_stage2_extraction" name="test_fake_client_caps_attempts_and_rejects_unplanned_payload" time="0.006"><failure message="jobfit.llm.budget.BudgetExceeded: Comparison stage is not running">tmp_path = PosixPath('/private/var/folders/7j/1_v4mdn15nn4ry80ckw0xy9w0000gn/T/pytest-of-gidion/pytest-68/test_fake_client_caps_attempts0')
+
+    def test_fake_client_caps_attempts_and_rejects_unplanned_payload(tmp_path):
+        ledger = UsageLedger(tmp_path/'ledger.jsonl')
+        stage = {'stage_id': 'deepseek-flash/F00332', 'first_input_token_upper': 1500,
+                 'repair_input_token_upper': 2000}
+        s = Stage2ExtractionSession(tmp_path/'state.json', run_id='fake-comparison',
+                                    fingerprint='fixed', jobs=[stage['stage_id']], ledger=ledger, ceiling='0.10')
+        s.begin(stage['stage_id'])
+        c = Stage2ExtractionClient(FakeClient(ledger), s, stage)
+        messages = [{'role': 'user', 'content': 'synthetic fixture'}]
+        assert c.chat_structured('deepseek-flash', messages, SmallWire, 'jd_extraction').value == 1
+        assert c.chat_structured('deepseek-flash', messages, SmallWire, 'jd_extraction').value == 1
+        with pytest.raises(BudgetExceeded, match='attempt'):
+            c.chat_structured('deepseek-flash', messages, SmallWire, 'jd_extraction')
+        assert len(ledger.records()) == 2
+        s.finish({'job_id': stage['stage_id'], 'status': 'done', 'result_sha256': 'r'})
+        assert s.data['status'] == 'awaiting_semantic_check'
+        with pytest.raises(ValueError, match='not running'):
+&gt;           c.chat_structured('deepseek-flash', messages, SmallWire, 'jd_extraction')
+
+tests/test_cp23_stage2_extraction.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;jobfit.eval.stage2_extraction.Stage2ExtractionClient object at 0x107158a90&gt;
+model = 'deepseek-flash'
+messages = [{'content': 'synthetic fixture', 'role': 'user'}]
+output_model = &lt;class 'test_cp23_stage2_extraction.SmallWire'&gt;
+task = 'jd_extraction', max_tokens = 2000, temperature = 0
+
+    def chat_structured(self, model, messages, output_model, task, max_tokens=2000, temperature=0):
+        s = self.session
+        if s.data['status'] != 'running':
+&gt;           raise BudgetExceeded('Comparison stage is not running')
+E           jobfit.llm.budget.BudgetExceeded: Comparison stage is not running
+
+src/jobfit/eval/stage2_extraction.py:108: BudgetExceeded</failure></testcase><testcase classname="tests.test_cp23_stage2_extraction" name="test_fake_client_does_not_dispatch_oversize_or_wrong_model" time="0.003" /><testcase classname="tests.test_evaluation_tools" name="test_missing_original_rank2_cannot_be_filled_by_rank6" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_p_at_5_original_denominator_and_short_ranking_hold" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_exponential_ndcg_uses_original_positions_and_declared_eligible_pool" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_labeled_pool_recall_and_filter_coverage_are_explicit" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_original_top_k_labeled_pool_recall_two_of_three" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_invalid_ranking_and_missing_label_do_not_become_zero[ranking0-judgments0-eligible0]" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_invalid_ranking_and_missing_label_do_not_become_zero[ranking1-judgments1-eligible1]" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_invalid_ranking_and_missing_label_do_not_become_zero[ranking2-judgments2-eligible2]" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_invalid_ranking_and_missing_label_do_not_become_zero[ranking3-judgments3-eligible3]" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_invalid_ranking_and_missing_label_do_not_become_zero[ranking4-judgments4-eligible4]" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_evidence_failure_counts_gold_class_false_negative" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_all_failed_three_class_support_gives_zero_macro_not_perfect" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_aggregate_support_is_required_not_each_pair" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_extraction_f1_requires_completeness_and_verified_alignment" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_strict_split_and_merge_count_independently_assessable_units" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_complex_many_to_many_alignment_remains_unavailable" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_cost_and_latency_keep_failed_and_cached_runs_separate" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_unfair_or_heldout_comparisons_are_blocked[filters-value0]" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_unfair_or_heldout_comparisons_are_blocked[cv_sha256-changed]" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_unfair_or_heldout_comparisons_are_blocked[judgments_sha256-other]" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_unfair_or_heldout_comparisons_are_blocked[eligible_ids-value3]" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_unfair_or_heldout_comparisons_are_blocked[execution_kind-live_model]" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_unfair_or_heldout_comparisons_are_blocked[cv_id-CV3]" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_contract_approval_alone_does_not_unlock_reference_readiness" time="0.001" /><testcase classname="tests.test_evaluation_tools" name="test_fake_runner_reports_original_rank_diagnostics_not_winner" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_saved_top20_cannot_be_claimed_as_top30" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_llm_comparison_is_offline_and_safety_does_not_follow_from_schema" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_llm_comparison_blocks_incomparable_inputs[input_hashes-value0]" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_llm_comparison_blocks_incomparable_inputs[execution_kind-live_model]" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_llm_comparison_blocks_incomparable_inputs[prompt_hashes-value2]" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_llm_comparison_blocks_incomparable_inputs[requirement_hashes-value3]" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_llm_comparison_blocks_incomparable_inputs[attempt_kind-automatic_repair]" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_pending_alignment_and_reference_case_cap_block_metrics" time="0.000" /><testcase classname="tests.test_evaluation_tools" name="test_reviewer_assistance_or_missing_receipt_cannot_be_primary_comparison" time="0.000" /><testcase classname="tests.test_cp23_stage1_prep" name="test_selected_sources_rejects_heldout_and_duplicate_source" time="0.001" /><testcase classname="tests.test_cp23_stage1_prep" name="test_cli_cannot_silently_select_legacy_pilot_path" time="0.054" /></testsuite></testsuites>

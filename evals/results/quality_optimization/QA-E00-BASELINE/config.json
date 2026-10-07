@@ -1,0 +1,74 @@
+{
+ "experiment_id": "QA-E00-BASELINE",
+ "created_at": "2026-10-07T07:33:07+00:00",
+ "kind": "offline reproduction of saved development artifacts",
+ "pipeline_version": "pipeline-cp23-freeze-candidate-v4",
+ "config_file": "config/versions/pipeline_cp23_freeze_candidate_v4_20261006.yaml",
+ "config_sha256": "9bc52debdef8577620db4c509624453621e11462fda617f9cf95dbfff1c0df1f",
+ "freeze": "D-087 (cp23_freeze_draft_v2)",
+ "model": "gpt-6-sol",
+ "fallback_model_in_product": "gpt-6-luna",
+ "phase_a_fallback": "not used (Sol only, so the prompt is the only variable)",
+ "prompt_file": "prompts/evidence_matching_v1_1.md",
+ "prompt_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+ "prompt_version": "evidence-prompt-v1.1",
+ "guideline": "evals/annotation_guideline_v1_3.md",
+ "guideline_sha256": "3d964a28fd105e16b24ad51b8b0a22b34bb9255e438b51e4e6e0eda551c57645",
+ "schema": "cv-v1.1-precision",
+ "output_schema": "EvidenceResponse (jobfit.matching.evidence_matcher)",
+ "validator": "quote-check-v1.1",
+ "guardrails": [
+  "G1",
+  "G2"
+ ],
+ "retrieval": "hybrid_fts_dense_rrf",
+ "embedding_model": "qwen3-embedding-8b",
+ "k": 10,
+ "partial_weight": 0.5,
+ "seniority_rule": "seniority-demote-3y-v1",
+ "experience_rule": "experience-upper-bound-v1",
+ "hold_policy": "H2v2",
+ "extraction": "deepseek-flash saved development extractions (pipeline v1.1)",
+ "datasets": {
+  "ranking": {
+   "name": "QA-DEV-RANK-v1",
+   "cvs": [
+    "CV1",
+    "CV2"
+   ],
+   "pairs": 20,
+   "matchable_pairs": 19,
+   "labels": "gold r4 relevance (CV1-CV2)",
+   "labels_sha256": "35abd0e1bcb09e8395ba4d9d8d3a0e99086e7a648366c72ca26943f63cb9993e"
+  },
+  "fixed_input": {
+   "name": "QA-DEV-FI-v1",
+   "split_file": "evals/results/quality_optimization/benchmark_v1/split.json",
+   "split_sha256": "8a6c9e73dcae31d90e88ef6b27f2054e4a396e684a269f9a415613e8d88403a8",
+   "pairs": {
+    "optimization": 20,
+    "confirmation": 22
+   },
+   "units": {
+    "optimization": 411,
+    "confirmation": 415
+   }
+  },
+  "anchor": {
+   "name": "r3 fixed-input anchor",
+   "pairs": 4,
+   "units": 73,
+   "source": "evals/results/cp23/dev_eval_v2_20261004/model_sweep_stage1_v4.json"
+  }
+ },
+ "cv_count": 2,
+ "versions": {
+  "python": "3.10.12",
+  "pydantic": "2.13.5",
+  "openai": "3.24.0",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "matplotlib": "3.10.9",
+  "pyyaml": "6.0.3"
+ }
+}

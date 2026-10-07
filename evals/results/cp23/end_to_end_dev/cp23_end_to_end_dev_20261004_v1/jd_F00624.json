@@ -1,0 +1,826 @@
+{
+  "job_id": "F00624",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "f494d8b7cde325f3a7f7a12b60fe176510bf7e8dfa6d711528601eec489acb10",
+  "wall_ms": 36345,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 12,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 12,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02",
+          "U03"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U04",
+          "U05",
+          "U06"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U07"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U08",
+          "U09",
+          "U10"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U11"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U12"
+        ]
+      },
+      {
+        "source_id": "Q08",
+        "unit_ids": [
+          "U13",
+          "U14",
+          "U15",
+          "U16"
+        ]
+      },
+      {
+        "source_id": "Q09",
+        "unit_ids": [
+          "U17",
+          "U18",
+          "U19",
+          "U20"
+        ]
+      },
+      {
+        "source_id": "Q10",
+        "unit_ids": [
+          "U21",
+          "U22",
+          "U23",
+          "U24"
+        ]
+      },
+      {
+        "source_id": "Q11",
+        "unit_ids": [
+          "U25",
+          "U26",
+          "U27",
+          "U28"
+        ]
+      },
+      {
+        "source_id": "Q12",
+        "unit_ids": [
+          "U29",
+          "U30",
+          "U31"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00624",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Minimum 8 years of software engineering experience, including relevant experience in Generative AI.",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": null,
+        "min_years": 8.0,
+        "branches": [],
+        "source_quotes": [
+          "Minimum 8 years of software engineering experience, including relevant experience in Generative AI."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Strong hands-on experience in Python",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong hands-on experience in Python and backend development."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Strong hands-on experience in backend development",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong hands-on experience in Python and backend development."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Experience developing RAG-based applications",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience developing RAG, LLM and AI-agent based applications."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Experience developing LLM-based applications",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience developing RAG, LLM and AI-agent based applications."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Experience developing AI-agent based applications",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience developing RAG, LLM and AI-agent based applications."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Hands-on experience with LangChain, LangGraph or equivalent frameworks",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "LangChain",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "LangGraph",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "equivalent frameworks",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Hands-on experience with LangChain, LangGraph or equivalent frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Strong understanding of vector databases",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong understanding of vector databases, embeddings and semantic search."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Strong understanding of embeddings",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong understanding of vector databases, embeddings and semantic search."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Strong understanding of semantic search",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong understanding of vector databases, embeddings and semantic search."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Experience with Weaviate, Pinecone, Qdrant or similar technologies",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Weaviate",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Pinecone",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Qdrant",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "similar technologies",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience with Weaviate, Pinecone, Qdrant or similar technologies."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Experience with OpenAI, Claude, Llama or AWS Bedrock",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "OpenAI",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Claude",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Llama",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "AWS Bedrock",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience with OpenAI, Claude, Llama or AWS Bedrock."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Experience with FastAPI",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with FastAPI, REST APIs, microservices and scalable backend systems."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Experience with REST APIs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with FastAPI, REST APIs, microservices and scalable backend systems."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Experience with microservices",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with FastAPI, REST APIs, microservices and scalable backend systems."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Experience with scalable backend systems",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with FastAPI, REST APIs, microservices and scalable backend systems."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Good knowledge of SQL",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good knowledge of SQL, PostgreSQL, MongoDB and Redis."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Good knowledge of PostgreSQL",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good knowledge of SQL, PostgreSQL, MongoDB and Redis."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Good knowledge of MongoDB",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good knowledge of SQL, PostgreSQL, MongoDB and Redis."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Good knowledge of Redis",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good knowledge of SQL, PostgreSQL, MongoDB and Redis."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Experience with AWS",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with AWS, Docker, Kubernetes and CI/CD."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Experience with Docker",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with AWS, Docker, Kubernetes and CI/CD."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Experience with Kubernetes",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with AWS, Docker, Kubernetes and CI/CD."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U24",
+        "text": "Experience with CI/CD",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with AWS, Docker, Kubernetes and CI/CD."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U25",
+        "text": "Knowledge of AI evaluation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of AI evaluation, prompt engineering, guardrails and security."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U26",
+        "text": "Knowledge of prompt engineering",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of AI evaluation, prompt engineering, guardrails and security."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U27",
+        "text": "Knowledge of guardrails",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of AI evaluation, prompt engineering, guardrails and security."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U28",
+        "text": "Knowledge of security",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of AI evaluation, prompt engineering, guardrails and security."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U29",
+        "text": "Strong analytical skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong analytical, problem-solving and communication skills."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U30",
+        "text": "Strong problem-solving skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong analytical, problem-solving and communication skills."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U31",
+        "text": "Strong communication skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong analytical, problem-solving and communication skills."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U32",
+        "text": "Experience in financial services",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience in financial services, investment management, insurance or financial document processing."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U33",
+        "text": "Experience in investment management",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience in financial services, investment management, insurance or financial document processing."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U34",
+        "text": "Experience in insurance",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience in financial services, investment management, insurance or financial document processing."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U35",
+        "text": "Experience in financial document processing",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience in financial services, investment management, insurance or financial document processing."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U36",
+        "text": "Experience in KYC/AML",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience in KYC/AML, compliance or financial document intelligence."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U37",
+        "text": "Experience in compliance",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience in KYC/AML, compliance or financial document intelligence."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U38",
+        "text": "Experience in financial document intelligence",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience in KYC/AML, compliance or financial document intelligence."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U39",
+        "text": "Knowledge of LangSmith, RAGAS, Arize Phoenix or similar AI evaluation tools",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "LangSmith",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "RAGAS",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Arize Phoenix",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "similar AI evaluation tools",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Knowledge of LangSmith, RAGAS, Arize Phoenix or similar AI evaluation tools."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U40",
+        "text": "Experience with AWS Textract or document extraction technologies",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "AWS Textract",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "document extraction technologies",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience with AWS Textract or document extraction technologies."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

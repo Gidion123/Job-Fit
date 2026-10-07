@@ -1,0 +1,481 @@
+{
+  "job_id": "F00655",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "cache_hit": false,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 9,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 9,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02",
+          "U03",
+          "U04"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U05",
+          "U06",
+          "U07",
+          "U08"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U09",
+          "U10",
+          "U11"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U12",
+          "U13"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U14"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U15"
+        ]
+      },
+      {
+        "source_id": "Q08",
+        "unit_ids": [
+          "U16",
+          "U17"
+        ]
+      },
+      {
+        "source_id": "Q09",
+        "unit_ids": [
+          "U18",
+          "U19"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "wall_ms": 32852,
+  "extraction": {
+    "job_id": "F00655",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Proven experience as a Machine Learning Engineer or similar role",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "Proven experience as a Machine Learning Engineer or similar role",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Machine Learning Engineer",
+            "field": "experience_duration",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "similar role",
+            "field": "experience_duration",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Proven experience as a Machine Learning Engineer or similar role"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Understanding of data structures",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Understanding of data structures",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Understanding of data structures, data modeling and software architecture"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Understanding of data modeling",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Understanding of data modeling",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Understanding of data structures, data modeling and software architecture"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Understanding of software architecture",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Understanding of software architecture",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Understanding of data structures, data modeling and software architecture"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Deep knowledge of math",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Deep knowledge of math",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Deep knowledge of math, probability, statistics and algorithms"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Deep knowledge of probability",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Deep knowledge of probability",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Deep knowledge of math, probability, statistics and algorithms"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Deep knowledge of statistics",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Deep knowledge of statistics",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Deep knowledge of math, probability, statistics and algorithms"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Deep knowledge of algorithms",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Deep knowledge of algorithms",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Deep knowledge of math, probability, statistics and algorithms"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Ability to write robust code in Python",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Ability to write robust code in Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Ability to write robust code in Python, Java and R"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Ability to write robust code in Java",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Ability to write robust code in Java",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Ability to write robust code in Python, Java and R"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Ability to write robust code in R",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Ability to write robust code in R",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Ability to write robust code in Python, Java and R"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Familiarity with machine learning frameworks such as Keras or PyTorch",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Familiarity with machine learning frameworks such as Keras or PyTorch",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Keras",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "PyTorch",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Familiarity with machine learning frameworks (like Keras or PyTorch) and libraries (like scikit-learn)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Familiarity with machine learning libraries such as scikit-learn",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Familiarity with machine learning libraries such as scikit-learn",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with machine learning frameworks (like Keras or PyTorch) and libraries (like scikit-learn)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Excellent communication skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Excellent communication skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Excellent communication skills"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Ability to work in a team",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Ability to work in a team",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Ability to work in a team"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Outstanding analytical skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Outstanding analytical skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Outstanding analytical and problem-solving skills"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Outstanding problem-solving skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Outstanding problem-solving skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Outstanding analytical and problem-solving skills"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "BSc in Computer Science, Mathematics or similar field",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "BSc in Computer Science, Mathematics or similar field",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "BSc in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "BSc in Mathematics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "BSc in similar field",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "BSc in Computer Science, Mathematics or similar field; Master’s degree is a plus"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Master’s degree is a plus",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "education",
+        "normalized_name": "Master’s degree is a plus",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "BSc in Computer Science, Mathematics or similar field; Master’s degree is a plus"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Exceptional skills in statistics",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Exceptional skills in statistics",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "To do this job successfully,\nyou need exceptional skills in statistics and programming."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Exceptional skills in programming",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Exceptional skills in programming",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "To do this job successfully,\nyou need exceptional skills in statistics and programming."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Knowledge of data science",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Knowledge of data science",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "If you also have\nknowledge of data science and software engineering, we’d like to meet you."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Knowledge of software engineering",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Knowledge of software engineering",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "If you also have\nknowledge of data science and software engineering, we’d like to meet you."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

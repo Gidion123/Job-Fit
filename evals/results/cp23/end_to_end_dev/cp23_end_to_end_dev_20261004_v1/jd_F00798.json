@@ -1,0 +1,42 @@
+{
+  "job_id": "F00798",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "1619f10b3fc077bdae1218aa04e74dbea352fb77ce9f51da31546f4c894545d3",
+  "wall_ms": 76330,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00798",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "6+ years of software engineering experience",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "",
+        "min_years": 6.0,
+        "branches": [],
+        "source_quotes": [
+          "6+ years of software engineering experience"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

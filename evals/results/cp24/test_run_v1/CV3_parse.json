@@ -1,0 +1,143 @@
+{
+ "cv_id": "CV3",
+ "status": "ok",
+ "masking_counts": {
+  "name": 1,
+  "email": 1,
+  "phone": 1,
+  "profile": 1
+ },
+ "masked_digest": "0284f74648bb5e6dd4a9c0fe12ce6121afbde8e3846080ec9a8554b06a9124d7",
+ "parsed": {
+  "profile": {
+   "cv_id": "CV3",
+   "is_synthetic": true,
+   "language": "Indonesian (native), English (fluent)",
+   "parse_status": "ok",
+   "raw_text": "# [NAME] Lestari Hutapea\n\nJakarta, Indonesia · [EMAIL] · [PHONE] · [PROFILE]\n\n## Summary\n\nMachine learning engineer with about one year of industry experience building and serving ML models for an e-commerce startup. Comfortable with Python, model training and evaluation, experiment tracking, and REST APIs.\n\n## Experience\n\n**Junior Machine Learning Engineer**, PT Contoh Belanja Cepat, Jakarta · August 2025 - present\n- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.\n- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2.\n- Tracked experiments and model versions with MLflow; wrote unit tests with pytest.\n- Worked with the data engineering team on Airflow pipelines that feed training data.\n\n**Machine Learning Intern**, PT Contoh Belanja Cepat, Jakarta · February 2025 - July 2025\n- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18).\n\n## Education\n\n**Bachelor of Computer Science (S1 Ilmu Komputer)**, Institut Teknologi Contoh, Jakarta · 2021 - 2025\n- Thesis: \"Comparing Gradient Boosting Methods for Credit Scoring\"\n\n## Projects\n\n**Semantic Product Search** · 2026 (side project)\n- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector.\n\n## Skills\n\nPython, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux\n\n## Languages\n\nIndonesian (native), English (fluent)",
+   "sections": {
+    "Summary": "Machine learning engineer with about one year of industry experience building and serving ML models for an e-commerce startup. Comfortable with Python, model training and evaluation, experiment tracking, and REST APIs.",
+    "Experience": "**Junior Machine Learning Engineer**, PT Contoh Belanja Cepat, Jakarta · August 2025 - present\n- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.\n- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2.\n- Tracked experiments and model versions with MLflow; wrote unit tests with pytest.\n- Worked with the data engineering team on Airflow pipelines that feed training data.\n\n**Machine Learning Intern**, PT Contoh Belanja Cepat, Jakarta · February 2025 - July 2025\n- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18).",
+    "Education": "**Bachelor of Computer Science (S1 Ilmu Komputer)**, Institut Teknologi Contoh, Jakarta · 2021 - 2025\n- Thesis: \"Comparing Gradient Boosting Methods for Credit Scoring\"",
+    "Projects": "**Semantic Product Search** · 2026 (side project)\n- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector.",
+    "Skills": "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux\nIndonesian (native), English (fluent)",
+    "Other": "Jakarta, Indonesia · [EMAIL] · [PHONE] · [PROFILE]"
+   },
+   "experience": [
+    {
+     "title": "Junior Machine Learning Engineer",
+     "organization": "PT Contoh Belanja Cepat",
+     "start": null,
+     "end": null,
+     "is_present": true,
+     "description": "**Junior Machine Learning Engineer**, PT Contoh Belanja Cepat, Jakarta · August 2025 - present\n- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.\n- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2.\n- Tracked experiments and model versions with MLflow; wrote unit tests with pytest.\n- Worked with the data engineering team on Airflow pipelines that feed training data.",
+     "start_partial": {
+      "year": 2025,
+      "month": 8
+     },
+     "end_partial": null,
+     "start_text": "August 2025",
+     "end_text": "present"
+    },
+    {
+     "title": "Machine Learning Intern",
+     "organization": "PT Contoh Belanja Cepat",
+     "start": null,
+     "end": null,
+     "is_present": false,
+     "description": "**Machine Learning Intern**, PT Contoh Belanja Cepat, Jakarta · February 2025 - July 2025\n- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18).",
+     "start_partial": {
+      "year": 2025,
+      "month": 2
+     },
+     "end_partial": {
+      "year": 2025,
+      "month": 7
+     },
+     "start_text": "February 2025",
+     "end_text": "July 2025"
+    }
+   ],
+   "skills_list": [
+    "Python",
+    "SQL",
+    "scikit-learn",
+    "LightGBM",
+    "PyTorch",
+    "MLflow",
+    "FastAPI",
+    "Docker",
+    "AWS (EC2, S3)",
+    "Airflow",
+    "Git",
+    "pytest",
+    "Linux"
+   ],
+   "confirmed_location": null
+  },
+  "evidence": [
+   {
+    "fact_id": "emp_1",
+    "section": "Experience",
+    "quote": "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+   },
+   {
+    "fact_id": "emp_2",
+    "section": "Experience",
+    "quote": "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+   },
+   {
+    "fact_id": "emp_3",
+    "section": "Experience",
+    "quote": "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest."
+   },
+   {
+    "fact_id": "emp_4",
+    "section": "Experience",
+    "quote": "- Worked with the data engineering team on Airflow pipelines that feed training data."
+   },
+   {
+    "fact_id": "emp_5",
+    "section": "Experience",
+    "quote": "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+   },
+   {
+    "fact_id": "edu_1",
+    "section": "Education",
+    "quote": "- Thesis: \"Comparing Gradient Boosting Methods for Credit Scoring\""
+   },
+   {
+    "fact_id": "proj_1",
+    "section": "Projects",
+    "quote": "- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector."
+   }
+  ],
+  "source_work": [
+   {
+    "title": "Junior Machine Learning Engineer",
+    "organization": "PT Contoh Belanja Cepat",
+    "source_quote": "**Junior Machine Learning Engineer**, PT Contoh Belanja Cepat, Jakarta · August 2025 - present\n- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.\n- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2.\n- Tracked experiments and model versions with MLflow; wrote unit tests with pytest.\n- Worked with the data engineering team on Airflow pipelines that feed training data.",
+    "start_text": "August 2025",
+    "end_text": "present",
+    "is_present": true
+   },
+   {
+    "title": "Machine Learning Intern",
+    "organization": "PT Contoh Belanja Cepat",
+    "source_quote": "**Machine Learning Intern**, PT Contoh Belanja Cepat, Jakarta · February 2025 - July 2025\n- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18).",
+    "start_text": "February 2025",
+    "end_text": "July 2025",
+    "is_present": false
+   }
+  ],
+  "location_suggestion": "Jakarta",
+  "analysis_date": "2026-09-30",
+  "schema_version": "cv-v1.1-precision",
+  "warnings": [
+   "Check that employment, projects, education, dates and skills match the source before analysis."
+  ],
+  "attempts": 2,
+  "review_required": true
+ },
+ "attempts": 2
+}

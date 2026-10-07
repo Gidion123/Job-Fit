@@ -1,0 +1,221 @@
+{
+  "job_id": "F00654",
+  "status": "done",
+  "attempts": 2,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "d6add2d19dbc4c227b86f0d3807b8159911fc6aa3e74e08d543169b23e92bf09",
+  "wall_ms": 49303,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 5,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 5,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01",
+          "U02"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U03"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U04"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U05",
+          "U06"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U07"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00654",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "3+ years of experience as a machine learning engineer or scientist, deploying models in production at scale",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "3+ years of experience as a machine learning engineer or scientist, deploying models in production at scale",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "3+ years of experience as a machine learning engineer, deploying models in production at scale",
+            "field": "experience_duration",
+            "min_years": 3.0
+          },
+          {
+            "branch_id": "B2",
+            "text": "3+ years of experience as a machine learning scientist, deploying models in production at scale",
+            "field": "experience_duration",
+            "min_years": 3.0
+          }
+        ],
+        "source_quotes": [
+          "You have 3+ years of experience as a machine learning engineer or scientist, deploying models in production at scale."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Experience deploying models as part of a (possibly stateful) microservice",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "experience_duration",
+        "normalized_name": "Experience deploying models as part of a (possibly stateful) microservice",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience deploying models as a part of a (possibly stateful) microservice is strongly desired."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Passionate about directly optimizing core products or operations through AI/ML systems deployed to production",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Passionate about directly optimizing core products or operations through AI/ML systems deployed to production",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are passionate about directly optimizing core products or operations through AI/ML systems deployed to production"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Care deeply about exploring data and understanding real-life user behavior and processes that generate it",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Care deeply about exploring data and understanding real-life user behavior and processes that generate it",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You care deeply about exploring data and understanding the real-life user behavior and processes that generate it"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Expert in Python's open-source machine learning ecosystem",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Expert in Python's open-source machine learning ecosystem",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are an expert in Python's open-source machine learning ecosystem."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Experience with TensorFlow or PyTorch",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "Experience with TensorFlow or PyTorch",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience with TensorFlow",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience with PyTorch",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience with TensorFlow or PyTorch is strongly desired."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Experience with the Object-Oriented Programming (OOP) paradigm and related concepts",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience with the Object-Oriented Programming (OOP) paradigm and related concepts",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with the Object-Oriented Programming (OOP) paradigm and related concepts."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Independent and innovative thinker with an ability to work in an autonomous environment",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Independent and innovative thinker with an ability to work in an autonomous environment",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Independent and innovative thinker with an ability to work in an autonomous environment."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Excel at communicating progress, trade-offs, and the results of work to team members from other functions",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Excel at communicating progress, trade-offs, and the results of work to team members from other functions",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You excel at communicating progress, trade-offs, and the results of your work to team\nmembers from other functions."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

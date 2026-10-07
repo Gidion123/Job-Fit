@@ -1,0 +1,100 @@
+{
+  "fixture_id": "dev_02_experience_too_short",
+  "synthetic": true,
+  "note": "Synthetic development fixture for the deterministic rules. Hand-written, not model output. Not part of the test set.",
+  "analysis_date": "2026-09-29",
+  "cv_parse_status": "ok",
+  "case": "Qualified unit '3 years of Python'; CV shows about 1 year. PARTIAL plus explicit conflict.",
+  "extraction": {
+    "job_id": "FIX-02",
+    "units": [
+      {
+        "unit_id": "u1",
+        "text": "At least 3 years of experience using Python",
+        "importance": "required",
+        "field": "experience_duration",
+        "source_quotes": [
+          "At least 3 years of experience using Python"
+        ],
+        "kind": "qualified",
+        "min_years": 3
+      },
+      {
+        "unit_id": "u2",
+        "text": "SQL",
+        "importance": "required",
+        "field": "skill_tool",
+        "source_quotes": [
+          "SQL"
+        ]
+      },
+      {
+        "unit_id": "u3",
+        "text": "Git",
+        "importance": "required",
+        "field": "skill_tool",
+        "source_quotes": [
+          "Git"
+        ]
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "u1",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Junior ML Engineer, Aug 2025 to present: Python services for model serving"
+      ]
+    },
+    {
+      "unit_id": "u2",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "SQL feature tables in BigQuery"
+      ]
+    },
+    {
+      "unit_id": "u3",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Code review and branching with Git"
+      ]
+    }
+  ],
+  "experience": {
+    "min_years": 3,
+    "cv_entries": [
+      {
+        "title": "Junior ML Engineer",
+        "start": "2025-08-01",
+        "is_present": true
+      }
+    ]
+  },
+  "expected": {
+    "score_pct": 83.33,
+    "status": "final",
+    "required_total": 3,
+    "matched": 2,
+    "partial": 1,
+    "constraint_state": "explicit_conflict"
+  },
+  "fixture_version": "v1.3-r1",
+  "guideline_version": "v1.3",
+  "revision": {
+    "source_file": "evals/fixtures/dev_02_experience_too_short.json",
+    "source_sha256": "6a2259d1bcda7214b0e43b81b2ba9ed0edd76aca50611587fa081f0598fac791",
+    "reason": "Keep the three-year Python qualifier and inclusive dated employment; do not count title as technology tenure.",
+    "scope": "Synthetic fixture revision only; no real JD/CV or approved label edited",
+    "review_kind": "delegated technical and semantic examination under user instruction",
+    "human_independent_approval": false
+  },
+  "synthetic_jd_context": "Required qualifications:\nAt least 3 years of experience using Python\nSQL\nGit",
+  "synthetic_cv_context": "Junior ML Engineer, Aug 2025 to present: Python services for model serving\nSQL feature tables in BigQuery\nCode review and branching with Git",
+  "scope_statement": "Complete professional history consists only of this Aug2025–present Python-serving role; the source confirms this activity for the employment interval.",
+  "semantic_review_status": "delegated_checked"
+}

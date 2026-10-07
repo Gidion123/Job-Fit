@@ -1,0 +1,1090 @@
+{
+  "run_id": "cp22_development_batch_preflight_v2_20261002",
+  "mode": "preflight",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "scope": "frozen development only",
+  "max_output_tokens": 16000,
+  "development_jobs": 214,
+  "held_out_deferred": 214,
+  "pending": 214,
+  "cache_hits": 0,
+  "conservative_upper_usd": 13.6984794,
+  "approval_ceiling_usd": 1.0,
+  "budget_approval_needed": true,
+  "estimates": [
+    {
+      "job_id": "F00001",
+      "cached": false,
+      "upper_usd": 0.0631002
+    },
+    {
+      "job_id": "F00003",
+      "cached": false,
+      "upper_usd": 0.063153
+    },
+    {
+      "job_id": "F00005",
+      "cached": false,
+      "upper_usd": 0.0626232
+    },
+    {
+      "job_id": "F00006",
+      "cached": false,
+      "upper_usd": 0.062346599999999995
+    },
+    {
+      "job_id": "F00010",
+      "cached": false,
+      "upper_usd": 0.063
+    },
+    {
+      "job_id": "F00011",
+      "cached": false,
+      "upper_usd": 0.0640488
+    },
+    {
+      "job_id": "F00012",
+      "cached": false,
+      "upper_usd": 0.06320039999999999
+    },
+    {
+      "job_id": "F00015",
+      "cached": false,
+      "upper_usd": 0.0628788
+    },
+    {
+      "job_id": "F00016",
+      "cached": false,
+      "upper_usd": 0.0636726
+    },
+    {
+      "job_id": "F00017",
+      "cached": false,
+      "upper_usd": 0.062358
+    },
+    {
+      "job_id": "F00018",
+      "cached": false,
+      "upper_usd": 0.0646296
+    },
+    {
+      "job_id": "F00020",
+      "cached": false,
+      "upper_usd": 0.06291719999999999
+    },
+    {
+      "job_id": "F00021",
+      "cached": false,
+      "upper_usd": 0.06475439999999999
+    },
+    {
+      "job_id": "F00022",
+      "cached": false,
+      "upper_usd": 0.0632316
+    },
+    {
+      "job_id": "F00023",
+      "cached": false,
+      "upper_usd": 0.0670332
+    },
+    {
+      "job_id": "F00029",
+      "cached": false,
+      "upper_usd": 0.0640224
+    },
+    {
+      "job_id": "F00030",
+      "cached": false,
+      "upper_usd": 0.0640758
+    },
+    {
+      "job_id": "F00033",
+      "cached": false,
+      "upper_usd": 0.06300359999999999
+    },
+    {
+      "job_id": "F00034",
+      "cached": false,
+      "upper_usd": 0.0628668
+    },
+    {
+      "job_id": "F00036",
+      "cached": false,
+      "upper_usd": 0.06413039999999999
+    },
+    {
+      "job_id": "F00052",
+      "cached": false,
+      "upper_usd": 0.0653454
+    },
+    {
+      "job_id": "F00055",
+      "cached": false,
+      "upper_usd": 0.0664938
+    },
+    {
+      "job_id": "F00059",
+      "cached": false,
+      "upper_usd": 0.0641766
+    },
+    {
+      "job_id": "F00060",
+      "cached": false,
+      "upper_usd": 0.0635016
+    },
+    {
+      "job_id": "F00066",
+      "cached": false,
+      "upper_usd": 0.0636084
+    },
+    {
+      "job_id": "F00067",
+      "cached": false,
+      "upper_usd": 0.06251759999999999
+    },
+    {
+      "job_id": "F00073",
+      "cached": false,
+      "upper_usd": 0.0631566
+    },
+    {
+      "job_id": "F00074",
+      "cached": false,
+      "upper_usd": 0.064284
+    },
+    {
+      "job_id": "F00075",
+      "cached": false,
+      "upper_usd": 0.063054
+    },
+    {
+      "job_id": "F00077",
+      "cached": false,
+      "upper_usd": 0.070596
+    },
+    {
+      "job_id": "F00082",
+      "cached": false,
+      "upper_usd": 0.0628584
+    },
+    {
+      "job_id": "F00090",
+      "cached": false,
+      "upper_usd": 0.0637236
+    },
+    {
+      "job_id": "F00103",
+      "cached": false,
+      "upper_usd": 0.06347459999999999
+    },
+    {
+      "job_id": "F00104",
+      "cached": false,
+      "upper_usd": 0.0630018
+    },
+    {
+      "job_id": "F00108",
+      "cached": false,
+      "upper_usd": 0.06294
+    },
+    {
+      "job_id": "F00114",
+      "cached": false,
+      "upper_usd": 0.0633246
+    },
+    {
+      "job_id": "F00117",
+      "cached": false,
+      "upper_usd": 0.0633756
+    },
+    {
+      "job_id": "F00123",
+      "cached": false,
+      "upper_usd": 0.0641058
+    },
+    {
+      "job_id": "F00126",
+      "cached": false,
+      "upper_usd": 0.0637848
+    },
+    {
+      "job_id": "F00129",
+      "cached": false,
+      "upper_usd": 0.0631632
+    },
+    {
+      "job_id": "F00130",
+      "cached": false,
+      "upper_usd": 0.0626082
+    },
+    {
+      "job_id": "F00132",
+      "cached": false,
+      "upper_usd": 0.0630378
+    },
+    {
+      "job_id": "F00151",
+      "cached": false,
+      "upper_usd": 0.06480659999999999
+    },
+    {
+      "job_id": "F00153",
+      "cached": false,
+      "upper_usd": 0.0625722
+    },
+    {
+      "job_id": "F00166",
+      "cached": false,
+      "upper_usd": 0.06502859999999999
+    },
+    {
+      "job_id": "F00176",
+      "cached": false,
+      "upper_usd": 0.0636708
+    },
+    {
+      "job_id": "F00177",
+      "cached": false,
+      "upper_usd": 0.0640572
+    },
+    {
+      "job_id": "F00183",
+      "cached": false,
+      "upper_usd": 0.0642942
+    },
+    {
+      "job_id": "F00184",
+      "cached": false,
+      "upper_usd": 0.0634044
+    },
+    {
+      "job_id": "F00187",
+      "cached": false,
+      "upper_usd": 0.06385980000000001
+    },
+    {
+      "job_id": "F00188",
+      "cached": false,
+      "upper_usd": 0.0635448
+    },
+    {
+      "job_id": "F00189",
+      "cached": false,
+      "upper_usd": 0.0637608
+    },
+    {
+      "job_id": "F00208",
+      "cached": false,
+      "upper_usd": 0.06712860000000001
+    },
+    {
+      "job_id": "F00210",
+      "cached": false,
+      "upper_usd": 0.064728
+    },
+    {
+      "job_id": "F00212",
+      "cached": false,
+      "upper_usd": 0.06402780000000001
+    },
+    {
+      "job_id": "F00247",
+      "cached": false,
+      "upper_usd": 0.062847
+    },
+    {
+      "job_id": "F00257",
+      "cached": false,
+      "upper_usd": 0.064116
+    },
+    {
+      "job_id": "F00284",
+      "cached": false,
+      "upper_usd": 0.0631632
+    },
+    {
+      "job_id": "F00287",
+      "cached": false,
+      "upper_usd": 0.06472739999999999
+    },
+    {
+      "job_id": "F00292",
+      "cached": false,
+      "upper_usd": 0.0648666
+    },
+    {
+      "job_id": "F00298",
+      "cached": false,
+      "upper_usd": 0.062718
+    },
+    {
+      "job_id": "F00300",
+      "cached": false,
+      "upper_usd": 0.06305939999999999
+    },
+    {
+      "job_id": "F00301",
+      "cached": false,
+      "upper_usd": 0.06428880000000001
+    },
+    {
+      "job_id": "F00303",
+      "cached": false,
+      "upper_usd": 0.06366959999999999
+    },
+    {
+      "job_id": "F00309",
+      "cached": false,
+      "upper_usd": 0.062646
+    },
+    {
+      "job_id": "F00310",
+      "cached": false,
+      "upper_usd": 0.068151
+    },
+    {
+      "job_id": "F00311",
+      "cached": false,
+      "upper_usd": 0.0655944
+    },
+    {
+      "job_id": "F00312",
+      "cached": false,
+      "upper_usd": 0.0629358
+    },
+    {
+      "job_id": "F00314",
+      "cached": false,
+      "upper_usd": 0.065574
+    },
+    {
+      "job_id": "F00315",
+      "cached": false,
+      "upper_usd": 0.0630672
+    },
+    {
+      "job_id": "F00320",
+      "cached": false,
+      "upper_usd": 0.064179
+    },
+    {
+      "job_id": "F00321",
+      "cached": false,
+      "upper_usd": 0.0651612
+    },
+    {
+      "job_id": "F00327",
+      "cached": false,
+      "upper_usd": 0.0641886
+    },
+    {
+      "job_id": "F00330",
+      "cached": false,
+      "upper_usd": 0.06296159999999999
+    },
+    {
+      "job_id": "F00332",
+      "cached": false,
+      "upper_usd": 0.062715
+    },
+    {
+      "job_id": "F00333",
+      "cached": false,
+      "upper_usd": 0.0637224
+    },
+    {
+      "job_id": "F00339",
+      "cached": false,
+      "upper_usd": 0.0642138
+    },
+    {
+      "job_id": "F00343",
+      "cached": false,
+      "upper_usd": 0.064434
+    },
+    {
+      "job_id": "F00347",
+      "cached": false,
+      "upper_usd": 0.0650292
+    },
+    {
+      "job_id": "F00350",
+      "cached": false,
+      "upper_usd": 0.0658788
+    },
+    {
+      "job_id": "F00351",
+      "cached": false,
+      "upper_usd": 0.0627432
+    },
+    {
+      "job_id": "F00352",
+      "cached": false,
+      "upper_usd": 0.063999
+    },
+    {
+      "job_id": "F00354",
+      "cached": false,
+      "upper_usd": 0.0642258
+    },
+    {
+      "job_id": "F00356",
+      "cached": false,
+      "upper_usd": 0.0622422
+    },
+    {
+      "job_id": "F00357",
+      "cached": false,
+      "upper_usd": 0.063657
+    },
+    {
+      "job_id": "F00362",
+      "cached": false,
+      "upper_usd": 0.064374
+    },
+    {
+      "job_id": "F00363",
+      "cached": false,
+      "upper_usd": 0.0641688
+    },
+    {
+      "job_id": "F00364",
+      "cached": false,
+      "upper_usd": 0.0627882
+    },
+    {
+      "job_id": "F00365",
+      "cached": false,
+      "upper_usd": 0.0643638
+    },
+    {
+      "job_id": "F00366",
+      "cached": false,
+      "upper_usd": 0.06285059999999999
+    },
+    {
+      "job_id": "F00368",
+      "cached": false,
+      "upper_usd": 0.064512
+    },
+    {
+      "job_id": "F00369",
+      "cached": false,
+      "upper_usd": 0.0646158
+    },
+    {
+      "job_id": "F00370",
+      "cached": false,
+      "upper_usd": 0.06384480000000001
+    },
+    {
+      "job_id": "F00377",
+      "cached": false,
+      "upper_usd": 0.0644172
+    },
+    {
+      "job_id": "F00378",
+      "cached": false,
+      "upper_usd": 0.0637104
+    },
+    {
+      "job_id": "F00394",
+      "cached": false,
+      "upper_usd": 0.06301739999999999
+    },
+    {
+      "job_id": "F00396",
+      "cached": false,
+      "upper_usd": 0.063057
+    },
+    {
+      "job_id": "F00404",
+      "cached": false,
+      "upper_usd": 0.06338880000000001
+    },
+    {
+      "job_id": "F00412",
+      "cached": false,
+      "upper_usd": 0.06454739999999999
+    },
+    {
+      "job_id": "F00415",
+      "cached": false,
+      "upper_usd": 0.06456780000000001
+    },
+    {
+      "job_id": "F00418",
+      "cached": false,
+      "upper_usd": 0.0627588
+    },
+    {
+      "job_id": "F00423",
+      "cached": false,
+      "upper_usd": 0.062907
+    },
+    {
+      "job_id": "F00425",
+      "cached": false,
+      "upper_usd": 0.06410339999999999
+    },
+    {
+      "job_id": "F00427",
+      "cached": false,
+      "upper_usd": 0.0628014
+    },
+    {
+      "job_id": "F00436",
+      "cached": false,
+      "upper_usd": 0.064512
+    },
+    {
+      "job_id": "F00437",
+      "cached": false,
+      "upper_usd": 0.0628302
+    },
+    {
+      "job_id": "F00438",
+      "cached": false,
+      "upper_usd": 0.0634134
+    },
+    {
+      "job_id": "F00442",
+      "cached": false,
+      "upper_usd": 0.0638856
+    },
+    {
+      "job_id": "F00463",
+      "cached": false,
+      "upper_usd": 0.0633282
+    },
+    {
+      "job_id": "F00464",
+      "cached": false,
+      "upper_usd": 0.06554639999999999
+    },
+    {
+      "job_id": "F00468",
+      "cached": false,
+      "upper_usd": 0.06442919999999999
+    },
+    {
+      "job_id": "F00471",
+      "cached": false,
+      "upper_usd": 0.06402780000000001
+    },
+    {
+      "job_id": "F00474",
+      "cached": false,
+      "upper_usd": 0.062488800000000004
+    },
+    {
+      "job_id": "F00476",
+      "cached": false,
+      "upper_usd": 0.06576119999999999
+    },
+    {
+      "job_id": "F00477",
+      "cached": false,
+      "upper_usd": 0.066117
+    },
+    {
+      "job_id": "F00479",
+      "cached": false,
+      "upper_usd": 0.0629898
+    },
+    {
+      "job_id": "F00505",
+      "cached": false,
+      "upper_usd": 0.0630942
+    },
+    {
+      "job_id": "F00514",
+      "cached": false,
+      "upper_usd": 0.0630852
+    },
+    {
+      "job_id": "F00515",
+      "cached": false,
+      "upper_usd": 0.0645126
+    },
+    {
+      "job_id": "F00523",
+      "cached": false,
+      "upper_usd": 0.064593
+    },
+    {
+      "job_id": "F00527",
+      "cached": false,
+      "upper_usd": 0.0645648
+    },
+    {
+      "job_id": "F00528",
+      "cached": false,
+      "upper_usd": 0.06473759999999999
+    },
+    {
+      "job_id": "F00531",
+      "cached": false,
+      "upper_usd": 0.06504539999999999
+    },
+    {
+      "job_id": "F00533",
+      "cached": false,
+      "upper_usd": 0.06401219999999999
+    },
+    {
+      "job_id": "F00536",
+      "cached": false,
+      "upper_usd": 0.0655278
+    },
+    {
+      "job_id": "F00537",
+      "cached": false,
+      "upper_usd": 0.0641214
+    },
+    {
+      "job_id": "F00541",
+      "cached": false,
+      "upper_usd": 0.066066
+    },
+    {
+      "job_id": "F00542",
+      "cached": false,
+      "upper_usd": 0.06364439999999999
+    },
+    {
+      "job_id": "F00547",
+      "cached": false,
+      "upper_usd": 0.0652776
+    },
+    {
+      "job_id": "F00554",
+      "cached": false,
+      "upper_usd": 0.0644628
+    },
+    {
+      "job_id": "F00556",
+      "cached": false,
+      "upper_usd": 0.0655086
+    },
+    {
+      "job_id": "F00558",
+      "cached": false,
+      "upper_usd": 0.06358739999999999
+    },
+    {
+      "job_id": "F00559",
+      "cached": false,
+      "upper_usd": 0.0635616
+    },
+    {
+      "job_id": "F00563",
+      "cached": false,
+      "upper_usd": 0.06589980000000001
+    },
+    {
+      "job_id": "F00564",
+      "cached": false,
+      "upper_usd": 0.063669
+    },
+    {
+      "job_id": "F00571",
+      "cached": false,
+      "upper_usd": 0.0665418
+    },
+    {
+      "job_id": "F00574",
+      "cached": false,
+      "upper_usd": 0.063144
+    },
+    {
+      "job_id": "F00601",
+      "cached": false,
+      "upper_usd": 0.0628866
+    },
+    {
+      "job_id": "F00602",
+      "cached": false,
+      "upper_usd": 0.0627948
+    },
+    {
+      "job_id": "F00609",
+      "cached": false,
+      "upper_usd": 0.0653892
+    },
+    {
+      "job_id": "F00610",
+      "cached": false,
+      "upper_usd": 0.064779
+    },
+    {
+      "job_id": "F00624",
+      "cached": false,
+      "upper_usd": 0.0635718
+    },
+    {
+      "job_id": "F00625",
+      "cached": false,
+      "upper_usd": 0.065124
+    },
+    {
+      "job_id": "F00629",
+      "cached": false,
+      "upper_usd": 0.0623742
+    },
+    {
+      "job_id": "F00637",
+      "cached": false,
+      "upper_usd": 0.06367139999999999
+    },
+    {
+      "job_id": "F00638",
+      "cached": false,
+      "upper_usd": 0.06351839999999999
+    },
+    {
+      "job_id": "F00643",
+      "cached": false,
+      "upper_usd": 0.0635928
+    },
+    {
+      "job_id": "F00645",
+      "cached": false,
+      "upper_usd": 0.063219
+    },
+    {
+      "job_id": "F00650",
+      "cached": false,
+      "upper_usd": 0.06398519999999999
+    },
+    {
+      "job_id": "F00654",
+      "cached": false,
+      "upper_usd": 0.0630846
+    },
+    {
+      "job_id": "F00655",
+      "cached": false,
+      "upper_usd": 0.0629844
+    },
+    {
+      "job_id": "F00657",
+      "cached": false,
+      "upper_usd": 0.0627378
+    },
+    {
+      "job_id": "F00663",
+      "cached": false,
+      "upper_usd": 0.06381780000000001
+    },
+    {
+      "job_id": "F00666",
+      "cached": false,
+      "upper_usd": 0.06347219999999999
+    },
+    {
+      "job_id": "F00677",
+      "cached": false,
+      "upper_usd": 0.062949
+    },
+    {
+      "job_id": "F00678",
+      "cached": false,
+      "upper_usd": 0.06419939999999999
+    },
+    {
+      "job_id": "F00679",
+      "cached": false,
+      "upper_usd": 0.0633708
+    },
+    {
+      "job_id": "F00681",
+      "cached": false,
+      "upper_usd": 0.0650046
+    },
+    {
+      "job_id": "F00682",
+      "cached": false,
+      "upper_usd": 0.06387659999999999
+    },
+    {
+      "job_id": "F00683",
+      "cached": false,
+      "upper_usd": 0.0633186
+    },
+    {
+      "job_id": "F00684",
+      "cached": false,
+      "upper_usd": 0.0639198
+    },
+    {
+      "job_id": "F00686",
+      "cached": false,
+      "upper_usd": 0.0651192
+    },
+    {
+      "job_id": "F00688",
+      "cached": false,
+      "upper_usd": 0.0653922
+    },
+    {
+      "job_id": "F00689",
+      "cached": false,
+      "upper_usd": 0.0655698
+    },
+    {
+      "job_id": "F00690",
+      "cached": false,
+      "upper_usd": 0.0626766
+    },
+    {
+      "job_id": "F00691",
+      "cached": false,
+      "upper_usd": 0.0629106
+    },
+    {
+      "job_id": "F00692",
+      "cached": false,
+      "upper_usd": 0.0678534
+    },
+    {
+      "job_id": "F00693",
+      "cached": false,
+      "upper_usd": 0.0650346
+    },
+    {
+      "job_id": "F00694",
+      "cached": false,
+      "upper_usd": 0.0654096
+    },
+    {
+      "job_id": "F00696",
+      "cached": false,
+      "upper_usd": 0.063708
+    },
+    {
+      "job_id": "F00697",
+      "cached": false,
+      "upper_usd": 0.0628548
+    },
+    {
+      "job_id": "F00698",
+      "cached": false,
+      "upper_usd": 0.0638238
+    },
+    {
+      "job_id": "F00699",
+      "cached": false,
+      "upper_usd": 0.0631452
+    },
+    {
+      "job_id": "F00702",
+      "cached": false,
+      "upper_usd": 0.0632196
+    },
+    {
+      "job_id": "F00720",
+      "cached": false,
+      "upper_usd": 0.0679308
+    },
+    {
+      "job_id": "F00725",
+      "cached": false,
+      "upper_usd": 0.0630414
+    },
+    {
+      "job_id": "F00728",
+      "cached": false,
+      "upper_usd": 0.063867
+    },
+    {
+      "job_id": "F00736",
+      "cached": false,
+      "upper_usd": 0.063837
+    },
+    {
+      "job_id": "F00740",
+      "cached": false,
+      "upper_usd": 0.0646254
+    },
+    {
+      "job_id": "F00742",
+      "cached": false,
+      "upper_usd": 0.063681
+    },
+    {
+      "job_id": "F00767",
+      "cached": false,
+      "upper_usd": 0.062814
+    },
+    {
+      "job_id": "F00768",
+      "cached": false,
+      "upper_usd": 0.0655956
+    },
+    {
+      "job_id": "F00779",
+      "cached": false,
+      "upper_usd": 0.065349
+    },
+    {
+      "job_id": "F00782",
+      "cached": false,
+      "upper_usd": 0.0642204
+    },
+    {
+      "job_id": "F00784",
+      "cached": false,
+      "upper_usd": 0.06362280000000001
+    },
+    {
+      "job_id": "F00785",
+      "cached": false,
+      "upper_usd": 0.0637626
+    },
+    {
+      "job_id": "F00786",
+      "cached": false,
+      "upper_usd": 0.064131
+    },
+    {
+      "job_id": "F00790",
+      "cached": false,
+      "upper_usd": 0.0627528
+    },
+    {
+      "job_id": "F00795",
+      "cached": false,
+      "upper_usd": 0.0631674
+    },
+    {
+      "job_id": "F00798",
+      "cached": false,
+      "upper_usd": 0.066639
+    },
+    {
+      "job_id": "F00799",
+      "cached": false,
+      "upper_usd": 0.06583019999999999
+    },
+    {
+      "job_id": "F00805",
+      "cached": false,
+      "upper_usd": 0.06378539999999999
+    },
+    {
+      "job_id": "F00806",
+      "cached": false,
+      "upper_usd": 0.06333180000000001
+    },
+    {
+      "job_id": "F00808",
+      "cached": false,
+      "upper_usd": 0.062778
+    },
+    {
+      "job_id": "F00815",
+      "cached": false,
+      "upper_usd": 0.0628236
+    },
+    {
+      "job_id": "F00816",
+      "cached": false,
+      "upper_usd": 0.06539339999999999
+    },
+    {
+      "job_id": "F00818",
+      "cached": false,
+      "upper_usd": 0.0656172
+    },
+    {
+      "job_id": "F00822",
+      "cached": false,
+      "upper_usd": 0.06272280000000001
+    },
+    {
+      "job_id": "F00825",
+      "cached": false,
+      "upper_usd": 0.064194
+    },
+    {
+      "job_id": "F00827",
+      "cached": false,
+      "upper_usd": 0.065034
+    },
+    {
+      "job_id": "F00830",
+      "cached": false,
+      "upper_usd": 0.0655758
+    },
+    {
+      "job_id": "F00845",
+      "cached": false,
+      "upper_usd": 0.0623316
+    },
+    {
+      "job_id": "F00847",
+      "cached": false,
+      "upper_usd": 0.0648516
+    },
+    {
+      "job_id": "F00848",
+      "cached": false,
+      "upper_usd": 0.0652686
+    },
+    {
+      "job_id": "F00850",
+      "cached": false,
+      "upper_usd": 0.0656946
+    },
+    {
+      "job_id": "F00851",
+      "cached": false,
+      "upper_usd": 0.063459
+    },
+    {
+      "job_id": "F00856",
+      "cached": false,
+      "upper_usd": 0.0641028
+    },
+    {
+      "job_id": "F00866",
+      "cached": false,
+      "upper_usd": 0.0629208
+    },
+    {
+      "job_id": "F00921",
+      "cached": false,
+      "upper_usd": 0.0660042
+    },
+    {
+      "job_id": "F00924",
+      "cached": false,
+      "upper_usd": 0.0636216
+    },
+    {
+      "job_id": "F00929",
+      "cached": false,
+      "upper_usd": 0.0636234
+    },
+    {
+      "job_id": "F00930",
+      "cached": false,
+      "upper_usd": 0.0623808
+    },
+    {
+      "job_id": "F00933",
+      "cached": false,
+      "upper_usd": 0.06320339999999999
+    },
+    {
+      "job_id": "F00935",
+      "cached": false,
+      "upper_usd": 0.0629148
+    }
+  ],
+  "results": [],
+  "guideline_sha256": "5939c9e69ffacf28dcba9588b8fbfc8d124a8a240e8e84e1f234d463b7f760db",
+  "prompt_sha256": "8325fb5065c5622b2bd4bc79f76b5bdde6e32f4b553f1b95379a3d8afadf11b9",
+  "status": "preflight"
+}

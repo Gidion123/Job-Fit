@@ -1,0 +1,13 @@
+{
+  "job_id": "claude-haiku-4.5/F00010",
+  "result_sha256": "04ce3ba328dbd3909b73b09434eceb28f2ca40992894bd8733414c574450d900",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "fail",
+    "grouping": "fail",
+    "qualifiers": "pass",
+    "importance": "pass"
+  },
+  "notes": "All seven qualification clauses checked; 12 units. Framework and cloud OR alternatives are converted into three independent required AND units each, and both similar-framework and similar-cloud routes are omitted. Eight-year AI/ML/DS alternatives are retained only in one qualified text, not explicit assessable branches. Communication and remote cross-functional teamwork remain merged; preferred coding assistants remain a simple composite without approved alternative representation. Proficiency/deployment qualifiers and eight-year minimum are retained in the emitted units; importance and exact quotes pass. No gold change.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

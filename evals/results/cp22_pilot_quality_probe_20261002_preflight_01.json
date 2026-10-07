@@ -1,0 +1,51 @@
+{
+  "model": "deepseek/deepseek-v4.1-flash",
+  "scope": [
+    "F00016",
+    "F00034",
+    "F00073"
+  ],
+  "estimates": [
+    {
+      "job_id": "F00034",
+      "cache_hit": false,
+      "input_token_upper_per_attempt": 41669,
+      "max_output_tokens": 16000,
+      "attempts_max": 2,
+      "upper_usd": 0.0634014
+    },
+    {
+      "job_id": "F00073",
+      "cache_hit": false,
+      "input_token_upper_per_attempt": 42152,
+      "max_output_tokens": 16000,
+      "attempts_max": 2,
+      "upper_usd": 0.0636912
+    }
+  ],
+  "remaining_upper_usd": 0.1270926,
+  "probe_spent_usd": "0.01550648",
+  "probe_ceiling_usd": "0.20",
+  "project_hard_stop_usd": 8.5,
+  "project_spent_usd": "0.187155500",
+  "provenance": {
+    "config/models_v1.yaml": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+    "config/pipeline_v1.yaml": "a8f219e74952c18451b93e469a1c3750e8f631f88e40ca387bc51a9ea690a4f8",
+    "evals/annotation_guideline_v1.md": "5939c9e69ffacf28dcba9588b8fbfc8d124a8a240e8e84e1f234d463b7f760db",
+    "evals/gold/extraction_gold.jsonl": "f43d4d029f82a392ebc4796fc4bfafc5275ac1afae3a686bee5e4ca2a3da9a7d",
+    "evals/splits/split_manifest.json": "f21741eb93c959b8d39f4c0227f7d9106aef4e815d51ecd379f68015ba1a39c2",
+    "src/jobfit/extraction/jd_extractor.py": "97ca557488a1e8d94d8a054c554954f23803bf4970bd71b2e070ebb0180b149a",
+    "src/jobfit/llm/structured.py": "6a218a40daf4cc4a712fcec55b94a0311eb43e38e1595f101761dd9ca7941312",
+    "src/jobfit/llm/client.py": "a3d8491668027932acf6819481af56bf7eb3687ac51460ce36a064a48d29c63d",
+    "src/jobfit/llm/probe.py": "fdf8c6bd1d1f7a73b2d87fddec827aee83ceb78d9fc995488fec90c39390133e",
+    "src/jobfit/schemas/requirements.py": "54d8fb16cdf55f6027d2d0d4c12973bb2616b027428215cdd343a9c201248c05",
+    "scripts/run_pilot_probe.py": "c096d269cc1b44cce65c77b51f875b289976ef7487c59415c1f0853ea96c4dee",
+    "prompts/jd_extraction_v1_1.md": "8c91296b0861a82654ede5bec46f60d324cc08dcee3d62bc690d7a36136052d0",
+    "F00016": "7ce15548520a18d87416f5fb8c3b959a2d40aca3199086ab17822c6add18d477",
+    "F00034": "8cdbfad2b5803545eb155c346253249dd72d4015024018e34706e3ddf9552826",
+    "F00073": "408a099f8f221bd4fca5a07ed93fbccda6b23f796111ee3efe105397570cc23f"
+  },
+  "status": "ready",
+  "mode": "preflight",
+  "new_api_calls": 0
+}

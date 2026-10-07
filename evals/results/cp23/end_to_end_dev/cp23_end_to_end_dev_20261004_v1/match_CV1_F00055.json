@@ -1,0 +1,446 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00055",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "wall_ms": 58827,
+  "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 6,
+    "partial": 1,
+    "required_total": 15,
+    "preferred_met": 1,
+    "preferred_total": 7,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+      "Required units not judged yet: U02",
+      "Requirement structure needs review; identified denominator is not validated."
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+        "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U10",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U11",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U12",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U13",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U14",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U15",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Indonesia (native)"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U16",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Inggris (menengah, TOEFL ITP 540)"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U17",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U18",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U19",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U20",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U21",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U22",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    }
+  ],
+  "source_flags": [
+    {
+      "unit_id": "U01",
+      "branch_id": "B1",
+      "kind": "quote_exact",
+      "model_quote": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "cv_span": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "start": 317,
+      "end": 400,
+      "flags": []
+    },
+    {
+      "unit_id": "U01",
+      "branch_id": "B5",
+      "kind": "quote_exact",
+      "model_quote": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "cv_span": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "start": 317,
+      "end": 400,
+      "flags": []
+    },
+    {
+      "unit_id": "U08",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "cv_span": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "start": 1228,
+      "end": 1328,
+      "flags": []
+    },
+    {
+      "unit_id": "U08",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+      "cv_span": "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+      "start": 1098,
+      "end": 1160,
+      "flags": []
+    },
+    {
+      "unit_id": "U09",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+      "cv_span": "Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+      "start": 1473,
+      "end": 1581,
+      "flags": []
+    },
+    {
+      "unit_id": "U13",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+      "cv_span": "Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+      "start": 1473,
+      "end": 1581,
+      "flags": []
+    },
+    {
+      "unit_id": "U14",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "cv_span": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "start": 723,
+      "end": 828,
+      "flags": []
+    },
+    {
+      "unit_id": "U15",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Indonesia (native)",
+      "cv_span": "Indonesia (native)",
+      "start": 1813,
+      "end": 1831,
+      "flags": []
+    },
+    {
+      "unit_id": "U16",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Inggris (menengah, TOEFL ITP 540)",
+      "cv_span": "Inggris (menengah, TOEFL ITP 540)",
+      "start": 1833,
+      "end": 1866,
+      "flags": []
+    },
+    {
+      "unit_id": "U22",
+      "branch_id": "B3",
+      "kind": "quote_exact",
+      "model_quote": "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+      "cv_span": "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+      "start": 831,
+      "end": 905,
+      "flags": []
+    }
+  ]
+}

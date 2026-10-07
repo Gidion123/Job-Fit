@@ -1,0 +1,528 @@
+{
+ "set": "ranking",
+ "cv_id": "CV1",
+ "job_id": "F00090",
+ "model": "gpt-6-sol",
+ "experiment_id": "QA-E01",
+ "wall_ms": 18789,
+ "status": "done",
+ "error_code": null,
+ "attempts": 1,
+ "assessments": [
+  {
+   "unit_id": "U01",
+   "label": "PARTIAL",
+   "check_status": "needs_clarification",
+   "cv_quotes": [
+    "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U02",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U03",
+   "label": null,
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [
+    {
+     "branch_id": "B1",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B2",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B3",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    }
+   ],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U04",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U05",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U06",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U07",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U08",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U09",
+   "label": null,
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [
+    {
+     "branch_id": "B1",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B2",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    }
+   ],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U10",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U11",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U12",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U13",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U14",
+   "label": null,
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [
+    {
+     "branch_id": "B1",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B2",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B3",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B4",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+     ]
+    }
+   ],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U15",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "Indonesia (native), Inggris (menengah, TOEFL ITP 540)"
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U16",
+   "label": null,
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [
+    {
+     "branch_id": "B1",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B2",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B3",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B4",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    }
+   ],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U17",
+   "label": null,
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [
+    {
+     "branch_id": "B1",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B2",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B3",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B4",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B5",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    }
+   ],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U18",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U19",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U20",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U21",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U22",
+   "label": null,
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [
+    {
+     "branch_id": "B1",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B2",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B3",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B4",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    }
+   ],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U23",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U24",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U25",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U26",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U27",
+   "label": null,
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [
+    {
+     "branch_id": "B1",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B2",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B3",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    }
+   ],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U28",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U29",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U30",
+   "label": null,
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [
+    {
+     "branch_id": "B1",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B2",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    }
+   ],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U31",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  }
+ ],
+ "source_flags": [
+  {
+   "unit_id": "U01",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+   "cv_span": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+   "start": 623,
+   "end": 720,
+   "flags": []
+  },
+  {
+   "unit_id": "U01",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "U02",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "U04",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "U05",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "U10",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar",
+   "cv_span": "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar",
+   "start": 1596,
+   "end": 1727,
+   "flags": []
+  },
+  {
+   "unit_id": "U14",
+   "branch_id": "B4",
+   "kind": "quote_exact",
+   "model_quote": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+   "cv_span": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+   "start": 317,
+   "end": 400,
+   "flags": []
+  },
+  {
+   "unit_id": "U15",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Indonesia (native), Inggris (menengah, TOEFL ITP 540)",
+   "cv_span": "Indonesia (native), Inggris (menengah, TOEFL ITP 540)",
+   "start": 1813,
+   "end": 1866,
+   "flags": []
+  }
+ ]
+}

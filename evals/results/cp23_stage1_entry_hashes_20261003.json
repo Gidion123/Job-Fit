@@ -1,0 +1,29 @@
+{
+  "status": "entry_protected_input_hashes",
+  "paths": {
+    "config/models_v1.yaml": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+    "config/pipeline_v1.yaml": "ba44704f573f9fabb24ff45a2b0142b5c00ac93af55902429500c020a3cd1dc8",
+    "config/retrieval_v1.yaml": "c54422081f79d3d9031367344de7b4813407410f911c849ae7721e7219495d7a",
+    "data/processed/jobs_features.jsonl": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+    "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+    "data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+    "evals/gold/development_v13_reviewed_20261002_r2/JD_coverage.json": "55312dce477c8f620a8db72067d92f3c1d76abdbe615c85d78db1bed40ffd511",
+    "evals/gold/development_v13_reviewed_20261002_r2/evidence_gold.jsonl": "9451fe9459c5cf97bc42ba24edf8a7a2cfc8b933083f8d0ab8b953fd579cb788",
+    "evals/gold/development_v13_reviewed_20261002_r2/excluded_records.json": "e72c7f8214b6474b4fd648d25a4c36f8c374f1662eac5909e60d5deeeb16d93e",
+    "evals/gold/development_v13_reviewed_20261002_r2/extraction_gold.jsonl": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+    "evals/gold/development_v13_reviewed_20261002_r2/held_records.json": "bb7393e9264bda74967042e846a1c9b67090b0ca92255a815037f97de94321aa",
+    "evals/gold/development_v13_reviewed_20261002_r2/logical_units.json": "49aa3b438470de8897a3b17b315da4190dd33f2e78f3f73f9065753250fffaf5",
+    "evals/gold/development_v13_reviewed_20261002_r2/manifest.json": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+    "evals/gold/development_v13_reviewed_20261002_r2/pair_coverage.json": "b2a1339e4a9de6c4b8cf4d55b7ebb8f21fc2d3bde58557ac26de96135ba0bd58",
+    "evals/gold/development_v13_reviewed_20261002_r2/relevance_gold.jsonl": "2f0ef6760c8d3b26728e6a93b2771d0fa5fb35395814fa8f7f0cc54f837b2bd6",
+    "evals/labeling/JobFit_Development_Labeling_v1.3.xlsx": "4d96852dce52effdc376709cf8c0131f2f9ad1a6f02795cc556fec1819eccb50",
+    "evals/pools/dev_pool.csv": "77825f8504d45baa577dbb12cf91585368b546da5e5cbbdbfd3085e6a807661e",
+    "evals/splits/dev_job_ids.txt": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+    "evals/splits/split_manifest.json": "f21741eb93c959b8d39f4c0227f7d9106aef4e815d51ecd379f68015ba1a39c2",
+    "evals/splits/test_job_ids.txt": "b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435",
+    "prompts/evidence_matching_v1_1.md": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+    "prompts/jd_extraction_v1_2.md": "35525ee62f8aa7f79307d8d8b95141e85c7d30fa06b359a9dcb48c3a6cad1836",
+    "prompts/jd_extraction_v1_3.md": "0afe4b95155c7225bafd62e9216344cd886a4d6ba2e005fd746652b6ed97a224",
+    "reports/usage/usage_ledger.jsonl": "2870f7530090192a0618a0b6ae77e68e483d011201f03b912e0bd4316f123d70"
+  }
+}

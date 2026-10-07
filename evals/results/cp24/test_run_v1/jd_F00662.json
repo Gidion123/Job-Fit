@@ -1,0 +1,495 @@
+{
+ "job_id": "F00662",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "no_uncovered_bullets",
+  "bullet_count": 11,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 11,
+  "inventory_mappings": [
+   {
+    "source_id": "Q01",
+    "unit_ids": [
+     "U01",
+     "U02",
+     "U03",
+     "U04",
+     "U05"
+    ]
+   },
+   {
+    "source_id": "Q02",
+    "unit_ids": [
+     "U06"
+    ]
+   },
+   {
+    "source_id": "Q03",
+    "unit_ids": [
+     "U07"
+    ]
+   },
+   {
+    "source_id": "Q04",
+    "unit_ids": [
+     "U08",
+     "U09",
+     "U10"
+    ]
+   },
+   {
+    "source_id": "Q05",
+    "unit_ids": [
+     "U11",
+     "U12"
+    ]
+   },
+   {
+    "source_id": "Q06",
+    "unit_ids": [
+     "U13",
+     "U14"
+    ]
+   },
+   {
+    "source_id": "Q07",
+    "unit_ids": [
+     "U15",
+     "U16"
+    ]
+   },
+   {
+    "source_id": "Q08",
+    "unit_ids": [
+     "U17",
+     "U18"
+    ]
+   },
+   {
+    "source_id": "Q09",
+    "unit_ids": [
+     "U19"
+    ]
+   },
+   {
+    "source_id": "Q10",
+    "unit_ids": [
+     "U20",
+     "U21"
+    ]
+   },
+   {
+    "source_id": "Q11",
+    "unit_ids": [
+     "U22"
+    ]
+   }
+  ],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00662",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Strong knowledge and experience in Pattern Recognition",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Pattern Recognition",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong knowledge and experience in Pattern Recognition, Computer Science, NLP, Generative AI, and Neural Networks"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "Strong knowledge and experience in Computer Science",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Computer Science",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong knowledge and experience in Pattern Recognition, Computer Science, NLP, Generative AI, and Neural Networks"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Strong knowledge and experience in NLP",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "NLP",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong knowledge and experience in Pattern Recognition, Computer Science, NLP, Generative AI, and Neural Networks"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Strong knowledge and experience in Generative AI",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Generative AI",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong knowledge and experience in Pattern Recognition, Computer Science, NLP, Generative AI, and Neural Networks"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Strong knowledge and experience in Neural Networks",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Neural Networks",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong knowledge and experience in Pattern Recognition, Computer Science, NLP, Generative AI, and Neural Networks"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Hands-on experience in fine-tuning LLM Llama model",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Fine-Tuning LLM Llama Model",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Hands-on experience in Fine-Tuning LLM LLama Model"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Hands-on in prompt engineering",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Prompt Engineering",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Hands-on in Prompt Engineering"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Proficiency in statistics",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Statistics",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Proficiency in Statistics, Algorithms, and data analysis"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Proficiency in algorithms",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Algorithms",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Proficiency in Statistics, Algorithms, and data analysis"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "Proficiency in data analysis",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Data Analysis",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Proficiency in Statistics, Algorithms, and data analysis"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "Experience in developing machine learning models",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Developing Machine Learning Models",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience in developing and implementing machine learning models"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "Experience in implementing machine learning models",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Implementing Machine Learning Models",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience in developing and implementing machine learning models"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U13",
+    "text": "Ability to evaluate new technologies",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Evaluate New Technologies",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Ability to evaluate and integrate new technologies"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U14",
+    "text": "Ability to integrate new technologies",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Integrate New Technologies",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Ability to evaluate and integrate new technologies"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U15",
+    "text": "Excellent problem-solving skills",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Problem-Solving Skills",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Excellent problem-solving and analytical skills"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U16",
+    "text": "Excellent analytical skills",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Analytical Skills",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Excellent problem-solving and analytical skills"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U17",
+    "text": "Strong programming skills",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Programming Skills",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong programming skills, preferably in Python or R"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U18",
+    "text": "Preferably in Python or R",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Python or R",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Strong programming skills, preferably in Python",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Strong programming skills, preferably in R",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Strong programming skills, preferably in Python or R"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U19",
+    "text": "Experience with machine learning frameworks and libraries, such as TensorFlow or PyTorch",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Machine Learning Frameworks and Libraries",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Experience with machine learning frameworks and libraries, such as TensorFlow",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Experience with machine learning frameworks and libraries, such as PyTorch",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience with machine learning frameworks and libraries, such as TensorFlow or PyTorch"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U20",
+    "text": "Knowledge of natural language processing",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Natural Language Processing",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Knowledge of natural language processing and deep learning is a plus"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U21",
+    "text": "Knowledge of deep learning",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Deep Learning",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Knowledge of natural language processing and deep learning is a plus"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U22",
+    "text": "Bachelor's or Master's degree in Computer Science, Statistics, or a related field",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "education",
+    "normalized_name": "Bachelor's or Master's Degree in Computer Science, Statistics, or Related Field",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Bachelor's degree in Computer Science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Bachelor's degree in Statistics",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Bachelor's degree in a related field",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "Master's degree in Computer Science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B5",
+      "text": "Master's degree in Statistics",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B6",
+      "text": "Master's degree in a related field",
+      "field": "education",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Bachelor's or Master's degree in Computer Science, Statistics, or a related field"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

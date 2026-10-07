@@ -1,0 +1,463 @@
+{
+  "schema_version": "cp23-dev-experience-block-v1",
+  "rule": "experience-upper-bound-v1",
+  "split": "development",
+  "api_calls": 0,
+  "matcher": "gpt-6-sol",
+  "hold_policy": "H2v2",
+  "partial_weight": 0.5,
+  "cv_total_years": {
+    "CV1": null,
+    "CV2": null
+  },
+  "flagged_pairs": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00663",
+      "relevance": 1,
+      "bucket": "5y+",
+      "scored": true,
+      "messages": [
+        "U02: the JD asks for at least 5 years; the whole CV work history is about 0.75 years. JD: \u2022 Pengalaman: Minimal 5 tahun pengalaman dalam pengembangan AI dan machine learning, dengan track record yang proven dalam implementasi proyek AI."
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00284",
+      "relevance": 1,
+      "bucket": "3-4y",
+      "scored": true,
+      "messages": [
+        "U01: the JD asks for at least 4 years; the whole CV work history is about 0.75 years. JD: 4+ years of professional experience in a Data Scientist role, delivering end-to-end machine learning solutions in production environments. | 4 years"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00333",
+      "relevance": 1,
+      "bucket": "5y+",
+      "scored": true,
+      "messages": [
+        "U02: the JD asks for at least 5 years; the whole CV work history is about 0.75 years. JD: You have at least 5 years of experience in data exploration and feature engineering.",
+        "U03: the JD asks for at least 5 years; the whole CV work history is about 0.75 years. JD: You have at least 5 years of experience in data exploration and feature engineering."
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00036",
+      "relevance": 1,
+      "bucket": "1-2y",
+      "scored": true,
+      "messages": [
+        "U02: the JD asks for at least 2 years; the whole CV work history is about 0.75 years. JD: Minimal 2-3 tahun pengalaman profesional sebagai Data Scientist atau posisi sejenisnya."
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00208",
+      "relevance": 1,
+      "bucket": "5y+",
+      "scored": true,
+      "messages": [
+        "U05: the JD asks for at least 8 years; the whole CV work history is about 0.75 years. JD: 8-10 years of progressive experience in machine learning, AI engineering, or data science, with at least 3 years focused on applied AI and production ML systems."
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00090",
+      "relevance": 1,
+      "bucket": "1-2y",
+      "scored": true,
+      "messages": [
+        "U01: the JD asks for at least 2 years; the whole CV work history is about 0.75 years. JD: - Min. 2\u20134 tahun pengalaman sebagai Backend Engineer / Software Engineer dengan fokus Python"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00189",
+      "relevance": 1,
+      "bucket": "5y+",
+      "scored": true,
+      "messages": [
+        "U01: the JD asks for at least 8 years; the whole CV work history is about 0.75 years. JD: You have at least 8 years of professional experience in data science, analytics, or statistical modelling within banking, payments, or financial services."
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00851",
+      "relevance": null,
+      "bucket": "5y+",
+      "scored": true,
+      "messages": [
+        "U001: the JD asks for at least 5 years; the whole CV work history is about 0.75 years. JD: \u2022 5+ years of professional experience as a Machine Learning Engineer."
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00055",
+      "relevance": 1,
+      "bucket": "3-4y",
+      "scored": true,
+      "messages": [
+        "U02: the JD asks for at least 3 years; the whole CV work history is about 0.75 years. JD: 3\u20136 years of hands-on data science or applied AI experience, with demonstrable work in text analytics, conversational data, or LLM-based systems"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00060",
+      "relevance": null,
+      "bucket": "3-4y",
+      "scored": true,
+      "messages": [
+        "U01: the JD asks for at least 3 years; the whole CV work history is about 0.75 years. JD: 3+ years of experience developing ML solutions"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00527",
+      "relevance": null,
+      "bucket": "3-4y",
+      "scored": true,
+      "messages": [
+        "U03: the JD asks for at least 4 years; the whole CV work history is about 0.75 years. JD: 4-6 years of total working experience",
+        "U04: the JD asks for at least 3 years; the whole CV work history is about 0.75 years. JD: At least 3+ years of working experience relevant to the field of data science"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00129",
+      "relevance": null,
+      "bucket": "1-2y",
+      "scored": true,
+      "messages": [
+        "U02: the JD asks for at least 1 years; the whole CV work history is about 0.75 years. JD: Have at least 1 years of experience as data science trainer"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00624",
+      "relevance": 1,
+      "bucket": "5y+",
+      "scored": true,
+      "messages": [
+        "U01: the JD asks for at least 8 years; the whole CV work history is about 5.42 years. JD: Minimum 8 years of software engineering experience, including relevant experience in Generative AI."
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00798",
+      "relevance": 1,
+      "bucket": "5y+",
+      "scored": true,
+      "messages": [
+        "U01: the JD asks for at least 6 years; the whole CV work history is about 5.42 years. JD: 6+ years of software engineering experience"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00208",
+      "relevance": 1,
+      "bucket": "5y+",
+      "scored": true,
+      "messages": [
+        "U05: the JD asks for at least 8 years; the whole CV work history is about 5.42 years. JD: 8-10 years of progressive experience in machine learning, AI engineering, or data science, with at least 3 years focused on applied AI and production ML systems."
+      ]
+    }
+  ],
+  "cells": [
+    {
+      "seniority_rule": false,
+      "k": 10,
+      "conflict_block": false,
+      "cv_id": "CV1",
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.3557029254053963,
+      "final_top5": [
+        "F00312",
+        "F00556",
+        "F00663",
+        "F00284",
+        "F00020"
+      ],
+      "unjudged_final_top10": []
+    },
+    {
+      "seniority_rule": false,
+      "k": 10,
+      "conflict_block": false,
+      "cv_id": "CV2",
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.7390788259162826,
+      "final_top5": [
+        "F00815",
+        "F00018",
+        "F00650",
+        "F00029",
+        "F00624"
+      ],
+      "unjudged_final_top10": []
+    },
+    {
+      "seniority_rule": false,
+      "k": 10,
+      "conflict_block": true,
+      "cv_id": "CV1",
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.35096419342734236,
+      "final_top5": [
+        "F00312",
+        "F00556",
+        "F00020",
+        "F00601",
+        "F00132"
+      ],
+      "unjudged_final_top10": []
+    },
+    {
+      "seniority_rule": false,
+      "k": 10,
+      "conflict_block": true,
+      "cv_id": "CV2",
+      "p_at_5": 0.8,
+      "ndcg_at_10": 0.7516714220411039,
+      "final_top5": [
+        "F00815",
+        "F00018",
+        "F00650",
+        "F00029",
+        "F00052"
+      ],
+      "unjudged_final_top10": []
+    },
+    {
+      "seniority_rule": false,
+      "k": 20,
+      "conflict_block": false,
+      "cv_id": "CV1",
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.41888666169038363,
+      "final_top5": [
+        "F00312",
+        "F00036",
+        "F00332",
+        "F00556",
+        "F00655"
+      ],
+      "unjudged_final_top10": []
+    },
+    {
+      "seniority_rule": false,
+      "k": 20,
+      "conflict_block": false,
+      "cv_id": "CV2",
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "final_top5": [
+        "F00815",
+        "F00018",
+        "F00645",
+        "F00650",
+        "F00029"
+      ],
+      "unjudged_final_top10": [
+        "F00645"
+      ]
+    },
+    {
+      "seniority_rule": false,
+      "k": 20,
+      "conflict_block": true,
+      "cv_id": "CV1",
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.45246854488190774,
+      "final_top5": [
+        "F00312",
+        "F00332",
+        "F00556",
+        "F00655",
+        "F00020"
+      ],
+      "unjudged_final_top10": []
+    },
+    {
+      "seniority_rule": false,
+      "k": 20,
+      "conflict_block": true,
+      "cv_id": "CV2",
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "final_top5": [
+        "F00815",
+        "F00018",
+        "F00645",
+        "F00650",
+        "F00029"
+      ],
+      "unjudged_final_top10": [
+        "F00645",
+        "F00629"
+      ]
+    },
+    {
+      "seniority_rule": true,
+      "k": 10,
+      "conflict_block": false,
+      "cv_id": "CV1",
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.5434619519747224,
+      "final_top5": [
+        "F00312",
+        "F00036",
+        "F00332",
+        "F00556",
+        "F00655"
+      ],
+      "unjudged_final_top10": []
+    },
+    {
+      "seniority_rule": true,
+      "k": 10,
+      "conflict_block": false,
+      "cv_id": "CV2",
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "final_top5": [
+        "F00815",
+        "F00018",
+        "F00645",
+        "F00650",
+        "F00052"
+      ],
+      "unjudged_final_top10": [
+        "F00645",
+        "F00629"
+      ]
+    },
+    {
+      "seniority_rule": true,
+      "k": 10,
+      "conflict_block": true,
+      "cv_id": "CV1",
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.5787501690492642,
+      "final_top5": [
+        "F00312",
+        "F00332",
+        "F00556",
+        "F00655",
+        "F00020"
+      ],
+      "unjudged_final_top10": []
+    },
+    {
+      "seniority_rule": true,
+      "k": 10,
+      "conflict_block": true,
+      "cv_id": "CV2",
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "final_top5": [
+        "F00815",
+        "F00018",
+        "F00645",
+        "F00650",
+        "F00052"
+      ],
+      "unjudged_final_top10": [
+        "F00645",
+        "F00629"
+      ]
+    },
+    {
+      "seniority_rule": true,
+      "k": 20,
+      "conflict_block": false,
+      "cv_id": "CV1",
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "final_top5": [
+        "F00129",
+        "F00312",
+        "F00036",
+        "F00332",
+        "F00556"
+      ],
+      "unjudged_final_top10": [
+        "F00129"
+      ]
+    },
+    {
+      "seniority_rule": true,
+      "k": 20,
+      "conflict_block": false,
+      "cv_id": "CV2",
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "final_top5": [
+        "F00815",
+        "F00682",
+        "F00556",
+        "F00018",
+        "F00645"
+      ],
+      "unjudged_final_top10": [
+        "F00682",
+        "F00556",
+        "F00645",
+        "F00629"
+      ]
+    },
+    {
+      "seniority_rule": true,
+      "k": 20,
+      "conflict_block": true,
+      "cv_id": "CV1",
+      "p_at_5": 0.6,
+      "ndcg_at_10": null,
+      "final_top5": [
+        "F00312",
+        "F00332",
+        "F00556",
+        "F00655",
+        "F00020"
+      ],
+      "unjudged_final_top10": [
+        "F00650",
+        "F00129"
+      ]
+    },
+    {
+      "seniority_rule": true,
+      "k": 20,
+      "conflict_block": true,
+      "cv_id": "CV2",
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "final_top5": [
+        "F00815",
+        "F00682",
+        "F00556",
+        "F00018",
+        "F00645"
+      ],
+      "unjudged_final_top10": [
+        "F00682",
+        "F00556",
+        "F00645",
+        "F00629"
+      ]
+    }
+  ],
+  "limits": [
+    "Two CVs. CV2 has about 5.4 years of total (mostly marketing) history, so the upper-bound rule cannot flag it; only CV1 can change.",
+    "Guideline Part D rates an explicit experience conflict as 1, so the block and the labels share the same idea (circularity, as with the seniority rule).",
+    "Missing labels are never zero; cells with unjudged top-10 jobs are provisional until gold r4."
+  ],
+  "input_sha256": {
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/relevance_gold.jsonl": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4",
+    "evals/splits/dev_job_ids.txt": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+    "data/processed/jobs_features.jsonl": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+    "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/plan.json": "54c0d5d1cec7ebf08b983083aaad785f0ec5d6347bb85909d24f698e904647ec",
+    "evals/results/cp23/matcher_coverage_gpt-6-sol_v1/summary_v1.json": "16d60967dba5f61daeb8dfb5b27b90c899250ba93de468061c6d13f48caa0d11"
+  }
+}

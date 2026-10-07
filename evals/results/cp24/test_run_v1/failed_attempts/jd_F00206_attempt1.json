@@ -1,0 +1,8 @@
+{
+ "job_id": "F00206",
+ "status": "failed",
+ "attempts": 1,
+ "error_code": "APITimeoutError",
+ "coverage": {},
+ "extraction": null
+}

@@ -1,0 +1,203 @@
+{
+  "schema_version": "cp23-stage1-post-amendment-validation-v1",
+  "status": "pass_scoped_stage1",
+  "base_manifest_sha256": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+  "amended_manifest_sha256": "6c814e0fff729bbedcdc301fceed591e523ba0c31766e5d83b3a40c8c9b193ec",
+  "changes": {
+    "A": {
+      "added": 0,
+      "removed": 0,
+      "modified": 0,
+      "added_ids": [],
+      "modified_ids": []
+    },
+    "B": {
+      "added": 0,
+      "removed": 0,
+      "modified": 2,
+      "added_ids": [],
+      "modified_ids": [
+        [
+          "CV1",
+          "F00332",
+          "P30-U08"
+        ],
+        [
+          "CV1",
+          "F00332",
+          "P30-U15"
+        ]
+      ]
+    },
+    "C": {
+      "added": 9,
+      "removed": 0,
+      "modified": 1,
+      "added_ids": [
+        [
+          "CV1",
+          "F00010"
+        ],
+        [
+          "CV1",
+          "F00022"
+        ],
+        [
+          "CV1",
+          "F00132"
+        ],
+        [
+          "CV1",
+          "F00284"
+        ],
+        [
+          "CV1",
+          "F00312"
+        ],
+        [
+          "CV1",
+          "F00369"
+        ],
+        [
+          "CV2",
+          "F00090"
+        ],
+        [
+          "CV2",
+          "F00114"
+        ],
+        [
+          "CV2",
+          "F00559"
+        ]
+      ],
+      "modified_ids": [
+        [
+          "CV1",
+          "F00332"
+        ]
+      ]
+    }
+  },
+  "held_counts": {
+    "A_Extraction": 45,
+    "B_Evidence": 39,
+    "C_Relevance": 2
+  },
+  "resolved_C_holds": 3,
+  "original_top10_union_pairs": 70,
+  "availability": [
+    {
+      "cv_id": "CV1",
+      "method": "B0",
+      "top5_judged": 5,
+      "top10_judged": 10,
+      "p5_available": true,
+      "ndcg10_available": true,
+      "top10_unjudged": []
+    },
+    {
+      "cv_id": "CV1",
+      "method": "B1",
+      "top5_judged": 5,
+      "top10_judged": 10,
+      "p5_available": true,
+      "ndcg10_available": true,
+      "top10_unjudged": []
+    },
+    {
+      "cv_id": "CV1",
+      "method": "dense_openai",
+      "top5_judged": 5,
+      "top10_judged": 10,
+      "p5_available": true,
+      "ndcg10_available": true,
+      "top10_unjudged": []
+    },
+    {
+      "cv_id": "CV1",
+      "method": "hybrid_openai",
+      "top5_judged": 5,
+      "top10_judged": 10,
+      "p5_available": true,
+      "ndcg10_available": true,
+      "top10_unjudged": []
+    },
+    {
+      "cv_id": "CV1",
+      "method": "dense_qwen",
+      "top5_judged": 5,
+      "top10_judged": 10,
+      "p5_available": true,
+      "ndcg10_available": true,
+      "top10_unjudged": []
+    },
+    {
+      "cv_id": "CV1",
+      "method": "hybrid_qwen",
+      "top5_judged": 5,
+      "top10_judged": 10,
+      "p5_available": true,
+      "ndcg10_available": true,
+      "top10_unjudged": []
+    },
+    {
+      "cv_id": "CV2",
+      "method": "B0",
+      "top5_judged": 5,
+      "top10_judged": 10,
+      "p5_available": true,
+      "ndcg10_available": true,
+      "top10_unjudged": []
+    },
+    {
+      "cv_id": "CV2",
+      "method": "B1",
+      "top5_judged": 5,
+      "top10_judged": 10,
+      "p5_available": true,
+      "ndcg10_available": true,
+      "top10_unjudged": []
+    },
+    {
+      "cv_id": "CV2",
+      "method": "dense_openai",
+      "top5_judged": 5,
+      "top10_judged": 10,
+      "p5_available": true,
+      "ndcg10_available": true,
+      "top10_unjudged": []
+    },
+    {
+      "cv_id": "CV2",
+      "method": "hybrid_openai",
+      "top5_judged": 5,
+      "top10_judged": 10,
+      "p5_available": true,
+      "ndcg10_available": true,
+      "top10_unjudged": []
+    },
+    {
+      "cv_id": "CV2",
+      "method": "dense_qwen",
+      "top5_judged": 5,
+      "top10_judged": 10,
+      "p5_available": true,
+      "ndcg10_available": true,
+      "top10_unjudged": []
+    },
+    {
+      "cv_id": "CV2",
+      "method": "hybrid_qwen",
+      "top5_judged": 5,
+      "top10_judged": 10,
+      "p5_available": true,
+      "ndcg10_available": true,
+      "top10_unjudged": []
+    }
+  ],
+  "protected_checked": 24,
+  "protected_changes": [],
+  "no_quality_metric_or_winner": true,
+  "api_calls": 0
+}

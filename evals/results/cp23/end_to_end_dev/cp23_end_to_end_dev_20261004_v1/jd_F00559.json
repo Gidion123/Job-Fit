@@ -1,0 +1,26 @@
+{
+  "job_id": "F00559",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "f93000a948689b7e0894121f94768fa72a1a6fba6be0bfad276d35b9e1f0bb26",
+  "wall_ms": 4932,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00559",
+    "units": [],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

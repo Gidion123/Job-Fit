@@ -1,0 +1,15 @@
+{
+  "job_id": "F00332_paste",
+  "result_sha256": "0b1d5822c21d98fbcadfc35db850c038f4d740419c83d41f369e5bcf724e6a09",
+  "date": "2026-10-03",
+  "checked_by": "delegated source reviewer",
+  "corrections": [
+    "Q02 explicitly lists Python, SQL, AND MS Excel. There is no or. Extract three independently required tool-use units and preserve experience using for each. Such-as examples do not permit changing explicit AND to OR.",
+    "Q01 explicitly permits Fresh Graduate OR bachelor degree. Preserve one education alternative group: fresh graduate branch and bachelor in analytical/quantitative discipline branch (named examples and other-disciplines-considered retained). Do not invent an unrepresentable cardinality or mark this plain OR unresolved; no university ranking or new equivalence.",
+    "Q04 contains excellent problem-solving AND drive to learn/master new technologies/techniques. Extract these independent soft-skill obligations separately with their shared source quote.",
+    "Q07 has large-tabular-data trend/anomaly analysis and communicating those findings as actionable recommendations. Separate these two independently assessable activities, retaining large-tabular-data and actionable-findings scope; do not count an extra umbrella.",
+    "U10 comfortable building SQL-based analyses is a practice/activity: knowledge_area; retain SQL-based analysis scope. The separate named SQL requirement fromQ02 remains skill_tool.",
+    "Keep all other correct units, source quotes, required/preferred scope and the8inventory mappings. No labels, changed scoring rule or invented qualifications."
+  ],
+  "budget_policy": "Second and final attempt for this JD stage within same run and0.40aggregate ceiling. First output retained."
+}

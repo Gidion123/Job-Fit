@@ -1,0 +1,463 @@
+{
+  "date": "2026-10-02",
+  "scope": "authorized CP2.2 takeover; no tuning or test evaluation",
+  "cp22_status": "IN_PROGRESS",
+  "cp23_formal_tuning": "NOT_RUN",
+  "protected_checks": [
+    {
+      "path": "evals/labeling/JobFit_Development_Labeling_v1.3.xlsx",
+      "before_sha256": "4d96852dce52effdc376709cf8c0131f2f9ad1a6f02795cc556fec1819eccb50",
+      "after_sha256": "4d96852dce52effdc376709cf8c0131f2f9ad1a6f02795cc556fec1819eccb50",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "data/processed/jobs_features.jsonl",
+      "before_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+      "after_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "evals/gold/extraction_gold.jsonl",
+      "before_sha256": "f43d4d029f82a392ebc4796fc4bfafc5275ac1afae3a686bee5e4ca2a3da9a7d",
+      "after_sha256": "f43d4d029f82a392ebc4796fc4bfafc5275ac1afae3a686bee5e4ca2a3da9a7d",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "evals/gold/README.md",
+      "before_sha256": "e4f239dc5e99be3344d4009fffb7667389007a2a62e4383a6b8d8b79ab8606e1",
+      "after_sha256": "516b031f5765c7673812b49a1b8b7cb388737de8982a46d9031452bb95c3dfea",
+      "unchanged": false,
+      "intentional_documentation_change": true
+    },
+    {
+      "path": "evals/gold/evidence_gold.jsonl",
+      "before_sha256": "d0e10f01bf3cefa69d227316ed561c02ecc31f009a497eb7508dec44b3d5f6e0",
+      "after_sha256": "d0e10f01bf3cefa69d227316ed561c02ecc31f009a497eb7508dec44b3d5f6e0",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "evals/gold/relevance_gold.csv",
+      "before_sha256": "144a185ca867c04816e791d4e5c5d849554216708f517b05824a69ba4ffe3011",
+      "after_sha256": "144a185ca867c04816e791d4e5c5d849554216708f517b05824a69ba4ffe3011",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "evals/splits/test_job_ids.txt",
+      "before_sha256": "b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435",
+      "after_sha256": "b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "evals/splits/dev_job_ids.txt",
+      "before_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+      "after_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "evals/splits/README.md",
+      "before_sha256": "ff702b41e8a9ef0c32b4f362ee2b999ac462c65b1ffda4bbdf35324daf6bbfc7",
+      "after_sha256": "ff702b41e8a9ef0c32b4f362ee2b999ac462c65b1ffda4bbdf35324daf6bbfc7",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "evals/splits/split_manifest.json",
+      "before_sha256": "f21741eb93c959b8d39f4c0227f7d9106aef4e815d51ecd379f68015ba1a39c2",
+      "after_sha256": "f21741eb93c959b8d39f4c0227f7d9106aef4e815d51ecd379f68015ba1a39c2",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "evals/pools/dev_pool.csv",
+      "before_sha256": "77825f8504d45baa577dbb12cf91585368b546da5e5cbbdbfd3085e6a807661e",
+      "after_sha256": "77825f8504d45baa577dbb12cf91585368b546da5e5cbbdbfd3085e6a807661e",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "data/synthetic_cvs/cv_05_ml_engineer_3yr_en.md",
+      "before_sha256": "e1783410f744da5e3668fbff3831e26c70475d7f0ebb66ad1381248ee541d4cf",
+      "after_sha256": "e1783410f744da5e3668fbff3831e26c70475d7f0ebb66ad1381248ee541d4cf",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "data/synthetic_cvs/cv_03_junior_ml_engineer_1yr_en.md",
+      "before_sha256": "890f79b64524bc450067ebc8025927411a7271a62a6ea7284683dcfdb9ed45cc",
+      "after_sha256": "890f79b64524bc450067ebc8025927411a7271a62a6ea7284683dcfdb9ed45cc",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md",
+      "before_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+      "after_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "data/synthetic_cvs/cv_04_data_analyst_to_ds_id.md",
+      "before_sha256": "ac26fada867130ef3ed916da69d0bebbb302591c05008653ac02dcfb720e7e64",
+      "after_sha256": "ac26fada867130ef3ed916da69d0bebbb302591c05008653ac02dcfb720e7e64",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md",
+      "before_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "after_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "config/tokenizers_v1.json",
+      "before_sha256": "bacd0aa6b68e6e356d86d4008bcb1e510d775f8a6d6298059a21f0a8d788d922",
+      "after_sha256": "bacd0aa6b68e6e356d86d4008bcb1e510d775f8a6d6298059a21f0a8d788d922",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "config/skill_aliases_v0.yaml",
+      "before_sha256": "28b922f6fe606a3b8aaf8c6140c54e9db4c7fe81284f2925a636d8452318fbe3",
+      "after_sha256": "28b922f6fe606a3b8aaf8c6140c54e9db4c7fe81284f2925a636d8452318fbe3",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "config/pipeline_v1.yaml",
+      "before_sha256": "ba44704f573f9fabb24ff45a2b0142b5c00ac93af55902429500c020a3cd1dc8",
+      "after_sha256": "ba44704f573f9fabb24ff45a2b0142b5c00ac93af55902429500c020a3cd1dc8",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "config/models_v1.yaml",
+      "before_sha256": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+      "after_sha256": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "config/retrieval_v1.yaml",
+      "before_sha256": "c54422081f79d3d9031367344de7b4813407410f911c849ae7721e7219495d7a",
+      "after_sha256": "c54422081f79d3d9031367344de7b4813407410f911c849ae7721e7219495d7a",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "config/archive/pipeline_v1_pre_D049_20261002.yaml",
+      "before_sha256": "a8f219e74952c18451b93e469a1c3750e8f631f88e40ca387bc51a9ea690a4f8",
+      "after_sha256": "a8f219e74952c18451b93e469a1c3750e8f631f88e40ca387bc51a9ea690a4f8",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "prompts/jd_extraction_v1.md",
+      "before_sha256": "0e17816b88703fdc26e341894c6ea87e8a79ba7f6dcfe2694a855458f63e6ad4",
+      "after_sha256": "0e17816b88703fdc26e341894c6ea87e8a79ba7f6dcfe2694a855458f63e6ad4",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "prompts/cv_suggestions_v1.md",
+      "before_sha256": "3ccc0634e70f0ad7ead45260a039d5252ad018f90a111bbea9b43bceabe201c6",
+      "after_sha256": "3ccc0634e70f0ad7ead45260a039d5252ad018f90a111bbea9b43bceabe201c6",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "prompts/jd_extraction_v1_1.md",
+      "before_sha256": "8c91296b0861a82654ede5bec46f60d324cc08dcee3d62bc690d7a36136052d0",
+      "after_sha256": "8c91296b0861a82654ede5bec46f60d324cc08dcee3d62bc690d7a36136052d0",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "prompts/market_insight_v1.md",
+      "before_sha256": "ad7e355e30f94f582a3dd7f33446c58893a5ad7ad6659dafbe1de0d1619eb0aa",
+      "after_sha256": "ad7e355e30f94f582a3dd7f33446c58893a5ad7ad6659dafbe1de0d1619eb0aa",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "prompts/evidence_matching_v1.md",
+      "before_sha256": "bbaaddea09a4364d5365376dc51ade462ffab9487149d0d6a9753991f5757816",
+      "after_sha256": "bbaaddea09a4364d5365376dc51ade462ffab9487149d0d6a9753991f5757816",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "prompts/jd_extraction_v1_2.md",
+      "before_sha256": "35525ee62f8aa7f79307d8d8b95141e85c7d30fa06b359a9dcb48c3a6cad1836",
+      "after_sha256": "35525ee62f8aa7f79307d8d8b95141e85c7d30fa06b359a9dcb48c3a6cad1836",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "prompts/cv_parsing_v1.md",
+      "before_sha256": "1847ef471c4d72b20b27c9f8f276a28a833d28e15f4aad28100494cf026dc341",
+      "after_sha256": "1847ef471c4d72b20b27c9f8f276a28a833d28e15f4aad28100494cf026dc341",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    },
+    {
+      "path": "prompts/evidence_matching_v1_1.md",
+      "before_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+      "after_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+      "unchanged": true,
+      "intentional_documentation_change": false
+    }
+  ],
+  "fixture_revisions": [
+    {
+      "path": "evals/fixtures/v1_3/dev_01_clear_match.json",
+      "sha256": "7e37f9bd86858009c1fdf7e4655fb3528f9e51c834d3522551f70b69c5f4ba84",
+      "expected": {
+        "score_pct": 87.5,
+        "status": "final",
+        "required_total": 4,
+        "matched": 3,
+        "partial": 1,
+        "met_display": "3.5 of 4 required requirements",
+        "constraint_state": "compatible"
+      },
+      "review_kind": "delegated technical and semantic examination under user instruction",
+      "independent_human_approval": false
+    },
+    {
+      "path": "evals/fixtures/v1_3/dev_02_experience_too_short.json",
+      "sha256": "7211f29b3b62ef44b97ef7d152392bb1e8032635e454354f030c35caad954470",
+      "expected": {
+        "score_pct": 83.33,
+        "status": "final",
+        "required_total": 3,
+        "matched": 2,
+        "partial": 1,
+        "constraint_state": "explicit_conflict"
+      },
+      "review_kind": "delegated technical and semantic examination under user instruction",
+      "independent_human_approval": false
+    },
+    {
+      "path": "evals/fixtures/v1_3/dev_03_duration_unknown.json",
+      "sha256": "06fd91490991378e952cf01a45caf94b73f009166e5995d660a4daa1b9f1db81",
+      "expected": {
+        "score_pct": 75.0,
+        "status": "final",
+        "required_total": 2,
+        "matched": 1,
+        "partial": 1,
+        "constraint_state": "unknown"
+      },
+      "review_kind": "delegated technical and semantic examination under user instruction",
+      "independent_human_approval": false
+    },
+    {
+      "path": "evals/fixtures/v1_3/dev_04_or_alternative_group.json",
+      "sha256": "1fc302bb8b467f488e4f3cc048993102dbff64f10809b4fc71a96521067c8da5",
+      "expected": {
+        "score_pct": 50.0,
+        "status": "final",
+        "required_total": 3,
+        "matched": 1,
+        "partial": 1,
+        "constraint_state": "unknown"
+      },
+      "review_kind": "delegated technical and semantic examination under user instruction",
+      "independent_human_approval": false
+    },
+    {
+      "path": "evals/fixtures/v1_3/dev_05_repeated_requirement.json",
+      "sha256": "94638b333c7650ed23de168acd3c5257074167dbb7a5b25b0075443fdad4ce8c",
+      "expected": {
+        "score_pct": 62.5,
+        "status": "final",
+        "required_total": 4,
+        "matched": 2,
+        "partial": 1,
+        "merged_quotes_for_u1": 2,
+        "constraint_state": "unknown"
+      },
+      "review_kind": "delegated technical and semantic examination under user instruction",
+      "independent_human_approval": false
+    },
+    {
+      "path": "evals/fixtures/v1_3/dev_06_ambiguous_importance.json",
+      "sha256": "32ac1cbaf54907bb8ab8b8bf990ce49ecf69dafe6f55e21e6f9acb3b1125dcf5",
+      "expected": {
+        "score_pct": 83.33,
+        "status": "provisional",
+        "required_total": 3,
+        "matched": 2,
+        "partial": 1,
+        "unknown_importance_total": 1,
+        "preferred_total": 1,
+        "preferred_met": 0,
+        "constraint_state": "unknown"
+      },
+      "review_kind": "delegated technical and semantic examination under user instruction",
+      "independent_human_approval": false
+    },
+    {
+      "path": "evals/fixtures/v1_3/dev_07_no_assessable_requirement.json",
+      "sha256": "4f5a44dfa242c11249d081267a0f2310382644f5e95804b9cb3cff295daf3957",
+      "expected": {
+        "score_pct": null,
+        "status": "no_score",
+        "required_total": 0,
+        "constraint_state": "unknown"
+      },
+      "review_kind": "delegated technical and semantic examination under user instruction",
+      "independent_human_approval": false
+    },
+    {
+      "path": "evals/fixtures/v1_3/dev_08_parsing_failure.json",
+      "sha256": "8fce9ac90b5058dd90c19f54933dadc5b79356c44789dc06e9b83724f223bf83",
+      "expected": {
+        "score_pct": null,
+        "status": "on_hold",
+        "required_total": 3,
+        "constraint_state": "unknown"
+      },
+      "review_kind": "delegated technical and semantic examination under user instruction",
+      "independent_human_approval": false
+    }
+  ],
+  "gold_bundle": "evals/gold/development_v13_reviewed_20261002_r2",
+  "gold_manifest_sha256": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+  "export_counts": {
+    "A_Extraction": {
+      "read": 1113,
+      "approved": 1113,
+      "rejected": 10,
+      "approved_retained": 1103,
+      "staged": 1058,
+      "held_retained": 45,
+      "promoted": 1058
+    },
+    "B_Evidence": {
+      "read": 1419,
+      "approved": 1419,
+      "rejected": 16,
+      "approved_retained": 1403,
+      "staged": 1364,
+      "held_retained": 39,
+      "promoted": 1364
+    },
+    "C_Relevance": {
+      "read": 74,
+      "approved": 74,
+      "rejected": 0,
+      "approved_retained": 74,
+      "staged": 69,
+      "held_retained": 5,
+      "promoted": 69
+    }
+  },
+  "readiness_status": "blocked",
+  "readiness_artifact": "evals/results/cp23_reviewed_bundle_readiness_20261002.json",
+  "tests": [
+    {
+      "file": "evals/results/cp22_takeover_final_offline_20261002.xml",
+      "sha256": "51e2d81975e009fb933b4709919e19cd7cbc2592d897dacb72841b4f8b870feb",
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "2",
+      "tests": "296",
+      "time": "7.768",
+      "timestamp": "2026-10-02T23:08:30.194992+07:00",
+      "hostname": "Gidions-MacBook-Pro.local"
+    },
+    {
+      "file": "evals/results/cp22_takeover_database_verified_20261002.xml",
+      "sha256": "8fe8fadef9525caff15084146b739534cb36c05ac355907d6bee1225ec5de80a",
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "5",
+      "time": "0.588",
+      "timestamp": "2026-10-02T23:05:44.177767+07:00",
+      "hostname": "Gidions-MacBook-Pro.local"
+    }
+  ],
+  "test_counts_overlap": true,
+  "markdown_links": [
+    {
+      "from": "docs/checkpoint_2/CP2_02_Modeling_Pipeline.md",
+      "target": "../../evals/gold/development_v13_reviewed_20261002_r2/manifest.json",
+      "exists": true
+    },
+    {
+      "from": "docs/checkpoint_2/CP2_02_Modeling_Pipeline.md",
+      "target": "supporting/CP22_Acceptance_Review_20261002.md",
+      "exists": true
+    },
+    {
+      "from": "docs/checkpoint_2/CP2_02_Modeling_Pipeline.md",
+      "target": "../../evals/gold/development_v13_reviewed_20261002_r2/manifest.json",
+      "exists": true
+    },
+    {
+      "from": "docs/checkpoint_2/CP2_02_Modeling_Pipeline.md",
+      "target": "../../evals/gold/development_v13_reviewed_20261002_r2/held_records.json",
+      "exists": true
+    },
+    {
+      "from": "docs/checkpoint_2/CP2_02_Modeling_Pipeline.md",
+      "target": "../../evals/results/cp23_reviewed_bundle_readiness_20261002.json",
+      "exists": true
+    },
+    {
+      "from": "docs/checkpoint_2/CP2_02_Modeling_Pipeline.md",
+      "target": "../../evals/results/cp22_retrieval_top30_20261002_03.json",
+      "exists": true
+    },
+    {
+      "from": "docs/checkpoint_2/CP2_02_Modeling_Pipeline.md",
+      "target": "../../evals/results/cp22_closure_f00034_semantic_check_20261002.json",
+      "exists": true
+    },
+    {
+      "from": "docs/checkpoint_2/CP2_02_Modeling_Pipeline.md",
+      "target": "supporting/archive/CP2_02_Modeling_Pipeline_before_takeover_20261002.md",
+      "exists": true
+    },
+    {
+      "from": "docs/checkpoint_2/supporting/CP22_Acceptance_Review_20261002.md",
+      "target": "../CP2_02_Modeling_Pipeline.md",
+      "exists": true
+    },
+    {
+      "from": "docs/checkpoint_2/supporting/CP22_Acceptance_Review_20261002.md",
+      "target": "archive/CP22_Acceptance_before_takeover_20261002.md",
+      "exists": true
+    }
+  ],
+  "live_probe_status": "stopped_semantic_issue",
+  "live_current_version_full_chain_pass": false,
+  "takeover_api_calls": 0,
+  "takeover_cost_usd": "0",
+  "ledger_records": 110,
+  "ledger_guard_total_usd": "0.220349844",
+  "uncertain_reservation_usd": "0.0210861",
+  "ledger_recorded_charge_subtotal_usd": "0.199263744",
+  "ledger_sha256": "90b3aa03c049ce6f4a4b4f83a30015a011a46b4005c42791b41e764e773e1848",
+  "workbook_written": false,
+  "test_labels_read": false,
+  "test_cv_content_used": false,
+  "git_used": false,
+  "limitations": [
+    "Record gold does not certify full-source completeness/model alignment",
+    "Source-bullet guard is not semantic recall",
+    "CP2.2 real-model semantic acceptance remains open"
+  ]
+}

@@ -1,0 +1,638 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00208",
+  "model": "gpt-6-luna",
+  "status": "done",
+  "error_code": null,
+  "wall_ms": 36350,
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "Jakarta Selatan, Indonesia · [EMAIL] · [PHONE] · [PROFILE]"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "Jakarta Selatan, Indonesia · [EMAIL] · [PHONE] · [PROFILE]"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+          ]
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+          ]
+        },
+        {
+          "branch_id": "B6",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U10",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U11",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U12",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U13",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U14",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U15",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U16",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U17",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U18",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U19",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U20",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U21",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U22",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U23",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U24",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U25",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U26",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U27",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U28",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U29",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U30",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B6",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B7",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B8",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U31",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U32",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U33",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U34",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U35",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U36",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U37",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh · Februari 2025 - Juni 2025"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U38",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U39",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U40",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "- Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data"
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U41",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ],
+  "scores": {
+    "H1": {
+      "score": {
+        "score_pct": null,
+        "status": "on_hold",
+        "matched": 5,
+        "partial": 3,
+        "required_total": 23,
+        "preferred_met": 1,
+        "preferred_total": 11,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 4,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 3,
+        "constraint_units_total": 2,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Required units not judged yet: U05, U14, U18, U25",
+          "Requirement structure needs review; identified denominator is not validated."
+        ]
+      },
+      "excluded": []
+    },
+    "H2": {
+      "score": {
+        "score_pct": 34.21,
+        "status": "provisional",
+        "matched": 5,
+        "partial": 3,
+        "required_total": 19,
+        "preferred_met": 1,
+        "preferred_total": 11,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 4,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 3,
+        "constraint_units_total": 2,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Some requirements need checking; excluded unresolved units are listed separately."
+        ]
+      },
+      "excluded": [
+        {
+          "unit_id": "U05",
+          "text": "8-10 years of progressive experience in machine learning, AI engineering, or data science, with at least 3 years focused on applied AI and production ML systems.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "8-10 years of progressive experience in machine learning, AI engineering, or data science, with at least 3 years focused on applied AI and production ML systems."
+          ]
+        },
+        {
+          "unit_id": "U14",
+          "text": "Experience designing and deploying production-grade AI/ML systems, including end-to-end ML pipelines covering training, evaluation, versioning, deployment, and monitoring.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "Demonstrated experience designing and deploying production-grade AI/ML systems, including end-to-end ML pipelines covering training, evaluation, versioning, deployment, and monitoring."
+          ]
+        },
+        {
+          "unit_id": "U18",
+          "text": "Experience building and operationalizing LLM-powered applications, including prompt engineering, retrieval-augmented generation (RAG), and tool/agent orchestration frameworks.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "Experience building and operationalizing LLM-powered applications, including prompt engineering, retrieval-augmented generation (RAG), and tool/agent orchestration frameworks."
+          ]
+        },
+        {
+          "unit_id": "U25",
+          "text": "Proven ability to serve as a senior technical individual contributor, setting standards, making architectural decisions, and mentoring peers without formal management authority.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "Proven ability to serve as a senior technical individual contributor, setting standards, making architectural decisions, and mentoring peers without formal management authority."
+          ]
+        }
+      ]
+    },
+    "H2v2": {
+      "score": {
+        "score_pct": null,
+        "status": "on_hold",
+        "matched": 5,
+        "partial": 3,
+        "required_total": 23,
+        "preferred_met": 1,
+        "preferred_total": 11,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 4,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 3,
+        "constraint_units_total": 2,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Required units not judged yet: U05, U14, U18, U25",
+          "An experience, level or education requirement needs checking: U05, U25."
+        ]
+      },
+      "excluded": []
+    }
+  }
+}

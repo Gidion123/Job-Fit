@@ -1,0 +1,72 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00351",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "wall_ms": 9284,
+  "score": {
+    "score_pct": null,
+    "status": "no_score",
+    "matched": 0,
+    "partial": 0,
+    "required_total": 0,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 1,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 1,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+      "Not enough information to compute"
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Lulusan S1 Statistika yang tertarik pada data science dan machine learning.",
+        "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+        "Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ],
+  "source_flags": [
+    {
+      "unit_id": "U01",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Lulusan S1 Statistika yang tertarik pada data science dan machine learning.",
+      "cv_span": "Lulusan S1 Statistika yang tertarik pada data science dan machine learning.",
+      "start": 98,
+      "end": 173,
+      "flags": []
+    },
+    {
+      "unit_id": "U01",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "cv_span": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "start": 1228,
+      "end": 1328,
+      "flags": []
+    },
+    {
+      "unit_id": "U01",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+      "cv_span": "Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+      "start": 1331,
+      "end": 1416,
+      "flags": []
+    }
+  ]
+}

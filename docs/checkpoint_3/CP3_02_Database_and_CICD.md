@@ -3,10 +3,10 @@
 **Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
 **Bootcamp checkpoint:** 16. Integrasi Database & GitHub Actions CI/CD · official date 6 Oct 2026  
 **JobFit version of this checkpoint:** PostgreSQL with pgvector, and GitHub Actions for CI/CD.  
-**Planned work:** 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) · **Actual:** not run yet  
-**Status:** PLANNED / NOT RUN · design basis: System Design v1.3
+**Planned work:** 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) · **Actual:** 6 Oct 2026  
+**Status:** PARTIAL · Docker and CI ready; hosting deploy waits for Dion · design basis: System Design v1.3
 
-> This report is a plan. It contains no results yet. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
+> Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
 
 ## 1. Goal of this stage
 
@@ -25,6 +25,15 @@ Make the system reproducible from a fresh clone and deployable.
 4. Secrets through environment variables only.
 5. Deploy the database and the API on the chosen host.
 6. Precompute the saved demo results for the synthetic CVs.
+
+## 3A. D-051 persistence and deployment gate
+
+Follow [privacy-threat-model.md](../privacy-threat-model.md). PostgreSQL/pgvector stores public jobs and explicitly synthetic demo data only for these paths, not private CVs, profiles, vectors, pasted JDs or reports. Audit feedback so it cannot silently retain document/contact payloads. Volatile private session storage must have persistence/backups disabled; adding a shared store or replicas needs an explicit isolation/retention design. Check Streamlit/FastAPI/proxy temporary upload copies, host logs/traces/crash dumps, backup volumes, TLS and server-only secrets.
+
+- [ ] No private-data migration or durable cache introduced.
+- [ ] Synthetic-canary inspection of database, logs, temporary files and hosting persistence.
+- [ ] CI runs privacy regression tests; deployed cleanup and session routing match the documented topology.
+
 
 ## 4. Planned outputs
 
@@ -77,8 +86,16 @@ Not run yet.
 
 ## 12. Decisions from this stage
 
-None yet. Decisions are recorded in the [decision log](../decisions.md) when they are made.
+D-051 privacy design is approved; implementation outcomes and release acceptance are pending. Record outcomes in the [decision log](../decisions.md) without treating design approval as a test pass.
 
 ## 13. Next step
 
 CP3.3 (checkpoint 17): Streamlit UI.
+
+## Results (6 Oct 2026)
+
+- **Docker:** `Dockerfile.api` (saved demo works with no database and no model call; live analysis off by default), `Dockerfile.ui`, and api/ui/db services in `docker-compose.yml`, all bound to 127.0.0.1. Two start-up bugs were found on Dion's Mac and fixed (FAIL-29 path, FAIL-30 file permissions).
+- **CI:** `.github/workflows/tests.yml` runs ruff (syntax and undefined names), the offline tests, both image builds and a `/health` smoke check. It starts only after Dion pushes; a local simulation without git-ignored files gave 615 passed, 9 skipped.
+- **Database:** the job corpus, embeddings and search already run on PostgreSQL with pgvector (CP2.1). Changes from the plan, on purpose: the demo cache is a versioned file bundle (`evals/demo/saved_demo_v4/`, D-022 key checks), JD requirements stay versioned JSON records, and feedback lives in memory with categories only. No private CV data is ever written to the database (D-051).
+- **Secrets:** only through environment variables (`.env` for local work, host variables for deployment); `.env` is git-ignored and excluded from the images.
+- **Pending (needs Dion):** Railway account and cost confirmation (D-023), loading the corpus snapshot into the hosted database, and the first deploy. Without the hosted database the deployed app still serves the saved demo.

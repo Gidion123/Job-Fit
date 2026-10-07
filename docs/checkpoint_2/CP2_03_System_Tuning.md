@@ -1,88 +1,77 @@
 # CP2.3: System Tuning
 
-**Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
-**Bootcamp checkpoint:** 10. Hyperparameter Tuning · official date 30 Sep 2026  
-**JobFit version of this checkpoint:** Tuning means choosing system settings with measurements: stage-1 search method, K, prompt version, LLM model, and the PARTIAL weight.  
-**Planned work:** 2 Oct 2026 · **Actual:** not run yet  
-**Status:** PLANNED / NOT RUN · design basis: System Design v1.3
+**Final update, 6 October 2026:** **Status:** DONE for development; the freeze receipt waits for Dion's approval. Gold r4 (D-085) completed the judgments. The D-078 rule chose K 10, PARTIAL weight 0.5 and the seniority rule; Hybrid Qwen stays under D-084; GPT-6 Sol matches (D-083); the experience block joins the freeze (D-086). Final product order on development: macro P@5 0.70, NDCG@10 0.552 (0.568 with the experience block). With the seniority rule, stage 1 alone reaches P@5 0.70 and NDCG@10 0.550, so stage 2 adds explanations rather than ranking gain on these two CVs. Details: [EXP-20261006-R4](../experiments.md).
 
-> This report is a plan. It contains no results yet. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
+**Earlier status (3 to 4 October 2026):** IN PROGRESS. D-068 records a provisional development configuration. The later pipeline v1.1 experiment has 42 of 60 development pairs with a final or explicitly provisional score under D-071, below its 54 of 60 target. It cannot confirm H4, K, the PARTIAL weight or full one-CV latency. D-050 extraction and D-051 privacy impact remain open. The frozen test set has not been used.
 
-## 1. Goal of this stage
+**Audit update, 4 October 2026:** see the [audit fixes report](supporting/CP23_Audit_Fixes_20261004.md). H2v2 (D-072) gives 33 of 60 usable pairs, product-order metrics (D-073) make final-order cells measurable, a seniority rule (D-074) is a development candidate, bootstrap intervals (D-075) show DeepSeek and Luna are not distinguishable on this sample, and a Luna matching check (D-076) is approved but not yet run.
 
-Choose the configuration with measurements on the development set, not by changing settings without a metric.
+## Summary
 
-## 2. Inputs and prerequisites
+JobFit compared six retrieval methods, two embedding models, and six LLM configurations across round one, reference and round two. Qwen met the pre-registered embedding selection rule. Hybrid Qwen and DeepSeek Flash were chosen provisionally for candidate retrieval, JD extraction and evidence matching. The larger Part B collection exposed extraction and matching coverage limits. Pipeline v1.1 raised process-valid JD extraction and score coverage but did not meet its coverage target; no K or PARTIAL weight can be selected from complete final-order metrics. The [main comparison report](CP2_03_Model_Comparison.md) contains the small fixed-case comparison. The [Part B report](supporting/CP23_PartB_Development_Run_20261004.md) and [pipeline v1.1 report](supporting/CP23_Pipeline_v11_20261004.md) retain both larger runs and their limits.
 
-- Checkpoint 9 outputs
-- Development labels reviewed by Dion
-- Locked test split (not used here)
+## Goal
 
-## 3. Planned method
+Choose a measured configuration for recommending jobs from a CV. Keep candidate retrieval, requirement extraction, evidence matching and final ordering distinct so that one metric cannot hide a failure in another stage.
 
-1. Compare the stage-1 methods (B0, B1, B2, hybrid RRF) and, if D-044 option A is approved, the two embedding models with Recall@K on the development pool (silver labels, D-044). With option B, use hybrid RRF and K = 20 as the default and only measure the methods in CP2.4.
-2. Choose K for stage 2 from 10, 20, 30 by recall, latency, and cost.
-3. Compare extraction prompt v1 and v2.
-4. LLM comparison round 1 (D-029) on about 30 development cases: `deepseek-flash`, GPT-6 Luna, Gemini 3.5 Flash-Lite, Claude Haiku 4.5, all through OpenRouter, with GPT-6 Sol on at most 10 hard cases as the quality reference. Choose with the fixed selection rule. Round 2 only if the rule asks for it.
-5. Audit the PARTIAL weight (0.5) against the relevance labels.
-6. Build the recommendation list end to end: filters, filter status, UNKNOWN option, ordering rules, statuses for not analyzed and failed jobs.
-7. Keep labeling the test set (Dion).
+## Inputs
 
-## 4. Planned outputs
+- Locked 214-job development half of the 428 target-role jobs, with CV1 and CV2 only.
+- Reviewed development relevance labels, seven JD extraction references, and four fixed CV/JD evidence pairs containing 73 requirement units.
+- Frozen source and split hashes, versioned prompts, saved model outputs, source-span validation, the usage ledger and D-029/D-044/D-052/D-054 evaluation rules.
+- The untouched test split, CV3 through CV5, and real CVs are outside this stage's model-selection inputs.
 
-- experiment table in docs/experiments.md with config snapshots
-- quality vs latency vs cost table
-- working recommendation list (script or endpoint)
-- this stage report
+## What was done
 
-## 5. Acceptance criteria
+1. Compared keyword B0, PostgreSQL FTS B1, dense and hybrid retrieval with both embedding models on identical development scopes.
+2. Compared four low-cost LLMs for extraction and matching, then measured GPT-6 Sol as a quality reference and DeepSeek Pro as a second-round candidate.
+3. Fixed a request-repair framing defect. Preserved original A results and used the bug-fixed B view as the primary operational comparison under D-066.
+4. Applied validator v1.1, bounded guardrails G1/G2 and the D-067 SQL reference consistently. Strict D-054 accounting was also applied to Gemini/F00815.
+5. Recorded the provisional D-068 configuration, six comparison figures, a Part B coverage figure, a one-page presentation summary and an explicit K=20 cost projection.
+6. Ran a capped development end-to-end check on the frozen Hybrid Qwen top-30 lists. It stopped after two matching transport timeouts, then resumed only 31 untouched pairs under Dion's amended US$2.50 total cap. All 60 pair records are saved. The [Part B report](supporting/CP23_PartB_Development_Run_20261004.md) separates collection from score quality.
+7. Checked optional-filter grouping and a mechanical masked-quote mapping on synthetic CV1/CV2. The Part B evaluator now holds percentages for JD units marked `needs_review`, following D-049. These checks are offline and do not approve semantic labels or public CV handling.
+8. Ran a versioned pipeline v1.1 coverage experiment on the same 60 development pairs. Dynamic output limits, longer timeouts, four-worker matching and D-071's provisional H2 hold rule were tested. A bounded follow-up retained unresolved source and model failures rather than loosening validation.
 
-- Every change has a before/after on the development set, and the keep/remove decision is written.
-- The test set is not used for tuning.
-- Spend stays within the budget guard.
-- The chosen stage-1 method, K, prompt, and model are recorded in docs/decisions.md, with the D-029 rule applied as written.
+## Results
 
-## 6. Evidence to keep
+| Question | Development result | Record |
+| --- | --- | --- |
+| Embedding | Qwen beats OpenAI by 0.206 dense and 0.077 hybrid labeled-pool Recall@20, exceeding D-044's 0.05 rule | [Retrieval report](supporting/CP23_Stage3_Retrieval_Comparison_20261003.md) |
+| Candidate method | Hybrid Qwen has the highest labeled-pool Recall@20, 0.549; B0 has the highest P@5, 0.500 | [Comparison](CP2_03_Model_Comparison.md#3-stage-1-retrieval-comparison) |
+| Extraction | DeepSeek Flash F1 0.862 versus Luna 0.794 on seven JDs; strict Gemini F1 0.683 | [Extraction record](../../evals/results/cp23_gemini_f00815_alignment_20261004_v1.json) |
+| Matching | DeepSeek Flash guarded Macro-F1 0.772 versus Luna 0.730 on 73 units, with four valid pairs each | [Validator and selection report](supporting/CP23_Validator_v11_and_A2_Proposal_20261004.md) |
+| Safety | DeepSeek retains two confirmed unsupported positives among 50 positive units; source spans must be displayed | [Decision D-068](../decisions.md) |
+| Cost and latency | Cached-JD K20 matching projection is US$0.203 for DeepSeek; its observed matching request p95 is 90.747 seconds | [Projection](../../evals/results/cp23_k20_cost_projection_20261004_v1.json) |
+| Larger development check | 51/52 JDs attempted, 37 process-valid and 14 failed; 25 pass deterministic score eligibility. All 60 pair records saved, but only 20 final scores; 0/18 complete final-order metric cells | [Part B completion](../../evals/results/cp23/end_to_end_dev/cp23_partb_completion_20261004_v3.json) |
+| Pipeline v1.1 coverage | 48/51 process-valid JD outputs; H1 26/60 final scores, H2 26 final plus 16 provisional, or 42/60 usable; 0/36 complete H1/H2 final-order cells | [Final v1.1 receipt](../../evals/results/cp23/pipeline_v11/coverage_summary_v2.json) |
 
-- docs/experiments.md entries
-- config snapshots
-- ledger totals
+The [figures](CP2_05_Evaluation_Visualization.md) and [recommendation summary](CP2_06_Recommendation_and_Summary.md) use development results only.
 
-## 7. Estimate and dependencies
+## Interpretation
 
-- **Estimate:** About 1 working day. LLM cost: under US$2 for round 1 and the prompt comparison.
-- **Depends on:** Development labels reviewed; checkpoint 9 pipeline working.
+Hybrid retrieval finds more known relevant candidates at depth, while B0 ranks the first five better in this small pool. DeepSeek's guarded matching quality exceeds Luna's by about 0.042, which is above the revised D-029 0.03 cost switch threshold. DeepSeek is much slower in the observed requests. CP3 needs concurrent matching, cached JD extraction and a precomputed synthetic demo. If one-CV latency proves unacceptable, Luna is the speed fallback with its measured quality trade-off. Match percentages remain evidence coverage of identified required units, not probabilities of hiring.
 
-## 8. Fallback if blocked
+## Limitations
 
-If time is short, cut the LLM comparison to 15 cases and test only K = 10 and 20. If a comparison is not complete, record the choice as provisional, not proven.
+- Only two development CV queries and four fixed evidence pairs informed the choice. Labels were assisted and reviewed by one annotator.
+- The 214-job development half is a tuning scope, not a representative deployment estimate. Deeper ranking positions have incomplete relevance judgments.
+- Gold-input final ordering had no fully scorable K/weight cells. K20 and weight 0.5 remain provisional after pipeline v1.1 because only 42/60 pairs have a final or provisional score under H2. A provisional score excludes listed unresolved units and is less complete than a final score.
+- All 18 Part B and all 36 pipeline v1.1 H1/H2 final-order metric cells are unavailable under D-052's original-position and complete-candidate rule. The scorer's subset diagnostic cannot choose K or the PARTIAL weight. The one-CV K20 end-to-end wall time was not measured. The v1.1 ledger retains a US$0.0501633 uncertain reservation from its interrupted first dispatch.
+- Complete cached extraction coverage for all 214 development jobs is not claimed. D-050 requires a per-job status and an approved scope or budget disposition.
+- D-051 local masking and session controls are prototypes for synthetic data. Paired quality impact and public API/UI security acceptance remain separate gates. Real CV processing is disabled.
+- The Part B score-order diagnostic is not the full D-013 product order. Saved stages do not carry confirmed constraint context. The offline [quote mapping receipt](../../evals/results/cp23_masking_quote_compatibility_20261004_v1.json) found 13 changed evidence rows, all mechanically traceable after masking; semantic compatibility and city policy remain open.
+- Held-out CP2.4 evaluation has not been performed and must not be used to choose prompt, model, K or weight.
 
-## 9. Checklist
+## Decisions
 
-- [ ] Compare the stage-1 methods (B0, B1, B2, hybrid RRF) and, if D-044 option A is approved, the two embedding models with Recall@K on the development pool (silver labels, D-044). With option B, use hybrid RRF and K = 20 as the default and only measure the methods in CP2.4.
-- [ ] Choose K for stage 2 from 10, 20, 30 by recall, latency, and cost.
-- [ ] Compare extraction prompt v1 and v2.
-- [ ] LLM comparison round 1 (D-029) on about 30 development cases: `deepseek-flash`, GPT-6 Luna, Gemini 3.5 Flash-Lite, Claude Haiku 4.5, all through OpenRouter, with GPT-6 Sol on at most 10 hard cases as the quality reference. Choose with the fixed selection rule. Round 2 only if the rule asks for it.
-- [ ] Audit the PARTIAL weight (0.5) against the relevance labels.
-- [ ] Build the recommendation list end to end: filters, filter status, UNKNOWN option, ordering rules, statuses for not analyzed and failed jobs.
-- [ ] Keep labeling the test set (Dion).
-- [ ] Acceptance: Every change has a before/after on the development set, and the keep/remove decision is written.
-- [ ] Acceptance: The test set is not used for tuning.
-- [ ] Acceptance: Spend stays within the budget guard.
-- [ ] Acceptance: The chosen stage-1 method, K, prompt, and model are recorded in docs/decisions.md, with the D-029 rule applied as written.
+- D-044 selects Qwen on development using the pre-registered Recall@20 rule.
+- D-065 approves bounded G1/G2 guardrails. D-066 revises D-029 for v1 safety reporting and per-task selection. D-067 records the consistent SQL example reference.
+- D-068 provisionally selects Hybrid Qwen and DeepSeek Flash for extraction and matching. The selected settings live in [a versioned configuration](../../config/versions/pipeline_cp23_provisional_20261004.yaml). The historical active config remains unchanged because frozen experiment records hash that path.
 
-## 10. Results
+## Changes from the plan
 
-Not run yet.
+The development comparison needed a repair-framing correction, source-bound quote validation and a reviewed SQL reference before model choice. GPT-6 Sol remained a quality reference. Broad JD extraction was carried from CP2.2 under D-050 and is now planned as quality-gated, resumable development work. It cannot be reported complete from a small probe or from the top-30 Part B subset. The historical schedule and the full sequence of changes remain in the [progress log](supporting/CP23_Progress_Log.md).
 
-## 11. Interpretation and limitations
+## Next step
 
-Not run yet.
-
-## 12. Decisions from this stage
-
-None yet. Decisions are recorded in the [decision log](../decisions.md) when they are made.
-
-## 13. Next step
-
-CP2.4 (checkpoint 11): run the chosen configuration on the held-out test set.
+Use the [pipeline v1.1 report](supporting/CP23_Pipeline_v11_20261004.md) as a measured coverage finding, not a full quality benchmark. It reached 42/60 H2 scores against the 54/60 target, with zero complete final-order cells and unresolved semantic disagreements. K and weight remain provisional. D-050 broad extraction and any further retry plan need a separate quality and budget decision. The four-pair D-051 masked comparison remains deferred. Freeze the full test protocol under D-053 before CP2.4. Do not mark CP2.3 DONE until these acceptance items are satisfied or Dion explicitly accepts a documented carry-over.

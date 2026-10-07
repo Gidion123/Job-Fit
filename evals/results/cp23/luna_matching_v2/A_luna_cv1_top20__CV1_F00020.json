@@ -1,0 +1,225 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00020",
+  "model": "gpt-6-luna",
+  "status": "done",
+  "error_code": null,
+  "wall_ms": 15856,
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+          ]
+        },
+        {
+          "branch_id": "B4",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+          ]
+        },
+        {
+          "branch_id": "B5",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+            "Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+          ]
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    }
+  ],
+  "scores": {
+    "H1": {
+      "score": {
+        "score_pct": 50.0,
+        "status": "final",
+        "matched": 2,
+        "partial": 0,
+        "required_total": 4,
+        "preferred_met": 1,
+        "preferred_total": 1,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 4,
+        "soft_skill_matched": 1,
+        "soft_skill_partial": 1,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    },
+    "H2": {
+      "score": {
+        "score_pct": 50.0,
+        "status": "final",
+        "matched": 2,
+        "partial": 0,
+        "required_total": 4,
+        "preferred_met": 1,
+        "preferred_total": 1,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 4,
+        "soft_skill_matched": 1,
+        "soft_skill_partial": 1,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    },
+    "H2v2": {
+      "score": {
+        "score_pct": 50.0,
+        "status": "final",
+        "matched": 2,
+        "partial": 0,
+        "required_total": 4,
+        "preferred_met": 1,
+        "preferred_total": 1,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 4,
+        "soft_skill_matched": 1,
+        "soft_skill_partial": 1,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    }
+  }
+}

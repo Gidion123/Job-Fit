@@ -1,0 +1,2939 @@
+{
+ "cv_id": "CV5",
+ "order": [
+  "F00306",
+  "F00662",
+  "F00853",
+  "F00206",
+  "F00290",
+  "F00070",
+  "F00032",
+  "F00071",
+  "F00599",
+  "F00651"
+ ],
+ "analyzed_ids": [
+  "F00290",
+  "F00206",
+  "F00853",
+  "F00662",
+  "F00306",
+  "F00070",
+  "F00032",
+  "F00071",
+  "F00599",
+  "F00651"
+ ],
+ "stage1_ids": [
+  "F00290",
+  "F00680",
+  "F00206",
+  "F00207",
+  "F00420",
+  "F00289",
+  "F00853",
+  "F00662",
+  "F00306",
+  "F00733",
+  "F00070",
+  "F00535",
+  "F00032",
+  "F00071",
+  "F00191",
+  "F00296",
+  "F00630",
+  "F00599",
+  "F00353",
+  "F00651",
+  "F00371",
+  "F00813",
+  "F00561",
+  "F00557",
+  "F00737",
+  "F00307",
+  "F00780",
+  "F00501",
+  "F00555",
+  "F00048"
+ ],
+ "held_ids": [
+  "F00032",
+  "F00071",
+  "F00599",
+  "F00651"
+ ],
+ "fallback_ids": [
+  "F00071",
+  "F00599",
+  "F00651"
+ ],
+ "versions": {
+  "service": "recommend-service-v1",
+  "pipeline": "pipeline-cp23-freeze-candidate-v4",
+  "seniority_rule": "seniority-demote-3y-v1",
+  "matching_model": "gpt-6-sol",
+  "matching_fallback_model": "gpt-6-luna",
+  "hold_policy": "H2v2",
+  "partial_weight": 0.5,
+  "k": 10,
+  "experience_conflict_rule": "experience-upper-bound-v1",
+  "history_confirmed": true
+ },
+ "wall_s": 84.6,
+ "jobs": {
+  "F00070": {
+   "score": {
+    "score_pct": null,
+    "status": "no_score",
+    "matched": 0,
+    "partial": 0,
+    "required_total": 0,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "Not enough information to compute"
+    ]
+   },
+   "assessments": [],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00032": {
+   "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 0,
+    "partial": 0,
+    "required_total": 0,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "JD extraction not available: jd_quality_looks_incomplete"
+    ]
+   },
+   "assessments": [],
+   "constraints": [],
+   "hold_reason": "JD extraction not available: jd_quality_looks_incomplete",
+   "matcher_model": null,
+   "attempts": []
+  },
+  "F00599": {
+   "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 0,
+    "partial": 0,
+    "required_total": 0,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "Evidence matching did not finish: RunCapReached"
+    ]
+   },
+   "assessments": [],
+   "constraints": [],
+   "hold_reason": "Evidence matching did not finish: RunCapReached",
+   "matcher_model": null,
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "failed",
+     "error": "RunCapReached"
+    },
+    {
+     "model": "gpt-6-luna",
+     "status": "failed",
+     "error": "RunCapReached"
+    }
+   ]
+  },
+  "F00306": {
+   "score": {
+    "score_pct": 100.0,
+    "status": "final",
+    "matched": 4,
+    "partial": 0,
+    "required_total": 4,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 5,
+    "soft_skill_matched": 1,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "**Bachelor of Informatics (S1 Informatika)**, Institut Teknologi Contoh Jakarta · September 2019 - August 2023"
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "**Bachelor of Informatics (S1 Informatika)**, Institut Teknologi Contoh Jakarta · September 2019 - August 2023"
+       ]
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B5",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout.",
+        "- Used Python and SQL to prepare training data and review mislabeled examples with support agents."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Used Python and SQL to prepare training data and review mislabeled examples with support agents."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Used Python and SQL to prepare training data and review mislabeled examples with support agents."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00853": {
+   "score": {
+    "score_pct": 53.85,
+    "status": "final",
+    "matched": 5,
+    "partial": 4,
+    "required_total": 13,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 1,
+    "soft_skill_matched": 1,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "Machine learning engineer with three years of experience across two software companies, building NLP services and an internal RAG assistant.",
+      "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks.",
+      "- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Used Python and SQL to prepare training data and review mislabeled examples with support agents."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Used Python and SQL to prepare training data and review mislabeled examples with support agents."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review.",
+      "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL, scikit-learn, PyTorch, Hugging Face Transformers, FastAPI, PostgreSQL pgvector, Docker, AWS (EC2, S3), Git, GitHub Actions, pytest, Kubernetes (basic), Terraform (basic)"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [
+    {
+     "kind": "experience",
+     "state": "unknown",
+     "message": "U01: total history covers it, but years in the asked role are not verified. JD: Pengalaman 2–4 tahun sebagai software/backend developer"
+    },
+    {
+     "kind": "experience",
+     "state": "unknown",
+     "message": "U02: total history covers it, but years in the asked role are not verified. JD: minimal 1 tahun menyentuh proyek berbasis LLM/AI agent"
+    }
+   ],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00206": {
+   "score": {
+    "score_pct": 50.0,
+    "status": "final",
+    "matched": 3,
+    "partial": 4,
+    "required_total": 10,
+    "preferred_met": 0,
+    "preferred_total": 5,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 4,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Used Python and SQL to prepare training data and review mislabeled examples with support agents.",
+      "- Added pytest checks and a GitHub Actions pipeline for tests and container builds. Production releases still require manual approval."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents.",
+        "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Indonesian (native), English (professional working proficiency)"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00662": {
+   "score": {
+    "score_pct": 85.29,
+    "status": "final",
+    "matched": 14,
+    "partial": 1,
+    "required_total": 17,
+    "preferred_met": 3,
+    "preferred_total": 3,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 2,
+    "soft_skill_matched": 2,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "**Bachelor of Informatics (S1 Informatika)**, Institut Teknologi Contoh Jakarta · September 2019 - August 2023",
+      "- Thesis: \"Text Classification for Customer Support Requests\""
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Machine learning engineer with three years of experience across two software companies, building NLP services and an internal RAG assistant."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week.",
+      "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Used Python and SQL to prepare training data and review mislabeled examples with support agents."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week.",
+      "- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Used Python and SQL to prepare training data and review mislabeled examples with support agents.",
+      "- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Used Python and SQL to prepare training data and review mislabeled examples with support agents."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U20",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Machine learning engineer with three years of experience across two software companies, building NLP services and an internal RAG assistant."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U21",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U22",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "**Bachelor of Informatics (S1 Informatika)**, Institut Teknologi Contoh Jakarta · September 2019 - August 2023"
+       ]
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B5",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B6",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00290": {
+   "score": {
+    "score_pct": 41.3,
+    "status": "final",
+    "matched": 7,
+    "partial": 5,
+    "required_total": 23,
+    "preferred_met": 3,
+    "preferred_total": 15,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 1,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Used Python and SQL to prepare training data and review mislabeled examples with support agents."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week.",
+      "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week.",
+      "- Used Python and SQL to prepare training data and review mislabeled examples with support agents.",
+      "- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL, scikit-learn, PyTorch, Hugging Face Transformers, FastAPI, PostgreSQL pgvector, Docker, AWS (EC2, S3), Git, GitHub Actions, pytest, Kubernetes (basic), Terraform (basic)"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Added pytest checks and a GitHub Actions pipeline for tests and container builds. Production releases still require manual approval."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a local Python report to flag missing predictions and unusually slow batches using synthetic CSV inputs. It was not connected to a production service."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U20",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U21",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks.",
+      "- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U22",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U23",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Added pytest checks and a GitHub Actions pipeline for tests and container builds. Production releases still require manual approval."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U24",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U25",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U26",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U27",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U28",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Introduction to Computer Vision, Contoh Learning Studio · June 2026 (course completed, no certificate)"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U29",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U30",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U31",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Added pytest checks and a GitHub Actions pipeline for tests and container builds. Production releases still require manual approval."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U32",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U33",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U34",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U35",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U36",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U37",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U38",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U39",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00071": {
+   "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 0,
+    "partial": 0,
+    "required_total": 0,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "Evidence matching did not finish: unbounded_required_duration_needs_clarification"
+    ]
+   },
+   "assessments": [],
+   "constraints": [],
+   "hold_reason": "Evidence matching did not finish: unbounded_required_duration_needs_clarification",
+   "matcher_model": null,
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "failed",
+     "error": "RunCapReached"
+    },
+    {
+     "model": "gpt-6-luna",
+     "status": "failed",
+     "error": "unbounded_required_duration_needs_clarification"
+    }
+   ]
+  },
+  "F00651": {
+   "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 0,
+    "partial": 0,
+    "required_total": 0,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "Evidence matching did not finish: unbounded_required_duration_needs_clarification"
+    ]
+   },
+   "assessments": [],
+   "constraints": [],
+   "hold_reason": "Evidence matching did not finish: unbounded_required_duration_needs_clarification",
+   "matcher_model": null,
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "failed",
+     "error": "RunCapReached"
+    },
+    {
+     "model": "gpt-6-luna",
+     "status": "failed",
+     "error": "unbounded_required_duration_needs_clarification"
+    }
+   ]
+  }
+ },
+ "presented": {
+  "cv_id": "CV5",
+  "note": "Match % is CV evidence coverage of the required items, not a hiring probability.",
+  "blocks": [
+   {
+    "title": "Target-role jobs",
+    "filter_state": null,
+    "groups": {
+     "matches": [
+      {
+       "job_id": "F00306",
+       "title": "AI Engineer (Generative AI, Data & Optimisation)",
+       "company": "EtonHouse Singapore",
+       "location": null,
+       "url": null,
+       "score_pct": 100.0,
+       "status": "final",
+       "scored": true,
+       "matched": 4,
+       "partial": 0,
+       "required_total": 4,
+       "soft_skills": {
+        "total": 5,
+        "matched": 1,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Relevant qualification in IT, Computer Science, Data/Analytics, Engineering, or equivalent practical experience",
+         "importance": "required",
+         "field": "education",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Basic programming language",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Used Python and SQL to prepare training data and review mislabeled examples with support agents."
+         ]
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Basic SQL",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Used Python and SQL to prepare training data and review mislabeled examples with support agents."
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Interest in AI / GenAI",
+         "importance": "required",
+         "field": "other",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+         ]
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Willingness to learn fast",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Able to explain work clearly",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Document what you did",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Responsible attitude toward data privacy",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Willingness to work as a team",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks."
+         ]
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00662",
+       "title": "Machine Learning Engineer",
+       "company": "PT Appfuxion Consulting Indonesia",
+       "location": null,
+       "url": null,
+       "score_pct": 85.29,
+       "status": "final",
+       "scored": true,
+       "matched": 14,
+       "partial": 1,
+       "required_total": 17,
+       "soft_skills": {
+        "total": 2,
+        "matched": 2,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Strong knowledge and experience in Pattern Recognition",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week."
+         ]
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Strong knowledge and experience in Computer Science",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "**Bachelor of Informatics (S1 Informatika)**, Institut Teknologi Contoh Jakarta · September 2019 - August 2023",
+          "- Thesis: \"Text Classification for Customer Support Requests\""
+         ]
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Strong knowledge and experience in NLP",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Machine learning engineer with three years of experience across two software companies, building NLP services and an internal RAG assistant."
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Strong knowledge and experience in Generative AI",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+         ]
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Strong knowledge and experience in Neural Networks",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+         ]
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Hands-on experience in fine-tuning LLM Llama model",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Hands-on in prompt engineering",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Proficiency in statistics",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week.",
+          "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+         ]
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Proficiency in algorithms",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week."
+         ]
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Proficiency in data analysis",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Used Python and SQL to prepare training data and review mislabeled examples with support agents."
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Experience in developing machine learning models",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week."
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Experience in implementing machine learning models",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week.",
+          "- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review."
+         ]
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Ability to evaluate new technologies",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Ability to integrate new technologies",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+         ]
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Excellent problem-solving skills",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks."
+         ]
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Excellent analytical skills",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+         ]
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Strong programming skills",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Used Python and SQL to prepare training data and review mislabeled examples with support agents.",
+          "- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review."
+         ]
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "Preferably in Python or R",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Experience with machine learning frameworks and libraries, such as TensorFlow or PyTorch",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U20",
+         "requirement": "Knowledge of natural language processing",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Machine learning engineer with three years of experience across two software companies, building NLP services and an internal RAG assistant."
+         ]
+        },
+        {
+         "unit_id": "U21",
+         "requirement": "Knowledge of deep learning",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+         ]
+        },
+        {
+         "unit_id": "U22",
+         "requirement": "Bachelor's or Master's degree in Computer Science, Statistics, or a related field",
+         "importance": "required",
+         "field": "education",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00853",
+       "title": "AI Agent Developer",
+       "company": "Erela",
+       "location": null,
+       "url": null,
+       "score_pct": 53.85,
+       "status": "final",
+       "scored": true,
+       "matched": 5,
+       "partial": 4,
+       "required_total": 13,
+       "soft_skills": {
+        "total": 1,
+        "matched": 1,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "2–4 years of experience as a software/backend developer",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "Machine learning engineer with three years of experience across two software companies, building NLP services and an internal RAG assistant.",
+          "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks.",
+          "- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review."
+         ]
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "At least 1 year of experience touching LLM/AI agent projects",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+         ]
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Strong in Python",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Used Python and SQL to prepare training data and review mislabeled examples with support agents."
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Familiar with FastAPI or another Python web framework",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Understand modern LLM concepts: prompt engineering",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Understand modern LLM concepts: function/tool calling",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Understand modern LLM concepts: RAG",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+         ]
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Understand modern LLM concepts: context management",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Experience with at least one agent/LLM framework (e.g., LangChain, LlamaIndex, OpenAI/Anthropic SDK, or equivalent)",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Able to work with REST API",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review."
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Able to work with SQL database",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Used Python and SQL to prepare training data and review mislabeled examples with support agents."
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Able to work with system integration",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review.",
+          "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks."
+         ]
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Familiar with Git",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL, scikit-learn, PyTorch, Hugging Face Transformers, FastAPI, PostgreSQL pgvector, Docker, AWS (EC2, S3), Git, GitHub Actions, pytest, Kubernetes (basic), Terraform (basic)"
+         ]
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Familiar with collaborative workflow",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks."
+         ]
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00206",
+       "title": "Open-Source Machine Learning Engineer - US Remote",
+       "company": "Hugging Face",
+       "location": null,
+       "url": null,
+       "score_pct": 50.0,
+       "status": "final",
+       "scored": true,
+       "matched": 3,
+       "partial": 4,
+       "required_total": 10,
+       "soft_skills": {
+        "total": 4,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Public track record of open-source work/contributions, reviewable on GitHub",
+         "importance": "required",
+         "field": "other",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Enjoy collaborating with a community out in the open on GitHub",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Love open source",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Passionate about making complex technology more accessible",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Want to contribute to one of the fastest-growing ML ecosystems",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Strong Python skills, with experience writing clean, well-tested, maintainable library code",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Used Python and SQL to prepare training data and review mislabeled examples with support agents.",
+          "- Added pytest checks and a GitHub Actions pipeline for tests and container builds. Production releases still require manual approval."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Deep hands-on experience with a modern deep-learning framework, especially PyTorch",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+         ]
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "JAX or TensorFlow a plus",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Practical experience with the Hugging Face open-source stack (Transformers, Datasets, Accelerate) or comparable ML libraries",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Solid understanding of modern machine learning",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week."
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Solid understanding of deep learning",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Solid understanding of transformer architectures",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+         ]
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Experience collaborating with a technical community in the open (GitHub issues and reviews, forums, Slack or Discord)",
+         "importance": "required",
+         "field": "other",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Fluent written English for asynchronous collaboration across a distributed, global community",
+         "importance": "required",
+         "field": "language",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Indonesian (native), English (professional working proficiency)"
+         ]
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Experience maintaining an open-source project",
+         "importance": "preferred",
+         "field": "other",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Prior contributions to Transformers, Datasets, Accelerate, or similar libraries",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Familiarity with distributed training, inference optimization, or GPU/accelerator performance work",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "Experience training or fine-tuning models at scale",
+         "importance": "preferred",
+         "field": "other",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Provide a cover letter mentioning why you would like to work in open-source at Hugging Face",
+         "importance": "required",
+         "field": "other",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00290",
+       "title": "AI Engineer Jr/Sr (MALAYSIAN)",
+       "company": "Aurous Consultancy Sdn Bhd",
+       "location": null,
+       "url": null,
+       "score_pct": 41.3,
+       "status": "final",
+       "scored": true,
+       "matched": 7,
+       "partial": 5,
+       "required_total": 23,
+       "soft_skills": {
+        "total": 1,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Proficiency in Python.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Used Python and SQL to prepare training data and review mislabeled examples with support agents."
+         ]
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Proficiency in ML frameworks/algorithms (e.g. scikit-learn, XGBoost, PyTorch, TensorFlow).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week.",
+          "- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+         ]
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Strong grasp of prompt engineering.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Strong grasp of structured extraction.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Strong grasp of RAG.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+         ]
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Strong grasp of embeddings.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Strong grasp of integrating hosted models (Anthropic Claude, Amazon Bedrock).",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Experience training and operationalizing custom ML models end to end (data prep, training, evaluation, deployment, monitoring).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week.",
+          "- Used Python and SQL to prepare training data and review mislabeled examples with support agents.",
+          "- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review."
+         ]
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Experience designing and deploying on AWS.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks."
+         ]
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Hands-on with core AWS services: Lambda, API Gateway, Step Functions, SageMaker, Bedrock, Textract, DynamoDB, S3, ECR, SSM Parameter Store, CloudWatch, VPC/IAM.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks."
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Infrastructure as Code with Terraform — modules, per-environment state backends, plan/apply workflows.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL, scikit-learn, PyTorch, Hugging Face Transformers, FastAPI, PostgreSQL pgvector, Docker, AWS (EC2, S3), Git, GitHub Actions, pytest, Kubernetes (basic), Terraform (basic)"
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "AWS CDK (a plus).",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Solid MLOps understanding: CI/CD.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Added pytest checks and a GitHub Actions pipeline for tests and container builds. Production releases still require manual approval."
+         ]
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Solid MLOps understanding: model registration.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Solid MLOps understanding: monitoring.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a local Python report to flag missing predictions and unusually slow batches using synthetic CSV inputs. It was not connected to a production service."
+         ]
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Solid MLOps understanding: drift detection.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Proven ability to own solution architecture.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "Proven ability to mentor engineers, including leading design and code reviews.",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Familiarity with event-driven architectures.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U20",
+         "requirement": "Familiarity with serverless architectures (Lambda / Step Functions).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U21",
+         "requirement": "Container skills: Docker (Python slim base images, Lambda container images).",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks.",
+          "- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review."
+         ]
+        },
+        {
+         "unit_id": "U22",
+         "requirement": "Container skills: image lifecycle management in ECR.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U23",
+         "requirement": "CI/CD with GitHub Actions.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Added pytest checks and a GitHub Actions pipeline for tests and container builds. Production releases still require manual approval."
+         ]
+        },
+        {
+         "unit_id": "U24",
+         "requirement": "CI/CD with GitHub Actions: OIDC federation to AWS (no long-lived credentials).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U25",
+         "requirement": "CI/CD with GitHub Actions: environment-gated promotion.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U26",
+         "requirement": "OCR experience.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U27",
+         "requirement": "Document-intelligence experience (AWS Textract, IDP pipelines).",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U28",
+         "requirement": "Computer vision / object detection experience (e.g. training and deploying detection models).",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Introduction to Computer Vision, Contoh Learning Studio · June 2026 (course completed, no certificate)"
+         ]
+        },
+        {
+         "unit_id": "U29",
+         "requirement": "Vector search / RAG with a vector store (e.g. pgvector).",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+         ]
+        },
+        {
+         "unit_id": "U30",
+         "requirement": "Data warehouse familiarity such as Amazon Redshift.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U31",
+         "requirement": "Testing and quality tooling: pytest.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Added pytest checks and a GitHub Actions pipeline for tests and container builds. Production releases still require manual approval."
+         ]
+        },
+        {
+         "unit_id": "U32",
+         "requirement": "Testing and quality tooling: property-based testing (Hypothesis / fast-check).",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U33",
+         "requirement": "Testing and quality tooling: SAST/dependency scanning.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U34",
+         "requirement": "API contract discipline with OpenAPI specs.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U35",
+         "requirement": "Full-stack awareness for AI applications: FastAPI backends.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks."
+         ]
+        },
+        {
+         "unit_id": "U36",
+         "requirement": "Full-stack awareness for AI applications: React/Vite/MUI frontends.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U37",
+         "requirement": "Exposure to Responsible AI practices.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U38",
+         "requirement": "Exposure to LLM guardrails (content filtering, confidence scoring, human review).",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U39",
+         "requirement": "AWS certifications (AI/ML Specialty, Solutions Architect) or equivalent.",
+         "importance": "preferred",
+         "field": "certification",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      }
+     ],
+     "conflicts": [],
+     "not_fully_analyzed": [
+      {
+       "job_id": "F00070",
+       "title": "Machine Learning Engineer",
+       "company": "PT Prima Vista Solusi",
+       "location": null,
+       "url": null,
+       "score_pct": null,
+       "status": "no_score",
+       "scored": false,
+       "matched": 0,
+       "partial": 0,
+       "required_total": 0,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [
+        "Not enough information to compute"
+       ],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00032",
+       "title": "Applied AI / Full-Stack AI Engineer (Mandarin / English Speaker)",
+       "company": "HITHINK TECHNOLOGY INDONESIA",
+       "location": null,
+       "url": null,
+       "score_pct": null,
+       "status": "on_hold",
+       "scored": false,
+       "matched": 0,
+       "partial": 0,
+       "required_total": 0,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [
+        "JD extraction not available: jd_quality_looks_incomplete"
+       ],
+       "hold_reason": "JD extraction not available: jd_quality_looks_incomplete",
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [],
+       "matcher_model": null,
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00071",
+       "title": "AI Engineer - DX Orchestration & Intelligence",
+       "company": "Tech Troops",
+       "location": null,
+       "url": null,
+       "score_pct": null,
+       "status": "on_hold",
+       "scored": false,
+       "matched": 0,
+       "partial": 0,
+       "required_total": 0,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [
+        "Evidence matching did not finish: unbounded_required_duration_needs_clarification"
+       ],
+       "hold_reason": "Evidence matching did not finish: unbounded_required_duration_needs_clarification",
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [],
+       "matcher_model": null,
+       "used_fallback": true,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00599",
+       "title": "Data Scientist",
+       "company": "PT. Quad Sinergi Teknologi",
+       "location": null,
+       "url": null,
+       "score_pct": null,
+       "status": "on_hold",
+       "scored": false,
+       "matched": 0,
+       "partial": 0,
+       "required_total": 0,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [
+        "Evidence matching did not finish: RunCapReached"
+       ],
+       "hold_reason": "Evidence matching did not finish: RunCapReached",
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [],
+       "matcher_model": null,
+       "used_fallback": true,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00651",
+       "title": "AI Engineer - LLM & AI Agent",
+       "company": "COMTECNOVA PTE. LTD.",
+       "location": null,
+       "url": null,
+       "score_pct": null,
+       "status": "on_hold",
+       "scored": false,
+       "matched": 0,
+       "partial": 0,
+       "required_total": 0,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [
+        "Evidence matching did not finish: unbounded_required_duration_needs_clarification"
+       ],
+       "hold_reason": "Evidence matching did not finish: unbounded_required_duration_needs_clarification",
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [],
+       "matcher_model": null,
+       "used_fallback": true,
+       "filter_state": null
+      }
+     ]
+    }
+   }
+  ],
+  "active_filters": [],
+  "empty_message": null,
+  "analyzed": 10,
+  "held": 4,
+  "demoted_by_seniority_rule": [],
+  "versions": {
+   "service": "recommend-service-v1",
+   "pipeline": "pipeline-cp23-freeze-candidate-v4",
+   "seniority_rule": "seniority-demote-3y-v1",
+   "matching_model": "gpt-6-sol",
+   "matching_fallback_model": "gpt-6-luna",
+   "hold_policy": "H2v2",
+   "partial_weight": 0.5,
+   "k": 10,
+   "experience_conflict_rule": "experience-upper-bound-v1",
+   "history_confirmed": true
+  }
+ }
+}

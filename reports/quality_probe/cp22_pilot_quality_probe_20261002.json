@@ -1,0 +1,854 @@
+{
+  "run_id": "cp22_pilot_quality_probe_20261002",
+  "fingerprint": "d62803989a2a8ca8d75d1679e974008b9fd9c8800dbfc956eee593643083e415",
+  "jobs": [
+    "F00016",
+    "F00034",
+    "F00073"
+  ],
+  "ceiling": "0.20",
+  "status": "stopped_semantic_issue",
+  "results": [
+    {
+      "job_id": "F00016",
+      "status": "done",
+      "attempts": 2,
+      "error_code": null,
+      "cache_hit": false,
+      "cache_key": "6f41439331cce82a1711d89944f46faf6e5b8eaea3e093e12915b52b2ad05894",
+      "source_sha256": "7ce15548520a18d87416f5fb8c3b959a2d40aca3199086ab17822c6add18d477",
+      "extraction": {
+        "job_id": "F00016",
+        "units": [
+          {
+            "unit_id": "U01",
+            "text": "Bachelor's degree in Computer Science, Artificial Intelligence, Data Science, or a related field.",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "education",
+            "normalized_name": "Bachelor's degree in Computer Science, Artificial Intelligence, Data Science, or a related field",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "B1",
+                "text": "Computer Science",
+                "field": "education",
+                "min_years": null
+              },
+              {
+                "branch_id": "B2",
+                "text": "Artificial Intelligence",
+                "field": "education",
+                "min_years": null
+              },
+              {
+                "branch_id": "B3",
+                "text": "Data Science",
+                "field": "education",
+                "min_years": null
+              },
+              {
+                "branch_id": "B4",
+                "text": "a related field",
+                "field": "education",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Bachelor's degree in Computer Science, Artificial Intelligence, Data Science, or a related field."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U02",
+            "text": "2–5 years of experience building software or AI/ML applications.",
+            "kind": "qualified",
+            "importance": "required",
+            "field": "experience_duration",
+            "normalized_name": "2–5 years of experience building software or AI/ML applications",
+            "min_years": 2.0,
+            "branches": [],
+            "source_quotes": [
+              "2–5 years of experience building software or AI/ML applications."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U03",
+            "text": "Programming skills in Python",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Programming skills in Python",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Strong programming skills in Python."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U04",
+            "text": "Understanding of machine learning concepts",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "Understanding of machine learning concepts",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Good understanding of machine learning concepts"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U05",
+            "text": "Experience with frameworks such as PyTorch, TensorFlow, or XGBoost",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Experience with frameworks such as PyTorch, TensorFlow, or XGBoost",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "B1",
+                "text": "PyTorch",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B2",
+                "text": "TensorFlow",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B3",
+                "text": "XGBoost",
+                "field": "skill_tool",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "experience with frameworks such as PyTorch, TensorFlow, or XGBoost"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U06",
+            "text": "Experience working with Large Language Models (LLMs)",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "Experience working with Large Language Models (LLMs)",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Experience working with Large Language Models (LLMs)"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U07",
+            "text": "Experience with frameworks such as LangChain, LlamaIndex, or similar tools",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Experience with frameworks such as LangChain, LlamaIndex, or similar tools",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "B1",
+                "text": "LangChain",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B2",
+                "text": "LlamaIndex",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "B3",
+                "text": "similar tools",
+                "field": "skill_tool",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "frameworks such as LangChain, LlamaIndex, or similar tools"
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U08",
+            "text": "Experience building AI applications in Natural Language Processing (NLP)",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "Experience building AI applications in Natural Language Processing (NLP)",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Experience building AI applications in areas such as Natural Language Processing (NLP), Computer Vision, Recommendation Systems, or Generative AI."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U09",
+            "text": "Experience building AI applications in Computer Vision",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "Experience building AI applications in Computer Vision",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Experience building AI applications in areas such as Natural Language Processing (NLP), Computer Vision, Recommendation Systems, or Generative AI."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U10",
+            "text": "Experience building AI applications in Recommendation Systems",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "Experience building AI applications in Recommendation Systems",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Experience building AI applications in areas such as Natural Language Processing (NLP), Computer Vision, Recommendation Systems, or Generative AI."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U11",
+            "text": "Experience building AI applications in Generative AI",
+            "kind": "simple",
+            "importance": "required",
+            "field": "knowledge_area",
+            "normalized_name": "Experience building AI applications in Generative AI",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Experience building AI applications in areas such as Natural Language Processing (NLP), Computer Vision, Recommendation Systems, or Generative AI."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U12",
+            "text": "Familiarity with REST APIs",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Familiarity with REST APIs",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Familiarity with REST APIs, Git, Docker, and CI/CD practices."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U13",
+            "text": "Familiarity with Git",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Familiarity with Git",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Familiarity with REST APIs, Git, Docker, and CI/CD practices."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U14",
+            "text": "Familiarity with Docker",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Familiarity with Docker",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Familiarity with REST APIs, Git, Docker, and CI/CD practices."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U15",
+            "text": "Familiarity with CI/CD practices",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Familiarity with CI/CD practices",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Familiarity with REST APIs, Git, Docker, and CI/CD practices."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U16",
+            "text": "Working knowledge of SQL",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Working knowledge of SQL",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Working knowledge of SQL and NoSQL databases."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U17",
+            "text": "Working knowledge of NoSQL databases",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Working knowledge of NoSQL databases",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Working knowledge of SQL and NoSQL databases."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U18",
+            "text": "Strong problem-solving skills",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "Strong problem-solving skills",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Strong problem-solving skills and a willingness to learn new technologies."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U19",
+            "text": "Willingness to learn new technologies",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "Willingness to learn new technologies",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Strong problem-solving skills and a willingness to learn new technologies."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U20",
+            "text": "Good communication skills",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "Good communication skills",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Good communication skills and the ability to work effectively with cross-functional teams."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U21",
+            "text": "Ability to work effectively with cross-functional teams",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "Ability to work effectively with cross-functional teams",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Good communication skills and the ability to work effectively with cross-functional teams."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          }
+        ],
+        "jd_quality": "ok",
+        "extractor_version": "jd-prompt-v1.1/deepseek-flash"
+      },
+      "latency_ms": 225914,
+      "provenance": {
+        "config/models_v1.yaml": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+        "config/pipeline_v1.yaml": "a8f219e74952c18451b93e469a1c3750e8f631f88e40ca387bc51a9ea690a4f8",
+        "evals/annotation_guideline_v1.md": "5939c9e69ffacf28dcba9588b8fbfc8d124a8a240e8e84e1f234d463b7f760db",
+        "evals/gold/extraction_gold.jsonl": "f43d4d029f82a392ebc4796fc4bfafc5275ac1afae3a686bee5e4ca2a3da9a7d",
+        "evals/splits/split_manifest.json": "f21741eb93c959b8d39f4c0227f7d9106aef4e815d51ecd379f68015ba1a39c2",
+        "src/jobfit/extraction/jd_extractor.py": "97ca557488a1e8d94d8a054c554954f23803bf4970bd71b2e070ebb0180b149a",
+        "src/jobfit/llm/structured.py": "6a218a40daf4cc4a712fcec55b94a0311eb43e38e1595f101761dd9ca7941312",
+        "src/jobfit/llm/client.py": "a3d8491668027932acf6819481af56bf7eb3687ac51460ce36a064a48d29c63d",
+        "src/jobfit/llm/probe.py": "fdf8c6bd1d1f7a73b2d87fddec827aee83ceb78d9fc995488fec90c39390133e",
+        "src/jobfit/schemas/requirements.py": "54d8fb16cdf55f6027d2d0d4c12973bb2616b027428215cdd343a9c201248c05",
+        "scripts/run_pilot_probe.py": "c096d269cc1b44cce65c77b51f875b289976ef7487c59415c1f0853ea96c4dee",
+        "prompts/jd_extraction_v1_1.md": "8c91296b0861a82654ede5bec46f60d324cc08dcee3d62bc690d7a36136052d0",
+        "F00016": "7ce15548520a18d87416f5fb8c3b959a2d40aca3199086ab17822c6add18d477",
+        "F00034": "8cdbfad2b5803545eb155c346253249dd72d4015024018e34706e3ddf9552826",
+        "F00073": "408a099f8f221bd4fca5a07ed93fbccda6b23f796111ee3efe105397570cc23f"
+      },
+      "run_id": "cp22_pilot_quality_probe_20261002",
+      "result_sha256": "b626e79dcd853b527b22eeebe9870ae76436a547e658174937bd6f9a89c10381",
+      "operational_check": {
+        "job_id": "F00016",
+        "result_sha256": "b626e79dcd853b527b22eeebe9870ae76436a547e658174937bd6f9a89c10381",
+        "checked_by": "execution-role",
+        "checks": {
+          "quotes": "pass",
+          "coverage": "pass",
+          "grouping": "pass",
+          "qualifiers": "pass",
+          "importance": "pass"
+        },
+        "notes": "Reviewed full source and all 21 model/gold A units by meaning. 10 qualification bullets covered; responsibilities/team text not promoted. Degree and framework alternatives preserved; four experience areas split under D-040; AND tool/database items separate. Required importance and 2-year minimum retained. Nonblocking differences: LLM field knowledge_area versus approved skill_tool; Strong and databases wording shortened in unit text but retained in exact source quotes, with no added depth rule. First attempt failed schema validation; one allowed repair succeeded. Operational pass only, not human alignment or evidence approval.",
+        "human_annotation_approval": false,
+        "alignment_status": "pending"
+      }
+    },
+    {
+      "job_id": "F00034",
+      "status": "done",
+      "attempts": 1,
+      "error_code": null,
+      "cache_hit": false,
+      "cache_key": "d2a4f6e62610f612b2ef9202dfb18f05d45f3fbb897e71bf7d6718f6143f9e5c",
+      "source_sha256": "8cdbfad2b5803545eb155c346253249dd72d4015024018e34706e3ddf9552826",
+      "extraction": {
+        "job_id": "F00034",
+        "units": [
+          {
+            "unit_id": "U01",
+            "text": "Minimum S1 in Informatics Engineering, Computer Science, Data Science, Artificial Intelligence, or a related field.",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "education",
+            "normalized_name": "S1 in relevant field",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "U01-B1",
+                "text": "S1 Teknik Informatika",
+                "field": "education",
+                "min_years": null
+              },
+              {
+                "branch_id": "U01-B2",
+                "text": "S1 Ilmu Komputer",
+                "field": "education",
+                "min_years": null
+              },
+              {
+                "branch_id": "U01-B3",
+                "text": "S1 Data Science",
+                "field": "education",
+                "min_years": null
+              },
+              {
+                "branch_id": "U01-B4",
+                "text": "S1 Artificial Intelligence",
+                "field": "education",
+                "min_years": null
+              },
+              {
+                "branch_id": "U01-B5",
+                "text": "S1 bidang terkait",
+                "field": "education",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Minimal S1 Teknik Informatika, Ilmu Komputer, Data Science, Artificial Intelligence, atau bidang terkait."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U02",
+            "text": "Minimum 2 years of experience as an AI Engineer, Machine Learning Engineer, or similar position.",
+            "kind": "qualified",
+            "importance": "required",
+            "field": "experience_duration",
+            "normalized_name": "AI/ML engineering experience",
+            "min_years": 2.0,
+            "branches": [],
+            "source_quotes": [
+              "Memiliki pengalaman minimal 2 tahun sebagai AI Engineer, Machine Learning Engineer, atau posisi serupa."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U03",
+            "text": "Proficient in Python programming language.",
+            "kind": "simple",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "Python",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Menguasai bahasa pemrograman Python."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U04",
+            "text": "Understanding of AI/ML frameworks such as TensorFlow, PyTorch, Scikit-learn, or similar.",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "AI/ML frameworks",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "U04-B1",
+                "text": "TensorFlow",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "U04-B2",
+                "text": "PyTorch",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "U04-B3",
+                "text": "Scikit-learn",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "U04-B4",
+                "text": "similar AI/ML framework",
+                "field": "skill_tool",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Memahami framework AI/ML seperti TensorFlow, PyTorch, Scikit-learn, atau sejenisnya."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U05",
+            "text": "Experience with LLMs such as GPT, Llama, Mistral, Gemini, or other open-source models.",
+            "kind": "alternative_group",
+            "importance": "required",
+            "field": "skill_tool",
+            "normalized_name": "LLM experience",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "U05-B1",
+                "text": "GPT",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "U05-B2",
+                "text": "Llama",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "U05-B3",
+                "text": "Mistral",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "U05-B4",
+                "text": "Gemini",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "U05-B5",
+                "text": "other open-source LLM",
+                "field": "skill_tool",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Memiliki pengalaman dengan LLM seperti GPT, Llama, Mistral, Gemini, atau model open-source lainnya."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U06",
+            "text": "Understanding of Retrieval-Augmented Generation (RAG) concepts.",
+            "kind": "simple",
+            "importance": "preferred",
+            "field": "knowledge_area",
+            "normalized_name": "Retrieval-Augmented Generation (RAG)",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Memahami konsep Retrieval-Augmented Generation (RAG), Prompt Engineering, dan Vector Database menjadi nilai tambah."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U07",
+            "text": "Understanding of Prompt Engineering concepts.",
+            "kind": "simple",
+            "importance": "preferred",
+            "field": "knowledge_area",
+            "normalized_name": "Prompt Engineering",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Memahami konsep Retrieval-Augmented Generation (RAG), Prompt Engineering, dan Vector Database menjadi nilai tambah."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U08",
+            "text": "Understanding of Vector Database concepts.",
+            "kind": "simple",
+            "importance": "preferred",
+            "field": "knowledge_area",
+            "normalized_name": "Vector Database",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Memahami konsep Retrieval-Augmented Generation (RAG), Prompt Engineering, dan Vector Database menjadi nilai tambah."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U09",
+            "text": "Experience using Git.",
+            "kind": "simple",
+            "importance": "preferred",
+            "field": "skill_tool",
+            "normalized_name": "Git",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Berpengalaman menggunakan Git, Docker, REST API, serta cloud platform (AWS, Azure, atau Google Cloud) menjadi nilai tambah."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U10",
+            "text": "Experience using Docker.",
+            "kind": "simple",
+            "importance": "preferred",
+            "field": "skill_tool",
+            "normalized_name": "Docker",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Berpengalaman menggunakan Git, Docker, REST API, serta cloud platform (AWS, Azure, atau Google Cloud) menjadi nilai tambah."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U11",
+            "text": "Experience using REST API.",
+            "kind": "simple",
+            "importance": "preferred",
+            "field": "skill_tool",
+            "normalized_name": "REST API",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Berpengalaman menggunakan Git, Docker, REST API, serta cloud platform (AWS, Azure, atau Google Cloud) menjadi nilai tambah."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U12",
+            "text": "Experience using a cloud platform (AWS, Azure, or Google Cloud).",
+            "kind": "alternative_group",
+            "importance": "preferred",
+            "field": "skill_tool",
+            "normalized_name": "Cloud platform",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "U12-B1",
+                "text": "AWS",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "U12-B2",
+                "text": "Azure",
+                "field": "skill_tool",
+                "min_years": null
+              },
+              {
+                "branch_id": "U12-B3",
+                "text": "Google Cloud",
+                "field": "skill_tool",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Berpengalaman menggunakan Git, Docker, REST API, serta cloud platform (AWS, Azure, atau Google Cloud) menjadi nilai tambah."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U13",
+            "text": "Good analytical skills.",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "Analytical skills",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Memiliki kemampuan analitis, problem solving, dan komunikasi yang baik."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U14",
+            "text": "Good problem-solving skills.",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "Problem solving",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Memiliki kemampuan analitis, problem solving, dan komunikasi yang baik."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U15",
+            "text": "Good communication skills.",
+            "kind": "simple",
+            "importance": "required",
+            "field": "soft_skill",
+            "normalized_name": "Communication",
+            "min_years": null,
+            "branches": [],
+            "source_quotes": [
+              "Memiliki kemampuan analitis, problem solving, dan komunikasi yang baik."
+            ],
+            "needs_review": false,
+            "label_source": "model_draft"
+          },
+          {
+            "unit_id": "U16",
+            "text": "Portfolio or experience in AI.",
+            "kind": "alternative_group",
+            "importance": "preferred",
+            "field": "other",
+            "normalized_name": "AI portfolio or experience",
+            "min_years": null,
+            "branches": [
+              {
+                "branch_id": "U16-B1",
+                "text": "Portfolio in AI",
+                "field": "other",
+                "min_years": null
+              },
+              {
+                "branch_id": "U16-B2",
+                "text": "Experience in AI",
+                "field": "knowledge_area",
+                "min_years": null
+              }
+            ],
+            "source_quotes": [
+              "Memiliki portofolio atau pengalaman di bidang AI menjadi nilai tambah."
+            ],
+            "needs_review": true,
+            "label_source": "model_draft"
+          }
+        ],
+        "jd_quality": "ok",
+        "extractor_version": "jd-prompt-v1.1/deepseek-flash"
+      },
+      "latency_ms": 120151,
+      "provenance": {
+        "config/models_v1.yaml": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+        "config/pipeline_v1.yaml": "a8f219e74952c18451b93e469a1c3750e8f631f88e40ca387bc51a9ea690a4f8",
+        "evals/annotation_guideline_v1.md": "5939c9e69ffacf28dcba9588b8fbfc8d124a8a240e8e84e1f234d463b7f760db",
+        "evals/gold/extraction_gold.jsonl": "f43d4d029f82a392ebc4796fc4bfafc5275ac1afae3a686bee5e4ca2a3da9a7d",
+        "evals/splits/split_manifest.json": "f21741eb93c959b8d39f4c0227f7d9106aef4e815d51ecd379f68015ba1a39c2",
+        "src/jobfit/extraction/jd_extractor.py": "97ca557488a1e8d94d8a054c554954f23803bf4970bd71b2e070ebb0180b149a",
+        "src/jobfit/llm/structured.py": "6a218a40daf4cc4a712fcec55b94a0311eb43e38e1595f101761dd9ca7941312",
+        "src/jobfit/llm/client.py": "a3d8491668027932acf6819481af56bf7eb3687ac51460ce36a064a48d29c63d",
+        "src/jobfit/llm/probe.py": "fdf8c6bd1d1f7a73b2d87fddec827aee83ceb78d9fc995488fec90c39390133e",
+        "src/jobfit/schemas/requirements.py": "54d8fb16cdf55f6027d2d0d4c12973bb2616b027428215cdd343a9c201248c05",
+        "scripts/run_pilot_probe.py": "c096d269cc1b44cce65c77b51f875b289976ef7487c59415c1f0853ea96c4dee",
+        "prompts/jd_extraction_v1_1.md": "8c91296b0861a82654ede5bec46f60d324cc08dcee3d62bc690d7a36136052d0",
+        "F00016": "7ce15548520a18d87416f5fb8c3b959a2d40aca3199086ab17822c6add18d477",
+        "F00034": "8cdbfad2b5803545eb155c346253249dd72d4015024018e34706e3ddf9552826",
+        "F00073": "408a099f8f221bd4fca5a07ed93fbccda6b23f796111ee3efe105397570cc23f"
+      },
+      "run_id": "cp22_pilot_quality_probe_20261002",
+      "result_sha256": "0c0edc283af6f2480f956cdb3669c6a87497abca44b1952ea143aa1956978f1c",
+      "operational_check": {
+        "job_id": "F00034",
+        "result_sha256": "0c0edc283af6f2480f956cdb3669c6a87497abca44b1952ea143aa1956978f1c",
+        "checked_by": "execution-role",
+        "checks": {
+          "quotes": "pass",
+          "coverage": "pass",
+          "grouping": "fail",
+          "qualifiers": "uncertain",
+          "importance": "pass"
+        },
+        "notes": "All 16 model units, 16 approved units and full source inspected. No responsibilities included, importance and explicit minima retained textually, all exact quotes valid. Stop: J3-U02 approved group G2 is modeled as qualified with no alternative branches, changing downstream handling of role alternatives/duration constraints. U16 is flagged needs_review even though approved portfolio/AI-experience alternatives exist. No gold/constraint/schema change, no F1. F00073 must not be called under this probe.",
+        "human_annotation_approval": false,
+        "alignment_status": "pending"
+      }
+    }
+  ],
+  "reservations": [],
+  "active_job": "F00034"
+}

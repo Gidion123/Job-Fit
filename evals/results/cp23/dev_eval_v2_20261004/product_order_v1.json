@@ -1,0 +1,3720 @@
+{
+  "schema_version": "cp23-dev-product-order-v1",
+  "date": "2026-10-04",
+  "split": "development",
+  "scope": "CV1/CV2, saved Hybrid Qwen top-30 and saved pipeline v1.1 stage outputs",
+  "api_calls": 0,
+  "test_used": false,
+  "gold_written": false,
+  "protocol": "D-073 product order (held jobs last) is primary for development final order; strict D-052 completeness is reported per cell",
+  "limits": [
+    "Two development CV queries; results are indicative, not statistically significant.",
+    "The explicit-conflict block is empty because saved stages have no confirmed constraint context.",
+    "Relevance judgments are single-annotator, model-assisted development gold."
+  ],
+  "validity_check": {
+    "recomputed_vs_saved_H1_H2_mismatches": [],
+    "usable_pairs_weight_0_5": {
+      "H1": 26,
+      "H2": 42,
+      "H2v2": 33
+    },
+    "expected_from_coverage_summary_v2": {
+      "H1": 26,
+      "H2": 42
+    }
+  },
+  "stage1": {
+    "CV1": {
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.354820491386454
+    },
+    "CV2": {
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.688917722133214
+    }
+  },
+  "stage1_macro": {
+    "p_at_5": 0.30000000000000004,
+    "ndcg_at_10": 0.521869106759834
+  },
+  "summary": [
+    {
+      "k": 10,
+      "hold_policy": "H1",
+      "partial_weight": 0.25,
+      "macro_p_at_5": 0.30000000000000004,
+      "macro_ndcg_at_10": 0.5407569149668161,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.2,
+          "ndcg_at_10": 0.3614154144760006,
+          "unscored_in_top_k": 4
+        },
+        "CV2": {
+          "p_at_5": 0.4,
+          "ndcg_at_10": 0.7200984154576315,
+          "unscored_in_top_k": 3
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 10,
+      "hold_policy": "H1",
+      "partial_weight": 0.5,
+      "macro_p_at_5": 0.4,
+      "macro_ndcg_at_10": 0.5430051978544647,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.2,
+          "ndcg_at_10": 0.3614154144760006,
+          "unscored_in_top_k": 4
+        },
+        "CV2": {
+          "p_at_5": 0.6,
+          "ndcg_at_10": 0.7245949812329286,
+          "unscored_in_top_k": 3
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 10,
+      "hold_policy": "H1",
+      "partial_weight": 0.75,
+      "macro_p_at_5": 0.4,
+      "macro_ndcg_at_10": 0.5372564964136716,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.2,
+          "ndcg_at_10": 0.36269888759213753,
+          "unscored_in_top_k": 4
+        },
+        "CV2": {
+          "p_at_5": 0.6,
+          "ndcg_at_10": 0.7118141052352056,
+          "unscored_in_top_k": 3
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 10,
+      "hold_policy": "H2",
+      "partial_weight": 0.25,
+      "macro_p_at_5": 0.4,
+      "macro_ndcg_at_10": 0.5319931648650583,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.2,
+          "ndcg_at_10": 0.35691202359155844,
+          "unscored_in_top_k": 3
+        },
+        "CV2": {
+          "p_at_5": 0.6,
+          "ndcg_at_10": 0.7070743061385583,
+          "unscored_in_top_k": 1
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 10,
+      "hold_policy": "H2",
+      "partial_weight": 0.5,
+      "macro_p_at_5": 0.4,
+      "macro_ndcg_at_10": 0.5339458014773211,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.2,
+          "ndcg_at_10": 0.3581954967076954,
+          "unscored_in_top_k": 3
+        },
+        "CV2": {
+          "p_at_5": 0.6,
+          "ndcg_at_10": 0.7096961062469468,
+          "unscored_in_top_k": 1
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 10,
+      "hold_policy": "H2",
+      "partial_weight": 0.75,
+      "macro_p_at_5": 0.4,
+      "macro_ndcg_at_10": 0.5278019866582571,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.2,
+          "ndcg_at_10": 0.35915347948830345,
+          "unscored_in_top_k": 3
+        },
+        "CV2": {
+          "p_at_5": 0.6,
+          "ndcg_at_10": 0.6964504938282108,
+          "unscored_in_top_k": 1
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 10,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.25,
+      "macro_p_at_5": 0.4,
+      "macro_ndcg_at_10": 0.54905442424805,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.2,
+          "ndcg_at_10": 0.35691202359155844,
+          "unscored_in_top_k": 3
+        },
+        "CV2": {
+          "p_at_5": 0.6,
+          "ndcg_at_10": 0.7411968249045414,
+          "unscored_in_top_k": 2
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 10,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.5,
+      "macro_p_at_5": 0.4,
+      "macro_ndcg_at_10": 0.5513742764325569,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.2,
+          "ndcg_at_10": 0.3581954967076954,
+          "unscored_in_top_k": 3
+        },
+        "CV2": {
+          "p_at_5": 0.6,
+          "ndcg_at_10": 0.7445530561574183,
+          "unscored_in_top_k": 2
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 10,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.75,
+      "macro_p_at_5": 0.5,
+      "macro_ndcg_at_10": 0.5394101908758415,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.2,
+          "ndcg_at_10": 0.35915347948830345,
+          "unscored_in_top_k": 3
+        },
+        "CV2": {
+          "p_at_5": 0.8,
+          "ndcg_at_10": 0.7196669022633795,
+          "unscored_in_top_k": 2
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 20,
+      "hold_policy": "H1",
+      "partial_weight": 0.25,
+      "macro_p_at_5": 0.4,
+      "macro_ndcg_at_10": 0.547880742304563,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.4,
+          "ndcg_at_10": 0.4186355613151646,
+          "unscored_in_top_k": 10
+        },
+        "CV2": {
+          "p_at_5": 0.4,
+          "ndcg_at_10": 0.6771259232939614,
+          "unscored_in_top_k": 11
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 20,
+      "hold_policy": "H1",
+      "partial_weight": 0.5,
+      "macro_p_at_5": 0.4,
+      "macro_ndcg_at_10": 0.5528329572422392,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.4,
+          "ndcg_at_10": 0.4186355613151646,
+          "unscored_in_top_k": 10
+        },
+        "CV2": {
+          "p_at_5": 0.4,
+          "ndcg_at_10": 0.6870303531693138,
+          "unscored_in_top_k": 11
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 20,
+      "hold_policy": "H1",
+      "partial_weight": 0.75,
+      "macro_p_at_5": 0.5,
+      "macro_ndcg_at_10": 0.5493672522287716,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.4,
+          "ndcg_at_10": 0.4199884615106555,
+          "unscored_in_top_k": 10
+        },
+        "CV2": {
+          "p_at_5": 0.6,
+          "ndcg_at_10": 0.6787460429468878,
+          "unscored_in_top_k": 11
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 20,
+      "hold_policy": "H2",
+      "partial_weight": 0.25,
+      "macro_p_at_5": 0.5,
+      "macro_ndcg_at_10": null,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.4,
+          "ndcg_at_10": 0.4186355613151646,
+          "unscored_in_top_k": 6
+        },
+        "CV2": {
+          "p_at_5": 0.6,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 6
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 20,
+      "hold_policy": "H2",
+      "partial_weight": 0.5,
+      "macro_p_at_5": 0.5,
+      "macro_ndcg_at_10": 0.5301019975508718,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.4,
+          "ndcg_at_10": 0.4193839124175744,
+          "unscored_in_top_k": 6
+        },
+        "CV2": {
+          "p_at_5": 0.6,
+          "ndcg_at_10": 0.6408200826841692,
+          "unscored_in_top_k": 6
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 20,
+      "hold_policy": "H2",
+      "partial_weight": 0.75,
+      "macro_p_at_5": 0.5,
+      "macro_ndcg_at_10": null,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.4,
+          "ndcg_at_10": 0.4204895762905926,
+          "unscored_in_top_k": 6
+        },
+        "CV2": {
+          "p_at_5": 0.6,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 6
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 20,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.25,
+      "macro_p_at_5": 0.5,
+      "macro_ndcg_at_10": null,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.4,
+          "ndcg_at_10": 0.4186355613151646,
+          "unscored_in_top_k": 9
+        },
+        "CV2": {
+          "p_at_5": 0.6,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 8
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 20,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.5,
+      "macro_p_at_5": 0.5,
+      "macro_ndcg_at_10": null,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.4,
+          "ndcg_at_10": 0.4193839124175744,
+          "unscored_in_top_k": 9
+        },
+        "CV2": {
+          "p_at_5": 0.6,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 8
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 20,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.75,
+      "macro_p_at_5": 0.6000000000000001,
+      "macro_ndcg_at_10": null,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": 0.4,
+          "ndcg_at_10": 0.4204895762905926,
+          "unscored_in_top_k": 9
+        },
+        "CV2": {
+          "p_at_5": 0.8,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 8
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 30,
+      "hold_policy": "H1",
+      "partial_weight": 0.25,
+      "macro_p_at_5": null,
+      "macro_ndcg_at_10": null,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 16
+        },
+        "CV2": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 18
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 30,
+      "hold_policy": "H1",
+      "partial_weight": 0.5,
+      "macro_p_at_5": null,
+      "macro_ndcg_at_10": null,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 16
+        },
+        "CV2": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 18
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 30,
+      "hold_policy": "H1",
+      "partial_weight": 0.75,
+      "macro_p_at_5": null,
+      "macro_ndcg_at_10": null,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 16
+        },
+        "CV2": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 18
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 30,
+      "hold_policy": "H2",
+      "partial_weight": 0.25,
+      "macro_p_at_5": null,
+      "macro_ndcg_at_10": null,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 10
+        },
+        "CV2": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 8
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 30,
+      "hold_policy": "H2",
+      "partial_weight": 0.5,
+      "macro_p_at_5": null,
+      "macro_ndcg_at_10": null,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 10
+        },
+        "CV2": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 8
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 30,
+      "hold_policy": "H2",
+      "partial_weight": 0.75,
+      "macro_p_at_5": null,
+      "macro_ndcg_at_10": null,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 10
+        },
+        "CV2": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 8
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 30,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.25,
+      "macro_p_at_5": null,
+      "macro_ndcg_at_10": null,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 14
+        },
+        "CV2": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 13
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 30,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.5,
+      "macro_p_at_5": null,
+      "macro_ndcg_at_10": null,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 14
+        },
+        "CV2": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 13
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    },
+    {
+      "k": 30,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.75,
+      "macro_p_at_5": null,
+      "macro_ndcg_at_10": null,
+      "per_cv": {
+        "CV1": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 14
+        },
+        "CV2": {
+          "p_at_5": null,
+          "ndcg_at_10": null,
+          "unscored_in_top_k": 13
+        }
+      },
+      "strict_D052_complete_cvs": 0
+    }
+  ],
+  "h2v2_status_changes_vs_h2": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00556",
+      "H2": [
+        "provisional",
+        60.0
+      ],
+      "H2v2": [
+        "final",
+        60.0
+      ],
+      "H2v2_reason": null,
+      "H2_excluded": [
+        "Any exposure to MLOps tools (e.g. MLflow, DVC) or cloud technologies (AWS, Docker, Kubernetes)"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00208",
+      "H2": [
+        "provisional",
+        39.47
+      ],
+      "H2v2": [
+        "on_hold",
+        null
+      ],
+      "H2v2_reason": "An experience, level or education requirement needs checking: U05, U25.",
+      "H2_excluded": [
+        "8-10 years of progressive experience in machine learning, AI engineering, or data science, with at least 3 years focused on applied AI and production ML systems.",
+        "Experience designing and deploying production-grade AI/ML systems, including end-to-end ML pipelines covering training, evaluation, versioning, deployment, and monitoring.",
+        "Experience building and operationalizing LLM-powered applications, including prompt engineering, retrieval-augmented generation (RAG), and tool/agent orchestration frameworks.",
+        "Proven ability to serve as a senior technical individual contributor, setting standards, making architectural decisions, and mentoring peers without formal management authority."
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00103",
+      "H2": [
+        "provisional",
+        29.41
+      ],
+      "H2v2": [
+        "on_hold",
+        null
+      ],
+      "H2v2_reason": "An experience, level or education requirement needs checking: U01.",
+      "H2_excluded": [
+        "Final-year student or recent graduate from a leading university, majoring in Engineering, Computer Science/Technology, or another relevant major."
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00189",
+      "H2": [
+        "provisional",
+        40.0
+      ],
+      "H2v2": [
+        "on_hold",
+        null
+      ],
+      "H2v2_reason": "An experience, level or education requirement needs checking: U01, U02.",
+      "H2_excluded": [
+        "At least 8 years of professional experience in data science, analytics, or statistical modelling within banking, payments, or financial services.",
+        "Bachelor's or master's degree in a quantitative discipline such as Statistics, Mathematics, Computer Science, Engineering, or Economics."
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00055",
+      "H2": [
+        "provisional",
+        46.43
+      ],
+      "H2v2": [
+        "on_hold",
+        null
+      ],
+      "H2v2_reason": "An experience, level or education requirement needs checking: U02.",
+      "H2_excluded": [
+        "3–6 years of hands-on data science or applied AI experience, with demonstrable work in text analytics, conversational data, or LLM-based systems"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00463",
+      "H2": [
+        "provisional",
+        69.23
+      ],
+      "H2v2": [
+        "on_hold",
+        null
+      ],
+      "H2v2_reason": "An experience, level or education requirement needs checking: U19.",
+      "H2_excluded": [
+        "Bachelor’s or Master’s degree in Computer Science, Artificial Intelligence, Data Science, or a related field"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00055",
+      "H2": [
+        "provisional",
+        50.0
+      ],
+      "H2v2": [
+        "on_hold",
+        null
+      ],
+      "H2v2_reason": "An experience, level or education requirement needs checking: U02.",
+      "H2_excluded": [
+        "3–6 years of hands-on data science or applied AI experience, with demonstrable work in text analytics, conversational data, or LLM-based systems"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00208",
+      "H2": [
+        "provisional",
+        44.74
+      ],
+      "H2v2": [
+        "on_hold",
+        null
+      ],
+      "H2v2_reason": "An experience, level or education requirement needs checking: U05, U25.",
+      "H2_excluded": [
+        "8-10 years of progressive experience in machine learning, AI engineering, or data science, with at least 3 years focused on applied AI and production ML systems.",
+        "Experience designing and deploying production-grade AI/ML systems, including end-to-end ML pipelines covering training, evaluation, versioning, deployment, and monitoring.",
+        "Experience building and operationalizing LLM-powered applications, including prompt engineering, retrieval-augmented generation (RAG), and tool/agent orchestration frameworks.",
+        "Proven ability to serve as a senior technical individual contributor, setting standards, making architectural decisions, and mentoring peers without formal management authority."
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00303",
+      "H2": [
+        "provisional",
+        66.67
+      ],
+      "H2v2": [
+        "on_hold",
+        null
+      ],
+      "H2v2_reason": "An experience, level or education requirement needs checking: U02.",
+      "H2_excluded": [
+        "At least 2 years of relevant experience in LLM applications, RAG, information retrieval, NLP, AI agents, or AI application development."
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00556",
+      "H2": [
+        "provisional",
+        70.0
+      ],
+      "H2v2": [
+        "final",
+        70.0
+      ],
+      "H2v2_reason": null,
+      "H2_excluded": [
+        "Any exposure to MLOps tools (e.g. MLflow, DVC) or cloud technologies (AWS, Docker, Kubernetes)"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00418",
+      "H2": [
+        "provisional",
+        47.37
+      ],
+      "H2v2": [
+        "on_hold",
+        null
+      ],
+      "H2v2_reason": "An experience, level or education requirement needs checking: U20.",
+      "H2_excluded": [
+        "AI Engineer, Intermediate/Senior Software Engineer keen to learn AI Engineering, or Intermediate/Senior Data Science keen to delve more into Software Engineer side"
+      ]
+    }
+  ],
+  "cells": [
+    {
+      "cv_id": "CV1",
+      "k": 10,
+      "hold_policy": "H1",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00663",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00601",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 4,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556"
+      ],
+      "unscored_in_final_top10": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.3614154144760006,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 10,
+      "hold_policy": "H1",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00663",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00601",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 4,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556"
+      ],
+      "unscored_in_final_top10": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.3614154144760006,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 10,
+      "hold_policy": "H1",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00663",
+        "F00333",
+        "F00601",
+        "F00284",
+        "F00020",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 4,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556"
+      ],
+      "unscored_in_final_top10": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.36269888759213753,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 10,
+      "hold_policy": "H2",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00663",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00556",
+        "F00601",
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 3,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "unscored_in_final_top10": [
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.35691202359155844,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 10,
+      "hold_policy": "H2",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00663",
+        "F00556",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00601",
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 3,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "unscored_in_final_top10": [
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.3581954967076954,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 10,
+      "hold_policy": "H2",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00556",
+        "F00663",
+        "F00333",
+        "F00601",
+        "F00284",
+        "F00020",
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 3,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "unscored_in_final_top10": [
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.35915347948830345,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 10,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00663",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00556",
+        "F00601",
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 3,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "unscored_in_final_top10": [
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.35691202359155844,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 10,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00663",
+        "F00556",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00601",
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 3,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "unscored_in_final_top10": [
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.3581954967076954,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 10,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00556",
+        "F00663",
+        "F00333",
+        "F00601",
+        "F00284",
+        "F00020",
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 3,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "unscored_in_final_top10": [
+        "F00366",
+        "F00132",
+        "F00022"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.35915347948830345,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 20,
+      "hold_policy": "H1",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00332",
+        "F00036",
+        "F00663",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00654",
+        "F00601",
+        "F00212",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 10,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.4186355613151646,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 20,
+      "hold_policy": "H1",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00332",
+        "F00036",
+        "F00663",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00654",
+        "F00601",
+        "F00212",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 10,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.4186355613151646,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 20,
+      "hold_policy": "H1",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00332",
+        "F00036",
+        "F00663",
+        "F00333",
+        "F00654",
+        "F00601",
+        "F00284",
+        "F00020",
+        "F00212",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 10,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.4199884615106555,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 20,
+      "hold_policy": "H2",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00332",
+        "F00036",
+        "F00663",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00556",
+        "F00654",
+        "F00601",
+        "F00189",
+        "F00208",
+        "F00103",
+        "F00212",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00090",
+        "F00369"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 6,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00090",
+        "F00369"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.4186355613151646,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 20,
+      "hold_policy": "H2",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00332",
+        "F00036",
+        "F00663",
+        "F00556",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00654",
+        "F00601",
+        "F00189",
+        "F00208",
+        "F00103",
+        "F00212",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00090",
+        "F00369"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 6,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00090",
+        "F00369"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.4193839124175744,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 20,
+      "hold_policy": "H2",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00332",
+        "F00036",
+        "F00556",
+        "F00663",
+        "F00333",
+        "F00654",
+        "F00601",
+        "F00284",
+        "F00020",
+        "F00208",
+        "F00189",
+        "F00103",
+        "F00212",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00090",
+        "F00369"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 6,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00090",
+        "F00369"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.4204895762905926,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 20,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00332",
+        "F00036",
+        "F00663",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00556",
+        "F00654",
+        "F00601",
+        "F00212",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 9,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.4186355613151646,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 20,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00332",
+        "F00036",
+        "F00663",
+        "F00556",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00654",
+        "F00601",
+        "F00212",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 9,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.4193839124175744,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 20,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00332",
+        "F00036",
+        "F00556",
+        "F00663",
+        "F00333",
+        "F00654",
+        "F00601",
+        "F00284",
+        "F00020",
+        "F00212",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 9,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.4204895762905926,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 30,
+      "hold_policy": "H1",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00312",
+        "F00129",
+        "F00332",
+        "F00036",
+        "F00663",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00654",
+        "F00601",
+        "F00354",
+        "F00851",
+        "F00212",
+        "F00650",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00055",
+        "F00060",
+        "F00351",
+        "F00527"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 16,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00055",
+        "F00060",
+        "F00351",
+        "F00527"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00129"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "k": 30,
+      "hold_policy": "H1",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00129",
+        "F00312",
+        "F00332",
+        "F00036",
+        "F00663",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00654",
+        "F00601",
+        "F00354",
+        "F00851",
+        "F00212",
+        "F00650",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00055",
+        "F00060",
+        "F00351",
+        "F00527"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 16,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00055",
+        "F00060",
+        "F00351",
+        "F00527"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00129"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "k": 30,
+      "hold_policy": "H1",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00129",
+        "F00312",
+        "F00332",
+        "F00036",
+        "F00663",
+        "F00333",
+        "F00654",
+        "F00601",
+        "F00284",
+        "F00020",
+        "F00354",
+        "F00851",
+        "F00212",
+        "F00650",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00055",
+        "F00060",
+        "F00351",
+        "F00527"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 16,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00556",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00055",
+        "F00060",
+        "F00351",
+        "F00527"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00129"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "k": 30,
+      "hold_policy": "H2",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00060",
+        "F00312",
+        "F00129",
+        "F00332",
+        "F00036",
+        "F00663",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00556",
+        "F00055",
+        "F00654",
+        "F00601",
+        "F00189",
+        "F00208",
+        "F00354",
+        "F00851",
+        "F00103",
+        "F00212",
+        "F00650",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00090",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00351",
+        "F00527"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 10,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00090",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00351",
+        "F00527"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00060",
+        "F00129"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "k": 30,
+      "hold_policy": "H2",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00060",
+        "F00129",
+        "F00312",
+        "F00332",
+        "F00036",
+        "F00663",
+        "F00556",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00654",
+        "F00601",
+        "F00055",
+        "F00189",
+        "F00208",
+        "F00354",
+        "F00103",
+        "F00851",
+        "F00212",
+        "F00650",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00090",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00351",
+        "F00527"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 10,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00090",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00351",
+        "F00527"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00060",
+        "F00129"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "k": 30,
+      "hold_policy": "H2",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00060",
+        "F00129",
+        "F00312",
+        "F00332",
+        "F00036",
+        "F00556",
+        "F00663",
+        "F00333",
+        "F00654",
+        "F00601",
+        "F00284",
+        "F00020",
+        "F00055",
+        "F00208",
+        "F00189",
+        "F00354",
+        "F00103",
+        "F00851",
+        "F00212",
+        "F00650",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00090",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00351",
+        "F00527"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 10,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00090",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00351",
+        "F00527"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00060",
+        "F00129"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "k": 30,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00060",
+        "F00312",
+        "F00129",
+        "F00332",
+        "F00036",
+        "F00663",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00556",
+        "F00654",
+        "F00601",
+        "F00354",
+        "F00851",
+        "F00212",
+        "F00650",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00055",
+        "F00351",
+        "F00527"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 14,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00055",
+        "F00351",
+        "F00527"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00060",
+        "F00129"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "k": 30,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00060",
+        "F00129",
+        "F00312",
+        "F00332",
+        "F00036",
+        "F00663",
+        "F00556",
+        "F00333",
+        "F00284",
+        "F00020",
+        "F00654",
+        "F00601",
+        "F00354",
+        "F00851",
+        "F00212",
+        "F00650",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00055",
+        "F00351",
+        "F00527"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 14,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00055",
+        "F00351",
+        "F00527"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00060",
+        "F00129"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "k": 30,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.2,
+        "ndcg_at_10": 0.354820491386454
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00060",
+        "F00129",
+        "F00312",
+        "F00332",
+        "F00036",
+        "F00556",
+        "F00663",
+        "F00333",
+        "F00654",
+        "F00601",
+        "F00284",
+        "F00020",
+        "F00354",
+        "F00851",
+        "F00212",
+        "F00650",
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00055",
+        "F00351",
+        "F00527"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 14,
+      "unscored_ids": [
+        "F00366",
+        "F00132",
+        "F00022",
+        "F00655",
+        "F00208",
+        "F00090",
+        "F00103",
+        "F00189",
+        "F00369",
+        "F00309",
+        "F00310",
+        "F00055",
+        "F00351",
+        "F00527"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00060",
+        "F00129"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "k": 10,
+      "hold_policy": "H1",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00815",
+        "F00624",
+        "F00074",
+        "F00798",
+        "F00052",
+        "F00176",
+        "F00018",
+        "F00463",
+        "F00029"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 3,
+      "unscored_ids": [
+        "F00018",
+        "F00463",
+        "F00029"
+      ],
+      "unscored_in_final_top10": [
+        "F00018",
+        "F00463",
+        "F00029"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.7200984154576315,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV2",
+      "k": 10,
+      "hold_policy": "H1",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00815",
+        "F00624",
+        "F00798",
+        "F00052",
+        "F00074",
+        "F00176",
+        "F00018",
+        "F00463",
+        "F00029"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 3,
+      "unscored_ids": [
+        "F00018",
+        "F00463",
+        "F00029"
+      ],
+      "unscored_in_final_top10": [
+        "F00018",
+        "F00463",
+        "F00029"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.7245949812329286,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV2",
+      "k": 10,
+      "hold_policy": "H1",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00798",
+        "F00052",
+        "F00815",
+        "F00624",
+        "F00074",
+        "F00176",
+        "F00018",
+        "F00463",
+        "F00029"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 3,
+      "unscored_ids": [
+        "F00018",
+        "F00463",
+        "F00029"
+      ],
+      "unscored_in_final_top10": [
+        "F00018",
+        "F00463",
+        "F00029"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.7118141052352056,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV2",
+      "k": 10,
+      "hold_policy": "H2",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00463",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00074",
+        "F00798",
+        "F00052",
+        "F00176",
+        "F00029"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 1,
+      "unscored_ids": [
+        "F00029"
+      ],
+      "unscored_in_final_top10": [
+        "F00029"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.7070743061385583,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV2",
+      "k": 10,
+      "hold_policy": "H2",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00463",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00798",
+        "F00052",
+        "F00074",
+        "F00176",
+        "F00029"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 1,
+      "unscored_ids": [
+        "F00029"
+      ],
+      "unscored_in_final_top10": [
+        "F00029"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.7096961062469468,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV2",
+      "k": 10,
+      "hold_policy": "H2",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00463",
+        "F00798",
+        "F00052",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00074",
+        "F00176",
+        "F00029"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 1,
+      "unscored_ids": [
+        "F00029"
+      ],
+      "unscored_in_final_top10": [
+        "F00029"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.6964504938282108,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV2",
+      "k": 10,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00074",
+        "F00798",
+        "F00052",
+        "F00176",
+        "F00463",
+        "F00029"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 2,
+      "unscored_ids": [
+        "F00463",
+        "F00029"
+      ],
+      "unscored_in_final_top10": [
+        "F00463",
+        "F00029"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.7411968249045414,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV2",
+      "k": 10,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00798",
+        "F00052",
+        "F00074",
+        "F00176",
+        "F00463",
+        "F00029"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 2,
+      "unscored_ids": [
+        "F00463",
+        "F00029"
+      ],
+      "unscored_in_final_top10": [
+        "F00463",
+        "F00029"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.7445530561574183,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV2",
+      "k": 10,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00798",
+        "F00052",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00074",
+        "F00176",
+        "F00463",
+        "F00029"
+      ],
+      "candidate_count": 10,
+      "unscored_count": 2,
+      "unscored_ids": [
+        "F00463",
+        "F00029"
+      ],
+      "unscored_in_final_top10": [
+        "F00463",
+        "F00029"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.8,
+      "ndcg_at_10": 0.7196669022633795,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV2",
+      "k": 20,
+      "hold_policy": "H1",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00020",
+        "F00074",
+        "F00798",
+        "F00052",
+        "F00176",
+        "F00018",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00629",
+        "F00645",
+        "F00698",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 11,
+      "unscored_ids": [
+        "F00018",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00629",
+        "F00645",
+        "F00698",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126"
+      ],
+      "unscored_in_final_top10": [
+        "F00018"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.6771259232939614,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV2",
+      "k": 20,
+      "hold_policy": "H1",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00798",
+        "F00052",
+        "F00020",
+        "F00074",
+        "F00176",
+        "F00018",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00629",
+        "F00645",
+        "F00698",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 11,
+      "unscored_ids": [
+        "F00018",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00629",
+        "F00645",
+        "F00698",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126"
+      ],
+      "unscored_in_final_top10": [
+        "F00018"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.6870303531693138,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV2",
+      "k": 20,
+      "hold_policy": "H1",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00798",
+        "F00052",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00020",
+        "F00074",
+        "F00176",
+        "F00018",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00629",
+        "F00645",
+        "F00698",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 11,
+      "unscored_ids": [
+        "F00018",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00629",
+        "F00645",
+        "F00698",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126"
+      ],
+      "unscored_in_final_top10": [
+        "F00018"
+      ],
+      "strict_D052_complete": false,
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.6787460429468878,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV2",
+      "k": 20,
+      "hold_policy": "H2",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00463",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00020",
+        "F00055",
+        "F00629",
+        "F00074",
+        "F00698",
+        "F00798",
+        "F00052",
+        "F00176",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00126"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 6,
+      "unscored_ids": [
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00126"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": 0.6,
+      "ndcg_at_10": null,
+      "p5_reason": null,
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00629"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "k": 20,
+      "hold_policy": "H2",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00463",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00798",
+        "F00052",
+        "F00020",
+        "F00055",
+        "F00629",
+        "F00074",
+        "F00698",
+        "F00176",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00126"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 6,
+      "unscored_ids": [
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00126"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.6408200826841692,
+      "p5_reason": null,
+      "ndcg_reason": null,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV2",
+      "k": 20,
+      "hold_policy": "H2",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00463",
+        "F00798",
+        "F00052",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00055",
+        "F00629",
+        "F00020",
+        "F00074",
+        "F00698",
+        "F00176",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00126"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 6,
+      "unscored_ids": [
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00126"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": 0.6,
+      "ndcg_at_10": null,
+      "p5_reason": null,
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00629"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "k": 20,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00020",
+        "F00629",
+        "F00074",
+        "F00698",
+        "F00798",
+        "F00052",
+        "F00176",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 8,
+      "unscored_ids": [
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": 0.6,
+      "ndcg_at_10": null,
+      "p5_reason": null,
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00629"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "k": 20,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00798",
+        "F00052",
+        "F00020",
+        "F00629",
+        "F00074",
+        "F00698",
+        "F00176",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 8,
+      "unscored_ids": [
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": 0.6,
+      "ndcg_at_10": null,
+      "p5_reason": null,
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00629"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "k": 20,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00798",
+        "F00052",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00629",
+        "F00020",
+        "F00074",
+        "F00698",
+        "F00176",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126"
+      ],
+      "candidate_count": 20,
+      "unscored_count": 8,
+      "unscored_ids": [
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": 0.8,
+      "ndcg_at_10": null,
+      "p5_reason": null,
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00629"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "k": 30,
+      "hold_policy": "H1",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00682",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00020",
+        "F00074",
+        "F00327",
+        "F00798",
+        "F00052",
+        "F00212",
+        "F00176",
+        "F00018",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00629",
+        "F00645",
+        "F00698",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126",
+        "F00208",
+        "F00303",
+        "F00556",
+        "F00418",
+        "F00436",
+        "F00114",
+        "F00343"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 18,
+      "unscored_ids": [
+        "F00018",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00629",
+        "F00645",
+        "F00698",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126",
+        "F00208",
+        "F00303",
+        "F00556",
+        "F00418",
+        "F00436",
+        "F00114",
+        "F00343"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00682"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "k": 30,
+      "hold_policy": "H1",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00682",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00798",
+        "F00052",
+        "F00020",
+        "F00074",
+        "F00327",
+        "F00212",
+        "F00176",
+        "F00018",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00629",
+        "F00645",
+        "F00698",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126",
+        "F00208",
+        "F00303",
+        "F00556",
+        "F00418",
+        "F00436",
+        "F00114",
+        "F00343"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 18,
+      "unscored_ids": [
+        "F00018",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00629",
+        "F00645",
+        "F00698",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126",
+        "F00208",
+        "F00303",
+        "F00556",
+        "F00418",
+        "F00436",
+        "F00114",
+        "F00343"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00682"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "k": 30,
+      "hold_policy": "H1",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00798",
+        "F00052",
+        "F00682",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00020",
+        "F00327",
+        "F00074",
+        "F00212",
+        "F00176",
+        "F00018",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00629",
+        "F00645",
+        "F00698",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126",
+        "F00208",
+        "F00303",
+        "F00556",
+        "F00418",
+        "F00436",
+        "F00114",
+        "F00343"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 18,
+      "unscored_ids": [
+        "F00018",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00629",
+        "F00645",
+        "F00698",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126",
+        "F00208",
+        "F00303",
+        "F00556",
+        "F00418",
+        "F00436",
+        "F00114",
+        "F00343"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00682"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "k": 30,
+      "hold_policy": "H2",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00682",
+        "F00556",
+        "F00303",
+        "F00463",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00020",
+        "F00418",
+        "F00055",
+        "F00629",
+        "F00074",
+        "F00208",
+        "F00698",
+        "F00327",
+        "F00114",
+        "F00798",
+        "F00052",
+        "F00212",
+        "F00176",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00126",
+        "F00436",
+        "F00343"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 8,
+      "unscored_ids": [
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00126",
+        "F00436",
+        "F00343"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00682",
+        "F00556"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "k": 30,
+      "hold_policy": "H2",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00556",
+        "F00463",
+        "F00682",
+        "F00303",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00798",
+        "F00052",
+        "F00020",
+        "F00055",
+        "F00629",
+        "F00418",
+        "F00208",
+        "F00074",
+        "F00327",
+        "F00114",
+        "F00698",
+        "F00212",
+        "F00176",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00126",
+        "F00436",
+        "F00343"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 8,
+      "unscored_ids": [
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00126",
+        "F00436",
+        "F00343"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00556",
+        "F00682"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "k": 30,
+      "hold_policy": "H2",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00463",
+        "F00798",
+        "F00052",
+        "F00556",
+        "F00682",
+        "F00018",
+        "F00815",
+        "F00303",
+        "F00624",
+        "F00663",
+        "F00055",
+        "F00629",
+        "F00208",
+        "F00020",
+        "F00418",
+        "F00327",
+        "F00074",
+        "F00114",
+        "F00212",
+        "F00698",
+        "F00176",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00126",
+        "F00436",
+        "F00343"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 8,
+      "unscored_ids": [
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00126",
+        "F00436",
+        "F00343"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00556",
+        "F00682"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "k": 30,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.25,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00682",
+        "F00556",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00020",
+        "F00629",
+        "F00074",
+        "F00698",
+        "F00327",
+        "F00114",
+        "F00798",
+        "F00052",
+        "F00212",
+        "F00176",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126",
+        "F00208",
+        "F00303",
+        "F00418",
+        "F00436",
+        "F00343"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 13,
+      "unscored_ids": [
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126",
+        "F00208",
+        "F00303",
+        "F00418",
+        "F00436",
+        "F00343"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00682",
+        "F00556",
+        "F00629"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "k": 30,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.5,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00556",
+        "F00682",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00798",
+        "F00052",
+        "F00020",
+        "F00629",
+        "F00074",
+        "F00327",
+        "F00114",
+        "F00698",
+        "F00212",
+        "F00176",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126",
+        "F00208",
+        "F00303",
+        "F00418",
+        "F00436",
+        "F00343"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 13,
+      "unscored_ids": [
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126",
+        "F00208",
+        "F00303",
+        "F00418",
+        "F00436",
+        "F00343"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00556",
+        "F00682"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "k": 30,
+      "hold_policy": "H2v2",
+      "partial_weight": 0.75,
+      "stage1": {
+        "p_at_5": 0.4,
+        "ndcg_at_10": 0.688917722133214
+      },
+      "protocol": "D-073_product_order_holds_last",
+      "order": [
+        "F00650",
+        "F00798",
+        "F00052",
+        "F00556",
+        "F00682",
+        "F00018",
+        "F00815",
+        "F00624",
+        "F00663",
+        "F00629",
+        "F00020",
+        "F00327",
+        "F00074",
+        "F00114",
+        "F00212",
+        "F00698",
+        "F00176",
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126",
+        "F00208",
+        "F00303",
+        "F00418",
+        "F00436",
+        "F00343"
+      ],
+      "candidate_count": 30,
+      "unscored_count": 13,
+      "unscored_ids": [
+        "F00463",
+        "F00029",
+        "F00559",
+        "F00645",
+        "F00034",
+        "F00310",
+        "F00055",
+        "F00126",
+        "F00208",
+        "F00303",
+        "F00418",
+        "F00436",
+        "F00343"
+      ],
+      "unscored_in_final_top10": [],
+      "strict_D052_complete": false,
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "p5_reason": "missing_original_position_judgment",
+      "ndcg_reason": "missing_original_position_judgment",
+      "unjudged_final_top10": [
+        "F00556",
+        "F00682",
+        "F00629"
+      ]
+    }
+  ],
+  "input_sha256": {
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/relevance_gold.jsonl": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4",
+    "evals/splits/dev_job_ids.txt": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+    "evals/results/cp23/pipeline_v11/plan_v1.json": "ec8c5b873736723c9b84bd1e3d944f6d24e3e3860ac8cc533836f38c599d6a1c",
+    "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/plan.json": "54c0d5d1cec7ebf08b983083aaad785f0ec5d6347bb85909d24f698e904647ec",
+    "evals/results/cp23/pipeline_v11/coverage_summary_v2.json": "b2ca8eaa20ebba74cc5fbb7fb1eac43fc804c69d9864d206910341e82cc09d8b"
+  }
+}

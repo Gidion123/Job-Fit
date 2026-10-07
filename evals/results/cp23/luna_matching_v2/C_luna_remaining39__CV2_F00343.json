@@ -1,0 +1,10 @@
+{
+  "cv_id": "CV2",
+  "job_id": "F00343",
+  "model": "gpt-6-luna",
+  "status": "held_extraction",
+  "error_code": null,
+  "wall_ms": 0,
+  "assessments": [],
+  "scores": {}
+}

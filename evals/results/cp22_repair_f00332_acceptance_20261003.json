@@ -1,0 +1,18 @@
+{
+  "job_id": "F00332_paste",
+  "result_sha256": "39d4bf45127a07436147d13131b9889d40138f5a60af8723055867c443f40cf4",
+  "checked_by": "delegated source reviewer",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "pass",
+    "qualifiers": "pass",
+    "importance": "pass"
+  },
+  "notes": [
+    "All eight qualification bullets checked against the original development source. Sixteen units preserve the explicit education OR, three independent tool requirements, six soft skills, five knowledge activities and preferred credit-scoring exposure.",
+    "Every quote is an exact source substring. Shared experience qualifiers are retained; Q07 source quote anchors the large-tabular-data context of both activities. No additional umbrella unit is scored.",
+    "Required/preferred and category review follows guideline v1.3. This is operational acceptance of a source-reviewed repair, not a new human gold label or proof of unattended extraction accuracy.",
+    "The original result remains in prior_stage_results. This receipt approves only the repaired result hash."
+  ]
+}

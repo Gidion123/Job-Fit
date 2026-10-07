@@ -1,0 +1,228 @@
+{
+  "run_id": "EXP-20261001-03",
+  "verified_at_utc": "2026-10-01T12:15:18+00:00",
+  "scope": "Phase 0 and verification of existing T03 Part 1 only",
+  "snapshot_id": "CP1_20260926",
+  "seed": 20261001,
+  "counts": {
+    "total": 428,
+    "development": 214,
+    "test": 214
+  },
+  "strata": {
+    "ai_ml_engineering / 1-2y": {
+      "total": 33,
+      "development": 16,
+      "test": 17
+    },
+    "ai_ml_engineering / 3-4y": {
+      "total": 36,
+      "development": 18,
+      "test": 18
+    },
+    "ai_ml_engineering / 5y+": {
+      "total": 41,
+      "development": 21,
+      "test": 20
+    },
+    "ai_ml_engineering / entry": {
+      "total": 22,
+      "development": 11,
+      "test": 11
+    },
+    "ai_ml_engineering / not_stated": {
+      "total": 90,
+      "development": 45,
+      "test": 45
+    },
+    "data_science / 1-2y": {
+      "total": 14,
+      "development": 7,
+      "test": 7
+    },
+    "data_science / 3-4y": {
+      "total": 31,
+      "development": 16,
+      "test": 15
+    },
+    "data_science / 5y+": {
+      "total": 37,
+      "development": 18,
+      "test": 19
+    },
+    "data_science / entry": {
+      "total": 16,
+      "development": 8,
+      "test": 8
+    },
+    "data_science / not_stated": {
+      "total": 33,
+      "development": 16,
+      "test": 17
+    },
+    "genai_llm / 1-2y": {
+      "total": 6,
+      "development": 3,
+      "test": 3
+    },
+    "genai_llm / 3-4y": {
+      "total": 11,
+      "development": 6,
+      "test": 5
+    },
+    "genai_llm / 5y+": {
+      "total": 12,
+      "development": 6,
+      "test": 6
+    },
+    "genai_llm / not_stated": {
+      "total": 21,
+      "development": 10,
+      "test": 11
+    },
+    "software_ai / 1-2y": {
+      "total": 5,
+      "development": 2,
+      "test": 3
+    },
+    "software_ai / 3-4y": {
+      "total": 5,
+      "development": 3,
+      "test": 2
+    },
+    "software_ai / 5y+": {
+      "total": 3,
+      "development": 2,
+      "test": 1
+    },
+    "software_ai / entry": {
+      "total": 3,
+      "development": 1,
+      "test": 2
+    },
+    "software_ai / not_stated": {
+      "total": 9,
+      "development": 5,
+      "test": 4
+    }
+  },
+  "checks": {
+    "split_ids_distinct_and_sorted": true,
+    "splits_disjoint": true,
+    "union_equals_all_428_auditable_target_jobs": true,
+    "all_five_pilot_ids_in_development": true,
+    "manifest_counts_match_independently_counted_source_metadata": true,
+    "all_input_hashes_match_manifest": true,
+    "frozen_record_mapping_matches_research_input_hashes": true,
+    "all_output_hashes_match_manifest": true,
+    "duplicate_pairs_and_components_match_both_source_files": true,
+    "deterministic_rerun_changed_no_protected_file": true,
+    "pilot_workbook_opened_read_only_and_bytes_unchanged": true
+  },
+  "pilot_ids": [
+    "F00016",
+    "F00022",
+    "F00034",
+    "F00073",
+    "F00114"
+  ],
+  "max_stratum_imbalance": 1,
+  "duplicate_validation": {
+    "source_files": [
+      {
+        "path": "data/interim/dedup_decisions.csv",
+        "rows": 40,
+        "protected_target_rows": 24,
+        "explicitly_different_rows": 8,
+        "outside_target_rows": 8
+      },
+      {
+        "path": "data/interim/jsearch_probable_duplicates_review.csv",
+        "rows": 40,
+        "protected_target_rows": 24,
+        "explicitly_different_rows": 8,
+        "outside_target_rows": 8
+      }
+    ],
+    "protected_source_rows": 48,
+    "unique_target_cluster_pairs": 19,
+    "already_merged_cluster_pairs": 18,
+    "cross_cluster_pairs": [
+      {
+        "ids": [
+          "F00014",
+          "F00812"
+        ],
+        "side": "test"
+      }
+    ],
+    "cross_split_pairs": 0,
+    "multi_job_components": [
+      [
+        "F00014",
+        "F00812"
+      ]
+    ],
+    "note": "Source rows overlap between the two files. Pair counts are deduplicated. DIFFERENT rows do not form protected edges."
+  },
+  "input_hashes": {
+    "data/processed/jobs_features.jsonl": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+    "data/interim/dedup_decisions.csv": "7db35513a7bd57fcf0b2f17d5d10360a1b5891456c6c6b406a1f6e20b3ea3a61",
+    "data/interim/jsearch_probable_duplicates_review.csv": "e78e01460a41491f51172ca192d8d6078300ef716e9dc3e46c05afdf51263d46",
+    "data/interim/snapshots/CP1_20260926/jsearch_records.jsonl": "14eddfe7acabf07770e3c94c7824d61c59a7a469757b0bb8074fdc0a1c59cc0b"
+  },
+  "output_hashes": {
+    "dev_job_ids.txt": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+    "test_job_ids.txt": "b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435"
+  },
+  "manifest_sha256": "f21741eb93c959b8d39f4c0227f7d9106aef4e815d51ecd379f68015ba1a39c2",
+  "code_hashes": {
+    "scripts/make_splits.py": "3d0f1ee5bd0e72dd49652d1e868340359b64f138800b6f962e900379c18892bf",
+    "tests/test_splits.py": "1c80f1998234d672ad95432158ed939bcab66ebeb32143774b4d54347ccc9e34"
+  },
+  "pilot_workbook_sha256": "47b5dde4eb687d5783b99ed40b13c8222310138d3ea8dd58b38c6890805071eb",
+  "phase_0": {
+    "default_python": {
+      "command": "python -m pytest -q",
+      "result": "collection failed: psycopg missing in the default Anaconda Python 3.13 environment",
+      "exit_code": 2
+    },
+    "project_python": {
+      "command": "env-job-fit/bin/python -m pytest -q",
+      "passed": 81,
+      "skipped": 1,
+      "elapsed_seconds": 7.28,
+      "exit_code": 0
+    },
+    "database_enabled": {
+      "command": "JOBFIT_DB_TESTS=1 env-job-fit/bin/python -m pytest -q",
+      "passed": 82,
+      "skipped": 0,
+      "elapsed_seconds": 7.47,
+      "exit_code": 0,
+      "access": "outside sandbox after approval",
+      "database_check": "idempotent load: 632 snapshot jobs, 428 target jobs"
+    },
+    "env_exists": true,
+    "required_variable_count": 4,
+    "missing_variable_names": [],
+    "runtime_budget_matches_D031": true,
+    "runtime_hard_stop_matches_D031": true,
+    "pilot_workbook_lock_present_at_check": false
+  },
+  "rerun": {
+    "command": "env-job-fit/bin/python scripts/make_splits.py",
+    "stdout": "OK: existing frozen split reproduced; no files changed",
+    "exit_code": 0
+  },
+  "cost": {
+    "provider_calls_this_session": 0,
+    "session_cost_usd": 0,
+    "project_ledger_records": 0,
+    "project_ledger_total_usd": 0,
+    "ledger_file_exists": false,
+    "note": "No project API call. No provider account balance lookup."
+  },
+  "git_sha": "Commit by Dion after this run; no git command run",
+  "stop": "Waiting for Dion to review stratum counts. T03 Part 2 and later tasks not started."
+}

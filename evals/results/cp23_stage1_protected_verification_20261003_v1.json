@@ -1,0 +1,145 @@
+{
+  "schema_version": "cp23-stage1-verification-v1",
+  "status": "pass",
+  "protected_file_count": 24,
+  "protected_changes": [],
+  "checks": {
+    "config/models_v1.yaml": {
+      "entry_sha256": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+      "final_sha256": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+      "match": true
+    },
+    "config/pipeline_v1.yaml": {
+      "entry_sha256": "ba44704f573f9fabb24ff45a2b0142b5c00ac93af55902429500c020a3cd1dc8",
+      "final_sha256": "ba44704f573f9fabb24ff45a2b0142b5c00ac93af55902429500c020a3cd1dc8",
+      "match": true
+    },
+    "config/retrieval_v1.yaml": {
+      "entry_sha256": "c54422081f79d3d9031367344de7b4813407410f911c849ae7721e7219495d7a",
+      "final_sha256": "c54422081f79d3d9031367344de7b4813407410f911c849ae7721e7219495d7a",
+      "match": true
+    },
+    "data/processed/jobs_features.jsonl": {
+      "entry_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+      "final_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+      "match": true
+    },
+    "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md": {
+      "entry_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "final_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "match": true
+    },
+    "data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md": {
+      "entry_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+      "final_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+      "match": true
+    },
+    "evals/gold/development_v13_reviewed_20261002_r2/JD_coverage.json": {
+      "entry_sha256": "55312dce477c8f620a8db72067d92f3c1d76abdbe615c85d78db1bed40ffd511",
+      "final_sha256": "55312dce477c8f620a8db72067d92f3c1d76abdbe615c85d78db1bed40ffd511",
+      "match": true
+    },
+    "evals/gold/development_v13_reviewed_20261002_r2/evidence_gold.jsonl": {
+      "entry_sha256": "9451fe9459c5cf97bc42ba24edf8a7a2cfc8b933083f8d0ab8b953fd579cb788",
+      "final_sha256": "9451fe9459c5cf97bc42ba24edf8a7a2cfc8b933083f8d0ab8b953fd579cb788",
+      "match": true
+    },
+    "evals/gold/development_v13_reviewed_20261002_r2/excluded_records.json": {
+      "entry_sha256": "e72c7f8214b6474b4fd648d25a4c36f8c374f1662eac5909e60d5deeeb16d93e",
+      "final_sha256": "e72c7f8214b6474b4fd648d25a4c36f8c374f1662eac5909e60d5deeeb16d93e",
+      "match": true
+    },
+    "evals/gold/development_v13_reviewed_20261002_r2/extraction_gold.jsonl": {
+      "entry_sha256": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+      "final_sha256": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+      "match": true
+    },
+    "evals/gold/development_v13_reviewed_20261002_r2/held_records.json": {
+      "entry_sha256": "bb7393e9264bda74967042e846a1c9b67090b0ca92255a815037f97de94321aa",
+      "final_sha256": "bb7393e9264bda74967042e846a1c9b67090b0ca92255a815037f97de94321aa",
+      "match": true
+    },
+    "evals/gold/development_v13_reviewed_20261002_r2/logical_units.json": {
+      "entry_sha256": "49aa3b438470de8897a3b17b315da4190dd33f2e78f3f73f9065753250fffaf5",
+      "final_sha256": "49aa3b438470de8897a3b17b315da4190dd33f2e78f3f73f9065753250fffaf5",
+      "match": true
+    },
+    "evals/gold/development_v13_reviewed_20261002_r2/manifest.json": {
+      "entry_sha256": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+      "final_sha256": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+      "match": true
+    },
+    "evals/gold/development_v13_reviewed_20261002_r2/pair_coverage.json": {
+      "entry_sha256": "b2a1339e4a9de6c4b8cf4d55b7ebb8f21fc2d3bde58557ac26de96135ba0bd58",
+      "final_sha256": "b2a1339e4a9de6c4b8cf4d55b7ebb8f21fc2d3bde58557ac26de96135ba0bd58",
+      "match": true
+    },
+    "evals/gold/development_v13_reviewed_20261002_r2/relevance_gold.jsonl": {
+      "entry_sha256": "2f0ef6760c8d3b26728e6a93b2771d0fa5fb35395814fa8f7f0cc54f837b2bd6",
+      "final_sha256": "2f0ef6760c8d3b26728e6a93b2771d0fa5fb35395814fa8f7f0cc54f837b2bd6",
+      "match": true
+    },
+    "evals/labeling/JobFit_Development_Labeling_v1.3.xlsx": {
+      "entry_sha256": "4d96852dce52effdc376709cf8c0131f2f9ad1a6f02795cc556fec1819eccb50",
+      "final_sha256": "4d96852dce52effdc376709cf8c0131f2f9ad1a6f02795cc556fec1819eccb50",
+      "match": true
+    },
+    "evals/pools/dev_pool.csv": {
+      "entry_sha256": "77825f8504d45baa577dbb12cf91585368b546da5e5cbbdbfd3085e6a807661e",
+      "final_sha256": "77825f8504d45baa577dbb12cf91585368b546da5e5cbbdbfd3085e6a807661e",
+      "match": true
+    },
+    "evals/splits/dev_job_ids.txt": {
+      "entry_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+      "final_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+      "match": true
+    },
+    "evals/splits/split_manifest.json": {
+      "entry_sha256": "f21741eb93c959b8d39f4c0227f7d9106aef4e815d51ecd379f68015ba1a39c2",
+      "final_sha256": "f21741eb93c959b8d39f4c0227f7d9106aef4e815d51ecd379f68015ba1a39c2",
+      "match": true
+    },
+    "evals/splits/test_job_ids.txt": {
+      "entry_sha256": "b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435",
+      "final_sha256": "b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435",
+      "match": true
+    },
+    "prompts/evidence_matching_v1_1.md": {
+      "entry_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+      "final_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+      "match": true
+    },
+    "prompts/jd_extraction_v1_2.md": {
+      "entry_sha256": "35525ee62f8aa7f79307d8d8b95141e85c7d30fa06b359a9dcb48c3a6cad1836",
+      "final_sha256": "35525ee62f8aa7f79307d8d8b95141e85c7d30fa06b359a9dcb48c3a6cad1836",
+      "match": true
+    },
+    "prompts/jd_extraction_v1_3.md": {
+      "entry_sha256": "0afe4b95155c7225bafd62e9216344cd886a4d6ba2e005fd746652b6ed97a224",
+      "final_sha256": "0afe4b95155c7225bafd62e9216344cd886a4d6ba2e005fd746652b6ed97a224",
+      "match": true
+    },
+    "reports/usage/usage_ledger.jsonl": {
+      "entry_sha256": "2870f7530090192a0618a0b6ae77e68e483d011201f03b912e0bd4316f123d70",
+      "final_sha256": "2870f7530090192a0618a0b6ae77e68e483d011201f03b912e0bd4316f123d70",
+      "match": true
+    }
+  },
+  "offline_tests": {
+    "command": "env-job-fit/bin/python -m pytest -q tests/test_evaluation_tools.py tests/test_cp23_stage1_prep.py tests/test_guideline_v13_runtime.py tests/test_alignment.py tests/test_retrieval_run.py tests/test_bundle_readiness.py --junitxml=evals/results/cp23_stage1_offline_tests_20261003.xml",
+    "tests": 0,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "junit_sha256": "4713ec2d74c565c480cbffdf13f9a8fa2e17ac4a0edd56196a48a5e64deb0812"
+  },
+  "api_calls_session": 0,
+  "actual_api_cost_usd_session": "0",
+  "ledger_records_final": 117,
+  "ledger_total_usd_final": "0.290770384",
+  "ledger_sha256": "2870f7530090192a0618a0b6ae77e68e483d011201f03b912e0bd4316f123d70",
+  "database_used": false,
+  "paid_inference_used": false,
+  "test_content_used": false,
+  "gold_or_workbook_writes": false
+}

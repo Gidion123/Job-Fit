@@ -1,0 +1,506 @@
+[
+  {
+    "job_id": "F00003",
+    "reviewed_retained_A": 6,
+    "promoted_A_rows": 6,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00010",
+    "reviewed_retained_A": 9,
+    "promoted_A_rows": 9,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00012",
+    "reviewed_retained_A": 22,
+    "promoted_A_rows": 21,
+    "all_retained_rows_exportable": false,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00016",
+    "reviewed_retained_A": 21,
+    "promoted_A_rows": 12,
+    "all_retained_rows_exportable": false,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00018",
+    "reviewed_retained_A": 24,
+    "promoted_A_rows": 24,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00020",
+    "reviewed_retained_A": 8,
+    "promoted_A_rows": 8,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00022",
+    "reviewed_retained_A": 21,
+    "promoted_A_rows": 14,
+    "all_retained_rows_exportable": false,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00029",
+    "reviewed_retained_A": 29,
+    "promoted_A_rows": 29,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00034",
+    "reviewed_retained_A": 16,
+    "promoted_A_rows": 15,
+    "all_retained_rows_exportable": false,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00036",
+    "reviewed_retained_A": 17,
+    "promoted_A_rows": 17,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00052",
+    "reviewed_retained_A": 28,
+    "promoted_A_rows": 28,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00055",
+    "reviewed_retained_A": 21,
+    "promoted_A_rows": 21,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00066",
+    "reviewed_retained_A": 16,
+    "promoted_A_rows": 16,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00073",
+    "reviewed_retained_A": 13,
+    "promoted_A_rows": 13,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00074",
+    "reviewed_retained_A": 25,
+    "promoted_A_rows": 24,
+    "all_retained_rows_exportable": false,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00075",
+    "reviewed_retained_A": 13,
+    "promoted_A_rows": 13,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00090",
+    "reviewed_retained_A": 35,
+    "promoted_A_rows": 35,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00103",
+    "reviewed_retained_A": 38,
+    "promoted_A_rows": 37,
+    "all_retained_rows_exportable": false,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00114",
+    "reviewed_retained_A": 17,
+    "promoted_A_rows": 16,
+    "all_retained_rows_exportable": false,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00117",
+    "reviewed_retained_A": 23,
+    "promoted_A_rows": 23,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00126",
+    "reviewed_retained_A": 4,
+    "promoted_A_rows": 4,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00176",
+    "reviewed_retained_A": 32,
+    "promoted_A_rows": 32,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00188",
+    "reviewed_retained_A": 13,
+    "promoted_A_rows": 13,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00189",
+    "reviewed_retained_A": 22,
+    "promoted_A_rows": 22,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00208",
+    "reviewed_retained_A": 38,
+    "promoted_A_rows": 38,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00212",
+    "reviewed_retained_A": 20,
+    "promoted_A_rows": 20,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00303",
+    "reviewed_retained_A": 18,
+    "promoted_A_rows": 18,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00309",
+    "reviewed_retained_A": 9,
+    "promoted_A_rows": 9,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00310",
+    "reviewed_retained_A": 68,
+    "promoted_A_rows": 68,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00327",
+    "reviewed_retained_A": 16,
+    "promoted_A_rows": 16,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00330",
+    "reviewed_retained_A": 8,
+    "promoted_A_rows": 8,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00332",
+    "reviewed_retained_A": 16,
+    "promoted_A_rows": 16,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00333",
+    "reviewed_retained_A": 23,
+    "promoted_A_rows": 23,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00354",
+    "reviewed_retained_A": 29,
+    "promoted_A_rows": 29,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00364",
+    "reviewed_retained_A": 0,
+    "promoted_A_rows": 0,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00366",
+    "reviewed_retained_A": 13,
+    "promoted_A_rows": 13,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00369",
+    "reviewed_retained_A": 24,
+    "promoted_A_rows": 0,
+    "all_retained_rows_exportable": false,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00412",
+    "reviewed_retained_A": 31,
+    "promoted_A_rows": 31,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00438",
+    "reviewed_retained_A": 17,
+    "promoted_A_rows": 17,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00463",
+    "reviewed_retained_A": 17,
+    "promoted_A_rows": 17,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00505",
+    "reviewed_retained_A": 10,
+    "promoted_A_rows": 10,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00515",
+    "reviewed_retained_A": 6,
+    "promoted_A_rows": 6,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00556",
+    "reviewed_retained_A": 18,
+    "promoted_A_rows": 18,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00601",
+    "reviewed_retained_A": 21,
+    "promoted_A_rows": 21,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00624",
+    "reviewed_retained_A": 35,
+    "promoted_A_rows": 35,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00650",
+    "reviewed_retained_A": 21,
+    "promoted_A_rows": 21,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00654",
+    "reviewed_retained_A": 10,
+    "promoted_A_rows": 10,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00655",
+    "reviewed_retained_A": 19,
+    "promoted_A_rows": 19,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00663",
+    "reviewed_retained_A": 20,
+    "promoted_A_rows": 20,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00666",
+    "reviewed_retained_A": 15,
+    "promoted_A_rows": 15,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00686",
+    "reviewed_retained_A": 12,
+    "promoted_A_rows": 12,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00698",
+    "reviewed_retained_A": 28,
+    "promoted_A_rows": 28,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00798",
+    "reviewed_retained_A": 39,
+    "promoted_A_rows": 39,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00815",
+    "reviewed_retained_A": 16,
+    "promoted_A_rows": 16,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00930",
+    "reviewed_retained_A": 3,
+    "promoted_A_rows": 3,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  },
+  {
+    "job_id": "F00933",
+    "reviewed_retained_A": 10,
+    "promoted_A_rows": 10,
+    "all_retained_rows_exportable": true,
+    "semantic_completeness": "not_inferred_from_row_approval",
+    "whole_JD_metric_eligible": false,
+    "reason": "Requires explicit complete source-to-logical-unit alignment receipt before extraction F1"
+  }
+]

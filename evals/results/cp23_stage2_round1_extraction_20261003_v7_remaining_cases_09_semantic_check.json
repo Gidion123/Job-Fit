@@ -1,0 +1,13 @@
+{
+  "job_id": "claude-haiku-4.5/F00018",
+  "result_sha256": "ca6ce54fa540a8fbb186600419ea4f300c2499b2e43ab3d2b6681338a844a651",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "fail",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "pass"
+  },
+  "notes": "All required and plus sections checked; 18 units. The entire five-clause plus section is absent, including cloud/AWS-stack preference, deep learning, taxonomies/ontologies, pipeline orchestration and Spark/Dask/Great Expectations. One-or-more NLP/LLM/recommendation use cases become three independent required AND obligations. Algorithms and underlying math remain merged. RAG and agentic units lose the shared strong hands-on qualifier. Five non-numerical experience units are misclassified experience_duration and generic software engineering as skill_tool. Extracted required/preferred importance and quotes pass, but completeness and grouping fail. No gold change.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

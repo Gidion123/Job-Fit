@@ -1,0 +1,162 @@
+{
+  "job_id": "F00060",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "96747ee23d34e4a662b81ec030e4fb59a0e78ebca1b4ff3c02329a1b446daa29",
+  "wall_ms": 27599,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00060",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "3+ years of experience developing ML solutions",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "3+ years of experience developing ML solutions",
+        "min_years": 3.0,
+        "branches": [],
+        "source_quotes": [
+          "3+ years of experience developing ML solutions"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Strong quantitative skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Strong quantitative skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong quantitative and problem-solving skills"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Strong problem-solving skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Strong problem-solving skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong quantitative and problem-solving skills"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Solid understanding of Statistics/ML fundamentals",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Solid understanding of Statistics/ML fundamentals",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Solid understanding of Statistics/ML fundamentals"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Experience in Python",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience in Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "experience in Python, R"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Experience in R",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience in R",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "experience in Python, R"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Communication skills to engage with business stakeholders to understand their needs and effectively communicate the results of analytical solutions",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Communication skills to engage with business stakeholders to understand their needs and effectively communicate the results of analytical solutions",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Communication skills to engage with business stakeholders to understand their needs and effectively communicate the results of the analytical solutions"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Ability to write clear and concise technical documentation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Ability to write clear and concise technical documentation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Ability to write clear and concise technical documentation"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Masters in a quantitative discipline (good to have; experienced Bachelor acceptable)",
+        "kind": "simple",
+        "importance": "unknown",
+        "field": "education",
+        "normalized_name": "Masters in a quantitative discipline (good to have; experienced Bachelor acceptable)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Masters in a quantitative discipline (good to have - Experienced - Bachelor)"
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

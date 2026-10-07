@@ -1,0 +1,293 @@
+{
+  "model": "claude-haiku-4.5",
+  "model_id": "anthropic/claude-haiku-4.5",
+  "cv_id": "CV1",
+  "job_id": "F00036",
+  "status": "done",
+  "error_code": null,
+  "attempts": 1,
+  "wall_ms": 9961,
+  "assessments": [
+    {
+      "unit_id": "P09-U01",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P09-U01/B01",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Lulusan S1 Statistika"
+          ]
+        },
+        {
+          "branch_id": "P09-U01/B02",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P09-U01/B03",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P09-U01/B04",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P09-U01/B05",
+          "label": null,
+          "check_status": "failed",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U02",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U03",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P09-U03/B01",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+          ]
+        },
+        {
+          "branch_id": "P09-U03/B02",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+          ]
+        },
+        {
+          "branch_id": "P09-U03/B03",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U04",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membangun model regresi logistik dan random forest dengan scikit-learn"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U05",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U06",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U07",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P09-U07/B01",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+          ]
+        },
+        {
+          "branch_id": "P09-U07/B02",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+          ]
+        },
+        {
+          "branch_id": "P09-U07/B03",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P09-U07/B04",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U08",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Melakukan analisis cohort retensi pelanggan"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U09",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P09-U09/B01",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P09-U09/B02",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P09-U09/B03",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Python (pandas, NumPy, scikit-learn, matplotlib)"
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U10",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U11",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "statistika inferensial"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U12",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\""
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U13",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "mempresentasikan hasilnya ke manajer divisi"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U14",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U15",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P09-U15/B01",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P09-U15/B02",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P09-U15/B03",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U16",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P09-U17",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "IPK 3,62 / 4,00"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ]
+}

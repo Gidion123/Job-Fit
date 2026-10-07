@@ -1,0 +1,358 @@
+{
+ "version": "test-relevance-cp24_test_v1-v1",
+ "date": "2026-10-06",
+ "split": "test",
+ "rule": "D-053-top10-union-v1",
+ "items": [
+  {
+   "item_id": "T01",
+   "cv_id": "CV4",
+   "job_id": "F00842"
+  },
+  {
+   "item_id": "T02",
+   "cv_id": "CV5",
+   "job_id": "F00071"
+  },
+  {
+   "item_id": "T03",
+   "cv_id": "CV4",
+   "job_id": "F00599"
+  },
+  {
+   "item_id": "T04",
+   "cv_id": "CV4",
+   "job_id": "F00557"
+  },
+  {
+   "item_id": "T05",
+   "cv_id": "CV1",
+   "job_id": "F00597"
+  },
+  {
+   "item_id": "T06",
+   "cv_id": "CV5",
+   "job_id": "F00853"
+  },
+  {
+   "item_id": "T07",
+   "cv_id": "CV2",
+   "job_id": "F00071"
+  },
+  {
+   "item_id": "T08",
+   "cv_id": "CV2",
+   "job_id": "F00680"
+  },
+  {
+   "item_id": "T09",
+   "cv_id": "CV3",
+   "job_id": "F00207"
+  },
+  {
+   "item_id": "T10",
+   "cv_id": "CV4",
+   "job_id": "F00374"
+  },
+  {
+   "item_id": "T11",
+   "cv_id": "CV5",
+   "job_id": "F00599"
+  },
+  {
+   "item_id": "T12",
+   "cv_id": "CV3",
+   "job_id": "F00206"
+  },
+  {
+   "item_id": "T13",
+   "cv_id": "CV3",
+   "job_id": "F00290"
+  },
+  {
+   "item_id": "T14",
+   "cv_id": "CV3",
+   "job_id": "F00680"
+  },
+  {
+   "item_id": "T15",
+   "cv_id": "CV5",
+   "job_id": "F00420"
+  },
+  {
+   "item_id": "T16",
+   "cv_id": "CV5",
+   "job_id": "F00207"
+  },
+  {
+   "item_id": "T17",
+   "cv_id": "CV2",
+   "job_id": "F00853"
+  },
+  {
+   "item_id": "T18",
+   "cv_id": "CV5",
+   "job_id": "F00032"
+  },
+  {
+   "item_id": "T19",
+   "cv_id": "CV1",
+   "job_id": "F00813"
+  },
+  {
+   "item_id": "T20",
+   "cv_id": "CV3",
+   "job_id": "F00139"
+  },
+  {
+   "item_id": "T21",
+   "cv_id": "CV2",
+   "job_id": "F00737"
+  },
+  {
+   "item_id": "T22",
+   "cv_id": "CV2",
+   "job_id": "F00290"
+  },
+  {
+   "item_id": "T23",
+   "cv_id": "CV2",
+   "job_id": "F00032"
+  },
+  {
+   "item_id": "T24",
+   "cv_id": "CV5",
+   "job_id": "F00662"
+  },
+  {
+   "item_id": "T25",
+   "cv_id": "CV4",
+   "job_id": "F00127"
+  },
+  {
+   "item_id": "T26",
+   "cv_id": "CV4",
+   "job_id": "F00346"
+  },
+  {
+   "item_id": "T27",
+   "cv_id": "CV1",
+   "job_id": "F00313"
+  },
+  {
+   "item_id": "T28",
+   "cv_id": "CV2",
+   "job_id": "F00651"
+  },
+  {
+   "item_id": "T29",
+   "cv_id": "CV5",
+   "job_id": "F00651"
+  },
+  {
+   "item_id": "T30",
+   "cv_id": "CV1",
+   "job_id": "F00599"
+  },
+  {
+   "item_id": "T31",
+   "cv_id": "CV1",
+   "job_id": "F00139"
+  },
+  {
+   "item_id": "T32",
+   "cv_id": "CV2",
+   "job_id": "F00069"
+  },
+  {
+   "item_id": "T33",
+   "cv_id": "CV3",
+   "job_id": "F00813"
+  },
+  {
+   "item_id": "T34",
+   "cv_id": "CV4",
+   "job_id": "F00027"
+  },
+  {
+   "item_id": "T35",
+   "cv_id": "CV2",
+   "job_id": "F00019"
+  },
+  {
+   "item_id": "T36",
+   "cv_id": "CV3",
+   "job_id": "F00480"
+  },
+  {
+   "item_id": "T37",
+   "cv_id": "CV5",
+   "job_id": "F00289"
+  },
+  {
+   "item_id": "T38",
+   "cv_id": "CV1",
+   "job_id": "F00267"
+  },
+  {
+   "item_id": "T39",
+   "cv_id": "CV3",
+   "job_id": "F00032"
+  },
+  {
+   "item_id": "T40",
+   "cv_id": "CV1",
+   "job_id": "F00374"
+  },
+  {
+   "item_id": "T41",
+   "cv_id": "CV5",
+   "job_id": "F00290"
+  },
+  {
+   "item_id": "T42",
+   "cv_id": "CV3",
+   "job_id": "F00501"
+  },
+  {
+   "item_id": "T43",
+   "cv_id": "CV2",
+   "job_id": "F00420"
+  },
+  {
+   "item_id": "T44",
+   "cv_id": "CV3",
+   "job_id": "F00656"
+  },
+  {
+   "item_id": "T45",
+   "cv_id": "CV4",
+   "job_id": "F00215"
+  },
+  {
+   "item_id": "T46",
+   "cv_id": "CV1",
+   "job_id": "F00557"
+  },
+  {
+   "item_id": "T47",
+   "cv_id": "CV3",
+   "job_id": "F00599"
+  },
+  {
+   "item_id": "T48",
+   "cv_id": "CV1",
+   "job_id": "F00236"
+  },
+  {
+   "item_id": "T49",
+   "cv_id": "CV3",
+   "job_id": "F00374"
+  },
+  {
+   "item_id": "T50",
+   "cv_id": "CV1",
+   "job_id": "F00206"
+  },
+  {
+   "item_id": "T51",
+   "cv_id": "CV5",
+   "job_id": "F00680"
+  },
+  {
+   "item_id": "T52",
+   "cv_id": "CV2",
+   "job_id": "F00306"
+  },
+  {
+   "item_id": "T53",
+   "cv_id": "CV1",
+   "job_id": "F00842"
+  },
+  {
+   "item_id": "T54",
+   "cv_id": "CV1",
+   "job_id": "F00258"
+  },
+  {
+   "item_id": "T55",
+   "cv_id": "CV3",
+   "job_id": "F00853"
+  },
+  {
+   "item_id": "T56",
+   "cv_id": "CV3",
+   "job_id": "F00358"
+  },
+  {
+   "item_id": "T57",
+   "cv_id": "CV4",
+   "job_id": "F00813"
+  },
+  {
+   "item_id": "T58",
+   "cv_id": "CV1",
+   "job_id": "F00771"
+  },
+  {
+   "item_id": "T59",
+   "cv_id": "CV5",
+   "job_id": "F00306"
+  },
+  {
+   "item_id": "T60",
+   "cv_id": "CV2",
+   "job_id": "F00236"
+  },
+  {
+   "item_id": "T61",
+   "cv_id": "CV5",
+   "job_id": "F00733"
+  },
+  {
+   "item_id": "T62",
+   "cv_id": "CV2",
+   "job_id": "F00599"
+  },
+  {
+   "item_id": "T63",
+   "cv_id": "CV5",
+   "job_id": "F00206"
+  },
+  {
+   "item_id": "T64",
+   "cv_id": "CV4",
+   "job_id": "F00530"
+  },
+  {
+   "item_id": "T65",
+   "cv_id": "CV4",
+   "job_id": "F00206"
+  },
+  {
+   "item_id": "T66",
+   "cv_id": "CV1",
+   "job_id": "F00027"
+  },
+  {
+   "item_id": "T67",
+   "cv_id": "CV4",
+   "job_id": "F00236"
+  },
+  {
+   "item_id": "T68",
+   "cv_id": "CV5",
+   "job_id": "F00070"
+  }
+ ],
+ "blind": true,
+ "hidden": [
+  "rank",
+  "score",
+  "method",
+  "model suggestion",
+  "experience bucket"
+ ],
+ "shuffle_seed": 20261053,
+ "workbook_sha256_at_creation": "d40b81d462afd65dda22a30cee02cbc736a3ade883d1250c6aad314637174a60"
+}

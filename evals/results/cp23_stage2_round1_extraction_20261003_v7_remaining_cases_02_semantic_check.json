@@ -1,0 +1,13 @@
+{
+  "job_id": "gemini-3.5-flash-lite/F00018",
+  "result_sha256": "08d86406816261547bccf3fcbb5c6f025db45eb717b1ea7f727fecf840f753d0",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "fail",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "pass"
+  },
+  "notes": "Full required and plus sections checked; 16 units. The five plus-section clauses are absent: general cloud/AWS-stack preference, deep learning, taxonomies/ontologies, pipeline orchestration, and big-data/data-quality tools. Required classification and regression are merged despite independently assessable tasks. U10 bare NLP/LLM/recommendation branches lose practical-use-case experience; LLM/RAG/agentic units lose strong qualifier, and problem-solving loses excellent. Required/preferred values on extracted units are correct, but missing preferred obligations remain a coverage failure. No gold change.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

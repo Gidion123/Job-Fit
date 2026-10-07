@@ -1,0 +1,146 @@
+{
+ "cv_id": "CV4",
+ "status": "ok",
+ "masking_counts": {
+  "name": 1,
+  "email": 1
+ },
+ "masked_digest": "948af5f96fa6084bf20a72326be235c086c355a620190ea0da10ecb52b2bf93a",
+ "parsed": {
+  "profile": {
+   "cv_id": "CV4",
+   "is_synthetic": true,
+   "language": "Indonesia (bahasa ibu), Inggris (menengah)",
+   "parse_status": "ok",
+   "raw_text": "# [NAME] Kirana Wibowo\n\nSurabaya, Indonesia · [EMAIL]\n\nCV per 30 September 2026. \"Sekarang\" mengacu pada tanggal ini.\n\n## Ringkasan\n\nData analyst dengan dua tahun pengalaman dalam pelaporan penjualan dan analisis pelanggan ritel. Menggunakan SQL, Python, dan dashboard untuk membantu tim operasional. Ingin beralih ke peran junior data scientist; pengalaman pemodelan machine learning sejauh ini berasal dari proyek pribadi.\n\n## Pengalaman\n\n**Data Analyst**, PT Contoh Ritel Timur, Surabaya · Oktober 2024 - sekarang\n- Menggabungkan data transaksi dan pelanggan dengan SQL di PostgreSQL; memeriksa duplikasi serta nilai yang hilang menggunakan Python dan pandas.\n- Membuat dashboard penjualan dan retensi pelanggan di Power BI untuk lima cabang, lalu membahas perubahan bulanan dengan tim operasional.\n- Mengotomatiskan laporan mingguan dengan Python sehingga pekerjaan rekap berkurang dari sekitar empat menjadi dua jam per minggu.\n- Menganalisis uji A/B halaman promosi bersama tim produk, memeriksa pembagian kelompok dan menghitung interval kepercayaan tingkat konversi sebelum menyampaikan rekomendasi.\n\n## Pendidikan\n\n**S1 Informatika**, Universitas Contoh Surabaya · September 2020 - Agustus 2024\n- Skripsi: \"Dashboard Pemantauan Persediaan untuk Toko Ritel\"\n- Mata kuliah terkait: Basis Data, Statistika, Data Mining\n\n## Proyek\n\n**Prediksi Churn Pelanggan** · 2025 (proyek pribadi)\n- Menggunakan dataset publik sekitar 7.000 pelanggan untuk membandingkan regresi logistik dan random forest dengan scikit-learn.\n- Memisahkan data latih dan uji, membandingkan precision dan recall, serta merangkum contoh kesalahan prediksi dalam notebook lokal. Model belum digunakan di layanan produksi.\n\n## Keahlian\n\nPython (pandas, scikit-learn), SQL (PostgreSQL), Power BI, Excel, analisis cohort, statistika dasar, Git, R (dasar)\n\n## Kursus\n\n- Pengantar Deep Learning, Akademi Contoh Daring · Mei 2026 (kursus selesai, tanpa sertifikat)\n\n## Bahasa\n\nIndonesia (bahasa ibu), Inggris (menengah)",
+   "sections": {
+    "Summary": "Data analyst dengan dua tahun pengalaman dalam pelaporan penjualan dan analisis pelanggan ritel. Menggunakan SQL, Python, dan dashboard untuk membantu tim operasional. Ingin beralih ke peran junior data scientist; pengalaman pemodelan machine learning sejauh ini berasal dari proyek pribadi.",
+    "Experience": "**Data Analyst**, PT Contoh Ritel Timur, Surabaya · Oktober 2024 - sekarang\n- Menggabungkan data transaksi dan pelanggan dengan SQL di PostgreSQL; memeriksa duplikasi serta nilai yang hilang menggunakan Python dan pandas.\n- Membuat dashboard penjualan dan retensi pelanggan di Power BI untuk lima cabang, lalu membahas perubahan bulanan dengan tim operasional.\n- Mengotomatiskan laporan mingguan dengan Python sehingga pekerjaan rekap berkurang dari sekitar empat menjadi dua jam per minggu.\n- Menganalisis uji A/B halaman promosi bersama tim produk, memeriksa pembagian kelompok dan menghitung interval kepercayaan tingkat konversi sebelum menyampaikan rekomendasi.",
+    "Education": "**S1 Informatika**, Universitas Contoh Surabaya · September 2020 - Agustus 2024\n- Skripsi: \"Dashboard Pemantauan Persediaan untuk Toko Ritel\"\n- Mata kuliah terkait: Basis Data, Statistika, Data Mining",
+    "Projects": "**Prediksi Churn Pelanggan** · 2025 (proyek pribadi)\n- Menggunakan dataset publik sekitar 7.000 pelanggan untuk membandingkan regresi logistik dan random forest dengan scikit-learn.\n- Memisahkan data latih dan uji, membandingkan precision dan recall, serta merangkum contoh kesalahan prediksi dalam notebook lokal. Model belum digunakan di layanan produksi.",
+    "Skills": "Python (pandas, scikit-learn), SQL (PostgreSQL), Power BI, Excel, analisis cohort, statistika dasar, Git, R (dasar)",
+    "Certifications": "- Pengantar Deep Learning, Akademi Contoh Daring · Mei 2026 (kursus selesai, tanpa sertifikat)",
+    "Other": "Indonesia (bahasa ibu), Inggris (menengah)"
+   },
+   "experience": [
+    {
+     "title": "Data Analyst",
+     "organization": "PT Contoh Ritel Timur",
+     "start": null,
+     "end": null,
+     "is_present": true,
+     "description": "**Data Analyst**, PT Contoh Ritel Timur, Surabaya · Oktober 2024 - sekarang\n- Menggabungkan data transaksi dan pelanggan dengan SQL di PostgreSQL; memeriksa duplikasi serta nilai yang hilang menggunakan Python dan pandas.\n- Membuat dashboard penjualan dan retensi pelanggan di Power BI untuk lima cabang, lalu membahas perubahan bulanan dengan tim operasional.\n- Mengotomatiskan laporan mingguan dengan Python sehingga pekerjaan rekap berkurang dari sekitar empat menjadi dua jam per minggu.\n- Menganalisis uji A/B halaman promosi bersama tim produk, memeriksa pembagian kelompok dan menghitung interval kepercayaan tingkat konversi sebelum menyampaikan rekomendasi.",
+     "start_partial": {
+      "year": 2024,
+      "month": 10
+     },
+     "end_partial": null,
+     "start_text": "Oktober 2024",
+     "end_text": "sekarang"
+    }
+   ],
+   "skills_list": [
+    "Python (pandas, scikit-learn)",
+    "SQL (PostgreSQL)",
+    "Power BI",
+    "Excel",
+    "analisis cohort",
+    "statistika dasar",
+    "Git",
+    "R (dasar)"
+   ],
+   "confirmed_location": null
+  },
+  "evidence": [
+   {
+    "fact_id": "employment_1",
+    "section": "Experience",
+    "quote": "**Data Analyst**, PT Contoh Ritel Timur, Surabaya · Oktober 2024 - sekarang"
+   },
+   {
+    "fact_id": "employment_1_bullet_1",
+    "section": "Experience",
+    "quote": "- Menggabungkan data transaksi dan pelanggan dengan SQL di PostgreSQL; memeriksa duplikasi serta nilai yang hilang menggunakan Python dan pandas."
+   },
+   {
+    "fact_id": "employment_1_bullet_2",
+    "section": "Experience",
+    "quote": "- Membuat dashboard penjualan dan retensi pelanggan di Power BI untuk lima cabang, lalu membahas perubahan bulanan dengan tim operasional."
+   },
+   {
+    "fact_id": "employment_1_bullet_3",
+    "section": "Experience",
+    "quote": "- Mengotomatiskan laporan mingguan dengan Python sehingga pekerjaan rekap berkurang dari sekitar empat menjadi dua jam per minggu."
+   },
+   {
+    "fact_id": "employment_1_bullet_4",
+    "section": "Experience",
+    "quote": "- Menganalisis uji A/B halaman promosi bersama tim produk, memeriksa pembagian kelompok dan menghitung interval kepercayaan tingkat konversi sebelum menyampaikan rekomendasi."
+   },
+   {
+    "fact_id": "education_1",
+    "section": "Education",
+    "quote": "**S1 Informatika**, Universitas Contoh Surabaya · September 2020 - Agustus 2024"
+   },
+   {
+    "fact_id": "education_1_bullet_1",
+    "section": "Education",
+    "quote": "- Skripsi: \"Dashboard Pemantauan Persediaan untuk Toko Ritel\""
+   },
+   {
+    "fact_id": "education_1_bullet_2",
+    "section": "Education",
+    "quote": "- Mata kuliah terkait: Basis Data, Statistika, Data Mining"
+   },
+   {
+    "fact_id": "project_1",
+    "section": "Projects",
+    "quote": "**Prediksi Churn Pelanggan** · 2025 (proyek pribadi)"
+   },
+   {
+    "fact_id": "project_1_bullet_1",
+    "section": "Projects",
+    "quote": "- Menggunakan dataset publik sekitar 7.000 pelanggan untuk membandingkan regresi logistik dan random forest dengan scikit-learn."
+   },
+   {
+    "fact_id": "project_1_bullet_2",
+    "section": "Projects",
+    "quote": "- Memisahkan data latih dan uji, membandingkan precision dan recall, serta merangkum contoh kesalahan prediksi dalam notebook lokal. Model belum digunakan di layanan produksi."
+   },
+   {
+    "fact_id": "skills_1",
+    "section": "Skills",
+    "quote": "Python (pandas, scikit-learn), SQL (PostgreSQL), Power BI, Excel, analisis cohort, statistika dasar, Git, R (dasar)"
+   },
+   {
+    "fact_id": "course_1",
+    "section": "Certifications",
+    "quote": "- Pengantar Deep Learning, Akademi Contoh Daring · Mei 2026 (kursus selesai, tanpa sertifikat)"
+   },
+   {
+    "fact_id": "language_1",
+    "section": "Other",
+    "quote": "Indonesia (bahasa ibu), Inggris (menengah)"
+   }
+  ],
+  "source_work": [
+   {
+    "title": "Data Analyst",
+    "organization": "PT Contoh Ritel Timur",
+    "source_quote": "**Data Analyst**, PT Contoh Ritel Timur, Surabaya · Oktober 2024 - sekarang\n- Menggabungkan data transaksi dan pelanggan dengan SQL di PostgreSQL; memeriksa duplikasi serta nilai yang hilang menggunakan Python dan pandas.\n- Membuat dashboard penjualan dan retensi pelanggan di Power BI untuk lima cabang, lalu membahas perubahan bulanan dengan tim operasional.\n- Mengotomatiskan laporan mingguan dengan Python sehingga pekerjaan rekap berkurang dari sekitar empat menjadi dua jam per minggu.\n- Menganalisis uji A/B halaman promosi bersama tim produk, memeriksa pembagian kelompok dan menghitung interval kepercayaan tingkat konversi sebelum menyampaikan rekomendasi.",
+    "start_text": "Oktober 2024",
+    "end_text": "sekarang",
+    "is_present": true
+   }
+  ],
+  "location_suggestion": "Surabaya, Indonesia",
+  "analysis_date": "2026-09-30",
+  "schema_version": "cv-v1.1-precision",
+  "warnings": [
+   "Check that employment, projects, education, dates and skills match the source before analysis."
+  ],
+  "attempts": 2,
+  "review_required": true
+ },
+ "attempts": 2
+}

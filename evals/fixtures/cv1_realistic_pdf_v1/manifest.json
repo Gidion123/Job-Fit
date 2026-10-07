@@ -1,0 +1,9 @@
+{
+ "scope": "CV1 synthetic development only; same facts and sentences, realistic layout",
+ "source": "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md",
+ "source_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+ "rendering": "pymupdf Story HTML: uppercase section headings, bold job lines, bullet list, no Markdown marks",
+ "generator": "scripts/make_cv1_realistic_pdf.py",
+ "file": "cv1_realistic.pdf",
+ "sha256": "d884dbaa2e5e1732e80d2986fa2e42e4fbb2c60f0d27bf0acca3425b23e5e055"
+}

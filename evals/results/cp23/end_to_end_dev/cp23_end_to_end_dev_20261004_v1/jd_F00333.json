@@ -1,0 +1,445 @@
+{
+  "job_id": "F00333",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "cbaf7813c40295c3592593e0093aa19c7e35c3d26d020fbba97f6f87c796a532",
+  "wall_ms": 80523,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00333",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Degree in Statistics, Mathematics, Operational Research, Computer Science, Economics, Engineering, or another quantitative field",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "degree in quantitative field",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Bachelor’s level degree in Statistics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Bachelor’s level degree in Mathematics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Bachelor’s level degree in Operational Research",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Bachelor’s level degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Bachelor’s level degree in Economics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B6",
+            "text": "Bachelor’s level degree in Engineering",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B7",
+            "text": "Bachelor’s level degree in another quantitative field",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "You hold a degree in Statistics, Mathematics, Operational Research, Computer Science, Economics, Engineering, or another quantitative field."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "At least 5 years of experience in data exploration",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "data exploration experience",
+        "min_years": 5.0,
+        "branches": [],
+        "source_quotes": [
+          "You have at least 5 years of experience in data exploration and feature engineering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "At least 5 years of experience in feature engineering",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "feature engineering experience",
+        "min_years": 5.0,
+        "branches": [],
+        "source_quotes": [
+          "You have at least 5 years of experience in data exploration and feature engineering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Understands local market conditions",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "local market conditions",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You understand local market conditions and industry regulations."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Understands industry regulations",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "industry regulations",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You understand local market conditions and industry regulations."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Master’s degree",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "education",
+        "normalized_name": "master's degree",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "A master’s degree is an advantage."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Proficiency in Gradient Boosting",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "gradient boosting",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are proficient in statistical techniques such as Gradient Boosting, Linear and Logistic Regression, Decision Trees, and Clustering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Proficiency in Linear Regression",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "linear regression",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are proficient in statistical techniques such as Gradient Boosting, Linear and Logistic Regression, Decision Trees, and Clustering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Proficiency in Logistic Regression",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "logistic regression",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are proficient in statistical techniques such as Gradient Boosting, Linear and Logistic Regression, Decision Trees, and Clustering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Proficiency in Decision Trees",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "decision trees",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are proficient in statistical techniques such as Gradient Boosting, Linear and Logistic Regression, Decision Trees, and Clustering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Proficiency in Clustering",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "clustering",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are proficient in statistical techniques such as Gradient Boosting, Linear and Logistic Regression, Decision Trees, and Clustering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Skilled in Python for data analysis and management",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are skilled in Python, SQL, and Power BI for data analysis and management."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Skilled in SQL for data analysis and management",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "sql",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are skilled in Python, SQL, and Power BI for data analysis and management."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Skilled in Power BI for data analysis and management",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "power bi",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are skilled in Python, SQL, and Power BI for data analysis and management."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Can translate complex datasets into clear, actionable insights for business improvement",
+        "kind": "simple",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": "data translation to insights",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You can translate complex datasets into clear, actionable insights for business improvement."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Strong in data storytelling",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "data storytelling",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are strong in data storytelling and presentation, with proficiency in MS Excel and MS PowerPoint."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Strong in presentation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": "presentation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are strong in data storytelling and presentation, with proficiency in MS Excel and MS PowerPoint."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Proficiency in MS Excel",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "ms excel",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are strong in data storytelling and presentation, with proficiency in MS Excel and MS PowerPoint."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Proficiency in MS PowerPoint",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "ms powerpoint",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are strong in data storytelling and presentation, with proficiency in MS Excel and MS PowerPoint."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Manages stakeholders collaboratively, diplomatically, and flexibly",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "stakeholder management",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You manage stakeholders collaboratively, diplomatically, and flexibly."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Communicates complex ideas effectively, both verbally and in writing",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "communication",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You communicate complex ideas effectively, both verbally and in writing."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Stays informed about macro trends in payments to support value proposition development",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "macro trends in payments",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You stay informed about macro trends in payments, banking, and financial services to support value proposition development (nice to have)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Stays informed about macro trends in banking to support value proposition development",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "macro trends in banking",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You stay informed about macro trends in payments, banking, and financial services to support value proposition development (nice to have)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U24",
+        "text": "Stays informed about macro trends in financial services to support value proposition development",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "macro trends in financial services",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You stay informed about macro trends in payments, banking, and financial services to support value proposition development (nice to have)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U25",
+        "text": "Work location is Indonesia",
+        "kind": "simple",
+        "importance": "required",
+        "field": "location",
+        "normalized_name": "indonesia location",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Location: Indonesia"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

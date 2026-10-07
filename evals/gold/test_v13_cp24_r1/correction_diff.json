@@ -1,0 +1,127 @@
+{
+ "change_summary": {
+  "relevance_label_changes": {
+   "count": 1,
+   "items": [
+    {
+     "item_id": "T68",
+     "before": 2,
+     "after": "UNJUDGED"
+    }
+   ]
+  },
+  "text_only_corrections": {
+   "count": 5,
+   "items": [
+    "T17",
+    "T21",
+    "T23",
+    "T43",
+    "T50"
+   ],
+   "field": "main_reason",
+   "score_changed": false
+  },
+  "other_relevance_or_score_changes": {
+   "count": 0,
+   "items": []
+  },
+  "statement": "1 relevance-label change (T68 2 -> UNJUDGED); 5 text-only corrections (T17, T21, T23, T43, T50); 0 other relevance/score changes."
+ },
+ "changes": [
+  {
+   "item_id": "T17",
+   "cv_id": "CV2",
+   "job_id": "F00853",
+   "field": "main_reason",
+   "before": "The CV supports Python and At least one agent/LLM framework such as LangChain, …, but the required duration is not met: 2–4 years as a software/backend developer, including at least 1 year on LLM/AI-agent projects.",
+   "after": "The CV supports Python and At least one agent/LLM framework such as LangChain, LlamaIndex, OpenAI/Anthropic SDK, or equivalent, but the required duration is not met: 2–4 years as a software/backend developer, including at least 1 year on LLM/AI-agent projects.",
+   "restored_fragments": [
+    {
+     "truncated": "At least one agent/LLM framework such as LangChain, …",
+     "restored": "At least one agent/LLM framework such as LangChain, LlamaIndex, OpenAI/Anthropic SDK, or equivalent"
+    }
+   ],
+   "score_before": 1,
+   "score_after": 1,
+   "source": "A_Extraction.unit_text of the same job, same workbook"
+  },
+  {
+   "item_id": "T21",
+   "cv_id": "CV2",
+   "job_id": "F00737",
+   "field": "main_reason",
+   "before": "The CV supports Python and Quantify subjective AI output such as accuracy, rele…, but the required duration is not met: At least 4 years of hands-on AI/ML or GenAI engineering experience.",
+   "after": "The CV supports Python and Quantify subjective AI output such as accuracy, relevance, and readability, but the required duration is not met: At least 4 years of hands-on AI/ML or GenAI engineering experience.",
+   "restored_fragments": [
+    {
+     "truncated": "Quantify subjective AI output such as accuracy, rele…",
+     "restored": "Quantify subjective AI output such as accuracy, relevance, and readability"
+    }
+   ],
+   "score_before": 1,
+   "score_after": 1,
+   "source": "A_Extraction.unit_text of the same job, same workbook"
+  },
+  {
+   "item_id": "T23",
+   "cv_id": "CV2",
+   "job_id": "F00032",
+   "field": "main_reason",
+   "before": "The CV supports Python and LLM/Generative AI API integration using OpenAI, Clau…, but the required duration is not met: 2–5 years of experience in AI Engineering, Full-Stack Development, Backend Engineering, or related roles.",
+   "after": "The CV supports Python and LLM/Generative AI API integration using OpenAI, Claude, Gemini, or similar, but the required duration is not met: 2–5 years of experience in AI Engineering, Full-Stack Development, Backend Engineering, or related roles.",
+   "restored_fragments": [
+    {
+     "truncated": "LLM/Generative AI API integration using OpenAI, Clau…",
+     "restored": "LLM/Generative AI API integration using OpenAI, Claude, Gemini, or similar"
+    }
+   ],
+   "score_before": 1,
+   "score_after": 1,
+   "source": "A_Extraction.unit_text of the same job, same workbook"
+  },
+  {
+   "item_id": "T43",
+   "cv_id": "CV2",
+   "job_id": "F00420",
+   "field": "main_reason",
+   "before": "The CV supports LLM and Frameworks such as LangChain, LlamaIndex, Hugging Fa…, but the required duration is not met: 3–5 years of experience in AI, Machine Learning, NLP, or software engineering.",
+   "after": "The CV supports LLM and Frameworks such as LangChain, LlamaIndex, Hugging Face, vLLM, or similar, but the required duration is not met: 3–5 years of experience in AI, Machine Learning, NLP, or software engineering.",
+   "restored_fragments": [
+    {
+     "truncated": "Frameworks such as LangChain, LlamaIndex, Hugging Fa…",
+     "restored": "Frameworks such as LangChain, LlamaIndex, Hugging Face, vLLM, or similar"
+    }
+   ],
+   "score_before": 1,
+   "score_after": 1,
+   "source": "A_Extraction.unit_text of the same job, same workbook"
+  },
+  {
+   "item_id": "T50",
+   "cv_id": "CV1",
+   "job_id": "F00206",
+   "field": "main_reason",
+   "before": "Some evidence supports Python and machine learning, but key required coverage is weak or missing in Write clean, well-tested, maintainable library code and Hands-on experience with a modern deep-learning fram….",
+   "after": "Some evidence supports Python and machine learning, but key required coverage is weak or missing in Write clean, well-tested, maintainable library code and Hands-on experience with a modern deep-learning framework.",
+   "restored_fragments": [
+    {
+     "truncated": "Hands-on experience with a modern deep-learning fram…",
+     "restored": "Hands-on experience with a modern deep-learning framework"
+    }
+   ],
+   "score_before": 1,
+   "score_after": 1,
+   "source": "A_Extraction.unit_text of the same job, same workbook"
+  },
+  {
+   "item_id": "T68",
+   "cv_id": "CV5",
+   "job_id": "F00070",
+   "field": "relevance_0_3",
+   "before": 2,
+   "after": "UNJUDGED (held)",
+   "reason": "JD has responsibilities only and 0 A_Extraction units; no assessable qualification requirements"
+  }
+ ]
+}

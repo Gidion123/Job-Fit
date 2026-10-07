@@ -1,0 +1,1924 @@
+{
+ "schema_version": "cp23-post-labeling-v1",
+ "api_calls": 0,
+ "gold": {
+  "bundle": "development_v13_reviewed_20261004_gap_r4",
+  "relevance_rows": 123,
+  "manifest_sha256": "8c297df261516c3e69f031ec3556ce20bf0cf0b66c8becb2e84bb8fe08347c55"
+ },
+ "d078_decision": {
+  "status": "chosen",
+  "k": 10,
+  "partial_weight": 0.5,
+  "seniority_rule": true,
+  "macro_ndcg_at_10": 0.5516531935019023,
+  "macro_p_at_5": 0.7,
+  "trace": [
+   "best K by NDCG@10 at w=0.5: 10 (0.552, P@5 0.700)",
+   "smallest K within 0.02 NDCG and 0.1 P@5 of the best: 10",
+   "no weight beats 0.5 by more than 0.02 NDCG@10; keep 0.5",
+   "rule not worse on both metrics: keep the rule"
+  ]
+ },
+ "freeze_grid_sol": [
+  {
+   "matcher": "sol",
+   "seniority_rule": false,
+   "k": 10,
+   "partial_weight": 0.25,
+   "macro_p_at_5": 0.4,
+   "macro_ndcg_at_10": 0.44074194821632207,
+   "macro_stage1_p_at_5": 0.30000000000000004,
+   "macro_stage1_ndcg_at_10": 0.4240797915848813,
+   "full_ranking_equivalent": true,
+   "unscored_in_top_k": {
+    "CV1": 2,
+    "CV2": 1
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": false,
+   "k": 10,
+   "partial_weight": 0.5,
+   "macro_p_at_5": 0.4,
+   "macro_ndcg_at_10": 0.44386251046588576,
+   "macro_stage1_p_at_5": 0.30000000000000004,
+   "macro_stage1_ndcg_at_10": 0.4240797915848813,
+   "full_ranking_equivalent": true,
+   "unscored_in_top_k": {
+    "CV1": 2,
+    "CV2": 1
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": false,
+   "k": 10,
+   "partial_weight": 0.75,
+   "macro_p_at_5": 0.4,
+   "macro_ndcg_at_10": 0.41095330624294313,
+   "macro_stage1_p_at_5": 0.30000000000000004,
+   "macro_stage1_ndcg_at_10": 0.4240797915848813,
+   "full_ranking_equivalent": true,
+   "unscored_in_top_k": {
+    "CV1": 2,
+    "CV2": 1
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": false,
+   "k": 20,
+   "partial_weight": 0.25,
+   "macro_p_at_5": 0.6,
+   "macro_ndcg_at_10": 0.44070903224466373,
+   "macro_stage1_p_at_5": 0.30000000000000004,
+   "macro_stage1_ndcg_at_10": 0.4240797915848813,
+   "full_ranking_equivalent": true,
+   "unscored_in_top_k": {
+    "CV1": 6,
+    "CV2": 5
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": false,
+   "k": 20,
+   "partial_weight": 0.5,
+   "macro_p_at_5": 0.6,
+   "macro_ndcg_at_10": 0.4414003499107469,
+   "macro_stage1_p_at_5": 0.30000000000000004,
+   "macro_stage1_ndcg_at_10": 0.4240797915848813,
+   "full_ranking_equivalent": true,
+   "unscored_in_top_k": {
+    "CV1": 6,
+    "CV2": 5
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": false,
+   "k": 20,
+   "partial_weight": 0.75,
+   "macro_p_at_5": 0.5,
+   "macro_ndcg_at_10": 0.4498840073601762,
+   "macro_stage1_p_at_5": 0.30000000000000004,
+   "macro_stage1_ndcg_at_10": 0.4240797915848813,
+   "full_ranking_equivalent": true,
+   "unscored_in_top_k": {
+    "CV1": 6,
+    "CV2": 5
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": false,
+   "k": 30,
+   "partial_weight": 0.25,
+   "macro_p_at_5": 0.30000000000000004,
+   "macro_ndcg_at_10": 0.38306318697420494,
+   "macro_stage1_p_at_5": 0.30000000000000004,
+   "macro_stage1_ndcg_at_10": 0.4240797915848813,
+   "full_ranking_equivalent": true,
+   "unscored_in_top_k": {
+    "CV1": 10,
+    "CV2": 10
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": false,
+   "k": 30,
+   "partial_weight": 0.5,
+   "macro_p_at_5": 0.30000000000000004,
+   "macro_ndcg_at_10": 0.3896353744309058,
+   "macro_stage1_p_at_5": 0.30000000000000004,
+   "macro_stage1_ndcg_at_10": 0.4240797915848813,
+   "full_ranking_equivalent": true,
+   "unscored_in_top_k": {
+    "CV1": 10,
+    "CV2": 10
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": false,
+   "k": 30,
+   "partial_weight": 0.75,
+   "macro_p_at_5": 0.4,
+   "macro_ndcg_at_10": 0.3715074047171903,
+   "macro_stage1_p_at_5": 0.30000000000000004,
+   "macro_stage1_ndcg_at_10": 0.4240797915848813,
+   "full_ranking_equivalent": true,
+   "unscored_in_top_k": {
+    "CV1": 10,
+    "CV2": 10
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": true,
+   "k": 10,
+   "partial_weight": 0.25,
+   "macro_p_at_5": 0.6,
+   "macro_ndcg_at_10": 0.5490939224590562,
+   "macro_stage1_p_at_5": 0.7,
+   "macro_stage1_ndcg_at_10": 0.5501628169624618,
+   "full_ranking_equivalent": true,
+   "unscored_in_top_k": {
+    "CV1": 3,
+    "CV2": 1
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": true,
+   "k": 10,
+   "partial_weight": 0.5,
+   "macro_p_at_5": 0.7,
+   "macro_ndcg_at_10": 0.5516531935019023,
+   "macro_stage1_p_at_5": 0.7,
+   "macro_stage1_ndcg_at_10": 0.5501628169624618,
+   "full_ranking_equivalent": true,
+   "unscored_in_top_k": {
+    "CV1": 3,
+    "CV2": 1
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": true,
+   "k": 10,
+   "partial_weight": 0.75,
+   "macro_p_at_5": 0.7,
+   "macro_ndcg_at_10": 0.5682286581031178,
+   "macro_stage1_p_at_5": 0.7,
+   "macro_stage1_ndcg_at_10": 0.5501628169624618,
+   "full_ranking_equivalent": true,
+   "unscored_in_top_k": {
+    "CV1": 3,
+    "CV2": 1
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": true,
+   "k": 20,
+   "partial_weight": 0.25,
+   "macro_p_at_5": 0.5,
+   "macro_ndcg_at_10": 0.41584031654186904,
+   "macro_stage1_p_at_5": 0.7,
+   "macro_stage1_ndcg_at_10": 0.5501628169624618,
+   "full_ranking_equivalent": false,
+   "unscored_in_top_k": {
+    "CV1": 6,
+    "CV2": 6
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": true,
+   "k": 20,
+   "partial_weight": 0.5,
+   "macro_p_at_5": 0.4,
+   "macro_ndcg_at_10": 0.4025098042826303,
+   "macro_stage1_p_at_5": 0.7,
+   "macro_stage1_ndcg_at_10": 0.5501628169624618,
+   "full_ranking_equivalent": false,
+   "unscored_in_top_k": {
+    "CV1": 6,
+    "CV2": 6
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": true,
+   "k": 20,
+   "partial_weight": 0.75,
+   "macro_p_at_5": 0.5,
+   "macro_ndcg_at_10": 0.41715391143120706,
+   "macro_stage1_p_at_5": 0.7,
+   "macro_stage1_ndcg_at_10": 0.5501628169624618,
+   "full_ranking_equivalent": false,
+   "unscored_in_top_k": {
+    "CV1": 6,
+    "CV2": 6
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": true,
+   "k": 30,
+   "partial_weight": 0.25,
+   "macro_p_at_5": 0.30000000000000004,
+   "macro_ndcg_at_10": 0.3825564436563034,
+   "macro_stage1_p_at_5": 0.7,
+   "macro_stage1_ndcg_at_10": 0.5501628169624618,
+   "full_ranking_equivalent": false,
+   "unscored_in_top_k": {
+    "CV1": 10,
+    "CV2": 10
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": true,
+   "k": 30,
+   "partial_weight": 0.5,
+   "macro_p_at_5": 0.30000000000000004,
+   "macro_ndcg_at_10": 0.38211625101967966,
+   "macro_stage1_p_at_5": 0.7,
+   "macro_stage1_ndcg_at_10": 0.5501628169624618,
+   "full_ranking_equivalent": false,
+   "unscored_in_top_k": {
+    "CV1": 10,
+    "CV2": 10
+   },
+   "missing_labels": []
+  },
+  {
+   "matcher": "sol",
+   "seniority_rule": true,
+   "k": 30,
+   "partial_weight": 0.75,
+   "macro_p_at_5": 0.4,
+   "macro_ndcg_at_10": 0.37280479406070743,
+   "macro_stage1_p_at_5": 0.7,
+   "macro_stage1_ndcg_at_10": 0.5501628169624618,
+   "full_ranking_equivalent": false,
+   "unscored_in_top_k": {
+    "CV1": 10,
+    "CV2": 10
+   },
+   "missing_labels": []
+  }
+ ],
+ "retriever_comparison": {
+  "rows": [
+   {
+    "method": "B0",
+    "seniority_rule": false,
+    "per_cv": {
+     "CV1": {
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.5584295428255502,
+      "recall_at_20": 0.5294117647058824,
+      "unjudged_top20": []
+     },
+     "CV2": {
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.44806908162498027,
+      "recall_at_20": 0.4117647058823529,
+      "unjudged_top20": []
+     }
+    },
+    "macro_p_at_5": 0.5,
+    "macro_ndcg_at_10": 0.5032493122252653,
+    "macro_recall_at_20": 0.47058823529411764
+   },
+   {
+    "method": "B0",
+    "seniority_rule": true,
+    "per_cv": {
+     "CV1": {
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.5557734457666067,
+      "recall_at_20": null,
+      "unjudged_top20": [
+       "F00311",
+       "F00666",
+       "F00017"
+      ]
+     },
+     "CV2": {
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.4845246466040719,
+      "recall_at_20": null,
+      "unjudged_top20": [
+       "F00571",
+       "F00354",
+       "F00533"
+      ]
+     }
+    },
+    "macro_p_at_5": 0.5,
+    "macro_ndcg_at_10": 0.5201490461853393,
+    "macro_recall_at_20": null
+   },
+   {
+    "method": "B1",
+    "seniority_rule": false,
+    "per_cv": {
+     "CV1": {
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.26428813580748556,
+      "recall_at_20": 0.29411764705882354,
+      "unjudged_top20": []
+     },
+     "CV2": {
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.46566866042412103,
+      "recall_at_20": 0.35294117647058826,
+      "unjudged_top20": []
+     }
+    },
+    "macro_p_at_5": 0.4,
+    "macro_ndcg_at_10": 0.3649783981158033,
+    "macro_recall_at_20": 0.3235294117647059
+   },
+   {
+    "method": "B1",
+    "seniority_rule": true,
+    "per_cv": {
+     "CV1": {
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.3708588288318952,
+      "recall_at_20": null,
+      "unjudged_top20": [
+       "F00847",
+       "F00609",
+       "F00638",
+       "F00682"
+      ]
+     },
+     "CV2": {
+      "p_at_5": 0.8,
+      "ndcg_at_10": 0.577469819526548,
+      "recall_at_20": null,
+      "unjudged_top20": [
+       "F00210",
+       "F00679",
+       "F00825"
+      ]
+     }
+    },
+    "macro_p_at_5": 0.6000000000000001,
+    "macro_ndcg_at_10": 0.4741643241792216,
+    "macro_recall_at_20": null
+   },
+   {
+    "method": "dense_openai",
+    "seniority_rule": false,
+    "per_cv": {
+     "CV1": {
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.279782836516991,
+      "recall_at_20": null,
+      "unjudged_top20": [
+       "F00559"
+      ]
+     },
+     "CV2": {
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.34199928793974005,
+      "recall_at_20": 0.23529411764705882,
+      "unjudged_top20": []
+     }
+    },
+    "macro_p_at_5": 0.2,
+    "macro_ndcg_at_10": 0.3108910622283655,
+    "macro_recall_at_20": null
+   },
+   {
+    "method": "dense_openai",
+    "seniority_rule": true,
+    "per_cv": {
+     "CV1": {
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.3095849956550251,
+      "recall_at_20": null,
+      "unjudged_top20": [
+       "F00559",
+       "F00856",
+       "F00315",
+       "F00183",
+       "F00378"
+      ]
+     },
+     "CV2": {
+      "p_at_5": 0.8,
+      "ndcg_at_10": null,
+      "recall_at_20": null,
+      "unjudged_top20": [
+       "F00183",
+       "F00001",
+       "F00681",
+       "F00638"
+      ]
+     }
+    },
+    "macro_p_at_5": 0.6000000000000001,
+    "macro_ndcg_at_10": null,
+    "macro_recall_at_20": null
+   },
+   {
+    "method": "dense_qwen",
+    "seniority_rule": false,
+    "per_cv": {
+     "CV1": {
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.5472300844795225,
+      "recall_at_20": 0.35294117647058826,
+      "unjudged_top20": []
+     },
+     "CV2": {
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.36950873758648384,
+      "recall_at_20": 0.4117647058823529,
+      "unjudged_top20": []
+     }
+    },
+    "macro_p_at_5": 0.30000000000000004,
+    "macro_ndcg_at_10": 0.45836941103300316,
+    "macro_recall_at_20": 0.38235294117647056
+   },
+   {
+    "method": "dense_qwen",
+    "seniority_rule": true,
+    "per_cv": {
+     "CV1": {
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.6057104893616004,
+      "recall_at_20": null,
+      "unjudged_top20": [
+       "F00315",
+       "F00845",
+       "F00018"
+      ]
+     },
+     "CV2": {
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.5521738026501604,
+      "recall_at_20": null,
+      "unjudged_top20": [
+       "F00067",
+       "F00697",
+       "F00574"
+      ]
+     }
+    },
+    "macro_p_at_5": 0.5,
+    "macro_ndcg_at_10": 0.5789421460058803,
+    "macro_recall_at_20": null
+   },
+   {
+    "method": "fusion_hybrid_qwen_B0",
+    "seniority_rule": false,
+    "per_cv": {
+     "CV1": {
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.5021548055310189,
+      "recall_at_20": 0.5882352941176471,
+      "unjudged_top20": []
+     },
+     "CV2": {
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.4139206506434358,
+      "recall_at_20": 0.4117647058823529,
+      "unjudged_top20": []
+     }
+    },
+    "macro_p_at_5": 0.5,
+    "macro_ndcg_at_10": 0.4580377280872273,
+    "macro_recall_at_20": 0.5
+   },
+   {
+    "method": "fusion_hybrid_qwen_B0",
+    "seniority_rule": true,
+    "per_cv": {
+     "CV1": {
+      "p_at_5": 0.8,
+      "ndcg_at_10": 0.662027980058141,
+      "recall_at_20": 0.6470588235294118,
+      "unjudged_top20": []
+     },
+     "CV2": {
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.44671176917943367,
+      "recall_at_20": 0.6470588235294118,
+      "unjudged_top20": []
+     }
+    },
+    "macro_p_at_5": 0.6000000000000001,
+    "macro_ndcg_at_10": 0.5543698746187873,
+    "macro_recall_at_20": 0.6470588235294118
+   },
+   {
+    "method": "hybrid_openai",
+    "seniority_rule": false,
+    "per_cv": {
+     "CV1": {
+      "p_at_5": 0.0,
+      "ndcg_at_10": 0.14572533673553842,
+      "recall_at_20": 0.23529411764705882,
+      "unjudged_top20": []
+     },
+     "CV2": {
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.46040922656992667,
+      "recall_at_20": 0.4117647058823529,
+      "unjudged_top20": []
+     }
+    },
+    "macro_p_at_5": 0.2,
+    "macro_ndcg_at_10": 0.30306728165273256,
+    "macro_recall_at_20": 0.32352941176470584
+   },
+   {
+    "method": "hybrid_openai",
+    "seniority_rule": true,
+    "per_cv": {
+     "CV1": {
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.3110540928450242,
+      "recall_at_20": 0.35294117647058826,
+      "unjudged_top20": []
+     },
+     "CV2": {
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.6122879113341518,
+      "recall_at_20": 0.47058823529411764,
+      "unjudged_top20": []
+     }
+    },
+    "macro_p_at_5": 0.5,
+    "macro_ndcg_at_10": 0.461671002089588,
+    "macro_recall_at_20": 0.4117647058823529
+   },
+   {
+    "method": "hybrid_qwen",
+    "seniority_rule": false,
+    "per_cv": {
+     "CV1": {
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.31554162933265345,
+      "recall_at_20": 0.35294117647058826,
+      "unjudged_top20": []
+     },
+     "CV2": {
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.5326179538371092,
+      "recall_at_20": 0.47058823529411764,
+      "unjudged_top20": []
+     }
+    },
+    "macro_p_at_5": 0.30000000000000004,
+    "macro_ndcg_at_10": 0.4240797915848813,
+    "macro_recall_at_20": 0.4117647058823529
+   },
+   {
+    "method": "hybrid_qwen",
+    "seniority_rule": true,
+    "per_cv": {
+     "CV1": {
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.467257323395251,
+      "recall_at_20": 0.5294117647058824,
+      "unjudged_top20": []
+     },
+     "CV2": {
+      "p_at_5": 0.8,
+      "ndcg_at_10": 0.6330683105296726,
+      "recall_at_20": 0.5294117647058824,
+      "unjudged_top20": []
+     }
+    },
+    "macro_p_at_5": 0.7,
+    "macro_ndcg_at_10": 0.5501628169624618,
+    "macro_recall_at_20": 0.5294117647058824
+   }
+  ],
+  "proposed_rule": {
+   "status": "approved_D-084",
+   "rule": "Keep Hybrid Qwen unless a challenger has macro NDCG@10 at least 0.05 higher AND macro P@5 not lower, both with the seniority rule on and complete judgments on both CVs. A switch is a new development iteration: the new top 30 needs new Sol matching before the freeze.",
+   "margin_ndcg": 0.05
+  },
+  "proposed_rule_verdicts": [
+   {
+    "challenger": "B0",
+    "result": "does not beat current",
+    "ndcg_diff": -0.03,
+    "p5_diff": -0.2
+   },
+   {
+    "challenger": "B1",
+    "result": "does not beat current",
+    "ndcg_diff": -0.076,
+    "p5_diff": -0.1
+   },
+   {
+    "challenger": "dense_openai",
+    "result": "unavailable (missing labels)"
+   },
+   {
+    "challenger": "dense_qwen",
+    "result": "does not beat current",
+    "ndcg_diff": 0.029,
+    "p5_diff": -0.2
+   },
+   {
+    "challenger": "fusion_hybrid_qwen_B0",
+    "result": "does not beat current",
+    "ndcg_diff": 0.004,
+    "p5_diff": -0.1
+   },
+   {
+    "challenger": "hybrid_openai",
+    "result": "does not beat current",
+    "ndcg_diff": -0.088,
+    "p5_diff": -0.2
+   }
+  ]
+ },
+ "experience_block_at_choice": [
+  {
+   "seniority_rule": true,
+   "k": 10,
+   "conflict_block": false,
+   "cv_id": "CV1",
+   "p_at_5": 0.6,
+   "ndcg_at_10": 0.4833003560091314,
+   "final_top5": [
+    "F00312",
+    "F00036",
+    "F00332",
+    "F00556",
+    "F00655"
+   ],
+   "unjudged_final_top10": []
+  },
+  {
+   "seniority_rule": true,
+   "k": 10,
+   "conflict_block": false,
+   "cv_id": "CV2",
+   "p_at_5": 0.8,
+   "ndcg_at_10": 0.6200060309946733,
+   "final_top5": [
+    "F00815",
+    "F00018",
+    "F00645",
+    "F00650",
+    "F00052"
+   ],
+   "unjudged_final_top10": []
+  },
+  {
+   "seniority_rule": true,
+   "k": 10,
+   "conflict_block": true,
+   "cv_id": "CV1",
+   "p_at_5": 0.6,
+   "ndcg_at_10": 0.5146821442154322,
+   "final_top5": [
+    "F00312",
+    "F00332",
+    "F00556",
+    "F00655",
+    "F00020"
+   ],
+   "unjudged_final_top10": []
+  },
+  {
+   "seniority_rule": true,
+   "k": 10,
+   "conflict_block": true,
+   "cv_id": "CV2",
+   "p_at_5": 0.8,
+   "ndcg_at_10": 0.6200060309946733,
+   "final_top5": [
+    "F00815",
+    "F00018",
+    "F00645",
+    "F00650",
+    "F00052"
+   ],
+   "unjudged_final_top10": []
+  }
+ ],
+ "experience_block_flagged": [
+  {
+   "cv_id": "CV1",
+   "job_id": "F00663",
+   "relevance": 1,
+   "bucket": "5y+",
+   "scored": true,
+   "messages": [
+    "U02: the JD asks for at least 5 years; the whole CV work history is about 0.75 years. JD: • Pengalaman: Minimal 5 tahun pengalaman dalam pengembangan AI dan machine learning, dengan track record yang proven dalam implementasi proyek AI."
+   ]
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00284",
+   "relevance": 1,
+   "bucket": "3-4y",
+   "scored": true,
+   "messages": [
+    "U01: the JD asks for at least 4 years; the whole CV work history is about 0.75 years. JD: 4+ years of professional experience in a Data Scientist role, delivering end-to-end machine learning solutions in production environments. | 4 years"
+   ]
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00333",
+   "relevance": 1,
+   "bucket": "5y+",
+   "scored": true,
+   "messages": [
+    "U02: the JD asks for at least 5 years; the whole CV work history is about 0.75 years. JD: You have at least 5 years of experience in data exploration and feature engineering.",
+    "U03: the JD asks for at least 5 years; the whole CV work history is about 0.75 years. JD: You have at least 5 years of experience in data exploration and feature engineering."
+   ]
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00036",
+   "relevance": 1,
+   "bucket": "1-2y",
+   "scored": true,
+   "messages": [
+    "U02: the JD asks for at least 2 years; the whole CV work history is about 0.75 years. JD: Minimal 2-3 tahun pengalaman profesional sebagai Data Scientist atau posisi sejenisnya."
+   ]
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00208",
+   "relevance": 1,
+   "bucket": "5y+",
+   "scored": true,
+   "messages": [
+    "U05: the JD asks for at least 8 years; the whole CV work history is about 0.75 years. JD: 8-10 years of progressive experience in machine learning, AI engineering, or data science, with at least 3 years focused on applied AI and production ML systems."
+   ]
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00090",
+   "relevance": 1,
+   "bucket": "1-2y",
+   "scored": true,
+   "messages": [
+    "U01: the JD asks for at least 2 years; the whole CV work history is about 0.75 years. JD: - Min. 2–4 tahun pengalaman sebagai Backend Engineer / Software Engineer dengan fokus Python"
+   ]
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00189",
+   "relevance": 1,
+   "bucket": "5y+",
+   "scored": true,
+   "messages": [
+    "U01: the JD asks for at least 8 years; the whole CV work history is about 0.75 years. JD: You have at least 8 years of professional experience in data science, analytics, or statistical modelling within banking, payments, or financial services."
+   ]
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00851",
+   "relevance": 1,
+   "bucket": "5y+",
+   "scored": true,
+   "messages": [
+    "U001: the JD asks for at least 5 years; the whole CV work history is about 0.75 years. JD: • 5+ years of professional experience as a Machine Learning Engineer."
+   ]
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00055",
+   "relevance": 1,
+   "bucket": "3-4y",
+   "scored": true,
+   "messages": [
+    "U02: the JD asks for at least 3 years; the whole CV work history is about 0.75 years. JD: 3–6 years of hands-on data science or applied AI experience, with demonstrable work in text analytics, conversational data, or LLM-based systems"
+   ]
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00060",
+   "relevance": 1,
+   "bucket": "3-4y",
+   "scored": true,
+   "messages": [
+    "U01: the JD asks for at least 3 years; the whole CV work history is about 0.75 years. JD: 3+ years of experience developing ML solutions"
+   ]
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00527",
+   "relevance": 1,
+   "bucket": "3-4y",
+   "scored": true,
+   "messages": [
+    "U03: the JD asks for at least 4 years; the whole CV work history is about 0.75 years. JD: 4-6 years of total working experience",
+    "U04: the JD asks for at least 3 years; the whole CV work history is about 0.75 years. JD: At least 3+ years of working experience relevant to the field of data science"
+   ]
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00129",
+   "relevance": 0,
+   "bucket": "1-2y",
+   "scored": true,
+   "messages": [
+    "U02: the JD asks for at least 1 years; the whole CV work history is about 0.75 years. JD: Have at least 1 years of experience as data science trainer"
+   ]
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00624",
+   "relevance": 1,
+   "bucket": "5y+",
+   "scored": true,
+   "messages": [
+    "U01: the JD asks for at least 8 years; the whole CV work history is about 5.42 years. JD: Minimum 8 years of software engineering experience, including relevant experience in Generative AI."
+   ]
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00798",
+   "relevance": 1,
+   "bucket": "5y+",
+   "scored": true,
+   "messages": [
+    "U01: the JD asks for at least 6 years; the whole CV work history is about 5.42 years. JD: 6+ years of software engineering experience"
+   ]
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00208",
+   "relevance": 1,
+   "bucket": "5y+",
+   "scored": true,
+   "messages": [
+    "U05: the JD asks for at least 8 years; the whole CV work history is about 5.42 years. JD: 8-10 years of progressive experience in machine learning, AI engineering, or data science, with at least 3 years focused on applied AI and production ML systems."
+   ]
+  }
+ ],
+ "p7": {
+  "schema_version": "cp23-dev-p7-v1",
+  "split": "development",
+  "api_calls": 0,
+  "gold": "evals/gold/development_v13_reviewed_20261004_gap_r4/relevance_gold.jsonl",
+  "language_view": [
+   {
+    "cv_id": "CV1",
+    "cv_language": "id",
+    "method": "B0",
+    "p_at_5": 0.6,
+    "ndcg_at_10": 0.5584295428255502,
+    "recall": {
+     "10": {
+      "value": 0.4117647058823529,
+      "numerator": 7,
+      "denominator": 17
+     },
+     "20": {
+      "value": 0.5294117647058824,
+      "numerator": 9,
+      "denominator": 17
+     },
+     "30": {
+      "value": 0.5882352941176471,
+      "numerator": 10,
+      "denominator": 17
+     }
+    },
+    "relevant_found_by_jd_language_top20": {
+     "id": {
+      "relevant": 1,
+      "found_top20": 0
+     },
+     "en": {
+      "relevant": 16,
+      "found_top20": 9
+     }
+    },
+    "precision_intervals": [
+     {
+      "k": 5,
+      "value": 0.6,
+      "hits": 3,
+      "wilson_95": [
+       0.231,
+       0.882
+      ],
+      "unjudged": []
+     },
+     {
+      "k": 10,
+      "value": 0.7,
+      "hits": 7,
+      "wilson_95": [
+       0.397,
+       0.892
+      ],
+      "unjudged": []
+     }
+    ]
+   },
+   {
+    "cv_id": "CV1",
+    "cv_language": "id",
+    "method": "B1",
+    "p_at_5": 0.2,
+    "ndcg_at_10": 0.26428813580748556,
+    "recall": {
+     "10": {
+      "value": 0.17647058823529413,
+      "numerator": 3,
+      "denominator": 17
+     },
+     "20": {
+      "value": 0.29411764705882354,
+      "numerator": 5,
+      "denominator": 17
+     },
+     "30": {
+      "value": 0.35294117647058826,
+      "numerator": 6,
+      "denominator": 17
+     }
+    },
+    "relevant_found_by_jd_language_top20": {
+     "id": {
+      "relevant": 1,
+      "found_top20": 0
+     },
+     "en": {
+      "relevant": 16,
+      "found_top20": 5
+     }
+    },
+    "precision_intervals": [
+     {
+      "k": 5,
+      "value": 0.2,
+      "hits": 1,
+      "wilson_95": [
+       0.036,
+       0.624
+      ],
+      "unjudged": []
+     },
+     {
+      "k": 10,
+      "value": 0.3,
+      "hits": 3,
+      "wilson_95": [
+       0.108,
+       0.603
+      ],
+      "unjudged": []
+     }
+    ]
+   },
+   {
+    "cv_id": "CV1",
+    "cv_language": "id",
+    "method": "dense_openai",
+    "p_at_5": 0.2,
+    "ndcg_at_10": 0.279782836516991,
+    "recall": {
+     "10": {
+      "value": 0.11764705882352941,
+      "numerator": 2,
+      "denominator": 17
+     },
+     "20": {
+      "value": 0.11764705882352941,
+      "numerator": 2,
+      "denominator": 17
+     },
+     "30": {
+      "value": 0.17647058823529413,
+      "numerator": 3,
+      "denominator": 17
+     }
+    },
+    "relevant_found_by_jd_language_top20": {
+     "id": {
+      "relevant": 1,
+      "found_top20": 1
+     },
+     "en": {
+      "relevant": 16,
+      "found_top20": 1
+     }
+    },
+    "precision_intervals": [
+     {
+      "k": 5,
+      "value": 0.2,
+      "hits": 1,
+      "wilson_95": [
+       0.036,
+       0.624
+      ],
+      "unjudged": []
+     },
+     {
+      "k": 10,
+      "value": 0.2,
+      "hits": 2,
+      "wilson_95": [
+       0.057,
+       0.51
+      ],
+      "unjudged": []
+     }
+    ]
+   },
+   {
+    "cv_id": "CV1",
+    "cv_language": "id",
+    "method": "hybrid_openai",
+    "p_at_5": 0.0,
+    "ndcg_at_10": 0.14572533673553842,
+    "recall": {
+     "10": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 17
+     },
+     "20": {
+      "value": 0.23529411764705882,
+      "numerator": 4,
+      "denominator": 17
+     },
+     "30": {
+      "value": 0.35294117647058826,
+      "numerator": 6,
+      "denominator": 17
+     }
+    },
+    "relevant_found_by_jd_language_top20": {
+     "id": {
+      "relevant": 1,
+      "found_top20": 1
+     },
+     "en": {
+      "relevant": 16,
+      "found_top20": 3
+     }
+    },
+    "precision_intervals": [
+     {
+      "k": 5,
+      "value": 0.0,
+      "hits": 0,
+      "wilson_95": [
+       0.0,
+       0.434
+      ],
+      "unjudged": []
+     },
+     {
+      "k": 10,
+      "value": 0.0,
+      "hits": 0,
+      "wilson_95": [
+       0.0,
+       0.278
+      ],
+      "unjudged": []
+     }
+    ]
+   },
+   {
+    "cv_id": "CV1",
+    "cv_language": "id",
+    "method": "dense_qwen",
+    "p_at_5": 0.4,
+    "ndcg_at_10": 0.5472300844795225,
+    "recall": {
+     "10": {
+      "value": 0.23529411764705882,
+      "numerator": 4,
+      "denominator": 17
+     },
+     "20": {
+      "value": 0.35294117647058826,
+      "numerator": 6,
+      "denominator": 17
+     },
+     "30": {
+      "value": 0.47058823529411764,
+      "numerator": 8,
+      "denominator": 17
+     }
+    },
+    "relevant_found_by_jd_language_top20": {
+     "id": {
+      "relevant": 1,
+      "found_top20": 1
+     },
+     "en": {
+      "relevant": 16,
+      "found_top20": 5
+     }
+    },
+    "precision_intervals": [
+     {
+      "k": 5,
+      "value": 0.4,
+      "hits": 2,
+      "wilson_95": [
+       0.118,
+       0.769
+      ],
+      "unjudged": []
+     },
+     {
+      "k": 10,
+      "value": 0.4,
+      "hits": 4,
+      "wilson_95": [
+       0.168,
+       0.687
+      ],
+      "unjudged": []
+     }
+    ]
+   },
+   {
+    "cv_id": "CV1",
+    "cv_language": "id",
+    "method": "hybrid_qwen",
+    "p_at_5": 0.2,
+    "ndcg_at_10": 0.31554162933265345,
+    "recall": {
+     "10": {
+      "value": 0.17647058823529413,
+      "numerator": 3,
+      "denominator": 17
+     },
+     "20": {
+      "value": 0.35294117647058826,
+      "numerator": 6,
+      "denominator": 17
+     },
+     "30": {
+      "value": 0.5294117647058824,
+      "numerator": 9,
+      "denominator": 17
+     }
+    },
+    "relevant_found_by_jd_language_top20": {
+     "id": {
+      "relevant": 1,
+      "found_top20": 1
+     },
+     "en": {
+      "relevant": 16,
+      "found_top20": 5
+     }
+    },
+    "precision_intervals": [
+     {
+      "k": 5,
+      "value": 0.2,
+      "hits": 1,
+      "wilson_95": [
+       0.036,
+       0.624
+      ],
+      "unjudged": []
+     },
+     {
+      "k": 10,
+      "value": 0.3,
+      "hits": 3,
+      "wilson_95": [
+       0.108,
+       0.603
+      ],
+      "unjudged": []
+     }
+    ]
+   },
+   {
+    "cv_id": "CV2",
+    "cv_language": "en",
+    "method": "B0",
+    "p_at_5": 0.4,
+    "ndcg_at_10": 0.44806908162498027,
+    "recall": {
+     "10": {
+      "value": 0.23529411764705882,
+      "numerator": 4,
+      "denominator": 17
+     },
+     "20": {
+      "value": 0.4117647058823529,
+      "numerator": 7,
+      "denominator": 17
+     },
+     "30": {
+      "value": 0.47058823529411764,
+      "numerator": 8,
+      "denominator": 17
+     }
+    },
+    "relevant_found_by_jd_language_top20": {
+     "id": {
+      "relevant": 0,
+      "found_top20": 0
+     },
+     "en": {
+      "relevant": 16,
+      "found_top20": 6
+     }
+    },
+    "precision_intervals": [
+     {
+      "k": 5,
+      "value": 0.4,
+      "hits": 2,
+      "wilson_95": [
+       0.118,
+       0.769
+      ],
+      "unjudged": []
+     },
+     {
+      "k": 10,
+      "value": 0.4,
+      "hits": 4,
+      "wilson_95": [
+       0.168,
+       0.687
+      ],
+      "unjudged": []
+     }
+    ]
+   },
+   {
+    "cv_id": "CV2",
+    "cv_language": "en",
+    "method": "B1",
+    "p_at_5": 0.6,
+    "ndcg_at_10": 0.46566866042412103,
+    "recall": {
+     "10": {
+      "value": 0.23529411764705882,
+      "numerator": 4,
+      "denominator": 17
+     },
+     "20": {
+      "value": 0.35294117647058826,
+      "numerator": 6,
+      "denominator": 17
+     },
+     "30": {
+      "value": 0.47058823529411764,
+      "numerator": 8,
+      "denominator": 17
+     }
+    },
+    "relevant_found_by_jd_language_top20": {
+     "id": {
+      "relevant": 0,
+      "found_top20": 0
+     },
+     "en": {
+      "relevant": 16,
+      "found_top20": 6
+     }
+    },
+    "precision_intervals": [
+     {
+      "k": 5,
+      "value": 0.6,
+      "hits": 3,
+      "wilson_95": [
+       0.231,
+       0.882
+      ],
+      "unjudged": []
+     },
+     {
+      "k": 10,
+      "value": 0.4,
+      "hits": 4,
+      "wilson_95": [
+       0.168,
+       0.687
+      ],
+      "unjudged": []
+     }
+    ]
+   },
+   {
+    "cv_id": "CV2",
+    "cv_language": "en",
+    "method": "dense_openai",
+    "p_at_5": 0.2,
+    "ndcg_at_10": 0.34199928793974005,
+    "recall": {
+     "10": {
+      "value": 0.11764705882352941,
+      "numerator": 2,
+      "denominator": 17
+     },
+     "20": {
+      "value": 0.23529411764705882,
+      "numerator": 4,
+      "denominator": 17
+     },
+     "30": {
+      "value": 0.29411764705882354,
+      "numerator": 5,
+      "denominator": 17
+     }
+    },
+    "relevant_found_by_jd_language_top20": {
+     "id": {
+      "relevant": 0,
+      "found_top20": 0
+     },
+     "en": {
+      "relevant": 16,
+      "found_top20": 4
+     }
+    },
+    "precision_intervals": [
+     {
+      "k": 5,
+      "value": 0.2,
+      "hits": 1,
+      "wilson_95": [
+       0.036,
+       0.624
+      ],
+      "unjudged": []
+     },
+     {
+      "k": 10,
+      "value": 0.2,
+      "hits": 2,
+      "wilson_95": [
+       0.057,
+       0.51
+      ],
+      "unjudged": []
+     }
+    ]
+   },
+   {
+    "cv_id": "CV2",
+    "cv_language": "en",
+    "method": "hybrid_openai",
+    "p_at_5": 0.4,
+    "ndcg_at_10": 0.46040922656992667,
+    "recall": {
+     "10": {
+      "value": 0.17647058823529413,
+      "numerator": 3,
+      "denominator": 17
+     },
+     "20": {
+      "value": 0.4117647058823529,
+      "numerator": 7,
+      "denominator": 17
+     },
+     "30": {
+      "value": 0.47058823529411764,
+      "numerator": 8,
+      "denominator": 17
+     }
+    },
+    "relevant_found_by_jd_language_top20": {
+     "id": {
+      "relevant": 0,
+      "found_top20": 0
+     },
+     "en": {
+      "relevant": 16,
+      "found_top20": 7
+     }
+    },
+    "precision_intervals": [
+     {
+      "k": 5,
+      "value": 0.4,
+      "hits": 2,
+      "wilson_95": [
+       0.118,
+       0.769
+      ],
+      "unjudged": []
+     },
+     {
+      "k": 10,
+      "value": 0.3,
+      "hits": 3,
+      "wilson_95": [
+       0.108,
+       0.603
+      ],
+      "unjudged": []
+     }
+    ]
+   },
+   {
+    "cv_id": "CV2",
+    "cv_language": "en",
+    "method": "dense_qwen",
+    "p_at_5": 0.2,
+    "ndcg_at_10": 0.36950873758648384,
+    "recall": {
+     "10": {
+      "value": 0.11764705882352941,
+      "numerator": 2,
+      "denominator": 17
+     },
+     "20": {
+      "value": 0.4117647058823529,
+      "numerator": 7,
+      "denominator": 17
+     },
+     "30": {
+      "value": 0.5882352941176471,
+      "numerator": 10,
+      "denominator": 17
+     }
+    },
+    "relevant_found_by_jd_language_top20": {
+     "id": {
+      "relevant": 0,
+      "found_top20": 0
+     },
+     "en": {
+      "relevant": 16,
+      "found_top20": 7
+     }
+    },
+    "precision_intervals": [
+     {
+      "k": 5,
+      "value": 0.2,
+      "hits": 1,
+      "wilson_95": [
+       0.036,
+       0.624
+      ],
+      "unjudged": []
+     },
+     {
+      "k": 10,
+      "value": 0.2,
+      "hits": 2,
+      "wilson_95": [
+       0.057,
+       0.51
+      ],
+      "unjudged": []
+     }
+    ]
+   },
+   {
+    "cv_id": "CV2",
+    "cv_language": "en",
+    "method": "hybrid_qwen",
+    "p_at_5": 0.4,
+    "ndcg_at_10": 0.5326179538371092,
+    "recall": {
+     "10": {
+      "value": 0.29411764705882354,
+      "numerator": 5,
+      "denominator": 17
+     },
+     "20": {
+      "value": 0.47058823529411764,
+      "numerator": 8,
+      "denominator": 17
+     },
+     "30": {
+      "value": 0.5882352941176471,
+      "numerator": 10,
+      "denominator": 17
+     }
+    },
+    "relevant_found_by_jd_language_top20": {
+     "id": {
+      "relevant": 0,
+      "found_top20": 0
+     },
+     "en": {
+      "relevant": 16,
+      "found_top20": 8
+     }
+    },
+    "precision_intervals": [
+     {
+      "k": 5,
+      "value": 0.4,
+      "hits": 2,
+      "wilson_95": [
+       0.118,
+       0.769
+      ],
+      "unjudged": []
+     },
+     {
+      "k": 10,
+      "value": 0.5,
+      "hits": 5,
+      "wilson_95": [
+       0.237,
+       0.763
+      ],
+      "unjudged": []
+     }
+    ]
+   }
+  ],
+  "hard_negatives": [
+   {
+    "cv_id": "CV1",
+    "list": "stage1_top10",
+    "position": 2,
+    "job_id": "F00020",
+    "relevance": 0,
+    "title": "MENTOR DATA ANALYST & AI",
+    "role_family": "ai_ml_engineering",
+    "experience_bucket": "not_stated",
+    "jd_language": "id",
+    "country": "ID",
+    "score_pct": 50.0,
+    "score_status": "final"
+   },
+   {
+    "cv_id": "CV1",
+    "list": "stage1_top10",
+    "position": 3,
+    "job_id": "F00663",
+    "relevance": 1,
+    "title": "AI EXPERT",
+    "role_family": "ai_ml_engineering",
+    "experience_bucket": "5y+",
+    "jd_language": "id",
+    "country": "ID",
+    "score_pct": null,
+    "score_status": null
+   },
+   {
+    "cv_id": "CV1",
+    "list": "stage1_top10",
+    "position": 4,
+    "job_id": "F00601",
+    "relevance": 1,
+    "title": "Data Scientist (Based in / Relocation to Bali)",
+    "role_family": "data_science",
+    "experience_bucket": "3-4y",
+    "jd_language": "en",
+    "country": "ID",
+    "score_pct": null,
+    "score_status": null
+   },
+   {
+    "cv_id": "CV1",
+    "list": "stage1_top10",
+    "position": 5,
+    "job_id": "F00284",
+    "relevance": 1,
+    "title": "Data Scientist (Up to 16k)",
+    "role_family": "data_science",
+    "experience_bucket": "3-4y",
+    "jd_language": "en",
+    "country": "MY",
+    "score_pct": null,
+    "score_status": null
+   },
+   {
+    "cv_id": "CV1",
+    "list": "stage1_top10",
+    "position": 6,
+    "job_id": "F00132",
+    "relevance": 1,
+    "title": "Data Scientist - Jakarta - WFO (ID: 707131)",
+    "role_family": "data_science",
+    "experience_bucket": "5y+",
+    "jd_language": "en",
+    "country": "ID",
+    "score_pct": null,
+    "score_status": null
+   },
+   {
+    "cv_id": "CV1",
+    "list": "stage1_top10",
+    "position": 9,
+    "job_id": "F00556",
+    "relevance": 1,
+    "title": "Machine Learning Engineer, Intern - MoneyLion",
+    "role_family": "ai_ml_engineering",
+    "experience_bucket": "entry",
+    "jd_language": "en",
+    "country": "MY",
+    "score_pct": 60.0,
+    "score_status": "final"
+   },
+   {
+    "cv_id": "CV1",
+    "list": "stage1_top10",
+    "position": 10,
+    "job_id": "F00333",
+    "relevance": 1,
+    "title": "Data Scientist Analyst (Indonesia)",
+    "role_family": "data_science",
+    "experience_bucket": "5y+",
+    "jd_language": "en",
+    "country": "ID",
+    "score_pct": null,
+    "score_status": null
+   },
+   {
+    "cv_id": "CV1",
+    "list": "final_top10",
+    "position": 2,
+    "job_id": "F00036",
+    "relevance": 1,
+    "title": "Data Scientist",
+    "role_family": "data_science",
+    "experience_bucket": "1-2y",
+    "jd_language": "id",
+    "country": "ID",
+    "score_pct": 67.86,
+    "score_status": "final"
+   },
+   {
+    "cv_id": "CV1",
+    "list": "final_top10",
+    "position": 4,
+    "job_id": "F00556",
+    "relevance": 1,
+    "title": "Machine Learning Engineer, Intern - MoneyLion",
+    "role_family": "ai_ml_engineering",
+    "experience_bucket": "entry",
+    "jd_language": "en",
+    "country": "MY",
+    "score_pct": 60.0,
+    "score_status": "final"
+   },
+   {
+    "cv_id": "CV1",
+    "list": "final_top10",
+    "position": 6,
+    "job_id": "F00020",
+    "relevance": 0,
+    "title": "MENTOR DATA ANALYST & AI",
+    "role_family": "ai_ml_engineering",
+    "experience_bucket": "not_stated",
+    "jd_language": "id",
+    "country": "ID",
+    "score_pct": 50.0,
+    "score_status": "final"
+   },
+   {
+    "cv_id": "CV1",
+    "list": "final_top10",
+    "position": 7,
+    "job_id": "F00090",
+    "relevance": 1,
+    "title": "Backend Engineer (Python & AI Integration)",
+    "role_family": "software_ai",
+    "experience_bucket": "1-2y",
+    "jd_language": "id",
+    "country": "ID",
+    "score_pct": 25.0,
+    "score_status": "final"
+   },
+   {
+    "cv_id": "CV2",
+    "list": "stage1_top10",
+    "position": 2,
+    "job_id": "F00624",
+    "relevance": 1,
+    "title": "Generative AI Engineer",
+    "role_family": "genai_llm",
+    "experience_bucket": "5y+",
+    "jd_language": "en",
+    "country": "SG",
+    "score_pct": null,
+    "score_status": null
+   },
+   {
+    "cv_id": "CV2",
+    "list": "stage1_top10",
+    "position": 4,
+    "job_id": "F00798",
+    "relevance": 1,
+    "title": "GenAI Application Engineer (LLM / RAG / Agentic AI)",
+    "role_family": "genai_llm",
+    "experience_bucket": "5y+",
+    "jd_language": "en",
+    "country": "SG",
+    "score_pct": null,
+    "score_status": null
+   },
+   {
+    "cv_id": "CV2",
+    "list": "stage1_top10",
+    "position": 5,
+    "job_id": "F00463",
+    "relevance": 1,
+    "title": "AI Expert",
+    "role_family": "ai_ml_engineering",
+    "experience_bucket": "3-4y",
+    "jd_language": "en",
+    "country": "ID",
+    "score_pct": null,
+    "score_status": null
+   },
+   {
+    "cv_id": "CV2",
+    "list": "stage1_top10",
+    "position": 6,
+    "job_id": "F00074",
+    "relevance": 1,
+    "title": "AI Application Engineer (LLM, RAG & Agentic Systems)",
+    "role_family": "genai_llm",
+    "experience_bucket": "not_stated",
+    "jd_language": "en",
+    "country": "ID",
+    "score_pct": 39.13,
+    "score_status": "final"
+   },
+   {
+    "cv_id": "CV2",
+    "list": "stage1_top10",
+    "position": 8,
+    "job_id": "F00029",
+    "relevance": 1,
+    "title": "AI Engineer – Generative AI & Agentic Systems",
+    "role_family": "genai_llm",
+    "experience_bucket": "3-4y",
+    "jd_language": "en",
+    "country": "ID",
+    "score_pct": null,
+    "score_status": null
+   },
+   {
+    "cv_id": "CV2",
+    "list": "final_top10",
+    "position": 3,
+    "job_id": "F00645",
+    "relevance": 1,
+    "title": "AI Engineer - LLM & AI Agent",
+    "role_family": "genai_llm",
+    "experience_bucket": "1-2y",
+    "jd_language": "en",
+    "country": "SG",
+    "score_pct": 69.23,
+    "score_status": "final"
+   },
+   {
+    "cv_id": "CV2",
+    "list": "final_top10",
+    "position": 6,
+    "job_id": "F00020",
+    "relevance": 0,
+    "title": "MENTOR DATA ANALYST & AI",
+    "role_family": "ai_ml_engineering",
+    "experience_bucket": "not_stated",
+    "jd_language": "id",
+    "country": "ID",
+    "score_pct": 50.0,
+    "score_status": "final"
+   },
+   {
+    "cv_id": "CV2",
+    "list": "final_top10",
+    "position": 8,
+    "job_id": "F00074",
+    "relevance": 1,
+    "title": "AI Application Engineer (LLM, RAG & Agentic Systems)",
+    "role_family": "genai_llm",
+    "experience_bucket": "not_stated",
+    "jd_language": "en",
+    "country": "ID",
+    "score_pct": 39.13,
+    "score_status": "final"
+   }
+  ],
+  "hard_negative_buckets": {
+   "CV1/stage1_top10": {
+    "not_stated": 1,
+    "5y+": 3,
+    "3-4y": 2,
+    "entry": 1
+   },
+   "CV1/final_top10": {
+    "1-2y": 2,
+    "entry": 1,
+    "not_stated": 1
+   },
+   "CV2/stage1_top10": {
+    "5y+": 2,
+    "3-4y": 2,
+    "not_stated": 1
+   },
+   "CV2/final_top10": {
+    "1-2y": 1,
+    "not_stated": 2
+   }
+  },
+  "final_top10": {
+   "CV1": [
+    "F00312",
+    "F00036",
+    "F00332",
+    "F00556",
+    "F00655",
+    "F00020",
+    "F00090",
+    "F00366",
+    "F00022",
+    "F00103"
+   ],
+   "CV2": [
+    "F00815",
+    "F00018",
+    "F00645",
+    "F00650",
+    "F00052",
+    "F00020",
+    "F00629",
+    "F00074",
+    "F00176",
+    "F00559"
+   ]
+  },
+  "limits": [
+   "Two CVs: one Indonesian, one English, and they also differ in profile, so a gap cannot be blamed on language alone.",
+   "Wilson intervals treat the k positions as independent trials; with one query this only shows how wide the number is.",
+   "Labels come from a pool built from these methods (pool bias, D-075)."
+  ],
+  "input_sha256": {
+   "evals/gold/development_v13_reviewed_20261004_gap_r4/relevance_gold.jsonl": "35abd0e1bcb09e8395ba4d9d8d3a0e99086e7a648366c72ca26943f63cb9993e",
+   "evals/splits/dev_job_ids.txt": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+   "data/processed/jobs_features.jsonl": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+   "evals/results/cp22_retrieval_top30_20261002_03.json": "32d99ff3dbfe4ec8b1ba37ce0d6fb51e3449b7e508c0bc2786d51658e52569eb",
+   "evals/results/cp23/matcher_coverage_gpt-6-sol_v1/summary_v1.json": "16d60967dba5f61daeb8dfb5b27b90c899250ba93de468061c6d13f48caa0d11"
+  }
+ },
+ "next_steps": [
+  "Dion decides: D-078 result, the proposed retriever rule, the experience block.",
+  "Write config v4 with the chosen K/weight (new file, v3 unchanged).",
+  "Rebuild the saved demo bundle for v4 (scripts/build_demo_bundle.py).",
+  "Draft the freeze receipt: scripts/prepare_cp23_freeze.py --config <v4> --write."
+ ]
+}

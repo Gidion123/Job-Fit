@@ -1,0 +1,11 @@
+{
+  "job_id": "F00366",
+  "status": "failed",
+  "attempts": 2,
+  "cache_hit": false,
+  "error_code": "qualification_inventory_unsupported_mapping",
+  "key": "77f1ef2110e9670b8e517ae5ee72bebe694eb06322d16a02d63b4cf96def6a39",
+  "wall_ms": 92365,
+  "coverage": {},
+  "extraction": null
+}

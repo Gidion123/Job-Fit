@@ -1,0 +1,64 @@
+{
+  "status": "source_and_coverage_checked; fixed adapter acceptance pending",
+  "pairs": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00332",
+      "units": 16,
+      "classes": {
+        "MATCH": 7,
+        "PARTIAL": 6,
+        "NO_MATCH": 3
+      },
+      "or_groups": 1,
+      "fixed_input_sha256": "3accf934b45f82c38d20f5fc82aa9b3fd6722cab777ec11f318c11b57acaa368"
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00036",
+      "units": 17,
+      "classes": {
+        "MATCH": 10,
+        "PARTIAL": 3,
+        "NO_MATCH": 4
+      },
+      "or_groups": 5,
+      "fixed_input_sha256": "b7bdf6460b7aa8c4dde8a7eccef6f182c2c1065bb5d9c92e2eacce6992ee3e91"
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00815",
+      "units": 16,
+      "classes": {
+        "PARTIAL": 8,
+        "MATCH": 7,
+        "NO_MATCH": 1
+      },
+      "or_groups": 4,
+      "fixed_input_sha256": "481b1c488a77b1022c4289426d29ea8d4e9952dfff6e9a95c08ced0c8f2cc0c6"
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00018",
+      "units": 24,
+      "classes": {
+        "MATCH": 11,
+        "NO_MATCH": 8,
+        "PARTIAL": 5
+      },
+      "or_groups": 3,
+      "fixed_input_sha256": "4c1c10c736da01cb953b6a5275850b7afd256a7a9ea494e898134bcc81c16ae9"
+    }
+  ],
+  "units": 73,
+  "classes": {
+    "MATCH": 35,
+    "PARTIAL": 22,
+    "NO_MATCH": 16
+  },
+  "all_three_classes_present": true,
+  "gold_sha256": "510bbe15bd02ed370b2a94982582169c6c9d38f62b5e6e27311bb55a0f3ef49e",
+  "model_calls": 0,
+  "metrics": null,
+  "fixed_input_alignment_verified": false
+}

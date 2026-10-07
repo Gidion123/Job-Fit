@@ -1,0 +1,13 @@
+{
+  "job_id": "gpt-6-luna/F00354",
+  "result_sha256": "7d5f4751a032eee44692c153f3bcd8d025904c55e8e7491652cf2ed7fdb0886b",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "pass"
+  },
+  "notes": "Complete ten-clause qualification source and 29 reviewed logical units inspected against 34 outputs. Exact quotes, education alternatives, named libraries and required context are retained. The interest clause is split into six technical scored obligations U29-U34 rather than the reviewed single interest soft-skill; it does not establish hands-on proficiency. Generic experiment-tracking frameworks/cloud platforms/containers are labeled skill_tool without a named product. U16 documentation uses other rather than knowledge_area; U22 validation loses the reviewed time-series context. All-source coverage is not semantic alignment. Retain grouping/category/qualifier failure; no gold edit or F1 approval.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

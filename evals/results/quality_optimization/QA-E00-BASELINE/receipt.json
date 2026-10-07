@@ -1,0 +1,22 @@
+{
+ "experiment_id": "QA-E00-BASELINE",
+ "api_calls": 0,
+ "created_at": "2026-10-07T07:33:07+00:00",
+ "inputs_sha256": {
+  "config/versions/pipeline_cp23_freeze_candidate_v4_20261006.yaml": "9bc52debdef8577620db4c509624453621e11462fda617f9cf95dbfff1c0df1f",
+  "prompts/evidence_matching_v1_1.md": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+  "evals/results/cp23/dev_eval_v2_20261004/model_sweep_stage1_v4.json": "f3abfe1f9fcbfd93c9017bcb4a0935a7591eb09ec7005794d7536cc6d863c70f",
+  "evals/results/cp23/matcher_coverage_gpt-6-sol_v1/summary_v1.json": "16d60967dba5f61daeb8dfb5b27b90c899250ba93de468061c6d13f48caa0d11",
+  "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/plan.json": "54c0d5d1cec7ebf08b983083aaad785f0ec5d6347bb85909d24f698e904647ec",
+  "evals/gold/development_v13_reviewed_20261004_gap_r4/relevance_gold.jsonl": "35abd0e1bcb09e8395ba4d9d8d3a0e99086e7a648366c72ca26943f63cb9993e",
+  "evals/results/quality_optimization/benchmark_v1/split.json": "8a6c9e73dcae31d90e88ef6b27f2054e4a396e684a269f9a415613e8d88403a8",
+  "scripts/qa_phase_a.py": "66410500bd1d6db9fa78d09db79524134bed88c1e32112b3b6412cb8105aa0f2",
+  "src/jobfit/eval/qa_phase_a.py": "7658b941bc48a98a5df09b1f0443b5432acd6d15276699a3ffc908ed110dff7f"
+ },
+ "outputs_sha256": {
+  "config.json": "4f2d599ef73b0cf3a6a1f4dd46ac4667979b4a50aa1b004f6ffa113768d0560a",
+  "cost.json": "5d703f95c64e49af3701adfbe893cb027578d45e343be42f974e1981697241aa",
+  "failures.json": "d7268641056b212ed6ace02fec0941bb5e4e19fc728b3855778e8b3abc76e2ac",
+  "metrics.json": "fc870d59135ad85831d08e7e4bc1947291e78ca7fafc29b1ba38eee5b8a7c3ac"
+ }
+}

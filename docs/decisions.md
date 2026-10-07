@@ -44,7 +44,7 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-016 | 29 Sep 2026 | Single human annotator with AI assistance | Approved |
 | D-017 | 29 Sep 2026 | Evaluation priorities for v1.3 | Approved |
 | D-018 | 29 Sep 2026 | LLM: DeepSeek baseline, compared on the development set | Superseded by D-029 |
-| D-019 | 29 Sep 2026 | API budget cap of US$15 for CP2 and CP3 | Approved (budget mechanics changed by D-031) |
+| D-019 | 29 Sep 2026 | Historical US$15 project ceiling | Revised by D-070 on 4 October 2026 |
 | D-020 | 29 Sep 2026 | Embedding model: OpenAI `text-embedding-3-small` | Approved (called through OpenRouter, D-030) |
 | D-021 | 29 Sep 2026 | Synthetic CVs by default; real CV only after explicit confirmation | Approved |
 | D-022 | 29 Sep 2026 | Demo path with saved results, honestly labeled | Approved |
@@ -56,7 +56,7 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-028 | 29 Sep 2026 | Scripts may read API keys from a git-ignored local `.env` | Approved (keys changed by D-030 and D-031) |
 | D-029 | 29 Sep 2026 | LLM shortlist across providers and a pre-registered selection rule | Approved (access changed by D-030) |
 | D-030 | 29 Sep 2026 | OpenRouter as the single gateway for all LLM and embedding calls | Approved (DeepSeek fallback removed by D-031) |
-| D-031 | 29 Sep 2026 | OpenRouter only (no direct DeepSeek key); budget guard follows the OpenRouter credit actually bought | Approved |
+| D-031 | 29 Sep 2026 | OpenRouter only; guard follows credit bought | Approved; current numeric limits revised by D-070 |
 | D-032 | 30 Sep 2026 | Soft skills are shown separately and are not part of the match % | Approved (to be checked against relevance labels) |
 | D-033 | 30 Sep 2026 | Location and work-authorization requirements are constraints, not score units | Approved |
 | D-034 | 30 Sep 2026 | How a JD list is split into requirement units depends on its wording | Approved (rule simplified by D-039) |
@@ -68,8 +68,54 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-040 | 30 Sep 2026 | Exception to D-039: a list of experience areas is split into one required unit per area, even with "such as ... or" | Approved |
 | D-041 | 1 Oct 2026 | Pilot review decisions on A_Extraction and B_Evidence (case decisions, not general rules) | Approved; general rules set by D-042 |
 | D-042 | 1 Oct 2026 | General rules from the pilot review: explicit Required items, level qualifiers, unbounded duration, and how experience minimums are counted | Approved |
-| D-043 | 1 Oct 2026 | Gold-set sizes from the pilot timing (2 hours of annotator time left) | Pending approval |
-| D-044 | 1 Oct 2026 | Model benchmark protocol: where the LLM and embedding models are compared, and a second embedding candidate | Pending approval |
+| D-043 | 1 Oct 2026 | Gold-set sizes from the pilot timing (2 hours of annotator time left) | Superseded by D-045 |
+| D-044 | 1 Oct 2026 | Model benchmark protocol: where the LLM and embedding models are compared, and a second embedding candidate | Approved (option A, with the silver/gold rules in D-045) |
+| D-045 | 1 Oct 2026 | Gold-set sizes v2, silver labels, and a phased labeling plan | Approved on 1 Oct 2026 |
+| D-046 | 1 Oct 2026 | Development/test split rules and the blind-first test labeling process | Approved (rules); split method is an implementation choice |
+| D-047 | 1 Oct 2026 | Development drafts followed by full human review | Approved |
+| D-048 | 2 Oct 2026 | Combined development A/B/C workbook preparation | Approved workflow; historical counts below |
+| D-049 | 2 Oct 2026 | Four annotation rules: umbrella overlap, importance, categories, and/or preservation | Adopted for manual review; runtime and historical-label migration pending |
+| D-050 | 3 Oct 2026 | Close CP2.2 implementation; materialize broad development extraction after CP2.3 configuration evaluation | Approved explicitly by Dion |
+| D-051 | 3 Oct 2026 | Server-temporary masking, isolated volatile CV sessions, explicit stop/delete and disconnect expiry | Design approved; implementation and deployed acceptance pending |
+| D-052 | 3 Oct 2026 | Development evaluation scope, original-rank precision, relevant threshold and failure/class accounting | Conventions approved; cases/alignment and evaluator verification pending |
+| D-053 | 3 Oct 2026 | Held-out top 10-union pool, coverage and configuration/protocol freeze | Approved protocol; execution pending |
+| D-054 | 3 Oct 2026 | Six development C decisions, F00332 mapping/B corrections, C-only hold review path, strict split/merge extraction F1 | All listed case decisions confirmed; Stage-1 gates ready |
+| D-055 | 3 Oct 2026 | Exact US$3.20 cap for four-model/seven-JD Stage-2 extraction batch | Approved; run stopped after first semantic failure, unused cap not transferable to changed protocol |
+| D-056 | 3 Oct 2026 | Exact US$3.23 cap for versioned v1.4 Stage-2 extraction batch | Approved; run stopped after the first case on semantic review, no winner |
+| D-057 | 3 Oct 2026 | V5 same-protocol remaining 27 extraction cases; keep semantic failures and review each next case; US$3.16 cap | Approved; terminal GPT process rejection preserved |
+| D-058 | 3 Oct 2026 | GPT-only unsupported-temperature omission and published dated response ID; v6 remaining 21 cases within cumulative v5/v6 US$3.16 | Explicitly approved by Dion; not a model winner |
+| D-059 | 3 Oct 2026 | Retain settled process failures and complete nine unattempted extraction cases; cumulative v5/v6/v7 US$3.16 | Explicitly approved by Dion; v7 completed |
+| D-060 | 3 Oct 2026 | Scoped Claude/F00036 complex accounting: 0 TP, 2 FN, 3 FP | Approved |
+| D-061 | 3 Oct 2026 | Primary extraction equivalence includes importance; category accuracy separate | Approved |
+| D-062 | 3 Oct 2026 | Four-model/four-pair fixed-input matching, separate US$1.85 cap | Approved; 16 stages complete, cost US$0.156686829 |
+| D-063 | 3 Oct 2026 | Accept v3 mapping recommendations and fixed adapter for metric calculation | Approved; assisted-QA acceptance, not independent re-annotation |
+| D-064 | 3 Oct 2026 | Completed reference experiment; separate repair-only addendum below | Completed; replay cost US$0.09795280 against approved US$0.65 cap |
+| D-065 | 4 Oct 2026 | G1/G2 evidence guardrails | Approved for v1 with recorded limits; runtime integration pending |
+| D-066 | 4 Oct 2026 | V1 safety, per-task cost selection and quote validator v1.1 | Approved by Dion; D-029 retained as history |
+| D-067 | 4 Oct 2026 | F00815 SQL reference v2, PostgreSQL as example | Approved by Dion; original gold unchanged |
+| D-068 | 4 Oct 2026 | Provisional CP2.3 configuration and DeepSeek Flash model choice | Approved by Dion for development; K/weight await Part B |
+| D-069 | 4 Oct 2026 | Resume only untouched Part B pairs under a US$2.50 aggregate cap and presentation cutoff | Approved and executed; no new configuration winner |
+| D-070 | 4 Oct 2026 | Revised project credit and guard for the bounded pipeline v1.1 run | Approved by Dion; provider balance not independently verified |
+| D-071 | 4 Oct 2026 | Pipeline v1.1 H2 provisional hold policy | Approved by Dion for development; comparative evaluation required |
+| D-072 | 4 Oct 2026 | H2v2: experience, level and education are never excluded | Approved by Dion |
+| D-073 | 4 Oct 2026 | Development final-order metrics use the real product order | Approved by Dion |
+| D-074 | 4 Oct 2026 | Stage-1 seniority rule (3+ years moved down) | Approved by Dion; frozen in D-086 |
+| D-075 | 4 Oct 2026 | Uncertainty reporting for CP2.3 comparisons | Recorded |
+| D-076 | 4 Oct 2026 | Development check of GPT-6 Luna for matching | Done |
+| D-077 | 4 Oct 2026 | DeepSeek Flash extracts, Luna matches | Matching part replaced by D-083 |
+| D-078 | 4 Oct 2026 | Rule for K and PARTIAL weight, set before the labels | Approved; applied in D-086 |
+| D-079 | 4 Oct 2026 | Matching model sweep under the same settings | Done |
+| D-080 | 4 Oct 2026 | Fair retriever comparison labels (46 gap items) | Labels imported in D-085 |
+| D-081 | 4 Oct 2026 | OpenRouter workspace budget versus the JobFit guard | Recorded |
+| D-082 | 4 Oct 2026 | Sweep results after budget recovery; Sol 60-pair check | Proposal approved as D-083 |
+| D-083 | 4 Oct 2026 | GPT-6 Sol matches, Luna is the fallback | Approved by Dion |
+| D-084 | 6 Oct 2026 | Rule for changing the stage-1 retriever | Approved by Dion before the r4 numbers |
+| D-085 | 6 Oct 2026 | Gap workbook imported as gold r4 (G04 held, A/B kept separate) | Approved by Dion; written |
+| D-086 | 6 Oct 2026 | Freeze candidate: K 10, weight 0.5, seniority rule, experience block | Approved; frozen in D-087 |
+| D-087 | 6 Oct 2026 | D-053 freeze approved (receipt v2, CP2.4 report contract) | Approved by Dion |
+| D-088 | 7 Oct 2026 | CP2.4 test labels: AI-assisted, human-reviewed provenance; import test_v13_cp24_r1 | Approved by Dion; written |
+| D-089 | 7 Oct 2026 | Phase A (post-test quality optimization) started; CP2.4 locked from optimization | Approved by Dion; closed by D-090 |
+| D-090 | 7 Oct 2026 | Phase A closed: keep the baseline prompt v1.1 | Decided by the locked rule; confirmed by Dion |
 
 ---
 
@@ -272,9 +318,10 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 
 - **Date and source:** 29 Sep 2026, Dion.
 - **Decision:**
-  - Two to three synthetic CVs are the default for evaluation and the public demo. Dion checks that they are realistic before labeling starts.
+  - Two to three synthetic CVs are the default for evaluation and the public demo (five from 1 Oct 2026: CV4 and CV5 are added for the test set only, D-045). Dion checks that they are realistic before labeling starts.
   - Dion's real CV is not needed to start. If it is needed later for private testing, it is sent to an external provider only after a separate, explicit confirmation.
   - Indonesian and English support is tested, including an Indonesian CV with English JDs (402 of the 428 target JDs are in English).
+- **Update (1 Oct 2026, Dion):** evaluation and the demo use synthetic CVs only. A real CV needs its own explicit consent before it is sent to any provider. The five open privacy design questions are needed before real uploads are built (CP3.1), not for the evaluation.
 - **Status:** Approved.
 
 ## D-022. Demo path with saved results
@@ -426,6 +473,7 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 - **Where budget limits live (three layers):**
   1. **OpenRouter prepaid credit.** Calls fail when the balance is used up, so real spending cannot pass what was bought.
   2. **OpenRouter key limit.** The API key gets a credit limit in the OpenRouter settings (now US$8.50). This key is used only for JobFit, so the ledger and the OpenRouter balance stay comparable. A later production key for the Railway demo gets its own, smaller limit.
+
   3. **App budget guard (D-019).** Reads the two values from `.env`, stops a call before it happens, and writes the usage ledger, so each experiment's cost is known.
   Limits are configuration, not code. The code only holds safe default values equal to `.env.example`.
 - **Changes to earlier entries:**
@@ -433,6 +481,8 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
   - D-028 and D-030: `.env` holds only `OPENROUTER_API_KEY` for model calls.
 - **Affects:** `.env.example`, `src/jobfit/config.py`, System Design v1.3 section 11, master plan section 6.
 - **Status:** Approved.
+
+**4 October 2026 addendum (D-070):** The figures above are historical. Dion reported about US$19.22 total credit bought after adding US$10. The configured local numbers verified before pipeline v1.1 were `API_BUDGET_USD=19` and `API_HARD_STOP_USD=18.5`. The new project ceiling is the credit actually bought, as recorded in D-070. The provider balance and OpenRouter key limit were not independently verified in this local check.
 
 ## D-032. Soft skills are shown separately, not in the match %
 
@@ -652,7 +702,7 @@ J1-U01 and J2-U08 differ on purpose: in J1 the softener is in the same sentence 
   - Model drafts are reviewed by Dion with time recorded (D-038). The job IDs are fixed in `evals/splits/test_job_ids.txt` before any tuning in CP2.3.
 - **Mandatory coverage (System Design v1.3 section 15):** the 8 development cases are covered by the code fixtures; an Indonesian CV with English JDs (CV1) is in both sets; hard negatives and a JD with many unknown fields are in the test pool; prompt injection is covered by tests in CP3.4, not by gold labels.
 - **Impact on conclusions:** the sets are small. Results are reported with the denominators, per CV, and with bootstrap confidence intervals, and they are described as indicative for this corpus, not as general accuracy. Extraction and evidence results on one test JD are a sanity check only.
-- **Status:** Pending approval by Dion.
+- **Status:** Superseded by D-045 on 1 Oct 2026. Dion asked for larger sets because 1 JD and 1 CV-job pair are too small for a meaningful test.
 
 ## D-044. Model benchmark protocol and a second embedding candidate
 
@@ -687,4 +737,570 @@ J1-U01 and J2-U08 differ on purpose: in J1 the softener is in the same sentence 
 - **Effect on the test pool (D-043):** the test pool takes the top results of every stage-1 method, including the dense search with each embedding candidate, so no method is favored because only its results were labeled. The pool is therefore picked after the embeddings exist (CP2.2), and locked before CP2.3.
 - **Technical notes:** if A is approved, `job_embeddings` gets a model id column and room for the 4096-dimension vectors (it is fixed at 1536 now). With 632 jobs an exact search is fast, so no vector index is needed. Provider routing keeps `data_collection: deny` (D-030); only public JDs and synthetic CVs are sent.
 - **Affects:** plan M04 and M09 in experiments.md, master plan CP2.2 and CP2.3, D-043 test pool, System Design v1.3 section 11.
-- **Status:** Pending approval by Dion (option A or B).
+- **Status:** Approved on 1 Oct 2026, option A. Dion's conditions: the drafting model writes silver labels; only rows Dion reviews and approves become gold; unreviewed rows stay silver, and a spot check never turns a whole batch into gold; silver is used for exploration only, and every configuration choice is confirmed on the development gold. Sizes and process: D-045, D-046.
+
+## D-045. Gold-set sizes v2, silver labels, and a phased labeling plan
+
+- **Date and source:** 1 Oct 2026, Dion. He asked for larger sets (development: 10 to 15 JDs, 60 to 100 evidence units, 60 to 90 relevance pairs; test: 5 to 8 JDs, 40 to 60 evidence units, 30 to 45 relevance pairs) as a starting target, checked against the pilot timing and the deadline. The drafting model may help; Dion reviews.
+- **Previous:** D-043 (1 test JD, 1 test CV-job pair, 30 test relevance labels).
+- **Terms:**
+  - An **evidence pair** is one CV x one JD. It holds one evidence row per requirement unit of that JD (about 17 rows on average in the pilot). An **evidence unit** is one row.
+  - **Gold** = reviewed and approved by Dion. **Silver** = model draft that Dion has not reviewed. Silver is stored apart from gold and is used only to explore (D-044).
+- **Time per item used for the plan:**
+
+  | Task | Per item | Source |
+  | --- | --- | --- |
+  | Review of an extraction draft | about 20 min per JD (1.2 min per unit) | Pilot, measured |
+  | Review of evidence drafts | about 20 min per CV-JD pair (1.2 min per row) | Pilot, measured |
+  | Review of a relevance draft | 2.4 min per label | Pilot, measured |
+  | Blind extraction | about 50 to 60 min per JD | Pilot J4, one JD (60 min, first time) |
+  | Blind evidence | about 3.5 min per row, about 60 min per pair | Estimate (same ratio as extraction); measured on the first pair |
+  | Blind relevance | about 3.5 min per label | Estimate; measured on the first 10 labels |
+
+  A QA fix round adds about 10 to 15%.
+- **Feasibility of the requested targets** (test labeled blind): the lower targets need about 13 hours of Dion's time (development 4.5, test 8.5) and the upper targets about 22 hours (development 8, test 13.5). The plan assumes about 5 hours before tuning (to 2 Oct), about 3 hours on 3 Oct, and more time on 4 to 7 Oct before the feature freeze (8 Oct); Dion confirms these hours. So the plan below keeps the development targets near their lower end, keeps the test relevance at the upper end (the main metric), and moves part of the test extraction and evidence work after the CP2 presentation.
+- **Update (1 Oct 2026, evening):** Dion has 2 to 3 hours per day for labeling and approved two more synthetic CVs for the test set (CV4, CV5). The sizes and phases below replace the first version of this entry.
+- **Recommended final sizes (historical relevance test target; D-053 replaces fixed 60 with top 10 union):**
+
+  | Set | Extraction | Evidence | Relevance |
+  | --- | --- | --- | --- |
+  | Development gold | 7 JDs (4 pilot + 3 new), about 120 units | 4 pairs (2 pilot + 2 new), about 68 rows | 50 labels (10 pilot + CV1 and CV2 x 20) |
+  | Development silver | none | none | the rest of the development pool (about 40 to 80 pairs) |
+  | Test gold | 4 JDs: 2 blind, 2 from model drafts | 3 pairs (CV3 x T1 blind; CV1 x T3 and CV2 x T4 from drafts), about 50 rows | 60 labels (CV1 to CV5 x 12), all blind |
+
+  Compared with Dion's starting targets: development extraction and relevance are a little below the lower end, evidence is inside the range, and test relevance is above it. More CVs (queries) matter more for the ranking metric than more jobs per CV, so the extra time goes to CV4 and CV5.
+- **Dion's time (estimate, 2 to 3 hours per day):**
+
+  | Phase | When | Work | Time |
+  | --- | --- | --- | --- |
+  | 1. Development | 2 Oct (and early 3 Oct) | 40 relevance labels (96 min), 3 extraction JDs (60 min), 2 evidence pairs (40 min), QA fixes | about 3.5 h |
+  | 2. Test relevance, CV1 to CV3 | 3 Oct, after the configuration is frozen | 36 blind labels | about 2 h |
+  | 3. Test expansion | 5 to 7 Oct | review CV4 and CV5 (30 min), 24 blind relevance labels for CV4 and CV5 (85 min), 2 blind extraction JDs (100 min), 2 reviewed JDs (40 min), 1 blind evidence pair (60 min), 2 reviewed pairs (40 min) | about 6 h |
+  | **Total** | | | **about 11.5 h** |
+
+- **What is reported when:**
+  - CP2.4 (3 Oct): ranking metrics (NDCG@10, P@5, safety) on the test relevance labels of CV1 to CV3. Extraction and evidence metrics on the development gold, marked as development numbers (optimistic, because prompts and models were chosen on them).
+  - Final report (CP3.5): the same frozen configuration on the full test set (CV1 to CV5, test extraction and evidence). The configuration frozen in CP2.6 is not changed because of these results; a bug fix is recorded and the whole test set is run again.
+  - Test extraction and evidence results are reported separately for the blind items and the model-draft items.
+  - If phase 2 cannot finish on 3 Oct, the CP2 presentation shows development results, clearly marked, and the test run moves to 5 Oct.
+- **Minimum if time runs out:** development relevance 30 gold, test relevance 36 (CV1 to CV3 only), test extraction 2 blind JDs, test evidence 2 pairs. The conclusions then say so.
+- **Limits that stay:** three CVs are three queries, so ranking results are shown per CV with bootstrap intervals and called indicative. One annotator. The drafting model is from the same family as some LLM candidates (D-038); the blind test items limit this effect.
+- **Status:** Approved on 1 October 2026 by Dion: sizes above, 2 to 3 hours per day, and the fallback if test labeling is not finished before CP2.
+
+## D-046. Development/test split rules and the blind-first test labeling
+
+- **Date and source:** 1 Oct 2026, Dion (rules 1 to 5); implementation choices marked below.
+- **Rules (approved):**
+  1. A JD and its duplicates are never in both splits.
+  2. The pilot jobs stay in development.
+  3. CV3 (Dewi) is used only with the test split. The same holds for CV4 and CV5 (added 1 Oct): they are written before the test pool exists, without looking at test jobs, and are never used in tuning.
+  4. Test labels and test results are never used to choose the model, prompt, weights, or K.
+  5. Test gold is labeled blind first: Dion gives his labels without seeing any model draft. Afterwards the drafting model only checks quotes, completeness, and rule consistency; Dion decides every change. Any test item that starts from a model draft is marked `label_source = model_draft` and reported separately.
+- **Implementation (proposed, Dion may change):**
+  - The 428 target jobs are split by job cluster into two halves with a fixed random seed, stratified by `role_family` and `experience_bucket`. The 5 pilot jobs are forced into development. Probable-duplicate pairs from the CP1 dedup review are kept on the same side.
+  - The split is written to `evals/splits/dev_job_ids.txt` and `evals/splits/test_job_ids.txt` before any tuning and is not changed afterwards.
+  - Development pools: for CV1 and CV2, the top 10 of every stage-1 candidate (B0, B1, dense and hybrid with both embedding models) inside the development half. Gold review covers every job in the top 5 of any method first, then random others up to 20 new labels per CV.
+  - **Historical, superseded by D-053:** Test pool: for each test CV (CV1 to CV5), the top 12 of the frozen configuration inside the test half, picked after CP2.3 ends. Jobs ranked lower that move into the final top 10 are reported as unjudged; NDCG@10 is computed on the judged jobs (condensed list), and the number of unjudged jobs is shown.
+  - Relevance 2 or 3 counts as relevant for P@5 and Recall@K (System Design v1.3 section 14).
+- **Trade-off:** each half has about 214 jobs, so stage-1 search in tuning and in testing runs on half of the corpus. K chosen on 214 jobs may act a little differently on 428; this is stated in the report.
+- **Status:** Approved (rules 1 to 5). Implementation choices take effect unless Dion changes them before the split is written.
+
+## D-047. Development batches use complete drafts followed by human review
+
+- **Date and source:** 1 October 2026, Dion's direct answer to the development blind-sample question: prepare every draft carefully; he will review the work afterwards.
+- **Reason:** Guideline v1.2 Part E/D-038 suggests about 10% annotator-first blind items, while T05 asks for a draft of every development pool row. This conflict was raised before review and resolved by Dion.
+- **Decision:** The current expanded development batches use draft-first human review for every row. Do not reserve four empty relevance rows or silently describe any development review as blind. All 60 new relevance rows have pending drafts available. The 40 designated review rows remain the D-045 planning subset; additional rows may be reviewed individually, but none become gold through a spot check or this decision.
+- **Unchanged:** Unit definitions, labels, scoring denominator, constraints, frozen split, configuration-selection rules, and D-046 held-out blind-first test procedure. CV3/CV4/CV5 remain test-only. Test items that start from drafts are still identified and reported separately.
+- **Limit:** Development draft review can anchor the annotator to the draft, so development quality numbers are not an independent blind evaluation. Report that provenance and rely on the separate test procedure for confirmation.
+- **Status:** Approved. This workflow exception applies to the current expanded development batches; it does not rewrite historical pilot provenance or approve any annotation label.
+
+## D-048. Complete development drafts in one pilot-format workbook
+
+- **Date and source:** 2 October 2026, Dion's direct instruction to complete A/B/C for every JD and CV-JD pair in the development pool and combine the two batches using the pilot template.
+- **Decision:** One active workbook, `evals/labeling/JobFit_Development_Labeling_v0.1.xlsx`. It contains 54 development JDs and 67 CV1/CV2 pairs: 53 frozen-pool JDs and 63 pool pairs, plus the retained selected senior JD and four explicitly optional pairs. A has 1,069 units, B has 1,387 evidence rows, and C has 67 relevance judgments.
+- **Provenance:** Existing decisions are preserved exactly: 39 approved A rows, 21 approved B rows, and 3 approved C rows. The remaining 1,030 A, 1,366 B, and 64 C rows are pending drafts. No new label is approved or exported by this preparation.
+- **Preparation dependency:** B can now be drafted before A is fully approved, as requested. This replaces T04's previous preparation stop only. If A changes, dependent B rows and affected C judgments must be checked again before gold export. Requirement fingerprints are recorded in the preparation manifest.
+- **Review capacity:** D-045 stays unchanged: prioritize A for D1/F00103, D2/F00074, D3/F00012; B for CV1×D1 and CV2×D2; C for the 40 `gold_review = yes` rows. Extra drafts are available for optional review and do not increase the mandatory labeling target.
+- **Exceptions:** F00364 has no qualification section, so no A/B requirements are invented. Its C draft remains. F00369 has a truncated clause; only available text is used and the limitation is recorded.
+- **Preservation:** The pilot, approved gold CSVs, source CV bodies, frozen split and pool are unchanged. Original development workbooks are retained byte-for-byte in `evals/labeling/archive/pre_combined_20261002/`. Only one editor should modify the active workbook. Never regenerate it to undo human review.
+- **Unchanged:** Guideline v1.2, score denominator, constraints, D-046 blind-first held-out test, test-only CV3-CV5, configuration-selection rules, and CP2.2 IN PROGRESS status.
+- **Status:** Approved workflow instruction. Draft semantic correctness still requires Dion's review.
+
+
+## D-049. Four clarification rules for development labeling (guideline v1.3)
+
+- **Date and source:** 2 October 2026, Dion proposed four explicit rules to speed up a large review and requested guideline updates if the review supported them. The rules below implement that request; the examples and migration safeguards are implementation clarifications, not approvals of individual labels.
+- **Decision:** (1) Do not score a redundant umbrella when its children fully represent the same obligation. Retain any distinct scope or qualifier. (2) Qualifications without local softeners are required; explicit preference cues are preferred; unknown is for genuine unresolved source ambiguity/conflict, subject to D-042. (3) Named technologies/tools/platforms/frameworks are skill_tool, concepts/domains/methods are knowledge_area; specific duration/education/certification and other existing categories retain precedence. (4) Do not split and/or into independent AND obligations; retain composites when selection count/grouping cannot be represented faithfully.
+- **Guideline:** [annotation_guideline_v1_3.md](../evals/annotation_guideline_v1_3.md), especially A3, A4/A4a, A5a, and the adoption checklist.
+- **Precedence:** Replaces the old general ambiguous-splitting fallback and and/or handling for new v1.3 review. D-041's historical pilot split remains unchanged, but is not a new-annotation precedent in v1.3. D-040's pure-or experience-area exception is not otherwise repealed and must not be extended to and/or. D-042 remains effective. This does not approve any unresolved equivalence, language-evidence, or degree-ranking policy.
+- **Score impact:** Unit count and therefore denominator can change after reviewed merges/rejections/splits. The mathematical score formula is unchanged. A mere category fix is not a MATCH decision. Unsupported composites need an honest review/hold path, not silent removal from the denominator.
+- **Migration:** Existing workbook, gold, source, split, prompt, config, runtime guideline v1.2, and scoring code remain unchanged in this documentation update. No bulk relabeling or version bump of old rows. Re-review affected A and dependent B/C before export/evaluation. Preserve historical results. Coordinate runtime adoption with the pipeline owner because the current extraction prompt hard-codes the older D-041 case.
+- **Status:** Adopted for manual review under Dion's conditional instruction to update the guideline after analysis. Runtime adoption and individual-label migration remain pending; no human label/fixture/alignment approval is implied.
+
+
+## D-050. CP2.2 implementation closure and deferred broad extraction
+
+- **Date and source:** 3 October 2026, Dion explicitly selected: “Tutup implementasi CP2.2; ekstraksi massal dilanjutkan setelah evaluasi CP2.3. Catat perubahan cakupan dan keterbatasannya.”
+- **Decision:** Close CP2.2 for implemented and evidenced backend acceptance: parser/upload/preview, requirement extraction, evidence matching, existing constraints/score, eight delegated fixtures, embedding/retrieval infrastructure, valid reviewed-record export, protected data, and a source-checked small real-model chain. Broad development extraction is carried forward until configuration evaluation in CP2.3. It is not claimed executed or replaced by pending statuses.
+- **Why:** The authorized small experiment completed with seven calls and bounded repairs. Full 214-JD materialization is premature before configuration evaluation and its conservative ceiling exceeds the current guard. Completing it is not required to begin the comparisons that should determine its configuration.
+- **Scope change:** Supersedes the CP2.2 acceptance requirement for planned-scale/all-target per-job extraction outcomes. The earlier criterion and its incomplete execution remain historical evidence. The master plan and CP2.2 report must mark this as an explicit user-approved carryover, not an achieved batch result.
+- **Evidence limits:** The operational pass is assisted and delegated, not independent human annotation or model accuracy. Two proposed F00332 alignments still have label-interpretation differences. Default JD prompt v1.2 is unchanged; experimental v1.3 is not a selected winner. Formal metrics, compatible complete references and alignment remain CP2.3 gates.
+- **Unchanged:** Gold, workbook, source data, split, pool, annotation/grouping/denominator/constraint rules, metric contract, D-044 selection requirements and D-046 test isolation. No model/prompt/K winner, bulk inference or new gold approval is authorized by closure. Hard stop US$8.50 remains; future batches need a quality/cost plan and existing approval thresholds. Held-out extraction/evaluation still wait for freeze.
+- **Status:** Approved explicitly by the user. CP2.2 may be marked DONE with this scope and its concrete evidence. CP2.3 formal tuning is NOT RUN.
+
+
+## D-051. Session-only CV privacy and security
+
+- **Date and source:** 3 October 2026. Dion approved full-text identity masking and the layered privacy design, emphasized no cross-user disclosure or private CV database storage, requested explicit stop/delete plus automatic cleanup on departure, then authorized documentation and CP2.3 implementation planning.
+- **Decision:** Accept temporary server processing for v1, mask locally before any LLM or embedding transmission, show an editable exact-text preview, and obtain explicit processing consent. Identify PII throughout the document; deleting everything before Summary is insufficient. Retain professional evidence and date precision. Masking is not guaranteed anonymization.
+- **Session boundary:** Private CV data and all derivatives remain owner-scoped volatile session state, never permanent database/public corpus/shared cache/log payloads. No account/login feature is added; secure session ownership checks are mandatory. Public jobs and labeled synthetic demo artifacts retain separate policies.
+- **Termination:** Visible “Hentikan & hapus sesi” invalidates access immediately and clears data, with cancellation where possible and late-result discard. Browser departure notification is best effort; server expiry is required. A two-minute lost-liveness lease is the proposed implementation target, with idle/absolute fallback and bounded cleanup. Background-tab visibility alone is not deletion. Exact timings/reload UX are acceptance targets to test before claiming guarantees; two hours is a fallback maximum, not the normal wait after exit.
+- **Additional controls:** Layered upload/resource validation, cleanup of framework temporary copies, HTTPS/token protection, payload-free logging, safe rendering/prompt-injection boundaries, endpoint policy verification for LLM and embedding, ZDR routing for real-CV paths and fail-closed behavior. Provider receipt of data cannot be undone by deleting a JobFit session.
+- **Plan:** CP2.3 implements/tests masking, consent/session primitives and paired quality impact using development synthetic CV1/CV2. CP3 integrates API ownership/TTL/delete, deployment persistence checks, browser UI and security acceptance. Detailed contract, timing targets, open fields and PR-01-PR-10 tests live in [privacy-threat-model.md](privacy-threat-model.md).
+- **Open:** City/country, company/institution treatment; final measured timing/transport behavior; detector choice and endpoint-policy verification. These are not silently resolved by approval of the architecture.
+- **Unchanged:** Synthetic-only current evaluation/demo and separate real-CV consent (D-021); gold/sources/split, score, model-selection contract, budget, D-050 and test isolation. No paid call, real upload, public enablement or dependency installation is authorized by this documentation change.
+- **Status:** Design approved. Implementation/security acceptance NOT RUN. Real-CV provider processing remains disabled until its gates and consent are met.
+
+
+## D-052. Development evaluation scope and metric conventions
+
+- **Date/source:** 3 October 2026, Dion accepted the stage-1 scope and fair-comparison discussion, then explicitly approved the three clarifications: relevance 2-3 for P@5/Recall@K; failed evidence as not_assessed with all-reference false negatives; all three gold classes represented or no three-class winner claim. He requested documentation and a bounded execution brief for Codex2.
+- **Scope:** Initial seven extraction JDs and four CV1/CV2 evidence pairs remain D-045 targets. Use all eligible reviewed development C records and audit missing judgments in the deduplicated top 10 union across six methods. Report added review effort before requesting it; do not silently change the frozen pool or create labels. Difficult but valid cases remain eligible. F00034 is a known regression, not unseen confirmation.
+- **Ranking:** C2/3 is relevant; NDCG exponential gain. P@5 uses original positions 1-5 and denominator 5, available only if all five are judged and present; no condensed replacement or implicit negative. Recall uses original topK and a declared labeled-pool denominator. Missing judgments/coverage are explicit; zero denominators are unavailable.
+- **Evidence:** MATCH/PARTIAL/NO_MATCH; invalid/missing assessments remain not_assessed, contributing FN to their gold class in all-reference primary scoring. Per-class counts and coverage are mandatory. Require all three classes across the chosen aggregate set for primary three-class Macro-F1 selection. Absent-class cases cannot silently change averaging or receive a perfect score. Assessed-only quality is diagnostic.
+- **Comparison:** Same inputs/rules, first attempt versus automatic repair reported separately, maximum one automatic repair per stage, failed-call costs/latency included. Reviewer-assisted corrections remain separately disclosed. Matching first uses fixed verified requirement inputs; full-chain effects are measured separately.
+- **Contract:** [evaluation.md](evaluation.md) specifies implementation and readiness gates. NDCG missing/short-ranking details and unresolved extraction split/merge mappings must be explicit; never infer semantic approval from numeric unit IDs or output validity.
+- **Unchanged:** D-029 selection/safety rules, original source/gold, D-046 split/test isolation, D-050 broad-extraction carryover, D-051 privacy scope, score formula, runtime budget and current model defaults. No inference, winner, gold edit or test access is authorized by this documentation decision.
+- **Status:** Conventions approved. Case manifest, source completeness, alignment and evaluator implementation remain to be verified; an approved contract is not blanket dataset/benchmark readiness.
+
+## D-053. Held-out ranking pool, coverage and CP2.3 freeze boundary
+
+- **Date/source:** 3 October 2026. Dion explicitly approved all discussed CP2.4 corrections and requested documentation alignment with CP2.3.
+- **Decision:** After approved configuration/protocol freeze, label the deduplicated union of original top 10 stage-1 and top 10 final recommendations per CV, normally 10-20 pairs/CV. Report exact counts and effort before workbook preparation, respecting 2-3 hours/day. C labeling stays blind. This replaces D-045's fixed 60-label target and D-046's top 12/condensed-list test rule only; extraction/evidence sizes, provenance and the frozen JD split remain unchanged.
+- **Metrics:** Original-rank P@5/NDCG@10 are primary ranking outcomes, gated on required judgments. Both orders use a common eligible pool/IDCG and paired eligible CV subset. Missing labels are never negatives or replaced by lower ranks. Recall is labeled-pool diagnostic only; filter recall needs pre-filter relevant judgments or is not measured. Partial reports disclose all coverage/hold reasons.
+- **Isolation:** CV1/CV2 with new test JDs are familiar-profile results; CV3-CV5 are held-out-profile results. Report separately and per CV. Freeze models/prompts/embedding/K/preprocessing/privacy/ordering/metric/reference/pool rules before held-out processing. No tuning on test outcomes; subsequent reuse is regression, not independent confirmation.
+- **Authority:** [evaluation.md section 7](evaluation.md#7-held-out-confirmation-protocol-d-053) supplies the operational protocol. D-050 carryover and D-051 privacy gates remain effective. No workbook, source, gold, split, code or API change is authorized by this documentation update.
+- **Status:** Approved protocol; implementation verification, configuration freeze, test preparation and evaluation remain pending. Codex2's current D-052 development stage 1 scope is unchanged.
+
+## D-054. CP2.3 Stage-1 case reviews and strict split/merge extraction F1
+
+- **Date/source:** 3 October 2026, Dion's explicit replies in the current project chat to the case-specific Stage-1 review questions. The prior [Stage-1 report](checkpoint_2/supporting/CP23_Stage1_Evaluation_Preparation_20261003.md) and versioned review packets identify the exact records. No exact per-row review time was supplied.
+- **Six additional C decisions:** Dion confirmed that he reviewed the full JD/CV and approved CV1/F00010=1, F00132=1, F00284=1, F00312=2; CV2/F00090=1, F00559=2. These are case decisions, not an approval of other missing relevance labels or a change to the frozen pool. Preserve model-assisted draft provenance and record his acceptance in a versioned amendment; do not edit the active workbook.
+- **F00332 alignment and evidence:** Dion approved the 16 proposed one-to-one CV1/F00332 model-to-gold mappings and changed gold B P30-U08 and P30-U15 from MATCH to PARTIAL. The two original MATCH judgments remain in the historical bundle; record before/after and why in a new version. Recheck the dependent C reason/status, without assuming its value is unchanged until Dion confirms it.
+- **C-only hold path:** Dion approved preparing direct JD/CV C review for CV1/F00022, CV2/F00114 and CV1/F00369 while their A/B records stay held. This **does not approve the new C values or clear the historical holds**. F00369 must use only its archived truncated source and carry a source-limitation flag; a similar posting is not original proof. Pending reviews cannot enter gold or replace a ranked position.
+- **Extraction split/merge:** For human-verified one-to-many/many-to-one mappings over complete independently assessable logical-unit inventories, count no automatic TP: each unmatched gold unit is FN and each unmatched model unit is FP. Report clause-level similarity separately. Unverified alignments and complex many-to-many mappings remain unavailable. This amends the unresolved D-052 split/merge convention only; no annotation schema, match-score denominator, PARTIAL weight or relevance rubric changes.
+- **Subsequent explicit review replies, same date:** Dion approved retaining CV1/F00332 C=3 and its existing reason after the two B corrections. After reading the original JD/CV, he also approved fresh direct C-only judgments CV1/F00022=3, CV2/F00114=1 and CV1/F00369=1; the last judgment is explicitly limited to the truncated archived JD. The A/B holds remain. The new values and original source limitations are recorded in `evals/results/cp23_stage1_user_review_receipt_20261003_v2.json` and the versioned r3 amendment, without inventing a per-row timestamp or independent annotator.
+- **Current status:** These case decisions and the strict rule are approved. The five Stage-1 prerequisite gates are ready in `evals/results/cp23_stage1_readiness_20261003_v4.json`; each future candidate output still requires its own alignment and semantic review. No model, embedding, prompt or K winner is approved.
+
+## D-055. Bounded CP2.3 Stage-2 extraction comparison budget
+
+- **Date/source:** 3 October 2026, Dion's explicit reply approving the exact question for four D-029 round-one models × seven fixed development JDs, including at most one automatic repair per case, with an aggregate additional ceiling of **US$3.20**. Receipt: `evals/results/cp23_stage2_extraction_budget_approval_20261003_v1.json`, bound to the v3 preflight hash.
+- **Scope:** Extraction only, experimental JD prompt v1.3, same sources/configuration for each model. The project US$8.50 hard stop remains. Matching, GPT-6 Sol reference, test data, broad extraction and a changed protocol are excluded. No batch splitting to evade the standing US$1 approval threshold.
+- **Execution:** The first DeepSeek/F00332 call cost US$0.00478664. Source-semantic QA found merged AND obligations and lost OR structure, so the durable run stopped after 1/28cases. The unused portion of the cap does not approve a new prompt, a reset, or a different batch. Preserve the failure as development evidence; replan and seek applicable approval before changed paid work.
+- **Status:** Approved for the frozen batch only; that batch is terminal on semantic failure. No winner or extraction-quality benchmark claim follows.
+
+## D-056. Bounded experimental v1.4 Stage-2 extraction budget
+
+- **Date/source:** 3 October 2026. After the explicit v1.4 preflight and US$3.23 approval request, Dion replied “Iya saya setuju, ayo selesaikan tahap 2.” The exact [approval receipt](../evals/results/cp23_stage2_extraction_budget_approval_20261003_v2.json) binds plan SHA `b901bad9176e33d45845dcd9748d2c3eb05bbf627b592655e174d697b2e9a0c2` and run ID `cp23_stage2_round1_extraction_20261003_v4`. No exact review time is asserted.
+- **Scope:** At most 28 extraction cases (four D-029 round-one models × the same seven development JDs), one automatic repair per case, aggregate additional cap US$3.23 including failures and uncertain charges. The conservative preflight bound is US$3.2232974. The US$8.50 project hard stop and existing guard/ledger remain. Experimental JD prompt v1.4 is fixed for this plan and is not the active default, a guideline change or a selected prompt.
+- **Exclusions:** Evidence matching, GPT-6 Sol reference, broad development extraction, test data and configuration selection require their own plans. Approval does not migrate from v3 or to a later changed protocol.
+- **Execution:** The first DeepSeek/F00332 stage returned a 17-unit draft after one automatic repair, two calls, US$0.022156197 provider-reported. Source-semantic QA found that the alternative branches do not represent the source's “other disciplines will be considered” path even though the group text repeats it and `needs_review=true` prevents scoring. One reviewed trend/anomaly obligation was split into two model units; D-054's strict mapping applies. The durable run stopped after 1/28 stages under its frozen quality gate. No model winner or extraction F1 is claimed.
+- **Status:** Exact paid scope approved and terminal on the recorded semantic failure. Any changed stop policy or further paid plan requires a distinct versioned scope and applicable approval; unused cap is not transferable.
+
+
+## D-057. Same-protocol v5 continuation with visible semantic failures
+
+- **Date/source:** 3 October 2026, Dion's explicit answer “Ya, setujui plan v5 dan plafon US$3,16”; original receipt `evals/results/cp23_stage2_continuation_budget_approval_20261003_v1.json`.
+- **Decision:** Run the remaining 27 original model/JD extraction cases on experimental v1.4; retain DeepSeek/F00332 as an external failure. A recorded source-semantic failure does not end the whole comparison, but each next case requires source QA. Process/schema failures, uncertain charges, changed hashes and budget breaches still stop.
+- **Limit:** US$3.16 including repairs/failed or uncertain charges; no matcher, reference, mass extraction, test or configuration selection.
+- **Outcome:** Six remaining DeepSeek cases collected and checked. V5 then stopped on the first rejected GPT/F00332 request. The terminal state is retained; no reset or hidden replay.
+
+## D-058. Versioned GPT request compatibility adaptation
+
+- **Date/source:** 3 October 2026, Dion's explicit answer “Setuju v6 dalam plafon kumulatif US$3,16” to the concrete21-case route-repair proposal.
+- **Decision:** Use a separate v6 run for the remaining GPT/Gemini/Claude extraction cases. Omit `temperature` only for GPT-6 Luna, whose published endpoints do not advertise it, and accept the verified published dated GPT response ID. Other models retain explicit temperature 0. GPT's provider default is not described as temperature 0 or deterministic sampling.
+- **Protection:** Same seven development sources, experimental prompt v1.4, guideline/schema, privacy controls, price ceilings and one automatic repair. All earlier results remain visible; original v5 state is not resumed. Cumulative v5 plus v6 spending is bounded by US$3.16, not a fresh allocation. The project hard stop remains US$8.50.
+- **Evidence:** Proposal `evals/results/cp23_stage2_v6_route_repair_proposal_20261003_v1.json`; plan-bound approval `evals/results/cp23_stage2_v6_route_approval_20261003_v1.json`; official endpoint metadata `evals/results/cp23_stage2_route_diagnosis_20261003_v1.json`.
+- **Limit:** Operational compatibility fix, not a selected model/prompt or relaxation of output/source validation. Candidate alignment, paid evidence matching and final selection remain separate.
+
+
+## D-059. Retain settled process failures and complete unattempted extraction cases
+
+**Approved by Dion, 3 October 2026**, explicit reply “Setuju v7 dalam plafon kumulatif US$3,16”. The terminal v6 Gemini/F00815 failure remains failed and is not replayed. V7 covers only the two remaining Gemini and seven Claude cases, with no request/prompt/privacy change and at most one automatic repair per case. After an exact failure receipt establishes settled charges, a process failure is retained as a comparison outcome and the next original case may proceed. Uncertain charges/reservations, changed source/identity and insufficient budget still stop. V5/v6/v7 share the same cumulative US$3.16 ceiling; the remaining conservative bound is US$2.0236408. No matching, test access, reference model, broad extraction or winner selection is authorized by this decision.
+
+[Plan](../evals/results/cp23_stage2_round1_extraction_20261003_v7_remaining_cases_preflight.json) and [approval](../evals/results/cp23_stage2_v7_remaining_cases_approval_20261003_v1.json) preserve the predecessor hashes and approval scope.
+
+
+## D-060. Scoped strict many-to-many accounting for Claude/F00036
+
+- **Date/source:** 3 October 2026, Dion explicitly replied “Setuju dengan hitungan ketat tersebut” to the exact Claude/F00036 question.
+- **Approved case:** reviewed gold P09-U08/P09-U09 (EDA and visualization-tool alternatives) versus model U11/U12/U13. Count **0 TP, 2 FN, 3 FP**, consistent with strict split/merge accounting. This closes that case's previously missing many-to-many convention.
+- **Implementation:** an accounting-only adapter preserves the original complex relation and emits two FN records/three FP records. It adds no source units and does not approve other model-to-gold mappings.
+- **Limits:** no blanket complex-case policy, no field-level-equivalence decision, no paid matching approval, no whole-alignment human verification and no model/configuration winner. Candidate-specific semantic review and the other pending questions remain.
+- **Receipt:** `evals/results/cp23_stage2_complex_alignment_approval_20261003_v1.json`, bound to current proposal packet v2.
+
+
+## D-061. Primary extraction equivalence and separate category accuracy
+
+- **Date/source:** 3 October 2026, Dion explicitly replied “Setuju dengan definisi tersebut” to the stated evaluation definition.
+- **Primary extraction F1:** a verified one-to-one semantic equivalent preserves meaning, material qualifiers, AND/OR structure and required/preferred importance. Ordinary proficiency-depth words remain subject to D-035/D-042.
+- **Category errors:** report category accuracy separately; a category mismatch alone does not invalidate a semantically equivalent unit for primary F1. Category effects on denominator/scoring remain visible and are not erased or treated as acceptable production behavior.
+- **Limits:** this is a development evaluation clarification recorded before final metric computation, after outputs had been inspected; report that chronology. No gold, score formula, prompt or test-set change. Candidate-specific mapping acceptance is still required.
+
+## D-062. Separate capped fixed-input matching experiment
+
+- **Date/source:** 3 October 2026, Dion explicitly approved “Setuju, maksimal US$1,85”.
+- **Scope:** four round-one models × four fixed reviewed development CV/JD pairs,16stages,atmost32calls includingoneautomaticrepair percase. Additional aggregate ceiling **US$1.85**; conservative preflight bound US$1.8464752. Exact plan/receipt in `evals/results/cp23_stage2_fixed_matching_20261003_v1_plan.json` and `_approval.json`.
+- **Protocol:** retain settled invalid-output failures and proceed to unattempted original stages; never repeat a failed stage or convert it into NO_MATCH. Persist typed attempts, ledger reservations and results; stop on uncertain cost, interrupted request, changed protected inputs or exhausted budget. GPT-only omission of unsupported temperature and published dated response-ID allowance are explicit. Existing privacy/provider routing and project hard stop US$8.50 remain.
+- **Exclusions:** test set, gold edits, broad extraction, quality-reference calls and automatic candidate/configuration selection. Acceptance of payment does not certify extraction alignment, fixed-adapter semantics or evidence accuracy.
+
+
+## D-063. Accepted Stage-2 candidate mappings and fixed matching adapter
+
+- **Date/source:** 3 October 2026, Dion: “Setuju pemetaan rekomendasi dan adapter tetap”.
+- **Scope:** recommended relations in the complete v3 packet (27 final extraction drafts and one retained failure, 447 relations), and the source-checked fixed matcher adapter containing 73 logical units across four development pairs. D-060 and D-061 accounting apply.
+- **Provenance:** human acceptance of assisted source QA, not independent human annotation of every candidate output. Original gold, outputs and historical source observations remain unchanged.
+- **Receipt:** `evals/results/cp23_stage2_alignment_and_fixed_adapter_approval_20261003_v1.json`, binding the packet, adapter, plan and reference hashes.
+- **Limits:** permits metric calculation on this accepted scope; does not approve evidence predictions, a winner, additional paid calls, test use or a change to the scoring formula.
+- **Status:** Approved.
+
+
+## D-064. Separate capped quality-reference and round-two experiment
+
+- **Date/source:** 3 October 2026, Dion: “Setuju protokol dan batas tambahan US$6,40”, followed by an instruction to continue maximally and precisely.
+- **Scope:** eight GPT-6 Sol reference stages (four extraction JDs shared with matching plus four fixed matching pairs), eleven DeepSeek Pro stages (seven original extraction JDs plus four fixed pairs); 19 stages, at most 38 calls including one repair per stage.
+- **Budget:** separate aggregate additional ceiling US$6.40; conservative bound US$6.33582444. Existing US$8.50 project hard stop remains. Unknown charges/reservations, changed inputs or unsafe headroom stop dispatch. Unused D-062 cap is not transferred.
+- **Protocol:** new versioned experiment; portable application-owned repair framing, unchanged first-call rubric/prompts/inputs, omit unsupported temperature only for GPT Sol, and allow only exact dated response IDs published in saved official endpoint metadata. Original failures and paid states remain unchanged. The framing is a compatibility mitigation, not a proven historical HTTP 400 diagnosis. Settled failures remain observations; failed cases are not repeated.
+- **Comparison limits:** reference extraction uses only its four-JD/73-unit common scope. Round-two extraction uses the common full-seven-JD/120-unit scope. Fixed-input matching has the same 73 reference units per model. New extraction alignments still require concrete acceptance; payment is not semantic approval or a winner. No test use, broad extraction, gold correction or runtime default promotion.
+- **Receipt:** `evals/results/cp23_stage2_reference_round2_20261003_v1_approval.json`, binding the accepted proposal v2 and frozen executor plan.
+- **Execution outcome:** all 19 stages completed in 25 calls, D-064 cost US$0.4054182374. All11 extraction drafts are process-valid; seven of eight matching outputs are valid. The retained DeepSeek Pro/CV1/F00036 source-quote failure is included in evaluation. Project ledger US$1.1735639842 includes historical uncertain US$0.0210861. New extraction mappings await their own acceptance; no winner is approved.
+- **Status:** Approved execution completed; quality/selection gates remain.
+
+
+### D-064 addendum: repair-only replay for 4 October preparation
+
+D-064 already identifies the completed reference/round-two experiment above. Preserve that authority, cost and results. Dion's new instruction explicitly authorizes fixing the repair bug and replaying only affected rejected repairs: "Jika ada bug, perbaiki. Jika tahap yang terkena bug itu penting, jalankan ulang khusus tahap itu saja."
+
+Initial cap US$0.30 was blocked by conservative preflight US$0.6485602. Dion then answered **"Setujui plafon US$0,65"**. This is a separate aggregate replay ceiling, not an increase to the US$8.50 project guard or authorization for more reference/model calls. Same first drafts, prompt/schema/model/parameters, one replay per stage. Repair instruction role changes from system to user; wording is preserved.
+
+Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65**. One matching and one extraction became valid; six matching repairs remained invalid. No original output, gold, source or default model was overwritten. Human acceptance of the new Gemini extraction mapping is pending. Guardrails are a separate offline proposal. [Plan and budget receipt](../evals/results/cp23_stage2_repair_rerun_20261004_v1_approval.json), [actual outcome](../evals/results/cp23_stage2_repair_rerun_20261004_v1_summary.json).
+
+## D-065. Deterministic evidence guardrails
+
+- **Status:** Approved for v1 by Dion on 4 October 2026. Runtime integration and release verification remain pending.
+- **G1:** MATCH supported only by quotes wholly inside Skills becomes PARTIAL, with `skills_list_only`.
+- **G2:** MATCH for an explicit named-tool conjunction with only some items supported outside Skills becomes PARTIAL, with `partial_item_coverage`. Explicit OR/example syntax is excluded. This bounded literal checker is not general entailment or technology equivalence.
+- **Trace:** preserve the input, record each unit/branch before and after, never raise labels. Gold, runtime labels, score formula and denominator stay unchanged.
+- **Measured result under the original reference:** four original unsupported positives lowered; four original scope overclaims remain. D-067 later clarified that the two SQL/PostgreSQL claims were supported by SQL work evidence. The revised evaluation therefore exempts that example-like requirement from G2 and reports the old and new references separately. Two additional Gemini skills-list claims are lowered; one additional Gemini scope claim remains. Insufficient citation is recorded separately. No claim that showing a quote alone makes an unsupported label safe.
+- **Evidence:** [A/B guardrail result v2](../evals/results/cp23_stage2_repair_comparison_20261004_v2.json). D-066 separately changes the v1 safety rule. Offline results alone do not certify the public runtime.
+
+## D-066. V1 safety and per-task selection amendment to D-029; quote validator v1.1
+
+- **Date/source:** 4 October 2026. Dion explicitly approved both D-029 revisions and the stated safe bounds for quote validator v1.1. D-029 remains unchanged as the historical pre-registered rule; this entry is a post-result amendment for v1 and must be identified as such in comparisons.
+- **Primary comparison:** the bug-fixed B view is primary; the original A view remains historical. Do not erase either result.
+- **Safety for v1:** zero unsupported positives remains a target, not a freeze-blocking gate. Report the observed unsupported-positive rate for model plus approved G1/G2 on development, then on held-out test. Display the actual matched CV source span beside each label. CP3 plans a separate display rule for MATCH claims that cannot be confirmed: PARTIAL, marked "perlu dicek". That display rule is not yet implemented or measured.
+- **Per-task model selection:** retain D-029 rule 5 allowing different extraction and matching models when one is at least 0.03 better on its own task. For cost comparison, use extraction F1 for extraction and evidence Macro-F1 for matching. Within each task, a cheaper model wins when it is within 0.03 of the best low-cost candidate on that task; use p95 latency to break a tie. A complete process run in that task remains mandatory. Report coverage, failure counts, quality and latency before a proposed model choice; Dion approves or rejects that choice.
+- **Quote validator v1.1:** keep the model's returned quote and a separate original source span. The displayed and evaluated evidence is the original CV span. Normalize only Unicode representation, separator/control punctuation, Markdown emphasis and whitespace; case-insensitive comparison is a fallback. Tokens must remain identical and adjacent in the same order. Any changed or invented word fails. Ambiguous source-span matches fail instead of silently choosing one. Every normalization is flagged.
+- **OR groups:** move a parent label and its quotes to a branch only if exactly one branch is clearly supported by the matched source span. If branch labels already exist, keep them and ignore the parent with a flag. Ambiguous branches remain not_assessed. Do not infer skill equivalence from a string match alone.
+- **Scope:** apply the same versioned validator to every saved development output from round one, repair replay, reference and round two. Preserve raw results, gold, workbook, sources, split and pool. Any model failure that survives validation remains a failure. Paid reruns are limited to confirmed application-caused failures under the separately approved US$0.30 cap; model mistakes do not qualify. No test access or freeze follows automatically.
+
+## D-067. F00815 SQL reference interpretation for development evaluation
+
+- **Date/source:** 4 October 2026. Dion explicitly decided: "SQL with PostgreSQL as an example: SQL evidence such as BigQuery SQL is MATCH."
+- **New reference:** F00815/P52-U10 means SQL familiarity with PostgreSQL as an example, not SQL plus mandatory PostgreSQL experience. CV2's work quote about SQL queries in BigQuery supports MATCH. The previous reviewed evidence label was PARTIAL under the narrower interpretation.
+- **Versioning:** retain the approved workbook and original gold intact. Store the old and new text, labels, source quote and file hashes in [reference v2](../evals/results/cp23_f00815_sql_reference_20261004_v2.json). Apply the same revised reference to every development candidate and show both metric views. Do not revise other units or the held-out test set.
+- **Guardrail consistency:** P52-U10 is SQL with PostgreSQL as an example. G2 must not treat the slash in the historical adapter as an AND requirement. The [offline comparison](../evals/results/cp23_sql_reference_comparison_20261004_v2.json) applies this exception to every model in the new-reference view while retaining the original view.
+- **Later resolution:** D-067 alone did not approve the three non-trivial Gemini/F00815 extraction alignments. Dion subsequently approved strict D-054/D-061/D-067 accounting under D-068. The [versioned Gemini result](../evals/results/cp23_gemini_f00815_alignment_20261004_v1.json) reports the new F1 without changing original gold.
+
+## D-068. Provisional CP2.3 freeze for development
+
+- **Date/source:** 4 October 2026. Dion accepted DeepSeek Flash for JD extraction and evidence matching under D-066, approved strict D-054/D-061/D-067 mapping of Gemini/F00815, and authorized Part A3, Part B and Part C under the existing capped protocol. This is an assisted development decision, not held-out test confirmation.
+- **Selected development configuration:** B as primary; hybrid FTS plus dense RRF with Qwen3-Embedding-8B by D-044; stage-1 K=20 provisionally; DeepSeek Flash for both tasks; JD extraction prompt v1.4 with qualification inventory; evidence prompt v1.1; quote validator v1.1; approved G1/G2; PARTIAL weight 0.5 provisionally. Original A, old SQL reference and earlier config remain as historical artifacts.
+- **Evidence:** On seven development JDs, DeepSeek Flash extraction F1 is 0.861789 versus GPT-6 Luna 0.793651. On four fixed development CV/JD pairs after validator v1.1, G1/G2 and D-067, evidence Macro-F1 is 0.772296 versus 0.730356. The 0.041940 gap exceeds the 0.03 cost switch threshold. Qwen wins the pre-registered embedding Recall@20 comparison. K and PARTIAL weight lack complete gold-input ordering and must be tested in Part B.
+- **Latency condition:** DeepSeek Flash request p95 was 90.747 seconds per matching pair in this small development run. CP3 must run independent matching calls concurrently, cache JD extraction, and prepare a precomputed synthetic demo under D-022. Part B measures actual end-to-end wall time for one CV and K=20. If unacceptable, GPT-6 Luna is the speed fallback; its observed p95 was 21.880 seconds and its guarded Macro-F1 is lower by about 0.042. Do not imply this sample is a production service guarantee.
+- **Quality reference and safety:** GPT-6 Sol is a measured quality reference, not the production choice. Report its K=20 cost projection beside both candidates. Two unsupported positives among 50 positive units remain for DeepSeek Flash after G1/G2 on the reviewed development pairs. Show source CV spans beside labels, report the safety rate on held-out test, and retain the CP3 "perlu dicek" display plan from D-066. The zero target remains a target, not an automatic release claim.
+- **Configuration provenance:** The provisional settings are saved in `config/versions/pipeline_cp23_provisional_20261004.yaml`. The historical `config/pipeline_v1.yaml` retains its original bytes because frozen retrieval and model-evaluation receipts hash that path. Overwriting it produced 28 failed checks and three setup errors; restoring it returned the full suite to 444 passed, 2 skipped. Part B must pass the provisional spec explicitly. CP3 runtime promotion needs a separately versioned migration and new acceptance checks; the freeze decision must not rewrite historical input hashes.
+- **Boundary:** Freeze is provisional development only. No test data selects settings. No real CV is sent to a provider. K/weight, public privacy gates, broad development extraction and CP2.4 frozen test evaluation remain open.
+
+## D-069. Bounded Part B resume before the CP2 presentation
+
+- **Date/source:** 4 October 2026. Dion chose option 2: finish A3 materials first, then continue only the 31 unattempted development CV/JD pairs. The aggregate Part B cap rises from US$2.00 to **US$2.50 total**, including previous costs and uncertain reservations. Previously timed-out pairs are skipped without replay. New timeouts must be recorded and skipped. Stop no later than two hours before the presentation; if incomplete, present clearly labeled partial results.
+- **Execution:** The [A3 snapshot](../evals/results/cp23/end_to_end_dev/cp23_a3_presentation_snapshot_20261004_v1.json) predates the resumed calls. The [plan amendment](../evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/cap_and_deadline_amendment_v2.json) binds the original plan hash, cap, skip rule and conservative 11:00 WIB cutoff. All 31 untouched pairs received records before that cutoff; the two old timeout pairs were not replayed and no new timeout occurred.
+- **Outcome:** All 60 planned pair records exist, but only 20 have final numeric scores. The [completion receipt](../evals/results/cp23/end_to_end_dev/cp23_partb_completion_20261004_v3.json) reports US$1.1875181592 total Part B accounting, including US$0.0646905 of old uncertain charges. Resumed calls added US$0.1968797400. This is collection completion, not semantic quality acceptance. H4, K and PARTIAL weight still lack complete final-order coverage; D-068 remains provisional.
+- **Limits:** No new model, prompt, gold, workbook, source, split, pool, test data or paid privacy comparison. The unused cap does not authorize retrying failed stages or broad extraction. D-050, D-051 and D-053 remain separate gates.
+
+## D-070. Revised project credit and bounded pipeline v1.1 budget
+
+- **Date/source:** 4 October 2026. Dion authorized adding US$10 of OpenRouter credit and a new development pipeline v1.1 run on the same 60 Part B pairs, with a separate aggregate cap of US$3.00. He reported that total credit bought would be about US$19.22. That provider balance is a user statement, not an independently verified balance.
+- **Revised D-019 ceiling:** replace the old US$15 planning ceiling with the actual credit bought, reported as about US$19.22. The numeric local guard is more restrictive: `API_BUDGET_USD=19` and `API_HARD_STOP_USD=18.5`. Dion updates `.env` and the OpenRouter key limit. Code and documentation must not edit or reveal the key. The preflight on 4 October read numeric guard values 19.0 and 18.5; the ledger was US$2.4590349434 before v1.1 paid work.
+- **Scope:** only previously failed or held stages among the same 52 development JDs and 60 CV1/CV2 pairs may be rerun under the changed pipeline. Valid v1 outputs are reused. All calls use the guard and ledger. Original results remain intact. No test use, new model, broad extraction, prompt change, gold edit, or configuration winner is approved by this budget decision.
+
+## D-071. Pipeline v1.1 H2 provisional hold policy
+
+- **Date/source:** 4 October 2026. Dion chose H2 with a 20 percent threshold after reviewing the H1/H2 saved-output simulation. This revises the D-006 whole-job `needs_review` hold for pipeline v1.1. Historical v1 scores and the score formula remain unchanged.
+- **Rule:** count scored required logical units after duplicate merging. If at most 20 percent of them have unresolved `needs_review` structure, exclude the unresolved logical units from the denominator and report a **provisional** score. Record each excluded unit's ID, text, source quote and reason. The user interface must show these as "syarat yang perlu dicek". If more than 20 percent are unresolved, or another processing failure prevents a score, keep `on_hold`.
+- **Evaluation:** report H1 and H2 side by side for coverage and original-position order metrics when available. Never replace an unjudged unit or job with a negative label or the next ranked job. The changed denominator is visible in every v1.1 pair receipt. No gold or annotation meaning is changed.
+- **Known trade-off:** H2 can raise coverage by omitting unresolved required units. Its percentage is less complete than a final score. The pre-run offline simulation moved 10 of 60 pairs from on hold to provisional, giving H1 20/60 and H2 30/60 usable scores on the saved v1 outputs; it did not fix extraction failures.
+- **Measured 4 October outcome:** Pipeline v1.1 and its bounded follow-up yielded H1 26/60 and H2 42/60, comprising 26 final and 16 provisional scores. The 54/60 development target was not met; zero of 36 final-order metric cells were complete. D-068's K20 and PARTIAL weight 0.5 remain provisional. The [versioned report](checkpoint_2/supporting/CP23_Pipeline_v11_20261004.md) and [coverage receipt](../evals/results/cp23/pipeline_v11/coverage_summary_v2.json) preserve both the gains and unresolved cases. This measurement does not expand D-071 into permission to hide exclusions or use the test split for tuning.
+
+## D-072. H2v2 hold policy: experience, level and education are never excluded
+
+- **Date/source:** 4 October 2026. Dion approved audit decision 2 after seeing that 9 of the 16 provisional H2 scores in pipeline v1.1 had removed a work-experience, seniority or education requirement from the denominator (for example "8-10 years of progressive experience" for a principal role, scored 39.47% for the fresh-graduate CV1).
+- **Problem:** for early-career users these requirements are usually NO_MATCH. Removing them raises the score of senior jobs, which is the opposite of what JobFit should do. The model marks exactly these complex requirements as `needs_review` most often.
+- **Rule (H2v2):**
+  - If a scored required unit marked `needs_review` states work experience, a seniority level or education, the pair stays **on hold**. Detection: category `experience_duration` or `education`, a `min_years` value, the same on any OR branch, or a documented seniority/years pattern in the text (`hold_policy_v11.is_protected_unit`).
+  - Other unresolved scored required units follow D-071: at most 20 percent may be excluded, the score is provisional and the excluded units are listed.
+  - A `needs_review` flag on a unit outside the percentage (preferred, unknown importance, soft skill, location, work authorization) no longer makes the score provisional. This fixes a bug in the H2 code (CV1 and CV2 x F00556 were provisional because of one preferred unit).
+- **Effect on saved v1.1 outputs (offline, no model call):** usable pairs H1 26, H2 42, **H2v2 33 of 60**. Nine pairs move from provisional to on hold; two move from provisional to final. Result: `evals/results/cp23/dev_eval_v2_20261004/product_order_v1.json`.
+- **Unchanged:** score formula, PARTIAL weight, gold, D-071 history and its receipts. H1 and H2 stay available for comparison.
+- **Trade-off:** lower coverage. A held job is shown under "could not be fully analyzed" instead of a misleading percentage.
+- **Status:** Approved. H2v2 is the development hold policy for the next freeze proposal.
+
+## D-073. Development final-order metrics use the real product order
+
+- **Date/source:** 4 October 2026. Dion approved audit decision 3. Amends the D-052 development contract for final-order metrics only.
+- **Problem:** under the strict D-052 rule, a top-K list with any held job gives no final-order metric, so 0 of 36 cells were measurable and H4, K and the PARTIAL weight could not be studied.
+- **Rule:** the primary development final-order metric uses the order the user actually sees (D-013, `scoring/ranking.py`): scored jobs by percentage, explicit-conflict jobs next, held or failed jobs last in stage-1 order. A held job is never skipped, never given relevance 0 and never replaced by a lower-ranked job. Every cell reports the number of unscored jobs in the top K. The strict D-052 completeness flag is reported next to it. P@5 and NDCG@10 keep the original-position rules (an unjudged job in the final top 10 makes the metric unavailable).
+- **Implementation:** `src/jobfit/eval/product_order.py`, tests in `tests/test_product_order.py`, script `scripts/evaluate_cp23_product_order.py`. The script first reproduces every saved H1/H2 score exactly (0 mismatches) before computing metrics.
+- **First development result (two CVs, indicative):** stage 1 macro P@5 0.30 and NDCG@10 0.522. Final order, H2v2, weight 0.5: K=10 P@5 0.40, NDCG@10 0.551. K=20 P@5 0.50, NDCG@10 unavailable because one job (CV2/F00629) has no relevance label. The explicit-conflict block is empty because saved stages carry no confirmed constraint context.
+- **Contract file:** `docs/evaluation.md` is left byte-identical because the approved D-052 receipt hashes it. This entry and `product_order.py` carry the amendment; a new versioned contract receipt is needed before the text of `evaluation.md` changes.
+- **Status:** Approved for development. D-053 already uses the same product order for the held-out test.
+
+## D-074. Stage-1 seniority rule for early-career users (development candidate)
+
+- **Date/source:** 4 October 2026. Dion approved audit decision 4: test a rule that moves jobs asking for three or more years below the others.
+- **Evidence (development only):** in the judged pool, all 14 jobs with bucket 3-4y or 5y+ are not relevant for CV1, and 16 of 17 for CV2. In the Hybrid Qwen top 20, none of the 16 such jobs is relevant.
+- **Rule:** `src/jobfit/search/seniority.py`, version `seniority-demote-3y-v1`. Stable partition of the stage-1 ranking: buckets `3-4y` and `5y+` move below all other jobs, order kept inside each group. `not_stated` is never demoted. Nothing is removed and the user can switch it off.
+- **Development result (offline):** Hybrid Qwen P@5 CV1 0.2 to 0.6 and CV2 0.4 to 0.8; NDCG@10 CV1 0.355 to 0.525 (CV2 unavailable: two newly promoted jobs have no label). Most other methods also gain P@5. Final order with the rule, H2v2, K=10: CV1 P@5 0.4, NDCG@10 0.581. Result: `evals/results/cp23/dev_eval_v2_20261004/seniority_rule_v1.json`.
+- **Limits:** two development CVs; the bucket is the CP1 v0 regex feature (many jobs are `not_stated`); the rule was found after looking at development labels, so only the held-out test can confirm it.
+- **Circularity note (added 4 October):** guideline Part D already gives relevance 1 when a job asks for 3+ years and the CV shows under 1 year. Part of the rule's gain therefore restates the labeling rule. That is still the right product behaviour (the user should not see such jobs first), but the gain is not independent evidence of better matching.
+- **Status:** Approved as a development candidate. It must be written into the frozen configuration before any test processing and never tuned on test outcomes.
+
+## D-075. Uncertainty reporting for CP2.3 comparisons
+
+- **Date/source:** 4 October 2026. Fulfils the D-045 promise of bootstrap intervals; reporting only, no rule change.
+- **Matching (73 units, 4 pairs, paired bootstrap, 5,000 draws):** DeepSeek minus Luna Macro-F1 is 0.042 under the reported view, 95 percent unit interval -0.067 to 0.148, pair interval -0.042 to 0.091. Without G1/G2 and the D-067 reference change the difference is 0.016. The difference is **not distinguishable from zero**, and the 0.03 cost rule cannot separate the two models on this sample.
+- **Error direction:** DeepSeek gives a stronger label than gold 6 times and a weaker one 9 times; Luna 3 and 16 times. MATCH precision is 0.84 for DeepSeek and 0.96 for Luna. For an evidence product a stronger-than-gold label is the more harmful error.
+- **Retrieval:** results are per CV with counts; Hybrid Qwen top 30 has 6 and 8 unjudged jobs, B0 15 and 16, so labeled-pool recall favours hybrid. B0 is better than Hybrid Qwen for CV1 at Recall@20 (8 versus 6 of 13). "Hybrid Qwen is best" is not established; Qwen over OpenAI is consistent on both CVs. Indonesian CV1 versus English CV2 Recall@20 for Hybrid Qwen: 0.46 versus 0.64 (H7, two CVs).
+- **Result:** `evals/results/cp23/dev_eval_v2_20261004/uncertainty_v1.json`.
+- **Status:** Recorded. Future comparisons report intervals next to point values.
+
+## D-076. Development check of GPT-6 Luna for evidence matching
+
+- **Date/source:** 4 October 2026. Dion approved audit decision 1 (test Luna before deciding), aggregate cap **US$0.40**.
+- **Scope:** same 60 development pairs and saved DeepSeek extractions; only the matching model changes. Phase A Luna CV1 top 20 with 20 workers and phase B DeepSeek CV1 top 20 with 20 workers measure one-CV K=20 wall time; phase C runs Luna on the other 40 pairs. Script `scripts/run_cp23_luna_matching.py` (zero-call preflight by default), comparison `scripts/evaluate_cp23_luna_matching.py`.
+- **Preflight (offline):** 54 Luna and 18 DeepSeek matching calls (held extractions are not called), median-based estimate US$0.30, guard 19 / 18.5, ledger US$3.09.
+- **Version 1 outcome (4 October):** stopped. All 18 Luna calls were rejected with `NotFoundError` at US$0 because the script sent `temperature`, which Luna endpoints do not support (the D-058 adaptation was not reused). The DeepSeek phase then hit `RunCapReached`: 20 parallel calls reserve about US$0.97 of conservative upper cost, above the US$0.40 cap. Eight DeepSeek calls finished; run cost US$0.1219. Records stay in `evals/results/cp23/luna_matching_v1/`.
+- **Version 2 (Dion's choice: Luna only):** D-058 `RouteClient` (temperature omitted, dated alias accepted), one canary call first, route/key errors stop the run, cap **US$0.50**, peak in-flight reservation US$0.379, median estimate US$0.15. DeepSeek latency is taken from saved runs (pipeline v1.1 and the eight v1 calls) instead of a new 20-worker phase.
+- **Version 2 outcome (4 October, run by Dion):** completed. 54 Luna pairs called (59 requests including 6 validation repairs), 50 process-valid, 4 failed (3 invalid output, 1 unbounded duration), US$0.1043. Ledger total US$3.313.
+  - Usable pairs of 60 under H2v2: Luna 36, DeepSeek 33.
+  - One-CV K=20 wall time with 20 workers: Luna **62.5 s** (pair p50 24 s). DeepSeek one-CV wall time was not measured; its pair times are p50 32 to 39 s and up to 113 s, so a fully parallel CV is bounded near 113 s.
+  - Same units, Luna versus DeepSeek labels: 740 of 848 equal (87 percent); Luna weaker on 94, stronger on 14. This matches the gold-pair finding that Luna is more conservative.
+  - Product order (H2v2, weight 0.5): CV1 K=10 P@5 0.2 both, NDCG@10 0.354 Luna versus 0.358 DeepSeek; CV1 K=20 P@5 0.6 versus 0.4, NDCG@10 0.450 versus 0.419; CV2 K=10 identical (0.6, 0.745). CV2 K=20 is unavailable (F00629, F00645 unlabeled).
+  - Cost per matched pair about US$0.002 (Luna) versus about US$0.010 (DeepSeek).
+  - Result: `evals/results/cp23/dev_eval_v2_20261004/luna_comparison_v1.json`; run records `evals/results/cp23/luna_matching_v2/`.
+- **Status:** Measured. Model choice waits for Dion; D-068 stays provisional until then. Candidate outcome: DeepSeek for offline JD extraction and Luna for online matching (D-029 rule 5).
+
+## D-077. Development model choice: DeepSeek Flash extracts, GPT-6 Luna matches
+
+- **Date/source:** 4 October 2026. Dion approved after reviewing D-075 and the D-076 Luna check.
+- **Decision:** JD extraction stays on DeepSeek Flash (seven-JD extraction F1 0.862 versus Luna 0.794; extraction runs once offline and is cached, so latency does not reach the user). Evidence matching moves to GPT-6 Luna with the D-058 request adaptation. This uses D-029 rule 5 (different models per task).
+- **Evidence for matching:** quality not distinguishable from DeepSeek (Macro-F1 difference 0.042, interval -0.067 to 0.148); fewer stronger-than-gold labels (3 versus 6); usable pairs 36 versus 33 under H2v2; equal or better product order on the comparable cells; one-CV K=20 in 62.5 s measured; about US$0.002 per pair versus about US$0.010.
+- **Known cost:** Luna gives weaker labels more often (16 weaker-than-gold on the fixed pairs, 94 weaker than DeepSeek on 848 shared units), so percentages tend to be lower. Four of 54 Luna pairs failed processing.
+- **Configuration:** `config/versions/pipeline_cp23_provisional_v2_20261004.yaml`. Earlier version files and `config/pipeline_v1.yaml` are unchanged. D-068 is superseded for the matching model only.
+- **Status:** Approved for development. Still provisional until the D-053 freeze; held-out test confirms it.
+
+## D-078. Proposed rule for choosing K and PARTIAL weight before the freeze
+
+- **Date/source:** 4 October 2026. **Approved by Dion** (same day). Written before the missing development relevance labels are filled, so the rule is fixed before the deciding numbers exist.
+- **Fixed inputs:** D-077 models, H2v2, product order (D-073), seniority rule on (D-074), development CV1/CV2, gold r3 plus the new gap labels (as a new versioned bundle).
+- **Seniority rule depth:** stage 1 returns 30 candidates; the rule reorders those 30; the top K of that list is analyzed. This makes every K <= 30 cell exact and matches what the app will do.
+- **Rule:**
+  1. Primary metric: macro NDCG@10 of the final product order at weight 0.5; secondary: macro P@5.
+  2. K in {10, 20, 30}: choose the smallest K whose NDCG@10 is within 0.02 of the best K and whose P@5 is not lower than the best K's P@5 minus 0.1. Smaller K wins ties (faster and cheaper).
+  3. Weight in {0.25, 0.5, 0.75} at the chosen K: keep 0.5 unless another weight is better by more than 0.02 NDCG@10.
+  4. Seniority rule check: if the rule is worse than no rule on both NDCG@10 and P@5 at the chosen K, freeze without it.
+  5. Any cell still missing a label is reported unavailable; it never counts as zero.
+- **Limit:** two CVs, so this is a development choice, not a significance claim. The held-out test (D-053) confirms it.
+
+## D-079. Matching model sweep: all candidates under the same current settings
+
+- **Date/source:** 4 October 2026. Dion asked to test all matching candidates at once instead of only Luna and DeepSeek, including models never tested (Claude Sonnet 5.5, Gemini 3.8 Flash, Gemini 3.1 Pro preview, Claude Opus 5.5).
+- **Correction recorded with this decision:** GPT-6 Sol was excluded earlier by its D-029 role (quality reference), not by data. Sol minus Luna Macro-F1 is 0.099, unit interval 0.006 to 0.199 (pair interval -0.023 to 0.19), and Sol has only 2 stronger-than-gold labels. So Sol is likely better than Luna on quality, at about 20 times the cost.
+- **Stage 1 (cap US$3.00, median-based estimate US$2.64):** ten models (Luna, DeepSeek Flash, Gemini 3.5 Flash-Lite, DeepSeek Pro, Gemini 3.8 Flash, Claude Haiku 4.5, GPT-6 Sol, Claude Sonnet 5.5, Gemini 3.1 Pro, Claude Opus 5.5) on the same four gold pairs, same fixed requirements, evidence prompt v1.1, validator v1.1, dynamic output, 240 s timeout, one call at a time. Request handling per model comes only from public endpoint metadata (temperature omitted when unsupported, output limit clamp, published aliases); prices must be at or below the D-029 ceilings. Evaluation reproduces the D-067 accounting exactly (checked: saved round-one outputs give 0.772, 0.730, 0.829, 0.457, 0.249, 0.642). Rerunning the six earlier models also measures run-to-run label agreement.
+- **Stage 2 (cap US$5.00):** models with 4/4 valid pairs and Macro-F1 at least Luna's go to the 60-pair coverage, latency and product-order check. The final matching choice then weighs quality, error direction, coverage, latency and cost; D-077 is revised if another model wins.
+- **Extraction:** not part of the sweep. A new extraction comparison needs manual semantic mapping per JD; DeepSeek keeps the highest measured F1.
+- **Scripts:** `scripts/run_cp23_model_sweep.py`, `scripts/evaluate_cp23_model_sweep.py`, tests `tests/test_model_sweep.py`.
+- **Stage 1 outcome (4 October, run by Dion):** US$1.282, stopped after Gemini 3.1 Pro returned `PermissionDeniedError` (403, US$0) on its last pair, so Claude Opus 5.5 did not run. **Corrected cause (D-081):** the 403 was the OpenRouter workspace lifetime budget of US$5.00 being exceeded at that moment, not a model-level restriction. Stopping the whole run was the right behaviour; the later change that made 403 skip only one model was wrong and is reverted. Result: `evals/results/cp23/dev_eval_v2_20261004/model_sweep_stage1_v1.json`.
+
+  | Model | Valid pairs | Macro-F1 (all 73 units) | Stronger / weaker than gold | MATCH precision | Cost per valid pair | Pair p50 | Same label as earlier run |
+  | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+  | GPT-6 Sol | 4/4 | 0.846 | 4 / 7 | 0.91 | US$0.038 | 17 s | 0.88 |
+  | Claude Sonnet 5.5 | 4/4 | 0.786 | 1 / 15 | 1.00 | US$0.084 | 34 s | new |
+  | Gemini 3.8 Flash | 4/4 | 0.747 | 2 / 16 | 0.93 | US$0.048 | 36 s | new |
+  | GPT-6 Luna | 4/4 | 0.736 | 4 / 14 | 0.96 | US$0.002 | 21 s | 0.90 |
+  | DeepSeek Pro | 4/4 | 0.663 | 6 / 14 | 0.84 | US$0.014 | 86 s | 0.86 |
+  | DeepSeek Flash | 3/4 (one 252 s timeout) | 0.578 (0.726 answered) | 3 / 9 | 0.88 | US$0.028 | 34 s | 0.82 |
+  | Gemini 3.5 Flash-Lite | 2/4 | 0.477 | 8 / 5 | 0.74 | US$0.021 | 7 s | 0.81 |
+  | Gemini 3.1 Pro | 2/4 (one invalid output; one 403 from the workspace budget, an infrastructure failure) | 0.420 | 0 / 10 | 1.00 | US$0.148 | 30 s | new |
+  | Claude Haiku 4.5 | 2/4 | 0.405 | 2 / 7 | 1.00 | US$0.061 | 14 s | 1.00 |
+  | Claude Opus 5.5 | not run | - | - | - | - | - | - |
+
+  Paired bootstrap against Luna: Sol +0.110 (unit -0.001 to 0.225, pair 0.022 to 0.182); Sonnet +0.050 (unit -0.044 to 0.149); Gemini 3.8 Flash +0.011 (unit -0.077 to 0.103); DeepSeek Pro -0.073. Stage-2 gate passed: Sol, Sonnet, Gemini 3.8 Flash. Run-to-run label agreement of the same model across two runs is 0.81 to 0.90, so a single run moves Macro-F1 by several points (DeepSeek Flash 0.772 earlier, 0.578 now with one timeout).
+- **Follow-up prepared:** `--continue-models claude-opus-5.5` runs Opus only under the same plan and the same cumulative US$3.00 cap (US$1.72 left, Opus estimate US$0.98). Superseded by the D-081 budget recovery run, which also redoes the Gemini 3.1 Pro pair blocked by the same budget. Stage 2 runner: `scripts/run_cp23_matcher_coverage.py --model <key>`, cumulative US$5.00 cap. Gemini 3.8 Flash and Sonnet are dominated by Luna and Sol respectively on cost and quality, so only Sol is proposed for stage 2 (estimate US$2.45).
+- **Opus continuation (4 October):** the first Opus request was rejected with `PermissionDeniedError` (403) after 115 ms at US$0, before any generation. An earlier version of this entry said the block was specific to Opus access; **that was wrong**. Dion's minimal direct probe returned the provider message `Workspace lifetime budget of $5.00 exceeded. Contact your org admin.` (D-081). Sonnet and the others had succeeded only because they ran before the workspace total crossed US$5. Opus and Gemini 3.1 Pro CV2/F00018 are infrastructure failures, not model results; their v1 failure files are kept as provenance.
+- **Status:** Stage 1 complete for eight models plus Gemini 3.1 Pro on 3 of 4 pairs; Opus and one Gemini pair wait for the D-081 budget recovery. Stage 2 proposed for Sol only.
+
+## D-080. Fair retriever comparison labels
+
+- **Date/source:** 4 October 2026. Dion approved labeling every unjudged job in the top 20 of all six retrieval methods, plus the Hybrid Qwen top 30.
+- **Workbook:** `evals/labeling/dev_relevance_gap_20261004_v2/` (46 items: 24 CV1, 22 CV2), blind and shuffled. It replaces the unfilled 14-item v1 workbook.
+- **Use:** after Dion's labels are imported into a new versioned gold bundle (r3 unchanged), all six methods have complete top-20 judgments, so Recall@20 and the B0 versus Hybrid comparison are no longer biased by the pool; the seniority rule and an offline Hybrid+B0 fusion are compared on the same footing. Embedding choice (D-044) is not reopened: Qwen won on both CVs under a pre-registered rule.
+- **Status:** Approved; labeling pending.
+
+## D-081. OpenRouter workspace lifetime budget versus the JobFit guard
+
+- **Date/source:** 4 October 2026. Root cause confirmed by Dion with a minimal direct probe to `anthropic/claude-opus-5.5` ("Reply only with OK."): HTTP 403 `Workspace lifetime budget of $5.00 exceeded. Contact your org admin.`
+- **Three separate limits:**
+  1. **OpenRouter workspace (organization) lifetime budget:** set in the OpenRouter dashboard by the org admin. It counts all spending in that workspace, from every key and from playground use, over its whole life. It was US$5.00 and blocked every model with 403 once crossed.
+  2. **OpenRouter key credit limit:** a per-key cap in the key settings (D-031). Separate from the workspace budget.
+  3. **JobFit guard (`API_BUDGET_USD=19`, `API_HARD_STOP_USD=18.5`, D-070):** local, computed from `reports/usage/usage_ledger.jsonl`. It only sees calls made through the JobFit client, so it cannot see other keys, playground use or direct probes. It does not change, and is not changed by this entry.
+- **Ledger reconciliation:** the local ledger shows US$4.4173 reported plus US$0.1782 of uncertain timeout reservations (US$4.5956) when the block happened. OpenRouter counted more than US$5.00 for the workspace, so at least about US$0.40 came from outside this ledger (other keys, playground, direct probes, or charges on requests the ledger holds as uncertain). Dion checks the workspace usage page to reconcile.
+- **Required dashboard change (Dion, not code):** raise the workspace lifetime budget so it is not lower than the planned spend. Recommendation: set it to the credit actually bought (about US$19, D-070), keep the key limit at or below that, and use this workspace and key only for JobFit so the outside spend stays visible. The JobFit `.env` stays at 19 / 18.5.
+- **Code changes:** `scripts/probe_openrouter_access.py` (one tiny structured request per model, at most 64 output tokens, no CV or JD text; prints only the redacted provider message, its classified cause and the key's numeric usage/limit). Paid sweep and stage-2 runs now call this probe first and stop before any benchmark call if a model is blocked. HTTP 403 again stops the whole run. `--budget-recovery` redoes only the five pairs blocked by the budget (four Opus, one Gemini 3.1 Pro) into `evals/results/cp23/model_sweep_v1/continuation_2/`; v1 failure files stay; the evaluator prefers the recovery file and records it. Same cumulative US$3.00 stage-1 cap (US$1.72 left, estimate US$1.11).
+- **Status:** Root cause recorded. Recovery waits for Dion's dashboard change and probe.
+
+## D-082. D-079 results after the budget recovery and the Sol 60-pair check; matcher proposal
+
+- **Date/source:** 4 October 2026, runs by Dion after raising the OpenRouter workspace budget (D-081).
+- **Budget recovery (US$0.6305):** access probe passed for Opus and Gemini 3.1 Pro; all five blocked pairs completed. Final stage-1 table (`evals/results/cp23/dev_eval_v2_20261004/model_sweep_stage1_v3.json`):
+
+  | Model | Valid pairs | Macro-F1 | Stronger / weaker than gold | MATCH precision | Cost per pair | Pair p50 |
+  | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+  | GPT-6 Sol | 4/4 | **0.846** | 4 / 7 | 0.91 | US$0.038 | 17 s |
+  | Claude Sonnet 5.5 | 4/4 | 0.786 | 1 / 15 | 1.00 | US$0.084 | 34 s |
+  | Claude Opus 5.5 | 4/4 | 0.770 | 0 / 17 | 1.00 | US$0.136 | 32 s |
+  | Gemini 3.8 Flash | 4/4 | 0.747 | 2 / 16 | 0.93 | US$0.048 | 36 s |
+  | GPT-6 Luna | 4/4 | 0.736 | 4 / 14 | 0.96 | US$0.002 | 21 s |
+  | DeepSeek Pro | 4/4 | 0.663 | 6 / 14 | 0.84 | US$0.014 | 86 s |
+  | Gemini 3.1 Pro | 3/4 | 0.639 | 1 / 14 | 0.95 | US$0.127 | 34 s |
+  | DeepSeek Flash | 3/4 | 0.578 | 3 / 9 | 0.88 | US$0.028 | 34 s |
+  | Gemini 3.5 Flash-Lite | 2/4 | 0.477 | 8 / 5 | 0.74 | US$0.021 | 7 s |
+  | Claude Haiku 4.5 | 2/4 | 0.405 | 2 / 7 | 1.00 | US$0.061 | 14 s |
+
+  Against Luna: Sol +0.110 (pair interval 0.022 to 0.182), Sonnet +0.050, Opus +0.033, Gemini 3.8 Flash +0.011 (the last three intervals include zero). Opus and Sonnet never overclaim MATCH but miss more true MATCH labels; both cost more than Sol and score lower, so they were not sent to stage 2. Gemini 3.8 Flash costs about 28 times Luna for the same quality.
+- **Sol 60-pair check (US$1.4808, `evals/results/cp23/matcher_coverage_gpt-6-sol_v1/`, comparison `sol_comparison_v1.json`):** all 54 called pairs process-valid, no repair needed; usable pairs under H2v2 **40 of 60** (Luna 36, DeepSeek 33). One-CV K=20 wall time **35.4 s with 9 workers** (pair p50 15 s, max 23 s); Luna needed 62.5 s with 20 workers. Product order: CV1 K=10 P@5 0.2, NDCG@10 0.356; CV1 K=20 P@5 0.6, NDCG@10 0.419; CV2 K=10 P@5 0.6, NDCG@10 0.739; CV2 K=20 unavailable (F00645 unlabeled). On shared units Sol agrees with DeepSeek on 784 of 889 (stronger 41, weaker 64).
+- **Cost view:** about US$0.027 per matched pair in the 60-pair run, so about US$0.55 per CV at K=20, versus about US$0.04 for Luna. Ledger after the runs US$6.71. The key credit limit is still US$9.32 and must be raised before broad extraction and the test run.
+- **Proposal (approved by Dion, see D-083):** matching model GPT-6 Sol (best quality with a supported margin over Luna, 100 percent process-valid, fastest, most usable pairs); Luna stays the documented low-cost fallback. Extraction stays DeepSeek Flash. If approved, this supersedes the matching part of D-077 and creates a new configuration version file; the D-078 rule for K and weight then runs with Sol scores once the 46 labels are imported.
+
+## D-083. Development model choice revised: GPT-6 Sol matches, Luna is the fallback
+
+- **Date/source:** 4 October 2026. Dion approved the D-082 proposal.
+- **Decision:** evidence matching uses GPT-6 Sol with the metadata-based request handling of D-079. GPT-6 Luna stays the documented low-cost fallback (about US$0.04 versus about US$0.55 per CV at K=20). JD extraction stays DeepSeek Flash. This replaces the matching part of D-077; D-077's extraction choice and all other settings stand.
+- **Evidence:** D-082 (Macro-F1 0.846 versus 0.736, pair-bootstrap interval for the difference 0.022 to 0.182; 54 of 54 pairs valid; 40 of 60 usable pairs; one-CV K=20 in 35 s with 9 workers).
+- **Budget:** Dion raised the OpenRouter key credit limit and the workspace lifetime budget to about US$19 (4 October). The JobFit guard stays at 19 / 18.5. Ledger US$6.71 after the D-082 runs.
+- **Configuration:** `config/versions/pipeline_cp23_provisional_v3_20261004.yaml` (adds `stage1_candidate_depth: 30` from D-078). Earlier version files unchanged.
+- **Next:** import the 46 gap labels as a new gold bundle after Dion approves, compare retrievers on complete top-20 judgments, apply D-078 with Sol scores, then prepare the D-053 freeze.
+- **Status:** Approved for development; the held-out test confirms it.
+
+
+## D-084. Rule for changing the stage-1 retriever (set before the r4 numbers)
+
+- **Date/source:** 6 October 2026. Approved by Dion in chat before the 46 gap labels were imported or any r4 metric was computed.
+- **Rule:** Hybrid Qwen stays the stage-1 retriever unless a challenger (B0, B1, dense Qwen, dense OpenAI, hybrid OpenAI, or the offline Hybrid Qwen + B0 RRF fusion) has macro NDCG@10 at least 0.05 higher and macro P@5 not lower than Hybrid Qwen, both with the D-074 seniority rule on, on complete development judgments for CV1 and CV2. A challenger with a missing label in the needed positions is reported unavailable and cannot win.
+- **If a challenger wins:** this is a new development iteration. Its top 30 needs new Sol matching on development before the D-053 freeze; no test job is touched.
+- **Implementation:** `scripts/run_post_labeling.py` (`PROPOSED_RETRIEVER_RULE`, now approved).
+- **Limit:** two CVs; the margin is a practical threshold, not a significance test.
+- **Status:** Approved.
+
+## D-085. Import of the completed gap workbook into gold r4
+
+- **Date/source:** 6 October 2026. Dion finished `JobFit_Dev_Relevance_Gap_v2_v1.3_Final.xlsx`, asked for it to be checked and used, and chose in chat: G04 is unjudged, not 0; the A/B sheets are imported as extra development gold.
+- **Relevance:** 45 new rows (CV1 23, CV2 22). G04 (CV1/F00559) was marked UNSCORABLE by Dion because the JD has no candidate requirements. It is stored as a source-quality hold in `held_gap_v2.json`, never as 0 (D-052).
+- **Extraction and evidence:** 759 units for 39 JDs and 826 evidence rows for 42 CV/JD pairs, stored in `extraction_gold_gap_v2.jsonl` and `evidence_gold_gap_v2.jsonl` with their own unit namespace `gap_v2`. Seven of the JDs (F00029, F00052, F00126, F00212, F00332, F00556, F00650) already have r3 extraction gold; the r3 units stay authoritative and the two sets are never merged. One evidence row (CV2/G33-U27, `needs_clarification`) is held.
+- **Provenance:** the sheets were drafted by a model and accepted by Dion (`draft_note`: Stage 5 model draft). They are recorded as `model_draft_assisted_human_accepted`, the D-047 development practice, not as blind labels. D-080 described the workbook as blind; that description no longer holds for these labels and is corrected here.
+- **Checks:** every A source quote is found in its JD text, every MATCH/PARTIAL quote in its CV text, every B unit exists in A, identities match the manifest, Items and C_Relevance agree except G04. r3 files are copied byte for byte and re-hashed after the import.
+- **Bundle:** `evals/gold/development_v13_reviewed_20261004_gap_r4/` (script `scripts/import_dev_gap_r4.py`). r3 is unchanged.
+- **Status:** Approved by Dion; written.
+
+## D-086. Development configuration for the freeze (D-078 result, D-084 result, experience block)
+
+- **Date/source:** 6 October 2026. Computed by `scripts/run_post_labeling.py` on gold r4 (`evals/results/cp23/post_labeling_development_v13_reviewed_20261004_gap_r4_v1/summary.json`); the experience block was approved by Dion in chat after seeing the numbers.
+- **D-078 result (mechanical):** K = 10, PARTIAL weight 0.5, seniority rule on. Final product order macro P@5 0.70, NDCG@10 0.552 (CV1 0.483, CV2 0.620). No weight beat 0.5 by more than 0.02; the rule is not worse than no rule.
+- **D-084 result:** Hybrid Qwen stays. Best challenger on NDCG@10 was dense Qwen (+0.029, P@5 -0.2) and the Hybrid + B0 fusion (+0.004, P@5 -0.1); none met the rule. Dense OpenAI with the rule is unavailable (missing labels).
+- **Experience block (approved):** rule `experience-upper-bound-v1` is part of the frozen order. A job moves to the "possible conflict" block only when the whole confirmed CV work history is shorter than a required minimum; the score itself does not change. At K = 10 it raises CV1 NDCG@10 from 0.483 to 0.515; CV2 is unchanged; P@5 is unchanged. Macro with the block: P@5 0.70, NDCG@10 0.568.
+- **Honest reading:** with the seniority rule, stage 1 alone already gives P@5 0.70 and NDCG@10 0.550. The LLM match order at K = 10 is equal, not better, and at K = 20 or 30 it is worse (P@5 0.40 and 0.30), mostly because held jobs and match-percentage sorting pull in less relevant jobs. The value of stage 2 is the evidence and gap explanation per job, not a ranking gain. Two CVs only; the D-053 test confirms or refutes this.
+- **Configuration:** `config/versions/pipeline_cp23_freeze_candidate_v4_20261006.yaml`. Earlier version files unchanged.
+- **Status:** Approved for the freeze draft; the freeze itself needs Dion's approval of the receipt (D-053).
+
+## D-087. D-053 configuration and protocol freeze approved
+
+- **Date/source:** 6 October 2026. Dion wrote "approve freeze v2" in chat after asking for, and checking, the CP2.4 report contract.
+- **What is frozen:** the receipt `evals/freeze/cp23_freeze_draft_v2/freeze_receipt.json` (sha256 `18c1d17c41588a4780a6dfec147947057191f361434146b634890364a0e3a6f8`): config `pipeline_cp23_freeze_candidate_v4_20261006.yaml` (D-086), the stage-1, extraction and matching call settings, the experience block, the D-053 pool rule, D-052 metrics, gold r4, the splits and 57 file hashes.
+- **Report contract (frozen):** `cp24-report-contract-v1`. The headline held-out result is CV3-CV5 only (held-out profiles and jobs). CV1-CV2 are a separate familiar-profile diagnostic. No pooled CV1-CV5 metric is produced (`src/jobfit/eval/heldout_report.py`, `check_contract`).
+- **From now on:** no model, prompt, K, weight, rule, metric or report change because of test results (D-046, D-053). A bug fix is recorded and the whole test is rerun; any other change is a new development iteration.
+- **Next:** Dion runs `python scripts/prepare_cp23_freeze.py --approve evals/freeze/cp23_freeze_draft_v2 --decision D-087`, then the CP2.4 phases in the runbook.
+- **Status:** Approved.
+
+## D-088. CP2.4 test labels: provenance correction and import as test_v13_cp24_r1
+
+- **Date/source:** 7 October 2026. Before the gold import, Dion told me in chat that he labeled the CP2.4 test workbook with help from ChatGPT. ChatGPT assessed the CV-JD pairs and gave recommendations; Dion reviewed every pair and made the final decision. During labeling he did not see the JobFit rank, score, retriever method, JobFit model suggestions or `pool_provenance.json`.
+- **Provenance:** `ai_assisted_human_reviewed_blind_to_ranking`. The labels are blind to the system output, but they are NOT pure human gold and NOT independent human annotation. One reviewer, no inter-annotator agreement. This deviates from the D-053 wording "no model suggestions". D-053 itself is not edited; this record is the correction.
+- **Why it is still usable:** the configuration was frozen (D-087) before labeling, the labels never saw the system ranking, and the test set was not used for tuning. So it is valid for an internal held-out evaluation, with the disclosures below.
+- **Required disclosures in every CP2.4 report:**
+  - AI-assisted (ChatGPT) and human-reviewed by one reviewer; not independent human annotation.
+  - "Because the labeling assistant and matcher are both OpenAI-family models, correlated model preferences may inflate apparent agreement. The direction and magnitude of this bias were not independently measured."
+  - The headline covers three synthetic CVs (CV3-CV5); results are indicative only.
+- **Headline:** CV3-CV5 stay the primary held-out headline under `cp24-report-contract-v1`, with the disclosure next to the numbers. CV1-CV2 stay a supplementary diagnostic. No pooled CV1-CV5 metric.
+- **Source and corrections (approved by Dion):** the label source is sheet `C_Relevance` of `JobFit_Test_Relevance_Final_.xlsx` (the Items sheet is empty and not used). T68 (CV5/F00070) becomes an unscorable source-quality hold, unjudged and never 0 (D-052): the JD has responsibilities only and zero A_Extraction units. Five `main_reason` texts (T17, T21, T23, T43, T50) had requirement text cut with "…"; the cut part is filled with the full `unit_text` of the same job from A_Extraction. Change summary: 1 relevance-label change (T68 2 -> UNJUDGED); 5 text-only corrections (T17, T21, T23, T43, T50); 0 other relevance/score changes. The one empty `pilot_id` (T68) is noted in the manifest.
+- **Bundle:** `evals/gold/test_v13_cp24_r1/` (script `scripts/import_test_labels_cp24_r1.py`): `relevance_gold.jsonl` (67 judged), `held_test_r1.json` (T68), `relevance_before_correction.jsonl` (all 68 as in the sheet), `correction_diff.json`, `provenance_manifest.json`, `import_receipt.json`. Both workbooks are unchanged (sha256 before and after in the receipt). The first write of this bundle said "no score changed" next to the T68 change; Dion asked for the wording to be explicit, so the bundle was rebuilt with a `change_summary` and the first version is kept in `evals/gold/archive/test_v13_cp24_r1_metadata_v1/` (labels and texts identical). The freeze verify stays ok; no frozen file, model, prompt, K, metric or rule changed.
+- **Next:** Dion reviews the bundle. Only after that is `scripts/evaluate_cp24_test.py` run on it.
+- **Status:** Approved by Dion; written. Evaluator not run.
+
+## D-089. Phase A started: post-test quality optimization on development data; CP2.4 locked
+
+- **Date/source:** 7 October 2026. Dion asked for a quality-first optimization phase (Phase A) after CP2.4, with cost and latency recorded but not optimized yet (that is Phase B, not started).
+- **CP2.4 is locked from optimization.** Its labels (`test_v13_cp24_r1`), workbook, results (`evals/results/cp24/`), the held-out CVs CV3-CV5 and the test jobs are never used to choose anything. `src/jobfit/eval/qa_phase_a.py` refuses those paths, CVs and jobs (`LeakageError`), and tests check it. D-087, D-088, `heldout_report_v1.json` and the CP2.4 contract stay unchanged. CP2.4 is not rerun to compare challengers.
+- **Claim boundary:** any Phase A result is post-test development optimization, not an improved held-out result. Testing generalization needs a new fresh test set that Phase A never touched.
+- **What may change:** the evidence-matching prompt only, as new versioned files (`prompts/evidence_matching_v1_2_qa_e0N.md` plus a metadata file with the sha256). Model (GPT-6 Sol, frozen request rules, no fallback in Phase A), retriever, K 10, weight 0.5, seniority and experience rules, H2v2, schema, validator v1.1 and G1/G2 stay as in D-087. The frozen matcher file is not edited; the runner points it at a challenger prompt only inside its own process.
+- **Development data:** (1) QA-DEV-FI-v1: gold gap_v2 requirement units as matcher input and their gold labels as the answer (42 CV1/CV2 pairs, 826 units; model-draft-assisted, accepted by Dion, D-085), split by job with seed 20261007 into an optimization subset (20 pairs, 411 units) and a confirmation subset (22 pairs, 415 units); (2) QA-DEV-RANK-v1: the 20 analyzed top-10 pairs of CV1/CV2 with gold r4 relevance; (3) the r3 anchor (73 units) from saved outputs. Denominators are reported separately, never pooled.
+- **Baseline QA-E00-BASELINE (no call):** reproduced from saved artifacts: P@5 0.70, NDCG@10 0.567 (equal to D-086 with the experience block), hold rate 4/20, quote validity 676/676, anchor macro-F1 0.846, anchor run-to-run agreement 64/73.
+- **Selection rule (proposed before any Wave 1 result; Dion approves it with Wave 1):** a challenger is a finalist only if, against the two baseline runs on the optimization subset: unsupported positives are not higher than the higher baseline run and quote validity stays 1.0; failed pairs are not more than the baseline maximum plus one; macro-F1 beats the baseline mean by more than the larger of 0.02 and the baseline R1/R2 gap; the gain holds with any single pair left out; and on QA-DEV-RANK-v1 P@5 is not lower and NDCG@10 is not lower by more than 0.02 than the saved baseline. A finalist is then run once on the confirmation subset with a new experiment ID next to a new baseline run; it must keep the direction and pass the same grounding checks. If nothing passes: keep the baseline. Note: Dion's brief asks for a ranking improvement; here ranking is a non-inferiority check, because on two development CVs a matching prompt can only reorder the same 10 analyzed jobs. This difference needs Dion's decision.
+- **Stopping rule:** stop after (a) a finalist is confirmed, or (b) two waves without a finalist, or (c) gains that only trade one metric against grounding or reliability.
+- **Wave 1 (proposed, not run):** QA-E00-FI-R1 and R2 (baseline twice), QA-E01 (QA-H01, MATCH/PARTIAL calibration), QA-E02 (QA-H02, direct-evidence check), QA-E03 and QA-E03-R (QA-H03, ordered procedure and self-check). 177 calls, estimate US$5.16, upper US$7.22, cap US$7.50 for the whole wave inside the project guard.
+- **Dion's final decisions (7 Oct 2026, after reviewing the proposal):**
+  - Selection hierarchy: (1) grounding/correctness is a hard gate; (2) schema/reliability is a hard gate; (3) unit matching quality is the primary objective; (4) ranking is non-inferiority only (P@5 not lower than baseline, NDCG@10 not lower by more than 0.02); (5) hold/unscored behavior is a secondary diagnostic; (6) cost/latency is observability only. A prompt with better ranking but worse grounding or more hallucinations is rejected.
+  - Development references keep their source provenance: gap_v2 labels are `model_draft_assisted_human_accepted` (drafted with model help, accepted by Dion); r3 anchor labels are model drafts reviewed by the user with delegated follow-up QA. They are not independent human ground truth, and they may carry correlated model preferences if the draft model shares a family with the matcher. Phase A never edits them. Counts from the source metadata: `evals/results/quality_optimization/benchmark_v1/provenance.json`.
+  - GPT-6 Sol without the Luna fallback during prompt experiments. Results measure primary-Sol prompt behavior, not full production fallback reliability; a separate full-pipeline integration run checks the deployment configuration after a prompt is chosen.
+  - Failure taxonomy and QA-H01/H02/H03 approved; the taxonomy is never changed from confirmation results.
+  - The confirmation subset (22 pairs, 415 units) stays sealed during Wave 1 selection: no per-item confirmation result is shown and nothing is fixed from it. It opens only after exactly one finalist is recorded (code: `confirmation_unsealed`).
+  - Staged Wave 1: QA-E00-FI-R1, QA-E00-FI-R2, QA-E01, QA-E02, QA-E03, in that order (each needs the previous one run and evaluated), then stop and report. QA-E03-R runs only if E03 is still competitive and repeatability matters for the decision.
+  - Dion runs every paid call on his Mac, one command at a time.
+- **Amendment 1 (7 Oct 2026, Dion; written after QA-E00-FI-R1/R2 and before any challenger run):**
+  - The +0.02 macro-F1 bar is no longer a hard gate. 0.7343 (baseline mean 0.7143 + 0.02) is the practical improvement reference.
+  - Hard gates (reject if any fails): quote validity 1.0 with 0 invalid quotes; unsupported positives not above the baseline maximum (59); prompt-induced failed pairs not above the baseline maximum (0; transient failures are excluded, see below); ranking non-inferiority (P@5 >= 0.70, NDCG@10 >= 0.547).
+  - Eligible as finalist if it passes the gates, has no other regression (underclaims <= baseline max + 5, unassessed units <= baseline max + 2), and meets path A or B. Path A (quality): macro-F1 >= 0.7343, accuracy >= baseline mean, and with any single pair left out accuracy stays at or above the baseline on the same pairs. Path B (product errors): unsupported positives <= 53 and overclaims <= 60 (both 10% below baseline), macro-F1 and accuracy not below the baseline mean, and fewer unsupported positives in at least 3 pairs. Error categories (over/under/unassessed by field) are reported with every decision.
+  - Exactly one provisional finalist: lowest unsupported positives (candidates within 2 of the lowest stay), then highest macro-F1, then accuracy, then lowest ID. None eligible: keep the baseline.
+  - Repeat: the finalist runs again on the same optimization subset as `<ID>-R2` (QA-E01-R2, QA-E02-R2 or QA-E03-R2). The repeat must pass the same gates (ranking not rerun) and stay eligible. The fixed QA-E03-R is withdrawn (never run). The confirmation subset stays sealed until the repeat passes.
+  - Failure handling: a prompt- or schema-induced failure (schema_validation, truncated, coverage or quote codes) is a quality regression and is never retried. A transient provider/network/budget failure (timeout, connection, rate limit, 403 budget, run cap) is not a prompt error: it gets one documented retry with the same prompt and settings (`recover`; the failed record is moved with its sha256, never edited); if it fails again the run is marked invalid and repeated later under a new ID. Unknown codes are decided by Dion. Retries are never used to fish for better outputs.
+  - Numbers are locked in `evals/results/quality_optimization/selection_rule_v2.json` (written before any challenger result; the selection, repeat and unseal code reads only this file).
+  - Budget: no run starts unless the provider key's `limit_remaining` covers its upper estimate (checked read-only before every paid run). `budget-plan` computes the needed key limit from the ledger, the remaining upper bounds, the finalist repeat, the confirmation runs and a 10% buffer; `API_HARD_STOP_USD` stays 18.5.
+  - Prompts, data, split, taxonomy and metrics of E01-E03 are unchanged by this amendment.
+- **Amendment 2 (7 Oct 2026, Dion; after QA-E01, before any QA-E02 call): staged execution and adaptive stopping.**
+  - A challenger runs in two stages. Stage A: only the 20 optimization fixed-input pairs, evaluated offline. Stage B: the 19 ranking pairs, only if the Stage A check says `continue_to_ranking`.
+  - Stop after Stage A when: quote validity is below 1.0; unsupported positives exceed the locked limit; a prompt/schema-induced failure occurs; another regression appears; or neither path A nor path B can be met. Path A and B are unit-level, so they are final after Stage A and ranking can never rescue a Stage A failure.
+  - If QA-E02 stops at Stage A and no challenger is eligible, Phase A stops and the baseline (prompt v1.1) stays. QA-E03 is not run by default; it runs only if E01/E02 leave the decision ambiguous and the H03 information is needed (Dion's call).
+  - Locked in `evals/results/quality_optimization/amendment2_staged_execution.json` (prompt, split, rule and code hashes) before any QA-E02 call. Prompts, data, split, labels, taxonomy and the selection thresholds are unchanged.
+- **Status:** Approved by Dion, amendments 1 and 2 included. Closed by D-090.
+
+## D-090. Phase A closed: keep the baseline prompt v1.1
+
+- **Date/source:** 7 October 2026. Dion asked to finish Phase A offline after QA-E02 Stage A, following amendment 2 and the locked rule, with no further paid call.
+- **Selection (`python scripts/qa_phase_a.py select`, rule `selection_rule_v2.json` sha256 3ab3111a...):** no eligible challenger, so no provisional finalist. Final decision: KEEP BASELINE (prompt v1.1, D-087). No finalist repeat, no confirmation run; the confirmation subset stays sealed and unused.
+- **QA-E01 (H01):** hard gates pass; not eligible (macro-F1 0.699 below both paths; overclaims 61 > 60). It replaced weak PARTIAL claims with more full MATCH claims on gold NO_MATCH units (19 to 26). H01 not supported.
+- **QA-E02 (H02):** a precision/recall trade-off, not a plain failure. Macro-F1 0.740 and accuracy 0.786 are above the baseline (0.714, 0.753); unsupported positives 37 (59) and overclaims 40 (67-68) fall sharply; path A and path B are both met. But underclaims rise to 33, above the locked no-regression limit 25 (baseline max 20 + 5), so `stage-a-check` stopped it before ranking. The stricter evidence check also removes some true evidence (gold MATCH -> PARTIAL 12, gold PARTIAL -> NO_MATCH 17), mostly in knowledge areas.
+- **QA-E03 (H03):** not run (adaptive stopping). E01/E02 did not leave an ambiguity that a stability prompt would resolve.
+- **Future direction (not created, not run):** QA-H04 for a possible Phase A2: keep E02's direct-evidence behaviour for named tools, frameworks and components while keeping applied use of a knowledge area as MATCH and related-but-partial evidence as PARTIAL. It needs its own decision, a single preregistered challenger, the same locked rule, and the sealed confirmation subset as the real check, because the optimization subset has already been used by four prompt runs.
+- **Cost:** Phase A paid calls US$2.38 (R1 0.50, R2 0.37, E01 0.99, E02 Stage A 0.50, probes under 0.001). Adaptive stopping avoided about US$3.41 (upper US$4.62): E02 Stage B, E03, the finalist repeat and the two confirmation runs. Ledger total US$10.53; `API_HARD_STOP_USD` 18.5 unchanged.
+- **Claim boundary:** post-test development optimization only. CP2.4, D-087, D-088 and their files are unchanged.
+- **Status:** Closed.

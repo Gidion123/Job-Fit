@@ -1,0 +1,96 @@
+{
+  "cv_id": "CV2",
+  "job_id": "F00052",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "wall_ms": 23318,
+  "score": {
+    "score_pct": 50.0,
+    "status": "final",
+    "matched": 0,
+    "partial": 1,
+    "required_total": 1,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+  },
+  "assessments": [
+    {
+      "unit_id": "U001",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B6",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Marketing analyst moving into AI engineering. Three years of data work in digital marketing, followed by an intensive data science and AI bootcamp.",
+            "**Digital Marketing Analyst**, PT Contoh Media Digital, Bandung · March 2023 - May 2026"
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    }
+  ],
+  "source_flags": [
+    {
+      "unit_id": "U001",
+      "branch_id": "B6",
+      "kind": "quote_exact",
+      "model_quote": "Marketing analyst moving into AI engineering. Three years of data work in digital marketing, followed by an intensive data science and AI bootcamp.",
+      "cv_span": "Marketing analyst moving into AI engineering. Three years of data work in digital marketing, followed by an intensive data science and AI bootcamp.",
+      "start": 90,
+      "end": 237,
+      "flags": []
+    },
+    {
+      "unit_id": "U001",
+      "branch_id": "B6",
+      "kind": "quote_exact",
+      "model_quote": "**Digital Marketing Analyst**, PT Contoh Media Digital, Bandung · March 2023 - May 2026",
+      "cv_span": "**Digital Marketing Analyst**, PT Contoh Media Digital, Bandung · March 2023 - May 2026",
+      "start": 340,
+      "end": 427,
+      "flags": []
+    }
+  ]
+}

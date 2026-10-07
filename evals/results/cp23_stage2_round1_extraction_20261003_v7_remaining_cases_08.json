@@ -1,0 +1,261 @@
+{
+  "job_id": "claude-haiku-4.5/F00010",
+  "source_job_id": "F00010",
+  "model": "claude-haiku-4.5",
+  "model_id": "anthropic/claude-haiku-4.5",
+  "plan_sha256": "888a2cfd1219c6615cf5941c47d20db2fbe40edc5f97018eb14e271c6dbc9192",
+  "source_sha256": "7f372007cee58f0d52443ea003aa4e7b44f6b42758f42e95af6f5a74603bd29e",
+  "prompt_version": "jd-prompt-v1.4-experimental",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "extraction": {
+    "job_id": "F00010",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "8 years of relevant experience in AI, Machine Learning, or Data Science roles",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": null,
+        "min_years": 8.0,
+        "branches": [],
+        "source_quotes": [
+          "Minimum 8 years of relevant experience in AI, Machine Learning, or Data Science roles."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Excellent English communication skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "language",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Excellent English communication skills."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Strong proficiency in Python",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong proficiency in Python and common ML frameworks (TensorFlow, PyTorch, scikit-learn, or similar)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Strong proficiency in TensorFlow",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "TensorFlow",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong proficiency in Python and common ML frameworks (TensorFlow, PyTorch, scikit-learn, or similar)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Strong proficiency in PyTorch",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "PyTorch",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong proficiency in Python and common ML frameworks (TensorFlow, PyTorch, scikit-learn, or similar)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Strong proficiency in scikit-learn",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "scikit-learn",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong proficiency in Python and common ML frameworks (TensorFlow, PyTorch, scikit-learn, or similar)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Familiarity with deploying ML models in AWS",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "AWS",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with deploying ML models in cloud environments (AWS, GCP, Azure, or similar)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Familiarity with deploying ML models in GCP",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "GCP",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with deploying ML models in cloud environments (AWS, GCP, Azure, or similar)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Familiarity with deploying ML models in Azure",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Azure",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with deploying ML models in cloud environments (AWS, GCP, Azure, or similar)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Strong communication skills and ability to work effectively in a remote, cross-functional team",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong communication skills and ability to work effectively in a remote, cross-functional team."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Experience using AI coding assistants (Copilot, Cursor, Warp)",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience using AI coding assistants (Copilot, Cursor, Warp) is a strong plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Indonesian Citizen",
+        "kind": "simple",
+        "importance": "required",
+        "field": "work_authorization",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Indonesian Citizen."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/claude-haiku-4.5"
+  },
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 7,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 7,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U03",
+          "U04",
+          "U05",
+          "U06"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U07",
+          "U08",
+          "U09"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U10"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U11"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U12"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "cache_hit": false,
+  "latency_ms": 7517,
+  "result_sha256": "04ce3ba328dbd3909b73b09434eceb28f2ca40992894bd8733414c574450d900"
+}

@@ -1,0 +1,2153 @@
+[
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00103/D1-U27",
+    "reasons": [
+      "Enterprise REST API integration is a practice; skill_tool category needs D-049 compatibility review"
+    ],
+    "record": {
+      "pilot_id": "D1",
+      "job_id": "F00103",
+      "unit_no": "D1-U27",
+      "unit_text": "Consuming enterprise REST APIs",
+      "source_quote": "Integrasi API — mengonsumsi REST API dari sistem enterprise (Oracle, Salesforce, Workday).",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Oracle, Salesforce and Workday are enterprise examples; do not create three mandatory vendors.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00074/D2-U20",
+    "reasons": [
+      "CI/CD is a practice, not a named tool; D-049 category compatibility review needed"
+    ],
+    "record": {
+      "pilot_id": "D2",
+      "job_id": "F00074",
+      "unit_no": "D2-U20",
+      "unit_text": "CI/CD",
+      "source_quote": "Working knowledge of PostgreSQL, Git, Docker, and CI/CD",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Explicit qualification; independently assessable requirement.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00012/D3-U12",
+    "reasons": [
+      "MLOps CI/CD is a practice, not a named tool; D-049 category compatibility review needed"
+    ],
+    "record": {
+      "pilot_id": "D3",
+      "job_id": "F00012",
+      "unit_no": "D3-U12",
+      "unit_text": "MLOps CI/CD",
+      "source_quote": "Keterampilan MLOps yang kuat: CI/CD, versioning model, monitoring, A/B testing.",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Explicit qualification; independently assessable requirement.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00022/J1-U04",
+    "reasons": [
+      "D-049 and/or composite conflicts with historical independent AND split"
+    ],
+    "record": {
+      "pilot_id": "J1",
+      "job_id": "F00022",
+      "unit_no": "J1-U04",
+      "unit_text": "Intermediate mathematical skills, including their real-world advantages/drawbacks",
+      "source_quote": "Intermediate Mathematical, Statistical, and/or Machine Learning skills required, and their real-world advantages/drawbacks.",
+      "importance": "required",
+      "category": "knowledge_area",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "edited",
+      "draft_note": "One and/or group under A1; retain intermediate level and practical trade-offs. Proposed interpretation, not three mandatory fields.",
+      "review_note": "Disetujui sebagai tiga unit required: Matematika, Statistika, dan Machine Learning. Pemisahan mengikuti interpretasi reviewer atas frasa “skills required”; hubungan “and/or” pada JD tetap ambigu.",
+      "guideline_version": "v0.1"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00022/J1-U05",
+    "reasons": [
+      "Historical and/or dataset group needs explicit cardinality compatibility"
+    ],
+    "record": {
+      "pilot_id": "J1",
+      "job_id": "F00022",
+      "unit_no": "J1-U05",
+      "unit_text": "Knowledge or experience with structured | unstructured datasets",
+      "source_quote": "Knowledge and/or experience in working with structured and/or unstructured data sets.",
+      "importance": "required",
+      "category": "knowledge_area",
+      "group_id": "G2",
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": null,
+      "review_note": null,
+      "guideline_version": "v0.1"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00022/J1-U06",
+    "reasons": [
+      "Historical knowledge and/or experience qualifier needs explicit compatibility"
+    ],
+    "record": {
+      "pilot_id": "J1",
+      "job_id": "F00022",
+      "unit_no": "J1-U06",
+      "unit_text": "Data architecture knowledge or experience",
+      "source_quote": "Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform.",
+      "importance": "preferred",
+      "category": "knowledge_area",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": null,
+      "review_note": null,
+      "guideline_version": "v0.1"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00022/J1-U07",
+    "reasons": [
+      "Historical knowledge and/or experience qualifier needs explicit compatibility"
+    ],
+    "record": {
+      "pilot_id": "J1",
+      "job_id": "F00022",
+      "unit_no": "J1-U07",
+      "unit_text": "Data engineering knowledge or experience",
+      "source_quote": "Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform.",
+      "importance": "preferred",
+      "category": "knowledge_area",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": null,
+      "review_note": null,
+      "guideline_version": "v0.1"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00022/J1-U08",
+    "reasons": [
+      "Historical knowledge and/or experience qualifier needs explicit compatibility"
+    ],
+    "record": {
+      "pilot_id": "J1",
+      "job_id": "F00022",
+      "unit_no": "J1-U08",
+      "unit_text": "Google Cloud Platform knowledge or experience",
+      "source_quote": "Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform.",
+      "importance": "preferred",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Especially GCP emphasizes a preferred example; no extra experience duration inferred.",
+      "review_note": null,
+      "guideline_version": "v0.1"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00034/J3-U11",
+    "reasons": [
+      "REST API practice classified skill_tool in historical gold; D-049 category review needed"
+    ],
+    "record": {
+      "pilot_id": "J3",
+      "job_id": "F00034",
+      "unit_no": "J3-U11",
+      "unit_text": "REST API experience",
+      "source_quote": "Berpengalaman menggunakan Git, Docker, REST API, serta cloud platform (AWS, Azure, atau Google Cloud) menjadi nilai tambah.",
+      "importance": "preferred",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": null,
+      "review_note": null,
+      "guideline_version": "v0.1"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00022/J1-U20",
+    "reasons": [
+      "D-049 and/or composite conflicts with historical independent AND split"
+    ],
+    "record": {
+      "pilot_id": "J1",
+      "job_id": "F00022",
+      "unit_no": "J1-U20",
+      "unit_text": "Intermediate statistical skills, including their real-world advantages/drawbacks",
+      "source_quote": "Mathematical, Statistical, and/or Machine Learning skills required",
+      "importance": "required",
+      "category": "knowledge_area",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "annotator",
+      "review_status": "approved",
+      "review_action": "added",
+      "draft_note": "Split from J1-U04. Original draft: One and/or group under A1; retain intermediate level and practical trade-offs. Proposed interpretation, not three mandatory fields.",
+      "review_note": "Source explicitly uses \"and/or\"; retain the combined requirement\nrather than converting all three areas into independent mandatory requirements.",
+      "guideline_version": "v0.1"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00022/J1-U21",
+    "reasons": [
+      "D-049 and/or composite conflicts with historical independent AND split"
+    ],
+    "record": {
+      "pilot_id": "J1",
+      "job_id": "F00022",
+      "unit_no": "J1-U21",
+      "unit_text": "Intermediate machine learning skills, including their real-world advantages/drawbacks",
+      "source_quote": "Mathematical, Statistical, and/or Machine Learning skills required",
+      "importance": "required",
+      "category": "knowledge_area",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "annotator",
+      "review_status": "approved",
+      "review_action": "added",
+      "draft_note": "Split from J1-U04. Original draft: One and/or group under A1; retain intermediate level and practical trade-offs. Proposed interpretation, not three mandatory fields.",
+      "review_note": "Source explicitly uses \"and/or\"; retain the combined requirement\nrather than converting all three areas into independent mandatory requirements.",
+      "guideline_version": "v0.1"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00114/J5-U03",
+    "reasons": [
+      "Reviewer explicitly retains unresolved and/or composite and requires B/C hold"
+    ],
+    "record": {
+      "pilot_id": "J5",
+      "job_id": "F00114",
+      "unit_no": "J5-U03",
+      "unit_text": "Python/FastAPI and/or TypeScript/Node backend",
+      "source_quote": "Strong Python (FastAPI) and/or TypeScript / Node.js for backend AI services.",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "edited",
+      "draft_note": "and/or has no universal rule. One provisional alternative backend unit; human decision required.",
+      "review_note": "Klausul berada dalam kualifikasi tanpa softener, sehingga required. 'and/or' tetap satu komposit; jumlah cabang yang harus dipenuhi belum dapat dinilai oleh skema sederhana. B/C harus ditahan sampai interpretasi kelompoknya jelas.",
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U01",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U01",
+      "unit_text": "Quantitative bachelor/master",
+      "source_quote": "Bachelor's or Master's degree in Machine Learning, Computer Science, Data Science, Statistics, or a related quantitative field.",
+      "importance": "required",
+      "category": "education",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U02",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U02",
+      "unit_text": "2-4 years classical ML/DL/DS with build/train/validate experience",
+      "source_quote": "2-4 years of hands-on experience in classical machine learning (including deep learning) or data science roles, with demonstrated ability to build, train, and validate models from scratch.",
+      "importance": "required",
+      "category": "experience_duration",
+      "group_id": null,
+      "min_years": 2,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U03",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U03",
+      "unit_text": "scikit-learn",
+      "source_quote": "Proficiency in classical ML frameworks and libraries, including Scikit-learn for core algorithms, XGBoost for gradient boosting, and experience with NLP techniques using RNNs/LSTMs (e.g., via TensorFlow or PyTorch).",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U04",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U04",
+      "unit_text": "XGBoost",
+      "source_quote": "Proficiency in classical ML frameworks and libraries, including Scikit-learn for core algorithms, XGBoost for gradient boosting, and experience with NLP techniques using RNNs/LSTMs (e.g., via TensorFlow or PyTorch).",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U05",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U05",
+      "unit_text": "NLP sequence models (RNN/LSTM with TensorFlow | PyTorch)",
+      "source_quote": "Proficiency in classical ML frameworks and libraries, including Scikit-learn for core algorithms, XGBoost for gradient boosting, and experience with NLP techniques using RNNs/LSTMs (e.g., via TensorFlow or PyTorch).",
+      "importance": "required",
+      "category": "knowledge_area",
+      "group_id": "P35-G1",
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Alternative group: best supported branch; one denominator unit.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U06",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U06",
+      "unit_text": "Python",
+      "source_quote": "Strong programming skills in Python, with a focus on clean, maintainable code, version control (Git), and basic data manipulation using Pandas and NumPy.",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U07",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U07",
+      "unit_text": "Git",
+      "source_quote": "Strong programming skills in Python, with a focus on clean, maintainable code, version control (Git), and basic data manipulation using Pandas and NumPy.",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U08",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U08",
+      "unit_text": "pandas",
+      "source_quote": "Strong programming skills in Python, with a focus on clean, maintainable code, version control (Git), and basic data manipulation using Pandas and NumPy.",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U09",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U09",
+      "unit_text": "NumPy",
+      "source_quote": "Strong programming skills in Python, with a focus on clean, maintainable code, version control (Git), and basic data manipulation using Pandas and NumPy.",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U10",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U10",
+      "unit_text": "Clean maintainable code",
+      "source_quote": "Strong programming skills in Python, with a focus on clean, maintainable code, version control (Git), and basic data manipulation using Pandas and NumPy.",
+      "importance": "required",
+      "category": "knowledge_area",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U11",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U11",
+      "unit_text": "Anomaly detection",
+      "source_quote": "Familiarity with anomaly detection, predictive modeling, and concept drift monitoring in numerical datasets.",
+      "importance": "required",
+      "category": "knowledge_area",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U12",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U12",
+      "unit_text": "Predictive modelling",
+      "source_quote": "Familiarity with anomaly detection, predictive modeling, and concept drift monitoring in numerical datasets.",
+      "importance": "required",
+      "category": "knowledge_area",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U13",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U13",
+      "unit_text": "Concept drift monitoring",
+      "source_quote": "Familiarity with anomaly detection, predictive modeling, and concept drift monitoring in numerical datasets.",
+      "importance": "required",
+      "category": "knowledge_area",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U14",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U14",
+      "unit_text": "Agile/Scrum",
+      "source_quote": "Experience working in Agile/Scrum environments, including sprint-based development and cross-functional collaboration.",
+      "importance": "required",
+      "category": "knowledge_area",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U15",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U15",
+      "unit_text": "Cross-functional collaboration",
+      "source_quote": "Experience working in Agile/Scrum environments, including sprint-based development and cross-functional collaboration.",
+      "importance": "required",
+      "category": "soft_skill",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U16",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U16",
+      "unit_text": "Model evaluation metrics",
+      "source_quote": "Solid understanding of model evaluation metrics, cross-validation, and QA processes for ML systems.",
+      "importance": "required",
+      "category": "knowledge_area",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U17",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U17",
+      "unit_text": "Cross-validation",
+      "source_quote": "Solid understanding of model evaluation metrics, cross-validation, and QA processes for ML systems.",
+      "importance": "required",
+      "category": "knowledge_area",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U18",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U18",
+      "unit_text": "ML QA processes",
+      "source_quote": "Solid understanding of model evaluation metrics, cross-validation, and QA processes for ML systems.",
+      "importance": "required",
+      "category": "knowledge_area",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U19",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U19",
+      "unit_text": "English fluency",
+      "source_quote": "Fluency in English.",
+      "importance": "preferred",
+      "category": "language",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U20",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U20",
+      "unit_text": "Manufacturing | semiconductor | sensor analytics",
+      "source_quote": "Exposure to industrial domains such as manufacturing, semiconductors, or sensor-based analytics.",
+      "importance": "preferred",
+      "category": "knowledge_area",
+      "group_id": "P35-G2",
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Alternative group: best supported branch; one denominator unit.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U21",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U21",
+      "unit_text": "Spark distributed processing",
+      "source_quote": "Knowledge of big data tools like Apache Spark for distributed processing and handling large-scale datasets.",
+      "importance": "preferred",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Candidate qualification, normalized independently; evidence of use is assessed without inferring depth.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U22",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U22",
+      "unit_text": "Sentiment analysis",
+      "source_quote": "Prior work on NLP tasks integrated with classical ML, such as sentiment analysis or entity recognition in unstructured data.",
+      "importance": "preferred",
+      "category": "knowledge_area",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "edited",
+      "draft_note": "D-040 distinct application areas; incomplete final portfolio clause is not fabricated.",
+      "review_note": "D-040: dua area aplikasi NLP dinilai terpisah. Kalimat portofolio F00369 yang semula terpotong telah diverifikasi dan dicatat sebagai P35-U24.",
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U23",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U23",
+      "unit_text": "Entity recognition",
+      "source_quote": "Prior work on NLP tasks integrated with classical ML, such as sentiment analysis or entity recognition in unstructured data.",
+      "importance": "preferred",
+      "category": "knowledge_area",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "edited",
+      "draft_note": "D-040 distinct application areas; incomplete final portfolio clause is not fabricated.",
+      "review_note": "D-040: dua area aplikasi NLP dinilai terpisah. Kalimat portofolio F00369 yang semula terpotong telah diverifikasi dan dicatat sebagai P35-U24.",
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00369/P35-U24",
+    "reasons": [
+      "invalid_original_JD_quote",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "pilot_id": "P35",
+      "job_id": "F00369",
+      "unit_no": "P35-U24",
+      "unit_text": "Portfolio of innovative real-world ML projects",
+      "source_quote": "A portfolio of projects showcasing innovative solutions to real-world ML problems.",
+      "importance": "preferred",
+      "category": "other",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "annotator",
+      "review_status": "approved",
+      "review_action": "added",
+      "draft_note": null,
+      "review_note": "Kalimat JD terpotong pada “A portfolio of pro”. Sambungan diverifikasi terhadap salinan lowongan Keysight yang memuat paragraf kualifikasi sama: https://jobs.discovertechnata.com/companies/keysight-technologies/jobs/64661092-machine-learning-engineer-classical-ml-and-predictive-analytics. B/C ditinjau pada tahap berikutnya.",
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00016/J4-U02",
+    "reasons": [
+      "changed_decision_missing_note"
+    ],
+    "record": {
+      "split": "development",
+      "snapshot_id": "CP1_20260926",
+      "review_status": "approved",
+      "reviewed_by": "annotator",
+      "pilot_id": "J4",
+      "job_id": "F00016",
+      "unit_no": "J4-U02",
+      "unit_text": "Bachelor's degree in Computer Science | Artificial Intelligence | Data Science | related field",
+      "source_quote": "Bachelor's degree in Computer Science, Artificial Intelligence, Data Science, or a related field",
+      "importance": "required",
+      "category": "education",
+      "group_id": "G4",
+      "min_years": null,
+      "label_source": "annotator",
+      "review_action": "edited",
+      "review_note": null,
+      "guideline_version": "v1.1",
+      "_origin": "historical_extraction_gold.jsonl"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00016/J4-U03",
+    "reasons": [
+      "changed_decision_missing_note"
+    ],
+    "record": {
+      "split": "development",
+      "snapshot_id": "CP1_20260926",
+      "review_status": "approved",
+      "reviewed_by": "annotator",
+      "pilot_id": "J4",
+      "job_id": "F00016",
+      "unit_no": "J4-U03",
+      "unit_text": "Strong Python",
+      "source_quote": "Strong programming skills in Python.",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "annotator",
+      "review_action": "added",
+      "review_note": null,
+      "guideline_version": "v1.0",
+      "_origin": "historical_extraction_gold.jsonl"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00016/J4-U04",
+    "reasons": [
+      "changed_decision_missing_note"
+    ],
+    "record": {
+      "split": "development",
+      "snapshot_id": "CP1_20260926",
+      "review_status": "approved",
+      "reviewed_by": "annotator",
+      "pilot_id": "J4",
+      "job_id": "F00016",
+      "unit_no": "J4-U04",
+      "unit_text": "Machine Learning concepts",
+      "source_quote": "Good understanding of machine learning concepts and experience with frameworks such as PyTorch, TensorFlow, or XGBoost.",
+      "importance": "required",
+      "category": "knowledge_area",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "annotator",
+      "review_action": "added",
+      "review_note": null,
+      "guideline_version": "v1.0",
+      "_origin": "historical_extraction_gold.jsonl"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00016/J4-U05",
+    "reasons": [
+      "changed_decision_missing_note"
+    ],
+    "record": {
+      "split": "development",
+      "snapshot_id": "CP1_20260926",
+      "review_status": "approved",
+      "reviewed_by": "annotator",
+      "pilot_id": "J4",
+      "job_id": "F00016",
+      "unit_no": "J4-U05",
+      "unit_text": "Framework experience: PyTorch | TensorFlow | XGBoost",
+      "source_quote": "Good understanding of machine learning concepts and experience with frameworks such as PyTorch, TensorFlow, or XGBoost.",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": "G1",
+      "min_years": null,
+      "label_source": "annotator",
+      "review_action": "added",
+      "review_note": null,
+      "guideline_version": "v1.0",
+      "_origin": "historical_extraction_gold.jsonl"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00016/J4-U06",
+    "reasons": [
+      "Generic LLM experience is not a named technology under D-049",
+      "changed_decision_missing_note"
+    ],
+    "record": {
+      "split": "development",
+      "snapshot_id": "CP1_20260926",
+      "review_status": "approved",
+      "reviewed_by": "annotator",
+      "pilot_id": "J4",
+      "job_id": "F00016",
+      "unit_no": "J4-U06",
+      "unit_text": "LLM Experience",
+      "source_quote": "Experience working with Large Language Models (LLMs) and frameworks such as LangChain, LlamaIndex, or similar tools.",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "annotator",
+      "review_action": "added",
+      "review_note": null,
+      "guideline_version": "v1.0",
+      "_origin": "historical_extraction_gold.jsonl"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00016/J4-U07",
+    "reasons": [
+      "changed_decision_missing_note"
+    ],
+    "record": {
+      "split": "development",
+      "snapshot_id": "CP1_20260926",
+      "review_status": "approved",
+      "reviewed_by": "annotator",
+      "pilot_id": "J4",
+      "job_id": "F00016",
+      "unit_no": "J4-U07",
+      "unit_text": "Framework experience: LangChain | LlamaIndex | similar tools",
+      "source_quote": "Experience working with Large Language Models (LLMs) and frameworks such as LangChain, LlamaIndex, or similar tools.",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": "G2",
+      "min_years": null,
+      "label_source": "annotator",
+      "review_action": "added",
+      "review_note": null,
+      "guideline_version": "v1.0",
+      "_origin": "historical_extraction_gold.jsonl"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00016/J4-U12",
+    "reasons": [
+      "REST API practice historical tool category needs D-049 review",
+      "changed_decision_missing_note"
+    ],
+    "record": {
+      "split": "development",
+      "snapshot_id": "CP1_20260926",
+      "review_status": "approved",
+      "reviewed_by": "annotator",
+      "pilot_id": "J4",
+      "job_id": "F00016",
+      "unit_no": "J4-U12",
+      "unit_text": "REST APIs",
+      "source_quote": "Familiarity with REST APIs, Git, Docker, and CI/CD practices.",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "annotator",
+      "review_action": "edited",
+      "review_note": null,
+      "guideline_version": "v1.1",
+      "_origin": "historical_extraction_gold.jsonl"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00016/J4-U13",
+    "reasons": [
+      "changed_decision_missing_note"
+    ],
+    "record": {
+      "split": "development",
+      "snapshot_id": "CP1_20260926",
+      "review_status": "approved",
+      "reviewed_by": "annotator",
+      "pilot_id": "J4",
+      "job_id": "F00016",
+      "unit_no": "J4-U13",
+      "unit_text": "SQL databases",
+      "source_quote": "Working knowledge of SQL and NoSQL databases.",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "annotator",
+      "review_action": "edited",
+      "review_note": null,
+      "guideline_version": "v1.1",
+      "_origin": "historical_extraction_gold.jsonl"
+    }
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00016/J4-U20",
+    "reasons": [
+      "CI/CD practice historical tool category needs D-049 review"
+    ],
+    "record": {
+      "split": "development",
+      "snapshot_id": "CP1_20260926",
+      "review_status": "approved",
+      "reviewed_by": "annotator",
+      "pilot_id": "J4",
+      "job_id": "F00016",
+      "unit_no": "J4-U20",
+      "unit_text": "CI/CD practices",
+      "source_quote": "Familiarity with REST APIs, Git, Docker, and CI/CD practices.",
+      "importance": "required",
+      "category": "skill_tool",
+      "group_id": null,
+      "min_years": null,
+      "label_source": "model_draft",
+      "review_action": "accepted",
+      "review_note": null,
+      "guideline_version": "v1.1",
+      "_origin": "historical_extraction_gold.jsonl"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00022/J1-U04",
+    "reasons": [
+      "A_not_exportable"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00022",
+      "unit_no": "J1-U04",
+      "unit_text": "Intermediate mathematical skills, including their real-world advantages/drawbacks",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quote": "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+      "cv_section": "Education",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "edited",
+      "draft_note": "A terbaru: importance = required; category = knowledge_area. Nilai matematika saja, terpisah dari Statistika (J1-U20) dan ML (J1-U21). Cari bukti matematika dengan konteks serta pemahaman kelebihan/kekurangan penerapannya. Bukti statistika atau ML tidak otomatis membuktikan seluruh syarat matematika. Level intermediate tidak diukur pada v1. Label dan kutipan telah diisi reviewer. Catatan ini menjelaskan syarat, bukan menetapkan label.",
+      "review_note": "Pendidikan dan mata kuliah statistika mendukung kemampuan matematika secara tidak langsung. CV belum menjelaskan kemampuan matematika secara spesifik serta kelebihan/kekurangan penerapannya. Tingkat intermediate tidak dinilai pada v1.",
+      "guideline_version": "v0.1"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00022/J1-U05",
+    "reasons": [
+      "A_not_exportable"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00022",
+      "unit_no": "J1-U05",
+      "unit_text": "Knowledge or experience with structured | unstructured datasets",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quote": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "cv_section": "Experience",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "A terbaru: importance = required; category = knowledge_area. Ini kelompok alternatif; bukti satu pilihan yang sesuai dapat memenuhi kelompok. Structured transaction data supports one alternative; no need to prove both structured and unstructured.",
+      "review_note": null,
+      "guideline_version": "v0.1"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00022/J1-U06",
+    "reasons": [
+      "A_not_exportable"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00022",
+      "unit_no": "J1-U06",
+      "unit_text": "Data architecture knowledge or experience",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "A terbaru: importance = preferred; category = knowledge_area. No data architecture design evidence.",
+      "review_note": null,
+      "guideline_version": "v0.1"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00022/J1-U07",
+    "reasons": [
+      "A_not_exportable"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00022",
+      "unit_no": "J1-U07",
+      "unit_text": "Data engineering knowledge or experience",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quote": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "cv_section": "Experience",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "A terbaru: importance = preferred; category = knowledge_area. Cleaning/integration supports part of data engineering; pipeline design/operations not shown.",
+      "review_note": null,
+      "guideline_version": "v0.1"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00022/J1-U08",
+    "reasons": [
+      "A_not_exportable"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00022",
+      "unit_no": "J1-U08",
+      "unit_text": "Google Cloud Platform knowledge or experience",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "A terbaru: importance = preferred; category = skill_tool. Looker Studio dashboard use alone does not establish broader GCP knowledge or experience.",
+      "review_note": null,
+      "guideline_version": "v0.1"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00022/J1-U20",
+    "reasons": [
+      "A_not_exportable"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00022",
+      "unit_no": "J1-U20",
+      "unit_text": "Intermediate statistical skills, including their real-world advantages/drawbacks",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quote": "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+      "cv_section": "Experience",
+      "label_source": "annotator",
+      "review_status": "approved",
+      "review_action": "added",
+      "draft_note": "A terbaru: importance = required; category = knowledge_area. Nilai statistika saja, terpisah dari Matematika (J1-U04) dan ML (J1-U21). Cari bukti penggunaan metode statistika dengan konteks serta pemahaman kelebihan/kekurangan penerapannya. Level intermediate tidak diukur pada v1. Label dan kutipan telah diisi reviewer. Catatan ini menjelaskan syarat, bukan menetapkan label.",
+      "review_note": "Keputusan Dion: MATCH berdasarkan bukti mengajar praktikum regresi menggunakan R. Kutipan diperbaiki menjadi satu kalimat persis dari Experience. Ini penilaian bukti penggunaan statistika pada v1, bukan verifikasi tingkat intermediate. CV belum secara eksplisit menjelaskan kelebihan/kekurangan metode; reviewer tetap menerima bukti penggunaan sebagai dasar MATCH untuk unit ini. Interpretasi tersebut dicatat agar tidak dianggap bukti pemenuhan seluruh rincian JD.",
+      "guideline_version": "v0.1"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00022/J1-U21",
+    "reasons": [
+      "A_not_exportable"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00022",
+      "unit_no": "J1-U21",
+      "unit_text": "Intermediate machine learning skills, including their real-world advantages/drawbacks",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quote": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+      "cv_section": "Projects",
+      "label_source": "annotator",
+      "review_status": "approved",
+      "review_action": "added",
+      "draft_note": "A terbaru: importance = required; category = knowledge_area. Nilai machine learning saja, terpisah dari Matematika (J1-U04) dan Statistika (J1-U20). Cari bukti penggunaan ML dengan konteks serta pemahaman kelebihan/kekurangan penerapannya. Level intermediate tidak diukur pada v1. Label dan kutipan telah diisi reviewer. Catatan ini menjelaskan syarat, bukan menetapkan label.",
+      "review_note": "Keputusan Dion: MATCH berdasarkan proyek churn dengan regresi logistik, random forest, evaluasi F1, SMOTE, dan SHAP. Reviewer mengisi bukti setelah unit ML dipisahkan. Ini penilaian bukti penggunaan ML pada v1, bukan verifikasi tingkat intermediate. Kelebihan/kekurangan metode belum dijelaskan secara eksplisit; reviewer tetap menerima bukti penerapan sebagai dasar MATCH untuk unit ini. Interpretasi tersebut dicatat agar tidak dianggap bukti pemenuhan seluruh rincian JD.",
+      "guideline_version": "v0.1"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00103/D1-U27",
+    "reasons": [
+      "A_not_exportable"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00103",
+      "unit_no": "D1-U27",
+      "unit_text": "Consuming enterprise REST APIs",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "No evidence found in the CV; this does not assert the person lacks the skill.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U01",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U01",
+      "unit_text": "Quantitative bachelor/master",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quote": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "cv_section": "Education",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Contextual use supports this unit; no claim about truth or depth. Confirm against source CV.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U02",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U02",
+      "unit_text": "2-4 years classical ML/DL/DS with build/train/validate experience",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quote": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+      "cv_section": "Experience",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Four-month related internship; thesis, teaching and courses are not years in the specified professional role.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U03",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U03",
+      "unit_text": "scikit-learn",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quote": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "cv_section": "Projects",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Contextual use supports this unit; no claim about truth or depth. Confirm against source CV.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U04",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U04",
+      "unit_text": "XGBoost",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "No evidence found in the CV; this does not assert the person lacks the skill.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U05",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U05",
+      "unit_text": "NLP sequence models (RNN/LSTM with TensorFlow | PyTorch)",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quote": "- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+      "cv_section": "Projects",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "NLP shown, but no RNN/LSTM or specified DL framework.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U06",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U06",
+      "unit_text": "Python",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "cv_section": "Experience",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Contextual use supports this unit; no claim about truth or depth. Confirm against source CV.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U07",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U07",
+      "unit_text": "Git",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quote": "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar",
+      "cv_section": "Skills",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Git is skills-list-only, D-035.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U08",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U08",
+      "unit_text": "pandas",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "cv_section": "Experience",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Contextual use supports this unit; no claim about truth or depth. Confirm against source CV.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U09",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U09",
+      "unit_text": "NumPy",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quote": "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar",
+      "cv_section": "Skills",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "NumPy is listed without an applied example.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U10",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U10",
+      "unit_text": "Clean maintainable code",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "cv_section": "Experience",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Code use shown, code quality/maintainability not stated.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U11",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U11",
+      "unit_text": "Anomaly detection",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "No evidence found in the CV; this does not assert the person lacks the skill.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U12",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U12",
+      "unit_text": "Predictive modelling",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quote": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "cv_section": "Projects",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Contextual use supports this unit; no claim about truth or depth. Confirm against source CV.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U13",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U13",
+      "unit_text": "Concept drift monitoring",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "No evidence found in the CV; this does not assert the person lacks the skill.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U14",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U14",
+      "unit_text": "Agile/Scrum",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "No evidence found in the CV; this does not assert the person lacks the skill.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U15",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U15",
+      "unit_text": "Cross-functional collaboration",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "No evidence found in the CV; this does not assert the person lacks the skill.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U16",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U16",
+      "unit_text": "Model evaluation metrics",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quote": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "cv_section": "Projects",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "F1 on test data is contextual model evaluation.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U17",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U17",
+      "unit_text": "Cross-validation",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "No evidence found in the CV; this does not assert the person lacks the skill.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U18",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U18",
+      "unit_text": "ML QA processes",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "No evidence found in the CV; this does not assert the person lacks the skill.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U19",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U19",
+      "unit_text": "English fluency",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quote": "Indonesia (native), Inggris (menengah, TOEFL ITP 540)",
+      "cv_section": "Other",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Proficiency/test stated; no contextual English work example. Language evidence convention needs reviewer clarification.",
+      "review_note": "Pernyataan tingkat bahasa di CV adalah bukti parsial; penggunaan tertulis/lisan sesuai kualifikasi JD tidak ditunjukkan secara kontekstual.",
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U20",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U20",
+      "unit_text": "Manufacturing | semiconductor | sensor analytics",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "No evidence found in the CV; this does not assert the person lacks the skill.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U21",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U21",
+      "unit_text": "Spark distributed processing",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "No evidence found in the CV; this does not assert the person lacks the skill.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U22",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U22",
+      "unit_text": "Sentiment analysis",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quote": "- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+      "cv_section": "Projects",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Contextual use supports this unit; no claim about truth or depth. Confirm against source CV.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U23",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U23",
+      "unit_text": "Entity recognition",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "No evidence found in the CV; this does not assert the person lacks the skill.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV2/F00034/J3-U11",
+    "reasons": [
+      "A_not_exportable"
+    ],
+    "record": {
+      "cv_id": "CV2",
+      "job_id": "F00034",
+      "unit_no": "J3-U11",
+      "unit_text": "REST API experience",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quote": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "cv_section": "Projects",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "API serving is explicitly present.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV2/F00074/D2-U20",
+    "reasons": [
+      "A_not_exportable"
+    ],
+    "record": {
+      "cv_id": "CV2",
+      "job_id": "F00074",
+      "unit_no": "D2-U20",
+      "unit_text": "CI/CD",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "edited",
+      "draft_note": "Contextual use supports this unit; no claim about truth or depth. Confirm against source CV.",
+      "review_note": "Sinkronisasi ID/unit terhadap A_Extraction; bukti draft lama D2-U21 dipakai untuk D2-U20.",
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV2/F00114/J5-U03",
+    "reasons": [
+      "A_not_exportable"
+    ],
+    "record": {
+      "cv_id": "CV2",
+      "job_id": "F00114",
+      "unit_no": "J5-U03",
+      "unit_text": "Python/FastAPI and/or TypeScript/Node backend",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quote": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "cv_section": "Projects",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Contextual use supports this unit; no claim about truth or depth. Confirm against source CV.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV2/F00103/D1-U27",
+    "reasons": [
+      "A_not_exportable"
+    ],
+    "record": {
+      "cv_id": "CV2",
+      "job_id": "F00103",
+      "unit_no": "D1-U27",
+      "unit_text": "Consuming enterprise REST APIs",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quote": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "cv_section": "Projects",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "LLM library integration shown; no independent third-party REST consumption example.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00074/D2-U20",
+    "reasons": [
+      "A_not_exportable"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00074",
+      "unit_no": "D2-U20",
+      "unit_text": "CI/CD",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "edited",
+      "draft_note": "No evidence found in the CV; this does not assert the person lacks the skill.",
+      "review_note": "Sinkronisasi ID/unit terhadap A_Extraction; bukti draft lama D2-U21 dipakai untuk D2-U20.",
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00012/D3-U12",
+    "reasons": [
+      "A_not_exportable"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00012",
+      "unit_no": "D3-U12",
+      "unit_text": "MLOps CI/CD",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "No evidence found in the CV; this does not assert the person lacks the skill.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV2/F00012/D3-U12",
+    "reasons": [
+      "A_not_exportable"
+    ],
+    "record": {
+      "cv_id": "CV2",
+      "job_id": "F00012",
+      "unit_no": "D3-U12",
+      "unit_text": "MLOps CI/CD",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quote": null,
+      "cv_section": null,
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "No evidence found in the CV; this does not assert the person lacks the skill.",
+      "review_note": null,
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00369/P35-U24",
+    "reasons": [
+      "A_not_exportable",
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "unit_no": "P35-U24",
+      "unit_text": "Portfolio of innovative real-world ML projects",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quote": "## Proyek\n\n**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.\n\n**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025\n- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+      "cv_section": "Projects",
+      "label_source": "annotator",
+      "review_status": "approved",
+      "review_action": "added",
+      "draft_note": null,
+      "review_note": "CV memuat proyek ML yang dapat dinilai, tetapi tidak menunjukkan artefak portofolio tersendiri; tautan contoh tidak diverifikasi.",
+      "guideline_version": "v1.3"
+    }
+  },
+  {
+    "sheet": "C_Relevance",
+    "identity": "CV1/F00369",
+    "reasons": [
+      "source_provenance_hold_whole_job"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "cv_target": "Data Science / AI and data target families",
+      "pilot_id": null,
+      "job_id": "F00369",
+      "job_title": "Machine Learning Engineer Classical ML and Predictive Analytics",
+      "relevance_0_3": 1,
+      "main_reason": "Statistics, Python/scikit-learn and ML projects overlap; the restored portfolio clause has partial evidence. The required 2–4 years in ML/DS roles and recurrent-model experience are not shown.",
+      "constraint_note": "Two to four years hands-on ML/DS roles is not supported.",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "edited",
+      "draft_note": "Guideline v1.2 Part D; evidence coverage and explicit qualifications, not retrieval score. Human review required.",
+      "review_note": "F00369 JD sudah dilengkapi dan P35-U24 dinilai PARTIAL di B; skor tetap 1 karena syarat pengalaman kerja 2–4 tahun tidak terpenuhi.",
+      "guideline_version": "v1.3",
+      "gold_review": "no"
+    }
+  },
+  {
+    "sheet": "C_Relevance",
+    "identity": "CV1/F00022",
+    "reasons": [
+      "C_reason_depends_on_unresolved_D049_J1_units"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "cv_target": "Data science; Indonesia (Jakarta); entry level",
+      "pilot_id": "J1",
+      "job_id": "F00022",
+      "job_title": "Jr. Data Scientist",
+      "relevance_0_3": 3,
+      "main_reason": "Label B approved mendukung Python, SQL, dataset, visualisasi, Statistika, dan ML; matematika PARTIAL. Mayoritas syarat teknis didukung tanpa konflik eksplisit yang terbukti.",
+      "constraint_note": "Pengalaman 1–2 tahun ber-importance unknown karena fresh graduate juga diterima. Durasi internship 4 bulan tidak dijadikan penolakan otomatis.",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Penilaian ordinal menurut guideline v1.1 Part D (automatic mode, D-037), bukan konversi match %. Sumber: B_Evidence CV1/F00022; A J1-U01/U02/U03/U04/U05/U09/U20/U21. Ketidakpastian durasi tidak dipakai sebagai konflik pasti; soft skill dan lokasi tidak menurunkan skor sendiri. Nilai ini draf AI, belum gold manusia.",
+      "review_note": null,
+      "guideline_version": "v1.2",
+      "gold_review": "no"
+    }
+  },
+  {
+    "sheet": "C_Relevance",
+    "identity": "CV2/F00114",
+    "reasons": [
+      "Reviewer_requested_BC_hold_for_unresolved_composite"
+    ],
+    "record": {
+      "cv_id": "CV2",
+      "cv_target": "AI/ML engineering or GenAI; Indonesia; entry or 1-2 years",
+      "pilot_id": "J5",
+      "job_id": "F00114",
+      "job_title": "AI Engineer (AI Agent & RAG)",
+      "relevance_0_3": 1,
+      "main_reason": "Prototipe RAG, FastAPI, LangChain, FAISS, dan evaluasi 30 pertanyaan relevan; belum ada bukti production RAG, tool/function calling, operasi LLM aman, atau pengalaman engineer sesuai level senior.",
+      "constraint_note": "Explicit conflict under D-042: J5 requires 5+ years as an engineer and 2+ years shipping production LLM features. Bima's complete work history is in marketing (executive, digital marketing analyst) with no engineering role; the RAG prototype and bootcamp do not count toward work experience. A deployed prototype is not production LLM work.",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Penilaian ordinal menurut guideline v1.1 Part D (automatic mode, D-037), bukan konversi match %. Sumber: CV2 RAG/classifier/Skills; Requirements J5; A/B J5 belum tersedia. Ketidakpastian durasi tidak dipakai sebagai konflik pasti; soft skill dan lokasi tidak menurunkan skor sendiri. Nilai ini draf AI, belum gold manusia. | 1 Oct: constraint note rewritten to the D-042 rule after the annotator approved the update; rating unchanged.",
+      "review_note": null,
+      "guideline_version": "v1.2",
+      "gold_review": "no"
+    }
+  },
+  {
+    "sheet": "C_Relevance",
+    "identity": "CV1/F00114",
+    "reasons": [
+      "Reviewer_requested_BC_hold_for_unresolved_composite"
+    ],
+    "record": {
+      "cv_id": "CV1",
+      "cv_target": "Data science; Indonesia (Jakarta); entry level",
+      "pilot_id": "J5",
+      "job_id": "F00114",
+      "job_title": "AI Engineer (AI Agent & RAG)",
+      "relevance_0_3": 0,
+      "main_reason": "Hampir tidak ada dukungan untuk inti production agent/RAG: bukti Python umum ada, tetapi FastAPI, agent framework, tool calling, production RAG, vector DB, evaluasi LLM, dan keamanan LLM tidak ditemukan.",
+      "constraint_note": "Explicit conflict under D-042: J5 requires 5+ years as an engineer and 2+ years shipping production LLM features. Rina's complete work history is under 1 year and has no engineering role. The rating is 0 because almost no core requirement is supported, not because GenAI differs from her preferred target.",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Penilaian ordinal menurut guideline v1.1 Part D (automatic mode, D-037), bukan konversi match %. Sumber: CV1 lengkap dibandingkan Requirements J5; A/B J5 belum tersedia. Ketidakpastian durasi tidak dipakai sebagai konflik pasti; soft skill dan lokasi tidak menurunkan skor sendiri. Nilai ini draf AI, belum gold manusia. | 1 Oct: constraint note rewritten to the D-042 rule after the annotator approved the update; rating unchanged.",
+      "review_note": null,
+      "guideline_version": "v1.2",
+      "_origin": "historical_pilot_workbook_and_relevance_gold.csv"
+    }
+  },
+  {
+    "sheet": "C_Relevance",
+    "identity": "CV2/F00022",
+    "reasons": [
+      "C_reason_depends_on_unresolved_D049_J1_units"
+    ],
+    "record": {
+      "cv_id": "CV2",
+      "cv_target": "AI/ML engineering or GenAI; Indonesia; entry or 1-2 years",
+      "pilot_id": "J1",
+      "job_id": "F00022",
+      "job_title": "Jr. Data Scientist",
+      "relevance_0_3": 2,
+      "main_reason": "Penggunaan Python/SQL, analisis data, forecasting, dan klasifikasi ML mendukung beberapa syarat utama; matematika tidak eksplisit, visualisasi hanya tercantum pada Skills, dan bukti rincian metode terbatas.",
+      "constraint_note": "Pengalaman DS 1–2 tahun ambigu karena fresh graduate diterima. Marketing analytics tidak otomatis sama dengan seluruh syarat DS. Tidak memberi nilai 0 hanya karena preferensi CV AI/ML.",
+      "label_source": "model_draft",
+      "review_status": "approved",
+      "review_action": "accepted",
+      "draft_note": "Penilaian ordinal menurut guideline v1.1 Part D (automatic mode, D-037), bukan konversi match %. Sumber: CV2: Python automation, BigQuery, A/B tests, Prophet, classifier, Skills; A J1. Ketidakpastian durasi tidak dipakai sebagai konflik pasti; soft skill dan lokasi tidak menurunkan skor sendiri. Nilai ini draf AI, belum gold manusia.",
+      "review_note": null,
+      "guideline_version": "v1.2",
+      "_origin": "historical_pilot_workbook_and_relevance_gold.csv"
+    }
+  }
+]

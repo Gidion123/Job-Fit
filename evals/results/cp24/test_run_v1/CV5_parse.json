@@ -1,0 +1,158 @@
+{
+ "cv_id": "CV5",
+ "status": "ok",
+ "masking_counts": {
+  "name": 1,
+  "email": 1
+ },
+ "masked_digest": "6dce6a429fca97df4f30b2dbe6a84da5ac7d4c320275bbc193e02a9d717e9a70",
+ "parsed": {
+  "profile": {
+   "cv_id": "CV5",
+   "is_synthetic": true,
+   "language": "Indonesian (native), English (professional working proficiency)",
+   "parse_status": "ok",
+   "raw_text": "# [NAME] Mahendra Prasetya\n\nJakarta, Indonesia · [EMAIL]\n\nCV as of 30 September 2026. \"Present\" refers to this date.\n\n## Summary\n\nMachine learning engineer with three years of experience across two software companies, building NLP services and an internal RAG assistant.\n\n## Experience\n\n**Machine Learning Engineer**, PT Contoh Solusi Bahasa, Jakarta · April 2025 - present\n- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents.\n- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout.\n- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks.\n- Added pytest checks and a GitHub Actions pipeline for tests and container builds. Production releases still require manual approval.\n\n**Junior Machine Learning Engineer**, PT Contoh Layanan Digital, Jakarta · October 2023 - March 2025\n- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week.\n- Used Python and SQL to prepare training data and review mislabeled examples with support agents.\n- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review.\n\n## Education\n\n**Bachelor of Informatics (S1 Informatika)**, Institut Teknologi Contoh Jakarta · September 2019 - August 2023\n- Thesis: \"Text Classification for Customer Support Requests\"\n\n## Projects\n\n**Batch Prediction Monitor** · 2024 (personal project)\n- Built a local Python report to flag missing predictions and unusually slow batches using synthetic CSV inputs. It was not connected to a production service.\n\n## Skills\n\nPython, SQL, scikit-learn, PyTorch, Hugging Face Transformers, FastAPI, PostgreSQL pgvector, Docker, AWS (EC2, S3), Git, GitHub Actions, pytest, Kubernetes (basic), Terraform (basic)\n\n## Courses\n\n- Introduction to Computer Vision, Contoh Learning Studio · June 2026 (course completed, no certificate)\n\n## Languages\n\nIndonesian (native), English (professional working proficiency)",
+   "sections": {
+    "Summary": "Machine learning engineer with three years of experience across two software companies, building NLP services and an internal RAG assistant.",
+    "Experience": "**Machine Learning Engineer**, PT Contoh Solusi Bahasa, Jakarta · April 2025 - present\n- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents.\n- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout.\n- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks.\n- Added pytest checks and a GitHub Actions pipeline for tests and container builds. Production releases still require manual approval.\n**Junior Machine Learning Engineer**, PT Contoh Layanan Digital, Jakarta · October 2023 - March 2025\n- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week.\n- Used Python and SQL to prepare training data and review mislabeled examples with support agents.\n- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review.",
+    "Education": "**Bachelor of Informatics (S1 Informatika)**, Institut Teknologi Contoh Jakarta · September 2019 - August 2023\n- Thesis: \"Text Classification for Customer Support Requests\"",
+    "Projects": "**Batch Prediction Monitor** · 2024 (personal project)\n- Built a local Python report to flag missing predictions and unusually slow batches using synthetic CSV inputs. It was not connected to a production service.",
+    "Skills": "Python, SQL, scikit-learn, PyTorch, Hugging Face Transformers, FastAPI, PostgreSQL pgvector, Docker, AWS (EC2, S3), Git, GitHub Actions, pytest, Kubernetes (basic), Terraform (basic)",
+    "Certifications": "- Introduction to Computer Vision, Contoh Learning Studio · June 2026 (course completed, no certificate)",
+    "Other": "Indonesian (native), English (professional working proficiency)"
+   },
+   "experience": [
+    {
+     "title": "Machine Learning Engineer",
+     "organization": "PT Contoh Solusi Bahasa",
+     "start": null,
+     "end": null,
+     "is_present": true,
+     "description": "**Machine Learning Engineer**, PT Contoh Solusi Bahasa, Jakarta · April 2025 - present\n- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents.\n- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout.\n- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks.\n- Added pytest checks and a GitHub Actions pipeline for tests and container builds. Production releases still require manual approval.",
+     "start_partial": {
+      "year": 2025,
+      "month": 4
+     },
+     "end_partial": null,
+     "start_text": "April 2025",
+     "end_text": "present"
+    },
+    {
+     "title": "Junior Machine Learning Engineer",
+     "organization": "PT Contoh Layanan Digital",
+     "start": null,
+     "end": null,
+     "is_present": false,
+     "description": "**Junior Machine Learning Engineer**, PT Contoh Layanan Digital, Jakarta · October 2023 - March 2025\n- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week.\n- Used Python and SQL to prepare training data and review mislabeled examples with support agents.\n- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review.",
+     "start_partial": {
+      "year": 2023,
+      "month": 10
+     },
+     "end_partial": {
+      "year": 2025,
+      "month": 3
+     },
+     "start_text": "October 2023",
+     "end_text": "March 2025"
+    }
+   ],
+   "skills_list": [
+    "Python",
+    "SQL",
+    "scikit-learn",
+    "PyTorch",
+    "Hugging Face Transformers",
+    "FastAPI",
+    "PostgreSQL pgvector",
+    "Docker",
+    "AWS (EC2, S3)",
+    "Git",
+    "GitHub Actions",
+    "pytest",
+    "Kubernetes (basic)",
+    "Terraform (basic)"
+   ],
+   "confirmed_location": null
+  },
+  "evidence": [
+   {
+    "fact_id": "exp1_b1",
+    "section": "Experience",
+    "quote": "Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents."
+   },
+   {
+    "fact_id": "exp1_b2",
+    "section": "Experience",
+    "quote": "Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout."
+   },
+   {
+    "fact_id": "exp1_b3",
+    "section": "Experience",
+    "quote": "Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks."
+   },
+   {
+    "fact_id": "exp1_b4",
+    "section": "Experience",
+    "quote": "Added pytest checks and a GitHub Actions pipeline for tests and container builds. Production releases still require manual approval."
+   },
+   {
+    "fact_id": "exp2_b1",
+    "section": "Experience",
+    "quote": "Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week."
+   },
+   {
+    "fact_id": "exp2_b2",
+    "section": "Experience",
+    "quote": "Used Python and SQL to prepare training data and review mislabeled examples with support agents."
+   },
+   {
+    "fact_id": "exp2_b3",
+    "section": "Experience",
+    "quote": "Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review."
+   },
+   {
+    "fact_id": "edu1_b1",
+    "section": "Education",
+    "quote": "Thesis: \"Text Classification for Customer Support Requests\""
+   },
+   {
+    "fact_id": "proj1_b1",
+    "section": "Projects",
+    "quote": "Built a local Python report to flag missing predictions and unusually slow batches using synthetic CSV inputs. It was not connected to a production service."
+   },
+   {
+    "fact_id": "cert1",
+    "section": "Certifications",
+    "quote": "Introduction to Computer Vision, Contoh Learning Studio · June 2026 (course completed, no certificate)"
+   }
+  ],
+  "source_work": [
+   {
+    "title": "Machine Learning Engineer",
+    "organization": "PT Contoh Solusi Bahasa",
+    "source_quote": "**Machine Learning Engineer**, PT Contoh Solusi Bahasa, Jakarta · April 2025 - present\n- Fine-tuned a compact text classifier with PyTorch and Hugging Face Transformers for production ticket routing; reviewed minority-class errors with support agents.\n- Built an internal RAG assistant over about 150 support documents with embeddings and PostgreSQL pgvector. Checked passages and answers on 60 manually written questions before a limited rollout.\n- Maintained a FastAPI service in Docker on AWS EC2, with artifacts in S3; worked with backend engineers on failed requests and rollbacks.\n- Added pytest checks and a GitHub Actions pipeline for tests and container builds. Production releases still require manual approval.",
+    "start_text": "April 2025",
+    "end_text": "present",
+    "is_present": true
+   },
+   {
+    "title": "Junior Machine Learning Engineer",
+    "organization": "PT Contoh Layanan Digital",
+    "source_quote": "**Junior Machine Learning Engineer**, PT Contoh Layanan Digital, Jakarta · October 2023 - March 2025\n- Built a six-category ticket classifier using TF-IDF and logistic regression in scikit-learn, then supported its use on roughly 2,000 tickets per week.\n- Used Python and SQL to prepare training data and review mislabeled examples with support agents.\n- Packaged predictions behind a REST API and helped deploy the Docker image under a senior engineer's review.",
+    "start_text": "October 2023",
+    "end_text": "March 2025",
+    "is_present": false
+   }
+  ],
+  "location_suggestion": "Jakarta, Indonesia · [EMAIL]",
+  "analysis_date": "2026-09-30",
+  "schema_version": "cv-v1.1-precision",
+  "warnings": [
+   "Check that employment, projects, education, dates and skills match the source before analysis."
+  ],
+  "attempts": 1,
+  "review_required": true
+ },
+ "attempts": 1
+}

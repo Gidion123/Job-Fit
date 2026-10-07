@@ -1,0 +1,9 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00369",
+  "status": "held_source",
+  "reason": "source_provenance_hold",
+  "score_H1": null,
+  "score_H2": null,
+  "wall_ms": 0
+}

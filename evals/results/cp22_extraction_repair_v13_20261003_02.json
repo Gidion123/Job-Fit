@@ -1,0 +1,275 @@
+{
+  "job_id": "CV1_parse",
+  "run_id": "cp22_extraction_repair_v13_20261003",
+  "provenance": {
+    "config/models_v1.yaml": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+    "config/pipeline_v1.yaml": "ba44704f573f9fabb24ff45a2b0142b5c00ac93af55902429500c020a3cd1dc8",
+    "evals/annotation_guideline_v1_3.md": "3d964a28fd105e16b24ad51b8b0a22b34bb9255e438b51e4e6e0eda551c57645",
+    "prompts/jd_extraction_v1_3.md": "0afe4b95155c7225bafd62e9216344cd886a4d6ba2e005fd746652b6ed97a224",
+    "src/jobfit/extraction/audited.py": "4a56d8544e2e48049d351d2e958a1d630f2b47f71df879ba094396ff7b55ec19",
+    "src/jobfit/extraction/coverage.py": "b3f93f9e7280b772234c267f7b30796e549f44dc11a5d317e698fa7e51c0b887",
+    "src/jobfit/extraction/paste_jd.py": "94bc9d3ecc9b70d66df09fa6dacded94efb4157de4be15ea54278bebd1de9614",
+    "prompts/evidence_matching_v1_1.md": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+    "prompts/cv_parsing_v1.md": "1847ef471c4d72b20b27c9f8f276a28a833d28e15f4aad28100494cf026dc341",
+    "src/jobfit/llm/probe.py": "7c0a1bcebd6637344408fff1a2d849b8186ba4f0b63e588ebdba0d5b69dbc81c",
+    "src/jobfit/llm/closure_probe.py": "b022ec3faa240d6bc3401f192545169e08c58ed67611eee2aad83edd3e27d55e",
+    "src/jobfit/llm/client.py": "a3d8491668027932acf6819481af56bf7eb3687ac51460ce36a064a48d29c63d",
+    "src/jobfit/llm/structured.py": "4c6364e3aeaeef5716225f11fafd286b550abd92a410bf455b29f4db98b555a6",
+    "src/jobfit/pipeline.py": "d40ff6e15991f7ae1e21497948443a5b219b6c9d7a51b549adebd161b3d15652",
+    "src/jobfit/cv/parser.py": "02641bdca155315c6ccbb5a0b33cea65488164c2586297ddfa648207858b30e1",
+    "src/jobfit/extraction/jd_extractor.py": "e0295fec81ed61a36ccb5225a34c161f26f8ce5006f346d092e932f790954c3d",
+    "src/jobfit/matching/evidence_matcher.py": "8dc55863d6da608c6b92915d910c4c89e0991ece4effdcb6d866143a53de462f",
+    "scripts/run_cp22_repair_probe.py": "daaed65be0bf708f680975268b609fd44e318be708f561086ec7171a34c17d22",
+    "evals/results/cp22_repair_reference_compatibility_20261003.json": "ce2f6da3763c8a4f88e81bf1f783fe785dcd58b581d66ed8bb6657b1a7fc88b0",
+    "evals/results/cp22_repair_provider_verification_20261003.json": "0d02c50d62eadee216c68e50a3fa12349b69d6b890030ce4ba6db7ad7f8e8575",
+    "F00034": "8cdbfad2b5803545eb155c346253249dd72d4015024018e34706e3ddf9552826",
+    "F00332": "9113fae9a5efa7be34c475f2ddca9a2adc34a2edd2b57f7a78da494ef1381619",
+    "CV1": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a"
+  },
+  "versions": {
+    "guideline_version": "v1.3",
+    "jd_prompt_version": "jd-prompt-v1.3",
+    "evidence_prompt_version": "evidence-prompt-v1.1",
+    "schema_version": "v1",
+    "score_version": "v1",
+    "guideline_file": "evals/annotation_guideline_v1_3.md",
+    "jd_prompt_file": "prompts/jd_extraction_v1_3.md",
+    "evidence_prompt_file": "prompts/evidence_matching_v1_1.md",
+    "guideline_sha256": "3d964a28fd105e16b24ad51b8b0a22b34bb9255e438b51e4e6e0eda551c57645",
+    "jd_prompt_sha256": "0afe4b95155c7225bafd62e9216344cd886a4d6ba2e005fd746652b6ed97a224",
+    "evidence_prompt_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+    "extraction_coverage_contract": "qualification-inventory-v1"
+  },
+  "status": "done",
+  "parsed_cv": {
+    "profile": {
+      "cv_id": "CV1",
+      "is_synthetic": true,
+      "language": "Indonesia (native), Inggris (menengah, TOEFL ITP 540)",
+      "parse_status": "ok",
+      "raw_text": "# Rina Aprilia Putri\n\nJakarta Selatan, Indonesia \u00b7 rina.putri@example.com \u00b7 +62 800-0000-0001 \u00b7 github.com/example-rina\n\n## Ringkasan\n\nLulusan S1 Statistika yang tertarik pada data science dan machine learning. Terbiasa mengolah data dengan Python dan SQL, membuat model prediksi sederhana, dan menyajikan hasil analisis dalam dashboard.\n\n## Pendidikan\n\n**S1 Statistika**, Universitas Negeri Contoh, Jakarta \u00b7 Agustus 2022 - Agustus 2026\n- IPK 3,62 / 4,00\n- Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\"\n- Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data\n\n## Pengalaman\n\n**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta \u00b7 Februari 2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.\n\n**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh \u00b7 Februari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.\n\n## Proyek\n\n**Prediksi Churn Pelanggan (Skripsi)** \u00b7 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.\n\n**Analisis Sentimen Ulasan Aplikasi** \u00b7 Oktober 2025\n- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.\n\n## Keahlian\n\nPython (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar\n\n## Sertifikasi\n\n- Google Data Analytics Professional Certificate (2025)\n\n## Bahasa\n\nIndonesia (native), Inggris (menengah, TOEFL ITP 540)",
+      "sections": {
+        "Summary": "Lulusan S1 Statistika yang tertarik pada data science dan machine learning. Terbiasa mengolah data dengan Python dan SQL, membuat model prediksi sederhana, dan menyajikan hasil analisis dalam dashboard.",
+        "Education": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta \u00b7 Agustus 2022 - Agustus 2026\n- IPK 3,62 / 4,00\n- Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\"\n- Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+        "Experience": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta \u00b7 Februari 2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.\n\n**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh \u00b7 Februari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+        "Projects": "**Prediksi Churn Pelanggan (Skripsi)** \u00b7 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.\n\n**Analisis Sentimen Ulasan Aplikasi** \u00b7 Oktober 2025\n- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+        "Skills": "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar",
+        "Certifications": "- Google Data Analytics Professional Certificate (2025)",
+        "Other": "Jakarta Selatan, Indonesia \u00b7 rina.putri@example.com \u00b7 +62 800-0000-0001 \u00b7 github.com/example-rina\nIndonesia (native), Inggris (menengah, TOEFL ITP 540)"
+      },
+      "experience": [
+        {
+          "title": "Data Analyst Intern",
+          "organization": "PT Contoh Retail Nusantara",
+          "start": null,
+          "end": null,
+          "is_present": false,
+          "description": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta \u00b7 Februari 2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+          "start_partial": {
+            "year": 2026,
+            "month": 2
+          },
+          "end_partial": {
+            "year": 2026,
+            "month": 5
+          },
+          "start_text": "Februari 2026",
+          "end_text": "Mei 2026"
+        },
+        {
+          "title": "Asisten Praktikum Analisis Regresi",
+          "organization": "Universitas Negeri Contoh",
+          "start": null,
+          "end": null,
+          "is_present": false,
+          "description": "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh \u00b7 Februari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+          "start_partial": {
+            "year": 2025,
+            "month": 2
+          },
+          "end_partial": {
+            "year": 2025,
+            "month": 6
+          },
+          "start_text": "Februari 2025",
+          "end_text": "Juni 2025"
+        }
+      ],
+      "skills_list": [
+        "Python (pandas, NumPy, scikit-learn, matplotlib)",
+        "SQL",
+        "R",
+        "Looker Studio",
+        "Excel",
+        "Git",
+        "statistika inferensial",
+        "machine learning dasar"
+      ],
+      "confirmed_location": null
+    },
+    "evidence": [
+      {
+        "fact_id": "f1",
+        "section": "Summary",
+        "quote": "Lulusan S1 Statistika yang tertarik pada data science dan machine learning. Terbiasa mengolah data dengan Python dan SQL, membuat model prediksi sederhana, dan menyajikan hasil analisis dalam dashboard."
+      },
+      {
+        "fact_id": "f2",
+        "section": "Education",
+        "quote": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta \u00b7 Agustus 2022 - Agustus 2026"
+      },
+      {
+        "fact_id": "f3",
+        "section": "Education",
+        "quote": "IPK 3,62 / 4,00"
+      },
+      {
+        "fact_id": "f4",
+        "section": "Education",
+        "quote": "Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\""
+      },
+      {
+        "fact_id": "f5",
+        "section": "Education",
+        "quote": "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data"
+      },
+      {
+        "fact_id": "f6",
+        "section": "Experience",
+        "quote": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta \u00b7 Februari 2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      },
+      {
+        "fact_id": "f7",
+        "section": "Experience",
+        "quote": "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh \u00b7 Februari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+      },
+      {
+        "fact_id": "f8",
+        "section": "Projects",
+        "quote": "**Prediksi Churn Pelanggan (Skripsi)** \u00b7 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+      },
+      {
+        "fact_id": "f9",
+        "section": "Projects",
+        "quote": "**Analisis Sentimen Ulasan Aplikasi** \u00b7 Oktober 2025\n- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes."
+      },
+      {
+        "fact_id": "f10",
+        "section": "Skills",
+        "quote": "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+      },
+      {
+        "fact_id": "f11",
+        "section": "Certifications",
+        "quote": "- Google Data Analytics Professional Certificate (2025)"
+      },
+      {
+        "fact_id": "f12",
+        "section": "Other",
+        "quote": "Indonesia (native), Inggris (menengah, TOEFL ITP 540)"
+      },
+      {
+        "fact_id": "f13",
+        "section": "Other",
+        "quote": "Jakarta Selatan, Indonesia \u00b7 rina.putri@example.com \u00b7 +62 800-0000-0001 \u00b7 github.com/example-rina"
+      }
+    ],
+    "source_work": [
+      {
+        "title": "Data Analyst Intern",
+        "organization": "PT Contoh Retail Nusantara",
+        "source_quote": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta \u00b7 Februari 2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+        "start_text": "Februari 2026",
+        "end_text": "Mei 2026",
+        "is_present": false
+      },
+      {
+        "title": "Asisten Praktikum Analisis Regresi",
+        "organization": "Universitas Negeri Contoh",
+        "source_quote": "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh \u00b7 Februari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+        "start_text": "Februari 2025",
+        "end_text": "Juni 2025",
+        "is_present": false
+      }
+    ],
+    "location_suggestion": "Jakarta Selatan, Indonesia",
+    "analysis_date": "2026-09-30",
+    "schema_version": "cv-v1.1-precision",
+    "warnings": [
+      "Check that employment, projects, education, dates and skills match the source before analysis."
+    ],
+    "attempts": 1,
+    "review_required": true
+  },
+  "preview": {
+    "parse_status": "ok",
+    "analysis_date": "2026-09-30",
+    "sections_found": [
+      "Summary",
+      "Education",
+      "Experience",
+      "Projects",
+      "Skills",
+      "Certifications",
+      "Other"
+    ],
+    "evidence_count": 13,
+    "skills": [
+      "Python (pandas, NumPy, scikit-learn, matplotlib)",
+      "SQL",
+      "R",
+      "Looker Studio",
+      "Excel",
+      "Git",
+      "statistika inferensial",
+      "machine learning dasar"
+    ],
+    "employment": [
+      {
+        "title": "Data Analyst Intern",
+        "organization": "PT Contoh Retail Nusantara",
+        "start": null,
+        "end": null,
+        "is_present": false,
+        "description": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta \u00b7 Februari 2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+        "start_partial": {
+          "year": 2026,
+          "month": 2
+        },
+        "end_partial": {
+          "year": 2026,
+          "month": 5
+        },
+        "start_text": "Februari 2026",
+        "end_text": "Mei 2026"
+      },
+      {
+        "title": "Asisten Praktikum Analisis Regresi",
+        "organization": "Universitas Negeri Contoh",
+        "start": null,
+        "end": null,
+        "is_present": false,
+        "description": "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh \u00b7 Februari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+        "start_partial": {
+          "year": 2025,
+          "month": 2
+        },
+        "end_partial": {
+          "year": 2025,
+          "month": 6
+        },
+        "start_text": "Februari 2025",
+        "end_text": "Juni 2025"
+      }
+    ],
+    "location_suggestion": "Jakarta Selatan, Indonesia",
+    "location_confirmed": null,
+    "review_required": true,
+    "warnings": [
+      "Check that employment, projects, education, dates and skills match the source before analysis."
+    ]
+  },
+  "attempts": 1,
+  "latency_ms": 154687,
+  "result_sha256": "78f3900186fbcfa64164db72587884bedb8e9da459cd62a4ef003aa4c95530c6"
+}

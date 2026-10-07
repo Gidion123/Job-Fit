@@ -1,0 +1,85 @@
+{
+  "fixture_id": "dev_08_parsing_failure",
+  "synthetic": true,
+  "note": "Synthetic development fixture for the deterministic rules. Hand-written, not model output. Not part of the test set.",
+  "analysis_date": "2026-09-29",
+  "cv_parse_status": "ok",
+  "case": "One required unit failed to process (system failure). It is not turned into NO_MATCH; the score is on hold.",
+  "extraction": {
+    "job_id": "FIX-08",
+    "units": [
+      {
+        "unit_id": "u1",
+        "text": "Python",
+        "importance": "required",
+        "field": "skill_tool",
+        "source_quotes": [
+          "Python"
+        ]
+      },
+      {
+        "unit_id": "u2",
+        "text": "PyTorch",
+        "importance": "required",
+        "field": "skill_tool",
+        "source_quotes": [
+          "PyTorch"
+        ]
+      },
+      {
+        "unit_id": "u3",
+        "text": "MLOps",
+        "importance": "required",
+        "field": "knowledge_area",
+        "source_quotes": [
+          "MLOps"
+        ]
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "u1",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python for model training"
+      ]
+    },
+    {
+      "unit_id": "u2",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": []
+    },
+    {
+      "unit_id": "u3",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": []
+    }
+  ],
+  "experience": {
+    "min_years": null,
+    "cv_entries": []
+  },
+  "expected": {
+    "score_pct": null,
+    "status": "on_hold",
+    "required_total": 3,
+    "constraint_state": "unknown"
+  },
+  "fixture_version": "v1.3-r1",
+  "guideline_version": "v1.3",
+  "revision": {
+    "source_file": "evals/fixtures/dev_08_parsing_failure.json",
+    "source_sha256": "fe0d13660ac2b96d33d147eeca9b9d763f2a9fb4e5e6bd4f0b27e4b88ed3a657",
+    "reason": "Clarify assessment-stage failure despite successful CV parsing; preserve null label and on_hold.",
+    "scope": "Synthetic fixture revision only; no real JD/CV or approved label edited",
+    "review_kind": "delegated technical and semantic examination under user instruction",
+    "human_independent_approval": false
+  },
+  "synthetic_jd_context": "Required qualifications:\nPython\nPyTorch\nMLOps",
+  "synthetic_cv_context": "Python for model training",
+  "semantic_review_status": "delegated_checked"
+}

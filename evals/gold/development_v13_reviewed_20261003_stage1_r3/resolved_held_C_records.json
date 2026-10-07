@@ -1,0 +1,89 @@
+[
+  {
+    "original_held_record": {
+      "sheet": "C_Relevance",
+      "identity": "CV1/F00022",
+      "reasons": [
+        "C_reason_depends_on_unresolved_D049_J1_units"
+      ],
+      "record": {
+        "cv_id": "CV1",
+        "cv_target": "Data science; Indonesia (Jakarta); entry level",
+        "pilot_id": "J1",
+        "job_id": "F00022",
+        "job_title": "Jr. Data Scientist",
+        "relevance_0_3": 3,
+        "main_reason": "Label B approved mendukung Python, SQL, dataset, visualisasi, Statistika, dan ML; matematika PARTIAL. Mayoritas syarat teknis didukung tanpa konflik eksplisit yang terbukti.",
+        "constraint_note": "Pengalaman 1–2 tahun ber-importance unknown karena fresh graduate juga diterima. Durasi internship 4 bulan tidak dijadikan penolakan otomatis.",
+        "label_source": "model_draft",
+        "review_status": "approved",
+        "review_action": "accepted",
+        "draft_note": "Penilaian ordinal menurut guideline v1.1 Part D (automatic mode, D-037), bukan konversi match %. Sumber: B_Evidence CV1/F00022; A J1-U01/U02/U03/U04/U05/U09/U20/U21. Ketidakpastian durasi tidak dipakai sebagai konflik pasti; soft skill dan lokasi tidak menurunkan skor sendiri. Nilai ini draf AI, belum gold manusia.",
+        "review_note": null,
+        "guideline_version": "v1.2",
+        "gold_review": "no"
+      }
+    },
+    "resolution": "D-054_direct_C_re_review_only;A_B_remain_held",
+    "new_C_row_sha256": "e0ee286a8ebb8d39cdf4894b6fa3c202bf1598979f68666886eb2373b6fedec6",
+    "user_review_receipt_sha256": "a90dcd15be04abadf61fa1a204feb4c2c47b94803de75f4e97a72077b8681bfb"
+  },
+  {
+    "original_held_record": {
+      "sheet": "C_Relevance",
+      "identity": "CV2/F00114",
+      "reasons": [
+        "Reviewer_requested_BC_hold_for_unresolved_composite"
+      ],
+      "record": {
+        "cv_id": "CV2",
+        "cv_target": "AI/ML engineering or GenAI; Indonesia; entry or 1-2 years",
+        "pilot_id": "J5",
+        "job_id": "F00114",
+        "job_title": "AI Engineer (AI Agent & RAG)",
+        "relevance_0_3": 1,
+        "main_reason": "Prototipe RAG, FastAPI, LangChain, FAISS, dan evaluasi 30 pertanyaan relevan; belum ada bukti production RAG, tool/function calling, operasi LLM aman, atau pengalaman engineer sesuai level senior.",
+        "constraint_note": "Explicit conflict under D-042: J5 requires 5+ years as an engineer and 2+ years shipping production LLM features. Bima's complete work history is in marketing (executive, digital marketing analyst) with no engineering role; the RAG prototype and bootcamp do not count toward work experience. A deployed prototype is not production LLM work.",
+        "label_source": "model_draft",
+        "review_status": "approved",
+        "review_action": "accepted",
+        "draft_note": "Penilaian ordinal menurut guideline v1.1 Part D (automatic mode, D-037), bukan konversi match %. Sumber: CV2 RAG/classifier/Skills; Requirements J5; A/B J5 belum tersedia. Ketidakpastian durasi tidak dipakai sebagai konflik pasti; soft skill dan lokasi tidak menurunkan skor sendiri. Nilai ini draf AI, belum gold manusia. | 1 Oct: constraint note rewritten to the D-042 rule after the annotator approved the update; rating unchanged.",
+        "review_note": null,
+        "guideline_version": "v1.2",
+        "gold_review": "no"
+      }
+    },
+    "resolution": "D-054_direct_C_re_review_only;A_B_remain_held",
+    "new_C_row_sha256": "24163bb8516c77f0c214d24215cf51d13c7889a8f21bc6dc45d180217d62e25c",
+    "user_review_receipt_sha256": "a90dcd15be04abadf61fa1a204feb4c2c47b94803de75f4e97a72077b8681bfb"
+  },
+  {
+    "original_held_record": {
+      "sheet": "C_Relevance",
+      "identity": "CV1/F00369",
+      "reasons": [
+        "source_provenance_hold_whole_job"
+      ],
+      "record": {
+        "cv_id": "CV1",
+        "cv_target": "Data Science / AI and data target families",
+        "pilot_id": null,
+        "job_id": "F00369",
+        "job_title": "Machine Learning Engineer Classical ML and Predictive Analytics",
+        "relevance_0_3": 1,
+        "main_reason": "Statistics, Python/scikit-learn and ML projects overlap; the restored portfolio clause has partial evidence. The required 2–4 years in ML/DS roles and recurrent-model experience are not shown.",
+        "constraint_note": "Two to four years hands-on ML/DS roles is not supported.",
+        "label_source": "model_draft",
+        "review_status": "approved",
+        "review_action": "edited",
+        "draft_note": "Guideline v1.2 Part D; evidence coverage and explicit qualifications, not retrieval score. Human review required.",
+        "review_note": "F00369 JD sudah dilengkapi dan P35-U24 dinilai PARTIAL di B; skor tetap 1 karena syarat pengalaman kerja 2–4 tahun tidak terpenuhi.",
+        "guideline_version": "v1.3",
+        "gold_review": "no"
+      }
+    },
+    "resolution": "D-054_direct_C_re_review_only;A_B_remain_held",
+    "new_C_row_sha256": "1141efa5607bd1e2e0ad60b0ef165a56268d181e5540784b4ddea606b4a30423",
+    "user_review_receipt_sha256": "a90dcd15be04abadf61fa1a204feb4c2c47b94803de75f4e97a72077b8681bfb"
+  }
+]

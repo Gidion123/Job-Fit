@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "workbook": "evals/labeling/JobFit_Development_Labeling_v0.1.xlsx",
+  "workbook_sha256": "8f9f5575a97764152e71df3013fdc5c4503f3a7e5817a936703ccdbf6c9fb01f",
+  "counts": {
+    "jds": 54,
+    "pairs": 67,
+    "a": 1069,
+    "b": 1387,
+    "c": 67
+  },
+  "approved": {
+    "A_Extraction": 39,
+    "B_Evidence": 21,
+    "C_Relevance": 3
+  },
+  "pending": {
+    "A_Extraction": 1030,
+    "B_Evidence": 1366,
+    "C_Relevance": 64
+  },
+  "zero_requirement_jobs": [
+    "F00364"
+  ],
+  "quotes_exact": true,
+  "sources_unchanged": true,
+  "preserved_rows_unchanged": true,
+  "full_pair_unit_coverage": true,
+  "split_isolation": true,
+  "review_validation": true,
+  "mandatory_review_pairs": 40,
+  "semantic_spot_checks": 13,
+  "api_calls": 0,
+  "session_cost_usd": 0,
+  "limits": [
+    "Draft semantic correctness still requires annotator review.",
+    "Native Excel interaction not exercised; saved XML validation and artifact previews verified."
+  ]
+}

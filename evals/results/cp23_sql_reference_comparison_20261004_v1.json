@@ -1,0 +1,3178 @@
+{
+  "schema_version": "cp23-sql-reference-comparison-v1",
+  "date": "2026-10-04",
+  "old_and_new_reference_applied_to_every_model": true,
+  "gold_changed": false,
+  "api_calls": 0,
+  "truth_change": {
+    "key": "CV2/F00815/P52-U10",
+    "old": "PARTIAL",
+    "new": "MATCH"
+  },
+  "results": {
+    "round_one_B": {
+      "claude-haiku-4.5": {
+        "old": {
+          "all_cases": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 5,
+                "PARTIAL": 2,
+                "NO_MATCH": 0,
+                "not_assessed": 28
+              },
+              "PARTIAL": {
+                "MATCH": 3,
+                "PARTIAL": 3,
+                "NO_MATCH": 2,
+                "not_assessed": 14
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 1,
+                "not_assessed": 15
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 5,
+                "fp": 3,
+                "fn": 30,
+                "support": 35,
+                "precision": 0.625,
+                "recall": 0.14285714285714285,
+                "f1": 0.23255813953488372
+              },
+              "PARTIAL": {
+                "tp": 3,
+                "fp": 2,
+                "fn": 19,
+                "support": 22,
+                "precision": 0.6,
+                "recall": 0.13636363636363635,
+                "f1": 0.2222222222222222
+              },
+              "NO_MATCH": {
+                "tp": 1,
+                "fp": 2,
+                "fn": 15,
+                "support": 16,
+                "precision": 0.3333333333333333,
+                "recall": 0.0625,
+                "f1": 0.10526315789473684
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.18668117321728092,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 16,
+              "denominator": 73,
+              "value": 0.2191780821917808
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 5,
+                "PARTIAL": 2,
+                "NO_MATCH": 0,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 3,
+                "PARTIAL": 3,
+                "NO_MATCH": 2,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 1,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 5,
+                "fp": 3,
+                "fn": 2,
+                "support": 7,
+                "precision": 0.625,
+                "recall": 0.7142857142857143,
+                "f1": 0.6666666666666666
+              },
+              "PARTIAL": {
+                "tp": 3,
+                "fp": 2,
+                "fn": 5,
+                "support": 8,
+                "precision": 0.6,
+                "recall": 0.375,
+                "f1": 0.46153846153846156
+              },
+              "NO_MATCH": {
+                "tp": 1,
+                "fp": 2,
+                "fn": 0,
+                "support": 1,
+                "precision": 0.3333333333333333,
+                "recall": 1.0,
+                "f1": 0.5
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.5427350427350427,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 16,
+              "denominator": 16,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "all_cases_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 5,
+                "PARTIAL": 2,
+                "NO_MATCH": 0,
+                "not_assessed": 28
+              },
+              "PARTIAL": {
+                "MATCH": 0,
+                "PARTIAL": 6,
+                "NO_MATCH": 2,
+                "not_assessed": 14
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 1,
+                "not_assessed": 15
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 5,
+                "fp": 0,
+                "fn": 30,
+                "support": 35,
+                "precision": 1.0,
+                "recall": 0.14285714285714285,
+                "f1": 0.25
+              },
+              "PARTIAL": {
+                "tp": 6,
+                "fp": 2,
+                "fn": 16,
+                "support": 22,
+                "precision": 0.75,
+                "recall": 0.2727272727272727,
+                "f1": 0.4
+              },
+              "NO_MATCH": {
+                "tp": 1,
+                "fp": 2,
+                "fn": 15,
+                "support": 16,
+                "precision": 0.3333333333333333,
+                "recall": 0.0625,
+                "f1": 0.10526315789473684
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.2517543859649123,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 16,
+              "denominator": 73,
+              "value": 0.2191780821917808
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 5,
+                "PARTIAL": 2,
+                "NO_MATCH": 0,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 0,
+                "PARTIAL": 6,
+                "NO_MATCH": 2,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 1,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 5,
+                "fp": 0,
+                "fn": 2,
+                "support": 7,
+                "precision": 1.0,
+                "recall": 0.7142857142857143,
+                "f1": 0.8333333333333334
+              },
+              "PARTIAL": {
+                "tp": 6,
+                "fp": 2,
+                "fn": 2,
+                "support": 8,
+                "precision": 0.75,
+                "recall": 0.75,
+                "f1": 0.75
+              },
+              "NO_MATCH": {
+                "tp": 1,
+                "fp": 2,
+                "fn": 0,
+                "support": 1,
+                "precision": 0.3333333333333333,
+                "recall": 1.0,
+                "f1": 0.5
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.6944444444444445,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 16,
+              "denominator": 16,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          }
+        },
+        "new": {
+          "all_cases": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 6,
+                "PARTIAL": 2,
+                "NO_MATCH": 0,
+                "not_assessed": 28
+              },
+              "PARTIAL": {
+                "MATCH": 2,
+                "PARTIAL": 3,
+                "NO_MATCH": 2,
+                "not_assessed": 14
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 1,
+                "not_assessed": 15
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 6,
+                "fp": 2,
+                "fn": 30,
+                "support": 36,
+                "precision": 0.75,
+                "recall": 0.16666666666666666,
+                "f1": 0.2727272727272727
+              },
+              "PARTIAL": {
+                "tp": 3,
+                "fp": 2,
+                "fn": 18,
+                "support": 21,
+                "precision": 0.6,
+                "recall": 0.14285714285714285,
+                "f1": 0.23076923076923078
+              },
+              "NO_MATCH": {
+                "tp": 1,
+                "fp": 2,
+                "fn": 15,
+                "support": 16,
+                "precision": 0.3333333333333333,
+                "recall": 0.0625,
+                "f1": 0.10526315789473684
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.20291988713041345,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 16,
+              "denominator": 73,
+              "value": 0.2191780821917808
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 6,
+                "PARTIAL": 2,
+                "NO_MATCH": 0,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 2,
+                "PARTIAL": 3,
+                "NO_MATCH": 2,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 1,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 6,
+                "fp": 2,
+                "fn": 2,
+                "support": 8,
+                "precision": 0.75,
+                "recall": 0.75,
+                "f1": 0.75
+              },
+              "PARTIAL": {
+                "tp": 3,
+                "fp": 2,
+                "fn": 4,
+                "support": 7,
+                "precision": 0.6,
+                "recall": 0.42857142857142855,
+                "f1": 0.5
+              },
+              "NO_MATCH": {
+                "tp": 1,
+                "fp": 2,
+                "fn": 0,
+                "support": 1,
+                "precision": 0.3333333333333333,
+                "recall": 1.0,
+                "f1": 0.5
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.5833333333333334,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 16,
+              "denominator": 16,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "all_cases_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 5,
+                "PARTIAL": 3,
+                "NO_MATCH": 0,
+                "not_assessed": 28
+              },
+              "PARTIAL": {
+                "MATCH": 0,
+                "PARTIAL": 5,
+                "NO_MATCH": 2,
+                "not_assessed": 14
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 1,
+                "not_assessed": 15
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 5,
+                "fp": 0,
+                "fn": 31,
+                "support": 36,
+                "precision": 1.0,
+                "recall": 0.1388888888888889,
+                "f1": 0.24390243902439024
+              },
+              "PARTIAL": {
+                "tp": 5,
+                "fp": 3,
+                "fn": 16,
+                "support": 21,
+                "precision": 0.625,
+                "recall": 0.23809523809523808,
+                "f1": 0.3448275862068966
+              },
+              "NO_MATCH": {
+                "tp": 1,
+                "fp": 2,
+                "fn": 15,
+                "support": 16,
+                "precision": 0.3333333333333333,
+                "recall": 0.0625,
+                "f1": 0.10526315789473684
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.23133106104200787,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 16,
+              "denominator": 73,
+              "value": 0.2191780821917808
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 5,
+                "PARTIAL": 3,
+                "NO_MATCH": 0,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 0,
+                "PARTIAL": 5,
+                "NO_MATCH": 2,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 1,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 5,
+                "fp": 0,
+                "fn": 3,
+                "support": 8,
+                "precision": 1.0,
+                "recall": 0.625,
+                "f1": 0.7692307692307693
+              },
+              "PARTIAL": {
+                "tp": 5,
+                "fp": 3,
+                "fn": 2,
+                "support": 7,
+                "precision": 0.625,
+                "recall": 0.7142857142857143,
+                "f1": 0.6666666666666666
+              },
+              "NO_MATCH": {
+                "tp": 1,
+                "fp": 2,
+                "fn": 0,
+                "support": 1,
+                "precision": 0.3333333333333333,
+                "recall": 1.0,
+                "f1": 0.5
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.6452991452991453,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 16,
+              "denominator": 16,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          }
+        }
+      },
+      "deepseek-flash": {
+        "old": {
+          "all_cases": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 30,
+                "PARTIAL": 2,
+                "NO_MATCH": 3,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 7,
+                "PARTIAL": 11,
+                "NO_MATCH": 4,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 16,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 30,
+                "fp": 7,
+                "fn": 5,
+                "support": 35,
+                "precision": 0.8108108108108109,
+                "recall": 0.8571428571428571,
+                "f1": 0.8333333333333334
+              },
+              "PARTIAL": {
+                "tp": 11,
+                "fp": 2,
+                "fn": 11,
+                "support": 22,
+                "precision": 0.8461538461538461,
+                "recall": 0.5,
+                "f1": 0.6285714285714286
+              },
+              "NO_MATCH": {
+                "tp": 16,
+                "fp": 7,
+                "fn": 0,
+                "support": 16,
+                "precision": 0.6956521739130435,
+                "recall": 1.0,
+                "f1": 0.8205128205128205
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7608058608058608,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 30,
+                "PARTIAL": 2,
+                "NO_MATCH": 3,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 7,
+                "PARTIAL": 11,
+                "NO_MATCH": 4,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 16,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 30,
+                "fp": 7,
+                "fn": 5,
+                "support": 35,
+                "precision": 0.8108108108108109,
+                "recall": 0.8571428571428571,
+                "f1": 0.8333333333333334
+              },
+              "PARTIAL": {
+                "tp": 11,
+                "fp": 2,
+                "fn": 11,
+                "support": 22,
+                "precision": 0.8461538461538461,
+                "recall": 0.5,
+                "f1": 0.6285714285714286
+              },
+              "NO_MATCH": {
+                "tp": 16,
+                "fp": 7,
+                "fn": 0,
+                "support": 16,
+                "precision": 0.6956521739130435,
+                "recall": 1.0,
+                "f1": 0.8205128205128205
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7608058608058608,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "all_cases_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 30,
+                "PARTIAL": 2,
+                "NO_MATCH": 3,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 6,
+                "PARTIAL": 12,
+                "NO_MATCH": 4,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 16,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 30,
+                "fp": 6,
+                "fn": 5,
+                "support": 35,
+                "precision": 0.8333333333333334,
+                "recall": 0.8571428571428571,
+                "f1": 0.8450704225352113
+              },
+              "PARTIAL": {
+                "tp": 12,
+                "fp": 2,
+                "fn": 10,
+                "support": 22,
+                "precision": 0.8571428571428571,
+                "recall": 0.5454545454545454,
+                "f1": 0.6666666666666666
+              },
+              "NO_MATCH": {
+                "tp": 16,
+                "fp": 7,
+                "fn": 0,
+                "support": 16,
+                "precision": 0.6956521739130435,
+                "recall": 1.0,
+                "f1": 0.8205128205128205
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7774166365715661,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 30,
+                "PARTIAL": 2,
+                "NO_MATCH": 3,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 6,
+                "PARTIAL": 12,
+                "NO_MATCH": 4,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 16,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 30,
+                "fp": 6,
+                "fn": 5,
+                "support": 35,
+                "precision": 0.8333333333333334,
+                "recall": 0.8571428571428571,
+                "f1": 0.8450704225352113
+              },
+              "PARTIAL": {
+                "tp": 12,
+                "fp": 2,
+                "fn": 10,
+                "support": 22,
+                "precision": 0.8571428571428571,
+                "recall": 0.5454545454545454,
+                "f1": 0.6666666666666666
+              },
+              "NO_MATCH": {
+                "tp": 16,
+                "fp": 7,
+                "fn": 0,
+                "support": 16,
+                "precision": 0.6956521739130435,
+                "recall": 1.0,
+                "f1": 0.8205128205128205
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7774166365715661,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          }
+        },
+        "new": {
+          "all_cases": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 31,
+                "PARTIAL": 2,
+                "NO_MATCH": 3,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 6,
+                "PARTIAL": 11,
+                "NO_MATCH": 4,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 16,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 31,
+                "fp": 6,
+                "fn": 5,
+                "support": 36,
+                "precision": 0.8378378378378378,
+                "recall": 0.8611111111111112,
+                "f1": 0.8493150684931506
+              },
+              "PARTIAL": {
+                "tp": 11,
+                "fp": 2,
+                "fn": 10,
+                "support": 21,
+                "precision": 0.8461538461538461,
+                "recall": 0.5238095238095238,
+                "f1": 0.6470588235294118
+              },
+              "NO_MATCH": {
+                "tp": 16,
+                "fp": 7,
+                "fn": 0,
+                "support": 16,
+                "precision": 0.6956521739130435,
+                "recall": 1.0,
+                "f1": 0.8205128205128205
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7722955708451277,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 31,
+                "PARTIAL": 2,
+                "NO_MATCH": 3,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 6,
+                "PARTIAL": 11,
+                "NO_MATCH": 4,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 16,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 31,
+                "fp": 6,
+                "fn": 5,
+                "support": 36,
+                "precision": 0.8378378378378378,
+                "recall": 0.8611111111111112,
+                "f1": 0.8493150684931506
+              },
+              "PARTIAL": {
+                "tp": 11,
+                "fp": 2,
+                "fn": 10,
+                "support": 21,
+                "precision": 0.8461538461538461,
+                "recall": 0.5238095238095238,
+                "f1": 0.6470588235294118
+              },
+              "NO_MATCH": {
+                "tp": 16,
+                "fp": 7,
+                "fn": 0,
+                "support": 16,
+                "precision": 0.6956521739130435,
+                "recall": 1.0,
+                "f1": 0.8205128205128205
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7722955708451277,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "all_cases_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 30,
+                "PARTIAL": 3,
+                "NO_MATCH": 3,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 6,
+                "PARTIAL": 11,
+                "NO_MATCH": 4,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 16,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 30,
+                "fp": 6,
+                "fn": 6,
+                "support": 36,
+                "precision": 0.8333333333333334,
+                "recall": 0.8333333333333334,
+                "f1": 0.8333333333333334
+              },
+              "PARTIAL": {
+                "tp": 11,
+                "fp": 3,
+                "fn": 10,
+                "support": 21,
+                "precision": 0.7857142857142857,
+                "recall": 0.5238095238095238,
+                "f1": 0.6285714285714286
+              },
+              "NO_MATCH": {
+                "tp": 16,
+                "fp": 7,
+                "fn": 0,
+                "support": 16,
+                "precision": 0.6956521739130435,
+                "recall": 1.0,
+                "f1": 0.8205128205128205
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7608058608058608,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 30,
+                "PARTIAL": 3,
+                "NO_MATCH": 3,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 6,
+                "PARTIAL": 11,
+                "NO_MATCH": 4,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 16,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 30,
+                "fp": 6,
+                "fn": 6,
+                "support": 36,
+                "precision": 0.8333333333333334,
+                "recall": 0.8333333333333334,
+                "f1": 0.8333333333333334
+              },
+              "PARTIAL": {
+                "tp": 11,
+                "fp": 3,
+                "fn": 10,
+                "support": 21,
+                "precision": 0.7857142857142857,
+                "recall": 0.5238095238095238,
+                "f1": 0.6285714285714286
+              },
+              "NO_MATCH": {
+                "tp": 16,
+                "fp": 7,
+                "fn": 0,
+                "support": 16,
+                "precision": 0.6956521739130435,
+                "recall": 1.0,
+                "f1": 0.8205128205128205
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7608058608058608,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          }
+        }
+      },
+      "gemini-3.5-flash-lite": {
+        "old": {
+          "all_cases": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 12,
+                "PARTIAL": 4,
+                "NO_MATCH": 1,
+                "not_assessed": 18
+              },
+              "PARTIAL": {
+                "MATCH": 5,
+                "PARTIAL": 6,
+                "NO_MATCH": 0,
+                "not_assessed": 11
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 2,
+                "NO_MATCH": 3,
+                "not_assessed": 11
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 12,
+                "fp": 5,
+                "fn": 23,
+                "support": 35,
+                "precision": 0.7058823529411765,
+                "recall": 0.34285714285714286,
+                "f1": 0.46153846153846156
+              },
+              "PARTIAL": {
+                "tp": 6,
+                "fp": 6,
+                "fn": 16,
+                "support": 22,
+                "precision": 0.5,
+                "recall": 0.2727272727272727,
+                "f1": 0.35294117647058826
+              },
+              "NO_MATCH": {
+                "tp": 3,
+                "fp": 1,
+                "fn": 13,
+                "support": 16,
+                "precision": 0.75,
+                "recall": 0.1875,
+                "f1": 0.3
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.37149321266968327,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 33,
+              "denominator": 73,
+              "value": 0.4520547945205479
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 12,
+                "PARTIAL": 4,
+                "NO_MATCH": 1,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 5,
+                "PARTIAL": 6,
+                "NO_MATCH": 0,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 2,
+                "NO_MATCH": 3,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 12,
+                "fp": 5,
+                "fn": 5,
+                "support": 17,
+                "precision": 0.7058823529411765,
+                "recall": 0.7058823529411765,
+                "f1": 0.7058823529411765
+              },
+              "PARTIAL": {
+                "tp": 6,
+                "fp": 6,
+                "fn": 5,
+                "support": 11,
+                "precision": 0.5,
+                "recall": 0.5454545454545454,
+                "f1": 0.5217391304347826
+              },
+              "NO_MATCH": {
+                "tp": 3,
+                "fp": 1,
+                "fn": 2,
+                "support": 5,
+                "precision": 0.75,
+                "recall": 0.6,
+                "f1": 0.6666666666666666
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.631429383347542,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 33,
+              "denominator": 33,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "all_cases_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 12,
+                "PARTIAL": 4,
+                "NO_MATCH": 1,
+                "not_assessed": 18
+              },
+              "PARTIAL": {
+                "MATCH": 0,
+                "PARTIAL": 11,
+                "NO_MATCH": 0,
+                "not_assessed": 11
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 2,
+                "NO_MATCH": 3,
+                "not_assessed": 11
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 12,
+                "fp": 0,
+                "fn": 23,
+                "support": 35,
+                "precision": 1.0,
+                "recall": 0.34285714285714286,
+                "f1": 0.5106382978723404
+              },
+              "PARTIAL": {
+                "tp": 11,
+                "fp": 6,
+                "fn": 11,
+                "support": 22,
+                "precision": 0.6470588235294118,
+                "recall": 0.5,
+                "f1": 0.5641025641025641
+              },
+              "NO_MATCH": {
+                "tp": 3,
+                "fp": 1,
+                "fn": 13,
+                "support": 16,
+                "precision": 0.75,
+                "recall": 0.1875,
+                "f1": 0.3
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.4582469539916349,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 33,
+              "denominator": 73,
+              "value": 0.4520547945205479
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 12,
+                "PARTIAL": 4,
+                "NO_MATCH": 1,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 0,
+                "PARTIAL": 11,
+                "NO_MATCH": 0,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 2,
+                "NO_MATCH": 3,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 12,
+                "fp": 0,
+                "fn": 5,
+                "support": 17,
+                "precision": 1.0,
+                "recall": 0.7058823529411765,
+                "f1": 0.8275862068965517
+              },
+              "PARTIAL": {
+                "tp": 11,
+                "fp": 6,
+                "fn": 0,
+                "support": 11,
+                "precision": 0.6470588235294118,
+                "recall": 1.0,
+                "f1": 0.7857142857142857
+              },
+              "NO_MATCH": {
+                "tp": 3,
+                "fp": 1,
+                "fn": 2,
+                "support": 5,
+                "precision": 0.75,
+                "recall": 0.6,
+                "f1": 0.6666666666666666
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7599890530925014,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 33,
+              "denominator": 33,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          }
+        },
+        "new": {
+          "all_cases": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 13,
+                "PARTIAL": 4,
+                "NO_MATCH": 1,
+                "not_assessed": 18
+              },
+              "PARTIAL": {
+                "MATCH": 4,
+                "PARTIAL": 6,
+                "NO_MATCH": 0,
+                "not_assessed": 11
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 2,
+                "NO_MATCH": 3,
+                "not_assessed": 11
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 13,
+                "fp": 4,
+                "fn": 23,
+                "support": 36,
+                "precision": 0.7647058823529411,
+                "recall": 0.3611111111111111,
+                "f1": 0.49056603773584906
+              },
+              "PARTIAL": {
+                "tp": 6,
+                "fp": 6,
+                "fn": 15,
+                "support": 21,
+                "precision": 0.5,
+                "recall": 0.2857142857142857,
+                "f1": 0.36363636363636365
+              },
+              "NO_MATCH": {
+                "tp": 3,
+                "fp": 1,
+                "fn": 13,
+                "support": 16,
+                "precision": 0.75,
+                "recall": 0.1875,
+                "f1": 0.3
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.38473413379073756,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 33,
+              "denominator": 73,
+              "value": 0.4520547945205479
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 13,
+                "PARTIAL": 4,
+                "NO_MATCH": 1,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 4,
+                "PARTIAL": 6,
+                "NO_MATCH": 0,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 2,
+                "NO_MATCH": 3,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 13,
+                "fp": 4,
+                "fn": 5,
+                "support": 18,
+                "precision": 0.7647058823529411,
+                "recall": 0.7222222222222222,
+                "f1": 0.7428571428571429
+              },
+              "PARTIAL": {
+                "tp": 6,
+                "fp": 6,
+                "fn": 4,
+                "support": 10,
+                "precision": 0.5,
+                "recall": 0.6,
+                "f1": 0.5454545454545454
+              },
+              "NO_MATCH": {
+                "tp": 3,
+                "fp": 1,
+                "fn": 2,
+                "support": 5,
+                "precision": 0.75,
+                "recall": 0.6,
+                "f1": 0.6666666666666666
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.6516594516594516,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 33,
+              "denominator": 33,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "all_cases_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 12,
+                "PARTIAL": 5,
+                "NO_MATCH": 1,
+                "not_assessed": 18
+              },
+              "PARTIAL": {
+                "MATCH": 0,
+                "PARTIAL": 10,
+                "NO_MATCH": 0,
+                "not_assessed": 11
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 2,
+                "NO_MATCH": 3,
+                "not_assessed": 11
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 12,
+                "fp": 0,
+                "fn": 24,
+                "support": 36,
+                "precision": 1.0,
+                "recall": 0.3333333333333333,
+                "f1": 0.5
+              },
+              "PARTIAL": {
+                "tp": 10,
+                "fp": 7,
+                "fn": 11,
+                "support": 21,
+                "precision": 0.5882352941176471,
+                "recall": 0.47619047619047616,
+                "f1": 0.5263157894736842
+              },
+              "NO_MATCH": {
+                "tp": 3,
+                "fp": 1,
+                "fn": 13,
+                "support": 16,
+                "precision": 0.75,
+                "recall": 0.1875,
+                "f1": 0.3
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.4421052631578947,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 33,
+              "denominator": 73,
+              "value": 0.4520547945205479
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 12,
+                "PARTIAL": 5,
+                "NO_MATCH": 1,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 0,
+                "PARTIAL": 10,
+                "NO_MATCH": 0,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 2,
+                "NO_MATCH": 3,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 12,
+                "fp": 0,
+                "fn": 6,
+                "support": 18,
+                "precision": 1.0,
+                "recall": 0.6666666666666666,
+                "f1": 0.8
+              },
+              "PARTIAL": {
+                "tp": 10,
+                "fp": 7,
+                "fn": 0,
+                "support": 10,
+                "precision": 0.5882352941176471,
+                "recall": 1.0,
+                "f1": 0.7407407407407407
+              },
+              "NO_MATCH": {
+                "tp": 3,
+                "fp": 1,
+                "fn": 2,
+                "support": 5,
+                "precision": 0.75,
+                "recall": 0.6,
+                "f1": 0.6666666666666666
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7358024691358024,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 33,
+              "denominator": 33,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          }
+        }
+      },
+      "gpt-6-luna": {
+        "old": {
+          "all_cases": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 25,
+                "PARTIAL": 6,
+                "NO_MATCH": 4,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 1,
+                "PARTIAL": 16,
+                "NO_MATCH": 5,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 2,
+                "NO_MATCH": 14,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 25,
+                "fp": 1,
+                "fn": 10,
+                "support": 35,
+                "precision": 0.9615384615384616,
+                "recall": 0.7142857142857143,
+                "f1": 0.819672131147541
+              },
+              "PARTIAL": {
+                "tp": 16,
+                "fp": 8,
+                "fn": 6,
+                "support": 22,
+                "precision": 0.6666666666666666,
+                "recall": 0.7272727272727273,
+                "f1": 0.6956521739130435
+              },
+              "NO_MATCH": {
+                "tp": 14,
+                "fp": 9,
+                "fn": 2,
+                "support": 16,
+                "precision": 0.6086956521739131,
+                "recall": 0.875,
+                "f1": 0.717948717948718
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7444243410031008,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 25,
+                "PARTIAL": 6,
+                "NO_MATCH": 4,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 1,
+                "PARTIAL": 16,
+                "NO_MATCH": 5,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 2,
+                "NO_MATCH": 14,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 25,
+                "fp": 1,
+                "fn": 10,
+                "support": 35,
+                "precision": 0.9615384615384616,
+                "recall": 0.7142857142857143,
+                "f1": 0.819672131147541
+              },
+              "PARTIAL": {
+                "tp": 16,
+                "fp": 8,
+                "fn": 6,
+                "support": 22,
+                "precision": 0.6666666666666666,
+                "recall": 0.7272727272727273,
+                "f1": 0.6956521739130435
+              },
+              "NO_MATCH": {
+                "tp": 14,
+                "fp": 9,
+                "fn": 2,
+                "support": 16,
+                "precision": 0.6086956521739131,
+                "recall": 0.875,
+                "f1": 0.717948717948718
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7444243410031008,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "all_cases_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 25,
+                "PARTIAL": 6,
+                "NO_MATCH": 4,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 1,
+                "PARTIAL": 16,
+                "NO_MATCH": 5,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 2,
+                "NO_MATCH": 14,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 25,
+                "fp": 1,
+                "fn": 10,
+                "support": 35,
+                "precision": 0.9615384615384616,
+                "recall": 0.7142857142857143,
+                "f1": 0.819672131147541
+              },
+              "PARTIAL": {
+                "tp": 16,
+                "fp": 8,
+                "fn": 6,
+                "support": 22,
+                "precision": 0.6666666666666666,
+                "recall": 0.7272727272727273,
+                "f1": 0.6956521739130435
+              },
+              "NO_MATCH": {
+                "tp": 14,
+                "fp": 9,
+                "fn": 2,
+                "support": 16,
+                "precision": 0.6086956521739131,
+                "recall": 0.875,
+                "f1": 0.717948717948718
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7444243410031008,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 25,
+                "PARTIAL": 6,
+                "NO_MATCH": 4,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 1,
+                "PARTIAL": 16,
+                "NO_MATCH": 5,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 2,
+                "NO_MATCH": 14,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 25,
+                "fp": 1,
+                "fn": 10,
+                "support": 35,
+                "precision": 0.9615384615384616,
+                "recall": 0.7142857142857143,
+                "f1": 0.819672131147541
+              },
+              "PARTIAL": {
+                "tp": 16,
+                "fp": 8,
+                "fn": 6,
+                "support": 22,
+                "precision": 0.6666666666666666,
+                "recall": 0.7272727272727273,
+                "f1": 0.6956521739130435
+              },
+              "NO_MATCH": {
+                "tp": 14,
+                "fp": 9,
+                "fn": 2,
+                "support": 16,
+                "precision": 0.6086956521739131,
+                "recall": 0.875,
+                "f1": 0.717948717948718
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7444243410031008,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          }
+        },
+        "new": {
+          "all_cases": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 25,
+                "PARTIAL": 7,
+                "NO_MATCH": 4,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 1,
+                "PARTIAL": 15,
+                "NO_MATCH": 5,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 2,
+                "NO_MATCH": 14,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 25,
+                "fp": 1,
+                "fn": 11,
+                "support": 36,
+                "precision": 0.9615384615384616,
+                "recall": 0.6944444444444444,
+                "f1": 0.8064516129032258
+              },
+              "PARTIAL": {
+                "tp": 15,
+                "fp": 9,
+                "fn": 6,
+                "support": 21,
+                "precision": 0.625,
+                "recall": 0.7142857142857143,
+                "f1": 0.6666666666666666
+              },
+              "NO_MATCH": {
+                "tp": 14,
+                "fp": 9,
+                "fn": 2,
+                "support": 16,
+                "precision": 0.6086956521739131,
+                "recall": 0.875,
+                "f1": 0.717948717948718
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7303556658395368,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 25,
+                "PARTIAL": 7,
+                "NO_MATCH": 4,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 1,
+                "PARTIAL": 15,
+                "NO_MATCH": 5,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 2,
+                "NO_MATCH": 14,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 25,
+                "fp": 1,
+                "fn": 11,
+                "support": 36,
+                "precision": 0.9615384615384616,
+                "recall": 0.6944444444444444,
+                "f1": 0.8064516129032258
+              },
+              "PARTIAL": {
+                "tp": 15,
+                "fp": 9,
+                "fn": 6,
+                "support": 21,
+                "precision": 0.625,
+                "recall": 0.7142857142857143,
+                "f1": 0.6666666666666666
+              },
+              "NO_MATCH": {
+                "tp": 14,
+                "fp": 9,
+                "fn": 2,
+                "support": 16,
+                "precision": 0.6086956521739131,
+                "recall": 0.875,
+                "f1": 0.717948717948718
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7303556658395368,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "all_cases_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 25,
+                "PARTIAL": 7,
+                "NO_MATCH": 4,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 1,
+                "PARTIAL": 15,
+                "NO_MATCH": 5,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 2,
+                "NO_MATCH": 14,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 25,
+                "fp": 1,
+                "fn": 11,
+                "support": 36,
+                "precision": 0.9615384615384616,
+                "recall": 0.6944444444444444,
+                "f1": 0.8064516129032258
+              },
+              "PARTIAL": {
+                "tp": 15,
+                "fp": 9,
+                "fn": 6,
+                "support": 21,
+                "precision": 0.625,
+                "recall": 0.7142857142857143,
+                "f1": 0.6666666666666666
+              },
+              "NO_MATCH": {
+                "tp": 14,
+                "fp": 9,
+                "fn": 2,
+                "support": 16,
+                "precision": 0.6086956521739131,
+                "recall": 0.875,
+                "f1": 0.717948717948718
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7303556658395368,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 25,
+                "PARTIAL": 7,
+                "NO_MATCH": 4,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 1,
+                "PARTIAL": 15,
+                "NO_MATCH": 5,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 2,
+                "NO_MATCH": 14,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 25,
+                "fp": 1,
+                "fn": 11,
+                "support": 36,
+                "precision": 0.9615384615384616,
+                "recall": 0.6944444444444444,
+                "f1": 0.8064516129032258
+              },
+              "PARTIAL": {
+                "tp": 15,
+                "fp": 9,
+                "fn": 6,
+                "support": 21,
+                "precision": 0.625,
+                "recall": 0.7142857142857143,
+                "f1": 0.6666666666666666
+              },
+              "NO_MATCH": {
+                "tp": 14,
+                "fp": 9,
+                "fn": 2,
+                "support": 16,
+                "precision": 0.6086956521739131,
+                "recall": 0.875,
+                "f1": 0.717948717948718
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.7303556658395368,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          }
+        }
+      }
+    },
+    "reference_round_two": {
+      "deepseek-v4-pro": {
+        "old": {
+          "all_cases": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 28,
+                "PARTIAL": 0,
+                "NO_MATCH": 7,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 6,
+                "PARTIAL": 6,
+                "NO_MATCH": 10,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 16,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 28,
+                "fp": 6,
+                "fn": 7,
+                "support": 35,
+                "precision": 0.8235294117647058,
+                "recall": 0.8,
+                "f1": 0.8115942028985508
+              },
+              "PARTIAL": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 16,
+                "support": 22,
+                "precision": 1.0,
+                "recall": 0.2727272727272727,
+                "f1": 0.42857142857142855
+              },
+              "NO_MATCH": {
+                "tp": 16,
+                "fp": 17,
+                "fn": 0,
+                "support": 16,
+                "precision": 0.48484848484848486,
+                "recall": 1.0,
+                "f1": 0.6530612244897959
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.6310756186532585,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 28,
+                "PARTIAL": 0,
+                "NO_MATCH": 7,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 6,
+                "PARTIAL": 6,
+                "NO_MATCH": 10,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 16,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 28,
+                "fp": 6,
+                "fn": 7,
+                "support": 35,
+                "precision": 0.8235294117647058,
+                "recall": 0.8,
+                "f1": 0.8115942028985508
+              },
+              "PARTIAL": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 16,
+                "support": 22,
+                "precision": 1.0,
+                "recall": 0.2727272727272727,
+                "f1": 0.42857142857142855
+              },
+              "NO_MATCH": {
+                "tp": 16,
+                "fp": 17,
+                "fn": 0,
+                "support": 16,
+                "precision": 0.48484848484848486,
+                "recall": 1.0,
+                "f1": 0.6530612244897959
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.6310756186532585,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "all_cases_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 28,
+                "PARTIAL": 0,
+                "NO_MATCH": 7,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 5,
+                "PARTIAL": 7,
+                "NO_MATCH": 10,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 16,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 28,
+                "fp": 5,
+                "fn": 7,
+                "support": 35,
+                "precision": 0.8484848484848485,
+                "recall": 0.8,
+                "f1": 0.8235294117647058
+              },
+              "PARTIAL": {
+                "tp": 7,
+                "fp": 0,
+                "fn": 15,
+                "support": 22,
+                "precision": 1.0,
+                "recall": 0.3181818181818182,
+                "f1": 0.4827586206896552
+              },
+              "NO_MATCH": {
+                "tp": 16,
+                "fp": 17,
+                "fn": 0,
+                "support": 16,
+                "precision": 0.48484848484848486,
+                "recall": 1.0,
+                "f1": 0.6530612244897959
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.6531164189813857,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 28,
+                "PARTIAL": 0,
+                "NO_MATCH": 7,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 5,
+                "PARTIAL": 7,
+                "NO_MATCH": 10,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 16,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 28,
+                "fp": 5,
+                "fn": 7,
+                "support": 35,
+                "precision": 0.8484848484848485,
+                "recall": 0.8,
+                "f1": 0.8235294117647058
+              },
+              "PARTIAL": {
+                "tp": 7,
+                "fp": 0,
+                "fn": 15,
+                "support": 22,
+                "precision": 1.0,
+                "recall": 0.3181818181818182,
+                "f1": 0.4827586206896552
+              },
+              "NO_MATCH": {
+                "tp": 16,
+                "fp": 17,
+                "fn": 0,
+                "support": 16,
+                "precision": 0.48484848484848486,
+                "recall": 1.0,
+                "f1": 0.6530612244897959
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.6531164189813857,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          }
+        },
+        "new": {
+          "all_cases": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 29,
+                "PARTIAL": 0,
+                "NO_MATCH": 7,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 5,
+                "PARTIAL": 6,
+                "NO_MATCH": 10,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 16,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 29,
+                "fp": 5,
+                "fn": 7,
+                "support": 36,
+                "precision": 0.8529411764705882,
+                "recall": 0.8055555555555556,
+                "f1": 0.8285714285714286
+              },
+              "PARTIAL": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 15,
+                "support": 21,
+                "precision": 1.0,
+                "recall": 0.2857142857142857,
+                "f1": 0.4444444444444444
+              },
+              "NO_MATCH": {
+                "tp": 16,
+                "fp": 17,
+                "fn": 0,
+                "support": 16,
+                "precision": 0.48484848484848486,
+                "recall": 1.0,
+                "f1": 0.6530612244897959
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.6420256991685562,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 29,
+                "PARTIAL": 0,
+                "NO_MATCH": 7,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 5,
+                "PARTIAL": 6,
+                "NO_MATCH": 10,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 16,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 29,
+                "fp": 5,
+                "fn": 7,
+                "support": 36,
+                "precision": 0.8529411764705882,
+                "recall": 0.8055555555555556,
+                "f1": 0.8285714285714286
+              },
+              "PARTIAL": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 15,
+                "support": 21,
+                "precision": 1.0,
+                "recall": 0.2857142857142857,
+                "f1": 0.4444444444444444
+              },
+              "NO_MATCH": {
+                "tp": 16,
+                "fp": 17,
+                "fn": 0,
+                "support": 16,
+                "precision": 0.48484848484848486,
+                "recall": 1.0,
+                "f1": 0.6530612244897959
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.6420256991685562,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "all_cases_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 28,
+                "PARTIAL": 1,
+                "NO_MATCH": 7,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 5,
+                "PARTIAL": 6,
+                "NO_MATCH": 10,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 16,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 28,
+                "fp": 5,
+                "fn": 8,
+                "support": 36,
+                "precision": 0.8484848484848485,
+                "recall": 0.7777777777777778,
+                "f1": 0.8115942028985508
+              },
+              "PARTIAL": {
+                "tp": 6,
+                "fp": 1,
+                "fn": 15,
+                "support": 21,
+                "precision": 0.8571428571428571,
+                "recall": 0.2857142857142857,
+                "f1": 0.42857142857142855
+              },
+              "NO_MATCH": {
+                "tp": 16,
+                "fp": 17,
+                "fn": 0,
+                "support": 16,
+                "precision": 0.48484848484848486,
+                "recall": 1.0,
+                "f1": 0.6530612244897959
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.6310756186532585,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 28,
+                "PARTIAL": 1,
+                "NO_MATCH": 7,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 5,
+                "PARTIAL": 6,
+                "NO_MATCH": 10,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 0,
+                "NO_MATCH": 16,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 28,
+                "fp": 5,
+                "fn": 8,
+                "support": 36,
+                "precision": 0.8484848484848485,
+                "recall": 0.7777777777777778,
+                "f1": 0.8115942028985508
+              },
+              "PARTIAL": {
+                "tp": 6,
+                "fp": 1,
+                "fn": 15,
+                "support": 21,
+                "precision": 0.8571428571428571,
+                "recall": 0.2857142857142857,
+                "f1": 0.42857142857142855
+              },
+              "NO_MATCH": {
+                "tp": 16,
+                "fp": 17,
+                "fn": 0,
+                "support": 16,
+                "precision": 0.48484848484848486,
+                "recall": 1.0,
+                "f1": 0.6530612244897959
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.6310756186532585,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          }
+        }
+      },
+      "gpt-6-sol": {
+        "old": {
+          "all_cases": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 31,
+                "PARTIAL": 3,
+                "NO_MATCH": 1,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 2,
+                "PARTIAL": 15,
+                "NO_MATCH": 5,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 1,
+                "NO_MATCH": 15,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 31,
+                "fp": 2,
+                "fn": 4,
+                "support": 35,
+                "precision": 0.9393939393939394,
+                "recall": 0.8857142857142857,
+                "f1": 0.9117647058823529
+              },
+              "PARTIAL": {
+                "tp": 15,
+                "fp": 4,
+                "fn": 7,
+                "support": 22,
+                "precision": 0.7894736842105263,
+                "recall": 0.6818181818181818,
+                "f1": 0.7317073170731707
+              },
+              "NO_MATCH": {
+                "tp": 15,
+                "fp": 6,
+                "fn": 1,
+                "support": 16,
+                "precision": 0.7142857142857143,
+                "recall": 0.9375,
+                "f1": 0.8108108108108109
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.8180942779221115,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 31,
+                "PARTIAL": 3,
+                "NO_MATCH": 1,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 2,
+                "PARTIAL": 15,
+                "NO_MATCH": 5,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 1,
+                "NO_MATCH": 15,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 31,
+                "fp": 2,
+                "fn": 4,
+                "support": 35,
+                "precision": 0.9393939393939394,
+                "recall": 0.8857142857142857,
+                "f1": 0.9117647058823529
+              },
+              "PARTIAL": {
+                "tp": 15,
+                "fp": 4,
+                "fn": 7,
+                "support": 22,
+                "precision": 0.7894736842105263,
+                "recall": 0.6818181818181818,
+                "f1": 0.7317073170731707
+              },
+              "NO_MATCH": {
+                "tp": 15,
+                "fp": 6,
+                "fn": 1,
+                "support": 16,
+                "precision": 0.7142857142857143,
+                "recall": 0.9375,
+                "f1": 0.8108108108108109
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.8180942779221115,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "all_cases_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 31,
+                "PARTIAL": 3,
+                "NO_MATCH": 1,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 1,
+                "PARTIAL": 16,
+                "NO_MATCH": 5,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 1,
+                "NO_MATCH": 15,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 31,
+                "fp": 1,
+                "fn": 4,
+                "support": 35,
+                "precision": 0.96875,
+                "recall": 0.8857142857142857,
+                "f1": 0.9253731343283582
+              },
+              "PARTIAL": {
+                "tp": 16,
+                "fp": 4,
+                "fn": 6,
+                "support": 22,
+                "precision": 0.8,
+                "recall": 0.7272727272727273,
+                "f1": 0.7619047619047619
+              },
+              "NO_MATCH": {
+                "tp": 15,
+                "fp": 6,
+                "fn": 1,
+                "support": 16,
+                "precision": 0.7142857142857143,
+                "recall": 0.9375,
+                "f1": 0.8108108108108109
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.8326962356813103,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 31,
+                "PARTIAL": 3,
+                "NO_MATCH": 1,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 1,
+                "PARTIAL": 16,
+                "NO_MATCH": 5,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 1,
+                "NO_MATCH": 15,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 31,
+                "fp": 1,
+                "fn": 4,
+                "support": 35,
+                "precision": 0.96875,
+                "recall": 0.8857142857142857,
+                "f1": 0.9253731343283582
+              },
+              "PARTIAL": {
+                "tp": 16,
+                "fp": 4,
+                "fn": 6,
+                "support": 22,
+                "precision": 0.8,
+                "recall": 0.7272727272727273,
+                "f1": 0.7619047619047619
+              },
+              "NO_MATCH": {
+                "tp": 15,
+                "fp": 6,
+                "fn": 1,
+                "support": 16,
+                "precision": 0.7142857142857143,
+                "recall": 0.9375,
+                "f1": 0.8108108108108109
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.8326962356813103,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          }
+        },
+        "new": {
+          "all_cases": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 32,
+                "PARTIAL": 3,
+                "NO_MATCH": 1,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 1,
+                "PARTIAL": 15,
+                "NO_MATCH": 5,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 1,
+                "NO_MATCH": 15,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 32,
+                "fp": 1,
+                "fn": 4,
+                "support": 36,
+                "precision": 0.9696969696969697,
+                "recall": 0.8888888888888888,
+                "f1": 0.927536231884058
+              },
+              "PARTIAL": {
+                "tp": 15,
+                "fp": 4,
+                "fn": 6,
+                "support": 21,
+                "precision": 0.7894736842105263,
+                "recall": 0.7142857142857143,
+                "f1": 0.75
+              },
+              "NO_MATCH": {
+                "tp": 15,
+                "fp": 6,
+                "fn": 1,
+                "support": 16,
+                "precision": 0.7142857142857143,
+                "recall": 0.9375,
+                "f1": 0.8108108108108109
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.829449014231623,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 32,
+                "PARTIAL": 3,
+                "NO_MATCH": 1,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 1,
+                "PARTIAL": 15,
+                "NO_MATCH": 5,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 1,
+                "NO_MATCH": 15,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 32,
+                "fp": 1,
+                "fn": 4,
+                "support": 36,
+                "precision": 0.9696969696969697,
+                "recall": 0.8888888888888888,
+                "f1": 0.927536231884058
+              },
+              "PARTIAL": {
+                "tp": 15,
+                "fp": 4,
+                "fn": 6,
+                "support": 21,
+                "precision": 0.7894736842105263,
+                "recall": 0.7142857142857143,
+                "f1": 0.75
+              },
+              "NO_MATCH": {
+                "tp": 15,
+                "fp": 6,
+                "fn": 1,
+                "support": 16,
+                "precision": 0.7142857142857143,
+                "recall": 0.9375,
+                "f1": 0.8108108108108109
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.829449014231623,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "all_cases_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 31,
+                "PARTIAL": 4,
+                "NO_MATCH": 1,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 1,
+                "PARTIAL": 15,
+                "NO_MATCH": 5,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 1,
+                "NO_MATCH": 15,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 31,
+                "fp": 1,
+                "fn": 5,
+                "support": 36,
+                "precision": 0.96875,
+                "recall": 0.8611111111111112,
+                "f1": 0.9117647058823529
+              },
+              "PARTIAL": {
+                "tp": 15,
+                "fp": 5,
+                "fn": 6,
+                "support": 21,
+                "precision": 0.75,
+                "recall": 0.7142857142857143,
+                "f1": 0.7317073170731707
+              },
+              "NO_MATCH": {
+                "tp": 15,
+                "fp": 6,
+                "fn": 1,
+                "support": 16,
+                "precision": 0.7142857142857143,
+                "recall": 0.9375,
+                "f1": 0.8108108108108109
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.8180942779221115,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          },
+          "answered_cases_only_guarded": {
+            "classes": [
+              "MATCH",
+              "PARTIAL",
+              "NO_MATCH"
+            ],
+            "confusion": {
+              "MATCH": {
+                "MATCH": 31,
+                "PARTIAL": 4,
+                "NO_MATCH": 1,
+                "not_assessed": 0
+              },
+              "PARTIAL": {
+                "MATCH": 1,
+                "PARTIAL": 15,
+                "NO_MATCH": 5,
+                "not_assessed": 0
+              },
+              "NO_MATCH": {
+                "MATCH": 0,
+                "PARTIAL": 1,
+                "NO_MATCH": 15,
+                "not_assessed": 0
+              }
+            },
+            "per_class": {
+              "MATCH": {
+                "tp": 31,
+                "fp": 1,
+                "fn": 5,
+                "support": 36,
+                "precision": 0.96875,
+                "recall": 0.8611111111111112,
+                "f1": 0.9117647058823529
+              },
+              "PARTIAL": {
+                "tp": 15,
+                "fp": 5,
+                "fn": 6,
+                "support": 21,
+                "precision": 0.75,
+                "recall": 0.7142857142857143,
+                "f1": 0.7317073170731707
+              },
+              "NO_MATCH": {
+                "tp": 15,
+                "fp": 6,
+                "fn": 1,
+                "support": 16,
+                "precision": 0.7142857142857143,
+                "recall": 0.9375,
+                "f1": 0.8108108108108109
+              }
+            },
+            "class_support_complete": true,
+            "macro_f1": 0.8180942779221115,
+            "selection_blocker": null,
+            "coverage": {
+              "numerator": 73,
+              "denominator": 73,
+              "value": 1.0
+            },
+            "protocol": "D-052_all_reference_not_assessed_FN"
+          }
+        }
+      }
+    }
+  },
+  "input_sha256": {
+    "evals/results/cp23_stage2_validator_v11_20261004_v2.json": "27cbb656495455810e98e17344b1142437be9bddc0d3dcd9c76fb9112c9cfadd",
+    "evals/results/cp23_f00815_sql_reference_20261004_v2.json": "6a0138e948a2b593cc2317b9f59a0b026b5ef63aad69cf949fd3cd9ffa2756ed"
+  }
+}

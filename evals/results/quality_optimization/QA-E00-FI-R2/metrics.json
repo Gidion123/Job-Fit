@@ -1,0 +1,169 @@
+{
+ "experiment_id": "QA-E00-FI-R2",
+ "fixed_input_optimization": {
+  "pairs": 20,
+  "units": 411,
+  "macro_f1": 0.7146438754018073,
+  "per_class_f1": {
+   "MATCH": 0.8775510204081632,
+   "PARTIAL": 0.45751633986928103,
+   "NO_MATCH": 0.8088642659279779
+  },
+  "accuracy_all_units": 0.754257907542579,
+  "accuracy_answered": 0.7808564231738035,
+  "confusion": {
+   "MATCH": {
+    "MATCH": 129,
+    "PARTIAL": 9,
+    "NO_MATCH": 1,
+    "not_assessed": 1
+   },
+   "PARTIAL": {
+    "MATCH": 9,
+    "PARTIAL": 35,
+    "NO_MATCH": 9,
+    "not_assessed": 13
+   },
+   "NO_MATCH": {
+    "MATCH": 16,
+    "PARTIAL": 43,
+    "NO_MATCH": 146,
+    "not_assessed": 0
+   }
+  },
+  "overclaim": 68,
+  "underclaim": 19,
+  "unsupported_positive": 59,
+  "unsupported_positive_by_field": {
+   "knowledge_area": 34,
+   "soft_skill": 15,
+   "other": 2,
+   "skill_tool": 3,
+   "education": 5
+  },
+  "fabricated_experience_proxy": 0,
+  "fabricated_skill_proxy": 37,
+  "fabricated_education_proxy": 5,
+  "unassessed_units": 14,
+  "failed_pairs": [],
+  "error_codes": {},
+  "repair_count": 0,
+  "guardrail_changes": 0,
+  "latency_ms_p50": 19999.0,
+  "latency_ms_p95": 29048,
+  "per_pair": {
+   "CV1/F00021": {
+    "units": 9,
+    "agree": 7
+   },
+   "CV1/F00029": {
+    "units": 29,
+    "agree": 26
+   },
+   "CV1/F00052": {
+    "units": 28,
+    "agree": 26
+   },
+   "CV1/F00059": {
+    "units": 24,
+    "agree": 16
+   },
+   "CV1/F00187": {
+    "units": 12,
+    "agree": 11
+   },
+   "CV1/F00351": {
+    "units": 9,
+    "agree": 8
+   },
+   "CV1/F00610": {
+    "units": 25,
+    "agree": 16
+   },
+   "CV1/F00690": {
+    "units": 8,
+    "agree": 6
+   },
+   "CV1/F00806": {
+    "units": 17,
+    "agree": 15
+   },
+   "CV1/F00818": {
+    "units": 36,
+    "agree": 34
+   },
+   "CV2/F00059": {
+    "units": 24,
+    "agree": 15
+   },
+   "CV2/F00082": {
+    "units": 9,
+    "agree": 6
+   },
+   "CV2/F00108": {
+    "units": 21,
+    "agree": 12
+   },
+   "CV2/F00332": {
+    "units": 16,
+    "agree": 11
+   },
+   "CV2/F00343": {
+    "units": 9,
+    "agree": 8
+   },
+   "CV2/F00442": {
+    "units": 37,
+    "agree": 22
+   },
+   "CV2/F00554": {
+    "units": 31,
+    "agree": 23
+   },
+   "CV2/F00558": {
+    "units": 25,
+    "agree": 14
+   },
+   "CV2/F00645": {
+    "units": 12,
+    "agree": 10
+   },
+   "CV2/F00682": {
+    "units": 30,
+    "agree": 24
+   }
+  },
+  "leave_one_pair_out_accuracy": {
+   "CV1/F00021": 0.753731343283582,
+   "CV1/F00029": 0.743455497382199,
+   "CV1/F00052": 0.741514360313316,
+   "CV1/F00059": 0.7596899224806202,
+   "CV1/F00187": 0.7493734335839599,
+   "CV1/F00351": 0.7512437810945274,
+   "CV1/F00610": 0.7616580310880829,
+   "CV1/F00690": 0.7543424317617866,
+   "CV1/F00806": 0.748730964467005,
+   "CV1/F00818": 0.736,
+   "CV2/F00059": 0.7622739018087855,
+   "CV2/F00082": 0.7562189054726368,
+   "CV2/F00108": 0.764102564102564,
+   "CV2/F00332": 0.7569620253164557,
+   "CV2/F00343": 0.7512437810945274,
+   "CV2/F00442": 0.7700534759358288,
+   "CV2/F00554": 0.7552631578947369,
+   "CV2/F00558": 0.7668393782383419,
+   "CV2/F00645": 0.7518796992481203,
+   "CV2/F00682": 0.7506561679790026
+  }
+ },
+ "grounding": {
+  "positive_items": 255,
+  "invalid_quote_items": 0,
+  "quote_validity": 1.0
+ },
+ "run_to_run_agreement": {
+  "units": 411,
+  "same": 382,
+  "rate": 0.9294403892944039
+ }
+}

@@ -1,0 +1,193 @@
+{
+ "set": "fixed_input",
+ "cv_id": "CV1",
+ "job_id": "F00351",
+ "model": "gpt-6-sol",
+ "experiment_id": "QA-E01",
+ "wall_ms": 9629,
+ "status": "done",
+ "error_code": null,
+ "attempts": 1,
+ "assessments": [
+  {
+   "unit_id": "G42-U01",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G42-U02",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G42-U03",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G42-U04",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G42-U05",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+    "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G42-U06",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G42-U07",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+    "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G42-U08",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G42-U09",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  }
+ ],
+ "source_flags": [
+  {
+   "unit_id": "G42-U01",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "G42-U02",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "cv_span": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "start": 1226,
+   "end": 1328,
+   "flags": []
+  },
+  {
+   "unit_id": "G42-U04",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "cv_span": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "start": 1226,
+   "end": 1328,
+   "flags": []
+  },
+  {
+   "unit_id": "G42-U05",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+   "cv_span": "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+   "start": 1096,
+   "end": 1160,
+   "flags": []
+  },
+  {
+   "unit_id": "G42-U05",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "cv_span": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "start": 1226,
+   "end": 1328,
+   "flags": []
+  },
+  {
+   "unit_id": "G42-U06",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "G42-U07",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "G42-U07",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+   "cv_span": "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+   "start": 1329,
+   "end": 1416,
+   "flags": []
+  },
+  {
+   "unit_id": "G42-U08",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+   "cv_span": "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+   "start": 1329,
+   "end": 1416,
+   "flags": []
+  }
+ ]
+}

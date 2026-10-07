@@ -1,0 +1,6 @@
+cv_id,group,pooled_pairs,judged_pairs,unjudged_pairs,stage1_p_at_5,final_p_at_5,stage1_ndcg_at_10,final_ndcg_at_10,final_ndcg_reason,final_top10_unjudged,final_top10_scored,final_top10_held_or_no_score
+CV3,primary_heldout,14,14,0,0.2,0.4,0.7620596439565763,0.9504379182071837,,,7,3
+CV4,primary_heldout,12,12,0,0.8,1.0,0.8473030763354782,0.9703722045282273,,,9,1
+CV5,primary_heldout,15,14,1,0.6,0.8,0.5824340196231942,,missing_original_position_judgment,F00070,5,5
+CV1,supplementary_familiar,14,14,0,0.4,0.6,0.84498996857478,0.8992661954462698,,,7,3
+CV2,supplementary_familiar,13,13,0,0.2,0.8,0.5300180594161356,0.8842858606013753,,,8,2

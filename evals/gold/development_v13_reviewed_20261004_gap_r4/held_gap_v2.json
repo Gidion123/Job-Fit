@@ -1,0 +1,25 @@
+[
+ {
+  "record": "C_Relevance",
+  "item_id": "G04",
+  "cv_id": "CV1",
+  "job_id": "F00559",
+  "hold_reason": "unscorable_source_quality",
+  "annotator_value": "UNSCORABLE",
+  "c_sheet_value": 0,
+  "main_reason": "Bukan karena CV1 dinilai tidak cocok. Score 0 digunakan sebagai source-quality hold karena JD tidak menyediakan candidate qualification units yang cukup untuk melakukan evidence-grounded relevance assessment.",
+  "source_note": "Source is largely responsibilities/task statements; no defensible candidate-qualification units were extractable. Score is a source-quality hold.",
+  "decision": "D-085",
+  "note": "Not a relevance judgment; never counted as 0 (D-052)."
+ },
+ {
+  "record": "B_Evidence",
+  "cv_id": "CV2",
+  "job_id": "F00108",
+  "unit_no": "G33-U27",
+  "hold_reason": "needs_clarification",
+  "label_in_sheet": "PARTIAL",
+  "draft_note": "CV location alone does not prove willingness/ability to commute or relocate.",
+  "decision": "D-085"
+ }
+]

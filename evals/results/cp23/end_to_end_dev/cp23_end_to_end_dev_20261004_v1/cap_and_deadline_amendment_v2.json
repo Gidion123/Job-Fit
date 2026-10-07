@@ -1,0 +1,10 @@
+{
+  "run_id": "cp23_end_to_end_dev_20261004_v1",
+  "original_plan_sha256": "54c0d5d1cec7ebf08b983083aaad785f0ec5d6347bb85909d24f698e904647ec",
+  "prior_total_cap_usd": 2.0,
+  "approved_total_cap_usd": 2.5,
+  "remaining_policy": "only_unsaved_pairs_no_timeout_replay",
+  "user_approval": "Continue only the 31 unattempted development pairs. The Part B aggregate cap is US$2.50. Skip prior and new timeouts without replay. Prepare A3 first and stop two hours before the presentation.",
+  "cutoff_utc": "2026-10-04T04:00:00Z",
+  "cutoff_note": "Conservative 11:00 WIB stop. At 08:13 WIB Dion said the presentation was in about six hours. The stop is more than two hours before that approximate time."
+}

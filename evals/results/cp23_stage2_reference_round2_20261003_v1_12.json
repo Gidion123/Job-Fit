@@ -1,0 +1,583 @@
+{
+  "stage_id": "deepseek-v4-pro/extraction/F00354",
+  "model": "deepseek-v4-pro",
+  "kind": "extraction",
+  "job_id": "F00354",
+  "extraction": {
+    "job_id": "F00354",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Currently pursuing or recently completed a degree in Computer Science, Artificial Intelligence, Data Science, Statistics, Mathematics, Operations Research, Engineering, or a related quantitative discipline",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "Currently pursuing or recently completed a degree in Computer Science, Artificial Intelligence, Data Science, Statistics, Mathematics, Operations Research, Engineering, or a related quantitative discipline",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "G1-1",
+            "text": "Currently pursuing or recently completed a degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "G1-2",
+            "text": "Currently pursuing or recently completed a degree in Artificial Intelligence",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "G1-3",
+            "text": "Currently pursuing or recently completed a degree in Data Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "G1-4",
+            "text": "Currently pursuing or recently completed a degree in Statistics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "G1-5",
+            "text": "Currently pursuing or recently completed a degree in Mathematics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "G1-6",
+            "text": "Currently pursuing or recently completed a degree in Operations Research",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "G1-7",
+            "text": "Currently pursuing or recently completed a degree in Engineering",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "G1-8",
+            "text": "Currently pursuing or recently completed a degree in a related quantitative discipline",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Currently pursuing or recently completed a degree in Computer Science, Artificial Intelligence, Data Science, Statistics, Mathematics, Operations Research, Engineering or a related quantitative discipline."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Strong Python programming ability",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong Python programming ability",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong Python programming ability with a sound understanding of machine-learning fundamentals."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Sound understanding of machine-learning fundamentals",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Sound understanding of machine-learning fundamentals",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong Python programming ability with a sound understanding of machine-learning fundamentals."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Familiarity with feature engineering",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Familiarity with feature engineering",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with feature engineering, model evaluation, hyperparameter optimization and libraries such as NumPy, pandas, scikit-learn and XGBoost."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Familiarity with model evaluation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Familiarity with model evaluation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with feature engineering, model evaluation, hyperparameter optimization and libraries such as NumPy, pandas, scikit-learn and XGBoost."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Familiarity with hyperparameter optimization",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Familiarity with hyperparameter optimization",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with feature engineering, model evaluation, hyperparameter optimization and libraries such as NumPy, pandas, scikit-learn and XGBoost."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Familiarity with libraries such as NumPy, pandas, scikit-learn and XGBoost",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Familiarity with libraries such as NumPy, pandas, scikit-learn and XGBoost",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "G2-1",
+            "text": "Familiarity with NumPy",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "G2-2",
+            "text": "Familiarity with pandas",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "G2-3",
+            "text": "Familiarity with scikit-learn",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "G2-4",
+            "text": "Familiarity with XGBoost",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Familiarity with feature engineering, model evaluation, hyperparameter optimization and libraries such as NumPy, pandas, scikit-learn and XGBoost."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Ability to design experiments carefully",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Ability to design experiments carefully",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Ability to design experiments carefully, interpret results critically and work with Git or an existing codebase."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Ability to interpret results critically",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Ability to interpret results critically",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Ability to design experiments carefully, interpret results critically and work with Git or an existing codebase."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Ability to work with Git or an existing codebase",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Ability to work with Git or an existing codebase",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "G3-1",
+            "text": "Ability to work with Git",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "G3-2",
+            "text": "Ability to work with an existing codebase",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Ability to design experiments carefully, interpret results critically and work with Git or an existing codebase."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Strong problem-solving skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Strong problem-solving skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong problem-solving, communication and documentation skills, with the ability to work independently while seeking guidance when appropriate."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Strong communication skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Strong communication skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong problem-solving, communication and documentation skills, with the ability to work independently while seeking guidance when appropriate."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Strong documentation skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Strong documentation skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong problem-solving, communication and documentation skills, with the ability to work independently while seeking guidance when appropriate."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Ability to work independently while seeking guidance when appropriate",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Ability to work independently while seeking guidance when appropriate",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong problem-solving, communication and documentation skills, with the ability to work independently while seeking guidance when appropriate."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Knowledge of genetic algorithms",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Knowledge of genetic algorithms",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of genetic algorithms, evolutionary computation and optimization methods."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Knowledge of evolutionary computation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Knowledge of evolutionary computation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of genetic algorithms, evolutionary computation and optimization methods."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Knowledge of optimization methods",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Knowledge of optimization methods",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of genetic algorithms, evolutionary computation and optimization methods."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Experience with time-series modelling",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience with time-series modelling",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with time-series modelling, validation and experiment-tracking frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Experience with validation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience with validation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with time-series modelling, validation and experiment-tracking frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Experience with experiment-tracking frameworks",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience with experiment-tracking frameworks",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with time-series modelling, validation and experiment-tracking frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Familiarity with Structured Query Language",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Familiarity with Structured Query Language",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with Structured Query Language and data pipelines."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Familiarity with data pipelines",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Familiarity with data pipelines",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with Structured Query Language and data pipelines."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Exposure to Representational State Transfer Application Programming Interfaces",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Exposure to Representational State Transfer Application Programming Interfaces",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Exposure to Representational State Transfer Application Programming Interfaces, lightweight application development and production-oriented software engineering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U24",
+        "text": "Exposure to lightweight application development",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Exposure to lightweight application development",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Exposure to Representational State Transfer Application Programming Interfaces, lightweight application development and production-oriented software engineering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U25",
+        "text": "Exposure to production-oriented software engineering",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Exposure to production-oriented software engineering",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Exposure to Representational State Transfer Application Programming Interfaces, lightweight application development and production-oriented software engineering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U26",
+        "text": "Interest in large language models",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Interest in large language models",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Interest in large language models, retrieval-augmented generation, agentic workflows, cloud platforms, containers and continuous integration / continuous delivery."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U27",
+        "text": "Interest in retrieval-augmented generation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Interest in retrieval-augmented generation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Interest in large language models, retrieval-augmented generation, agentic workflows, cloud platforms, containers and continuous integration / continuous delivery."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U28",
+        "text": "Interest in agentic workflows",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Interest in agentic workflows",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Interest in large language models, retrieval-augmented generation, agentic workflows, cloud platforms, containers and continuous integration / continuous delivery."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U29",
+        "text": "Interest in cloud platforms",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Interest in cloud platforms",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Interest in large language models, retrieval-augmented generation, agentic workflows, cloud platforms, containers and continuous integration / continuous delivery."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U30",
+        "text": "Interest in containers",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Interest in containers",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Interest in large language models, retrieval-augmented generation, agentic workflows, cloud platforms, containers and continuous integration / continuous delivery."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U31",
+        "text": "Interest in continuous integration / continuous delivery",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Interest in continuous integration / continuous delivery",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Interest in large language models, retrieval-augmented generation, agentic workflows, cloud platforms, containers and continuous integration / continuous delivery."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-v4-pro"
+  },
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "prompt_version": "jd-prompt-v1.4-experimental",
+  "status": "done",
+  "attempts": 2,
+  "error_code": null,
+  "stage_wall_ms": 389025,
+  "semantic_review": "pending",
+  "metrics": null
+}

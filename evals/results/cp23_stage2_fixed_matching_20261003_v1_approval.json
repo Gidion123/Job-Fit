@@ -1,0 +1,9 @@
+{
+  "approved_by": "Dion",
+  "approved_at_date": "2026-10-03",
+  "source": "explicit user reply in current chat: Setuju, maksimal US$1,85",
+  "plan_sha256": "360e16a8ed41a3c357b15c8b019f262adfcb6b2942344f677c92b8d8f9d4ccdd",
+  "ceiling_usd": "1.85",
+  "decision_id": "D-062",
+  "scope": "16 original fixed-input development matching stages; at most32calls includingrepair; test excluded; hardstop8.50; settledfailedstagesretainednotrepeated; uncertaincoststops"
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "development_CV1_CV2",
+  "run_id": "cp23_pipeline_v11_20261004_v1",
+  "counts": {
+    "pairs": 60,
+    "unit_occurrences": 1098,
+    "jd_quote_occurrences": 1099,
+    "cv_quote_occurrences": 696,
+    "excluded_unit_occurrences": 24
+  },
+  "H2_status_counts": {
+    "held_extraction": 3,
+    "final": 26,
+    "on_hold": 9,
+    "provisional": 16,
+    "held_source": 1,
+    "no_score": 5
+  },
+  "faults": [],
+  "semantic_approval": false,
+  "limit": "Exact source occurrence and identity are technical checks, not evidence entailment or complete JD interpretation."
+}

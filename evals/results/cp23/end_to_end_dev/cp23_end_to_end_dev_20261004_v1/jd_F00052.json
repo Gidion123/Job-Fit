@@ -1,0 +1,79 @@
+{
+  "job_id": "F00052",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "8115898c3f8f6be8869c61779f342f15db2c064945e968d399ae468869c5fd81",
+  "wall_ms": 58439,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00052",
+    "units": [
+      {
+        "unit_id": "U001",
+        "text": "Bachelor's degree in Computer Science, Software Engineering, Mathematics, Data Science, or a related field; equivalent professional experience also considered",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "bachelor_degree_in_computer_science_software_engineering_mathematics_data_science_or_related_field_equivalent_experience",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Bachelor's degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Bachelor's degree in Software Engineering",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Bachelor's degree in Mathematics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Bachelor's degree in Data Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Bachelor's degree in a related field",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B6",
+            "text": "Equivalent professional experience",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Bachelor's degree in Computer Science, Software Engineering, Mathematics, Data Science, or a related field. Equivalent professional experience will also be considered."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

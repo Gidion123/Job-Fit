@@ -1,0 +1,18 @@
+{
+  "schema_version": "cp23-stage2-integrity-v1",
+  "status": "pass_with_expected_append_only_ledger_change",
+  "protected_checked": 24,
+  "changed_from_stage1_snapshot": [
+    "reports/usage/usage_ledger.jsonl"
+  ],
+  "source_gold_workbook_split_pool_config_prompt_unchanged": true,
+  "v3_state": "stopped_semantic_issue",
+  "v4_paid_state_exists": false,
+  "v3_api_calls": 1,
+  "v3_cost_usd": "0.00478664",
+  "ledger_records": 118,
+  "ledger_total_usd": "0.295557024",
+  "uncertain_reservation_usd": "0.0210861",
+  "no_winner": true,
+  "test_access": false
+}

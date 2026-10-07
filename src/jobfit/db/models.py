@@ -52,4 +52,27 @@ CREATE TABLE IF NOT EXISTS job_embeddings (
     created_at      timestamptz NOT NULL DEFAULT now(),
     PRIMARY KEY (job_id, model)
 );
+
+-- Versioned CP2.2 storage. Preserve the original table and any legacy vectors.
+-- Unconstrained vector supports 1536 and 4096 dimensions without an ANN index.
+CREATE TABLE IF NOT EXISTS job_embedding_versions (
+    job_id text NOT NULL REFERENCES jobs(job_id),
+    profile_id text NOT NULL,
+    model text NOT NULL,
+    dimensions integer NOT NULL CHECK (dimensions > 0),
+    preprocessing_version text NOT NULL,
+    profile_spec jsonb NOT NULL,
+    content_hash text NOT NULL,
+    input_hash text NOT NULL,
+    input_tokens integer NOT NULL,
+    original_tokens integer NOT NULL,
+    truncated boolean NOT NULL,
+    embedding vector NOT NULL,
+    run_id text NOT NULL,
+    created_at timestamptz NOT NULL DEFAULT now(),
+    CHECK (vector_dims(embedding) = dimensions),
+    PRIMARY KEY(job_id, profile_id, content_hash, input_hash)
+);
+CREATE INDEX IF NOT EXISTS job_embedding_versions_profile_idx
+    ON job_embedding_versions(profile_id);
 """

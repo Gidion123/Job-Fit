@@ -1,0 +1,35 @@
+# CI on every push and pull request (CP3.2). No API key, no paid call: tests use fakes,
+# and tests that need git-ignored local files (database, tokenizers, query cache) skip.
+name: tests
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt -r requirements-dev.txt ruff
+      # Lint: syntax errors and undefined names only (the codebase uses a compact style).
+      - run: ruff check --select E9,F63,F7,F82 src scripts ui tests
+      - run: python -m pytest -q
+  docker-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: lint-and-test
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -f Dockerfile.api -t jobfit-api .
+      - run: docker build -f Dockerfile.ui -t jobfit-ui .
+      # Smoke: the API image must start and answer /health with the saved demo available.
+      - run: |
+          docker run -d --name api -p 8000:8000 jobfit-api
+          for i in $(seq 1 30); do curl -sf http://127.0.0.1:8000/health && break; sleep 2; done
+          curl -sf http://127.0.0.1:8000/health | grep '"saved_demo":true'

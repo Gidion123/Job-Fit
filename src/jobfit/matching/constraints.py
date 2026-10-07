@@ -27,12 +27,17 @@ def experience_years(entries: Iterable[ExperienceEntry], analysis_date: date) ->
     if not items:
         return None
     for e in items:
-        if e.start is None:
+        start = e.start or e.start_partial
+        if start is None or start.month is None:
             return None
-        end = analysis_date if e.is_present else e.end
-        if end is None:
+        end = analysis_date if e.is_present else (e.end or e.end_partial)
+        if end is None or end.month is None:
             return None
-        months.update(range(_month_index(e.start), _month_index(end) + 1))
+        # Future periods cannot be experience as of the configured analysis date.
+        if _month_index(start) > _month_index(analysis_date):
+            continue
+        last = min(_month_index(end), _month_index(analysis_date))
+        months.update(range(_month_index(start), last + 1))
     return round(len(months) / 12, 2)
 
 

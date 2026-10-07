@@ -1,0 +1,488 @@
+{
+  "job_id": "F00645",
+  "status": "done",
+  "attempts": 2,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "efce743248740242c756c72bfc69ad3aea83895785f52e98ec8bec74c1d6f1c0",
+  "wall_ms": 75313,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 7,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 7,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U03",
+          "U04"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U05"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U06",
+          "U07",
+          "U08",
+          "U09",
+          "U10"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U11"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U12",
+          "U13"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00645",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Bachelor's degree or above in Computer Science, AI, Machine Learning, NLP, Data Science, Engineering, or a related field.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "Bachelor's degree or above in Computer Science, AI, Machine Learning, NLP, Data Science, Engineering, or a related field.",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Bachelor's degree or above in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Bachelor's degree or above in AI",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Bachelor's degree or above in Machine Learning",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Bachelor's degree or above in NLP",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Bachelor's degree or above in Data Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B6",
+            "text": "Bachelor's degree or above in Engineering",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B7",
+            "text": "Bachelor's degree or above in a related field",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Bachelor's degree or above in Computer Science, AI, Machine Learning, NLP, Data Science, Engineering, or a related field."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "At least 2 years of relevant experience in LLM applications, information retrieval, RAG, AI agents, NLP, or AI application development.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "At least 2 years of relevant experience in LLM applications, information retrieval, RAG, AI agents, NLP, or AI application development.",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "At least 2 years of relevant experience in LLM applications",
+            "field": "experience_duration",
+            "min_years": 2.0
+          },
+          {
+            "branch_id": "B2",
+            "text": "At least 2 years of relevant experience in information retrieval",
+            "field": "experience_duration",
+            "min_years": 2.0
+          },
+          {
+            "branch_id": "B3",
+            "text": "At least 2 years of relevant experience in RAG",
+            "field": "experience_duration",
+            "min_years": 2.0
+          },
+          {
+            "branch_id": "B4",
+            "text": "At least 2 years of relevant experience in AI agents",
+            "field": "experience_duration",
+            "min_years": 2.0
+          },
+          {
+            "branch_id": "B5",
+            "text": "At least 2 years of relevant experience in NLP",
+            "field": "experience_duration",
+            "min_years": 2.0
+          },
+          {
+            "branch_id": "B6",
+            "text": "At least 2 years of relevant experience in AI application development",
+            "field": "experience_duration",
+            "min_years": 2.0
+          }
+        ],
+        "source_quotes": [
+          "At least 2 years of relevant experience in LLM applications, information retrieval, RAG, AI agents, NLP, or AI application development."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Strong Python programming skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong Python programming skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong Python programming skills and experience developing maintainable applications or backend services."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Experience developing maintainable applications or backend services",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": "Experience developing maintainable applications or backend services",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience developing maintainable applications",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience developing backend services",
+            "field": "other",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Strong Python programming skills and experience developing maintainable applications or backend services."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Hands-on experience with LLM APIs, open-source LLMs, embeddings, vector databases, semantic search, or retrieval systems",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": "Hands-on experience with LLM APIs, open-source LLMs, embeddings, vector databases, semantic search, or retrieval systems",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Hands-on experience with LLM APIs",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Hands-on experience with open-source LLMs",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Hands-on experience with embeddings",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Hands-on experience with vector databases",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Hands-on experience with semantic search",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B6",
+            "text": "Hands-on experience with retrieval systems",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Hands-on experience with LLM APIs, open-source LLMs, embeddings, vector databases, semantic search, or retrieval systems."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Practical understanding of RAG architecture",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Practical understanding of RAG architecture",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical understanding of RAG architecture, prompt engineering, retrieval strategies, evaluation, and hallucination mitigation."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Practical understanding of prompt engineering",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Practical understanding of prompt engineering",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical understanding of RAG architecture, prompt engineering, retrieval strategies, evaluation, and hallucination mitigation."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Practical understanding of retrieval strategies",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Practical understanding of retrieval strategies",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical understanding of RAG architecture, prompt engineering, retrieval strategies, evaluation, and hallucination mitigation."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Practical understanding of evaluation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Practical understanding of evaluation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical understanding of RAG architecture, prompt engineering, retrieval strategies, evaluation, and hallucination mitigation."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Practical understanding of hallucination mitigation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Practical understanding of hallucination mitigation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical understanding of RAG architecture, prompt engineering, retrieval strategies, evaluation, and hallucination mitigation."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Experience with tool calling, function calling, agent workflows, APIs, databases, or backend integration",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience with tool calling, function calling, agent workflows, APIs, databases, or backend integration",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience with tool calling",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience with function calling",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Experience with agent workflows",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Experience with APIs",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Experience with databases",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B6",
+            "text": "Experience with backend integration",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience with tool calling, function calling, agent workflows, APIs, databases, or backend integration."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Ability to independently design end-to-end LLM, RAG, AI agent, or AI application projects",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": "Ability to independently design end-to-end LLM, RAG, AI agent, or AI application projects",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Ability to independently design end-to-end LLM projects",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Ability to independently design end-to-end RAG projects",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Ability to independently design end-to-end AI agent projects",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Ability to independently design end-to-end AI application projects",
+            "field": "other",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Ability to independently design and deliver end-to-end LLM, RAG, AI agent, or AI application projects"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Ability to independently deliver end-to-end LLM, RAG, AI agent, or AI application projects",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": "Ability to independently deliver end-to-end LLM, RAG, AI agent, or AI application projects",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Ability to independently deliver end-to-end LLM projects",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Ability to independently deliver end-to-end RAG projects",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Ability to independently deliver end-to-end AI agent projects",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Ability to independently deliver end-to-end AI application projects",
+            "field": "other",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Ability to independently design and deliver end-to-end LLM, RAG, AI agent, or AI application projects"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

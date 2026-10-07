@@ -1,0 +1,612 @@
+{
+ "job_id": "F00313",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "no_uncovered_bullets",
+  "bullet_count": 7,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 0,
+  "inventory_mappings": [],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00313",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Advanced academic qualification in a quantitative discipline such as statistics, computer science, economics, operations research, data science, or a closely related field.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "education",
+    "normalized_name": "Advanced academic qualification in a quantitative discipline",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "statistics",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "computer science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "economics",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "operations research",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B5",
+      "text": "data science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B6",
+      "text": "closely related field",
+      "field": "education",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Advanced academic qualification in a quantitative discipline such as statistics, computer science, economics, operations research, data science, or a closely related field."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "Extensive professional experience in data science, machine learning, applied research, quantitative modelling, or algorithm development within technically sophisticated environments.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Extensive professional experience in quantitative/technical area",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "data science",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "machine learning",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "applied research",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "quantitative modelling",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B5",
+      "text": "algorithm development",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Extensive professional experience in data science, machine learning, applied research, quantitative modelling, or algorithm development within technically sophisticated environments."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Demonstrated experience taking machine learning or statistical models from research through to reliable production deployment.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Demonstrated experience taking models from research to production deployment",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "machine learning models",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "statistical models",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Demonstrated experience taking machine learning or statistical models from research through to reliable production deployment."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Strong programming and data analysis capability, including Python.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Python",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong programming and data analysis capability, including Python and SQL, together with experience working with scalable computing or cloud-based technology environments."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Strong programming and data analysis capability, including SQL.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "SQL",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong programming and data analysis capability, including Python and SQL, together with experience working with scalable computing or cloud-based technology environments."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Experience working with scalable computing or cloud-based technology environments.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience with scalable computing or cloud-based technology environments",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "scalable computing",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "cloud-based technology environments",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Strong programming and data analysis capability, including Python and SQL, together with experience working with scalable computing or cloud-based technology environments."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Deep understanding of statistical inference.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Statistical inference",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Deep understanding of statistical inference, experimental methodology, and quantitative model evaluation."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Deep understanding of experimental methodology.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experimental methodology",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Deep understanding of statistical inference, experimental methodology, and quantitative model evaluation."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Deep understanding of quantitative model evaluation.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Quantitative model evaluation",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Deep understanding of statistical inference, experimental methodology, and quantitative model evaluation."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "Experience leading technically complex data science initiatives with meaningful commercial or operational impact.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Leading technically complex data science initiatives",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience leading technically complex data science initiatives with meaningful commercial or operational impact."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "Ability to operate effectively across technical and non-technical stakeholder groups.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Operating across technical and non-technical stakeholder groups",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Ability to operate effectively across technical and non-technical stakeholder groups and translate complex analytical concepts into practical business decisions."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "Ability to translate complex analytical concepts into practical business decisions.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Translating complex analytical concepts into practical business decisions",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Ability to operate effectively across technical and non-technical stakeholder groups and translate complex analytical concepts into practical business decisions."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U13",
+    "text": "Experience working on problems involving dynamic pricing, marketplace optimisation, matching, allocation, logistics, capacity planning, or other highly dynamic operational systems.",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Experience with dynamic operational problem areas",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "dynamic pricing",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "marketplace optimisation",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "matching",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "allocation",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B5",
+      "text": "logistics",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B6",
+      "text": "capacity planning",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B7",
+      "text": "other highly dynamic operational systems",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience working on problems involving dynamic pricing, marketplace optimisation, matching, allocation, logistics, capacity planning, or other highly dynamic operational systems."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U14",
+    "text": "Exposure to two-sided or multi-participant platforms where supply, demand, capacity, and customer behaviour interact continuously.",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Exposure to two-sided or multi-participant platforms",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "two-sided platforms",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "multi-participant platforms",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Exposure to two-sided or multi-participant platforms where supply, demand, capacity, and customer behaviour interact continuously."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U15",
+    "text": "Experience applying causal inference, reinforcement learning, econometric modelling, optimisation, or operations research to real-world decision systems.",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Experience applying advanced quantitative methods to real-world decision systems",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "causal inference",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "reinforcement learning",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "econometric modelling",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "optimisation",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B5",
+      "text": "operations research",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience applying causal inference, reinforcement learning, econometric modelling, optimisation, or operations research to real-world decision systems."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U16",
+    "text": "Experience operating machine learning models in environments requiring high availability, substantial transaction volumes, and rapid decision-making.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Operating machine learning models in high-availability, high-volume environments",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience operating machine learning models in environments requiring high availability, substantial transaction volumes, and rapid decision-making."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U17",
+    "text": "Experience mentoring senior technical professionals.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "soft_skill",
+    "normalized_name": "Mentoring senior technical professionals",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience mentoring senior technical professionals and influencing data science strategy beyond an individual project or team."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U18",
+    "text": "Experience influencing data science strategy beyond an individual project or team.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "soft_skill",
+    "normalized_name": "Influencing data science strategy beyond individual projects",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience mentoring senior technical professionals and influencing data science strategy beyond an individual project or team."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U19",
+    "text": "Established data science or quantitative modelling leader who combines research depth with strong production experience.",
+    "kind": "alternative_group",
+    "importance": "unknown",
+    "field": "other",
+    "normalized_name": "Established data science or quantitative modelling leader",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "established data science leader",
+      "field": "other",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "established quantitative modelling leader",
+      "field": "other",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "This opportunity is suited to an established data science or quantitative modelling leader who combines research depth with strong production experience."
+    ],
+    "needs_review": true,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U20",
+    "text": "Candidates should be comfortable addressing ambiguous, high-dimensional problems.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Addressing ambiguous, high-dimensional problems",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Candidates should be comfortable addressing ambiguous, high-dimensional problems, challenging existing assumptions through empirical analysis, and taking ownership from mathematical formulation through deployment and measurable business outcomes."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U21",
+    "text": "Candidates should be comfortable challenging existing assumptions through empirical analysis.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Challenging existing assumptions through empirical analysis",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Candidates should be comfortable addressing ambiguous, high-dimensional problems, challenging existing assumptions through empirical analysis, and taking ownership from mathematical formulation through deployment and measurable business outcomes."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U22",
+    "text": "Candidates should be comfortable taking ownership from mathematical formulation through deployment and measurable business outcomes.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Taking ownership from mathematical formulation through deployment",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Candidates should be comfortable addressing ambiguous, high-dimensional problems, challenging existing assumptions through empirical analysis, and taking ownership from mathematical formulation through deployment and measurable business outcomes."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U23",
+    "text": "Relevant backgrounds may include advanced data science, machine learning, algorithmic decision-making, quantitative research, econometrics, operations research, optimisation, or applied computational research in large-scale technology environments.",
+    "kind": "alternative_group",
+    "importance": "unknown",
+    "field": "knowledge_area",
+    "normalized_name": "Relevant backgrounds in quantitative and computational fields",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "advanced data science",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "machine learning",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "algorithmic decision-making",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "quantitative research",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B5",
+      "text": "econometrics",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B6",
+      "text": "operations research",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B7",
+      "text": "optimisation",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B8",
+      "text": "applied computational research in large-scale technology environments",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Relevant backgrounds may include advanced data science, machine learning, algorithmic decision-making, quantitative research, econometrics, operations research, optimisation, or applied computational research in large-scale technology environments."
+    ],
+    "needs_review": true,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

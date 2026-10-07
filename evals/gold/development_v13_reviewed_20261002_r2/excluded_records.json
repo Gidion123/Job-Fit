@@ -1,0 +1,158 @@
+[
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00052/P10-U08",
+    "reason": "rejected",
+    "review_note": "LLMs sudah salah satu alternatif dalam P10-U07; satu klausul OR tidak boleh menghasilkan beberapa syarat preferensi mandiri."
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00052/P10-U09",
+    "reason": "rejected",
+    "review_note": "Prompt engineering sudah salah satu alternatif dalam P10-U07; hindari penghitungan ganda."
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00052/P10-U10",
+    "reason": "rejected",
+    "review_note": "RAG sudah salah satu alternatif dalam P10-U07; hindari penghitungan ganda."
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00052/P10-U11",
+    "reason": "rejected",
+    "review_note": "AI agents sudah salah satu alternatif dalam P10-U07; hindari penghitungan ganda."
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00052/P10-U12",
+    "reason": "rejected",
+    "review_note": "AI APIs sudah salah satu alternatif dalam P10-U07; hindari penghitungan ganda."
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00075/P14-U11",
+    "reason": "rejected",
+    "review_note": "Automation di klausul ini mengulang P14-U03 tanpa qualifier baru; sumber asli tetap dipertahankan pada row ini (AUD-023)."
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00188/P21-U03",
+    "reason": "rejected",
+    "review_note": "Microsoft BI/Power BI sebagai nilai tambah sudah tercakup pada P21-U08; tidak dihitung dua kali (AUD-028)."
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00208/P23-U38",
+    "reason": "rejected",
+    "review_note": "Causal inference adalah cabang alternatif dari P23-U37, bukan unit pelatihan mandiri yang wajib bersama cabang lain (AUD-080)."
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00208/P23-U39",
+    "reason": "rejected",
+    "review_note": "Program evaluation adalah cabang alternatif dari P23-U37, bukan unit pelatihan mandiri yang wajib bersama cabang lain (AUD-080)."
+  },
+  {
+    "sheet": "A_Extraction",
+    "identity": "F00798/P51-U37",
+    "reason": "rejected",
+    "review_note": "vLLM sudah tercakup sebagai salah satu pilihan pada P51-U40; sumber tetap tersimpan pada row ini untuk jejak historis."
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00075/P14-U11",
+    "reason": "rejected",
+    "review_note": "Unit A_Extraction P14-U11 ditolak sebagai redundan/tidak mandiri; label B ini tidak digunakan untuk skor."
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00188/P21-U03",
+    "reason": "rejected",
+    "review_note": "Unit A_Extraction P21-U03 ditolak sebagai redundan/tidak mandiri; label B ini tidak digunakan untuk skor."
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00208/P23-U38",
+    "reason": "rejected",
+    "review_note": "Unit A_Extraction P23-U38 ditolak sebagai redundan/tidak mandiri; label B ini tidak digunakan untuk skor."
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00208/P23-U39",
+    "reason": "rejected",
+    "review_note": "Unit A_Extraction P23-U39 ditolak sebagai redundan/tidak mandiri; label B ini tidak digunakan untuk skor."
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV2/F00018/P04-U24",
+    "reason": "rejected",
+    "review_note": "ID draft lama tidak ada di A final; bukti sudah dipindah ke unit A yang tepat."
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV2/F00018/P04-U25",
+    "reason": "rejected",
+    "review_note": "ID draft lama tidak ada di A final; bukti sudah dipindah ke unit A yang tepat."
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV2/F00052/P10-U08",
+    "reason": "rejected",
+    "review_note": "Unit A_Extraction P10-U08 ditolak sebagai redundan/tidak mandiri; label B ini tidak digunakan untuk skor."
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV2/F00052/P10-U09",
+    "reason": "rejected",
+    "review_note": "Unit A_Extraction P10-U09 ditolak sebagai redundan/tidak mandiri; label B ini tidak digunakan untuk skor."
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV2/F00052/P10-U10",
+    "reason": "rejected",
+    "review_note": "Unit A_Extraction P10-U10 ditolak sebagai redundan/tidak mandiri; label B ini tidak digunakan untuk skor."
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV2/F00052/P10-U11",
+    "reason": "rejected",
+    "review_note": "Unit A_Extraction P10-U11 ditolak sebagai redundan/tidak mandiri; label B ini tidak digunakan untuk skor."
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV2/F00052/P10-U12",
+    "reason": "rejected",
+    "review_note": "Unit A_Extraction P10-U12 ditolak sebagai redundan/tidak mandiri; label B ini tidak digunakan untuk skor."
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV2/F00074/D2-U26",
+    "reason": "rejected",
+    "review_note": "ID draft lama tidak ada di A final; bukti sudah dipetakan ke D2-U25."
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV2/F00208/P23-U38",
+    "reason": "rejected",
+    "review_note": "Unit A_Extraction P23-U38 ditolak sebagai redundan/tidak mandiri; label B ini tidak digunakan untuk skor."
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV2/F00208/P23-U39",
+    "reason": "rejected",
+    "review_note": "Unit A_Extraction P23-U39 ditolak sebagai redundan/tidak mandiri; label B ini tidak digunakan untuk skor."
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV2/F00798/P51-U37",
+    "reason": "rejected",
+    "review_note": "Unit A_Extraction P51-U37 ditolak sebagai redundan/tidak mandiri; label B ini tidak digunakan untuk skor."
+  },
+  {
+    "sheet": "B_Evidence",
+    "identity": "CV1/F00074/D2-U26",
+    "reason": "rejected",
+    "review_note": "ID draft lama tidak ada di A final; bukti sudah dipetakan ke D2-U25."
+  }
+]

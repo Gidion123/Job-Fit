@@ -1,0 +1,31 @@
+{
+  "version": "pipeline-v1.1-output-policy",
+  "observed_run": "cp23_end_to_end_dev_20261004_v1",
+  "method": "Nearest-rank p99 of successful call output/input token ratios, then multiply by 1.5. Floors exceed the historical 16000-token cutoff. Per-unit terms are extra engineering cushions above the p99 ratio, not fitted independent output forecasts.",
+  "model_output_limit": 131072,
+  "official_metadata_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+  "official_checked_date": "2026-10-04",
+  "tasks": {
+    "jd_extraction": {
+      "successful_calls": 49,
+      "p99_ratio": 2.004420866489832,
+      "ratio_after_margin": 3.0066312997347477,
+      "floor": 20000,
+      "per_unit_allowance": 96
+    },
+    "evidence_matching": {
+      "successful_calls": 49,
+      "p99_ratio": 1.5464025026068822,
+      "ratio_after_margin": 2.3196037539103234,
+      "floor": 18000,
+      "per_unit_allowance": 64
+    },
+    "cv_parsing": {
+      "successful_calls": 3,
+      "p99_ratio": 9.030508474576271,
+      "ratio_after_margin": 13.545762711864406,
+      "floor": 12000,
+      "per_unit_allowance": 128
+    }
+  }
+}

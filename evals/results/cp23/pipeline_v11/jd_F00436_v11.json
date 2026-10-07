@@ -1,0 +1,10 @@
+{
+  "job_id": "F00436",
+  "status": "failed",
+  "attempts": 2,
+  "error_code": "schema_validation",
+  "cache_hit": false,
+  "coverage": {},
+  "wall_ms": 153814,
+  "extraction": null
+}

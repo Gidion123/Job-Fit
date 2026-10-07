@@ -1,0 +1,149 @@
+{
+  "timestamp": "2026-10-01T14:06:12.593574+00:00",
+  "stage": "CP2.2 embedding continuation",
+  "tests": {
+    "command": "JOBFIT_DB_TESTS=1 env-job-fit/bin/python -m pytest -q",
+    "passed": 123,
+    "skipped": 0,
+    "seconds": 8.39
+  },
+  "cv_approval_hash_checks": [
+    {
+      "path": "data/synthetic_cvs/cv_04_data_analyst_to_ds_id.md",
+      "file_hash_matches": true,
+      "body_hash_matches": true
+    },
+    {
+      "path": "data/synthetic_cvs/cv_05_ml_engineer_3yr_en.md",
+      "file_hash_matches": true,
+      "body_hash_matches": true
+    }
+  ],
+  "frozen_split_hash_checks": {
+    "dev_job_ids.txt": true,
+    "test_job_ids.txt": true
+  },
+  "estimated_total_usd": 0.01208639,
+  "conservative_total_usd": 0.06603606000000001,
+  "ledger": {
+    "records": 88,
+    "ok_records": 82,
+    "rejected_records": 3,
+    "cost_sources": {
+      "rejected_request": 3,
+      "reported": 85
+    },
+    "total_usd": 0.01226822,
+    "successful_build_usd": 0.01209273,
+    "billed_validation_failures_usd": 0.00017549,
+    "remaining_guard_usd": 8.487732
+  },
+  "completed_embedding_inputs": 1268,
+  "development_search_smoke_run": true,
+  "no_workbook_or_label_changes": true,
+  "sources": [
+    "embedding_preflight_resume_20261001.json",
+    "embedding_resume_20261001.json",
+    "embedding_key_preflight_20261001.json"
+  ],
+  "response_model_alias_observations": [
+    {
+      "request_model": "openai/text-embedding-3-small",
+      "response_model": "text-embedding-3-small",
+      "dimensions": 1536,
+      "diagnostic_run_id": "embedding_response_probe_20261001"
+    },
+    {
+      "request_model": "qwen/qwen3-embedding-8b",
+      "response_model": "Qwen/Qwen3-Embedding-8B",
+      "dimensions": 4096,
+      "diagnostic_run_id": "qwen_response_probe_20261001"
+    }
+  ],
+  "source_hashes": {
+    "scripts/build_embeddings.py": "f46bc9fbeb5ba82e80e817b60af8190e0b7dfc3e09a22c7b7ebc285c4df5955f",
+    "src/jobfit/llm/client.py": "b12ba14d5d55164e85df9fece6a2acec07553e5ef1ec53af62baae4329fba664",
+    "src/jobfit/llm/pricing.py": "147d81787aecdda2072f36b961ea89a3d609ad3ca8b2f26c27fde183d2a9d40f",
+    "src/jobfit/llm/ledger.py": "a80da244e4ac4b19b48e4c3879110ef8b8ecf66b59efe2c6f5fc381c46999f47",
+    "src/jobfit/search/embeddings.py": "3e5c11a1776a0239a5b8c69f902a70fc30fc8bf317fb7083cefe20dd0a171dab",
+    "src/jobfit/search/embedding_store.py": "f7c0a2b846b454cbb2f70118019cb881fe41bfded1cb1def9d2d8c90e8bc8695",
+    "src/jobfit/search/query_cache.py": "4776b315ac0a9f4cde7a06be56295f0ce8b6ff3f9d74009eadaf95287e6be548",
+    "src/jobfit/search/response_cache.py": "319458e2dab6d350b8e111070675d8149116d2e113486fb6569edd2964d81e4b",
+    "src/jobfit/search/dense.py": "7b036e3e325789e32486a9c74e95fd357101e7a53851103df72296516b83a761",
+    "src/jobfit/search/hybrid.py": "9b4c0333b5a9138e06f43cfee7d9e4282257505a918446de341f96a89a1aa3d1",
+    "src/jobfit/search/fts.py": "8fd9ee6eabe58293033dbef69b59e9f2e9b5e18c93ba88de75943231f47e75a5",
+    "config/models_v1.yaml": "751ff5b8f55f42bb7237a1bada374211e603bb12057e550b600c822afa6b4bd1",
+    "config/retrieval_v1.yaml": "c54422081f79d3d9031367344de7b4813407410f911c849ae7721e7219495d7a",
+    "config/tokenizers_v1.json": "bacd0aa6b68e6e356d86d4008bcb1e510d775f8a6d6298059a21f0a8d788d922",
+    "tests/test_embeddings.py": "d49854efa58795baf632ecce0aab426871dd64dd234d85f9cfca637b5a040c8d",
+    "tests/test_embedding_db.py": "59744e4ee51e4fddd3b29f2889e0bf4d48fa03007125153b196ca69fd6fa056e"
+  },
+  "status": "DONE: live embedding build and scoped search verified; CP2.2 overall remains IN PROGRESS",
+  "historical_blocked_reason": "management_key",
+  "historical_authentication": {
+    "authenticated": true,
+    "key_type_known": true,
+    "is_management_key": true,
+    "inference_key": false
+  },
+  "authentication": {
+    "authenticated": true,
+    "key_type_known": true,
+    "is_management_key": false,
+    "inference_key": true
+  },
+  "live_run_report": "embedding_validated_aliases_20261001.json",
+  "stored_job_embeddings": [
+    [
+      "openai/text-embedding-3-small",
+      1536,
+      632
+    ],
+    [
+      "qwen/qwen3-embedding-8b",
+      4096,
+      632
+    ]
+  ],
+  "database_unchanged": true,
+  "search_smoke": [
+    {
+      "model": "openai/text-embedding-3-small",
+      "cv_id": "CV1",
+      "dense_count": 20,
+      "hybrid_count": 20,
+      "valid": true,
+      "ranking_sha256": "176ed89f7bd04d2076e1f0baf84cb7706811d785afcb9b61cb0afc278147f46b"
+    },
+    {
+      "model": "openai/text-embedding-3-small",
+      "cv_id": "CV2",
+      "dense_count": 20,
+      "hybrid_count": 20,
+      "valid": true,
+      "ranking_sha256": "74578f54de92996f08882d942713968ac1e7b8eecf427ab75a2ade308e358217"
+    },
+    {
+      "model": "qwen/qwen3-embedding-8b",
+      "cv_id": "CV1",
+      "dense_count": 20,
+      "hybrid_count": 20,
+      "valid": true,
+      "ranking_sha256": "7c17df555b9cbcbeaf8d9aab0c1b50391c00d5fa19c3d2b161123570f089986d"
+    },
+    {
+      "model": "qwen/qwen3-embedding-8b",
+      "cv_id": "CV2",
+      "dense_count": 20,
+      "hybrid_count": 20,
+      "valid": true,
+      "ranking_sha256": "ffdc9a62f0483f02d6a243c2a5f700b276575cb17d1f5608c0ea252c6c6e66e8"
+    }
+  ],
+  "cache_verification": {
+    "report": "embedding_cache_verification_20261001.json",
+    "pending": 0,
+    "estimated_usd": 0,
+    "ledger_unchanged": true
+  }
+}

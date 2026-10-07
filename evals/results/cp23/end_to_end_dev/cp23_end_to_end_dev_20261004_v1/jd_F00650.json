@@ -1,0 +1,489 @@
+{
+  "job_id": "F00650",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "55eb60872a1e886d2a0611a49e4d1e114915ec07e5b074881a29823e5374e8ea",
+  "wall_ms": 116086,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00650",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Strong proficiency in Python",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong proficiency in Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong proficiency in Python and experience with FastAPI or similar backend frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Experience with FastAPI or similar backend frameworks",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience with FastAPI or similar backend frameworks",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "FastAPI",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "similar backend frameworks",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Strong proficiency in Python and experience with FastAPI or similar backend frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Experience working with LLM APIs (e.g., OpenAI, Anthropic, or similar)",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience working with LLM APIs (e.g., OpenAI, Anthropic, or similar)",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "OpenAI",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Anthropic",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "similar LLM API",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience working with LLM APIs (e.g., OpenAI, Anthropic, or similar) and frameworks such as LangChain or LlamaIndex."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Experience working with frameworks such as LangChain or LlamaIndex",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience working with frameworks such as LangChain or LlamaIndex",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "LangChain",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "LlamaIndex",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience working with LLM APIs (e.g., OpenAI, Anthropic, or similar) and frameworks such as LangChain or LlamaIndex."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Experience with RAG architectures",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience with RAG architectures",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with RAG architectures, embeddings, and vector databases (e.g., Pinecone, Weaviate, pgvector, or similar)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Experience with embeddings",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience with embeddings",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with RAG architectures, embeddings, and vector databases (e.g., Pinecone, Weaviate, pgvector, or similar)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Experience with vector databases (e.g., Pinecone, Weaviate, pgvector, or similar)",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience with vector databases (e.g., Pinecone, Weaviate, pgvector, or similar)",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Pinecone",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Weaviate",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "pgvector",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "similar vector database",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience with RAG architectures, embeddings, and vector databases (e.g., Pinecone, Weaviate, pgvector, or similar)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Hands-on experience with Docker",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Hands-on experience with Docker",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Hands-on experience with Docker and containerized development environments."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Hands-on experience with containerized development environments",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Hands-on experience with containerized development environments",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Hands-on experience with Docker and containerized development environments."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Experience working with PostgreSQL, Redis, or similar data stores",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience working with PostgreSQL, Redis, or similar data stores",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "PostgreSQL",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Redis",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "similar data stores",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience working with PostgreSQL, Redis, or similar data stores."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Strong experience writing functional tests",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Strong experience writing functional tests",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong experience writing functional and integration tests, including evaluation frameworks for AI/LLM output quality."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Strong experience writing integration tests",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Strong experience writing integration tests",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong experience writing functional and integration tests, including evaluation frameworks for AI/LLM output quality."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Strong experience writing evaluation frameworks for AI/LLM output quality",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Strong experience writing evaluation frameworks for AI/LLM output quality",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong experience writing functional and integration tests, including evaluation frameworks for AI/LLM output quality."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Excellent written and verbal communication skills in English",
+        "kind": "simple",
+        "importance": "required",
+        "field": "language",
+        "normalized_name": "Excellent written and verbal communication skills in English",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Excellent written and verbal communication skills in English."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Ability to work independently in a remote, fast-paced environment",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Ability to work independently in a remote, fast-paced environment",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Ability to work independently in a remote, fast-paced environment."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Experience fine-tuning or evaluating open-source LLMs",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Experience fine-tuning or evaluating open-source LLMs",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "fine-tuning open-source LLMs",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "evaluating open-source LLMs",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience fine-tuning or evaluating open-source LLMs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Familiarity with prompt engineering best practices",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Familiarity with prompt engineering best practices",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with prompt engineering best practices and agentic workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Familiarity with agentic workflows",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Familiarity with agentic workflows",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with prompt engineering best practices and agentic workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Experience with distributed systems",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Experience with distributed systems",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with distributed systems, streaming (e.g., Kafka), or large-scale applications."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Experience with streaming (e.g., Kafka)",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Experience with streaming (e.g., Kafka)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with distributed systems, streaming (e.g., Kafka), or large-scale applications."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Experience with large-scale applications",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Experience with large-scale applications",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with distributed systems, streaming (e.g., Kafka), or large-scale applications."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Background in machine learning fundamentals (e.g., scikit-learn, PyTorch, or TensorFlow)",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Background in machine learning fundamentals (e.g., scikit-learn, PyTorch, or TensorFlow)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Background in machine learning fundamentals (e.g., scikit-learn, PyTorch, or TensorFlow)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Comfortable working flexible hours to overlap with distributed teams across different time zones",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "soft_skill",
+        "normalized_name": "Comfortable working flexible hours to overlap with distributed teams across different time zones",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Comfortable working flexible hours to overlap with distributed teams across different time zones."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U24",
+        "text": "US Timezone Overlap: 5h–6h daily PST",
+        "kind": "simple",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": "US Timezone Overlap: 5h–6h daily PST",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "US Timezone Overlap: 5h–6h daily PST"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

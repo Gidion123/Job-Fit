@@ -14,6 +14,11 @@ dist/
 
 # Tool caches
 .pytest_cache/
+reports/tokenizers/
+reports/embedding_queries/
+reports/embedding_receipts/
+reports/extraction_cache/
+reports/usage/*.lock
 .ipynb_checkpoints/
 
 # OS and editor files
@@ -33,3 +38,5 @@ data/raw/
 data/interim/jsearch_records.jsonl
 data/interim/snapshots/*/jsearch_records.jsonl
 
+reports/quality_probe/*.lock
+evals/staging/

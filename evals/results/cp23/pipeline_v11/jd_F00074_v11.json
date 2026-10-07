@@ -1,0 +1,528 @@
+{
+  "job_id": "F00074",
+  "status": "done",
+  "attempts": 2,
+  "error_code": null,
+  "cache_hit": false,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 10,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02",
+          "U03"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U04",
+          "U05"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U06"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U07",
+          "U08",
+          "U09",
+          "U10",
+          "U11"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U12",
+          "U13",
+          "U14"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U15",
+          "U16",
+          "U17"
+        ]
+      },
+      {
+        "source_id": "Q08",
+        "unit_ids": [
+          "U18",
+          "U19",
+          "U20",
+          "U21"
+        ]
+      },
+      {
+        "source_id": "Q09",
+        "unit_ids": [
+          "U22",
+          "U23"
+        ]
+      },
+      {
+        "source_id": "Q10",
+        "unit_ids": [
+          "U24",
+          "U25"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "wall_ms": 117283,
+  "extraction": {
+    "job_id": "F00074",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Professional working proficiency in English, written and spoken",
+        "kind": "simple",
+        "importance": "required",
+        "field": "language",
+        "normalized_name": "English",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Professional working proficiency in English, written and spoken"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "2+ years building production software",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "Production software engineering",
+        "min_years": 2.0,
+        "branches": [],
+        "source_quotes": [
+          "2+ years building production software"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "At least 1 year shipping LLM-based applications to real users",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "Shipping LLM-based applications",
+        "min_years": 1.0,
+        "branches": [],
+        "source_quotes": [
+          "at least 1 year shipping LLM-based applications to real users"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Strong Python",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong Python"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "A production web framework such as FastAPI",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Production web framework (e.g., FastAPI)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "a production web framework such as FastAPI"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Direct experience with LLM provider APIs (Anthropic, OpenAI, or Google) at the API level, not only through high-level wrappers",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "LLM provider API",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Direct experience with Anthropic LLM provider API at the API level, not only through high-level wrappers",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Direct experience with OpenAI LLM provider API at the API level, not only through high-level wrappers",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Direct experience with Google LLM provider API at the API level, not only through high-level wrappers",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Direct experience with LLM provider APIs (Anthropic, OpenAI, or Google) at the API level, not only through high-level wrappers"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "RAG component experience: chunking strategy",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Chunking strategy",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "chunking strategy"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "RAG component experience: embedding models",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Embedding models",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "embedding models"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "RAG component experience: a vector store (pgvector, Qdrant, Weaviate, or similar)",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Vector store",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "RAG component experience: vector store pgvector",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "RAG component experience: vector store Qdrant",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "RAG component experience: vector store Weaviate",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "a vector store (pgvector, Qdrant, Weaviate, or similar)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "RAG component experience: BM25 or hybrid search",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "BM25 or hybrid search",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "RAG component experience: BM25",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "RAG component experience: hybrid search",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "BM25 or hybrid search"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "RAG component experience: reranking",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Reranking",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "reranking"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Practical experience with tool and function calling",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Tool and function calling",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "tool and function calling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Practical experience with structured output",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Structured output",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "structured output"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Practical experience with schema enforcement",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Schema enforcement",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "schema enforcement"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Practical experience evaluating LLM systems: building test sets",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Building test sets for LLM evaluation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "building test sets"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Practical experience evaluating LLM systems: measuring quality",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Measuring LLM quality",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "measuring quality"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Practical experience evaluating LLM systems: preventing regressions",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Preventing LLM regressions",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "preventing regressions"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Working knowledge of PostgreSQL",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "PostgreSQL",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "PostgreSQL"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Working knowledge of Git",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Git",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Git"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Working knowledge of Docker",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Docker",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Docker"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Working knowledge of CI/CD",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "CI/CD practices",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "CI/CD"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Comfortable owning cost and latency budgets",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Owning cost and latency budgets",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Comfortable owning cost and latency budgets"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Reasoning about tradeoffs between quality, speed, and spend",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Quality, speed and spend tradeoffs",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "reasoning about tradeoffs between quality, speed, and spend"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U24",
+        "text": "Excellent problem-solving skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Problem solving",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Excellent problem-solving skills"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U25",
+        "text": "Ability to work independently in a small team",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Independent working in a small team",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "the ability to work independently in a small team"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

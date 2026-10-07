@@ -13,6 +13,7 @@ No model is trained here: the score is a fixed rule.
 from __future__ import annotations
 
 import re
+import math
 from collections.abc import Iterable
 
 from jobfit.schemas.analysis import (
@@ -111,6 +112,7 @@ def compute_score(
     assessments: Iterable[UnitAssessment],
     cv_parse_status: ParseStatus = ParseStatus.OK,
     soft_skills_in_score: bool = False,
+    partial_weight: float = PARTIAL_WEIGHT,
 ) -> ScoreResult:
     """Apply the section 8 status table, in this order:
 
@@ -123,6 +125,8 @@ def compute_score(
 
     needs_clarification with a label still counts; the clarification question is shown to the user.
     """
+    if isinstance(partial_weight,bool) or not isinstance(partial_weight,(int,float)) or not math.isfinite(partial_weight) or not 0<=partial_weight<=1:
+        raise ValueError('PARTIAL weight must be finite and between zero and one')
     units, _ = merge_duplicate_units(extraction.units)
     by_id = {a.unit_id: a for a in assessments}
 
@@ -179,7 +183,7 @@ def compute_score(
             **base,
         )
 
-    pct = round((matched + PARTIAL_WEIGHT * partial) / len(required) * 100, 2)
+    pct = round((matched + partial_weight * partial) / len(required) * 100, 2)
     if unknown_total:
         return ScoreResult(
             score_pct=pct,

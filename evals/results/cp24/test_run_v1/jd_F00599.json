@@ -1,0 +1,473 @@
+{
+ "job_id": "F00599",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "not_assessed",
+  "bullet_count": 0,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 0,
+  "inventory_mappings": [],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00599",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "For Junior level: Fresh Graduate with approximately 2 years of experience in Data Science",
+    "kind": "qualified",
+    "importance": "unknown",
+    "field": "experience_duration",
+    "normalized_name": "Data Science experience",
+    "min_years": 2.0,
+    "branches": [],
+    "source_quotes": [
+     "Fresh Graduate – ±2 years of experience in Data Science, Machine Learning, or Data Analytics."
+    ],
+    "needs_review": true,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "For Junior level: Fresh Graduate with approximately 2 years of experience in Machine Learning",
+    "kind": "qualified",
+    "importance": "unknown",
+    "field": "experience_duration",
+    "normalized_name": "Machine Learning experience",
+    "min_years": 2.0,
+    "branches": [],
+    "source_quotes": [
+     "Fresh Graduate – ±2 years of experience in Data Science, Machine Learning, or Data Analytics."
+    ],
+    "needs_review": true,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "For Junior level: Fresh Graduate with approximately 2 years of experience in Data Analytics",
+    "kind": "qualified",
+    "importance": "unknown",
+    "field": "experience_duration",
+    "normalized_name": "Data Analytics experience",
+    "min_years": 2.0,
+    "branches": [],
+    "source_quotes": [
+     "Fresh Graduate – ±2 years of experience in Data Science, Machine Learning, or Data Analytics."
+    ],
+    "needs_review": true,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "For Mid-Level: 2–4 years of experience as Data Scientist, Machine Learning Engineer, Data Analyst, or related roles",
+    "kind": "alternative_group",
+    "importance": "unknown",
+    "field": "experience_duration",
+    "normalized_name": "Mid-Level Data Science role experience",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Data Scientist",
+      "field": "experience_duration",
+      "min_years": 2.0
+     },
+     {
+      "branch_id": "B2",
+      "text": "Machine Learning Engineer",
+      "field": "experience_duration",
+      "min_years": 2.0
+     },
+     {
+      "branch_id": "B3",
+      "text": "Data Analyst",
+      "field": "experience_duration",
+      "min_years": 2.0
+     },
+     {
+      "branch_id": "B4",
+      "text": "related roles",
+      "field": "experience_duration",
+      "min_years": 2.0
+     }
+    ],
+    "source_quotes": [
+     "2–4 years of experience as Data Scientist, Machine Learning Engineer, Data Analyst, or related roles."
+    ],
+    "needs_review": true,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Experience handling AI/Data projects for enterprise or customers",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "other",
+    "normalized_name": "AI/Data project experience",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience handling AI/Data projects for enterprise or customers is a plus."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Python",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Python",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Python & SQL"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "SQL",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "SQL",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Python & SQL"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Pandas",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Pandas",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Pandas, NumPy, Scikit-learn"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "NumPy",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "NumPy",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Pandas, NumPy, Scikit-learn"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "Scikit-learn",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Scikit-learn",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Pandas, NumPy, Scikit-learn"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "Machine Learning fundamentals",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Machine Learning fundamentals",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Machine Learning fundamentals"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "Statistics",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Statistics",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Statistics & data analysis"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U13",
+    "text": "Data analysis",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Data analysis",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Statistics & data analysis"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U14",
+    "text": "Database fundamentals",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Database fundamentals",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Database fundamentals"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U15",
+    "text": "Analytical skills",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Analytical skills",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong analytical & problem-solving skills"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U16",
+    "text": "Problem-solving skills",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Problem-solving skills",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong analytical & problem-solving skills"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U17",
+    "text": "Experience with Generative AI / LLM",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Generative AI / LLM",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Generative AI / LLM"
+    ],
+    "needs_review": true,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U18",
+    "text": "RAG",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "RAG",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "RAG & Vector Database"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U19",
+    "text": "Vector Database",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Vector Database",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "RAG & Vector Database"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U20",
+    "text": "Experience with PyTorch or TensorFlow",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "PyTorch or TensorFlow",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "PyTorch",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "TensorFlow",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "PyTorch / TensorFlow"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U21",
+    "text": "Experience with Docker or MLflow",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Docker or MLflow",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Docker",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "MLflow",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Docker / MLflow"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U22",
+    "text": "Experience with cloud platforms (AWS, Azure, or GCP)",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Cloud platforms (AWS, Azure, or GCP)",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "AWS",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Azure",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "GCP",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Cloud (AWS / Azure / GCP)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U23",
+    "text": "Experience with Power BI, Tableau, or Streamlit",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Power BI, Tableau, or Streamlit",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Power BI",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Tableau",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Streamlit",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Power BI / Tableau / Streamlit"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U24",
+    "text": "Ability to turn business problems into data, analysis, model, AI solution, and business impact",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Business problem to AI solution process",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "We're looking for someone who can turn:\n\nBusiness Problem → Data → Analysis → Model → AI Solution → Business Impact"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

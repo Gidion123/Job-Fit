@@ -1,0 +1,315 @@
+{
+  "schema_version": "cp23-F00332-alignment-approval-v1",
+  "status": "verified_case_specific_assisted_artifact",
+  "job_id": "F00332",
+  "cv_id": "CV1",
+  "human_verified": true,
+  "reviewer": "Dion",
+  "review_date": "2026-10-03",
+  "reviewed_at": null,
+  "review_channel": "current_project_chat",
+  "source_user_reply": "Ya, pemetaan dan dua PARTIAL disetujui",
+  "proposal_sha256": "155b4d407f13e054f9b48e577b3dbc5e2632818618d6d97bfef7a11f723fc00d",
+  "review_receipt_sha256": "1a23dbcc8514e20e78f123efe57b59f5f9afc59f7e7455ee633738ed437a0436",
+  "base_gold_manifest_sha256": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+  "jd_source_sha256": "9113fae9a5efa7be34c475f2ddca9a2adc34a2edd2b57f7a78da494ef1381619",
+  "gold_unit_ids": [
+    "P30-U01",
+    "P30-U02",
+    "P30-U03",
+    "P30-U04",
+    "P30-U05",
+    "P30-U06",
+    "P30-U07",
+    "P30-U08",
+    "P30-U09",
+    "P30-U10",
+    "P30-U11",
+    "P30-U12",
+    "P30-U13",
+    "P30-U14",
+    "P30-U15",
+    "P30-U16"
+  ],
+  "model_unit_ids": [
+    "U01",
+    "U02",
+    "U03",
+    "U04",
+    "U05",
+    "U06",
+    "U07",
+    "U08",
+    "U09",
+    "U10",
+    "U11",
+    "U12",
+    "U13",
+    "U14",
+    "U15",
+    "U16"
+  ],
+  "unmapped_gold": [],
+  "unmapped_model": [],
+  "rows": [
+    {
+      "gold_ids": [
+        "P30-U01"
+      ],
+      "model_ids": [
+        "U01"
+      ],
+      "status": "verified",
+      "semantic_equivalent": true,
+      "source_quotes": [
+        "Fresh Graduate or Bachelor's degree in an analytical or quantitative discipline (e.g., math, statistics, engineering, computer science); other disciplines will be considered."
+      ],
+      "proposal_model_label": "MATCH",
+      "proposal_gold_label": "MATCH",
+      "reviewed_B_label": "MATCH"
+    },
+    {
+      "gold_ids": [
+        "P30-U02"
+      ],
+      "model_ids": [
+        "U02"
+      ],
+      "status": "verified",
+      "semantic_equivalent": true,
+      "source_quotes": [
+        "Experience using statistical computer languages such as Python, SQL, and MS Excel."
+      ],
+      "proposal_model_label": "MATCH",
+      "proposal_gold_label": "MATCH",
+      "reviewed_B_label": "MATCH"
+    },
+    {
+      "gold_ids": [
+        "P30-U03"
+      ],
+      "model_ids": [
+        "U13"
+      ],
+      "status": "verified",
+      "semantic_equivalent": true,
+      "source_quotes": [
+        "Experience using statistical computer languages such as Python, SQL, and MS Excel."
+      ],
+      "proposal_model_label": "MATCH",
+      "proposal_gold_label": "MATCH",
+      "reviewed_B_label": "MATCH"
+    },
+    {
+      "gold_ids": [
+        "P30-U04"
+      ],
+      "model_ids": [
+        "U14"
+      ],
+      "status": "verified",
+      "semantic_equivalent": true,
+      "source_quotes": [
+        "Experience using statistical computer languages such as Python, SQL, and MS Excel."
+      ],
+      "proposal_model_label": "PARTIAL",
+      "proposal_gold_label": "PARTIAL",
+      "reviewed_B_label": "PARTIAL"
+    },
+    {
+      "gold_ids": [
+        "P30-U05"
+      ],
+      "model_ids": [
+        "U03"
+      ],
+      "status": "verified",
+      "semantic_equivalent": true,
+      "source_quotes": [
+        "Good communication skills and ability to work collaboratively in a team."
+      ],
+      "proposal_model_label": "MATCH",
+      "proposal_gold_label": "MATCH",
+      "reviewed_B_label": "MATCH"
+    },
+    {
+      "gold_ids": [
+        "P30-U06"
+      ],
+      "model_ids": [
+        "U04"
+      ],
+      "status": "verified",
+      "semantic_equivalent": true,
+      "source_quotes": [
+        "Good communication skills and ability to work collaboratively in a team."
+      ],
+      "proposal_model_label": "NO_MATCH",
+      "proposal_gold_label": "NO_MATCH",
+      "reviewed_B_label": "NO_MATCH"
+    },
+    {
+      "gold_ids": [
+        "P30-U07"
+      ],
+      "model_ids": [
+        "U05"
+      ],
+      "status": "verified",
+      "semantic_equivalent": true,
+      "source_quotes": [
+        "Excellent problem-solving skills with a drive to learn and master new technologies and techniques."
+      ],
+      "proposal_model_label": "MATCH",
+      "proposal_gold_label": "MATCH",
+      "reviewed_B_label": "MATCH"
+    },
+    {
+      "gold_ids": [
+        "P30-U08"
+      ],
+      "model_ids": [
+        "U15"
+      ],
+      "status": "verified",
+      "semantic_equivalent": true,
+      "source_quotes": [
+        "Excellent problem-solving skills with a drive to learn and master new technologies and techniques."
+      ],
+      "proposal_model_label": "PARTIAL",
+      "proposal_gold_label": "MATCH",
+      "reviewed_B_label": "PARTIAL"
+    },
+    {
+      "gold_ids": [
+        "P30-U09"
+      ],
+      "model_ids": [
+        "U06"
+      ],
+      "status": "verified",
+      "semantic_equivalent": true,
+      "source_quotes": [
+        "Willingness to learn new skills independently and strong sense of project ownership."
+      ],
+      "proposal_model_label": "PARTIAL",
+      "proposal_gold_label": "PARTIAL",
+      "reviewed_B_label": "PARTIAL"
+    },
+    {
+      "gold_ids": [
+        "P30-U10"
+      ],
+      "model_ids": [
+        "U07"
+      ],
+      "status": "verified",
+      "semantic_equivalent": true,
+      "source_quotes": [
+        "Willingness to learn new skills independently and strong sense of project ownership."
+      ],
+      "proposal_model_label": "PARTIAL",
+      "proposal_gold_label": "PARTIAL",
+      "reviewed_B_label": "PARTIAL"
+    },
+    {
+      "gold_ids": [
+        "P30-U11"
+      ],
+      "model_ids": [
+        "U08"
+      ],
+      "status": "verified",
+      "semantic_equivalent": true,
+      "source_quotes": [
+        "Comfortable exploring data, investigating anomalies, and building SQL-based analyses."
+      ],
+      "proposal_model_label": "MATCH",
+      "proposal_gold_label": "MATCH",
+      "reviewed_B_label": "MATCH"
+    },
+    {
+      "gold_ids": [
+        "P30-U12"
+      ],
+      "model_ids": [
+        "U09"
+      ],
+      "status": "verified",
+      "semantic_equivalent": true,
+      "source_quotes": [
+        "Comfortable exploring data, investigating anomalies, and building SQL-based analyses."
+      ],
+      "proposal_model_label": "NO_MATCH",
+      "proposal_gold_label": "NO_MATCH",
+      "reviewed_B_label": "NO_MATCH"
+    },
+    {
+      "gold_ids": [
+        "P30-U13"
+      ],
+      "model_ids": [
+        "U10"
+      ],
+      "status": "verified",
+      "semantic_equivalent": true,
+      "source_quotes": [
+        "Comfortable exploring data, investigating anomalies, and building SQL-based analyses."
+      ],
+      "proposal_model_label": "MATCH",
+      "proposal_gold_label": "MATCH",
+      "reviewed_B_label": "MATCH"
+    },
+    {
+      "gold_ids": [
+        "P30-U14"
+      ],
+      "model_ids": [
+        "U11"
+      ],
+      "status": "verified",
+      "semantic_equivalent": true,
+      "source_quotes": [
+        "Experience working with large tabular datasets to detect trends and anomalies and communicate findings as actionable recommendations."
+      ],
+      "proposal_model_label": "PARTIAL",
+      "proposal_gold_label": "PARTIAL",
+      "reviewed_B_label": "PARTIAL"
+    },
+    {
+      "gold_ids": [
+        "P30-U15"
+      ],
+      "model_ids": [
+        "U16"
+      ],
+      "status": "verified",
+      "semantic_equivalent": true,
+      "source_quotes": [
+        "Experience working with large tabular datasets to detect trends and anomalies and communicate findings as actionable recommendations."
+      ],
+      "proposal_model_label": "PARTIAL",
+      "proposal_gold_label": "MATCH",
+      "reviewed_B_label": "PARTIAL"
+    },
+    {
+      "gold_ids": [
+        "P30-U16"
+      ],
+      "model_ids": [
+        "U12"
+      ],
+      "status": "verified",
+      "semantic_equivalent": true,
+      "source_quotes": [
+        "Exposure to credit scoring modelling concepts is a plus."
+      ],
+      "proposal_model_label": "NO_MATCH",
+      "proposal_gold_label": "NO_MATCH",
+      "reviewed_B_label": "NO_MATCH"
+    }
+  ],
+  "metrics": null,
+  "metric_claim": "No independent model-quality claim. Artifact was reviewer-assisted and source-repaired; future model outputs need separate mapping review.",
+  "api_calls": 0
+}

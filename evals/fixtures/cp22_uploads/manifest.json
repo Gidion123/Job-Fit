@@ -1,0 +1,25 @@
+{
+  "scope": "CV1 synthetic development only; not new candidate facts or labels",
+  "source": "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md",
+  "source_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+  "body_sha256": "4cf316f674675b751b4636d96a6b355cab2ffd903dece9883f5098f801769685",
+  "rendering": "Literal Markdown body, Helvetica, whitespace-only line wrapping. No content omitted.",
+  "fixtures": [
+    {
+      "file": "cv1_1_column.pdf",
+      "columns": 1,
+      "sha256": "3178d6d6d4148d0aee2044388f1d7501d1d13e39e512c24fb2cd0f663b20888f"
+    },
+    {
+      "file": "cv1_2_column.pdf",
+      "columns": 2,
+      "sha256": "3cb6ab26acfe2cc94aa8c49cab828e32e377a2675ab0d683d23216b00f46cc37"
+    },
+    {
+      "file": "cv1_image_only.pdf",
+      "columns": null,
+      "sha256": "39b5623e66f8b8597ff17ce2c14cb4f5979d0f68facc445fc05e2b5f166956a2",
+      "expected": "no extractable text, no OCR"
+    }
+  ]
+}

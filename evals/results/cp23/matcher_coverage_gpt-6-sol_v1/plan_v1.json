@@ -1,0 +1,316 @@
+{
+  "run_id": "cp23_matcher_coverage_gpt-6-sol_20261004_v1",
+  "model": "gpt-6-sol",
+  "model_id": "openai/gpt-6-sol",
+  "decision": "D-079 stage 2",
+  "split": "development",
+  "stage2_cap_usd": 5.0,
+  "stage2_spent_before_usd": 0,
+  "phases": [
+    {
+      "name": "P0_canary",
+      "model": "gpt-6-sol",
+      "workers": 1,
+      "pairs": [
+        [
+          "CV2",
+          "F00018"
+        ]
+      ]
+    },
+    {
+      "name": "A_cv1_top20",
+      "model": "gpt-6-sol",
+      "workers": 9,
+      "pairs": [
+        [
+          "CV1",
+          "F00366"
+        ],
+        [
+          "CV1",
+          "F00020"
+        ],
+        [
+          "CV1",
+          "F00663"
+        ],
+        [
+          "CV1",
+          "F00601"
+        ],
+        [
+          "CV1",
+          "F00284"
+        ],
+        [
+          "CV1",
+          "F00132"
+        ],
+        [
+          "CV1",
+          "F00312"
+        ],
+        [
+          "CV1",
+          "F00022"
+        ],
+        [
+          "CV1",
+          "F00556"
+        ],
+        [
+          "CV1",
+          "F00333"
+        ],
+        [
+          "CV1",
+          "F00655"
+        ],
+        [
+          "CV1",
+          "F00036"
+        ],
+        [
+          "CV1",
+          "F00208"
+        ],
+        [
+          "CV1",
+          "F00090"
+        ],
+        [
+          "CV1",
+          "F00103"
+        ],
+        [
+          "CV1",
+          "F00212"
+        ],
+        [
+          "CV1",
+          "F00189"
+        ],
+        [
+          "CV1",
+          "F00332"
+        ],
+        [
+          "CV1",
+          "F00369"
+        ],
+        [
+          "CV1",
+          "F00654"
+        ]
+      ]
+    },
+    {
+      "name": "C_remaining39",
+      "model": "gpt-6-sol",
+      "workers": 8,
+      "pairs": [
+        [
+          "CV1",
+          "F00309"
+        ],
+        [
+          "CV1",
+          "F00310"
+        ],
+        [
+          "CV1",
+          "F00354"
+        ],
+        [
+          "CV1",
+          "F00851"
+        ],
+        [
+          "CV1",
+          "F00055"
+        ],
+        [
+          "CV1",
+          "F00060"
+        ],
+        [
+          "CV1",
+          "F00351"
+        ],
+        [
+          "CV1",
+          "F00527"
+        ],
+        [
+          "CV1",
+          "F00650"
+        ],
+        [
+          "CV1",
+          "F00129"
+        ],
+        [
+          "CV2",
+          "F00624"
+        ],
+        [
+          "CV2",
+          "F00650"
+        ],
+        [
+          "CV2",
+          "F00798"
+        ],
+        [
+          "CV2",
+          "F00463"
+        ],
+        [
+          "CV2",
+          "F00074"
+        ],
+        [
+          "CV2",
+          "F00815"
+        ],
+        [
+          "CV2",
+          "F00029"
+        ],
+        [
+          "CV2",
+          "F00052"
+        ],
+        [
+          "CV2",
+          "F00176"
+        ],
+        [
+          "CV2",
+          "F00559"
+        ],
+        [
+          "CV2",
+          "F00629"
+        ],
+        [
+          "CV2",
+          "F00645"
+        ],
+        [
+          "CV2",
+          "F00020"
+        ],
+        [
+          "CV2",
+          "F00698"
+        ],
+        [
+          "CV2",
+          "F00034"
+        ],
+        [
+          "CV2",
+          "F00310"
+        ],
+        [
+          "CV2",
+          "F00663"
+        ],
+        [
+          "CV2",
+          "F00055"
+        ],
+        [
+          "CV2",
+          "F00126"
+        ],
+        [
+          "CV2",
+          "F00208"
+        ],
+        [
+          "CV2",
+          "F00327"
+        ],
+        [
+          "CV2",
+          "F00303"
+        ],
+        [
+          "CV2",
+          "F00556"
+        ],
+        [
+          "CV2",
+          "F00418"
+        ],
+        [
+          "CV2",
+          "F00682"
+        ],
+        [
+          "CV2",
+          "F00436"
+        ],
+        [
+          "CV2",
+          "F00114"
+        ],
+        [
+          "CV2",
+          "F00343"
+        ],
+        [
+          "CV2",
+          "F00212"
+        ]
+      ]
+    }
+  ],
+  "matching_calls": 54,
+  "estimate_usd": 2.4527,
+  "phase_a_workers": 9,
+  "peak_reservation_usd": 3.6756,
+  "metadata": {
+    "found": true,
+    "endpoints": 7,
+    "structured_endpoints": 7,
+    "min_output_limit": 128000,
+    "temperature_supported": false,
+    "response_aliases": [
+      "openai/gpt-6-sol-20260922"
+    ],
+    "cheapest_structured_price_per_m": [
+      1.0,
+      5.0
+    ]
+  },
+  "ledger_before_usd": 5.22948,
+  "project_hard_stop_usd": 18.5,
+  "protected_sha256": {
+    "evals/labeling/JobFit_Development_Labeling_v1.3.xlsx": "4d96852dce52effdc376709cf8c0131f2f9ad1a6f02795cc556fec1819eccb50",
+    "evals/splits/dev_job_ids.txt": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+    "evals/splits/test_job_ids.txt": "b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435",
+    "prompts/evidence_matching_v1_1.md": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+    "evals/annotation_guideline_v1_3.md": "3d964a28fd105e16b24ad51b8b0a22b34bb9255e438b51e4e6e0eda551c57645",
+    "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+    "data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+    "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/plan.json": "54c0d5d1cec7ebf08b983083aaad785f0ec5d6347bb85909d24f698e904647ec",
+    "evals/results/cp23/pipeline_v11/plan_v1.json": "ec8c5b873736723c9b84bd1e3d944f6d24e3e3860ac8cc533836f38c599d6a1c",
+    "evals/results/cp23/pipeline_v11/coverage_summary_v2.json": "b2ca8eaa20ebba74cc5fbb7fb1eac43fc804c69d9864d206910341e82cc09d8b",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/JD_coverage.json": "55312dce477c8f620a8db72067d92f3c1d76abdbe615c85d78db1bed40ffd511",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/amendment_receipt.json": "15fedf3af6655452f52a182bbe582014681107562a4afa20395c9775fe8f5efe",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/evidence_gold.jsonl": "510bbe15bd02ed370b2a94982582169c6c9d38f62b5e6e27311bb55a0f3ef49e",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/excluded_records.json": "e72c7f8214b6474b4fd648d25a4c36f8c374f1662eac5909e60d5deeeb16d93e",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/extraction_gold.jsonl": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/held_records.json": "2ebab10a5a7ee76ad2ed4f4ef2285d980ef0211f5c9cb3435c485534b6842a37",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/logical_units.json": "49aa3b438470de8897a3b17b315da4190dd33f2e78f3f73f9065753250fffaf5",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/manifest.json": "6c814e0fff729bbedcdc301fceed591e523ba0c31766e5d83b3a40c8c9b193ec",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/pair_coverage.json": "b2a1339e4a9de6c4b8cf4d55b7ebb8f21fc2d3bde58557ac26de96135ba0bd58",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/relevance_gold.jsonl": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/resolved_held_C_records.json": "c73ce803dc75daeef888cf7cb0135913db4366f9e98ca08c98e7674f065906b8"
+  },
+  "problems": []
+}

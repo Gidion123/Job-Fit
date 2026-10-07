@@ -1,0 +1,243 @@
+{
+ "schema_version": "qa-failure-taxonomy-v1",
+ "split": "development",
+ "api_calls": 0,
+ "A_unit_errors_r3_anchor": {
+  "source": "saved GPT-6 Sol outputs (model sweep v1), 73 reviewed units in 4 pairs",
+  "errors": 11,
+  "units": 73,
+  "by_category": {
+   "overly_conservative_soft_skill": 2,
+   "partial_match_calibration_underclaim": 5,
+   "adjacent_evidence_overclaim": 3,
+   "soft_skill_inference_overclaim": 1
+  },
+  "run_to_run_label_agreement": {
+   "units": 73,
+   "same": 64,
+   "rate": 0.8767123287671232
+  },
+  "examples": [
+   {
+    "unit": "CV1/F00332/P30-U08",
+    "field": "soft_skill",
+    "importance": "required",
+    "gold": "PARTIAL",
+    "sol": "NO_MATCH",
+    "category": "overly_conservative_soft_skill",
+    "text": "Learning new techniques"
+   },
+   {
+    "unit": "CV1/F00332/P30-U09",
+    "field": "soft_skill",
+    "importance": "required",
+    "gold": "PARTIAL",
+    "sol": "NO_MATCH",
+    "category": "overly_conservative_soft_skill",
+    "text": "Independent learning"
+   },
+   {
+    "unit": "CV1/F00332/P30-U13",
+    "field": "knowledge_area",
+    "importance": "required",
+    "gold": "MATCH",
+    "sol": "PARTIAL",
+    "category": "partial_match_calibration_underclaim",
+    "text": "SQL-based analysis"
+   },
+   {
+    "unit": "CV1/F00036/P09-U11",
+    "field": "knowledge_area",
+    "importance": "required",
+    "gold": "PARTIAL",
+    "sol": "MATCH",
+    "category": "adjacent_evidence_overclaim",
+    "text": "Inferential statistics"
+   },
+   {
+    "unit": "CV1/F00036/P09-U12",
+    "field": "knowledge_area",
+    "importance": "required",
+    "gold": "MATCH",
+    "sol": "PARTIAL",
+    "category": "partial_match_calibration_underclaim",
+    "text": "Research methodology"
+   },
+   {
+    "unit": "CV1/F00036/P09-U13",
+    "field": "other",
+    "importance": "required",
+    "gold": "MATCH",
+    "sol": "PARTIAL",
+    "category": "partial_match_calibration_underclaim",
+    "text": "Explaining technical analysis to nontechnical stakeholders"
+   },
+   {
+    "unit": "CV1/F00036/P09-U14",
+    "field": "knowledge_area",
+    "importance": "preferred",
+    "gold": "MATCH",
+    "sol": "PARTIAL",
+    "category": "partial_match_calibration_underclaim",
+    "text": "Database management"
+   },
+   {
+    "unit": "CV1/F00036/P09-U17",
+    "field": "soft_skill",
+    "importance": "required",
+    "gold": "NO_MATCH",
+    "sol": "PARTIAL",
+    "category": "soft_skill_inference_overclaim",
+    "text": "Attention to detail"
+   },
+   {
+    "unit": "CV2/F00815/P52-U07",
+    "field": "knowledge_area",
+    "importance": "required",
+    "gold": "PARTIAL",
+    "sol": "MATCH",
+    "category": "adjacent_evidence_overclaim",
+    "text": "Data pipelines"
+   },
+   {
+    "unit": "CV2/F00815/P52-U14",
+    "field": "knowledge_area",
+    "importance": "required",
+    "gold": "MATCH",
+    "sol": "PARTIAL",
+    "category": "partial_match_calibration_underclaim",
+    "text": "Testing"
+   },
+   {
+    "unit": "CV2/F00018/P04-U15",
+    "field": "language",
+    "importance": "required",
+    "gold": "PARTIAL",
+    "sol": "MATCH",
+    "category": "adjacent_evidence_overclaim",
+    "text": "English at strong upper-intermediate level"
+   }
+  ]
+ },
+ "B_process_saved_pipeline_pairs": {
+  "source": "saved GPT-6 Sol coverage run, 60 CV1/CV2 pairs (D-079 stage 2)",
+  "pair_outcomes": {
+   "score_final": 34,
+   "hold_caused_by_missing_extraction": 6,
+   "score_no_score": 3,
+   "score_on_hold": 11,
+   "score_provisional": 6
+  },
+  "non_done_items": {
+   "duration_needs_clarification_no_verified_years": 49,
+   "extraction_needs_review_unit_failed": 32,
+   "location_needs_clarification": 10
+  },
+  "responsibility_as_qualification_units": [
+   "F00020/U07: Responsible for preparing learning materials.",
+   "F00020/U08: Responsible for the learning schedule."
+  ],
+  "schema_or_repair_failures": 0,
+  "invalid_quotes": 0,
+  "positive_items_checked": 676
+ },
+ "C_ranking_discordance_top10": [
+  {
+   "cv_id": "CV1",
+   "job_id": "F00556",
+   "position": 3,
+   "relevance": 1,
+   "score_status": "final",
+   "score_pct": 60.0,
+   "category": "low_relevance_in_top5",
+   "analyst_note": "Internship asks for a current student; most other units are PARTIAL/MATCH, so the score stays high."
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00020",
+   "position": 5,
+   "relevance": 0,
+   "score_status": "final",
+   "score_pct": 50.0,
+   "category": "low_relevance_in_top5",
+   "analyst_note": "Mentoring/teaching role outside the target families (relevance 0); generic tool units match, and two responsibility lines were extracted as units."
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00366",
+   "position": 8,
+   "relevance": 2,
+   "score_status": "on_hold",
+   "score_pct": null,
+   "category": "relevant_job_held_or_unscored",
+   "analyst_note": "Extraction not usable (held_extraction)."
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00022",
+   "position": 9,
+   "relevance": 3,
+   "score_status": "on_hold",
+   "score_pct": null,
+   "category": "relevant_job_held_or_unscored",
+   "analyst_note": "Two required units not judged (needs_clarification), so the job is on hold."
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00103",
+   "position": 10,
+   "relevance": 2,
+   "score_status": "on_hold",
+   "score_pct": null,
+   "category": "relevant_job_held_or_unscored",
+   "analyst_note": "One required unit not judged, so the job is on hold."
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00645",
+   "position": 3,
+   "relevance": 1,
+   "score_status": "final",
+   "score_pct": 69.23,
+   "category": "low_relevance_in_top5",
+   "analyst_note": "Required 2 years is needs_clarification and excluded under H2v2, so the score ignores the main gap."
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00629",
+   "position": 7,
+   "relevance": 2,
+   "score_status": "provisional",
+   "score_pct": 45.83,
+   "category": "relevant_job_below_top5",
+   "analyst_note": null
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00176",
+   "position": 9,
+   "relevance": 2,
+   "score_status": "final",
+   "score_pct": 26.92,
+   "category": "relevant_job_below_top5",
+   "analyst_note": "26 required units from one long list (over-splitting); many basic API units are NO_MATCH, so the score is low."
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00559",
+   "position": 10,
+   "relevance": 2,
+   "score_status": "no_score",
+   "score_pct": null,
+   "category": "relevant_job_held_or_unscored",
+   "analyst_note": "No required unit extracted (responsibilities-only JD), so no score."
+  }
+ ],
+ "not_observed_or_not_measurable": {
+  "and_or_mistake": "not observed in the 11 anchor errors",
+  "education_mismatch": "not observed in the 11 anchor errors",
+  "wrong_cv_section": "not measurable: the matcher output has no section field",
+  "schema_formatting_failure": "0 of 53 saved calls failed or needed a repair"
+ },
+ "reading": "Unit errors are mostly MATCH/PARTIAL calibration in both directions plus soft skills. Ranking errors are mostly holds (missing extraction, needs_review units, durations without verified years) and job-level fit that a coverage score cannot see (role family, required years excluded under H2v2). A matching-prompt change can only address the first group."
+}

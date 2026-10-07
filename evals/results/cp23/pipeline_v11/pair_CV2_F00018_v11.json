@@ -1,0 +1,67 @@
+{
+  "cv_id": "CV2",
+  "job_id": "F00018",
+  "status": "done",
+  "error_code": null,
+  "source": "reused_v1_matching",
+  "jd_source": "reused_v1",
+  "score_H1": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 7,
+    "partial": 3,
+    "required_total": 14,
+    "preferred_met": 2,
+    "preferred_total": 7,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 2,
+    "soft_skill_matched": 1,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+      "Required units not judged yet: U11",
+      "Requirement structure needs review; identified denominator is not validated."
+    ]
+  },
+  "score_H2": {
+    "score_pct": 65.38,
+    "status": "provisional",
+    "matched": 7,
+    "partial": 3,
+    "required_total": 13,
+    "preferred_met": 2,
+    "preferred_total": 6,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 2,
+    "soft_skill_matched": 1,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+      "Some requirements need checking; excluded unresolved units are listed separately."
+    ]
+  },
+  "excluded_needs_review": [
+    {
+      "unit_id": "U11",
+      "text": "Practical experience with one or more use cases from: NLP, LLMs, or Recommendation engines",
+      "reason": "model marked the requirement structure needs_review",
+      "importance": "required",
+      "source_quotes": [
+        "Practical experience with one or more use cases from the following: NLP, LLMs, and Recommendation engines."
+      ]
+    },
+    {
+      "unit_id": "U22",
+      "text": "Practical experience with Spark/Dask",
+      "reason": "model marked the requirement structure needs_review",
+      "importance": "preferred",
+      "source_quotes": [
+        "Practical experience with Spark/Dask, Great Expectations."
+      ]
+    }
+  ],
+  "wall_ms": 5,
+  "assessments": []
+}

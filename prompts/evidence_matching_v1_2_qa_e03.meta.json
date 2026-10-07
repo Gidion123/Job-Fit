@@ -1,0 +1,11 @@
+{
+ "experiment_id": "QA-E03",
+ "parent_prompt": "prompts/evidence_matching_v1_1.md",
+ "parent_prompt_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+ "prompt_version": "evidence-prompt-v1.2-qa-e03",
+ "hypothesis": "QA-H03",
+ "created_at": "2026-10-07",
+ "intended_change": "Ordered decision procedure plus a final self-check, with no new labeling rule, to reduce run-to-run label instability.",
+ "change_scope": "v1.1 text kept word for word (title line renamed); one paragraph added at the end",
+ "prompt_sha256": "8520056dddaf9ebc52bfc1c8e3f8bbf74176ed822899102e372fc97e87e00389"
+}

@@ -1,0 +1,112 @@
+{
+  "stage": "CP2.2",
+  "date": "2026-10-02",
+  "status": "implementation_verified_quality_review_pending",
+  "tests": {
+    "command": "JOBFIT_DB_TESTS=1 env-job-fit/bin/python -m pytest -q",
+    "passed": 161,
+    "skipped": 0,
+    "warnings": 5,
+    "seconds": 8.63,
+    "warnings_scope": "PyMuPDF SWIG deprecation warnings"
+  },
+  "workbook_written_this_continuation": false,
+  "workbook_sha256_at_verification": "7a1321180ae7785d3ab018b9317acf76f97769404e06375ad8370753cc195bc1",
+  "matches_released_correction_snapshot": true,
+  "split_hash_checks": {
+    "dev_job_ids.txt": true,
+    "test_job_ids.txt": true
+  },
+  "runs": [
+    {
+      "run_id": "cp22_live_cv1_j1_20261002_01",
+      "status": "extraction_failed",
+      "calls": 4,
+      "cost_usd": 0.025907734,
+      "score_status": "on_hold",
+      "units": null,
+      "file_sha256": "b56a9a25d9833d536a3031abbaf3bfb68641a02b29b0500ce073a33052dac0b4"
+    },
+    {
+      "run_id": "cp22_live_cv1_j1_20261002_02",
+      "status": "parsing_review_required",
+      "calls": 2,
+      "cost_usd": 0.014689476,
+      "score_status": null,
+      "units": null,
+      "file_sha256": "759f393987bf25951dd93f3cf86c939635960b092e12f487b127e75b53b2c1c5"
+    },
+    {
+      "run_id": "cp22_live_cv1_j1_20261002_03",
+      "status": "parsing_review_required",
+      "calls": 2,
+      "cost_usd": 0.023914152,
+      "score_status": null,
+      "units": null,
+      "file_sha256": "300b7a4753d19257d7a2bd9fd5b42edddc93a59511a10898b421c399ef55f9c4"
+    },
+    {
+      "run_id": "cp22_live_cv1_j1_20261002_04",
+      "status": "done",
+      "calls": 6,
+      "cost_usd": 0.059793905999999994,
+      "score_status": "on_hold",
+      "units": 17,
+      "file_sha256": "fc4d647b0851e315a0b1c6985ff04ce20b43ee338189414835fd9eb219ca5007"
+    },
+    {
+      "run_id": "cp22_live_cv1_j1_20261002_05",
+      "status": "done",
+      "calls": 1,
+      "cost_usd": 0.0119073,
+      "score_status": "no_score",
+      "units": 0,
+      "file_sha256": "7fde8ba97feddfa5526735c78a21dc63bd46ded6d659c236c7f0ca42490cb904"
+    },
+    {
+      "run_id": "cp22_live_cv1_j1_20261002_06",
+      "status": "done",
+      "calls": 2,
+      "cost_usd": 0.023168232,
+      "score_status": "provisional",
+      "units": 21,
+      "file_sha256": "436e5287f3ca9e94c490508a5ecb3a60ef8d75c26031380c7d142c31a8c80f77"
+    }
+  ],
+  "session_cost_usd": 0.15938080000000002,
+  "ledger_total_usd": 0.17164902000000004,
+  "inference_calls_this_continuation": 17,
+  "final_verified_code_hashes": {
+    "src/jobfit/cv/text_extract.py": "86e1acfd280b4fe6bfbe5e5e30842af2a8782458ac21a4e6491484c707732998",
+    "src/jobfit/cv/__init__.py": "4c4ffadd9c3116f51dc46a0d164997876136354da20665b91fb936008f81f8b7",
+    "src/jobfit/cv/parser.py": "02641bdca155315c6ccbb5a0b33cea65488164c2586297ddfa648207858b30e1",
+    "src/jobfit/cv/dates.py": "db482dc2fe2b955601001a21b0550b3f6af100386ed99c72ef395991cc039b25",
+    "src/jobfit/extraction/paste_jd.py": "2659f2dfa4d91178918e51627b3d4ddd91d81a8b1e72f2ce6ea7875c2a7c0696",
+    "src/jobfit/extraction/cache.py": "3eb2c559c4e707ef1350527c174652b6db6933cb4bb392d8cd37b42a118c6572",
+    "src/jobfit/extraction/__init__.py": "05ba8c9b91d4c42c293c69c423758f259dd0938f4fd87cd0f062ec19cc9ca01c",
+    "src/jobfit/extraction/jd_extractor.py": "8dd4129171c5bd58938e982cc607db55844e417c5e4f24b0ec50cf778e7ac514",
+    "src/jobfit/pipeline.py": "61a77f529181166ae7cbded8d0842b6d11c04d92c700bbf2ab53eaf4c89b6905",
+    "src/jobfit/llm/structured.py": "6a218a40daf4cc4a712fcec55b94a0311eb43e38e1595f101761dd9ca7941312",
+    "src/jobfit/llm/client.py": "a3d8491668027932acf6819481af56bf7eb3687ac51460ce36a064a48d29c63d",
+    "src/jobfit/matching/evidence_matcher.py": "0ecd83de2039f3747ee8a0b6fb16255b7a9b582fde5f7e8996d61b68a4ddf7d5",
+    "src/jobfit/matching/constraints.py": "905355fd60f6bab7ebac74e27c2f8642e9e0acd4d8d57eda985ba0f4f870fc63",
+    "config/pipeline_v1.yaml": "a8f219e74952c18451b93e469a1c3750e8f631f88e40ca387bc51a9ea690a4f8",
+    "config/models_v1.yaml": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+    "scripts/run_cp22_example.py": "79f6f5f9bbf5ac5713584340133d8bd99bde9f1bbdc3c456cdb156b917a8bb0c",
+    "scripts/run_batch_extraction.py": "426fef19b6249a6cae46a4d48b08ffb47e2a1a48e5f5380e7f12a93dd9a547e5",
+    "prompts/cv_parsing_v1.md": "1847ef471c4d72b20b27c9f8f276a28a833d28e15f4aad28100494cf026dc341",
+    "prompts/jd_extraction_v1.md": "0e17816b88703fdc26e341894c6ea87e8a79ba7f6dcfe2694a855458f63e6ad4",
+    "prompts/jd_extraction_v1_1.md": "8c91296b0861a82654ede5bec46f60d324cc08dcee3d62bc690d7a36136052d0",
+    "prompts/evidence_matching_v1.md": "bbaaddea09a4364d5365376dc51ade462ffab9487149d0d6a9753991f5757816",
+    "requirements.txt": "c880689a7321e7254127add51fb7aa4cc710df6b9fa2dbb854c16b8ad601ea9b"
+  },
+  "hash_note": "These code hashes describe final verification, not every earlier exploratory run. Per-run prompts/configuration are preserved where recorded.",
+  "limits": [
+    "No test data used for development.",
+    "No pending labels exported or approved.",
+    "Real model outputs are not gold.",
+    "All 214 development extractions remain pending; test214 deferred until freeze.",
+    "No full batch authorized or executed.",
+    "Automated fixture checks do not constitute human sign-off on eight cases."
+  ]
+}

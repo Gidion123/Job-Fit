@@ -1,0 +1,14 @@
+{
+  "schema_version": "cp23-partb-protected-check-v1",
+  "date": "2026-10-04",
+  "plan_protected_paths": 9,
+  "plan_changed": [],
+  "gold_manifest_files": 10,
+  "gold_changed": [],
+  "active_workbook_matches_gold_manifest": true,
+  "historic_data_baseline_paths": 521,
+  "historic_data_changed": [],
+  "historic_baseline_file": "evals/results/cp23_stage2_repair_rerun_20261004_v1_protection_before.json",
+  "scope_note": "Hash comparison only. Test CV and test split contents were not opened for development evaluation. Newly created Part B outputs and append-only ledger are outside these protected inputs.",
+  "git_used": false
+}

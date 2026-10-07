@@ -1,0 +1,13 @@
+{
+  "job_id": "deepseek-flash/F00354",
+  "result_sha256": "1075fdaa4200b00db4c2580c959db99752e94767965a192e01509b5bf421edb3",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "pass"
+  },
+  "notes": "Delegated full-source QA: all 10 qualification bullets are represented and every model quote occurs exactly in the F00354 JD; responsibilities are not added. The model has 34 units versus 29 reviewed logical gold units. U22 says generic validation, losing the source/gold 'validation in time-series modelling' scope. U29-U34 split the one reviewed soft-skill interest clause covering LLM/RAG/agents/cloud/containers/CI/CD into six separately scored knowledge/tool units; this is a D-054 strict split/merge relation, not automatic TPs, and needs reference compatibility review rather than gold editing. Documentation and experiment-tracking categories also differ from reviewed units. The first attempt failed schema validation and one repair produced this final draft; both attempts/costs remain recorded. Source completeness alone does not certify compatible unit structure. Record failure and continue under approved v5 policy; no human alignment approval, F1 or winner.",
+  "checked_by": "delegated_Codex2_source_semantic_QA_2026-10-03"
+}

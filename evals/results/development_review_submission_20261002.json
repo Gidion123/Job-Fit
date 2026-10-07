@@ -1,0 +1,475 @@
+{
+  "workbook": "evals/labeling/JobFit_Development_Labeling_v1.3.xlsx",
+  "sha256": "cd047da11cb25d6ed234e695842c0dd82035c48c2c22a2173f21367079bfa87b",
+  "baseline_sha256": "df24026f63432ca37c53934a3478697da36630cf2f596b1070eb221563806c1f",
+  "summary": {
+    "A_Extraction": {
+      "rows": 1078,
+      "retained": 1068,
+      "status": {
+        "approved": 1078
+      },
+      "actions": {
+        "edited": 69,
+        "accepted": 989,
+        "added": 10,
+        "rejected": 10
+      },
+      "versions": {
+        "v1.3": 1040,
+        "v0.1": 37,
+        "v1.2": 1
+      }
+    },
+    "B_Evidence": {
+      "rows": 1405,
+      "retained": 1389,
+      "status": {
+        "approved": 1405
+      },
+      "actions": {
+        "accepted": 1259,
+        "edited": 110,
+        "added": 20,
+        "rejected": 16
+      },
+      "versions": {
+        "v1.3": 1384,
+        "v0.1": 21
+      }
+    },
+    "C_Relevance": {
+      "rows": 67,
+      "retained": 67,
+      "status": {
+        "approved": 67
+      },
+      "actions": {
+        "accepted": 65,
+        "edited": 2
+      },
+      "versions": {
+        "v1.3": 64,
+        "v1.2": 3
+      }
+    }
+  },
+  "sources_same": false,
+  "development_only": true,
+  "jd_count": 54,
+  "pairs": 67,
+  "issues": [
+    {
+      "sheet": "A_Extraction",
+      "excel_row": 47,
+      "cv_id": null,
+      "job_id": "F00074",
+      "unit_no": "D2-U08",
+      "code": "missing_review_note",
+      "detail": "Edited/rejected row needs reason",
+      "severity": "blocking"
+    },
+    {
+      "sheet": "A_Extraction",
+      "excel_row": 134,
+      "cv_id": null,
+      "job_id": "F00010",
+      "unit_no": "P02-U05",
+      "code": "missing_review_note",
+      "detail": "Edited/rejected row needs reason",
+      "severity": "blocking"
+    },
+    {
+      "sheet": "A_Extraction",
+      "excel_row": 149,
+      "cv_id": null,
+      "job_id": "F00018",
+      "unit_no": "P04-U11",
+      "code": "missing_review_note",
+      "detail": "Edited/rejected row needs reason",
+      "severity": "blocking"
+    },
+    {
+      "sheet": "A_Extraction",
+      "excel_row": 156,
+      "cv_id": null,
+      "job_id": "F00018",
+      "unit_no": "P04-U18",
+      "code": "missing_review_note",
+      "detail": "Edited/rejected row needs reason",
+      "severity": "blocking",
+      "resolution": "Filled for the user-approved QA correction"
+    },
+    {
+      "sheet": "A_Extraction",
+      "excel_row": 162,
+      "cv_id": null,
+      "job_id": "F00020",
+      "unit_no": "P05-U01",
+      "code": "missing_review_note",
+      "detail": "Edited/rejected row needs reason",
+      "severity": "blocking"
+    },
+    {
+      "sheet": "A_Extraction",
+      "excel_row": 170,
+      "cv_id": null,
+      "job_id": "F00029",
+      "unit_no": "P07-U01a",
+      "code": "missing_review_note",
+      "detail": "Edited/rejected row needs reason",
+      "severity": "blocking"
+    },
+    {
+      "sheet": "A_Extraction",
+      "excel_row": 171,
+      "cv_id": null,
+      "job_id": "F00029",
+      "unit_no": "P07-U01b",
+      "code": "missing_review_note",
+      "detail": "Edited/rejected row needs reason",
+      "severity": "blocking"
+    },
+    {
+      "sheet": "A_Extraction",
+      "excel_row": 187,
+      "cv_id": null,
+      "job_id": "F00029",
+      "unit_no": "P07-U17",
+      "code": "missing_review_note",
+      "detail": "Edited/rejected row needs reason",
+      "severity": "blocking",
+      "resolution": "Filled for the user-approved QA correction"
+    },
+    {
+      "sheet": "A_Extraction",
+      "excel_row": 198,
+      "cv_id": null,
+      "job_id": "F00029",
+      "unit_no": "P07-U27",
+      "code": "missing_review_note",
+      "detail": "Edited/rejected row needs reason",
+      "severity": "blocking"
+    },
+    {
+      "sheet": "JDs",
+      "excel_row": null,
+      "job_id": "F00369",
+      "unit_no": null,
+      "cv_id": null,
+      "code": "unverified_source_extension",
+      "severity": "blocking",
+      "detail": "User states completed tail came from a very similar Google posting. Not verified as the original source; original snapshot remains truncated. Exclude this JD from evaluation until source lineage is resolved."
+    },
+    {
+      "sheet": "A_Extraction",
+      "excel_row": 156,
+      "job_id": "F00018",
+      "unit_no": "P04-U18",
+      "cv_id": null,
+      "code": "local_softener_scope",
+      "severity": "semantic_review",
+      "detail": "General practical cloud experience is not softened; only AWS stack is preferred. Proposed required cloud unit plus preferred AWS unit, pending user response.",
+      "resolution": "User approved; applied to active workbook; cloud dependencies require recheck"
+    },
+    {
+      "sheet": "A_Extraction",
+      "excel_row": 187,
+      "job_id": "F00029",
+      "unit_no": "P07-U17",
+      "cv_id": null,
+      "code": "method_classified_as_tool",
+      "severity": "semantic_review",
+      "detail": "Debugging is a practice/method, not a named tool. Proposed knowledge_area, pending user response.",
+      "resolution": "User approved; applied to active workbook; cloud dependencies require recheck"
+    },
+    {
+      "sheet": "A_Extraction",
+      "excel_row": 171,
+      "job_id": "F00029",
+      "unit_no": "P07-U01b",
+      "cv_id": null,
+      "code": "mixed_version_alternative_group",
+      "severity": "compatibility",
+      "detail": "P07-G1 has two branch rows at v1.3 and v1.2. Keep provenance; confirm equivalent-experience meaning and group-level counting before evaluation."
+    }
+  ],
+  "A_changed_jobs": [
+    "F00003",
+    "F00029",
+    "F00036",
+    "F00052",
+    "F00055",
+    "F00075",
+    "F00090",
+    "F00114",
+    "F00117",
+    "F00176",
+    "F00188",
+    "F00208",
+    "F00212",
+    "F00303",
+    "F00310",
+    "F00327",
+    "F00354",
+    "F00369",
+    "F00515",
+    "F00556",
+    "F00624",
+    "F00650",
+    "F00663",
+    "F00798",
+    "F00815",
+    "F00933"
+  ],
+  "dependency_pairs_to_confirm": [
+    [
+      "CV1",
+      "F00036"
+    ],
+    [
+      "CV1",
+      "F00055"
+    ],
+    [
+      "CV1",
+      "F00075"
+    ],
+    [
+      "CV1",
+      "F00090"
+    ],
+    [
+      "CV1",
+      "F00188"
+    ],
+    [
+      "CV1",
+      "F00208"
+    ],
+    [
+      "CV1",
+      "F00212"
+    ],
+    [
+      "CV1",
+      "F00310"
+    ],
+    [
+      "CV1",
+      "F00354"
+    ],
+    [
+      "CV1",
+      "F00369"
+    ],
+    [
+      "CV1",
+      "F00515"
+    ],
+    [
+      "CV1",
+      "F00556"
+    ],
+    [
+      "CV1",
+      "F00663"
+    ],
+    [
+      "CV2",
+      "F00003"
+    ],
+    [
+      "CV2",
+      "F00029"
+    ],
+    [
+      "CV2",
+      "F00052"
+    ],
+    [
+      "CV2",
+      "F00055"
+    ],
+    [
+      "CV2",
+      "F00114"
+    ],
+    [
+      "CV2",
+      "F00117"
+    ],
+    [
+      "CV2",
+      "F00176"
+    ],
+    [
+      "CV2",
+      "F00208"
+    ],
+    [
+      "CV2",
+      "F00303"
+    ],
+    [
+      "CV2",
+      "F00310"
+    ],
+    [
+      "CV2",
+      "F00327"
+    ],
+    [
+      "CV2",
+      "F00624"
+    ],
+    [
+      "CV2",
+      "F00650"
+    ],
+    [
+      "CV2",
+      "F00663"
+    ],
+    [
+      "CV2",
+      "F00798"
+    ],
+    [
+      "CV2",
+      "F00815"
+    ],
+    [
+      "CV2",
+      "F00933"
+    ]
+  ],
+  "api_calls": 0,
+  "gold_written": false,
+  "source_extension_decision": {
+    "job_id": "F00369",
+    "user_answer": "Source is a very similar Google posting",
+    "status": "not_verified_as_original",
+    "original_snapshot_unchanged": true,
+    "evaluation_action": "withhold JD until source is verified; do not silently replace its source"
+  },
+  "status": "human_review_submitted_export_pending",
+  "limits": [
+    "All rows examined for mechanical integrity; no claim of independent semantic correctness of every label.",
+    "Historical semantic findings reconciled with current rows and linked notes; remaining policy cases are disclosed.",
+    "Human dependency confirmation and metric conventions remain required.",
+    "No actual gold export, model inference, database mutation, or workbook save."
+  ],
+  "changed_row_counts_vs_saved_working_book": {
+    "A_Extraction": 945,
+    "B_Evidence": 1384,
+    "C_Relevance": 64
+  },
+  "review_timing_complete": false,
+  "unanswered_questions_count": 20,
+  "semantic_reconciliation": {
+    "AUD-028": "Resolved: duplicate parent P21-U03 rejected; P21-U08 retained",
+    "AUD-078": "Resolved: importance limitation documented in draft/review notes",
+    "language_cases": "Repeated review notes support PARTIAL convention; global Questions decision not populated",
+    "nested_duration_cases": "Exact outer/inner thresholds remain in text; avoid reducing evaluation to min_years alone"
+  },
+  "reviewed_receipt_workbook": "evals/labeling/archive/review_receipts_20261002/JobFit_Development_Labeling_v0.1_A_B_C_review_v1.3_20261002.xlsx",
+  "reviewed_receipt_sha256": "e78f418ec7dfbb1f2e85af94117e103adf5ebb3f6036d0131c53320c1f573128",
+  "active_summary": {
+    "A_Extraction": {
+      "rows": 1079,
+      "approved": 1079,
+      "pending": 0,
+      "rejected": 10,
+      "retained": 1069
+    },
+    "B_Evidence": {
+      "rows": 1406,
+      "approved": 1404,
+      "pending": 2,
+      "rejected": 16,
+      "retained": 1390
+    },
+    "C_Relevance": {
+      "rows": 67,
+      "approved": 66,
+      "pending": 1,
+      "rejected": 0,
+      "retained": 67
+    }
+  },
+  "dependency_confirmation": {
+    "source": "Dion explicit reply in current chat",
+    "statement": "B and C reviewed after the last A changes in submitted receipt",
+    "scope": "original submitted receipt, before current cloud/category corrections",
+    "review_time_not_fabricated": true,
+    "new_cloud_recheck_pending": true
+  },
+  "active_missing_notes": [
+    {
+      "sheet": "A_Extraction",
+      "row": 47,
+      "unit_no": "D2-U08",
+      "job_id": "F00074"
+    },
+    {
+      "sheet": "A_Extraction",
+      "row": 134,
+      "unit_no": "P02-U05",
+      "job_id": "F00010"
+    },
+    {
+      "sheet": "A_Extraction",
+      "row": 149,
+      "unit_no": "P04-U11",
+      "job_id": "F00018"
+    },
+    {
+      "sheet": "A_Extraction",
+      "row": 162,
+      "unit_no": "P05-U01",
+      "job_id": "F00020"
+    },
+    {
+      "sheet": "A_Extraction",
+      "row": 170,
+      "unit_no": "P07-U01a",
+      "job_id": "F00029"
+    },
+    {
+      "sheet": "A_Extraction",
+      "row": 171,
+      "unit_no": "P07-U01b",
+      "job_id": "F00029"
+    },
+    {
+      "sheet": "A_Extraction",
+      "row": 198,
+      "unit_no": "P07-U27",
+      "job_id": "F00029"
+    }
+  ],
+  "active_pending_rows": [
+    {
+      "sheet": "B_Evidence",
+      "row": 600,
+      "unit_no": "P04-U18",
+      "cv_id": "CV2",
+      "job_id": "F00018"
+    },
+    {
+      "sheet": "B_Evidence",
+      "row": 1407,
+      "unit_no": "P04-U18-AWS",
+      "cv_id": "CV2",
+      "job_id": "F00018"
+    },
+    {
+      "sheet": "C_Relevance",
+      "row": 4,
+      "unit_no": null,
+      "cv_id": "CV2",
+      "job_id": "F00018"
+    }
+  ]
+}

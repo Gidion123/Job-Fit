@@ -1,0 +1,344 @@
+{
+  "job_id": "F00284",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "1d1db8e30d33e35a65cd105fa88f7b045c1ae7874b5b83a4d28661fb7d60b8a7",
+  "wall_ms": 61013,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00284",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "4+ years of professional experience in a Data Scientist role delivering end-to-end machine learning solutions in production environments",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "4+ years of professional experience in a Data Scientist role delivering end-to-end machine learning solutions in production environments",
+        "min_years": 4.0,
+        "branches": [],
+        "source_quotes": [
+          "4+ years of professional experience in a Data Scientist role, delivering end-to-end machine learning solutions in production environments.",
+          "4 years"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Strong business acumen with a proven track record of translating business requirements into technical data science problems",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Strong business acumen with a proven track record of translating business requirements into technical data science problems",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong business acumen with a proven track record of translating business requirements into technical data science problems."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Solid background in model evaluation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Solid background in model evaluation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Solid background in model evaluation, hyperparameter tuning, and model lifecycle management."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Solid background in hyperparameter tuning",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Solid background in hyperparameter tuning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Solid background in model evaluation, hyperparameter tuning, and model lifecycle management."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Solid background in model lifecycle management",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Solid background in model lifecycle management",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Solid background in model evaluation, hyperparameter tuning, and model lifecycle management."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Predictive Analytics",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Predictive Analytics",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Core Machine Learning: Predictive Analytics, Regression, Time Series Analysis, Classification, Supervised & Unsupervised Learning, Anomaly Detection."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Regression",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Regression",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Core Machine Learning: Predictive Analytics, Regression, Time Series Analysis, Classification, Supervised & Unsupervised Learning, Anomaly Detection."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Time Series Analysis",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Time Series Analysis",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Core Machine Learning: Predictive Analytics, Regression, Time Series Analysis, Classification, Supervised & Unsupervised Learning, Anomaly Detection."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Classification",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Classification",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Core Machine Learning: Predictive Analytics, Regression, Time Series Analysis, Classification, Supervised & Unsupervised Learning, Anomaly Detection."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Supervised Learning",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Supervised Learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Core Machine Learning: Predictive Analytics, Regression, Time Series Analysis, Classification, Supervised & Unsupervised Learning, Anomaly Detection."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Unsupervised Learning",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Unsupervised Learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Core Machine Learning: Predictive Analytics, Regression, Time Series Analysis, Classification, Supervised & Unsupervised Learning, Anomaly Detection."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Anomaly Detection",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Anomaly Detection",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Core Machine Learning: Predictive Analytics, Regression, Time Series Analysis, Classification, Supervised & Unsupervised Learning, Anomaly Detection."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "TensorFlow",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "TensorFlow",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Frameworks & Libraries: TensorFlow, PyTorch, XGBoost, Scikit-Learn."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "PyTorch",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "PyTorch",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Frameworks & Libraries: TensorFlow, PyTorch, XGBoost, Scikit-Learn."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "XGBoost",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "XGBoost",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Frameworks & Libraries: TensorFlow, PyTorch, XGBoost, Scikit-Learn."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Scikit-Learn",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Scikit-Learn",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Frameworks & Libraries: TensorFlow, PyTorch, XGBoost, Scikit-Learn."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Advanced proficiency in Python",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Advanced proficiency in Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Programming & Database: Advanced proficiency in Python and SQL."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Advanced proficiency in SQL",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Advanced proficiency in SQL",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Programming & Database: Advanced proficiency in Python and SQL."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Bachelor's or Master's degree in Data Science, Computer Science, Statistics, Applied Mathematics, or a related quantitative field",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "Bachelor's or Master's degree in Data Science, Computer Science, Statistics, Applied Mathematics, or a related quantitative field",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Bachelor's or Master's degree in Data Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Bachelor's or Master's degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Bachelor's or Master's degree in Statistics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Bachelor's or Master's degree in Applied Mathematics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Bachelor's or Master's degree in a related quantitative field",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Bachelor’s or Master’s degree in Data Science, Computer Science, Statistics, Applied Mathematics, or a related quantitative field."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

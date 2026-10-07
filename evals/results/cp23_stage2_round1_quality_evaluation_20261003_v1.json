@@ -1,0 +1,832 @@
+{
+  "schema_version": "cp23-stage2-round1-quality-v1",
+  "scope": "development only; fixed four pairs, seven whole JDs",
+  "acceptance_receipt": "evals/results/cp23_stage2_alignment_and_fixed_adapter_approval_20261003_v1.json",
+  "verification_method": "human_acceptance_of_assisted_source_QA; not independent human annotation",
+  "extraction": {
+    "deepseek-flash": {
+      "tp": 106,
+      "fp": 20,
+      "fn": 14,
+      "cases": 7,
+      "process_valid": 7,
+      "one_to_one": 112,
+      "category_correct": 105,
+      "importance_correct": 112,
+      "case_rows": [
+        {
+          "stage_id": "deepseek-flash/F00332",
+          "status": "pending_alignment_review",
+          "tp": 14,
+          "fp": 3,
+          "fn": 2,
+          "f1": 0.8484848484848485
+        },
+        {
+          "stage_id": "deepseek-flash/F00036",
+          "status": "pending_alignment_review",
+          "tp": 16,
+          "fp": 3,
+          "fn": 1,
+          "f1": 0.8888888888888888
+        },
+        {
+          "stage_id": "deepseek-flash/F00309",
+          "status": "pending_alignment_review",
+          "tp": 9,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        {
+          "stage_id": "deepseek-flash/F00354",
+          "status": "pending_alignment_review",
+          "tp": 27,
+          "fp": 7,
+          "fn": 2,
+          "f1": 0.8571428571428571
+        },
+        {
+          "stage_id": "deepseek-flash/F00815",
+          "status": "pending_alignment_review",
+          "tp": 10,
+          "fp": 5,
+          "fn": 6,
+          "f1": 0.6451612903225806
+        },
+        {
+          "stage_id": "deepseek-flash/F00010",
+          "status": "pending_alignment_review",
+          "tp": 8,
+          "fp": 1,
+          "fn": 1,
+          "f1": 0.8888888888888888
+        },
+        {
+          "stage_id": "deepseek-flash/F00018",
+          "status": "pending_alignment_review",
+          "tp": 22,
+          "fp": 1,
+          "fn": 2,
+          "f1": 0.9361702127659575
+        }
+      ],
+      "precision": 0.8412698412698413,
+      "recall": 0.8833333333333333,
+      "f1": 0.8617886178861789,
+      "category_accuracy_one_to_one": 0.9375,
+      "importance_accuracy_one_to_one": 1.0,
+      "attribute_denominator": "all accepted one-to-one relations; not extraction recall"
+    },
+    "gpt-6-luna": {
+      "tp": 100,
+      "fp": 32,
+      "fn": 20,
+      "cases": 7,
+      "process_valid": 7,
+      "one_to_one": 114,
+      "category_correct": 102,
+      "importance_correct": 105,
+      "case_rows": [
+        {
+          "stage_id": "gpt-6-luna/F00332",
+          "status": "pending_alignment_review",
+          "tp": 14,
+          "fp": 6,
+          "fn": 2,
+          "f1": 0.7777777777777778
+        },
+        {
+          "stage_id": "gpt-6-luna/F00036",
+          "status": "pending_alignment_review",
+          "tp": 16,
+          "fp": 4,
+          "fn": 1,
+          "f1": 0.8648648648648649
+        },
+        {
+          "stage_id": "gpt-6-luna/F00309",
+          "status": "pending_alignment_review",
+          "tp": 0,
+          "fp": 9,
+          "fn": 9,
+          "f1": 0.0
+        },
+        {
+          "stage_id": "gpt-6-luna/F00354",
+          "status": "pending_alignment_review",
+          "tp": 27,
+          "fp": 7,
+          "fn": 2,
+          "f1": 0.8571428571428571
+        },
+        {
+          "stage_id": "gpt-6-luna/F00815",
+          "status": "pending_alignment_review",
+          "tp": 15,
+          "fp": 2,
+          "fn": 1,
+          "f1": 0.9090909090909091
+        },
+        {
+          "stage_id": "gpt-6-luna/F00010",
+          "status": "pending_alignment_review",
+          "tp": 8,
+          "fp": 1,
+          "fn": 1,
+          "f1": 0.8888888888888888
+        },
+        {
+          "stage_id": "gpt-6-luna/F00018",
+          "status": "pending_alignment_review",
+          "tp": 20,
+          "fp": 3,
+          "fn": 4,
+          "f1": 0.851063829787234
+        }
+      ],
+      "precision": 0.7575757575757576,
+      "recall": 0.8333333333333334,
+      "f1": 0.7936507936507936,
+      "category_accuracy_one_to_one": 0.8947368421052632,
+      "importance_accuracy_one_to_one": 0.9210526315789473,
+      "attribute_denominator": "all accepted one-to-one relations; not extraction recall"
+    },
+    "gemini-3.5-flash-lite": {
+      "tp": 69,
+      "fp": 36,
+      "fn": 51,
+      "cases": 7,
+      "process_valid": 6,
+      "one_to_one": 82,
+      "category_correct": 75,
+      "importance_correct": 71,
+      "case_rows": [
+        {
+          "stage_id": "gemini-3.5-flash-lite/F00332",
+          "status": "pending_alignment_review",
+          "tp": 15,
+          "fp": 4,
+          "fn": 1,
+          "f1": 0.8571428571428571
+        },
+        {
+          "stage_id": "gemini-3.5-flash-lite/F00036",
+          "status": "pending_alignment_review",
+          "tp": 10,
+          "fp": 4,
+          "fn": 7,
+          "f1": 0.6451612903225806
+        },
+        {
+          "stage_id": "gemini-3.5-flash-lite/F00309",
+          "status": "pending_alignment_review",
+          "tp": 9,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        {
+          "stage_id": "gemini-3.5-flash-lite/F00354",
+          "status": "pending_alignment_review",
+          "tp": 12,
+          "fp": 26,
+          "fn": 17,
+          "f1": 0.3582089552238806
+        },
+        {
+          "stage_id": "gemini-3.5-flash-lite/F00815",
+          "status": "retained_process_failure",
+          "tp": 0,
+          "fp": 0,
+          "fn": 16,
+          "f1": 0.0
+        },
+        {
+          "stage_id": "gemini-3.5-flash-lite/F00010",
+          "status": "pending_alignment_review",
+          "tp": 8,
+          "fp": 1,
+          "fn": 1,
+          "f1": 0.8888888888888888
+        },
+        {
+          "stage_id": "gemini-3.5-flash-lite/F00018",
+          "status": "pending_alignment_review",
+          "tp": 15,
+          "fp": 1,
+          "fn": 9,
+          "f1": 0.75
+        }
+      ],
+      "precision": 0.6571428571428571,
+      "recall": 0.575,
+      "f1": 0.6133333333333333,
+      "category_accuracy_one_to_one": 0.9146341463414634,
+      "importance_accuracy_one_to_one": 0.8658536585365854,
+      "attribute_denominator": "all accepted one-to-one relations; not extraction recall"
+    },
+    "claude-haiku-4.5": {
+      "tp": 65,
+      "fp": 55,
+      "fn": 55,
+      "cases": 7,
+      "process_valid": 7,
+      "one_to_one": 86,
+      "category_correct": 74,
+      "importance_correct": 75,
+      "case_rows": [
+        {
+          "stage_id": "claude-haiku-4.5/F00332",
+          "status": "pending_alignment_review",
+          "tp": 10,
+          "fp": 3,
+          "fn": 6,
+          "f1": 0.6896551724137931
+        },
+        {
+          "stage_id": "claude-haiku-4.5/F00036",
+          "status": "pending_alignment_review",
+          "tp": 2,
+          "fp": 16,
+          "fn": 15,
+          "f1": 0.11428571428571428
+        },
+        {
+          "stage_id": "claude-haiku-4.5/F00309",
+          "status": "pending_alignment_review",
+          "tp": 8,
+          "fp": 1,
+          "fn": 1,
+          "f1": 0.8888888888888888
+        },
+        {
+          "stage_id": "claude-haiku-4.5/F00354",
+          "status": "pending_alignment_review",
+          "tp": 15,
+          "fp": 19,
+          "fn": 14,
+          "f1": 0.47619047619047616
+        },
+        {
+          "stage_id": "claude-haiku-4.5/F00815",
+          "status": "pending_alignment_review",
+          "tp": 13,
+          "fp": 3,
+          "fn": 3,
+          "f1": 0.8125
+        },
+        {
+          "stage_id": "claude-haiku-4.5/F00010",
+          "status": "pending_alignment_review",
+          "tp": 3,
+          "fp": 9,
+          "fn": 6,
+          "f1": 0.2857142857142857
+        },
+        {
+          "stage_id": "claude-haiku-4.5/F00018",
+          "status": "pending_alignment_review",
+          "tp": 14,
+          "fp": 4,
+          "fn": 10,
+          "f1": 0.6666666666666666
+        }
+      ],
+      "precision": 0.5416666666666666,
+      "recall": 0.5416666666666666,
+      "f1": 0.5416666666666666,
+      "category_accuracy_one_to_one": 0.8604651162790697,
+      "importance_accuracy_one_to_one": 0.872093023255814,
+      "attribute_denominator": "all accepted one-to-one relations; not extraction recall"
+    }
+  },
+  "evidence": {
+    "deepseek-flash": {
+      "metrics": {
+        "classes": [
+          "MATCH",
+          "PARTIAL",
+          "NO_MATCH"
+        ],
+        "confusion": {
+          "MATCH": {
+            "MATCH": 30,
+            "PARTIAL": 2,
+            "NO_MATCH": 3,
+            "not_assessed": 0
+          },
+          "PARTIAL": {
+            "MATCH": 7,
+            "PARTIAL": 11,
+            "NO_MATCH": 4,
+            "not_assessed": 0
+          },
+          "NO_MATCH": {
+            "MATCH": 0,
+            "PARTIAL": 0,
+            "NO_MATCH": 16,
+            "not_assessed": 0
+          }
+        },
+        "per_class": {
+          "MATCH": {
+            "tp": 30,
+            "fp": 7,
+            "fn": 5,
+            "support": 35,
+            "precision": 0.8108108108108109,
+            "recall": 0.8571428571428571,
+            "f1": 0.8333333333333334
+          },
+          "PARTIAL": {
+            "tp": 11,
+            "fp": 2,
+            "fn": 11,
+            "support": 22,
+            "precision": 0.8461538461538461,
+            "recall": 0.5,
+            "f1": 0.6285714285714286
+          },
+          "NO_MATCH": {
+            "tp": 16,
+            "fp": 7,
+            "fn": 0,
+            "support": 16,
+            "precision": 0.6956521739130435,
+            "recall": 1.0,
+            "f1": 0.8205128205128205
+          }
+        },
+        "class_support_complete": true,
+        "macro_f1": 0.7608058608058608,
+        "selection_blocker": null,
+        "coverage": {
+          "numerator": 73,
+          "denominator": 73,
+          "value": 1.0
+        },
+        "protocol": "D-052_all_reference_not_assessed_FN"
+      },
+      "cases": [
+        {
+          "stage_id": "deepseek-flash/CV1/F00332",
+          "status": "done",
+          "attempts": 1,
+          "error_code": null,
+          "units": 16,
+          "stage_wall_ms": 21439
+        },
+        {
+          "stage_id": "deepseek-flash/CV1/F00036",
+          "status": "done",
+          "attempts": 1,
+          "error_code": null,
+          "units": 17,
+          "stage_wall_ms": 28703
+        },
+        {
+          "stage_id": "deepseek-flash/CV2/F00815",
+          "status": "done",
+          "attempts": 1,
+          "error_code": null,
+          "units": 16,
+          "stage_wall_ms": 59025
+        },
+        {
+          "stage_id": "deepseek-flash/CV2/F00018",
+          "status": "done",
+          "attempts": 1,
+          "error_code": null,
+          "units": 24,
+          "stage_wall_ms": 90771
+        }
+      ],
+      "process_valid": 4,
+      "original_cases": 4
+    },
+    "gpt-6-luna": {
+      "metrics": {
+        "classes": [
+          "MATCH",
+          "PARTIAL",
+          "NO_MATCH"
+        ],
+        "confusion": {
+          "MATCH": {
+            "MATCH": 25,
+            "PARTIAL": 6,
+            "NO_MATCH": 4,
+            "not_assessed": 0
+          },
+          "PARTIAL": {
+            "MATCH": 1,
+            "PARTIAL": 16,
+            "NO_MATCH": 5,
+            "not_assessed": 0
+          },
+          "NO_MATCH": {
+            "MATCH": 0,
+            "PARTIAL": 2,
+            "NO_MATCH": 14,
+            "not_assessed": 0
+          }
+        },
+        "per_class": {
+          "MATCH": {
+            "tp": 25,
+            "fp": 1,
+            "fn": 10,
+            "support": 35,
+            "precision": 0.9615384615384616,
+            "recall": 0.7142857142857143,
+            "f1": 0.819672131147541
+          },
+          "PARTIAL": {
+            "tp": 16,
+            "fp": 8,
+            "fn": 6,
+            "support": 22,
+            "precision": 0.6666666666666666,
+            "recall": 0.7272727272727273,
+            "f1": 0.6956521739130435
+          },
+          "NO_MATCH": {
+            "tp": 14,
+            "fp": 9,
+            "fn": 2,
+            "support": 16,
+            "precision": 0.6086956521739131,
+            "recall": 0.875,
+            "f1": 0.717948717948718
+          }
+        },
+        "class_support_complete": true,
+        "macro_f1": 0.7444243410031008,
+        "selection_blocker": null,
+        "coverage": {
+          "numerator": 73,
+          "denominator": 73,
+          "value": 1.0
+        },
+        "protocol": "D-052_all_reference_not_assessed_FN"
+      },
+      "cases": [
+        {
+          "stage_id": "gpt-6-luna/CV1/F00332",
+          "status": "done",
+          "attempts": 1,
+          "error_code": null,
+          "units": 16,
+          "stage_wall_ms": 14761
+        },
+        {
+          "stage_id": "gpt-6-luna/CV1/F00036",
+          "status": "done",
+          "attempts": 1,
+          "error_code": null,
+          "units": 17,
+          "stage_wall_ms": 21906
+        },
+        {
+          "stage_id": "gpt-6-luna/CV2/F00815",
+          "status": "done",
+          "attempts": 1,
+          "error_code": null,
+          "units": 16,
+          "stage_wall_ms": 21865
+        },
+        {
+          "stage_id": "gpt-6-luna/CV2/F00018",
+          "status": "done",
+          "attempts": 1,
+          "error_code": null,
+          "units": 24,
+          "stage_wall_ms": 21591
+        }
+      ],
+      "process_valid": 4,
+      "original_cases": 4
+    },
+    "gemini-3.5-flash-lite": {
+      "metrics": {
+        "classes": [
+          "MATCH",
+          "PARTIAL",
+          "NO_MATCH"
+        ],
+        "confusion": {
+          "MATCH": {
+            "MATCH": 0,
+            "PARTIAL": 0,
+            "NO_MATCH": 0,
+            "not_assessed": 35
+          },
+          "PARTIAL": {
+            "MATCH": 0,
+            "PARTIAL": 0,
+            "NO_MATCH": 0,
+            "not_assessed": 22
+          },
+          "NO_MATCH": {
+            "MATCH": 0,
+            "PARTIAL": 0,
+            "NO_MATCH": 0,
+            "not_assessed": 16
+          }
+        },
+        "per_class": {
+          "MATCH": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 35,
+            "support": 35,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "PARTIAL": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 22,
+            "support": 22,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "NO_MATCH": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 16,
+            "support": 16,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "class_support_complete": true,
+        "macro_f1": 0.0,
+        "selection_blocker": null,
+        "coverage": {
+          "numerator": 0,
+          "denominator": 73,
+          "value": 0.0
+        },
+        "protocol": "D-052_all_reference_not_assessed_FN"
+      },
+      "cases": [
+        {
+          "stage_id": "gemini-3.5-flash-lite/CV1/F00332",
+          "status": "failed",
+          "attempts": 2,
+          "error_code": "BadRequestError",
+          "units": 16,
+          "stage_wall_ms": 4792
+        },
+        {
+          "stage_id": "gemini-3.5-flash-lite/CV1/F00036",
+          "status": "failed",
+          "attempts": 2,
+          "error_code": "BadRequestError",
+          "units": 17,
+          "stage_wall_ms": 6724
+        },
+        {
+          "stage_id": "gemini-3.5-flash-lite/CV2/F00815",
+          "status": "failed",
+          "attempts": 2,
+          "error_code": "BadRequestError",
+          "units": 16,
+          "stage_wall_ms": 6145
+        },
+        {
+          "stage_id": "gemini-3.5-flash-lite/CV2/F00018",
+          "status": "failed",
+          "attempts": 2,
+          "error_code": "BadRequestError",
+          "units": 24,
+          "stage_wall_ms": 6613
+        }
+      ],
+      "process_valid": 0,
+      "original_cases": 4
+    },
+    "claude-haiku-4.5": {
+      "metrics": {
+        "classes": [
+          "MATCH",
+          "PARTIAL",
+          "NO_MATCH"
+        ],
+        "confusion": {
+          "MATCH": {
+            "MATCH": 5,
+            "PARTIAL": 2,
+            "NO_MATCH": 0,
+            "not_assessed": 28
+          },
+          "PARTIAL": {
+            "MATCH": 3,
+            "PARTIAL": 3,
+            "NO_MATCH": 2,
+            "not_assessed": 14
+          },
+          "NO_MATCH": {
+            "MATCH": 0,
+            "PARTIAL": 0,
+            "NO_MATCH": 1,
+            "not_assessed": 15
+          }
+        },
+        "per_class": {
+          "MATCH": {
+            "tp": 5,
+            "fp": 3,
+            "fn": 30,
+            "support": 35,
+            "precision": 0.625,
+            "recall": 0.14285714285714285,
+            "f1": 0.23255813953488372
+          },
+          "PARTIAL": {
+            "tp": 3,
+            "fp": 2,
+            "fn": 19,
+            "support": 22,
+            "precision": 0.6,
+            "recall": 0.13636363636363635,
+            "f1": 0.2222222222222222
+          },
+          "NO_MATCH": {
+            "tp": 1,
+            "fp": 2,
+            "fn": 15,
+            "support": 16,
+            "precision": 0.3333333333333333,
+            "recall": 0.0625,
+            "f1": 0.10526315789473684
+          }
+        },
+        "class_support_complete": true,
+        "macro_f1": 0.18668117321728092,
+        "selection_blocker": null,
+        "coverage": {
+          "numerator": 16,
+          "denominator": 73,
+          "value": 0.2191780821917808
+        },
+        "protocol": "D-052_all_reference_not_assessed_FN"
+      },
+      "cases": [
+        {
+          "stage_id": "claude-haiku-4.5/CV1/F00332",
+          "status": "failed",
+          "attempts": 2,
+          "error_code": "BadRequestError",
+          "units": 16,
+          "stage_wall_ms": 14970
+        },
+        {
+          "stage_id": "claude-haiku-4.5/CV1/F00036",
+          "status": "failed",
+          "attempts": 2,
+          "error_code": "BadRequestError",
+          "units": 17,
+          "stage_wall_ms": 15359
+        },
+        {
+          "stage_id": "claude-haiku-4.5/CV2/F00815",
+          "status": "done",
+          "attempts": 1,
+          "error_code": null,
+          "units": 16,
+          "stage_wall_ms": 8812
+        },
+        {
+          "stage_id": "claude-haiku-4.5/CV2/F00018",
+          "status": "failed",
+          "attempts": 2,
+          "error_code": "BadRequestError",
+          "units": 24,
+          "stage_wall_ms": 11383
+        }
+      ],
+      "process_valid": 1,
+      "original_cases": 4
+    }
+  },
+  "evidence_support": {
+    "MATCH": 35,
+    "PARTIAL": 22,
+    "NO_MATCH": 16
+  },
+  "matching_operations": {
+    "deepseek-flash": {
+      "live": {
+        "records": 4,
+        "cost_usd": 0.040561914000000004,
+        "latency_observed": 4,
+        "latency_missing": 0,
+        "p50_ms": 28687,
+        "p95_ms": 90747,
+        "percentile_method": "nearest_rank",
+        "failures": 0
+      },
+      "cached": {
+        "records": 0,
+        "cost_usd": 0,
+        "latency_observed": 0,
+        "latency_missing": 0,
+        "p50_ms": null,
+        "p95_ms": null,
+        "percentile_method": "nearest_rank",
+        "failures": 0
+      }
+    },
+    "gpt-6-luna": {
+      "live": {
+        "records": 4,
+        "cost_usd": 0.007206285,
+        "latency_observed": 4,
+        "latency_missing": 0,
+        "p50_ms": 21559,
+        "p95_ms": 21880,
+        "percentile_method": "nearest_rank",
+        "failures": 0
+      },
+      "cached": {
+        "records": 0,
+        "cost_usd": 0,
+        "latency_observed": 0,
+        "latency_missing": 0,
+        "p50_ms": null,
+        "p95_ms": null,
+        "percentile_method": "nearest_rank",
+        "failures": 0
+      }
+    },
+    "gemini-3.5-flash-lite": {
+      "live": {
+        "records": 8,
+        "cost_usd": 0.028526629999999997,
+        "latency_observed": 8,
+        "latency_missing": 0,
+        "p50_ms": 592,
+        "p95_ms": 6165,
+        "percentile_method": "nearest_rank",
+        "failures": 4
+      },
+      "cached": {
+        "records": 0,
+        "cost_usd": 0,
+        "latency_observed": 0,
+        "latency_missing": 0,
+        "p50_ms": null,
+        "p95_ms": null,
+        "percentile_method": "nearest_rank",
+        "failures": 0
+      }
+    },
+    "claude-haiku-4.5": {
+      "live": {
+        "records": 7,
+        "cost_usd": 0.080392,
+        "latency_observed": 7,
+        "latency_missing": 0,
+        "p50_ms": 8647,
+        "p95_ms": 12619,
+        "percentile_method": "nearest_rank",
+        "failures": 3
+      },
+      "cached": {
+        "records": 0,
+        "cost_usd": 0,
+        "latency_observed": 0,
+        "latency_missing": 0,
+        "p50_ms": null,
+        "p95_ms": null,
+        "percentile_method": "nearest_rank",
+        "failures": 0
+      }
+    }
+  },
+  "matching_cost_usd": "0.156686829",
+  "matching_api_calls": 23,
+  "ledger_accounted_usd": "0.7681457468",
+  "project_hard_stop_usd": "8.50",
+  "matching_ceiling_usd": "1.85",
+  "winner": null,
+  "limits": [
+    "Evidence uses fixed reviewed requirements, not an end-to-end extraction comparison",
+    "Failed matching is not_assessed: gold-class FN, never NO_MATCH or excluded",
+    "Gemini/F00815 extraction failure contributes 16 FN on the common original scope",
+    "Category accuracy conditional on one-to-one relations; omissions/splits remain in primary F1",
+    "Cost/latency include attempts and rejected repairs; one small run is not production timing",
+    "Safety/source entailment review and D-029 quality reference remain separate selection gates"
+  ],
+  "hashes": {
+    "evals/results/cp23_stage2_fixed_matching_20261003_v1_plan.json": "360e16a8ed41a3c357b15c8b019f262adfcb6b2942344f677c92b8d8f9d4ccdd",
+    "reports/quality_probe/cp23_stage2_fixed_matching_20261003_v1.json": "df0f435604286300cbaf0a429d78a56a791cbbaaca67d67607225401dc695de4",
+    "evals/results/cp23_stage2_alignment_and_fixed_adapter_approval_20261003_v1.json": "7b43b7ad9a4b0d9d6e1b537a5a4b856ee158d26d1d983c09c9d6b7c311541096"
+  }
+}

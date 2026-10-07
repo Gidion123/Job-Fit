@@ -1,0 +1,77 @@
+{
+  "fixture_id": "dev_03_duration_unknown",
+  "synthetic": true,
+  "note": "Synthetic development fixture for the deterministic rules. Hand-written, not model output. Not part of the test set.",
+  "analysis_date": "2026-09-29",
+  "cv_parse_status": "ok",
+  "case": "Python project with no dates: PARTIAL with needs_clarification; duration unknown, not a conflict.",
+  "extraction": {
+    "job_id": "FIX-03",
+    "units": [
+      {
+        "unit_id": "u1",
+        "text": "2+ years of Python experience",
+        "importance": "required",
+        "field": "experience_duration",
+        "source_quotes": [
+          "2+ years of Python experience"
+        ],
+        "kind": "qualified",
+        "min_years": 2
+      },
+      {
+        "unit_id": "u2",
+        "text": "Pandas",
+        "importance": "required",
+        "field": "skill_tool",
+        "source_quotes": [
+          "Pandas"
+        ]
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "u1",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "Personal project: sentiment analysis in Python"
+      ]
+    },
+    {
+      "unit_id": "u2",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Cleaned 50k rows with pandas"
+      ]
+    }
+  ],
+  "experience": {
+    "min_years": 2,
+    "cv_entries": []
+  },
+  "expected": {
+    "score_pct": 75.0,
+    "status": "final",
+    "required_total": 2,
+    "matched": 1,
+    "partial": 1,
+    "constraint_state": "unknown"
+  },
+  "fixture_version": "v1.3-r1",
+  "guideline_version": "v1.3",
+  "revision": {
+    "source_file": "evals/fixtures/dev_03_duration_unknown.json",
+    "source_sha256": "bd1690174049bb54c7feb403dc55c983422c6388b131c959c52f5e03bb7f8726",
+    "reason": "Explicitly unavailable employment history; project supports use, never employment duration.",
+    "scope": "Synthetic fixture revision only; no real JD/CV or approved label edited",
+    "review_kind": "delegated technical and semantic examination under user instruction",
+    "human_independent_approval": false
+  },
+  "synthetic_jd_context": "Required qualifications:\n2+ years of Python experience\nPandas",
+  "synthetic_cv_context": "Personal project: sentiment analysis in Python\nCleaned 50k rows with pandas",
+  "scope_statement": "Employment history and its completeness are not supplied. The undated project is excluded from employment duration, not asserted to prove zero years.",
+  "semantic_review_status": "delegated_checked"
+}

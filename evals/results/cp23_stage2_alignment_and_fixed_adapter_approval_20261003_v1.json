@@ -1,0 +1,24 @@
+{
+  "decision_id": "D-063",
+  "approved_by": "Dion",
+  "date": "2026-10-03",
+  "approval_text": "Setuju pemetaan rekomendasi dan adapter tetap",
+  "verification_method": "human_acceptance_of_assisted_source_QA; not independent human annotation",
+  "packet": "evals/results/cp23_stage2_full_alignment_review_20261003_v3.json",
+  "fixed_input_reference": "evals/results/cp23_stage2_fixed_matching_reference_check_20261003_v1.json",
+  "hashes": {
+    "evals/results/cp23_stage2_full_alignment_review_20261003_v3.json": "225fa3e42d9cc128d8f90a888b7dbc0debc1a1003fb28ea8565688e5310984b1",
+    "evals/results/cp23_stage2_fixed_matching_20261003_v1_plan.json": "360e16a8ed41a3c357b15c8b019f262adfcb6b2942344f677c92b8d8f9d4ccdd",
+    "evals/results/cp23_stage2_fixed_matching_reference_check_20261003_v1.json": "e2308dbe0088c25159c0f703592ef56f70989c5c02fe5c34eed82f7c10b27478",
+    "src/jobfit/eval/fixed_requirements.py": "c947d63fac6418dd3eb1a03c9838dfbabc97d601e5e90dfc87190a92136ec955",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/extraction_gold.jsonl": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/evidence_gold.jsonl": "510bbe15bd02ed370b2a94982582169c6c9d38f62b5e6e27311bb55a0f3ef49e"
+  },
+  "accepted_recommendations": true,
+  "fixed_input_adapter_accepted": true,
+  "limits": [
+    "No gold or model output correction",
+    "No winner, quality reference, test use or new paid authorization",
+    "D-060 scoped complex accounting only; D-061 primary importance required/category separate"
+  ]
+}

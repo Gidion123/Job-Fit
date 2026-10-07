@@ -1,0 +1,265 @@
+{
+  "job_id": "F00020",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "ad3d22e70e09ab4bbf39fa4c136898b9b2c802d673c6ed70534a4d0ee865dba5",
+  "wall_ms": 66094,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 6,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 6,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U03"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U04",
+          "U05",
+          "U06"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U07",
+          "U08"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U09"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00020",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Mastery of at least one of the following fields: Microsoft Excel, Power BI, Python, SQL, or AI/Generative AI application.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": "Mastery of at least one of the following fields: Microsoft Excel, Power BI, Python, SQL, or AI/Generative AI application.",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Mastery of Microsoft Excel",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Mastery of Power BI",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Mastery of Python",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Mastery of SQL",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Mastery of AI/Generative AI application",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Menguasai minimal salah satu bidang: Microsoft Excel, Power BI, Python, SQL, atau penerapan AI/Generative AI."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Have practical experience or a project portfolio relevant to the field taught.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": "Have practical experience or a project portfolio relevant to the field taught.",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Practical experience relevant to the field taught",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Project portfolio relevant to the field taught",
+            "field": "other",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Memiliki pengalaman praktik atau portofolio proyek yang relevan dengan bidang yang diajarkan."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Able to explain technical concepts simply, including to beginners.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Able to explain technical concepts simply, including to beginners.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Mampu menjelaskan konsep teknis secara sederhana, termasuk kepada pemula."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Good communication skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Good communication skills.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Memiliki kemampuan komunikasi yang baik, sabar, dan mampu membangun suasana belajar yang inklusif."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Patient.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Patient.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Memiliki kemampuan komunikasi yang baik, sabar, dan mampu membangun suasana belajar yang inklusif."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Able to build an inclusive learning atmosphere.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Able to build an inclusive learning atmosphere.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Memiliki kemampuan komunikasi yang baik, sabar, dan mampu membangun suasana belajar yang inklusif."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Responsible for preparing learning materials.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": "Responsible for preparing learning materials.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Bertanggung jawab terhadap persiapan materi dan jadwal pembelajaran."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Responsible for the learning schedule.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": "Responsible for the learning schedule.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Bertanggung jawab terhadap persiapan materi dan jadwal pembelajaran."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Teaching, mentoring, or trainer experience is a plus.",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "other",
+        "normalized_name": "Teaching, mentoring, or trainer experience is a plus.",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Teaching experience",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Mentoring experience",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Trainer experience",
+            "field": "other",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Pengalaman mengajar, mentoring, atau menjadi trainer merupakan nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

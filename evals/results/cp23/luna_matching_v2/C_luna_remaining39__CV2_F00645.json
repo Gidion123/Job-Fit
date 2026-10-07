@@ -1,0 +1,440 @@
+{
+  "cv_id": "CV2",
+  "job_id": "F00645",
+  "model": "gpt-6-luna",
+  "status": "done",
+  "error_code": null,
+  "wall_ms": 31577,
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B6",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B7",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": null,
+      "check_status": "needs_clarification",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "PARTIAL",
+          "check_status": "needs_clarification",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "PARTIAL",
+          "check_status": "needs_clarification",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "B3",
+          "label": "PARTIAL",
+          "check_status": "needs_clarification",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "needs_clarification",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "PARTIAL",
+          "check_status": "needs_clarification",
+          "cv_quotes": [
+            "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+          ]
+        },
+        {
+          "branch_id": "B6",
+          "label": "PARTIAL",
+          "check_status": "needs_clarification",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+            "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "B4",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "B5",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B6",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+        "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U10",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U11",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+          ]
+        },
+        {
+          "branch_id": "B5",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B6",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U12",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+            "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+          ]
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U13",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+            "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+          ]
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    }
+  ],
+  "scores": {
+    "H1": {
+      "score": {
+        "score_pct": 69.23,
+        "status": "final",
+        "matched": 7,
+        "partial": 4,
+        "required_total": 13,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    },
+    "H2": {
+      "score": {
+        "score_pct": 69.23,
+        "status": "final",
+        "matched": 7,
+        "partial": 4,
+        "required_total": 13,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    },
+    "H2v2": {
+      "score": {
+        "score_pct": 69.23,
+        "status": "final",
+        "matched": 7,
+        "partial": 4,
+        "required_total": 13,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": []
+      },
+      "excluded": []
+    }
+  }
+}

@@ -1,0 +1,401 @@
+{
+  "job_id": "F00663",
+  "status": "done",
+  "attempts": 2,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "2b712a59ace1cee3fa13347d131c694f896566c3804948df680614eb8796f720",
+  "wall_ms": 158075,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00663",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Minimum bachelor's degree (S1) in Computer Science, Informatics Engineering, Mathematics, Statistics, or a related field.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Minimum bachelor's degree (S1) in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Minimum bachelor's degree (S1) in Informatics Engineering",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Minimum bachelor's degree (S1) in Mathematics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Minimum bachelor's degree (S1) in Statistics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Minimum bachelor's degree (S1) in a related field",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "• Pendidikan: Minimal S1 dalam bidang Ilmu Komputer, Teknik Informatika, Matematika, Statistika, atau bidang terkait."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Minimum 5 years of experience in AI and machine learning development, with a proven track record in implementing AI projects.",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": null,
+        "min_years": 5.0,
+        "branches": [],
+        "source_quotes": [
+          "• Pengalaman: Minimal 5 tahun pengalaman dalam pengembangan AI dan machine learning, dengan track record yang proven dalam implementasi proyek AI."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Proficient in a programming language (Python, Java, or C++), with the ability to write clean and maintainable code.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Proficient in Python with the ability to write clean and maintainable code",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Proficient in Java with the ability to write clean and maintainable code",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Proficient in C++ with the ability to write clean and maintainable code",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "• Pemrograman: Mahir dalam bahasa pemrograman Python, Java, atau C++, dengan kemampuan untuk menulis kode yang clean dan maintainable."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Deep mastery of machine learning concepts and techniques.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Machine Learning & Deep Learning: Penguasaan mendalam terhadap konsep dan teknik machine learning, supervised learning, unsupervised learning, reinforcement learning, dan deep neural networks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Deep mastery of supervised learning concepts and techniques.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Machine Learning & Deep Learning: Penguasaan mendalam terhadap konsep dan teknik machine learning, supervised learning, unsupervised learning, reinforcement learning, dan deep neural networks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Deep mastery of unsupervised learning concepts and techniques.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Machine Learning & Deep Learning: Penguasaan mendalam terhadap konsep dan teknik machine learning, supervised learning, unsupervised learning, reinforcement learning, dan deep neural networks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Deep mastery of reinforcement learning concepts and techniques.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Machine Learning & Deep Learning: Penguasaan mendalam terhadap konsep dan teknik machine learning, supervised learning, unsupervised learning, reinforcement learning, dan deep neural networks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Deep mastery of deep neural networks.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Machine Learning & Deep Learning: Penguasaan mendalam terhadap konsep dan teknik machine learning, supervised learning, unsupervised learning, reinforcement learning, dan deep neural networks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Practical experience with popular frameworks such as TensorFlow, PyTorch, scikit-learn, Keras, and other AI tools.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Practical experience with TensorFlow",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Practical experience with PyTorch",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Practical experience with scikit-learn",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Practical experience with Keras",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Practical experience with other AI tools",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "• Framework & Libraries: Pengalaman praktis dengan framework populer seperti TensorFlow, PyTorch, scikit-learn, Keras, dan tools AI lainnya."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Strong ability in data preprocessing using tools such as Pandas, NumPy, and SQL.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Data Processing: Kemampuan strong dalam data preprocessing, feature engineering, dan handling big data menggunakan tools seperti Pandas, NumPy, dan SQL."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Strong ability in feature engineering using tools such as Pandas, NumPy, and SQL.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Data Processing: Kemampuan strong dalam data preprocessing, feature engineering, dan handling big data menggunakan tools seperti Pandas, NumPy, dan SQL."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Strong ability in handling big data using tools such as Pandas, NumPy, and SQL.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Data Processing: Kemampuan strong dalam data preprocessing, feature engineering, dan handling big data menggunakan tools seperti Pandas, NumPy, dan SQL."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Experience with cloud computing platforms such as AWS, Google Cloud Platform, or Microsoft Azure for AI model deployment.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience with AWS for AI model deployment",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience with Google Cloud Platform for AI model deployment",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Experience with Microsoft Azure for AI model deployment",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "• Cloud Platforms: Pengalaman dengan cloud computing platforms seperti AWS, Google Cloud Platform, atau Microsoft Azure untuk deployment model AI."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Strong analytical ability in solving complex business problems through AI approaches.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Problem Solving: Kemampuan analytical yang strong dan creative thinking dalam menyelesaikan masalah bisnis yang kompleks melalui pendekatan AI."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Creative thinking in solving complex business problems through AI approaches.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Problem Solving: Kemampuan analytical yang strong dan creative thinking dalam menyelesaikan masalah bisnis yang kompleks melalui pendekatan AI."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Good communication ability to explain technical concepts to non-technical stakeholders.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Komunikasi: Kemampuan komunikasi yang baik untuk menjelaskan konsep teknis kepada stakeholder non-technical."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Certification in AI, Machine Learning, or Cloud Computing is a plus.",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "certification",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Certification in AI is a plus",
+            "field": "certification",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Certification in Machine Learning is a plus",
+            "field": "certification",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Certification in Cloud Computing is a plus",
+            "field": "certification",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "• Sertifikasi Tambahan: Sertifikasi dalam AI, Machine Learning, atau Cloud Computing akan menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

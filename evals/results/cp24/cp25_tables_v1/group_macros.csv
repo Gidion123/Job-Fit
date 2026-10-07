@@ -1,0 +1,5 @@
+group,metric,stage1_macro,final_macro,cvs_included,cvs_planned,coverage,cvs_in_macro,omitted
+primary_heldout,p_at_5,0.5333333333333333,0.7333333333333334,3,3,3/3 CV complete,CV3 CV4 CV5,
+primary_heldout,ndcg_at_10,0.8046813601460272,0.9604050613677055,2,3,2/3 CV complete,CV3 CV4,CV5: final missing_original_position_judgment
+supplementary_familiar,p_at_5,0.30000000000000004,0.7,2,2,2/2 CV complete,CV1 CV2,
+supplementary_familiar,ndcg_at_10,0.6875040139954578,0.8917760280238225,2,2,2/2 CV complete,CV1 CV2,

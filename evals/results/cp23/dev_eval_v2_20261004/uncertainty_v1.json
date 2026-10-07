@@ -1,0 +1,480 @@
+{
+  "schema_version": "cp23-dev-uncertainty-v1",
+  "date": "2026-10-04",
+  "split": "development",
+  "api_calls": 0,
+  "seed": 20261004,
+  "draws": 5000,
+  "test_used": false,
+  "gold_written": false,
+  "matching_bootstrap": [
+    {
+      "a": "deepseek-flash",
+      "b": "gpt-6-luna",
+      "reference": "old",
+      "view": "all_cases",
+      "units": 73,
+      "pairs": 4,
+      "observed_difference": 0.016381519802759925,
+      "unit_bootstrap_95": [
+        -0.09087610970872007,
+        0.1223214977690682
+      ],
+      "pair_bootstrap_95": [
+        -0.11742951754251196,
+        0.09097966432569482
+      ],
+      "share_of_unit_draws_below_0_03": 0.5906
+    },
+    {
+      "a": "deepseek-flash",
+      "b": "gpt-6-luna",
+      "reference": "old",
+      "view": "all_cases_guarded",
+      "units": 73,
+      "pairs": 4,
+      "observed_difference": 0.03299229556846528,
+      "unit_bootstrap_95": [
+        -0.07194485356167979,
+        0.1408785468886069
+      ],
+      "pair_bootstrap_95": [
+        -0.07328280597784131,
+        0.09097966432569482
+      ],
+      "share_of_unit_draws_below_0_03": 0.4772
+    },
+    {
+      "a": "deepseek-flash",
+      "b": "gpt-6-luna",
+      "reference": "new",
+      "view": "all_cases",
+      "units": 73,
+      "pairs": 4,
+      "observed_difference": 0.04193990500559086,
+      "unit_bootstrap_95": [
+        -0.06472045449003971,
+        0.15134522639954728
+      ],
+      "pair_bootstrap_95": [
+        -0.042092163013348616,
+        0.09097966432569482
+      ],
+      "share_of_unit_draws_below_0_03": 0.4008
+    },
+    {
+      "a": "deepseek-flash",
+      "b": "gpt-6-luna",
+      "reference": "new",
+      "view": "all_cases_guarded",
+      "units": 73,
+      "pairs": 4,
+      "observed_difference": 0.04193990500559086,
+      "unit_bootstrap_95": [
+        -0.06674342078068785,
+        0.14759094626376035
+      ],
+      "pair_bootstrap_95": [
+        -0.042092163013348616,
+        0.09097966432569482
+      ],
+      "share_of_unit_draws_below_0_03": 0.3928
+    },
+    {
+      "a": "gpt-6-sol",
+      "b": "deepseek-flash",
+      "reference": "new",
+      "view": "all_cases_guarded",
+      "units": 73,
+      "pairs": 4,
+      "observed_difference": 0.057153443386495306,
+      "unit_bootstrap_95": [
+        -0.020532042046949583,
+        0.14321547942154567
+      ],
+      "pair_bootstrap_95": [
+        -0.02391444880345317,
+        0.11613574525868375
+      ],
+      "share_of_unit_draws_below_0_03": 0.254
+    }
+  ],
+  "matching_error_profile_new_reference_guarded": {
+    "round_one_B/claude-haiku-4.5": {
+      "claims_stronger_than_gold": 0,
+      "claims_weaker_than_gold": 4,
+      "predicted_match": 6,
+      "match_overclaim": 0,
+      "positive_claim_on_gold_no_match": 0,
+      "match_underclaim": 2,
+      "match_precision": 1.0,
+      "not_assessed": 57
+    },
+    "round_one_B/deepseek-flash": {
+      "claims_stronger_than_gold": 6,
+      "claims_weaker_than_gold": 9,
+      "predicted_match": 37,
+      "match_overclaim": 6,
+      "positive_claim_on_gold_no_match": 0,
+      "match_underclaim": 5,
+      "match_precision": 0.8378378378378378,
+      "not_assessed": 0
+    },
+    "round_one_B/gemini-3.5-flash-lite": {
+      "claims_stronger_than_gold": 2,
+      "claims_weaker_than_gold": 5,
+      "predicted_match": 13,
+      "match_overclaim": 0,
+      "positive_claim_on_gold_no_match": 2,
+      "match_underclaim": 5,
+      "match_precision": 1.0,
+      "not_assessed": 40
+    },
+    "round_one_B/gpt-6-luna": {
+      "claims_stronger_than_gold": 3,
+      "claims_weaker_than_gold": 16,
+      "predicted_match": 26,
+      "match_overclaim": 1,
+      "positive_claim_on_gold_no_match": 2,
+      "match_underclaim": 11,
+      "match_precision": 0.9615384615384616,
+      "not_assessed": 0
+    },
+    "reference_round_two/deepseek-v4-pro": {
+      "claims_stronger_than_gold": 5,
+      "claims_weaker_than_gold": 17,
+      "predicted_match": 34,
+      "match_overclaim": 5,
+      "positive_claim_on_gold_no_match": 0,
+      "match_underclaim": 7,
+      "match_precision": 0.8529411764705882,
+      "not_assessed": 0
+    },
+    "reference_round_two/gpt-6-sol": {
+      "claims_stronger_than_gold": 2,
+      "claims_weaker_than_gold": 9,
+      "predicted_match": 33,
+      "match_overclaim": 1,
+      "positive_claim_on_gold_no_match": 1,
+      "match_underclaim": 4,
+      "match_precision": 0.9696969696969697,
+      "not_assessed": 0
+    }
+  },
+  "retrieval_per_cv": [
+    {
+      "cv_id": "CV1",
+      "method": "B0",
+      "relevant_in_pool": 13,
+      "found_at_k": {
+        "10": 7,
+        "20": 8,
+        "30": 9
+      },
+      "unjudged_in_top": {
+        "10": 0,
+        "20": 7,
+        "30": 15
+      },
+      "relevant_ranks": [
+        1,
+        2,
+        5,
+        6,
+        8,
+        9,
+        10,
+        19,
+        23
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "method": "B1",
+      "relevant_in_pool": 13,
+      "found_at_k": {
+        "10": 3,
+        "20": 3,
+        "30": 4
+      },
+      "unjudged_in_top": {
+        "10": 0,
+        "20": 7,
+        "30": 12
+      },
+      "relevant_ranks": [
+        2,
+        6,
+        10,
+        24
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "method": "dense_openai",
+      "relevant_in_pool": 13,
+      "found_at_k": {
+        "10": 2,
+        "20": 2,
+        "30": 3
+      },
+      "unjudged_in_top": {
+        "10": 0,
+        "20": 6,
+        "30": 13
+      },
+      "relevant_ranks": [
+        2,
+        6,
+        23
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "method": "hybrid_openai",
+      "relevant_in_pool": 13,
+      "found_at_k": {
+        "10": 0,
+        "20": 4,
+        "30": 5
+      },
+      "unjudged_in_top": {
+        "10": 0,
+        "20": 0,
+        "30": 6
+      },
+      "relevant_ranks": [
+        11,
+        12,
+        16,
+        17,
+        24
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "method": "dense_qwen",
+      "relevant_in_pool": 13,
+      "found_at_k": {
+        "10": 4,
+        "20": 5,
+        "30": 7
+      },
+      "unjudged_in_top": {
+        "10": 0,
+        "20": 7,
+        "30": 13
+      },
+      "relevant_ranks": [
+        1,
+        5,
+        7,
+        9,
+        17,
+        22,
+        23
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "method": "hybrid_qwen",
+      "relevant_in_pool": 13,
+      "found_at_k": {
+        "10": 3,
+        "20": 6,
+        "30": 8
+      },
+      "unjudged_in_top": {
+        "10": 0,
+        "20": 0,
+        "30": 6
+      },
+      "relevant_ranks": [
+        1,
+        7,
+        8,
+        11,
+        15,
+        18,
+        21,
+        23
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "method": "B0",
+      "relevant_in_pool": 11,
+      "found_at_k": {
+        "10": 4,
+        "20": 4,
+        "30": 5
+      },
+      "unjudged_in_top": {
+        "10": 0,
+        "20": 9,
+        "30": 16
+      },
+      "relevant_ranks": [
+        2,
+        4,
+        8,
+        9,
+        30
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "method": "B1",
+      "relevant_in_pool": 11,
+      "found_at_k": {
+        "10": 4,
+        "20": 5,
+        "30": 7
+      },
+      "unjudged_in_top": {
+        "10": 0,
+        "20": 7,
+        "30": 13
+      },
+      "relevant_ranks": [
+        2,
+        3,
+        5,
+        8,
+        13,
+        24,
+        30
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "method": "dense_openai",
+      "relevant_in_pool": 11,
+      "found_at_k": {
+        "10": 2,
+        "20": 3,
+        "30": 3
+      },
+      "unjudged_in_top": {
+        "10": 0,
+        "20": 5,
+        "30": 13
+      },
+      "relevant_ranks": [
+        5,
+        6,
+        12
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "method": "hybrid_openai",
+      "relevant_in_pool": 11,
+      "found_at_k": {
+        "10": 3,
+        "20": 7,
+        "30": 7
+      },
+      "unjudged_in_top": {
+        "10": 0,
+        "20": 0,
+        "30": 6
+      },
+      "relevant_ranks": [
+        1,
+        4,
+        6,
+        11,
+        12,
+        15,
+        18
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "method": "dense_qwen",
+      "relevant_in_pool": 11,
+      "found_at_k": {
+        "10": 2,
+        "20": 5,
+        "30": 7
+      },
+      "unjudged_in_top": {
+        "10": 0,
+        "20": 4,
+        "30": 10
+      },
+      "relevant_ranks": [
+        1,
+        9,
+        11,
+        15,
+        18,
+        25,
+        28
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "method": "hybrid_qwen",
+      "relevant_in_pool": 11,
+      "found_at_k": {
+        "10": 5,
+        "20": 7,
+        "30": 8
+      },
+      "unjudged_in_top": {
+        "10": 0,
+        "20": 2,
+        "30": 8
+      },
+      "relevant_ranks": [
+        1,
+        3,
+        7,
+        9,
+        10,
+        11,
+        15,
+        22
+      ]
+    }
+  ],
+  "h7_indonesian_vs_english_recall20": {
+    "B0": {
+      "CV1_indonesian_recall20": 0.6153846153846154,
+      "CV2_english_recall20": 0.36363636363636365
+    },
+    "B1": {
+      "CV1_indonesian_recall20": 0.23076923076923078,
+      "CV2_english_recall20": 0.45454545454545453
+    },
+    "dense_openai": {
+      "CV1_indonesian_recall20": 0.15384615384615385,
+      "CV2_english_recall20": 0.2727272727272727
+    },
+    "dense_qwen": {
+      "CV1_indonesian_recall20": 0.38461538461538464,
+      "CV2_english_recall20": 0.45454545454545453
+    },
+    "hybrid_openai": {
+      "CV1_indonesian_recall20": 0.3076923076923077,
+      "CV2_english_recall20": 0.6363636363636364
+    },
+    "hybrid_qwen": {
+      "CV1_indonesian_recall20": 0.46153846153846156,
+      "CV2_english_recall20": 0.6363636363636364
+    }
+  },
+  "interpretation_limits": [
+    "73 units in 4 CV/JD pairs; two retrieval CV queries.",
+    "A pair bootstrap with four pairs is coarse; both intervals are reported.",
+    "Unjudged jobs count as not found in labeled-pool recall, which favours methods whose deeper ranks overlap the pooled top-10 lists."
+  ],
+  "input_sha256": {
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/relevance_gold.jsonl": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4",
+    "evals/results/cp22_retrieval_top30_20261002_03.json": "32d99ff3dbfe4ec8b1ba37ce0d6fb51e3449b7e508c0bc2786d51658e52569eb",
+    "evals/results/cp23_stage2_validator_v11_20261004_v2.json": "27cbb656495455810e98e17344b1142437be9bddc0d3dcd9c76fb9112c9cfadd",
+    "evals/results/cp23_f00815_sql_reference_20261004_v2.json": "6a0138e948a2b593cc2317b9f59a0b026b5ef63aad69cf949fd3cd9ffa2756ed"
+  }
+}

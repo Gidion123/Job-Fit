@@ -1,0 +1,472 @@
+{
+  "job_id": "gpt-6-luna/F00018",
+  "source_job_id": "F00018",
+  "model": "gpt-6-luna",
+  "model_id": "openai/gpt-6-luna",
+  "plan_sha256": "023bf2ba3f9ad0dac975b39173a5ba543d09584216573acbba51bb616a152a1a",
+  "source_sha256": "f409e9a55d3bc70109c69b1ee7aa779e5e866428ca42e6439a4901fa3187d3d4",
+  "prompt_version": "jd-prompt-v1.4-experimental",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "extraction": {
+    "job_id": "F00018",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Hands-on experience with standard machine learning algorithms",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "machine learning algorithms",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Comfortable with standard ML algorithms and underlying math."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Comfortable with the underlying mathematics of standard machine learning algorithms",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "mathematics for machine learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Comfortable with standard ML algorithms and underlying math."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Strong hands-on experience with LLMs in production",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "large language models in production",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong hands-on experience with LLMs in production, RAG architecture, and agentic systems"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Strong hands-on experience with RAG architecture",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "RAG architecture",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong hands-on experience with LLMs in production, RAG architecture, and agentic systems"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Strong hands-on experience with agentic systems",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "agentic systems",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong hands-on experience with LLMs in production, RAG architecture, and agentic systems"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Experience with AWS Bedrock",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "AWS Bedrock",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "AWS Bedrock experience strongly preferred"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Practical experience solving classification tasks",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "classification",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with solving classification and regression tasks in general, feature engineering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Practical experience solving regression tasks",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "regression",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with solving classification and regression tasks in general, feature engineering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Practical experience with feature engineering",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "feature engineering",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with solving classification and regression tasks in general, feature engineering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Practical experience with machine learning models in production",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "machine learning models in production",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with ML models in production."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Practical experience with one or more use cases among NLP, LLMs, and recommendation engines",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with one or more use cases from the following: NLP, LLMs, and Recommendation engines."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Solid software engineering skills, including producing well-structured modules rather than only notebook scripts",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "software engineering practices",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Solid software engineering skills (i.e., ability to produce well-structured modules, not only notebook scripts)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Expertise in Python",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Python expertise, Docker."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Docker proficiency",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Docker",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Python expertise, Docker."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Strong upper-intermediate English proficiency",
+        "kind": "simple",
+        "importance": "required",
+        "field": "language",
+        "normalized_name": "English",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "English level - strong upper- intermediate."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Excellent communication skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "communication",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Excellent communication and problem-solving skills."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Excellent problem-solving skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "problem solving",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Excellent communication and problem-solving skills."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Practical experience with cloud platforms, particularly the AWS stack; examples include Amazon SageMaker, ECR, EMR, S3, and AWS Lambda",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with cloud platforms (AWS stack is preferred, e.g. Amazon SageMaker, ECR, EMR, S3, AWS Lambda)."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Practical experience with deep learning models",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "deep learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with deep learning models."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Experience with taxonomies or ontologies",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B20A",
+            "text": "Experience with taxonomies",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B20B",
+            "text": "Experience with ontologies",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience with taxonomies or ontologies."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Practical experience with machine learning pipelines for orchestrating complicated workflows",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "machine learning pipelines",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with machine learning pipelines to orchestrate complicated workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Practical experience with Spark or Dask",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B22A",
+            "text": "Practical experience with Spark",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B22B",
+            "text": "Practical experience with Dask",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Practical experience with Spark/Dask, Great Expectations."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Practical experience with Great Expectations",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "Great Expectations",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with Spark/Dask, Great Expectations."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/gpt-6-luna"
+  },
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 10,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 10,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01",
+          "U02"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U03",
+          "U04",
+          "U05"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U06"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U07",
+          "U08",
+          "U09"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U10"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U11"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U12"
+        ]
+      },
+      {
+        "source_id": "Q08",
+        "unit_ids": [
+          "U13",
+          "U14"
+        ]
+      },
+      {
+        "source_id": "Q09",
+        "unit_ids": [
+          "U15"
+        ]
+      },
+      {
+        "source_id": "Q10",
+        "unit_ids": [
+          "U16",
+          "U17"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "cache_hit": false,
+  "latency_ms": 31211,
+  "result_sha256": "0c8db93503493e707a37922cbb777b1ac32cc3cb595ac8136ff117225ed7bbd7"
+}

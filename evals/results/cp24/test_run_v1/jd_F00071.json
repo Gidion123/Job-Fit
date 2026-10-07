@@ -1,0 +1,793 @@
+{
+ "job_id": "F00071",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "not_assessed",
+  "bullet_count": 0,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 0,
+  "inventory_mappings": [],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00071",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Bachelor's degree in Computer Science, Information Technology, Artificial Intelligence, Data Science, or a related field.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "education",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B01",
+      "text": "Bachelor's degree in Computer Science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B02",
+      "text": "Bachelor's degree in Information Technology",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B03",
+      "text": "Bachelor's degree in Artificial Intelligence",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B04",
+      "text": "Bachelor's degree in Data Science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B05",
+      "text": "Bachelor's degree in a related field",
+      "field": "education",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Bachelor's degree in Computer Science, Information Technology, Artificial Intelligence, Data Science, or a related field."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "2–5 years of experience in AI Engineering, Machine Learning, Data Engineering, or Backend Development.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "",
+    "min_years": 2.0,
+    "branches": [
+     {
+      "branch_id": "B06",
+      "text": "2–5 years of experience in AI Engineering",
+      "field": "experience_duration",
+      "min_years": 2.0
+     },
+     {
+      "branch_id": "B07",
+      "text": "2–5 years of experience in Machine Learning",
+      "field": "experience_duration",
+      "min_years": 2.0
+     },
+     {
+      "branch_id": "B08",
+      "text": "2–5 years of experience in Data Engineering",
+      "field": "experience_duration",
+      "min_years": 2.0
+     },
+     {
+      "branch_id": "B09",
+      "text": "2–5 years of experience in Backend Development",
+      "field": "experience_duration",
+      "min_years": 2.0
+     }
+    ],
+    "source_quotes": [
+     "2–5 years of experience in AI Engineering, Machine Learning, Data Engineering, or Backend Development."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Strong programming skills in Python.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong programming skills in Python and SQL."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Strong programming skills in SQL.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong programming skills in Python and SQL."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Experience developing RESTful APIs using FastAPI or Flask.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B10",
+      "text": "Experience developing RESTful APIs using FastAPI",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B11",
+      "text": "Experience developing RESTful APIs using Flask",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience developing RESTful APIs using FastAPI or Flask."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Hands-on experience with Large Language Models (LLMs).",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Hands-on experience with Large Language Models (LLMs), Prompt Engineering, and Retrieval-Augmented Generation (RAG)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Hands-on experience with Prompt Engineering.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Hands-on experience with Large Language Models (LLMs), Prompt Engineering, and Retrieval-Augmented Generation (RAG)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Hands-on experience with Retrieval-Augmented Generation (RAG).",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Hands-on experience with Large Language Models (LLMs), Prompt Engineering, and Retrieval-Augmented Generation (RAG)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Experience with vector databases such as FAISS, Milvus, Qdrant, Pinecone, Weaviate, or pgvector.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B12",
+      "text": "Experience with vector databases such as FAISS",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B13",
+      "text": "Experience with vector databases such as Milvus",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B14",
+      "text": "Experience with vector databases such as Qdrant",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B15",
+      "text": "Experience with vector databases such as Pinecone",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B16",
+      "text": "Experience with vector databases such as Weaviate",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B17",
+      "text": "Experience with vector databases such as pgvector",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience with vector databases such as FAISS, Milvus, Qdrant, Pinecone, Weaviate, or pgvector."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "Knowledge of machine learning fundamentals.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Knowledge of machine learning fundamentals, model evaluation, and AI workflow development."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "Knowledge of model evaluation.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Knowledge of machine learning fundamentals, model evaluation, and AI workflow development."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "Knowledge of AI workflow development.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Knowledge of machine learning fundamentals, model evaluation, and AI workflow development."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U13",
+    "text": "Experience working with Docker.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience working with Docker, Git, cloud deployment, and CI/CD practices."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U14",
+    "text": "Experience working with Git.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience working with Docker, Git, cloud deployment, and CI/CD practices."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U15",
+    "text": "Experience working with cloud deployment.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience working with Docker, Git, cloud deployment, and CI/CD practices."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U16",
+    "text": "Experience working with CI/CD practices.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience working with Docker, Git, cloud deployment, and CI/CD practices."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U17",
+    "text": "Strong data processing skills using Pandas, Polars, or PySpark.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B18",
+      "text": "Strong data processing skills using Pandas",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B19",
+      "text": "Strong data processing skills using Polars",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B20",
+      "text": "Strong data processing skills using PySpark",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Strong data processing skills using Pandas, Polars, or PySpark."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U18",
+    "text": "Experience integrating AI solutions with enterprise systems.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience integrating AI solutions with enterprise systems and APIs."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U19",
+    "text": "Experience integrating AI solutions with APIs.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience integrating AI solutions with enterprise systems and APIs."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U20",
+    "text": "Experience with OpenAI, Azure OpenAI, Google Gemini, Anthropic Claude, or other enterprise LLM platforms.",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B21",
+      "text": "Experience with OpenAI",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B22",
+      "text": "Experience with Azure OpenAI",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B23",
+      "text": "Experience with Google Gemini",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B24",
+      "text": "Experience with Anthropic Claude",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B25",
+      "text": "Experience with other enterprise LLM platforms",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience with OpenAI, Azure OpenAI, Google Gemini, Anthropic Claude, or other enterprise LLM platforms."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U21",
+    "text": "Familiarity with LangChain.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Familiarity with LangChain, LlamaIndex, and AI orchestration frameworks."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U22",
+    "text": "Familiarity with LlamaIndex.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Familiarity with LangChain, LlamaIndex, and AI orchestration frameworks."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U23",
+    "text": "Familiarity with AI orchestration frameworks.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Familiarity with LangChain, LlamaIndex, and AI orchestration frameworks."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U24",
+    "text": "Experience with PostgreSQL, MySQL, Redis, Elasticsearch/OpenSearch, Airflow, BigQuery, or other data platforms.",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B26",
+      "text": "Experience with PostgreSQL",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B27",
+      "text": "Experience with MySQL",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B28",
+      "text": "Experience with Redis",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B29",
+      "text": "Experience with Elasticsearch/OpenSearch",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B30",
+      "text": "Experience with Airflow",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B31",
+      "text": "Experience with BigQuery",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B32",
+      "text": "Experience with other data platforms",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience with PostgreSQL, MySQL, Redis, Elasticsearch/OpenSearch, Airflow, BigQuery, or other data platforms."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U25",
+    "text": "Understanding of payment systems.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Understanding of payment systems, reconciliation, settlement processes, customer journey analytics, campaign management, and digital business operations."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U26",
+    "text": "Understanding of reconciliation.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Understanding of payment systems, reconciliation, settlement processes, customer journey analytics, campaign management, and digital business operations."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U27",
+    "text": "Understanding of settlement processes.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Understanding of payment systems, reconciliation, settlement processes, customer journey analytics, campaign management, and digital business operations."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U28",
+    "text": "Understanding of customer journey analytics.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Understanding of payment systems, reconciliation, settlement processes, customer journey analytics, campaign management, and digital business operations."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U29",
+    "text": "Understanding of campaign management.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Understanding of payment systems, reconciliation, settlement processes, customer journey analytics, campaign management, and digital business operations."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U30",
+    "text": "Understanding of digital business operations.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Understanding of payment systems, reconciliation, settlement processes, customer journey analytics, campaign management, and digital business operations."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U31",
+    "text": "Knowledge of AI governance.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Knowledge of AI governance, monitoring, prompt versioning, and LLMOps practices."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U32",
+    "text": "Knowledge of monitoring.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Knowledge of AI governance, monitoring, prompt versioning, and LLMOps practices."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U33",
+    "text": "Knowledge of prompt versioning.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Knowledge of AI governance, monitoring, prompt versioning, and LLMOps practices."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U34",
+    "text": "Knowledge of LLMOps practices.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Knowledge of AI governance, monitoring, prompt versioning, and LLMOps practices."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U35",
+    "text": "Excellent analytical skills.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "soft_skill",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Excellent analytical, problem-solving, and communication skills."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U36",
+    "text": "Excellent problem-solving skills.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "soft_skill",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Excellent analytical, problem-solving, and communication skills."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U37",
+    "text": "Excellent communication skills.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "soft_skill",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Excellent analytical, problem-solving, and communication skills."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U38",
+    "text": "Ability to translate business requirements into scalable AI solutions.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "other",
+    "normalized_name": "",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Ability to translate business requirements into scalable AI solutions."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

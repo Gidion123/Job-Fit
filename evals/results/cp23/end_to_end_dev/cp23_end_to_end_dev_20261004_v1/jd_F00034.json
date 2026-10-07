@@ -1,0 +1,467 @@
+{
+  "job_id": "F00034",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "591a6ab4c864730de066a2105a1962bd41b6adde61b1d33f3386366be96791ef",
+  "wall_ms": 58461,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 9,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 9,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U03"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U04"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U05"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U06",
+          "U07",
+          "U08"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U09",
+          "U10",
+          "U11",
+          "U12"
+        ]
+      },
+      {
+        "source_id": "Q08",
+        "unit_ids": [
+          "U13",
+          "U14",
+          "U15"
+        ]
+      },
+      {
+        "source_id": "Q09",
+        "unit_ids": [
+          "U16"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00034",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Minimum S1 degree in Informatics Engineering, Computer Science, Data Science, Artificial Intelligence, or a related field.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "degree_in_informatics_or_related_field",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B01",
+            "text": "S1 Teknik Informatika",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B02",
+            "text": "S1 Ilmu Komputer",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B03",
+            "text": "S1 Data Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B04",
+            "text": "S1 Artificial Intelligence",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B05",
+            "text": "S1 bidang terkait",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Minimal S1 Teknik Informatika, Ilmu Komputer, Data Science, Artificial Intelligence, atau bidang terkait."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Minimum 2 years of experience as an AI Engineer, Machine Learning Engineer, or similar role.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "experience_as_ai_engineer_or_similar",
+        "min_years": 2.0,
+        "branches": [
+          {
+            "branch_id": "B06",
+            "text": "AI Engineer",
+            "field": "experience_duration",
+            "min_years": 2.0
+          },
+          {
+            "branch_id": "B07",
+            "text": "Machine Learning Engineer",
+            "field": "experience_duration",
+            "min_years": 2.0
+          },
+          {
+            "branch_id": "B08",
+            "text": "posisi serupa",
+            "field": "experience_duration",
+            "min_years": 2.0
+          }
+        ],
+        "source_quotes": [
+          "Memiliki pengalaman minimal 2 tahun sebagai AI Engineer, Machine Learning Engineer, atau posisi serupa."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Proficiency in Python programming language.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "python_programming_language",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Menguasai bahasa pemrograman Python."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Understanding of AI/ML frameworks such as TensorFlow, PyTorch, Scikit-learn, or equivalent.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "ai_ml_frameworks",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B09",
+            "text": "TensorFlow framework",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B10",
+            "text": "PyTorch framework",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B11",
+            "text": "Scikit-learn framework",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B12",
+            "text": "sejenisnya",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Memahami framework AI/ML seperti TensorFlow, PyTorch, Scikit-learn, atau sejenisnya."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Experience with LLMs such as GPT, Llama, Mistral, Gemini, or other open-source models.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "large_language_models",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B13",
+            "text": "GPT LLM",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B14",
+            "text": "Llama LLM",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B15",
+            "text": "Mistral LLM",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B16",
+            "text": "Gemini LLM",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B17",
+            "text": "model open-source lainnya",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Memiliki pengalaman dengan LLM seperti GPT, Llama, Mistral, Gemini, atau model open-source lainnya."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Understanding of Retrieval-Augmented Generation (RAG) concepts.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "retrieval_augmented_generation_concepts",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Memahami konsep Retrieval-Augmented Generation (RAG), Prompt Engineering, dan Vector Database menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Understanding of Prompt Engineering concepts.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "prompt_engineering_concepts",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Memahami konsep Retrieval-Augmented Generation (RAG), Prompt Engineering, dan Vector Database menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Understanding of Vector Database concepts.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "vector_database_concepts",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Memahami konsep Retrieval-Augmented Generation (RAG), Prompt Engineering, dan Vector Database menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Experience using Git.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "git",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Berpengalaman menggunakan Git, Docker, REST API, serta cloud platform (AWS, Azure, atau Google Cloud) menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Experience using Docker.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "docker",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Berpengalaman menggunakan Git, Docker, REST API, serta cloud platform (AWS, Azure, atau Google Cloud) menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Experience using REST API.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "rest_api_concepts",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Berpengalaman menggunakan Git, Docker, REST API, serta cloud platform (AWS, Azure, atau Google Cloud) menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Experience using cloud platform (AWS, Azure, or Google Cloud).",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "cloud_platform",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B18",
+            "text": "AWS cloud platform",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B19",
+            "text": "Azure cloud platform",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B20",
+            "text": "Google Cloud platform",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Berpengalaman menggunakan Git, Docker, REST API, serta cloud platform (AWS, Azure, atau Google Cloud) menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Analytical skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "analytical_skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Memiliki kemampuan analitis, problem solving, dan komunikasi yang baik."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Problem solving skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "problem_solving",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Memiliki kemampuan analitis, problem solving, dan komunikasi yang baik."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Good communication skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "communication_skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Memiliki kemampuan analitis, problem solving, dan komunikasi yang baik."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Portfolio or experience in the AI field.",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "other",
+        "normalized_name": "portfolio_or_experience_in_ai",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B21",
+            "text": "Portofolio di bidang AI",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B22",
+            "text": "Pengalaman di bidang AI",
+            "field": "other",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Memiliki portofolio atau pengalaman di bidang AI menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

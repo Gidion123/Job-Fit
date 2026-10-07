@@ -1,0 +1,13 @@
+{
+  "job_id": "gpt-6-luna/F00309",
+  "result_sha256": "b7db359886fe4f978a3971321277ce3c20d040528ad0deebe6f37c385b6118b8",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "pass",
+    "qualifiers": "pass",
+    "importance": "fail"
+  },
+  "notes": "All three preferred-qualification clauses and nine independent logical obligations checked against the complete source. Exact quotes, one-to-three-year minimum and education/equivalent-practical-experience alternatives are retained. Every output unit is required although the entire source section is explicitly Preferred competencies and qualifications and all nine reviewed references are preferred. This changes eligibility/scoring meaning and fails importance. The education composite also uses other rather than reviewed education; its branch expansion preserves the alternatives and is not counted as extra denominator units. No gold update or approved candidate alignment.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

@@ -1,0 +1,41 @@
+# D-083 development configuration candidate (Sol matching). Earlier version files stay unchanged.
+# K and PARTIAL weight are chosen by the D-078 rule before the D-053 freeze.
+pipeline_version: pipeline-cp23-provisional-v3
+based_on: config/versions/pipeline_cp23_provisional_v2_20261004.yaml
+analysis_date: '2026-09-30'
+schema_version: cv-v1.1-precision
+guideline_version: v1.3
+guideline_file: evals/annotation_guideline_v1_3.md
+# Stage 1
+stage1_method: hybrid_fts_dense_rrf
+embedding_model: qwen3-embedding-8b
+rrf_k: 60
+stage1_seniority_rule: seniority-demote-3y-v1   # D-074, user can switch it off
+stage1_candidate_depth: 30   # D-078: the rule reorders the stage-1 top 30, then the top K is analyzed
+stage1_k: 20            # provisional until D-078
+# Stage 2: extraction (offline, cached)
+extraction_model: deepseek-flash
+jd_prompt_file: prompts/jd_extraction_v1_4_experimental.md
+jd_prompt_version: jd-prompt-v1.4-experimental
+jd_extraction_contract: qualification-inventory-v1
+# Stage 2: evidence matching (online, per user)
+matching_model: gpt-6-sol
+matching_request_adaptation: D-079 SweepClient metadata rules (temperature omitted, published aliases)
+matching_fallback_model: gpt-6-luna   # D-077 low-cost fallback, D-058 RouteClient
+evidence_prompt_file: prompts/evidence_matching_v1_1.md
+evidence_prompt_version: evidence-prompt-v1.1
+evidence_validator: quote-check-v1.1
+evidence_guardrails: [G1, G2]
+guardrail_g1_headings: markdown-or-plain-v1
+# Runtime limits
+output_policy: pipeline-v1.1-output-policy
+request_timeout_seconds: 240
+matching_concurrency_limit: 20
+max_validation_repairs: 1
+max_length_continuations: 1
+# Score and order
+hold_policy: H2v2                       # D-072
+hold_required_fraction_max: 0.20
+partial_weight: 0.5     # provisional until D-078
+order: product_order_constraints_then_holds   # D-013, D-073
+freeze_status: provisional_development_D083

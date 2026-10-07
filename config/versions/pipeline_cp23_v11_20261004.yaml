@@ -1,0 +1,20 @@
+# CP2.3 development coverage experiment. Historical v1 configuration is unchanged.
+pipeline_version: pipeline-v1.1-development
+based_on: config/versions/pipeline_cp23_provisional_20261004.yaml
+analysis_date: '2026-09-30'
+model: deepseek-flash
+jd_prompt_version: jd-prompt-v1.4-experimental
+evidence_prompt_version: evidence-prompt-v1.1
+guideline_version: v1.3
+evidence_validator: quote-check-v1.1
+evidence_guardrails: [G1, G2]
+output_policy: pipeline-v1.1-output-policy
+model_output_limit: 131072
+request_timeout_seconds: 240
+matching_concurrency_limit: 4
+hold_policy: H2
+hold_required_fraction_max: 0.20
+partial_weight: 0.5
+stage1_method: hybrid_qwen
+stage1_k: 20
+scope: same_60_development_pairs_as_part_b

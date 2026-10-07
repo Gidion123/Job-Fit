@@ -1,0 +1,13 @@
+{
+  "job_id": "deepseek-flash/F00332",
+  "result_sha256": "ba10604a792000ec8341d652d96c6eb0f3b87edc0a7e9a7a41ee821e54366ec2",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "fail",
+    "grouping": "fail",
+    "qualifiers": "pass",
+    "importance": "pass"
+  },
+  "notes": "All eight qualification bullets are mapped, but U02 merges independently assessable Python, SQL and Excel under an AND clause; U01 treats the education alternative as simple; U12 merges large-tabular trend/anomaly analysis and actionable communication. Source-quote exactness and required/preferred statuses alone do not establish a compatible extraction. Stop the batch before other candidates; preserve this first-attempt output and its ledger cost. No gold or rule changes.",
+  "checked_by": "delegated_Codex2_source_semantic_QA_2026-10-03"
+}

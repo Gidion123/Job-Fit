@@ -1,0 +1,450 @@
+{
+ "set": "fixed_input",
+ "cv_id": "CV1",
+ "job_id": "F00052",
+ "model": "gpt-6-sol",
+ "experiment_id": "QA-E01",
+ "wall_ms": 21250,
+ "status": "done",
+ "error_code": null,
+ "attempts": 1,
+ "assessments": [
+  {
+   "unit_id": "P10-U01",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U02",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+    "- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U03",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+    "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U04",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U05",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U06",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U07",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U13",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U14",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+    "- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U15",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U16",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U17",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U18",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U19",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U20",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U21",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U22",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U23",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U24",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U25",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+    "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U26",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U27",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025",
+    "- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U28",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U29",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U30",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U31",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U32",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P10-U33",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  }
+ ],
+ "source_flags": [
+  {
+   "unit_id": "P10-U01",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+   "cv_span": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+   "start": 317,
+   "end": 400,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U02",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "cv_span": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "start": 1226,
+   "end": 1328,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U02",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+   "cv_span": "- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+   "start": 1471,
+   "end": 1581,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U03",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+   "cv_span": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+   "start": 1173,
+   "end": 1225,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U03",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "cv_span": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "start": 1226,
+   "end": 1328,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U04",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U06",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "cv_span": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "start": 1226,
+   "end": 1328,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U14",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "cv_span": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "start": 1226,
+   "end": 1328,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U14",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+   "cv_span": "- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+   "start": 1471,
+   "end": 1581,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U16",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U17",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+   "cv_span": "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+   "start": 906,
+   "end": 1000,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U18",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U19",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar",
+   "cv_span": "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar",
+   "start": 1596,
+   "end": 1727,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U22",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+   "cv_span": "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+   "start": 1329,
+   "end": 1416,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U25",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+   "cv_span": "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+   "start": 1096,
+   "end": 1160,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U25",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+   "cv_span": "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+   "start": 906,
+   "end": 1000,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U27",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025",
+   "cv_span": "**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025",
+   "start": 1418,
+   "end": 1470,
+   "flags": []
+  },
+  {
+   "unit_id": "P10-U27",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+   "cv_span": "- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+   "start": 1471,
+   "end": 1581,
+   "flags": []
+  }
+ ]
+}

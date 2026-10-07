@@ -1,0 +1,247 @@
+{
+  "model": "deepseek-flash",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "cv_id": "CV2",
+  "job_id": "F00815",
+  "status": "done",
+  "error_code": null,
+  "attempts": 1,
+  "wall_ms": 27447,
+  "assessments": [
+    {
+      "unit_id": "P52-U01",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Marketing analyst moving into AI engineering. Three years of data work in digital marketing, followed by an intensive data science and AI bootcamp. Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+        "**Data Science and AI Bootcamp**, Contoh Academy (online) · June 2026 - present",
+        "- Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U02",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U03",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P52-U03/B01",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "P52-U03/B02",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "P52-U03/B03",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U04",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U05",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "**Document Q&A Assistant (RAG)** · August 2026",
+        "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+        "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U06",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+        "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U07",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+        "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U08",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U09",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P52-U09/B01",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+            "- Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+          ]
+        },
+        {
+          "branch_id": "P52-U09/B02",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P52-U09/B03",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U10",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U11",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P52-U11/B01",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P52-U11/B02",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "P52-U11/B03",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U12",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P52-U12/B01",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "- AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+          ]
+        },
+        {
+          "branch_id": "P52-U12/B02",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U13",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U14",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U15",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U16",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ]
+}

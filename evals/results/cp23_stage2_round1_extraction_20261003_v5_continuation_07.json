@@ -1,0 +1,17 @@
+{
+  "job_id": "gpt-6-luna/F00332",
+  "source_job_id": "F00332",
+  "model": "gpt-6-luna",
+  "model_id": "openai/gpt-6-luna",
+  "plan_sha256": "e6c4e899d49a82f7c4573957c49fff0195a93512d21c36796330a3bcc429fd71",
+  "source_sha256": "9113fae9a5efa7be34c475f2ddca9a2adc34a2edd2b57f7a78da494ef1381619",
+  "prompt_version": "jd-prompt-v1.4-experimental",
+  "status": "failed",
+  "attempts": 1,
+  "error_code": "NotFoundError",
+  "extraction": null,
+  "coverage": {},
+  "cache_hit": false,
+  "latency_ms": 137,
+  "result_sha256": "ea9537ebabe4a7a40e4afc05d028bd482cd80ec0d891930ccda1e78994a87e51"
+}

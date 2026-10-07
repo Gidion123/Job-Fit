@@ -1,0 +1,510 @@
+{
+  "job_id": "F00034",
+  "run_id": "cp22_extraction_repair_v13_20261003",
+  "provenance": {
+    "config/models_v1.yaml": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+    "config/pipeline_v1.yaml": "ba44704f573f9fabb24ff45a2b0142b5c00ac93af55902429500c020a3cd1dc8",
+    "evals/annotation_guideline_v1_3.md": "3d964a28fd105e16b24ad51b8b0a22b34bb9255e438b51e4e6e0eda551c57645",
+    "prompts/jd_extraction_v1_3.md": "0afe4b95155c7225bafd62e9216344cd886a4d6ba2e005fd746652b6ed97a224",
+    "src/jobfit/extraction/audited.py": "4a56d8544e2e48049d351d2e958a1d630f2b47f71df879ba094396ff7b55ec19",
+    "src/jobfit/extraction/coverage.py": "b3f93f9e7280b772234c267f7b30796e549f44dc11a5d317e698fa7e51c0b887",
+    "src/jobfit/extraction/paste_jd.py": "94bc9d3ecc9b70d66df09fa6dacded94efb4157de4be15ea54278bebd1de9614",
+    "prompts/evidence_matching_v1_1.md": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+    "prompts/cv_parsing_v1.md": "1847ef471c4d72b20b27c9f8f276a28a833d28e15f4aad28100494cf026dc341",
+    "src/jobfit/llm/probe.py": "7c0a1bcebd6637344408fff1a2d849b8186ba4f0b63e588ebdba0d5b69dbc81c",
+    "src/jobfit/llm/closure_probe.py": "b022ec3faa240d6bc3401f192545169e08c58ed67611eee2aad83edd3e27d55e",
+    "src/jobfit/llm/client.py": "a3d8491668027932acf6819481af56bf7eb3687ac51460ce36a064a48d29c63d",
+    "src/jobfit/llm/structured.py": "4c6364e3aeaeef5716225f11fafd286b550abd92a410bf455b29f4db98b555a6",
+    "src/jobfit/pipeline.py": "d40ff6e15991f7ae1e21497948443a5b219b6c9d7a51b549adebd161b3d15652",
+    "src/jobfit/cv/parser.py": "02641bdca155315c6ccbb5a0b33cea65488164c2586297ddfa648207858b30e1",
+    "src/jobfit/extraction/jd_extractor.py": "e0295fec81ed61a36ccb5225a34c161f26f8ce5006f346d092e932f790954c3d",
+    "src/jobfit/matching/evidence_matcher.py": "8dc55863d6da608c6b92915d910c4c89e0991ece4effdcb6d866143a53de462f",
+    "scripts/run_cp22_repair_probe.py": "daaed65be0bf708f680975268b609fd44e318be708f561086ec7171a34c17d22",
+    "evals/results/cp22_repair_reference_compatibility_20261003.json": "ce2f6da3763c8a4f88e81bf1f783fe785dcd58b581d66ed8bb6657b1a7fc88b0",
+    "evals/results/cp22_repair_provider_verification_20261003.json": "0d02c50d62eadee216c68e50a3fa12349b69d6b890030ce4ba6db7ad7f8e8575",
+    "F00034": "8cdbfad2b5803545eb155c346253249dd72d4015024018e34706e3ddf9552826",
+    "F00332": "9113fae9a5efa7be34c475f2ddca9a2adc34a2edd2b57f7a78da494ef1381619",
+    "CV1": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a"
+  },
+  "versions": {
+    "guideline_version": "v1.3",
+    "jd_prompt_version": "jd-prompt-v1.3",
+    "evidence_prompt_version": "evidence-prompt-v1.1",
+    "schema_version": "v1",
+    "score_version": "v1",
+    "guideline_file": "evals/annotation_guideline_v1_3.md",
+    "jd_prompt_file": "prompts/jd_extraction_v1_3.md",
+    "evidence_prompt_file": "prompts/evidence_matching_v1_1.md",
+    "guideline_sha256": "3d964a28fd105e16b24ad51b8b0a22b34bb9255e438b51e4e6e0eda551c57645",
+    "jd_prompt_sha256": "0afe4b95155c7225bafd62e9216344cd886a4d6ba2e005fd746652b6ed97a224",
+    "evidence_prompt_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+    "extraction_coverage_contract": "qualification-inventory-v1",
+    "semantic_repair_version": "source-review-repair-v1"
+  },
+  "replaces_result_sha256": "698cfb9c16aab9351fc179f7c6c61b7f3457ea9075f49ba6b6ab0d954e023ddf",
+  "repair_extension_hashes": {
+    "src/jobfit/llm/semantic_repair.py": "2659638683388cf9d08821a46dbb4f73ec4a2896af51def682700ed562ff7481",
+    "scripts/repair_cp22_semantics.py": "e6251a6585bbd13bef4bad6fae57f153fb769f1fe5e6fb1c5deeb5e7c96b13e6"
+  },
+  "semantic_repair_receipt_sha256": "7ff503ad48c389ea576dc0648c9d627d2ff53553fc237ce52d429999b7bd0373",
+  "status": "done",
+  "extraction": {
+    "job_id": "F00034",
+    "units": [
+      {
+        "unit_id": "F00034-U01",
+        "text": "Minimal S1 (bachelor's degree) in Informatics Engineering, Computer Science, Data Science, Artificial Intelligence, or a related field.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Bachelor's degree (S1) in Informatics Engineering",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Bachelor's degree (S1) in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Bachelor's degree (S1) in Data Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Bachelor's degree (S1) in Artificial Intelligence",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Bachelor's degree (S1) in a related field",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Minimal S1 Teknik Informatika, Ilmu Komputer, Data Science, Artificial Intelligence, atau bidang terkait."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "F00034-U02",
+        "text": "At least 2 years of experience as an AI Engineer, Machine Learning Engineer, or similar position.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "At least 2 years of experience as an AI Engineer",
+            "field": "experience_duration",
+            "min_years": 2.0
+          },
+          {
+            "branch_id": "B2",
+            "text": "At least 2 years of experience as a Machine Learning Engineer",
+            "field": "experience_duration",
+            "min_years": 2.0
+          },
+          {
+            "branch_id": "B3",
+            "text": "At least 2 years of experience in a similar position",
+            "field": "experience_duration",
+            "min_years": 2.0
+          }
+        ],
+        "source_quotes": [
+          "Memiliki pengalaman minimal 2 tahun sebagai AI Engineer, Machine Learning Engineer, atau posisi serupa."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "F00034-U03",
+        "text": "Proficient in the Python programming language.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Menguasai bahasa pemrograman Python."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "F00034-U04",
+        "text": "Understand AI/ML frameworks such as TensorFlow, PyTorch, Scikit-learn, or similar.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Understand AI/ML framework: TensorFlow",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Understand AI/ML framework: PyTorch",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Understand AI/ML framework: Scikit-learn",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Understand a similar AI/ML framework",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Memahami framework AI/ML seperti TensorFlow, PyTorch, Scikit-learn, atau sejenisnya."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "F00034-U05",
+        "text": "Experience with LLMs such as GPT, Llama, Mistral, Gemini, or other open-source models.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience with GPT",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience with Llama",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Experience with Mistral",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Experience with Gemini",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Experience with other open-source models",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Memiliki pengalaman dengan LLM seperti GPT, Llama, Mistral, Gemini, atau model open-source lainnya."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "F00034-U06",
+        "text": "Understand Retrieval-Augmented Generation (RAG) concept.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Retrieval-Augmented Generation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Memahami konsep Retrieval-Augmented Generation (RAG), Prompt Engineering, dan Vector Database menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "F00034-U07",
+        "text": "Understand Prompt Engineering.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Prompt Engineering",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Memahami konsep Retrieval-Augmented Generation (RAG), Prompt Engineering, dan Vector Database menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "F00034-U08",
+        "text": "Understand Vector Database concept.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Vector Database",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Memahami konsep Retrieval-Augmented Generation (RAG), Prompt Engineering, dan Vector Database menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "F00034-U09",
+        "text": "Experience using Git.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "Git",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Berpengalaman menggunakan Git, Docker, REST API, serta cloud platform (AWS, Azure, atau Google Cloud) menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "F00034-U10",
+        "text": "Experience using Docker.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "Docker",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Berpengalaman menggunakan Git, Docker, REST API, serta cloud platform (AWS, Azure, atau Google Cloud) menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "F00034-U11",
+        "text": "Experience using REST APIs.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "REST API",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Berpengalaman menggunakan Git, Docker, REST API, serta cloud platform (AWS, Azure, atau Google Cloud) menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "F00034-U12",
+        "text": "Experience using cloud platforms (AWS, Azure, or Google Cloud).",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience using cloud platform: AWS",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience using cloud platform: Azure",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Experience using cloud platform: Google Cloud",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Berpengalaman menggunakan Git, Docker, REST API, serta cloud platform (AWS, Azure, atau Google Cloud) menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "F00034-U13",
+        "text": "Strong analytical skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Analytical skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Memiliki kemampuan analitis, problem solving, dan komunikasi yang baik."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "F00034-U14",
+        "text": "Problem solving skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Problem solving",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Memiliki kemampuan analitis, problem solving, dan komunikasi yang baik."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "F00034-U15",
+        "text": "Good communication skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Communication",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Memiliki kemampuan analitis, problem solving, dan komunikasi yang baik."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "F00034-U16",
+        "text": "Portfolio or experience in the AI field.",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "other",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Portfolio in AI",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience in AI",
+            "field": "other",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Memiliki portofolio atau pengalaman di bidang AI menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.3/source-review-repair-v1/deepseek-flash"
+  },
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 9,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false
+  },
+  "inventory_mappings": [
+    {
+      "source_id": "Q01",
+      "unit_ids": [
+        "F00034-U01"
+      ]
+    },
+    {
+      "source_id": "Q02",
+      "unit_ids": [
+        "F00034-U02"
+      ]
+    },
+    {
+      "source_id": "Q03",
+      "unit_ids": [
+        "F00034-U03"
+      ]
+    },
+    {
+      "source_id": "Q04",
+      "unit_ids": [
+        "F00034-U04"
+      ]
+    },
+    {
+      "source_id": "Q05",
+      "unit_ids": [
+        "F00034-U05"
+      ]
+    },
+    {
+      "source_id": "Q06",
+      "unit_ids": [
+        "F00034-U06",
+        "F00034-U07",
+        "F00034-U08"
+      ]
+    },
+    {
+      "source_id": "Q07",
+      "unit_ids": [
+        "F00034-U09",
+        "F00034-U10",
+        "F00034-U11",
+        "F00034-U12"
+      ]
+    },
+    {
+      "source_id": "Q08",
+      "unit_ids": [
+        "F00034-U13",
+        "F00034-U14",
+        "F00034-U15"
+      ]
+    },
+    {
+      "source_id": "Q09",
+      "unit_ids": [
+        "F00034-U16"
+      ]
+    }
+  ],
+  "attempts": 2,
+  "cache_hit": false,
+  "latency_ms": 20179,
+  "result_sha256": "04aa96129e6ac7f6fffa36cfed7ec9d4d017fed36ed8b12dcc9814613f60b54c"
+}

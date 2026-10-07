@@ -1,0 +1,637 @@
+{
+ "job_id": "F00842",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "not_assessed",
+  "bullet_count": 0,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 0,
+  "inventory_mappings": [],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00842",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Minimum bachelor's degree (S1) in Computer Science, Information Systems, or other major",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "education",
+    "normalized_name": "Minimum bachelor's degree (S1) in Computer Science, Information Systems, or other major",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Bachelor's degree in Computer Science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Bachelor's degree in Information Systems",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Bachelor's degree in other major",
+      "field": "education",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Minimal S1 Teknik Informatika, Sistem Informasi, atau jurusan lainnya"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "Proficiency in database administration for Oracle Database, Microsoft SQL Server, PostgreSQL, or MariaDB",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Proficiency in database administration for Oracle Database, Microsoft SQL Server, PostgreSQL, or MariaDB",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Oracle Database administration",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Microsoft SQL Server administration",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "PostgreSQL administration",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "MariaDB administration",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Menguasai administrasi database Oracle Database, Microsoft SQL Server, atau PostgreSQL, MariaDB"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Experience in performance tuning",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience in performance tuning",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Berpengalaman dalam performance tuning, backup & recovery, troubleshooting, dan database security."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Experience in backup & recovery",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience in backup & recovery",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Berpengalaman dalam performance tuning, backup & recovery, troubleshooting, dan database security."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Experience in troubleshooting",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience in troubleshooting",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Berpengalaman dalam performance tuning, backup & recovery, troubleshooting, dan database security."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Experience in database security",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience in database security",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Berpengalaman dalam performance tuning, backup & recovery, troubleshooting, dan database security."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Ability to handle incident/escalation from monitoring team",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Ability to handle incident/escalation from monitoring team",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Mampu menangani incident/escalation dari tim monitoring serta maintenance database harian."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Ability to perform daily database maintenance",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Ability to perform daily database maintenance",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Mampu menangani incident/escalation dari tim monitoring serta maintenance database harian."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Willingness to work on-site in Jakarta Pusat",
+    "kind": "simple",
+    "importance": "required",
+    "field": "location",
+    "normalized_name": "Willingness to work on-site in Jakarta Pusat",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Bersedia bekerja secara on-site dan shifting di Jakarta Pusat"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "Willingness to work shifting in Jakarta Pusat",
+    "kind": "simple",
+    "importance": "required",
+    "field": "location",
+    "normalized_name": "Willingness to work shifting in Jakarta Pusat",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Bersedia bekerja secara on-site dan shifting di Jakarta Pusat"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "Experience in banking",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Experience in banking",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memiliki pengalaman di banking merupakan nilai plus"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "Supporting certification (Oracle/SQL/etc.)",
+    "kind": "simple",
+    "importance": "required",
+    "field": "certification",
+    "normalized_name": "Supporting certification (Oracle/SQL/etc.)",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memiliki sertifikat pendukung (Oracle/SQL/dll)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U13",
+    "text": "Ability to join quickly",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "other",
+    "normalized_name": "Ability to join quickly",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Dapat bergabung lebih cepat merupakan nilai plus"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U14",
+    "text": "Minimum 1 year experience in related field or equivalent ability",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "Minimum 1 year experience in related field or equivalent ability",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "1 year experience in related field",
+      "field": "experience_duration",
+      "min_years": 1.0
+     },
+     {
+      "branch_id": "B2",
+      "text": "Equivalent ability",
+      "field": "other",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Pengalaman minimal 1 tahun di bidang terkait atau kemampuan setara.",
+     "Pengalaman minimal 1 tahun di bidang terkait atau kemampuan setara."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U15",
+    "text": "Experience using SSIS (SQL Server Integration Service)",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Experience using SSIS (SQL Server Integration Service)",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Pengalaman di dalam penggunaan SSIS (SQL Server Integration Service)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U16",
+    "text": "Experience using IBM Infosphere Family (Datastage, IA, BPM, RAD (workbench), PME, DB2)",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Experience using IBM Infosphere Family (Datastage, IA, BPM, RAD (workbench), PME, DB2)",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Pengalaman di dalam penggunaan IBM Infosphere Family (Datastage, IA, BРМ, RAD (workbench), PME, DB2)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U17",
+    "text": "Experience using Data Engineering Integration Informatica",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Experience using Data Engineering Integration Informatica",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Pengalaman di dalam penggunaan Data Engineering Integration Informatica."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U18",
+    "text": "Experience in Apache Spark for data processing using PySpark/Spark R/Scala",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Experience in Apache Spark for data processing using PySpark/Spark R/Scala",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Pengalaman dalam Apache Spark untuk pemrosesan data menggunakan PySpark/Spark R/Scala."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U19",
+    "text": "Experience in creating ETL processes for data processing",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience in creating ETL processes for data processing",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Pengalaman dalam pembuatan proses ETL untuk pemrosesan data."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U20",
+    "text": "Experience in data modeling",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience in data modeling",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Pengalaman dalam data modeling, data architecture, dan data warehousing."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U21",
+    "text": "Experience in data architecture",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience in data architecture",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Pengalaman dalam data modeling, data architecture, dan data warehousing."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U22",
+    "text": "Experience in data warehousing",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience in data warehousing",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Pengalaman dalam data modeling, data architecture, dan data warehousing."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U23",
+    "text": "Knowledge in data flow automation on various platforms",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Knowledge in data flow automation on various platforms",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memiliki pengetahuan dalam otomasi data flow, data integration, manajemen informasi dan data processing pada berbagai macam platform."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U24",
+    "text": "Knowledge in data integration on various platforms",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Knowledge in data integration on various platforms",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memiliki pengetahuan dalam otomasi data flow, data integration, manajemen informasi dan data processing pada berbagai macam platform."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U25",
+    "text": "Knowledge in information management on various platforms",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Knowledge in information management on various platforms",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memiliki pengetahuan dalam otomasi data flow, data integration, manajemen informasi dan data processing pada berbagai macam platform."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U26",
+    "text": "Knowledge in data processing on various platforms",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Knowledge in data processing on various platforms",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memiliki pengetahuan dalam otomasi data flow, data integration, manajemen informasi dan data processing pada berbagai macam platform."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U27",
+    "text": "Experience in developing data reporting or data visualization using BI tools (e.g., Tableau, QlikView, Microsoft PowerBI, SSRS, IBM Cognos, etc.)",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience in developing data reporting or data visualization using BI tools (e.g., Tableau, QlikView, Microsoft PowerBI, SSRS, IBM Cognos, etc.)",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Experience in developing data reporting using BI tools",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Experience in developing data visualization using BI tools",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Pengalaman dalam pengembangan data reporting atau visualization menggunakan BI tools (i.e Tableau, QlikView, Microsoft PowerBI, SSRS, IBM Cognos, etc.)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U28",
+    "text": "Minimum 2 years in predictive and prescriptive analytics (advanced analytics) or equivalent ability",
+    "kind": "qualified",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "Minimum 2 years in predictive and prescriptive analytics (advanced analytics) or equivalent ability",
+    "min_years": 2.0,
+    "branches": [],
+    "source_quotes": [
+     "Pengalaman minimal 2 tahun di bidang predictive dan prescriptive analytics (advanced analytics) atau kemampuan setara."
+    ],
+    "needs_review": true,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U29",
+    "text": "Experience in SQL/NoSQL processing languages and similar",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Experience in SQL/NoSQL processing languages and similar",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Pengalaman dalam bahasa pemrosesan SQL/NO-SQL dan sejenisnya."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U30",
+    "text": "Experience in programming languages Python and/or R for machine learning modeling, statistical modeling, and operation research",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Experience in programming languages Python and/or R for machine learning modeling, statistical modeling, and operation research",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Pengalaman dalam bahasa pemrograman Python dan/atau R untuk pemodelan machine learning, statistical model, operation research."
+    ],
+    "needs_review": true,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U31",
+    "text": "Experience in modeling techniques: machine learning, statistical model, or operation research",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience in modeling techniques: machine learning, statistical model, or operation research",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Machine learning modeling techniques",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Statistical modeling techniques",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Operation research modeling techniques",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Pengalaman pada teknik pemodelan machine learning, statistical model, atau operation research."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U32",
+    "text": "Experience or capability to deploy modeling results to production environment",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience or capability to deploy modeling results to production environment",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Experience deploying modeling results to production environment",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Capability to deploy modeling results to production environment",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Pengalaman atau kapabilitas untuk men-deploy hasil pemodelan ke dalam production environment."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U33",
+    "text": "Experience in big data technologies (Spark, Hive, Impala, Kafka, etc.)",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Experience in big data technologies (Spark, Hive, Impala, Kafka, etc.)",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Pengalaman dalam teknologi big data (Spark, Hive, Impala, Kafka, etc) lebih diutamakan."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U34",
+    "text": "Experience in implementing advanced analytics on projects",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience in implementing advanced analytics on projects",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Pengalaman dalam mengimplementasikan advanced analytics pada proyek."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

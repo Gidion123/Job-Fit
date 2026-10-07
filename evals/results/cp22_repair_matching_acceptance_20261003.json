@@ -1,0 +1,20 @@
+{
+  "job_id": "CV1_F00332_match",
+  "result_sha256": "3af66cc7d660c11adc6078148eeae9c05dcd4e578a7a280ba108913dae63d436",
+  "checked_by": "delegated source reviewer",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "pass",
+    "qualifiers": "pass",
+    "importance": "pass"
+  },
+  "notes": [
+    "All 16 requirement assessments and both education branches inspected against the actual synthetic CV1 and development F00332 source. All positive CV quotes are exact substrings; negatives do not invent missing evidence. No gold label was sent as a target.",
+    "One education OR counts once; Python, SQL and Excel remain three independent requirements. Nine required scored units: five MATCH, three PARTIAL, one NO_MATCH. Formula (5 + 0.5 * 3) / 9 yields 72.22%. Six soft skills excluded; one preferred knowledge item excluded. No denominator or label rule changed.",
+    "Final semantic repair now recognizes certificate learning and thesis project evidence as PARTIAL for U15/U06/U07. No inference of teamwork, independent employment duration, or full autonomy. Skills-only Excel stays PARTIAL. Anomaly investigation and credit scoring have no evidence.",
+    "U15 learning and U16 actionable recommendations remain PARTIAL versus MATCH in reviewed gold. These are explicitly retained interpretation differences, not new gold decisions. Presentation does not explicitly prove actionable recommendations; certificate supports learning but does not demonstrate mastery. Human alignment remains pending; no F1 or accuracy claim.",
+    "Date2026-09-30 preserved. No work-duration minimum in this JD; experience unknown is correct, not compatible. Location unconfirmed remains unknown; neither warning changes score arithmetic.",
+    "Operational source review passes for this assisted acceptance case after bounded repairs. Runtime final is an arithmetic/status result, not independent semantic accuracy certification. Default JDpromptv1.2 is unchanged; this experiment explicitly uses JDpromptv1.3. Broad development outcomes remain incomplete."
+  ]
+}

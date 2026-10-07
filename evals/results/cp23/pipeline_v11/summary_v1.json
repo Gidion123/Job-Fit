@@ -1,0 +1,42 @@
+{
+  "run_id": "cp23_pipeline_v11_20261004_v1",
+  "status": "completed",
+  "pairs": 60,
+  "H1_usable": 26,
+  "H2_usable": 42,
+  "per_cv": {
+    "CV1": {
+      "H1": 14,
+      "H2": 20
+    },
+    "CV2": {
+      "H1": 12,
+      "H2": 22
+    }
+  },
+  "ledger_run_cost_usd": 0.5721828139999999,
+  "ledger_total_usd": 3.031218,
+  "wall_ms": 2648004,
+  "protected_sha256": {
+    "evals/labeling/JobFit_Development_Labeling_v1.3.xlsx": "4d96852dce52effdc376709cf8c0131f2f9ad1a6f02795cc556fec1819eccb50",
+    "evals/splits/dev_job_ids.txt": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+    "evals/splits/test_job_ids.txt": "b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435",
+    "data/processed/jobs_features.jsonl": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+    "evals/pools/dev_pool.csv": "77825f8504d45baa577dbb12cf91585368b546da5e5cbbdbfd3085e6a807661e",
+    "evals/results/cp22_retrieval_top30_20261002_03.json": "32d99ff3dbfe4ec8b1ba37ce0d6fb51e3449b7e508c0bc2786d51658e52569eb",
+    "evals/annotation_guideline_v1_3.md": "3d964a28fd105e16b24ad51b8b0a22b34bb9255e438b51e4e6e0eda551c57645",
+    "prompts/jd_extraction_v1_4_experimental.md": "9fe62242b5f24f4f4b5560218653bf8db68df09ede5465a3fc01ca4e6bc087e7",
+    "prompts/evidence_matching_v1_1.md": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+    "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+    "data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+    "evals/gold/development_v13_reviewed_20261002_r2/JD_coverage.json": "55312dce477c8f620a8db72067d92f3c1d76abdbe615c85d78db1bed40ffd511",
+    "evals/gold/development_v13_reviewed_20261002_r2/evidence_gold.jsonl": "9451fe9459c5cf97bc42ba24edf8a7a2cfc8b933083f8d0ab8b953fd579cb788",
+    "evals/gold/development_v13_reviewed_20261002_r2/excluded_records.json": "e72c7f8214b6474b4fd648d25a4c36f8c374f1662eac5909e60d5deeeb16d93e",
+    "evals/gold/development_v13_reviewed_20261002_r2/extraction_gold.jsonl": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+    "evals/gold/development_v13_reviewed_20261002_r2/held_records.json": "bb7393e9264bda74967042e846a1c9b67090b0ca92255a815037f97de94321aa",
+    "evals/gold/development_v13_reviewed_20261002_r2/logical_units.json": "49aa3b438470de8897a3b17b315da4190dd33f2e78f3f73f9065753250fffaf5",
+    "evals/gold/development_v13_reviewed_20261002_r2/manifest.json": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+    "evals/gold/development_v13_reviewed_20261002_r2/pair_coverage.json": "b2a1339e4a9de6c4b8cf4d55b7ebb8f21fc2d3bde58557ac26de96135ba0bd58",
+    "evals/gold/development_v13_reviewed_20261002_r2/relevance_gold.jsonl": "2f0ef6760c8d3b26728e6a93b2771d0fa5fb35395814fa8f7f0cc54f837b2bd6"
+  }
+}

@@ -10,10 +10,15 @@ fee_note: OpenRouter adds a fee when credit is bought (about 5.5%); it is not pa
 
 models:
   deepseek-flash:
-    id: deepseek/deepseek-v4.1-flash   # confirm exact id; the OpenRouter page lists several flash versions
+    id: deepseek/deepseek-v4.1-flash
+    verified_at: '2026-10-02'
+    verification_url: https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints
     role: round1_baseline
-    input_per_m: 0.30                  # conservative: highest listed flash price, until confirmed
+    input_per_m: 0.30                  # request routing ceiling, verified endpoint prices at or below this
     output_per_m: 1.20
+    # CP2.2 operational baseline: default high exhausted the 6k response budget.
+    # Supported efforts verified from /models on 2 Oct; not a CP2.3 selection.
+    reasoning: {effort: low, exclude: true}
   gpt-6-luna:
     id: openai/gpt-6-luna              # dated id seen in the API list: openai/gpt-6-luna-20260922
     role: round1
@@ -43,5 +48,18 @@ models:
 embeddings:
   text-embedding-3-small:
     id: openai/text-embedding-3-small
+    # Observed native provider response through OpenRouter on 1 October 2026.
+    response_model_aliases: [text-embedding-3-small]
     dimensions: 1536
     input_per_m: 0.02
+    max_input_tokens: 8191
+    tokenizer: cl100k_base
+    verified_at: '2026-10-01'
+  qwen3-embedding-8b:
+    id: qwen/qwen3-embedding-8b
+    response_model_aliases: [Qwen/Qwen3-Embedding-8B]
+    dimensions: 4096
+    input_per_m: 0.01
+    max_input_tokens: 31900 # lowest endpoint is 32000; reserve space for provider wrapping
+    tokenizer: qwen3-embedding-8b
+    verified_at: '2026-10-01'

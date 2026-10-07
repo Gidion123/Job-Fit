@@ -1,0 +1,16 @@
+{
+  "job_id": "F00034",
+  "result_sha256": "64b3d8d9ac0f937c0a960e3162a2f6df3d994bf4be7d5c536798be5b99881b18",
+  "checked_by": "execution-role; delegated semantic inspection",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "fail",
+    "grouping": "uncertain",
+    "qualifiers": "fail",
+    "importance": "pass"
+  },
+  "notes": "Read the whole nine-bullet qualification section and all returned output. Model returned only the first education requirement. It omitted minimum two-year AI/ML employment, Python, AI/ML frameworks, LLM experience, RAG/prompt/vector concepts, Git/Docker/REST/cloud preferences, three soft skills, and portfolio/AI-experience preference. Therefore stop before CV parsing/pasted extraction/matching; no repair for this schema-valid semantic failure and no model/prompt change. Education quote/importance valid, but branches omit the common degree qualifier and need scoped interpretation; no quality F1.",
+  "source_qualification_bullets": 9,
+  "returned_units": 1,
+  "omission_scope": "qualification bullets2\u20139; responsibilities correctly not treated as requirements"
+}

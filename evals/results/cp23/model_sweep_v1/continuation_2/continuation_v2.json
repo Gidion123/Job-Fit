@@ -1,0 +1,40 @@
+{
+  "run_id": "cp23_model_sweep_stage1_20261004_v1_cont2",
+  "tasks": [
+    [
+      "claude-opus-5.5",
+      "CV1",
+      "F00332"
+    ],
+    [
+      "claude-opus-5.5",
+      "CV1",
+      "F00036"
+    ],
+    [
+      "claude-opus-5.5",
+      "CV2",
+      "F00815"
+    ],
+    [
+      "claude-opus-5.5",
+      "CV2",
+      "F00018"
+    ],
+    [
+      "gemini-3.1-pro",
+      "CV2",
+      "F00018"
+    ]
+  ],
+  "estimate_usd": 1.1071,
+  "cumulative_cap_usd": 3.0,
+  "spent_since_stage1_plan_usd": 1.2836,
+  "remaining_cap_usd": 1.7164,
+  "ledger_usd": 4.597,
+  "jobfit_guard": [
+    19.0,
+    18.5
+  ],
+  "reason": "D-081: the 4 October 403s were an OpenRouter workspace lifetime budget of US$5, raised by Dion; v1 failure files kept as provenance"
+}

@@ -1,0 +1,70 @@
+{
+  "cv_id": "CV2",
+  "job_id": "F00798",
+  "status": "done",
+  "attempts": 2,
+  "error_code": null,
+  "wall_ms": 34361,
+  "score": {
+    "score_pct": 50.0,
+    "status": "final",
+    "matched": 0,
+    "partial": 1,
+    "required_total": 1,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+  },
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+        "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+        "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ],
+  "source_flags": [
+    {
+      "unit_id": "U01",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "cv_span": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "start": 1215,
+      "end": 1332,
+      "flags": []
+    },
+    {
+      "unit_id": "U01",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "cv_span": "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "start": 1335,
+      "end": 1446,
+      "flags": []
+    },
+    {
+      "unit_id": "U01",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+      "cv_span": "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+      "start": 961,
+      "end": 1057,
+      "flags": []
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "job_id": "F00309",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "c2948ba5e634b349eae23369b2489218dc0bae4f8603cb1378009b925814a12b",
+  "wall_ms": 43615,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00309",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "1-3 years of relevant experience demonstrating practical application of skills at this seniority level",
+        "kind": "qualified",
+        "importance": "preferred",
+        "field": "experience_duration",
+        "normalized_name": null,
+        "min_years": 1.0,
+        "branches": [],
+        "source_quotes": [
+          "1-3 years of relevant experience demonstrating practical application of skills at this seniority level"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Proficiency in Python",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Proficiency in SQL",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Proficiency in statistics",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Proficiency in machine learning",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Proficiency in experimentation",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Proficiency in data visualization",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Proficiency in data storytelling",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Diploma, degree, or equivalent practical experience in a relevant technical, business, or creative discipline",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "education",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B01",
+            "text": "Diploma in a relevant technical discipline",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B02",
+            "text": "Diploma in a relevant business discipline",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B03",
+            "text": "Diploma in a relevant creative discipline",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B04",
+            "text": "Degree in a relevant technical discipline",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B05",
+            "text": "Degree in a relevant business discipline",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B06",
+            "text": "Degree in a relevant creative discipline",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B07",
+            "text": "Equivalent practical experience in a relevant technical discipline",
+            "field": "experience_duration",
+            "min_years": null
+          },
+          {
+            "branch_id": "B08",
+            "text": "Equivalent practical experience in a relevant business discipline",
+            "field": "experience_duration",
+            "min_years": null
+          },
+          {
+            "branch_id": "B09",
+            "text": "Equivalent practical experience in a relevant creative discipline",
+            "field": "experience_duration",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Diploma, degree, or equivalent practical experience in a relevant technical, business, or creative discipline"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

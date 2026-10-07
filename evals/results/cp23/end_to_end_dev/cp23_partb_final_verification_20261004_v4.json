@@ -1,0 +1,45 @@
+{
+  "schema_version": "cp23-partb-final-verification-v4",
+  "created_at_utc": "2026-10-04T02:54:41.394341+00:00",
+  "scope": "development_only",
+  "run_status": "all_60_records_saved",
+  "tests": {
+    "command": "env-job-fit/bin/python -m pytest -q",
+    "passed": 462,
+    "skipped": 2,
+    "failed": 0,
+    "note": "Full suite after evaluator and cutoff-binding changes; separate quote audit script subsequently ran successfully"
+  },
+  "quote_audit": {
+    "matching_done": 35,
+    "units": 584,
+    "jd_quotes": 585,
+    "assessments": 584,
+    "cv_quotes": 508
+  },
+  "quote_audit_faults": 0,
+  "protected_check_sha256": "dc9fa73a309cc47d48f6de74b45c3ab9032cb3da4c5ac2ff79cae859108893c8",
+  "completion_receipt_sha256": "cbe86aa890d829f2486af1a8999c5255ba4989a67b1f2515a71ff04406df01e0",
+  "evaluation_sha256": "a54b16a7de92478eb78b147feb873810e74937685303ca8f4d90e42c93984237",
+  "report_and_figure_sha256": {
+    "README.md": "1893a104f30275655af8046159bba7c9982f5a065b03b06c34920c16fff11366",
+    "docs/master-plan.md": "8eccbb75d29c6d8994bba6299795b0d06dc1c3396a953acc72df74245352b70e",
+    "docs/decisions.md": "cf03f88995541e87c3296b8f49b913a1813dd06daec1d9998eb5c1f3743dfdd3",
+    "docs/experiments.md": "a85e95655cdb6cfa2452081424fb0564695012bafcc23932ea56f2032cbc5428",
+    "docs/failures.md": "bab4e115022b0fb4c4c7829010280b4a9e06f3fd3cd726df1d04c4178997bfcd",
+    "docs/repo-structure.md": "1e1ece5239b53cb9494c50a77228fba1aae602b250ed5c7808522abb23e446d2",
+    "docs/checkpoint_2/CP2_03_System_Tuning.md": "5796ac44da9a0465b11c8c6b27eb53d96d14d124a6cc6910306b1955b800f1b2",
+    "docs/checkpoint_2/CP2_03_Model_Comparison.md": "a3da3c997f85f18bed0a11e195610fc4a61307a7b36648db82d3c3f4016ec737",
+    "docs/checkpoint_2/CP2_05_Evaluation_Visualization.md": "22c8626392d2033429512571618ac965707422139eef6571ae86db3402e89bd3",
+    "docs/checkpoint_2/CP2_06_Recommendation_and_Summary.md": "d3ae0c306047ea9483ffd9eaba56df799a6fa47a40db1cfd4d23e371eb83825c",
+    "docs/checkpoint_2/supporting/CP2_Presentation_Summary_20261004.md": "53627178ba8414fa3ac3ebfcfc0db849e44a3f8c440dd34c2cb62880ca2d555e",
+    "docs/checkpoint_2/supporting/CP23_PartB_Development_Run_20261004.md": "92a1afb039d6a658ebdaaf625b3c80bf061efbcf35628c6df130a124f7989f50",
+    "reports/figures/cp2/fig07_partb_coverage_20261004_v1.png": "fce0a54e41cecb64a0138bcd6518d964ca7059fa5c8ba6721518c6da2488014f"
+  },
+  "local_links_checked": 241,
+  "local_links_missing": 0,
+  "paid_inference_after_completion": false,
+  "test_content_access": false,
+  "winner_changed": false,
+  "corrected_from_sha256": "901f06a91ca952995a5c44b5faeccfb238e36bafb0d92563340106b1c3a40cab"
+}

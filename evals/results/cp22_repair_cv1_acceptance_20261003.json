@@ -1,0 +1,19 @@
+{
+  "job_id": "CV1_parse",
+  "result_sha256": "78f3900186fbcfa64164db72587884bedb8e9da459cd62a4ef003aa4c95530c6",
+  "checked_by": "delegated source reviewer",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "pass",
+    "qualifiers": "pass",
+    "importance": "pass"
+  },
+  "notes": [
+    "13source-grounded facts and7section categories preserve all source content needed for matching;2employment entries correctly separated from2projects andeducation.",
+    "InternshipFeb-May2026 andteachingFeb-Jun2025 retain monthprecision; no invented days or project workmonths. Source quotes, certifications, skills-only list andlanguage scores preserved.",
+    "Date remains2026-09-30; location onlysuggested,not confirmed. No qualification importance assigned by parser.",
+    "Nonblocking metadata limitation: profile.language contains the source language-proficiency line rather than a normalized id/en code. It is not used for this matching/constraint flow; no language eligibility inferred.",
+    "Parsing preview confirmed under delegated synthetic-source inspection,not production user consent or gold approval."
+  ]
+}

@@ -1,0 +1,458 @@
+{
+ "set": "ranking",
+ "cv_id": "CV2",
+ "job_id": "F00018",
+ "model": "gpt-6-sol",
+ "experiment_id": "QA-E01",
+ "wall_ms": 21980,
+ "status": "done",
+ "error_code": null,
+ "attempts": 1,
+ "assessments": [
+  {
+   "unit_id": "U01",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Forecasted monthly ad spend with Prophet for internal planning.",
+    "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U02",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U03",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+    "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+    "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U04",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+    "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U05",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U06",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U07",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U08",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Forecasted monthly ad spend with Prophet for internal planning."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U09",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U10",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U11",
+   "label": null,
+   "check_status": "failed",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U12",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+    "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U13",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U14",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U15",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "Indonesian (native), English (professional working proficiency)"
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U16",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Ran A/B tests for ad creatives and explained results to account managers."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U17",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U18",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U19",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U20",
+   "label": null,
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [
+    {
+     "branch_id": "B1",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B2",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    }
+   ],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U21",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+    "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U22",
+   "label": null,
+   "check_status": "failed",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U23",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  }
+ ],
+ "source_flags": [
+  {
+   "unit_id": "U01",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Forecasted monthly ad spend with Prophet for internal planning.",
+   "cv_span": "- Forecasted monthly ad spend with Prophet for internal planning.",
+   "start": 1641,
+   "end": 1706,
+   "flags": []
+  },
+  {
+   "unit_id": "U01",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+   "cv_span": "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+   "start": 1491,
+   "end": 1603,
+   "flags": []
+  },
+  {
+   "unit_id": "U03",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+   "cv_span": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+   "start": 238,
+   "end": 323,
+   "flags": []
+  },
+  {
+   "unit_id": "U03",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "cv_span": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "start": 1213,
+   "end": 1332,
+   "flags": []
+  },
+  {
+   "unit_id": "U03",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "cv_span": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "start": 1333,
+   "end": 1446,
+   "flags": []
+  },
+  {
+   "unit_id": "U04",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "cv_span": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "start": 1213,
+   "end": 1332,
+   "flags": []
+  },
+  {
+   "unit_id": "U04",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "cv_span": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "start": 1333,
+   "end": 1446,
+   "flags": []
+  },
+  {
+   "unit_id": "U07",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+   "cv_span": "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+   "start": 1491,
+   "end": 1603,
+   "flags": []
+  },
+  {
+   "unit_id": "U08",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Forecasted monthly ad spend with Prophet for internal planning.",
+   "cv_span": "- Forecasted monthly ad spend with Prophet for internal planning.",
+   "start": 1641,
+   "end": 1706,
+   "flags": []
+  },
+  {
+   "unit_id": "U10",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+   "cv_span": "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+   "start": 1491,
+   "end": 1603,
+   "flags": []
+  },
+  {
+   "unit_id": "U12",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "cv_span": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "start": 520,
+   "end": 633,
+   "flags": []
+  },
+  {
+   "unit_id": "U12",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "cv_span": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "start": 1333,
+   "end": 1446,
+   "flags": []
+  },
+  {
+   "unit_id": "U13",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "cv_span": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "start": 520,
+   "end": 633,
+   "flags": []
+  },
+  {
+   "unit_id": "U14",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "cv_span": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "start": 1333,
+   "end": 1446,
+   "flags": []
+  },
+  {
+   "unit_id": "U15",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Indonesian (native), English (professional working proficiency)",
+   "cv_span": "Indonesian (native), English (professional working proficiency)",
+   "start": 1990,
+   "end": 2053,
+   "flags": []
+  },
+  {
+   "unit_id": "U16",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "cv_span": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "start": 634,
+   "end": 709,
+   "flags": []
+  },
+  {
+   "unit_id": "U17",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "cv_span": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "start": 520,
+   "end": 633,
+   "flags": []
+  },
+  {
+   "unit_id": "U18",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "cv_span": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "start": 428,
+   "end": 519,
+   "flags": []
+  },
+  {
+   "unit_id": "U19",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+   "cv_span": "- Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+   "start": 1491,
+   "end": 1603,
+   "flags": []
+  },
+  {
+   "unit_id": "U21",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+   "cv_span": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+   "start": 238,
+   "end": 323,
+   "flags": []
+  },
+  {
+   "unit_id": "U21",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "cv_span": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "start": 1213,
+   "end": 1332,
+   "flags": []
+  }
+ ]
+}

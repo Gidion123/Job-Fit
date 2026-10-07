@@ -1,0 +1,60 @@
+{
+ "created_at": "2026-10-07T08:49:52+00:00",
+ "rule_sha256": "3ab3111a192b97adca625959e47bf62978f6b3743dfcc0fdf1dc404b8723f337",
+ "cards": {
+  "QA-E01": {
+   "gates": {
+    "quote_validity_1": true,
+    "unsupported_not_worse": true,
+    "prompt_failures_not_worse": true,
+    "no_unrecovered_transient": true,
+    "ranking_p5_not_lower": true,
+    "ranking_ndcg_within_0_02": true
+   },
+   "gates_passed": true,
+   "path_A": false,
+   "path_B": false,
+   "no_other_regression": true,
+   "pairs_with_fewer_unsupported": 11,
+   "eligible": false,
+   "values": {
+    "macro_f1": 0.6991982563702441,
+    "accuracy": 0.7591240875912408,
+    "unsupported_positive": 47,
+    "overclaim": 61,
+    "underclaim": 23,
+    "unassessed": 15,
+    "prompt_failed_pairs": 0
+   }
+  },
+  "QA-E02": {
+   "gates": {
+    "quote_validity_1": true,
+    "unsupported_not_worse": true,
+    "prompt_failures_not_worse": true,
+    "no_unrecovered_transient": true,
+    "ranking_evaluated": false
+   },
+   "gates_passed": false,
+   "path_A": true,
+   "path_B": true,
+   "no_other_regression": false,
+   "pairs_with_fewer_unsupported": 14,
+   "eligible": false,
+   "values": {
+    "macro_f1": 0.7396855936729252,
+    "accuracy": 0.7858880778588808,
+    "unsupported_positive": 37,
+    "overclaim": 40,
+    "underclaim": 33,
+    "unassessed": 15,
+    "prompt_failed_pairs": 0
+   }
+  }
+ },
+ "not_run_adaptive_stopping": [
+  "QA-E03"
+ ],
+ "provisional_finalist": null,
+ "decision": "no eligible challenger: keep the baseline (prompt v1.1); confirmation stays sealed"
+}

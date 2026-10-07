@@ -1,0 +1,13 @@
+{
+  "job_id": "gpt-6-luna/F00332",
+  "result_sha256": "d10b9dc085cb64dd397dba150fe20a1712192d2656b8acff73c0c5750c3e99d1",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "fail",
+    "qualifiers": "pass",
+    "importance": "pass"
+  },
+  "notes": "Delegated full-source comparison of all eight qualification clauses and 20 final units against the 16 reviewed logical units. Other considered education disciplines and experience qualifiers are retained. The learning/mastering-technologies/techniques clause is over-split into U08-U11 rather than the reviewed independent learning obligation; trend/anomaly analysis is split into U17/U18 instead of the reviewed joint analytical obligation. Data exploration and actionable findings use other rather than the reviewed knowledge_area; SQL-based analysis uses skill_tool instead of knowledge_area. This is a failed grouping/category observation, not approved alignment or F1. Exact source quotes are valid and plus remains preferred.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

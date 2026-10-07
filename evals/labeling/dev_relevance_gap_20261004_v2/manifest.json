@@ -1,0 +1,253 @@
+{
+  "version": "dev-relevance-gap-v2",
+  "date": "2026-10-04",
+  "split": "development",
+  "supersedes": "dev-relevance-gap-v1 (unfilled)",
+  "scope": [
+    "unjudged Hybrid Qwen top 30 (CV1, CV2)",
+    "unjudged top 20 of all six methods (CV1, CV2)"
+  ],
+  "items": [
+    {
+      "item_id": "G01",
+      "cv_id": "CV2",
+      "job_id": "F00856"
+    },
+    {
+      "item_id": "G02",
+      "cv_id": "CV2",
+      "job_id": "F00436"
+    },
+    {
+      "item_id": "G03",
+      "cv_id": "CV1",
+      "job_id": "F00818"
+    },
+    {
+      "item_id": "G04",
+      "cv_id": "CV1",
+      "job_id": "F00559"
+    },
+    {
+      "item_id": "G05",
+      "cv_id": "CV2",
+      "job_id": "F00558"
+    },
+    {
+      "item_id": "G06",
+      "cv_id": "CV2",
+      "job_id": "F00645"
+    },
+    {
+      "item_id": "G07",
+      "cv_id": "CV1",
+      "job_id": "F00650"
+    },
+    {
+      "item_id": "G08",
+      "cv_id": "CV2",
+      "job_id": "F00300"
+    },
+    {
+      "item_id": "G09",
+      "cv_id": "CV2",
+      "job_id": "F00212"
+    },
+    {
+      "item_id": "G10",
+      "cv_id": "CV1",
+      "job_id": "F00352"
+    },
+    {
+      "item_id": "G11",
+      "cv_id": "CV1",
+      "job_id": "F00690"
+    },
+    {
+      "item_id": "G12",
+      "cv_id": "CV1",
+      "job_id": "F00029"
+    },
+    {
+      "item_id": "G13",
+      "cv_id": "CV1",
+      "job_id": "F00610"
+    },
+    {
+      "item_id": "G14",
+      "cv_id": "CV1",
+      "job_id": "F00052"
+    },
+    {
+      "item_id": "G15",
+      "cv_id": "CV1",
+      "job_id": "F00768"
+    },
+    {
+      "item_id": "G16",
+      "cv_id": "CV2",
+      "job_id": "F00442"
+    },
+    {
+      "item_id": "G17",
+      "cv_id": "CV2",
+      "job_id": "F00059"
+    },
+    {
+      "item_id": "G18",
+      "cv_id": "CV1",
+      "job_id": "F00806"
+    },
+    {
+      "item_id": "G19",
+      "cv_id": "CV1",
+      "job_id": "F00187"
+    },
+    {
+      "item_id": "G20",
+      "cv_id": "CV2",
+      "job_id": "F00153"
+    },
+    {
+      "item_id": "G21",
+      "cv_id": "CV2",
+      "job_id": "F00629"
+    },
+    {
+      "item_id": "G22",
+      "cv_id": "CV1",
+      "job_id": "F00851"
+    },
+    {
+      "item_id": "G23",
+      "cv_id": "CV2",
+      "job_id": "F00332"
+    },
+    {
+      "item_id": "G24",
+      "cv_id": "CV1",
+      "job_id": "F00436"
+    },
+    {
+      "item_id": "G25",
+      "cv_id": "CV1",
+      "job_id": "F00059"
+    },
+    {
+      "item_id": "G26",
+      "cv_id": "CV1",
+      "job_id": "F00021"
+    },
+    {
+      "item_id": "G27",
+      "cv_id": "CV2",
+      "job_id": "F00556"
+    },
+    {
+      "item_id": "G28",
+      "cv_id": "CV1",
+      "job_id": "F00527"
+    },
+    {
+      "item_id": "G29",
+      "cv_id": "CV2",
+      "job_id": "F00082"
+    },
+    {
+      "item_id": "G30",
+      "cv_id": "CV1",
+      "job_id": "F00850"
+    },
+    {
+      "item_id": "G31",
+      "cv_id": "CV2",
+      "job_id": "F00554"
+    },
+    {
+      "item_id": "G32",
+      "cv_id": "CV2",
+      "job_id": "F00077"
+    },
+    {
+      "item_id": "G33",
+      "cv_id": "CV2",
+      "job_id": "F00108"
+    },
+    {
+      "item_id": "G34",
+      "cv_id": "CV2",
+      "job_id": "F00699"
+    },
+    {
+      "item_id": "G35",
+      "cv_id": "CV2",
+      "job_id": "F00682"
+    },
+    {
+      "item_id": "G36",
+      "cv_id": "CV1",
+      "job_id": "F00129"
+    },
+    {
+      "item_id": "G37",
+      "cv_id": "CV1",
+      "job_id": "F00060"
+    },
+    {
+      "item_id": "G38",
+      "cv_id": "CV1",
+      "job_id": "F00023"
+    },
+    {
+      "item_id": "G39",
+      "cv_id": "CV2",
+      "job_id": "F00343"
+    },
+    {
+      "item_id": "G40",
+      "cv_id": "CV2",
+      "job_id": "F00418"
+    },
+    {
+      "item_id": "G41",
+      "cv_id": "CV1",
+      "job_id": "F00126"
+    },
+    {
+      "item_id": "G42",
+      "cv_id": "CV1",
+      "job_id": "F00351"
+    },
+    {
+      "item_id": "G43",
+      "cv_id": "CV2",
+      "job_id": "F00060"
+    },
+    {
+      "item_id": "G44",
+      "cv_id": "CV1",
+      "job_id": "F00694"
+    },
+    {
+      "item_id": "G45",
+      "cv_id": "CV2",
+      "job_id": "F00370"
+    },
+    {
+      "item_id": "G46",
+      "cv_id": "CV1",
+      "job_id": "F00693"
+    }
+  ],
+  "gold_r3_unchanged": true,
+  "blind": true,
+  "hidden": [
+    "rank",
+    "score",
+    "method",
+    "model suggestion",
+    "experience_bucket"
+  ],
+  "shuffle_seed": 20261005,
+  "workbook_sha256_at_creation": "bd18754ecc5764de6b8378c35f13fe550e9f09d6049041cda85bc2bbbe73e4d0"
+}

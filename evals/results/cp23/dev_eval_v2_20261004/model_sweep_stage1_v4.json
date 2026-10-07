@@ -1,0 +1,513 @@
+{
+  "schema_version": "cp23-dev-model-sweep-stage1-v1",
+  "split": "development",
+  "api_calls": 0,
+  "reference": "D-067, all 73 units, failures as false negatives, G1/G2 in evaluation",
+  "models": {
+    "gpt-6-luna": {
+      "model_id": "openai/gpt-6-luna",
+      "role": "selected D-077",
+      "pair_status": [
+        "done",
+        "done",
+        "done",
+        "done"
+      ],
+      "valid_pairs": 4,
+      "macro_f1_all_cases_guarded": 0.7360303617571059,
+      "macro_f1_answered_only": 0.7360303617571059,
+      "per_class_f1": {
+        "MATCH": 0.84375,
+        "PARTIAL": 0.6976744186046512,
+        "NO_MATCH": 0.6666666666666666
+      },
+      "error_profile": {
+        "claims_stronger_than_gold": 4,
+        "claims_weaker_than_gold": 14,
+        "predicted_match": 28,
+        "match_overclaim": 1,
+        "positive_claim_on_gold_no_match": 3,
+        "match_underclaim": 9,
+        "match_precision": 0.9642857142857143,
+        "not_assessed": 0
+      },
+      "cost_usd": 0.00695,
+      "calls": 4,
+      "cost_per_valid_pair_usd": 0.001737,
+      "pair_wall_ms_p50": 21014.0,
+      "pair_wall_ms_max": 22654,
+      "run_to_run_label_agreement": {
+        "units": 73,
+        "same": 66,
+        "rate": 0.9041095890410958
+      }
+    },
+    "deepseek-flash": {
+      "model_id": "deepseek/deepseek-v4.1-flash",
+      "role": "baseline",
+      "pair_status": [
+        "done",
+        "done",
+        "done",
+        "failed:APITimeoutError"
+      ],
+      "valid_pairs": 3,
+      "macro_f1_all_cases_guarded": 0.5777777777777778,
+      "macro_f1_answered_only": 0.725669392336059,
+      "per_class_f1": {
+        "MATCH": 0.7,
+        "PARTIAL": 0.5,
+        "NO_MATCH": 0.5333333333333333
+      },
+      "error_profile": {
+        "claims_stronger_than_gold": 3,
+        "claims_weaker_than_gold": 9,
+        "predicted_match": 24,
+        "match_overclaim": 3,
+        "positive_claim_on_gold_no_match": 0,
+        "match_underclaim": 4,
+        "match_precision": 0.875,
+        "not_assessed": 24
+      },
+      "cost_usd": 0.084524,
+      "calls": 4,
+      "cost_per_valid_pair_usd": 0.028175,
+      "pair_wall_ms_p50": 33526.5,
+      "pair_wall_ms_max": 252481,
+      "run_to_run_label_agreement": {
+        "units": 49,
+        "same": 40,
+        "rate": 0.8163265306122449
+      }
+    },
+    "gemini-3.5-flash-lite": {
+      "model_id": "google/gemini-3.5-flash-lite",
+      "role": "round one",
+      "pair_status": [
+        "failed:invalid_structured_output_or_source",
+        "failed:invalid_structured_output_or_source",
+        "done",
+        "done"
+      ],
+      "valid_pairs": 2,
+      "macro_f1_all_cases_guarded": 0.4769433465085639,
+      "macro_f1_answered_only": 0.6751012145748988,
+      "per_class_f1": {
+        "MATCH": 0.509090909090909,
+        "PARTIAL": 0.4,
+        "NO_MATCH": 0.5217391304347826
+      },
+      "error_profile": {
+        "claims_stronger_than_gold": 8,
+        "claims_weaker_than_gold": 5,
+        "predicted_match": 19,
+        "match_overclaim": 5,
+        "positive_claim_on_gold_no_match": 3,
+        "match_underclaim": 5,
+        "match_precision": 0.7368421052631579,
+        "not_assessed": 33
+      },
+      "cost_usd": 0.041338,
+      "calls": 6,
+      "cost_per_valid_pair_usd": 0.020669,
+      "pair_wall_ms_p50": 7495.0,
+      "pair_wall_ms_max": 12327,
+      "run_to_run_label_agreement": {
+        "units": 16,
+        "same": 13,
+        "rate": 0.8125
+      }
+    },
+    "deepseek-v4-pro": {
+      "model_id": "deepseek/deepseek-v4-pro",
+      "role": "round two",
+      "pair_status": [
+        "done",
+        "done",
+        "done",
+        "done"
+      ],
+      "valid_pairs": 4,
+      "macro_f1_all_cases_guarded": 0.66299920272523,
+      "macro_f1_answered_only": 0.66299920272523,
+      "per_class_f1": {
+        "MATCH": 0.8493150684931506,
+        "PARTIAL": 0.42857142857142855,
+        "NO_MATCH": 0.7111111111111111
+      },
+      "error_profile": {
+        "claims_stronger_than_gold": 6,
+        "claims_weaker_than_gold": 14,
+        "predicted_match": 37,
+        "match_overclaim": 6,
+        "positive_claim_on_gold_no_match": 0,
+        "match_underclaim": 5,
+        "match_precision": 0.8378378378378378,
+        "not_assessed": 0
+      },
+      "cost_usd": 0.056504,
+      "calls": 5,
+      "cost_per_valid_pair_usd": 0.014126,
+      "pair_wall_ms_p50": 86353.5,
+      "pair_wall_ms_max": 203383,
+      "run_to_run_label_agreement": {
+        "units": 73,
+        "same": 63,
+        "rate": 0.863013698630137
+      }
+    },
+    "gemini-3.8-flash": {
+      "model_id": "google/gemini-3.8-flash",
+      "role": "new",
+      "pair_status": [
+        "done",
+        "done",
+        "done",
+        "done"
+      ],
+      "valid_pairs": 4,
+      "macro_f1_all_cases_guarded": 0.7472013366750209,
+      "macro_f1_answered_only": 0.7472013366750209,
+      "per_class_f1": {
+        "MATCH": 0.7936507936507936,
+        "PARTIAL": 0.7368421052631579,
+        "NO_MATCH": 0.7111111111111111
+      },
+      "error_profile": {
+        "claims_stronger_than_gold": 2,
+        "claims_weaker_than_gold": 16,
+        "predicted_match": 27,
+        "match_overclaim": 2,
+        "positive_claim_on_gold_no_match": 0,
+        "match_underclaim": 11,
+        "match_precision": 0.9259259259259259,
+        "not_assessed": 0
+      },
+      "cost_usd": 0.190088,
+      "calls": 4,
+      "cost_per_valid_pair_usd": 0.047522,
+      "pair_wall_ms_p50": 36456.5,
+      "pair_wall_ms_max": 48615,
+      "run_to_run_label_agreement": {
+        "units": 0,
+        "same": 0,
+        "rate": null
+      }
+    },
+    "claude-haiku-4.5": {
+      "model_id": "anthropic/claude-haiku-4.5",
+      "role": "round one",
+      "pair_status": [
+        "failed:invalid_structured_output_or_source",
+        "done",
+        "done",
+        "failed:assessment_coverage"
+      ],
+      "valid_pairs": 2,
+      "macro_f1_all_cases_guarded": 0.40503474116919497,
+      "macro_f1_answered_only": 0.6642866250159378,
+      "per_class_f1": {
+        "MATCH": 0.5306122448979592,
+        "PARTIAL": 0.4117647058823529,
+        "NO_MATCH": 0.2727272727272727
+      },
+      "error_profile": {
+        "claims_stronger_than_gold": 2,
+        "claims_weaker_than_gold": 7,
+        "predicted_match": 13,
+        "match_overclaim": 0,
+        "positive_claim_on_gold_no_match": 2,
+        "match_underclaim": 5,
+        "match_precision": 1.0,
+        "not_assessed": 41
+      },
+      "cost_usd": 0.121684,
+      "calls": 6,
+      "cost_per_valid_pair_usd": 0.060842,
+      "pair_wall_ms_p50": 13609.0,
+      "pair_wall_ms_max": 18861,
+      "run_to_run_label_agreement": {
+        "units": 16,
+        "same": 16,
+        "rate": 1.0
+      }
+    },
+    "gpt-6-sol": {
+      "model_id": "openai/gpt-6-sol",
+      "role": "quality reference",
+      "pair_status": [
+        "done",
+        "done",
+        "done",
+        "done"
+      ],
+      "valid_pairs": 4,
+      "macro_f1_all_cases_guarded": 0.8463304137722742,
+      "macro_f1_answered_only": 0.8463304137722742,
+      "per_class_f1": {
+        "MATCH": 0.8857142857142857,
+        "PARTIAL": 0.7441860465116279,
+        "NO_MATCH": 0.9090909090909091
+      },
+      "error_profile": {
+        "claims_stronger_than_gold": 4,
+        "claims_weaker_than_gold": 7,
+        "predicted_match": 34,
+        "match_overclaim": 3,
+        "positive_claim_on_gold_no_match": 1,
+        "match_underclaim": 5,
+        "match_precision": 0.9117647058823529,
+        "not_assessed": 0
+      },
+      "cost_usd": 0.151405,
+      "calls": 5,
+      "cost_per_valid_pair_usd": 0.037851,
+      "pair_wall_ms_p50": 17463.5,
+      "pair_wall_ms_max": 31401,
+      "run_to_run_label_agreement": {
+        "units": 73,
+        "same": 64,
+        "rate": 0.8767123287671232
+      }
+    },
+    "claude-sonnet-5.5": {
+      "model_id": "anthropic/claude-sonnet-5.5",
+      "role": "new",
+      "pair_status": [
+        "done",
+        "done",
+        "done",
+        "done"
+      ],
+      "valid_pairs": 4,
+      "macro_f1_all_cases_guarded": 0.7860307964993908,
+      "macro_f1_answered_only": 0.7860307964993908,
+      "per_class_f1": {
+        "MATCH": 0.7796610169491526,
+        "PARTIAL": 0.7450980392156863,
+        "NO_MATCH": 0.8333333333333334
+      },
+      "error_profile": {
+        "claims_stronger_than_gold": 1,
+        "claims_weaker_than_gold": 15,
+        "predicted_match": 23,
+        "match_overclaim": 0,
+        "positive_claim_on_gold_no_match": 1,
+        "match_underclaim": 13,
+        "match_precision": 1.0,
+        "not_assessed": 0
+      },
+      "cost_usd": 0.334362,
+      "calls": 4,
+      "cost_per_valid_pair_usd": 0.08359,
+      "pair_wall_ms_p50": 33811.0,
+      "pair_wall_ms_max": 41141,
+      "run_to_run_label_agreement": {
+        "units": 0,
+        "same": 0,
+        "rate": null
+      }
+    },
+    "gemini-3.1-pro": {
+      "model_id": "google/gemini-3.1-pro-preview",
+      "role": "new, preview",
+      "pair_status": [
+        "failed:invalid_structured_output_or_source",
+        "done",
+        "done",
+        "done"
+      ],
+      "valid_pairs": 3,
+      "macro_f1_all_cases_guarded": 0.6388888888888888,
+      "macro_f1_answered_only": 0.7291291995725494,
+      "per_class_f1": {
+        "MATCH": 0.6785714285714286,
+        "PARTIAL": 0.5714285714285714,
+        "NO_MATCH": 0.6666666666666666
+      },
+      "error_profile": {
+        "claims_stronger_than_gold": 1,
+        "claims_weaker_than_gold": 14,
+        "predicted_match": 20,
+        "match_overclaim": 1,
+        "positive_claim_on_gold_no_match": 0,
+        "match_underclaim": 10,
+        "match_precision": 0.95,
+        "not_assessed": 16
+      },
+      "cost_usd": 0.380126,
+      "calls": 6,
+      "cost_per_valid_pair_usd": 0.126709,
+      "pair_wall_ms_p50": 33925.0,
+      "pair_wall_ms_max": 56230,
+      "run_to_run_label_agreement": {
+        "units": 0,
+        "same": 0,
+        "rate": null
+      }
+    },
+    "claude-opus-5.5": {
+      "model_id": "anthropic/claude-opus-5.5",
+      "role": "new, upper reference",
+      "pair_status": [
+        "done",
+        "done",
+        "done",
+        "done"
+      ],
+      "valid_pairs": 4,
+      "macro_f1_all_cases_guarded": 0.7695023902651021,
+      "macro_f1_answered_only": 0.7695023902651021,
+      "per_class_f1": {
+        "MATCH": 0.7796610169491526,
+        "PARTIAL": 0.7083333333333334,
+        "NO_MATCH": 0.8205128205128205
+      },
+      "error_profile": {
+        "claims_stronger_than_gold": 0,
+        "claims_weaker_than_gold": 17,
+        "predicted_match": 23,
+        "match_overclaim": 0,
+        "positive_claim_on_gold_no_match": 0,
+        "match_underclaim": 13,
+        "match_precision": 1.0,
+        "not_assessed": 0
+      },
+      "cost_usd": 0.545704,
+      "calls": 5,
+      "cost_per_valid_pair_usd": 0.136426,
+      "pair_wall_ms_p50": 32180.0,
+      "pair_wall_ms_max": 35249,
+      "run_to_run_label_agreement": {
+        "units": 0,
+        "same": 0,
+        "rate": null
+      }
+    }
+  },
+  "bootstrap_vs_luna": {
+    "deepseek-v4-pro": {
+      "units": 73,
+      "pairs": 4,
+      "observed_difference": -0.07303115903187585,
+      "unit_bootstrap_95": [
+        -0.1945553114171381,
+        0.05639406049313911
+      ],
+      "pair_bootstrap_95": [
+        -0.15115995115995118,
+        0.03416621758279781
+      ],
+      "share_of_unit_draws_below_0_03": 0.9418
+    },
+    "gemini-3.8-flash": {
+      "units": 73,
+      "pairs": 4,
+      "observed_difference": 0.011170974917914966,
+      "unit_bootstrap_95": [
+        -0.0771112623308502,
+        0.10261105595520481
+      ],
+      "pair_bootstrap_95": [
+        -0.04709486133634744,
+        0.04696118506860192
+      ],
+      "share_of_unit_draws_below_0_03": 0.6668
+    },
+    "gpt-6-sol": {
+      "units": 73,
+      "pairs": 4,
+      "observed_difference": 0.11030005201516835,
+      "unit_bootstrap_95": [
+        -0.0012903542260435108,
+        0.22547081176725936
+      ],
+      "pair_bootstrap_95": [
+        0.022478580539675774,
+        0.18159296420165982
+      ],
+      "share_of_unit_draws_below_0_03": 0.0802
+    },
+    "claude-sonnet-5.5": {
+      "units": 73,
+      "pairs": 4,
+      "observed_difference": 0.05000043474228488,
+      "unit_bootstrap_95": [
+        -0.04423541188247071,
+        0.1490855748126929
+      ],
+      "pair_bootstrap_95": [
+        -0.022536876703543318,
+        0.0944454119741478
+      ],
+      "share_of_unit_draws_below_0_03": 0.3366
+    },
+    "claude-opus-5.5": {
+      "units": 73,
+      "pairs": 4,
+      "observed_difference": 0.03347202850799624,
+      "unit_bootstrap_95": [
+        -0.045620695376411335,
+        0.11664203753148217
+      ],
+      "pair_bootstrap_95": [
+        -0.04757442992737104,
+        0.09804043338526103
+      ],
+      "share_of_unit_draws_below_0_03": 0.4724
+    }
+  },
+  "stage2_gate_valid_4_of_4_and_macro_f1_at_least_luna": {
+    "deepseek-flash": false,
+    "gemini-3.5-flash-lite": false,
+    "deepseek-v4-pro": false,
+    "gemini-3.8-flash": true,
+    "claude-haiku-4.5": false,
+    "gpt-6-sol": true,
+    "claude-sonnet-5.5": true,
+    "gemini-3.1-pro": false,
+    "claude-opus-5.5": true
+  },
+  "run_summary": {
+    "run_id": "cp23_model_sweep_stage1_20261004_v1",
+    "stopped": "PermissionDeniedError",
+    "models": [
+      {
+        "model": "gpt-6-luna",
+        "skipped_after_first_pair": null
+      },
+      {
+        "model": "deepseek-flash",
+        "skipped_after_first_pair": null
+      },
+      {
+        "model": "gemini-3.5-flash-lite",
+        "skipped_after_first_pair": null
+      },
+      {
+        "model": "deepseek-v4-pro",
+        "skipped_after_first_pair": null
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "skipped_after_first_pair": null
+      },
+      {
+        "model": "claude-haiku-4.5",
+        "skipped_after_first_pair": null
+      },
+      {
+        "model": "gpt-6-sol",
+        "skipped_after_first_pair": null
+      },
+      {
+        "model": "claude-sonnet-5.5",
+        "skipped_after_first_pair": null
+      }
+    ]
+  },
+  "limits": [
+    "Four CV/JD pairs and 73 units: differences of a few points are noise.",
+    "Run-to-run agreement compares the same model across two runs; earlier runs used older settings."
+  ]
+}

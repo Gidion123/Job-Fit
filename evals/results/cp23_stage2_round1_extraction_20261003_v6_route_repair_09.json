@@ -1,0 +1,362 @@
+{
+  "job_id": "gemini-3.5-flash-lite/F00036",
+  "source_job_id": "F00036",
+  "model": "gemini-3.5-flash-lite",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "plan_sha256": "023bf2ba3f9ad0dac975b39173a5ba543d09584216573acbba51bb616a152a1a",
+  "source_sha256": "831248e3faf86e60196bb7d56ce63270d790903be72c185c746c1f20faf19b7d",
+  "prompt_version": "jd-prompt-v1.4-experimental",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "extraction": {
+    "job_id": "F00036",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Bachelor's degree in Statistics, Mathematics, Computer Science, Informatics Engineering, or Data Science",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "bachelors_degree",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Bachelor's degree in Statistics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Bachelor's degree in Mathematics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Bachelor's degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Bachelor's degree in Informatics Engineering",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Bachelor's degree in Data Science",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Pendidikan minimal S1 Statistika, Matematika, Ilmu Komputer, Teknik Informatika, Data Science"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "2 to 3 years of professional experience as a Data Scientist or in a similar position",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "data_scientist_experience",
+        "min_years": 2.0,
+        "branches": [],
+        "source_quotes": [
+          "Minimal 2-3 tahun pengalaman profesional sebagai Data Scientist atau posisi sejenisnya."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Proficiency in Python programming language",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "python",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Python",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "R",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "SQL",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Keahlian dalam bahasa pemrograman seperti Python, R, atau SQL untuk manipulasi dan analisis data."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Understanding of supervised learning",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "supervised_learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pemahaman kuat tentang konsep machine learning, termasuk supervised learning, unsupervised learning, dan deep learning."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Understanding of unsupervised learning",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "unsupervised_learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pemahaman kuat tentang konsep machine learning, termasuk supervised learning, unsupervised learning, dan deep learning."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Understanding of deep learning",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "deep_learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pemahaman kuat tentang konsep machine learning, termasuk supervised learning, unsupervised learning, dan deep learning."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Experience with Pandas",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "pandas",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Pandas",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Scikit-learn",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "TensorFlow",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "PyTorch",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Pengalaman dalam menggunakan tools dan library populer seperti Pandas, Scikit-learn, TensorFlow, atau PyTorch."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Ability to perform exploratory data analysis and data visualization using Tableau",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "tableau",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Tableau",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Power BI",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Matplotlib",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Kemampuan untuk melakukan exploratory data analysis dan data visualization menggunakan tools seperti Tableau, Power BI, atau Matplotlib."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Solid understanding of descriptive statistics",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "descriptive_statistics",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pemahaman solid tentang statistik deskriptif dan inferensial serta metodologi penelitian."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Solid understanding of inferential statistics",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "inferential_statistics",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pemahaman solid tentang statistik deskriptif dan inferensial serta metodologi penelitian."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Solid understanding of research methodology",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "research_methodology",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pemahaman solid tentang statistik deskriptif dan inferensial serta metodologi penelitian."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Good communication skills to explain technical concepts to non-technical stakeholders",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "communication_skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Kemampuan komunikasi yang baik untuk menjelaskan konsep teknis kepada stakeholder non-teknis."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Experience with database management",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "database_management",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Database management",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Hadoop",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Spark",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Cloud platforms",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Pengalaman dengan database management dan big data technologies seperti Hadoop, Spark, atau cloud platforms akan menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Strong problem-solving skills and attention to detail in working with data",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "problem_solving",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Kemampuan problem-solving yang kuat dan attention to detail dalam bekerja dengan data."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/gemini-3.5-flash-lite"
+  },
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "cache_hit": false,
+  "latency_ms": 6915,
+  "result_sha256": "e8f5a8336b30c6e44040d7eed6da2d965d844bbf58895232543a05a5b14b1948"
+}

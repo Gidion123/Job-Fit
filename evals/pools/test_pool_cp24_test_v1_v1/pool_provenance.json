@@ -1,0 +1,463 @@
+{
+ "run_id": "cp24_test_v1",
+ "run_file": "evals/results/cp24/test_run_v1/test_run.json",
+ "run_sha256": "04f8440900287710d1864dd7e3372c8b218288e8fdad3571b666ee3eab1b710c",
+ "freeze_folder": "evals/freeze/cp23_freeze_draft_v2",
+ "test_ids_sha256": "b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435",
+ "rule": "D-053-top10-union-v1",
+ "depth": 10,
+ "rows": [
+  {
+   "cv_id": "CV1",
+   "job_id": "F00599",
+   "stage1_rank": 1,
+   "final_rank": 1
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00267",
+   "stage1_rank": 2,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00236",
+   "stage1_rank": 3,
+   "final_rank": 4
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00597",
+   "stage1_rank": 4,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00813",
+   "stage1_rank": 5,
+   "final_rank": 6
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00258",
+   "stage1_rank": 6,
+   "final_rank": 8
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00557",
+   "stage1_rank": 7,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00139",
+   "stage1_rank": 8,
+   "final_rank": 9
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00206",
+   "stage1_rank": 9,
+   "final_rank": 5
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00027",
+   "stage1_rank": 10,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00771",
+   "stage1_rank": null,
+   "final_rank": 2
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00313",
+   "stage1_rank": null,
+   "final_rank": 3
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00374",
+   "stage1_rank": null,
+   "final_rank": 7
+  },
+  {
+   "cv_id": "CV1",
+   "job_id": "F00842",
+   "stage1_rank": null,
+   "final_rank": 10
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00071",
+   "stage1_rank": 1,
+   "final_rank": 6
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00420",
+   "stage1_rank": 2,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00651",
+   "stage1_rank": 3,
+   "final_rank": 9
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00032",
+   "stage1_rank": 4,
+   "final_rank": 10
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00236",
+   "stage1_rank": 5,
+   "final_rank": 5
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00680",
+   "stage1_rank": 6,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00853",
+   "stage1_rank": 7,
+   "final_rank": 4
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00737",
+   "stage1_rank": 8,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00306",
+   "stage1_rank": 9,
+   "final_rank": 1
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00599",
+   "stage1_rank": 10,
+   "final_rank": 2
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00069",
+   "stage1_rank": null,
+   "final_rank": 3
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00019",
+   "stage1_rank": null,
+   "final_rank": 7
+  },
+  {
+   "cv_id": "CV2",
+   "job_id": "F00290",
+   "stage1_rank": null,
+   "final_rank": 8
+  },
+  {
+   "cv_id": "CV3",
+   "job_id": "F00207",
+   "stage1_rank": 1,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV3",
+   "job_id": "F00480",
+   "stage1_rank": 2,
+   "final_rank": 8
+  },
+  {
+   "cv_id": "CV3",
+   "job_id": "F00374",
+   "stage1_rank": 3,
+   "final_rank": 4
+  },
+  {
+   "cv_id": "CV3",
+   "job_id": "F00680",
+   "stage1_rank": 4,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV3",
+   "job_id": "F00206",
+   "stage1_rank": 5,
+   "final_rank": 1
+  },
+  {
+   "cv_id": "CV3",
+   "job_id": "F00813",
+   "stage1_rank": 6,
+   "final_rank": 6
+  },
+  {
+   "cv_id": "CV3",
+   "job_id": "F00290",
+   "stage1_rank": 7,
+   "final_rank": 3
+  },
+  {
+   "cv_id": "CV3",
+   "job_id": "F00599",
+   "stage1_rank": 8,
+   "final_rank": 2
+  },
+  {
+   "cv_id": "CV3",
+   "job_id": "F00358",
+   "stage1_rank": 9,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV3",
+   "job_id": "F00656",
+   "stage1_rank": 10,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV3",
+   "job_id": "F00501",
+   "stage1_rank": null,
+   "final_rank": 5
+  },
+  {
+   "cv_id": "CV3",
+   "job_id": "F00853",
+   "stage1_rank": null,
+   "final_rank": 7
+  },
+  {
+   "cv_id": "CV3",
+   "job_id": "F00139",
+   "stage1_rank": null,
+   "final_rank": 9
+  },
+  {
+   "cv_id": "CV3",
+   "job_id": "F00032",
+   "stage1_rank": null,
+   "final_rank": 10
+  },
+  {
+   "cv_id": "CV4",
+   "job_id": "F00236",
+   "stage1_rank": 1,
+   "final_rank": 5
+  },
+  {
+   "cv_id": "CV4",
+   "job_id": "F00599",
+   "stage1_rank": 2,
+   "final_rank": 1
+  },
+  {
+   "cv_id": "CV4",
+   "job_id": "F00557",
+   "stage1_rank": 3,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV4",
+   "job_id": "F00530",
+   "stage1_rank": 4,
+   "final_rank": 3
+  },
+  {
+   "cv_id": "CV4",
+   "job_id": "F00346",
+   "stage1_rank": 5,
+   "final_rank": 6
+  },
+  {
+   "cv_id": "CV4",
+   "job_id": "F00215",
+   "stage1_rank": 6,
+   "final_rank": 2
+  },
+  {
+   "cv_id": "CV4",
+   "job_id": "F00374",
+   "stage1_rank": 7,
+   "final_rank": 8
+  },
+  {
+   "cv_id": "CV4",
+   "job_id": "F00027",
+   "stage1_rank": 8,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV4",
+   "job_id": "F00813",
+   "stage1_rank": 9,
+   "final_rank": 9
+  },
+  {
+   "cv_id": "CV4",
+   "job_id": "F00127",
+   "stage1_rank": 10,
+   "final_rank": 4
+  },
+  {
+   "cv_id": "CV4",
+   "job_id": "F00206",
+   "stage1_rank": null,
+   "final_rank": 7
+  },
+  {
+   "cv_id": "CV4",
+   "job_id": "F00842",
+   "stage1_rank": null,
+   "final_rank": 10
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00290",
+   "stage1_rank": 1,
+   "final_rank": 5
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00680",
+   "stage1_rank": 2,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00206",
+   "stage1_rank": 3,
+   "final_rank": 4
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00207",
+   "stage1_rank": 4,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00420",
+   "stage1_rank": 5,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00289",
+   "stage1_rank": 6,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00853",
+   "stage1_rank": 7,
+   "final_rank": 3
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00662",
+   "stage1_rank": 8,
+   "final_rank": 2
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00306",
+   "stage1_rank": 9,
+   "final_rank": 1
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00733",
+   "stage1_rank": 10,
+   "final_rank": null
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00070",
+   "stage1_rank": null,
+   "final_rank": 6
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00032",
+   "stage1_rank": null,
+   "final_rank": 7
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00071",
+   "stage1_rank": null,
+   "final_rank": 8
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00599",
+   "stage1_rank": null,
+   "final_rank": 9
+  },
+  {
+   "cv_id": "CV5",
+   "job_id": "F00651",
+   "stage1_rank": null,
+   "final_rank": 10
+  }
+ ],
+ "per_cv": {
+  "CV1": {
+   "stage1_returned": 10,
+   "final_returned": 10,
+   "overlap": 6,
+   "pairs": 14,
+   "short_list": false
+  },
+  "CV2": {
+   "stage1_returned": 10,
+   "final_returned": 10,
+   "overlap": 7,
+   "pairs": 13,
+   "short_list": false
+  },
+  "CV3": {
+   "stage1_returned": 10,
+   "final_returned": 10,
+   "overlap": 6,
+   "pairs": 14,
+   "short_list": false
+  },
+  "CV4": {
+   "stage1_returned": 10,
+   "final_returned": 10,
+   "overlap": 8,
+   "pairs": 12,
+   "short_list": false
+  },
+  "CV5": {
+   "stage1_returned": 10,
+   "final_returned": 10,
+   "overlap": 5,
+   "pairs": 15,
+   "short_list": false
+  }
+ },
+ "pairs": 68,
+ "effort": {
+  "minutes_per_label": 2.4,
+  "source": "D-045 phase 1 measured pace (40 labels, about 96 minutes)",
+  "estimated_minutes": 163,
+  "sessions_at_2h": 2
+ }
+}

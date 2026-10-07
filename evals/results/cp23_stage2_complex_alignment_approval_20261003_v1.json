@@ -1,0 +1,22 @@
+{
+  "decision_id": "D-060",
+  "approved_by": "Dion",
+  "source": "explicit user reply in this chat, 3 October 2026",
+  "stage_id": "claude-haiku-4.5/F00036",
+  "gold_ids": [
+    "P09-U08",
+    "P09-U09"
+  ],
+  "model_ids": [
+    "U11",
+    "U12",
+    "U13"
+  ],
+  "accounting": {
+    "tp": 0,
+    "fn": 2,
+    "fp": 3
+  },
+  "packet_sha256": "f5fbf5666845424c473d056c17b52ddc8a5a710edbb566f06ba61e1f4e4264a5",
+  "scope": "only this exact complex relation; no other alignment, field-equivalence, payment or winner approval"
+}

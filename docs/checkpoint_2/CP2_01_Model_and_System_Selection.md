@@ -229,5 +229,5 @@ Full text: [decisions.md](../decisions.md).
 - Test run: `python -m pytest -q` (79 passed, 1 skipped) and `JOBFIT_DB_TESTS=1 python -m pytest -q` on Dion's machine.
 - Runs: [EXP-20261001-01 and EXP-20261001-02](../experiments.md), outputs in `evals/results/`.
 - Labels: `evals/gold/` (rebuilt with `python scripts/export_pilot_gold.py`), audit records in `evals/pilot/audit/`.
-- Model-draft stage record: [supporting/CP2_01_Pilot_Draft_Review.md](supporting/CP2_01_Pilot_Draft_Review.md).
+- Model-draft stage record: [supporting/CP2_01_Pilot_Draft_Review.md](supporting/archive/preparation/CP2_01_Pilot_Draft_Review.md).
 - Commits: pushed by Dion.

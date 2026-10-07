@@ -1,0 +1,58 @@
+{
+  "cv_id": "CV2",
+  "job_id": "F00114",
+  "status": "done",
+  "error_code": null,
+  "source": "reused_v1_matching",
+  "jd_source": "reused_v1",
+  "score_H1": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 3,
+    "partial": 6,
+    "required_total": 17,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+      "Required units not judged yet: U03",
+      "Requirement structure needs review; identified denominator is not validated."
+    ]
+  },
+  "score_H2": {
+    "score_pct": 37.5,
+    "status": "provisional",
+    "matched": 3,
+    "partial": 6,
+    "required_total": 16,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+      "Some requirements need checking; excluded unresolved units are listed separately."
+    ]
+  },
+  "excluded_needs_review": [
+    {
+      "unit_id": "U03",
+      "text": "Strong Python (FastAPI) and/or TypeScript / Node.js for backend AI services",
+      "reason": "model marked the requirement structure needs_review",
+      "importance": "required",
+      "source_quotes": [
+        "Strong Python (FastAPI) and/or TypeScript / Node.js for backend AI services."
+      ]
+    }
+  ],
+  "wall_ms": 9,
+  "assessments": []
+}

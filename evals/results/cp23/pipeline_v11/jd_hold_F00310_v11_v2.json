@@ -1,0 +1,9 @@
+{
+  "job_id": "F00310",
+  "status": "failed",
+  "attempts": 2,
+  "error_code": "invalid_source_quote",
+  "wall_ms": 291742,
+  "coverage": {},
+  "extraction": null
+}

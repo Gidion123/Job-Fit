@@ -1,0 +1,241 @@
+{
+  "job_id": "F00343",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "33e6c8b661d904d6485fdb2f1f2552fb44a9f2c73cbbd204c058c6e3e34e7a25",
+  "wall_ms": 43159,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "review_required",
+    "bullet_count": 6,
+    "uncovered_bullet_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00343",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Currently pursuing a Bachelor's or Master's degree in Computer Science, Data Science, Statistics, Mathematics, or related technical field",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "degree",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Currently pursuing a Bachelor's or Master's degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Currently pursuing a Bachelor's or Master's degree in Data Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Currently pursuing a Bachelor's or Master's degree in Statistics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Currently pursuing a Bachelor's or Master's degree in Mathematics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Currently pursuing a Bachelor's or Master's degree in a related technical field",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Currently pursuing a Bachelor’s or Master’s degree in Computer Science, Data Science, Statistics, Mathematics, or related technical field."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Expected graduation in 2026 or 2027",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "graduation_year",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Expected graduation in 2026",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Expected graduation in 2027",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Expected graduation in 2026 or 2027."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Strong Python programming skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong Python programming skills with demonstrated AI-native development practices — you use agentic coding tools (Claude Code, Cursor, GitHub Copilot Workspace) as a core part of your workflow."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Demonstrated AI-native development practices using agentic coding tools (e.g., Claude Code, Cursor, GitHub Copilot Workspace) as a core part of workflow",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "ai_native_development",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong Python programming skills with demonstrated AI-native development practices — you use agentic coding tools (Claude Code, Cursor, GitHub Copilot Workspace) as a core part of your workflow."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Foundational understanding of attention mechanisms in large language models",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "attention_mechanisms",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Foundational understanding of how large language models work — attention mechanisms, prompting, and the difference between standard generation and reasoning models."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Foundational understanding of prompting in large language models",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "prompting",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Foundational understanding of how large language models work — attention mechanisms, prompting, and the difference between standard generation and reasoning models."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Foundational understanding of the difference between standard generation and reasoning models in large language models",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "generation_vs_reasoning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Foundational understanding of how large language models work — attention mechanisms, prompting, and the difference between standard generation and reasoning models."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Structured problem-solving approach",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "structured_problem_solving",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Structured problem-solving approach and ability to operate independently on defined tasks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Ability to operate independently on defined tasks",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "independent_operation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Structured problem-solving approach and ability to operate independently on defined tasks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Current university student or recent graduate",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "applicant_status",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Current university student",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Recent graduate",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Current university students and recent graduates"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "looks_incomplete",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

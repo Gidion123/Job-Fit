@@ -1,0 +1,121 @@
+{
+  "fixture_id": "dev_05_repeated_requirement",
+  "synthetic": true,
+  "note": "Synthetic development fixture for the deterministic rules. Hand-written, not model output. Not part of the test set.",
+  "analysis_date": "2026-09-29",
+  "cv_parse_status": "ok",
+  "case": "Two literal general-reporting SQL requirements merge once; complex-query development retains its qualifier. Only general queries are evidenced, so complex-query evidence is PARTIAL.",
+  "extraction": {
+    "job_id": "FIX-05",
+    "units": [
+      {
+        "unit_id": "u1",
+        "text": "SQL for weekly sales reporting",
+        "importance": "required",
+        "field": "skill_tool",
+        "source_quotes": [
+          "Required: SQL for weekly sales reporting."
+        ],
+        "normalized_name": "sql weekly sales reporting"
+      },
+      {
+        "unit_id": "u2",
+        "text": "Python",
+        "importance": "required",
+        "field": "skill_tool",
+        "source_quotes": [
+          "Python"
+        ],
+        "normalized_name": "python"
+      },
+      {
+        "unit_id": "u3",
+        "text": "Experience writing complex SQL queries",
+        "importance": "required",
+        "field": "skill_tool",
+        "source_quotes": [
+          "Required: experience writing complex SQL queries."
+        ],
+        "normalized_name": "complex sql query development"
+      },
+      {
+        "unit_id": "u4",
+        "text": "Tableau",
+        "importance": "required",
+        "field": "skill_tool",
+        "source_quotes": [
+          "Tableau"
+        ],
+        "normalized_name": "tableau"
+      },
+      {
+        "unit_id": "u5",
+        "text": "SQL for weekly sales reporting",
+        "importance": "required",
+        "field": "skill_tool",
+        "source_quotes": [
+          "SQL for weekly sales reporting is required."
+        ],
+        "normalized_name": "sql weekly sales reporting"
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "u1",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "SQL queries for weekly sales dashboard"
+      ]
+    },
+    {
+      "unit_id": "u2",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python scripts for data cleaning"
+      ]
+    },
+    {
+      "unit_id": "u4",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": []
+    },
+    {
+      "unit_id": "u3",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "SQL queries for weekly sales dashboard"
+      ]
+    }
+  ],
+  "experience": {
+    "min_years": null,
+    "cv_entries": []
+  },
+  "expected": {
+    "score_pct": 62.5,
+    "status": "final",
+    "required_total": 4,
+    "matched": 2,
+    "partial": 1,
+    "merged_quotes_for_u1": 2,
+    "constraint_state": "unknown"
+  },
+  "fixture_version": "v1.3-r1",
+  "guideline_version": "v1.3",
+  "revision": {
+    "source_file": "evals/fixtures/dev_05_repeated_requirement.json",
+    "source_sha256": "59d30a67ab53dfeae7105998a9fd850a3dc8c5ba06d6a391498177b7da78b867",
+    "reason": "Preserve complex SQL activity qualifier as a distinct normalized requirement; add an exact repeated general SQL obligation to keep this a deduplication case.",
+    "scope": "Synthetic fixture revision only; no real JD/CV or approved label edited",
+    "review_kind": "delegated technical and semantic examination under user instruction",
+    "human_independent_approval": false
+  },
+  "synthetic_jd_context": "Required qualifications:\nRequired: SQL for weekly sales reporting.\nPython\nRequired: experience writing complex SQL queries.\nTableau\nSQL for weekly sales reporting is required.",
+  "synthetic_cv_context": "SQL queries for weekly sales dashboard\nPython scripts for data cleaning",
+  "semantic_review_status": "delegated_checked"
+}

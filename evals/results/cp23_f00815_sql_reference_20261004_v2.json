@@ -1,0 +1,26 @@
+{
+  "schema_version": "cp23-sql-postgresql-reference-v2",
+  "date": "2026-10-04",
+  "source_decision": "Dion: SQL with PostgreSQL as an example; SQL evidence such as BigQuery SQL is MATCH",
+  "scope": "F00815/P52-U10 and CV2 only; every evaluated model sees the same revised reference",
+  "old_reference": {
+    "unit_text": "SQL/PostgreSQL",
+    "importance": "required",
+    "evidence_label": "PARTIAL",
+    "cv_quote": "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+  },
+  "new_reference": {
+    "unit_text": "SQL familiarity; PostgreSQL is an example, not an additional mandatory item",
+    "importance": "required",
+    "evidence_label": "MATCH",
+    "cv_quote": "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+    "source_quote": "Familiarity with databases such as SQL (PostgreSQL) and Vector databases (e.g. Pinecone, FAISS, Weaviate)"
+  },
+  "original_gold_unchanged": true,
+  "reference_compatibility_note": "The archived JD wording is example-like. The new reference is a versioned interpretation for development comparison, not a change to the source JD or approved workbook.",
+  "input_sha256": {
+    "extraction_gold.jsonl": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+    "evidence_gold.jsonl": "510bbe15bd02ed370b2a94982582169c6c9d38f62b5e6e27311bb55a0f3ef49e",
+    "cv_02": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469"
+  }
+}

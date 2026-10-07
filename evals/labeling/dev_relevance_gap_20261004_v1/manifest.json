@@ -1,0 +1,89 @@
+{
+  "version": "dev-relevance-gap-v1",
+  "date": "2026-10-04",
+  "split": "development",
+  "items": [
+    {
+      "item_id": "G01",
+      "cv_id": "CV2",
+      "job_id": "F00212"
+    },
+    {
+      "item_id": "G02",
+      "cv_id": "CV2",
+      "job_id": "F00418"
+    },
+    {
+      "item_id": "G03",
+      "cv_id": "CV2",
+      "job_id": "F00343"
+    },
+    {
+      "item_id": "G04",
+      "cv_id": "CV2",
+      "job_id": "F00645"
+    },
+    {
+      "item_id": "G05",
+      "cv_id": "CV1",
+      "job_id": "F00060"
+    },
+    {
+      "item_id": "G06",
+      "cv_id": "CV1",
+      "job_id": "F00129"
+    },
+    {
+      "item_id": "G07",
+      "cv_id": "CV2",
+      "job_id": "F00682"
+    },
+    {
+      "item_id": "G08",
+      "cv_id": "CV1",
+      "job_id": "F00527"
+    },
+    {
+      "item_id": "G09",
+      "cv_id": "CV2",
+      "job_id": "F00556"
+    },
+    {
+      "item_id": "G10",
+      "cv_id": "CV2",
+      "job_id": "F00436"
+    },
+    {
+      "item_id": "G11",
+      "cv_id": "CV2",
+      "job_id": "F00629"
+    },
+    {
+      "item_id": "G12",
+      "cv_id": "CV1",
+      "job_id": "F00650"
+    },
+    {
+      "item_id": "G13",
+      "cv_id": "CV1",
+      "job_id": "F00851"
+    },
+    {
+      "item_id": "G14",
+      "cv_id": "CV1",
+      "job_id": "F00351"
+    }
+  ],
+  "source": "unjudged jobs in saved Hybrid Qwen top-30 (cp23_end_to_end_dev plan.json) against gold r3",
+  "gold_r3_unchanged": true,
+  "workbook_sha256_at_creation": "474da8ba58c9788e1897cb90885f360a9d64c15098b3b6e76f0069be1810f959",
+  "shuffle_seed": 20261004,
+  "blind": true,
+  "columns_hidden": [
+    "experience_bucket",
+    "rank",
+    "score",
+    "method"
+  ],
+  "status": "superseded_unfilled_by_v2"
+}

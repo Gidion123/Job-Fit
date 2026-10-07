@@ -1,0 +1,367 @@
+{
+  "job_id": "F00601",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "76a86682c706c6f623323e79ce74ca942d16c0f67521602462fa4f231d5162dc",
+  "wall_ms": 40751,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 5,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 5,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01",
+          "U02"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U03",
+          "U04",
+          "U05",
+          "U06",
+          "U07"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U08",
+          "U09",
+          "U10"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U11",
+          "U12",
+          "U13",
+          "U14"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U15",
+          "U16",
+          "U17",
+          "U18"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00601",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Minimum 3+ years of experience in Data Science or Machine Learning",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "Minimum 3+ years of experience in Data Science or Machine Learning",
+        "min_years": 3.0,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Minimum 3+ years of experience in Data Science",
+            "field": "experience_duration",
+            "min_years": 3.0
+          },
+          {
+            "branch_id": "B2",
+            "text": "Minimum 3+ years of experience in Machine Learning",
+            "field": "experience_duration",
+            "min_years": 3.0
+          }
+        ],
+        "source_quotes": [
+          "Minimum 3+ years of experience in Data Science or Machine Learning, with hands-on experience deploying production-level ML models via APIs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Hands-on experience deploying production-level ML models via APIs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Hands-on experience deploying production-level ML models via APIs",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Minimum 3+ years of experience in Data Science or Machine Learning, with hands-on experience deploying production-level ML models via APIs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Strong programming skills in Python",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong programming skills in Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong programming skills in Python (including pandas, NumPy, and scikit-learn) and advanced SQL capabilities (e.g., CTEs, window functions, large-scale data handling)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Strong programming skills in Python, including pandas",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong programming skills in Python, including pandas",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong programming skills in Python (including pandas, NumPy, and scikit-learn) and advanced SQL capabilities (e.g., CTEs, window functions, large-scale data handling)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Strong programming skills in Python, including NumPy",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong programming skills in Python, including NumPy",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong programming skills in Python (including pandas, NumPy, and scikit-learn) and advanced SQL capabilities (e.g., CTEs, window functions, large-scale data handling)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Strong programming skills in Python, including scikit-learn",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong programming skills in Python, including scikit-learn",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong programming skills in Python (including pandas, NumPy, and scikit-learn) and advanced SQL capabilities (e.g., CTEs, window functions, large-scale data handling)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Advanced SQL capabilities (e.g., CTEs, window functions, large-scale data handling)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Advanced SQL capabilities (e.g., CTEs, window functions, large-scale data handling)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong programming skills in Python (including pandas, NumPy, and scikit-learn) and advanced SQL capabilities (e.g., CTEs, window functions, large-scale data handling)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Solid understanding of classification models (such as XGBoost or LightGBM)",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Solid understanding of classification models (such as XGBoost or LightGBM)",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Solid understanding of classification models, such as XGBoost",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Solid understanding of classification models, such as LightGBM",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Solid understanding of classification models (such as XGBoost or LightGBM) and performance evaluation metrics like AUC and precision-recall."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Solid understanding of performance evaluation metrics like AUC",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Solid understanding of performance evaluation metrics like AUC",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Solid understanding of classification models (such as XGBoost or LightGBM) and performance evaluation metrics like AUC and precision-recall."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Solid understanding of performance evaluation metrics like precision-recall",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Solid understanding of performance evaluation metrics like precision-recall",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Solid understanding of classification models (such as XGBoost or LightGBM) and performance evaluation metrics like AUC and precision-recall."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Proven experience in experimentation frameworks (A/B testing), including design",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Proven experience in experimentation frameworks (A/B testing), including design",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proven experience in experimentation frameworks (A/B testing), including design, analysis, and bias mitigation, along with the ability to translate insights into actionable decisions."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Proven experience in experimentation frameworks (A/B testing), including analysis",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Proven experience in experimentation frameworks (A/B testing), including analysis",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proven experience in experimentation frameworks (A/B testing), including design, analysis, and bias mitigation, along with the ability to translate insights into actionable decisions."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Proven experience in experimentation frameworks (A/B testing), including bias mitigation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Proven experience in experimentation frameworks (A/B testing), including bias mitigation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proven experience in experimentation frameworks (A/B testing), including design, analysis, and bias mitigation, along with the ability to translate insights into actionable decisions."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Ability to translate insights into actionable decisions",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Ability to translate insights into actionable decisions",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proven experience in experimentation frameworks (A/B testing), including design, analysis, and bias mitigation, along with the ability to translate insights into actionable decisions."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Familiarity with engineering best practices, including version control (Git)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Familiarity with engineering best practices, including version control (Git)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with engineering best practices, including version control (Git), containerization (Docker), and writing clean, maintainable code, as well as basic knowledge of ML monitoring and observability."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Familiarity with engineering best practices, including containerization (Docker)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Familiarity with engineering best practices, including containerization (Docker)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with engineering best practices, including version control (Git), containerization (Docker), and writing clean, maintainable code, as well as basic knowledge of ML monitoring and observability."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Familiarity with engineering best practices, including writing clean, maintainable code",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Familiarity with engineering best practices, including writing clean, maintainable code",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with engineering best practices, including version control (Git), containerization (Docker), and writing clean, maintainable code, as well as basic knowledge of ML monitoring and observability."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Basic knowledge of ML monitoring and observability",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Basic knowledge of ML monitoring and observability",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with engineering best practices, including version control (Git), containerization (Docker), and writing clean, maintainable code, as well as basic knowledge of ML monitoring and observability."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

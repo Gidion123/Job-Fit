@@ -23,7 +23,7 @@ def query_phrases(cv_skill_set: set[str], alias_file=DEFAULT_ALIAS_FILE) -> list
     return phrases
 
 
-def build_query(phrases: list[str]) -> tuple[sql.Composed, list[str]]:
+def build_query(phrases: list[str], scoped: bool = False) -> tuple[sql.Composed, list[str]]:
     if not phrases:
         raise ValueError("no query phrases: the CV has no v0 skills")
     tsq = sql.SQL(" || ").join(sql.SQL("phraseto_tsquery('simple', {})").format(sql.Placeholder()) for _ in phrases)
@@ -31,13 +31,20 @@ def build_query(phrases: list[str]) -> tuple[sql.Composed, list[str]]:
         "WITH q AS (SELECT ({tsq}) AS query) "
         "SELECT j.job_id, ts_rank_cd(j.search, q.query) AS score "
         "FROM jobs j, q WHERE j.search @@ q.query AND j.role_group = ANY(%s) "
+        "{scope} "
         "ORDER BY score DESC, j.job_id LIMIT %s"
-    ).format(tsq=tsq)
+    ).format(tsq=tsq, scope=sql.SQL("AND j.job_id = ANY(%s)" if scoped else ""))
     return query, phrases
 
 
-def rank(conn, cv_skill_set: set[str], top_k: int = 20, role_groups=("target",)) -> list[dict]:
-    query, params = build_query(query_phrases(cv_skill_set))
+def rank(conn, cv_skill_set: set[str], top_k: int = 20, role_groups=("target",), *, job_ids=None) -> list[dict]:
+    if top_k < 1:
+        raise ValueError("top_k must be positive")
+    phrases = query_phrases(cv_skill_set)
+    if not phrases or job_ids is not None and not job_ids:
+        return []
+    query, params = build_query(phrases, scoped=job_ids is not None)
+    scope_params = [sorted(set(job_ids))] if job_ids is not None else []
     with conn.cursor() as cur:
-        cur.execute(query, [*params, list(role_groups), top_k])
+        cur.execute(query, [*params, list(role_groups), *scope_params, top_k])
         return [{"job_id": j, "score": round(float(s), 4)} for j, s in cur.fetchall()]

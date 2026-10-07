@@ -1,0 +1,153 @@
+{
+  "schema_version": "cp23-fixed-matcher-inputs-v1",
+  "status": "offline_source_checked_only",
+  "bundle_manifest_sha256": "6c814e0fff729bbedcdc301fceed591e523ba0c31766e5d83b3a40c8c9b193ec",
+  "adapter_sha256": "c947d63fac6418dd3eb1a03c9838dfbabc97d601e5e90dfc87190a92136ec955",
+  "pair_count": 4,
+  "pairs": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00332",
+      "source_sha256": "9113fae9a5efa7be34c475f2ddca9a2adc34a2edd2b57f7a78da494ef1381619",
+      "cv_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "fixed_input_sha256": "3accf934b45f82c38d20f5fc82aa9b3fd6722cab777ec11f318c11b57acaa368",
+      "logical_units": 16,
+      "or_groups": 1,
+      "or_branch_ids": {
+        "P30-U01": [
+          "P30-U01/B01",
+          "P30-U01/B02"
+        ]
+      },
+      "gold_B_class_support": {
+        "MATCH": 7,
+        "PARTIAL": 6,
+        "NO_MATCH": 3
+      },
+      "status": "source_checked_fixed_requirement_representation; matcher_call_not_run",
+      "duration_input_status": "not_applicable"
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00036",
+      "source_sha256": "831248e3faf86e60196bb7d56ce63270d790903be72c185c746c1f20faf19b7d",
+      "cv_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "fixed_input_sha256": "b7bdf6460b7aa8c4dde8a7eccef6f182c2c1065bb5d9c92e2eacce6992ee3e91",
+      "logical_units": 17,
+      "or_groups": 5,
+      "or_branch_ids": {
+        "P09-U01": [
+          "P09-U01/B01",
+          "P09-U01/B02",
+          "P09-U01/B03",
+          "P09-U01/B04",
+          "P09-U01/B05"
+        ],
+        "P09-U03": [
+          "P09-U03/B01",
+          "P09-U03/B02",
+          "P09-U03/B03"
+        ],
+        "P09-U07": [
+          "P09-U07/B01",
+          "P09-U07/B02",
+          "P09-U07/B03",
+          "P09-U07/B04"
+        ],
+        "P09-U09": [
+          "P09-U09/B01",
+          "P09-U09/B02",
+          "P09-U09/B03"
+        ],
+        "P09-U15": [
+          "P09-U15/B01",
+          "P09-U15/B02",
+          "P09-U15/B03"
+        ]
+      },
+      "gold_B_class_support": {
+        "MATCH": 10,
+        "PARTIAL": 3,
+        "NO_MATCH": 4
+      },
+      "status": "source_checked_fixed_requirement_representation; matcher_call_not_run",
+      "duration_input_status": "requires_separate source-derived verification"
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00815",
+      "source_sha256": "5e1c8a9d4a1f5b64c510e7e21ff5484a4ae0f298a972fffbd57081fe2d68ca09",
+      "cv_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+      "fixed_input_sha256": "481b1c488a77b1022c4289426d29ea8d4e9952dfff6e9a95c08ced0c8f2cc0c6",
+      "logical_units": 16,
+      "or_groups": 4,
+      "or_branch_ids": {
+        "P52-U03": [
+          "P52-U03/B01",
+          "P52-U03/B02",
+          "P52-U03/B03"
+        ],
+        "P52-U09": [
+          "P52-U09/B01",
+          "P52-U09/B02",
+          "P52-U09/B03"
+        ],
+        "P52-U11": [
+          "P52-U11/B01",
+          "P52-U11/B02",
+          "P52-U11/B03"
+        ],
+        "P52-U12": [
+          "P52-U12/B01",
+          "P52-U12/B02"
+        ]
+      },
+      "gold_B_class_support": {
+        "MATCH": 7,
+        "PARTIAL": 8,
+        "NO_MATCH": 1
+      },
+      "status": "source_checked_fixed_requirement_representation; matcher_call_not_run",
+      "duration_input_status": "not_applicable"
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00018",
+      "source_sha256": "f409e9a55d3bc70109c69b1ee7aa779e5e866428ca42e6439a4901fa3187d3d4",
+      "cv_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+      "fixed_input_sha256": "4c1c10c736da01cb953b6a5275850b7afd256a7a9ea494e898134bcc81c16ae9",
+      "logical_units": 24,
+      "or_groups": 3,
+      "or_branch_ids": {
+        "P04-U11": [
+          "P04-U11/B01",
+          "P04-U11/B02",
+          "P04-U11/B03"
+        ],
+        "P04-U20": [
+          "P04-U20/B01",
+          "P04-U20/B02"
+        ],
+        "P04-U22": [
+          "P04-U22/B01",
+          "P04-U22/B02"
+        ]
+      },
+      "gold_B_class_support": {
+        "MATCH": 11,
+        "PARTIAL": 5,
+        "NO_MATCH": 8
+      },
+      "status": "source_checked_fixed_requirement_representation; matcher_call_not_run",
+      "duration_input_status": "not_applicable"
+    }
+  ],
+  "gold_answers_sent_to_model": false,
+  "api_calls": 0,
+  "quality_metrics": null,
+  "limitations": [
+    "Reviewer-approved A/B references; authored OR branch descriptions are delegated adapter QA, not new gold labels",
+    "CV parse and scoped experience duration must be fixed before paid matcher-only comparison",
+    "Stage-2 extraction comparison stopped on first semantic issue; no matcher dispatch"
+  ]
+}

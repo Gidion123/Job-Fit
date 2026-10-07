@@ -1,0 +1,531 @@
+{
+  "cv_id": "CV2",
+  "job_id": "F00663",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "wall_ms": 30379,
+  "score": {
+    "score_pct": 57.69,
+    "status": "final",
+    "matched": 6,
+    "partial": 3,
+    "required_total": 13,
+    "preferred_met": 0,
+    "preferred_total": 1,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 3,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 2,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+  },
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Bachelor of Communication (S1 Ilmu Komunikasi)**, Universitas Contoh Bandung · 2016 - 2020"
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+        "Data Science and AI Bootcamp**, Contoh Academy (online) · June 2026 - present",
+        "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+        "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+        "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+        "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+          ]
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+            "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U10",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U11",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U12",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U13",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U14",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Ran A/B tests for ad creatives and explained results to account managers.",
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U15",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U16",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Ran A/B tests for ad creatives and explained results to account managers."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U17",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    }
+  ],
+  "source_flags": [
+    {
+      "unit_id": "U01",
+      "branch_id": "B5",
+      "kind": "quote_normalized",
+      "model_quote": "Bachelor of Communication (S1 Ilmu Komunikasi), Universitas Contoh Bandung · 2016 - 2020",
+      "cv_span": "Bachelor of Communication (S1 Ilmu Komunikasi)**, Universitas Contoh Bandung · 2016 - 2020",
+      "start": 1061,
+      "end": 1151,
+      "flags": [
+        "normalized_separators"
+      ]
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "cv_span": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "start": 238,
+      "end": 323,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": null,
+      "kind": "quote_normalized",
+      "model_quote": "Data Science and AI Bootcamp, Contoh Academy (online) · June 2026 - present",
+      "cv_span": "Data Science and AI Bootcamp**, Contoh Academy (online) · June 2026 - present",
+      "start": 881,
+      "end": 958,
+      "flags": [
+        "normalized_separators"
+      ]
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+      "cv_span": "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+      "start": 961,
+      "end": 1057,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "cv_span": "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "start": 1493,
+      "end": 1603,
+      "flags": []
+    },
+    {
+      "unit_id": "U03",
+      "branch_id": "B1",
+      "kind": "quote_exact",
+      "model_quote": "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+      "cv_span": "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+      "start": 522,
+      "end": 633,
+      "flags": []
+    },
+    {
+      "unit_id": "U04",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+      "cv_span": "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+      "start": 961,
+      "end": 1057,
+      "flags": []
+    },
+    {
+      "unit_id": "U04",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "cv_span": "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "start": 1493,
+      "end": 1603,
+      "flags": []
+    },
+    {
+      "unit_id": "U05",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "cv_span": "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "start": 1493,
+      "end": 1603,
+      "flags": []
+    },
+    {
+      "unit_id": "U08",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+      "cv_span": "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+      "start": 961,
+      "end": 1057,
+      "flags": []
+    },
+    {
+      "unit_id": "U08",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "cv_span": "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "start": 1493,
+      "end": 1603,
+      "flags": []
+    },
+    {
+      "unit_id": "U09",
+      "branch_id": "B3",
+      "kind": "quote_exact",
+      "model_quote": "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio",
+      "cv_span": "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio",
+      "start": 1719,
+      "end": 1888,
+      "flags": []
+    },
+    {
+      "unit_id": "U09",
+      "branch_id": "B5",
+      "kind": "quote_exact",
+      "model_quote": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "cv_span": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "start": 1215,
+      "end": 1332,
+      "flags": []
+    },
+    {
+      "unit_id": "U09",
+      "branch_id": "B5",
+      "kind": "quote_exact",
+      "model_quote": "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "cv_span": "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "start": 1493,
+      "end": 1603,
+      "flags": []
+    },
+    {
+      "unit_id": "U10",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+      "cv_span": "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+      "start": 430,
+      "end": 519,
+      "flags": []
+    },
+    {
+      "unit_id": "U10",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "cv_span": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "start": 238,
+      "end": 323,
+      "flags": []
+    },
+    {
+      "unit_id": "U13",
+      "branch_id": "B1",
+      "kind": "quote_exact",
+      "model_quote": "AWS Cloud Practitioner (course completed, 2026; exam not taken)",
+      "cv_span": "AWS Cloud Practitioner (course completed, 2026; exam not taken)",
+      "start": 1911,
+      "end": 1974,
+      "flags": []
+    },
+    {
+      "unit_id": "U14",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Ran A/B tests for ad creatives and explained results to account managers.",
+      "cv_span": "Ran A/B tests for ad creatives and explained results to account managers.",
+      "start": 636,
+      "end": 709,
+      "flags": []
+    },
+    {
+      "unit_id": "U14",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "cv_span": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "start": 238,
+      "end": 323,
+      "flags": []
+    },
+    {
+      "unit_id": "U16",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Ran A/B tests for ad creatives and explained results to account managers.",
+      "cv_span": "Ran A/B tests for ad creatives and explained results to account managers.",
+      "start": 636,
+      "end": 709,
+      "flags": []
+    },
+    {
+      "unit_id": "U17",
+      "branch_id": "B3",
+      "kind": "quote_exact",
+      "model_quote": "AWS Cloud Practitioner (course completed, 2026; exam not taken)",
+      "cv_span": "AWS Cloud Practitioner (course completed, 2026; exam not taken)",
+      "start": 1911,
+      "end": 1974,
+      "flags": []
+    }
+  ]
+}

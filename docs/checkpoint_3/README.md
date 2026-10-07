@@ -6,10 +6,10 @@ Every report starts as a plan (status PLANNED / NOT RUN). Results, interpretatio
 
 | Stage | Bootcamp checkpoint (template name) | Report | Official date | Planned work | Status |
 | --- | --- | --- | --- | --- | --- |
-| CP3.1 | 15. Deployment API menggunakan Flask/FastAPI | [API Deployment with FastAPI](CP3_01_FastAPI_Service.md) | 5 Oct 2026 | 5 Oct 2026 | PLANNED / NOT RUN |
-| CP3.2 | 16. Integrasi Database & GitHub Actions CI/CD | [Database Integration and CI/CD](CP3_02_Database_and_CICD.md) | 6 Oct 2026 | 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) | PLANNED / NOT RUN |
-| CP3.3 | 17. Build Streamlit UI | [Streamlit UI](CP3_03_Streamlit_UI.md) | 7 Oct 2026 | 7 Oct 2026 | PLANNED / NOT RUN |
-| CP3.4 | 18. Testing End-to-End Application | [End-to-End Testing](CP3_04_End_to_End_Testing.md) | 8 Oct 2026 | 8 Oct 2026 (feature freeze at the end of the day) | PLANNED / NOT RUN |
+| CP3.1 | 15. Deployment API menggunakan Flask/FastAPI | [API Deployment with FastAPI](CP3_01_FastAPI_Service.md) | 5 Oct 2026 | 5 Oct 2026 | DONE LOCALLY |
+| CP3.2 | 16. Integrasi Database & GitHub Actions CI/CD | [Database Integration and CI/CD](CP3_02_Database_and_CICD.md) | 6 Oct 2026 | 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) | PARTIAL (deploy pending) |
+| CP3.3 | 17. Build Streamlit UI | [Streamlit UI](CP3_03_Streamlit_UI.md) | 7 Oct 2026 | 7 Oct 2026 | DONE LOCALLY |
+| CP3.4 | 18. Testing End-to-End Application | [End-to-End Testing](CP3_04_End_to_End_Testing.md) | 8 Oct 2026 | 8 Oct 2026 (feature freeze at the end of the day) | PARTIAL (local checks passed) |
 | CP3.5 | 19. PPT Final Project / Portfolio | [Final Presentation and Portfolio](CP3_05_Final_Presentation_and_Portfolio.md) | 9 Oct 2026 | 9 Oct 2026 | PLANNED / NOT RUN |
 | CP3.6 | 20. Finalisasi Portfolio & Rehearsal Presentation | [Finalization and Rehearsal](CP3_06_Finalization_and_Rehearsal.md) | 10 Oct 2026 | 10 Oct 2026 | PLANNED / NOT RUN |
 | CP3.7 | 21. Final Project Presentation + Pemberian Tugas Portofolio | [Final Presentation and Submission](CP3_07_Final_Presentation_and_Submission.md) | 11 Oct 2026 | 11 Oct 2026 | PLANNED / NOT RUN |

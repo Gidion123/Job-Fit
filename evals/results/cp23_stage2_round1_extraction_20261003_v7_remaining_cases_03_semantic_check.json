@@ -1,0 +1,13 @@
+{
+  "job_id": "claude-haiku-4.5/F00332",
+  "result_sha256": "1b132f5cd492f9eacdc28bdbb78331eb188198ed291a21ca4ae623efe53390d1",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "fail",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "pass"
+  },
+  "notes": "All eight source qualification bullets checked; 13 units. U01 source quote includes Fresh Graduate OR degree, but normalized requirement loses the fresh-graduate route and has no alternative branches. U11 merges exploration, anomaly investigation and SQL-based analyses; U12 merges large-tabular trend/anomaly work with actionable recommendations and incorrectly uses experience_duration despite no numerical duration. Python/SQL/Excel are separate and preferred credit-scoring exposure is correct. Exact quotes do not rescue lost normalized alternatives. Candidate alignment remains pending; no gold change.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

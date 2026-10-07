@@ -1,0 +1,663 @@
+{
+  "schema_version": "cp23-stage1-held-decision-review-v1",
+  "status": "pending_Dion_decisions_no_gold_change",
+  "gold_manifest_sha256": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+  "held_file_sha256": "bb7393e9264bda74967042e846a1c9b67090b0ca92255a815037f97de94321aa",
+  "items": [
+    {
+      "job_id": "F00022",
+      "source_record_id": "CP1_JSearch_JS04_DataScientist_Jakarta_ID_Response#4",
+      "source_text_sha256": "5096de1762a4d7d373d8df4780441a254189e009e03927c9945a56c858a54345",
+      "source_file": "evidence/checkpoint_1/provider_benchmark/jsearch/CP1_JSearch_JS04_DataScientist_Jakarta_ID_Response.json",
+      "source_file_sha256": "9874f1f85dbe4eef7c53e263ddbb1c45826d1bb058c6aa9ab65a17be105415cc",
+      "held_counts": {
+        "A_Extraction": 7,
+        "B_Evidence": 7,
+        "C_Relevance": 2
+      },
+      "held_A_units": [
+        {
+          "unit_no": "J1-U04",
+          "reasons": [
+            "D-049 and/or composite conflicts with historical independent AND split"
+          ],
+          "source_quote": "Intermediate Mathematical, Statistical, and/or Machine Learning skills required, and their real-world advantages/drawbacks.",
+          "guideline_version": "v0.1"
+        },
+        {
+          "unit_no": "J1-U05",
+          "reasons": [
+            "Historical and/or dataset group needs explicit cardinality compatibility"
+          ],
+          "source_quote": "Knowledge and/or experience in working with structured and/or unstructured data sets.",
+          "guideline_version": "v0.1"
+        },
+        {
+          "unit_no": "J1-U06",
+          "reasons": [
+            "Historical knowledge and/or experience qualifier needs explicit compatibility"
+          ],
+          "source_quote": "Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform.",
+          "guideline_version": "v0.1"
+        },
+        {
+          "unit_no": "J1-U07",
+          "reasons": [
+            "Historical knowledge and/or experience qualifier needs explicit compatibility"
+          ],
+          "source_quote": "Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform.",
+          "guideline_version": "v0.1"
+        },
+        {
+          "unit_no": "J1-U08",
+          "reasons": [
+            "Historical knowledge and/or experience qualifier needs explicit compatibility"
+          ],
+          "source_quote": "Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform.",
+          "guideline_version": "v0.1"
+        },
+        {
+          "unit_no": "J1-U20",
+          "reasons": [
+            "D-049 and/or composite conflicts with historical independent AND split"
+          ],
+          "source_quote": "Mathematical, Statistical, and/or Machine Learning skills required",
+          "guideline_version": "v0.1"
+        },
+        {
+          "unit_no": "J1-U21",
+          "reasons": [
+            "D-049 and/or composite conflicts with historical independent AND split"
+          ],
+          "source_quote": "Mathematical, Statistical, and/or Machine Learning skills required",
+          "guideline_version": "v0.1"
+        }
+      ],
+      "held_B_identities": [
+        {
+          "cv_id": "CV1",
+          "unit_no": "J1-U04",
+          "reasons": [
+            "A_not_exportable"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "J1-U05",
+          "reasons": [
+            "A_not_exportable"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "J1-U06",
+          "reasons": [
+            "A_not_exportable"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "J1-U07",
+          "reasons": [
+            "A_not_exportable"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "J1-U08",
+          "reasons": [
+            "A_not_exportable"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "J1-U20",
+          "reasons": [
+            "A_not_exportable"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "J1-U21",
+          "reasons": [
+            "A_not_exportable"
+          ]
+        }
+      ],
+      "held_C_pairs": [
+        {
+          "cv_id": "CV1",
+          "value": 3,
+          "reason": "Label B approved mendukung Python, SQL, dataset, visualisasi, Statistika, dan ML; matematika PARTIAL. Mayoritas syarat teknis didukung tanpa konflik eksplisit yang terbukti.",
+          "constraint_note": "Pengalaman 1–2 tahun ber-importance unknown karena fresh graduate juga diterima. Durasi internship 4 bulan tidak dijadikan penolakan otomatis.",
+          "guideline_version": "v1.2",
+          "hold_reasons": [
+            "C_reason_depends_on_unresolved_D049_J1_units"
+          ]
+        },
+        {
+          "cv_id": "CV2",
+          "value": 2,
+          "reason": "Penggunaan Python/SQL, analisis data, forecasting, dan klasifikasi ML mendukung beberapa syarat utama; matematika tidak eksplisit, visualisasi hanya tercantum pada Skills, dan bukti rincian metode terbatas.",
+          "constraint_note": "Pengalaman DS 1–2 tahun ambigu karena fresh graduate diterima. Marketing analytics tidak otomatis sama dengan seluruh syarat DS. Tidak memberi nilai 0 hanya karena preferensi CV AI/ML.",
+          "guideline_version": "v1.2",
+          "hold_reasons": [
+            "C_reason_depends_on_unresolved_D049_J1_units"
+          ]
+        }
+      ],
+      "automatic_release": false
+    },
+    {
+      "job_id": "F00114",
+      "source_record_id": "B02_ID_LLM_JAK_P01#10",
+      "source_text_sha256": "9142b5e96143a367f19583a241180844e43bbc1cfb62198c22aafa75f8a4f0f8",
+      "source_file": "data/raw/jsearch/B02_ID_LLM_JAK_P01.json",
+      "source_file_sha256": "1d42f3b4c0cc52fe582b610285844339761292124a6a96c82971f2b524ce9e03",
+      "held_counts": {
+        "A_Extraction": 1,
+        "B_Evidence": 1,
+        "C_Relevance": 2
+      },
+      "held_A_units": [
+        {
+          "unit_no": "J5-U03",
+          "reasons": [
+            "Reviewer explicitly retains unresolved and/or composite and requires B/C hold"
+          ],
+          "source_quote": "Strong Python (FastAPI) and/or TypeScript / Node.js for backend AI services.",
+          "guideline_version": "v1.3"
+        }
+      ],
+      "held_B_identities": [
+        {
+          "cv_id": "CV2",
+          "unit_no": "J5-U03",
+          "reasons": [
+            "A_not_exportable"
+          ]
+        }
+      ],
+      "held_C_pairs": [
+        {
+          "cv_id": "CV2",
+          "value": 1,
+          "reason": "Prototipe RAG, FastAPI, LangChain, FAISS, dan evaluasi 30 pertanyaan relevan; belum ada bukti production RAG, tool/function calling, operasi LLM aman, atau pengalaman engineer sesuai level senior.",
+          "constraint_note": "Explicit conflict under D-042: J5 requires 5+ years as an engineer and 2+ years shipping production LLM features. Bima's complete work history is in marketing (executive, digital marketing analyst) with no engineering role; the RAG prototype and bootcamp do not count toward work experience. A deployed prototype is not production LLM work.",
+          "guideline_version": "v1.2",
+          "hold_reasons": [
+            "Reviewer_requested_BC_hold_for_unresolved_composite"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "value": 0,
+          "reason": "Hampir tidak ada dukungan untuk inti production agent/RAG: bukti Python umum ada, tetapi FastAPI, agent framework, tool calling, production RAG, vector DB, evaluasi LLM, dan keamanan LLM tidak ditemukan.",
+          "constraint_note": "Explicit conflict under D-042: J5 requires 5+ years as an engineer and 2+ years shipping production LLM features. Rina's complete work history is under 1 year and has no engineering role. The rating is 0 because almost no core requirement is supported, not because GenAI differs from her preferred target.",
+          "guideline_version": "v1.2",
+          "hold_reasons": [
+            "Reviewer_requested_BC_hold_for_unresolved_composite"
+          ]
+        }
+      ],
+      "automatic_release": false
+    },
+    {
+      "job_id": "F00369",
+      "source_record_id": "B05A_TEST_NUMPAGES3_SG_MLE_P01#21",
+      "source_text_sha256": "86ed12356cc5d1b910b7b7750a1e8335a807380da15a8e1ac5570b81198dac8b",
+      "source_file": "data/raw/jsearch/B05A_TEST_NUMPAGES3_SG_MLE_P01.json",
+      "source_file_sha256": "d0fe2fba801a4ca4d26676a80e3d0714f8647407f86643be0bd1553901e9dfdf",
+      "held_counts": {
+        "A_Extraction": 24,
+        "B_Evidence": 24,
+        "C_Relevance": 1
+      },
+      "held_A_units": [
+        {
+          "unit_no": "P35-U01",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Bachelor's or Master's degree in Machine Learning, Computer Science, Data Science, Statistics, or a related quantitative field.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U02",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "2-4 years of hands-on experience in classical machine learning (including deep learning) or data science roles, with demonstrated ability to build, train, and validate models from scratch.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U03",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Proficiency in classical ML frameworks and libraries, including Scikit-learn for core algorithms, XGBoost for gradient boosting, and experience with NLP techniques using RNNs/LSTMs (e.g., via TensorFlow or PyTorch).",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U04",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Proficiency in classical ML frameworks and libraries, including Scikit-learn for core algorithms, XGBoost for gradient boosting, and experience with NLP techniques using RNNs/LSTMs (e.g., via TensorFlow or PyTorch).",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U05",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Proficiency in classical ML frameworks and libraries, including Scikit-learn for core algorithms, XGBoost for gradient boosting, and experience with NLP techniques using RNNs/LSTMs (e.g., via TensorFlow or PyTorch).",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U06",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Strong programming skills in Python, with a focus on clean, maintainable code, version control (Git), and basic data manipulation using Pandas and NumPy.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U07",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Strong programming skills in Python, with a focus on clean, maintainable code, version control (Git), and basic data manipulation using Pandas and NumPy.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U08",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Strong programming skills in Python, with a focus on clean, maintainable code, version control (Git), and basic data manipulation using Pandas and NumPy.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U09",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Strong programming skills in Python, with a focus on clean, maintainable code, version control (Git), and basic data manipulation using Pandas and NumPy.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U10",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Strong programming skills in Python, with a focus on clean, maintainable code, version control (Git), and basic data manipulation using Pandas and NumPy.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U11",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Familiarity with anomaly detection, predictive modeling, and concept drift monitoring in numerical datasets.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U12",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Familiarity with anomaly detection, predictive modeling, and concept drift monitoring in numerical datasets.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U13",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Familiarity with anomaly detection, predictive modeling, and concept drift monitoring in numerical datasets.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U14",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Experience working in Agile/Scrum environments, including sprint-based development and cross-functional collaboration.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U15",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Experience working in Agile/Scrum environments, including sprint-based development and cross-functional collaboration.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U16",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Solid understanding of model evaluation metrics, cross-validation, and QA processes for ML systems.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U17",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Solid understanding of model evaluation metrics, cross-validation, and QA processes for ML systems.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U18",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Solid understanding of model evaluation metrics, cross-validation, and QA processes for ML systems.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U19",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Fluency in English.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U20",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Exposure to industrial domains such as manufacturing, semiconductors, or sensor-based analytics.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U21",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Knowledge of big data tools like Apache Spark for distributed processing and handling large-scale datasets.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U22",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Prior work on NLP tasks integrated with classical ML, such as sentiment analysis or entity recognition in unstructured data.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U23",
+          "reasons": [
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "Prior work on NLP tasks integrated with classical ML, such as sentiment analysis or entity recognition in unstructured data.",
+          "guideline_version": "v1.3"
+        },
+        {
+          "unit_no": "P35-U24",
+          "reasons": [
+            "invalid_original_JD_quote",
+            "source_provenance_hold_whole_job"
+          ],
+          "source_quote": "A portfolio of projects showcasing innovative solutions to real-world ML problems.",
+          "guideline_version": "v1.3"
+        }
+      ],
+      "held_B_identities": [
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U01",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U02",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U03",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U04",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U05",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U06",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U07",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U08",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U09",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U10",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U11",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U12",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U13",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U14",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U15",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U16",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U17",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U18",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U19",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U20",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U21",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U22",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U23",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        },
+        {
+          "cv_id": "CV1",
+          "unit_no": "P35-U24",
+          "reasons": [
+            "A_not_exportable",
+            "source_provenance_hold_whole_job"
+          ]
+        }
+      ],
+      "held_C_pairs": [
+        {
+          "cv_id": "CV1",
+          "value": 1,
+          "reason": "Statistics, Python/scikit-learn and ML projects overlap; the restored portfolio clause has partial evidence. The required 2–4 years in ML/DS roles and recurrent-model experience are not shown.",
+          "constraint_note": "Two to four years hands-on ML/DS roles is not supported.",
+          "guideline_version": "v1.3",
+          "hold_reasons": [
+            "source_provenance_hold_whole_job"
+          ]
+        }
+      ],
+      "automatic_release": false,
+      "archived_source_tail": "entiment analysis or entity recognition in unstructured data. A portfolio of pro",
+      "external_corresponding_copy": "https://jobs.discovertechnata.com/companies/keysight-technologies/jobs/64661092-machine-learning-engineer-classical-ml-and-predictive-analytics",
+      "external_copy_limit": "Matching long text on a different job-board page, with title/lineage differences; not the original archived Trabajo source and not sufficient for automatic source replacement or hold release."
+    }
+  ],
+  "F00332_model_vs_gold": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00332",
+      "gold_unit_no": "P30-U08",
+      "model_unit_id": "U15",
+      "source_requirement": "Excellent problem-solving skills with a drive to learn and master new technologies and techniques.",
+      "cv_evidence": "- Google Data Analytics Professional Certificate (2025)",
+      "gold_label": "MATCH",
+      "model_label": "PARTIAL",
+      "recommendation": "Review case-specific sufficiency; keep historical gold unchanged until Dion decides.",
+      "dependent_C_recheck_if_B_changes": true
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00332",
+      "gold_unit_no": "P30-U15",
+      "model_unit_id": "U16",
+      "source_requirement": "Experience working with large tabular datasets to detect trends and anomalies and communicate findings as actionable recommendations.",
+      "cv_evidence": "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+      "gold_label": "MATCH",
+      "model_label": "PARTIAL",
+      "recommendation": "PARTIAL appears better supported because presentation does not explicitly establish actionable recommendations; Dion decides.",
+      "dependent_C_recheck_if_B_changes": true
+    }
+  ],
+  "split_merge_proposal": {
+    "status": "new_rubric_pending",
+    "recommended_primary": "Strict assessable logical-unit F1: only human-verified one-to-one semantic equivalents are TP. For an unresolved 1:n/n:1 mapping, mark extraction F1 unavailable for that case. After adjudication, a genuine split/merge that loses independently assessable obligations contributes each unmatched gold unit as FN and each unmatched model unit as FP; report clause-level equivalence separately, never as extra TP.",
+    "alternative": "Keep split/merge cases entirely unavailable until a separate metric is approved; report coverage and examples without aggregate extraction F1.",
+    "no_automatic_adoption": true
+  },
+  "source_handling_recommendations": {
+    "F00022": "D-049 explicit and/or composite semantics require human A review of seven held units, then CV1 B recheck and both CV1/CV2 C recheck. Historical v1.2 C cannot be auto-reused.",
+    "F00114": "Reviewer explicitly held the Python/FastAPI and/or TypeScript/Node composite. Decide branch count/group representation, recheck CV2 B and both CV1/CV2 C; the five-year engineer/two-year production LLM conflict is independently visible but does not auto-clear the dependency.",
+    "F00369": "Archived JSearch/Trabajo description terminates at A portfolio of pro. External matching copy is corroboration only. Recommend either original-source verification, or Dion-approved source-limited C re-review on the archived truncated text with A/B still held. No source mutation, no next-ranked substitution."
+  },
+  "api_calls": 0,
+  "workbook_changed": false,
+  "gold_changed": false
+}

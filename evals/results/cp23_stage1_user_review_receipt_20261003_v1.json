@@ -1,0 +1,82 @@
+{
+  "schema_version": "cp23-stage1-user-review-receipt-v1",
+  "reviewer": "Dion",
+  "review_channel": "current_project_chat",
+  "review_date": "2026-10-03",
+  "reviewed_at": null,
+  "exact_reply_text": {
+    "six_C": "Ya, setujui keenam nilai setelah review",
+    "F00332_alignment_and_two_B": "Ya, pemetaan dan dua PARTIAL disetujui",
+    "C_only_path_and_strict_F1": "Ya, jalur C-only dan aturan F1 ketat"
+  },
+  "approved": {
+    "six_C": [
+      [
+        "CV1",
+        "F00010",
+        1
+      ],
+      [
+        "CV1",
+        "F00132",
+        1
+      ],
+      [
+        "CV1",
+        "F00284",
+        1
+      ],
+      [
+        "CV1",
+        "F00312",
+        2
+      ],
+      [
+        "CV2",
+        "F00090",
+        1
+      ],
+      [
+        "CV2",
+        "F00559",
+        2
+      ]
+    ],
+    "F00332_alignment": "all_16_proposed_one_to_one_mappings_in_saved_proposal",
+    "F00332_B_edits": [
+      [
+        "CV1",
+        "F00332",
+        "P30-U08",
+        "MATCH",
+        "PARTIAL"
+      ],
+      [
+        "CV1",
+        "F00332",
+        "P30-U15",
+        "MATCH",
+        "PARTIAL"
+      ]
+    ],
+    "held_C_path": [
+      "CV1/F00022",
+      "CV2/F00114",
+      "CV1/F00369"
+    ],
+    "split_merge_extraction_F1": "strict_independently_assessable_1_to_many_or_many_to_1"
+  },
+  "not_approved": {
+    "held_C_values": "three case-scoped drafts still require separate review",
+    "F00332_dependent_C": "awaiting explicit recheck reply",
+    "A_B_holds": "remain held",
+    "future_model_alignments": "each new output needs review"
+  },
+  "input_hashes": {
+    "six_C_draft_json": "f2b00f0d66ee7fb0b966ce856c15fa319343a513305e6d5275fef041d0507bcf",
+    "hold_review_json": "4f89bf56d1e0a4270bbbb8708919ca2ed6c1fe3d17eb2a22e0c801891f593394",
+    "F00332_proposal_json": "155b4d407f13e054f9b48e577b3dbc5e2632818618d6d97bfef7a11f723fc00d",
+    "base_gold_manifest": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc"
+  },
+  "api_calls": 0
+}

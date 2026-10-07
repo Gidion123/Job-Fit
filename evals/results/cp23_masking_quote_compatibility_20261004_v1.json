@@ -1,0 +1,177 @@
+{
+  "schema_version": "cp23-masking-quote-compatibility-v1",
+  "scope": "development_synthetic_CV1_CV2_only",
+  "masking_version": "local-pattern-masking-v1",
+  "gold_file": "evals/gold/development_v13_reviewed_20261003_stage1_r3/evidence_gold.jsonl",
+  "gold_sha256": "510bbe15bd02ed370b2a94982582169c6c9d38f62b5e6e27311bb55a0f3ef49e",
+  "results": {
+    "CV1": {
+      "source_file": "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md",
+      "source_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "masked_sha256": "694a41a230e68d3e11f7daa191a85cc9f3398fff9eaa0881ebd383fcf604ce98",
+      "quoted_gold_rows": 303,
+      "unchanged_exact_quote_rows": 299,
+      "changed_quote_rows": 4,
+      "changed_unique_source_quotes": 1,
+      "changed_rows": [
+        {
+          "cv_id": "CV1",
+          "job_id": "F00103",
+          "unit_no": "D1-U17",
+          "review_status": "approved",
+          "raw_quote_sha256": "14fbb337664465c3fd640f3b03617cbf99618485905d0e903959d3a6d13a1972",
+          "masked_quote_sha256": "1e99c6a98818b0de8e12a39f87e7349dd3b46181b5b62cc4d878eab3002c924d",
+          "mapped_quote_exact_in_masked_cv": true,
+          "semantic_label_review": "not_performed"
+        },
+        {
+          "cv_id": "CV1",
+          "job_id": "F00188",
+          "unit_no": "P21-U01",
+          "review_status": "approved",
+          "raw_quote_sha256": "14fbb337664465c3fd640f3b03617cbf99618485905d0e903959d3a6d13a1972",
+          "masked_quote_sha256": "1e99c6a98818b0de8e12a39f87e7349dd3b46181b5b62cc4d878eab3002c924d",
+          "mapped_quote_exact_in_masked_cv": true,
+          "semantic_label_review": "not_performed"
+        },
+        {
+          "cv_id": "CV1",
+          "job_id": "F00208",
+          "unit_no": "P23-U01",
+          "review_status": "approved",
+          "raw_quote_sha256": "14fbb337664465c3fd640f3b03617cbf99618485905d0e903959d3a6d13a1972",
+          "masked_quote_sha256": "1e99c6a98818b0de8e12a39f87e7349dd3b46181b5b62cc4d878eab3002c924d",
+          "mapped_quote_exact_in_masked_cv": true,
+          "semantic_label_review": "not_performed"
+        },
+        {
+          "cv_id": "CV1",
+          "job_id": "F00208",
+          "unit_no": "P23-U02",
+          "review_status": "approved",
+          "raw_quote_sha256": "14fbb337664465c3fd640f3b03617cbf99618485905d0e903959d3a6d13a1972",
+          "masked_quote_sha256": "1e99c6a98818b0de8e12a39f87e7349dd3b46181b5b62cc4d878eab3002c924d",
+          "mapped_quote_exact_in_masked_cv": true,
+          "semantic_label_review": "not_performed"
+        }
+      ],
+      "masking_entity_counts": {
+        "name": 1,
+        "email": 1,
+        "phone": 1,
+        "profile": 1
+      }
+    },
+    "CV2": {
+      "source_file": "data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md",
+      "source_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+      "masked_sha256": "89fd639aefd106710eb66d20f9971a75c78a21330bf91576ed0f8b1496600379",
+      "quoted_gold_rows": 478,
+      "unchanged_exact_quote_rows": 469,
+      "changed_quote_rows": 9,
+      "changed_unique_source_quotes": 1,
+      "changed_rows": [
+        {
+          "cv_id": "CV2",
+          "job_id": "F00066",
+          "unit_no": "P12-U16",
+          "review_status": "approved",
+          "raw_quote_sha256": "3dd62e2eb54eb3f3d7c45a5e7bc3197fa0b86ccad1ead40ad87afce679c28ef3",
+          "masked_quote_sha256": "29fb14fffac7f131c03214aeb381e209f17c0be36612b6b4d1da884d518bf330",
+          "mapped_quote_exact_in_masked_cv": true,
+          "semantic_label_review": "not_performed"
+        },
+        {
+          "cv_id": "CV2",
+          "job_id": "F00117",
+          "unit_no": "P18-U23",
+          "review_status": "approved",
+          "raw_quote_sha256": "3dd62e2eb54eb3f3d7c45a5e7bc3197fa0b86ccad1ead40ad87afce679c28ef3",
+          "masked_quote_sha256": "29fb14fffac7f131c03214aeb381e209f17c0be36612b6b4d1da884d518bf330",
+          "mapped_quote_exact_in_masked_cv": true,
+          "semantic_label_review": "not_performed"
+        },
+        {
+          "cv_id": "CV2",
+          "job_id": "F00208",
+          "unit_no": "P23-U01",
+          "review_status": "approved",
+          "raw_quote_sha256": "3dd62e2eb54eb3f3d7c45a5e7bc3197fa0b86ccad1ead40ad87afce679c28ef3",
+          "masked_quote_sha256": "29fb14fffac7f131c03214aeb381e209f17c0be36612b6b4d1da884d518bf330",
+          "mapped_quote_exact_in_masked_cv": true,
+          "semantic_label_review": "not_performed"
+        },
+        {
+          "cv_id": "CV2",
+          "job_id": "F00208",
+          "unit_no": "P23-U02",
+          "review_status": "approved",
+          "raw_quote_sha256": "3dd62e2eb54eb3f3d7c45a5e7bc3197fa0b86ccad1ead40ad87afce679c28ef3",
+          "masked_quote_sha256": "29fb14fffac7f131c03214aeb381e209f17c0be36612b6b4d1da884d518bf330",
+          "mapped_quote_exact_in_masked_cv": true,
+          "semantic_label_review": "not_performed"
+        },
+        {
+          "cv_id": "CV2",
+          "job_id": "F00650",
+          "unit_no": "P44-U20",
+          "review_status": "approved",
+          "raw_quote_sha256": "3dd62e2eb54eb3f3d7c45a5e7bc3197fa0b86ccad1ead40ad87afce679c28ef3",
+          "masked_quote_sha256": "29fb14fffac7f131c03214aeb381e209f17c0be36612b6b4d1da884d518bf330",
+          "mapped_quote_exact_in_masked_cv": true,
+          "semantic_label_review": "not_performed"
+        },
+        {
+          "cv_id": "CV2",
+          "job_id": "F00650",
+          "unit_no": "P44-U21",
+          "review_status": "approved",
+          "raw_quote_sha256": "3dd62e2eb54eb3f3d7c45a5e7bc3197fa0b86ccad1ead40ad87afce679c28ef3",
+          "masked_quote_sha256": "29fb14fffac7f131c03214aeb381e209f17c0be36612b6b4d1da884d518bf330",
+          "mapped_quote_exact_in_masked_cv": true,
+          "semantic_label_review": "not_performed"
+        },
+        {
+          "cv_id": "CV2",
+          "job_id": "F00698",
+          "unit_no": "P50-U01",
+          "review_status": "approved",
+          "raw_quote_sha256": "3dd62e2eb54eb3f3d7c45a5e7bc3197fa0b86ccad1ead40ad87afce679c28ef3",
+          "masked_quote_sha256": "29fb14fffac7f131c03214aeb381e209f17c0be36612b6b4d1da884d518bf330",
+          "mapped_quote_exact_in_masked_cv": true,
+          "semantic_label_review": "not_performed"
+        },
+        {
+          "cv_id": "CV2",
+          "job_id": "F00933",
+          "unit_no": "P54-U01",
+          "review_status": "approved",
+          "raw_quote_sha256": "3dd62e2eb54eb3f3d7c45a5e7bc3197fa0b86ccad1ead40ad87afce679c28ef3",
+          "masked_quote_sha256": "29fb14fffac7f131c03214aeb381e209f17c0be36612b6b4d1da884d518bf330",
+          "mapped_quote_exact_in_masked_cv": true,
+          "semantic_label_review": "not_performed"
+        },
+        {
+          "cv_id": "CV2",
+          "job_id": "F00103",
+          "unit_no": "D1-U17",
+          "review_status": "approved",
+          "raw_quote_sha256": "3dd62e2eb54eb3f3d7c45a5e7bc3197fa0b86ccad1ead40ad87afce679c28ef3",
+          "masked_quote_sha256": "29fb14fffac7f131c03214aeb381e209f17c0be36612b6b4d1da884d518bf330",
+          "mapped_quote_exact_in_masked_cv": true,
+          "semantic_label_review": "not_performed"
+        }
+      ],
+      "masking_entity_counts": {
+        "name": 1,
+        "email": 1,
+        "phone": 1,
+        "profile": 1
+      }
+    }
+  },
+  "all_changed_quotes_mapped_exactly": true,
+  "semantic_equivalence_approved": false,
+  "limitation": "Text mapping is mechanical. It does not validate the evidence meaning or a model response.",
+  "api_calls": 0
+}

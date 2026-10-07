@@ -1,0 +1,198 @@
+{
+  "recorded_at": "2026-10-02T12:06:43.727362+07:00",
+  "stage": "CP2.2 IN PROGRESS",
+  "kind": "offline implementation audit; not human semantic approval",
+  "baseline": "evals/results/cp22_pipeline_verification_20261002.json",
+  "initial_baseline_hashes_matched": true,
+  "checks": {
+    "protected": [
+      {
+        "path": "config/models_v1.yaml",
+        "before_sha256": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+        "after_sha256": "c25e1afb4b37d32b1a0febb671a376a1ad42cc21e437ae0b4454acfdc5d23a57",
+        "unchanged": true
+      },
+      {
+        "path": "config/pipeline_v1.yaml",
+        "before_sha256": "a8f219e74952c18451b93e469a1c3750e8f631f88e40ca387bc51a9ea690a4f8",
+        "after_sha256": "a8f219e74952c18451b93e469a1c3750e8f631f88e40ca387bc51a9ea690a4f8",
+        "unchanged": true
+      },
+      {
+        "path": "data/processed/jobs_features.jsonl",
+        "before_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+        "after_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+        "unchanged": true
+      },
+      {
+        "path": "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md",
+        "before_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+        "after_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+        "unchanged": true
+      },
+      {
+        "path": "data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md",
+        "before_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+        "after_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+        "unchanged": true
+      },
+      {
+        "path": "docs/decisions.md",
+        "before_sha256": "4381bbae7f8565e0cb86c87a30f04a0a5360d4b660ba179cfcebe81729d583e6",
+        "after_sha256": "4381bbae7f8565e0cb86c87a30f04a0a5360d4b660ba179cfcebe81729d583e6",
+        "unchanged": true
+      },
+      {
+        "path": "evals/annotation_guideline_v1.md",
+        "before_sha256": "5939c9e69ffacf28dcba9588b8fbfc8d124a8a240e8e84e1f234d463b7f760db",
+        "after_sha256": "5939c9e69ffacf28dcba9588b8fbfc8d124a8a240e8e84e1f234d463b7f760db",
+        "unchanged": true
+      },
+      {
+        "path": "evals/gold/evidence_gold.jsonl",
+        "before_sha256": "d0e10f01bf3cefa69d227316ed561c02ecc31f009a497eb7508dec44b3d5f6e0",
+        "after_sha256": "d0e10f01bf3cefa69d227316ed561c02ecc31f009a497eb7508dec44b3d5f6e0",
+        "unchanged": true
+      },
+      {
+        "path": "evals/gold/extraction_gold.jsonl",
+        "before_sha256": "f43d4d029f82a392ebc4796fc4bfafc5275ac1afae3a686bee5e4ca2a3da9a7d",
+        "after_sha256": "f43d4d029f82a392ebc4796fc4bfafc5275ac1afae3a686bee5e4ca2a3da9a7d",
+        "unchanged": true
+      },
+      {
+        "path": "evals/gold/relevance_gold.csv",
+        "before_sha256": "144a185ca867c04816e791d4e5c5d849554216708f517b05824a69ba4ffe3011",
+        "after_sha256": "144a185ca867c04816e791d4e5c5d849554216708f517b05824a69ba4ffe3011",
+        "unchanged": true
+      },
+      {
+        "path": "evals/labeling/JobFit_Development_Labeling_v0.1.xlsx",
+        "before_sha256": "7a1321180ae7785d3ab018b9317acf76f97769404e06375ad8370753cc195bc1",
+        "after_sha256": "7a1321180ae7785d3ab018b9317acf76f97769404e06375ad8370753cc195bc1",
+        "unchanged": true
+      },
+      {
+        "path": "evals/splits/dev_job_ids.txt",
+        "before_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+        "after_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+        "unchanged": true
+      },
+      {
+        "path": "evals/splits/test_job_ids.txt",
+        "before_sha256": "b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435",
+        "after_sha256": "b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435",
+        "unchanged": true
+      },
+      {
+        "path": "prompts/cv_parsing_v1.md",
+        "before_sha256": "1847ef471c4d72b20b27c9f8f276a28a833d28e15f4aad28100494cf026dc341",
+        "after_sha256": "1847ef471c4d72b20b27c9f8f276a28a833d28e15f4aad28100494cf026dc341",
+        "unchanged": true
+      },
+      {
+        "path": "prompts/evidence_matching_v1.md",
+        "before_sha256": "bbaaddea09a4364d5365376dc51ade462ffab9487149d0d6a9753991f5757816",
+        "after_sha256": "bbaaddea09a4364d5365376dc51ade462ffab9487149d0d6a9753991f5757816",
+        "unchanged": true
+      },
+      {
+        "path": "prompts/jd_extraction_v1.md",
+        "before_sha256": "0e17816b88703fdc26e341894c6ea87e8a79ba7f6dcfe2694a855458f63e6ad4",
+        "after_sha256": "0e17816b88703fdc26e341894c6ea87e8a79ba7f6dcfe2694a855458f63e6ad4",
+        "unchanged": true
+      },
+      {
+        "path": "prompts/jd_extraction_v1_1.md",
+        "before_sha256": "8c91296b0861a82654ede5bec46f60d324cc08dcee3d62bc690d7a36136052d0",
+        "after_sha256": "8c91296b0861a82654ede5bec46f60d324cc08dcee3d62bc690d7a36136052d0",
+        "unchanged": true
+      },
+      {
+        "path": "reports/usage/usage_ledger.jsonl",
+        "before_sha256": "7b569df4dc53897f1148a112da755b2c03377ce114185abc24012778de5196d7",
+        "after_sha256": "7b569df4dc53897f1148a112da755b2c03377ce114185abc24012778de5196d7",
+        "unchanged": true
+      },
+      {
+        "path": "requirements.txt",
+        "before_sha256": "c880689a7321e7254127add51fb7aa4cc710df6b9fa2dbb854c16b8ad601ea9b",
+        "after_sha256": "c880689a7321e7254127add51fb7aa4cc710df6b9fa2dbb854c16b8ad601ea9b",
+        "unchanged": true
+      }
+    ],
+    "protected_unchanged_at_check": true,
+    "workbook_written": false,
+    "active_workbook_loaded": false,
+    "actual_gold_written": false,
+    "git_commands": 0,
+    "new_dependencies": 0,
+    "public_extraction_cache_entries": 0
+  },
+  "api_calls_this_audit": 0,
+  "session_cost_usd": "0",
+  "ledger_records": 105,
+  "ledger_total_usd": "0.171649020",
+  "configured_hard_stop_usd": "8.50",
+  "headroom_usd": "8.328350980",
+  "final_tests": {
+    "command": "env-job-fit/bin/python -m pytest -q tests/test_cp22_audit_regressions.py tests/test_review_export.py tests/test_alignment.py tests/test_cp22_contract.py tests/test_cv_upload_pipeline.py tests/test_budget_guard.py tests/test_constraints.py tests/test_schemas.py tests/test_scoring.py tests/test_embeddings.py --junitxml=evals/results/cp22_pipeline_audit_final_tests_20261002.xml",
+    "tests": 164,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "reported_pytest_seconds": 0.55,
+    "warnings": 5,
+    "scope": "selected offline tests; fake clients; no database verification or new model-quality measurement"
+  },
+  "preliminary_tests": {
+    "passed": 119,
+    "skipped": 0,
+    "warnings": 5,
+    "seconds": 0.42,
+    "scope": "earlier selected subset before final additions"
+  },
+  "final_code_sha256": {
+    "src/jobfit/extraction/cache.py": "2817c418e5554e72c004854ae1c1f5352b86dfd5faaf287301a1d1aa3be829d1",
+    "src/jobfit/extraction/jd_extractor.py": "97ca557488a1e8d94d8a054c554954f23803bf4970bd71b2e070ebb0180b149a",
+    "src/jobfit/matching/evidence_matcher.py": "7d57532961dbed9e22a7d4aab77a9f909b311dca5f0133869c4b367fdfb1ee2a",
+    "src/jobfit/llm/budget.py": "5a0c69a90993a7aa8e43d11b6963d32aaa7985fcd832659204f9a063707c13e3",
+    "scripts/export_pilot_gold.py": "960a2306bf1f0a819cd7a4e4dc14fd37fda3d690c5e52a1976e28cdce75991cb",
+    "src/jobfit/eval/review_export.py": "5891b4ea9718941e59436db818a98a8f4bd970129a7b4df29c2d332d273bac86",
+    "src/jobfit/eval/alignment.py": "5907de40fc2bda6b6dd6db455d90055ec5c80d67e09ac2408b70ac97b2ea5263",
+    "scripts/prepare_cp22_alignment_review.py": "619bbcf2edbfbd266074da4e2c3f6d6375a2876b4945d3f8bdee29e543af7b00",
+    "tests/test_cp22_audit_regressions.py": "da1c4c1219727ef942f3d9ecf87a5480187ad6134bf4534419acd3a4268d405a",
+    "tests/test_review_export.py": "a8c0b7642626ad89adf6ec102f310c3dbc635464f09704e59dcb36525c8a9e07",
+    "tests/test_alignment.py": "03c05116f673c021df1735a8f6c164457d403fb89deda9236725b0b1f8f47515",
+    "scripts/run_batch_extraction.py": "6c8bc269712b05f7f051e8242b95c20c451726ac4f84b5e47952b1289d83afbd"
+  },
+  "baseline_files_changed": [
+    "src/jobfit/extraction/cache.py",
+    "src/jobfit/extraction/jd_extractor.py",
+    "src/jobfit/matching/evidence_matcher.py",
+    "scripts/run_batch_extraction.py"
+  ],
+  "alignment_artifact": "evals/results/cp22_pilot_alignment_review_20261002.json",
+  "preflight_artifact": "evals/results/cp22_pilot_remaining_preflight_20261002.json",
+  "limits": [
+    "No new live model run",
+    "No whole-suite/database rerun; historical 161 with DB is a different test set",
+    "Alignment is proposed, not human-verified; no F1/Macro-F1",
+    "Safe export helper tested on temporary dictionaries only; no workbook adapter or actual gold promotion",
+    "No full 214-JD batch"
+  ],
+  "local_command_corrections": [
+    "One initial Python command used the workspace root instead of the repository; command did not execute and was rerun from repo.",
+    "First invocation of the new alignment CLI could not import scripts; repository-root import path was fixed before output, then CLI succeeded."
+  ],
+  "intermediate_tests": {
+    "command": "env-job-fit/bin/python -m pytest -q tests/test_cp22_audit_regressions.py tests/test_review_export.py tests/test_alignment.py tests/test_cp22_contract.py tests/test_cv_upload_pipeline.py tests/test_budget_guard.py tests/test_constraints.py tests/test_schemas.py tests/test_scoring.py tests/test_embeddings.py --junitxml=evals/results/cp22_pipeline_audit_tests_20261002.xml",
+    "tests": 161,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "reported_pytest_seconds": 0.58,
+    "warnings": 5,
+    "scope": "selected offline tests; fake clients; no database verification or new model-quality measurement"
+  }
+}

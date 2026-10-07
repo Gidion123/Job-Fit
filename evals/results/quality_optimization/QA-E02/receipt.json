@@ -1,0 +1,47 @@
+{
+ "experiment_id": "QA-E02",
+ "evaluated_at": "2026-10-07T08:47:26+00:00",
+ "api_calls_in_evaluation": 0,
+ "prompt_sha256": "d2b362a267e18a1f1e92a27177f5f728732a89e206aa65932dc58cd13a34065e",
+ "split_sha256": "8a6c9e73dcae31d90e88ef6b27f2054e4a396e684a269f9a415613e8d88403a8",
+ "code_sha256": {
+  "scripts/qa_phase_a.py": "f4f36e00384020ec2b8234517728c72a3600e1492674495d31c31c62c13c67c5",
+  "src/jobfit/eval/qa_phase_a.py": "653c1308cd9a1b13f8104b8d1bb01eb5281ca852e9cc7b08d14c5c2cb95ae104"
+ },
+ "run_records_sha256": {
+  "fixed_input__CV1_F00021.json": "7142a00c8de2c40da239b45fbdcaefdae63d1654f25a32493da096b1a5cc5d6b",
+  "fixed_input__CV1_F00029.json": "a8179547b3908bd61afd0f1b0fe2da4bc9d1b91567ff9f27f9913e9b46030cf2",
+  "fixed_input__CV1_F00052.json": "2982aefd562145918a69156249b310764ff74e245b03dbb5163e63f2ef39941f",
+  "fixed_input__CV1_F00059.json": "fc4f8c63e4c129337da1ab09efc7972c59e2da42695aba0d658467a9b4c79d3d",
+  "fixed_input__CV1_F00187.json": "ed4c8c100d97f9b7e4b7452eff3ab5aebe70c6c8381a7e10eba4f916c9711ae3",
+  "fixed_input__CV1_F00351.json": "2ee49318e1e38e6d4d702d5ae372f2e0ece0edb1eb0aa973df7b84953c5079da",
+  "fixed_input__CV1_F00610.json": "09478a8e692d6924819c4b4122e70b0b69bf3628da81fbad51d00cd622dbf3d7",
+  "fixed_input__CV1_F00690.json": "5d9ef1564919b1510ce1ad1092c177ba95db8317917d922d7ad979791a9b9c4f",
+  "fixed_input__CV1_F00806.json": "2bdecbf717b702dd6d55931ec6fade4038274756df2f8e2aa565ffd856666c1e",
+  "fixed_input__CV1_F00818.json": "36ddeca54b5808809283de315db7b6c5f4c98cfb83f36dc5de42ca0b288e5255",
+  "fixed_input__CV2_F00059.json": "6cccf5676958ab91182dc32b1202cc5ebd762c304a504d7d0b1356d4beb94c68",
+  "fixed_input__CV2_F00082.json": "818ca417ddf9e66188918ad706315df063a219ac79dec659fb79095e27535332",
+  "fixed_input__CV2_F00108.json": "2602e86882a8b530a5cac697dddd75185ae1456ecf56724d6ae10b994119c55f",
+  "fixed_input__CV2_F00332.json": "a3b8cc0e5f9a53f6e3b667dc397d46e65099fae3c1d6828260d8a70556684f3c",
+  "fixed_input__CV2_F00343.json": "4dad85d3ffd32cfba65ff087cdf990971a2281eb597adb267f553a19cf713bc2",
+  "fixed_input__CV2_F00442.json": "d7637520a8c8cab79e52c9ff43c347eb7e36ad856d8014b9c9af26888932db63",
+  "fixed_input__CV2_F00554.json": "db0d1815355d813e3a648d4acc0f1c15e0839d7087660351bb0f3e43cac1e049",
+  "fixed_input__CV2_F00558.json": "c457163c7025326843ec153c13658acba1b198df3b1bedf8bbc34d56b7fc3cbf",
+  "fixed_input__CV2_F00645.json": "35720f401e1f3ca2e85163e6d6ba633028c6eb5c694b9a85845cfda7a059fe49",
+  "fixed_input__CV2_F00682.json": "51b42f55c3f483b5f5329d478315d6b7cde8770258da0671241d83b8455eec46"
+ },
+ "outputs_sha256": {
+  "config.json": "88403e239b46cbb29ecb2697b1f51b76374295bd54fcffa1282bd1d637b102a6",
+  "cost.json": "44f815c62cda7761037b112e0eb76eef632bed9da1e6ab6ffc179fcbfcaeb5d0",
+  "dry_run_v1.json": "1e4191cb23f00e4e54993ee45642b58013f5600f0bab84946baa134474a39ff9",
+  "dry_run_v2.json": "0b8b49229049e312bf41b1d603a843ca9e44971a726976a1828f2eaced719ad6",
+  "dry_run_v3.json": "13ecf8e9309dc45c95b4c45cf6007d37c38c67bfe543dc7535ef1b6ffcca7784",
+  "dry_run_v4.json": "9baed67795af356e0ddb7f8dfddac4c6d0bf5706592699097f70c6b268e18643",
+  "dry_run_v5.json": "2db304182c6542e2157134f8860581ab893175892802171fd1a77e9840bab5ae",
+  "dry_run_v6.json": "e321f69039616096de43bd882f6911796d2e0907df0ce39840f5a024e5eab979",
+  "failures.json": "f5f334d6aa034fd252ba6dae902921442fd4e73d7333031c63bca908aeff02a2",
+  "metrics.json": "507063921b51c0290c86deb610699a90da370b2fc14a323d4e747c957de96189",
+  "plan.json": "d41275ed7ad8954496922be41e97f52e304400d5498de6a7202ee14a4cac46d3",
+  "run_summary.json": "5fa5ad4a72cf65d1db6d424d5bcf89b89bf0504402a8225c3322e4c97fe71fed"
+ }
+}

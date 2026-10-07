@@ -1,0 +1,469 @@
+{
+  "job_id": "F00527",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "cache_hit": false,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "wall_ms": 46389,
+  "extraction": {
+    "job_id": "F00527",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Bachelor Degree in Mathematics and Statistics, Computer Science, or Engineering",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "Bachelor Degree in Mathematics and Statistics, Computer Science, or Engineering",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B01",
+            "text": "Bachelor Degree in Mathematics and Statistics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B02",
+            "text": "Bachelor Degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B03",
+            "text": "Bachelor Degree in Engineering",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Bachelor Degree in Mathematics and Statistics, Computer Science, or Engineering"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Masters in Data Science / Data Analytics or certifications (added advantage)",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "education",
+        "normalized_name": "Masters in Data Science / Data Analytics or certifications (added advantage)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Masters in Data Science / Data Analytics Certifications will be an added advantage"
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "4-6 years of total working experience",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "4-6 years of total working experience",
+        "min_years": 4.0,
+        "branches": [],
+        "source_quotes": [
+          "4-6 years of total working experience"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "At least 3+ years of working experience relevant to the field of data science",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "At least 3+ years of working experience relevant to the field of data science",
+        "min_years": 3.0,
+        "branches": [],
+        "source_quotes": [
+          "At least 3+ years of working experience relevant to the field of data science"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Technical expertise in data analytics",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Technical expertise in data analytics",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Technical expertise in data analytics, data visualization, machine learning and ETL techniques"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Technical expertise in data visualization",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Technical expertise in data visualization",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Technical expertise in data analytics, data visualization, machine learning and ETL techniques"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Technical expertise in machine learning",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Technical expertise in machine learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Technical expertise in data analytics, data visualization, machine learning and ETL techniques"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Technical expertise in ETL techniques",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Technical expertise in ETL techniques",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Technical expertise in data analytics, data visualization, machine learning and ETL techniques"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Strong knowledge of and experience with databases (e.g. Microsoft SQL)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong knowledge of and experience with databases (e.g. Microsoft SQL)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong knowledge of and experience with databases (e.g. Microsoft SQL), programming languages (e.g. Python), SQL scripting, ETL platforms (e.g. MS SSIS), data reporting and visualization tools (e.g. Looker Studio, Power BI etc.)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Strong knowledge of and experience with programming languages (e.g. Python)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong knowledge of and experience with programming languages (e.g. Python)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong knowledge of and experience with databases (e.g. Microsoft SQL), programming languages (e.g. Python), SQL scripting, ETL platforms (e.g. MS SSIS), data reporting and visualization tools (e.g. Looker Studio, Power BI etc.)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Strong knowledge of and experience with SQL scripting",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong knowledge of and experience with SQL scripting",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong knowledge of and experience with databases (e.g. Microsoft SQL), programming languages (e.g. Python), SQL scripting, ETL platforms (e.g. MS SSIS), data reporting and visualization tools (e.g. Looker Studio, Power BI etc.)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Strong knowledge of and experience with ETL platforms (e.g. MS SSIS)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong knowledge of and experience with ETL platforms (e.g. MS SSIS)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong knowledge of and experience with databases (e.g. Microsoft SQL), programming languages (e.g. Python), SQL scripting, ETL platforms (e.g. MS SSIS), data reporting and visualization tools (e.g. Looker Studio, Power BI etc.)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Strong knowledge of and experience with data reporting and visualization tools (e.g. Looker Studio, Power BI etc.)",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong knowledge of and experience with data reporting and visualization tools (e.g. Looker Studio, Power BI etc.)",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B04",
+            "text": "Strong knowledge of and experience with data reporting and visualization tools (e.g. Looker Studio)",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B05",
+            "text": "Strong knowledge of and experience with data reporting and visualization tools (e.g. Power BI)",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Strong knowledge of and experience with databases (e.g. Microsoft SQL), programming languages (e.g. Python), SQL scripting, ETL platforms (e.g. MS SSIS), data reporting and visualization tools (e.g. Looker Studio, Power BI etc.)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Proven knowledge utilising common data science toolkits such as Python, R, SQL, etc.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Proven knowledge utilising common data science toolkits such as Python, R, SQL, etc.",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B06",
+            "text": "Proven knowledge utilising common data science toolkits such as Python",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B07",
+            "text": "Proven knowledge utilising common data science toolkits such as R",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B08",
+            "text": "Proven knowledge utilising common data science toolkits such as SQL",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Proven knowledge utilising common data science toolkits such as Python, R, SQL, etc."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Proficient in data visualization",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Proficient in data visualization",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficient in data visualization and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Proficient in data storytelling",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Proficient in data storytelling",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficient in data visualization and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Strong statistical skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Strong statistical skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong statistical, analytical, and problem solving skills"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Strong analytical skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Strong analytical skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong statistical, analytical, and problem solving skills"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Strong problem solving skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Strong problem solving skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong statistical, analytical, and problem solving skills"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Familiarity with cloud platforms and technologies e.g. Google Cloud Platform, Azure, AWS etc.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Familiarity with cloud platforms and technologies e.g. Google Cloud Platform, Azure, AWS etc.",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B09",
+            "text": "Familiarity with cloud platforms and technologies e.g. Google Cloud Platform",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B10",
+            "text": "Familiarity with cloud platforms and technologies e.g. Azure",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B11",
+            "text": "Familiarity with cloud platforms and technologies e.g. AWS",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Familiarity with cloud platforms and technologies e.g. Google Cloud Platform, Azure, AWS etc."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Passionate in learning new technologies and skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Passionate in learning new technologies and skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Passionate in learning new technologies and skills"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Proven experience in building predictive models",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Proven experience in building predictive models",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proven experience in building predictive models"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Knowledge and/or proven experience in using RPA tools (e.g. UiPath)",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "Knowledge and/or proven experience in using RPA tools (e.g. UiPath)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge and/or proven experience in using RPA tools (e.g. UiPath)"
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U24",
+        "text": "Internal or external auditing experience",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Internal or external auditing experience",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B12",
+            "text": "Internal auditing experience",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B13",
+            "text": "External auditing experience",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Internal or external auditing experience"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

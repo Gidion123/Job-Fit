@@ -1,0 +1,13 @@
+{
+ "superseded_bundle": "evals/gold/test_v13_cp24_r1 (metadata v1, 7 Oct 2026)",
+ "archived_as": "evals/gold/archive/test_v13_cp24_r1_metadata_v1",
+ "reason": "Audit wording fix requested by Dion: metadata said \"other_score_changes: none\" and docs said \"no score changed\" while T68 changed 2 -> UNJUDGED. Labels and text unchanged; only summary wording/structure changed.",
+ "previous_files_sha256": {
+  "correction_diff.json": "fd65efc85014c1135d0caf6a28ba06d7a6bfec9cb515ce4b328ad1aefc5e9e05",
+  "held_test_r1.json": "45c8e2921967224e658a4fd414a7725b18baa3d4196ce78eaded1410cf7db513",
+  "import_receipt.json": "ebd599c1523536df04f38a74a477e5b2c04e95bb58104f624c5ccbfd1db33e45",
+  "provenance_manifest.json": "aa095f41a5117e0d513621253cc8e5c3794384cd97b961757cf708bfc15a498f",
+  "relevance_before_correction.jsonl": "fcd14f0a4920b7551eda2917ed2f56368ad49b817e793affdd4fa3cada2d7f95",
+  "relevance_gold.jsonl": "cc3efd3f0cd5805c4aee7c7be8ca6650487b30fac86974c7a4333c9c5821bc33"
+ }
+}

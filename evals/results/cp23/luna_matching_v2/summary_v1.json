@@ -1,0 +1,44 @@
+{
+  "run_id": "cp23_luna_matching_20261004_v2",
+  "phases": [
+    {
+      "phase": "P0_luna_canary",
+      "model": "gpt-6-luna",
+      "workers": 1,
+      "pairs": 1,
+      "called": 1,
+      "phase_wall_ms": 22201,
+      "pair_wall_ms_p50": 22200,
+      "pair_wall_ms_max": 22200,
+      "done": 1,
+      "stop": null
+    },
+    {
+      "phase": "A_luna_cv1_top20",
+      "model": "gpt-6-luna",
+      "workers": 20,
+      "pairs": 20,
+      "called": 18,
+      "phase_wall_ms": 62493,
+      "pair_wall_ms_p50": 25996.5,
+      "pair_wall_ms_max": 62491,
+      "done": 16,
+      "stop": null
+    },
+    {
+      "phase": "C_luna_remaining39",
+      "model": "gpt-6-luna",
+      "workers": 8,
+      "pairs": 39,
+      "called": 35,
+      "phase_wall_ms": 145798,
+      "pair_wall_ms_p50": 23704,
+      "pair_wall_ms_max": 62720,
+      "done": 33,
+      "stop": null
+    }
+  ],
+  "run_cost_usd": 0.10433810500000003,
+  "ledger_total_usd": 3.313365,
+  "completed": true
+}

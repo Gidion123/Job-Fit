@@ -1,0 +1,13 @@
+{
+  "job_id": "F00034",
+  "result_sha256": "0c0edc283af6f2480f956cdb3669c6a87497abca44b1952ea143aa1956978f1c",
+  "checked_by": "execution-role",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "fail",
+    "qualifiers": "uncertain",
+    "importance": "pass"
+  },
+  "notes": "All 16 model units, 16 approved units and full source inspected. No responsibilities included, importance and explicit minima retained textually, all exact quotes valid. Stop: J3-U02 approved group G2 is modeled as qualified with no alternative branches, changing downstream handling of role alternatives/duration constraints. U16 is flagged needs_review even though approved portfolio/AI-experience alternatives exist. No gold/constraint/schema change, no F1. F00073 must not be called under this probe."
+}

@@ -1,0 +1,286 @@
+{
+  "model": "claude-sonnet-5.5",
+  "model_id": "anthropic/claude-sonnet-5.5",
+  "cv_id": "CV2",
+  "job_id": "F00018",
+  "status": "done",
+  "error_code": null,
+  "attempts": 1,
+  "wall_ms": 33919,
+  "assessments": [
+    {
+      "unit_id": "P04-U01",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+        "pandas, scikit-learn, LangChain"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U02",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U03",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+        "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U04",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U05",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U06",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U07",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U08",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Forecasted monthly ad spend with Prophet for internal planning.",
+        "pandas, scikit-learn, LangChain"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U09",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U10",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+        "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U11",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P04-U11/B01",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+          ]
+        },
+        {
+          "branch_id": "P04-U11/B02",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "P04-U11/B03",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U12",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+        "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U13",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U14",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U15",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "English (professional working proficiency)"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U16",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Ran A/B tests for ad creatives and explained results to account managers."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U17",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U18",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U19",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U20",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P04-U20/B01",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P04-U20/B02",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U21",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U22",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P04-U22/B01",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P04-U22/B02",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U23",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P04-U18-AWS",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ]
+}

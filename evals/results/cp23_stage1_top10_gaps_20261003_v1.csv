@@ -1,0 +1,10 @@
+cv_id,job_id,status,methods_ranks,reasons,historical_pilot_version,review_path
+CV1,F00010,unjudged,hybrid_openai:5,no_eligible_current_C_judgment,,optional_new_relevance_review
+CV1,F00022,held,B0:8; dense_openai:6; dense_qwen:1; hybrid_qwen:8,C_reason_depends_on_unresolved_D049_J1_units,v1.2,resolve_existing_hold
+CV1,F00132,unjudged,hybrid_openai:8; hybrid_qwen:6,no_eligible_current_C_judgment,,optional_new_relevance_review
+CV1,F00284,unjudged,hybrid_openai:7; hybrid_qwen:5,no_eligible_current_C_judgment,,optional_new_relevance_review
+CV1,F00312,unjudged,hybrid_qwen:7,no_eligible_current_C_judgment,,optional_new_relevance_review
+CV1,F00369,held,B1:7,source_provenance_hold_whole_job,,source_provenance_blocker
+CV2,F00090,unjudged,hybrid_openai:7,no_eligible_current_C_judgment,,optional_new_relevance_review
+CV2,F00114,held,dense_openai:7; hybrid_openai:2,Reviewer_requested_BC_hold_for_unresolved_composite,v1.2,resolve_existing_hold
+CV2,F00559,unjudged,hybrid_openai:6,no_eligible_current_C_judgment,,optional_new_relevance_review

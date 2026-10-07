@@ -1,0 +1,459 @@
+{
+ "job_id": "F00215",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "no_uncovered_bullets",
+  "bullet_count": 10,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 10,
+  "inventory_mappings": [
+   {
+    "source_id": "Q01",
+    "unit_ids": [
+     "U001"
+    ]
+   },
+   {
+    "source_id": "Q02",
+    "unit_ids": [
+     "U002"
+    ]
+   },
+   {
+    "source_id": "Q03",
+    "unit_ids": [
+     "U003",
+     "U004",
+     "U005"
+    ]
+   },
+   {
+    "source_id": "Q04",
+    "unit_ids": [
+     "U006",
+     "U007"
+    ]
+   },
+   {
+    "source_id": "Q05",
+    "unit_ids": [
+     "U008"
+    ]
+   },
+   {
+    "source_id": "Q06",
+    "unit_ids": [
+     "U009"
+    ]
+   },
+   {
+    "source_id": "Q07",
+    "unit_ids": [
+     "U010",
+     "U011"
+    ]
+   },
+   {
+    "source_id": "Q08",
+    "unit_ids": [
+     "U012",
+     "U013"
+    ]
+   },
+   {
+    "source_id": "Q09",
+    "unit_ids": [
+     "U014",
+     "U015"
+    ]
+   },
+   {
+    "source_id": "Q10",
+    "unit_ids": [
+     "U016",
+     "U017"
+    ]
+   }
+  ],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00215",
+  "units": [
+   {
+    "unit_id": "U001",
+    "text": "Minimum bachelor's degree (S1) in Informatics Engineering, Information Systems, Computer Science, Data Science, or a related IT field",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "education",
+    "normalized_name": "Minimum bachelor's degree (S1) in Informatics Engineering, Information Systems, Computer Science, Data Science, or a related IT field",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B001",
+      "text": "Minimum bachelor's degree (S1) in Informatics Engineering",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B002",
+      "text": "Minimum bachelor's degree (S1) in Information Systems",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B003",
+      "text": "Minimum bachelor's degree (S1) in Computer Science",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B004",
+      "text": "Minimum bachelor's degree (S1) in Data Science",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B005",
+      "text": "Minimum bachelor's degree (S1) in a related IT field",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Minimal S1 Teknik Informatika, Sistem Informasi, Ilmu Komputer, Data Science, atau bidang IT terkait"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U002",
+    "text": "Have experience as Data Analyst, Business Analyst, Reporting Analyst, or a related position",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "other",
+    "normalized_name": "Have experience as Data Analyst, Business Analyst, Reporting Analyst, or a related position",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B006",
+      "text": "Have experience as Data Analyst",
+      "field": "other",
+      "min_years": null
+     },
+     {
+      "branch_id": "B007",
+      "text": "Have experience as Business Analyst",
+      "field": "other",
+      "min_years": null
+     },
+     {
+      "branch_id": "B008",
+      "text": "Have experience as Reporting Analyst",
+      "field": "other",
+      "min_years": null
+     },
+     {
+      "branch_id": "B009",
+      "text": "Have experience in a related position",
+      "field": "other",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Memiliki pengalaman sebagai Data Analyst / Business Analyst / Reporting Analyst atau posisi terkait"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U003",
+    "text": "Accustomed to performing data processing",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Accustomed to performing data processing",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Terbiasa melakukan data processing, data analysis, dan data visualization"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U004",
+    "text": "Accustomed to performing data analysis",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Accustomed to performing data analysis",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Terbiasa melakukan data processing, data analysis, dan data visualization"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U005",
+    "text": "Accustomed to performing data visualization",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Accustomed to performing data visualization",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Terbiasa melakukan data processing, data analysis, dan data visualization"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U006",
+    "text": "Proficient in Microsoft Excel",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Proficient in Microsoft Excel",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Menguasai Microsoft Excel dan tools pengolahan/visualisasi data"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U007",
+    "text": "Proficient in data processing/visualization tools",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Proficient in data processing/visualization tools",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Menguasai Microsoft Excel dan tools pengolahan/visualisasi data"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U008",
+    "text": "Familiar with SQL, Power BI, Tableau, Python, or similar tools (preferred)",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Familiar with SQL, Power BI, Tableau, Python, or similar tools (preferred)",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B010",
+      "text": "Familiar with SQL",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B011",
+      "text": "Familiar with Power BI",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B012",
+      "text": "Familiar with Tableau",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B013",
+      "text": "Familiar with Python",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B014",
+      "text": "Familiar with similar tools",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Familiar dengan SQL, Power BI, Tableau, Python, atau tools sejenis menjadi nilai tambah"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U009",
+    "text": "Accustomed to using AI tools to assist with analysis, reporting, automation, or data processing",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Accustomed to using AI tools to assist with analysis, reporting, automation, or data processing",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B015",
+      "text": "Accustomed to using AI tools to assist with analysis",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B016",
+      "text": "Accustomed to using AI tools to assist with reporting",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B017",
+      "text": "Accustomed to using AI tools to assist with automation",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B018",
+      "text": "Accustomed to using AI tools to assist with data processing",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Terbiasa menggunakan AI tools untuk membantu analisis, reporting, automation, atau pengolahan data"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U010",
+    "text": "Good analytical thinking",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Good analytical thinking",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memiliki analytical thinking dan problem-solving yang baik"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U011",
+    "text": "Good problem-solving",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Good problem-solving",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memiliki analytical thinking dan problem-solving yang baik"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U012",
+    "text": "Detail-oriented",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Detail-oriented",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Teliti dan mampu mengolah data dalam jumlah besar"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U013",
+    "text": "Able to process large amounts of data",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Able to process large amounts of data",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Teliti dan mampu mengolah data dalam jumlah besar"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U014",
+    "text": "Able to communicate well",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Able to communicate well",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Mampu berkomunikasi dan berkoordinasi dengan baik"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U015",
+    "text": "Able to coordinate well",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Able to coordinate well",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Mampu berkomunikasi dan berkoordinasi dengan baik"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U016",
+    "text": "Fluent English (spoken)",
+    "kind": "simple",
+    "importance": "required",
+    "field": "language",
+    "normalized_name": "Fluent English (spoken)",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Fluent English baik Lisan maupun Tulisan"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U017",
+    "text": "Fluent English (written)",
+    "kind": "simple",
+    "importance": "required",
+    "field": "language",
+    "normalized_name": "Fluent English (written)",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Fluent English baik Lisan maupun Tulisan"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

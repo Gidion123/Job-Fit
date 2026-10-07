@@ -1,0 +1,222 @@
+{
+  "job_id": "F00312",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "864fb4afbf153829e961ff8088773e28ac1332ef84787036a3538e0f83b1f5e9",
+  "wall_ms": 21451,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00312",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Proven experience in statistical analysis",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "statistical analysis",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "proven experience in statistical analysis, mathematical modeling, and applied machine learning"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Proven experience in mathematical modeling",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "mathematical modeling",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "proven experience in statistical analysis, mathematical modeling, and applied machine learning"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Proven experience in applied machine learning",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "applied machine learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "proven experience in statistical analysis, mathematical modeling, and applied machine learning"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "High proficiency in Python programming",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Python programming",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "High proficiency in Python programming and relevant machine learning frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "High proficiency in relevant machine learning frameworks",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "machine learning frameworks",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "High proficiency in Python programming and relevant machine learning frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Demonstrated experience building data solutions within cloud environments",
+        "kind": "simple",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "building data solutions in cloud environments",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Demonstrated experience building and scaling data solutions within cloud environments"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Demonstrated experience scaling data solutions within cloud environments",
+        "kind": "simple",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "scaling data solutions in cloud environments",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Demonstrated experience building and scaling data solutions within cloud environments"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Predictive Modeling",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "predictive modeling",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Predictive Modeling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Machine Learning",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "machine learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Machine Learning"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Data science",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "data science",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "data science"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Data analysis",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "data analysis",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Data analysis"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Natural language processing (NLP)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "natural language processing",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "natural language processing (NLP)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Bachelor Degree",
+        "kind": "simple",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "bachelor degree",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Bachelor Degree"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

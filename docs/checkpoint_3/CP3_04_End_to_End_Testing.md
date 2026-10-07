@@ -3,10 +3,10 @@
 **Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
 **Bootcamp checkpoint:** 18. Testing End-to-End Application · official date 8 Oct 2026  
 **JobFit version of this checkpoint:** Same as the template, on the deployed app.  
-**Planned work:** 8 Oct 2026 (feature freeze at the end of the day) · **Actual:** not run yet  
-**Status:** PLANNED / NOT RUN · design basis: System Design v1.3
+**Planned work:** 8 Oct 2026 (feature freeze at the end of the day) · **Actual:** 6 Oct 2026 (local part)  
+**Status:** PARTIAL · local checks passed; deployed and live checks pending · design basis: System Design v1.3
 
-> This report is a plan. It contains no results yet. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
+> Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
 
 ## 1. Goal of this stage
 
@@ -24,6 +24,16 @@ Test the real user journey and the critical failure paths on the deployed app, t
 4. PII check of the logs.
 5. p50/p95 latency and cost per run, live and cached separately.
 6. Record the feature freeze.
+
+## 3A. D-051 security acceptance before real uploads
+
+Execute all PR-01-PR-10 scenarios in [privacy-threat-model.md](../privacy-threat-model.md) on the deployed topology using synthetic identifiers. Two isolated browser sessions must never read, mutate or delete one another's CV/report. Test deletion and expiry during in-flight model work, discarded late responses, independent cleanup when no request follows, actual disconnect/idle/absolute bounds and reload/background behavior. Inspect both LLM and embedding payloads, logs, database, cache, temporary upload copies and provider-failure routing. Consent is not a substitute for these checks.
+
+- [ ] PR-01-PR-10 have reproducible outcomes and safe synthetic evidence.
+- [ ] Measured access-revocation and cleanup bounds support exact product wording.
+- [ ] Missing endpoint/privacy or upload controls fail closed, never downgrade silently.
+- [ ] Real-CV gate stays disabled on critical failure; do not claim security from offline tests alone.
+
 
 ## 4. Planned outputs
 
@@ -75,8 +85,14 @@ Not run yet.
 
 ## 12. Decisions from this stage
 
-None yet. Decisions are recorded in the [decision log](../decisions.md) when they are made.
+D-051 privacy design is approved; implementation outcomes and release acceptance are pending. Record outcomes in the [decision log](../decisions.md) without treating design approval as a test pass.
 
 ## 13. Next step
 
 CP3.5 (checkpoint 19): final deck and portfolio.
+
+## Results (6 Oct 2026, local)
+
+- **Script:** `scripts/e2e_check.py --base <url> [--live] [--write]` writes a report without CV text or canary values.
+- **Local run (API started from exactly the image file set, live off):** 27 of 27 checks passed: saved demo for CV1 and CV2, no invented score for held jobs, suggestions with the claim guard, coach bullets from answers only, job detail, market, feedback, invalid inputs, masking canaries, wrong-digest consent refused, upload parsing gated, delete and no access after delete. The server log had no canary.
+- **Pending:** the same script on the deployed URL; `--live` for one live run and the prompt-injection fixture (about US$0.30); p50/p95 latency and cost for live runs; recording the feature freeze.

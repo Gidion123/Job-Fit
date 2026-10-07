@@ -1,0 +1,143 @@
+{
+  "fixture_id": "dev_06_ambiguous_importance",
+  "synthetic": true,
+  "note": "Synthetic development fixture for the deterministic rules. Hand-written, not model output. Not part of the test set.",
+  "analysis_date": "2026-09-29",
+  "cv_parse_status": "ok",
+  "case": "Two units are unclear (required or preferred). The technical one stays out of the denominator and makes the score provisional. The unclear soft skill is not part of the score at all (D-032).",
+  "extraction": {
+    "job_id": "FIX-06",
+    "units": [
+      {
+        "unit_id": "u1",
+        "text": "Python",
+        "importance": "required",
+        "field": "skill_tool",
+        "source_quotes": [
+          "Python"
+        ]
+      },
+      {
+        "unit_id": "u2",
+        "text": "Statistics",
+        "importance": "required",
+        "field": "knowledge_area",
+        "source_quotes": [
+          "Statistics"
+        ]
+      },
+      {
+        "unit_id": "u3",
+        "text": "SQL",
+        "importance": "required",
+        "field": "skill_tool",
+        "source_quotes": [
+          "SQL"
+        ]
+      },
+      {
+        "unit_id": "u4",
+        "text": "Familiarity with LLM APIs",
+        "importance": "unknown",
+        "field": "knowledge_area",
+        "source_quotes": [
+          "Familiarity with LLM APIs is required.",
+          "Familiarity with LLM APIs is optional, not a requirement."
+        ]
+      },
+      {
+        "unit_id": "u5",
+        "text": "Good communication",
+        "importance": "unknown",
+        "field": "soft_skill",
+        "source_quotes": [
+          "Good communication is required.",
+          "Good communication is optional, not a requirement."
+        ]
+      },
+      {
+        "unit_id": "u6",
+        "text": "Airflow",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "source_quotes": [
+          "Airflow is preferred."
+        ]
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "u1",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python for regression analysis"
+      ]
+    },
+    {
+      "unit_id": "u2",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Applied statistical tests and confidence intervals to an A/B experiment."
+      ]
+    },
+    {
+      "unit_id": "u3",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Skills: SQL"
+      ]
+    },
+    {
+      "unit_id": "u4",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": []
+    },
+    {
+      "unit_id": "u5",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Presented findings to the marketing team"
+      ]
+    },
+    {
+      "unit_id": "u6",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": []
+    }
+  ],
+  "experience": {
+    "min_years": null,
+    "cv_entries": []
+  },
+  "expected": {
+    "score_pct": 83.33,
+    "status": "provisional",
+    "required_total": 3,
+    "matched": 2,
+    "partial": 1,
+    "unknown_importance_total": 1,
+    "preferred_total": 1,
+    "preferred_met": 0,
+    "constraint_state": "unknown"
+  },
+  "fixture_version": "v1.3-r1",
+  "guideline_version": "v1.3",
+  "revision": {
+    "source_file": "evals/fixtures/dev_06_ambiguous_importance.json",
+    "source_sha256": "778e7667a8bc66a2d00f035d3e0d8b3b7746aaea27acf0b46fd493e089709182",
+    "reason": "Supply explicit source conflict for unknown importance and an explicit preferred softener; remove degree-equivalence ambiguity from statistics evidence. Generic LLM API familiarity is knowledge_area, not a named tool.",
+    "scope": "Synthetic fixture revision only; no real JD/CV or approved label edited",
+    "review_kind": "delegated technical and semantic examination under user instruction",
+    "human_independent_approval": false
+  },
+  "synthetic_jd_context": "Requirements and explicitly marked optional items:\nPython\nStatistics\nSQL\nFamiliarity with LLM APIs is required.\nFamiliarity with LLM APIs is optional, not a requirement.\nGood communication is required.\nGood communication is optional, not a requirement.\nAirflow is preferred.",
+  "synthetic_cv_context": "Python for regression analysis\nApplied statistical tests and confidence intervals to an A/B experiment.\nSkills: SQL\nPresented findings to the marketing team",
+  "semantic_review_status": "delegated_checked"
+}

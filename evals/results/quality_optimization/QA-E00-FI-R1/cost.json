@@ -1,0 +1,9 @@
+{
+ "run_id": "qa_phase_a_w1_qa-e00-fi-r1",
+ "calls": 20,
+ "repair_calls": 0,
+ "total_cost_usd": 0.503653,
+ "cost_per_pair": 0.025183,
+ "median_latency_ms": 18182.5,
+ "p95_latency_ms": 24663
+}

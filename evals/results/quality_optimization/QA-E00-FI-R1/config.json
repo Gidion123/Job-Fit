@@ -1,0 +1,33 @@
+{
+ "experiment_id": "QA-E00-FI-R1",
+ "model": "gpt-6-sol",
+ "prompt": {
+  "prompt_file": "prompts/evidence_matching_v1_1.md",
+  "prompt_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f"
+ },
+ "subsets": [
+  "optimization"
+ ],
+ "ranking": false,
+ "config_file": "config/versions/pipeline_cp23_freeze_candidate_v4_20261006.yaml",
+ "validator": "quote-check-v1.1",
+ "guardrails": [
+  "G1",
+  "G2"
+ ],
+ "hold_policy": "H2v2",
+ "partial_weight": 0.5,
+ "k": 10,
+ "fallback": "not used",
+ "measurement_scope": "primary GPT-6 Sol prompt behavior; not production fallback reliability (Sol then Luna), which a later integration run checks",
+ "reference_provenance": "evals/results/quality_optimization/benchmark_v1/provenance.json",
+ "versions": {
+  "python": "3.11.16",
+  "pydantic": "2.13.5",
+  "openai": "3.20.0",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3",
+  "matplotlib": "3.10.6",
+  "pyyaml": "6.0.3"
+ }
+}

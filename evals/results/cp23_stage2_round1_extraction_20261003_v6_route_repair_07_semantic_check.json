@@ -1,0 +1,13 @@
+{
+  "job_id": "gpt-6-luna/F00018",
+  "result_sha256": "0c8db93503493e707a37922cbb777b1ac32cc3cb595ac8136ff117225ed7bbd7",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "fail",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "pass"
+  },
+  "notes": "All ten required and five plus-section clauses reviewed against 24 logical references and 23 outputs. Exact quotes and preferred scopes remain. U01 strengthens Comfortable with standard ML algorithms into Hands-on experience, which the quoted source does not require. U18 merges generic practical cloud experience and a distinct AWS-stack preference, whereas the reviewed gold preserves two independent obligations; it also labels generic cloud platforms skill_tool. U11 preserves the one-or-more use-case wording but does not expose assessable branches, leaving a composite to review. Classification/regression, production, English, named tools and taxonomies/Spark alternatives are present. This is a qualifier/grouping/coverage failure, not candidate alignment approval.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

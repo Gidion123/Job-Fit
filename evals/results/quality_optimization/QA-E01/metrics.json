@@ -1,0 +1,299 @@
+{
+ "experiment_id": "QA-E01",
+ "fixed_input_optimization": {
+  "pairs": 20,
+  "units": 411,
+  "macro_f1": 0.6991982563702441,
+  "failure_classes": {},
+  "prompt_induced_failed_pairs": 0,
+  "per_class_f1": {
+   "MATCH": 0.8349514563106796,
+   "PARTIAL": 0.4297520661157025,
+   "NO_MATCH": 0.8328912466843501
+  },
+  "accuracy_all_units": 0.7591240875912408,
+  "accuracy_answered": 0.7878787878787878,
+  "confusion": {
+   "MATCH": {
+    "MATCH": 129,
+    "PARTIAL": 8,
+    "NO_MATCH": 2,
+    "not_assessed": 1
+   },
+   "PARTIAL": {
+    "MATCH": 14,
+    "PARTIAL": 26,
+    "NO_MATCH": 13,
+    "not_assessed": 13
+   },
+   "NO_MATCH": {
+    "MATCH": 26,
+    "PARTIAL": 21,
+    "NO_MATCH": 157,
+    "not_assessed": 1
+   }
+  },
+  "overclaim": 61,
+  "underclaim": 23,
+  "unsupported_positive": 47,
+  "unsupported_positive_by_field": {
+   "knowledge_area": 32,
+   "soft_skill": 7,
+   "other": 3,
+   "skill_tool": 1,
+   "education": 4
+  },
+  "fabricated_experience_proxy": 0,
+  "fabricated_skill_proxy": 33,
+  "fabricated_education_proxy": 4,
+  "unassessed_units": 15,
+  "failed_pairs": [],
+  "error_codes": {},
+  "repair_count": 0,
+  "guardrail_changes": 0,
+  "latency_ms_p50": 18579.5,
+  "latency_ms_p95": 26808,
+  "per_pair": {
+   "CV1/F00021": {
+    "units": 9,
+    "agree": 7
+   },
+   "CV1/F00029": {
+    "units": 29,
+    "agree": 26
+   },
+   "CV1/F00052": {
+    "units": 28,
+    "agree": 27
+   },
+   "CV1/F00059": {
+    "units": 24,
+    "agree": 16
+   },
+   "CV1/F00187": {
+    "units": 12,
+    "agree": 12
+   },
+   "CV1/F00351": {
+    "units": 9,
+    "agree": 8
+   },
+   "CV1/F00610": {
+    "units": 25,
+    "agree": 17
+   },
+   "CV1/F00690": {
+    "units": 8,
+    "agree": 6
+   },
+   "CV1/F00806": {
+    "units": 17,
+    "agree": 13
+   },
+   "CV1/F00818": {
+    "units": 36,
+    "agree": 33
+   },
+   "CV2/F00059": {
+    "units": 24,
+    "agree": 15
+   },
+   "CV2/F00082": {
+    "units": 9,
+    "agree": 4
+   },
+   "CV2/F00108": {
+    "units": 21,
+    "agree": 12
+   },
+   "CV2/F00332": {
+    "units": 16,
+    "agree": 11
+   },
+   "CV2/F00343": {
+    "units": 9,
+    "agree": 9
+   },
+   "CV2/F00442": {
+    "units": 37,
+    "agree": 19
+   },
+   "CV2/F00554": {
+    "units": 31,
+    "agree": 24
+   },
+   "CV2/F00558": {
+    "units": 25,
+    "agree": 19
+   },
+   "CV2/F00645": {
+    "units": 12,
+    "agree": 10
+   },
+   "CV2/F00682": {
+    "units": 30,
+    "agree": 24
+   }
+  },
+  "leave_one_pair_out_accuracy": {
+   "CV1/F00021": 0.7587064676616916,
+   "CV1/F00029": 0.7486910994764397,
+   "CV1/F00052": 0.7441253263707572,
+   "CV1/F00059": 0.7648578811369509,
+   "CV1/F00187": 0.7518796992481203,
+   "CV1/F00351": 0.7562189054726368,
+   "CV1/F00610": 0.7642487046632125,
+   "CV1/F00690": 0.7593052109181141,
+   "CV1/F00806": 0.7588832487309645,
+   "CV1/F00818": 0.744,
+   "CV2/F00059": 0.7674418604651163,
+   "CV2/F00082": 0.7661691542288557,
+   "CV2/F00108": 0.7692307692307693,
+   "CV2/F00332": 0.7620253164556962,
+   "CV2/F00343": 0.753731343283582,
+   "CV2/F00442": 0.7834224598930482,
+   "CV2/F00554": 0.7578947368421053,
+   "CV2/F00558": 0.7590673575129534,
+   "CV2/F00645": 0.7568922305764411,
+   "CV2/F00682": 0.7559055118110236
+  }
+ },
+ "grounding": {
+  "positive_items": 463,
+  "invalid_quote_items": 0,
+  "quote_validity": 1.0
+ },
+ "ranking": {
+  "macro_p_at_5": 0.7,
+  "macro_ndcg_at_10": 0.5527468629416912,
+  "hold_rate": 0.2,
+  "held_or_unscored": 4,
+  "analyzed": 20,
+  "per_cv": {
+   "CV1": {
+    "p_at_5": 0.6,
+    "ndcg_at_10": 0.5003401870578158,
+    "order": [
+     "F00312",
+     "F00655",
+     "F00332",
+     "F00556",
+     "F00020",
+     "F00036",
+     "F00090",
+     "F00366",
+     "F00022",
+     "F00103"
+    ],
+    "unscored_in_top10": [
+     "F00366",
+     "F00022",
+     "F00103"
+    ],
+    "unjudged": []
+   },
+   "CV2": {
+    "p_at_5": 0.8,
+    "ndcg_at_10": 0.6051535388255666,
+    "order": [
+     "F00052",
+     "F00645",
+     "F00815",
+     "F00650",
+     "F00018",
+     "F00020",
+     "F00629",
+     "F00074",
+     "F00176",
+     "F00559"
+    ],
+    "unscored_in_top10": [
+     "F00559"
+    ],
+    "unjudged": []
+   }
+  },
+  "scores": {
+   "CV1/F00366": {
+    "status": "on_hold",
+    "score_pct": null
+   },
+   "CV1/F00020": {
+    "status": "final",
+    "score_pct": 50.0
+   },
+   "CV1/F00312": {
+    "status": "final",
+    "score_pct": 84.62
+   },
+   "CV1/F00022": {
+    "status": "on_hold",
+    "score_pct": null
+   },
+   "CV1/F00556": {
+    "status": "final",
+    "score_pct": 60.0
+   },
+   "CV1/F00655": {
+    "status": "final",
+    "score_pct": 68.75
+   },
+   "CV1/F00036": {
+    "status": "final",
+    "score_pct": 75.0
+   },
+   "CV1/F00090": {
+    "status": "final",
+    "score_pct": 25.0
+   },
+   "CV1/F00103": {
+    "status": "on_hold",
+    "score_pct": null
+   },
+   "CV1/F00332": {
+    "status": "final",
+    "score_pct": 66.67
+   },
+   "CV2/F00018": {
+    "status": "provisional",
+    "score_pct": 61.54
+   },
+   "CV2/F00650": {
+    "status": "final",
+    "score_pct": 66.67
+   },
+   "CV2/F00074": {
+    "status": "final",
+    "score_pct": 43.48
+   },
+   "CV2/F00815": {
+    "status": "final",
+    "score_pct": 67.65
+   },
+   "CV2/F00052": {
+    "status": "final",
+    "score_pct": 100.0
+   },
+   "CV2/F00176": {
+    "status": "final",
+    "score_pct": 25.0
+   },
+   "CV2/F00559": {
+    "status": "no_score",
+    "score_pct": null
+   },
+   "CV2/F00629": {
+    "status": "provisional",
+    "score_pct": 43.75
+   },
+   "CV2/F00645": {
+    "status": "final",
+    "score_pct": 69.23
+   },
+   "CV2/F00020": {
+    "status": "final",
+    "score_pct": 50.0
+   }
+  }
+ }
+}

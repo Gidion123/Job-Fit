@@ -1,0 +1,85 @@
+{
+  "job_id": "F00126",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "wall_ms": 39855,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00126",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Strong Python fundamentals",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Python fundamentals",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong Python fundamentals"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Experience building something with LLMs (through thesis, internship, projects, or hackathon)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "LLM building experience",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Have experience on building something with LLMs (through Thesis, internship, projects, or hackathon)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Can explain the concept and its objective in a simple way",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Explaining concepts simply",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "can explain the concept and its objective in a simple way"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Fresh graduate (Bachelor's or Master's) in a quantitative field (Statistics, Computer Science, Math, Engineering, Physics) or maximum 2 years professional experience",
+        "kind": "simple",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "Fresh graduate quantitative degree or max 2 years experience",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Fresh graduate (Bachelor's or Master's) in a quantitative field: Statistics, Computer Science, Math, Engineering, Physics or have maximum 2 years professional experience"
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

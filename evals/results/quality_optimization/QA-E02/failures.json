@@ -1,0 +1,799 @@
+{
+ "experiment_id": "QA-E02",
+ "unit_errors": [
+  {
+   "unit": "CV1/F00021/G26-U01",
+   "field": "experience_duration",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": null,
+   "status": "needs_clarification",
+   "direction": "unassessed"
+  },
+  {
+   "unit": "CV1/F00021/G26-U03",
+   "field": "skill_tool",
+   "importance": "required",
+   "gold": "MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV1/F00029/P07-U02",
+   "field": "experience_duration",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": null,
+   "status": "needs_clarification",
+   "direction": "unassessed"
+  },
+  {
+   "unit": "CV1/F00029/P07-U04",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV1/F00029/P07-U14",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV1/F00052/P10-U03",
+   "field": "knowledge_area",
+   "importance": "preferred",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV1/F00059/G17-U04",
+   "field": "soft_skill",
+   "importance": "required",
+   "gold": "MATCH",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV1/F00059/G17-U08",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV1/F00059/G17-U10",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV1/F00059/G17-U14",
+   "field": "knowledge_area",
+   "importance": "preferred",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV1/F00059/G17-U17",
+   "field": "knowledge_area",
+   "importance": "preferred",
+   "gold": "MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV1/F00059/G17-U18",
+   "field": "knowledge_area",
+   "importance": "preferred",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV1/F00059/G17-U20",
+   "field": "experience_duration",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": null,
+   "status": "needs_clarification",
+   "direction": "unassessed"
+  },
+  {
+   "unit": "CV1/F00187/G19-U08",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV1/F00351/G42-U02",
+   "field": "skill_tool",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "MATCH",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV1/F00351/G42-U08",
+   "field": "soft_skill",
+   "importance": "required",
+   "gold": "MATCH",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV1/F00610/G13-U01",
+   "field": "experience_duration",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": null,
+   "status": "needs_clarification",
+   "direction": "unassessed"
+  },
+  {
+   "unit": "CV1/F00610/G13-U02",
+   "field": "language",
+   "importance": "required",
+   "gold": "MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV1/F00610/G13-U10",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "MATCH",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV1/F00610/G13-U15",
+   "field": "soft_skill",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV1/F00610/G13-U19",
+   "field": "location",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": null,
+   "status": "needs_clarification",
+   "direction": "unassessed"
+  },
+  {
+   "unit": "CV1/F00610/G13-U21",
+   "field": "knowledge_area",
+   "importance": "preferred",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV1/F00610/G13-U25",
+   "field": "knowledge_area",
+   "importance": "preferred",
+   "gold": "NO_MATCH",
+   "pred": "MATCH",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV1/F00690/G11-U07",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV1/F00690/G11-U08",
+   "field": "experience_duration",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": null,
+   "status": "needs_clarification",
+   "direction": "unassessed"
+  },
+  {
+   "unit": "CV1/F00806/G18-U02",
+   "field": "experience_duration",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": null,
+   "status": "needs_clarification",
+   "direction": "unassessed"
+  },
+  {
+   "unit": "CV1/F00806/G18-U04",
+   "field": "skill_tool",
+   "importance": "required",
+   "gold": "MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV1/F00806/G18-U06",
+   "field": "soft_skill",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV1/F00806/G18-U07",
+   "field": "soft_skill",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV1/F00818/G03-U01",
+   "field": "education",
+   "importance": "required",
+   "gold": "MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV1/F00818/G03-U16",
+   "field": "soft_skill",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00059/G17-U05",
+   "field": "other",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00059/G17-U08",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00059/G17-U11",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00059/G17-U12",
+   "field": "soft_skill",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00059/G17-U13",
+   "field": "soft_skill",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00059/G17-U14",
+   "field": "knowledge_area",
+   "importance": "preferred",
+   "gold": "NO_MATCH",
+   "pred": "MATCH",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00059/G17-U18",
+   "field": "knowledge_area",
+   "importance": "preferred",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00059/G17-U20",
+   "field": "experience_duration",
+   "importance": "required",
+   "gold": "MATCH",
+   "pred": null,
+   "status": "needs_clarification",
+   "direction": "unassessed"
+  },
+  {
+   "unit": "CV2/F00082/G29-U01",
+   "field": "education",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00082/G29-U02",
+   "field": "experience_duration",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": null,
+   "status": "needs_clarification",
+   "direction": "unassessed"
+  },
+  {
+   "unit": "CV2/F00082/G29-U06",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "MATCH",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00082/G29-U07",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00108/G33-U01",
+   "field": "education",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00108/G33-U02",
+   "field": "experience_duration",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": null,
+   "status": "needs_clarification",
+   "direction": "unassessed"
+  },
+  {
+   "unit": "CV2/F00108/G33-U03",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00108/G33-U04",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "MATCH",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00108/G33-U05",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00108/G33-U06",
+   "field": "skill_tool",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00108/G33-U09",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00108/G33-U17",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00108/G33-U24",
+   "field": "language",
+   "importance": "required",
+   "gold": "MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00332/P30-U10",
+   "field": "soft_skill",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "MATCH",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00332/P30-U11",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00332/P30-U13",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00332/P30-U15",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00343/G39-U08",
+   "field": "soft_skill",
+   "importance": "required",
+   "gold": "MATCH",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00442/G16-U01",
+   "field": "experience_duration",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": null,
+   "status": "needs_clarification",
+   "direction": "unassessed"
+  },
+  {
+   "unit": "CV2/F00442/G16-U02",
+   "field": "education",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00442/G16-U04",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "MATCH",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00442/G16-U06",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00442/G16-U07",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00442/G16-U08",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00442/G16-U09",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00442/G16-U10",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00442/G16-U12",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00442/G16-U14",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00442/G16-U15",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00442/G16-U17",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "MATCH",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00442/G16-U19",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00442/G16-U20",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00442/G16-U21",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00442/G16-U38",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00554/G31-U03",
+   "field": "experience_duration",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": null,
+   "status": "needs_clarification",
+   "direction": "unassessed"
+  },
+  {
+   "unit": "CV2/F00554/G31-U05",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00554/G31-U08",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00554/G31-U11",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00554/G31-U16",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "MATCH",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00558/G05-U01",
+   "field": "experience_duration",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": null,
+   "status": "needs_clarification",
+   "direction": "unassessed"
+  },
+  {
+   "unit": "CV2/F00558/G05-U03",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00558/G05-U11",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00558/G05-U16",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00558/G05-U18",
+   "field": "other",
+   "importance": "preferred",
+   "gold": "PARTIAL",
+   "pred": "MATCH",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00558/G05-U21",
+   "field": "soft_skill",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": "NO_MATCH",
+   "status": "done",
+   "direction": "under"
+  },
+  {
+   "unit": "CV2/F00558/G05-U23",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "NO_MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "over"
+  },
+  {
+   "unit": "CV2/F00645/G06-U02",
+   "field": "experience_duration",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": null,
+   "status": "needs_clarification",
+   "direction": "unassessed"
+  },
+  {
+   "unit": "CV2/F00682/G35-U01",
+   "field": "experience_duration",
+   "importance": "required",
+   "gold": "PARTIAL",
+   "pred": null,
+   "status": "needs_clarification",
+   "direction": "unassessed"
+  },
+  {
+   "unit": "CV2/F00682/G35-U25",
+   "field": "knowledge_area",
+   "importance": "required",
+   "gold": "MATCH",
+   "pred": "PARTIAL",
+   "status": "done",
+   "direction": "under"
+  }
+ ],
+ "failed_pairs": [],
+ "error_codes": {}
+}

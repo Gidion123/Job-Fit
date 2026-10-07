@@ -1,0 +1,63 @@
+{
+ "created_at": "2026-10-07T08:50:16+00:00",
+ "decision": "KEEP BASELINE",
+ "selected": "QA-E00-BASELINE (prompt v1.1, D-087)",
+ "selection_file": "evals/results/quality_optimization/analysis/wave1_selection_v1.json",
+ "rule_sha256": "3ab3111a192b97adca625959e47bf62978f6b3743dfcc0fdf1dc404b8723f337",
+ "claim_boundary": "post-test development optimization; CP2.4 untouched; no held-out claim",
+ "cost": {
+  "phase_a_runs_usd": {
+   "qa_phase_a_w1_qa-e00-fi-r1": 0.503653,
+   "qa_phase_a_w1_qa-e00-fi-r2": 0.372558,
+   "qa_phase_a_w1_qa-e01": 0.993774,
+   "qa_phase_a_w1_qa-e02": 0.504891
+  },
+  "access_probes_usd": 0.000702,
+  "phase_a_total_usd": 2.375578,
+  "calls": 101,
+  "ledger_total_usd": 10.528495
+ },
+ "adaptive_stopping_avoided": {
+  "QA-E02 Stage B (ranking, 19 calls)": {
+   "estimate_usd": 0.5337,
+   "upper_estimate_usd": 0.723
+  },
+  "QA-E03 Stage A + B (39 calls)": {
+   "estimate_usd": 1.0937,
+   "upper_estimate_usd": 1.4818
+  },
+  "finalist repeat <ID>-R2 (20 calls)": {
+   "estimate_usd": 0.5618,
+   "upper_estimate_usd": 0.7611
+  },
+  "confirmation baseline + finalist (44 calls)": {
+   "estimate_usd": 1.2235,
+   "upper_estimate_usd": 1.6577
+  }
+ },
+ "avoided_estimate_usd": 3.4127,
+ "avoided_upper_usd": 4.6236,
+ "e02_trade_off": {
+  "baseline_mean": {
+   "macro_f1": 0.7143,
+   "accuracy": 0.753,
+   "overclaim": 67.5,
+   "underclaim": 19.5,
+   "unsupported_positive": 59
+  },
+  "qa_e02": {
+   "macro_f1": 0.7397,
+   "accuracy": 0.7859,
+   "overclaim": 40,
+   "underclaim": 33,
+   "unsupported_positive": 37
+  },
+  "reading": "Higher precision on positive claims (MATCH F1 0.901, NO_MATCH F1 0.850) at the cost of recall on true evidence: gold MATCH labeled PARTIAL 12 (baseline 9), gold PARTIAL labeled NO_MATCH 17 (baseline 9-10), gold MATCH labeled NO_MATCH 4 (baseline 1); underclaims concentrated in knowledge_area (20) and soft_skill (7)."
+ },
+ "future_hypothesis": {
+  "id": "QA-H04 (Phase A2, not created, not run)",
+  "statement": "Keep the stricter direct-evidence behaviour of QA-E02 (fewer unsupported positives and overclaims) while reducing its underclaims: the neighbouring-evidence check should apply to named tools, frameworks and listed components, while a CV sentence that shows applied use of a knowledge area in work, project or study stays MATCH, and related-but-partial evidence stays PARTIAL instead of NO_MATCH.",
+  "evidence": "QA-E02 Stage A confusion and error categories (this file, failures.json of QA-E02).",
+  "conditions": "A new decision and experiment IDs; same locked rule and data; one challenger only; the optimization subset has now been used by four prompt runs, so the sealed confirmation subset is the real check."
+ }
+}

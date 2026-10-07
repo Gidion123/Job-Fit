@@ -1,8 +1,13 @@
 # Data Splits
 
+Rules: D-046. Split by job cluster: a job and its duplicates are always on the same side. The split is written before any tuning and is not changed afterwards.
+
 | File | Content | Status |
 | --- | --- | --- |
-| `dev_job_ids.txt` | The 5 pilot jobs (J1 to J5). Used for tuning in CP2.3 | Filled 1 Oct 2026 |
-| `test_job_ids.txt` | Held-out test jobs (D-043): 10 jobs per CV from the 428 target jobs, none from the pilot jobs or their dedup clusters | Locked before any tuning in CP2.3 |
+| `dev_job_ids.txt` | Development half of the 428 target jobs, including the 5 pilot jobs | Frozen 1 Oct 2026: 214 jobs |
+| `test_job_ids.txt` | Test half of the 428 target jobs | Frozen 1 Oct 2026: 214 jobs |
 
-Split by job cluster: a job and its duplicates are always in the same split. Synthetic CV3 (Dewi) is used only with test jobs.
+- CV1 and CV2 are used with both halves; CV3 (Dewi) only with the test half.
+- Test labels and test results are never used to choose a model, prompt, weight, or K.
+
+Manifest and checks: `split_manifest.json`; report: `docs/checkpoint_2/supporting/T03_Job_Split_20261001.md`. Re-run `python scripts/make_splits.py` only to verify the frozen outputs; it rejects changed inputs or contents.

@@ -1,0 +1,27 @@
+{
+  "version": "evaluation-contract-v1",
+  "decision_id": "D-052",
+  "review_status": "approved_conventions",
+  "approval_provenance": "docs/decisions.md#D-052; Dion approved 3 October 2026",
+  "source_document": "docs/evaluation.md",
+  "source_sha256": "437b9781bcda27312ca7a8b1ef54a01b8db0536686c747473e3cb14f7f96914c",
+  "policy": {
+    "relevant_grades": [
+      2,
+      3
+    ],
+    "ndcg_gain": "exponential",
+    "ranking_positions": "original",
+    "p_at_5": "five_present_and_judged_denominator_5",
+    "ndcg_at_10": "ten_present_and_judged_else_unavailable",
+    "short_ranking": "unavailable_pending_convention",
+    "recall": "original_top_k_judged_eligible_pool",
+    "failed_evidence": "all_reference_not_assessed_false_negative",
+    "macro_f1": "all_three_aggregate_gold_classes_required",
+    "extraction_split_merge": "blocked_pending_decision"
+  },
+  "reference_readiness": "not_implied",
+  "alignment_approval": "not_implied",
+  "benchmark_execution": "not_run",
+  "api_calls": 0
+}

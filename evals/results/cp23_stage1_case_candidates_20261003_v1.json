@@ -1,0 +1,2175 @@
+{
+  "schema_version": "cp23-stage1-case-candidates-v1",
+  "status": "proposed_not_benchmark_ready",
+  "selection_basis": "Source variation selected before any CP2.3 candidate-quality comparison",
+  "api_calls": 0,
+  "gold_bundle": "evals/gold/development_v13_reviewed_20261002_r2",
+  "gold_manifest_sha256": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+  "metric_contract_receipt_sha256": "043237eba817bfbc642c78dcd60e1f10aa7f096d5307cf0f1cad86a1b0e9e1d2",
+  "source_corpus_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+  "development_split_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+  "case_count": 7,
+  "pair_count": 4,
+  "cases": [
+    {
+      "job_id": "F00332",
+      "title": "Data Scientist - Risk Analytics & Modelling",
+      "role_family": "data_science",
+      "experience_bucket": "entry",
+      "source_language": "en",
+      "source_characters": 1456,
+      "source_sha256": "9113fae9a5efa7be34c475f2ddca9a2adc34a2edd2b57f7a78da494ef1381619",
+      "gold_A_file_sha256": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+      "gold_A_rows": 16,
+      "logical_unit_count": 16,
+      "logical_unit_ids": [
+        "F00332/P30-G1",
+        "F00332/P30-U02",
+        "F00332/P30-U03",
+        "F00332/P30-U04",
+        "F00332/P30-U05",
+        "F00332/P30-U06",
+        "F00332/P30-U07",
+        "F00332/P30-U08",
+        "F00332/P30-U09",
+        "F00332/P30-U10",
+        "F00332/P30-U11",
+        "F00332/P30-U12",
+        "F00332/P30-U13",
+        "F00332/P30-U14",
+        "F00332/P30-U15",
+        "F00332/P30-U16"
+      ],
+      "A_identities": [
+        {
+          "unit_no": "P30-U01",
+          "logical_unit_id": "F00332/P30-G1",
+          "row_sha256": "dc429bfde817bd4b05a18f5f6767ae5351bc6704b76a59f81785065d72a46b54",
+          "guideline_version": "v1.3",
+          "category": "education",
+          "importance": "required",
+          "group_id": "P30-G1",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P30-U02",
+          "logical_unit_id": "F00332/P30-U02",
+          "row_sha256": "be66f6de19c411e3962eb7433b2bbeff9db75c93d2c999c22ce4a8f1d9f0771a",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P30-U03",
+          "logical_unit_id": "F00332/P30-U03",
+          "row_sha256": "cc0cb7bd9546c470e6de236d203a666de84ed9eabd3d7375d9d4ce7cd95f733d",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P30-U04",
+          "logical_unit_id": "F00332/P30-U04",
+          "row_sha256": "979bdcf6d874c594716750ad0ad523e4385f7ce16263eb95a9ffe807422a460a",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P30-U05",
+          "logical_unit_id": "F00332/P30-U05",
+          "row_sha256": "09d2c1fff3e114ab309c155b3f1e9cff0f408b73bf74367d2fb0732fe1a30cd4",
+          "guideline_version": "v1.3",
+          "category": "soft_skill",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P30-U06",
+          "logical_unit_id": "F00332/P30-U06",
+          "row_sha256": "3beb98ac39f8b5fac6a7deebc1dc08bc884d5c4b1a590ef7db7002ff3fe31f10",
+          "guideline_version": "v1.3",
+          "category": "soft_skill",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P30-U07",
+          "logical_unit_id": "F00332/P30-U07",
+          "row_sha256": "6eb0ef836c36f5ecdb31b6437e4c0acec80498a969c9a23e01d7c980ebacf5ea",
+          "guideline_version": "v1.3",
+          "category": "soft_skill",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P30-U08",
+          "logical_unit_id": "F00332/P30-U08",
+          "row_sha256": "766d5495bdb194846e5004dfedb3dc9450e88c7948a15f87fdc20e2a694a6fb2",
+          "guideline_version": "v1.3",
+          "category": "soft_skill",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P30-U09",
+          "logical_unit_id": "F00332/P30-U09",
+          "row_sha256": "092abf6ceb9539cd627302f1997c550040831f9c8123055e5c186749c4c1fbf6",
+          "guideline_version": "v1.3",
+          "category": "soft_skill",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P30-U10",
+          "logical_unit_id": "F00332/P30-U10",
+          "row_sha256": "8b26475915e92130c1c55b4c45e65017b0def63401a854fd4ffb4a2708cba1b5",
+          "guideline_version": "v1.3",
+          "category": "soft_skill",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P30-U11",
+          "logical_unit_id": "F00332/P30-U11",
+          "row_sha256": "b04b915b5e10c43c8e7ca659c5ded6e71735b33e7f2d4ba52d527849f2856ed6",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P30-U12",
+          "logical_unit_id": "F00332/P30-U12",
+          "row_sha256": "9f470da432db274842b8a391bf9b418ee9bb3e5b1c6a8ea49904899bfc2d266d",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P30-U13",
+          "logical_unit_id": "F00332/P30-U13",
+          "row_sha256": "55ad1dc4f053a950da5a632949f1b7c2b937319de271f5a57117dc82ad0bd5ff",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P30-U14",
+          "logical_unit_id": "F00332/P30-U14",
+          "row_sha256": "e57cbcf53881280088b10cf3cfa6ec796f8c492d13d2696bf3f612f89bded813",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P30-U15",
+          "logical_unit_id": "F00332/P30-U15",
+          "row_sha256": "a42371cc7dea963c5aecd8a5611a6cbd9712b8af9bbfe52a9c51af256406672c",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P30-U16",
+          "logical_unit_id": "F00332/P30-U16",
+          "row_sha256": "35e9b0d08c3c61f95d241bc342bfa6f2725fbbf6819eb23e401925a6b9445725",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "preferred",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        }
+      ],
+      "qualification_bullets_delegated_source_review": 8,
+      "exact_quote_valid_count": 16,
+      "held_A_count": 0,
+      "complete_reference_status": "delegated_source_QA_candidate_not_independent_human_certification",
+      "source_review_notes": [
+        "Source AND Python/SQL/Excel is three units, not an OR. Two model-versus-gold B interpretations remain pending, not a gold defect determination."
+      ],
+      "variation_reason": "English entry-level DS; eight qualification bullets, explicit AND and preferred credit-scoring exposure; known assisted model alignment questions.",
+      "formal_model_alignment_approved": false
+    },
+    {
+      "job_id": "F00036",
+      "title": "Data Scientist",
+      "role_family": "data_science",
+      "experience_bucket": "1-2y",
+      "source_language": "id",
+      "source_characters": 3811,
+      "source_sha256": "831248e3faf86e60196bb7d56ce63270d790903be72c185c746c1f20faf19b7d",
+      "gold_A_file_sha256": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+      "gold_A_rows": 17,
+      "logical_unit_count": 17,
+      "logical_unit_ids": [
+        "F00036/P09-G1",
+        "F00036/P09-U02",
+        "F00036/P09-G2",
+        "F00036/P09-U04",
+        "F00036/P09-U05",
+        "F00036/P09-U06",
+        "F00036/P09-G3",
+        "F00036/P09-U08",
+        "F00036/P09-G4",
+        "F00036/P09-U10",
+        "F00036/P09-U11",
+        "F00036/P09-U12",
+        "F00036/P09-U13",
+        "F00036/P09-U14",
+        "F00036/P09-G5",
+        "F00036/P09-U16",
+        "F00036/P09-U17"
+      ],
+      "A_identities": [
+        {
+          "unit_no": "P09-U01",
+          "logical_unit_id": "F00036/P09-G1",
+          "row_sha256": "ef53ca01e7af58c24a524d5f05a258605508fe53fe867add7286751183d80c8f",
+          "guideline_version": "v1.3",
+          "category": "education",
+          "importance": "required",
+          "group_id": "P09-G1",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P09-U02",
+          "logical_unit_id": "F00036/P09-U02",
+          "row_sha256": "d9ace92bdb45d241df57b7f366d627ffdb5eab5bcca72bd0ba245d77741c5708",
+          "guideline_version": "v1.3",
+          "category": "experience_duration",
+          "importance": "required",
+          "group_id": null,
+          "min_years": 2,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P09-U03",
+          "logical_unit_id": "F00036/P09-G2",
+          "row_sha256": "a5fe480ec34df92de4edd3ab2701d29a15d99bc30285cd4a84f24f3d19e68844",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": "P09-G2",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P09-U04",
+          "logical_unit_id": "F00036/P09-U04",
+          "row_sha256": "f70663a254ade5c63768d7aa73458e431eb7420f74e12e0be452d0ea34bcc741",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P09-U05",
+          "logical_unit_id": "F00036/P09-U05",
+          "row_sha256": "a1ed90fd8c865a01004c1483fd5fabc12e0c3a15c681876b03961fa0ed8d55ed",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P09-U06",
+          "logical_unit_id": "F00036/P09-U06",
+          "row_sha256": "ed5615bf6faf0ee05cc545da3308ff71375847a53c9916a70e17ee9e7c130160",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P09-U07",
+          "logical_unit_id": "F00036/P09-G3",
+          "row_sha256": "e647313715b22e0b425da47ab32e03568f1ffb45eaf0d392411eac27d69631c3",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": "P09-G3",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P09-U08",
+          "logical_unit_id": "F00036/P09-U08",
+          "row_sha256": "ce0d095093930e17482622cbdeb3fe834f3f4acdf8a627b3a4054415d8c0d98e",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P09-U09",
+          "logical_unit_id": "F00036/P09-G4",
+          "row_sha256": "1feaabd4aee1c2cfe44feb729bc4b2bf182f8aff47a0d8abaec294cac312eacb",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": "P09-G4",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P09-U10",
+          "logical_unit_id": "F00036/P09-U10",
+          "row_sha256": "338db8dfa95fc0934bf23b77fb09b7728b43709dc73666d46625ac8721851b10",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P09-U11",
+          "logical_unit_id": "F00036/P09-U11",
+          "row_sha256": "2eba6c89db22f07d7b470bbe9c47bfc1ae78847df1602273c0e23926859a1f14",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P09-U12",
+          "logical_unit_id": "F00036/P09-U12",
+          "row_sha256": "ba15311d82a7a2acaa054a71e8a9c631de6863bd6c89035091351b8d7a947c22",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P09-U13",
+          "logical_unit_id": "F00036/P09-U13",
+          "row_sha256": "fbfd6104eb05e8329b822124177df48161a3541fe6a94c5a406287daba425a06",
+          "guideline_version": "v1.3",
+          "category": "other",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P09-U14",
+          "logical_unit_id": "F00036/P09-U14",
+          "row_sha256": "6e5e73d3e940deda14351ac1972d44e1ede20f744a4682d489c795f1fc865bfb",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "preferred",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P09-U15",
+          "logical_unit_id": "F00036/P09-G5",
+          "row_sha256": "4626fc5e37677d809f727cc2c1937d37a3db322638317941e6a8559c653a3d8f",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "preferred",
+          "group_id": "P09-G5",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P09-U16",
+          "logical_unit_id": "F00036/P09-U16",
+          "row_sha256": "23db2bb7c5de37adcfc03e5deb9880350588aac7bd899e5aacbb0b840695828a",
+          "guideline_version": "v1.3",
+          "category": "soft_skill",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P09-U17",
+          "logical_unit_id": "F00036/P09-U17",
+          "row_sha256": "d02ebae03d3fdcec751e1029d16c4f07617ef61add4ff94815a65687b2140483",
+          "guideline_version": "v1.3",
+          "category": "soft_skill",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        }
+      ],
+      "qualification_bullets_delegated_source_review": 10,
+      "exact_quote_valid_count": 17,
+      "held_A_count": 0,
+      "complete_reference_status": "delegated_source_QA_candidate_not_independent_human_certification",
+      "source_review_notes": [
+        "2-3 years stays scoped to professional Data Scientist or similar work; projects alone do not satisfy duration."
+      ],
+      "variation_reason": "Indonesian 2-3-year DS; tool alternatives, ML components and preferred big-data clause.",
+      "formal_model_alignment_approved": false
+    },
+    {
+      "job_id": "F00309",
+      "title": "Data Scientist - AI/ML",
+      "role_family": "data_science",
+      "experience_bucket": "1-2y",
+      "source_language": "en",
+      "source_characters": 1361,
+      "source_sha256": "bebe8392865ea77ac7453db73d0e6d688608b2ae539397073ec2f77538b0a8a3",
+      "gold_A_file_sha256": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+      "gold_A_rows": 9,
+      "logical_unit_count": 9,
+      "logical_unit_ids": [
+        "F00309/P26-U01",
+        "F00309/P26-U02",
+        "F00309/P26-U03",
+        "F00309/P26-U04",
+        "F00309/P26-U05",
+        "F00309/P26-U06",
+        "F00309/P26-U07",
+        "F00309/P26-U08",
+        "F00309/P26-G1"
+      ],
+      "A_identities": [
+        {
+          "unit_no": "P26-U01",
+          "logical_unit_id": "F00309/P26-U01",
+          "row_sha256": "3caf47e50bf1b163d694b1255b77dec9e903d55f6cb1607493803a33f8280c49",
+          "guideline_version": "v1.3",
+          "category": "experience_duration",
+          "importance": "preferred",
+          "group_id": null,
+          "min_years": 1,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P26-U02",
+          "logical_unit_id": "F00309/P26-U02",
+          "row_sha256": "bcf938b46e9bb9b8bc185aad3612c3a154f8036c376cc86c2616e30fc119d303",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "preferred",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P26-U03",
+          "logical_unit_id": "F00309/P26-U03",
+          "row_sha256": "fb5c7d3d576bab7564b9f3d3f812ce5b15228a6cc5b97372aa03723f401812f7",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "preferred",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P26-U04",
+          "logical_unit_id": "F00309/P26-U04",
+          "row_sha256": "4c5bc246e16e41c9a4dfa7559ed80fc730266d81eb41c0f0a8e41391b7acd514",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "preferred",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P26-U05",
+          "logical_unit_id": "F00309/P26-U05",
+          "row_sha256": "ef94749b2eee6fd010e072a4e70a718c6f65ed879ae858f33bba169bf516b83b",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "preferred",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P26-U06",
+          "logical_unit_id": "F00309/P26-U06",
+          "row_sha256": "bbbcce69f3f98ead7accc4f9068e340fdd78f74800ad95b5b02564d9685873ea",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "preferred",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P26-U07",
+          "logical_unit_id": "F00309/P26-U07",
+          "row_sha256": "052573b72ea716b79323e5a337eb90ee1df2ce07c8dd2933e38977e651ebd2be",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "preferred",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P26-U08",
+          "logical_unit_id": "F00309/P26-U08",
+          "row_sha256": "2e5176e809e5a58bc758613f6319e7f1e00a1ff79e3bdce3d755b0735827656f",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "preferred",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P26-U09",
+          "logical_unit_id": "F00309/P26-G1",
+          "row_sha256": "b4deb519417307aec0d72b13a24bd3d70264b4fbe96186d9664d27869cd96476",
+          "guideline_version": "v1.3",
+          "category": "education",
+          "importance": "preferred",
+          "group_id": "P26-G1",
+          "min_years": null,
+          "source_quote_exact": true
+        }
+      ],
+      "qualification_bullets_delegated_source_review": 3,
+      "exact_quote_valid_count": 9,
+      "held_A_count": 0,
+      "complete_reference_status": "delegated_source_QA_candidate_not_independent_human_certification",
+      "source_review_notes": [
+        "Preferred heading governs all three clauses; an empty required score denominator is legitimate."
+      ],
+      "variation_reason": "English short DS; entire qualifications section preferred, including 1-3-year qualifier; zero-required-score case.",
+      "formal_model_alignment_approved": false
+    },
+    {
+      "job_id": "F00354",
+      "title": "Intern (TGI - Machine Learning/ AI Engineering)",
+      "role_family": "ai_ml_engineering",
+      "experience_bucket": "entry",
+      "source_language": "en",
+      "source_characters": 3966,
+      "source_sha256": "1031ae0641ebd36ed68e1075546b2db8b761489fabd6fef3001c46b8780d467c",
+      "gold_A_file_sha256": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+      "gold_A_rows": 29,
+      "logical_unit_count": 29,
+      "logical_unit_ids": [
+        "F00354/P32-G1",
+        "F00354/P32-U02",
+        "F00354/P32-U03",
+        "F00354/P32-U04",
+        "F00354/P32-U05",
+        "F00354/P32-U06",
+        "F00354/P32-U07",
+        "F00354/P32-U08",
+        "F00354/P32-U09",
+        "F00354/P32-U10",
+        "F00354/P32-U11",
+        "F00354/P32-U12",
+        "F00354/P32-G2",
+        "F00354/P32-U14",
+        "F00354/P32-U15",
+        "F00354/P32-U16",
+        "F00354/P32-U17",
+        "F00354/P32-U18",
+        "F00354/P32-U19",
+        "F00354/P32-U20",
+        "F00354/P32-U21",
+        "F00354/P32-U22",
+        "F00354/P32-U23",
+        "F00354/P32-U24",
+        "F00354/P32-U25",
+        "F00354/P32-U26",
+        "F00354/P32-U27",
+        "F00354/P32-U28",
+        "F00354/P32-U29"
+      ],
+      "A_identities": [
+        {
+          "unit_no": "P32-U01",
+          "logical_unit_id": "F00354/P32-G1",
+          "row_sha256": "6ed6e073bf7c8ff093f3a66b3a62f8994682aba778f503965da94dac9501de74",
+          "guideline_version": "v1.3",
+          "category": "education",
+          "importance": "required",
+          "group_id": "P32-G1",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U02",
+          "logical_unit_id": "F00354/P32-U02",
+          "row_sha256": "c6d501d2cb4994a47ec9160635045e60c0e8cee76c2e2a476e4e175b30291f12",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U03",
+          "logical_unit_id": "F00354/P32-U03",
+          "row_sha256": "5688683127ff80a76270bd5576201d60010a7c9f83c7ff2bee43e98d6567ea62",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U04",
+          "logical_unit_id": "F00354/P32-U04",
+          "row_sha256": "6fe41423710207d80e4784b66c329eb721e93ccc0f77d803f261cc2f01fbcbc7",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U05",
+          "logical_unit_id": "F00354/P32-U05",
+          "row_sha256": "17ede6e8d1e6d63e844b20f06ee4bd4350c10b588392cdfafa6e67495152b930",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U06",
+          "logical_unit_id": "F00354/P32-U06",
+          "row_sha256": "a288c6ec4292d104a0fc54527b8dc0336e5c6fa22694264def4a0e6c26125659",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U07",
+          "logical_unit_id": "F00354/P32-U07",
+          "row_sha256": "58a870658662e6fefe69ce9b4152963415f3da4f47ea0acc15832106517881e1",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U08",
+          "logical_unit_id": "F00354/P32-U08",
+          "row_sha256": "3c06b2386f18a6cd6c9dfac36491899529557d36d7606d8503419b7cea8779b7",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U09",
+          "logical_unit_id": "F00354/P32-U09",
+          "row_sha256": "291ed17700e2541a375b0099b3b10eff586bb20efab21b69a32cbba71e567019",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U10",
+          "logical_unit_id": "F00354/P32-U10",
+          "row_sha256": "e08d8e70b4f9d33b1773d56efa26f83b655c1c1cb0e225734b71650aa93e618c",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U11",
+          "logical_unit_id": "F00354/P32-U11",
+          "row_sha256": "ec76e0f7513bbc08f4602a69008882b4a229646947d5deb27dd72019454561ba",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U12",
+          "logical_unit_id": "F00354/P32-U12",
+          "row_sha256": "1275416104b0d7d6598e917e883f903c23a281dbf24767bd9121d78a40473171",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U13",
+          "logical_unit_id": "F00354/P32-G2",
+          "row_sha256": "f4a8cb9ad469fd80ad706937fb8e60024fec9dc390f79556525208e56cd2291f",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": "P32-G2",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U14",
+          "logical_unit_id": "F00354/P32-U14",
+          "row_sha256": "9856a8b0d233f6c5b769763cf4192c64d830627297c11e0e682c46c6516c0c79",
+          "guideline_version": "v1.3",
+          "category": "soft_skill",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U15",
+          "logical_unit_id": "F00354/P32-U15",
+          "row_sha256": "f240b269174eb0733c4aaf03dc67847624f0512f904e2f55dc486ea275c533d2",
+          "guideline_version": "v1.3",
+          "category": "soft_skill",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U16",
+          "logical_unit_id": "F00354/P32-U16",
+          "row_sha256": "3e109bc476eb655bd0603d6544298a70b33a333bff3c5b72474cc89c36aa79bf",
+          "guideline_version": "v1.3",
+          "category": "soft_skill",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U17",
+          "logical_unit_id": "F00354/P32-U17",
+          "row_sha256": "79c6f318bfa393c025f0c05679599dbd065bc1c71c6e968c4de24aacd05bd8b2",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U18",
+          "logical_unit_id": "F00354/P32-U18",
+          "row_sha256": "e5e5144ab859c84f7350be2a4388abae83076167e3bd46415c36b0beca346bc7",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U19",
+          "logical_unit_id": "F00354/P32-U19",
+          "row_sha256": "9f4042098ef47c897ec9b0b1aaafe02e465a0feaf6cc2dc33241b57cff8798ca",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U20",
+          "logical_unit_id": "F00354/P32-U20",
+          "row_sha256": "78a3af5bc5bf6f1337ecc9ccd696f45f0db91ae05edd45e040e36fef24bb057c",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U21",
+          "logical_unit_id": "F00354/P32-U21",
+          "row_sha256": "ac5b064f7bb647f5e1f803b84a83684871398d9d8785084294b8263f2dac833b",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U22",
+          "logical_unit_id": "F00354/P32-U22",
+          "row_sha256": "c15c09e073cbd54ace5e2d52b3d5b81ef95f38f444eaf4561d61e7a54b5aaa01",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U23",
+          "logical_unit_id": "F00354/P32-U23",
+          "row_sha256": "8453d8a8d7fd010fdff3c2817d9c2277bd3bb3243b7769b76b918fbdd524d64a",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U24",
+          "logical_unit_id": "F00354/P32-U24",
+          "row_sha256": "463aa480a251400212743c94b52eb12243b492d2494d3e452ad187633b8e4d8e",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U25",
+          "logical_unit_id": "F00354/P32-U25",
+          "row_sha256": "dbbf38628ad1dc58708727bf867abc7d59d9e4edb5cabf8de3192e43a8b2fc33",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U26",
+          "logical_unit_id": "F00354/P32-U26",
+          "row_sha256": "fbec1a5d3d0329edc12874ee7fb345cbb3b5dcb25c4fa1d53476be0ddaac9734",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U27",
+          "logical_unit_id": "F00354/P32-U27",
+          "row_sha256": "8eabd377687c5a2a8f4fe210ddf3b88847357ede80bfcf0bac87f761f8490e73",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U28",
+          "logical_unit_id": "F00354/P32-U28",
+          "row_sha256": "a3c4c1e2de03d785753cab146126a27048d282341e3159618f8cbed9f24e65ca",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P32-U29",
+          "logical_unit_id": "F00354/P32-U29",
+          "row_sha256": "c7165b56dc4be7b4b4dbf1411aa7a70d506a22a2f0ce3c644c75222843f010cd",
+          "guideline_version": "v1.3",
+          "category": "soft_skill",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        }
+      ],
+      "qualification_bullets_delegated_source_review": 10,
+      "exact_quote_valid_count": 29,
+      "held_A_count": 0,
+      "complete_reference_status": "delegated_source_QA_candidate_not_independent_human_certification",
+      "source_review_notes": [
+        "Duplicate company description is not a requirement; qualification interest in LLM/RAG/etc is not proven technical competence."
+      ],
+      "variation_reason": "English entry ML/AI internship; ten qualification bullets, AND/OR, broad technology interest as soft-skill scope.",
+      "formal_model_alignment_approved": false
+    },
+    {
+      "job_id": "F00815",
+      "title": "Artificial Intelligence Engineer",
+      "role_family": "ai_ml_engineering",
+      "experience_bucket": "not_stated",
+      "source_language": "en",
+      "source_characters": 1649,
+      "source_sha256": "5e1c8a9d4a1f5b64c510e7e21ff5484a4ae0f298a972fffbd57081fe2d68ca09",
+      "gold_A_file_sha256": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+      "gold_A_rows": 16,
+      "logical_unit_count": 16,
+      "logical_unit_ids": [
+        "F00815/P52-U01",
+        "F00815/P52-U02",
+        "F00815/P52-G1",
+        "F00815/P52-U04",
+        "F00815/P52-U05",
+        "F00815/P52-U06",
+        "F00815/P52-U07",
+        "F00815/P52-U08",
+        "F00815/P52-G2",
+        "F00815/P52-U10",
+        "F00815/P52-G3",
+        "F00815/P52-G4",
+        "F00815/P52-U13",
+        "F00815/P52-U14",
+        "F00815/P52-U15",
+        "F00815/P52-U16"
+      ],
+      "A_identities": [
+        {
+          "unit_no": "P52-U01",
+          "logical_unit_id": "F00815/P52-U01",
+          "row_sha256": "d16ba587d272bd04771f9f78fb9226d9c4b30a23775a72d2aad8c309b6a6a37d",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P52-U02",
+          "logical_unit_id": "F00815/P52-U02",
+          "row_sha256": "47041799290b766b2da586fc07ca127c4506a49ec4b86f0c265fb351814c0e63",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P52-U03",
+          "logical_unit_id": "F00815/P52-G1",
+          "row_sha256": "440ff380ddfa88c0a40001c17d8563b449127e05708442d655c3234365086bfe",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": "P52-G1",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P52-U04",
+          "logical_unit_id": "F00815/P52-U04",
+          "row_sha256": "fcd09979538e9b3d263404a3fe77cd1bc8d3ee58261b7df4ccda8351efd6c338",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P52-U05",
+          "logical_unit_id": "F00815/P52-U05",
+          "row_sha256": "1b0fc7ac0d53be01bbd094adbfa839e37713809ff46cc27e10ceacb137ebb421",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P52-U06",
+          "logical_unit_id": "F00815/P52-U06",
+          "row_sha256": "f1061d20f7a41028101ed892d5c43ff02b09fa385234c80dfbf9b95a52690d1c",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P52-U07",
+          "logical_unit_id": "F00815/P52-U07",
+          "row_sha256": "28a1660d863b2eb2727f1dd398acb39a674d0fc85284ced60c073707ddae2082",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P52-U08",
+          "logical_unit_id": "F00815/P52-U08",
+          "row_sha256": "21533037d7860707d941fcd100d7b906bca6efbc158f03e85a5ae49902c659d3",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P52-U09",
+          "logical_unit_id": "F00815/P52-G2",
+          "row_sha256": "443820228a5efe16e8fef4cb70f4bff77e8b17836f48a055dd0d4fad90b94eeb",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": "P52-G2",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P52-U10",
+          "logical_unit_id": "F00815/P52-U10",
+          "row_sha256": "deebd97d403be3bbe04e742b0a5a15e3e63f7203a1a68540ea12b86f80c58d0e",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P52-U11",
+          "logical_unit_id": "F00815/P52-G3",
+          "row_sha256": "d3100fb7d75ae41d0e1941eba197be136d27a95bc94606ed98101f3dd9fbe58a",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": "P52-G3",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P52-U12",
+          "logical_unit_id": "F00815/P52-G4",
+          "row_sha256": "435237c9be8c78aa45c6f88b71fb67cdda9ab9ec727da51ea91ac98d8e923a30",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": "P52-G4",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P52-U13",
+          "logical_unit_id": "F00815/P52-U13",
+          "row_sha256": "15cd34a47e2747f801c59a3d19bd30f52b711c02caf4b7eedc97a4feb9b35015",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P52-U14",
+          "logical_unit_id": "F00815/P52-U14",
+          "row_sha256": "48d3d7167cdb98fa88154f565cf9cc0b7872dbdaa2bfb9b456c711633e8ea81a",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P52-U15",
+          "logical_unit_id": "F00815/P52-U15",
+          "row_sha256": "fd617305c772cfc7e842d500578ac5e066424d557a285d0f0d89b1bb9d9be71c",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P52-U16",
+          "logical_unit_id": "F00815/P52-U16",
+          "row_sha256": "fe5068dcd86f4744c24a90660e8bfff2661a926782eecb452346da8fe91ebcf9",
+          "guideline_version": "v1.3",
+          "category": "education",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        }
+      ],
+      "qualification_bullets_delegated_source_review": 9,
+      "exact_quote_valid_count": 16,
+      "held_A_count": 0,
+      "complete_reference_status": "delegated_source_QA_candidate_not_independent_human_certification",
+      "source_review_notes": [
+        "API build/deploy and technical framework alternatives stay distinct; category/qualifier requires reviewer confirmation before formal alignment."
+      ],
+      "variation_reason": "English AI engineer; nine requirement bullets, named framework/cloud alternatives and API experience.",
+      "formal_model_alignment_approved": false
+    },
+    {
+      "job_id": "F00010",
+      "title": "Senior AI ML Engineer (Computer Vision)",
+      "role_family": "ai_ml_engineering",
+      "experience_bucket": "5y+",
+      "source_language": "en",
+      "source_characters": 1939,
+      "source_sha256": "7f372007cee58f0d52443ea003aa4e7b44f6b42758f42e95af6f5a74603bd29e",
+      "gold_A_file_sha256": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+      "gold_A_rows": 9,
+      "logical_unit_count": 9,
+      "logical_unit_ids": [
+        "F00010/P02-G1",
+        "F00010/P02-U02",
+        "F00010/P02-U03",
+        "F00010/P02-G2",
+        "F00010/P02-G3",
+        "F00010/P02-U06",
+        "F00010/P02-U07",
+        "F00010/P02-G4",
+        "F00010/P02-U09"
+      ],
+      "A_identities": [
+        {
+          "unit_no": "P02-U01",
+          "logical_unit_id": "F00010/P02-G1",
+          "row_sha256": "5fc8f301efd5a02d9b7a91e09353a3d2e22ef3a3571d54f0efb578a37415aeb6",
+          "guideline_version": "v1.3",
+          "category": "experience_duration",
+          "importance": "required",
+          "group_id": "P02-G1",
+          "min_years": 8,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P02-U02",
+          "logical_unit_id": "F00010/P02-U02",
+          "row_sha256": "e82a30517b5469ee91e011c570e4b74be259d1bbc2f7921c5ad21e507efe6bb7",
+          "guideline_version": "v1.3",
+          "category": "language",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P02-U03",
+          "logical_unit_id": "F00010/P02-U03",
+          "row_sha256": "a576e8248cb014f62ca5e8fd9ad8fa1dfe0f470c3e16989639dd5b2b7306cf94",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P02-U04",
+          "logical_unit_id": "F00010/P02-G2",
+          "row_sha256": "5395eda88c33e43870a3dc0d278af6da66454e1c5fe085ec0ea042fdc399b32c",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": "P02-G2",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P02-U05",
+          "logical_unit_id": "F00010/P02-G3",
+          "row_sha256": "ad734f4b4ca603da32a4789048f8f84d69e0fc7db8264a9ba24d38e8282ae061",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": "P02-G3",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P02-U06",
+          "logical_unit_id": "F00010/P02-U06",
+          "row_sha256": "8c062067c223d10d2acd37b92b9852b3b2231fa2a089f7f763da90e9c52228f3",
+          "guideline_version": "v1.3",
+          "category": "soft_skill",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P02-U07",
+          "logical_unit_id": "F00010/P02-U07",
+          "row_sha256": "eb5528a1f159c261f2d4d1d5cd308bd42e2a6f39b3636ffbf0676a8ce8557651",
+          "guideline_version": "v1.3",
+          "category": "soft_skill",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P02-U08",
+          "logical_unit_id": "F00010/P02-G4",
+          "row_sha256": "ea89aabbb75f9255943389af0f198b7cf69348f7402b8f3b0ca28c349c0858e3",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "preferred",
+          "group_id": "P02-G4",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P02-U09",
+          "logical_unit_id": "F00010/P02-U09",
+          "row_sha256": "543d37d97b8254de7bd59496aada15b5c71c77d7622279ffae2dac4c3e81e071",
+          "guideline_version": "v1.3",
+          "category": "work_authorization",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        }
+      ],
+      "qualification_bullets_delegated_source_review": 7,
+      "exact_quote_valid_count": 9,
+      "held_A_count": 0,
+      "complete_reference_status": "delegated_source_QA_candidate_not_independent_human_certification",
+      "source_review_notes": [
+        "English communication and remote cross-functional communication retain different qualifiers; 8 years is role-scoped."
+      ],
+      "variation_reason": "English senior computer-vision title, 8-year qualified AI/ML/DS duration; cloud deployment and Indonesian citizenship.",
+      "formal_model_alignment_approved": false
+    },
+    {
+      "job_id": "F00018",
+      "title": "Lowongan Kerja Senior ML Engineer LLMs, AWS",
+      "role_family": "ai_ml_engineering",
+      "experience_bucket": "not_stated",
+      "source_language": "mixed_id_en",
+      "source_characters": 4551,
+      "source_sha256": "f409e9a55d3bc70109c69b1ee7aa779e5e866428ca42e6439a4901fa3187d3d4",
+      "gold_A_file_sha256": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+      "gold_A_rows": 24,
+      "logical_unit_count": 24,
+      "logical_unit_ids": [
+        "F00018/P04-U01",
+        "F00018/P04-U02",
+        "F00018/P04-U03",
+        "F00018/P04-U04",
+        "F00018/P04-U05",
+        "F00018/P04-U06",
+        "F00018/P04-U07",
+        "F00018/P04-U08",
+        "F00018/P04-U09",
+        "F00018/P04-U10",
+        "F00018/P04-U11",
+        "F00018/P04-U12",
+        "F00018/P04-U13",
+        "F00018/P04-U14",
+        "F00018/P04-U15",
+        "F00018/P04-U16",
+        "F00018/P04-U17",
+        "F00018/P04-U18",
+        "F00018/P04-U19",
+        "F00018/P04-G1",
+        "F00018/P04-U21",
+        "F00018/P04-G2",
+        "F00018/P04-U23",
+        "F00018/P04-U18-AWS"
+      ],
+      "A_identities": [
+        {
+          "unit_no": "P04-U01",
+          "logical_unit_id": "F00018/P04-U01",
+          "row_sha256": "09ff242caa7f5ffe2ba141a93a9726d1fb2eab80cfd377f721154125c3fbb448",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U02",
+          "logical_unit_id": "F00018/P04-U02",
+          "row_sha256": "9b864efeb60df1b3f13da3332eb2a7fd9280e04b684433ce0b5c90dcca3b3b60",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U03",
+          "logical_unit_id": "F00018/P04-U03",
+          "row_sha256": "ea51811153bd9e1780fb9e819c204c875ee28c1fe2775cdb520b5a9abe259fcc",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U04",
+          "logical_unit_id": "F00018/P04-U04",
+          "row_sha256": "61c78a3b7cd16268d0c10125c21841d5200c44c44361f1e415be214cb34239fd",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U05",
+          "logical_unit_id": "F00018/P04-U05",
+          "row_sha256": "7c310d9d4b6b1e94172501fb8a84d14e88d7ff02b9a85d59b8e42e15ff71d23d",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U06",
+          "logical_unit_id": "F00018/P04-U06",
+          "row_sha256": "cfca648c66127d6636730e9f85de705e7c6e9b2e4a761a58cc81a512d88c3dff",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "preferred",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U07",
+          "logical_unit_id": "F00018/P04-U07",
+          "row_sha256": "55d160de95fc7ec245dbaf02acf25146a3be5a1a4513ff932a6602d071a282b9",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U08",
+          "logical_unit_id": "F00018/P04-U08",
+          "row_sha256": "9afeb6dc6c19d42c8438480e2680508679568730a7683d2da640ed5d21b8a379",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U09",
+          "logical_unit_id": "F00018/P04-U09",
+          "row_sha256": "809aae205501722a2b763d494ef6368500dc142b4a13a9aa6290b05d1620df78",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U10",
+          "logical_unit_id": "F00018/P04-U10",
+          "row_sha256": "2f53562f942e2146fd5e86ece9ba0550db774f33edc9d834f294d401bd792f29",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U11",
+          "logical_unit_id": "F00018/P04-U11",
+          "row_sha256": "439172c3c4f9611af3b0b2d1741e1eb327c80984e483327bead94a36319b57ce",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U12",
+          "logical_unit_id": "F00018/P04-U12",
+          "row_sha256": "c7aa128b77a512efaa7aedb72b79205ec3a28421ec7c4c1a2c14e50536a76040",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U13",
+          "logical_unit_id": "F00018/P04-U13",
+          "row_sha256": "e05c909e3ff7db2ae3fc4091f69fde3905b67be8f073f0a6d54c5b12c5f3ff33",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U14",
+          "logical_unit_id": "F00018/P04-U14",
+          "row_sha256": "56f585521917b46b00970f8c761349a0aed86de00210bd6db7ac885509ebbfe3",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U15",
+          "logical_unit_id": "F00018/P04-U15",
+          "row_sha256": "c5288746413ee3ab3ba5d99c525918eb45cfd850799762a58508506a00d218b9",
+          "guideline_version": "v1.3",
+          "category": "language",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U16",
+          "logical_unit_id": "F00018/P04-U16",
+          "row_sha256": "94423034e4d380fa05b76e06fec5c8410b0f2adebc95a6c24fc948b66ad0093f",
+          "guideline_version": "v1.3",
+          "category": "soft_skill",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U17",
+          "logical_unit_id": "F00018/P04-U17",
+          "row_sha256": "6f0d0dd8c66d8d262ca12cf444783fe03f4f164a0fa018ab0a972ef11074b9ea",
+          "guideline_version": "v1.3",
+          "category": "soft_skill",
+          "importance": "required",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U18",
+          "logical_unit_id": "F00018/P04-U18",
+          "row_sha256": "b438dd9718128464e43c5c1ed0cd9dc154bed9699c68afcf2e410d359c655232",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "preferred",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U19",
+          "logical_unit_id": "F00018/P04-U19",
+          "row_sha256": "1a682ee1d0646f6b40425238e2eb9403474834a038168a7f6662724b4ef87884",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "preferred",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U20",
+          "logical_unit_id": "F00018/P04-G1",
+          "row_sha256": "34f99a272b43ecb69c3ac43cc89d35940e91ad36f471efa801249e024d08a0c3",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "preferred",
+          "group_id": "P04-G1",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U21",
+          "logical_unit_id": "F00018/P04-U21",
+          "row_sha256": "f6789a39db0a9786cae689ba8ec998ef5b08bc92787dde958fa0f8f724995024",
+          "guideline_version": "v1.3",
+          "category": "knowledge_area",
+          "importance": "preferred",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U22",
+          "logical_unit_id": "F00018/P04-G2",
+          "row_sha256": "96b3d201c79c2ea3516336754e2e7e705482d72c424e7fc6c4d9e41c84306324",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "preferred",
+          "group_id": "P04-G2",
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U23",
+          "logical_unit_id": "F00018/P04-U23",
+          "row_sha256": "9bb82e958fffb42c800083ddbbfd626c68aeb02a43f014bc49c02329309999f9",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "preferred",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        },
+        {
+          "unit_no": "P04-U18-AWS",
+          "logical_unit_id": "F00018/P04-U18-AWS",
+          "row_sha256": "47ff9b8b3a9535b8a7f0a4cea4d6904a7c40ab5a5dc2df176eb0be5c45b8871d",
+          "guideline_version": "v1.3",
+          "category": "skill_tool",
+          "importance": "preferred",
+          "group_id": null,
+          "min_years": null,
+          "source_quote_exact": true
+        }
+      ],
+      "qualification_bullets_delegated_source_review": 15,
+      "exact_quote_valid_count": 24,
+      "held_A_count": 0,
+      "complete_reference_status": "delegated_source_QA_candidate_not_independent_human_certification",
+      "source_review_notes": [
+        "General cloud and AWS stack are both preferred under Will be a plus (approved correction). Bedrock is a separately named preference; check no unsupported double counting in formal comparison."
+      ],
+      "variation_reason": "Mixed Indonesian wrapper/English senior ML source; fifteen required/plus bullets and nested cloud/AWS preference approved in review.",
+      "formal_model_alignment_approved": false
+    }
+  ],
+  "pairs": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00332",
+      "CV_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "gold_B_file_sha256": "9451fe9459c5cf97bc42ba24edf8a7a2cfc8b933083f8d0ab8b953fd579cb788",
+      "B_rows": 16,
+      "A_to_B_identity_complete": true,
+      "positive_CV_quotes_exact": true,
+      "all_check_status_done": true,
+      "class_support": {
+        "MATCH": 9,
+        "PARTIAL": 4,
+        "NO_MATCH": 3
+      },
+      "B_identities": [
+        {
+          "unit_no": "P30-U01",
+          "row_sha256": "ba21f8951537ba8e66d57e3d4a76f1dbd7e5158fd8bce8da3d32fa5b53765c6a",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P30-U02",
+          "row_sha256": "68a5babbd0fa2ba503ab6dbc041d40cb7ad78453fc9e57663d07e2f207f0d453",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P30-U03",
+          "row_sha256": "7704ad624be2f1720f3a52eec92ff252ec4168cbd45cae58e7e0092edc042334",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P30-U04",
+          "row_sha256": "c5d64e56f2263bf07560e4d1dc05edc3e7a63ff4874a499918cd30a4461b7fbf",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P30-U05",
+          "row_sha256": "9bf09cccbe2ccf90799cb7551338c211bac2307036ea3130660ae12447d96710",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P30-U06",
+          "row_sha256": "be8e1f054e9835e47d6dbee1cd6eb49575b181389d694f6eb8d078ddca00861a",
+          "guideline_version": "v1.3",
+          "label": "NO_MATCH"
+        },
+        {
+          "unit_no": "P30-U07",
+          "row_sha256": "14f5a5a709caff5550247c3c5440e9031f75fa42b69fa82ae291aa578bb63c35",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P30-U08",
+          "row_sha256": "99e0b8d8a3ac6f57ec6ae3aa3b768f523e3dcd86605d6a34178ac2db914f92a4",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P30-U09",
+          "row_sha256": "eabf4ab65dc858db5ce8f757483ada64c0982b130d68b7935b6454aa63f8a7c0",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P30-U10",
+          "row_sha256": "0524935ee49c4b91c8f57c00e00bd062d4542969631b36c516e86e92c24e837d",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P30-U11",
+          "row_sha256": "96bb6d5952c6f522152ac85d07b5daa4e58296c76c28c6250489a58672b08a66",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P30-U12",
+          "row_sha256": "e1be44fb560db36c20e02af65297560417a21a3f4f484a446ea72909a3cae663",
+          "guideline_version": "v1.3",
+          "label": "NO_MATCH"
+        },
+        {
+          "unit_no": "P30-U13",
+          "row_sha256": "b4fe726d78b6d017275290e9b77525caec6a6f739c18127836aeb4af0b3abdb7",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P30-U14",
+          "row_sha256": "51dec7adf25e7aa3934a4ff08ae5bf90db2b025715f1576def4cc96f48a2252a",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P30-U15",
+          "row_sha256": "b7f96be64a3aed163417a80367e6c84a66ff864216e0957c10a875b7ac83244d",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P30-U16",
+          "row_sha256": "d57bbbdf5e95b4bc79e59ced60eb32e413e5575c783b7f7659124d7df80246a2",
+          "guideline_version": "v1.3",
+          "label": "NO_MATCH"
+        }
+      ],
+      "fixed_requirement_input": "reviewed A logical units for F00332",
+      "formal_model_to_gold_alignment_approved": false,
+      "special_note": "F00332 model U15/U16 versus gold P30-U08/U15 pending; gold unchanged"
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00036",
+      "CV_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "gold_B_file_sha256": "9451fe9459c5cf97bc42ba24edf8a7a2cfc8b933083f8d0ab8b953fd579cb788",
+      "B_rows": 17,
+      "A_to_B_identity_complete": true,
+      "positive_CV_quotes_exact": true,
+      "all_check_status_done": true,
+      "class_support": {
+        "MATCH": 10,
+        "PARTIAL": 3,
+        "NO_MATCH": 4
+      },
+      "B_identities": [
+        {
+          "unit_no": "P09-U01",
+          "row_sha256": "e1f0ff440c015404edb44224bc8bed718cee167de0f191a6c9ff78e51c667026",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P09-U02",
+          "row_sha256": "05b0a372a06d73d2d9220e651be2e65ff2d5847e11013a342cfdce11419c87ac",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P09-U03",
+          "row_sha256": "305b3b6267d4fe78dbc0d4ee402f3bb8d53562b68e1dcba4bf98d45013976cef",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P09-U04",
+          "row_sha256": "a9bfd0d7fb0b6d438fd46d84af601e6bae91a42b7aff66f110320642d3f0976e",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P09-U05",
+          "row_sha256": "5db9614b488569bec41be2dfa4a15191e04e5f1ba2dfb29739a8b26f42493128",
+          "guideline_version": "v1.3",
+          "label": "NO_MATCH"
+        },
+        {
+          "unit_no": "P09-U06",
+          "row_sha256": "8a715eb63562325fa52250c474ee08ab5d397ffdb7f0aa7936548a81f4aac528",
+          "guideline_version": "v1.3",
+          "label": "NO_MATCH"
+        },
+        {
+          "unit_no": "P09-U07",
+          "row_sha256": "cdf491f485769a8f4c1dc8700ff6db649ccc23f6e8a5586fa560a51696c13cca",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P09-U08",
+          "row_sha256": "60ede2a25a280ec9e5a96a7a366dfc7a110b6441646eef91b9f9e1a814d437a2",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P09-U09",
+          "row_sha256": "5715b65c35ee3e6696a216f60d7b6576f06a4189eb61bfa032f7d050416a2831",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P09-U10",
+          "row_sha256": "40f8f067de21c404dfdca57f6d3071b1711697bb5eae32a806e273742e935611",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P09-U11",
+          "row_sha256": "391889470a0778d0cbce4ca4826b125802502932e6f2152d632c99332bce03b5",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P09-U12",
+          "row_sha256": "d6ed785e83098d166ed752457f720b0dbc481ce895d8d1b25fab50a03e081677",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P09-U13",
+          "row_sha256": "524fc98f38063da75ce7847c76485c55670fc5425f47366c24aadb8d240245de",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P09-U14",
+          "row_sha256": "ba6524859adc61eeaa199fd36e381acfe31d64e628c898eae88205d76182f51f",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P09-U15",
+          "row_sha256": "29692737d6daabb8b09d2addad23a5a379265ae9760875cc2383438ee8533648",
+          "guideline_version": "v1.3",
+          "label": "NO_MATCH"
+        },
+        {
+          "unit_no": "P09-U16",
+          "row_sha256": "ec8ec27f7ed4f6663cbb48045ae53a083e55b5c5a501d3692c67824606626854",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P09-U17",
+          "row_sha256": "1825b4849410386e3778b7b79373023e98aa1e849fa8830b475128246299724f",
+          "guideline_version": "v1.3",
+          "label": "NO_MATCH"
+        }
+      ],
+      "fixed_requirement_input": "reviewed A logical units for F00036",
+      "formal_model_to_gold_alignment_approved": false,
+      "special_note": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00815",
+      "CV_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+      "gold_B_file_sha256": "9451fe9459c5cf97bc42ba24edf8a7a2cfc8b933083f8d0ab8b953fd579cb788",
+      "B_rows": 16,
+      "A_to_B_identity_complete": true,
+      "positive_CV_quotes_exact": true,
+      "all_check_status_done": true,
+      "class_support": {
+        "MATCH": 7,
+        "PARTIAL": 8,
+        "NO_MATCH": 1
+      },
+      "B_identities": [
+        {
+          "unit_no": "P52-U01",
+          "row_sha256": "c82f6714d503fb051a13725aedc24113702fa96217cd7a33272e873872b867ef",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P52-U02",
+          "row_sha256": "fba8abb9d9b3bf7f21cb66b124c5b39f90e0ed6ae0957ec9d8a42948e267ebb7",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P52-U03",
+          "row_sha256": "7e8800a0d7f700aed5e7d402dc0cfda441fe5b4bc39bb64060eaf07595a32f7b",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P52-U04",
+          "row_sha256": "5f50a20b5deb1e4b37c1791843f9fce2321522f83684d4352f28fc469fe58d8b",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P52-U05",
+          "row_sha256": "09e688b479c612f1f65743069d1284b5a16f76135f5e9bf7a8c1c8518e0417b5",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P52-U06",
+          "row_sha256": "4c496c7f4cea1c1cad03eeddd6713a1fc19f299f817ee83110482a3555604f67",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P52-U07",
+          "row_sha256": "e1a6fc9dbf851cccb192fb68c17f83c91e1506f17ee25d81480488774e5465d4",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P52-U08",
+          "row_sha256": "91ebab61d5225fe08ada12eb7555f4bc4603e681878e6a8b565121ec1195465b",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P52-U09",
+          "row_sha256": "ddefc490e7372f7bc54357bbcdfd239f0022e418ac4e98192a74750660b11c0c",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P52-U10",
+          "row_sha256": "499c28c9e30f49000b2dfc0a9b7afdd03562fbb09dcc4491d863ae9af30e82f0",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P52-U11",
+          "row_sha256": "5d9c96716d55768417ebac1a33191743967f66c292bb5936d0c4e3c25fcc2250",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P52-U12",
+          "row_sha256": "0c6d38bcc19af9050001a0a6843ae45c4d8ff31c03cc49770480b10b6120f9b0",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P52-U13",
+          "row_sha256": "96ce1d4f444c54d10559d3a98e51ec63686bf41654f606ddec2cc87f24c7b5ac",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P52-U14",
+          "row_sha256": "bf45afde1cee2803d2e900ff0a9651dc8331a24056938d6742400e93edff70b1",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P52-U15",
+          "row_sha256": "1e6b67ececa7a02bc5acccbc0d28aefec907e9d604a10bd8944c23188b8332dd",
+          "guideline_version": "v1.3",
+          "label": "NO_MATCH"
+        },
+        {
+          "unit_no": "P52-U16",
+          "row_sha256": "0d1bacfa36fd94af770244444f4b06e1d3186e648e0be58d6ae893c8b66f4cce",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        }
+      ],
+      "fixed_requirement_input": "reviewed A logical units for F00815",
+      "formal_model_to_gold_alignment_approved": false,
+      "special_note": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00018",
+      "CV_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+      "gold_B_file_sha256": "9451fe9459c5cf97bc42ba24edf8a7a2cfc8b933083f8d0ab8b953fd579cb788",
+      "B_rows": 24,
+      "A_to_B_identity_complete": true,
+      "positive_CV_quotes_exact": true,
+      "all_check_status_done": true,
+      "class_support": {
+        "MATCH": 11,
+        "PARTIAL": 5,
+        "NO_MATCH": 8
+      },
+      "B_identities": [
+        {
+          "unit_no": "P04-U01",
+          "row_sha256": "2f2f1f51ddbdf55f819455ac4afdcacf0e89149eb84e63311beff09b77c47f14",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P04-U02",
+          "row_sha256": "39cf5b3751eb9e27888fb56dbaacbcbc79d5bf3cb28e005d0900b079311489df",
+          "guideline_version": "v1.3",
+          "label": "NO_MATCH"
+        },
+        {
+          "unit_no": "P04-U03",
+          "row_sha256": "b86586555f58af4ceb66444c206dc15f84b99e377156e67154e9fe74c3cc3fc0",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P04-U04",
+          "row_sha256": "6aa0b459c4c9fbe5ccdf506d0c75da2b40e64859be6574c75da4fd192fb2f7b1",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P04-U05",
+          "row_sha256": "aef80fb25f2fd21c9b36f498ac2a60d82e9dbafd9f69a952b8703e036c11554c",
+          "guideline_version": "v1.3",
+          "label": "NO_MATCH"
+        },
+        {
+          "unit_no": "P04-U06",
+          "row_sha256": "2d2ae49de37190835e8e76f595717da02fbd3c130ee056301007e8067919464f",
+          "guideline_version": "v1.3",
+          "label": "NO_MATCH"
+        },
+        {
+          "unit_no": "P04-U07",
+          "row_sha256": "2e7a7144e790cf4d452fa07cce3d22afe9791213ea4c8e90a46f4c29641b2ed8",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P04-U08",
+          "row_sha256": "fcdbe445a929301d8500d7b8d4f7985c953ed1601b2276278693ef59b1d89f23",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P04-U09",
+          "row_sha256": "85f4d911bc8edb9955861ab911208eb1bdf7dc8f7671696eab952d3fb58573d7",
+          "guideline_version": "v1.3",
+          "label": "NO_MATCH"
+        },
+        {
+          "unit_no": "P04-U10",
+          "row_sha256": "87506c1d7b72072fe927015b3f1a4253ef4d5f05f22363a955c1566c899993a7",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P04-U11",
+          "row_sha256": "f94687469ac254b4cad31cac230fb62a4fa56ffb814f4145880879242e2f5057",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P04-U12",
+          "row_sha256": "45fe20a5e95b19a53765f46b52ab7173a9c4f58000c71b826eeb70110526ae31",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P04-U13",
+          "row_sha256": "a02c233c1bfdc3f375a7b224eb00032a5f68c3988599f495f70a51a64d951b82",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P04-U14",
+          "row_sha256": "0bd692e2159dff7ded843d4fb743a59d4d56c24eef5c1e5098265b520621b4a1",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P04-U15",
+          "row_sha256": "69096c664ebfd0d2ebe9213997aa48859df7ce8147952c8810ba54954eb4b770",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        },
+        {
+          "unit_no": "P04-U16",
+          "row_sha256": "c356db3a0f2017599dcec3192f9e65bd4a13ac90a26bfc49710da7ac44f3bcc4",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P04-U17",
+          "row_sha256": "1f1a6a3dc4dd34b7f8c7f56a842a6156992a76bc571447406bcd020e3bf882e7",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P04-U18",
+          "row_sha256": "9a65e748f9de3e0b6a95878780549701e2eb271e6508d1536a8de4ed4b7b2a4d",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P04-U19",
+          "row_sha256": "c59ebc7c2542536538e6e8878f2524ca9895316b943f96aafd8ec59d6b3457cd",
+          "guideline_version": "v1.3",
+          "label": "MATCH"
+        },
+        {
+          "unit_no": "P04-U20",
+          "row_sha256": "b1e71ba548092738b6c274b424f67638d38dbc525ea3fc1ef40d532405384fd1",
+          "guideline_version": "v1.3",
+          "label": "NO_MATCH"
+        },
+        {
+          "unit_no": "P04-U21",
+          "row_sha256": "73525fab036592970a6371f486e5a2f1967205150f40ac9a3e5b10f85ba7b66c",
+          "guideline_version": "v1.3",
+          "label": "NO_MATCH"
+        },
+        {
+          "unit_no": "P04-U22",
+          "row_sha256": "a348a308aa9be0e2eb8cda6ce9831df0ef36778ae32f2f82ff3a6794d41abc85",
+          "guideline_version": "v1.3",
+          "label": "NO_MATCH"
+        },
+        {
+          "unit_no": "P04-U23",
+          "row_sha256": "643415df60b8447cffe6a626763b6d5bd4ba5369bba98deb229bcc0227b14f38",
+          "guideline_version": "v1.3",
+          "label": "NO_MATCH"
+        },
+        {
+          "unit_no": "P04-U18-AWS",
+          "row_sha256": "3c2703efa45e4714a596a5956252ebfeb48f57f7d97a83e0697de50027b8c4cc",
+          "guideline_version": "v1.3",
+          "label": "PARTIAL"
+        }
+      ],
+      "fixed_requirement_input": "reviewed A logical units for F00018",
+      "formal_model_to_gold_alignment_approved": false,
+      "special_note": null
+    }
+  ],
+  "known_regression_separate": {
+    "job_id": "F00034",
+    "source_sha256": "8cdbfad2b5803545eb155c346253249dd72d4015024018e34706e3ddf9552826",
+    "previously_exposed_to_experimental_prompt": true,
+    "A_held_count": 1,
+    "held_reasons": [
+      "A_not_exportable",
+      "REST API practice classified skill_tool in historical gold; D-049 category review needed"
+    ],
+    "status": "hold_from_seven_until_historical_v0_1_structure_compatible",
+    "use": "regression_diagnostic_only_not_unseen_quality"
+  },
+  "review_scope": "delegated source/technical QA; no independent human model alignment approval",
+  "exclusions_considered": [
+    {
+      "job_id": "F00066",
+      "reason": "PKWT willingness qualification is absent from exported A; do not call it whole-JD complete"
+    },
+    {
+      "job_id": "F00208",
+      "reason": "US residence appears in two scored location units; overlap needs reconciliation before inclusion"
+    }
+  ],
+  "formal_metrics": null,
+  "winner": null
+}

@@ -1,0 +1,1314 @@
+{
+  "snapshot_id": "CP1_20260926",
+  "seed": 20261001,
+  "split_hashes": {
+    "dev_job_ids.txt": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+    "test_job_ids.txt": "b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435"
+  },
+  "config": {
+    "preprocessing_version": "title-clean-jd-cv-body-v1",
+    "rrf_k": 60,
+    "branch_depth": 20,
+    "batch_size": 16,
+    "max_batch_tokens": 64000
+  },
+  "cv_hashes": {
+    "CV1": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+    "CV2": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469"
+  },
+  "profiles": [
+    "a91d3cbc9fc3e8298fd42c1b497e218aaef72046718e2b73ed16f6ad1fbef66f",
+    "5684ef95f1bb44bf53eef8b4513aaabfdb9c4b29e96e9044fb8d5382fa2a7256"
+  ],
+  "cvs": {
+    "CV1": {
+      "pool_size": 29,
+      "mandatory_new_top5": 17,
+      "review_limit": 20,
+      "selection_blocked": false,
+      "selected_new": 20,
+      "already_gold_in_pool": 1,
+      "rankings": {
+        "B0": [
+          {
+            "job_id": "F00686",
+            "score": 1.0,
+            "matched": [
+              "machine_learning",
+              "python",
+              "sql"
+            ],
+            "job_skill_count": 3
+          },
+          {
+            "job_id": "F00930",
+            "score": 1.0,
+            "matched": [
+              "python",
+              "r"
+            ],
+            "job_skill_count": 2
+          },
+          {
+            "job_id": "F00330",
+            "score": 1.0,
+            "matched": [
+              "git"
+            ],
+            "job_skill_count": 1
+          },
+          {
+            "job_id": "F00438",
+            "score": 1.0,
+            "matched": [
+              "excel"
+            ],
+            "job_skill_count": 1
+          },
+          {
+            "job_id": "F00505",
+            "score": 0.8,
+            "matched": [
+              "machine_learning",
+              "python",
+              "r",
+              "sql"
+            ],
+            "job_skill_count": 5
+          },
+          {
+            "job_id": "F00332",
+            "score": 0.75,
+            "matched": [
+              "excel",
+              "python",
+              "sql"
+            ],
+            "job_skill_count": 4
+          },
+          {
+            "job_id": "F00601",
+            "score": 0.6667,
+            "matched": [
+              "git",
+              "machine_learning",
+              "pandas_numpy",
+              "python",
+              "scikit_learn",
+              "sql"
+            ],
+            "job_skill_count": 9
+          },
+          {
+            "job_id": "F00022",
+            "score": 0.6667,
+            "matched": [
+              "looker",
+              "machine_learning",
+              "python",
+              "sql"
+            ],
+            "job_skill_count": 6
+          },
+          {
+            "job_id": "F00188",
+            "score": 0.6667,
+            "matched": [
+              "excel",
+              "machine_learning",
+              "python",
+              "r"
+            ],
+            "job_skill_count": 6
+          },
+          {
+            "job_id": "F00515",
+            "score": 0.6667,
+            "matched": [
+              "machine_learning",
+              "python",
+              "r",
+              "sql"
+            ],
+            "job_skill_count": 6
+          },
+          {
+            "job_id": "F00693",
+            "score": 0.6667,
+            "matched": [
+              "excel",
+              "machine_learning",
+              "python",
+              "sql"
+            ],
+            "job_skill_count": 6
+          },
+          {
+            "job_id": "F00806",
+            "score": 0.6667,
+            "matched": [
+              "git",
+              "machine_learning",
+              "python",
+              "sql"
+            ],
+            "job_skill_count": 6
+          },
+          {
+            "job_id": "F00850",
+            "score": 0.6667,
+            "matched": [
+              "git",
+              "machine_learning",
+              "python",
+              "sql"
+            ],
+            "job_skill_count": 6
+          },
+          {
+            "job_id": "F00352",
+            "score": 0.6667,
+            "matched": [
+              "machine_learning",
+              "sql"
+            ],
+            "job_skill_count": 3
+          },
+          {
+            "job_id": "F00610",
+            "score": 0.6667,
+            "matched": [
+              "python",
+              "sql"
+            ],
+            "job_skill_count": 3
+          },
+          {
+            "job_id": "F00690",
+            "score": 0.6667,
+            "matched": [
+              "python",
+              "sql"
+            ],
+            "job_skill_count": 3
+          },
+          {
+            "job_id": "F00020",
+            "score": 0.6,
+            "matched": [
+              "excel",
+              "python",
+              "sql"
+            ],
+            "job_skill_count": 5
+          },
+          {
+            "job_id": "F00187",
+            "score": 0.6,
+            "matched": [
+              "machine_learning",
+              "python",
+              "sql"
+            ],
+            "job_skill_count": 5
+          },
+          {
+            "job_id": "F00309",
+            "score": 0.6,
+            "matched": [
+              "machine_learning",
+              "python",
+              "sql"
+            ],
+            "job_skill_count": 5
+          },
+          {
+            "job_id": "F00333",
+            "score": 0.6,
+            "matched": [
+              "excel",
+              "python",
+              "sql"
+            ],
+            "job_skill_count": 5
+          }
+        ],
+        "B1": [
+          {
+            "job_id": "F00556",
+            "score": 8.2
+          },
+          {
+            "job_id": "F00655",
+            "score": 6.2
+          },
+          {
+            "job_id": "F00208",
+            "score": 5.8
+          },
+          {
+            "job_id": "F00090",
+            "score": 5.4
+          },
+          {
+            "job_id": "F00212",
+            "score": 5.4
+          },
+          {
+            "job_id": "F00366",
+            "score": 5.4
+          },
+          {
+            "job_id": "F00369",
+            "score": 5.4
+          },
+          {
+            "job_id": "F00654",
+            "score": 5.4
+          },
+          {
+            "job_id": "F00310",
+            "score": 5.2
+          },
+          {
+            "job_id": "F00354",
+            "score": 5.0
+          },
+          {
+            "job_id": "F00851",
+            "score": 4.6
+          },
+          {
+            "job_id": "F00284",
+            "score": 4.4
+          },
+          {
+            "job_id": "F00351",
+            "score": 4.2
+          },
+          {
+            "job_id": "F00650",
+            "score": 4.2
+          },
+          {
+            "job_id": "F00818",
+            "score": 4.2
+          },
+          {
+            "job_id": "F00010",
+            "score": 4.0
+          },
+          {
+            "job_id": "F00023",
+            "score": 4.0
+          },
+          {
+            "job_id": "F00052",
+            "score": 4.0
+          },
+          {
+            "job_id": "F00663",
+            "score": 4.0
+          },
+          {
+            "job_id": "F00694",
+            "score": 4.0
+          }
+        ],
+        "dense_openai": [
+          {
+            "job_id": "F00333",
+            "score": 0.5857784611447009
+          },
+          {
+            "job_id": "F00103",
+            "score": 0.5777791492517241
+          },
+          {
+            "job_id": "F00090",
+            "score": 0.5652371976258994
+          },
+          {
+            "job_id": "F00020",
+            "score": 0.557885928886932
+          },
+          {
+            "job_id": "F00055",
+            "score": 0.5574302189378806
+          },
+          {
+            "job_id": "F00022",
+            "score": 0.5493422366658872
+          },
+          {
+            "job_id": "F00663",
+            "score": 0.5477250082384285
+          },
+          {
+            "job_id": "F00189",
+            "score": 0.5430519344118798
+          },
+          {
+            "job_id": "F00036",
+            "score": 0.5421537101129693
+          },
+          {
+            "job_id": "F00075",
+            "score": 0.5357974660100217
+          },
+          {
+            "job_id": "F00012",
+            "score": 0.5313443294601362
+          },
+          {
+            "job_id": "F00060",
+            "score": 0.5286243144484177
+          },
+          {
+            "job_id": "F00059",
+            "score": 0.5249650435842618
+          },
+          {
+            "job_id": "F00129",
+            "score": 0.5227981686320342
+          },
+          {
+            "job_id": "F00029",
+            "score": 0.522355102832695
+          },
+          {
+            "job_id": "F00601",
+            "score": 0.5219181154299822
+          },
+          {
+            "job_id": "F00436",
+            "score": 0.521712927241535
+          },
+          {
+            "job_id": "F00034",
+            "score": 0.5207499549267286
+          },
+          {
+            "job_id": "F00559",
+            "score": 0.5183112473110598
+          },
+          {
+            "job_id": "F00132",
+            "score": 0.5180311362254171
+          }
+        ],
+        "hybrid_openai": [
+          {
+            "job_id": "F00090",
+            "score": 0.03149801587301587
+          },
+          {
+            "job_id": "F00663",
+            "score": 0.027583600982429624
+          },
+          {
+            "job_id": "F00333",
+            "score": 0.01639344262295082
+          },
+          {
+            "job_id": "F00556",
+            "score": 0.01639344262295082
+          },
+          {
+            "job_id": "F00103",
+            "score": 0.016129032258064516
+          },
+          {
+            "job_id": "F00655",
+            "score": 0.016129032258064516
+          },
+          {
+            "job_id": "F00208",
+            "score": 0.015873015873015872
+          },
+          {
+            "job_id": "F00020",
+            "score": 0.015625
+          },
+          {
+            "job_id": "F00055",
+            "score": 0.015384615384615385
+          },
+          {
+            "job_id": "F00212",
+            "score": 0.015384615384615385
+          },
+          {
+            "job_id": "F00022",
+            "score": 0.015151515151515152
+          },
+          {
+            "job_id": "F00366",
+            "score": 0.015151515151515152
+          },
+          {
+            "job_id": "F00369",
+            "score": 0.014925373134328358
+          },
+          {
+            "job_id": "F00189",
+            "score": 0.014705882352941176
+          },
+          {
+            "job_id": "F00654",
+            "score": 0.014705882352941176
+          },
+          {
+            "job_id": "F00036",
+            "score": 0.014492753623188406
+          },
+          {
+            "job_id": "F00310",
+            "score": 0.014492753623188406
+          },
+          {
+            "job_id": "F00075",
+            "score": 0.014285714285714285
+          },
+          {
+            "job_id": "F00354",
+            "score": 0.014285714285714285
+          },
+          {
+            "job_id": "F00012",
+            "score": 0.014084507042253521
+          }
+        ],
+        "dense_qwen": [
+          {
+            "job_id": "F00022",
+            "score": 0.5668274572121309
+          },
+          {
+            "job_id": "F00333",
+            "score": 0.5637448506051764
+          },
+          {
+            "job_id": "F00036",
+            "score": 0.5473664246101696
+          },
+          {
+            "job_id": "F00020",
+            "score": 0.5417904034478666
+          },
+          {
+            "job_id": "F00103",
+            "score": 0.5353265338296823
+          },
+          {
+            "job_id": "F00189",
+            "score": 0.5171741288123769
+          },
+          {
+            "job_id": "F00332",
+            "score": 0.5171642323928745
+          },
+          {
+            "job_id": "F00601",
+            "score": 0.5046339341343963
+          },
+          {
+            "job_id": "F00309",
+            "score": 0.4991928933126991
+          },
+          {
+            "job_id": "F00663",
+            "score": 0.49688857701082556
+          },
+          {
+            "job_id": "F00132",
+            "score": 0.4958136069219353
+          },
+          {
+            "job_id": "F00055",
+            "score": 0.49544897567012514
+          },
+          {
+            "job_id": "F00060",
+            "score": 0.4901794773661583
+          },
+          {
+            "job_id": "F00527",
+            "score": 0.4880827055076564
+          },
+          {
+            "job_id": "F00129",
+            "score": 0.4852172228045538
+          },
+          {
+            "job_id": "F00768",
+            "score": 0.48440074455762416
+          },
+          {
+            "job_id": "F00366",
+            "score": 0.4818736084730717
+          },
+          {
+            "job_id": "F00126",
+            "score": 0.48062836662018193
+          },
+          {
+            "job_id": "F00059",
+            "score": 0.47645859787874456
+          },
+          {
+            "job_id": "F00021",
+            "score": 0.4721143601315776
+          }
+        ],
+        "hybrid_qwen": [
+          {
+            "job_id": "F00366",
+            "score": 0.02813852813852814
+          },
+          {
+            "job_id": "F00663",
+            "score": 0.02694394213381555
+          },
+          {
+            "job_id": "F00022",
+            "score": 0.01639344262295082
+          },
+          {
+            "job_id": "F00556",
+            "score": 0.01639344262295082
+          },
+          {
+            "job_id": "F00333",
+            "score": 0.016129032258064516
+          },
+          {
+            "job_id": "F00655",
+            "score": 0.016129032258064516
+          },
+          {
+            "job_id": "F00036",
+            "score": 0.015873015873015872
+          },
+          {
+            "job_id": "F00208",
+            "score": 0.015873015873015872
+          },
+          {
+            "job_id": "F00020",
+            "score": 0.015625
+          },
+          {
+            "job_id": "F00090",
+            "score": 0.015625
+          },
+          {
+            "job_id": "F00103",
+            "score": 0.015384615384615385
+          },
+          {
+            "job_id": "F00212",
+            "score": 0.015384615384615385
+          },
+          {
+            "job_id": "F00189",
+            "score": 0.015151515151515152
+          },
+          {
+            "job_id": "F00332",
+            "score": 0.014925373134328358
+          },
+          {
+            "job_id": "F00369",
+            "score": 0.014925373134328358
+          },
+          {
+            "job_id": "F00601",
+            "score": 0.014705882352941176
+          },
+          {
+            "job_id": "F00654",
+            "score": 0.014705882352941176
+          },
+          {
+            "job_id": "F00309",
+            "score": 0.014492753623188406
+          },
+          {
+            "job_id": "F00310",
+            "score": 0.014492753623188406
+          },
+          {
+            "job_id": "F00354",
+            "score": 0.014285714285714285
+          }
+        ]
+      }
+    },
+    "CV2": {
+      "pool_size": 34,
+      "mandatory_new_top5": 18,
+      "review_limit": 20,
+      "selection_blocked": false,
+      "selected_new": 20,
+      "already_gold_in_pool": 2,
+      "rankings": {
+        "B0": [
+          {
+            "job_id": "F00364",
+            "score": 1.0,
+            "matched": [
+              "deep_learning",
+              "machine_learning",
+              "mlops"
+            ],
+            "job_skill_count": 3
+          },
+          {
+            "job_id": "F00686",
+            "score": 1.0,
+            "matched": [
+              "machine_learning",
+              "python",
+              "sql"
+            ],
+            "job_skill_count": 3
+          },
+          {
+            "job_id": "F00330",
+            "score": 1.0,
+            "matched": [
+              "git"
+            ],
+            "job_skill_count": 1
+          },
+          {
+            "job_id": "F00438",
+            "score": 1.0,
+            "matched": [
+              "excel"
+            ],
+            "job_skill_count": 1
+          },
+          {
+            "job_id": "F00074",
+            "score": 0.8333,
+            "matched": [
+              "docker",
+              "embeddings",
+              "fastapi_flask_django",
+              "git",
+              "llm",
+              "openai_api",
+              "postgresql",
+              "python",
+              "rag",
+              "vector_database"
+            ],
+            "job_skill_count": 12
+          },
+          {
+            "job_id": "F00066",
+            "score": 0.8333,
+            "matched": [
+              "fastapi_flask_django",
+              "git",
+              "llm",
+              "openai_api",
+              "python"
+            ],
+            "job_skill_count": 6
+          },
+          {
+            "job_id": "F00666",
+            "score": 0.8333,
+            "matched": [
+              "llm",
+              "machine_learning",
+              "python",
+              "rag",
+              "sql"
+            ],
+            "job_skill_count": 6
+          },
+          {
+            "job_id": "F00815",
+            "score": 0.8125,
+            "matched": [
+              "aws",
+              "fastapi_flask_django",
+              "git",
+              "langchain",
+              "llm",
+              "machine_learning",
+              "openai_api",
+              "postgresql",
+              "prompt_engineering",
+              "python",
+              "rag",
+              "sql",
+              "vector_database"
+            ],
+            "job_skill_count": 16
+          },
+          {
+            "job_id": "F00412",
+            "score": 0.8,
+            "matched": [
+              "fastapi_flask_django",
+              "langchain",
+              "llm",
+              "machine_learning",
+              "postgresql",
+              "python",
+              "rag",
+              "vector_database"
+            ],
+            "job_skill_count": 10
+          },
+          {
+            "job_id": "F00933",
+            "score": 0.8,
+            "matched": [
+              "aws",
+              "machine_learning",
+              "python",
+              "rag"
+            ],
+            "job_skill_count": 5
+          },
+          {
+            "job_id": "F00077",
+            "score": 0.7778,
+            "matched": [
+              "aws",
+              "docker",
+              "fastapi_flask_django",
+              "git",
+              "mlops",
+              "postgresql",
+              "python"
+            ],
+            "job_skill_count": 9
+          },
+          {
+            "job_id": "F00601",
+            "score": 0.7778,
+            "matched": [
+              "docker",
+              "git",
+              "machine_learning",
+              "pandas_numpy",
+              "python",
+              "scikit_learn",
+              "sql"
+            ],
+            "job_skill_count": 9
+          },
+          {
+            "job_id": "F00856",
+            "score": 0.7778,
+            "matched": [
+              "docker",
+              "git",
+              "llm",
+              "openai_api",
+              "prompt_engineering",
+              "python",
+              "sql"
+            ],
+            "job_skill_count": 9
+          },
+          {
+            "job_id": "F00153",
+            "score": 0.75,
+            "matched": [
+              "aws",
+              "llm",
+              "machine_learning",
+              "python",
+              "rag",
+              "sql"
+            ],
+            "job_skill_count": 8
+          },
+          {
+            "job_id": "F00645",
+            "score": 0.75,
+            "matched": [
+              "embeddings",
+              "llm",
+              "machine_learning",
+              "prompt_engineering",
+              "python",
+              "rag"
+            ],
+            "job_skill_count": 8
+          },
+          {
+            "job_id": "F00060",
+            "score": 0.75,
+            "matched": [
+              "llm",
+              "machine_learning",
+              "python"
+            ],
+            "job_skill_count": 4
+          },
+          {
+            "job_id": "F00300",
+            "score": 0.75,
+            "matched": [
+              "llm",
+              "prompt_engineering",
+              "rag"
+            ],
+            "job_skill_count": 4
+          },
+          {
+            "job_id": "F00332",
+            "score": 0.75,
+            "matched": [
+              "excel",
+              "python",
+              "sql"
+            ],
+            "job_skill_count": 4
+          },
+          {
+            "job_id": "F00370",
+            "score": 0.75,
+            "matched": [
+              "llm",
+              "machine_learning",
+              "mlops"
+            ],
+            "job_skill_count": 4
+          },
+          {
+            "job_id": "F00436",
+            "score": 0.75,
+            "matched": [
+              "llm",
+              "machine_learning",
+              "rag"
+            ],
+            "job_skill_count": 4
+          }
+        ],
+        "B1": [
+          {
+            "job_id": "F00798",
+            "score": 28.4
+          },
+          {
+            "job_id": "F00698",
+            "score": 17.6
+          },
+          {
+            "job_id": "F00018",
+            "score": 14.8
+          },
+          {
+            "job_id": "F00624",
+            "score": 14.0
+          },
+          {
+            "job_id": "F00650",
+            "score": 12.2
+          },
+          {
+            "job_id": "F00310",
+            "score": 11.2
+          },
+          {
+            "job_id": "F00074",
+            "score": 10.8
+          },
+          {
+            "job_id": "F00815",
+            "score": 10.8
+          },
+          {
+            "job_id": "F00208",
+            "score": 10.6
+          },
+          {
+            "job_id": "F00303",
+            "score": 10.4
+          },
+          {
+            "job_id": "F00556",
+            "score": 10.2
+          },
+          {
+            "job_id": "F00682",
+            "score": 10.0
+          },
+          {
+            "job_id": "F00052",
+            "score": 9.2
+          },
+          {
+            "job_id": "F00114",
+            "score": 9.0
+          },
+          {
+            "job_id": "F00212",
+            "score": 8.2
+          },
+          {
+            "job_id": "F00463",
+            "score": 8.0
+          },
+          {
+            "job_id": "F00554",
+            "score": 8.0
+          },
+          {
+            "job_id": "F00558",
+            "score": 8.0
+          },
+          {
+            "job_id": "F00699",
+            "score": 8.0
+          },
+          {
+            "job_id": "F00629",
+            "score": 7.8
+          }
+        ],
+        "dense_openai": [
+          {
+            "job_id": "F00055",
+            "score": 0.6281922444259053
+          },
+          {
+            "job_id": "F00601",
+            "score": 0.6235306765603981
+          },
+          {
+            "job_id": "F00029",
+            "score": 0.6107668115520951
+          },
+          {
+            "job_id": "F00333",
+            "score": 0.5971120668387004
+          },
+          {
+            "job_id": "F00176",
+            "score": 0.5832327273812012
+          },
+          {
+            "job_id": "F00052",
+            "score": 0.5818639272245797
+          },
+          {
+            "job_id": "F00114",
+            "score": 0.5805461209956775
+          },
+          {
+            "job_id": "F00010",
+            "score": 0.5804381305793945
+          },
+          {
+            "job_id": "F00117",
+            "score": 0.5777904693289054
+          },
+          {
+            "job_id": "F00003",
+            "score": 0.5768341054749825
+          },
+          {
+            "job_id": "F00066",
+            "score": 0.57558579764791
+          },
+          {
+            "job_id": "F00559",
+            "score": 0.5705774832788382
+          },
+          {
+            "job_id": "F00059",
+            "score": 0.5663014363233837
+          },
+          {
+            "job_id": "F00108",
+            "score": 0.5656299392810187
+          },
+          {
+            "job_id": "F00442",
+            "score": 0.5646924158492889
+          },
+          {
+            "job_id": "F00663",
+            "score": 0.5632707554819636
+          },
+          {
+            "job_id": "F00090",
+            "score": 0.5608528602629566
+          },
+          {
+            "job_id": "F00082",
+            "score": 0.5600159494325245
+          },
+          {
+            "job_id": "F00436",
+            "score": 0.559581434997965
+          },
+          {
+            "job_id": "F00073",
+            "score": 0.5577840119959727
+          }
+        ],
+        "hybrid_openai": [
+          {
+            "job_id": "F00052",
+            "score": 0.028850145288501453
+          },
+          {
+            "job_id": "F00114",
+            "score": 0.028438886647841874
+          },
+          {
+            "job_id": "F00055",
+            "score": 0.01639344262295082
+          },
+          {
+            "job_id": "F00798",
+            "score": 0.01639344262295082
+          },
+          {
+            "job_id": "F00601",
+            "score": 0.016129032258064516
+          },
+          {
+            "job_id": "F00698",
+            "score": 0.016129032258064516
+          },
+          {
+            "job_id": "F00018",
+            "score": 0.015873015873015872
+          },
+          {
+            "job_id": "F00029",
+            "score": 0.015873015873015872
+          },
+          {
+            "job_id": "F00333",
+            "score": 0.015625
+          },
+          {
+            "job_id": "F00624",
+            "score": 0.015625
+          },
+          {
+            "job_id": "F00176",
+            "score": 0.015384615384615385
+          },
+          {
+            "job_id": "F00650",
+            "score": 0.015384615384615385
+          },
+          {
+            "job_id": "F00310",
+            "score": 0.015151515151515152
+          },
+          {
+            "job_id": "F00074",
+            "score": 0.014925373134328358
+          },
+          {
+            "job_id": "F00010",
+            "score": 0.014705882352941176
+          },
+          {
+            "job_id": "F00815",
+            "score": 0.014705882352941176
+          },
+          {
+            "job_id": "F00117",
+            "score": 0.014492753623188406
+          },
+          {
+            "job_id": "F00208",
+            "score": 0.014492753623188406
+          },
+          {
+            "job_id": "F00003",
+            "score": 0.014285714285714285
+          },
+          {
+            "job_id": "F00303",
+            "score": 0.014285714285714285
+          }
+        ],
+        "dense_qwen": [
+          {
+            "job_id": "F00018",
+            "score": 0.5961330429952572
+          },
+          {
+            "job_id": "F00020",
+            "score": 0.595141615220927
+          },
+          {
+            "job_id": "F00034",
+            "score": 0.5866361300241654
+          },
+          {
+            "job_id": "F00463",
+            "score": 0.5861199220836594
+          },
+          {
+            "job_id": "F00029",
+            "score": 0.5820209686681186
+          },
+          {
+            "job_id": "F00663",
+            "score": 0.5778559260712011
+          },
+          {
+            "job_id": "F00055",
+            "score": 0.5764597128451818
+          },
+          {
+            "job_id": "F00126",
+            "score": 0.5749224499099198
+          },
+          {
+            "job_id": "F00327",
+            "score": 0.5701139658349945
+          },
+          {
+            "job_id": "F00624",
+            "score": 0.5700419807233902
+          },
+          {
+            "job_id": "F00650",
+            "score": 0.568478567347626
+          },
+          {
+            "job_id": "F00418",
+            "score": 0.5645866240056618
+          },
+          {
+            "job_id": "F00436",
+            "score": 0.5615935701393274
+          },
+          {
+            "job_id": "F00343",
+            "score": 0.5610137581825894
+          },
+          {
+            "job_id": "F00176",
+            "score": 0.5607053826978368
+          },
+          {
+            "job_id": "F00059",
+            "score": 0.5596902632898423
+          },
+          {
+            "job_id": "F00798",
+            "score": 0.5563954809550928
+          },
+          {
+            "job_id": "F00815",
+            "score": 0.5547246371784272
+          },
+          {
+            "job_id": "F00074",
+            "score": 0.5511972125063413
+          },
+          {
+            "job_id": "F00103",
+            "score": 0.5508270920309917
+          }
+        ],
+        "hybrid_qwen": [
+          {
+            "job_id": "F00018",
+            "score": 0.032266458495966696
+          },
+          {
+            "job_id": "F00624",
+            "score": 0.029910714285714284
+          },
+          {
+            "job_id": "F00650",
+            "score": 0.02946912242686891
+          },
+          {
+            "job_id": "F00798",
+            "score": 0.02938045560996381
+          },
+          {
+            "job_id": "F00463",
+            "score": 0.028782894736842105
+          },
+          {
+            "job_id": "F00074",
+            "score": 0.027583600982429624
+          },
+          {
+            "job_id": "F00815",
+            "score": 0.027526395173453996
+          },
+          {
+            "job_id": "F00020",
+            "score": 0.016129032258064516
+          },
+          {
+            "job_id": "F00698",
+            "score": 0.016129032258064516
+          },
+          {
+            "job_id": "F00034",
+            "score": 0.015873015873015872
+          },
+          {
+            "job_id": "F00029",
+            "score": 0.015384615384615385
+          },
+          {
+            "job_id": "F00310",
+            "score": 0.015151515151515152
+          },
+          {
+            "job_id": "F00663",
+            "score": 0.015151515151515152
+          },
+          {
+            "job_id": "F00055",
+            "score": 0.014925373134328358
+          },
+          {
+            "job_id": "F00126",
+            "score": 0.014705882352941176
+          },
+          {
+            "job_id": "F00208",
+            "score": 0.014492753623188406
+          },
+          {
+            "job_id": "F00327",
+            "score": 0.014492753623188406
+          },
+          {
+            "job_id": "F00303",
+            "score": 0.014285714285714285
+          },
+          {
+            "job_id": "F00556",
+            "score": 0.014084507042253521
+          },
+          {
+            "job_id": "F00418",
+            "score": 0.013888888888888888
+          }
+        ]
+      }
+    }
+  },
+  "api_calls": 0,
+  "session_cost_usd": 0
+}

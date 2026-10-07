@@ -1,0 +1,8 @@
+{
+ "job_id": "F00480",
+ "status": "failed",
+ "attempts": 2,
+ "error_code": "schema_validation",
+ "coverage": {},
+ "extraction": null
+}

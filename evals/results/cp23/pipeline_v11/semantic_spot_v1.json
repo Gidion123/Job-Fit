@@ -1,0 +1,59 @@
+{
+  "scope": "development_CV1_CV2",
+  "status": "delegated_source_audit_not_human_approval",
+  "cases": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00103",
+      "model_unit_ids": [
+        "U07"
+      ],
+      "gold_unit_ids": [
+        "D1-U07"
+      ],
+      "jd_source_quote": "Kemampuan komunikasi tertulis dan verbal yang sangat baik.",
+      "model_label": "MATCH",
+      "model_cv_quote": "Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\"",
+      "gold_label": "NO_MATCH",
+      "finding": "A thesis title alone does not substantiate excellent written communication. Exact quote validity is not evidence entailment.",
+      "action": "Retain raw model output and reviewed gold; count as a semantic disagreement, not an approved correction."
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00103",
+      "model_unit_ids": [
+        "U10"
+      ],
+      "gold_unit_ids": [
+        "D1-U10",
+        "D1-U11",
+        "D1-U12"
+      ],
+      "jd_source_quote": "Mahir menggunakan Microsoft Office Suite (Excel, PowerPoint, Word).",
+      "model_label": "PARTIAL",
+      "gold_labels": {
+        "D1-U10": "PARTIAL",
+        "D1-U11": "NO_MATCH",
+        "D1-U12": "NO_MATCH"
+      },
+      "finding": "One model unit combines three independently assessed application requirements. This changes the score denominator and requires strict D-054 split accounting; one PARTIAL cannot stand for three gold units.",
+      "action": "Do not claim one-to-one label agreement or semantic approval."
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00029",
+      "model_unit_ids": [
+        "U06"
+      ],
+      "gold_unit_ids": [
+        "P07-U06"
+      ],
+      "jd_source_quote": "Understanding of prompts, structured outputs, RAG, and embeddings.",
+      "model_text": "Understanding of prompts",
+      "gold_text": "Prompt engineering",
+      "finding": "The model preserves the source qualifier \"Understanding\" while the reviewed reference uses \"Prompt engineering\". Whether the stronger gold phrasing is intended requires an explicit reference interpretation review.",
+      "action": "No gold change or automatic equivalence claim."
+    }
+  ],
+  "sampling_limit": "Three findings in two development CV/JD pairs. This does not validate all extracted units or matching labels."
+}

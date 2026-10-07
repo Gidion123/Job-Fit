@@ -1,0 +1,993 @@
+{
+  "schema_version": "cp23-dev-p7-v1",
+  "split": "development",
+  "api_calls": 0,
+  "gold": "evals/gold/development_v13_reviewed_20261003_stage1_r3/relevance_gold.jsonl",
+  "language_view": [
+    {
+      "cv_id": "CV1",
+      "cv_language": "id",
+      "method": "B0",
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.6279432771172868,
+      "recall": {
+        "10": {
+          "value": 0.5384615384615384,
+          "numerator": 7,
+          "denominator": 13
+        },
+        "20": {
+          "value": 0.6153846153846154,
+          "numerator": 8,
+          "denominator": 13
+        },
+        "30": {
+          "value": 0.6923076923076923,
+          "numerator": 9,
+          "denominator": 13
+        }
+      },
+      "relevant_found_by_jd_language_top20": {
+        "id": {
+          "relevant": 1,
+          "found_top20": 0
+        },
+        "en": {
+          "relevant": 12,
+          "found_top20": 8
+        }
+      },
+      "precision_intervals": [
+        {
+          "k": 5,
+          "value": 0.6,
+          "hits": 3,
+          "wilson_95": [
+            0.231,
+            0.882
+          ],
+          "unjudged": []
+        },
+        {
+          "k": 10,
+          "value": 0.7,
+          "hits": 7,
+          "wilson_95": [
+            0.397,
+            0.892
+          ],
+          "unjudged": []
+        }
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "cv_language": "id",
+      "method": "B1",
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.2971869239984233,
+      "recall": {
+        "10": {
+          "value": 0.23076923076923078,
+          "numerator": 3,
+          "denominator": 13
+        },
+        "20": {
+          "value": 0.23076923076923078,
+          "numerator": 3,
+          "denominator": 13
+        },
+        "30": {
+          "value": 0.3076923076923077,
+          "numerator": 4,
+          "denominator": 13
+        }
+      },
+      "relevant_found_by_jd_language_top20": {
+        "id": {
+          "relevant": 1,
+          "found_top20": 0
+        },
+        "en": {
+          "relevant": 12,
+          "found_top20": 3
+        }
+      },
+      "precision_intervals": [
+        {
+          "k": 5,
+          "value": 0.2,
+          "hits": 1,
+          "wilson_95": [
+            0.036,
+            0.624
+          ],
+          "unjudged": []
+        },
+        {
+          "k": 10,
+          "value": 0.3,
+          "hits": 3,
+          "wilson_95": [
+            0.108,
+            0.603
+          ],
+          "unjudged": []
+        }
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "cv_language": "id",
+      "method": "dense_openai",
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.3146104168391627,
+      "recall": {
+        "10": {
+          "value": 0.15384615384615385,
+          "numerator": 2,
+          "denominator": 13
+        },
+        "20": {
+          "value": 0.15384615384615385,
+          "numerator": 2,
+          "denominator": 13
+        },
+        "30": {
+          "value": 0.23076923076923078,
+          "numerator": 3,
+          "denominator": 13
+        }
+      },
+      "relevant_found_by_jd_language_top20": {
+        "id": {
+          "relevant": 1,
+          "found_top20": 1
+        },
+        "en": {
+          "relevant": 12,
+          "found_top20": 1
+        }
+      },
+      "precision_intervals": [
+        {
+          "k": 5,
+          "value": 0.2,
+          "hits": 1,
+          "wilson_95": [
+            0.036,
+            0.624
+          ],
+          "unjudged": []
+        },
+        {
+          "k": 10,
+          "value": 0.2,
+          "hits": 2,
+          "wilson_95": [
+            0.057,
+            0.51
+          ],
+          "unjudged": []
+        }
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "cv_language": "id",
+      "method": "hybrid_openai",
+      "p_at_5": 0.0,
+      "ndcg_at_10": 0.1638653375065445,
+      "recall": {
+        "10": {
+          "value": 0.0,
+          "numerator": 0,
+          "denominator": 13
+        },
+        "20": {
+          "value": 0.3076923076923077,
+          "numerator": 4,
+          "denominator": 13
+        },
+        "30": {
+          "value": 0.38461538461538464,
+          "numerator": 5,
+          "denominator": 13
+        }
+      },
+      "relevant_found_by_jd_language_top20": {
+        "id": {
+          "relevant": 1,
+          "found_top20": 1
+        },
+        "en": {
+          "relevant": 12,
+          "found_top20": 3
+        }
+      },
+      "precision_intervals": [
+        {
+          "k": 5,
+          "value": 0.0,
+          "hits": 0,
+          "wilson_95": [
+            0.0,
+            0.434
+          ],
+          "unjudged": []
+        },
+        {
+          "k": 10,
+          "value": 0.0,
+          "hits": 0,
+          "wilson_95": [
+            0.0,
+            0.278
+          ],
+          "unjudged": []
+        }
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "cv_language": "id",
+      "method": "dense_qwen",
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.6153497016768482,
+      "recall": {
+        "10": {
+          "value": 0.3076923076923077,
+          "numerator": 4,
+          "denominator": 13
+        },
+        "20": {
+          "value": 0.38461538461538464,
+          "numerator": 5,
+          "denominator": 13
+        },
+        "30": {
+          "value": 0.5384615384615384,
+          "numerator": 7,
+          "denominator": 13
+        }
+      },
+      "relevant_found_by_jd_language_top20": {
+        "id": {
+          "relevant": 1,
+          "found_top20": 1
+        },
+        "en": {
+          "relevant": 12,
+          "found_top20": 4
+        }
+      },
+      "precision_intervals": [
+        {
+          "k": 5,
+          "value": 0.4,
+          "hits": 2,
+          "wilson_95": [
+            0.118,
+            0.769
+          ],
+          "unjudged": []
+        },
+        {
+          "k": 10,
+          "value": 0.4,
+          "hits": 4,
+          "wilson_95": [
+            0.168,
+            0.687
+          ],
+          "unjudged": []
+        }
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "cv_language": "id",
+      "method": "hybrid_qwen",
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.354820491386454,
+      "recall": {
+        "10": {
+          "value": 0.23076923076923078,
+          "numerator": 3,
+          "denominator": 13
+        },
+        "20": {
+          "value": 0.46153846153846156,
+          "numerator": 6,
+          "denominator": 13
+        },
+        "30": {
+          "value": 0.6153846153846154,
+          "numerator": 8,
+          "denominator": 13
+        }
+      },
+      "relevant_found_by_jd_language_top20": {
+        "id": {
+          "relevant": 1,
+          "found_top20": 1
+        },
+        "en": {
+          "relevant": 12,
+          "found_top20": 5
+        }
+      },
+      "precision_intervals": [
+        {
+          "k": 5,
+          "value": 0.2,
+          "hits": 1,
+          "wilson_95": [
+            0.036,
+            0.624
+          ],
+          "unjudged": []
+        },
+        {
+          "k": 10,
+          "value": 0.3,
+          "hits": 3,
+          "wilson_95": [
+            0.108,
+            0.603
+          ],
+          "unjudged": []
+        }
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "cv_language": "en",
+      "method": "B0",
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.5795575024228476,
+      "recall": {
+        "10": {
+          "value": 0.36363636363636365,
+          "numerator": 4,
+          "denominator": 11
+        },
+        "20": {
+          "value": 0.36363636363636365,
+          "numerator": 4,
+          "denominator": 11
+        },
+        "30": {
+          "value": 0.45454545454545453,
+          "numerator": 5,
+          "denominator": 11
+        }
+      },
+      "relevant_found_by_jd_language_top20": {
+        "id": {
+          "relevant": 0,
+          "found_top20": 0
+        },
+        "en": {
+          "relevant": 11,
+          "found_top20": 4
+        }
+      },
+      "precision_intervals": [
+        {
+          "k": 5,
+          "value": 0.4,
+          "hits": 2,
+          "wilson_95": [
+            0.118,
+            0.769
+          ],
+          "unjudged": []
+        },
+        {
+          "k": 10,
+          "value": 0.4,
+          "hits": 4,
+          "wilson_95": [
+            0.168,
+            0.687
+          ],
+          "unjudged": []
+        }
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "cv_language": "en",
+      "method": "B1",
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.6023217777339952,
+      "recall": {
+        "10": {
+          "value": 0.36363636363636365,
+          "numerator": 4,
+          "denominator": 11
+        },
+        "20": {
+          "value": 0.45454545454545453,
+          "numerator": 5,
+          "denominator": 11
+        },
+        "30": {
+          "value": 0.6363636363636364,
+          "numerator": 7,
+          "denominator": 11
+        }
+      },
+      "relevant_found_by_jd_language_top20": {
+        "id": {
+          "relevant": 0,
+          "found_top20": 0
+        },
+        "en": {
+          "relevant": 11,
+          "found_top20": 5
+        }
+      },
+      "precision_intervals": [
+        {
+          "k": 5,
+          "value": 0.6,
+          "hits": 3,
+          "wilson_95": [
+            0.231,
+            0.882
+          ],
+          "unjudged": []
+        },
+        {
+          "k": 10,
+          "value": 0.4,
+          "hits": 4,
+          "wilson_95": [
+            0.168,
+            0.687
+          ],
+          "unjudged": []
+        }
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "cv_language": "en",
+      "method": "dense_openai",
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.4423609244135308,
+      "recall": {
+        "10": {
+          "value": 0.18181818181818182,
+          "numerator": 2,
+          "denominator": 11
+        },
+        "20": {
+          "value": 0.2727272727272727,
+          "numerator": 3,
+          "denominator": 11
+        },
+        "30": {
+          "value": 0.2727272727272727,
+          "numerator": 3,
+          "denominator": 11
+        }
+      },
+      "relevant_found_by_jd_language_top20": {
+        "id": {
+          "relevant": 0,
+          "found_top20": 0
+        },
+        "en": {
+          "relevant": 11,
+          "found_top20": 3
+        }
+      },
+      "precision_intervals": [
+        {
+          "k": 5,
+          "value": 0.2,
+          "hits": 1,
+          "wilson_95": [
+            0.036,
+            0.624
+          ],
+          "unjudged": []
+        },
+        {
+          "k": 10,
+          "value": 0.2,
+          "hits": 2,
+          "wilson_95": [
+            0.057,
+            0.51
+          ],
+          "unjudged": []
+        }
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "cv_language": "en",
+      "method": "hybrid_openai",
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.5955189330975375,
+      "recall": {
+        "10": {
+          "value": 0.2727272727272727,
+          "numerator": 3,
+          "denominator": 11
+        },
+        "20": {
+          "value": 0.6363636363636364,
+          "numerator": 7,
+          "denominator": 11
+        },
+        "30": {
+          "value": 0.6363636363636364,
+          "numerator": 7,
+          "denominator": 11
+        }
+      },
+      "relevant_found_by_jd_language_top20": {
+        "id": {
+          "relevant": 0,
+          "found_top20": 0
+        },
+        "en": {
+          "relevant": 11,
+          "found_top20": 7
+        }
+      },
+      "precision_intervals": [
+        {
+          "k": 5,
+          "value": 0.4,
+          "hits": 2,
+          "wilson_95": [
+            0.118,
+            0.769
+          ],
+          "unjudged": []
+        },
+        {
+          "k": 10,
+          "value": 0.3,
+          "hits": 3,
+          "wilson_95": [
+            0.108,
+            0.603
+          ],
+          "unjudged": []
+        }
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "cv_language": "en",
+      "method": "dense_qwen",
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.47794317854379453,
+      "recall": {
+        "10": {
+          "value": 0.18181818181818182,
+          "numerator": 2,
+          "denominator": 11
+        },
+        "20": {
+          "value": 0.45454545454545453,
+          "numerator": 5,
+          "denominator": 11
+        },
+        "30": {
+          "value": 0.6363636363636364,
+          "numerator": 7,
+          "denominator": 11
+        }
+      },
+      "relevant_found_by_jd_language_top20": {
+        "id": {
+          "relevant": 0,
+          "found_top20": 0
+        },
+        "en": {
+          "relevant": 11,
+          "found_top20": 5
+        }
+      },
+      "precision_intervals": [
+        {
+          "k": 5,
+          "value": 0.2,
+          "hits": 1,
+          "wilson_95": [
+            0.036,
+            0.624
+          ],
+          "unjudged": []
+        },
+        {
+          "k": 10,
+          "value": 0.2,
+          "hits": 2,
+          "wilson_95": [
+            0.057,
+            0.51
+          ],
+          "unjudged": []
+        }
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "cv_language": "en",
+      "method": "hybrid_qwen",
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.688917722133214,
+      "recall": {
+        "10": {
+          "value": 0.45454545454545453,
+          "numerator": 5,
+          "denominator": 11
+        },
+        "20": {
+          "value": 0.6363636363636364,
+          "numerator": 7,
+          "denominator": 11
+        },
+        "30": {
+          "value": 0.7272727272727273,
+          "numerator": 8,
+          "denominator": 11
+        }
+      },
+      "relevant_found_by_jd_language_top20": {
+        "id": {
+          "relevant": 0,
+          "found_top20": 0
+        },
+        "en": {
+          "relevant": 11,
+          "found_top20": 7
+        }
+      },
+      "precision_intervals": [
+        {
+          "k": 5,
+          "value": 0.4,
+          "hits": 2,
+          "wilson_95": [
+            0.118,
+            0.769
+          ],
+          "unjudged": []
+        },
+        {
+          "k": 10,
+          "value": 0.5,
+          "hits": 5,
+          "wilson_95": [
+            0.237,
+            0.763
+          ],
+          "unjudged": []
+        }
+      ]
+    }
+  ],
+  "hard_negatives": [
+    {
+      "cv_id": "CV1",
+      "list": "stage1_top10",
+      "position": 2,
+      "job_id": "F00020",
+      "relevance": 0,
+      "title": "MENTOR DATA ANALYST & AI",
+      "role_family": "ai_ml_engineering",
+      "experience_bucket": "not_stated",
+      "jd_language": "id",
+      "country": "ID",
+      "score_pct": 50.0,
+      "score_status": "final"
+    },
+    {
+      "cv_id": "CV1",
+      "list": "stage1_top10",
+      "position": 3,
+      "job_id": "F00663",
+      "relevance": 1,
+      "title": "AI EXPERT",
+      "role_family": "ai_ml_engineering",
+      "experience_bucket": "5y+",
+      "jd_language": "id",
+      "country": "ID",
+      "score_pct": null,
+      "score_status": null
+    },
+    {
+      "cv_id": "CV1",
+      "list": "stage1_top10",
+      "position": 4,
+      "job_id": "F00601",
+      "relevance": 1,
+      "title": "Data Scientist (Based in / Relocation to Bali)",
+      "role_family": "data_science",
+      "experience_bucket": "3-4y",
+      "jd_language": "en",
+      "country": "ID",
+      "score_pct": null,
+      "score_status": null
+    },
+    {
+      "cv_id": "CV1",
+      "list": "stage1_top10",
+      "position": 5,
+      "job_id": "F00284",
+      "relevance": 1,
+      "title": "Data Scientist (Up to 16k)",
+      "role_family": "data_science",
+      "experience_bucket": "3-4y",
+      "jd_language": "en",
+      "country": "MY",
+      "score_pct": null,
+      "score_status": null
+    },
+    {
+      "cv_id": "CV1",
+      "list": "stage1_top10",
+      "position": 6,
+      "job_id": "F00132",
+      "relevance": 1,
+      "title": "Data Scientist - Jakarta - WFO (ID: 707131)",
+      "role_family": "data_science",
+      "experience_bucket": "5y+",
+      "jd_language": "en",
+      "country": "ID",
+      "score_pct": null,
+      "score_status": null
+    },
+    {
+      "cv_id": "CV1",
+      "list": "stage1_top10",
+      "position": 9,
+      "job_id": "F00556",
+      "relevance": 1,
+      "title": "Machine Learning Engineer, Intern - MoneyLion",
+      "role_family": "ai_ml_engineering",
+      "experience_bucket": "entry",
+      "jd_language": "en",
+      "country": "MY",
+      "score_pct": 60.0,
+      "score_status": "final"
+    },
+    {
+      "cv_id": "CV1",
+      "list": "stage1_top10",
+      "position": 10,
+      "job_id": "F00333",
+      "relevance": 1,
+      "title": "Data Scientist Analyst (Indonesia)",
+      "role_family": "data_science",
+      "experience_bucket": "5y+",
+      "jd_language": "en",
+      "country": "ID",
+      "score_pct": null,
+      "score_status": null
+    },
+    {
+      "cv_id": "CV1",
+      "list": "final_top10",
+      "position": 2,
+      "job_id": "F00036",
+      "relevance": 1,
+      "title": "Data Scientist",
+      "role_family": "data_science",
+      "experience_bucket": "1-2y",
+      "jd_language": "id",
+      "country": "ID",
+      "score_pct": 67.86,
+      "score_status": "final"
+    },
+    {
+      "cv_id": "CV1",
+      "list": "final_top10",
+      "position": 4,
+      "job_id": "F00556",
+      "relevance": 1,
+      "title": "Machine Learning Engineer, Intern - MoneyLion",
+      "role_family": "ai_ml_engineering",
+      "experience_bucket": "entry",
+      "jd_language": "en",
+      "country": "MY",
+      "score_pct": 60.0,
+      "score_status": "final"
+    },
+    {
+      "cv_id": "CV1",
+      "list": "final_top10",
+      "position": 6,
+      "job_id": "F00020",
+      "relevance": 0,
+      "title": "MENTOR DATA ANALYST & AI",
+      "role_family": "ai_ml_engineering",
+      "experience_bucket": "not_stated",
+      "jd_language": "id",
+      "country": "ID",
+      "score_pct": 50.0,
+      "score_status": "final"
+    },
+    {
+      "cv_id": "CV1",
+      "list": "final_top10",
+      "position": 7,
+      "job_id": "F00090",
+      "relevance": 1,
+      "title": "Backend Engineer (Python & AI Integration)",
+      "role_family": "software_ai",
+      "experience_bucket": "1-2y",
+      "jd_language": "id",
+      "country": "ID",
+      "score_pct": 25.0,
+      "score_status": "final"
+    },
+    {
+      "cv_id": "CV2",
+      "list": "stage1_top10",
+      "position": 2,
+      "job_id": "F00624",
+      "relevance": 1,
+      "title": "Generative AI Engineer",
+      "role_family": "genai_llm",
+      "experience_bucket": "5y+",
+      "jd_language": "en",
+      "country": "SG",
+      "score_pct": null,
+      "score_status": null
+    },
+    {
+      "cv_id": "CV2",
+      "list": "stage1_top10",
+      "position": 4,
+      "job_id": "F00798",
+      "relevance": 1,
+      "title": "GenAI Application Engineer (LLM / RAG / Agentic AI)",
+      "role_family": "genai_llm",
+      "experience_bucket": "5y+",
+      "jd_language": "en",
+      "country": "SG",
+      "score_pct": null,
+      "score_status": null
+    },
+    {
+      "cv_id": "CV2",
+      "list": "stage1_top10",
+      "position": 5,
+      "job_id": "F00463",
+      "relevance": 1,
+      "title": "AI Expert",
+      "role_family": "ai_ml_engineering",
+      "experience_bucket": "3-4y",
+      "jd_language": "en",
+      "country": "ID",
+      "score_pct": null,
+      "score_status": null
+    },
+    {
+      "cv_id": "CV2",
+      "list": "stage1_top10",
+      "position": 6,
+      "job_id": "F00074",
+      "relevance": 1,
+      "title": "AI Application Engineer (LLM, RAG & Agentic Systems)",
+      "role_family": "genai_llm",
+      "experience_bucket": "not_stated",
+      "jd_language": "en",
+      "country": "ID",
+      "score_pct": 39.13,
+      "score_status": "final"
+    },
+    {
+      "cv_id": "CV2",
+      "list": "stage1_top10",
+      "position": 8,
+      "job_id": "F00029",
+      "relevance": 1,
+      "title": "AI Engineer \u2013 Generative AI & Agentic Systems",
+      "role_family": "genai_llm",
+      "experience_bucket": "3-4y",
+      "jd_language": "en",
+      "country": "ID",
+      "score_pct": null,
+      "score_status": null
+    },
+    {
+      "cv_id": "CV2",
+      "list": "final_top10",
+      "position": 6,
+      "job_id": "F00020",
+      "relevance": 0,
+      "title": "MENTOR DATA ANALYST & AI",
+      "role_family": "ai_ml_engineering",
+      "experience_bucket": "not_stated",
+      "jd_language": "id",
+      "country": "ID",
+      "score_pct": 50.0,
+      "score_status": "final"
+    },
+    {
+      "cv_id": "CV2",
+      "list": "final_top10",
+      "position": 8,
+      "job_id": "F00074",
+      "relevance": 1,
+      "title": "AI Application Engineer (LLM, RAG & Agentic Systems)",
+      "role_family": "genai_llm",
+      "experience_bucket": "not_stated",
+      "jd_language": "en",
+      "country": "ID",
+      "score_pct": 39.13,
+      "score_status": "final"
+    }
+  ],
+  "hard_negative_buckets": {
+    "CV1/stage1_top10": {
+      "not_stated": 1,
+      "5y+": 3,
+      "3-4y": 2,
+      "entry": 1
+    },
+    "CV1/final_top10": {
+      "1-2y": 2,
+      "entry": 1,
+      "not_stated": 1
+    },
+    "CV2/stage1_top10": {
+      "5y+": 2,
+      "3-4y": 2,
+      "not_stated": 1
+    },
+    "CV2/final_top10": {
+      "not_stated": 2
+    }
+  },
+  "final_top10": {
+    "CV1": [
+      "F00312",
+      "F00036",
+      "F00332",
+      "F00556",
+      "F00655",
+      "F00020",
+      "F00090",
+      "F00366",
+      "F00022",
+      "F00103"
+    ],
+    "CV2": [
+      "F00815",
+      "F00018",
+      "F00645",
+      "F00650",
+      "F00052",
+      "F00020",
+      "F00629",
+      "F00074",
+      "F00176",
+      "F00559"
+    ]
+  },
+  "limits": [
+    "Two CVs: one Indonesian, one English, and they also differ in profile, so a gap cannot be blamed on language alone.",
+    "Wilson intervals treat the k positions as independent trials; with one query this only shows how wide the number is.",
+    "Labels come from a pool built from these methods (pool bias, D-075)."
+  ],
+  "input_sha256": {
+    "evals/gold/development_v13_reviewed_20261003_stage1_r3/relevance_gold.jsonl": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4",
+    "evals/splits/dev_job_ids.txt": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+    "data/processed/jobs_features.jsonl": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+    "evals/results/cp22_retrieval_top30_20261002_03.json": "32d99ff3dbfe4ec8b1ba37ce0d6fb51e3449b7e508c0bc2786d51658e52569eb",
+    "evals/results/cp23/matcher_coverage_gpt-6-sol_v1/summary_v1.json": "16d60967dba5f61daeb8dfb5b27b90c899250ba93de468061c6d13f48caa0d11"
+  }
+}

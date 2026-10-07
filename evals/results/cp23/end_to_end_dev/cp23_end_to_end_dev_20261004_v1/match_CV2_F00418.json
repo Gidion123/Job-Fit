@@ -1,0 +1,355 @@
+{
+  "cv_id": "CV2",
+  "job_id": "F00418",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "wall_ms": 5569,
+  "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 8,
+    "partial": 2,
+    "required_total": 20,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+      "Required units not judged yet: U20",
+      "Requirement structure needs review; identified denominator is not validated."
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+        "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+        "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+        "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U10",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+        "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U11",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U12",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U13",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U14",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U15",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U16",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U17",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U18",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U19",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U20",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ],
+  "source_flags": [
+    {
+      "unit_id": "U01",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "cv_span": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "start": 238,
+      "end": 323,
+      "flags": []
+    },
+    {
+      "unit_id": "U01",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "cv_span": "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "start": 1335,
+      "end": 1446,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "cv_span": "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "start": 1493,
+      "end": 1603,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+      "cv_span": "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+      "start": 961,
+      "end": 1057,
+      "flags": []
+    },
+    {
+      "unit_id": "U03",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio",
+      "cv_span": "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio",
+      "start": 1719,
+      "end": 1888,
+      "flags": []
+    },
+    {
+      "unit_id": "U04",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "cv_span": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "start": 1215,
+      "end": 1332,
+      "flags": []
+    },
+    {
+      "unit_id": "U06",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+      "cv_span": "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+      "start": 522,
+      "end": 633,
+      "flags": []
+    },
+    {
+      "unit_id": "U08",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "cv_span": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "start": 1215,
+      "end": 1332,
+      "flags": []
+    },
+    {
+      "unit_id": "U09",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "cv_span": "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "start": 1335,
+      "end": 1446,
+      "flags": []
+    },
+    {
+      "unit_id": "U09",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+      "cv_span": "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+      "start": 961,
+      "end": 1057,
+      "flags": []
+    },
+    {
+      "unit_id": "U10",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "cv_span": "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "start": 1335,
+      "end": 1446,
+      "flags": []
+    },
+    {
+      "unit_id": "U10",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+      "cv_span": "Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+      "start": 961,
+      "end": 1057,
+      "flags": []
+    },
+    {
+      "unit_id": "U13",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio",
+      "cv_span": "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio",
+      "start": 1719,
+      "end": 1888,
+      "flags": []
+    },
+    {
+      "unit_id": "U15",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+      "cv_span": "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+      "start": 430,
+      "end": 519,
+      "flags": []
+    }
+  ]
+}

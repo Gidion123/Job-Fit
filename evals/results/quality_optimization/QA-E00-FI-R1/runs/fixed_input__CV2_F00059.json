@@ -1,0 +1,570 @@
+{
+ "set": "fixed_input",
+ "cv_id": "CV2",
+ "job_id": "F00059",
+ "model": "gpt-6-sol",
+ "experiment_id": "QA-E00-FI-R1",
+ "wall_ms": 22844,
+ "status": "done",
+ "error_code": null,
+ "attempts": 1,
+ "assessments": [
+  {
+   "unit_id": "G17-U01",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Ran A/B tests for ad creatives and explained results to account managers."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U02",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U03",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U04",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Ran A/B tests for ad creatives and explained results to account managers."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U05",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Forecasted monthly ad spend with Prophet for internal planning."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U06",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Managed social media campaigns and monthly budget reports in Excel.",
+    "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U07",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+    "- Ran A/B tests for ad creatives and explained results to account managers."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U08",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Forecasted monthly ad spend with Prophet for internal planning."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U09",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Ran A/B tests for ad creatives and explained results to account managers."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U10",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Forecasted monthly ad spend with Prophet for internal planning.",
+    "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U11",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Managed social media campaigns and monthly budget reports in Excel."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U12",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Ran A/B tests for ad creatives and explained results to account managers."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U13",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "**Data Science and AI Bootcamp**, Contoh Academy (online) · June 2026 - present",
+    "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U14",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+    "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U15",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U16",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U17",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U18",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+    "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U19",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U20",
+   "label": "PARTIAL",
+   "check_status": "needs_clarification",
+   "cv_quotes": [
+    "**Digital Marketing Analyst**, PT Contoh Media Digital, Bandung · March 2023 - May 2026",
+    "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+    "- Ran A/B tests for ad creatives and explained results to account managers."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U21",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "**Bachelor of Communication (S1 Ilmu Komunikasi)**, Universitas Contoh Bandung · 2016 - 2020"
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U22",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "Indonesian (native), English (professional working proficiency)"
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U23",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "Indonesian (native), English (professional working proficiency)"
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G17-U24",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+    "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  }
+ ],
+ "source_flags": [
+  {
+   "unit_id": "G17-U01",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "cv_span": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "start": 634,
+   "end": 709,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U04",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "cv_span": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "start": 634,
+   "end": 709,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U05",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Forecasted monthly ad spend with Prophet for internal planning.",
+   "cv_span": "- Forecasted monthly ad spend with Prophet for internal planning.",
+   "start": 1641,
+   "end": 1706,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U06",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Managed social media campaigns and monthly budget reports in Excel.",
+   "cv_span": "- Managed social media campaigns and monthly budget reports in Excel.",
+   "start": 794,
+   "end": 863,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U06",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio",
+   "cv_span": "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio",
+   "start": 1719,
+   "end": 1888,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U07",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "cv_span": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "start": 428,
+   "end": 519,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U07",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "cv_span": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "start": 634,
+   "end": 709,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U08",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Forecasted monthly ad spend with Prophet for internal planning.",
+   "cv_span": "- Forecasted monthly ad spend with Prophet for internal planning.",
+   "start": 1641,
+   "end": 1706,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U09",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "cv_span": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "start": 634,
+   "end": 709,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U10",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Forecasted monthly ad spend with Prophet for internal planning.",
+   "cv_span": "- Forecasted monthly ad spend with Prophet for internal planning.",
+   "start": 1641,
+   "end": 1706,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U10",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "cv_span": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "start": 428,
+   "end": 519,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U11",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Managed social media campaigns and monthly budget reports in Excel.",
+   "cv_span": "- Managed social media campaigns and monthly budget reports in Excel.",
+   "start": 794,
+   "end": 863,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U12",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "cv_span": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "start": 634,
+   "end": 709,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U13",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "**Data Science and AI Bootcamp**, Contoh Academy (online) · June 2026 - present",
+   "cv_span": "**Data Science and AI Bootcamp**, Contoh Academy (online) · June 2026 - present",
+   "start": 879,
+   "end": 958,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U13",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "cv_span": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "start": 1213,
+   "end": 1332,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U14",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+   "cv_span": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+   "start": 238,
+   "end": 323,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U14",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "cv_span": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "start": 1333,
+   "end": 1446,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U15",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "cv_span": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "start": 428,
+   "end": 519,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U16",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "cv_span": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "start": 520,
+   "end": 633,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U17",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "cv_span": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "start": 428,
+   "end": 519,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U18",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+   "cv_span": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+   "start": 238,
+   "end": 323,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U18",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "cv_span": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "start": 520,
+   "end": 633,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U19",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "cv_span": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "start": 428,
+   "end": 519,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U20",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "**Digital Marketing Analyst**, PT Contoh Media Digital, Bandung · March 2023 - May 2026",
+   "cv_span": "**Digital Marketing Analyst**, PT Contoh Media Digital, Bandung · March 2023 - May 2026",
+   "start": 340,
+   "end": 427,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U20",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "cv_span": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "start": 428,
+   "end": 519,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U20",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "cv_span": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "start": 634,
+   "end": 709,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U21",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "**Bachelor of Communication (S1 Ilmu Komunikasi)**, Universitas Contoh Bandung · 2016 - 2020",
+   "cv_span": "**Bachelor of Communication (S1 Ilmu Komunikasi)**, Universitas Contoh Bandung · 2016 - 2020",
+   "start": 1059,
+   "end": 1151,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U22",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Indonesian (native), English (professional working proficiency)",
+   "cv_span": "Indonesian (native), English (professional working proficiency)",
+   "start": 1990,
+   "end": 2053,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U23",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Indonesian (native), English (professional working proficiency)",
+   "cv_span": "Indonesian (native), English (professional working proficiency)",
+   "start": 1990,
+   "end": 2053,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U24",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "cv_span": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "start": 428,
+   "end": 519,
+   "flags": []
+  },
+  {
+   "unit_id": "G17-U24",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "cv_span": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "start": 520,
+   "end": 633,
+   "flags": []
+  }
+ ]
+}

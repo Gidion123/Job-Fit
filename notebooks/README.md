@@ -44,3 +44,23 @@ Read `docs/checkpoint_1/supporting/CP1_Research_Audit.md` and `docs/checkpoint_1
 ## Companion reports per stage
 
 The [CP1.1 to CP1.6 reports](../docs/checkpoint_1/README.md) explain the work step by step. The notebook explanations were expanded with what the results mean, examples, trade-offs, and implications for JobFit. The code and my Run All output stay the same; the text changes do not need a re-run.
+
+## 02_cp2_heldout_evaluation.ipynb (CP2.4-CP2.6)
+
+Makes the held-out tables and figures 9-11 from the saved CP2.4 report, run files and labels `test_v13_cp24_r1`. No API call, no tuning. It refuses to overwrite existing outputs.
+
+```bash
+cd project-job-fit
+python -m jupyter nbconvert --to notebook --execute --inplace notebooks/02_cp2_heldout_evaluation.ipynb
+```
+
+Outputs: `reports/figures/cp2/fig09_cp24_heldout_primary_v1.png`, `fig10_cp24_supplementary_familiar_v1.png`, `fig11_cp24_order_decomposition_v1.png`, and `evals/results/cp24/cp25_tables_v1/` (CSV + `receipt.json`).
+
+## 03_post_test_quality_optimization.ipynb (Phase A, D-089)
+
+The experiment story for Phase A: baseline, failure taxonomy, hypotheses, prompt experiments, comparison, selection, confirmation and conclusion. It only reads `evals/results/quality_optimization/` (no model call, no hard-coded metric) and checks that nothing there points at CP2.4 material. Sections without results yet say so.
+
+```bash
+cd project-job-fit
+python -m jupyter nbconvert --to notebook --execute --inplace notebooks/03_post_test_quality_optimization.ipynb
+```

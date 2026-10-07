@@ -1,0 +1,335 @@
+{
+  "status": "blocked",
+  "purpose": "reviewed_bundle_readiness_not_tuning",
+  "api_calls": 0,
+  "metrics": null,
+  "winner": null,
+  "scoped_live_acceptance": {
+    "run_id": "cp22_extraction_repair_v13_20261003",
+    "receipt_sha256": "755582f9e8462c3a4c3327d31d7d42d79f42029775ae839040490f69bbeadd32",
+    "status": "operationally_checked",
+    "stages": 4,
+    "versions": {
+      "guideline_version": "v1.3",
+      "jd_prompt_version": "jd-prompt-v1.3",
+      "evidence_prompt_version": "evidence-prompt-v1.1",
+      "schema_version": "v1",
+      "score_version": "v1",
+      "guideline_file": "evals/annotation_guideline_v1_3.md",
+      "jd_prompt_file": "prompts/jd_extraction_v1_3.md",
+      "evidence_prompt_file": "prompts/evidence_matching_v1_1.md",
+      "guideline_sha256": "3d964a28fd105e16b24ad51b8b0a22b34bb9255e438b51e4e6e0eda551c57645",
+      "jd_prompt_sha256": "0afe4b95155c7225bafd62e9216344cd886a4d6ba2e005fd746652b6ed97a224",
+      "evidence_prompt_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+      "extraction_coverage_contract": "qualification-inventory-v1",
+      "semantic_repair_version": "evidence-source-review-repair-v1"
+    },
+    "score": {
+      "score_pct": 72.22,
+      "status": "final",
+      "matched": 5,
+      "partial": 3,
+      "required_total": 9,
+      "preferred_met": 0,
+      "preferred_total": 1,
+      "unknown_importance_total": 0,
+      "soft_skill_total": 6,
+      "soft_skill_matched": 2,
+      "soft_skill_partial": 3,
+      "constraint_units_total": 0,
+      "soft_skills_in_score": false,
+      "reasons": []
+    },
+    "baseline_promoted": false,
+    "human_alignment_status": "pending",
+    "quality_metric": null
+  },
+  "gold_bundle": "evals/gold/development_v13_reviewed_20261002_r2",
+  "gold_manifest_sha256": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+  "gold_inventory": {
+    "A": 1058,
+    "B": 1364,
+    "C": 69
+  },
+  "priority_relevance_missing_or_held": [
+    [
+      "CV1",
+      "F00022"
+    ],
+    [
+      "CV2",
+      "F00114"
+    ]
+  ],
+  "retrieval_artifact": "evals/results/cp22_retrieval_top30_20261002_03.json",
+  "retrieval_sha256": "32d99ff3dbfe4ec8b1ba37ce0d6fb51e3449b7e508c0bc2786d51658e52569eb",
+  "verified_top30_runs": 12,
+  "judgment_coverage": [
+    {
+      "cv_id": "CV1",
+      "method": "B0",
+      "judged_top30": 13,
+      "unjudged_top30": [
+        "F00017",
+        "F00022",
+        "F00059",
+        "F00132",
+        "F00187",
+        "F00311",
+        "F00352",
+        "F00527",
+        "F00542",
+        "F00610",
+        "F00666",
+        "F00689",
+        "F00690",
+        "F00693",
+        "F00767",
+        "F00806",
+        "F00850"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "method": "B1",
+      "judged_top30": 13,
+      "unjudged_top30": [
+        "F00010",
+        "F00023",
+        "F00052",
+        "F00132",
+        "F00284",
+        "F00312",
+        "F00351",
+        "F00369",
+        "F00609",
+        "F00638",
+        "F00650",
+        "F00682",
+        "F00694",
+        "F00818",
+        "F00847",
+        "F00850",
+        "F00851"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "method": "dense_openai",
+      "judged_top30": 13,
+      "unjudged_top30": [
+        "F00003",
+        "F00010",
+        "F00022",
+        "F00029",
+        "F00059",
+        "F00060",
+        "F00066",
+        "F00129",
+        "F00132",
+        "F00183",
+        "F00284",
+        "F00315",
+        "F00378",
+        "F00436",
+        "F00559",
+        "F00702",
+        "F00856"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "method": "hybrid_openai",
+      "judged_top30": 19,
+      "unjudged_top30": [
+        "F00010",
+        "F00022",
+        "F00059",
+        "F00060",
+        "F00129",
+        "F00132",
+        "F00284",
+        "F00351",
+        "F00369",
+        "F00650",
+        "F00851"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "method": "dense_qwen",
+      "judged_top30": 13,
+      "unjudged_top30": [
+        "F00018",
+        "F00021",
+        "F00022",
+        "F00059",
+        "F00060",
+        "F00126",
+        "F00129",
+        "F00132",
+        "F00284",
+        "F00312",
+        "F00315",
+        "F00339",
+        "F00527",
+        "F00528",
+        "F00767",
+        "F00768",
+        "F00845"
+      ]
+    },
+    {
+      "cv_id": "CV1",
+      "method": "hybrid_qwen",
+      "judged_top30": 19,
+      "unjudged_top30": [
+        "F00022",
+        "F00060",
+        "F00129",
+        "F00132",
+        "F00284",
+        "F00312",
+        "F00351",
+        "F00369",
+        "F00527",
+        "F00650",
+        "F00851"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "method": "B0",
+      "judged_top30": 13,
+      "unjudged_top30": [
+        "F00060",
+        "F00077",
+        "F00114",
+        "F00153",
+        "F00300",
+        "F00320",
+        "F00332",
+        "F00354",
+        "F00363",
+        "F00370",
+        "F00436",
+        "F00442",
+        "F00533",
+        "F00571",
+        "F00638",
+        "F00645",
+        "F00856"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "method": "B1",
+      "judged_top30": 14,
+      "unjudged_top30": [
+        "F00090",
+        "F00114",
+        "F00210",
+        "F00212",
+        "F00287",
+        "F00363",
+        "F00554",
+        "F00556",
+        "F00558",
+        "F00559",
+        "F00629",
+        "F00645",
+        "F00679",
+        "F00682",
+        "F00699",
+        "F00825"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "method": "dense_openai",
+      "judged_top30": 14,
+      "unjudged_top30": [
+        "F00001",
+        "F00059",
+        "F00082",
+        "F00090",
+        "F00108",
+        "F00114",
+        "F00123",
+        "F00183",
+        "F00189",
+        "F00436",
+        "F00442",
+        "F00559",
+        "F00638",
+        "F00681",
+        "F00702",
+        "F00856"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "method": "hybrid_openai",
+      "judged_top30": 21,
+      "unjudged_top30": [
+        "F00059",
+        "F00090",
+        "F00108",
+        "F00114",
+        "F00212",
+        "F00442",
+        "F00556",
+        "F00559",
+        "F00682"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "method": "dense_qwen",
+      "judged_top30": 19,
+      "unjudged_top30": [
+        "F00059",
+        "F00067",
+        "F00108",
+        "F00343",
+        "F00418",
+        "F00436",
+        "F00559",
+        "F00574",
+        "F00629",
+        "F00645",
+        "F00697"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "method": "hybrid_qwen",
+      "judged_top30": 20,
+      "unjudged_top30": [
+        "F00114",
+        "F00212",
+        "F00343",
+        "F00418",
+        "F00436",
+        "F00556",
+        "F00559",
+        "F00629",
+        "F00645",
+        "F00682"
+      ]
+    }
+  ],
+  "coverage_is_not_a_quality_metric": true,
+  "blockers": [
+    "Metric convention receipt is still pending",
+    "Complete reference and semantic model alignment are not certified by record-level approval",
+    "A repaired experimental chain passed operational review; default baseline promotion and broad development outcomes remain open",
+    "Held records and unjudged retrieval candidates must not silently become relevance zero"
+  ],
+  "next_stage": "CP2.3 preparation may proceed; formal comparison and configuration selection are not authorized by this report",
+  "limitations": [
+    "Only CV1/CV2 development; no test access",
+    "Optional filters remain deferred",
+    "Gold source versions and held records remain explicit; no blanket version migration"
+  ]
+}

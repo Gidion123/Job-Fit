@@ -1,0 +1,244 @@
+{
+  "model": "claude-opus-5.5",
+  "model_id": "anthropic/claude-opus-5.5",
+  "cv_id": "CV2",
+  "job_id": "F00815",
+  "status": "done",
+  "error_code": null,
+  "attempts": 1,
+  "wall_ms": 29122,
+  "assessments": [
+    {
+      "unit_id": "P52-U01",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Marketing analyst moving into AI engineering.",
+        "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U02",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U03",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P52-U03/B01",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "P52-U03/B02",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "P52-U03/B03",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U04",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "LangChain, prompt engineering, FastAPI"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U05",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U06",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U07",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U08",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U09",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P52-U09/B01",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+          ]
+        },
+        {
+          "branch_id": "P52-U09/B02",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P52-U09/B03",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U10",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+        "SQL (BigQuery, PostgreSQL)"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U11",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P52-U11/B01",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "P52-U11/B02",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "P52-U11/B03",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U12",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P52-U12/B01",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "AWS Cloud Practitioner (course completed, 2026; exam not taken)"
+          ]
+        },
+        {
+          "branch_id": "P52-U12/B02",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U13",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Docker, Git, Hugging Face Transformers"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U14",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U15",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P52-U16",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Bachelor of Communication (S1 Ilmu Komunikasi)"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ],
+  "run_id": "cp23_model_sweep_stage1_20261004_v1_cont2",
+  "supersedes": "claude-opus-5.5__CV2_F00815.json (403 workspace budget)"
+}

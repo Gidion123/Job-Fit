@@ -1,0 +1,15 @@
+{
+  "decision": "approved",
+  "approved_by": "Dion",
+  "review_date": "2026-10-03",
+  "review_time_exact": null,
+  "source": "Dion's explicit reply 'Iya saya setuju, ayo selesaikan tahap 2' to the pending v1.4 US$3.23 batch approval described immediately before it in the project chat",
+  "scope": "cp23_stage2_round1_extraction_20261003_v4",
+  "plan_file": "evals/results/cp23_stage2_round1_extraction_20261003_v4_preflight.json",
+  "plan_sha256": "b901bad9176e33d45845dcd9748d2c3eb05bbf627b592655e174d697b2e9a0c2",
+  "aggregate_cap_usd": "3.23",
+  "covers": "Four D-029 round-one models x seven fixed development JD extraction cases under experimental JD prompt v1.4, at most one automatic repair per case; aggregate includes failed and uncertain calls",
+  "excludes": ["four evidence-matching pairs", "GPT-6 Sol reference", "broad development extraction", "test data", "configuration selection"],
+  "project_hard_stop_usd": "8.50",
+  "no_budget_evasion": true
+}

@@ -1,0 +1,190 @@
+{
+  "model": "deepseek-flash",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "cv_id": "CV1",
+  "job_id": "F00332",
+  "status": "done",
+  "error_code": null,
+  "attempts": 1,
+  "wall_ms": 28437,
+  "assessments": [
+    {
+      "unit_id": "P30-U01",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "P30-U01/B01",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Lulusan S1 Statistika yang tertarik pada data science dan machine learning.",
+            "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+          ]
+        },
+        {
+          "branch_id": "P30-U01/B02",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Lulusan S1 Statistika yang tertarik pada data science dan machine learning.",
+            "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U02",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Terbiasa mengolah data dengan Python dan SQL, membuat model prediksi sederhana, dan menyajikan hasil analisis dalam dashboard.",
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+        "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U03",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Terbiasa mengolah data dengan Python dan SQL, membuat model prediksi sederhana, dan menyajikan hasil analisis dalam dashboard.",
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+        "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U04",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U05",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+        "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+        "Lulusan S1 Statistika yang tertarik pada data science dan machine learning. Terbiasa mengolah data dengan Python dan SQL, membuat model prediksi sederhana, dan menyajikan hasil analisis dalam dashboard."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U06",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U07",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+        "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U08",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U09",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U10",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U11",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+        "Terbiasa mengolah data dengan Python dan SQL, membuat model prediksi sederhana, dan menyajikan hasil analisis dalam dashboard."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U12",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U13",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U14",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U15",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+        "Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+        "Terbiasa mengolah data dengan Python dan SQL, membuat model prediksi sederhana, dan menyajikan hasil analisis dalam dashboard."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "P30-U16",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ]
+}

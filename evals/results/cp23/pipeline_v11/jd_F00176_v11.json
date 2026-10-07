@@ -1,0 +1,815 @@
+{
+  "job_id": "F00176",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "cache_hit": false,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "wall_ms": 95279,
+  "extraction": {
+    "job_id": "F00176",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Proven experience building AI agents, AI workflows, copilots, chatbots, or automation systems",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "proven experience building ai agents ai workflows copilots chatbots or automation systems",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Proven experience building AI agents",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Proven experience building AI workflows",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Proven experience building copilots",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Proven experience building chatbots",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Proven experience building automation systems",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Proven experience building AI agents, AI workflows, copilots, chatbots, or automation systems."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Experience using LLM APIs such as OpenAI, Claude, Gemini or similar models",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "experience using llm apis such as openai claude gemini or similar models",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience using LLM APIs such as OpenAI",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience using LLM APIs such as Claude",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Experience using LLM APIs such as Gemini",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Experience using LLM APIs such as similar models",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience using LLM APIs such as OpenAI, Claude, Gemini or similar models."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Strong prompt engineering skills for structured output",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "strong prompt engineering skills for structured output",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong prompt engineering skills, especially for structured output, classification, extraction, summarization, and tool-calling workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Strong prompt engineering skills for classification",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "strong prompt engineering skills for classification",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong prompt engineering skills, especially for structured output, classification, extraction, summarization, and tool-calling workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Strong prompt engineering skills for extraction",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "strong prompt engineering skills for extraction",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong prompt engineering skills, especially for structured output, classification, extraction, summarization, and tool-calling workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Strong prompt engineering skills for summarization",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "strong prompt engineering skills for summarization",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong prompt engineering skills, especially for structured output, classification, extraction, summarization, and tool-calling workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Strong prompt engineering skills for tool-calling workflows",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "strong prompt engineering skills for tool-calling workflows",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong prompt engineering skills, especially for structured output, classification, extraction, summarization, and tool-calling workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Strong experience with automation tools such as n8n, Make, Zapier, Power Automate, UiPath, or Google Apps Script",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "strong experience with automation tools such as n8n make zapier power automate uipath or google apps script",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Strong experience with automation tool n8n",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Strong experience with automation tool Make",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Strong experience with automation tool Zapier",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Strong experience with automation tool Power Automate",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Strong experience with automation tool UiPath",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B6",
+            "text": "Strong experience with automation tool Google Apps Script",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Strong experience with automation tools such as n8n, Make, Zapier, Power Automate, UiPath, or Google Apps Script."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Strong understanding of REST API",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "strong understanding of rest api",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong understanding of REST API, webhooks, JSON, authentication, rate limits, callback URLs, and error handling."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Strong understanding of webhooks",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "strong understanding of webhooks",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong understanding of REST API, webhooks, JSON, authentication, rate limits, callback URLs, and error handling."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Strong understanding of JSON",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "strong understanding of json",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong understanding of REST API, webhooks, JSON, authentication, rate limits, callback URLs, and error handling."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Strong understanding of authentication",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "strong understanding of authentication",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong understanding of REST API, webhooks, JSON, authentication, rate limits, callback URLs, and error handling."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Strong understanding of rate limits",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "strong understanding of rate limits",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong understanding of REST API, webhooks, JSON, authentication, rate limits, callback URLs, and error handling."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Strong understanding of callback URLs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "strong understanding of callback urls",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong understanding of REST API, webhooks, JSON, authentication, rate limits, callback URLs, and error handling."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Strong understanding of error handling",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "strong understanding of error handling",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong understanding of REST API, webhooks, JSON, authentication, rate limits, callback URLs, and error handling."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Experience working with databases",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "experience working with databases",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience working with databases, Google Sheets automation, CSV/Excel processing, and transaction data."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Experience working with Google Sheets automation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "experience working with google sheets automation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience working with databases, Google Sheets automation, CSV/Excel processing, and transaction data."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Experience working with CSV/Excel processing",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "experience working with csv excel processing",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience working with databases, Google Sheets automation, CSV/Excel processing, and transaction data."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Experience working with transaction data",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "experience working with transaction data",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience working with databases, Google Sheets automation, CSV/Excel processing, and transaction data."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Knowledge of RAG, embeddings, vector databases, LlamaIndex, LangChain, LangGraph, Pinecone, Chroma, Weaviate, or Supabase Vector is preferred",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "knowledge of rag embeddings vector databases llamaindex langchain langgraph pinecone chroma weaviate or supabase vector is preferred",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Knowledge of RAG",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Knowledge of embeddings",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Knowledge of vector databases",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Knowledge of LlamaIndex",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Knowledge of LangChain",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B6",
+            "text": "Knowledge of LangGraph",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B7",
+            "text": "Knowledge of Pinecone",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B8",
+            "text": "Knowledge of Chroma",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B9",
+            "text": "Knowledge of Weaviate",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B10",
+            "text": "Knowledge of Supabase Vector",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Knowledge of RAG, embeddings, vector databases, LlamaIndex, LangChain, LangGraph, Pinecone, Chroma, Weaviate, or Supabase Vector is preferred."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Good understanding of API key protection",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "good understanding of api key protection",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good understanding of security practices including API key protection, environment variables, data masking, access control, and audit logs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Good understanding of environment variables",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "good understanding of environment variables",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good understanding of security practices including API key protection, environment variables, data masking, access control, and audit logs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Good understanding of data masking",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "good understanding of data masking",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good understanding of security practices including API key protection, environment variables, data masking, access control, and audit logs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U24",
+        "text": "Good understanding of access control",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "good understanding of access control",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good understanding of security practices including API key protection, environment variables, data masking, access control, and audit logs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U25",
+        "text": "Good understanding of audit logs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "good understanding of audit logs",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good understanding of security practices including API key protection, environment variables, data masking, access control, and audit logs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U26",
+        "text": "Strong technical documentation skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "strong technical documentation skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong technical documentation and debugging skills."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U27",
+        "text": "Strong debugging skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "strong debugging skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong technical documentation and debugging skills."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U28",
+        "text": "Experience with n8n is highly preferred",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "experience with n8n is highly preferred",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with n8n is highly preferred."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U29",
+        "text": "Experience integrating WhatsApp API, email API, CRM, helpdesk, payment systems, or internal business systems is a strong plus",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "experience integrating whatsapp api email api crm helpdesk payment systems or internal business systems is a strong plus",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience integrating WhatsApp API",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience integrating email API",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Experience integrating CRM",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Experience integrating helpdesk",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Experience integrating payment systems",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B6",
+            "text": "Experience integrating internal business systems",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience integrating WhatsApp API, email API, CRM, helpdesk, payment systems, or internal business systems is a strong plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U30",
+        "text": "Experience building AI tools for customer service",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "experience building ai tools for customer service",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience building AI tools for customer service, operations, finance, e-commerce, fintech, PPOB, SaaS, POS, or B2B platforms is a plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U31",
+        "text": "Experience building AI tools for operations",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "experience building ai tools for operations",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience building AI tools for customer service, operations, finance, e-commerce, fintech, PPOB, SaaS, POS, or B2B platforms is a plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U32",
+        "text": "Experience building AI tools for finance",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "experience building ai tools for finance",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience building AI tools for customer service, operations, finance, e-commerce, fintech, PPOB, SaaS, POS, or B2B platforms is a plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U33",
+        "text": "Experience building AI tools for e-commerce",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "experience building ai tools for e-commerce",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience building AI tools for customer service, operations, finance, e-commerce, fintech, PPOB, SaaS, POS, or B2B platforms is a plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U34",
+        "text": "Experience building AI tools for fintech",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "experience building ai tools for fintech",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience building AI tools for customer service, operations, finance, e-commerce, fintech, PPOB, SaaS, POS, or B2B platforms is a plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U35",
+        "text": "Experience building AI tools for PPOB",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "experience building ai tools for ppob",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience building AI tools for customer service, operations, finance, e-commerce, fintech, PPOB, SaaS, POS, or B2B platforms is a plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U36",
+        "text": "Experience building AI tools for SaaS",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "experience building ai tools for saas",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience building AI tools for customer service, operations, finance, e-commerce, fintech, PPOB, SaaS, POS, or B2B platforms is a plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U37",
+        "text": "Experience building AI tools for POS",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "experience building ai tools for pos",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience building AI tools for customer service, operations, finance, e-commerce, fintech, PPOB, SaaS, POS, or B2B platforms is a plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U38",
+        "text": "Experience building AI tools for B2B platforms",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "experience building ai tools for b2b platforms",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience building AI tools for customer service, operations, finance, e-commerce, fintech, PPOB, SaaS, POS, or B2B platforms is a plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U39",
+        "text": "Experience deploying workflows on VPS or cloud platforms is preferred",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "experience deploying workflows on vps or cloud platforms is preferred",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience deploying workflows on VPS",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience deploying workflows on cloud platforms",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience deploying workflows on VPS or cloud platforms is preferred."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

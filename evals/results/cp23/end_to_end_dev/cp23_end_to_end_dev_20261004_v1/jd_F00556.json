@@ -1,0 +1,364 @@
+{
+  "job_id": "F00556",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "bda11d99b626c5161dccf4473bf1d423293d72b5e73dbb5d8bb4375379526012",
+  "wall_ms": 15342,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 10,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U03",
+          "U04"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U05"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U06"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U07"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U08",
+          "U09"
+        ]
+      },
+      {
+        "source_id": "Q08",
+        "unit_ids": [
+          "U10"
+        ]
+      },
+      {
+        "source_id": "Q09",
+        "unit_ids": [
+          "U11"
+        ]
+      },
+      {
+        "source_id": "Q10",
+        "unit_ids": [
+          "U12"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00556",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Currently pursuing a degree in Computer Science, Data Science, Mathematics, Statistics, Engineering, or a related field",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "pursuing degree in quantitative/technical field",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B01",
+            "text": "Currently pursuing a degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B02",
+            "text": "Currently pursuing a degree in Data Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B03",
+            "text": "Currently pursuing a degree in Mathematics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B04",
+            "text": "Currently pursuing a degree in Statistics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B05",
+            "text": "Currently pursuing a degree in Engineering",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B06",
+            "text": "Currently pursuing a degree in a related field",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Currently pursuing a degree in Computer Science, Data Science, Mathematics, Statistics, Engineering, or a related field"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Strong foundation in mathematics, statistics, or related quantitative disciplines",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "quantitative foundation",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B01",
+            "text": "Strong foundation in mathematics",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B02",
+            "text": "Strong foundation in statistics",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B03",
+            "text": "Strong foundation in related quantitative disciplines",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Strong foundation in mathematics, statistics, or related quantitative disciplines"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Basic to intermediate programming skills, preferably in Python",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "Python programming",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Basic to intermediate programming skills, preferably in Python (SQL is a plus)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "SQL programming skills",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "SQL",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Basic to intermediate programming skills, preferably in Python (SQL is a plus)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Familiarity with machine learning concepts, predictive analytics, or statistical modelling",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "machine learning concepts",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B01",
+            "text": "Familiarity with machine learning concepts",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B02",
+            "text": "Familiarity with predictive analytics",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B03",
+            "text": "Familiarity with statistical modelling",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Familiarity with machine learning concepts, predictive analytics, or statistical modelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Exposure to machine learning libraries such as scikit-learn, XGBoost, or LightGBM",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "machine learning libraries",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B01",
+            "text": "Exposure to scikit-learn",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B02",
+            "text": "Exposure to XGBoost",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B03",
+            "text": "Exposure to LightGBM",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Exposure to machine learning libraries such as scikit-learn, XGBoost, or LightGBM is a plus"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Interest in learning how machine learning models are developed and deployed in production",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "interest in production ML",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Interest in learning how machine learning models are developed and deployed in production"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Familiarity with version control (e.g. Git)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "version control (Git)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with version control (e.g. Git) and basic software engineering concepts"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Basic software engineering concepts",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "software engineering concepts",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with version control (e.g. Git) and basic software engineering concepts"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Any exposure to MLOps tools (e.g. MLflow, DVC) or cloud technologies (AWS, Docker, Kubernetes)",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "MLOps tools or cloud technologies",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Any exposure to MLOps tools (e.g. MLflow, DVC) or cloud technologies (AWS, Docker, Kubernetes) is a bonus but not required"
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Curious, proactive, and eager to learn in a fast-paced environment",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "curious, proactive, eager to learn",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Curious, proactive, and eager to learn in a fast-paced environment"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Good communication skills and ability to work collaboratively in a team",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "communication and teamwork",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good communication skills and ability to work collaboratively in a team"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

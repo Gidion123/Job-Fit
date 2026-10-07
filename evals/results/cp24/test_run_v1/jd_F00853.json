@@ -1,0 +1,317 @@
+{
+ "job_id": "F00853",
+ "status": "done",
+ "attempts": 2,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "no_uncovered_bullets",
+  "bullet_count": 6,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 6,
+  "inventory_mappings": [
+   {
+    "source_id": "Q01",
+    "unit_ids": [
+     "U01",
+     "U02"
+    ]
+   },
+   {
+    "source_id": "Q02",
+    "unit_ids": [
+     "U03",
+     "U04"
+    ]
+   },
+   {
+    "source_id": "Q03",
+    "unit_ids": [
+     "U05",
+     "U06",
+     "U07",
+     "U08"
+    ]
+   },
+   {
+    "source_id": "Q04",
+    "unit_ids": [
+     "U09"
+    ]
+   },
+   {
+    "source_id": "Q05",
+    "unit_ids": [
+     "U10",
+     "U11",
+     "U12"
+    ]
+   },
+   {
+    "source_id": "Q06",
+    "unit_ids": [
+     "U13",
+     "U14"
+    ]
+   }
+  ],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00853",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "2–4 years of experience as a software/backend developer",
+    "kind": "qualified",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "software/backend developer experience",
+    "min_years": 2.0,
+    "branches": [],
+    "source_quotes": [
+     "Pengalaman 2–4 tahun sebagai software/backend developer"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "At least 1 year of experience touching LLM/AI agent projects",
+    "kind": "qualified",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "LLM/AI agent project experience",
+    "min_years": 1.0,
+    "branches": [],
+    "source_quotes": [
+     "minimal 1 tahun menyentuh proyek berbasis LLM/AI agent"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Strong in Python",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Python",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Kuat di Python"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Familiar with FastAPI or another Python web framework",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Python web framework",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "FastAPI",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "another Python web framework",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "familiar dengan FastAPI atau framework web Python lain"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Understand modern LLM concepts: prompt engineering",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "prompt engineering",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memahami konsep LLM modern: prompt engineering, function/tool calling, RAG, context management"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Understand modern LLM concepts: function/tool calling",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "function/tool calling",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memahami konsep LLM modern: prompt engineering, function/tool calling, RAG, context management"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Understand modern LLM concepts: RAG",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "RAG",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memahami konsep LLM modern: prompt engineering, function/tool calling, RAG, context management"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Understand modern LLM concepts: context management",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "context management",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memahami konsep LLM modern: prompt engineering, function/tool calling, RAG, context management"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Experience with at least one agent/LLM framework (e.g., LangChain, LlamaIndex, OpenAI/Anthropic SDK, or equivalent)",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "agent/LLM framework",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "LangChain",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "LlamaIndex",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "OpenAI/Anthropic SDK",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "equivalent",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Pengalaman dengan minimal satu framework agent/LLM (mis. LangChain, LlamaIndex, OpenAI/Anthropic SDK, atau setara)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "Able to work with REST API",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "REST API",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Mampu bekerja dengan REST API, database SQL, dan integrasi sistem"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "Able to work with SQL database",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "SQL database",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Mampu bekerja dengan REST API, database SQL, dan integrasi sistem"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "Able to work with system integration",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "system integration",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Mampu bekerja dengan REST API, database SQL, dan integrasi sistem"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U13",
+    "text": "Familiar with Git",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Git",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Familiar dengan Git dan alur kerja kolaboratif"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U14",
+    "text": "Familiar with collaborative workflow",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "collaborative workflow",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Familiar dengan Git dan alur kerja kolaboratif"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

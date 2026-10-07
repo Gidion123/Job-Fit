@@ -1,0 +1,13 @@
+# CP2.3 Stage-1 held relevance: direct JD/CV review
+
+**Status:** three case-scoped drafts pending Dion's review. Approval of the **C-only review path** did not approve these values or release historical holds. A/B stay held. No workbook or gold has changed.
+
+Read each full archived JD in the [source-hashed JSON](cp23_stage1_held_C_review_20261003_v1.json) and the relevant [CV1](../../../data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md) or [CV2](../../../data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md). Apply [guideline v1.3 Part D](../../annotation_guideline_v1_3.md#part-d-relevance-cv-profile--job-0-to-3-d-014-d-037) in automatic mode at reference date 2026-09-30. Ranks and retrieval methods are intentionally hidden. Review action must be accepted, edited or rejected with a note; no draft becomes gold automatically.
+
+| CV × JD | Exact source anchor | Direct C draft | Distinct source/constraint issue | Dion's decision |
+| --- | --- | ---: | --- | --- |
+| CV1 × F00022 | “Mandatory: Experienced using programming languages (at least Python and SQL) to manipulate data and draw insights from large data sets.” | **3, pending** | Statistics degree, Python/SQL internship and ML projects support the junior DS role. The JD also welcomes fresh graduates, so four months of internship is not an automatic duration conflict. The old A/B and C reason depend on an unresolved `and/or` decomposition; this new reason uses the original JD/CV directly. | Blank |
+| CV2 × F00114 | “2+ years shipping production LLM features (not just prototypes).” | **1, pending** | RAG/FastAPI project evidence is relevant, but the full employment record is marketing, while the JD asks for five engineering years and two production LLM years. This C judgment does not decide the held Python/TypeScript `and/or` A/B unit. | Blank |
+| CV1 × F00369 | “2-4 years of hands-on experience in classical machine learning (including deep learning) or data science roles…” | **1, pending** | Statistics/scikit-learn projects overlap, but the CV does not show the required ML/DS employment duration or recurrent-model work. The archived original JD ends at **“A portfolio of pro”**. The draft ignores any reconstructed portfolio requirement and must carry this source limitation if approved. | Blank |
+
+The numerical drafts happen to match historical held C values; that is **not** a compatibility receipt or an approval. The JSON gives a new source-based reason and retains historical hold reasons. If Dion approves one, record the actual decision/provenance in a versioned amendment, verify source hashes and dependencies, and release **only that C** under the approved case-scoped path. Do not release A/B or substitute another ranked job.

@@ -1,0 +1,3935 @@
+{
+ "cv_id": "CV3",
+ "order": [
+  "F00206",
+  "F00599",
+  "F00290",
+  "F00374",
+  "F00501",
+  "F00813",
+  "F00853",
+  "F00480",
+  "F00139",
+  "F00032"
+ ],
+ "analyzed_ids": [
+  "F00480",
+  "F00374",
+  "F00206",
+  "F00813",
+  "F00290",
+  "F00599",
+  "F00501",
+  "F00853",
+  "F00139",
+  "F00032"
+ ],
+ "stage1_ids": [
+  "F00207",
+  "F00480",
+  "F00374",
+  "F00680",
+  "F00206",
+  "F00813",
+  "F00290",
+  "F00599",
+  "F00358",
+  "F00656",
+  "F00501",
+  "F00355",
+  "F00853",
+  "F00139",
+  "F00032",
+  "F00535",
+  "F00307",
+  "F00557",
+  "F00071",
+  "F00191",
+  "F00353",
+  "F00555",
+  "F00561",
+  "F00733",
+  "F00296",
+  "F00630",
+  "F00771",
+  "F00597",
+  "F00737",
+  "F00925"
+ ],
+ "held_ids": [
+  "F00480",
+  "F00139",
+  "F00032"
+ ],
+ "fallback_ids": [
+  "F00853"
+ ],
+ "versions": {
+  "service": "recommend-service-v1",
+  "pipeline": "pipeline-cp23-freeze-candidate-v4",
+  "seniority_rule": "seniority-demote-3y-v1",
+  "matching_model": "gpt-6-sol",
+  "matching_fallback_model": "gpt-6-luna",
+  "hold_policy": "H2v2",
+  "partial_weight": 0.5,
+  "k": 10,
+  "experience_conflict_rule": "experience-upper-bound-v1",
+  "history_confirmed": true
+ },
+ "wall_s": 37.2,
+ "jobs": {
+  "F00480": {
+   "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 0,
+    "partial": 0,
+    "required_total": 0,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "JD extraction not available: schema_validation"
+    ]
+   },
+   "assessments": [],
+   "constraints": [],
+   "hold_reason": "JD extraction not available: schema_validation",
+   "matcher_model": null,
+   "attempts": []
+  },
+  "F00139": {
+   "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 0,
+    "partial": 0,
+    "required_total": 0,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "JD extraction not available: jd_quality_looks_incomplete"
+    ]
+   },
+   "assessments": [],
+   "constraints": [],
+   "hold_reason": "JD extraction not available: jd_quality_looks_incomplete",
+   "matcher_model": null,
+   "attempts": []
+  },
+  "F00032": {
+   "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 0,
+    "partial": 0,
+    "required_total": 0,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "JD extraction not available: jd_quality_looks_incomplete"
+    ]
+   },
+   "assessments": [],
+   "constraints": [],
+   "hold_reason": "JD extraction not available: jd_quality_looks_incomplete",
+   "matcher_model": null,
+   "attempts": []
+  },
+  "F00374": {
+   "score": {
+    "score_pct": 65.0,
+    "status": "final",
+    "matched": 5,
+    "partial": 3,
+    "required_total": 10,
+    "preferred_met": 0,
+    "preferred_total": 1,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 1,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B01",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "**Bachelor of Computer Science (S1 Ilmu Komputer)**, Institut Teknologi Contoh, Jakarta · 2021 - 2025"
+       ]
+      },
+      {
+       "branch_id": "B02",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B03",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B04",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+      "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+      "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "NO_MATCH",
+     "check_status": "needs_clarification",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+      "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+      "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B05",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B06",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B07",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Machine learning engineer with about one year of industry experience building and serving ML models for an e-commerce startup. Comfortable with Python, model training and evaluation, experiment tracking, and REST APIs.",
+      "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B08",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B09",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+      "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [
+    {
+     "kind": "experience",
+     "state": "explicit_conflict",
+     "message": "U02: the JD asks for at least 5 years; the whole CV work history is about 1.67 years. JD: Minimum 5 strong years of software engineering practices and experiences in data science, machine learning, generative AI."
+    },
+    {
+     "kind": "experience",
+     "state": "explicit_conflict",
+     "message": "U03: the JD asks for at least 5 years; the whole CV work history is about 1.67 years. JD: Minimum 5 strong years of software engineering practices and experiences in data science, machine learning, generative AI."
+    },
+    {
+     "kind": "experience",
+     "state": "explicit_conflict",
+     "message": "U04: the JD asks for at least 5 years; the whole CV work history is about 1.67 years. JD: Minimum 5 strong years of software engineering practices and experiences in data science, machine learning, generative AI."
+    }
+   ],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00206": {
+   "score": {
+    "score_pct": 50.0,
+    "status": "final",
+    "matched": 4,
+    "partial": 2,
+    "required_total": 10,
+    "preferred_met": 0,
+    "preferred_total": 5,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 4,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest.",
+      "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Indonesian (native), English (fluent)"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00853": {
+   "score": {
+    "score_pct": 30.77,
+    "status": "final",
+    "matched": 2,
+    "partial": 4,
+    "required_total": 13,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 1,
+    "soft_skill_matched": 1,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "**Junior Machine Learning Engineer**, PT Contoh Belanja Cepat, Jakarta · August 2025 - present",
+      "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "NO_MATCH",
+     "check_status": "needs_clarification",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Comfortable with Python, model training and evaluation, experiment tracking, and REST APIs."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Comfortable with Python, model training and evaluation, experiment tracking, and REST APIs.",
+      "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "**Semantic Product Search** · 2026 (side project)\n- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Worked with the data engineering team on Airflow pipelines that feed training data."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [
+    {
+     "kind": "experience",
+     "state": "explicit_conflict",
+     "message": "U01: the JD asks for at least 2 years; the whole CV work history is about 1.67 years. JD: Pengalaman 2–4 tahun sebagai software/backend developer"
+    },
+    {
+     "kind": "experience",
+     "state": "unknown",
+     "message": "U02: total history covers it, but years in the asked role are not verified. JD: minimal 1 tahun menyentuh proyek berbasis LLM/AI agent"
+    }
+   ],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-luna",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "failed",
+     "error": "RunCapReached"
+    },
+    {
+     "model": "gpt-6-luna",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00813": {
+   "score": {
+    "score_pct": 37.5,
+    "status": "final",
+    "matched": 1,
+    "partial": 7,
+    "required_total": 12,
+    "preferred_met": 1,
+    "preferred_total": 8,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "Machine learning engineer with about one year of industry experience building and serving ML models for an e-commerce startup.",
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+      "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+      "- Thesis: \"Comparing Gradient Boosting Methods for Credit Scoring\""
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U20",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [
+    {
+     "kind": "experience",
+     "state": "explicit_conflict",
+     "message": "U01: the JD asks for at least 3 years; the whole CV work history is about 1.67 years. JD: Shall have at least three (3) years of implementation and deployment experience in machine learning and statistical data analysis on large datasets."
+    },
+    {
+     "kind": "experience",
+     "state": "explicit_conflict",
+     "message": "U02: the JD asks for at least 3 years; the whole CV work history is about 1.67 years. JD: Shall have at least three (3) years of implementation and deployment experience in machine learning and statistical data analysis on large datasets."
+    }
+   ],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00599": {
+   "score": {
+    "score_pct": 50.0,
+    "status": "provisional",
+    "matched": 3,
+    "partial": 4,
+    "required_total": 10,
+    "preferred_met": 4,
+    "preferred_total": 8,
+    "unknown_importance_total": 4,
+    "soft_skill_total": 2,
+    "soft_skill_matched": 2,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+     "4 requirement(s) not clearly required or preferred"
+    ]
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Thesis: \"Comparing Gradient Boosting Methods for Credit Scoring\""
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": null,
+     "check_status": "failed",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U20",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U21",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U22",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U23",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U24",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+      "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00290": {
+   "score": {
+    "score_pct": 23.91,
+    "status": "final",
+    "matched": 3,
+    "partial": 5,
+    "required_total": 23,
+    "preferred_met": 3,
+    "preferred_total": 15,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 1,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "Comfortable with Python, model training and evaluation, experiment tracking, and REST APIs.",
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+      "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+      "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U10",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U11",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U12",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U13",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U14",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U15",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U16",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U17",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U18",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U19",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U20",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U21",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U22",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U23",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U24",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U25",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U26",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U27",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U28",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U29",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U30",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U31",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U32",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U33",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U34",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U35",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U36",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U37",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U38",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U39",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  },
+  "F00501": {
+   "score": {
+    "score_pct": 58.33,
+    "status": "final",
+    "matched": 5,
+    "partial": 4,
+    "required_total": 12,
+    "preferred_met": 3,
+    "preferred_total": 4,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+   },
+   "assessments": [
+    {
+     "unit_id": "U01",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "**Bachelor of Computer Science (S1 Ilmu Komputer)**, Institut Teknologi Contoh, Jakarta · 2021 - 2025"
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "**Junior Machine Learning Engineer**, PT Contoh Belanja Cepat, Jakarta · August 2025 - present"
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U02",
+     "label": "PARTIAL",
+     "check_status": "needs_clarification",
+     "cv_quotes": [
+      "**Junior Machine Learning Engineer**, PT Contoh Belanja Cepat, Jakarta · August 2025 - present",
+      "**Machine Learning Intern**, PT Contoh Belanja Cepat, Jakarta · February 2025 - July 2025"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U03",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "MATCH",
+       "check_status": "done",
+       "cv_quotes": [
+        "Comfortable with Python, model training and evaluation, experiment tracking, and REST APIs.",
+        "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2.",
+        "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U04",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Worked with the data engineering team on Airflow pipelines that feed training data."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05a",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+      "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05b",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U05c",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06a",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2.",
+      "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06b",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Worked with the data engineering team on Airflow pipelines that feed training data."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U06c",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2.",
+      "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07a",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07b",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07c",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+     ],
+     "branches": [],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U07d",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U08",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+       ]
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B3",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B4",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B5",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B6",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B7",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B8",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B9",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B10",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B11",
+       "label": "PARTIAL",
+       "check_status": "done",
+       "cv_quotes": [
+        "Comfortable with Python, model training and evaluation, experiment tracking, and REST APIs.",
+        "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+       ]
+      }
+     ],
+     "label_source": "model_draft"
+    },
+    {
+     "unit_id": "U09",
+     "label": null,
+     "check_status": "done",
+     "cv_quotes": [],
+     "branches": [
+      {
+       "branch_id": "B1",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      },
+      {
+       "branch_id": "B2",
+       "label": "NO_MATCH",
+       "check_status": "done",
+       "cv_quotes": []
+      }
+     ],
+     "label_source": "model_draft"
+    }
+   ],
+   "constraints": [
+    {
+     "kind": "experience",
+     "state": "explicit_conflict",
+     "message": "U02: the JD asks for at least 2 years; the whole CV work history is about 1.67 years. JD: • 2+ years of relevant professional experience"
+    }
+   ],
+   "hold_reason": null,
+   "matcher_model": "gpt-6-sol",
+   "attempts": [
+    {
+     "model": "gpt-6-sol",
+     "status": "done",
+     "error": null
+    }
+   ]
+  }
+ },
+ "presented": {
+  "cv_id": "CV3",
+  "note": "Match % is CV evidence coverage of the required items, not a hiring probability.",
+  "blocks": [
+   {
+    "title": "Target-role jobs",
+    "filter_state": null,
+    "groups": {
+     "matches": [
+      {
+       "job_id": "F00206",
+       "title": "Open-Source Machine Learning Engineer - US Remote",
+       "company": "Hugging Face",
+       "location": null,
+       "url": null,
+       "score_pct": 50.0,
+       "status": "final",
+       "scored": true,
+       "matched": 4,
+       "partial": 2,
+       "required_total": 10,
+       "soft_skills": {
+        "total": 4,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Public track record of open-source work/contributions, reviewable on GitHub",
+         "importance": "required",
+         "field": "other",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Enjoy collaborating with a community out in the open on GitHub",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Love open source",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Passionate about making complex technology more accessible",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Want to contribute to one of the fastest-growing ML ecosystems",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Strong Python skills, with experience writing clean, well-tested, maintainable library code",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest.",
+          "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Deep hands-on experience with a modern deep-learning framework, especially PyTorch",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+         ]
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "JAX or TensorFlow a plus",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Practical experience with the Hugging Face open-source stack (Transformers, Datasets, Accelerate) or comparable ML libraries",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Solid understanding of modern machine learning",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Solid understanding of deep learning",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Solid understanding of transformer architectures",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Experience collaborating with a technical community in the open (GitHub issues and reviews, forums, Slack or Discord)",
+         "importance": "required",
+         "field": "other",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Fluent written English for asynchronous collaboration across a distributed, global community",
+         "importance": "required",
+         "field": "language",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Indonesian (native), English (fluent)"
+         ]
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Experience maintaining an open-source project",
+         "importance": "preferred",
+         "field": "other",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Prior contributions to Transformers, Datasets, Accelerate, or similar libraries",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Familiarity with distributed training, inference optimization, or GPU/accelerator performance work",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "Experience training or fine-tuning models at scale",
+         "importance": "preferred",
+         "field": "other",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Provide a cover letter mentioning why you would like to work in open-source at Hugging Face",
+         "importance": "required",
+         "field": "other",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00599",
+       "title": "Data Scientist",
+       "company": "PT. Quad Sinergi Teknologi",
+       "location": null,
+       "url": null,
+       "score_pct": 50.0,
+       "status": "provisional",
+       "scored": true,
+       "matched": 3,
+       "partial": 4,
+       "required_total": 10,
+       "soft_skills": {
+        "total": 2,
+        "matched": 2,
+        "partial": 0
+       },
+       "reasons": [
+        "4 requirement(s) not clearly required or preferred"
+       ],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "For Junior level: Fresh Graduate with approximately 2 years of experience in Data Science",
+         "importance": "unknown",
+         "field": "experience_duration",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "For Junior level: Fresh Graduate with approximately 2 years of experience in Machine Learning",
+         "importance": "unknown",
+         "field": "experience_duration",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "For Junior level: Fresh Graduate with approximately 2 years of experience in Data Analytics",
+         "importance": "unknown",
+         "field": "experience_duration",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "For Mid-Level: 2–4 years of experience as Data Scientist, Machine Learning Engineer, Data Analyst, or related roles",
+         "importance": "unknown",
+         "field": "experience_duration",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Experience handling AI/Data projects for enterprise or customers",
+         "importance": "preferred",
+         "field": "other",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+         ]
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Python",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "SQL",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+         ]
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Pandas",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "NumPy",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Scikit-learn",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Machine Learning fundamentals",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Statistics",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Data analysis",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+         ]
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Database fundamentals",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector."
+         ]
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Analytical skills",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Thesis: \"Comparing Gradient Boosting Methods for Credit Scoring\""
+         ]
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Problem-solving skills",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+         ]
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Experience with Generative AI / LLM",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "failed",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "RAG",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector."
+         ]
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Vector Database",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector."
+         ]
+        },
+        {
+         "unit_id": "U20",
+         "requirement": "Experience with PyTorch or TensorFlow",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U21",
+         "requirement": "Experience with Docker or MLflow",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U22",
+         "requirement": "Experience with cloud platforms (AWS, Azure, or GCP)",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U23",
+         "requirement": "Experience with Power BI, Tableau, or Streamlit",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U24",
+         "requirement": "Ability to turn business problems into data, analysis, model, AI solution, and business impact",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+          "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+         ]
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00290",
+       "title": "AI Engineer Jr/Sr (MALAYSIAN)",
+       "company": "Aurous Consultancy Sdn Bhd",
+       "location": null,
+       "url": null,
+       "score_pct": 23.91,
+       "status": "final",
+       "scored": true,
+       "matched": 3,
+       "partial": 5,
+       "required_total": 23,
+       "soft_skills": {
+        "total": 1,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Proficiency in Python.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Comfortable with Python, model training and evaluation, experiment tracking, and REST APIs.",
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%."
+         ]
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Proficiency in ML frameworks/algorithms (e.g. scikit-learn, XGBoost, PyTorch, TensorFlow).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+          "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+         ]
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Strong grasp of prompt engineering.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Strong grasp of structured extraction.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Strong grasp of RAG.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Strong grasp of embeddings.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Strong grasp of integrating hosted models (Anthropic Claude, Amazon Bedrock).",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Experience training and operationalizing custom ML models end to end (data prep, training, evaluation, deployment, monitoring).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+          "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+         ]
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Experience designing and deploying on AWS.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+         ]
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Hands-on with core AWS services: Lambda, API Gateway, Step Functions, SageMaker, Bedrock, Textract, DynamoDB, S3, ECR, SSM Parameter Store, CloudWatch, VPC/IAM.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Infrastructure as Code with Terraform — modules, per-environment state backends, plan/apply workflows.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "AWS CDK (a plus).",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Solid MLOps understanding: CI/CD.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Solid MLOps understanding: model registration.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest."
+         ]
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Solid MLOps understanding: monitoring.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Solid MLOps understanding: drift detection.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Proven ability to own solution architecture.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "Proven ability to mentor engineers, including leading design and code reviews.",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Familiarity with event-driven architectures.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U20",
+         "requirement": "Familiarity with serverless architectures (Lambda / Step Functions).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U21",
+         "requirement": "Container skills: Docker (Python slim base images, Lambda container images).",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+         ]
+        },
+        {
+         "unit_id": "U22",
+         "requirement": "Container skills: image lifecycle management in ECR.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U23",
+         "requirement": "CI/CD with GitHub Actions.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U24",
+         "requirement": "CI/CD with GitHub Actions: OIDC federation to AWS (no long-lived credentials).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U25",
+         "requirement": "CI/CD with GitHub Actions: environment-gated promotion.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U26",
+         "requirement": "OCR experience.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U27",
+         "requirement": "Document-intelligence experience (AWS Textract, IDP pipelines).",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U28",
+         "requirement": "Computer vision / object detection experience (e.g. training and deploying detection models).",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+         ]
+        },
+        {
+         "unit_id": "U29",
+         "requirement": "Vector search / RAG with a vector store (e.g. pgvector).",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector."
+         ]
+        },
+        {
+         "unit_id": "U30",
+         "requirement": "Data warehouse familiarity such as Amazon Redshift.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U31",
+         "requirement": "Testing and quality tooling: pytest.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest."
+         ]
+        },
+        {
+         "unit_id": "U32",
+         "requirement": "Testing and quality tooling: property-based testing (Hypothesis / fast-check).",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U33",
+         "requirement": "Testing and quality tooling: SAST/dependency scanning.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U34",
+         "requirement": "API contract discipline with OpenAPI specs.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U35",
+         "requirement": "Full-stack awareness for AI applications: FastAPI backends.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+         ]
+        },
+        {
+         "unit_id": "U36",
+         "requirement": "Full-stack awareness for AI applications: React/Vite/MUI frontends.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U37",
+         "requirement": "Exposure to Responsible AI practices.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U38",
+         "requirement": "Exposure to LLM guardrails (content filtering, confidence scoring, human review).",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U39",
+         "requirement": "AWS certifications (AI/ML Specialty, Solutions Architect) or equivalent.",
+         "importance": "preferred",
+         "field": "certification",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      }
+     ],
+     "conflicts": [
+      {
+       "job_id": "F00374",
+       "title": "Machine Learning Engineering",
+       "company": "Technosoft SEA Pte Ltd",
+       "location": null,
+       "url": null,
+       "score_pct": 65.0,
+       "status": "final",
+       "scored": true,
+       "matched": 5,
+       "partial": 3,
+       "required_total": 10,
+       "soft_skills": {
+        "total": 1,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [
+        "U02: the JD asks for at least 5 years; the whole CV work history is about 1.67 years. JD: Minimum 5 strong years of software engineering practices and experiences in data science, machine learning, generative AI.",
+        "U03: the JD asks for at least 5 years; the whole CV work history is about 1.67 years. JD: Minimum 5 strong years of software engineering practices and experiences in data science, machine learning, generative AI.",
+        "U04: the JD asks for at least 5 years; the whole CV work history is about 1.67 years. JD: Minimum 5 strong years of software engineering practices and experiences in data science, machine learning, generative AI."
+       ],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Bachelor's Degree in Computer Science, Electrical Engineering, Math, or related field.",
+         "importance": "required",
+         "field": "education",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "Minimum 5 years of software engineering practices and experience in data science.",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+          "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest."
+         ]
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Minimum 5 years of software engineering practices and experience in machine learning.",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+          "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest."
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Minimum 5 years of software engineering practices and experience in generative AI.",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "NO_MATCH",
+         "check_status": "needs_clarification",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Deep understanding of different types of machine learning algorithms (e.g., CNN, RNN, LSTM, Reinforcement Learning).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+          "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+         ]
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Experience training deep-learning models in an end-to-end fashion.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+          "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+         ]
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Project experience working with Azure Machine Learning, Azure Open AI, or other modern deep learning frameworks.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Proficient in Python.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "Machine learning engineer with about one year of industry experience building and serving ML models for an e-commerce startup. Comfortable with Python, model training and evaluation, experiment tracking, and REST APIs.",
+          "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+         ]
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Additional knowledge of C++ or C#.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Working knowledge of statistics (e.g., Monte Carlo, hypothesis testing, confidence intervals, maximum likelihood, bootstrap, Bayesian inference).",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Working knowledge in machine learning algorithms: logistic regression, random forest, gradient boosted trees, neural networks, k-means, and more.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+          "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Excellent verbal and written communication skills.",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00501",
+       "title": "Data Engineer II - QuantumBlack, AI by McKinsey",
+       "company": "McKinsey & Company",
+       "location": null,
+       "url": null,
+       "score_pct": 58.33,
+       "status": "final",
+       "scored": true,
+       "matched": 5,
+       "partial": 4,
+       "required_total": 12,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [
+        "U02: the JD asks for at least 2 years; the whole CV work history is about 1.67 years. JD: • 2+ years of relevant professional experience"
+       ],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "Degree in computer science, engineering, mathematics, or equivalent experience",
+         "importance": "required",
+         "field": "education",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "2+ years of relevant professional experience",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "**Junior Machine Learning Engineer**, PT Contoh Belanja Cepat, Jakarta · August 2025 - present",
+          "**Machine Learning Intern**, PT Contoh Belanja Cepat, Jakarta · February 2025 - July 2025"
+         ]
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Ability to write clean, maintainable, scalable and robust code in an object-oriented language (e.g., Python, Scala, Java) in a professional setting",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Proven experience building data pipelines in production for advanced analytics use cases",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Worked with the data engineering team on Airflow pipelines that feed training data."
+         ]
+        },
+        {
+         "unit_id": "U05a",
+         "requirement": "Experience working across structured data",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+          "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+         ]
+        },
+        {
+         "unit_id": "U05b",
+         "requirement": "Experience working across semi-structured data",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05c",
+         "requirement": "Experience working across unstructured data",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a first image-quality classifier for product photos with PyTorch (transfer learning from ResNet-18)."
+         ]
+        },
+        {
+         "unit_id": "U06a",
+         "requirement": "Exposure to DevOps",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2.",
+          "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest."
+         ]
+        },
+        {
+         "unit_id": "U06b",
+         "requirement": "Exposure to DataOps",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Worked with the data engineering team on Airflow pipelines that feed training data."
+         ]
+        },
+        {
+         "unit_id": "U06c",
+         "requirement": "Exposure to MLOps",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2.",
+          "- Tracked experiments and model versions with MLflow; wrote unit tests with pytest."
+         ]
+        },
+        {
+         "unit_id": "U07a",
+         "requirement": "Familiarity with distributed computing frameworks",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U07b",
+         "requirement": "Familiarity with cloud platforms",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+         ]
+        },
+        {
+         "unit_id": "U07c",
+         "requirement": "Familiarity with containerization",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+         ]
+        },
+        {
+         "unit_id": "U07d",
+         "requirement": "Familiarity with analytics libraries (e.g. pandas, numpy, matplotlib)",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Experienced on Big Data platforms and tools like AWS, Azure, GCP and tools like Spark, Kafka, Snowflake, GCS Data Proc, Azure DataFactory, AWS Glue, Apache Beam/Flink, Python/PySpark, etc.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Commercial client-facing or senior stakeholder management experience would be beneficial",
+         "importance": "preferred",
+         "field": "other",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00813",
+       "title": "Senior Data Scientist / Machine Learning Engineer",
+       "company": "Singapore Technologies Engineering Ltd",
+       "location": null,
+       "url": null,
+       "score_pct": 37.5,
+       "status": "final",
+       "scored": true,
+       "matched": 1,
+       "partial": 7,
+       "required_total": 12,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [
+        "U01: the JD asks for at least 3 years; the whole CV work history is about 1.67 years. JD: Shall have at least three (3) years of implementation and deployment experience in machine learning and statistical data analysis on large datasets.",
+        "U02: the JD asks for at least 3 years; the whole CV work history is about 1.67 years. JD: Shall have at least three (3) years of implementation and deployment experience in machine learning and statistical data analysis on large datasets."
+       ],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "At least 3 years of implementation and deployment experience in machine learning on large datasets.",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "Machine learning engineer with about one year of industry experience building and serving ML models for an e-commerce startup.",
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+          "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+         ]
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "At least 3 years of implementation and deployment experience in statistical data analysis on large datasets.",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "- Trained and maintained a product categorization model (scikit-learn and LightGBM) for 80,000 new listings per month; improved accuracy from 86% to 91%.",
+          "- Thesis: \"Comparing Gradient Boosting Methods for Credit Scoring\""
+         ]
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Experience translating business questions into analytical problems.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Experience using statistical techniques to derive actionable insights using statistical software (Python, R, SAS).",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Experience using statistical techniques to derive actionable insights using database languages (SQL).",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+         ]
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Experience using statistical techniques to derive actionable insights using visualization tools (Qlik Sense).",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Experience using statistical techniques to derive actionable insights using deep learning framework (TensorFlow, PyTorch).",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Data Wrangling.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Data Visualization.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "DBMS.",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector."
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "SQL.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Python.",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+         ]
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Completed at least one project using Scrum or equivalent Agile development framework.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Experience with MS Access (Front-end).",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U15",
+         "requirement": "Experience with SharePoint (Back-end).",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U16",
+         "requirement": "Experience with Power BI (Visualisation).",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U17",
+         "requirement": "Experience with Kubernetes.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U18",
+         "requirement": "Experience with Docker/Podman.",
+         "importance": "preferred",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U19",
+         "requirement": "Experience with Microservices Architecture.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U20",
+         "requirement": "Experience with DevSecOps Methodology.",
+         "importance": "preferred",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        }
+       ],
+       "matcher_model": "gpt-6-sol",
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00853",
+       "title": "AI Agent Developer",
+       "company": "Erela",
+       "location": null,
+       "url": null,
+       "score_pct": 30.77,
+       "status": "final",
+       "scored": true,
+       "matched": 2,
+       "partial": 4,
+       "required_total": 13,
+       "soft_skills": {
+        "total": 1,
+        "matched": 1,
+        "partial": 0
+       },
+       "reasons": [],
+       "hold_reason": null,
+       "explicit_conflicts": [
+        "U01: the JD asks for at least 2 years; the whole CV work history is about 1.67 years. JD: Pengalaman 2–4 tahun sebagai software/backend developer"
+       ],
+       "excluded_units": [],
+       "requirements": [
+        {
+         "unit_id": "U01",
+         "requirement": "2–4 years of experience as a software/backend developer",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "PARTIAL",
+         "check_status": "needs_clarification",
+         "cv_quotes": [
+          "**Junior Machine Learning Engineer**, PT Contoh Belanja Cepat, Jakarta · August 2025 - present",
+          "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+         ]
+        },
+        {
+         "unit_id": "U02",
+         "requirement": "At least 1 year of experience touching LLM/AI agent projects",
+         "importance": "required",
+         "field": "experience_duration",
+         "label": "NO_MATCH",
+         "check_status": "needs_clarification",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U03",
+         "requirement": "Strong in Python",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Comfortable with Python, model training and evaluation, experiment tracking, and REST APIs."
+         ]
+        },
+        {
+         "unit_id": "U04",
+         "requirement": "Familiar with FastAPI or another Python web framework",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U05",
+         "requirement": "Understand modern LLM concepts: prompt engineering",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U06",
+         "requirement": "Understand modern LLM concepts: function/tool calling",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U07",
+         "requirement": "Understand modern LLM concepts: RAG",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U08",
+         "requirement": "Understand modern LLM concepts: context management",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U09",
+         "requirement": "Experience with at least one agent/LLM framework (e.g., LangChain, LlamaIndex, OpenAI/Anthropic SDK, or equivalent)",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": null,
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U10",
+         "requirement": "Able to work with REST API",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Comfortable with Python, model training and evaluation, experiment tracking, and REST APIs.",
+          "- Built a FastAPI service for model inference and deployed it with Docker on AWS EC2."
+         ]
+        },
+        {
+         "unit_id": "U11",
+         "requirement": "Able to work with SQL database",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "**Semantic Product Search** · 2026 (side project)\n- Built a small semantic search demo with sentence-transformers embeddings and PostgreSQL pgvector."
+         ]
+        },
+        {
+         "unit_id": "U12",
+         "requirement": "Able to work with system integration",
+         "importance": "required",
+         "field": "knowledge_area",
+         "label": "NO_MATCH",
+         "check_status": "done",
+         "cv_quotes": []
+        },
+        {
+         "unit_id": "U13",
+         "requirement": "Familiar with Git",
+         "importance": "required",
+         "field": "skill_tool",
+         "label": "PARTIAL",
+         "check_status": "done",
+         "cv_quotes": [
+          "Python, SQL, scikit-learn, LightGBM, PyTorch, MLflow, FastAPI, Docker, AWS (EC2, S3), Airflow, Git, pytest, Linux"
+         ]
+        },
+        {
+         "unit_id": "U14",
+         "requirement": "Familiar with collaborative workflow",
+         "importance": "required",
+         "field": "soft_skill",
+         "label": "MATCH",
+         "check_status": "done",
+         "cv_quotes": [
+          "- Worked with the data engineering team on Airflow pipelines that feed training data."
+         ]
+        }
+       ],
+       "matcher_model": "gpt-6-luna",
+       "used_fallback": true,
+       "filter_state": null
+      }
+     ],
+     "not_fully_analyzed": [
+      {
+       "job_id": "F00480",
+       "title": "ML Engineer - Supply Chain AI",
+       "company": "SPACE EXECUTIVE PTE. LTD.",
+       "location": null,
+       "url": null,
+       "score_pct": null,
+       "status": "on_hold",
+       "scored": false,
+       "matched": 0,
+       "partial": 0,
+       "required_total": 0,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [
+        "JD extraction not available: schema_validation"
+       ],
+       "hold_reason": "JD extraction not available: schema_validation",
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [],
+       "matcher_model": null,
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00139",
+       "title": "Data Scientist Credit Scoring",
+       "company": "PT Sharing Vision Indonesia",
+       "location": null,
+       "url": null,
+       "score_pct": null,
+       "status": "on_hold",
+       "scored": false,
+       "matched": 0,
+       "partial": 0,
+       "required_total": 0,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [
+        "JD extraction not available: jd_quality_looks_incomplete"
+       ],
+       "hold_reason": "JD extraction not available: jd_quality_looks_incomplete",
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [],
+       "matcher_model": null,
+       "used_fallback": false,
+       "filter_state": null
+      },
+      {
+       "job_id": "F00032",
+       "title": "Applied AI / Full-Stack AI Engineer (Mandarin / English Speaker)",
+       "company": "HITHINK TECHNOLOGY INDONESIA",
+       "location": null,
+       "url": null,
+       "score_pct": null,
+       "status": "on_hold",
+       "scored": false,
+       "matched": 0,
+       "partial": 0,
+       "required_total": 0,
+       "soft_skills": {
+        "total": 0,
+        "matched": 0,
+        "partial": 0
+       },
+       "reasons": [
+        "JD extraction not available: jd_quality_looks_incomplete"
+       ],
+       "hold_reason": "JD extraction not available: jd_quality_looks_incomplete",
+       "explicit_conflicts": [],
+       "excluded_units": [],
+       "requirements": [],
+       "matcher_model": null,
+       "used_fallback": false,
+       "filter_state": null
+      }
+     ]
+    }
+   }
+  ],
+  "active_filters": [],
+  "empty_message": null,
+  "analyzed": 10,
+  "held": 3,
+  "demoted_by_seniority_rule": [],
+  "versions": {
+   "service": "recommend-service-v1",
+   "pipeline": "pipeline-cp23-freeze-candidate-v4",
+   "seniority_rule": "seniority-demote-3y-v1",
+   "matching_model": "gpt-6-sol",
+   "matching_fallback_model": "gpt-6-luna",
+   "hold_policy": "H2v2",
+   "partial_weight": 0.5,
+   "k": 10,
+   "experience_conflict_rule": "experience-upper-bound-v1",
+   "history_confirmed": true
+  }
+ }
+}

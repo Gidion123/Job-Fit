@@ -1,0 +1,38 @@
+{
+  "run_id": "cp23_model_sweep_stage1_20261004_v1",
+  "stopped": "PermissionDeniedError",
+  "models": [
+    {
+      "model": "gpt-6-luna",
+      "skipped_after_first_pair": null
+    },
+    {
+      "model": "deepseek-flash",
+      "skipped_after_first_pair": null
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "skipped_after_first_pair": null
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "skipped_after_first_pair": null
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "skipped_after_first_pair": null
+    },
+    {
+      "model": "claude-haiku-4.5",
+      "skipped_after_first_pair": null
+    },
+    {
+      "model": "gpt-6-sol",
+      "skipped_after_first_pair": null
+    },
+    {
+      "model": "claude-sonnet-5.5",
+      "skipped_after_first_pair": null
+    }
+  ]
+}

@@ -1,0 +1,548 @@
+{
+  "job_id": "F00103",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "cache_hit": false,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "wall_ms": 59605,
+  "extraction": {
+    "job_id": "F00103",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Final-year student or recent graduate from a leading university, majoring in Engineering, Computer Science/Technology, or another relevant major.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "Final-year student or recent graduate from a leading university, majoring in Engineering, Computer Science/Technology, or another relevant major.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Mahasiswa tingkat akhir atau lulusan baru dari universitas terkemuka, jurusan Teknik, Ilmu Komputer/Teknologi, atau jurusan relevan lainnya."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Minimum GPA of 3.00 out of 4.00 or equivalent.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "Minimum GPA of 3.00 out of 4.00 or equivalent.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "IPK minimal 3.00 dari 4.00 atau setara."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Strong analytical ability.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Strong analytical ability.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Kemampuan analitis dan kuantitatif yang kuat, mampu berpikir strategis dan memecahkan masalah kompleks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Strong quantitative ability.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Strong quantitative ability.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Kemampuan analitis dan kuantitatif yang kuat, mampu berpikir strategis dan memecahkan masalah kompleks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Ability to think strategically.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Ability to think strategically.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Kemampuan analitis dan kuantitatif yang kuat, mampu berpikir strategis dan memecahkan masalah kompleks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Ability to solve complex problems.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Ability to solve complex problems.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Kemampuan analitis dan kuantitatif yang kuat, mampu berpikir strategis dan memecahkan masalah kompleks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Excellent written communication skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Excellent written communication skills.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Kemampuan komunikasi tertulis dan verbal yang sangat baik."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Excellent verbal communication skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Excellent verbal communication skills.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Kemampuan komunikasi tertulis dan verbal yang sangat baik."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Ability to work collaboratively in a team.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Ability to work collaboratively in a team.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Kemampuan bekerja kolaboratif dalam tim."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Proficiency in Microsoft Office Suite (Excel, PowerPoint, Word).",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Proficiency in Microsoft Office Suite (Excel, PowerPoint, Word).",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Mahir menggunakan Microsoft Office Suite (Excel, PowerPoint, Word)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Knowledge of business process improvement methodologies.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Knowledge of business process improvement methodologies.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pengetahuan tentang metodologi perbaikan proses bisnis menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Eagerness to learn.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Eagerness to learn.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Antusias untuk belajar dan mampu beradaptasi dengan cepat di lingkungan dinamis."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Ability to adapt quickly in a dynamic environment.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Ability to adapt quickly in a dynamic environment.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Antusias untuk belajar dan mampu beradaptasi dengan cepat di lingkungan dinamis."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Strong expertise in data science, technology, or other relevant certification.",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "other",
+        "normalized_name": "Strong expertise in data science, technology, or other relevant certification.",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "data science expertise",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "technology expertise",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "relevant certification",
+            "field": "certification",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Nilai tambah jika memiliki keahlian kuat di bidang data science, teknologi, atau sertifikasi relevan lainnya."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Willingness to intern full-time at the Yogyakarta office for at least 3 months.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "location",
+        "normalized_name": "Willingness to intern full-time at the Yogyakarta office for at least 3 months.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Bersedia magang penuh waktu di Kantor Yogyakarta selama minimal 3 bulan."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Experience in data engineering.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "Experience in data engineering.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pengalaman data engineering."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Strong Python skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong Python skills.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Kemampuan Python dan SQL yang kuat."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Strong SQL skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong SQL skills.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Kemampuan Python dan SQL yang kuat."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Experience designing ETL/ELT pipelines using Airflow, Azure Data Factory, or similar.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience designing ETL/ELT pipelines using Airflow, Azure Data Factory, or similar.",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "designing ETL/ELT pipelines with Airflow",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "designing ETL/ELT pipelines with Azure Data Factory",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "designing ETL/ELT pipelines with similar tools",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Pengalaman desain dan orkestrasi pipeline ETL/ELT (Airflow, Azure Data Factory, atau sejenisnya)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Experience orchestrating ETL/ELT pipelines using Airflow, Azure Data Factory, or similar.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience orchestrating ETL/ELT pipelines using Airflow, Azure Data Factory, or similar.",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "orchestrating ETL/ELT pipelines with Airflow",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "orchestrating ETL/ELT pipelines with Azure Data Factory",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "orchestrating ETL/ELT pipelines with similar tools",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Pengalaman desain dan orkestrasi pipeline ETL/ELT (Airflow, Azure Data Factory, atau sejenisnya)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Experience with Azure data services (Data Lake, Synapse, Data Factory, Cosmos DB).",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience with Azure data services (Data Lake, Synapse, Data Factory, Cosmos DB).",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pengalaman dengan layanan data Azure (Data Lake, Synapse, Data Factory, Cosmos DB)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "API integration — consuming REST APIs from enterprise systems (Oracle, Salesforce, Workday).",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "API integration — consuming REST APIs from enterprise systems (Oracle, Salesforce, Workday).",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Integrasi API — mengonsumsi REST API dari sistem enterprise (Oracle, Salesforce, Workday)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Experience with frameworks.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience with frameworks.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pengalaman framework dan monitoring kualitas data."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U24",
+        "text": "Experience monitoring data quality.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience monitoring data quality.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pengalaman framework dan monitoring kualitas data."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U25",
+        "text": "Understanding of data governance.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Understanding of data governance.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pemahaman tata kelola data, kontrol akses, dan persyaratan privasi."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U26",
+        "text": "Understanding of access control.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Understanding of access control.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pemahaman tata kelola data, kontrol akses, dan persyaratan privasi."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U27",
+        "text": "Understanding of privacy requirements.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Understanding of privacy requirements.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pemahaman tata kelola data, kontrol akses, dan persyaratan privasi."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U28",
+        "text": "Knowledge of PDPA/data privacy regulations.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Knowledge of PDPA/data privacy regulations.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pengetahuan tentang PDPA/regulasi privasi data menjadi prioritas."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U29",
+        "text": "Experience with Microsoft Graph API.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience with Microsoft Graph API.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pengalaman dengan Microsoft Graph API."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U30",
+        "text": "Familiarity with vector databases.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Familiarity with vector databases.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiar dengan vector database dan embedding pipelines."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U31",
+        "text": "Familiarity with embedding pipelines.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Familiarity with embedding pipelines.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiar dengan vector database dan embedding pipelines."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

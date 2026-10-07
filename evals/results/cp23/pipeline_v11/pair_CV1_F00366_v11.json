@@ -1,0 +1,9 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00366",
+  "status": "held_extraction",
+  "reason": "qualification_inventory_incomplete",
+  "score_H1": null,
+  "score_H2": null,
+  "wall_ms": 0
+}

@@ -1,0 +1,94 @@
+{
+  "source": "evals/labeling/JobFit_Development_Labeling_v1.3.xlsx",
+  "excel_view_copy": "evals/labeling/JobFit_Development_Labeling_v1.3_Excel_compatible.xlsx",
+  "source_sha256": "4d96852dce52effdc376709cf8c0131f2f9ad1a6f02795cc556fec1819eccb50",
+  "output_sha256": "b27ed413bc33ea0a94e73b8a730bfaecb636208482596ab43ad5ef54c2e5fb91",
+  "reason": "Six OOXML parts lacked mc:Ignorable namespace declarations; the JD sheet froze nine tall rows and selected a frozen header cell.",
+  "changed_parts": {
+    "xl/worksheets/sheet4.xml": {
+      "declared_prefixes": [
+        "x14ac",
+        "xr",
+        "xr2",
+        "xr3"
+      ],
+      "jd_view_freeze_header_only": false,
+      "old_part_sha256": "61c2198ea831a82aee80c51061f604377954d46ac1bd6a53dc12658533432cf9",
+      "new_part_sha256": "4069190be1ff6d040bcbcf70cfc4174696f9f24e433bc5a09c5b18a117fa0838"
+    },
+    "xl/worksheets/sheet5.xml": {
+      "declared_prefixes": [
+        "x14ac",
+        "xr",
+        "xr2",
+        "xr3"
+      ],
+      "jd_view_freeze_header_only": false,
+      "old_part_sha256": "b66a824c668c871c6ecd117a014a501e1cf21d8fa7968aec4d2cdc08d1a398b8",
+      "new_part_sha256": "06a1c93b314bed41de02c3101938fe90c7156df1309eeb2a2aa1159676dfaa7e"
+    },
+    "xl/worksheets/sheet6.xml": {
+      "declared_prefixes": [
+        "x14ac",
+        "xr",
+        "xr2",
+        "xr3"
+      ],
+      "jd_view_freeze_header_only": false,
+      "old_part_sha256": "6c220e6fecccd9cf29f33e734bb7b25902ab57a42572ca628141e615f4ee9083",
+      "new_part_sha256": "eed16b7648704342dd6666212456a4e29797d1d234a401606a4ec0885e82f1dc"
+    },
+    "xl/worksheets/sheet1.xml": {
+      "declared_prefixes": [
+        "x14ac",
+        "xr",
+        "xr2",
+        "xr3"
+      ],
+      "jd_view_freeze_header_only": false,
+      "old_part_sha256": "40b660667c39895f1292ba9e05b8c644fbb374fa73ca389b57c8df4cea6ab46f",
+      "new_part_sha256": "4d6e009887e5059d755c2fa6a6c692fbcad383655fa8b3ed014f3a80d50175ed"
+    },
+    "xl/worksheets/sheet2.xml": {
+      "declared_prefixes": [],
+      "jd_view_freeze_header_only": true,
+      "old_part_sha256": "e2e6b8f596e81bde2d0edd62c7643c8729371f48ef0934ceab11f6692b210314",
+      "new_part_sha256": "691533b979dd2fd18cd92c1576e8e4b8f64981febf69690a98b9f9850de1d3ce"
+    },
+    "xl/tables/table4.xml": {
+      "declared_prefixes": [
+        "xr",
+        "xr3"
+      ],
+      "jd_view_freeze_header_only": false,
+      "old_part_sha256": "ba6adad2c875b05cb1dc486d040500fb51d853fe1926560e03d7cf74ceb3c8c4",
+      "new_part_sha256": "3a3fb1f0b799466ac20d7be0a2ed059fc96c7cab9e3704875852f37ebd311f3c"
+    },
+    "xl/tables/table3.xml": {
+      "declared_prefixes": [
+        "xr",
+        "xr3"
+      ],
+      "jd_view_freeze_header_only": false,
+      "old_part_sha256": "0a9a21bf5ae76ee7d423fc3b08de24b9377a3fa56d3b20fc6b78231e5ae28c9c",
+      "new_part_sha256": "ff848381a496ef0c96711357b058b2b7c2267308a0d6668ba9f809f771d76830"
+    }
+  },
+  "unchanged_part_count": 28,
+  "canonical_source_preserved": true,
+  "verification": {
+    "zip_crc": "passed",
+    "xml_well_formed": "passed",
+    "markup_compatibility_prefixes": "all declared",
+    "sheet_count": 9,
+    "cell_slots_compared": 37644,
+    "cell_values_formulas_styles_formats": "exact match to canonical source",
+    "tables_and_data_validations": "unchanged",
+    "JDs_freeze_pane": "A10 in canonical source; A2 in Excel-compatible copy",
+    "JDs_selection": "B2 in Excel-compatible copy",
+    "CV_scope": "CV1/CV2 development only; CV3-CV5 remain test-only per D-046",
+    "openpyxl_read": "passed",
+    "libreoffice_open_and_export": "passed",
+    "microsoft_excel_open": "previous compatible copy opened without recovery warning; revised scroll copy awaiting user confirmation"
+  }
+}

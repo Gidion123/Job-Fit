@@ -1,0 +1,314 @@
+{
+ "set": "ranking",
+ "cv_id": "CV1",
+ "job_id": "F00020",
+ "model": "gpt-6-sol",
+ "experiment_id": "QA-E01",
+ "wall_ms": 13599,
+ "status": "done",
+ "error_code": null,
+ "attempts": 1,
+ "assessments": [
+  {
+   "unit_id": "U01",
+   "label": null,
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [
+    {
+     "branch_id": "B1",
+     "label": "PARTIAL",
+     "check_status": "done",
+     "cv_quotes": [
+      "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+     ]
+    },
+    {
+     "branch_id": "B2",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B3",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ]
+    },
+    {
+     "branch_id": "B4",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ]
+    },
+    {
+     "branch_id": "B5",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+      "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+     ]
+    }
+   ],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U02",
+   "label": null,
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [
+    {
+     "branch_id": "B1",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+      "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+     ]
+    },
+    {
+     "branch_id": "B2",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+      "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+     ]
+    }
+   ],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U03",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U04",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U05",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U06",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U07",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U08",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "U09",
+   "label": null,
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [
+    {
+     "branch_id": "B1",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh · Februari 2025 - Juni 2025",
+      "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+     ]
+    },
+    {
+     "branch_id": "B2",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+     ]
+    },
+    {
+     "branch_id": "B3",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    }
+   ],
+   "label_source": "model_draft"
+  }
+ ],
+ "source_flags": [
+  {
+   "unit_id": "U01",
+   "branch_id": "B1",
+   "kind": "quote_exact",
+   "model_quote": "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar",
+   "cv_span": "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar",
+   "start": 1596,
+   "end": 1727,
+   "flags": []
+  },
+  {
+   "unit_id": "U01",
+   "branch_id": "B3",
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "U01",
+   "branch_id": "B4",
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "U01",
+   "branch_id": "B5",
+   "kind": "quote_exact",
+   "model_quote": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+   "cv_span": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+   "start": 1173,
+   "end": 1225,
+   "flags": []
+  },
+  {
+   "unit_id": "U01",
+   "branch_id": "B5",
+   "kind": "quote_exact",
+   "model_quote": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "cv_span": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "start": 1226,
+   "end": 1328,
+   "flags": []
+  },
+  {
+   "unit_id": "U02",
+   "branch_id": "B1",
+   "kind": "quote_exact",
+   "model_quote": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+   "cv_span": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+   "start": 623,
+   "end": 720,
+   "flags": []
+  },
+  {
+   "unit_id": "U02",
+   "branch_id": "B1",
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "U02",
+   "branch_id": "B2",
+   "kind": "quote_exact",
+   "model_quote": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+   "cv_span": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026",
+   "start": 1173,
+   "end": 1225,
+   "flags": []
+  },
+  {
+   "unit_id": "U02",
+   "branch_id": "B2",
+   "kind": "quote_exact",
+   "model_quote": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "cv_span": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "start": 1226,
+   "end": 1328,
+   "flags": []
+  },
+  {
+   "unit_id": "U03",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+   "cv_span": "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+   "start": 1096,
+   "end": 1160,
+   "flags": []
+  },
+  {
+   "unit_id": "U04",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+   "cv_span": "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+   "start": 906,
+   "end": 1000,
+   "flags": []
+  },
+  {
+   "unit_id": "U09",
+   "branch_id": "B1",
+   "kind": "quote_exact",
+   "model_quote": "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh · Februari 2025 - Juni 2025",
+   "cv_span": "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh · Februari 2025 - Juni 2025",
+   "start": 1002,
+   "end": 1095,
+   "flags": []
+  },
+  {
+   "unit_id": "U09",
+   "branch_id": "B1",
+   "kind": "quote_exact",
+   "model_quote": "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+   "cv_span": "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+   "start": 1096,
+   "end": 1160,
+   "flags": []
+  },
+  {
+   "unit_id": "U09",
+   "branch_id": "B2",
+   "kind": "quote_exact",
+   "model_quote": "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+   "cv_span": "- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+   "start": 1096,
+   "end": 1160,
+   "flags": []
+  }
+ ]
+}

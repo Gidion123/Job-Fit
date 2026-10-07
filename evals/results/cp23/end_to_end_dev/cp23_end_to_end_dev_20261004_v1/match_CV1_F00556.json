@@ -1,0 +1,554 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00556",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "wall_ms": 65858,
+  "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 2,
+    "partial": 2,
+    "required_total": 5,
+    "preferred_met": 3,
+    "preferred_total": 4,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 3,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 3,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+      "Requirement structure needs review; identified denominator is not validated."
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B01",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B02",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B03",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B04",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+          ]
+        },
+        {
+          "branch_id": "B05",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B06",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B01",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+            "statistika inferensial"
+          ]
+        },
+        {
+          "branch_id": "B02",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+            "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+            "statistika inferensial"
+          ]
+        },
+        {
+          "branch_id": "B03",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+            "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+            "statistika inferensial"
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+        "Python (pandas, NumPy, scikit-learn, matplotlib)"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B01",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Lulusan S1 Statistika yang tertarik pada data science dan machine learning.",
+            "machine learning dasar"
+          ]
+        },
+        {
+          "branch_id": "B02",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "membuat model prediksi sederhana",
+            "Prediksi Churn Pelanggan (Skripsi)",
+            "F1-score 0,78 pada data uji."
+          ]
+        },
+        {
+          "branch_id": "B03",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+            "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+            "statistika inferensial"
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B01",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+            "Python (pandas, NumPy, scikit-learn, matplotlib)"
+          ]
+        },
+        {
+          "branch_id": "B02",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B03",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Lulusan S1 Statistika yang tertarik pada data science dan machine learning.",
+        "membuat model prediksi sederhana"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U10",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U11",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Lulusan S1 Statistika yang tertarik pada data science dan machine learning."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U12",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+        "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ],
+  "source_flags": [
+    {
+      "unit_id": "U01",
+      "branch_id": "B04",
+      "kind": "quote_exact",
+      "model_quote": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "cv_span": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "start": 317,
+      "end": 400,
+      "flags": []
+    },
+    {
+      "unit_id": "U01",
+      "branch_id": "B06",
+      "kind": "quote_exact",
+      "model_quote": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "cv_span": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "start": 317,
+      "end": 400,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": "B01",
+      "kind": "quote_exact",
+      "model_quote": "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+      "cv_span": "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+      "start": 523,
+      "end": 606,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": "B01",
+      "kind": "quote_exact",
+      "model_quote": "statistika inferensial",
+      "cv_span": "statistika inferensial",
+      "start": 1681,
+      "end": 1703,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": "B02",
+      "kind": "quote_exact",
+      "model_quote": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "cv_span": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "start": 317,
+      "end": 400,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": "B02",
+      "kind": "quote_exact",
+      "model_quote": "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+      "cv_span": "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+      "start": 523,
+      "end": 606,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": "B02",
+      "kind": "quote_exact",
+      "model_quote": "statistika inferensial",
+      "cv_span": "statistika inferensial",
+      "start": 1681,
+      "end": 1703,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": "B03",
+      "kind": "quote_exact",
+      "model_quote": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "cv_span": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "start": 317,
+      "end": 400,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": "B03",
+      "kind": "quote_exact",
+      "model_quote": "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+      "cv_span": "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+      "start": 523,
+      "end": 606,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": "B03",
+      "kind": "quote_exact",
+      "model_quote": "statistika inferensial",
+      "cv_span": "statistika inferensial",
+      "start": 1681,
+      "end": 1703,
+      "flags": []
+    },
+    {
+      "unit_id": "U03",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "cv_span": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "start": 723,
+      "end": 828,
+      "flags": []
+    },
+    {
+      "unit_id": "U03",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Python (pandas, NumPy, scikit-learn, matplotlib)",
+      "cv_span": "Python (pandas, NumPy, scikit-learn, matplotlib)",
+      "start": 1596,
+      "end": 1644,
+      "flags": []
+    },
+    {
+      "unit_id": "U04",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "cv_span": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "start": 723,
+      "end": 828,
+      "flags": []
+    },
+    {
+      "unit_id": "U05",
+      "branch_id": "B01",
+      "kind": "quote_exact",
+      "model_quote": "Lulusan S1 Statistika yang tertarik pada data science dan machine learning.",
+      "cv_span": "Lulusan S1 Statistika yang tertarik pada data science dan machine learning.",
+      "start": 98,
+      "end": 173,
+      "flags": []
+    },
+    {
+      "unit_id": "U05",
+      "branch_id": "B01",
+      "kind": "quote_exact",
+      "model_quote": "machine learning dasar",
+      "cv_span": "machine learning dasar",
+      "start": 1705,
+      "end": 1727,
+      "flags": []
+    },
+    {
+      "unit_id": "U05",
+      "branch_id": "B02",
+      "kind": "quote_exact",
+      "model_quote": "membuat model prediksi sederhana",
+      "cv_span": "membuat model prediksi sederhana",
+      "start": 220,
+      "end": 252,
+      "flags": []
+    },
+    {
+      "unit_id": "U05",
+      "branch_id": "B02",
+      "kind": "quote_exact",
+      "model_quote": "Prediksi Churn Pelanggan (Skripsi)",
+      "cv_span": "Prediksi Churn Pelanggan (Skripsi)",
+      "start": 1175,
+      "end": 1209,
+      "flags": []
+    },
+    {
+      "unit_id": "U05",
+      "branch_id": "B02",
+      "kind": "quote_exact",
+      "model_quote": "F1-score 0,78 pada data uji.",
+      "cv_span": "F1-score 0,78 pada data uji.",
+      "start": 1300,
+      "end": 1328,
+      "flags": []
+    },
+    {
+      "unit_id": "U05",
+      "branch_id": "B03",
+      "kind": "quote_exact",
+      "model_quote": "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+      "cv_span": "Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+      "start": 523,
+      "end": 606,
+      "flags": []
+    },
+    {
+      "unit_id": "U05",
+      "branch_id": "B03",
+      "kind": "quote_exact",
+      "model_quote": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "cv_span": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "start": 1228,
+      "end": 1328,
+      "flags": []
+    },
+    {
+      "unit_id": "U05",
+      "branch_id": "B03",
+      "kind": "quote_exact",
+      "model_quote": "statistika inferensial",
+      "cv_span": "statistika inferensial",
+      "start": 1681,
+      "end": 1703,
+      "flags": []
+    },
+    {
+      "unit_id": "U06",
+      "branch_id": "B01",
+      "kind": "quote_exact",
+      "model_quote": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "cv_span": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "start": 1228,
+      "end": 1328,
+      "flags": []
+    },
+    {
+      "unit_id": "U06",
+      "branch_id": "B01",
+      "kind": "quote_exact",
+      "model_quote": "Python (pandas, NumPy, scikit-learn, matplotlib)",
+      "cv_span": "Python (pandas, NumPy, scikit-learn, matplotlib)",
+      "start": 1596,
+      "end": 1644,
+      "flags": []
+    },
+    {
+      "unit_id": "U07",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Lulusan S1 Statistika yang tertarik pada data science dan machine learning.",
+      "cv_span": "Lulusan S1 Statistika yang tertarik pada data science dan machine learning.",
+      "start": 98,
+      "end": 173,
+      "flags": []
+    },
+    {
+      "unit_id": "U07",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "membuat model prediksi sederhana",
+      "cv_span": "membuat model prediksi sederhana",
+      "start": 220,
+      "end": 252,
+      "flags": []
+    },
+    {
+      "unit_id": "U08",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar",
+      "cv_span": "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar",
+      "start": 1596,
+      "end": 1727,
+      "flags": []
+    },
+    {
+      "unit_id": "U11",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Lulusan S1 Statistika yang tertarik pada data science dan machine learning.",
+      "cv_span": "Lulusan S1 Statistika yang tertarik pada data science dan machine learning.",
+      "start": 98,
+      "end": 173,
+      "flags": []
+    },
+    {
+      "unit_id": "U12",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+      "cv_span": "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+      "start": 908,
+      "end": 1000,
+      "flags": []
+    },
+    {
+      "unit_id": "U12",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+      "cv_span": "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+      "start": 1098,
+      "end": 1160,
+      "flags": []
+    }
+  ]
+}

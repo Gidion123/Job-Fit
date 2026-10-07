@@ -1,0 +1,305 @@
+{
+ "job_id": "F00127",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "not_assessed",
+  "bullet_count": 0,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 0,
+  "inventory_mappings": [],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00127",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Minimal D3/D4/S1 in Information Systems, Informatics Engineering, Telecommunication Engineering, Statistics, Mathematics, or a related major",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "education",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B01",
+      "text": "Minimal D3/D4/S1 in Sistem Informasi",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B02",
+      "text": "Minimal D3/D4/S1 in Teknik Informatika",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B03",
+      "text": "Minimal D3/D4/S1 in Teknik Telekomunikasi",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B04",
+      "text": "Minimal D3/D4/S1 in Statistika",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B05",
+      "text": "Minimal D3/D4/S1 in Matematika",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B06",
+      "text": "Minimal D3/D4/S1 in a related major",
+      "field": "education",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Minimal D3 / D4 / S1 Sistem Informasi, Teknik Informatika, Teknik Telekomunikasi, Statistika, Matematika, atau jurusan terkait."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "Experience in operational data management (fresh graduates with relevant internship experience are welcome to apply)",
+    "kind": "simple",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memiliki pengalaman dalam pengelolaan data operasional, administrasi, dan penyusunan laporan (Fresh Graduate dengan pengalaman magang relevan dipersilakan melamar)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Experience in administration (fresh graduates with relevant internship experience are welcome to apply)",
+    "kind": "simple",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memiliki pengalaman dalam pengelolaan data operasional, administrasi, dan penyusunan laporan (Fresh Graduate dengan pengalaman magang relevan dipersilakan melamar)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Experience in report preparation (fresh graduates with relevant internship experience are welcome to apply)",
+    "kind": "simple",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memiliki pengalaman dalam pengelolaan data operasional, administrasi, dan penyusunan laporan (Fresh Graduate dengan pengalaman magang relevan dipersilakan melamar)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Experience using SAP for operational, administrative, or reporting needs",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Wajib memiliki pengalaman menggunakan SAP untuk kebutuhan operasional, administrasi, atau pelaporan."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Python for data processing",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Wajib memiliki kemampuan Python untuk pengolahan, analisis, dan automasi data."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Python for data analysis",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Wajib memiliki kemampuan Python untuk pengolahan, analisis, dan automasi data."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Python for data automation",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Wajib memiliki kemampuan Python untuk pengolahan, analisis, dan automasi data."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Microsoft Excel for data processing",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Mahir mengoperasikan Microsoft Excel untuk pengolahan dan analisis data."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "Microsoft Excel for data analysis",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Mahir mengoperasikan Microsoft Excel untuk pengolahan dan analisis data."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "Experience supporting data administration in NOC, Network Operation, or Telecommunication Operations",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B07",
+      "text": "Experience supporting data administration in NOC team",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B08",
+      "text": "Experience supporting data administration in Network Operation team",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B09",
+      "text": "Experience supporting data administration in Telecommunication Operations team",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Berpengalaman mendukung administrasi data pada tim NOC, Network Operation, atau Operasional Telekomunikasi menjadi nilai tambah."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "Detail-oriented",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Teliti, memiliki kemampuan analitis yang baik, serta mampu berkoordinasi dengan berbagai unit kerja."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U13",
+    "text": "Good analytical skills",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Teliti, memiliki kemampuan analitis yang baik, serta mampu berkoordinasi dengan berbagai unit kerja."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U14",
+    "text": "Able to coordinate with various work units",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Teliti, memiliki kemampuan analitis yang baik, serta mampu berkoordinasi dengan berbagai unit kerja."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U15",
+    "text": "Willing to work WFO at Cyber 2 Tower, Kuningan, South Jakarta",
+    "kind": "simple",
+    "importance": "required",
+    "field": "location",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Bersedia bekerja WFO di Cyber 2 Tower, Kuningan, Jakarta Selatan."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "cp23-dev-trainer-roles-v1",
+  "api_calls": 0,
+  "pattern": "\\b(trainer|mentor|instruktur|instructor|tutor|pengajar|dosen|lecturer|teacher|guru|fasilitator|facilitator|coach|bootcamp)\\b",
+  "development_jobs": [
+    {
+      "job_id": "F00020",
+      "title": "MENTOR DATA ANALYST & AI",
+      "role_family": "ai_ml_engineering",
+      "experience_bucket": "not_stated"
+    },
+    {
+      "job_id": "F00129",
+      "title": "Data Science Trainer",
+      "role_family": "data_science",
+      "experience_bucket": "1-2y"
+    },
+    {
+      "job_id": "F00514",
+      "title": "Data Science (Lecturer)",
+      "role_family": "data_science",
+      "experience_bucket": "entry"
+    }
+  ],
+  "test_split_count_only": 1,
+  "approved_labels": [
+    {
+      "cv_id": "CV2",
+      "job_id": "F00020",
+      "relevance": 0
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00020",
+      "relevance": 0
+    }
+  ],
+  "stage1_top30_positions": {
+    "CV1": [
+      [
+        2,
+        "F00020"
+      ],
+      [
+        30,
+        "F00129"
+      ]
+    ],
+    "CV2": [
+      [
+        14,
+        "F00020"
+      ]
+    ]
+  },
+  "saved_demo_final_positions_rule_on_k20": {
+    "CV1": [
+      {
+        "position": 1,
+        "job_id": "F00129",
+        "score_pct": 87.5
+      },
+      {
+        "position": 9,
+        "job_id": "F00020",
+        "score_pct": 50.0
+      }
+    ],
+    "CV2": [
+      {
+        "position": 8,
+        "job_id": "F00020",
+        "score_pct": 50.0
+      }
+    ]
+  },
+  "limits": [
+    "Three development jobs: too few to tune or evaluate a rule.",
+    "One of them is in the pending blind gap workbook, so its label is not read here."
+  ]
+}

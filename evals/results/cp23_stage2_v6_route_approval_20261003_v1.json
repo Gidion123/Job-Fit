@@ -1,0 +1,19 @@
+{
+  "decision": "approved",
+  "approved_by": "Dion",
+  "review_date": "2026-10-03",
+  "source": "Dion's explicit answer 'Setuju v6 dalam plafon kumulatif US$3,16' to the route-repair proposal in this chat",
+  "scope": "cp23_stage2_round1_extraction_20261003_v6_route_repair",
+  "plan_file": "evals/results/cp23_stage2_round1_extraction_20261003_v6_route_repair_preflight.json",
+  "plan_sha256": "023bf2ba3f9ad0dac975b39173a5ba543d09584216573acbba51bb616a152a1a",
+  "aggregate_cap_usd": "3.16",
+  "cap_scope": "Cumulative non-cached charges for v5 and v6; old results are retained; this is not a fresh USD3.16 allocation",
+  "covers": "21 remaining original extraction cases, GPT-only temperature omission and published dated response alias, fixed experimental v1.4, one repair and independent source check per case",
+  "excludes": [
+    "test set",
+    "matcher calls",
+    "reference model",
+    "broad extraction",
+    "configuration selection"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "job_id": "deepseek-flash/F00815",
+  "result_sha256": "4de4c9851252f32e0cfeba49b0ff62bf4606048efeb622d537aa389aa26b3653",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "fail",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "pass"
+  },
+  "notes": "Delegated full-source QA of F00815: all nine requirement bullets have mappings and every quote is an exact source substring, but 15 model units do not preserve the 16 reviewed logical obligations. U03 flattens the OpenAI/LangChain/LlamaIndex framework alternatives into one simple item; U12 similarly flattens Pinecone/FAISS/Weaviate vector-database alternatives. U14 merges independently assessable Git, testing and CI/CD requirements. U09/U10 split API building/deployment while dropping the reviewed FastAPI/Flask/equivalent alternative branches and their shared build-and-deploy scope. U13 correctly retains AWS or other cloud as a required alternative despite the intro's AWS preference. U01 category also differs from the reviewed professional AI/ML experience unit. Source inventory success is insufficient; record semantic failure and continue only under the approved v5 policy. No gold/denominator change, human mapping approval, F1 or winner.",
+  "checked_by": "delegated_Codex2_source_semantic_QA_2026-10-03"
+}

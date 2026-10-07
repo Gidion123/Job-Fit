@@ -1,0 +1,1128 @@
+{
+  "status": "pending_alignment_review",
+  "human_verified": false,
+  "rows": [
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U02"
+      ],
+      "model_ids": [
+        "U01"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U02",
+          "unit_text": "Bachelor's degree in Computer Science | Artificial Intelligence | Data Science | related field",
+          "source_quote": "Bachelor's degree in Computer Science, Artificial Intelligence, Data Science, or a related field",
+          "importance": "required",
+          "category": "education",
+          "group_id": "G4",
+          "min_years": null,
+          "label_source": "annotator",
+          "review_action": "edited",
+          "review_note": null,
+          "guideline_version": "v1.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U01",
+          "text": "Bachelor's degree in Computer Science, Artificial Intelligence, Data Science, or a related field.",
+          "kind": "alternative_group",
+          "importance": "required",
+          "field": "education",
+          "normalized_name": "Bachelor's degree in Computer Science, Artificial Intelligence, Data Science, or a related field",
+          "min_years": null,
+          "branches": [
+            {
+              "branch_id": "B1",
+              "text": "Computer Science",
+              "field": "education",
+              "min_years": null
+            },
+            {
+              "branch_id": "B2",
+              "text": "Artificial Intelligence",
+              "field": "education",
+              "min_years": null
+            },
+            {
+              "branch_id": "B3",
+              "text": "Data Science",
+              "field": "education",
+              "min_years": null
+            },
+            {
+              "branch_id": "B4",
+              "text": "a related field",
+              "field": "education",
+              "min_years": null
+            }
+          ],
+          "source_quotes": [
+            "Bachelor's degree in Computer Science, Artificial Intelligence, Data Science, or a related field."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": false
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U01"
+      ],
+      "model_ids": [
+        "U02"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U01",
+          "unit_text": "Min 2 years of building software or AI/ML applications",
+          "source_quote": "2–5 years of experience building software or AI/ML applications.",
+          "importance": "required",
+          "category": "experience_duration",
+          "group_id": null,
+          "min_years": 2.0,
+          "label_source": "annotator",
+          "review_action": "added",
+          "review_note": "Saya pilih label required karena ada kata \"What You Will Need:\" artinya persyaratan yg dibutuhkan sehingga ini menjadi wajib",
+          "guideline_version": "v1.0"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U02",
+          "text": "2–5 years of experience building software or AI/ML applications.",
+          "kind": "qualified",
+          "importance": "required",
+          "field": "experience_duration",
+          "normalized_name": "2–5 years of experience building software or AI/ML applications",
+          "min_years": 2.0,
+          "branches": [],
+          "source_quotes": [
+            "2–5 years of experience building software or AI/ML applications."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U03"
+      ],
+      "model_ids": [
+        "U03"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Strong is omitted from normalized unit text but preserved in the exact source quote. D-035 does not measure depth.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U03",
+          "unit_text": "Strong Python",
+          "source_quote": "Strong programming skills in Python.",
+          "importance": "required",
+          "category": "skill_tool",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "annotator",
+          "review_action": "added",
+          "review_note": null,
+          "guideline_version": "v1.0"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U03",
+          "text": "Programming skills in Python",
+          "kind": "simple",
+          "importance": "required",
+          "field": "skill_tool",
+          "normalized_name": "Programming skills in Python",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Strong programming skills in Python."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U04"
+      ],
+      "model_ids": [
+        "U04"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U04",
+          "unit_text": "Machine Learning concepts",
+          "source_quote": "Good understanding of machine learning concepts and experience with frameworks such as PyTorch, TensorFlow, or XGBoost.",
+          "importance": "required",
+          "category": "knowledge_area",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "annotator",
+          "review_action": "added",
+          "review_note": null,
+          "guideline_version": "v1.0"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U04",
+          "text": "Understanding of machine learning concepts",
+          "kind": "simple",
+          "importance": "required",
+          "field": "knowledge_area",
+          "normalized_name": "Understanding of machine learning concepts",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Good understanding of machine learning concepts"
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": false
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U05"
+      ],
+      "model_ids": [
+        "U05"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U05",
+          "unit_text": "Framework experience: PyTorch | TensorFlow | XGBoost",
+          "source_quote": "Good understanding of machine learning concepts and experience with frameworks such as PyTorch, TensorFlow, or XGBoost.",
+          "importance": "required",
+          "category": "skill_tool",
+          "group_id": "G1",
+          "min_years": null,
+          "label_source": "annotator",
+          "review_action": "added",
+          "review_note": null,
+          "guideline_version": "v1.0"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U05",
+          "text": "Experience with frameworks such as PyTorch, TensorFlow, or XGBoost",
+          "kind": "alternative_group",
+          "importance": "required",
+          "field": "skill_tool",
+          "normalized_name": "Experience with frameworks such as PyTorch, TensorFlow, or XGBoost",
+          "min_years": null,
+          "branches": [
+            {
+              "branch_id": "B1",
+              "text": "PyTorch",
+              "field": "skill_tool",
+              "min_years": null
+            },
+            {
+              "branch_id": "B2",
+              "text": "TensorFlow",
+              "field": "skill_tool",
+              "min_years": null
+            },
+            {
+              "branch_id": "B3",
+              "text": "XGBoost",
+              "field": "skill_tool",
+              "min_years": null
+            }
+          ],
+          "source_quotes": [
+            "experience with frameworks such as PyTorch, TensorFlow, or XGBoost"
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": false
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U06"
+      ],
+      "model_ids": [
+        "U06"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Model category knowledge_area versus approved skill_tool for LLM experience; both remain technical, no denominator change or gold edit.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U06",
+          "unit_text": "LLM Experience",
+          "source_quote": "Experience working with Large Language Models (LLMs) and frameworks such as LangChain, LlamaIndex, or similar tools.",
+          "importance": "required",
+          "category": "skill_tool",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "annotator",
+          "review_action": "added",
+          "review_note": null,
+          "guideline_version": "v1.0"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U06",
+          "text": "Experience working with Large Language Models (LLMs)",
+          "kind": "simple",
+          "importance": "required",
+          "field": "knowledge_area",
+          "normalized_name": "Experience working with Large Language Models (LLMs)",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Experience working with Large Language Models (LLMs)"
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": false
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U07"
+      ],
+      "model_ids": [
+        "U07"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U07",
+          "unit_text": "Framework experience: LangChain | LlamaIndex | similar tools",
+          "source_quote": "Experience working with Large Language Models (LLMs) and frameworks such as LangChain, LlamaIndex, or similar tools.",
+          "importance": "required",
+          "category": "skill_tool",
+          "group_id": "G2",
+          "min_years": null,
+          "label_source": "annotator",
+          "review_action": "added",
+          "review_note": null,
+          "guideline_version": "v1.0"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U07",
+          "text": "Experience with frameworks such as LangChain, LlamaIndex, or similar tools",
+          "kind": "alternative_group",
+          "importance": "required",
+          "field": "skill_tool",
+          "normalized_name": "Experience with frameworks such as LangChain, LlamaIndex, or similar tools",
+          "min_years": null,
+          "branches": [
+            {
+              "branch_id": "B1",
+              "text": "LangChain",
+              "field": "skill_tool",
+              "min_years": null
+            },
+            {
+              "branch_id": "B2",
+              "text": "LlamaIndex",
+              "field": "skill_tool",
+              "min_years": null
+            },
+            {
+              "branch_id": "B3",
+              "text": "similar tools",
+              "field": "skill_tool",
+              "min_years": null
+            }
+          ],
+          "source_quotes": [
+            "frameworks such as LangChain, LlamaIndex, or similar tools"
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": false
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U08"
+      ],
+      "model_ids": [
+        "U08"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U08",
+          "unit_text": "Experience Build AI App NLP",
+          "source_quote": "Experience building AI applications in areas such as Natural Language Processing (NLP), Computer Vision, Recommendation Systems, or Generative AI.",
+          "importance": "required",
+          "category": "knowledge_area",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "annotator",
+          "review_action": "added",
+          "review_note": "Kept as four required units: exception for lists of experience areas (D-040).",
+          "guideline_version": "v1.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U08",
+          "text": "Experience building AI applications in Natural Language Processing (NLP)",
+          "kind": "simple",
+          "importance": "required",
+          "field": "knowledge_area",
+          "normalized_name": "Experience building AI applications in Natural Language Processing (NLP)",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Experience building AI applications in areas such as Natural Language Processing (NLP), Computer Vision, Recommendation Systems, or Generative AI."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U09"
+      ],
+      "model_ids": [
+        "U09"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U09",
+          "unit_text": "Experience Build AI App Computer Vision",
+          "source_quote": "Experience building AI applications in areas such as Natural Language Processing (NLP), Computer Vision, Recommendation Systems, or Generative AI.",
+          "importance": "required",
+          "category": "knowledge_area",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "annotator",
+          "review_action": "added",
+          "review_note": "Kept as four required units: exception for lists of experience areas (D-040).",
+          "guideline_version": "v1.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U09",
+          "text": "Experience building AI applications in Computer Vision",
+          "kind": "simple",
+          "importance": "required",
+          "field": "knowledge_area",
+          "normalized_name": "Experience building AI applications in Computer Vision",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Experience building AI applications in areas such as Natural Language Processing (NLP), Computer Vision, Recommendation Systems, or Generative AI."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U10"
+      ],
+      "model_ids": [
+        "U10"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U10",
+          "unit_text": "Experience Build AI App Recommendation Systems",
+          "source_quote": "Experience building AI applications in areas such as Natural Language Processing (NLP), Computer Vision, Recommendation Systems, or Generative AI.",
+          "importance": "required",
+          "category": "knowledge_area",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "annotator",
+          "review_action": "added",
+          "review_note": "Kept as four required units: exception for lists of experience areas (D-040).",
+          "guideline_version": "v1.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U10",
+          "text": "Experience building AI applications in Recommendation Systems",
+          "kind": "simple",
+          "importance": "required",
+          "field": "knowledge_area",
+          "normalized_name": "Experience building AI applications in Recommendation Systems",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Experience building AI applications in areas such as Natural Language Processing (NLP), Computer Vision, Recommendation Systems, or Generative AI."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U11"
+      ],
+      "model_ids": [
+        "U11"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U11",
+          "unit_text": "Experience Build AI App Generative AI",
+          "source_quote": "Experience building AI applications in areas such as Natural Language Processing (NLP), Computer Vision, Recommendation Systems, or Generative AI.",
+          "importance": "required",
+          "category": "knowledge_area",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "annotator",
+          "review_action": "added",
+          "review_note": "Kept as four required units: exception for lists of experience areas (D-040).",
+          "guideline_version": "v1.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U11",
+          "text": "Experience building AI applications in Generative AI",
+          "kind": "simple",
+          "importance": "required",
+          "field": "knowledge_area",
+          "normalized_name": "Experience building AI applications in Generative AI",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Experience building AI applications in areas such as Natural Language Processing (NLP), Computer Vision, Recommendation Systems, or Generative AI."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U12"
+      ],
+      "model_ids": [
+        "U12"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U12",
+          "unit_text": "REST APIs",
+          "source_quote": "Familiarity with REST APIs, Git, Docker, and CI/CD practices.",
+          "importance": "required",
+          "category": "skill_tool",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "annotator",
+          "review_action": "edited",
+          "review_note": null,
+          "guideline_version": "v1.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U12",
+          "text": "Familiarity with REST APIs",
+          "kind": "simple",
+          "importance": "required",
+          "field": "skill_tool",
+          "normalized_name": "Familiarity with REST APIs",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Familiarity with REST APIs, Git, Docker, and CI/CD practices."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U18"
+      ],
+      "model_ids": [
+        "U13"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U18",
+          "unit_text": "Git",
+          "source_quote": "Familiarity with REST APIs, Git, Docker, and CI/CD practices.",
+          "importance": "required",
+          "category": "skill_tool",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v1.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U13",
+          "text": "Familiarity with Git",
+          "kind": "simple",
+          "importance": "required",
+          "field": "skill_tool",
+          "normalized_name": "Familiarity with Git",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Familiarity with REST APIs, Git, Docker, and CI/CD practices."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U19"
+      ],
+      "model_ids": [
+        "U14"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U19",
+          "unit_text": "Docker",
+          "source_quote": "Familiarity with REST APIs, Git, Docker, and CI/CD practices.",
+          "importance": "required",
+          "category": "skill_tool",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v1.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U14",
+          "text": "Familiarity with Docker",
+          "kind": "simple",
+          "importance": "required",
+          "field": "skill_tool",
+          "normalized_name": "Familiarity with Docker",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Familiarity with REST APIs, Git, Docker, and CI/CD practices."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U20"
+      ],
+      "model_ids": [
+        "U15"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U20",
+          "unit_text": "CI/CD practices",
+          "source_quote": "Familiarity with REST APIs, Git, Docker, and CI/CD practices.",
+          "importance": "required",
+          "category": "skill_tool",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v1.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U15",
+          "text": "Familiarity with CI/CD practices",
+          "kind": "simple",
+          "importance": "required",
+          "field": "skill_tool",
+          "normalized_name": "Familiarity with CI/CD practices",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Familiarity with REST APIs, Git, Docker, and CI/CD practices."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U13"
+      ],
+      "model_ids": [
+        "U16"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Model short text says SQL; databases remains in its exact quote and source scope.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U13",
+          "unit_text": "SQL databases",
+          "source_quote": "Working knowledge of SQL and NoSQL databases.",
+          "importance": "required",
+          "category": "skill_tool",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "annotator",
+          "review_action": "edited",
+          "review_note": null,
+          "guideline_version": "v1.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U16",
+          "text": "Working knowledge of SQL",
+          "kind": "simple",
+          "importance": "required",
+          "field": "skill_tool",
+          "normalized_name": "Working knowledge of SQL",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Working knowledge of SQL and NoSQL databases."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U21"
+      ],
+      "model_ids": [
+        "U17"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U21",
+          "unit_text": "NoSQL databases",
+          "source_quote": "Working knowledge of SQL and NoSQL databases.",
+          "importance": "required",
+          "category": "skill_tool",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v1.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U17",
+          "text": "Working knowledge of NoSQL databases",
+          "kind": "simple",
+          "importance": "required",
+          "field": "skill_tool",
+          "normalized_name": "Working knowledge of NoSQL databases",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Working knowledge of SQL and NoSQL databases."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U14"
+      ],
+      "model_ids": [
+        "U18"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U14",
+          "unit_text": "Problem-solving",
+          "source_quote": "Strong problem-solving skills and a willingness to learn new technologies.",
+          "importance": "required",
+          "category": "soft_skill",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v1.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U18",
+          "text": "Strong problem-solving skills",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "Strong problem-solving skills",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Strong problem-solving skills and a willingness to learn new technologies."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U15"
+      ],
+      "model_ids": [
+        "U19"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U15",
+          "unit_text": "Willingness to learn new technologies",
+          "source_quote": "Strong problem-solving skills and a willingness to learn new technologies.",
+          "importance": "required",
+          "category": "soft_skill",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v1.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U19",
+          "text": "Willingness to learn new technologies",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "Willingness to learn new technologies",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Strong problem-solving skills and a willingness to learn new technologies."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U16"
+      ],
+      "model_ids": [
+        "U20"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U16",
+          "unit_text": "Good communication",
+          "source_quote": "Good communication skills and the ability to work effectively with cross-functional teams.",
+          "importance": "required",
+          "category": "soft_skill",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v1.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U20",
+          "text": "Good communication skills",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "Good communication skills",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Good communication skills and the ability to work effectively with cross-functional teams."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true
+    },
+    {
+      "relation": "one_to_one",
+      "gold_ids": [
+        "J4-U17"
+      ],
+      "model_ids": [
+        "U21"
+      ],
+      "status": "proposed_pending_alignment_review",
+      "note": "Same scoped requirement after source-level inspection; pending human alignment.",
+      "gold": [
+        {
+          "split": "development",
+          "snapshot_id": "CP1_20260926",
+          "review_status": "approved",
+          "reviewed_by": "annotator",
+          "pilot_id": "J4",
+          "job_id": "F00016",
+          "unit_no": "J4-U17",
+          "unit_text": "Work effectively with cross-functional teams",
+          "source_quote": "Good communication skills and the ability to work effectively with cross-functional teams.",
+          "importance": "required",
+          "category": "soft_skill",
+          "group_id": null,
+          "min_years": null,
+          "label_source": "model_draft",
+          "review_action": "accepted",
+          "review_note": null,
+          "guideline_version": "v1.1"
+        }
+      ],
+      "model": [
+        {
+          "unit_id": "U21",
+          "text": "Ability to work effectively with cross-functional teams",
+          "kind": "simple",
+          "importance": "required",
+          "field": "soft_skill",
+          "normalized_name": "Ability to work effectively with cross-functional teams",
+          "min_years": null,
+          "branches": [],
+          "source_quotes": [
+            "Good communication skills and the ability to work effectively with cross-functional teams."
+          ],
+          "needs_review": false,
+          "label_source": "model_draft"
+        }
+      ],
+      "same_source_anchor": true
+    }
+  ],
+  "unmapped_gold": [],
+  "unmapped_model": [],
+  "metrics": null,
+  "metric_gate": "No F1/Macro-F1: alignment and split/merge treatment require explicit verification. Equal IDs/counts or shared source quotes do not establish equivalence.",
+  "job_id": "F00016",
+  "result_sha256": "b626e79dcd853b527b22eeebe9870ae76436a547e658174937bd6f9a89c10381",
+  "source_sha256": "7ce15548520a18d87416f5fb8c3b959a2d40aca3199086ab17822c6add18d477",
+  "operational_scope": "Extraction only, not evidence accuracy",
+  "whole_jd_human_completeness_approval_changed": false
+}

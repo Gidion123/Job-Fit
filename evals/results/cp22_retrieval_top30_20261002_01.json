@@ -1,0 +1,9 @@
+{
+  "status": "failed",
+  "error_type": "OperationalError",
+  "api_calls": 0,
+  "cost_usd": 0,
+  "quality_metrics": null,
+  "winner": null,
+  "next_action": "Check local DB and exact source/profile/query cache compatibility; no inference fallback"
+}

@@ -1,0 +1,77 @@
+{
+  "protected_file_hashes": {
+    "evals/gold/extraction_gold.jsonl": true,
+    "evals/gold/evidence_gold.jsonl": true,
+    "evals/gold/relevance_gold.csv": true,
+    "evals/splits/dev_job_ids.txt": true,
+    "evals/splits/test_job_ids.txt": true,
+    "evals/splits/split_manifest.json": true,
+    "data/processed/jobs_features.jsonl": true,
+    "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md": true,
+    "data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md": true,
+    "evals/annotation_guideline_v1.md": true,
+    "config/models_v1.yaml": true,
+    "config/retrieval_v1.yaml": true,
+    "prompts/jd_extraction_v1_1.md": true,
+    "prompts/evidence_matching_v1.md": true,
+    "config/archive/pipeline_v1_pre_D049_20261002.yaml": true,
+    "evals/results/cp22_pilot_probe_review_20261002.json": true,
+    "evals/fixtures/dev_01_clear_match.json": true,
+    "evals/fixtures/dev_02_experience_too_short.json": true,
+    "evals/fixtures/dev_03_duration_unknown.json": true,
+    "evals/fixtures/dev_04_or_alternative_group.json": true,
+    "evals/fixtures/dev_05_repeated_requirement.json": true,
+    "evals/fixtures/dev_06_ambiguous_importance.json": true,
+    "evals/fixtures/dev_07_no_assessable_requirement.json": true,
+    "evals/fixtures/dev_08_parsing_failure.json": true
+  },
+  "workbook_sha256": "4d96852dce52effdc376709cf8c0131f2f9ad1a6f02795cc556fec1819eccb50",
+  "workbook_matches_coordination_note": true,
+  "workbook_loaded_or_written": false,
+  "gold_exported": false,
+  "paid_calls_by_this_task": 0,
+  "task_cost_usd": "0",
+  "ledger_records": 109,
+  "ledger_including_reservation_usd": "0.212701440",
+  "uncertain_reservation_usd": "0.0210861",
+  "rankings_successful": 12,
+  "ranking_reproducibility": "identical ordered IDs in two local runs; not production benchmark",
+  "ranking_provenance_matches_current_files": true,
+  "code_sha256": {
+    "src/jobfit/eval/retrieval_run.py": "b131b3be43e78b200c1f74eb4588a93b44840b613a4ef3b767d697b075fc080a",
+    "scripts/run_retrieval_comparison.py": "40d0dd46683f09dcaf0276c03d4e8781ab143ebfb4852483039f4bc2dee143b9",
+    "scripts/prepare_cp22_acceptance.py": "0d0541738a8087a158b9999be9abbbfbffde934c178e91c86055087f9ae84ea8",
+    "tests/test_retrieval_run.py": "9442edda6757ccb9e043a69b2669e2de4ff579fd7df9cab308e540251fa82bd8"
+  },
+  "tests": {
+    "evals/results/cp22_retrieval_final_offline_20261002_02.xml": [
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "13",
+        "time": "0.143",
+        "timestamp": "2026-10-02T21:56:22.663042+07:00",
+        "hostname": "Gidions-MacBook-Pro.local"
+      }
+    ],
+    "evals/results/cp22_fixture_acceptance_checks_20261002.xml": [
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "29",
+        "time": "0.069",
+        "timestamp": "2026-10-02T18:19:51.227486+07:00",
+        "hostname": "Gidions-MacBook-Pro.local"
+      }
+    ]
+  },
+  "fixture_results_passed": 8,
+  "human_fixture_approval": "pending",
+  "probe": "preflight_only; no inference",
+  "cp22_status": "IN PROGRESS",
+  "cp23_tuning": "NOT RUN"
+}

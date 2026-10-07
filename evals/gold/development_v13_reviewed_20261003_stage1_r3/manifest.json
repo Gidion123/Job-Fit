@@ -1,0 +1,92 @@
+{
+  "schema_version": "development-reviewed-records-v1",
+  "counts": {
+    "A_Extraction": {
+      "read": 1113,
+      "approved": 1113,
+      "rejected": 10,
+      "approved_retained": 1103,
+      "staged": 1058,
+      "held_retained": 45,
+      "promoted": 1058
+    },
+    "B_Evidence": {
+      "read": 1419,
+      "approved": 1419,
+      "rejected": 16,
+      "approved_retained": 1403,
+      "staged": 1364,
+      "held_retained": 39,
+      "promoted": 1364
+    },
+    "C_Relevance": {
+      "read": 80,
+      "approved": 80,
+      "rejected": 0,
+      "approved_retained": 80,
+      "staged": 78,
+      "held_retained": 2,
+      "promoted": 78
+    }
+  },
+  "approval_receipt": {
+    "source": "user-confirmed review closure coordination note + current explicit export authorization",
+    "source_sha256": "a4a1e686c69e07b3648f536a75125d7369573a8a9d47323dc2734c921279f2dd",
+    "user_confirmed_BC_after_final_A": true,
+    "confirmation_scope": "User confirms B/C checked after final A in reviewed submission; delegated cloud/AWS follow-up from closure note. No per-row review date inferred.",
+    "reviewed_at": null,
+    "independent_annotation_claim": false
+  },
+  "status": "promoted_record_gold",
+  "gold_written": true,
+  "snapshot_digest": "7a1a342e6c5023befcfb0a0f54cea09ccff1520ad2ae283102288170573db422",
+  "limits": [
+    "Record-level gold is not whole-JD completeness or verified model alignment.",
+    "Original guideline/review metadata retained. Export time is not a review time.",
+    "Never concatenate pilot and this authoritative current bundle without identity overlay."
+  ],
+  "workbook_counts": {
+    "A_Extraction": 1079,
+    "B_Evidence": 1406,
+    "C_Relevance": 67
+  },
+  "historical_pilot_additions": {
+    "A_Extraction": 34,
+    "B_Evidence": 13,
+    "C_Relevance": 7
+  },
+  "exported_at": "2026-10-03T07:56:56.531026+00:00",
+  "workbook_sha256": "4d96852dce52effdc376709cf8c0131f2f9ad1a6f02795cc556fec1819eccb50",
+  "files": {
+    "extraction_gold.jsonl": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+    "evidence_gold.jsonl": "510bbe15bd02ed370b2a94982582169c6c9d38f62b5e6e27311bb55a0f3ef49e",
+    "relevance_gold.jsonl": "59908aed0a80b11eac744fca5fd71d93ad36f67aa59a45aaa40504bd8a4114a4",
+    "logical_units.json": "49aa3b438470de8897a3b17b315da4190dd33f2e78f3f73f9065753250fffaf5",
+    "excluded_records.json": "e72c7f8214b6474b4fd648d25a4c36f8c374f1662eac5909e60d5deeeb16d93e",
+    "JD_coverage.json": "55312dce477c8f620a8db72067d92f3c1d76abdbe615c85d78db1bed40ffd511",
+    "pair_coverage.json": "b2a1339e4a9de6c4b8cf4d55b7ebb8f21fc2d3bde58557ac26de96135ba0bd58",
+    "held_records.json": "2ebab10a5a7ee76ad2ed4f4ef2285d980ef0211f5c9cb3435c485534b6842a37",
+    "resolved_held_C_records.json": "c73ce803dc75daeef888cf7cb0135913db4366f9e98ca08c98e7674f065906b8",
+    "amendment_receipt.json": "15fedf3af6655452f52a182bbe582014681107562a4afa20395c9775fe8f5efe"
+  },
+  "source_hashes": {
+    "data/processed/jobs_features.jsonl": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+    "evals/splits/split_manifest.json": "f21741eb93c959b8d39f4c0227f7d9106aef4e815d51ecd379f68015ba1a39c2",
+    "evals/pools/dev_pool.csv": "77825f8504d45baa577dbb12cf91585368b546da5e5cbbdbfd3085e6a807661e",
+    "evals/pilot/JobFit_Pilot_Labeling_v0.1.xlsx": "47b5dde4eb687d5783b99ed40b13c8222310138d3ea8dd58b38c6890805071eb",
+    "evals/gold/extraction_gold.jsonl": "f43d4d029f82a392ebc4796fc4bfafc5275ac1afae3a686bee5e4ca2a3da9a7d",
+    "evals/gold/README.md": "e4f239dc5e99be3344d4009fffb7667389007a2a62e4383a6b8d8b79ab8606e1",
+    "evals/gold/evidence_gold.jsonl": "d0e10f01bf3cefa69d227316ed561c02ecc31f009a497eb7508dec44b3d5f6e0",
+    "evals/gold/relevance_gold.csv": "144a185ca867c04816e791d4e5c5d849554216708f517b05824a69ba4ffe3011",
+    "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+    "data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+    "evals/gold/development_v13_reviewed_20261002_r2/manifest.json": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+    "evals/labeling/drafts/cp23_stage1_relevance_review_20261003_v1.json": "f2b00f0d66ee7fb0b966ce856c15fa319343a513305e6d5275fef041d0507bcf",
+    "evals/labeling/drafts/cp23_stage1_held_C_review_20261003_v1.json": "2cbe69a9cf24eee33019df75509cf194ce95fd93c9eca01f7a6ff8e63aaeda7d",
+    "evals/results/cp23_stage1_user_review_receipt_20261003_v2.json": "a90dcd15be04abadf61fa1a204feb4c2c47b94803de75f4e97a72077b8681bfb",
+    "evals/results/cp23_F00332_C_recheck_20261003_v1.json": "adf71d2e3888e76e10291c504860b6339748d693538308bf08745601a60777b2"
+  },
+  "selection_rule": "D-054 versioned amendment: six additional C, three direct C-only hold reviews, two F00332 B edits and dependent C recheck; pilot included once in base. A/B holds unchanged.",
+  "amendment_receipt_sha256": "15fedf3af6655452f52a182bbe582014681107562a4afa20395c9775fe8f5efe",
+  "workbook_sha256_meaning": "Hash of unchanged source workbook at base export; D-054 decisions came through a separate user-review receipt."
+}

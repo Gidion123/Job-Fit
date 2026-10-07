@@ -1,0 +1,407 @@
+{
+ "job_id": "F00501",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "not_assessed",
+  "bullet_count": 0,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 0,
+  "inventory_mappings": [],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00501",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Degree in computer science, engineering, mathematics, or equivalent experience",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "education",
+    "normalized_name": "Degree in computer science, engineering, mathematics, or equivalent experience",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Degree in computer science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Degree in engineering",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Degree in mathematics",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "Equivalent experience",
+      "field": "experience_duration",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "• Degree in computer science, engineering, mathematics, or equivalent experience"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "2+ years of relevant professional experience",
+    "kind": "qualified",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "2+ years of relevant professional experience",
+    "min_years": 2.0,
+    "branches": [],
+    "source_quotes": [
+     "• 2+ years of relevant professional experience"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Ability to write clean, maintainable, scalable and robust code in an object-oriented language (e.g., Python, Scala, Java) in a professional setting",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Ability to write clean, maintainable, scalable and robust code in an object-oriented language (e.g., Python, Scala, Java) in a professional setting",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Python",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Scala",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Java",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "• Ability to write clean, maintainable, scalable and robust code in an object-oriented language, e.g., Python, Scala, Java, in a professional setting"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Proven experience building data pipelines in production for advanced analytics use cases",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Proven experience building data pipelines in production for advanced analytics use cases",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "• Proven experience building data pipelines in production for advanced analytics use cases"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05a",
+    "text": "Experience working across structured data",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience working across structured data",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "• Experience working across structured, semi-structured and unstructured data"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05b",
+    "text": "Experience working across semi-structured data",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience working across semi-structured data",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "• Experience working across structured, semi-structured and unstructured data"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05c",
+    "text": "Experience working across unstructured data",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience working across unstructured data",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "• Experience working across structured, semi-structured and unstructured data"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06a",
+    "text": "Exposure to DevOps",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Exposure to DevOps",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "• Exposure to software engineering concepts and best practices, inc. DevOps, DataOps and MLOps would be considered a plus"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06b",
+    "text": "Exposure to DataOps",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Exposure to DataOps",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "• Exposure to software engineering concepts and best practices, inc. DevOps, DataOps and MLOps would be considered a plus"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06c",
+    "text": "Exposure to MLOps",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Exposure to MLOps",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "• Exposure to software engineering concepts and best practices, inc. DevOps, DataOps and MLOps would be considered a plus"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07a",
+    "text": "Familiarity with distributed computing frameworks",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Familiarity with distributed computing frameworks",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "• Familiarity with distributed computing frameworks, cloud platforms, containerization, and analytics libraries (e.g. pandas, numpy, matplotlib)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07b",
+    "text": "Familiarity with cloud platforms",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Familiarity with cloud platforms",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "• Familiarity with distributed computing frameworks, cloud platforms, containerization, and analytics libraries (e.g. pandas, numpy, matplotlib)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07c",
+    "text": "Familiarity with containerization",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Familiarity with containerization",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "• Familiarity with distributed computing frameworks, cloud platforms, containerization, and analytics libraries (e.g. pandas, numpy, matplotlib)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07d",
+    "text": "Familiarity with analytics libraries (e.g. pandas, numpy, matplotlib)",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Familiarity with analytics libraries (e.g. pandas, numpy, matplotlib)",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "pandas",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "numpy",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "matplotlib",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "• Familiarity with distributed computing frameworks, cloud platforms, containerization, and analytics libraries (e.g. pandas, numpy, matplotlib)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Experienced on Big Data platforms and tools like AWS, Azure, GCP and tools like Spark, Kafka, Snowflake, GCS Data Proc, Azure DataFactory, AWS Glue, Apache Beam/Flink, Python/PySpark, etc.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Experienced on Big Data platforms and tools like AWS, Azure, GCP and tools like Spark, Kafka, Snowflake, GCS Data Proc, Azure DataFactory, AWS Glue, Apache Beam/Flink, Python/PySpark, etc.",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "AWS",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Azure",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "GCP",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "Spark",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B5",
+      "text": "Kafka",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B6",
+      "text": "Snowflake",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B7",
+      "text": "GCS Data Proc",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B8",
+      "text": "Azure DataFactory",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B9",
+      "text": "AWS Glue",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B10",
+      "text": "Apache Beam/Flink",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B11",
+      "text": "Python/PySpark",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "• Experienced on Big Data platforms and tools like AWS, Azure, GCP and tools like Spark, Kafka, Snowflake, GCS Data Proc, Azure DataFactory, AWS Glue, Apache Beam/Flink, Python/PySpark, etc."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Commercial client-facing or senior stakeholder management experience would be beneficial",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "other",
+    "normalized_name": "Commercial client-facing or senior stakeholder management experience would be beneficial",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Commercial client-facing experience",
+      "field": "other",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Senior stakeholder management experience",
+      "field": "other",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "• Commercial client-facing or senior stakeholder management experience would be beneficial"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

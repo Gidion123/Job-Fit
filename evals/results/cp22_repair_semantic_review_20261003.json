@@ -1,0 +1,342 @@
+{
+  "run_id": "cp22_extraction_repair_v13_20261003",
+  "status": "delegated_operational_check_passed",
+  "human_annotation_approval": false,
+  "formal_metrics": null,
+  "alignment_status": "pending_human_verification",
+  "checked_A_units": 16,
+  "checked_B_units": 16,
+  "checked_education_branches": 2,
+  "score_recomputed_exactly": {
+    "score_pct": 72.22,
+    "status": "final",
+    "matched": 5,
+    "partial": 3,
+    "required_total": 9,
+    "preferred_met": 0,
+    "preferred_total": 1,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 6,
+    "soft_skill_matched": 2,
+    "soft_skill_partial": 3,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+  },
+  "all_positive_quotes_valid": true,
+  "date": "2026-09-30",
+  "employment_months_total_upper_bound": 9,
+  "not_all_months_are_technology_experience": true,
+  "constraints": [
+    {
+      "kind": "experience",
+      "state": "unknown",
+      "message": "No unambiguous required experience minimum was extracted. Preferred or unknown conditions are not hard constraints."
+    },
+    {
+      "kind": "location",
+      "state": "unknown",
+      "message": "No confirmed user location"
+    }
+  ],
+  "unit_alignment_proposals": [
+    {
+      "job_id": "F00332",
+      "cv_id": "CV1",
+      "model_unit_id": "U01",
+      "gold_unit_no": "P30-U01",
+      "relationship": "proposed_one_to_one",
+      "mapping_basis": "Source clause meaning, qualifier and category, not unit number or row count",
+      "source_quotes": [
+        "Fresh Graduate or Bachelor's degree in an analytical or quantitative discipline (e.g., math, statistics, engineering, computer science); other disciplines will be considered."
+      ],
+      "model_text": "Fresh graduate or bachelor's degree in an analytical or quantitative discipline (e.g., math, statistics, engineering, computer science); other disciplines will be considered.",
+      "gold_text": "Fresh graduate | bachelor in quantitative/analytical or other considered discipline",
+      "model_label": "MATCH",
+      "gold_label": "MATCH",
+      "agreement": true,
+      "alignment_status": "pending_human_verification"
+    },
+    {
+      "job_id": "F00332",
+      "cv_id": "CV1",
+      "model_unit_id": "U02",
+      "gold_unit_no": "P30-U02",
+      "relationship": "proposed_one_to_one",
+      "mapping_basis": "Source clause meaning, qualifier and category, not unit number or row count",
+      "source_quotes": [
+        "Experience using statistical computer languages such as Python, SQL, and MS Excel."
+      ],
+      "model_text": "Experience using statistical computer languages: Python.",
+      "gold_text": "Python",
+      "model_label": "MATCH",
+      "gold_label": "MATCH",
+      "agreement": true,
+      "alignment_status": "pending_human_verification"
+    },
+    {
+      "job_id": "F00332",
+      "cv_id": "CV1",
+      "model_unit_id": "U13",
+      "gold_unit_no": "P30-U03",
+      "relationship": "proposed_one_to_one",
+      "mapping_basis": "Source clause meaning, qualifier and category, not unit number or row count",
+      "source_quotes": [
+        "Experience using statistical computer languages such as Python, SQL, and MS Excel."
+      ],
+      "model_text": "Experience using statistical computer languages: SQL.",
+      "gold_text": "SQL",
+      "model_label": "MATCH",
+      "gold_label": "MATCH",
+      "agreement": true,
+      "alignment_status": "pending_human_verification"
+    },
+    {
+      "job_id": "F00332",
+      "cv_id": "CV1",
+      "model_unit_id": "U14",
+      "gold_unit_no": "P30-U04",
+      "relationship": "proposed_one_to_one",
+      "mapping_basis": "Source clause meaning, qualifier and category, not unit number or row count",
+      "source_quotes": [
+        "Experience using statistical computer languages such as Python, SQL, and MS Excel."
+      ],
+      "model_text": "Experience using statistical computer languages: MS Excel.",
+      "gold_text": "Microsoft Excel",
+      "model_label": "PARTIAL",
+      "gold_label": "PARTIAL",
+      "agreement": true,
+      "alignment_status": "pending_human_verification"
+    },
+    {
+      "job_id": "F00332",
+      "cv_id": "CV1",
+      "model_unit_id": "U03",
+      "gold_unit_no": "P30-U05",
+      "relationship": "proposed_one_to_one",
+      "mapping_basis": "Source clause meaning, qualifier and category, not unit number or row count",
+      "source_quotes": [
+        "Good communication skills and ability to work collaboratively in a team."
+      ],
+      "model_text": "Good communication skills.",
+      "gold_text": "Communication",
+      "model_label": "MATCH",
+      "gold_label": "MATCH",
+      "agreement": true,
+      "alignment_status": "pending_human_verification"
+    },
+    {
+      "job_id": "F00332",
+      "cv_id": "CV1",
+      "model_unit_id": "U04",
+      "gold_unit_no": "P30-U06",
+      "relationship": "proposed_one_to_one",
+      "mapping_basis": "Source clause meaning, qualifier and category, not unit number or row count",
+      "source_quotes": [
+        "Good communication skills and ability to work collaboratively in a team."
+      ],
+      "model_text": "Ability to work collaboratively in a team.",
+      "gold_text": "Team collaboration",
+      "model_label": "NO_MATCH",
+      "gold_label": "NO_MATCH",
+      "agreement": true,
+      "alignment_status": "pending_human_verification"
+    },
+    {
+      "job_id": "F00332",
+      "cv_id": "CV1",
+      "model_unit_id": "U05",
+      "gold_unit_no": "P30-U07",
+      "relationship": "proposed_one_to_one",
+      "mapping_basis": "Source clause meaning, qualifier and category, not unit number or row count",
+      "source_quotes": [
+        "Excellent problem-solving skills with a drive to learn and master new technologies and techniques."
+      ],
+      "model_text": "Excellent problem-solving skills.",
+      "gold_text": "Problem solving",
+      "model_label": "MATCH",
+      "gold_label": "MATCH",
+      "agreement": true,
+      "alignment_status": "pending_human_verification"
+    },
+    {
+      "job_id": "F00332",
+      "cv_id": "CV1",
+      "model_unit_id": "U15",
+      "gold_unit_no": "P30-U08",
+      "relationship": "proposed_one_to_one",
+      "mapping_basis": "Source clause meaning, qualifier and category, not unit number or row count",
+      "source_quotes": [
+        "Excellent problem-solving skills with a drive to learn and master new technologies and techniques."
+      ],
+      "model_text": "Drive to learn and master new technologies and techniques.",
+      "gold_text": "Learning new techniques",
+      "model_label": "PARTIAL",
+      "gold_label": "MATCH",
+      "agreement": false,
+      "alignment_status": "pending_human_verification"
+    },
+    {
+      "job_id": "F00332",
+      "cv_id": "CV1",
+      "model_unit_id": "U06",
+      "gold_unit_no": "P30-U09",
+      "relationship": "proposed_one_to_one",
+      "mapping_basis": "Source clause meaning, qualifier and category, not unit number or row count",
+      "source_quotes": [
+        "Willingness to learn new skills independently and strong sense of project ownership."
+      ],
+      "model_text": "Willingness to learn new skills independently.",
+      "gold_text": "Independent learning",
+      "model_label": "PARTIAL",
+      "gold_label": "PARTIAL",
+      "agreement": true,
+      "alignment_status": "pending_human_verification"
+    },
+    {
+      "job_id": "F00332",
+      "cv_id": "CV1",
+      "model_unit_id": "U07",
+      "gold_unit_no": "P30-U10",
+      "relationship": "proposed_one_to_one",
+      "mapping_basis": "Source clause meaning, qualifier and category, not unit number or row count",
+      "source_quotes": [
+        "Willingness to learn new skills independently and strong sense of project ownership."
+      ],
+      "model_text": "Strong sense of project ownership.",
+      "gold_text": "Project ownership",
+      "model_label": "PARTIAL",
+      "gold_label": "PARTIAL",
+      "agreement": true,
+      "alignment_status": "pending_human_verification"
+    },
+    {
+      "job_id": "F00332",
+      "cv_id": "CV1",
+      "model_unit_id": "U08",
+      "gold_unit_no": "P30-U11",
+      "relationship": "proposed_one_to_one",
+      "mapping_basis": "Source clause meaning, qualifier and category, not unit number or row count",
+      "source_quotes": [
+        "Comfortable exploring data, investigating anomalies, and building SQL-based analyses."
+      ],
+      "model_text": "Comfortable exploring data.",
+      "gold_text": "Data exploration",
+      "model_label": "MATCH",
+      "gold_label": "MATCH",
+      "agreement": true,
+      "alignment_status": "pending_human_verification"
+    },
+    {
+      "job_id": "F00332",
+      "cv_id": "CV1",
+      "model_unit_id": "U09",
+      "gold_unit_no": "P30-U12",
+      "relationship": "proposed_one_to_one",
+      "mapping_basis": "Source clause meaning, qualifier and category, not unit number or row count",
+      "source_quotes": [
+        "Comfortable exploring data, investigating anomalies, and building SQL-based analyses."
+      ],
+      "model_text": "Comfortable investigating anomalies.",
+      "gold_text": "Anomaly investigation",
+      "model_label": "NO_MATCH",
+      "gold_label": "NO_MATCH",
+      "agreement": true,
+      "alignment_status": "pending_human_verification"
+    },
+    {
+      "job_id": "F00332",
+      "cv_id": "CV1",
+      "model_unit_id": "U10",
+      "gold_unit_no": "P30-U13",
+      "relationship": "proposed_one_to_one",
+      "mapping_basis": "Source clause meaning, qualifier and category, not unit number or row count",
+      "source_quotes": [
+        "Comfortable exploring data, investigating anomalies, and building SQL-based analyses."
+      ],
+      "model_text": "Comfortable building SQL-based analyses.",
+      "gold_text": "SQL-based analysis",
+      "model_label": "MATCH",
+      "gold_label": "MATCH",
+      "agreement": true,
+      "alignment_status": "pending_human_verification"
+    },
+    {
+      "job_id": "F00332",
+      "cv_id": "CV1",
+      "model_unit_id": "U11",
+      "gold_unit_no": "P30-U14",
+      "relationship": "proposed_one_to_one",
+      "mapping_basis": "Source clause meaning, qualifier and category, not unit number or row count",
+      "source_quotes": [
+        "Experience working with large tabular datasets to detect trends and anomalies and communicate findings as actionable recommendations."
+      ],
+      "model_text": "Experience working with large tabular datasets to detect trends and anomalies.",
+      "gold_text": "Large tabular-data trend/anomaly analysis",
+      "model_label": "PARTIAL",
+      "gold_label": "PARTIAL",
+      "agreement": true,
+      "alignment_status": "pending_human_verification"
+    },
+    {
+      "job_id": "F00332",
+      "cv_id": "CV1",
+      "model_unit_id": "U16",
+      "gold_unit_no": "P30-U15",
+      "relationship": "proposed_one_to_one",
+      "mapping_basis": "Source clause meaning, qualifier and category, not unit number or row count",
+      "source_quotes": [
+        "Experience working with large tabular datasets to detect trends and anomalies and communicate findings as actionable recommendations."
+      ],
+      "model_text": "Communicate findings as actionable recommendations.",
+      "gold_text": "Communicating actionable findings",
+      "model_label": "PARTIAL",
+      "gold_label": "MATCH",
+      "agreement": false,
+      "alignment_status": "pending_human_verification"
+    },
+    {
+      "job_id": "F00332",
+      "cv_id": "CV1",
+      "model_unit_id": "U12",
+      "gold_unit_no": "P30-U16",
+      "relationship": "proposed_one_to_one",
+      "mapping_basis": "Source clause meaning, qualifier and category, not unit number or row count",
+      "source_quotes": [
+        "Exposure to credit scoring modelling concepts is a plus."
+      ],
+      "model_text": "Exposure to credit scoring modelling concepts.",
+      "gold_text": "Credit-scoring modelling",
+      "model_label": "NO_MATCH",
+      "gold_label": "NO_MATCH",
+      "agreement": true,
+      "alignment_status": "pending_human_verification"
+    }
+  ],
+  "decisions_to_review": [
+    {
+      "model_unit_id": "U15",
+      "gold_unit_no": "P30-U08",
+      "source": "Drive to learn and master new technologies and techniques; CV certificate2025",
+      "model_label": "PARTIAL",
+      "gold_label": "MATCH",
+      "recommendation": "Preserve existing gold. Confirm case-specific learning evidence when verifying alignment; no new universal course-to-trait equivalence.",
+      "score_impact": "None: soft skill excluded."
+    },
+    {
+      "model_unit_id": "U16",
+      "gold_unit_no": "P30-U15",
+      "source": "Communicate findings as actionable recommendations; CV says presentation of cohort results",
+      "model_label": "PARTIAL",
+      "gold_label": "MATCH",
+      "recommendation": "Preserve existing gold. Decide whether this case demonstrates the actionable qualifier; execution review conservatively retains PARTIAL.",
+      "score_impact": "One required technical unit differs; no gold score recomputed as a quality metric."
+    }
+  ],
+  "limits": [
+    "No F1/Macro-F1 or winner; no independent human approval inferred.",
+    "Runtime final describes score-status rules, not validated accuracy.",
+    "CV language field contains a proficiency line; source language evidence is preserved and no language requirement is assessed here.",
+    "The result required source-based repairs on both JDs and evidence; unattended quality is not established."
+  ]
+}

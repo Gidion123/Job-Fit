@@ -1,0 +1,15 @@
+{
+ "schema_version": "cp24-failed-attempt-receipt-v1",
+ "cv_id": "CV5",
+ "attempt": 1,
+ "original_path": "evals/results/cp24/test_run_v1/CV5_parse.json",
+ "archived_path": "evals/results/cp24/test_run_v1/failed_attempts/CV5_parse_attempt1.json",
+ "sha256": "b7e9daba975ff3794655317eb3780bc83682c48a516d16591375cc3a5a35832d",
+ "bytes": 3024,
+ "failure": [
+  "cv_parsing: APITimeoutError (1 attempt(s))"
+ ],
+ "masked_digest": "6dce6a429fca97df4f30b2dbe6a84da5ac7d4c320275bbc193e02a9d717e9a70",
+ "reason": "Operational provider timeout only. Retried by the unchanged frozen parse phase with the same model, prompt, masking and settings (D-087). No test outcome was read.",
+ "archived_at_utc": "2026-10-06T13:55:37+00:00"
+}

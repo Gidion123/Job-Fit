@@ -1,0 +1,381 @@
+{
+  "cv_id": "CV2",
+  "job_id": "F00114",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "wall_ms": 17721,
+  "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 3,
+    "partial": 6,
+    "required_total": 17,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+      "Required units not judged yet: U03",
+      "Requirement structure needs review; identified denominator is not validated."
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+        "**Data Science and AI Bootcamp**, Contoh Academy (online) · June 2026 - present"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+        "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+        "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U10",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U11",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U12",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U13",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U14",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+        "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U15",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U16",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U17",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ],
+  "source_flags": [
+    {
+      "unit_id": "U01",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "cv_span": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "start": 238,
+      "end": 323,
+      "flags": []
+    },
+    {
+      "unit_id": "U01",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "**Data Science and AI Bootcamp**, Contoh Academy (online) · June 2026 - present",
+      "cv_span": "**Data Science and AI Bootcamp**, Contoh Academy (online) · June 2026 - present",
+      "start": 879,
+      "end": 958,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "cv_span": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "start": 238,
+      "end": 323,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "cv_span": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "start": 1215,
+      "end": 1332,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "cv_span": "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "start": 1335,
+      "end": 1446,
+      "flags": []
+    },
+    {
+      "unit_id": "U04",
+      "branch_id": "B1",
+      "kind": "quote_exact",
+      "model_quote": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "cv_span": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "start": 1215,
+      "end": 1332,
+      "flags": []
+    },
+    {
+      "unit_id": "U07",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "cv_span": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "start": 1215,
+      "end": 1332,
+      "flags": []
+    },
+    {
+      "unit_id": "U10",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "cv_span": "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "start": 1335,
+      "end": 1446,
+      "flags": []
+    },
+    {
+      "unit_id": "U11",
+      "branch_id": "B5",
+      "kind": "quote_exact",
+      "model_quote": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "cv_span": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "start": 1215,
+      "end": 1332,
+      "flags": []
+    },
+    {
+      "unit_id": "U12",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "cv_span": "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "start": 1335,
+      "end": 1446,
+      "flags": []
+    },
+    {
+      "unit_id": "U13",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio",
+      "cv_span": "Python, SQL (BigQuery, PostgreSQL), pandas, scikit-learn, LangChain, prompt engineering, FastAPI, Docker, Git, Hugging Face Transformers, Google Analytics, Looker Studio",
+      "start": 1719,
+      "end": 1888,
+      "flags": []
+    },
+    {
+      "unit_id": "U14",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "cv_span": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+      "start": 238,
+      "end": 323,
+      "flags": []
+    },
+    {
+      "unit_id": "U14",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "cv_span": "Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "start": 1335,
+      "end": 1446,
+      "flags": []
+    }
+  ]
+}

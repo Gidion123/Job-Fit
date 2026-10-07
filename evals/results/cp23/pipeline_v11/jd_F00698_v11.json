@@ -1,0 +1,608 @@
+{
+  "job_id": "F00698",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "cache_hit": false,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "wall_ms": 118975,
+  "extraction": {
+    "job_id": "F00698",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Remote role open to candidates in the USA.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "location",
+        "normalized_name": "Remote role open to candidates in the USA.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "The job is a remote job and is open to candidates in USA."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Strong programming experience in Python.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong programming experience in Python.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong programming experience in Python"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Experience building REST APIs using FastAPI or Flask.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience building REST APIs using FastAPI or Flask.",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "FastAPI",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Flask",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience building REST APIs using FastAPI or Flask"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Hands-on experience with Google Gemini APIs.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Hands-on experience with Google Gemini APIs.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Hands-on experience with Google Gemini APIs, Vertex AI, and other enterprise LLM platforms"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Hands-on experience with Vertex AI.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Hands-on experience with Vertex AI.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Hands-on experience with Google Gemini APIs, Vertex AI, and other enterprise LLM platforms"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Hands-on experience with other enterprise LLM platforms.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Hands-on experience with other enterprise LLM platforms.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Hands-on experience with Google Gemini APIs, Vertex AI, and other enterprise LLM platforms"
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Strong expertise with Langchain.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong expertise with Langchain.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong expertise with Langchain and LangGraph"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Strong expertise with LangGraph.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong expertise with LangGraph.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong expertise with Langchain and LangGraph"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Experience implementing RAG architecture.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience implementing RAG architecture.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience implementing RAG architecture"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Strong knowledge of Google Cloud Platform.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong knowledge of Google Cloud Platform.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong knowledge of Google Cloud Platform (Google Cloud Platform)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Experience with IAM.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience with IAM.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with Vertex AI, IAM, Cloud Run, BigQuery, and Google Cloud Storage"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Experience with Cloud Run.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience with Cloud Run.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with Vertex AI, IAM, Cloud Run, BigQuery, and Google Cloud Storage"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Experience with BigQuery.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience with BigQuery.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with Vertex AI, IAM, Cloud Run, BigQuery, and Google Cloud Storage"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Experience with Google Cloud Storage.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience with Google Cloud Storage.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with Vertex AI, IAM, Cloud Run, BigQuery, and Google Cloud Storage"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Experience working with Vector Databases including Pinecone, Weaviate, Qdrant, Chroma, or Milvus.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience working with Vector Databases including Pinecone, Weaviate, Qdrant, Chroma, or Milvus.",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Pinecone",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Weaviate",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Qdrant",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Chroma",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Milvus",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience working with Vector Databases including Pinecone, Weaviate, Qdrant, Chroma, or Milvus"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Strong SQL database experience.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong SQL database experience.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong SQL and NoSQL database experience"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Strong NoSQL database experience.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Strong NoSQL database experience.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong SQL and NoSQL database experience"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Experience debugging complex AI pipelines.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience debugging complex AI pipelines.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience debugging complex AI pipelines and distributed applications"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Experience debugging distributed applications.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience debugging distributed applications.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience debugging complex AI pipelines and distributed applications"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Strong problem-solving skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Strong problem-solving skills.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong problem-solving and communication skills"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Strong communication skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Strong communication skills.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong problem-solving and communication skills"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Google Cloud Professional Machine Learning Engineer Certification.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "certification",
+        "normalized_name": "Google Cloud Professional Machine Learning Engineer Certification.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Google Cloud Professional Machine Learning Engineer Certification"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Google Cloud Professional Cloud Architect Certification.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "certification",
+        "normalized_name": "Google Cloud Professional Cloud Architect Certification.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Google Cloud Professional Cloud Architect Certification"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U24",
+        "text": "Experience with Llama Index.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience with Llama Index.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with Llama Index"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U25",
+        "text": "Experience with Hugging Face.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience with Hugging Face.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with Hugging Face"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U26",
+        "text": "Experience with React.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience with React.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with React and TypeScript"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U27",
+        "text": "Experience with TypeScript.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience with TypeScript.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with React and TypeScript"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U28",
+        "text": "Knowledge of Agentic AI architectures.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Knowledge of Agentic AI architectures.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of Agentic AI architectures"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U29",
+        "text": "Experience with MLOps or LLMOps platforms.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience with MLOps or LLMOps platforms.",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "MLOps platforms",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "LLMOps platforms",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience with MLOps or LLMOps platforms"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U30",
+        "text": "PEFT.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "PEFT.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "PEFT"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U31",
+        "text": "Vertex AI Vector Search.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Vertex AI Vector Search.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Vertex AI Vector Search"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U32",
+        "text": "Few Shot Learning.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Few Shot Learning.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Few Shot Learning"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U33",
+        "text": "Cloud Architecture.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Cloud Architecture.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Cloud Architecture"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U34",
+        "text": "Prompt Engineering.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Prompt Engineering.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Prompt Engineering"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U35",
+        "text": "REST APIs.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "REST APIs.",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "REST APIs"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "preflight": {
+    "mode": "live",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "reasoning": {
+      "effort": "low",
+      "exclude": true
+    },
+    "max_output_tokens": 16000,
+    "analysis_date": "2026-09-30",
+    "cv": "CV1",
+    "job_id": "F00022",
+    "split": "development",
+    "maximum_calls": 6,
+    "conservative_bound_usd": 0.2952,
+    "ledger_before_usd": 0.052865,
+    "remaining_guard_usd": 8.447135
+  },
+  "cv_source_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+  "pdf_sha256": "3cb6ab26acfe2cc94aa8c49cab828e32e377a2675ab0d683d23216b00f46cc37",
+  "jd_sha256": "5096de1762a4d7d373d8df4780441a254189e009e03927c9945a56c858a54345",
+  "fixture_results": [
+    {
+      "fixture_id": "dev_01_clear_match",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 87.5,
+        "status": "final",
+        "matched": 3,
+        "partial": 1,
+        "required_total": 4,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "compatible",
+        "met_display": "3.5 of 4 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_02_experience_too_short",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 83.33,
+        "status": "final",
+        "matched": 2,
+        "partial": 1,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "explicit_conflict",
+        "met_display": "2.5 of 3 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_03_duration_unknown",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 75.0,
+        "status": "final",
+        "matched": 1,
+        "partial": 1,
+        "required_total": 2,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "unknown",
+        "met_display": "1.5 of 2 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_04_or_alternative_group",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 50.0,
+        "status": "final",
+        "matched": 1,
+        "partial": 1,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "unknown",
+        "met_display": "1.5 of 3 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_05_repeated_requirement",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 66.67,
+        "status": "final",
+        "matched": 2,
+        "partial": 0,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "unknown",
+        "met_display": "2 of 3 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_06_ambiguous_importance",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 83.33,
+        "status": "provisional",
+        "matched": 2,
+        "partial": 1,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 1,
+        "unknown_importance_total": 1,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "1 requirement(s) not clearly required or preferred"
+        ],
+        "constraint_state": "unknown",
+        "met_display": "2.5 of 3 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_07_no_assessable_requirement",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": null,
+        "status": "no_score",
+        "matched": 0,
+        "partial": 0,
+        "required_total": 0,
+        "preferred_met": 0,
+        "preferred_total": 1,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Not enough information to compute"
+        ],
+        "constraint_state": "unknown",
+        "met_display": "0 of 0 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_08_parsing_failure",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": null,
+        "status": "on_hold",
+        "matched": 1,
+        "partial": 0,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Required units not judged yet: u2"
+        ],
+        "constraint_state": "unknown",
+        "met_display": "1 of 3 required requirements"
+      }
+    }
+  ],
+  "status": "parsing_review_required",
+  "limits": [
+    "Synthetic development plumbing check, not a held-out quality metric.",
+    "Configured baseline is not selected by tuning. No human label approval is granted."
+  ],
+  "parsed_cv": {
+    "profile": {
+      "cv_id": "CV1",
+      "is_synthetic": true,
+      "language": null,
+      "parse_status": "failed",
+      "raw_text": "# Rina Aprilia Putri\nJakarta Selatan, Indonesia · rina.putri@example.com · +62\n800-0000-0001 · github.com/example-rina\n## Ringkasan\nLulusan S1 Statistika yang tertarik pada data science dan machine\nlearning. Terbiasa mengolah data dengan Python dan SQL, membuat\nmodel prediksi sederhana, dan menyajikan hasil analisis dalam\ndashboard.\n## Pendidikan\n**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 -\nAgustus 2026\n- IPK 3,62 / 4,00\n- Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan\nRegresi Logistik dan Random Forest\"\n- Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian,\nBasis Data\n## Pengalaman\n**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari\n2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris\ndengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim\nmarketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan\nhasilnya ke manajer divisi.\n**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh ·\nFebruari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.\n## Proyek\n**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan\nscikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur\npenting dengan SHAP.\n**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025\n- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan\nmengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.\n## Keahlian\nPython (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio,\nExcel, Git, statistika inferensial, machine learning dasar\n## Sertifikasi\n- Google Data Analytics Professional Certificate (2025)\n## Bahasa\nIndonesia (native), Inggris (menengah, TOEFL ITP 540)",
+      "sections": {},
+      "experience": [],
+      "skills_list": [],
+      "confirmed_location": null
+    },
+    "evidence": [],
+    "source_work": [],
+    "location_suggestion": null,
+    "analysis_date": "2026-09-30",
+    "schema_version": "cv-v1.1-precision",
+    "warnings": [
+      "Check PDF reading order and every experience/date in the parsing preview.",
+      "cv_parsing: evidence_section_mismatch (2 attempt(s))"
+    ],
+    "attempts": 2,
+    "review_required": true
+  },
+  "parsing_summary": {
+    "parse_status": "failed",
+    "analysis_date": "2026-09-30",
+    "sections_found": [],
+    "evidence_count": 0,
+    "skills": [],
+    "employment": [],
+    "location_suggestion": null,
+    "location_confirmed": null,
+    "review_required": true,
+    "warnings": [
+      "Check PDF reading order and every experience/date in the parsing preview.",
+      "cv_parsing: evidence_section_mismatch (2 attempt(s))"
+    ]
+  },
+  "parsing_confirmation": {
+    "kind": "synthetic_fixture_check",
+    "passed": false,
+    "human_confirmation": false
+  },
+  "calls": 2,
+  "run_cost_usd": 0.023914152,
+  "ledger_after_usd": 0.07678
+}

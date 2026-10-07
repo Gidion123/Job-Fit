@@ -1,0 +1,87 @@
+{
+  "cv_id": "CV2",
+  "job_id": "F00126",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "wall_ms": 8199,
+  "score": {
+    "score_pct": null,
+    "status": "on_hold",
+    "matched": 2,
+    "partial": 0,
+    "required_total": 3,
+    "preferred_met": 0,
+    "preferred_total": 0,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 1,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": [
+      "Required units not judged yet: Q01",
+      "Requirement structure needs review; identified denominator is not validated."
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "Q01",
+      "label": null,
+      "check_status": "failed",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "Q02",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "Q03",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "Q04",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ],
+  "source_flags": [
+    {
+      "unit_id": "Q02",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+      "cv_span": "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+      "start": 522,
+      "end": 633,
+      "flags": []
+    },
+    {
+      "unit_id": "Q03",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "cv_span": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "start": 1215,
+      "end": 1332,
+      "flags": []
+    }
+  ]
+}

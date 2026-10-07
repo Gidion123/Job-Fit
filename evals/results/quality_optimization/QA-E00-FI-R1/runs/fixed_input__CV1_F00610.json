@@ -1,0 +1,455 @@
+{
+ "set": "fixed_input",
+ "cv_id": "CV1",
+ "job_id": "F00610",
+ "model": "gpt-6-sol",
+ "experiment_id": "QA-E00-FI-R1",
+ "wall_ms": 17819,
+ "status": "done",
+ "error_code": null,
+ "attempts": 1,
+ "assessments": [
+  {
+   "unit_id": "G13-U01",
+   "label": "PARTIAL",
+   "check_status": "needs_clarification",
+   "cv_quotes": [
+    "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)"
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U02",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "Indonesia (native), Inggris (menengah, TOEFL ITP 540)"
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U03",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U04",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U05",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U06",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U07",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U09",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U10",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U11",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U12",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U13",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U14",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U15",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U16",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U17",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U18",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U19",
+   "label": "PARTIAL",
+   "check_status": "needs_clarification",
+   "cv_quotes": [
+    "Jakarta Selatan, Indonesia · [EMAIL] · [PHONE] · [PROFILE]"
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U20",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U21",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U22",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U23",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U24",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U25",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "G13-U26",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  }
+ ],
+ "source_flags": [
+  {
+   "unit_id": "G13-U01",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+   "cv_span": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+   "start": 623,
+   "end": 720,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U02",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Indonesia (native), Inggris (menengah, TOEFL ITP 540)",
+   "cv_span": "Indonesia (native), Inggris (menengah, TOEFL ITP 540)",
+   "start": 1813,
+   "end": 1866,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U04",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+   "cv_span": "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+   "start": 906,
+   "end": 1000,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U05",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U06",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U07",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U09",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U10",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U11",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "cv_span": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "start": 1226,
+   "end": 1328,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U12",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+   "cv_span": "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+   "start": 829,
+   "end": 905,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U13",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+   "cv_span": "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+   "start": 906,
+   "end": 1000,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U14",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+   "cv_span": "- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+   "start": 1329,
+   "end": 1416,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U15",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "cv_span": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+   "start": 721,
+   "end": 828,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U16",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+   "cv_span": "- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+   "start": 906,
+   "end": 1000,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U18",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+   "cv_span": "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+   "start": 829,
+   "end": 905,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U19",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Jakarta Selatan, Indonesia · [EMAIL] · [PHONE] · [PROFILE]",
+   "cv_span": "Jakarta Selatan, Indonesia · [EMAIL] · [PHONE] · [PROFILE]",
+   "start": 24,
+   "end": 82,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U21",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "cv_span": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+   "start": 1226,
+   "end": 1328,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U23",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+   "cv_span": "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+   "start": 829,
+   "end": 905,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U24",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+   "cv_span": "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+   "start": 829,
+   "end": 905,
+   "flags": []
+  },
+  {
+   "unit_id": "G13-U25",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+   "cv_span": "- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.",
+   "start": 829,
+   "end": 905,
+   "flags": []
+  }
+ ]
+}

@@ -1,1 +1,38 @@
-# Image for the FastAPI service. Planned for CP3.2; not written yet.
+# Image for the FastAPI service (CP3.2).
+# Saved demo works out of the box (no database, no model call).
+# Live analysis is off by default: a fresh container has an empty usage ledger, so the
+# project budget guard would not see earlier spending. Turn it on only with a
+# persistent volume for reports/usage and a key with its own spending limit.
+FROM python:3.11-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    JOBFIT_LIVE_ENABLED=0 \
+    PYTHONPATH=/app/src
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+# Only what the app reads at runtime (see src/jobfit/api/wiring.py).
+COPY pyproject.toml README.md LICENSE ./
+COPY src/ src/
+COPY config/ config/
+COPY prompts/ prompts/
+COPY data/processed/jobs_features.jsonl data/processed/jobs_features.jsonl
+COPY data/synthetic_cvs/ data/synthetic_cvs/
+COPY evals/annotation_guideline_v1_3.md evals/annotation_guideline_v1_3.md
+COPY evals/splits/ evals/splits/
+COPY evals/demo/ evals/demo/
+COPY evals/results/cp23/ evals/results/cp23/
+# Run from /app/src (PYTHONPATH), not as an installed package: config.py finds
+# config/, data/ and evals/ relative to the source folder (REPO_ROOT).
+# Files copied from a Mac folder can be owner-only (mode 600); make them readable for the
+# non-root user that runs the app, and give it a writable folder for the usage ledger.
+RUN chmod -R a+rX /app && useradd --create-home jobfit && mkdir -p reports/usage && chown -R jobfit /app/reports
+USER jobfit
+
+EXPOSE 8000
+HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=3 CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"
+CMD ["sh", "-c", "uvicorn jobfit.api.wiring:create_default_app --factory --host 0.0.0.0 --port ${PORT:-8000}"]

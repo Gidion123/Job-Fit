@@ -1,0 +1,43 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00212",
+  "status": "done",
+  "error_code": null,
+  "source": "reused_v1_matching",
+  "jd_source": "reused_v1",
+  "score_H1": {
+    "score_pct": 25.0,
+    "status": "final",
+    "matched": 2,
+    "partial": 1,
+    "required_total": 10,
+    "preferred_met": 0,
+    "preferred_total": 9,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+  },
+  "score_H2": {
+    "score_pct": 25.0,
+    "status": "final",
+    "matched": 2,
+    "partial": 1,
+    "required_total": 10,
+    "preferred_met": 0,
+    "preferred_total": 9,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 0,
+    "soft_skill_matched": 0,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+  },
+  "excluded_needs_review": [],
+  "wall_ms": 9,
+  "assessments": []
+}

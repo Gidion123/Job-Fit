@@ -1,0 +1,235 @@
+{
+ "job_id": "F00306",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "no_uncovered_bullets",
+  "bullet_count": 7,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 7,
+  "inventory_mappings": [
+   {
+    "source_id": "Q01",
+    "unit_ids": [
+     "U01"
+    ]
+   },
+   {
+    "source_id": "Q02",
+    "unit_ids": [
+     "U02"
+    ]
+   },
+   {
+    "source_id": "Q03",
+    "unit_ids": [
+     "U03"
+    ]
+   },
+   {
+    "source_id": "Q04",
+    "unit_ids": [
+     "U04",
+     "U05"
+    ]
+   },
+   {
+    "source_id": "Q05",
+    "unit_ids": [
+     "U06",
+     "U07"
+    ]
+   },
+   {
+    "source_id": "Q06",
+    "unit_ids": [
+     "U08"
+    ]
+   },
+   {
+    "source_id": "Q07",
+    "unit_ids": [
+     "U09"
+    ]
+   }
+  ],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00306",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Relevant qualification in IT, Computer Science, Data/Analytics, Engineering, or equivalent practical experience",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "education",
+    "normalized_name": "Relevant qualification in IT, Computer Science, Data/Analytics, Engineering, or equivalent practical experience",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "IT",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Computer Science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Data/Analytics",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "Engineering",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B5",
+      "text": "equivalent practical experience",
+      "field": "education",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Relevant Qualification in IT, Computer Science, Data/Analytics, Engineering, or equivalent practical experience."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "Basic programming language",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Basic programming language",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Basic Programming Language"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Basic SQL",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Basic SQL",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Basic SQL"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Interest in AI / GenAI",
+    "kind": "simple",
+    "importance": "required",
+    "field": "other",
+    "normalized_name": "Interest in AI / GenAI",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Interest in AI / GenAI and willingness to learn fast"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Willingness to learn fast",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Willingness to learn fast",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Interest in AI / GenAI and willingness to learn fast"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Able to explain work clearly",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Able to explain work clearly",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Able to explain your work clearly and document what you did"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Document what you did",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Document what you did",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Able to explain your work clearly and document what you did"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Responsible attitude toward data privacy",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Responsible attitude toward data privacy",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Responsible attitude toward data privacy"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Willingness to work as a team",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Willingness to work as a team",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Willingness to work as a team"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

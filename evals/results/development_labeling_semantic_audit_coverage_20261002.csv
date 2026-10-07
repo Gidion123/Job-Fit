@@ -1,0 +1,55 @@
+job_id,title,A_rows_read,B_rows_read,C_rows_read,manual_semantic_pass,sampled_only,finding_entries
+F00003,Agentic AI Developer,6,6,1,complete_first_pass,False,2
+F00010,Senior AI ML Engineer (Computer Vision),9,9,1,complete_first_pass,False,1
+F00012,ADMO - ML Engineer Section Head,22,44,2,complete_first_pass,False,3
+F00018,"Lowongan Kerja Senior ML Engineer LLMs, AWS",25,25,1,complete_first_pass,False,2
+F00020,MENTOR DATA ANALYST & AI,8,16,2,complete_first_pass,False,0
+F00022,Jr. Data Scientist,21,21,1,complete_first_pass,False,1
+F00029,AI Engineer – Generative AI & Agentic Systems,27,27,1,complete_first_pass,False,4
+F00034,AI Engineer,16,16,1,complete_first_pass,False,0
+F00036,Data Scientist,17,17,1,complete_first_pass,False,1
+F00052,AI Developer,33,33,1,complete_first_pass,False,2
+F00055,Data Scientist - Conversational AI & Customer Intelligence,21,42,2,complete_first_pass,False,8
+F00066,Artificial Intelligence Developer,16,16,1,complete_first_pass,False,1
+F00074,"AI Application Engineer (LLM, RAG & Agentic Systems)",26,52,2,complete_first_pass,False,7
+F00075,AI-ENABLED FULL-STACK ENGINEER,14,14,1,complete_first_pass,False,1
+F00090,Backend Engineer (Python & AI Integration),35,35,1,complete_first_pass,False,1
+F00103,Consulting - Internship - AI & Data Science (Start ASAP),36,72,2,complete_first_pass,False,4
+F00114,AI Engineer (AI Agent & RAG),17,17,1,complete_first_pass,False,1
+F00117,Artificial Intelligence Full Stack Engineer ( AI Fullstack Developer ),23,23,1,complete_first_pass,False,2
+F00126,Junior Data Scientist (AI/LLM Systems),4,4,1,complete_first_pass,False,0
+F00176,AI Agent Developer / AI Automation Engineer,32,32,1,complete_first_pass,False,0
+F00188,Junior Data Scientist,14,14,1,complete_first_pass,False,2
+F00189,Data Scientist Manager (Indonesia),22,22,1,complete_first_pass,False,0
+F00208,Principal AI & Machine Learning Engineer - U.S. Based Hybrid Opportunity,40,80,2,complete_first_pass,False,6
+F00212,Machine Learning Engineer,17,17,1,complete_first_pass,False,1
+F00303,AI / LLM Engineer – RAG & Agentic AI,18,18,1,complete_first_pass,False,2
+F00309,Data Scientist - AI/ML,9,9,1,complete_first_pass,False,0
+F00310,Enterprise Data Scientist,66,132,2,complete_first_pass,False,7
+F00327,Marketing Automation & AI Engineer,16,16,1,complete_first_pass,False,1
+F00330,Senior Applied AI Specialist,8,16,2,complete_first_pass,False,1
+F00332,Data Scientist - Risk Analytics & Modelling,16,16,1,complete_first_pass,False,2
+F00333,Data Scientist Analyst (Indonesia),23,46,2,complete_first_pass,False,0
+F00354,Intern (TGI - Machine Learning/ AI Engineering),29,29,1,complete_first_pass,False,1
+F00364,AI/ML Engineer (Industrial / Manufacturing) - Semiconductor,0,0,1,complete_first_pass,False,1
+F00366,Data Science Engineer (AI / Machine Learning),13,13,1,complete_first_pass,False,0
+F00369,Machine Learning Engineer Classical ML and Predictive Analytics,23,23,1,complete_first_pass,False,2
+F00412,Agentic AI Engineer,31,31,1,complete_first_pass,False,4
+F00438,Business Process & AI Automation Specialist,17,34,2,complete_first_pass,False,7
+F00463,AI Expert,17,17,1,complete_first_pass,False,0
+F00505,Lead Data Scientist - Mining Sector (SaaS),10,10,1,complete_first_pass,False,0
+F00515,Demand Planning Data Scientist,6,6,1,complete_first_pass,False,0
+F00556,"Machine Learning Engineer, Intern - MoneyLion",18,18,1,complete_first_pass,False,0
+F00601,Data Scientist (Based in / Relocation to Bali),21,42,2,complete_first_pass,False,3
+F00624,Generative AI Engineer,35,35,1,complete_first_pass,False,0
+F00650,Senior AI/LLM Engineer (Python) - Remote,21,21,1,complete_first_pass,False,2
+F00654,Machine Learning Engineer | Manila,10,10,1,complete_first_pass,False,1
+F00655,Machine Learning Engineer,19,19,1,complete_first_pass,False,1
+F00663,AI EXPERT,18,36,2,complete_first_pass,False,2
+F00666,Senior Machine Learning Engineer,15,15,1,complete_first_pass,False,1
+F00686,"Data Scientist, Payments",12,24,2,complete_first_pass,False,0
+F00698,"[Remote] Gen AI Engineer - Wilmington, DE, Fairfax, VA, Washington, DC, Silver Spring, MD, Philadelphia, PA",28,28,1,complete_first_pass,False,1
+F00798,GenAI Application Engineer (LLM / RAG / Agentic AI),40,40,1,complete_first_pass,False,2
+F00815,Artificial Intelligence Engineer,16,16,1,complete_first_pass,False,0
+F00930,Junior AI​/ML Engineer Federal Data Solutions,3,3,1,complete_first_pass,False,0
+F00933,Junior AI Engineer,10,10,1,complete_first_pass,False,1

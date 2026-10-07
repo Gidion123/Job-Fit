@@ -1,0 +1,10 @@
+{
+  "job_id": "F00366",
+  "status": "failed",
+  "attempts": 2,
+  "error_code": "qualification_inventory_incomplete",
+  "cache_hit": false,
+  "coverage": {},
+  "wall_ms": 60105,
+  "extraction": null
+}

@@ -1,0 +1,6 @@
+# Implementation defaults from the CP2 brief, not a CP2.3 selected configuration.
+preprocessing_version: title-clean-jd-cv-body-v1
+rrf_k: 60
+branch_depth: 20
+batch_size: 16
+max_batch_tokens: 64000

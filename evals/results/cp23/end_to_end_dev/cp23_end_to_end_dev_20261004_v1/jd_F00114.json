@@ -1,0 +1,412 @@
+{
+  "job_id": "F00114",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "1c9860fd1184acd76e4c153e92b54e3411aab494677a068824c6bbde739c7658",
+  "wall_ms": 70610,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 10,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 10,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U03"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U04"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U05"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U06",
+          "U07",
+          "U08",
+          "U09",
+          "U10"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U11"
+        ]
+      },
+      {
+        "source_id": "Q08",
+        "unit_ids": [
+          "U12"
+        ]
+      },
+      {
+        "source_id": "Q09",
+        "unit_ids": [
+          "U13",
+          "U14"
+        ]
+      },
+      {
+        "source_id": "Q10",
+        "unit_ids": [
+          "U15",
+          "U16",
+          "U17"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00114",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "5+ years as an Engineer",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "5+ years as an Engineer",
+        "min_years": 5.0,
+        "branches": [],
+        "source_quotes": [
+          "5+ Years as an Engineer"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "2+ years shipping production LLM features (not just prototypes)",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "2+ years shipping production LLM features (not just prototypes)",
+        "min_years": 2.0,
+        "branches": [],
+        "source_quotes": [
+          "2+ years shipping production LLM features (not just prototypes)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Strong Python (FastAPI) and/or TypeScript / Node.js for backend AI services",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong Python (FastAPI) and/or TypeScript / Node.js for backend AI services",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong Python (FastAPI) and/or TypeScript / Node.js for backend AI services."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Hands-on with at least one agent framework: LangChain / LangGraph, LlamaIndex, LangSmith, CrewAI, or n8n",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Hands-on with at least one agent framework",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Hands-on with at least one agent framework: LangChain / LangGraph",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Hands-on with at least one agent framework: LlamaIndex",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Hands-on with at least one agent framework: LangSmith",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Hands-on with at least one agent framework: CrewAI",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Hands-on with at least one agent framework: n8n",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Hands-on with at least one agent framework: LangChain / LangGraph, LlamaIndex, LangSmith, CrewAI, or n8n."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Practical experience with native tool/function calling across major providers",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Practical experience with native tool/function calling across major providers",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Practical experience with native tool/function calling across major providers."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Real RAG production experience: chunking trade-offs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Real RAG production experience: chunking trade-offs",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Real RAG production experience: chunking trade-offs, embedding selection, hybrid retrieval, reranking, and how to measure retrieval quality."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Real RAG production experience: embedding selection",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Real RAG production experience: embedding selection",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Real RAG production experience: chunking trade-offs, embedding selection, hybrid retrieval, reranking, and how to measure retrieval quality."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Real RAG production experience: hybrid retrieval",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Real RAG production experience: hybrid retrieval",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Real RAG production experience: chunking trade-offs, embedding selection, hybrid retrieval, reranking, and how to measure retrieval quality."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Real RAG production experience: reranking",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Real RAG production experience: reranking",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Real RAG production experience: chunking trade-offs, embedding selection, hybrid retrieval, reranking, and how to measure retrieval quality."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Real RAG production experience: how to measure retrieval quality",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Real RAG production experience: how to measure retrieval quality",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Real RAG production experience: chunking trade-offs, embedding selection, hybrid retrieval, reranking, and how to measure retrieval quality."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Working knowledge of vector databases: pgvector, Pinecone, Qdrant, Weaviate, or equivalent",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Working knowledge of vector databases",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Working knowledge of vector databases: pgvector",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Working knowledge of vector databases: Pinecone",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Working knowledge of vector databases: Qdrant",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Working knowledge of vector databases: Weaviate",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Working knowledge of vector databases: equivalent",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Working knowledge of vector databases: pgvector, Pinecone, Qdrant, Weaviate, or equivalent."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Experience designing evaluation pipelines for LLM features",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience designing evaluation pipelines for LLM features",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience designing evaluation pipelines for LLM features."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Comfortable with PostgreSQL",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Comfortable with PostgreSQL",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Comfortable with PostgreSQL and RESTful API design."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Comfortable with RESTful API design",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Comfortable with RESTful API design",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Comfortable with PostgreSQL and RESTful API design."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Awareness of prompt injection",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Awareness of prompt injection",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Awareness of prompt injection, PII handling, and safe tool exposure."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Awareness of PII handling",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Awareness of PII handling",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Awareness of prompt injection, PII handling, and safe tool exposure."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Awareness of safe tool exposure",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Awareness of safe tool exposure",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Awareness of prompt injection, PII handling, and safe tool exposure."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

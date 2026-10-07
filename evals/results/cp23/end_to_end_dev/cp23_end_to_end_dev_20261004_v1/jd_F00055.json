@@ -1,0 +1,477 @@
+{
+  "job_id": "F00055",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "47651d1e43b5c3188aed392a95d999152042d8455751cf0e30ac0d5681a606bd",
+  "wall_ms": 37442,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00055",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Strong academic background in statistics, econometrics, mathematics, computer science, or a related quantitative discipline",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "Strong academic background in statistics, econometrics, mathematics, computer science, or a related quantitative discipline",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "statistics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "econometrics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "mathematics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "computer science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "a related quantitative discipline",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Strong academic background in statistics, econometrics, mathematics, computer science, or a related quantitative discipline"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "3–6 years of hands-on data science or applied AI experience, with demonstrable work in text analytics, conversational data, or LLM-based systems",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "3–6 years of hands-on data science or applied AI experience, with demonstrable work in text analytics, conversational data, or LLM-based systems",
+        "min_years": 3.0,
+        "branches": [],
+        "source_quotes": [
+          "3–6 years of hands-on data science or applied AI experience, with demonstrable work in text analytics, conversational data, or LLM-based systems"
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Fluency with LLM APIs (Anthropic, OpenAI, or equivalent)",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Fluency with LLM APIs (Anthropic, OpenAI, or equivalent)",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Anthropic",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "OpenAI",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "equivalent",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Fluency with LLM APIs (Anthropic, OpenAI, or equivalent)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Structured prompting",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Structured prompting",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "structured prompting"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "JSON output parsing",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "JSON output parsing",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "JSON output parsing"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Batch processing",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Batch processing",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "batch processing"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Prompt evaluation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Prompt evaluation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "prompt evaluation"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Regression",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Regression",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "regression"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Classification",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Classification",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "classification"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Survival analysis",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Survival analysis",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "survival analysis"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Experiment design",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experiment design",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "experiment design"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Econometrics or quantitative social science backgrounds are a genuine advantage here",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "education",
+        "normalized_name": "Econometrics or quantitative social science backgrounds are a genuine advantage here",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Econometrics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Quantitative social science",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Econometrics or quantitative social science backgrounds are a genuine advantage here"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Direct experience working with text data in Bahasa Indonesia",
+        "kind": "simple",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "Direct experience working with text data in Bahasa Indonesia",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Direct experience working with text data in Bahasa Indonesia — you understand informal register, code-switching, and how Indonesians actually write in chat"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Ability to work with raw, messy data",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Ability to work with raw, messy data",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Ability to work with raw, messy data — you will be building pipelines from conversation logs, not receiving clean feature tables"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Clear written and verbal communication in Bahasa Indonesia",
+        "kind": "simple",
+        "importance": "required",
+        "field": "language",
+        "normalized_name": "Clear written and verbal communication in Bahasa Indonesia",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Clear written and verbal communication in both Bahasa Indonesia and English — you will write insight reports that a bank's business team needs to act on"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Clear written and verbal communication in English",
+        "kind": "simple",
+        "importance": "required",
+        "field": "language",
+        "normalized_name": "Clear written and verbal communication in English",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Clear written and verbal communication in both Bahasa Indonesia and English — you will write insight reports that a bank's business team needs to act on"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Experience with conversational data specifically: chat logs, call transcripts, or any sequential text where the unit of analysis is a session rather than a document",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "experience_duration",
+        "normalized_name": "Experience with conversational data specifically: chat logs, call transcripts, or any sequential text where the unit of analysis is a session rather than a document",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "chat logs",
+            "field": "experience_duration",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "call transcripts",
+            "field": "experience_duration",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "any sequential text where the unit of analysis is a session rather than a document",
+            "field": "experience_duration",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience with conversational data specifically: chat logs, call transcripts, or any sequential text where the unit of analysis is a session rather than a document"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Familiarity with financial products and how customers talk about them",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Familiarity with financial products and how customers talk about them",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with financial products and how customers talk about them — mortgages, savings, loans, insurance — across any market."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Indonesian financial product context",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Indonesian financial product context",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Indonesian financial product context is a plus given our current focus, but not a hard requirement"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Experience in a fintech, financial services, or any high-stakes conversion environment (e-commerce, insurance, lending) where understanding why customers do or do not complete a transaction was the central analytical problem",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "experience_duration",
+        "normalized_name": "Experience in a fintech, financial services, or any high-stakes conversion environment (e-commerce, insurance, lending) where understanding why customers do or do not complete a transaction was the central analytical problem",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "fintech",
+            "field": "experience_duration",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "financial services",
+            "field": "experience_duration",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "any high-stakes conversion environment (e-commerce, insurance, lending)",
+            "field": "experience_duration",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience in a fintech, financial services, or any high-stakes conversion environment (e-commerce, insurance, lending) where understanding why customers do or do not complete a transaction was the central analytical problem"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Familiarity with model cost optimisation",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Familiarity with model cost optimisation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with model cost optimisation — understanding the trade-offs between frontier and smaller models, and practical experience making that switch in a real system"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Experience building lightweight dashboards or reporting outputs (Streamlit, Metabase, or similar)",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "Experience building lightweight dashboards or reporting outputs (Streamlit, Metabase, or similar)",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Streamlit",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Metabase",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "similar",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience building lightweight dashboards or reporting outputs (Streamlit, Metabase, or similar)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

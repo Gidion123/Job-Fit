@@ -1,0 +1,105 @@
+{
+ "set": "ranking",
+ "cv_id": "CV2",
+ "job_id": "F00052",
+ "model": "gpt-6-sol",
+ "experiment_id": "QA-E01",
+ "wall_ms": 11840,
+ "status": "done",
+ "error_code": null,
+ "attempts": 1,
+ "assessments": [
+  {
+   "unit_id": "U001",
+   "label": null,
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [
+    {
+     "branch_id": "B1",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B2",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B3",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B4",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B5",
+     "label": "NO_MATCH",
+     "check_status": "done",
+     "cv_quotes": []
+    },
+    {
+     "branch_id": "B6",
+     "label": "MATCH",
+     "check_status": "done",
+     "cv_quotes": [
+      "**Digital Marketing Analyst**, PT Contoh Media Digital, Bandung · March 2023 - May 2026",
+      "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+      "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+      "- Ran A/B tests for ad creatives and explained results to account managers."
+     ]
+    }
+   ],
+   "label_source": "model_draft"
+  }
+ ],
+ "source_flags": [
+  {
+   "unit_id": "U001",
+   "branch_id": "B6",
+   "kind": "quote_exact",
+   "model_quote": "**Digital Marketing Analyst**, PT Contoh Media Digital, Bandung · March 2023 - May 2026",
+   "cv_span": "**Digital Marketing Analyst**, PT Contoh Media Digital, Bandung · March 2023 - May 2026",
+   "start": 340,
+   "end": 427,
+   "flags": []
+  },
+  {
+   "unit_id": "U001",
+   "branch_id": "B6",
+   "kind": "quote_exact",
+   "model_quote": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "cv_span": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "start": 428,
+   "end": 519,
+   "flags": []
+  },
+  {
+   "unit_id": "U001",
+   "branch_id": "B6",
+   "kind": "quote_exact",
+   "model_quote": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "cv_span": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "start": 520,
+   "end": 633,
+   "flags": []
+  },
+  {
+   "unit_id": "U001",
+   "branch_id": "B6",
+   "kind": "quote_exact",
+   "model_quote": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "cv_span": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "start": 634,
+   "end": 709,
+   "flags": []
+  }
+ ]
+}

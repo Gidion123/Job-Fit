@@ -1,0 +1,29 @@
+{
+ "script": "scripts/build_cp25_heldout_figures.py",
+ "report_reproduced_from_labels": true,
+ "contract": "cp24-report-contract-v1",
+ "label_version": "test_v13_cp24_r1",
+ "inputs_sha256": {
+  "evals/results/cp24/heldout_report_v1.json": "b446f2dceec9e20fa8f1a0fb04acf46b75d0b6706aa88e7edef6283d028c004e",
+  "evals/results/cp24/test_run_v1/test_run.json": "04f8440900287710d1864dd7e3372c8b218288e8fdad3571b666ee3eab1b710c",
+  "evals/gold/test_v13_cp24_r1/relevance_gold.jsonl": "cc3efd3f0cd5805c4aee7c7be8ca6650487b30fac86974c7a4333c9c5821bc33",
+  "evals/gold/test_v13_cp24_r1/held_test_r1.json": "45c8e2921967224e658a4fd414a7725b18baa3d4196ce78eaded1410cf7db513",
+  "evals/gold/test_v13_cp24_r1/provenance_manifest.json": "e6c1c1c698fcde401f2bebb48258e4395728c8c5b6e513aa32f63ecd79ae4f19",
+  "evals/results/cp24/test_run_v1/final_CV3.json": "f31806142406cfd371d9fabef6b914c52dd24ecb8571604b46b7b391af1b364d",
+  "evals/results/cp24/test_run_v1/final_CV4.json": "3e9fd4dbf529485768f34933359fb5b5f1bcbcc220643c9d81cb60a7feecabb8",
+  "evals/results/cp24/test_run_v1/final_CV5.json": "23edc1107af881de7476d3208a9d9417fbb6c6cca966b90457b680d1d722c150",
+  "evals/results/cp24/test_run_v1/final_CV1.json": "31d0127513ebef5b27afe44f0c8e9df7f7ab9f2a56f3e51e78d46169b9bc5946",
+  "evals/results/cp24/test_run_v1/final_CV2.json": "0c92c4f5d1ab7e668234e0a4a7661492abdb8c64e04ca4b545c0c4e25982e2a8"
+ },
+ "outputs_sha256": {
+  "reports/figures/cp2/fig09_cp24_heldout_primary_v1.png": "17e705a83c8f76c31ddeb5b9f78a1dc6444b183de3eefb42528191a37409f27e",
+  "reports/figures/cp2/fig10_cp24_supplementary_familiar_v1.png": "a25ed6c530c3055e2ccb0a181b96641f193435ea3e82c5fd21b183722b1883a3",
+  "reports/figures/cp2/fig11_cp24_order_decomposition_v1.png": "8dff324904050f31d73462867c4c2aabaf9b80b44d27fe8e2f30a0c1a9bc07ab",
+  "evals/results/cp24/cp25_tables_v1/group_macros.csv": "6781d307a1271e18c2b6f6c512cd21991d31896642465f087e294d48140098d9",
+  "evals/results/cp24/cp25_tables_v1/order_decomposition_posthoc.csv": "d288496694495c549cbbd5334f0a3ff8a173e7b43dd5ec582b9531cc2af8dff2",
+  "evals/results/cp24/cp25_tables_v1/per_cv.csv": "614bfd5b5eb8c69c9912ffb0a56dd1f3e715226b8cd7234c7fe749290cc7e8a0"
+ },
+ "notes": [
+  "Figure 11 and order_decomposition_posthoc.csv are post-hoc diagnostics, not part of the frozen contract and not used to change anything."
+ ]
+}

@@ -1,0 +1,708 @@
+{
+  "job_id": "F00029",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "cache_hit": false,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 11,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 11,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U03"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U04"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U05"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U06",
+          "U07",
+          "U08",
+          "U09"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U10"
+        ]
+      },
+      {
+        "source_id": "Q08",
+        "unit_ids": [
+          "U11",
+          "U12"
+        ]
+      },
+      {
+        "source_id": "Q09",
+        "unit_ids": [
+          "U13",
+          "U14",
+          "U15"
+        ]
+      },
+      {
+        "source_id": "Q10",
+        "unit_ids": [
+          "U16"
+        ]
+      },
+      {
+        "source_id": "Q11",
+        "unit_ids": [
+          "U17",
+          "U18"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "wall_ms": 103910,
+  "extraction": {
+    "job_id": "F00029",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Bachelor’s degree in Computer Science, Engineering, Data Science, or a related field, or equivalent experience",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Bachelor’s degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Bachelor’s degree in Engineering",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Bachelor’s degree in Data Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Bachelor’s degree in a related field",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "equivalent experience",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Bachelor’s degree in Computer Science, Engineering, Data Science, or a related field, or equivalent experience."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Around 3–6 years of relevant engineering experience",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "text",
+        "min_years": 3.0,
+        "branches": [],
+        "source_quotes": [
+          "Around 3–6 years of relevant engineering experience."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Strong Python programming skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong Python programming skills."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Experience building production software, data, or AI applications",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience building production software",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience building data",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Experience building AI applications",
+            "field": "other",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience building production software, data, or AI applications."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Experience using generative AI models or APIs",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience using generative AI models",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience using APIs",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience using generative AI models or APIs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Understanding of prompts",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Understanding of prompts, structured outputs, RAG, and embeddings."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Understanding of structured outputs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Understanding of prompts, structured outputs, RAG, and embeddings."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Understanding of RAG",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Understanding of prompts, structured outputs, RAG, and embeddings."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Understanding of embeddings",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Understanding of prompts, structured outputs, RAG, and embeddings."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Familiarity with AI agents or multi-step LLM workflows",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Familiarity with AI agents",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Familiarity with multi-step LLM workflows",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Familiarity with AI agents or multi-step LLM workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Experience developing APIs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience developing APIs and backend services."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Experience developing backend services",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience developing APIs and backend services."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Experience with Git",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with Git, testing, and CI/CD."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Experience with testing",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with Git, testing, and CI/CD."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Experience with CI/CD",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with Git, testing, and CI/CD."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Experience with at least one cloud platform",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with at least one cloud platform."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Strong debugging skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong debugging and problem-solving skills."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Strong problem-solving skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong debugging and problem-solving skills."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Experience with LangChain, LangGraph, LlamaIndex, or similar frameworks",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience with LangChain",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience with LangGraph",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Experience with LlamaIndex",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Experience with similar frameworks",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience with LangChain, LangGraph, LlamaIndex, or similar frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Experience with commercial or open-source language models",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience with commercial language models",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience with open-source language models",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience with commercial or open-source language models."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Experience with pgvector, Pinecone, Weaviate, Milvus, or OpenSearch",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience with pgvector",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience with Pinecone",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Experience with Weaviate",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Experience with Milvus",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Experience with OpenSearch",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience with pgvector, Pinecone, Weaviate, Milvus, or OpenSearch."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Experience with PyTorch, Hugging Face, or scikit-learn",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience with PyTorch",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience with Hugging Face",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Experience with scikit-learn",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience with PyTorch, Hugging Face, or scikit-learn."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Experience with document intelligence or multimodal AI",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience with document intelligence",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience with multimodal AI",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience with document intelligence or multimodal AI."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U24",
+        "text": "Familiarity with AI evaluation or observability tools",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Familiarity with AI evaluation",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Familiarity with observability tools",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Familiarity with AI evaluation or observability tools."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U25",
+        "text": "Docker experience",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Docker experience is a strong plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U26",
+        "text": "Kubernetes or MLOps experience",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "other",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Kubernetes experience",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "MLOps experience",
+            "field": "other",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Kubernetes or MLOps experience is a plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U27",
+        "text": "Experience in enterprise environments",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "other",
+        "normalized_name": "text",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience in enterprise environments is a plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

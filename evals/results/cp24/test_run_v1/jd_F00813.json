@@ -1,0 +1,382 @@
+{
+ "job_id": "F00813",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "not_assessed",
+  "bullet_count": 0,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 0,
+  "inventory_mappings": [],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00813",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "At least 3 years of implementation and deployment experience in machine learning on large datasets.",
+    "kind": "qualified",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "machine_learning_experience",
+    "min_years": 3.0,
+    "branches": [],
+    "source_quotes": [
+     "Shall have at least three (3) years of implementation and deployment experience in machine learning and statistical data analysis on large datasets."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "At least 3 years of implementation and deployment experience in statistical data analysis on large datasets.",
+    "kind": "qualified",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "statistical_data_analysis_experience",
+    "min_years": 3.0,
+    "branches": [],
+    "source_quotes": [
+     "Shall have at least three (3) years of implementation and deployment experience in machine learning and statistical data analysis on large datasets."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Experience translating business questions into analytical problems.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "business_question_translation",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Shall have experience in translating business questions into analytical problems and using statistical techniques to derive actional insights using statistical software (Python, R, SAS), database languages (SQL), visualization tools (Qlik Sense), and deep learning framework (TensorFlow, PyTorch)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Experience using statistical techniques to derive actionable insights using statistical software (Python, R, SAS).",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "statistical_software_experience",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "using statistical techniques to derive actionable insights using Python",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "using statistical techniques to derive actionable insights using R",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "using statistical techniques to derive actionable insights using SAS",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Shall have experience in translating business questions into analytical problems and using statistical techniques to derive actional insights using statistical software (Python, R, SAS), database languages (SQL), visualization tools (Qlik Sense), and deep learning framework (TensorFlow, PyTorch)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Experience using statistical techniques to derive actionable insights using database languages (SQL).",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "database_language_experience",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Shall have experience in translating business questions into analytical problems and using statistical techniques to derive actional insights using statistical software (Python, R, SAS), database languages (SQL), visualization tools (Qlik Sense), and deep learning framework (TensorFlow, PyTorch)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Experience using statistical techniques to derive actionable insights using visualization tools (Qlik Sense).",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "visualization_tool_experience",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Shall have experience in translating business questions into analytical problems and using statistical techniques to derive actional insights using statistical software (Python, R, SAS), database languages (SQL), visualization tools (Qlik Sense), and deep learning framework (TensorFlow, PyTorch)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Experience using statistical techniques to derive actionable insights using deep learning framework (TensorFlow, PyTorch).",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "deep_learning_framework_experience",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "using statistical techniques to derive actionable insights using TensorFlow",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "using statistical techniques to derive actionable insights using PyTorch",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Shall have experience in translating business questions into analytical problems and using statistical techniques to derive actional insights using statistical software (Python, R, SAS), database languages (SQL), visualization tools (Qlik Sense), and deep learning framework (TensorFlow, PyTorch)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Data Wrangling.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "data_wrangling",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Shall have the following skillsets: Data Wrangling, Data Visualization, DBMS, SQL, Python"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Data Visualization.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "data_visualization",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Shall have the following skillsets: Data Wrangling, Data Visualization, DBMS, SQL, Python"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "DBMS.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "dbms",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Shall have the following skillsets: Data Wrangling, Data Visualization, DBMS, SQL, Python"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "SQL.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "sql",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Shall have the following skillsets: Data Wrangling, Data Visualization, DBMS, SQL, Python"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "Python.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "python",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Shall have the following skillsets: Data Wrangling, Data Visualization, DBMS, SQL, Python"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U13",
+    "text": "Completed at least one project using Scrum or equivalent Agile development framework.",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "agile_project_experience",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "completed at least one project using Scrum",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "completed at least one project using equivalent Agile development framework",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Preferably have completed at least one (1) project using Scrum or equivalent Agile development framework."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U14",
+    "text": "Experience with MS Access (Front-end).",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "ms_access",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience in these products/tools would be advantageous: MS Access (Front-end), SharePoint (Back-end), Power BI (Visualisation), Kubernetes, Docker/Podman, Microservices Architecture, DevSecOps Methodology"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U15",
+    "text": "Experience with SharePoint (Back-end).",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "sharepoint",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience in these products/tools would be advantageous: MS Access (Front-end), SharePoint (Back-end), Power BI (Visualisation), Kubernetes, Docker/Podman, Microservices Architecture, DevSecOps Methodology"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U16",
+    "text": "Experience with Power BI (Visualisation).",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "power_bi",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience in these products/tools would be advantageous: MS Access (Front-end), SharePoint (Back-end), Power BI (Visualisation), Kubernetes, Docker/Podman, Microservices Architecture, DevSecOps Methodology"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U17",
+    "text": "Experience with Kubernetes.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "kubernetes",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience in these products/tools would be advantageous: MS Access (Front-end), SharePoint (Back-end), Power BI (Visualisation), Kubernetes, Docker/Podman, Microservices Architecture, DevSecOps Methodology"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U18",
+    "text": "Experience with Docker/Podman.",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "container_tool_experience",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Experience with Docker",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Experience with Podman",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience in these products/tools would be advantageous: MS Access (Front-end), SharePoint (Back-end), Power BI (Visualisation), Kubernetes, Docker/Podman, Microservices Architecture, DevSecOps Methodology"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U19",
+    "text": "Experience with Microservices Architecture.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "microservices_architecture",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience in these products/tools would be advantageous: MS Access (Front-end), SharePoint (Back-end), Power BI (Visualisation), Kubernetes, Docker/Podman, Microservices Architecture, DevSecOps Methodology"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U20",
+    "text": "Experience with DevSecOps Methodology.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "devsecops_methodology",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience in these products/tools would be advantageous: MS Access (Front-end), SharePoint (Back-end), Power BI (Visualisation), Kubernetes, Docker/Podman, Microservices Architecture, DevSecOps Methodology"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

@@ -1,0 +1,42 @@
+{
+  "job_id": "F00351",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "d155457ecb850be97f8127ce85b8001c14d990fbe7e5f6ede115555c1b433a33",
+  "wall_ms": 56124,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00351",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Passion for solving complex problems with data",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Passion for solving complex problems with data",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Passion for Solving Complex Problems with Data"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

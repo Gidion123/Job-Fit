@@ -1,0 +1,16 @@
+[
+ {
+  "record": "C_Relevance",
+  "item_id": "T68",
+  "cv_id": "CV5",
+  "job_id": "F00070",
+  "job_title": "Machine Learning Engineer",
+  "hold_reason": "unscorable_source_quality",
+  "c_sheet_value": 2,
+  "main_reason": "The CV shows production NLP/RAG, model fine-tuning, FastAPI/Docker, and ML-service work aligned with the ML-engineering responsibilities, but the JD has no extractable qualification requirements, so the score is conservative.",
+  "draft_note": "Role family: AI/ML engineering. A coverage limitation: this JD contains responsibilities only and has no A_Extraction rows; no qualification requirements were invented.",
+  "a_extraction_units": 0,
+  "decision": "D-088",
+  "note": "Not a relevance judgment; never counted as 0 (D-052). Unjudged."
+ }
+]

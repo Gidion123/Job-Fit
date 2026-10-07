@@ -1,0 +1,609 @@
+{
+ "job_id": "F00290",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "not_assessed",
+  "bullet_count": 0,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 0,
+  "inventory_mappings": [],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00290",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Proficiency in Python.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Python",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Proficiency in Python and ML frameworks/algorithms (e.g. scikit-learn, XGBoost, PyTorch, TensorFlow)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "Proficiency in ML frameworks/algorithms (e.g. scikit-learn, XGBoost, PyTorch, TensorFlow).",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "ML frameworks/algorithms",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Proficiency in Python and ML frameworks/algorithms (e.g. scikit-learn, XGBoost, PyTorch, TensorFlow)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Strong grasp of prompt engineering.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "prompt engineering",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Strong grasp of generative AI and LLM techniques: prompt engineering, structured extraction, RAG, embeddings, and integrating hosted models (Anthropic Claude, Amazon Bedrock)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Strong grasp of structured extraction.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "structured extraction",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Strong grasp of generative AI and LLM techniques: prompt engineering, structured extraction, RAG, embeddings, and integrating hosted models (Anthropic Claude, Amazon Bedrock)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Strong grasp of RAG.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "RAG",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Strong grasp of generative AI and LLM techniques: prompt engineering, structured extraction, RAG, embeddings, and integrating hosted models (Anthropic Claude, Amazon Bedrock)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Strong grasp of embeddings.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "embeddings",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Strong grasp of generative AI and LLM techniques: prompt engineering, structured extraction, RAG, embeddings, and integrating hosted models (Anthropic Claude, Amazon Bedrock)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Strong grasp of integrating hosted models (Anthropic Claude, Amazon Bedrock).",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "integrating hosted models",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Strong grasp of generative AI and LLM techniques: prompt engineering, structured extraction, RAG, embeddings, and integrating hosted models (Anthropic Claude, Amazon Bedrock)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Experience training and operationalizing custom ML models end to end (data prep, training, evaluation, deployment, monitoring).",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "custom ML model lifecycle",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Experience training and operationalizing custom ML models end to end (data prep, training, evaluation, deployment, monitoring)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Experience designing and deploying on AWS.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "AWS design and deployment",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Experience designing and deploying on AWS, hands-on with core services used here: Lambda, API Gateway, Step Functions, SageMaker, Bedrock, Textract, DynamoDB, S3, ECR, SSM Parameter Store, CloudWatch, VPC/IAM."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "Hands-on with core AWS services: Lambda, API Gateway, Step Functions, SageMaker, Bedrock, Textract, DynamoDB, S3, ECR, SSM Parameter Store, CloudWatch, VPC/IAM.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "core AWS services",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Experience designing and deploying on AWS, hands-on with core services used here: Lambda, API Gateway, Step Functions, SageMaker, Bedrock, Textract, DynamoDB, S3, ECR, SSM Parameter Store, CloudWatch, VPC/IAM."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "Infrastructure as Code with Terraform — modules, per-environment state backends, plan/apply workflows.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Terraform",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Infrastructure as Code with Terraform — modules, per-environment state backends, plan/apply workflows (AWS CDK a plus)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "AWS CDK (a plus).",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "AWS CDK",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Infrastructure as Code with Terraform — modules, per-environment state backends, plan/apply workflows (AWS CDK a plus)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U13",
+    "text": "Solid MLOps understanding: CI/CD.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "CI/CD",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Solid MLOps understanding: CI/CD, model registration, monitoring, and drift detection."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U14",
+    "text": "Solid MLOps understanding: model registration.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "model registration",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Solid MLOps understanding: CI/CD, model registration, monitoring, and drift detection."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U15",
+    "text": "Solid MLOps understanding: monitoring.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "monitoring",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Solid MLOps understanding: CI/CD, model registration, monitoring, and drift detection."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U16",
+    "text": "Solid MLOps understanding: drift detection.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "drift detection",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Solid MLOps understanding: CI/CD, model registration, monitoring, and drift detection."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U17",
+    "text": "Proven ability to own solution architecture.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "solution architecture ownership",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Proven ability to own solution architecture and mentor engineers, including leading design and code reviews."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U18",
+    "text": "Proven ability to mentor engineers, including leading design and code reviews.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "mentoring engineers",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Proven ability to own solution architecture and mentor engineers, including leading design and code reviews."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U19",
+    "text": "Familiarity with event-driven architectures.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "event-driven architectures",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Familiarity with event-driven and serverless architectures (Lambda / Step Functions)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U20",
+    "text": "Familiarity with serverless architectures (Lambda / Step Functions).",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "serverless architectures",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Familiarity with event-driven and serverless architectures (Lambda / Step Functions)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U21",
+    "text": "Container skills: Docker (Python slim base images, Lambda container images).",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Docker",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Container skills: Docker (Python slim base images, Lambda container images) and image lifecycle management in ECR."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U22",
+    "text": "Container skills: image lifecycle management in ECR.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "ECR image lifecycle management",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Container skills: Docker (Python slim base images, Lambda container images) and image lifecycle management in ECR."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U23",
+    "text": "CI/CD with GitHub Actions.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "CI/CD with GitHub Actions",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· CI/CD with GitHub Actions, including OIDC federation to AWS (no long-lived credentials) and environment-gated promotion."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U24",
+    "text": "CI/CD with GitHub Actions: OIDC federation to AWS (no long-lived credentials).",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "OIDC federation to AWS",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· CI/CD with GitHub Actions, including OIDC federation to AWS (no long-lived credentials) and environment-gated promotion."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U25",
+    "text": "CI/CD with GitHub Actions: environment-gated promotion.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "environment-gated promotion",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· CI/CD with GitHub Actions, including OIDC federation to AWS (no long-lived credentials) and environment-gated promotion."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U26",
+    "text": "OCR experience.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "OCR",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· OCR and document-intelligence experience (AWS Textract, IDP pipelines)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U27",
+    "text": "Document-intelligence experience (AWS Textract, IDP pipelines).",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "document intelligence",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· OCR and document-intelligence experience (AWS Textract, IDP pipelines)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U28",
+    "text": "Computer vision / object detection experience (e.g. training and deploying detection models).",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "computer vision / object detection",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Computer vision / object detection experience (e.g. training and deploying detection models)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U29",
+    "text": "Vector search / RAG with a vector store (e.g. pgvector).",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "vector search / RAG with vector store",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Vector search / RAG with a vector store (e.g. pgvector)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U30",
+    "text": "Data warehouse familiarity such as Amazon Redshift.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "data warehouse familiarity",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Data warehouse familiarity such as Amazon Redshift."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U31",
+    "text": "Testing and quality tooling: pytest.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "pytest",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Testing and quality tooling: pytest, property-based testing (Hypothesis / fast-check), and SAST/dependency scanning."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U32",
+    "text": "Testing and quality tooling: property-based testing (Hypothesis / fast-check).",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "property-based testing",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Testing and quality tooling: pytest, property-based testing (Hypothesis / fast-check), and SAST/dependency scanning."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U33",
+    "text": "Testing and quality tooling: SAST/dependency scanning.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "SAST/dependency scanning",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Testing and quality tooling: pytest, property-based testing (Hypothesis / fast-check), and SAST/dependency scanning."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U34",
+    "text": "API contract discipline with OpenAPI specs.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "API contract discipline with OpenAPI",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· API contract discipline with OpenAPI specs."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U35",
+    "text": "Full-stack awareness for AI applications: FastAPI backends.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "FastAPI backends",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Full-stack awareness for AI applications: FastAPI backends and React/Vite/MUI frontends."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U36",
+    "text": "Full-stack awareness for AI applications: React/Vite/MUI frontends.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "React/Vite/MUI frontends",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Full-stack awareness for AI applications: FastAPI backends and React/Vite/MUI frontends."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U37",
+    "text": "Exposure to Responsible AI practices.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "Responsible AI practices",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Exposure to Responsible AI practices and LLM guardrails (content filtering, confidence scoring, human review)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U38",
+    "text": "Exposure to LLM guardrails (content filtering, confidence scoring, human review).",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "LLM guardrails",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· Exposure to Responsible AI practices and LLM guardrails (content filtering, confidence scoring, human review)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U39",
+    "text": "AWS certifications (AI/ML Specialty, Solutions Architect) or equivalent.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "certification",
+    "normalized_name": "AWS certifications",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "· AWS certifications (AI/ML Specialty, Solutions Architect) or equivalent."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

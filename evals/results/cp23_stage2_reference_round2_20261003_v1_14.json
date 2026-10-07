@@ -1,0 +1,287 @@
+{
+  "stage_id": "deepseek-v4-pro/extraction/F00010",
+  "model": "deepseek-v4-pro",
+  "kind": "extraction",
+  "job_id": "F00010",
+  "extraction": {
+    "job_id": "F00010",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "8 years of relevant experience in AI, Machine Learning, or Data Science roles",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": null,
+        "min_years": 8.0,
+        "branches": [
+          {
+            "branch_id": "U01a",
+            "text": "8 years of relevant experience in AI roles",
+            "field": "experience_duration",
+            "min_years": 8.0
+          },
+          {
+            "branch_id": "U01b",
+            "text": "8 years of relevant experience in Machine Learning roles",
+            "field": "experience_duration",
+            "min_years": 8.0
+          },
+          {
+            "branch_id": "U01c",
+            "text": "8 years of relevant experience in Data Science roles",
+            "field": "experience_duration",
+            "min_years": 8.0
+          }
+        ],
+        "source_quotes": [
+          "Minimum 8 years of relevant experience in AI, Machine Learning, or Data Science roles."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Excellent English communication skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "language",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Excellent English communication skills."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Strong proficiency in Python",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong proficiency in Python and common ML frameworks (TensorFlow, PyTorch, scikit-learn, or similar)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Strong proficiency in common ML frameworks (TensorFlow, PyTorch, scikit-learn, or similar)",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "U04a",
+            "text": "Strong proficiency in TensorFlow",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U04b",
+            "text": "Strong proficiency in PyTorch",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U04c",
+            "text": "Strong proficiency in scikit-learn",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Strong proficiency in Python and common ML frameworks (TensorFlow, PyTorch, scikit-learn, or similar)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Familiarity with deploying ML models in cloud environments (AWS, GCP, Azure, or similar)",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "U05a",
+            "text": "Familiarity with deploying ML models in AWS",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U05b",
+            "text": "Familiarity with deploying ML models in GCP",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U05c",
+            "text": "Familiarity with deploying ML models in Azure",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Familiarity with deploying ML models in cloud environments (AWS, GCP, Azure, or similar)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Strong communication skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong communication skills and ability to work effectively in a remote, cross-functional team."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Ability to work effectively in a remote, cross-functional team",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong communication skills and ability to work effectively in a remote, cross-functional team."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Experience using AI coding assistants (Copilot, Cursor, Warp)",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "U08a",
+            "text": "Experience using Copilot",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U08b",
+            "text": "Experience using Cursor",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U08c",
+            "text": "Experience using Warp",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience using AI coding assistants (Copilot, Cursor, Warp) is a strong plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Indonesian Citizen",
+        "kind": "simple",
+        "importance": "required",
+        "field": "work_authorization",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Indonesian Citizen."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-v4-pro"
+  },
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 7,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 7,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U03",
+          "U04"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U05"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U06",
+          "U07"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U08"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U09"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "prompt_version": "jd-prompt-v1.4-experimental",
+  "status": "done",
+  "attempts": 2,
+  "error_code": null,
+  "stage_wall_ms": 160030,
+  "semantic_review": "pending",
+  "metrics": null
+}

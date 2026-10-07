@@ -1,0 +1,37 @@
+{
+  "schema_version": "cp23-stage1-readiness-v1",
+  "status": "blocked",
+  "purpose": "offline_development_preparation_not_tuning",
+  "gates": {
+    "contract": true,
+    "references": false,
+    "alignment": false,
+    "coverage": false,
+    "implementation": true
+  },
+  "gate_reasons": {
+    "contract": "D-052 receipt validates against current evaluation contract; D-053 test appendix is documentation only.",
+    "references": "Seven source-checked candidates and four A/B-complete pairs; whole-JD compatibility is delegated QA and specific model mappings still need human review.",
+    "alignment": "F00332 model-to-gold mappings are proposed, not human verified; split/merge scoring remains unresolved.",
+    "coverage": "Original top10 union has 61 eligible judged, 6 new unjudged and 3 held CV/job pairs; no implicit zero or historical auto-reuse.",
+    "implementation": "D-052 original-position metrics, failure/class accounting and caller gates passed targeted offline tests; no real quality result."
+  },
+  "receipts": {
+    "contract_sha256": "043237eba817bfbc642c78dcd60e1f10aa7f096d5307cf0f1cad86a1b0e9e1d2",
+    "reference_sha256": "0bf710467d899080fd0de24bb20469097235d74836ae29fe96f5dcebaaecd3ec",
+    "alignment_sha256": "155b4d407f13e054f9b48e577b3dbc5e2632818618d6d97bfef7a11f723fc00d",
+    "coverage_sha256": "4263325e0e9c861068d75129d753d04603c5ac5198989d03ade8913cd78997ca",
+    "gold_manifest_sha256": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+    "retrieval_sha256": "32d99ff3dbfe4ec8b1ba37ce0d6fb51e3449b7e508c0bc2786d51658e52569eb"
+  },
+  "held_reference_ids": [
+    "CV1/F00022",
+    "CV1/F00369",
+    "CV2/F00114"
+  ],
+  "api_calls": 0,
+  "quality_metrics": null,
+  "winner": null,
+  "configuration_selected": false,
+  "stop_boundary": "no workbook/gold mutation, paid inference, test access, configuration promotion or winner"
+}

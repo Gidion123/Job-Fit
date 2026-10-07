@@ -1,0 +1,175 @@
+{
+  "workbook": "evals/labeling/JobFit_Development_Labeling_v1.3.xlsx",
+  "sha256": "cd047da11cb25d6ed234e695842c0dd82035c48c2c22a2173f21367079bfa87b",
+  "original_receipt": "evals/labeling/archive/review_receipts_20261002/JobFit_Development_Labeling_v0.1_A_B_C_review_v1.3_20261002.xlsx",
+  "original_receipt_sha256": "e78f418ec7dfbb1f2e85af94117e103adf5ebb3f6036d0131c53320c1f573128",
+  "summary": {
+    "A_Extraction": {
+      "rows": 1079,
+      "approved": 1079,
+      "pending": 0,
+      "rejected": 10,
+      "retained": 1069
+    },
+    "B_Evidence": {
+      "rows": 1406,
+      "approved": 1404,
+      "pending": 2,
+      "rejected": 16,
+      "retained": 1390
+    },
+    "C_Relevance": {
+      "rows": 67,
+      "approved": 66,
+      "pending": 1,
+      "rejected": 0,
+      "retained": 67
+    }
+  },
+  "missing_notes": [
+    {
+      "sheet": "A_Extraction",
+      "row": 47,
+      "unit_no": "D2-U08",
+      "job_id": "F00074"
+    },
+    {
+      "sheet": "A_Extraction",
+      "row": 134,
+      "unit_no": "P02-U05",
+      "job_id": "F00010"
+    },
+    {
+      "sheet": "A_Extraction",
+      "row": 149,
+      "unit_no": "P04-U11",
+      "job_id": "F00018"
+    },
+    {
+      "sheet": "A_Extraction",
+      "row": 162,
+      "unit_no": "P05-U01",
+      "job_id": "F00020"
+    },
+    {
+      "sheet": "A_Extraction",
+      "row": 170,
+      "unit_no": "P07-U01a",
+      "job_id": "F00029"
+    },
+    {
+      "sheet": "A_Extraction",
+      "row": 171,
+      "unit_no": "P07-U01b",
+      "job_id": "F00029"
+    },
+    {
+      "sheet": "A_Extraction",
+      "row": 198,
+      "unit_no": "P07-U27",
+      "job_id": "F00029"
+    }
+  ],
+  "pending": [
+    {
+      "sheet": "B_Evidence",
+      "row": 600,
+      "unit_no": "P04-U18",
+      "cv_id": "CV2",
+      "job_id": "F00018"
+    },
+    {
+      "sheet": "B_Evidence",
+      "row": 1407,
+      "unit_no": "P04-U18-AWS",
+      "cv_id": "CV2",
+      "job_id": "F00018"
+    },
+    {
+      "sheet": "C_Relevance",
+      "row": 4,
+      "unit_no": null,
+      "cv_id": "CV2",
+      "job_id": "F00018"
+    }
+  ],
+  "verified_changed_cells": [
+    [
+      "README",
+      "B1"
+    ],
+    [
+      "README",
+      "B2"
+    ],
+    [
+      "A_Extraction",
+      "D156"
+    ],
+    [
+      "A_Extraction",
+      "F156"
+    ],
+    [
+      "A_Extraction",
+      "G156"
+    ],
+    [
+      "A_Extraction",
+      "N156"
+    ],
+    [
+      "A_Extraction",
+      "G187"
+    ],
+    [
+      "A_Extraction",
+      "N187"
+    ],
+    [
+      "B_Evidence",
+      "D600"
+    ],
+    [
+      "B_Evidence",
+      "J600"
+    ],
+    [
+      "B_Evidence",
+      "K600"
+    ],
+    [
+      "B_Evidence",
+      "M600"
+    ],
+    [
+      "C_Relevance",
+      "J4"
+    ],
+    [
+      "C_Relevance",
+      "K4"
+    ],
+    [
+      "C_Relevance",
+      "M4"
+    ]
+  ],
+  "styles_panes_widths_tables_dropdowns_verified": true,
+  "source_zip_parts_preserved": true,
+  "all_unrelated_approvals_preserved": true,
+  "gold_written": false,
+  "api_calls": 0,
+  "complete_active_row_checks": {
+    "development_only": true,
+    "identity_enums_quotes_A_B_references_pair_coverage": "passed",
+    "jd_count": 54,
+    "cv_jd_pairs": 67,
+    "remaining_review_notes": 7,
+    "reopened_pending_records": 3,
+    "source_lineage_exception": "F00369: unverified supplement; evaluation hold",
+    "checked_local_markdown_links": 66,
+    "missing_checked_links": 0,
+    "whole_label_semantic_accuracy": "not asserted; human-reviewed decisions plus documented QA follow-ups"
+  }
+}

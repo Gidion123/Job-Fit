@@ -1,0 +1,560 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00036",
+  "status": "done",
+  "attempts": 2,
+  "error_code": null,
+  "wall_ms": 67540,
+  "score": {
+    "score_pct": 75.0,
+    "status": "final",
+    "matched": 9,
+    "partial": 3,
+    "required_total": 14,
+    "preferred_met": 1,
+    "preferred_total": 2,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 3,
+    "soft_skill_matched": 3,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 1,
+    "soft_skills_in_score": false,
+    "reasons": []
+  },
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026"
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B5",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+          ]
+        },
+        {
+          "branch_id": "B3",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+          ]
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B4",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Python (pandas, NumPy, scikit-learn, matplotlib)"
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "PARTIAL",
+          "check_status": "done",
+          "cv_quotes": [
+            "Python (pandas, NumPy, scikit-learn, matplotlib)"
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U10",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Lulusan S1 Statistika yang tertarik pada data science dan machine learning."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U11",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U12",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\""
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U13",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U14",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U15",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U16",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U17",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL)."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U18",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U19",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U20",
+      "label": "PARTIAL",
+      "check_status": "needs_clarification",
+      "cv_quotes": [
+        "Jakarta Selatan, Indonesia"
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ],
+  "source_flags": [
+    {
+      "unit_id": "U01",
+      "branch_id": "B1",
+      "kind": "quote_exact",
+      "model_quote": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "cv_span": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026",
+      "start": 317,
+      "end": 400,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+      "cv_span": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)",
+      "start": 623,
+      "end": 720,
+      "flags": []
+    },
+    {
+      "unit_id": "U03",
+      "branch_id": "B1",
+      "kind": "quote_exact",
+      "model_quote": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "cv_span": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "start": 723,
+      "end": 828,
+      "flags": []
+    },
+    {
+      "unit_id": "U03",
+      "branch_id": "B2",
+      "kind": "quote_exact",
+      "model_quote": "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+      "cv_span": "Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+      "start": 1098,
+      "end": 1160,
+      "flags": []
+    },
+    {
+      "unit_id": "U03",
+      "branch_id": "B3",
+      "kind": "quote_exact",
+      "model_quote": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "cv_span": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "start": 723,
+      "end": 828,
+      "flags": []
+    },
+    {
+      "unit_id": "U04",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "cv_span": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "start": 1228,
+      "end": 1328,
+      "flags": []
+    },
+    {
+      "unit_id": "U07",
+      "branch_id": "B1",
+      "kind": "quote_exact",
+      "model_quote": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "cv_span": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "start": 723,
+      "end": 828,
+      "flags": []
+    },
+    {
+      "unit_id": "U07",
+      "branch_id": "B2",
+      "kind": "quote_exact",
+      "model_quote": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "cv_span": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "start": 1228,
+      "end": 1328,
+      "flags": []
+    },
+    {
+      "unit_id": "U08",
+      "branch_id": "B3",
+      "kind": "quote_exact",
+      "model_quote": "Python (pandas, NumPy, scikit-learn, matplotlib)",
+      "cv_span": "Python (pandas, NumPy, scikit-learn, matplotlib)",
+      "start": 1596,
+      "end": 1644,
+      "flags": []
+    },
+    {
+      "unit_id": "U09",
+      "branch_id": "B3",
+      "kind": "quote_exact",
+      "model_quote": "Python (pandas, NumPy, scikit-learn, matplotlib)",
+      "cv_span": "Python (pandas, NumPy, scikit-learn, matplotlib)",
+      "start": 1596,
+      "end": 1644,
+      "flags": []
+    },
+    {
+      "unit_id": "U10",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Lulusan S1 Statistika yang tertarik pada data science dan machine learning.",
+      "cv_span": "Lulusan S1 Statistika yang tertarik pada data science dan machine learning.",
+      "start": 98,
+      "end": 173,
+      "flags": []
+    },
+    {
+      "unit_id": "U11",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "cv_span": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "start": 1228,
+      "end": 1328,
+      "flags": []
+    },
+    {
+      "unit_id": "U12",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\"",
+      "cv_span": "Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\"",
+      "start": 421,
+      "end": 520,
+      "flags": []
+    },
+    {
+      "unit_id": "U13",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+      "cv_span": "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+      "start": 908,
+      "end": 1000,
+      "flags": []
+    },
+    {
+      "unit_id": "U14",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "cv_span": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "start": 723,
+      "end": 828,
+      "flags": []
+    },
+    {
+      "unit_id": "U16",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+      "cv_span": "Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.",
+      "start": 1331,
+      "end": 1416,
+      "flags": []
+    },
+    {
+      "unit_id": "U17",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "cv_span": "Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "start": 723,
+      "end": 828,
+      "flags": []
+    },
+    {
+      "unit_id": "U18",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+      "cv_span": "Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+      "start": 908,
+      "end": 1000,
+      "flags": []
+    },
+    {
+      "unit_id": "U19",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "cv_span": "Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "start": 1228,
+      "end": 1328,
+      "flags": []
+    },
+    {
+      "unit_id": "U20",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Jakarta Selatan, Indonesia",
+      "cv_span": "Jakarta Selatan, Indonesia",
+      "start": 24,
+      "end": 50,
+      "flags": []
+    }
+  ]
+}

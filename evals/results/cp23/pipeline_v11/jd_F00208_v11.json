@@ -1,0 +1,803 @@
+{
+  "job_id": "F00208",
+  "status": "done",
+  "attempts": 2,
+  "error_code": null,
+  "cache_hit": false,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 15,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "wall_ms": 324787,
+  "extraction": {
+    "job_id": "F00208",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Must live in the United States.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "location",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Candidates must live in the United States."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Employees can live anywhere in the US or its territories.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "location",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Hybrid Work & Travel: Employees can live anywhere in the US or its territories, with the willingness and ability to travel for periodic in-person events-including semi-annual Common App retreats, department retreats, and strategic leadership sessions."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Willingness and ability to travel for periodic in-person events, including semi-annual Common App retreats, department retreats, and strategic leadership sessions.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Hybrid Work & Travel: Employees can live anywhere in the US or its territories, with the willingness and ability to travel for periodic in-person events-including semi-annual Common App retreats, department retreats, and strategic leadership sessions."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Bachelor's degree in Computer Science, Data Science, Statistics, Mathematics, or a closely related quantitative or technical field; or an equivalent combination of education and experience.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Bachelor's degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Bachelor's degree in Data Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Bachelor's degree in Statistics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Bachelor's degree in Mathematics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Bachelor's degree in a closely related quantitative or technical field",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B6",
+            "text": "Equivalent combination of education and experience",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Bachelor's degree in Computer Science, Data Science, Statistics, Mathematics, or a closely related quantitative or technical field; or an equivalent combination of education and experience."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "8-10 years of progressive experience in machine learning, AI engineering, or data science, with at least 3 years focused on applied AI and production ML systems.",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": null,
+        "min_years": 8.0,
+        "branches": [],
+        "source_quotes": [
+          "8-10 years of progressive experience in machine learning, AI engineering, or data science, with at least 3 years focused on applied AI and production ML systems."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Experience integrating LLMs into enterprise analytic or operational workflows.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Demonstrated experience integrating LLMs and generative AI into enterprise analytic or operational workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Experience integrating generative AI into enterprise analytic or operational workflows.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Demonstrated experience integrating LLMs and generative AI into enterprise analytic or operational workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Experience working within enterprise data governance frameworks.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Demonstrated experience working within enterprise data governance and compliance frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Experience working within compliance frameworks.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Demonstrated experience working within enterprise data governance and compliance frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Expertise in supervised learning.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Expertise in applied machine learning and AI, including supervised and unsupervised learning, natural language processing, and large language model integration (e.g., OpenAI, Anthropic, open-source LLMs via Hugging Face)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Expertise in unsupervised learning.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Expertise in applied machine learning and AI, including supervised and unsupervised learning, natural language processing, and large language model integration (e.g., OpenAI, Anthropic, open-source LLMs via Hugging Face)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Expertise in natural language processing.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Expertise in applied machine learning and AI, including supervised and unsupervised learning, natural language processing, and large language model integration (e.g., OpenAI, Anthropic, open-source LLMs via Hugging Face)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Expertise in large language model integration (e.g., OpenAI, Anthropic, open-source LLMs via Hugging Face).",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Expertise in applied machine learning and AI, including supervised and unsupervised learning, natural language processing, and large language model integration (e.g., OpenAI, Anthropic, open-source LLMs via Hugging Face)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Experience designing and deploying production-grade AI/ML systems, including end-to-end ML pipelines covering training, evaluation, versioning, deployment, and monitoring.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Demonstrated experience designing and deploying production-grade AI/ML systems, including end-to-end ML pipelines covering training, evaluation, versioning, deployment, and monitoring."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Proficiency in R for machine learning and AI development.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in R and Python for machine learning and AI development; familiarity with ML frameworks such as scikit-learn, PyTorch, TensorFlow, or equivalent."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Proficiency in Python for machine learning and AI development.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in R and Python for machine learning and AI development; familiarity with ML frameworks such as scikit-learn, PyTorch, TensorFlow, or equivalent."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Familiarity with ML frameworks such as scikit-learn, PyTorch, TensorFlow, or equivalent.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "scikit-learn",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "PyTorch",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "TensorFlow",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "equivalent ML framework",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Proficiency in R and Python for machine learning and AI development; familiarity with ML frameworks such as scikit-learn, PyTorch, TensorFlow, or equivalent."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Experience building and operationalizing LLM-powered applications, including prompt engineering, retrieval-augmented generation (RAG), and tool/agent orchestration frameworks.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience building and operationalizing LLM-powered applications, including prompt engineering, retrieval-augmented generation (RAG), and tool/agent orchestration frameworks."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Strong SQL skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong SQL skills and experience working with large-scale cloud data platforms (e.g., Databricks, Snowflake, BigQuery); ability to design AI-ready data pipelines within enterprise warehouse environments."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Experience working with large-scale cloud data platforms (e.g., Databricks, Snowflake, BigQuery).",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong SQL skills and experience working with large-scale cloud data platforms (e.g., Databricks, Snowflake, BigQuery); ability to design AI-ready data pipelines within enterprise warehouse environments."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Ability to design AI-ready data pipelines within enterprise warehouse environments.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong SQL skills and experience working with large-scale cloud data platforms (e.g., Databricks, Snowflake, BigQuery); ability to design AI-ready data pipelines within enterprise warehouse environments."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Knowledge of AI governance.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of AI governance, responsible AI principles, and compliance considerations for AI systems handling sensitive or personally identifiable data."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Knowledge of responsible AI principles.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of AI governance, responsible AI principles, and compliance considerations for AI systems handling sensitive or personally identifiable data."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U24",
+        "text": "Knowledge of compliance considerations for AI systems handling sensitive or personally identifiable data.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of AI governance, responsible AI principles, and compliance considerations for AI systems handling sensitive or personally identifiable data."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U25",
+        "text": "Proven ability to serve as a senior technical individual contributor, setting standards, making architectural decisions, and mentoring peers without formal management authority.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proven ability to serve as a senior technical individual contributor, setting standards, making architectural decisions, and mentoring peers without formal management authority."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U26",
+        "text": "Strong interpersonal and communication skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong interpersonal and communication skills, with the ability to translate complex AI/ML concepts into accessible language for non-technical stakeholders and executive audiences."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U27",
+        "text": "Ability to translate complex AI/ML concepts into accessible language for non-technical stakeholders and executive audiences.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong interpersonal and communication skills, with the ability to translate complex AI/ML concepts into accessible language for non-technical stakeholders and executive audiences."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U28",
+        "text": "Proven ability to manage multiple competing priorities.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proven ability to manage multiple competing priorities and deliver high-quality AI solutions in a fast-paced, collaborative environment."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U29",
+        "text": "Proven ability to deliver high-quality AI solutions in a fast-paced, collaborative environment.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proven ability to manage multiple competing priorities and deliver high-quality AI solutions in a fast-paced, collaborative environment."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U30",
+        "text": "Master's or doctoral degree in Computer Science, Machine Learning, Data Science, or a related field.",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "education",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Master's degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Master's degree in Machine Learning",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Master's degree in Data Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Master's degree in a related field",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Doctoral degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B6",
+            "text": "Doctoral degree in Machine Learning",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B7",
+            "text": "Doctoral degree in Data Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B8",
+            "text": "Doctoral degree in a related field",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Master's or doctoral degree in Computer Science, Machine Learning, Data Science, or a related field."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U31",
+        "text": "Relevant AI/ML or cloud certifications (e.g., Databricks Certified Machine Learning Professional, AWS Machine Learning Specialty, or equivalent).",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "certification",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Databricks Certified Machine Learning Professional",
+            "field": "certification",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "AWS Machine Learning Specialty",
+            "field": "certification",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "equivalent AI/ML or cloud certification",
+            "field": "certification",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Relevant AI/ML or cloud certifications (e.g., Databricks Certified Machine Learning Professional, AWS Machine Learning Specialty, or equivalent)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U32",
+        "text": "Experience working with Agile frameworks for cross-functional, product-minded collaboration.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience working with Agile frameworks for cross-functional, product-minded collaboration."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U33",
+        "text": "Experience with agentic AI frameworks.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with agentic AI frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U34",
+        "text": "Familiarity with Databricks AI feature MLflow.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with Databricks AI features, including MLflow, Model Serving, and Genie or semantic layer integrations."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U35",
+        "text": "Familiarity with Databricks AI feature Model Serving.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with Databricks AI features, including MLflow, Model Serving, and Genie or semantic layer integrations."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U36",
+        "text": "Familiarity with Databricks AI features including Genie or semantic layer integrations.",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Databricks Genie",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Databricks semantic layer integrations",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Familiarity with Databricks AI features, including MLflow, Model Serving, and Genie or semantic layer integrations."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U37",
+        "text": "Experience in higher education contexts.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "other",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience in higher education, nonprofit, or mission-driven technology contexts."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U38",
+        "text": "Experience in nonprofit contexts.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "other",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience in higher education, nonprofit, or mission-driven technology contexts."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U39",
+        "text": "Experience in mission-driven technology contexts.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "other",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience in higher education, nonprofit, or mission-driven technology contexts."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U40",
+        "text": "Advanced training in statistics, causal inference, or program evaluation methods.",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Advanced training in statistics",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Advanced training in causal inference",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Advanced training in program evaluation methods",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Advanced training in statistics, causal inference, or program evaluation methods."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U41",
+        "text": "Passion for higher education.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "soft_skill",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "A passion for higher education is a plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

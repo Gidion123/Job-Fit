@@ -1,0 +1,352 @@
+{
+  "schema_version": "cp23-stage1-top10-gap-v4",
+  "status": "judgment_coverage_ready_not_quality_comparison",
+  "retrieval_artifact": "evals/results/cp22_retrieval_top30_20261002_03.json",
+  "retrieval_sha256": "32d99ff3dbfe4ec8b1ba37ce0d6fb51e3449b7e508c0bc2786d51658e52569eb",
+  "common_filters": {
+    "role_group": [
+      "target"
+    ],
+    "optional": {}
+  },
+  "development_split_sha256": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+  "source_corpus_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+  "gold_manifest_sha256": "6c814e0fff729bbedcdc301fceed591e523ba0c31766e5d83b3a40c8c9b193ec",
+  "union_top10_cv_job_pairs": 70,
+  "judged_union": 70,
+  "held_union": 0,
+  "unjudged_union": 0,
+  "cutoff_coverage": [
+    {
+      "cv_id": "CV1",
+      "method": "B0",
+      "cutoffs": {
+        "5": {
+          "judged": 5,
+          "held": 0,
+          "unjudged": 0
+        },
+        "10": {
+          "judged": 10,
+          "held": 0,
+          "unjudged": 0
+        },
+        "20": {
+          "judged": 13,
+          "held": 0,
+          "unjudged": 7
+        },
+        "30": {
+          "judged": 15,
+          "held": 0,
+          "unjudged": 15
+        }
+      }
+    },
+    {
+      "cv_id": "CV1",
+      "method": "B1",
+      "cutoffs": {
+        "5": {
+          "judged": 5,
+          "held": 0,
+          "unjudged": 0
+        },
+        "10": {
+          "judged": 10,
+          "held": 0,
+          "unjudged": 0
+        },
+        "20": {
+          "judged": 13,
+          "held": 0,
+          "unjudged": 7
+        },
+        "30": {
+          "judged": 18,
+          "held": 0,
+          "unjudged": 12
+        }
+      }
+    },
+    {
+      "cv_id": "CV1",
+      "method": "dense_openai",
+      "cutoffs": {
+        "5": {
+          "judged": 5,
+          "held": 0,
+          "unjudged": 0
+        },
+        "10": {
+          "judged": 10,
+          "held": 0,
+          "unjudged": 0
+        },
+        "20": {
+          "judged": 14,
+          "held": 0,
+          "unjudged": 6
+        },
+        "30": {
+          "judged": 17,
+          "held": 0,
+          "unjudged": 13
+        }
+      }
+    },
+    {
+      "cv_id": "CV1",
+      "method": "hybrid_openai",
+      "cutoffs": {
+        "5": {
+          "judged": 5,
+          "held": 0,
+          "unjudged": 0
+        },
+        "10": {
+          "judged": 10,
+          "held": 0,
+          "unjudged": 0
+        },
+        "20": {
+          "judged": 20,
+          "held": 0,
+          "unjudged": 0
+        },
+        "30": {
+          "judged": 24,
+          "held": 0,
+          "unjudged": 6
+        }
+      }
+    },
+    {
+      "cv_id": "CV1",
+      "method": "dense_qwen",
+      "cutoffs": {
+        "5": {
+          "judged": 5,
+          "held": 0,
+          "unjudged": 0
+        },
+        "10": {
+          "judged": 10,
+          "held": 0,
+          "unjudged": 0
+        },
+        "20": {
+          "judged": 13,
+          "held": 0,
+          "unjudged": 7
+        },
+        "30": {
+          "judged": 17,
+          "held": 0,
+          "unjudged": 13
+        }
+      }
+    },
+    {
+      "cv_id": "CV1",
+      "method": "hybrid_qwen",
+      "cutoffs": {
+        "5": {
+          "judged": 5,
+          "held": 0,
+          "unjudged": 0
+        },
+        "10": {
+          "judged": 10,
+          "held": 0,
+          "unjudged": 0
+        },
+        "20": {
+          "judged": 20,
+          "held": 0,
+          "unjudged": 0
+        },
+        "30": {
+          "judged": 24,
+          "held": 0,
+          "unjudged": 6
+        }
+      }
+    },
+    {
+      "cv_id": "CV2",
+      "method": "B0",
+      "cutoffs": {
+        "5": {
+          "judged": 5,
+          "held": 0,
+          "unjudged": 0
+        },
+        "10": {
+          "judged": 10,
+          "held": 0,
+          "unjudged": 0
+        },
+        "20": {
+          "judged": 11,
+          "held": 0,
+          "unjudged": 9
+        },
+        "30": {
+          "judged": 14,
+          "held": 0,
+          "unjudged": 16
+        }
+      }
+    },
+    {
+      "cv_id": "CV2",
+      "method": "B1",
+      "cutoffs": {
+        "5": {
+          "judged": 5,
+          "held": 0,
+          "unjudged": 0
+        },
+        "10": {
+          "judged": 10,
+          "held": 0,
+          "unjudged": 0
+        },
+        "20": {
+          "judged": 13,
+          "held": 0,
+          "unjudged": 7
+        },
+        "30": {
+          "judged": 17,
+          "held": 0,
+          "unjudged": 13
+        }
+      }
+    },
+    {
+      "cv_id": "CV2",
+      "method": "dense_openai",
+      "cutoffs": {
+        "5": {
+          "judged": 5,
+          "held": 0,
+          "unjudged": 0
+        },
+        "10": {
+          "judged": 10,
+          "held": 0,
+          "unjudged": 0
+        },
+        "20": {
+          "judged": 15,
+          "held": 0,
+          "unjudged": 5
+        },
+        "30": {
+          "judged": 17,
+          "held": 0,
+          "unjudged": 13
+        }
+      }
+    },
+    {
+      "cv_id": "CV2",
+      "method": "hybrid_openai",
+      "cutoffs": {
+        "5": {
+          "judged": 5,
+          "held": 0,
+          "unjudged": 0
+        },
+        "10": {
+          "judged": 10,
+          "held": 0,
+          "unjudged": 0
+        },
+        "20": {
+          "judged": 20,
+          "held": 0,
+          "unjudged": 0
+        },
+        "30": {
+          "judged": 24,
+          "held": 0,
+          "unjudged": 6
+        }
+      }
+    },
+    {
+      "cv_id": "CV2",
+      "method": "dense_qwen",
+      "cutoffs": {
+        "5": {
+          "judged": 5,
+          "held": 0,
+          "unjudged": 0
+        },
+        "10": {
+          "judged": 10,
+          "held": 0,
+          "unjudged": 0
+        },
+        "20": {
+          "judged": 16,
+          "held": 0,
+          "unjudged": 4
+        },
+        "30": {
+          "judged": 20,
+          "held": 0,
+          "unjudged": 10
+        }
+      }
+    },
+    {
+      "cv_id": "CV2",
+      "method": "hybrid_qwen",
+      "cutoffs": {
+        "5": {
+          "judged": 5,
+          "held": 0,
+          "unjudged": 0
+        },
+        "10": {
+          "judged": 10,
+          "held": 0,
+          "unjudged": 0
+        },
+        "20": {
+          "judged": 18,
+          "held": 0,
+          "unjudged": 2
+        },
+        "30": {
+          "judged": 22,
+          "held": 0,
+          "unjudged": 8
+        }
+      }
+    }
+  ],
+  "gaps": [],
+  "new_review_items": 0,
+  "existing_held_rechecks": 0,
+  "source_provenance_blockers": 0,
+  "historical_pilot_reuse_autoapproved": false,
+  "source_limited_judgments": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "source": "archived_truncated_original",
+      "C_reviewed_directly": true,
+      "A_B_still_held": true
+    }
+  ],
+  "time_estimate_minutes_new_only": 0.0,
+  "time_basis": "D-045 measured pilot relevance review 2.4 min per label; excludes held-case/source resolution and QA",
+  "quality_metrics": null,
+  "winner": null,
+  "api_calls": 0
+}

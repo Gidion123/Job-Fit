@@ -1,0 +1,342 @@
+{
+ "set": "fixed_input",
+ "cv_id": "CV2",
+ "job_id": "F00332",
+ "model": "gpt-6-sol",
+ "experiment_id": "QA-E00-FI-R2",
+ "wall_ms": 15055,
+ "status": "done",
+ "error_code": null,
+ "attempts": 1,
+ "assessments": [
+  {
+   "unit_id": "P30-U01",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "**Bachelor of Communication (S1 Ilmu Komunikasi)**, Universitas Contoh Bandung · 2016 - 2020"
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P30-U02",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P30-U03",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P30-U04",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Managed social media campaigns and monthly budget reports in Excel."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P30-U05",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Ran A/B tests for ad creatives and explained results to account managers."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P30-U06",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P30-U07",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P30-U08",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "Marketing analyst moving into AI engineering. Three years of data work in digital marketing, followed by an intensive data science and AI bootcamp.",
+    "- Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P30-U09",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P30-U10",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+    "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+    "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P30-U11",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+    "- Ran A/B tests for ad creatives and explained results to account managers."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P30-U12",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P30-U13",
+   "label": "MATCH",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P30-U14",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+    "- Ran A/B tests for ad creatives and explained results to account managers."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P30-U15",
+   "label": "PARTIAL",
+   "check_status": "done",
+   "cv_quotes": [
+    "- Ran A/B tests for ad creatives and explained results to account managers."
+   ],
+   "branches": [],
+   "label_source": "model_draft"
+  },
+  {
+   "unit_id": "P30-U16",
+   "label": "NO_MATCH",
+   "check_status": "done",
+   "cv_quotes": [],
+   "branches": [],
+   "label_source": "model_draft"
+  }
+ ],
+ "source_flags": [
+  {
+   "unit_id": "P30-U01",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "**Bachelor of Communication (S1 Ilmu Komunikasi)**, Universitas Contoh Bandung · 2016 - 2020",
+   "cv_span": "**Bachelor of Communication (S1 Ilmu Komunikasi)**, Universitas Contoh Bandung · 2016 - 2020",
+   "start": 1059,
+   "end": 1151,
+   "flags": []
+  },
+  {
+   "unit_id": "P30-U02",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "cv_span": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "start": 520,
+   "end": 633,
+   "flags": []
+  },
+  {
+   "unit_id": "P30-U03",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "cv_span": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "start": 428,
+   "end": 519,
+   "flags": []
+  },
+  {
+   "unit_id": "P30-U04",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Managed social media campaigns and monthly budget reports in Excel.",
+   "cv_span": "- Managed social media campaigns and monthly budget reports in Excel.",
+   "start": 794,
+   "end": 863,
+   "flags": []
+  },
+  {
+   "unit_id": "P30-U05",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "cv_span": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "start": 634,
+   "end": 709,
+   "flags": []
+  },
+  {
+   "unit_id": "P30-U07",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "cv_span": "- Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+   "start": 520,
+   "end": 633,
+   "flags": []
+  },
+  {
+   "unit_id": "P30-U08",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Marketing analyst moving into AI engineering. Three years of data work in digital marketing, followed by an intensive data science and AI bootcamp.",
+   "cv_span": "Marketing analyst moving into AI engineering. Three years of data work in digital marketing, followed by an intensive data science and AI bootcamp.",
+   "start": 90,
+   "end": 237,
+   "flags": []
+  },
+  {
+   "unit_id": "P30-U08",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+   "cv_span": "- Topics: machine learning, deep learning basics, LLM applications, MLOps with Docker and FastAPI.",
+   "start": 959,
+   "end": 1057,
+   "flags": []
+  },
+  {
+   "unit_id": "P30-U10",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+   "cv_span": "Built LLM and retrieval projects end to end, from data preparation to a deployed API.",
+   "start": 238,
+   "end": 323,
+   "flags": []
+  },
+  {
+   "unit_id": "P30-U10",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "cv_span": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+   "start": 1213,
+   "end": 1332,
+   "flags": []
+  },
+  {
+   "unit_id": "P30-U10",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "cv_span": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+   "start": 1333,
+   "end": 1446,
+   "flags": []
+  },
+  {
+   "unit_id": "P30-U11",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "cv_span": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "start": 428,
+   "end": 519,
+   "flags": []
+  },
+  {
+   "unit_id": "P30-U11",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "cv_span": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "start": 634,
+   "end": 709,
+   "flags": []
+  },
+  {
+   "unit_id": "P30-U13",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "cv_span": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "start": 428,
+   "end": 519,
+   "flags": []
+  },
+  {
+   "unit_id": "P30-U14",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "cv_span": "- Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+   "start": 428,
+   "end": 519,
+   "flags": []
+  },
+  {
+   "unit_id": "P30-U14",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "cv_span": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "start": 634,
+   "end": 709,
+   "flags": []
+  },
+  {
+   "unit_id": "P30-U15",
+   "branch_id": null,
+   "kind": "quote_exact",
+   "model_quote": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "cv_span": "- Ran A/B tests for ad creatives and explained results to account managers.",
+   "start": 634,
+   "end": 709,
+   "flags": []
+  }
+ ]
+}

@@ -1,0 +1,509 @@
+{
+  "job_id": "F00463",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "cache_hit": false,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "wall_ms": 209873,
+  "extraction": {
+    "job_id": "F00463",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "3-5 years of experience",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "3-5 years of experience",
+        "min_years": 3.0,
+        "branches": [],
+        "source_quotes": [
+          "3 - 5 Years"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Experience in pipeline deployment",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience in pipeline deployment",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "The ideal candidate will have experience in model training, pipeline deployment, and working with frameworks like Unsloth, LangChain, and LLM observability tools."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Experience with LLM frameworks",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience with LLM frameworks",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "LangChain",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Unsloth",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "HuggingFace",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "• Experience with LLM frameworks (e.g., LangChain, Unsloth, HuggingFace)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Hands-on with model fine-tuning",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Hands-on with model fine-tuning",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "LoRA",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "QLoRA",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "PEFT techniques",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "• Hands-on with model fine-tuning (e.g., LoRA, QLoRA, PEFT techniques)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Experience with vector stores",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience with vector stores",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "FAISS",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Pinecone",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "• Experience with vector stores and embedding models (e.g., FAISS, Pinecone)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Experience with embedding models",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience with embedding models",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Experience with vector stores and embedding models (e.g., FAISS, Pinecone)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Knowledge of LLM observability tools",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Knowledge of LLM observability tools",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Arize AI",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Phoenix",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "WandB",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "• Knowledge of LLM observability tools (e.g., Arize AI, Phoenix, WandB)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Proficiency in Python, PyTorch, or TensorFlow",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Proficiency in Python, PyTorch, or TensorFlow",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Python",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "PyTorch",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "TensorFlow",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "• Python, PyTorch, or TensorFlow proficiency"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Prompt engineering",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Prompt engineering",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Prompt engineering and retrieval-augmented generation (RAG)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Retrieval-augmented generation (RAG)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Retrieval-augmented generation (RAG)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Prompt engineering and retrieval-augmented generation (RAG)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Strong problem-solving skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Strong problem-solving skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Strong problem-solving and critical thinking skills"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Strong critical thinking skills",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Strong critical thinking skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Strong problem-solving and critical thinking skills"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Curiosity",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Curiosity",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Curiosity and continuous learning in fast-evolving AI space"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Continuous learning in fast-evolving AI space",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Continuous learning in fast-evolving AI space",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Curiosity and continuous learning in fast-evolving AI space"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Ability to communicate technical findings to non-technical stakeholders",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Ability to communicate technical findings to non-technical stakeholders",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Ability to communicate technical findings to non-technical stakeholders"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Team collaboration with product managers and developers",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Team collaboration with product managers and developers",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Team collaboration with product managers and developers"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Agile mindset",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Agile mindset",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Agile mindset and delivery-oriented execution"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Delivery-oriented execution",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Delivery-oriented execution",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Agile mindset and delivery-oriented execution"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Bachelor’s or Master’s degree in Computer Science, Artificial Intelligence, Data Science, or a related field",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "Bachelor’s or Master’s degree in Computer Science, Artificial Intelligence, Data Science, or a related field",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Bachelor's degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Master's degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Bachelor's degree in Artificial Intelligence",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Master's degree in Artificial Intelligence",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Bachelor's degree in Data Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B6",
+            "text": "Master's degree in Data Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B7",
+            "text": "Bachelor's degree in a related field",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B8",
+            "text": "Master's degree in a related field",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Bachelor’s or Master’s degree in Computer Science, Artificial Intelligence, Data Science, or a related field"
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "3-5 years in AI/ML",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "3-5 years in AI/ML",
+        "min_years": 3.0,
+        "branches": [],
+        "source_quotes": [
+          "3–5 years in AI/ML, with proven experience fine-tuning and deploying LLM-based chatbot systems"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Proven experience fine-tuning LLM-based chatbot systems",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Proven experience fine-tuning LLM-based chatbot systems",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "3–5 years in AI/ML, with proven experience fine-tuning and deploying LLM-based chatbot systems"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Proven experience deploying LLM-based chatbot systems",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Proven experience deploying LLM-based chatbot systems",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "3–5 years in AI/ML, with proven experience fine-tuning and deploying LLM-based chatbot systems"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Onsite work location",
+        "kind": "simple",
+        "importance": "required",
+        "field": "location",
+        "normalized_name": "Onsite work location",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "LI-Onsite"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

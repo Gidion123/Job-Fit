@@ -1,0 +1,280 @@
+{
+  "cv_id": "CV2",
+  "job_id": "F00020",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "wall_ms": 14774,
+  "score": {
+    "score_pct": 50.0,
+    "status": "final",
+    "matched": 2,
+    "partial": 0,
+    "required_total": 4,
+    "preferred_met": 0,
+    "preferred_total": 1,
+    "unknown_importance_total": 0,
+    "soft_skill_total": 4,
+    "soft_skill_matched": 1,
+    "soft_skill_partial": 0,
+    "constraint_units_total": 0,
+    "soft_skills_in_score": false,
+    "reasons": []
+  },
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Managed social media campaigns and monthly budget reports in Excel."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+          ]
+        },
+        {
+          "branch_id": "B4",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands."
+          ]
+        },
+        {
+          "branch_id": "B5",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+            "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U02",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+            "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week."
+          ]
+        },
+        {
+          "branch_id": "B2",
+          "label": "MATCH",
+          "check_status": "done",
+          "cv_quotes": [
+            "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+            "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81."
+          ]
+        }
+      ],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U03",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U04",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Ran A/B tests for ad creatives and explained results to account managers."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U05",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U06",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U07",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U08",
+      "label": "NO_MATCH",
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [],
+      "label_source": "model_draft"
+    },
+    {
+      "unit_id": "U09",
+      "label": null,
+      "check_status": "done",
+      "cv_quotes": [],
+      "branches": [
+        {
+          "branch_id": "B1",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B2",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        },
+        {
+          "branch_id": "B3",
+          "label": "NO_MATCH",
+          "check_status": "done",
+          "cv_quotes": []
+        }
+      ],
+      "label_source": "model_draft"
+    }
+  ],
+  "source_flags": [
+    {
+      "unit_id": "U01",
+      "branch_id": "B1",
+      "kind": "quote_exact",
+      "model_quote": "Managed social media campaigns and monthly budget reports in Excel.",
+      "cv_span": "Managed social media campaigns and monthly budget reports in Excel.",
+      "start": 796,
+      "end": 863,
+      "flags": []
+    },
+    {
+      "unit_id": "U01",
+      "branch_id": "B3",
+      "kind": "quote_exact",
+      "model_quote": "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+      "cv_span": "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+      "start": 522,
+      "end": 633,
+      "flags": []
+    },
+    {
+      "unit_id": "U01",
+      "branch_id": "B4",
+      "kind": "quote_exact",
+      "model_quote": "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+      "cv_span": "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+      "start": 430,
+      "end": 519,
+      "flags": []
+    },
+    {
+      "unit_id": "U01",
+      "branch_id": "B5",
+      "kind": "quote_exact",
+      "model_quote": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "cv_span": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "start": 1215,
+      "end": 1332,
+      "flags": []
+    },
+    {
+      "unit_id": "U01",
+      "branch_id": "B5",
+      "kind": "quote_exact",
+      "model_quote": "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "cv_span": "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "start": 1493,
+      "end": 1603,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": "B1",
+      "kind": "quote_exact",
+      "model_quote": "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+      "cv_span": "Wrote SQL queries in BigQuery to build weekly campaign performance reports for 12 brands.",
+      "start": 430,
+      "end": 519,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": "B1",
+      "kind": "quote_exact",
+      "model_quote": "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+      "cv_span": "Automated report generation with Python scripts, cutting manual reporting time from 6 hours to 1 hour per week.",
+      "start": 522,
+      "end": 633,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": "B2",
+      "kind": "quote_exact",
+      "model_quote": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "cv_span": "Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "start": 1215,
+      "end": 1332,
+      "flags": []
+    },
+    {
+      "unit_id": "U02",
+      "branch_id": "B2",
+      "kind": "quote_exact",
+      "model_quote": "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "cv_span": "Fine-tuned a small pretrained transformer (DistilBERT) with Hugging Face for 3-class sentiment; macro-F1 0.81.",
+      "start": 1493,
+      "end": 1603,
+      "flags": []
+    },
+    {
+      "unit_id": "U04",
+      "branch_id": null,
+      "kind": "quote_exact",
+      "model_quote": "Ran A/B tests for ad creatives and explained results to account managers.",
+      "cv_span": "Ran A/B tests for ad creatives and explained results to account managers.",
+      "start": 636,
+      "end": 709,
+      "flags": []
+    }
+  ]
+}

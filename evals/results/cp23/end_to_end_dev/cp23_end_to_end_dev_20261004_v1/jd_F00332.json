@@ -1,0 +1,337 @@
+{
+  "job_id": "F00332",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "80e0a650660c9a65edac496ee53946829e2b3ee8c8a661b9e09a26e5eb6de93a",
+  "wall_ms": 76968,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 8,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02",
+          "U03",
+          "U04"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U05",
+          "U06"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U07",
+          "U08"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U09",
+          "U10"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U11",
+          "U12",
+          "U13"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U14",
+          "U15"
+        ]
+      },
+      {
+        "source_id": "Q08",
+        "unit_ids": [
+          "U16"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00332",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Fresh graduate or bachelor's degree in an analytical or quantitative discipline (e.g., math, statistics, engineering, computer science); other disciplines will be considered.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "Fresh graduate or bachelor's degree in an analytical or quantitative discipline",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "Q01-B1",
+            "text": "Fresh Graduate",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "Q01-B2",
+            "text": "Bachelor's degree in an analytical or quantitative discipline (e.g., math, statistics, engineering, computer science); other disciplines will be considered.",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Fresh Graduate or Bachelor's degree in an analytical or quantitative discipline (e.g., math, statistics, engineering, computer science); other disciplines will be considered."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Experience using statistical computer languages such as Python.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience using statistical computer languages such as Python, SQL, and MS Excel."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Experience using statistical computer languages such as SQL.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "SQL",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience using statistical computer languages such as Python, SQL, and MS Excel."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Experience using statistical computer languages such as MS Excel.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "MS Excel",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience using statistical computer languages such as Python, SQL, and MS Excel."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Good communication skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Communication skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good communication skills and ability to work collaboratively in a team."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Ability to work collaboratively in a team.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Collaboration",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good communication skills and ability to work collaboratively in a team."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Excellent problem-solving skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Problem solving",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Excellent problem-solving skills with a drive to learn and master new technologies and techniques."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Drive to learn and master new technologies and techniques.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Learning drive",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Excellent problem-solving skills with a drive to learn and master new technologies and techniques."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Willingness to learn new skills independently.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Independent learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Willingness to learn new skills independently and strong sense of project ownership."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Strong sense of project ownership.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Project ownership",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Willingness to learn new skills independently and strong sense of project ownership."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Comfortable exploring data.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Data exploration",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Comfortable exploring data, investigating anomalies, and building SQL-based analyses."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Comfortable investigating anomalies.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Anomaly investigation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Comfortable exploring data, investigating anomalies, and building SQL-based analyses."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Comfortable building SQL-based analyses.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "SQL-based analyses",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Comfortable exploring data, investigating anomalies, and building SQL-based analyses."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Experience working with large tabular datasets to detect trends and anomalies.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Large tabular data analysis",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience working with large tabular datasets to detect trends and anomalies and communicate findings as actionable recommendations."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Experience communicating findings from large tabular datasets as actionable recommendations.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": "Communicating actionable findings",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience working with large tabular datasets to detect trends and anomalies and communicate findings as actionable recommendations."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Exposure to credit scoring modelling concepts.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Credit scoring modelling concepts",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Exposure to credit scoring modelling concepts is a plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

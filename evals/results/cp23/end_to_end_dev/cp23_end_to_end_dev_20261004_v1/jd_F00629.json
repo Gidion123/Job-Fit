@@ -1,0 +1,436 @@
+{
+  "job_id": "F00629",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "9f6c500596c502bd9fb43336a2bddb0fd69459e5b0a0d95ee028642e6589e936",
+  "wall_ms": 62614,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00629",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Advanced prompt engineering",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Advanced prompt engineering",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Advanced Prompt Engineering"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "RAG architectures",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "RAG architectures",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "RAG architectures"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Model fine-tuning",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Model fine-tuning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Model Fine-Tuning"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "LangChain",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "LangChain",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "LangChain"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "LlamaIndex",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "LlamaIndex",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "LlamaIndex"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Vector databases (e.g., Pinecone, Chroma, Qdrant)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Vector databases",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Vector Databases (Pinecone, Chroma, Qdrant)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "PyTorch",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "PyTorch",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "PyTorch"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "TensorFlow",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "TensorFlow",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "TensorFlow"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Scikit-learn",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Scikit-learn",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Scikit-learn"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "NLP",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "NLP",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "NLP"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Computer vision",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Computer vision",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Computer Vision"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Transformers",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Transformers",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Transformers"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "MLflow",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "MLflow",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "MLflow"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Kubeflow",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Kubeflow",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Kubeflow"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Model deployment",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Model deployment",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Model Deployment (Docker, Kubernetes)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Docker",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Docker",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Docker"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Kubernetes",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Kubernetes",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Kubernetes"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "CI/CD pipelines",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "CI/CD pipelines",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "CI/CD pipelines"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Model monitoring/observability",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Model monitoring/observability",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Model Monitoring/Observability"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Python (advanced)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Python (Advanced)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "FastAPI/REST APIs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": "FastAPI/REST APIs",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "FastAPI/REST APIs"
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Microservices",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Microservices",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Microservices"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Cloud platforms (AWS, Azure, or GCP)",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Cloud platforms",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "AWS",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Azure",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "GCP",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Cloud Platforms (AWS / Azure / GCP)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U24",
+        "text": "Architectural design",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Architectural design",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Architectural design"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U25",
+        "text": "Technical leadership",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Technical leadership",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "technical leadership"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U26",
+        "text": "Cross-functional project delivery",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Cross-functional project delivery",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "cross-functional project delivery"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "job_id": "gemini-3.5-flash-lite/F00815",
+  "result_sha256": "7c16cb220deefbd582351f994c47a0a13f4b97da2878513ee84a7e3e90f47b43",
+  "error_code": "BadRequestError",
+  "disposition": "retain_failed_case_no_retry",
+  "checks": null,
+  "notes": "Typed first output failed qualification_inventory_unsupported_mapping; sole repair rejected with BadRequestError. Both attempts settled in ledger (US$0.00927525 and US$0). No accepted final extraction. Predecessor state remains terminal and unchanged.",
+  "checked_by": "delegated_process_QA_2026-10-03",
+  "human_annotation_approval": false,
+  "alignment_status": "pending"
+}

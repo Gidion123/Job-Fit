@@ -1,0 +1,13 @@
+{
+ "set": "ranking",
+ "cv_id": "CV2",
+ "job_id": "F00559",
+ "model": "gpt-6-sol",
+ "experiment_id": "QA-E01",
+ "wall_ms": 0,
+ "status": "done",
+ "error_code": null,
+ "attempts": 0,
+ "assessments": [],
+ "source_flags": []
+}

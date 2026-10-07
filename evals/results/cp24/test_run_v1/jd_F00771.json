@@ -1,0 +1,331 @@
+{
+ "job_id": "F00771",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "not_assessed",
+  "bullet_count": 0,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 0,
+  "inventory_mappings": [],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00771",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Current students or graduates with a Bachelor’s degree in Computer Science, Software Engineering, Artificial Intelligence, Data Science, Mathematics, Statistics, or related quantitative fields.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "education",
+    "normalized_name": "Bachelor's degree in quantitative field",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Bachelor’s degree in Computer Science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Bachelor’s degree in Software Engineering",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Bachelor’s degree in Artificial Intelligence",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "Bachelor’s degree in Data Science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B5",
+      "text": "Bachelor’s degree in Mathematics",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B6",
+      "text": "Bachelor’s degree in Statistics",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B7",
+      "text": "Bachelor’s degree in related quantitative fields",
+      "field": "education",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Current students or graduates with a Bachelor’s degree in Computer Science, Software Engineering, Artificial Intelligence, Data Science, Mathematics, Statistics, or related quantitative fields."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "Strong foundational knowledge of machine learning concepts.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Machine learning concepts",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong foundational knowledge of machine learning concepts, model development, and evaluation."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Strong foundational knowledge of model development.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Model development",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong foundational knowledge of machine learning concepts, model development, and evaluation."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Strong foundational knowledge of evaluation.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Model evaluation",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong foundational knowledge of machine learning concepts, model development, and evaluation."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Proficiency in Python for data manipulation, scripting, and model development.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Python",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Proficiency in Python and SQL for data manipulation, scripting, and model development."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Proficiency in SQL for data manipulation, scripting, and model development.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "SQL",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Proficiency in Python and SQL for data manipulation, scripting, and model development."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Skills in exploratory data analysis.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Exploratory data analysis",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Skills in exploratory data analysis, feature engineering, and interpreting complex datasets."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Skills in feature engineering.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Feature engineering",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Skills in exploratory data analysis, feature engineering, and interpreting complex datasets."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Skills in interpreting complex datasets.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Interpreting complex datasets",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Skills in exploratory data analysis, feature engineering, and interpreting complex datasets."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "Interest or experience in prompt engineering.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Prompt engineering",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Interest in prompt engineering",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Experience in prompt engineering",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Interest or experience in prompt engineering, large language models, and generative AI applications."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "Interest or experience in large language models.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Large language models",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Interest in large language models",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Experience in large language models",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Interest or experience in prompt engineering, large language models, and generative AI applications."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "Interest or experience in generative AI applications.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Generative AI applications",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Interest in generative AI applications",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Experience in generative AI applications",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Interest or experience in prompt engineering, large language models, and generative AI applications."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U13",
+    "text": "Strong analytical abilities to develop structured solutions.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Analytical abilities",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong analytical and problem-solving abilities to develop structured solutions."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U14",
+    "text": "Strong problem-solving abilities to develop structured solutions.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Problem-solving abilities",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong analytical and problem-solving abilities to develop structured solutions."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U15",
+    "text": "Ability to collaborate effectively within cross-functional technical teams in a fast-paced environment.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Collaboration in cross-functional teams",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Ability to collaborate effectively within cross-functional technical teams in a fast-paced environment."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

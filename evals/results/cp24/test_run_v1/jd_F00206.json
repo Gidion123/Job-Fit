@@ -1,0 +1,393 @@
+{
+ "job_id": "F00206",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "not_assessed",
+  "bullet_count": 0,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 0,
+  "inventory_mappings": [],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00206",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Public track record of open-source work/contributions, reviewable on GitHub",
+    "kind": "simple",
+    "importance": "required",
+    "field": "other",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "You have a public track record of open-source work",
+     "A public track record of open-source contributions, for example merged pull requests to ML or data libraries, that we can review on GitHub"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "Enjoy collaborating with a community out in the open on GitHub",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "you enjoy collaborating with a community out in the open on GitHub"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Love open source",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "You love open source"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Passionate about making complex technology more accessible",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "you're passionate about making complex technology more accessible"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Want to contribute to one of the fastest-growing ML ecosystems",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "you want to contribute to one of the fastest-growing ML ecosystems"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Strong Python skills, with experience writing clean, well-tested, maintainable library code",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong Python skills, with experience writing clean, well-tested, maintainable library code"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Deep hands-on experience with a modern deep-learning framework, especially PyTorch",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Deep hands-on experience with a modern deep-learning framework, especially PyTorch"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "JAX or TensorFlow a plus",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "JAX a plus",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "TensorFlow a plus",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "(JAX or TensorFlow a plus)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Practical experience with the Hugging Face open-source stack (Transformers, Datasets, Accelerate) or comparable ML libraries",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Practical experience with the Hugging Face open-source stack (Transformers, Datasets, Accelerate)",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Practical experience with comparable ML libraries",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Practical experience with the Hugging Face open-source stack (Transformers, Datasets, Accelerate) or comparable ML libraries"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "Solid understanding of modern machine learning",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Solid understanding of modern machine learning and deep learning, including transformer architectures"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "Solid understanding of deep learning",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Solid understanding of modern machine learning and deep learning, including transformer architectures"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "Solid understanding of transformer architectures",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Solid understanding of modern machine learning and deep learning, including transformer architectures"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U13",
+    "text": "Experience collaborating with a technical community in the open (GitHub issues and reviews, forums, Slack or Discord)",
+    "kind": "simple",
+    "importance": "required",
+    "field": "other",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience collaborating with a technical community in the open (GitHub issues and reviews, forums, Slack or Discord)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U14",
+    "text": "Fluent written English for asynchronous collaboration across a distributed, global community",
+    "kind": "simple",
+    "importance": "required",
+    "field": "language",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Fluent written English for asynchronous collaboration across a distributed, global community"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U15",
+    "text": "Experience maintaining an open-source project",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "other",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience maintaining an open-source project"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U16",
+    "text": "Prior contributions to Transformers, Datasets, Accelerate, or similar libraries",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Prior contributions to Transformers",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Prior contributions to Datasets",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Prior contributions to Accelerate",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B4",
+      "text": "Prior contributions to similar libraries",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Prior contributions to Transformers, Datasets, Accelerate, or similar libraries"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U17",
+    "text": "Familiarity with distributed training, inference optimization, or GPU/accelerator performance work",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Familiarity with distributed training",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Familiarity with inference optimization",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "B3",
+      "text": "Familiarity with GPU/accelerator performance work",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Familiarity with distributed training, inference optimization, or GPU/accelerator performance work"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U18",
+    "text": "Experience training or fine-tuning models at scale",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "other",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Experience training models at scale",
+      "field": "other",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Experience fine-tuning models at scale",
+      "field": "other",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Experience training or fine-tuning models at scale"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U19",
+    "text": "Provide a cover letter mentioning why you would like to work in open-source at Hugging Face",
+    "kind": "simple",
+    "importance": "required",
+    "field": "other",
+    "normalized_name": null,
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Please provide a cover letter mentioning why you would like to work in open-source at Hugging Face."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

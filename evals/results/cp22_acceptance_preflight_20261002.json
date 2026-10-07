@@ -1,0 +1,299 @@
+{
+  "mode": "preflight_only",
+  "proposed_run_id": "cp22_v13_acceptance_probe_after_closure_20261002",
+  "execution_authorized_in_this_session": false,
+  "new_api_calls": 0,
+  "session_cost_usd": 0,
+  "baseline": "deepseek/deepseek-v4.1-flash",
+  "price_source": "local routing ceilings; last official evidence cp22_probe_provider_20261002.json; reverify before any future paid run",
+  "versions": {
+    "guideline_version": "v1.3",
+    "jd_prompt_version": "jd-prompt-v1.2",
+    "evidence_prompt_version": "evidence-prompt-v1.1",
+    "schema_version": "v1",
+    "score_version": "v1",
+    "guideline_file": "evals/annotation_guideline_v1_3.md",
+    "jd_prompt_file": "prompts/jd_extraction_v1_2.md",
+    "evidence_prompt_file": "prompts/evidence_matching_v1_1.md",
+    "guideline_sha256": "3d964a28fd105e16b24ad51b8b0a22b34bb9255e438b51e4e6e0eda551c57645",
+    "jd_prompt_sha256": "35525ee62f8aa7f79307d8d8b95141e85c7d30fa06b359a9dcb48c3a6cad1836",
+    "evidence_prompt_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f"
+  },
+  "analysis_date": "2026-09-30",
+  "stages": [
+    {
+      "stage": "jd_extraction",
+      "job_id": "F00034",
+      "scope": "corpus_jd",
+      "cache_hit": false,
+      "input_token_upper_per_attempt": 51937,
+      "attempts_max": 2,
+      "upper_usd": "0.0695622"
+    },
+    {
+      "stage": "jd_extraction",
+      "job_id": "F00022",
+      "scope": "session_jd",
+      "cache_hit": false,
+      "input_token_upper_per_attempt": 52545,
+      "attempts_max": 2,
+      "upper_usd": "0.069927"
+    },
+    {
+      "stage": "cv_parsing",
+      "cv_id": "CV1",
+      "job_id": null,
+      "scope": "session_only",
+      "input_token_upper_per_attempt": 100000,
+      "attempts_max": 2,
+      "upper_usd": "0.0984",
+      "bound_condition": "Future executor must reject actual request+schema+repair byte bound above100000 before dispatch"
+    },
+    {
+      "stage": "evidence_matching",
+      "cv_id": "CV1",
+      "job_id": "F00022",
+      "scope": "session_only",
+      "input_token_upper_per_attempt": 100000,
+      "attempts_max": 2,
+      "upper_usd": "0.0984",
+      "bound_condition": "Future executor must reject actual request+schema+repair byte bound above100000 before dispatch"
+    }
+  ],
+  "maximum_calls": 8,
+  "max_output_tokens_per_call": 16000,
+  "conservative_upper_usd": "0.3362892",
+  "proposed_aggregate_ceiling_usd": "0.40",
+  "fits_proposed_ceiling": true,
+  "ledger_records": 109,
+  "ledger_total_including_reservations_usd": "0.212701440",
+  "uncertain_reservation_usd": "0.0210861",
+  "hard_stop_usd": "8.5",
+  "remaining_guard_including_reservation_usd": "8.287298560",
+  "fits_project_guard": true,
+  "source_sha256": {
+    "F00022": "5096de1762a4d7d373d8df4780441a254189e009e03927c9945a56c858a54345",
+    "F00034": "8cdbfad2b5803545eb155c346253249dd72d4015024018e34706e3ddf9552826"
+  },
+  "cv_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+  "sequence": [
+    "F00034 extraction; inspect role alternatives/duration/portfolio",
+    "CV1 parse preview and confirmation",
+    "F00022 pasted extraction; inspect D-049 composite/importance/categories/qualifiers",
+    "CV1 x F00022 evidence/report only if structure resolved without new rules"
+  ],
+  "stop_conditions": [
+    "Terminal stage failure after at most one repair",
+    "Important semantic error, omitted/invented requirement or source qualifier",
+    "Unresolved structure: record hold, stop next paid stage",
+    "Aggregate spend+reservations+next conservative estimate exceeds ceiling or project guard",
+    "Input bound exceeded or source/prompt/model/config hash changed"
+  ],
+  "quality_status": "Technical semantic diagnostic only; no compatible whole-JD reviewed gold/alignment receipt yet, no F1",
+  "reuse_policy": "No reuse of interrupted started artifact. Public JD cache exact version only; CV/paste/evidence session memory only. Check any approved successful parse reuse by content/schema/prompt/date hashes first; do not silently re-infer.",
+  "executor_status": "Plan only. Separate guarded staged executor required before future execution; do not use closed v1.2 driver or ungated full-chain command.",
+  "fixture_results": [
+    {
+      "fixture_id": "dev_01_clear_match",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 87.5,
+        "status": "final",
+        "matched": 3,
+        "partial": 1,
+        "required_total": 4,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "compatible",
+        "met_display": "3.5 of 4 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_02_experience_too_short",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 83.33,
+        "status": "final",
+        "matched": 2,
+        "partial": 1,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "explicit_conflict",
+        "met_display": "2.5 of 3 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_03_duration_unknown",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 75.0,
+        "status": "final",
+        "matched": 1,
+        "partial": 1,
+        "required_total": 2,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "unknown",
+        "met_display": "1.5 of 2 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_04_or_alternative_group",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 50.0,
+        "status": "final",
+        "matched": 1,
+        "partial": 1,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "unknown",
+        "met_display": "1.5 of 3 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_05_repeated_requirement",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 66.67,
+        "status": "final",
+        "matched": 2,
+        "partial": 0,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [],
+        "constraint_state": "unknown",
+        "met_display": "2 of 3 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_06_ambiguous_importance",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": 83.33,
+        "status": "provisional",
+        "matched": 2,
+        "partial": 1,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 1,
+        "unknown_importance_total": 1,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "1 requirement(s) not clearly required or preferred"
+        ],
+        "constraint_state": "unknown",
+        "met_display": "2.5 of 3 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_07_no_assessable_requirement",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": null,
+        "status": "no_score",
+        "matched": 0,
+        "partial": 0,
+        "required_total": 0,
+        "preferred_met": 0,
+        "preferred_total": 1,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Not enough information to compute"
+        ],
+        "constraint_state": "unknown",
+        "met_display": "0 of 0 required requirements"
+      }
+    },
+    {
+      "fixture_id": "dev_08_parsing_failure",
+      "passed": true,
+      "mismatches": {},
+      "result": {
+        "score_pct": null,
+        "status": "on_hold",
+        "matched": 1,
+        "partial": 0,
+        "required_total": 3,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 0,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 0,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Required units not judged yet: u2"
+        ],
+        "constraint_state": "unknown",
+        "met_display": "1 of 3 required requirements"
+      }
+    }
+  ],
+  "fixture_sources": {
+    "evals/fixtures/dev_01_clear_match.json": "9145f48a5b6e5d32302dde534c9188fe0de5eff5aeb8f6f4f02e1d669cafc7e8",
+    "evals/fixtures/dev_02_experience_too_short.json": "6a2259d1bcda7214b0e43b81b2ba9ed0edd76aca50611587fa081f0598fac791",
+    "evals/fixtures/dev_03_duration_unknown.json": "bd1690174049bb54c7feb403dc55c983422c6388b131c959c52f5e03bb7f8726",
+    "evals/fixtures/dev_04_or_alternative_group.json": "dc4aa7c879685d7f9c40b0ccc6dc01259c9c97c72b6ee0ed577605ad56abed41",
+    "evals/fixtures/dev_05_repeated_requirement.json": "59d30a67ab53dfeae7105998a9fd850a3dc8c5ba06d6a391498177b7da78b867",
+    "evals/fixtures/dev_06_ambiguous_importance.json": "778e7667a8bc66a2d00f035d3e0d8b3b7746aaea27acf0b46fd493e089709182",
+    "evals/fixtures/dev_07_no_assessable_requirement.json": "59cc3813c261afef305ef573759075acb0df00ac21b18d8d9a10ebb96efaefbc",
+    "evals/fixtures/dev_08_parsing_failure.json": "fe0d13660ac2b96d33d147eeca9b9d763f2a9fb4e5e6bd4f0b27e4b88ed3a657"
+  },
+  "human_fixture_review_status": "pending",
+  "fixture_date_policy": "Preserve original2026-09-29; live development reference remains2026-09-30"
+}

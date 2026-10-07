@@ -1,0 +1,270 @@
+{
+  "run_id": "cp23_model_sweep_stage1_20261004_v1",
+  "decision": "D-079 stage 1",
+  "split": "development",
+  "cap_usd": 3.0,
+  "pairs": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00332",
+      "fixed_requirements_sha256": "3accf934b45f82c38d20f5fc82aa9b3fd6722cab777ec11f318c11b57acaa368",
+      "duration_input": {}
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00036",
+      "fixed_requirements_sha256": "b7bdf6460b7aa8c4dde8a7eccef6f182c2c1065bb5d9c92e2eacce6992ee3e91",
+      "duration_input": {
+        "P09-U02": 0.75
+      }
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00815",
+      "fixed_requirements_sha256": "481b1c488a77b1022c4289426d29ea8d4e9952dfff6e9a95c08ced0c8f2cc0c6",
+      "duration_input": {}
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00018",
+      "fixed_requirements_sha256": "4c1c10c736da01cb953b6a5275850b7afd256a7a9ea494e898134bcc81c16ae9",
+      "duration_input": {}
+    }
+  ],
+  "models": {
+    "gpt-6-luna": {
+      "model_id": "openai/gpt-6-luna",
+      "ceiling_in": 0.1,
+      "ceiling_out": 0.5,
+      "role": "selected D-077",
+      "metadata": {
+        "found": true,
+        "endpoints": 7,
+        "structured_endpoints": 7,
+        "min_output_limit": 128000,
+        "temperature_supported": false,
+        "response_aliases": [
+          "openai/gpt-6-luna-20260922"
+        ],
+        "cheapest_structured_price_per_m": [
+          0.049999999999999996,
+          0.25
+        ]
+      }
+    },
+    "deepseek-flash": {
+      "model_id": "deepseek/deepseek-v4.1-flash",
+      "ceiling_in": 0.3,
+      "ceiling_out": 1.2,
+      "role": "baseline",
+      "metadata": {
+        "found": true,
+        "endpoints": 30,
+        "structured_endpoints": 21,
+        "min_output_limit": 131072,
+        "temperature_supported": true,
+        "response_aliases": [
+          "deepseek/deepseek-v4.1-flash-20260910"
+        ],
+        "cheapest_structured_price_per_m": [
+          0.02,
+          0.35
+        ]
+      }
+    },
+    "gemini-3.5-flash-lite": {
+      "model_id": "google/gemini-3.5-flash-lite",
+      "ceiling_in": 0.3,
+      "ceiling_out": 2.5,
+      "role": "round one",
+      "metadata": {
+        "found": true,
+        "endpoints": 8,
+        "structured_endpoints": 8,
+        "min_output_limit": 65536,
+        "temperature_supported": true,
+        "response_aliases": [
+          "google/gemini-3.5-flash-lite-20260721"
+        ],
+        "cheapest_structured_price_per_m": [
+          0.15,
+          1.25
+        ]
+      }
+    },
+    "deepseek-v4-pro": {
+      "model_id": "deepseek/deepseek-v4-pro",
+      "ceiling_in": 0.66,
+      "ceiling_out": 3.96,
+      "role": "round two",
+      "metadata": {
+        "found": true,
+        "endpoints": 16,
+        "structured_endpoints": 10,
+        "min_output_limit": 16384,
+        "temperature_supported": true,
+        "response_aliases": [
+          "deepseek/deepseek-v4-pro-20260423"
+        ],
+        "cheapest_structured_price_per_m": [
+          0.20879999999999999,
+          0.41759999999999997
+        ]
+      }
+    },
+    "gemini-3.8-flash": {
+      "model_id": "google/gemini-3.8-flash",
+      "ceiling_in": 0.75,
+      "ceiling_out": 3.75,
+      "role": "new",
+      "metadata": {
+        "found": true,
+        "endpoints": 6,
+        "structured_endpoints": 6,
+        "min_output_limit": 65536,
+        "temperature_supported": true,
+        "response_aliases": [
+          "google/gemini-3.8-flash-20260902"
+        ],
+        "cheapest_structured_price_per_m": [
+          0.375,
+          1.875
+        ]
+      }
+    },
+    "claude-haiku-4.5": {
+      "model_id": "anthropic/claude-haiku-4.5",
+      "ceiling_in": 1.0,
+      "ceiling_out": 5.0,
+      "role": "round one",
+      "metadata": {
+        "found": true,
+        "endpoints": 8,
+        "structured_endpoints": 5,
+        "min_output_limit": 64000,
+        "temperature_supported": true,
+        "response_aliases": [
+          "anthropic/claude-4.5-haiku-20251001"
+        ],
+        "cheapest_structured_price_per_m": [
+          1.0,
+          5.0
+        ]
+      }
+    },
+    "gpt-6-sol": {
+      "model_id": "openai/gpt-6-sol",
+      "ceiling_in": 2.0,
+      "ceiling_out": 10.0,
+      "role": "quality reference",
+      "metadata": {
+        "found": true,
+        "endpoints": 7,
+        "structured_endpoints": 7,
+        "min_output_limit": 128000,
+        "temperature_supported": false,
+        "response_aliases": [
+          "openai/gpt-6-sol-20260922"
+        ],
+        "cheapest_structured_price_per_m": [
+          1.0,
+          5.0
+        ]
+      }
+    },
+    "claude-sonnet-5.5": {
+      "model_id": "anthropic/claude-sonnet-5.5",
+      "ceiling_in": 2.0,
+      "ceiling_out": 10.0,
+      "role": "new",
+      "metadata": {
+        "found": true,
+        "endpoints": 8,
+        "structured_endpoints": 6,
+        "min_output_limit": 128000,
+        "temperature_supported": true,
+        "response_aliases": [
+          "anthropic/claude-sonnet-5.5-20260928"
+        ],
+        "cheapest_structured_price_per_m": [
+          2.0,
+          10.0
+        ]
+      }
+    },
+    "gemini-3.1-pro": {
+      "model_id": "google/gemini-3.1-pro-preview",
+      "ceiling_in": 2.0,
+      "ceiling_out": 12.0,
+      "role": "new, preview",
+      "metadata": {
+        "found": true,
+        "endpoints": 6,
+        "structured_endpoints": 6,
+        "min_output_limit": 65536,
+        "temperature_supported": true,
+        "response_aliases": [
+          "google/gemini-3.1-pro-preview-20260219"
+        ],
+        "cheapest_structured_price_per_m": [
+          1.0,
+          6.0
+        ]
+      }
+    },
+    "claude-opus-5.5": {
+      "model_id": "anthropic/claude-opus-5.5",
+      "ceiling_in": 4.0,
+      "ceiling_out": 20.0,
+      "role": "new, upper reference",
+      "metadata": {
+        "found": true,
+        "endpoints": 11,
+        "structured_endpoints": 8,
+        "min_output_limit": 128000,
+        "temperature_supported": true,
+        "response_aliases": [
+          "anthropic/claude-opus-5.5-20260921"
+        ],
+        "cheapest_structured_price_per_m": [
+          4.0,
+          20.0
+        ]
+      }
+    }
+  },
+  "estimate_usd": 2.6425,
+  "estimate_by_model_usd": {
+    "gpt-6-luna": 0.0111,
+    "deepseek-flash": 0.0375,
+    "gemini-3.5-flash-lite": 0.0455,
+    "deepseek-v4-pro": 0.0176,
+    "gemini-3.8-flash": 0.1845,
+    "claude-haiku-4.5": 0.1275,
+    "gpt-6-sol": 0.1788,
+    "claude-sonnet-5.5": 0.492,
+    "gemini-3.1-pro": 0.564,
+    "claude-opus-5.5": 0.984
+  },
+  "project_budget_usd": 19.0,
+  "project_hard_stop_usd": 18.5,
+  "ledger_before_usd": 3.313365,
+  "problems": [],
+  "settings": {
+    "prompt": "evidence v1.1",
+    "validator": "quote-check-v1.1",
+    "guardrails_in_run": [],
+    "guardrails_in_evaluation": [
+      "G1",
+      "G2"
+    ],
+    "reference": "D-067",
+    "dynamic_output": true,
+    "timeout_s": 240,
+    "workers": 1,
+    "cache": "none"
+  },
+  "input_sha256": {
+    "evals/results/cp23_stage2_fixed_matching_20261003_v1_plan.json": "360e16a8ed41a3c357b15c8b019f262adfcb6b2942344f677c92b8d8f9d4ccdd"
+  }
+}

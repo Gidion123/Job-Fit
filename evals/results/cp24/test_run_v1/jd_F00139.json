@@ -1,0 +1,225 @@
+{
+ "job_id": "F00139",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "no_uncovered_bullets",
+  "bullet_count": 6,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 6,
+  "inventory_mappings": [
+   {
+    "source_id": "Q01",
+    "unit_ids": [
+     "U01",
+     "U02"
+    ]
+   },
+   {
+    "source_id": "Q02",
+    "unit_ids": [
+     "U03"
+    ]
+   },
+   {
+    "source_id": "Q03",
+    "unit_ids": [
+     "U04"
+    ]
+   },
+   {
+    "source_id": "Q04",
+    "unit_ids": [
+     "U05",
+     "U06",
+     "U07"
+    ]
+   },
+   {
+    "source_id": "Q05",
+    "unit_ids": [
+     "U08"
+    ]
+   },
+   {
+    "source_id": "Q06",
+    "unit_ids": [
+     "U09"
+    ]
+   }
+  ],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00139",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "At least 2 years of experience in work or projects related to credit scoring",
+    "kind": "qualified",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "credit scoring experience",
+    "min_years": 2.0,
+    "branches": [],
+    "source_quotes": [
+     "Berpengalaman dalam pekerjaan/proyek terkait credit scoring dan underwriting minimal 2 tahun"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "At least 2 years of experience in work or projects related to underwriting",
+    "kind": "qualified",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "underwriting experience",
+    "min_years": 2.0,
+    "branches": [],
+    "source_quotes": [
+     "Berpengalaman dalam pekerjaan/proyek terkait credit scoring dan underwriting minimal 2 tahun"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Advanced programming language proficiency in Python or PySpark for machine learning modeling",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Python or PySpark",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Advanced programming language proficiency in Python for machine learning modeling",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Advanced programming language proficiency in PySpark for machine learning modeling",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Advance dalam bahasa pemrograman Python/PySpark untuk permodelan machine learning"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Mastery of SQL queries",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "SQL queries",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Menguasai query dalam SQL"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Advanced techniques in machine learning modeling (i.e., classification, regression, clustering, fraud detection, credit scoring)",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "machine learning modeling",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Advance dalam teknik permodelan machine learning, artificial intelligent dan statistik (i.e classification, regression, clustering, fraud detection,credit scoring)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Advanced techniques in artificial intelligence modeling (i.e., classification, regression, clustering, fraud detection, credit scoring)",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "artificial intelligence modeling",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Advance dalam teknik permodelan machine learning, artificial intelligent dan statistik (i.e classification, regression, clustering, fraud detection,credit scoring)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Advanced techniques in statistics modeling (i.e., classification, regression, clustering, fraud detection, credit scoring)",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "statistics modeling",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Advance dalam teknik permodelan machine learning, artificial intelligent dan statistik (i.e classification, regression, clustering, fraud detection,credit scoring)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Experience in big data technologies (Spark, Hive, Impala) is preferred",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "big data technologies",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Pengalaman dalam teknologi big data (Spark, Hive, Impala) lebih diutamakan"
+    ],
+    "needs_review": true,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Certification or training in data science professional is preferred",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "certification",
+    "normalized_name": "data science professional credential",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B1",
+      "text": "Certification in data science professional",
+      "field": "certification",
+      "min_years": null
+     },
+     {
+      "branch_id": "B2",
+      "text": "Training in data science professional",
+      "field": "certification",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Memiliki sertifikasi atau training data science professional menjadi nilai tambah"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "looks_incomplete",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

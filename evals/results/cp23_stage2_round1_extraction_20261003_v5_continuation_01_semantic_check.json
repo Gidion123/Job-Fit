@@ -1,0 +1,13 @@
+{
+  "job_id": "deepseek-flash/F00036",
+  "result_sha256": "215cb532fc719d6e91d979400db8187c2e71f64c21903d8927eca0807449314b",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "uncertain",
+    "grouping": "fail",
+    "qualifiers": "pass",
+    "importance": "uncertain"
+  },
+  "notes": "Delegated source QA compared the full F00036 JD and 17 reviewed logical units. Every model quote occurs in the source. The model has 19 units, including two opening-paragraph umbrella concepts ('analitik data' and 'pemodelan statistik') absent as independent gold units; the paragraph also names ML, while later qualification bullets cover its components. Guideline A1/A4a leaves the opening-paragraph versus redundant-umbrella interpretation unresolved for this specific source, so no gold change or model TP is inferred. The model makes EDA itself an alternative group over Tableau/Power BI/Matplotlib rather than preserving the reviewed simple EDA obligation plus a separate visualization-tool alternative. Its two-year DS-or-similar minimum is present, although it unnecessarily marks this clear source wording needs_review. Preferred database and Hadoop/Spark/cloud context is retained. This case is a semantic comparison failure/uncertainty, not a complete compatible alignment; record it and continue under the separately approved v5 policy. No relevance or evidence label changes.",
+  "checked_by": "delegated_Codex2_source_semantic_QA_2026-10-03"
+}

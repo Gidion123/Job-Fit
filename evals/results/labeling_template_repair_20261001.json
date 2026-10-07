@@ -1,0 +1,285 @@
+{
+  "date": "2026-10-01",
+  "task": "Labeling workbook validation and template repair",
+  "pilot_unchanged": true,
+  "api_cost_usd": 0,
+  "workbooks": {
+    "dev_batch_01.xlsx": {
+      "sha256_before": "0043d9e9bccb8e283a69a78b0c621b96b4856aeab94fd722848c7c2b8b1de60d",
+      "sha256_after": "a81a107d7ec3a50ebd86fe6dbd882a4c4d3322805c379061ce88d3bfd771c881",
+      "sheets": {
+        "README": {
+          "existing_content_unchanged": true,
+          "native_tables_preserved": true,
+          "pilot_header_style_matched": true,
+          "freeze_panes": null
+        },
+        "JDs": {
+          "existing_content_unchanged": true,
+          "native_tables_preserved": true,
+          "pilot_header_style_matched": true,
+          "freeze_panes": "A2"
+        },
+        "CVs": {
+          "existing_content_unchanged": true,
+          "native_tables_preserved": true,
+          "pilot_header_style_matched": true,
+          "freeze_panes": "A2"
+        },
+        "A_Extraction": {
+          "existing_content_unchanged": true,
+          "native_tables_preserved": true,
+          "pilot_header_style_matched": true,
+          "freeze_panes": "A2",
+          "status_counts": {
+            "approved": 1,
+            "pending": 83
+          },
+          "dropdowns": {
+            "review_status": {
+              "allowed": [
+                "pending",
+                "approved"
+              ],
+              "last_row": 115,
+              "blank_allowed": true
+            },
+            "review_action": {
+              "allowed": [
+                "accepted",
+                "edited",
+                "rejected",
+                "added"
+              ],
+              "last_row": 115,
+              "blank_allowed": true
+            },
+            "label_source": {
+              "allowed": [
+                "model_draft",
+                "annotator"
+              ],
+              "last_row": 115,
+              "blank_allowed": true
+            },
+            "importance": {
+              "allowed": [
+                "required",
+                "preferred",
+                "unknown"
+              ],
+              "last_row": 115,
+              "blank_allowed": true
+            },
+            "category": {
+              "allowed": [
+                "skill_tool",
+                "knowledge_area",
+                "experience_duration",
+                "education",
+                "language",
+                "certification",
+                "soft_skill",
+                "location",
+                "work_authorization",
+                "other"
+              ],
+              "last_row": 115,
+              "blank_allowed": true
+            }
+          },
+          "approved_without_action": [
+            2
+          ]
+        },
+        "B_Evidence": {
+          "existing_content_unchanged": true,
+          "native_tables_preserved": true,
+          "pilot_header_style_matched": true,
+          "freeze_panes": "A2",
+          "status_counts": {
+            "None": 1
+          },
+          "dropdowns": {
+            "review_status": {
+              "allowed": [
+                "pending",
+                "approved"
+              ],
+              "last_row": 100,
+              "blank_allowed": true
+            },
+            "review_action": {
+              "allowed": [
+                "accepted",
+                "edited",
+                "rejected",
+                "added"
+              ],
+              "last_row": 100,
+              "blank_allowed": true
+            },
+            "label_source": {
+              "allowed": [
+                "model_draft",
+                "annotator"
+              ],
+              "last_row": 100,
+              "blank_allowed": true
+            },
+            "label": {
+              "allowed": [
+                "MATCH",
+                "PARTIAL",
+                "NO_MATCH"
+              ],
+              "last_row": 100,
+              "blank_allowed": true
+            },
+            "check_status": {
+              "allowed": [
+                "done",
+                "needs_clarification",
+                "failed"
+              ],
+              "last_row": 100,
+              "blank_allowed": true
+            },
+            "cv_section": {
+              "allowed": [
+                "Experience",
+                "Projects",
+                "Education",
+                "Skills",
+                "Certifications",
+                "Summary",
+                "Other"
+              ],
+              "last_row": 100,
+              "blank_allowed": true
+            }
+          },
+          "approved_without_action": []
+        },
+        "Timing": {
+          "existing_content_unchanged": true,
+          "native_tables_preserved": true,
+          "pilot_header_style_matched": true,
+          "freeze_panes": "A2"
+        },
+        "Questions": {
+          "existing_content_unchanged": true,
+          "native_tables_preserved": true,
+          "pilot_header_style_matched": true,
+          "freeze_panes": "A2"
+        },
+        "QA_Log": {
+          "existing_content_unchanged": true,
+          "native_tables_preserved": true,
+          "pilot_header_style_matched": true,
+          "freeze_panes": "A2"
+        }
+      }
+    },
+    "dev_batch_02.xlsx": {
+      "sha256_before": "90a4b7c34c502fb1adabf8a360f78e9dda85a88ecaadb5cc941054426d85aa46",
+      "sha256_after": "4b94c05a7a3f1d46d335e577b02688e31f923f696f353b3bd3631479f21b3fd1",
+      "sheets": {
+        "README": {
+          "existing_content_unchanged": true,
+          "native_tables_preserved": true,
+          "pilot_header_style_matched": true,
+          "freeze_panes": null
+        },
+        "JDs": {
+          "existing_content_unchanged": true,
+          "native_tables_preserved": true,
+          "pilot_header_style_matched": true,
+          "freeze_panes": "A2"
+        },
+        "CVs": {
+          "existing_content_unchanged": true,
+          "native_tables_preserved": true,
+          "pilot_header_style_matched": true,
+          "freeze_panes": "A2"
+        },
+        "C_Relevance": {
+          "existing_content_unchanged": true,
+          "native_tables_preserved": true,
+          "pilot_header_style_matched": true,
+          "freeze_panes": "A2",
+          "status_counts": {
+            "pending": 60
+          },
+          "dropdowns": {
+            "review_status": {
+              "allowed": [
+                "pending",
+                "approved"
+              ],
+              "last_row": 100,
+              "blank_allowed": true
+            },
+            "review_action": {
+              "allowed": [
+                "accepted",
+                "edited",
+                "rejected",
+                "added"
+              ],
+              "last_row": 100,
+              "blank_allowed": true
+            },
+            "label_source": {
+              "allowed": [
+                "model_draft",
+                "annotator"
+              ],
+              "last_row": 100,
+              "blank_allowed": true
+            },
+            "relevance_0_3": {
+              "allowed": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "last_row": 100,
+              "blank_allowed": true
+            },
+            "gold_review": {
+              "allowed": [
+                "yes",
+                "no"
+              ],
+              "last_row": 100,
+              "blank_allowed": true
+            }
+          },
+          "approved_without_action": []
+        },
+        "Timing": {
+          "existing_content_unchanged": true,
+          "native_tables_preserved": true,
+          "pilot_header_style_matched": true,
+          "freeze_panes": "A2"
+        },
+        "Questions": {
+          "existing_content_unchanged": true,
+          "native_tables_preserved": true,
+          "pilot_header_style_matched": true,
+          "freeze_panes": "A2"
+        },
+        "QA_Log": {
+          "existing_content_unchanged": true,
+          "native_tables_preserved": true,
+          "pilot_header_style_matched": true,
+          "freeze_panes": "A2"
+        }
+      }
+    }
+  },
+  "native_excel_interaction_tested": false,
+  "scope": "Formatting and validation only. Existing cell values, formulas, tables, sheet order and reviews preserved."
+}

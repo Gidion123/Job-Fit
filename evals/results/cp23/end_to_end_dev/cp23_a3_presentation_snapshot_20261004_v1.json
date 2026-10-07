@@ -1,0 +1,52 @@
+{
+  "status": "presentation_materials_ready_before_partb_resume",
+  "created_at_utc": "2026-10-04T01:16:07.619235+00:00",
+  "files": {
+    "docs/decisions.md": {
+      "sha256": "5542a1c1c0e508246659645a0cdef040735fc2d9f1ec730212b4bfc4c0552670",
+      "bytes": 119657
+    },
+    "config/versions/pipeline_cp23_provisional_20261004.yaml": {
+      "sha256": "ad27b23c961762c079fd359fece0627b2738f5cc19df027912b157909356de06",
+      "bytes": 845
+    },
+    "docs/checkpoint_2/CP2_05_Evaluation_Visualization.md": {
+      "sha256": "a4b1876e87c6ff66b7f5e23bf130bf7800a36bca7b1b25bedd25dd9be2aaa2c7",
+      "bytes": 4107
+    },
+    "docs/checkpoint_2/CP2_06_Recommendation_and_Summary.md": {
+      "sha256": "97f044ef65f4564828d4f731558348e819d647eba714cc4f32198674ffd19940",
+      "bytes": 4232
+    },
+    "docs/checkpoint_2/supporting/CP2_Presentation_Summary_20261004.md": {
+      "sha256": "a2b6111b410424261fba4846e1421b5f86f5b7a5f475a79da53cdb19da6ecc08",
+      "bytes": 3945
+    },
+    "reports/figures/cp2/fig01_retrieval_methods.png": {
+      "sha256": "0b15210698a4d147575f299df1093409ffd1b6fbd560f97ce8936e695b9e1e52",
+      "bytes": 73095
+    },
+    "reports/figures/cp2/fig02_embedding_recall20.png": {
+      "sha256": "4287236e6aa9de5914b4b36e267135d94e02c47eac064e2970c5295f6cbaddfc",
+      "bytes": 59069
+    },
+    "reports/figures/cp2/fig03_llm_quality.png": {
+      "sha256": "d7e2617b443e8ab5c75054ce59d3fb6d95da05fbb55240957de8ea2df6f833c7",
+      "bytes": 54357
+    },
+    "reports/figures/cp2/fig04_matching_confusion.png": {
+      "sha256": "9586760b2fe0f1ea33399f1c4b8556fdf5863d1af76b2c31be2c020939938418",
+      "bytes": 70524
+    },
+    "reports/figures/cp2/fig05_guardrail_effect.png": {
+      "sha256": "dd4c989d855b13d4bc4c237768bc636479d6e0150cfdf14c8cffb9487a10cefd",
+      "bytes": 69492
+    },
+    "reports/figures/cp2/fig06_cost_latency.png": {
+      "sha256": "ee5b477b6e4a3b8c12dce803f1d525202dab2cc77c9ff9a3190df6a817291fa0",
+      "bytes": 80248
+    }
+  },
+  "development_only": true,
+  "partb_status_at_snapshot": "29 of 60 pair records saved; K and PARTIAL weight remain provisional"
+}

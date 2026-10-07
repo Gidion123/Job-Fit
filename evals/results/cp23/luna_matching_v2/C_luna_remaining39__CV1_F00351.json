@@ -1,0 +1,85 @@
+{
+  "cv_id": "CV1",
+  "job_id": "F00351",
+  "model": "gpt-6-luna",
+  "status": "done",
+  "error_code": null,
+  "wall_ms": 4213,
+  "assessments": [
+    {
+      "unit_id": "U01",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Lulusan S1 Statistika yang tertarik pada data science dan machine learning."
+      ],
+      "branches": [],
+      "label_source": "model_draft"
+    }
+  ],
+  "scores": {
+    "H1": {
+      "score": {
+        "score_pct": null,
+        "status": "no_score",
+        "matched": 0,
+        "partial": 0,
+        "required_total": 0,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 1,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 1,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Not enough information to compute"
+        ]
+      },
+      "excluded": []
+    },
+    "H2": {
+      "score": {
+        "score_pct": null,
+        "status": "no_score",
+        "matched": 0,
+        "partial": 0,
+        "required_total": 0,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 1,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 1,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Not enough information to compute"
+        ]
+      },
+      "excluded": []
+    },
+    "H2v2": {
+      "score": {
+        "score_pct": null,
+        "status": "no_score",
+        "matched": 0,
+        "partial": 0,
+        "required_total": 0,
+        "preferred_met": 0,
+        "preferred_total": 0,
+        "unknown_importance_total": 0,
+        "soft_skill_total": 1,
+        "soft_skill_matched": 0,
+        "soft_skill_partial": 1,
+        "constraint_units_total": 0,
+        "soft_skills_in_score": false,
+        "reasons": [
+          "Not enough information to compute"
+        ]
+      },
+      "excluded": []
+    }
+  }
+}

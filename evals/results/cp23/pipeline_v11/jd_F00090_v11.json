@@ -1,0 +1,661 @@
+{
+  "job_id": "F00090",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "cache_hit": false,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "wall_ms": 64975,
+  "extraction": {
+    "job_id": "F00090",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "2–4 years of experience as Backend Engineer / Software Engineer with focus on Python",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "2–4 years of experience as Backend Engineer / Software Engineer with focus on Python",
+        "min_years": 2.0,
+        "branches": [],
+        "source_quotes": [
+          "- Min. 2–4 tahun pengalaman sebagai Backend Engineer / Software Engineer dengan fokus Python"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Advanced Python proficiency, including OOP, clean code, and unit testing",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Advanced Python proficiency, including OOP, clean code, and unit testing",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Python tingkat mahir — OOP, clean code, unit testing"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Experience building REST API with FastAPI, Django REST Framework, or Flask",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Experience building REST API with FastAPI, Django REST Framework, or Flask",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "FastAPI",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Django REST Framework",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Flask",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "- Pengalaman membangun REST API dengan FastAPI, Django REST Framework, atau Flask"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Mastery of SQL, including query optimization, indexing, and transactions",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Mastery of SQL, including query optimization, indexing, and transactions",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Menguasai SQL dan database relational (PostgreSQL/MySQL) — query optimization, indexing, transaction"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Mastery of relational databases (PostgreSQL/MySQL), including query optimization, indexing, and transactions",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Mastery of relational databases (PostgreSQL/MySQL), including query optimization, indexing, and transactions",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Menguasai SQL dan database relational (PostgreSQL/MySQL) — query optimization, indexing, transaction"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Understanding of authentication and authorization concepts (JWT, OAuth2)",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Understanding of authentication and authorization concepts (JWT, OAuth2)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Memahami konsep authentication & authorization (JWT, OAuth2), API security, dan validasi input"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Understanding of API security",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Understanding of API security",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Memahami konsep authentication & authorization (JWT, OAuth2), API security, dan validasi input"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Understanding of input validation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Understanding of input validation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Memahami konsep authentication & authorization (JWT, OAuth2), API security, dan validasi input"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Experience with third-party API integration or service-to-service integration",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience with third-party API integration or service-to-service integration",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "third-party API integration",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "service-to-service integration",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "- Pengalaman integrasi third-party API / service-to-service integration"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Familiarity with Git workflow",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Familiarity with Git workflow",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Familiar dengan Git workflow dan code review"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Familiarity with code review",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Familiarity with code review",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Familiar dengan Git workflow dan code review"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Experience deploying applications to production environment",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience deploying applications to production environment",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Pengalaman deploy aplikasi ke environment production (Docker menjadi nilai tambah besar)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Docker",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "Docker",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Pengalaman deploy aplikasi ke environment production (Docker menjadi nilai tambah besar)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Minimum S1 degree in Informatics Engineering, Computer Science, Information Systems, or related field",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "Minimum S1 degree in Informatics Engineering, Computer Science, Information Systems, or related field",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "S1 Teknik Informatika",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "S1 Ilmu Komputer",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "S1 Sistem Informasi",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "S1 bidang terkait",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "- Pendidikan min. S1 Teknik Informatika, Ilmu Komputer, Sistem Informasi, atau bidang terkait"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Passive-active English",
+        "kind": "simple",
+        "importance": "required",
+        "field": "language",
+        "normalized_name": "Passive-active English",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Bahasa Inggris pasif-aktif"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Work experience in banking/financial services industry (in-house at bank, fintech, payment gateway, or project for banking clients)",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "other",
+        "normalized_name": "Work experience in banking/financial services industry (in-house at bank, fintech, payment gateway, or project for banking clients)",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "in-house di bank",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "fintech",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "payment gateway",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "project untuk klien perbankan",
+            "field": "other",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "- **Pengalaman kerja di industri banking/financial services** (in-house di bank, fintech, payment gateway, atau project untuk klien perbankan) — is a plus"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Familiarity with banking use cases: core banking integration, payment/transfer flow, transaction reconciliation, loan origination, or KYC/AML process",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Familiarity with banking use cases: core banking integration, payment/transfer flow, transaction reconciliation, loan origination, or KYC/AML process",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "core banking integration",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "payment/transfer flow",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "transaction reconciliation",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "loan origination",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "KYC/AML process",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "- Familiar dengan use case perbankan: core banking integration, payment/transfer flow, transaction reconciliation, loan origination, atau KYC/AML process"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Understanding of customer data sensitivity",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Understanding of customer data sensitivity",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Pemahaman sensitivitas data nasabah, data masking/encryption, audit trail, dan prinsip compliance di industri keuangan (POJK/PDP, PCI-DSS)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Understanding of data masking/encryption",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Understanding of data masking/encryption",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Pemahaman sensitivitas data nasabah, data masking/encryption, audit trail, dan prinsip compliance di industri keuangan (POJK/PDP, PCI-DSS)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Understanding of audit trail",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Understanding of audit trail",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Pemahaman sensitivitas data nasabah, data masking/encryption, audit trail, dan prinsip compliance di industri keuangan (POJK/PDP, PCI-DSS)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Understanding of compliance principles in financial industry (POJK/PDP, PCI-DSS)",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Understanding of compliance principles in financial industry (POJK/PDP, PCI-DSS)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Pemahaman sensitivitas data nasabah, data masking/encryption, audit trail, dan prinsip compliance di industri keuangan (POJK/PDP, PCI-DSS)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Experience with message broker / async processing: Kafka, RabbitMQ, Celery, Redis",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "Experience with message broker / async processing: Kafka, RabbitMQ, Celery, Redis",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Kafka",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "RabbitMQ",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Celery",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Redis",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "- Pengalaman dengan message broker / async processing: Kafka, RabbitMQ, Celery, Redis"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Experience with microservices architecture",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Experience with microservices architecture",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Pengalaman microservices architecture dan API gateway"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U24",
+        "text": "Experience with API gateway",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Experience with API gateway",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Pengalaman microservices architecture dan API gateway"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U25",
+        "text": "Familiarity with CI/CD (GitLab CI, Jenkins, GitHub Actions)",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Familiarity with CI/CD (GitLab CI, Jenkins, GitHub Actions)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Familiar CI/CD (GitLab CI, Jenkins, GitHub Actions) dan monitoring/logging (Prometheus, Grafana, ELK)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U26",
+        "text": "Familiarity with monitoring/logging (Prometheus, Grafana, ELK)",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Familiarity with monitoring/logging (Prometheus, Grafana, ELK)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Familiar CI/CD (GitLab CI, Jenkins, GitHub Actions) dan monitoring/logging (Prometheus, Grafana, ELK)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U27",
+        "text": "Familiarity with cloud platform: AWS, GCP, or Azure",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "Familiarity with cloud platform: AWS, GCP, or Azure",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "AWS",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "GCP",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Azure",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "- Familiar cloud platform: AWS, GCP, atau Azure"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U28",
+        "text": "Experience with NoSQL (MongoDB)",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "Experience with NoSQL (MongoDB)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Pengalaman NoSQL (MongoDB) dan caching strategy"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U29",
+        "text": "Experience with caching strategy",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Experience with caching strategy",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Pengalaman NoSQL (MongoDB) dan caching strategy"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U30",
+        "text": "Open-source contribution or GitHub portfolio",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "other",
+        "normalized_name": "Open-source contribution or GitHub portfolio",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "open-source contribution",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "portfolio GitHub",
+            "field": "other",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "- Kontribusi open-source atau portfolio GitHub"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U31",
+        "text": "Certification related to cloud/backend development",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "certification",
+        "normalized_name": "Certification related to cloud/backend development",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "- Sertifikasi terkait cloud/backend development"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

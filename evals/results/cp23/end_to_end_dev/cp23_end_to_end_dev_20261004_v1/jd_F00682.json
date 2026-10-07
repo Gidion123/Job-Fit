@@ -1,0 +1,683 @@
+{
+  "job_id": "F00682",
+  "status": "done",
+  "attempts": 2,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "13340007c37682dbbd250e74cbc3e9b403bf9419cc101f972513df020f9b90a7",
+  "wall_ms": 67785,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 15,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 15,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02",
+          "U03"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U04"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U05",
+          "U06",
+          "U07"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U08"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U09",
+          "U10",
+          "U11"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U12",
+          "U13",
+          "U14"
+        ]
+      },
+      {
+        "source_id": "Q08",
+        "unit_ids": [
+          "U15",
+          "U16"
+        ]
+      },
+      {
+        "source_id": "Q09",
+        "unit_ids": [
+          "U17",
+          "U18"
+        ]
+      },
+      {
+        "source_id": "Q10",
+        "unit_ids": [
+          "U19"
+        ]
+      },
+      {
+        "source_id": "Q11",
+        "unit_ids": [
+          "U20",
+          "U21"
+        ]
+      },
+      {
+        "source_id": "Q12",
+        "unit_ids": [
+          "U22",
+          "U23"
+        ]
+      },
+      {
+        "source_id": "Q13",
+        "unit_ids": [
+          "U24"
+        ]
+      },
+      {
+        "source_id": "Q14",
+        "unit_ids": [
+          "U25"
+        ]
+      },
+      {
+        "source_id": "Q15",
+        "unit_ids": [
+          "U26"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00682",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "2+ years of experience as an AI Engineer, Machine Learning Engineer, or similar role.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "2+ years of experience as an AI Engineer, Machine Learning Engineer, or similar role.",
+        "min_years": 2.0,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "2+ years of experience as an AI Engineer",
+            "field": "experience_duration",
+            "min_years": 2.0
+          },
+          {
+            "branch_id": "B2",
+            "text": "2+ years of experience as a Machine Learning Engineer",
+            "field": "experience_duration",
+            "min_years": 2.0
+          },
+          {
+            "branch_id": "B3",
+            "text": "2+ years of experience in a similar role",
+            "field": "experience_duration",
+            "min_years": 2.0
+          }
+        ],
+        "source_quotes": [
+          "2+ years of experience as an AI Engineer, Machine Learning Engineer, or similar role."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Strong experience with Python.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong experience with Python and AI/ML libraries such as TensorFlow, PyTorch, Scikit-learn, or LangChain."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Strong experience with AI/ML libraries such as TensorFlow, PyTorch, Scikit-learn, or LangChain.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "AI/ML libraries such as TensorFlow, PyTorch, Scikit-learn, or LangChain",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Strong experience with the AI/ML library TensorFlow",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Strong experience with the AI/ML library PyTorch",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Strong experience with the AI/ML library Scikit-learn",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Strong experience with the AI/ML library LangChain",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Strong experience with Python and AI/ML libraries such as TensorFlow, PyTorch, Scikit-learn, or LangChain."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Experience working with LLMs, generative AI, prompt engineering, or AI agents.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "LLMs, generative AI, prompt engineering, or AI agents",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience working with LLMs",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience working with generative AI",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Experience working with prompt engineering",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Experience working with AI agents",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience working with LLMs, generative AI, prompt engineering, or AI agents."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Familiarity with vector databases.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "vector databases",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with vector databases, embeddings, and retrieval-augmented generation (RAG)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Familiarity with embeddings.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "embeddings",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with vector databases, embeddings, and retrieval-augmented generation (RAG)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Familiarity with retrieval-augmented generation (RAG).",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "retrieval-augmented generation (RAG)",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with vector databases, embeddings, and retrieval-augmented generation (RAG)."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Experience deploying models using cloud platforms like AWS, Azure, or Google Cloud.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "deploying models using cloud platforms like AWS, Azure, or Google Cloud",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience deploying models using the cloud platform AWS",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience deploying models using the cloud platform Azure",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Experience deploying models using the cloud platform Google Cloud",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience deploying models using cloud platforms like AWS, Azure, or Google Cloud."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Understanding of APIs.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "APIs",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Understanding of APIs, microservices, and backend development."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Understanding of microservices.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "microservices",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Understanding of APIs, microservices, and backend development."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Understanding of backend development.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "backend development",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Understanding of APIs, microservices, and backend development."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Experience with Docker.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Docker",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with Docker, Git, and CI/CD workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Experience with Git.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Git",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with Docker, Git, and CI/CD workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Experience with CI/CD workflows.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "CI/CD workflows",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with Docker, Git, and CI/CD workflows."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Strong analytical skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "analytical skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong analytical and problem-solving skills."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Strong problem-solving skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "problem-solving skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong analytical and problem-solving skills."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Excellent communication skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "communication skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Excellent communication skills and ability to work remotely with global teams."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Ability to work remotely with global teams.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "ability to work remotely with global teams",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Excellent communication skills and ability to work remotely with global teams."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Bachelor's degree in Computer Science, AI, Data Science, or related field preferred.",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "education",
+        "normalized_name": "Bachelor's degree in Computer Science, AI, Data Science, or related field",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Bachelor's degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Bachelor's degree in AI",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Bachelor's degree in Data Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Bachelor's degree in a related field",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Bachelor's degree in Computer Science, AI, Data Science, or related field preferred."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Experience with AI automation tools.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "AI automation tools",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with AI automation tools and agent frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Experience with agent frameworks.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "agent frameworks",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience with AI automation tools and agent frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Knowledge of MLOps.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "MLOps",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of MLOps and model monitoring tools."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Knowledge of model monitoring tools.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "model monitoring tools",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of MLOps and model monitoring tools."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U24",
+        "text": "Familiarity with NLP, computer vision, or recommendation systems.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "NLP, computer vision, or recommendation systems",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Familiarity with NLP",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Familiarity with computer vision",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Familiarity with recommendation systems",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Familiarity with NLP, computer vision, or recommendation systems."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U25",
+        "text": "Experience building AI SaaS products or chatbots.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "building AI SaaS products or chatbots",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience building AI SaaS products",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience building chatbots",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience building AI SaaS products or chatbots."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U26",
+        "text": "Exposure to FastAPI, Node.js, or React-based applications.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "FastAPI, Node.js, or React-based applications",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Exposure to FastAPI",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Exposure to Node.js",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Exposure to React-based applications",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Exposure to FastAPI, Node.js, or React-based applications."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "run_id": "cp23_pipeline_v11_20261004_v1",
+  "cases": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00022",
+      "status": "done",
+      "H2_status": "on_hold"
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00126",
+      "status": "done",
+      "H2_status": "on_hold"
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00310",
+      "status": "held_extraction",
+      "H2_status": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00310",
+      "status": "held_extraction",
+      "H2_status": null
+    }
+  ],
+  "aggregate_accounted_usd": 0.6281001646000001
+}

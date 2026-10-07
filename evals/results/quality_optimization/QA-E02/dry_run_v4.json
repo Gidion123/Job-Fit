@@ -1,0 +1,132 @@
+{
+ "created_at": "2026-10-07T08:42:06+00:00",
+ "plan": {
+  "experiment_id": "QA-E02",
+  "requires_evaluated": [
+   "QA-E01"
+  ],
+  "approved": true,
+  "staged": true,
+  "hypothesis": "QA-H02",
+  "parent": "QA-E00-FI-R1",
+  "prompt": "prompts/evidence_matching_v1_2_qa_e02.md",
+  "subsets": [
+   "optimization"
+  ],
+  "ranking": false,
+  "replicate_of": null,
+  "purpose": "Direct-evidence check against overclaiming.",
+  "stage": "A",
+  "prompt_record": {
+   "prompt_file": "prompts/evidence_matching_v1_2_qa_e02.md",
+   "prompt_sha256": "d2b362a267e18a1f1e92a27177f5f728732a89e206aa65932dc58cd13a34065e",
+   "experiment_id": "QA-E02",
+   "parent_prompt": "prompts/evidence_matching_v1_1.md",
+   "parent_prompt_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+   "prompt_version": "evidence-prompt-v1.2-qa-e02",
+   "hypothesis": "QA-H02",
+   "created_at": "2026-10-07",
+   "intended_change": "Direct-evidence check against overclaiming (guideline B3, B4): the quote must show the required item itself, not a neighbouring activity, umbrella or related tool; soft skills need a sentence that shows the behaviour.",
+   "change_scope": "v1.1 text kept word for word (title line renamed); one paragraph added at the end"
+  },
+  "fixed_input_pairs": [
+   [
+    "CV1",
+    "F00021"
+   ],
+   [
+    "CV1",
+    "F00029"
+   ],
+   [
+    "CV1",
+    "F00052"
+   ],
+   [
+    "CV1",
+    "F00059"
+   ],
+   [
+    "CV1",
+    "F00187"
+   ],
+   [
+    "CV1",
+    "F00351"
+   ],
+   [
+    "CV1",
+    "F00610"
+   ],
+   [
+    "CV1",
+    "F00690"
+   ],
+   [
+    "CV1",
+    "F00806"
+   ],
+   [
+    "CV1",
+    "F00818"
+   ],
+   [
+    "CV2",
+    "F00059"
+   ],
+   [
+    "CV2",
+    "F00082"
+   ],
+   [
+    "CV2",
+    "F00108"
+   ],
+   [
+    "CV2",
+    "F00332"
+   ],
+   [
+    "CV2",
+    "F00343"
+   ],
+   [
+    "CV2",
+    "F00442"
+   ],
+   [
+    "CV2",
+    "F00554"
+   ],
+   [
+    "CV2",
+    "F00558"
+   ],
+   [
+    "CV2",
+    "F00645"
+   ],
+   [
+    "CV2",
+    "F00682"
+   ]
+  ],
+  "ranking_pairs": [],
+  "calls": 20,
+  "split_sha256": "8a6c9e73dcae31d90e88ef6b27f2054e4a396e684a269f9a415613e8d88403a8",
+  "run_id": "qa_phase_a_w1_qa-e02"
+ },
+ "estimate": {
+  "observed_sol_calls": 169,
+  "median_cost_per_call": 0.027435,
+  "p90_cost_per_call": 0.037686,
+  "prompt_input_factor": 1.0204,
+  "estimate_usd": 0.5599,
+  "upper_estimate_usd": 0.7691,
+  "wave1_cap_usd": 7.5,
+  "wave1_spent_usd": 1.869984,
+  "ledger_total_usd": 10.02337,
+  "project_hard_stop_usd": 18.5
+ },
+ "api_calls": 0
+}

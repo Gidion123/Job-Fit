@@ -1,0 +1,13 @@
+{
+  "job_id": "gemini-3.5-flash-lite/F00354",
+  "result_sha256": "62b06c9b78ded1416928b2d9e54be0ab2227c2e955edd849f033fa4083cce845",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "fail",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "fail"
+  },
+  "notes": "All ten qualification bullets reviewed against 29 logical references and 38 outputs. Source education OR is turned into eight independent required-degree units U01-U08. Four reviewed named-library requirements are collapsed into one OR group U14 with invented or wording. The uns softened later bullets (genetic algorithms through LLM/agent/cloud interest) are preferred in U22-U38 although the source contains no preferred heading/softener there and reviewed importance is required. The one interest soft-skill becomes six technical/tool units; generic experiment-tracking/cloud/container and documentation types conflict with Rule3/reference, and validation loses time-series scope. Exact quotes pass but source grouping/importance and denominator meaning do not. No silent gold correction or candidate F1.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

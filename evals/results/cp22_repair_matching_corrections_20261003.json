@@ -1,0 +1,25 @@
+{
+  "job_id": "CV1_F00332_match",
+  "result_sha256": "54bbe20b687a8e68e239394b1560c170be1d3ce5b1b06d20e31c7bc31fe29894",
+  "checked_by": "delegated source reviewer",
+  "review_kind": "operational semantic repair, not human gold approval",
+  "corrections": [
+    {
+      "unit_ids": [
+        "U15",
+        "U06"
+      ],
+      "source_quote": "- Google Data Analytics Professional Certificate (2025)",
+      "finding": "The CV explicitly lists a completed learning certificate. The prior NO_MATCH decisions ignore relevant evidence of learning. Apply B1/B4: distinguish demonstrated learning from the unproven independence qualifier. Do not assume independent learning from a certificate alone."
+    },
+    {
+      "unit_ids": [
+        "U07"
+      ],
+      "source_quote": "**Prediksi Churn Pelanggan (Skripsi)** \u00b7 2025 - 2026",
+      "supporting_quote": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "finding": "The candidate describes a thesis project and their own model-building activity. Consider this partial source evidence of project ownership rather than claiming no evidence at all; do not infer unsupervised work or full autonomy. Reassess against B1/B4."
+    }
+  ],
+  "preserve": "All 16 extracted units, identities, exact source context and current guideline remain fixed. The actionable-recommendation qualifier is not demonstrated merely by presenting results; preserve uncertainty/partial support rather than inventing an action. Do not force a gold score."
+}

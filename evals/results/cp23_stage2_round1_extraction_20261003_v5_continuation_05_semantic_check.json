@@ -1,0 +1,13 @@
+{
+  "job_id": "deepseek-flash/F00010",
+  "result_sha256": "a21e17c90a250b8c9702439aba302564a89c04b2763fa674b18a6f782e48a2a3",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "pass",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "pass"
+  },
+  "notes": "Delegated full-source QA: all seven qualification bullets and nine reviewed logical obligations have model units; every source quote is exact, the three role branches each retain the eight-year professional minimum, and required/preferred statuses are appropriate. Yet U04's TensorFlow/PyTorch/scikit-learn branches do not each retain the source's 'strong proficiency in common ML frameworks' qualifier, and U05's AWS/GCP/Azure branches omit 'familiarity with deploying ML models in cloud environments'. U08 is a simple list of Copilot/Cursor/Warp rather than the reviewed one-of alternative group. These structural losses can alter evidence assessment despite the same unit count. Record a semantic failure, no automatic one-to-one TP, gold change, F1 or winner; continue under approved v5 policy.",
+  "checked_by": "delegated_Codex2_source_semantic_QA_2026-10-03"
+}

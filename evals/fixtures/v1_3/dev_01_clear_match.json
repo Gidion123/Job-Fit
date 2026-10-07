@@ -1,0 +1,116 @@
+{
+  "fixture_id": "dev_01_clear_match",
+  "synthetic": true,
+  "note": "Synthetic development fixture for the deterministic rules. Hand-written, not model output. Not part of the test set.",
+  "analysis_date": "2026-09-29",
+  "cv_parse_status": "ok",
+  "case": "Clear match: 3 MATCH and 1 PARTIAL (skill only in the skills list).",
+  "extraction": {
+    "job_id": "FIX-01",
+    "units": [
+      {
+        "unit_id": "u1",
+        "text": "Python",
+        "importance": "required",
+        "field": "skill_tool",
+        "source_quotes": [
+          "Python"
+        ]
+      },
+      {
+        "unit_id": "u2",
+        "text": "SQL",
+        "importance": "required",
+        "field": "skill_tool",
+        "source_quotes": [
+          "SQL"
+        ]
+      },
+      {
+        "unit_id": "u3",
+        "text": "Machine learning model development",
+        "importance": "required",
+        "field": "knowledge_area",
+        "source_quotes": [
+          "Machine learning model development"
+        ]
+      },
+      {
+        "unit_id": "u4",
+        "text": "Docker",
+        "importance": "required",
+        "field": "skill_tool",
+        "source_quotes": [
+          "Docker"
+        ]
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "unit_id": "u1",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Built churn model in Python (pandas, scikit-learn)"
+      ]
+    },
+    {
+      "unit_id": "u2",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Wrote SQL queries for weekly sales dashboard"
+      ]
+    },
+    {
+      "unit_id": "u3",
+      "label": "MATCH",
+      "check_status": "done",
+      "cv_quotes": [
+        "Trained and evaluated a churn classification model"
+      ]
+    },
+    {
+      "unit_id": "u4",
+      "label": "PARTIAL",
+      "check_status": "done",
+      "cv_quotes": [
+        "Skills: Python, SQL, Docker"
+      ]
+    }
+  ],
+  "experience": {
+    "min_years": 1,
+    "cv_entries": [
+      {
+        "title": "Data Science Intern",
+        "start": "2025-02-01",
+        "end": "2026-04-30"
+      }
+    ]
+  },
+  "expected": {
+    "score_pct": 87.5,
+    "status": "final",
+    "required_total": 4,
+    "matched": 3,
+    "partial": 1,
+    "met_display": "3.5 of 4 required requirements",
+    "constraint_state": "compatible"
+  },
+  "fixture_version": "v1.3-r1",
+  "guideline_version": "v1.3",
+  "revision": {
+    "source_file": "evals/fixtures/dev_01_clear_match.json",
+    "source_sha256": "9145f48a5b6e5d32302dde534c9188fe0de5eff5aeb8f6f4f02e1d669cafc7e8",
+    "reason": "Add explicit required heading and relevant employment scope; retain list-only PARTIAL.",
+    "scope": "Synthetic fixture revision only; no real JD/CV or approved label edited",
+    "review_kind": "delegated technical and semantic examination under user instruction",
+    "human_independent_approval": false
+  },
+  "synthetic_jd_context": "Required qualifications:\nPython\nSQL\nMachine learning model development\nDocker",
+  "synthetic_cv_context": "Built churn model in Python (pandas, scikit-learn)\nWrote SQL queries for weekly sales dashboard\nTrained and evaluated a churn classification model\nSkills: Python, SQL, Docker",
+  "scope_statement": "The supplied internship used Python/SQL for data science during its entire Feb2025–Apr2026 interval; one-year relevant employment comparison is an explicit fixture input.",
+  "semantic_review_status": "delegated_checked"
+}

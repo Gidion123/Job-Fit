@@ -1,0 +1,21 @@
+# Fixed development reference date. Uploaded CV metadata never overrides it.
+analysis_date: '2026-09-30'
+model: deepseek-flash
+extraction_model: deepseek-flash
+matching_model: deepseek-flash
+schema_version: cv-v1.1-precision
+guideline_version: v1.3
+guideline_file: evals/annotation_guideline_v1_3.md
+jd_prompt_file: prompts/jd_extraction_v1_4_experimental.md
+jd_prompt_version: jd-prompt-v1.4-experimental
+jd_extraction_contract: qualification-inventory-v1
+evidence_prompt_file: prompts/evidence_matching_v1_1.md
+evidence_prompt_version: evidence-prompt-v1.1
+evidence_validator: quote-check-v1.1
+evidence_guardrails: [G1, G2]
+stage1_method: hybrid_fts_dense_rrf
+embedding_model: qwen3-embedding-8b
+stage1_k: 20
+partial_weight: 0.5
+freeze_status: provisional_development_D068
+# D-068: model choice is approved; K and PARTIAL weight await Part B.

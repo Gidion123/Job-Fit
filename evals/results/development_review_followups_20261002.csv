@@ -1,0 +1,13 @@
+severity,sheet,excel_row,job_id,cv_id,unit_no,code,detail
+blocking,A_Extraction,47,F00074,,D2-U08,missing_review_note,Edited/rejected row needs reason
+blocking,A_Extraction,134,F00010,,P02-U05,missing_review_note,Edited/rejected row needs reason
+blocking,A_Extraction,149,F00018,,P04-U11,missing_review_note,Edited/rejected row needs reason
+blocking,A_Extraction,162,F00020,,P05-U01,missing_review_note,Edited/rejected row needs reason
+blocking,A_Extraction,170,F00029,,P07-U01a,missing_review_note,Edited/rejected row needs reason
+blocking,A_Extraction,171,F00029,,P07-U01b,missing_review_note,Edited/rejected row needs reason
+blocking,A_Extraction,198,F00029,,P07-U27,missing_review_note,Edited/rejected row needs reason
+blocking,JDs,,F00369,,,unverified_source_extension,User states completed tail came from a very similar Google posting. Not verified as the original source; original snapshot remains truncated. Exclude this JD from evaluation until source lineage is resolved.
+compatibility,A_Extraction,171,F00029,,P07-U01b,mixed_version_alternative_group,P07-G1 has two branch rows at v1.3 and v1.2. Keep provenance; confirm equivalent-experience meaning and group-level counting before evaluation.
+recheck,B_Evidence,600,F00018,CV2,P04-U18,cloud_dependency_recheck,"After user-approved required-cloud / preferred-AWS separation, verify retained draft and approve only after decision."
+recheck,B_Evidence,1407,F00018,CV2,P04-U18-AWS,cloud_dependency_recheck,"After user-approved required-cloud / preferred-AWS separation, verify retained draft and approve only after decision."
+recheck,C_Relevance,4,F00018,CV2,,cloud_dependency_recheck,"After user-approved required-cloud / preferred-AWS separation, verify retained draft and approve only after decision."

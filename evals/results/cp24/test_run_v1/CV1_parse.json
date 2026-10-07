@@ -1,0 +1,139 @@
+{
+ "cv_id": "CV1",
+ "status": "ok",
+ "masking_counts": {
+  "name": 1,
+  "email": 1,
+  "phone": 1,
+  "profile": 1
+ },
+ "masked_digest": "1205713c32c70159519e887587d3fab06bbd1368c1283b14da80a02b81c3481e",
+ "parsed": {
+  "profile": {
+   "cv_id": "CV1",
+   "is_synthetic": true,
+   "language": "Indonesia (native), Inggris (menengah, TOEFL ITP 540)",
+   "parse_status": "ok",
+   "raw_text": "# [NAME] Aprilia Putri\n\nJakarta Selatan, Indonesia · [EMAIL] · [PHONE] · [PROFILE]\n\n## Ringkasan\n\nLulusan S1 Statistika yang tertarik pada data science dan machine learning. Terbiasa mengolah data dengan Python dan SQL, membuat model prediksi sederhana, dan menyajikan hasil analisis dalam dashboard.\n\n## Pendidikan\n\n**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026\n- IPK 3,62 / 4,00\n- Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\"\n- Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data\n\n## Pengalaman\n\n**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.\n\n**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh · Februari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.\n\n## Proyek\n\n**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.\n\n**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025\n- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.\n\n## Keahlian\n\nPython (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar\n\n## Sertifikasi\n\n- Google Data Analytics Professional Certificate (2025)\n\n## Bahasa\n\nIndonesia (native), Inggris (menengah, TOEFL ITP 540)",
+   "sections": {
+    "Other": "# [NAME] Aprilia Putri\n\nJakarta Selatan, Indonesia · [EMAIL] · [PHONE] · [PROFILE]\nLulusan S1 Statistika yang tertarik pada data science dan machine learning. Terbiasa mengolah data dengan Python dan SQL, membuat model prediksi sederhana, dan menyajikan hasil analisis dalam dashboard.\nIndonesia (native), Inggris (menengah, TOEFL ITP 540)",
+    "Education": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026\n- IPK 3,62 / 4,00\n- Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\"\n- Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data",
+    "Experience": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.\n\n**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh · Februari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+    "Projects": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP.\n\n**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025\n- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes.",
+    "Skills": "Python (pandas, NumPy, scikit-learn, matplotlib), SQL, R, Looker Studio, Excel, Git, statistika inferensial, machine learning dasar",
+    "Certifications": "- Google Data Analytics Professional Certificate (2025)"
+   },
+   "experience": [
+    {
+     "title": "Data Analyst Intern",
+     "organization": "PT Contoh Retail Nusantara",
+     "start": null,
+     "end": null,
+     "is_present": false,
+     "description": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+     "start_partial": {
+      "year": 2026,
+      "month": 2
+     },
+     "end_partial": {
+      "year": 2026,
+      "month": 5
+     },
+     "start_text": "Februari 2026",
+     "end_text": "Mei 2026"
+    },
+    {
+     "title": "Asisten Praktikum Analisis Regresi",
+     "organization": "Universitas Negeri Contoh",
+     "start": null,
+     "end": null,
+     "is_present": false,
+     "description": "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh · Februari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+     "start_partial": {
+      "year": 2025,
+      "month": 2
+     },
+     "end_partial": {
+      "year": 2025,
+      "month": 6
+     },
+     "start_text": "Februari 2025",
+     "end_text": "Juni 2025"
+    }
+   ],
+   "skills_list": [],
+   "confirmed_location": null
+  },
+  "evidence": [
+   {
+    "fact_id": "contact_1",
+    "section": "Other",
+    "quote": "Jakarta Selatan, Indonesia · [EMAIL] · [PHONE] · [PROFILE]"
+   },
+   {
+    "fact_id": "education_1",
+    "section": "Education",
+    "quote": "**S1 Statistika**, Universitas Negeri Contoh, Jakarta · Agustus 2022 - Agustus 2026\n- IPK 3,62 / 4,00\n- Skripsi: \"Prediksi Churn Pelanggan Layanan Internet Menggunakan Regresi Logistik dan Random Forest\"\n- Mata kuliah terkait: Analisis Regresi, Data Mining, Statistika Bayesian, Basis Data"
+   },
+   {
+    "fact_id": "employment_1",
+    "section": "Experience",
+    "quote": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi."
+   },
+   {
+    "fact_id": "employment_2",
+    "section": "Experience",
+    "quote": "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh · Februari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R."
+   },
+   {
+    "fact_id": "project_1",
+    "section": "Projects",
+    "quote": "**Prediksi Churn Pelanggan (Skripsi)** · 2025 - 2026\n- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.\n- Menangani data tidak seimbang dengan SMOTE dan menjelaskan fitur penting dengan SHAP."
+   },
+   {
+    "fact_id": "project_2",
+    "section": "Projects",
+    "quote": "**Analisis Sentimen Ulasan Aplikasi** · Oktober 2025\n- Mengumpulkan 5.000 ulasan berbahasa Indonesia dan mengklasifikasikan sentimen dengan TF-IDF dan Naive Bayes."
+   },
+   {
+    "fact_id": "certification_1",
+    "section": "Certifications",
+    "quote": "- Google Data Analytics Professional Certificate (2025)"
+   },
+   {
+    "fact_id": "language_1",
+    "section": "Other",
+    "quote": "Indonesia (native), Inggris (menengah, TOEFL ITP 540)"
+   }
+  ],
+  "source_work": [
+   {
+    "title": "Data Analyst Intern",
+    "organization": "PT Contoh Retail Nusantara",
+    "source_quote": "**Data Analyst Intern**, PT Contoh Retail Nusantara, Jakarta · Februari 2026 - Mei 2026 (4 bulan)\n- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).\n- Membuat dashboard penjualan mingguan di Looker Studio untuk tim marketing.\n- Melakukan analisis cohort retensi pelanggan dan mempresentasikan hasilnya ke manajer divisi.",
+    "start_text": "Februari 2026",
+    "end_text": "Mei 2026",
+    "is_present": false
+   },
+   {
+    "title": "Asisten Praktikum Analisis Regresi",
+    "organization": "Universitas Negeri Contoh",
+    "source_quote": "**Asisten Praktikum Analisis Regresi**, Universitas Negeri Contoh · Februari 2025 - Juni 2025\n- Membimbing 40 mahasiswa dalam praktikum regresi menggunakan R.",
+    "start_text": "Februari 2025",
+    "end_text": "Juni 2025",
+    "is_present": false
+   }
+  ],
+  "location_suggestion": "Jakarta Selatan, Indonesia",
+  "analysis_date": "2026-09-30",
+  "schema_version": "cv-v1.1-precision",
+  "warnings": [
+   "Check that employment, projects, education, dates and skills match the source before analysis."
+  ],
+  "attempts": 2,
+  "review_required": true
+ },
+ "attempts": 2,
+ "reused_from": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/CV1_parse.json",
+ "reused_sha256": "d5e8f3f1b834286269f39f5027ad9bd0a8a4f39955ee646b420a7615547c11c4"
+}

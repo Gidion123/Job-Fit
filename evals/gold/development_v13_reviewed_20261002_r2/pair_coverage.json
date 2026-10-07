@@ -1,0 +1,721 @@
+[
+  {
+    "cv_id": "CV1",
+    "job_id": "F00012",
+    "expected_retained_units": 22,
+    "ready_evidence_rows": 21,
+    "missing_or_held_units": [
+      "D3-U12"
+    ],
+    "complete_existing_reviewed_units": false,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00020",
+    "expected_retained_units": 8,
+    "ready_evidence_rows": 8,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00022",
+    "expected_retained_units": 21,
+    "ready_evidence_rows": 14,
+    "missing_or_held_units": [
+      "J1-U04",
+      "J1-U05",
+      "J1-U06",
+      "J1-U07",
+      "J1-U08",
+      "J1-U20",
+      "J1-U21"
+    ],
+    "complete_existing_reviewed_units": false,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00036",
+    "expected_retained_units": 17,
+    "ready_evidence_rows": 17,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00055",
+    "expected_retained_units": 21,
+    "ready_evidence_rows": 21,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00074",
+    "expected_retained_units": 25,
+    "ready_evidence_rows": 24,
+    "missing_or_held_units": [
+      "D2-U20"
+    ],
+    "complete_existing_reviewed_units": false,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00075",
+    "expected_retained_units": 13,
+    "ready_evidence_rows": 13,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00090",
+    "expected_retained_units": 35,
+    "ready_evidence_rows": 35,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00103",
+    "expected_retained_units": 38,
+    "ready_evidence_rows": 37,
+    "missing_or_held_units": [
+      "D1-U27"
+    ],
+    "complete_existing_reviewed_units": false,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00188",
+    "expected_retained_units": 13,
+    "ready_evidence_rows": 13,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00189",
+    "expected_retained_units": 22,
+    "ready_evidence_rows": 22,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00208",
+    "expected_retained_units": 38,
+    "ready_evidence_rows": 38,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00212",
+    "expected_retained_units": 20,
+    "ready_evidence_rows": 20,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00309",
+    "expected_retained_units": 9,
+    "ready_evidence_rows": 9,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00310",
+    "expected_retained_units": 68,
+    "ready_evidence_rows": 68,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00330",
+    "expected_retained_units": 8,
+    "ready_evidence_rows": 8,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00332",
+    "expected_retained_units": 16,
+    "ready_evidence_rows": 16,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00333",
+    "expected_retained_units": 23,
+    "ready_evidence_rows": 23,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00354",
+    "expected_retained_units": 29,
+    "ready_evidence_rows": 29,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00366",
+    "expected_retained_units": 13,
+    "ready_evidence_rows": 13,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00369",
+    "expected_retained_units": 24,
+    "ready_evidence_rows": 0,
+    "missing_or_held_units": [
+      "P35-U01",
+      "P35-U02",
+      "P35-U03",
+      "P35-U04",
+      "P35-U05",
+      "P35-U06",
+      "P35-U07",
+      "P35-U08",
+      "P35-U09",
+      "P35-U10",
+      "P35-U11",
+      "P35-U12",
+      "P35-U13",
+      "P35-U14",
+      "P35-U15",
+      "P35-U16",
+      "P35-U17",
+      "P35-U18",
+      "P35-U19",
+      "P35-U20",
+      "P35-U21",
+      "P35-U22",
+      "P35-U23",
+      "P35-U24"
+    ],
+    "complete_existing_reviewed_units": false,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00438",
+    "expected_retained_units": 17,
+    "ready_evidence_rows": 17,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00505",
+    "expected_retained_units": 10,
+    "ready_evidence_rows": 10,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00515",
+    "expected_retained_units": 6,
+    "ready_evidence_rows": 6,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00556",
+    "expected_retained_units": 18,
+    "ready_evidence_rows": 18,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00601",
+    "expected_retained_units": 21,
+    "ready_evidence_rows": 21,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00654",
+    "expected_retained_units": 10,
+    "ready_evidence_rows": 10,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00655",
+    "expected_retained_units": 19,
+    "ready_evidence_rows": 19,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00663",
+    "expected_retained_units": 20,
+    "ready_evidence_rows": 20,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00686",
+    "expected_retained_units": 12,
+    "ready_evidence_rows": 12,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV1",
+    "job_id": "F00930",
+    "expected_retained_units": 3,
+    "ready_evidence_rows": 3,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00003",
+    "expected_retained_units": 6,
+    "ready_evidence_rows": 6,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00010",
+    "expected_retained_units": 9,
+    "ready_evidence_rows": 9,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00012",
+    "expected_retained_units": 22,
+    "ready_evidence_rows": 21,
+    "missing_or_held_units": [
+      "D3-U12"
+    ],
+    "complete_existing_reviewed_units": false,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00018",
+    "expected_retained_units": 24,
+    "ready_evidence_rows": 24,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00020",
+    "expected_retained_units": 8,
+    "ready_evidence_rows": 8,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00029",
+    "expected_retained_units": 29,
+    "ready_evidence_rows": 29,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00034",
+    "expected_retained_units": 16,
+    "ready_evidence_rows": 15,
+    "missing_or_held_units": [
+      "J3-U11"
+    ],
+    "complete_existing_reviewed_units": false,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00052",
+    "expected_retained_units": 28,
+    "ready_evidence_rows": 28,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00055",
+    "expected_retained_units": 21,
+    "ready_evidence_rows": 21,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00066",
+    "expected_retained_units": 16,
+    "ready_evidence_rows": 16,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00073",
+    "expected_retained_units": 13,
+    "ready_evidence_rows": 13,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00074",
+    "expected_retained_units": 25,
+    "ready_evidence_rows": 24,
+    "missing_or_held_units": [
+      "D2-U20"
+    ],
+    "complete_existing_reviewed_units": false,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00103",
+    "expected_retained_units": 38,
+    "ready_evidence_rows": 37,
+    "missing_or_held_units": [
+      "D1-U27"
+    ],
+    "complete_existing_reviewed_units": false,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00114",
+    "expected_retained_units": 17,
+    "ready_evidence_rows": 16,
+    "missing_or_held_units": [
+      "J5-U03"
+    ],
+    "complete_existing_reviewed_units": false,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00117",
+    "expected_retained_units": 23,
+    "ready_evidence_rows": 23,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00126",
+    "expected_retained_units": 4,
+    "ready_evidence_rows": 4,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00176",
+    "expected_retained_units": 32,
+    "ready_evidence_rows": 32,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00208",
+    "expected_retained_units": 38,
+    "ready_evidence_rows": 38,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00303",
+    "expected_retained_units": 18,
+    "ready_evidence_rows": 18,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00310",
+    "expected_retained_units": 68,
+    "ready_evidence_rows": 68,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00327",
+    "expected_retained_units": 16,
+    "ready_evidence_rows": 16,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00330",
+    "expected_retained_units": 8,
+    "ready_evidence_rows": 8,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00333",
+    "expected_retained_units": 23,
+    "ready_evidence_rows": 23,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00412",
+    "expected_retained_units": 31,
+    "ready_evidence_rows": 31,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00438",
+    "expected_retained_units": 17,
+    "ready_evidence_rows": 17,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00463",
+    "expected_retained_units": 17,
+    "ready_evidence_rows": 17,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00601",
+    "expected_retained_units": 21,
+    "ready_evidence_rows": 21,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00624",
+    "expected_retained_units": 35,
+    "ready_evidence_rows": 35,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00650",
+    "expected_retained_units": 21,
+    "ready_evidence_rows": 21,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00663",
+    "expected_retained_units": 20,
+    "ready_evidence_rows": 20,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00666",
+    "expected_retained_units": 15,
+    "ready_evidence_rows": 15,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00686",
+    "expected_retained_units": 12,
+    "ready_evidence_rows": 12,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00698",
+    "expected_retained_units": 28,
+    "ready_evidence_rows": 28,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00798",
+    "expected_retained_units": 39,
+    "ready_evidence_rows": 39,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00815",
+    "expected_retained_units": 16,
+    "ready_evidence_rows": 16,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  },
+  {
+    "cv_id": "CV2",
+    "job_id": "F00933",
+    "expected_retained_units": 10,
+    "ready_evidence_rows": 10,
+    "missing_or_held_units": [],
+    "complete_existing_reviewed_units": true,
+    "whole_pair_metric_eligible": false,
+    "reason": "Source completeness/alignment is a separate metric gate"
+  }
+]

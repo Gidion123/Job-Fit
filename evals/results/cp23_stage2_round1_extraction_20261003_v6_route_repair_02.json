@@ -1,0 +1,468 @@
+{
+  "job_id": "gpt-6-luna/F00036",
+  "source_job_id": "F00036",
+  "model": "gpt-6-luna",
+  "model_id": "openai/gpt-6-luna",
+  "plan_sha256": "023bf2ba3f9ad0dac975b39173a5ba543d09584216573acbba51bb616a152a1a",
+  "source_sha256": "831248e3faf86e60196bb7d56ce63270d790903be72c185c746c1f20faf19b7d",
+  "prompt_version": "jd-prompt-v1.4-experimental",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "extraction": {
+    "job_id": "F00036",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Work full-time in Bandung, West Java.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "location",
+        "normalized_name": "Bandung, West Java",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Anda akan bekerja secara penuh waktu di Bandung, Jawa Barat, dengan kesempatan untuk berkolaborasi dengan berbagai departemen dalam organisasi kami."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Understanding of data analytics.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "data analytics",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Posisi ini memerlukan pemahaman mendalam tentang analitik data, machine learning, dan pemodelan statistik."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Strong understanding of supervised learning.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "supervised learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Posisi ini memerlukan pemahaman mendalam tentang analitik data, machine learning, dan pemodelan statistik.",
+          "Pemahaman kuat tentang konsep machine learning, termasuk supervised learning, unsupervised learning, dan deep learning."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Strong understanding of unsupervised learning.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "unsupervised learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Posisi ini memerlukan pemahaman mendalam tentang analitik data, machine learning, dan pemodelan statistik.",
+          "Pemahaman kuat tentang konsep machine learning, termasuk supervised learning, unsupervised learning, dan deep learning."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Strong understanding of deep learning.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "deep learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Posisi ini memerlukan pemahaman mendalam tentang analitik data, machine learning, dan pemodelan statistik.",
+          "Pemahaman kuat tentang konsep machine learning, termasuk supervised learning, unsupervised learning, dan deep learning."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Understanding of statistical modeling.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "statistical modeling",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Posisi ini memerlukan pemahaman mendalam tentang analitik data, machine learning, dan pemodelan statistik."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Bachelor's degree (S1) in one of the listed fields.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "U07-A",
+            "text": "Bachelor's degree (S1) in Statistics.",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "U07-B",
+            "text": "Bachelor's degree (S1) in Mathematics.",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "U07-C",
+            "text": "Bachelor's degree (S1) in Computer Science.",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "U07-D",
+            "text": "Bachelor's degree (S1) in Information Engineering.",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "U07-E",
+            "text": "Bachelor's degree (S1) in Data Science.",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Pendidikan minimal S1 Statistika, Matematika, Ilmu Komputer, Teknik Informatika, Data Science"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "At least 2–3 years of professional experience as a Data Scientist or in a similar position.",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "professional experience as a Data Scientist or similar position",
+        "min_years": 2.0,
+        "branches": [],
+        "source_quotes": [
+          "Minimal 2-3 tahun pengalaman profesional sebagai Data Scientist atau posisi sejenisnya."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Ability to manipulate and analyze data using one of the listed programming languages.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "U09-A",
+            "text": "Use Python for data manipulation and analysis.",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U09-B",
+            "text": "Use R for data manipulation and analysis.",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U09-C",
+            "text": "Use SQL for data manipulation and analysis.",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Keahlian dalam bahasa pemrograman seperti Python, R, atau SQL untuk manipulasi dan analisis data."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Experience using one of the listed tools or libraries.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "U10-A",
+            "text": "Experience using Pandas.",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U10-B",
+            "text": "Experience using Scikit-learn.",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U10-C",
+            "text": "Experience using TensorFlow.",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U10-D",
+            "text": "Experience using PyTorch.",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Pengalaman dalam menggunakan tools dan library populer seperti Pandas, Scikit-learn, TensorFlow, atau PyTorch."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Ability to perform exploratory data analysis using one of the listed tools.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "U11-A",
+            "text": "Perform exploratory data analysis using Tableau.",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U11-B",
+            "text": "Perform exploratory data analysis using Power BI.",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U11-C",
+            "text": "Perform exploratory data analysis using Matplotlib.",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Kemampuan untuk melakukan exploratory data analysis dan data visualization menggunakan tools seperti Tableau, Power BI, atau Matplotlib."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Ability to perform data visualization using one of the listed tools.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "U12-A",
+            "text": "Perform data visualization using Tableau.",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U12-B",
+            "text": "Perform data visualization using Power BI.",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U12-C",
+            "text": "Perform data visualization using Matplotlib.",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Kemampuan untuk melakukan exploratory data analysis dan data visualization menggunakan tools seperti Tableau, Power BI, atau Matplotlib."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Understanding of descriptive statistics.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "descriptive statistics",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pemahaman solid tentang statistik deskriptif dan inferensial serta metodologi penelitian."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Understanding of inferential statistics.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "inferential statistics",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pemahaman solid tentang statistik deskriptif dan inferensial serta metodologi penelitian."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Understanding of research methodology.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "research methodology",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pemahaman solid tentang statistik deskriptif dan inferensial serta metodologi penelitian."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Good communication skills to explain technical concepts to non-technical stakeholders.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "communication",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Kemampuan komunikasi yang baik untuk menjelaskan konsep teknis kepada stakeholder non-teknis."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Experience with database management.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "database management",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Pengalaman dengan database management dan big data technologies seperti Hadoop, Spark, atau cloud platforms akan menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Experience with one of the listed big data technologies.",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "U18-A",
+            "text": "Experience with Hadoop as a big data technology.",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U18-B",
+            "text": "Experience with Spark as a big data technology.",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "U18-C",
+            "text": "Experience with cloud platforms as big data technologies.",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Pengalaman dengan database management dan big data technologies seperti Hadoop, Spark, atau cloud platforms akan menjadi nilai tambah."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Strong problem-solving ability when working with data.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "problem-solving",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Kemampuan problem-solving yang kuat dan attention to detail dalam bekerja dengan data."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Attention to detail when working with data.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "attention to detail",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Kemampuan problem-solving yang kuat dan attention to detail dalam bekerja dengan data."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/gpt-6-luna"
+  },
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "cache_hit": false,
+  "latency_ms": 50942,
+  "result_sha256": "2b44c795b218bf8916e902ebcde24f5790da541462eee330009f070307e0c774"
+}

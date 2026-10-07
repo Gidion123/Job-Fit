@@ -1,0 +1,13 @@
+{
+  "job_id": "deepseek-flash/F00332",
+  "result_sha256": "809739d5c67c6ae09fb99b6bca9f789fad1863a294878d656f7675caaa806e25",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "fail",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "pass"
+  },
+  "notes": "Delegated source-semantic QA of the full F00332 JD and the reviewed 16-logical-unit reference. Both attempts are ledgered; the final draft has 17 units. All eight qualification inventory entries are mapped and every source quote is exact. Python, SQL and Excel are now independent. However, Q01's source says 'other disciplines will be considered' while its alternative_group branches only encode fresh graduate and a bachelor's degree in an analytical/quantitative discipline; needs_review=true prevents silent scoring but does not represent the considered-other-discipline path as an assessable branch. U14/U15 also split one reviewed large-tabular trend/anomaly obligation, a strict D-054 split/merge relation rather than an automatic TP. Category for SQL-based analyses differs from the reviewed knowledge_area category and needs alignment. Therefore coverage, grouping and qualifier compatibility are not established. Stop before the next JD/model under the frozen quality gate; preserve both paid attempts. This is not a gold amendment or winner claim.",
+  "checked_by": "delegated_Codex2_source_semantic_QA_2026-10-03"
+}

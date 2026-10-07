@@ -1,0 +1,20 @@
+{
+  "decision": "approved",
+  "approved_by": "Dion",
+  "review_date": "2026-10-03",
+  "source": "Dion's explicit reply: Setuju v7 dalam plafon kumulatif US$3,16",
+  "scope": "cp23_stage2_round1_extraction_20261003_v7_remaining_cases",
+  "plan_file": "evals/results/cp23_stage2_round1_extraction_20261003_v7_remaining_cases_preflight.json",
+  "plan_sha256": "888a2cfd1219c6615cf5941c47d20db2fbe40edc5f97018eb14e271c6dbc9192",
+  "aggregate_cap_usd": "3.16",
+  "cap_scope": "cumulative v5 + v6 + v7, not a fresh allocation",
+  "covers": "remaining nine original extraction cases; settled process failures retained with failure receipts before next case",
+  "excludes": [
+    "failed-case retry",
+    "test set",
+    "matching",
+    "reference model",
+    "broad extraction",
+    "configuration selection"
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "run_id": "cp23_stage2_repair_rerun_20261004_v1",
+  "status": "blocked_aggregate_cost_cap",
+  "api_calls": 0,
+  "cap_usd": "0.30",
+  "conservative_upper_usd": "0.6485602",
+  "ledger_before_usd": "1.1735639842",
+  "project_remaining_usd": "7.3264360158",
+  "stages": [
+    {
+      "stage_id": "gemini-3.5-flash-lite/CV1/F00332",
+      "model_id": "google/gemini-3.5-flash-lite",
+      "draft_sha256": "d7962810204dbd9077a7e8816d89929b20d3aa2bc5db699d4beb8d046fe69bd2",
+      "hash_provenance": {
+        "container": "reports/quality_probe/cp23_stage2_fixed_matching_20261003_v1.json",
+        "container_sha256": "df0f435604286300cbaf0a429d78a56a791cbbaaca67d67607225401dc695de4",
+        "receipt": "original quality evaluation hashes bind the complete state including first drafts"
+      },
+      "repair_roles": [
+        "system",
+        "user",
+        "assistant",
+        "user"
+      ],
+      "repair_messages_sha256": "af6c598e9326d917eb5b89bd4a18aaeb3f06aa14fe527f03c069c80d585300d6",
+      "schema_sha256": "1c1bf0396b7ec120ca5cb7b22696104b9711813d6ef2e92a10c00352c305a07a",
+      "first_trigger": "invalid_source_quote",
+      "input_upper": 42528,
+      "output_upper": 16000,
+      "input_per_m": 0.3,
+      "output_per_m": 2.5,
+      "upper_usd": "0.0527584",
+      "status": "replayable_but_budget_blocked"
+    },
+    {
+      "stage_id": "gemini-3.5-flash-lite/CV1/F00036",
+      "model_id": "google/gemini-3.5-flash-lite",
+      "draft_sha256": "5e7e90a5ec2560966cc06d8cc51f96b7625ffe66e19054aced621874f5f4574c",
+      "hash_provenance": {
+        "container": "reports/quality_probe/cp23_stage2_fixed_matching_20261003_v1.json",
+        "container_sha256": "df0f435604286300cbaf0a429d78a56a791cbbaaca67d67607225401dc695de4",
+        "receipt": "original quality evaluation hashes bind the complete state including first drafts"
+      },
+      "repair_roles": [
+        "system",
+        "user",
+        "assistant",
+        "user"
+      ],
+      "repair_messages_sha256": "733dff7d34c0178944790fc8941cd06ccb170435b3dde48cca6f29b616891f31",
+      "schema_sha256": "1c1bf0396b7ec120ca5cb7b22696104b9711813d6ef2e92a10c00352c305a07a",
+      "first_trigger": "group_label_must_be_resolved_by_scorer",
+      "input_upper": 47295,
+      "output_upper": 16000,
+      "input_per_m": 0.3,
+      "output_per_m": 2.5,
+      "upper_usd": "0.0541885",
+      "status": "replayable_but_budget_blocked"
+    },
+    {
+      "stage_id": "gemini-3.5-flash-lite/CV2/F00815",
+      "model_id": "google/gemini-3.5-flash-lite",
+      "draft_sha256": "c7cc369486784b607c53e14abc2c1980419f56e927441d6b2a629e655ef2862b",
+      "hash_provenance": {
+        "container": "reports/quality_probe/cp23_stage2_fixed_matching_20261003_v1.json",
+        "container_sha256": "df0f435604286300cbaf0a429d78a56a791cbbaaca67d67607225401dc695de4",
+        "receipt": "original quality evaluation hashes bind the complete state including first drafts"
+      },
+      "repair_roles": [
+        "system",
+        "user",
+        "assistant",
+        "user"
+      ],
+      "repair_messages_sha256": "9f5822a45699fd2ae1093e45391c5377d9ff9e4acfa0bdd9dad0967c56246c7c",
+      "schema_sha256": "1c1bf0396b7ec120ca5cb7b22696104b9711813d6ef2e92a10c00352c305a07a",
+      "first_trigger": "invalid_source_quote",
+      "input_upper": 45474,
+      "output_upper": 16000,
+      "input_per_m": 0.3,
+      "output_per_m": 2.5,
+      "upper_usd": "0.0536422",
+      "status": "replayable_but_budget_blocked"
+    },
+    {
+      "stage_id": "gemini-3.5-flash-lite/CV2/F00018",
+      "model_id": "google/gemini-3.5-flash-lite",
+      "draft_sha256": "3f3ea23d1db5d494cc038db4f95dbb1c2492078fcc22471fcb2cd088d29947bf",
+      "hash_provenance": {
+        "container": "reports/quality_probe/cp23_stage2_fixed_matching_20261003_v1.json",
+        "container_sha256": "df0f435604286300cbaf0a429d78a56a791cbbaaca67d67607225401dc695de4",
+        "receipt": "original quality evaluation hashes bind the complete state including first drafts"
+      },
+      "repair_roles": [
+        "system",
+        "user",
+        "assistant",
+        "user"
+      ],
+      "repair_messages_sha256": "5e94a1c4888073ee54397edcf287dd8d8b3ab3505dac6e4da2d9989f6744b8fc",
+      "schema_sha256": "1c1bf0396b7ec120ca5cb7b22696104b9711813d6ef2e92a10c00352c305a07a",
+      "first_trigger": "invalid_source_quote",
+      "input_upper": 47870,
+      "output_upper": 16000,
+      "input_per_m": 0.3,
+      "output_per_m": 2.5,
+      "upper_usd": "0.054361",
+      "status": "replayable_but_budget_blocked"
+    },
+    {
+      "stage_id": "claude-haiku-4.5/CV1/F00332",
+      "model_id": "anthropic/claude-haiku-4.5",
+      "draft_sha256": "4da4abee34547e45c6d6ee4a0961bcc2582fac94ea63a53b41137bd8f8179f7d",
+      "hash_provenance": {
+        "container": "reports/quality_probe/cp23_stage2_fixed_matching_20261003_v1.json",
+        "container_sha256": "df0f435604286300cbaf0a429d78a56a791cbbaaca67d67607225401dc695de4",
+        "receipt": "original quality evaluation hashes bind the complete state including first drafts"
+      },
+      "repair_roles": [
+        "system",
+        "user",
+        "assistant",
+        "user"
+      ],
+      "repair_messages_sha256": "80078942f5e4a07ea74edc0fc8227eb328855258c3431988d3f01b58b6613e58",
+      "schema_sha256": "1c1bf0396b7ec120ca5cb7b22696104b9711813d6ef2e92a10c00352c305a07a",
+      "first_trigger": "group_label_must_be_resolved_by_scorer",
+      "input_upper": 43253,
+      "output_upper": 16000,
+      "input_per_m": 1.0,
+      "output_per_m": 5.0,
+      "upper_usd": "0.123253",
+      "status": "replayable_but_budget_blocked"
+    },
+    {
+      "stage_id": "claude-haiku-4.5/CV1/F00036",
+      "model_id": "anthropic/claude-haiku-4.5",
+      "draft_sha256": "aa03730f52b1ac6ac98d835c5bc73052f7cc8d9f0df7ac960e3646df8ff8b78a",
+      "hash_provenance": {
+        "container": "reports/quality_probe/cp23_stage2_fixed_matching_20261003_v1.json",
+        "container_sha256": "df0f435604286300cbaf0a429d78a56a791cbbaaca67d67607225401dc695de4",
+        "receipt": "original quality evaluation hashes bind the complete state including first drafts"
+      },
+      "repair_roles": [
+        "system",
+        "user",
+        "assistant",
+        "user"
+      ],
+      "repair_messages_sha256": "f75c1969e43059237fd5b4e56cfe6b614165d9a7f6dd12d157d82afe9a6df4cc",
+      "schema_sha256": "1c1bf0396b7ec120ca5cb7b22696104b9711813d6ef2e92a10c00352c305a07a",
+      "first_trigger": "group_label_must_be_resolved_by_scorer",
+      "input_upper": 47199,
+      "output_upper": 16000,
+      "input_per_m": 1.0,
+      "output_per_m": 5.0,
+      "upper_usd": "0.127199",
+      "status": "replayable_but_budget_blocked"
+    },
+    {
+      "stage_id": "claude-haiku-4.5/CV2/F00018",
+      "model_id": "anthropic/claude-haiku-4.5",
+      "draft_sha256": "beac21886ce14da9fe79933ec263e16606e8ae19a3b7bbed430120ba31224279",
+      "hash_provenance": {
+        "container": "reports/quality_probe/cp23_stage2_fixed_matching_20261003_v1.json",
+        "container_sha256": "df0f435604286300cbaf0a429d78a56a791cbbaaca67d67607225401dc695de4",
+        "receipt": "original quality evaluation hashes bind the complete state including first drafts"
+      },
+      "repair_roles": [
+        "system",
+        "user",
+        "assistant",
+        "user"
+      ],
+      "repair_messages_sha256": "835c4c19281bebb813f0dc82c4fc71e46216f35689eb2f0c9f2931734cfbafd6",
+      "schema_sha256": "1c1bf0396b7ec120ca5cb7b22696104b9711813d6ef2e92a10c00352c305a07a",
+      "first_trigger": "invalid_structured_output_or_source",
+      "input_upper": 48588,
+      "output_upper": 16000,
+      "input_per_m": 1.0,
+      "output_per_m": 5.0,
+      "upper_usd": "0.128588",
+      "status": "replayable_but_budget_blocked"
+    },
+    {
+      "stage_id": "gemini-3.5-flash-lite/F00815",
+      "model_id": "google/gemini-3.5-flash-lite",
+      "draft_sha256": "70ed77d4ffaa854732f0dfe92224ea99d92cbbc938aeb10d1aab0c48b8259ec4",
+      "hash_provenance": {
+        "container": "reports/quality_probe/cp23_stage2_round1_extraction_20261003_v6_route_repair.json",
+        "container_sha256": "23fd825fd5b72bb035260b9221bb4449f721848c2f5230011055732b2e826229",
+        "recorded_output_sha256": "70ed77d4ffaa854732f0dfe92224ea99d92cbbc938aeb10d1aab0c48b8259ec4"
+      },
+      "repair_roles": [
+        "system",
+        "user",
+        "assistant",
+        "user"
+      ],
+      "repair_messages_sha256": "f1ba701e94f04524953ad2fa0569e569f2c7c96269543a58894afe25612e00b7",
+      "schema_sha256": "841b6190c708f3854cc8fb1b814e0ef05dd35c138a0c866b9e49978b8e7e641a",
+      "first_trigger": "qualification_inventory_unsupported_mapping",
+      "input_upper": 48567,
+      "output_upper": 16000,
+      "input_per_m": 0.3,
+      "output_per_m": 2.5,
+      "upper_usd": "0.0545701",
+      "status": "replayable_but_budget_blocked"
+    }
+  ],
+  "excluded": [
+    {
+      "stage_id": "deepseek-flash/CV1/F00332",
+      "reason": "Succeeded; replay prohibited"
+    },
+    {
+      "stage_id": "deepseek-flash/CV1/F00036",
+      "reason": "Succeeded; replay prohibited"
+    },
+    {
+      "stage_id": "deepseek-flash/CV2/F00815",
+      "reason": "Succeeded; replay prohibited"
+    },
+    {
+      "stage_id": "deepseek-flash/CV2/F00018",
+      "reason": "Succeeded; replay prohibited"
+    },
+    {
+      "stage_id": "gpt-6-luna/CV1/F00332",
+      "reason": "Succeeded; replay prohibited"
+    },
+    {
+      "stage_id": "gpt-6-luna/CV1/F00036",
+      "reason": "Succeeded; replay prohibited"
+    },
+    {
+      "stage_id": "gpt-6-luna/CV2/F00815",
+      "reason": "Succeeded; replay prohibited"
+    },
+    {
+      "stage_id": "gpt-6-luna/CV2/F00018",
+      "reason": "Succeeded; replay prohibited"
+    },
+    {
+      "stage_id": "claude-haiku-4.5/CV2/F00815",
+      "reason": "Succeeded; replay prohibited"
+    }
+  ],
+  "prices": "Unchanged project request price ceilings; no live provider check or dispatch",
+  "budget_reason": "All eight unchanged repairs do not fit the approved aggregate worst-case cap. No token limit reduction or subset selection authorized.",
+  "ledger_sha256": "c111e8bb50f4a21c1d239e62cd6b3bd9740943472a2437146f2b5c50627fb9c0"
+}

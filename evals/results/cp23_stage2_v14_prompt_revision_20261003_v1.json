@@ -1,0 +1,18 @@
+{
+  "schema_version": "cp23-stage2-prompt-revision-v1",
+  "status": "prepared_offline_not_model_verified",
+  "historical_failed_result": "evals/results/cp23_stage2_round1_extraction_20261003_v3_01.json",
+  "historical_semantic_check": "evals/results/cp23_stage2_round1_extraction_20261003_v3_01_semantic_check.json",
+  "old_prompt_sha256": "0afe4b95155c7225bafd62e9216344cd886a4d6ba2e005fd746652b6ed97a224",
+  "new_prompt_sha256": "9fe62242b5f24f4f4b5560218653bf8db68df09ede5465a3fc01ca4e6bc087e7",
+  "new_prompt_file": "prompts/jd_extraction_v1_4_experimental.md",
+  "active_pipeline_prompt_unchanged": true,
+  "guideline_unchanged": true,
+  "change_basis": "Explicit v1.3 guideline AND atomicity and OR cardinality; first live v1.3 extraction merged independent obligations despite valid schema/quotes",
+  "scope": "All seven frozen development JDs and four round-one models share the same new prompt; no case replacement or gold answer enters inference",
+  "new_plan_sha256": "b901bad9176e33d45845dcd9748d2c3eb05bbf627b592655e174d697b2e9a0c2",
+  "new_conservative_upper_usd": "3.2232974",
+  "actual_api_calls_this_revision": 0,
+  "quality_result": null,
+  "approval_status": "pending_specific_batch_approval"
+}

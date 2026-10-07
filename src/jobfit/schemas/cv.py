@@ -22,6 +22,12 @@ class CVSection(str, Enum):
     OTHER = "Other"
 
 
+class PartialDate(BaseModel):
+    """Original year or month precision. Never manufacture the missing day."""
+    year: int = Field(ge=1, le=9999)
+    month: int | None = Field(default=None, ge=1, le=12)
+
+
 class ExperienceEntry(BaseModel):
     title: str
     organization: str | None = None
@@ -29,6 +35,10 @@ class ExperienceEntry(BaseModel):
     end: date | None = None
     is_present: bool = False  # "present/sekarang" is resolved with the analysis date
     description: str = ""
+    start_partial: PartialDate | None = None
+    end_partial: PartialDate | None = None
+    start_text: str | None = None
+    end_text: str | None = None
 
     @model_validator(mode="after")
     def _check_dates(self) -> "ExperienceEntry":
@@ -36,6 +46,15 @@ class ExperienceEntry(BaseModel):
             raise ValueError("an entry cannot have both an end date and is_present")
         if self.start and self.end and self.end < self.start:
             raise ValueError("end date is before start date")
+        if self.start and self.start_partial or self.end and self.end_partial:
+            raise ValueError("use full or partial precision, never both")
+        if self.is_present and self.end_partial:
+            raise ValueError("present cannot have a partial end")
+        start = self.start or self.start_partial
+        end = self.end or self.end_partial
+        if start and end and (end.year < start.year or
+                (end.year == start.year and end.month and start.month and end.month < start.month)):
+            raise ValueError("end precedes start at available precision")
         return self
 
 

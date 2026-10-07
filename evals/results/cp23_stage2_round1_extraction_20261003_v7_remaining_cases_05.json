@@ -1,0 +1,168 @@
+{
+  "job_id": "claude-haiku-4.5/F00309",
+  "source_job_id": "F00309",
+  "model": "claude-haiku-4.5",
+  "model_id": "anthropic/claude-haiku-4.5",
+  "plan_sha256": "888a2cfd1219c6615cf5941c47d20db2fbe40edc5f97018eb14e271c6dbc9192",
+  "source_sha256": "bebe8392865ea77ac7453db73d0e6d688608b2ae539397073ec2f77538b0a8a3",
+  "prompt_version": "jd-prompt-v1.4-experimental",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "extraction": {
+    "job_id": "F00309",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "1-3 years of relevant experience demonstrating practical application of skills",
+        "kind": "qualified",
+        "importance": "preferred",
+        "field": "experience_duration",
+        "normalized_name": null,
+        "min_years": 1.0,
+        "branches": [],
+        "source_quotes": [
+          "1-3 years of relevant experience demonstrating practical application of skills at this seniority level"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Proficiency in Python",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Proficiency in SQL",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "SQL",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Proficiency in statistics",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "statistics",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Proficiency in machine learning",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "machine learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Proficiency in experimentation",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "experimentation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Proficiency in data visualization",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "data visualization",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Proficiency in data storytelling",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "data storytelling",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Diploma, degree, or equivalent practical experience in a relevant technical, business, or creative discipline",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "education",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Diploma, degree, or equivalent practical experience in a relevant technical, business, or creative discipline"
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/claude-haiku-4.5"
+  },
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "cache_hit": false,
+  "latency_ms": 6282,
+  "result_sha256": "2aaa17e7e54b14103bc74b4c67dcafc90711e9dc5cb20f3e89f7ce970d20aa63"
+}

@@ -1,0 +1,223 @@
+{
+  "job_id": "gpt-6-luna/F00309",
+  "source_job_id": "F00309",
+  "model": "gpt-6-luna",
+  "model_id": "openai/gpt-6-luna",
+  "plan_sha256": "023bf2ba3f9ad0dac975b39173a5ba543d09584216573acbba51bb616a152a1a",
+  "source_sha256": "bebe8392865ea77ac7453db73d0e6d688608b2ae539397073ec2f77538b0a8a3",
+  "prompt_version": "jd-prompt-v1.4-experimental",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "extraction": {
+    "job_id": "F00309",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "1–3 years of relevant experience demonstrating practical application of skills at this seniority level",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "relevant experience",
+        "min_years": 1.0,
+        "branches": [],
+        "source_quotes": [
+          "1-3 years of relevant experience demonstrating practical application of skills at this seniority level"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Proficiency in Python",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Proficiency in SQL",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "SQL",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Proficiency in statistics",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "statistics",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Proficiency in machine learning",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "machine learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Proficiency in experimentation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "experimentation",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Proficiency in data visualization",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "data visualization",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Proficiency in data storytelling",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "data storytelling",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficiency in Python, SQL, statistics, machine learning, experimentation, data visualization, and data storytelling"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "A diploma, degree, or equivalent practical experience in a relevant technical, business, or creative discipline",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B01",
+            "text": "A diploma in a relevant technical discipline",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B02",
+            "text": "A diploma in a relevant business discipline",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B03",
+            "text": "A diploma in a relevant creative discipline",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B04",
+            "text": "A degree in a relevant technical discipline",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B05",
+            "text": "A degree in a relevant business discipline",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B06",
+            "text": "A degree in a relevant creative discipline",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B07",
+            "text": "Equivalent practical experience in a relevant technical discipline",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B08",
+            "text": "Equivalent practical experience in a relevant business discipline",
+            "field": "other",
+            "min_years": null
+          },
+          {
+            "branch_id": "B09",
+            "text": "Equivalent practical experience in a relevant creative discipline",
+            "field": "other",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Diploma, degree, or equivalent practical experience in a relevant technical, business, or creative discipline"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/gpt-6-luna"
+  },
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "cache_hit": false,
+  "latency_ms": 23414,
+  "result_sha256": "b7db359886fe4f978a3971321277ce3c20d040528ad0deebe6f37c385b6118b8"
+}

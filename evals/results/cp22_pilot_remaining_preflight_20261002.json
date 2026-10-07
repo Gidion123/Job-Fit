@@ -1,0 +1,35 @@
+{
+  "run_id": "cp22_pilot_remaining_preflight_20261002",
+  "mode": "preflight",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "scope": "frozen development only",
+  "max_output_tokens": 16000,
+  "development_jobs": 3,
+  "held_out_deferred": 214,
+  "pending": 3,
+  "cache_hits": 0,
+  "conservative_upper_usd": 0.1912998,
+  "approval_ceiling_usd": 1.0,
+  "budget_approval_needed": false,
+  "estimates": [
+    {
+      "job_id": "F00016",
+      "cached": false,
+      "upper_usd": 0.06420719999999999
+    },
+    {
+      "job_id": "F00034",
+      "cached": false,
+      "upper_usd": 0.0634014
+    },
+    {
+      "job_id": "F00073",
+      "cached": false,
+      "upper_usd": 0.0636912
+    }
+  ],
+  "results": [],
+  "guideline_sha256": "5939c9e69ffacf28dcba9588b8fbfc8d124a8a240e8e84e1f234d463b7f760db",
+  "prompt_sha256": "f0d1df033bc3330407e2f97fa49e5851ee5049ca5d7926de7bd41afc36a90198",
+  "status": "preflight"
+}

@@ -1,0 +1,136 @@
+{
+  "verified_at": "2026-10-03T00:46:10.925414+00:00",
+  "cp22_status": "DONE_under_D050",
+  "scope_receipt": "docs/decisions.md#d-050-cp22-implementation-closure-and-deferred-broad-extraction",
+  "human_scope_approval_date": "2026-10-03",
+  "api_calls_this_continuation": 1,
+  "api_cost_this_continuation_usd": "0.010082400",
+  "experiment_calls": 7,
+  "experiment_cost_usd": "0.070420540",
+  "ledger_records": 117,
+  "ledger_usd_including_reserve": "0.290770384",
+  "uncertain_reservation_usd": "0.0210861",
+  "confirmed_record_subtotal_usd": "0.269684284",
+  "project_hard_stop_usd": "8.50",
+  "protected_checks": {
+    "evals/labeling/JobFit_Development_Labeling_v1.3.xlsx": true,
+    "data/processed/jobs_features.jsonl": true,
+    "evals/gold/extraction_gold.jsonl": true,
+    "evals/gold/README.md": true,
+    "evals/gold/evidence_gold.jsonl": true,
+    "evals/gold/relevance_gold.csv": true,
+    "evals/gold/development_v13_reviewed_20261002_r2/relevance_gold.jsonl": true,
+    "evals/gold/development_v13_reviewed_20261002_r2/extraction_gold.jsonl": true,
+    "evals/gold/development_v13_reviewed_20261002_r2/JD_coverage.json": true,
+    "evals/gold/development_v13_reviewed_20261002_r2/evidence_gold.jsonl": true,
+    "evals/gold/development_v13_reviewed_20261002_r2/manifest.json": true,
+    "evals/gold/development_v13_reviewed_20261002_r2/excluded_records.json": true,
+    "evals/gold/development_v13_reviewed_20261002_r2/logical_units.json": true,
+    "evals/gold/development_v13_reviewed_20261002_r2/pair_coverage.json": true,
+    "evals/gold/development_v13_reviewed_20261002_r2/held_records.json": true,
+    "evals/splits/test_job_ids.txt": true,
+    "evals/splits/dev_job_ids.txt": true,
+    "evals/splits/README.md": true,
+    "evals/splits/split_manifest.json": true,
+    "evals/pools/dev_pool.csv": true,
+    "config/tokenizers_v1.json": true,
+    "config/skill_aliases_v0.yaml": true,
+    "config/pipeline_v1.yaml": true,
+    "config/models_v1.yaml": true,
+    "config/retrieval_v1.yaml": true,
+    "config/archive/pipeline_v1_pre_D049_20261002.yaml": true,
+    "prompts/jd_extraction_v1.md": true,
+    "prompts/cv_suggestions_v1.md": true,
+    "prompts/jd_extraction_v1_1.md": true,
+    "prompts/market_insight_v1.md": true,
+    "prompts/jd_extraction_v1_3.md": true,
+    "prompts/evidence_matching_v1.md": true,
+    "prompts/jd_extraction_v1_2.md": true,
+    "prompts/cv_parsing_v1.md": true,
+    "prompts/evidence_matching_v1_1.md": true,
+    "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md": true
+  },
+  "workbook_sha256": "4d96852dce52effdc376709cf8c0131f2f9ad1a6f02795cc556fec1819eccb50",
+  "workbook_read_only": true,
+  "gold_manifest_sha256": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+  "gold_scopes": {
+    "A": {
+      "rows": 1058,
+      "jobs": 54
+    },
+    "B": {
+      "rows": 1364,
+      "jobs": 53,
+      "pairs": 66
+    },
+    "C": {
+      "rows": 69,
+      "jobs": 53,
+      "pairs": 69
+    }
+  },
+  "gold_counts": {
+    "A_Extraction": {
+      "read": 1113,
+      "approved": 1113,
+      "rejected": 10,
+      "approved_retained": 1103,
+      "staged": 1058,
+      "held_retained": 45,
+      "promoted": 1058
+    },
+    "B_Evidence": {
+      "read": 1419,
+      "approved": 1419,
+      "rejected": 16,
+      "approved_retained": 1403,
+      "staged": 1364,
+      "held_retained": 39,
+      "promoted": 1364
+    },
+    "C_Relevance": {
+      "read": 74,
+      "approved": 74,
+      "rejected": 0,
+      "approved_retained": 74,
+      "staged": 69,
+      "held_retained": 5,
+      "promoted": 69
+    }
+  },
+  "no_F00369_exported": true,
+  "B_has_exported_A": true,
+  "tests": {
+    "cp22_resume_final_offline_20261003.xml": {
+      "tests": 228,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "cp23_D050_readiness_tests_20261003.xml": {
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "test_counts_overlap": true,
+  "database_rerun": false,
+  "real_model_integration": "Complete scoped repaired experiment; delegated source check, not independent human approval",
+  "probe_sha256": "755582f9e8462c3a4c3327d31d7d42d79f42029775ae839040490f69bbeadd32",
+  "probe_status": "complete",
+  "stage_attempts": {
+    "F00034": 2,
+    "CV1_parse": 1,
+    "F00332_paste": 2,
+    "CV1_F00332_match": 2
+  },
+  "probe_reservations": [],
+  "readiness_status": "blocked",
+  "quality_metrics": null,
+  "winner": null,
+  "test_evaluation": false,
+  "mass_extraction": false,
+  "new_dependencies": [],
+  "carryover": "Broad development extraction after CP2.3 configuration evaluation, explicitly approved D-050. Reference alignment/metric decisions pending for CP2.3."
+}

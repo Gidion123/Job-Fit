@@ -1,0 +1,48 @@
+{
+  "schema_version": "cp23-k20-cost-projection-v1",
+  "date": "2026-10-04",
+  "split": "development",
+  "method": "observed extraction cost per JD plus observed matching cost per CV/JD pair, multiplied by 20",
+  "k": 20,
+  "api_calls": 0,
+  "models": {
+    "deepseek-flash": {
+      "extraction_observed_usd": 0.0909947738,
+      "extraction_observed_jds": 7,
+      "matching_observed_usd": 0.040561914,
+      "matching_observed_pairs": 4,
+      "k20_cached_jd_matching_only_usd": 0.20280957,
+      "k20_uncached_jd_extraction_plus_matching_usd": 0.462794638
+    },
+    "gpt-6-luna": {
+      "extraction_observed_usd": 0.01729669,
+      "extraction_observed_jds": 7,
+      "matching_observed_usd": 0.007206285,
+      "matching_observed_pairs": 4,
+      "k20_cached_jd_matching_only_usd": 0.036031425,
+      "k20_uncached_jd_extraction_plus_matching_usd": 0.085450539286
+    },
+    "gpt-6-sol": {
+      "extraction_observed_usd": 0.1501824,
+      "extraction_observed_jds": 4,
+      "matching_observed_usd": 0.1675217,
+      "matching_observed_pairs": 4,
+      "k20_cached_jd_matching_only_usd": 0.8376085,
+      "k20_uncached_jd_extraction_plus_matching_usd": 1.5885205
+    }
+  },
+  "sources": [
+    "docs/checkpoint_2/supporting/CP23_Stage2_LLM_Comparison_20261003.md",
+    "evals/results/cp23_stage2_repair_comparison_20261004_v2.json",
+    "evals/results/cp23_stage2_followup_matching_evaluation_20261003_v1.json"
+  ],
+  "exclusions": [
+    "CV parsing",
+    "query embedding",
+    "provider routing changes",
+    "retries and repairs beyond the observed sample",
+    "parallel load effects",
+    "hosting"
+  ],
+  "limit": "A small observed development sample supports a planning estimate, not a production bill or wall-time guarantee"
+}

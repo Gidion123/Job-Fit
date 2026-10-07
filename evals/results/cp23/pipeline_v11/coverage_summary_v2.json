@@ -1,0 +1,1650 @@
+{
+  "schema_version": "cp23-pipeline-v11-coverage-v2",
+  "scope": "development CV1/CV2, original Hybrid Qwen top-30 per CV",
+  "historical_v1_final_pairs": 20,
+  "historical_v1_H2_offline_counterfactual_pairs": 30,
+  "v11_primary_H1_pairs": 26,
+  "v11_primary_H2_pairs": 42,
+  "v11_with_continuation_H1_pairs": 26,
+  "v11_with_continuation_H2_pairs": 42,
+  "per_cv": {
+    "CV1": {
+      "H1": 14,
+      "H2": 20
+    },
+    "CV2": {
+      "H1": 12,
+      "H2": 22
+    }
+  },
+  "pair_status_counts": {
+    "H1": {
+      "no_score_object": 6,
+      "final": 26,
+      "on_hold": 25,
+      "no_score": 3
+    },
+    "H2": {
+      "no_score_object": 6,
+      "final": 26,
+      "on_hold": 9,
+      "provisional": 16,
+      "no_score": 3
+    }
+  },
+  "process_valid_JDs": 48,
+  "JD_quality_ok": 47,
+  "JD_attempted": 51,
+  "source_held_JDs": [
+    "F00369"
+  ],
+  "zero_required_examples": [
+    "F00309"
+  ],
+  "pairs": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00366",
+      "original_rank": 1,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00366_v11.json",
+      "status": "held_extraction",
+      "error_code": "qualification_inventory_incomplete",
+      "H1_status": null,
+      "H2_status": null,
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00020",
+      "original_rank": 2,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00020_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 50.0,
+      "H2_score_pct": 50.0,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00663",
+      "original_rank": 3,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00663_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 65.38,
+      "H2_score_pct": 65.38,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00601",
+      "original_rank": 4,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00601_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 47.22,
+      "H2_score_pct": 47.22,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00284",
+      "original_rank": 5,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00284_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 52.78,
+      "H2_score_pct": 52.78,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00132",
+      "original_rank": 6,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00132_v11.json",
+      "status": "failed",
+      "error_code": "unbounded_required_duration_needs_clarification",
+      "H1_status": "on_hold",
+      "H2_status": "on_hold",
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U22",
+          "text": "Solid experience with ETL tools such as Talend or SSIS",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "Solid experience with ETL tools such as Talend (preferred) or SSIS."
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00312",
+      "original_rank": 7,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00312_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 84.62,
+      "H2_score_pct": 84.62,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00022",
+      "original_rank": 8,
+      "record": "evals/results/cp23/pipeline_v11/pair_hold_CV1_F00022_v11_v2.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "on_hold",
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [],
+      "continuation": true
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00556",
+      "original_rank": 9,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00556_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "provisional",
+      "H1_score_pct": null,
+      "H2_score_pct": 60.0,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U10",
+          "text": "Any exposure to MLOps tools (e.g. MLflow, DVC) or cloud technologies (AWS, Docker, Kubernetes)",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "preferred",
+          "source_quotes": [
+            "Any exposure to MLOps tools (e.g. MLflow, DVC) or cloud technologies (AWS, Docker, Kubernetes) is a bonus but not required"
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00333",
+      "original_rank": 10,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00333_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 58.33,
+      "H2_score_pct": 58.33,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00655",
+      "original_rank": 11,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00655_v11.json",
+      "status": "failed",
+      "error_code": "invalid_structured_output_or_source",
+      "H1_status": "on_hold",
+      "H2_status": "on_hold",
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00036",
+      "original_rank": 12,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00036_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 75.0,
+      "H2_score_pct": 75.0,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00208",
+      "original_rank": 13,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00208_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "provisional",
+      "H1_score_pct": null,
+      "H2_score_pct": 39.47,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U05",
+          "text": "8-10 years of progressive experience in machine learning, AI engineering, or data science, with at least 3 years focused on applied AI and production ML systems.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "8-10 years of progressive experience in machine learning, AI engineering, or data science, with at least 3 years focused on applied AI and production ML systems."
+          ]
+        },
+        {
+          "unit_id": "U14",
+          "text": "Experience designing and deploying production-grade AI/ML systems, including end-to-end ML pipelines covering training, evaluation, versioning, deployment, and monitoring.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "Demonstrated experience designing and deploying production-grade AI/ML systems, including end-to-end ML pipelines covering training, evaluation, versioning, deployment, and monitoring."
+          ]
+        },
+        {
+          "unit_id": "U18",
+          "text": "Experience building and operationalizing LLM-powered applications, including prompt engineering, retrieval-augmented generation (RAG), and tool/agent orchestration frameworks.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "Experience building and operationalizing LLM-powered applications, including prompt engineering, retrieval-augmented generation (RAG), and tool/agent orchestration frameworks."
+          ]
+        },
+        {
+          "unit_id": "U25",
+          "text": "Proven ability to serve as a senior technical individual contributor, setting standards, making architectural decisions, and mentoring peers without formal management authority.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "Proven ability to serve as a senior technical individual contributor, setting standards, making architectural decisions, and mentoring peers without formal management authority."
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00090",
+      "original_rank": 14,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00090_v11.json",
+      "status": "failed",
+      "error_code": "invalid_structured_output_or_source",
+      "H1_status": "on_hold",
+      "H2_status": "on_hold",
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00103",
+      "original_rank": 15,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00103_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "provisional",
+      "H1_score_pct": null,
+      "H2_score_pct": 29.41,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U01",
+          "text": "Final-year student or recent graduate from a leading university, majoring in Engineering, Computer Science/Technology, or another relevant major.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "Mahasiswa tingkat akhir atau lulusan baru dari universitas terkemuka, jurusan Teknik, Ilmu Komputer/Teknologi, atau jurusan relevan lainnya."
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00212",
+      "original_rank": 16,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00212_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 25.0,
+      "H2_score_pct": 25.0,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00189",
+      "original_rank": 17,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00189_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "provisional",
+      "H1_score_pct": null,
+      "H2_score_pct": 40.0,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U01",
+          "text": "At least 8 years of professional experience in data science, analytics, or statistical modelling within banking, payments, or financial services.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "You have at least 8 years of professional experience in data science, analytics, or statistical modelling within banking, payments, or financial services."
+          ]
+        },
+        {
+          "unit_id": "U02",
+          "text": "Bachelor's or master's degree in a quantitative discipline such as Statistics, Mathematics, Computer Science, Engineering, or Economics.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "You hold a bachelor’s or master’s degree in a quantitative discipline such as Statistics, Mathematics, Computer Science, Engineering, or Economics."
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00332",
+      "original_rank": 18,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00332_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 77.78,
+      "H2_score_pct": 77.78,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "original_rank": 19,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00369_v11.json",
+      "status": "held_source",
+      "error_code": "source_provenance_hold",
+      "H1_status": null,
+      "H2_status": null,
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00654",
+      "original_rank": 20,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00654_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 50.0,
+      "H2_score_pct": 50.0,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00309",
+      "original_rank": 21,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00309_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "no_score",
+      "H2_status": "no_score",
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00310",
+      "original_rank": 22,
+      "record": "evals/results/cp23/pipeline_v11/pair_hold_CV1_F00310_v11_v2.json",
+      "status": "held_extraction",
+      "error_code": "invalid_source_quote",
+      "H1_status": null,
+      "H2_status": null,
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [],
+      "continuation": true
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00354",
+      "original_rank": 23,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00354_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 31.48,
+      "H2_score_pct": 31.48,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00851",
+      "original_rank": 24,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00851_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 28.12,
+      "H2_score_pct": 28.12,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00055",
+      "original_rank": 25,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00055_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "provisional",
+      "H1_score_pct": null,
+      "H2_score_pct": 46.43,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U02",
+          "text": "3–6 years of hands-on data science or applied AI experience, with demonstrable work in text analytics, conversational data, or LLM-based systems",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "3–6 years of hands-on data science or applied AI experience, with demonstrable work in text analytics, conversational data, or LLM-based systems"
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00060",
+      "original_rank": 26,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00060_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "provisional",
+      "H1_score_pct": null,
+      "H2_score_pct": 90.0,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U09",
+          "text": "Masters in a quantitative discipline (good to have; experienced Bachelor acceptable)",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "unknown",
+          "source_quotes": [
+            "Masters in a quantitative discipline (good to have - Experienced - Bachelor)"
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00351",
+      "original_rank": 27,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00351_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "no_score",
+      "H2_status": "no_score",
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00527",
+      "original_rank": 28,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00527_v11.json",
+      "status": "failed",
+      "error_code": "invalid_structured_output_or_source",
+      "H1_status": "on_hold",
+      "H2_status": "on_hold",
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U02",
+          "text": "Masters in Data Science / Data Analytics or certifications (added advantage)",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "preferred",
+          "source_quotes": [
+            "Masters in Data Science / Data Analytics Certifications will be an added advantage"
+          ]
+        },
+        {
+          "unit_id": "U23",
+          "text": "Knowledge and/or proven experience in using RPA tools (e.g. UiPath)",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "preferred",
+          "source_quotes": [
+            "Knowledge and/or proven experience in using RPA tools (e.g. UiPath)"
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00650",
+      "original_rank": 29,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00650_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 16.67,
+      "H2_score_pct": 16.67,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00129",
+      "original_rank": 30,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV1_F00129_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 87.5,
+      "H2_score_pct": 87.5,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00018",
+      "original_rank": 1,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00018_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "provisional",
+      "H1_score_pct": null,
+      "H2_score_pct": 65.38,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U11",
+          "text": "Practical experience with one or more use cases from: NLP, LLMs, or Recommendation engines",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "Practical experience with one or more use cases from the following: NLP, LLMs, and Recommendation engines."
+          ]
+        },
+        {
+          "unit_id": "U22",
+          "text": "Practical experience with Spark/Dask",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "preferred",
+          "source_quotes": [
+            "Practical experience with Spark/Dask, Great Expectations."
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00624",
+      "original_rank": 2,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00624_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 60.71,
+      "H2_score_pct": 60.71,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00650",
+      "original_rank": 3,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00650_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 76.67,
+      "H2_score_pct": 76.67,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00798",
+      "original_rank": 4,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00798_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 50.0,
+      "H2_score_pct": 50.0,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00463",
+      "original_rank": 5,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00463_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "provisional",
+      "H1_score_pct": null,
+      "H2_score_pct": 69.23,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U19",
+          "text": "Bachelor’s or Master’s degree in Computer Science, Artificial Intelligence, Data Science, or a related field",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "Bachelor’s or Master’s degree in Computer Science, Artificial Intelligence, Data Science, or a related field"
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00074",
+      "original_rank": 6,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00074_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 43.48,
+      "H2_score_pct": 43.48,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00815",
+      "original_rank": 7,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00815_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 64.71,
+      "H2_score_pct": 64.71,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00029",
+      "original_rank": 8,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00029_v11.json",
+      "status": "failed",
+      "error_code": "unbounded_required_duration_needs_clarification",
+      "H1_status": "on_hold",
+      "H2_status": "on_hold",
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00052",
+      "original_rank": 9,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00052_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 50.0,
+      "H2_score_pct": 50.0,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00176",
+      "original_rank": 10,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00176_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 26.92,
+      "H2_score_pct": 26.92,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00559",
+      "original_rank": 11,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00559_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "no_score",
+      "H2_status": "no_score",
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00629",
+      "original_rank": 12,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00629_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "provisional",
+      "H1_score_pct": null,
+      "H2_score_pct": 47.92,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U21",
+          "text": "FastAPI/REST APIs",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "FastAPI/REST APIs"
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00645",
+      "original_rank": 13,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00645_v11.json",
+      "status": "failed",
+      "error_code": "unbounded_required_duration_needs_clarification",
+      "H1_status": "on_hold",
+      "H2_status": "on_hold",
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00020",
+      "original_rank": 14,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00020_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 50.0,
+      "H2_score_pct": 50.0,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00698",
+      "original_rank": 15,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00698_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "provisional",
+      "H1_score_pct": null,
+      "H2_score_pct": 32.26,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U06",
+          "text": "Hands-on experience with other enterprise LLM platforms.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "Hands-on experience with Google Gemini APIs, Vertex AI, and other enterprise LLM platforms"
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00034",
+      "original_rank": 16,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00034_v11.json",
+      "status": "failed",
+      "error_code": "invalid_structured_output_or_source",
+      "H1_status": "on_hold",
+      "H2_status": "on_hold",
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00310",
+      "original_rank": 17,
+      "record": "evals/results/cp23/pipeline_v11/pair_hold_CV2_F00310_v11_v2.json",
+      "status": "held_extraction",
+      "error_code": "invalid_source_quote",
+      "H1_status": null,
+      "H2_status": null,
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [],
+      "continuation": true
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00663",
+      "original_rank": 18,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00663_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 57.69,
+      "H2_score_pct": 57.69,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00055",
+      "original_rank": 19,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00055_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "provisional",
+      "H1_score_pct": null,
+      "H2_score_pct": 50.0,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U02",
+          "text": "3–6 years of hands-on data science or applied AI experience, with demonstrable work in text analytics, conversational data, or LLM-based systems",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "3–6 years of hands-on data science or applied AI experience, with demonstrable work in text analytics, conversational data, or LLM-based systems"
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00126",
+      "original_rank": 20,
+      "record": "evals/results/cp23/pipeline_v11/pair_hold_CV2_F00126_v11_v2.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "on_hold",
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [],
+      "continuation": true
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00208",
+      "original_rank": 21,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00208_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "provisional",
+      "H1_score_pct": null,
+      "H2_score_pct": 44.74,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U05",
+          "text": "8-10 years of progressive experience in machine learning, AI engineering, or data science, with at least 3 years focused on applied AI and production ML systems.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "8-10 years of progressive experience in machine learning, AI engineering, or data science, with at least 3 years focused on applied AI and production ML systems."
+          ]
+        },
+        {
+          "unit_id": "U14",
+          "text": "Experience designing and deploying production-grade AI/ML systems, including end-to-end ML pipelines covering training, evaluation, versioning, deployment, and monitoring.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "Demonstrated experience designing and deploying production-grade AI/ML systems, including end-to-end ML pipelines covering training, evaluation, versioning, deployment, and monitoring."
+          ]
+        },
+        {
+          "unit_id": "U18",
+          "text": "Experience building and operationalizing LLM-powered applications, including prompt engineering, retrieval-augmented generation (RAG), and tool/agent orchestration frameworks.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "Experience building and operationalizing LLM-powered applications, including prompt engineering, retrieval-augmented generation (RAG), and tool/agent orchestration frameworks."
+          ]
+        },
+        {
+          "unit_id": "U25",
+          "text": "Proven ability to serve as a senior technical individual contributor, setting standards, making architectural decisions, and mentoring peers without formal management authority.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "Proven ability to serve as a senior technical individual contributor, setting standards, making architectural decisions, and mentoring peers without formal management authority."
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00327",
+      "original_rank": 22,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00327_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 39.47,
+      "H2_score_pct": 39.47,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00303",
+      "original_rank": 23,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00303_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "provisional",
+      "H1_score_pct": null,
+      "H2_score_pct": 66.67,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U02",
+          "text": "At least 2 years of relevant experience in LLM applications, RAG, information retrieval, NLP, AI agents, or AI application development.",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "At least 2 years of relevant experience in LLM applications, RAG, information retrieval, NLP, AI agents or AI application development."
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00556",
+      "original_rank": 24,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00556_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "provisional",
+      "H1_score_pct": null,
+      "H2_score_pct": 70.0,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U10",
+          "text": "Any exposure to MLOps tools (e.g. MLflow, DVC) or cloud technologies (AWS, Docker, Kubernetes)",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "preferred",
+          "source_quotes": [
+            "Any exposure to MLOps tools (e.g. MLflow, DVC) or cloud technologies (AWS, Docker, Kubernetes) is a bonus but not required"
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00418",
+      "original_rank": 25,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00418_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "provisional",
+      "H1_score_pct": null,
+      "H2_score_pct": 47.37,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U20",
+          "text": "AI Engineer, Intermediate/Senior Software Engineer keen to learn AI Engineering, or Intermediate/Senior Data Science keen to delve more into Software Engineer side",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "AI Engineer, Intermediate/Senior Software Engineer that keen to learn AI Engineering or Intermediate/Senior Data Science that keens to delve more into Software Engineer side of things."
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00682",
+      "original_rank": 26,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00682_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 69.05,
+      "H2_score_pct": 69.05,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00436",
+      "original_rank": 27,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00436_v11.json",
+      "status": "held_extraction",
+      "error_code": "schema_validation",
+      "H1_status": null,
+      "H2_status": null,
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00114",
+      "original_rank": 28,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00114_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "on_hold",
+      "H2_status": "provisional",
+      "H1_score_pct": null,
+      "H2_score_pct": 37.5,
+      "excluded_needs_review": [
+        {
+          "unit_id": "U03",
+          "text": "Strong Python (FastAPI) and/or TypeScript / Node.js for backend AI services",
+          "reason": "model marked the requirement structure needs_review",
+          "importance": "required",
+          "source_quotes": [
+            "Strong Python (FastAPI) and/or TypeScript / Node.js for backend AI services."
+          ]
+        }
+      ],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00343",
+      "original_rank": 29,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00343_v11.json",
+      "status": "held_extraction",
+      "error_code": "looks_incomplete",
+      "H1_status": null,
+      "H2_status": null,
+      "H1_score_pct": null,
+      "H2_score_pct": null,
+      "excluded_needs_review": [],
+      "continuation": false
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00212",
+      "original_rank": 30,
+      "record": "evals/results/cp23/pipeline_v11/pair_CV2_F00212_v11.json",
+      "status": "done",
+      "error_code": null,
+      "H1_status": "final",
+      "H2_status": "final",
+      "H1_score_pct": 30.0,
+      "H2_score_pct": 30.0,
+      "excluded_needs_review": [],
+      "continuation": false
+    }
+  ],
+  "jds": [
+    {
+      "job_id": "F00018",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 23,
+      "needs_review_units": 2,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00018.json"
+    },
+    {
+      "job_id": "F00020",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 9,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00020.json"
+    },
+    {
+      "job_id": "F00022",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 19,
+      "needs_review_units": 4,
+      "error_code": null,
+      "source": "evals/results/cp23/pipeline_v11/jd_hold_F00022_v11_v2.json"
+    },
+    {
+      "job_id": "F00029",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 27,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/pipeline_v11/jd_F00029_v11.json"
+    },
+    {
+      "job_id": "F00034",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 16,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00034.json"
+    },
+    {
+      "job_id": "F00036",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 20,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00036.json"
+    },
+    {
+      "job_id": "F00052",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 1,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00052.json"
+    },
+    {
+      "job_id": "F00055",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 22,
+      "needs_review_units": 1,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00055.json"
+    },
+    {
+      "job_id": "F00060",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 9,
+      "needs_review_units": 1,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00060.json"
+    },
+    {
+      "job_id": "F00074",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 25,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/pipeline_v11/jd_F00074_v11.json"
+    },
+    {
+      "job_id": "F00090",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 31,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/pipeline_v11/jd_F00090_v11.json"
+    },
+    {
+      "job_id": "F00103",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 31,
+      "needs_review_units": 1,
+      "error_code": null,
+      "source": "evals/results/cp23/pipeline_v11/jd_F00103_v11.json"
+    },
+    {
+      "job_id": "F00114",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 17,
+      "needs_review_units": 1,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00114.json"
+    },
+    {
+      "job_id": "F00126",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 4,
+      "needs_review_units": 1,
+      "error_code": null,
+      "source": "evals/results/cp23/pipeline_v11/jd_hold_F00126_v11_v2.json"
+    },
+    {
+      "job_id": "F00129",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 7,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00129.json"
+    },
+    {
+      "job_id": "F00132",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 36,
+      "needs_review_units": 1,
+      "error_code": null,
+      "source": "evals/results/cp23/pipeline_v11/jd_F00132_v11.json"
+    },
+    {
+      "job_id": "F00176",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 39,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/pipeline_v11/jd_F00176_v11.json"
+    },
+    {
+      "job_id": "F00189",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 22,
+      "needs_review_units": 2,
+      "error_code": null,
+      "source": "evals/results/cp23/pipeline_v11/jd_F00189_v11.json"
+    },
+    {
+      "job_id": "F00208",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 41,
+      "needs_review_units": 4,
+      "error_code": null,
+      "source": "evals/results/cp23/pipeline_v11/jd_F00208_v11.json"
+    },
+    {
+      "job_id": "F00212",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 21,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00212.json"
+    },
+    {
+      "job_id": "F00284",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 19,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00284.json"
+    },
+    {
+      "job_id": "F00303",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 18,
+      "needs_review_units": 1,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00303.json"
+    },
+    {
+      "job_id": "F00309",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 9,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00309.json"
+    },
+    {
+      "job_id": "F00310",
+      "status": "failed",
+      "jd_quality": null,
+      "unit_count": null,
+      "needs_review_units": 0,
+      "error_code": "invalid_source_quote",
+      "source": "evals/results/cp23/pipeline_v11/jd_hold_F00310_v11_v2.json"
+    },
+    {
+      "job_id": "F00312",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 13,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00312.json"
+    },
+    {
+      "job_id": "F00327",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 23,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00327.json"
+    },
+    {
+      "job_id": "F00332",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 16,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00332.json"
+    },
+    {
+      "job_id": "F00333",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 25,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00333.json"
+    },
+    {
+      "job_id": "F00343",
+      "status": "done",
+      "jd_quality": "looks_incomplete",
+      "unit_count": 10,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/pipeline_v11/jd_F00343_v11.json"
+    },
+    {
+      "job_id": "F00351",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 1,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00351.json"
+    },
+    {
+      "job_id": "F00354",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 31,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00354.json"
+    },
+    {
+      "job_id": "F00366",
+      "status": "failed",
+      "jd_quality": null,
+      "unit_count": null,
+      "needs_review_units": 0,
+      "error_code": "qualification_inventory_incomplete",
+      "source": "evals/results/cp23/pipeline_v11/jd_F00366_v11.json"
+    },
+    {
+      "job_id": "F00369",
+      "status": "held_source",
+      "jd_quality": null,
+      "unit_count": null,
+      "source": null
+    },
+    {
+      "job_id": "F00418",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 20,
+      "needs_review_units": 1,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00418.json"
+    },
+    {
+      "job_id": "F00436",
+      "status": "failed",
+      "jd_quality": null,
+      "unit_count": null,
+      "needs_review_units": 0,
+      "error_code": "schema_validation",
+      "source": "evals/results/cp23/pipeline_v11/jd_F00436_v11.json"
+    },
+    {
+      "job_id": "F00463",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 23,
+      "needs_review_units": 1,
+      "error_code": null,
+      "source": "evals/results/cp23/pipeline_v11/jd_F00463_v11.json"
+    },
+    {
+      "job_id": "F00527",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 24,
+      "needs_review_units": 2,
+      "error_code": null,
+      "source": "evals/results/cp23/pipeline_v11/jd_F00527_v11.json"
+    },
+    {
+      "job_id": "F00556",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 12,
+      "needs_review_units": 1,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00556.json"
+    },
+    {
+      "job_id": "F00559",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 0,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00559.json"
+    },
+    {
+      "job_id": "F00601",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 18,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00601.json"
+    },
+    {
+      "job_id": "F00624",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 40,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00624.json"
+    },
+    {
+      "job_id": "F00629",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 26,
+      "needs_review_units": 1,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00629.json"
+    },
+    {
+      "job_id": "F00645",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 13,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00645.json"
+    },
+    {
+      "job_id": "F00650",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 24,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00650.json"
+    },
+    {
+      "job_id": "F00654",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 9,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00654.json"
+    },
+    {
+      "job_id": "F00655",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 23,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/pipeline_v11/jd_F00655_v11.json"
+    },
+    {
+      "job_id": "F00663",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 17,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00663.json"
+    },
+    {
+      "job_id": "F00682",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 26,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00682.json"
+    },
+    {
+      "job_id": "F00698",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 35,
+      "needs_review_units": 1,
+      "error_code": null,
+      "source": "evals/results/cp23/pipeline_v11/jd_F00698_v11.json"
+    },
+    {
+      "job_id": "F00798",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 1,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00798.json"
+    },
+    {
+      "job_id": "F00815",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 17,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00815.json"
+    },
+    {
+      "job_id": "F00851",
+      "status": "done",
+      "jd_quality": "ok",
+      "unit_count": 39,
+      "needs_review_units": 0,
+      "error_code": null,
+      "source": "evals/results/cp23/end_to_end_dev/cp23_end_to_end_dev_20261004_v1/jd_F00851.json"
+    }
+  ],
+  "run_calls": 57,
+  "run_accounted_usd": 0.6281001646000001,
+  "run_uncertain_reservation_usd": 0.0501633,
+  "run_cap_usd": 3.0,
+  "project_ledger_total_usd": 3.087135,
+  "one_cv_k20_end_to_end_wall_measured": false,
+  "quality_limit": "Process-valid and source-exact outputs are not human-approved semantic matches.",
+  "source_receipts": {
+    "primary": "evals/results/cp23/pipeline_v11/summary_v1.json",
+    "continuation": "evals/results/cp23/pipeline_v11/hold_continuation_summary_v2.json"
+  },
+  "protected_input_sha256": {
+    "evals/labeling/JobFit_Development_Labeling_v1.3.xlsx": "4d96852dce52effdc376709cf8c0131f2f9ad1a6f02795cc556fec1819eccb50",
+    "evals/splits/dev_job_ids.txt": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+    "evals/splits/test_job_ids.txt": "b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435",
+    "data/processed/jobs_features.jsonl": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+    "evals/pools/dev_pool.csv": "77825f8504d45baa577dbb12cf91585368b546da5e5cbbdbfd3085e6a807661e",
+    "evals/results/cp22_retrieval_top30_20261002_03.json": "32d99ff3dbfe4ec8b1ba37ce0d6fb51e3449b7e508c0bc2786d51658e52569eb",
+    "evals/annotation_guideline_v1_3.md": "3d964a28fd105e16b24ad51b8b0a22b34bb9255e438b51e4e6e0eda551c57645",
+    "prompts/jd_extraction_v1_4_experimental.md": "9fe62242b5f24f4f4b5560218653bf8db68df09ede5465a3fc01ca4e6bc087e7",
+    "prompts/evidence_matching_v1_1.md": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f",
+    "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+    "data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+    "evals/gold/development_v13_reviewed_20261002_r2/JD_coverage.json": "55312dce477c8f620a8db72067d92f3c1d76abdbe615c85d78db1bed40ffd511",
+    "evals/gold/development_v13_reviewed_20261002_r2/evidence_gold.jsonl": "9451fe9459c5cf97bc42ba24edf8a7a2cfc8b933083f8d0ab8b953fd579cb788",
+    "evals/gold/development_v13_reviewed_20261002_r2/excluded_records.json": "e72c7f8214b6474b4fd648d25a4c36f8c374f1662eac5909e60d5deeeb16d93e",
+    "evals/gold/development_v13_reviewed_20261002_r2/extraction_gold.jsonl": "f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84",
+    "evals/gold/development_v13_reviewed_20261002_r2/held_records.json": "bb7393e9264bda74967042e846a1c9b67090b0ca92255a815037f97de94321aa",
+    "evals/gold/development_v13_reviewed_20261002_r2/logical_units.json": "49aa3b438470de8897a3b17b315da4190dd33f2e78f3f73f9065753250fffaf5",
+    "evals/gold/development_v13_reviewed_20261002_r2/manifest.json": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+    "evals/gold/development_v13_reviewed_20261002_r2/pair_coverage.json": "b2a1339e4a9de6c4b8cf4d55b7ebb8f21fc2d3bde58557ac26de96135ba0bd58",
+    "evals/gold/development_v13_reviewed_20261002_r2/relevance_gold.jsonl": "2f0ef6760c8d3b26728e6a93b2771d0fa5fb35395814fa8f7f0cc54f837b2bd6"
+  },
+  "test_used": false,
+  "gold_written": false
+}

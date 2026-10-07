@@ -1,0 +1,24 @@
+{
+  "approval_date": "2026-10-01",
+  "reviewed_by": "Dion",
+  "approval_scope": "CV content and realism only; no evidence or relevance labels",
+  "split": "test",
+  "evaluation_reference_date": "2026-09-30",
+  "content_version": "0.1",
+  "files": [
+    {
+      "path": "data/synthetic_cvs/cv_04_data_analyst_to_ds_id.md",
+      "draft_sha256": "9cff7d0db9b20426f4125ffced0d04425745dc44984c30266936e3c837e9c9f1",
+      "approved_sha256": "ac26fada867130ef3ed916da69d0bebbb302591c05008653ac02dcfb720e7e64",
+      "body_sha256": "8edd4cb75b6cf269d13eeecf26ffbd7e0c19fccf0d0adb8362026f7c1816e963",
+      "body_unchanged": true
+    },
+    {
+      "path": "data/synthetic_cvs/cv_05_ml_engineer_3yr_en.md",
+      "draft_sha256": "20e8a26be2eae5168aea8df770b19cb216493159aa154fba009c4efb911f9d32",
+      "approved_sha256": "e1783410f744da5e3668fbff3831e26c70475d7f0ebb66ad1381248ee541d4cf",
+      "body_sha256": "f3fa3133f349d066a4a3375a48150b0b8c9aef6837917a587072cca6d61dd67d",
+      "body_unchanged": true
+    }
+  ]
+}

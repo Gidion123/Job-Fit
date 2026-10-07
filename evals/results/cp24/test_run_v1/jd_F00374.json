@@ -1,0 +1,314 @@
+{
+ "job_id": "F00374",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "no_uncovered_bullets",
+  "bullet_count": 8,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 8,
+  "inventory_mappings": [
+   {
+    "source_id": "Q01",
+    "unit_ids": [
+     "U01"
+    ]
+   },
+   {
+    "source_id": "Q02",
+    "unit_ids": [
+     "U02",
+     "U03",
+     "U04"
+    ]
+   },
+   {
+    "source_id": "Q03",
+    "unit_ids": [
+     "U05",
+     "U06"
+    ]
+   },
+   {
+    "source_id": "Q04",
+    "unit_ids": [
+     "U07"
+    ]
+   },
+   {
+    "source_id": "Q05",
+    "unit_ids": [
+     "U08",
+     "U09"
+    ]
+   },
+   {
+    "source_id": "Q06",
+    "unit_ids": [
+     "U10"
+    ]
+   },
+   {
+    "source_id": "Q07",
+    "unit_ids": [
+     "U11"
+    ]
+   },
+   {
+    "source_id": "Q08",
+    "unit_ids": [
+     "U12"
+    ]
+   }
+  ],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00374",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Bachelor's Degree in Computer Science, Electrical Engineering, Math, or related field.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "education",
+    "normalized_name": "Bachelor's Degree in Computer Science, Electrical Engineering, Math, or related field.",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B01",
+      "text": "Bachelor's Degree in Computer Science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B02",
+      "text": "Bachelor's Degree in Electrical Engineering",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B03",
+      "text": "Bachelor's Degree in Math",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "B04",
+      "text": "Bachelor's Degree in a related field",
+      "field": "education",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Bachelor’s Degree in Computer Science/Electrical Engineering, Math, or related field."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "Minimum 5 years of software engineering practices and experience in data science.",
+    "kind": "qualified",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "Minimum 5 years of software engineering practices and experience in data science.",
+    "min_years": 5.0,
+    "branches": [],
+    "source_quotes": [
+     "Minimum 5 strong years of software engineering practices and experiences in data science, machine learning, generative AI."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Minimum 5 years of software engineering practices and experience in machine learning.",
+    "kind": "qualified",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "Minimum 5 years of software engineering practices and experience in machine learning.",
+    "min_years": 5.0,
+    "branches": [],
+    "source_quotes": [
+     "Minimum 5 strong years of software engineering practices and experiences in data science, machine learning, generative AI."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "Minimum 5 years of software engineering practices and experience in generative AI.",
+    "kind": "qualified",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "Minimum 5 years of software engineering practices and experience in generative AI.",
+    "min_years": 5.0,
+    "branches": [],
+    "source_quotes": [
+     "Minimum 5 strong years of software engineering practices and experiences in data science, machine learning, generative AI."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Deep understanding of different types of machine learning algorithms (e.g., CNN, RNN, LSTM, Reinforcement Learning).",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Deep understanding of different types of machine learning algorithms (e.g., CNN, RNN, LSTM, Reinforcement Learning).",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Strong Machine Learning background with deep understanding of different types of machine learning algorithms (e.g., CNN, RNN, LSTM and Reinforcement Learning)."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Experience training deep-learning models in an end-to-end fashion.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Experience training deep-learning models in an end-to-end fashion.",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Experience of training deep-learning models in an end-to-end fashion."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Project experience working with Azure Machine Learning, Azure Open AI, or other modern deep learning frameworks.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Project experience working with Azure Machine Learning, Azure Open AI, or other modern deep learning frameworks.",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B05",
+      "text": "Project experience working with Azure Machine Learning",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B06",
+      "text": "Project experience working with Azure Open AI",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B07",
+      "text": "Project experience working with other modern deep learning frameworks",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Project experience working with Azure Machine Learning, Azure Open AI or other modern deep learning frameworks."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Proficient in Python.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Proficient in Python.",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Proficient in Python is a minimum."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Additional knowledge of C++ or C#.",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Additional knowledge of C++ or C#.",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B08",
+      "text": "Additional knowledge of C++",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B09",
+      "text": "Additional knowledge of C#",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Additional knowledge of C++ / C# is a plus."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "Working knowledge of statistics (e.g., Monte Carlo, hypothesis testing, confidence intervals, maximum likelihood, bootstrap, Bayesian inference).",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Working knowledge of statistics (e.g., Monte Carlo, hypothesis testing, confidence intervals, maximum likelihood, bootstrap, Bayesian inference).",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Working knowledge of statistics (e.g., Monte Carlo, hypothesis testing, confidence intervals, maximum likelihood, bootstrap, Bayesian inference)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "Working knowledge in machine learning algorithms: logistic regression, random forest, gradient boosted trees, neural networks, k-means, and more.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Working knowledge in machine learning algorithms: logistic regression, random forest, gradient boosted trees, neural networks, k-means, and more.",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Working knowledge in machine learning algorithms: logistic regression, random forest, gradient boosted trees, neural networks, k-means, and more!"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "Excellent verbal and written communication skills.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "Excellent verbal and written communication skills.",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Excellent verbal and written communication skills"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

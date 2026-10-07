@@ -1,0 +1,118 @@
+{
+ "created_at": "2026-10-07T07:34:14+00:00",
+ "plan": {
+  "experiment_id": "QA-E00-FI-R2",
+  "hypothesis": "QA-E00",
+  "parent": "QA-E00-FI-R1",
+  "prompt": "prompts/evidence_matching_v1_1.md",
+  "subsets": [
+   "optimization"
+  ],
+  "ranking": false,
+  "replicate_of": "QA-E00-FI-R1",
+  "purpose": "Same as R1, run again: run-to-run noise of the baseline.",
+  "prompt_record": {
+   "prompt_file": "prompts/evidence_matching_v1_1.md",
+   "prompt_sha256": "19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f"
+  },
+  "fixed_input_pairs": [
+   [
+    "CV1",
+    "F00021"
+   ],
+   [
+    "CV1",
+    "F00029"
+   ],
+   [
+    "CV1",
+    "F00052"
+   ],
+   [
+    "CV1",
+    "F00059"
+   ],
+   [
+    "CV1",
+    "F00187"
+   ],
+   [
+    "CV1",
+    "F00351"
+   ],
+   [
+    "CV1",
+    "F00610"
+   ],
+   [
+    "CV1",
+    "F00690"
+   ],
+   [
+    "CV1",
+    "F00806"
+   ],
+   [
+    "CV1",
+    "F00818"
+   ],
+   [
+    "CV2",
+    "F00059"
+   ],
+   [
+    "CV2",
+    "F00082"
+   ],
+   [
+    "CV2",
+    "F00108"
+   ],
+   [
+    "CV2",
+    "F00332"
+   ],
+   [
+    "CV2",
+    "F00343"
+   ],
+   [
+    "CV2",
+    "F00442"
+   ],
+   [
+    "CV2",
+    "F00554"
+   ],
+   [
+    "CV2",
+    "F00558"
+   ],
+   [
+    "CV2",
+    "F00645"
+   ],
+   [
+    "CV2",
+    "F00682"
+   ]
+  ],
+  "ranking_pairs": [],
+  "calls": 20,
+  "split_sha256": "8a6c9e73dcae31d90e88ef6b27f2054e4a396e684a269f9a415613e8d88403a8",
+  "run_id": "qa_phase_a_w1_qa-e00-fi-r2"
+ },
+ "estimate": {
+  "observed_sol_calls": 91,
+  "median_cost_per_call": 0.028697,
+  "p90_cost_per_call": 0.040157,
+  "prompt_input_factor": 1.0,
+  "estimate_usd": 0.5739,
+  "upper_estimate_usd": 0.8031,
+  "wave1_cap_usd": 7.5,
+  "wave1_spent_usd": 0,
+  "ledger_total_usd": 8.152683,
+  "project_hard_stop_usd": 18.5
+ },
+ "api_calls": 0
+}

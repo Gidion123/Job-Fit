@@ -1,0 +1,537 @@
+{
+ "job_id": "F00236",
+ "status": "done",
+ "attempts": 2,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "no_uncovered_bullets",
+  "bullet_count": 10,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 10,
+  "inventory_mappings": [
+   {
+    "source_id": "Q01",
+    "unit_ids": [
+     "U01"
+    ]
+   },
+   {
+    "source_id": "Q02",
+    "unit_ids": [
+     "U02"
+    ]
+   },
+   {
+    "source_id": "Q03",
+    "unit_ids": [
+     "U03",
+     "U04"
+    ]
+   },
+   {
+    "source_id": "Q04",
+    "unit_ids": [
+     "U05",
+     "U06"
+    ]
+   },
+   {
+    "source_id": "Q05",
+    "unit_ids": [
+     "U07"
+    ]
+   },
+   {
+    "source_id": "Q06",
+    "unit_ids": [
+     "U08"
+    ]
+   },
+   {
+    "source_id": "Q07",
+    "unit_ids": [
+     "U09",
+     "U10"
+    ]
+   },
+   {
+    "source_id": "Q08",
+    "unit_ids": [
+     "U11"
+    ]
+   },
+   {
+    "source_id": "Q09",
+    "unit_ids": [
+     "U11",
+     "U12"
+    ]
+   },
+   {
+    "source_id": "Q10",
+    "unit_ids": [
+     "U13"
+    ]
+   }
+  ],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00236",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Minimum bachelor's degree (S1) in Informatics Engineering, Computer Science, Data Science, Information Systems, or a related field.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "S1 Teknik Informatika, Ilmu Komputer, Data Science, Sistem Informasi, atau bidang terkait",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B01",
+      "text": "S1 Teknik Informatika",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B02",
+      "text": "S1 Ilmu Komputer",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B03",
+      "text": "S1 Data Science",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B04",
+      "text": "S1 Sistem Informasi",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B05",
+      "text": "S1 bidang terkait",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Pendidikan minimal S1 Teknik Informatika, Ilmu Komputer, Data Science, Sistem Informasi, atau bidang terkait."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "Experience or understanding in Artificial Intelligence / Machine Learning.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Artificial Intelligence / Machine Learning",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B01",
+      "text": "pengalaman dalam Artificial Intelligence / Machine Learning",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B02",
+      "text": "pemahaman dalam Artificial Intelligence / Machine Learning",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Memiliki pengalaman atau pemahaman dalam Artificial Intelligence / Machine Learning."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Python.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Python",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Menguasai Python dan library AI/ML seperti Pandas, NumPy, Scikit-learn, atau framework sejenis.",
+     "Python"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "AI/ML libraries such as Pandas, NumPy, Scikit-learn, or similar frameworks.",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "AI/ML library",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B01",
+      "text": "Pandas",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B02",
+      "text": "NumPy",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B03",
+      "text": "Scikit-learn",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B04",
+      "text": "framework sejenis",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Menguasai Python dan library AI/ML seperti Pandas, NumPy, Scikit-learn, atau framework sejenis."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "LLM (Large Language Model) concepts.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "LLM",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memahami konsep LLM (Large Language Model) dan implementasi AI.",
+     "LLM"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "AI implementation.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "AI implementation",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memahami konsep LLM (Large Language Model) dan implementasi AI."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Understanding RAG (Retrieval-Augmented Generation) and/or AI Agent.",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "RAG dan/atau AI Agent",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memahami RAG (Retrieval-Augmented Generation) dan/atau AI Agent menjadi nilai tambah."
+    ],
+    "needs_review": true,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Use of APIs for AI application integration.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "API integration",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memahami penggunaan API untuk integrasi aplikasi AI.",
+     "API Integration"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "SQL.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "SQL",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memahami SQL dan pengolahan database.",
+     "SQL"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "Database processing.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Pengolahan database",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Memahami SQL dan pengolahan database."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "Microsoft Power BI for creating dashboards and data visualization.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Microsoft Power BI",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Wajib memiliki kemampuan Power BI untuk membuat dashboard dan visualisasi data.",
+     "Mampu mengolah data dari berbagai sumber dan menyajikannya dalam dashboard Power BI.",
+     "Microsoft Power BI"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "Processing data from various sources.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Data processing",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Mampu mengolah data dari berbagai sumber dan menyajikannya dalam dashboard Power BI."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U13",
+    "text": "Portfolio/project in AI or Power BI.",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Portofolio/project AI atau Power BI",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "B01",
+      "text": "portofolio/project AI",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "B02",
+      "text": "portofolio/project Power BI",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "Memiliki portofolio/project AI atau Power BI menjadi nilai tambah."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U14",
+    "text": "Machine Learning.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Machine Learning",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Machine Learning"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U15",
+    "text": "RAG (Retrieval-Augmented Generation).",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "RAG",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "RAG"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U16",
+    "text": "AI Agent / Agentic AI.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "AI Agent / Agentic AI",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "AI Agent / Agentic AI"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U17",
+    "text": "Vector Database.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Vector Database",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Vector Database"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U18",
+    "text": "Embeddings.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Embeddings",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Embeddings"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U19",
+    "text": "DAX.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "DAX",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "DAX"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U20",
+    "text": "Power Query.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Power Query",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Power Query"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U21",
+    "text": "Data Modeling.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Data Modeling",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Data Modeling"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U22",
+    "text": "Dashboard.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Dashboard",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Dashboard & Reporting"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U23",
+    "text": "Reporting.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Reporting",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Dashboard & Reporting"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U24",
+    "text": "Power BI Service.",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Power BI Service",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Power BI Service"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "source_run_id": "cp23_matcher_coverage_gpt-6-sol_20261004_v1",
+ "run_cost_usd": 1.4807958,
+ "cost_per_called_pair": 0.027422144444444446,
+ "median_latency_ms": 15351.5,
+ "p95_latency_ms": 21258,
+ "note": "historical cost of the saved run; no new call"
+}

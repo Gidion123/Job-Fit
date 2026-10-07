@@ -1,0 +1,22 @@
+{
+ "source": "inline outputs of notebooks/03_post_test_quality_optimization.ipynb as run by Dion on 7 Oct 2026 (no re-plotting)",
+ "notebook_sha256": "29983b647e03147e916829a3227b8fbda96b019da3bea19b6e5cc25947601484",
+ "figures": {
+  "reports/figures/phase_a/figA1_failure_taxonomy_v1.png": {
+   "sha256": "08a03b7501ce6053cf02178fb0606ebfc8ebc16fbd588fba6735b8b00cf6c350",
+   "cell": 8
+  },
+  "reports/figures/phase_a/figA2_baseline_repeatability_v1.png": {
+   "sha256": "2972e1211bc118076893e24afc7872b6ddb7b200098469967f8976ea98a58c0d",
+   "cell": 16
+  },
+  "reports/figures/phase_a/figA3_wave1_comparison_v1.png": {
+   "sha256": "a56fc8432f201a11927a8d6b4c0f506407ee6e61a7dfb576f0e9ba852a2725bb",
+   "cell": 20
+  },
+  "reports/figures/phase_a/figA4_e02_precision_recall_tradeoff_v1.png": {
+   "sha256": "315cbb4fb1f746e532be1e749f553db5724e0e3e2f7ee6be48c6fcf153095e02",
+   "cell": 27
+  }
+ }
+}

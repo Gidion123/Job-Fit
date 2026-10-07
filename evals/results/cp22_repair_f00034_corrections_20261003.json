@@ -1,0 +1,12 @@
+{
+  "job_id": "F00034",
+  "result_sha256": "698cfb9c16aab9351fc179f7c6c61b7f3457ea9075f49ba6b6ab0d954e023ddf",
+  "date": "2026-10-03",
+  "checked_by": "delegated source reviewer",
+  "corrections": [
+    "F00034-U11: source says Berpengalaman menggunakan REST API. Preserve experience using REST APIs, not merely understand REST API. Category knowledge_area remains appropriate for API practice.",
+    "F00034-U05: generic LLM experience may remain knowledge_area at group level, but named model/technology alternatives GPT, Llama, Mistral and Gemini are skill_tool under D-049. Retain the shared experience qualifier in every branch. Generic other open-source models may remain knowledge_area.",
+    "Preserve every existing source-supported unit, correct local importance and AND/OR, and retain shared understanding/experience/duration qualifiers in alternative branch text/fields. Do not remove any of the nine coverage entries."
+  ],
+  "budget_policy": "One semantic repair uses the second and final attempt of this stage. No new run ID, no reset, no extra calls beyond original eight-attempt aggregate cap. First result stays preserved."
+}

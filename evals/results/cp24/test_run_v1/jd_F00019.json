@@ -1,0 +1,547 @@
+{
+ "job_id": "F00019",
+ "status": "done",
+ "attempts": 1,
+ "error_code": null,
+ "coverage": {
+  "version": "qualification-bullet-coverage-v1",
+  "status": "not_assessed",
+  "bullet_count": 0,
+  "uncovered_bullet_indices": [],
+  "semantic_completeness_verified": false,
+  "inventory_contract": "qualification-inventory-v1",
+  "inventory_count": 0,
+  "inventory_mappings": [],
+  "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+ },
+ "extraction": {
+  "job_id": "F00019",
+  "units": [
+   {
+    "unit_id": "U01",
+    "text": "Work location: South Jakarta",
+    "kind": "simple",
+    "importance": "required",
+    "field": "location",
+    "normalized_name": "South Jakarta",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "South Jakarta"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U02",
+    "text": "Master's degree in Data Science & AI, Business Analytics, Operations Research, Computer Science, Econometrics, Artificial Intelligence, or a related field",
+    "kind": "alternative_group",
+    "importance": "required",
+    "field": "education",
+    "normalized_name": "Master's degree",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "G1-B01",
+      "text": "Master's degree in Data Science & AI",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "G1-B02",
+      "text": "Master's degree in Business Analytics",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "G1-B03",
+      "text": "Master's degree in Operations Research",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "G1-B04",
+      "text": "Master's degree in Computer Science",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "G1-B05",
+      "text": "Master's degree in Econometrics",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "G1-B06",
+      "text": "Master's degree in Artificial Intelligence",
+      "field": "education",
+      "min_years": null
+     },
+     {
+      "branch_id": "G1-B07",
+      "text": "Master's degree in a related field",
+      "field": "education",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "A Master's degree in Data Science & AI, Business Analytics, Operations Research, Computer Science, Econometrics, Artificial Intelligence, or a related field"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U03",
+    "text": "Excellent communication skills in English",
+    "kind": "simple",
+    "importance": "required",
+    "field": "language",
+    "normalized_name": "English communication skills",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Excellent communication skills in English"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U04",
+    "text": "0–4 years of relevant experience",
+    "kind": "qualified",
+    "importance": "required",
+    "field": "experience_duration",
+    "normalized_name": "relevant experience",
+    "min_years": 0.0,
+    "branches": [],
+    "source_quotes": [
+     "0–4 years of relevant experience"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U05",
+    "text": "Programming experience in Python",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "Python",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Programming experience in Python and SQL"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U06",
+    "text": "Programming experience in SQL",
+    "kind": "simple",
+    "importance": "required",
+    "field": "skill_tool",
+    "normalized_name": "SQL",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Programming experience in Python and SQL"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U07",
+    "text": "Strong analytical skills",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "analytical skills",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "strong analytical and problem-solving skills"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U08",
+    "text": "Strong problem-solving skills",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "problem-solving skills",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "strong analytical and problem-solving skills"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U09",
+    "text": "Understanding of data pipelines",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "data pipelines",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Understanding of data pipelines"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U10",
+    "text": "Understanding of data modelling concepts",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "data modelling concepts",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Understanding of data pipelines and data modelling concepts"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U11",
+    "text": "Knowledge of LLM prompting concepts",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "prompting",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "knowledge of LLM concepts such as prompting, embeddings, and Retrieval-Augmented Generation (RAG)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U12",
+    "text": "Knowledge of LLM embeddings concepts",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "embeddings",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "knowledge of LLM concepts such as prompting, embeddings, and Retrieval-Augmented Generation (RAG)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U13",
+    "text": "Knowledge of Retrieval-Augmented Generation (RAG)",
+    "kind": "simple",
+    "importance": "required",
+    "field": "knowledge_area",
+    "normalized_name": "Retrieval-Augmented Generation (RAG)",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "knowledge of LLM concepts such as prompting, embeddings, and Retrieval-Augmented Generation (RAG)"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U14",
+    "text": "Proactive attitude",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "proactive attitude",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "A proactive attitude and eagerness to learn and inspire"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U15",
+    "text": "Eagerness to learn",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "eagerness to learn",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "A proactive attitude and eagerness to learn and inspire"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U16",
+    "text": "Eagerness to inspire",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "eagerness to inspire",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "A proactive attitude and eagerness to learn and inspire"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U17",
+    "text": "Enthusiastic early-career professional",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "enthusiastic early-career professional",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "You are an enthusiastic early-career professional who enjoys both building solutions and explaining them to others."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U18",
+    "text": "Enjoys building solutions",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "enjoys building solutions",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "You are an enthusiastic early-career professional who enjoys both building solutions and explaining them to others."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U19",
+    "text": "Enjoys explaining solutions to others",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "enjoys explaining solutions to others",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "You are an enthusiastic early-career professional who enjoys both building solutions and explaining them to others."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U20",
+    "text": "Curious about new technologies",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "curious about new technologies",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "You are curious about new technologies and motivated to translate innovative ideas into practical applications."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U21",
+    "text": "Motivated to translate innovative ideas into practical applications",
+    "kind": "simple",
+    "importance": "required",
+    "field": "soft_skill",
+    "normalized_name": "motivated to translate innovative ideas into practical applications",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "You are curious about new technologies and motivated to translate innovative ideas into practical applications."
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U22",
+    "text": "Experience with Azure cloud services",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Azure cloud services",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "experience with Azure cloud services"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U23",
+    "text": "Experience with LLM frameworks such as LangChain, Semantic Kernel, or similar technologies",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "LLM frameworks",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "G2-B01",
+      "text": "LangChain",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "G2-B02",
+      "text": "Semantic Kernel",
+      "field": "skill_tool",
+      "min_years": null
+     },
+     {
+      "branch_id": "G2-B03",
+      "text": "similar technologies",
+      "field": "skill_tool",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "LLM frameworks such as LangChain, Semantic Kernel, or similar technologies"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U24",
+    "text": "Experience with Git",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "skill_tool",
+    "normalized_name": "Git",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Git and software development best practices"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U25",
+    "text": "Experience with software development best practices",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "software development best practices",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "Git and software development best practices"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U26",
+    "text": "Experience with supply chain analytics",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "supply chain analytics",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "supply chain and logistics analytics"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U27",
+    "text": "Experience with logistics analytics",
+    "kind": "simple",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "logistics analytics",
+    "min_years": null,
+    "branches": [],
+    "source_quotes": [
+     "supply chain and logistics analytics"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U28",
+    "text": "Experience with mathematical optimization or operations research techniques",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "knowledge_area",
+    "normalized_name": "mathematical optimization or operations research techniques",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "G3-B01",
+      "text": "mathematical optimization",
+      "field": "knowledge_area",
+      "min_years": null
+     },
+     {
+      "branch_id": "G3-B02",
+      "text": "operations research techniques",
+      "field": "knowledge_area",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "mathematical optimization or operations research techniques"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   },
+   {
+    "unit_id": "U29",
+    "text": "Experience with facilitating workshops or delivering training sessions",
+    "kind": "alternative_group",
+    "importance": "preferred",
+    "field": "soft_skill",
+    "normalized_name": "facilitating workshops or delivering training sessions",
+    "min_years": null,
+    "branches": [
+     {
+      "branch_id": "G4-B01",
+      "text": "facilitating workshops",
+      "field": "soft_skill",
+      "min_years": null
+     },
+     {
+      "branch_id": "G4-B02",
+      "text": "delivering training sessions",
+      "field": "soft_skill",
+      "min_years": null
+     }
+    ],
+    "source_quotes": [
+     "facilitating workshops or delivering training sessions"
+    ],
+    "needs_review": false,
+    "label_source": "model_draft"
+   }
+  ],
+  "jd_quality": "ok",
+  "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+ }
+}

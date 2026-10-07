@@ -1,0 +1,212 @@
+{
+  "job_id": "F00129",
+  "status": "done",
+  "attempts": 1,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "824c9396dcddc0f71869dc7273b5c5972490d6f53bd873bc9dcb3f884b4aee31",
+  "wall_ms": 37825,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00129",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Bachelor’s Degree in Software Engineering, Computer Science, Information Systems, Mathematics, Statistics, Management, or a similar field",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "Bachelor’s Degree in Software Engineering, Computer Science, Information Systems, Mathematics, Statistics, Management, or a similar field",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Bachelor’s Degree in Software Engineering",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Bachelor’s Degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Bachelor’s Degree in Information Systems",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Bachelor’s Degree in Mathematics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Bachelor’s Degree in Statistics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B6",
+            "text": "Bachelor’s Degree in Management",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B7",
+            "text": "Bachelor’s Degree in a similar field",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "A Bachelor’s Degree in Software Engineering, Computer Science, Information Systems, Mathematics, Statistics, Management or a similar field"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "At least 1 year of experience as a data science trainer",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "At least 1 year of experience as a data science trainer",
+        "min_years": 1.0,
+        "branches": [],
+        "source_quotes": [
+          "Have at least 1 years of experience as data science trainer"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Experience in projects related to data science",
+        "kind": "simple",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "Experience in projects related to data science",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Have experience in projects that related with data science"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Deep understanding in data science tools (Tableau, PowerBI, Python, R, Knime, or similar)",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Deep understanding in data science tools (Tableau, PowerBI, Python, R, Knime, or similar)",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Tableau",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "PowerBI",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Python",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "R",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Knime",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B6",
+            "text": "similar data science tool",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Have a deep understanding in data science tools (Tableau, PowerBI, Python, R, Knime, etc)"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Portfolio of data science projects",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "other",
+        "normalized_name": "Portfolio of data science projects",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Have portfolio of data science projects will be an additional value"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Highly motivated",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Highly motivated",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "We are looking for a highly motivated and experienced data science to grow as big as the company."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Location: Jakarta",
+        "kind": "simple",
+        "importance": "required",
+        "field": "location",
+        "normalized_name": "Location: Jakarta",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Location : Jakarta"
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

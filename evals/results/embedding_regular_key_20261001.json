@@ -1,0 +1,121 @@
+{
+  "run_id": "embedding_regular_key_20261001",
+  "timestamp": "2026-10-01T13:49:06.598670+00:00",
+  "executed": true,
+  "snapshot_id": "CP1_20260926",
+  "corpus": "all 632 loaded auditable jobs; search smoke restricted to development 214",
+  "query_cvs": [
+    "CV1",
+    "CV2"
+  ],
+  "config": {
+    "preprocessing_version": "title-clean-jd-cv-body-v1",
+    "rrf_k": 60,
+    "branch_depth": 20,
+    "batch_size": 16,
+    "max_batch_tokens": 64000
+  },
+  "profiles": [
+    {
+      "profile": {
+        "model": "openai/text-embedding-3-small",
+        "dimensions": 1536,
+        "preprocessing_version": "title-clean-jd-cv-body-v1",
+        "max_input_tokens": 8191,
+        "tokenizer": "cl100k_base",
+        "tokenizer_revision": "cl100k_base-v1"
+      },
+      "profile_id": "a91d3cbc9fc3e8298fd42c1b497e218aaef72046718e2b73ed16f6ad1fbef66f",
+      "jobs": {
+        "documents": 632,
+        "cached": 0,
+        "pending": 632,
+        "tokenizer_tokens": 401836,
+        "conservative_token_bound": 2196989,
+        "estimated_usd": 0.00803672,
+        "conservative_usd": 0.04393978,
+        "truncated": 0
+      },
+      "queries": {
+        "documents": 2,
+        "cached": 0,
+        "pending": 2,
+        "tokenizer_tokens": 1076,
+        "conservative_token_bound": 4213,
+        "estimated_usd": 2.152e-05,
+        "conservative_usd": 8.426000000000001e-05,
+        "truncated": 0
+      }
+    },
+    {
+      "profile": {
+        "model": "qwen/qwen3-embedding-8b",
+        "dimensions": 4096,
+        "preprocessing_version": "title-clean-jd-cv-body-v1",
+        "max_input_tokens": 31900,
+        "tokenizer": "qwen3-embedding-8b",
+        "tokenizer_revision": "83cdf8c3a34f68862319cb1810ee7b1e2c0a44e0864ae930194ddb76bb7feb8d"
+      },
+      "profile_id": "5684ef95f1bb44bf53eef8b4513aaabfdb9c4b29e96e9044fb8d5382fa2a7256",
+      "jobs": {
+        "documents": 632,
+        "cached": 0,
+        "pending": 632,
+        "tokenizer_tokens": 401671,
+        "conservative_token_bound": 2196989,
+        "estimated_usd": 0.00401671,
+        "conservative_usd": 0.02196989,
+        "truncated": 0
+      },
+      "queries": {
+        "documents": 2,
+        "cached": 0,
+        "pending": 2,
+        "tokenizer_tokens": 1144,
+        "conservative_token_bound": 4213,
+        "estimated_usd": 1.1439999999999999e-05,
+        "conservative_usd": 4.2130000000000005e-05,
+        "truncated": 0
+      }
+    }
+  ],
+  "results": [
+    {
+      "model": "openai/text-embedding-3-small",
+      "kind": "jobs",
+      "documents": 632,
+      "cached": 0,
+      "succeeded": 0,
+      "failed": 16,
+      "not_attempted": 616,
+      "truncated": 0,
+      "recovered": 0,
+      "api_inputs": 0,
+      "error_type": "ValueError"
+    }
+  ],
+  "search_smoke": [],
+  "ledger_before_usd": 0.0,
+  "hard_stop_usd": 8.5,
+  "database_before": {
+    "jobs": 632,
+    "inventory_sha256": "5c20434df6269bbf481c26fbdbe98da96a00292e6a08d22c91f172eb930cd996",
+    "legacy_embeddings": 0
+  },
+  "estimated_total_usd": 0.01208639,
+  "conservative_total_usd": 0.06603606000000001,
+  "remaining_guard_usd": 8.5,
+  "ledger_after_usd": 0.000175,
+  "session_ledger_delta_usd": 0.000175,
+  "authentication": {
+    "authenticated": true,
+    "key_type_known": true,
+    "is_management_key": false,
+    "inference_key": true
+  },
+  "database_after": {
+    "jobs": 632,
+    "inventory_sha256": "5c20434df6269bbf481c26fbdbe98da96a00292e6a08d22c91f172eb930cd996",
+    "legacy_embeddings": 0
+  }
+}

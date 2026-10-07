@@ -1,0 +1,17 @@
+{
+ "schema_version": "protocol-input-drift-receipt-v1",
+ "date": "2026-10-06",
+ "file": "evals/labeling/JobFit_Development_Labeling_v1.3.xlsx",
+ "approved_sha256_in_D064_proposal": "4d96852dce52effdc376709cf8c0131f2f9ad1a6f02795cc556fec1819eccb50",
+ "current_sha256": "b27ed413bc33ea0a94e73b8a730bfaecb636208482596ab43ad5ef54c2e5fb91",
+ "found_by": "tests/test_cp23_stage2_followup.py on 6 Oct 2026",
+ "facts": [
+  "The file bytes differ from the hash the closed D-064 run recorded. The file mtime still shows 4 Oct 2026 06:28 UTC; the evals/labeling folder changed on 6 Oct 2026 01:40 UTC, so the file was most likely replaced by a copy that kept its original time.",
+  "Sheet row counts equal the r3 export snapshot (A 1079, B 1406, C 67); the workbook properties still say last modified 2 Oct 2026 by openpyxl.",
+  "Gold r3 and r4 are separate files and were not read from this workbook again; no result depends on it after 3 Oct 2026."
+ ],
+ "action": "The test now pins the current hash for this one file and points to this receipt, so any further change still fails. The workbook itself was not edited.",
+ "open_question_for_Dion": "Did you copy or restore this workbook on 6 Oct? If the content was meant to change, tell Claude before the freeze.",
+ "answer_from_Dion": "6 Oct 2026: Dion restored this workbook with a repaired copy because the earlier file could not be opened in Excel. The current file is the one to use.",
+ "status": "resolved: current file accepted by Dion"
+}

@@ -1,0 +1,182 @@
+{
+  "schema_version": "cp23-stage1-additional-C-drafts-v1",
+  "status": "pending_human_review_not_gold",
+  "scope": "six original-top10-union development gaps; no retrieval ranks/methods in review rows",
+  "automatic_mode": true,
+  "evaluation_reference_date": "2026-09-30",
+  "guideline": "evals/annotation_guideline_v1_3.md",
+  "gold_manifest_sha256": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+  "corpus_sha256": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+  "rows": [
+    {
+      "cv_id": "CV1",
+      "job_id": "F00010",
+      "job_title": "Senior AI ML Engineer (Computer Vision)",
+      "source_record_id": "CP1_JSearch_JS03D_MLEngineer_Jakarta_ID_Response#6",
+      "jd_text": "About The Company\n\nOur client is a US-based software aggregator that leverages AI and machine learning to build scalable, intelligent solutions.\n\nAbout The Role\n\nOur client is seeking an AI / Machine Learning Engineer who is passionate about designing, building, and deploying data-driven models into real-world applications. In this role, you will work on developing, training, and optimizing machine learning models, while collaborating closely with software engineers to integrate AI solutions into production systems.\n\nResponsibilities\n\n• Design, build, train, and evaluate machine learning and AI models for real-world use cases.\n• Work with structured and unstructured data to develop predictive, classification, or generative models.\n• Develop and maintain data pipelines for data collection, preprocessing, and feature engineering.\n• Deploy machine learning models into production environments and monitor their performance.\n• Optimize models for accuracy, scalability, and efficiency.\n• Collaborate with cross-functional teams (engineering, product, data) to translate business needs into AI solutions.\n• Leverage AI-assisted development tools (GitHub Copilot, Cursor, Warp, etc.) to improve development speed and code quality.\n\nQualifications\n\n• Minimum 8 years of relevant experience in AI, Machine Learning, or Data Science roles.\n• Excellent English communication skills.\n• Strong proficiency in Python and common ML frameworks (TensorFlow, PyTorch, scikit-learn, or similar).\n• Familiarity with deploying ML models in cloud environments (AWS, GCP, Azure, or similar).\n• Strong communication skills and ability to work effectively in a remote, cross-functional team.\n• Experience using AI coding assistants (Copilot, Cursor, Warp) is a strong plus.\n• Indonesian Citizen.\n\nIf you thrive in a demanding, fast-paced environment and are eager to work on impactful AI-driven products, this could be the perfect opportunity for you.",
+      "jd_sha256": "7f372007cee58f0d52443ea003aa4e7b44f6b42758f42e95af6f5a74603bd29e",
+      "cv_source_path": "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md",
+      "cv_source_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "exact_jd_excerpt": "Minimum 8 years of relevant experience in AI, Machine Learning, or Data Science roles.",
+      "exact_cv_excerpt": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "draft": {
+        "relevance_0_3": 1,
+        "main_reason": "CV1 has Python and ML project evidence, but the senior AI/ML role asks for eight years and ML cloud deployment, which are not shown.",
+        "constraint_note": "Explicit conflict: the complete CV1 employment history is far below eight years in AI/ML/DS roles.",
+        "label_source": "model_draft",
+        "review_status": "pending",
+        "review_action": null,
+        "guideline_version": "v1.3"
+      },
+      "human_review": {
+        "relevance_0_3": null,
+        "review_action": null,
+        "review_note": null,
+        "reviewed_at": null
+      },
+      "source_limitation": null
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00132",
+      "job_title": "Data Scientist - Jakarta - WFO (ID: 707131)",
+      "source_record_id": "B03_CONT_DAS_JAK_P03#7",
+      "jd_text": "Data Scientist - Jakarta - WFO (ID: 707131)\n\nPosition: Data Scientist\nEmployment Type: Contract-Based\nWork Location: Jakarta\nWork Arrangement: Full Work From Office (WFO)\nRequirements\n• Bachelor's degree in Computer Science, Information Systems, Informatics Engineering, or a related quantitative field.\n• Minimum 5 years of experience in Data Engineering or Data Integration, with proven experience in migrating unstructured data (Excel/CSV) into centralized relational databases.\n• Hands-on experience in designing and developing large-scale (enterprise-level) ETL/ELT solutions.\n• Strong expertise in Microsoft SQL Server, Oracle, and PostgreSQL, including Stored Procedures, Indexing, Query Optimization, and complex SQL development.\n• Proficient in writing advanced SQL queries for large-scale data processing and transformation.\n• Strong Python programming skills for data processing and automation, particularly using Pandas, NumPy, and related integration frameworks.\n• Experience in consuming and developing RESTful APIs.\n• Solid experience with ETL tools such as Talend (preferred) or SSIS.\n• Familiarity with orchestration tools such as Apache Airflow for scheduling and managing data pipelines.\n• Good understanding of Data Warehousing concepts, including Star Schema, Snowflake Schema, and Data Modeling.\n• Knowledge of Data Governance practices, including Data Lineage, Data Cataloging, Metadata Management, and automated data quality validation.\nNice to Have\n• Experience with Robotic Process Automation (RPA) tools such as UiPath, Power Automate, Selenium, Playwright, or similar technologies for automating repetitive business processes.\n• Familiarity with modern Data Cataloging platforms such as OpenMetadata, DataHub, or equivalent tools.\n• Understanding of real-time data architectures and streaming technologies such as Kafka or Spark Streaming.\n• Relevant professional certifications, such as Talend Certified Developer, Microsoft SQL Server Certification, or other related certifications.",
+      "jd_sha256": "cb12c3099b0cbcfdd7033ebc2f5fabe566bcab19b1e5cb3a19ac5dbb91ce7578",
+      "cv_source_path": "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md",
+      "cv_source_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "exact_jd_excerpt": "Minimum 5 years of experience in Data Engineering or Data Integration",
+      "exact_cv_excerpt": "- Membersihkan dan menggabungkan data transaksi 1,2 juta baris dengan Python (pandas) dan SQL (PostgreSQL).",
+      "draft": {
+        "relevance_0_3": 1,
+        "main_reason": "CV1 shows Python, SQL and data cleaning, but not enterprise ETL/data integration or complex SQL Server/Oracle experience.",
+        "constraint_note": "Explicit conflict: the JD requires five years in Data Engineering/Data Integration; CV1 has no such employment period.",
+        "label_source": "model_draft",
+        "review_status": "pending",
+        "review_action": null,
+        "guideline_version": "v1.3"
+      },
+      "human_review": {
+        "relevance_0_3": null,
+        "review_action": null,
+        "review_note": null,
+        "reviewed_at": null
+      },
+      "source_limitation": null
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00284",
+      "job_title": "Data Scientist (Up to 16k)",
+      "source_record_id": "B04_GLOBAL_MY_DAS_P01#6",
+      "jd_text": "About the company\n\nThe client is a leading life insurer in Malaysia going through a Digital Transformation. They need a highly skilled Data Scientist to join their team to build traditional ML models to improve insurance day to day business operations.\n\nKey Responsibilities • End-to-End Model Development: Design, build, evaluate, and deploy predictive models using supervised and unsupervised learning techniques.\n\n• Predictive & Time Series Modeling: Develop time series forecasting and regression models to predict business outcomes, trends, and demand patterns.\n\n• Anomaly Detection & Classification: Build algorithms to detect operational anomalies, fraud, or system outliers while refining classification workflows.\n\n• Pipeline & Feature Engineering: Write clean, modular Python and SQL scripts to clean, transform, and extract high-value features from complex structured and unstructured datasets.\n\n• Framework Implementation: Leverage TensorFlow, PyTorch, and XGBoost to train, tune, and optimize machine learning and deep learning models for production readiness.\n\n• Stakeholder Collaboration: Translate complex business questions into quantitative frameworks and present analytical findings directly to technical leads and executive business stakeholders.\n\nQualifications• 4+ years of professional experience in a Data Scientist role, delivering end-to-end machine learning solutions in production environments.\n\n• Strong business acumen with a proven track record of translating business requirements into technical data science problems.\n\n• Solid background in model evaluation, hyperparameter tuning, and model lifecycle management.\n\nKey Skills Required• Core Machine Learning: Predictive Analytics, Regression, Time Series Analysis, Classification, Supervised & Unsupervised Learning, Anomaly Detection.\n\n• Frameworks & Libraries: TensorFlow, PyTorch, XGBoost, Scikit-Learn.\n\n• Programming & Database: Advanced proficiency in Python and SQL.\n\nexperience\n4 years\n\nskills\nPython, SQL, Tensorflow, Pytorch\n\nqualifications\nBachelor’s or Master’s degree in Data Science, Computer Science, Statistics, Applied Mathematics, or a related quantitative field.\n\neducation\nBachelor Degree",
+      "jd_sha256": "41371e2761e1bd954747674e4637722d351f031c95123b15fe213cb6d1736348",
+      "cv_source_path": "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md",
+      "cv_source_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "exact_jd_excerpt": "4+ years of professional experience in a Data Scientist role",
+      "exact_cv_excerpt": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "draft": {
+        "relevance_0_3": 1,
+        "main_reason": "CV1 has academic ML modelling and Python/SQL, but no professional end-to-end production DS experience.",
+        "constraint_note": "Explicit conflict: the JD requires four or more years in a professional Data Scientist role; CV1 has no such employment history.",
+        "label_source": "model_draft",
+        "review_status": "pending",
+        "review_action": null,
+        "guideline_version": "v1.3"
+      },
+      "human_review": {
+        "relevance_0_3": null,
+        "review_action": null,
+        "review_note": null,
+        "reviewed_at": null
+      },
+      "source_limitation": null
+    },
+    {
+      "cv_id": "CV1",
+      "job_id": "F00312",
+      "job_title": "Data Scientist | Predictive Modelling | Machine learning",
+      "source_record_id": "B05_JUNIOR_DATA_SCIENTIST_IN_SINGAPORE_P01#2",
+      "jd_text": "• Exposure to latest technology\n• Permanent role with high job stability\n\nAbout the company\n\nOur client is the market leader in their industry. As part of their plan to invest in technology, they are now hiring a new team member to be based here in their Headquarters here in Singapore.\n\nAbout the job\n\nYour role involves:\n• Lead end-to-end data science lifecycles, from defining the initial problem scope through to model implementation and evaluation.\n• Engineer and optimize advanced machine learning models to solve intricate business challenges.\n• Write clean, maintainable, and production-ready code utilizing Python.\n• Oversee comprehensive data preparation, including deep data wrangling, feature engineering, and transformation of imperfect datasets.\n• Translate and present complex analytical findings to non-technical stakeholders to influence key business decisions.\n• Provide technical mentorship to junior data scientists and actively evaluate emerging research to improve internal methodologies.\n\nSkills and experience required\n\nAs a successful applicant, you will have proven experience in statistical analysis, mathematical modeling, and applied machine learning. High proficiency in Python programming and relevant machine learning frameworks.\n\nDemonstrated experience building and scaling data solutions within cloud environments\n\nWhats on offer\nThis is an excellent opportunity to join an established company with heavy investments in technology.\n\nTo apply online please use the 'apply' function, alternatively you can reach me at https://www.linkedin.com/in/hoonteck-nologyrecruitment. (EA: 94C3609/ R1219669)\n\nskills\n\nPredictive Modeling, Machine Learning, data science, Data analysis, natural language processing (NLP)\n\nqualifications\n\nno additional qualifications required\n\neducation\n\nBachelor Degree",
+      "jd_sha256": "502c3c507ce107c75388ecd4651cd341d46c99aa437bf141ba0eda067ee2bff7",
+      "cv_source_path": "data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md",
+      "cv_source_sha256": "6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a",
+      "exact_jd_excerpt": "Demonstrated experience building and scaling data solutions within cloud environments",
+      "exact_cv_excerpt": "- Membangun model regresi logistik dan random forest dengan scikit-learn; F1-score 0,78 pada data uji.",
+      "draft": {
+        "relevance_0_3": 2,
+        "main_reason": "Statistics, Python and ML project work support several core activities; cloud scaling and mentoring are not evidenced.",
+        "constraint_note": "No stated minimum duration. Singapore job location does not itself prove a location conflict without confirmed user location.",
+        "label_source": "model_draft",
+        "review_status": "pending",
+        "review_action": null,
+        "guideline_version": "v1.3"
+      },
+      "human_review": {
+        "relevance_0_3": null,
+        "review_action": null,
+        "review_note": null,
+        "reviewed_at": null
+      },
+      "source_limitation": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00090",
+      "job_title": "Backend Engineer (Python & AI Integration)",
+      "source_record_id": "B05_PYTHON_DEVELOPER_AI_IN_JAKARTA_P01#1",
+      "jd_text": "• *Backend Engineer (Python)**\n\nContract: 3 Months\n\nOnsite – Gatot Subroto, Jakarta Selatan\n\nMencari Backend Engineer dengan pengalaman 2–4 tahun yang kuat di Python untuk membangun dan memelihara REST API serta service berskala production. Diutamakan kandidat yang punya pengalaman di industri banking/financial services atau pernah menangani project untuk klien perbankan, karena project ini menuntut pemahaman terhadap sistem dengan tingkat keamanan, akurasi data, dan compliance yang tinggi.\n• *Requirement / Kualifikasi**\n\nWajib (Must-have):\n\n- Min. 2–4 tahun pengalaman sebagai Backend Engineer / Software Engineer dengan fokus Python\n\n- Python tingkat mahir — OOP, clean code, unit testing\n\n- Pengalaman membangun REST API dengan FastAPI, Django REST Framework, atau Flask\n\n- Menguasai SQL dan database relational (PostgreSQL/MySQL) — query optimization, indexing, transaction\n\n- Memahami konsep authentication & authorization (JWT, OAuth2), API security, dan validasi input\n\n- Pengalaman integrasi third-party API / service-to-service integration\n\n- Familiar dengan Git workflow dan code review\n\n- Pengalaman deploy aplikasi ke environment production (Docker menjadi nilai tambah besar)\n\n- Pendidikan min. S1 Teknik Informatika, Ilmu Komputer, Sistem Informasi, atau bidang terkait\n\n- Bahasa Inggris pasif-aktif\n\nNilai Tambah (Nice-to-have):\n\n- **Pengalaman kerja di industri banking/financial services** (in-house di bank, fintech, payment gateway, atau project untuk klien perbankan) — is a plus\n\n- Familiar dengan use case perbankan: core banking integration, payment/transfer flow, transaction reconciliation, loan origination, atau KYC/AML process\n\n- Pemahaman sensitivitas data nasabah, data masking/encryption, audit trail, dan prinsip compliance di industri keuangan (POJK/PDP, PCI-DSS)\n\n- Pengalaman dengan message broker / async processing: Kafka, RabbitMQ, Celery, Redis\n\n- Pengalaman microservices architecture dan API gateway\n\n- Familiar CI/CD (GitLab CI, Jenkins, GitHub Actions) dan monitoring/logging (Prometheus, Grafana, ELK)\n\n- Familiar cloud platform: AWS, GCP, atau Azure\n\n- Pengalaman NoSQL (MongoDB) dan caching strategy\n\n- Kontribusi open-source atau portfolio GitHub\n\n- Sertifikasi terkait cloud/backend development\n• *Job Description / Tanggung Jawab**\n\n- Merancang, mengembangkan, dan memelihara REST API serta backend service menggunakan Python\n\n- Melakukan integrasi dengan sistem internal maupun third-party API sesuai kebutuhan project\n\n- Merancang skema database, menulis query yang efisien, dan menjaga integritas data\n\n- Menerapkan standar keamanan aplikasi: autentikasi, otorisasi, enkripsi data sensitif, dan audit logging\n\n- Melakukan unit testing dan integration testing untuk memastikan kualitas kode\n\n- Melakukan debugging, troubleshooting, dan optimasi performa service di production\n\n- Berkolaborasi dengan Frontend Engineer, Data/AI Engineer, QA, dan Product Team\n\n- Mendokumentasikan API (OpenAPI/Swagger), arsitektur, dan flow sistem secara rapi\n\n- Mengikuti best practice version control (Git), code review, dan CI/CD",
+      "jd_sha256": "e1416cd2615eaec5bfe5d183f56a580ae6f86b48998f17692a2e3c5f72057663",
+      "cv_source_path": "data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md",
+      "cv_source_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+      "exact_jd_excerpt": "Min. 2–4 tahun pengalaman sebagai Backend Engineer / Software Engineer dengan fokus Python",
+      "exact_cv_excerpt": "- Served it with FastAPI in a Docker container; wrote an evaluation set of 30 questions to check answer accuracy.",
+      "draft": {
+        "relevance_0_3": 1,
+        "main_reason": "CV2 has Python automation and a FastAPI project, but limited evidence of production backend engineering, relational-database optimization or API security.",
+        "constraint_note": "Explicit conflict: two to four years of Backend/Software Engineer employment focused on Python are required; CV2 employment is in marketing analytics/executive roles.",
+        "label_source": "model_draft",
+        "review_status": "pending",
+        "review_action": null,
+        "guideline_version": "v1.3"
+      },
+      "human_review": {
+        "relevance_0_3": null,
+        "review_action": null,
+        "review_note": null,
+        "reviewed_at": null
+      },
+      "source_limitation": null
+    },
+    {
+      "cv_id": "CV2",
+      "job_id": "F00559",
+      "job_title": "Deep Learning Engineer",
+      "source_record_id": "B05_CONT_MACHINE_LEARNING_ENGINEER_IN_KUALA_P02#8",
+      "jd_text": "Design, develop, and implement Retrieval-Augmented Generation (RAG) systems to enhance the capabilities of conversational AI models, ensuring accurate and contextually relevant responses.Integrate Large Language Models (LLMs) with existing systems and new applications, focusing on seamless mobile integration for a superior user experience.Develop and maintain robust APIs for conversational AI services, facilitating efficient communication between the AI backend and mobile applications.Collaborate with cross-functional teams, including product managers and mobile developers, to define AI features and ensure successful deployment on mobile platforms.Utilize Python and cloud platforms (e.g., AWS, Azure, GCP) to build scalable and performant AI solutions, adhering to best practices in system design and data structures.Troubleshoot and debug complex issues within the RAG and LLM pipelines, optimizing performance and reliability for mobile users.Stay abreast of the latest advancements in Conversational AI, RAG, LLMs, and mobile development, proactively identifying opportunities for innovation and improvement.Participate in agile development cycles, contributing to sprint planning, code reviews, and continuous integration/continuous deployment (CI/CD) processes.\n\nDevelop and implement Retrieval-Augmented Generation (RAG) systems to enhance the knowledge base and accuracy of our conversational AI models.Integrate Large Language Models (LLMs) into existing and new applications, ensuring seamless performance and scalability.Design and build robust APIs for conversational AI services, facilitating integration with various platforms and services.Collaborate with mobile development teams to integrate conversational AI features into native iOS and Android applications, ensuring a smooth user experience.Utilize Python for backend development, AI model implementation, and data processing, adhering to best practices in coding and system design.Deploy and manage AI solutions on cloud platforms (e.g., AWS, Azure, GCP), optimizing for performance, cost, and reliability.Apply strong problem-solving skills to troubleshoot and resolve complex technical challenges in AI and mobile integration.Work within an Agile development environment, participating in sprint planning, daily stand-ups, and retrospectives.Demonstrate proficiency in data structures and algorithms to optimize AI model performance and application efficiency.Contribute to system design discussions, ensuring that conversational AI solutions are scalable, maintainable, and align with overall architectural goals.Communicate effectively with cross-functional teams, including product managers, designers, and other engineers, to deliver high-quality AI-powered features.Leverage knowledge of Mandarin and Bahasa Malaysia to potentially contribute to localized AI experiences, although primary work will be in English.\n\nEPFSOCSOAnnual LeaveMedical LeaveHealth Insurance",
+      "jd_sha256": "375331541f2ed1b4c63eb9416e771ff8db8a8c59ff85a773b9173fea12906882",
+      "cv_source_path": "data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md",
+      "cv_source_sha256": "63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469",
+      "exact_jd_excerpt": "Develop and maintain robust APIs for conversational AI services",
+      "exact_cv_excerpt": "- Built a retrieval-augmented chatbot over 40 PDF reports using LangChain, OpenAI embeddings, and a FAISS vector store.",
+      "draft": {
+        "relevance_0_3": 2,
+        "main_reason": "CV2 has a RAG chatbot, FastAPI/Docker service and Python evidence relevant to the role; mobile integration and production cloud operation are not shown.",
+        "constraint_note": "No stated qualification or employment-duration minimum. Rate role fit from stated work only, following the approved responsibilities-only C precedent F00364; do not invent A/B requirements.",
+        "label_source": "model_draft",
+        "review_status": "pending",
+        "review_action": null,
+        "guideline_version": "v1.3"
+      },
+      "human_review": {
+        "relevance_0_3": null,
+        "review_action": null,
+        "review_note": null,
+        "reviewed_at": null
+      },
+      "source_limitation": "Responsibilities-only JD; F00364 C precedent, no A/B requirements invented"
+    }
+  ],
+  "approved_count": 0,
+  "api_calls": 0
+}

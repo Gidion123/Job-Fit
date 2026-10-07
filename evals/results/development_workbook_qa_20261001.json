@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "api_calls": 0,
+  "session_cost_usd": 0,
+  "workbooks": {
+    "dev_batch_01.xlsx": {
+      "sha256": "b7b438d9e9c6665db80176e827e8f733e516906052439eefdf2cfa824e3c6d4d",
+      "rows": 84,
+      "counts": {
+        "F00103": 36,
+        "F00074": 26,
+        "F00012": 22
+      },
+      "sheets": [
+        "README",
+        "JDs",
+        "CVs",
+        "A_Extraction",
+        "B_Evidence",
+        "Timing",
+        "Questions",
+        "QA_Log"
+      ],
+      "sources_exact": true,
+      "new_labels_pending": true
+    },
+    "dev_batch_02.xlsx": {
+      "sha256": "90a4b7c34c502fb1adabf8a360f78e9dda85a88ecaadb5cc941054426d85aa46",
+      "rows": 60,
+      "counts": {
+        "CV1": {
+          "2": 8,
+          "1": 16,
+          "3": 3,
+          "0": 1
+        },
+        "CV2": {
+          "0": 1,
+          "2": 10,
+          "1": 21
+        }
+      },
+      "sheets": [
+        "README",
+        "JDs",
+        "CVs",
+        "C_Relevance",
+        "Timing",
+        "Questions",
+        "QA_Log"
+      ],
+      "sources_exact": true,
+      "new_labels_pending": true
+    }
+  },
+  "protected_sources_unchanged": true,
+  "all_top5_covered_within_40_new_reviews": true,
+  "workflow_decision": "D-047: draft-first current development; held-out test unchanged",
+  "tests": {
+    "database_enabled_passed": 125,
+    "database_seconds": 7.67,
+    "offline_passed": 123,
+    "offline_skipped": 2
+  },
+  "code_hashes": {
+    "src/jobfit/search/pools.py": "2431d3ecae230af24fe6df683b684271bb36514b6947611c009b5fe4e5e7d7ef",
+    "scripts/build_dev_pools.py": "b304902a020185edcc9b41a82fd9441d90858b12c8c2a7f6c5eec192c1f64ce7",
+    "scripts/prepare_development_review.py": "3c3a8e5bdd2e20ac81e43da3faa38c7ac372846f4059fd57b1b62ac035a4a02c",
+    "scripts/validate_development_review.py": "73201beb0a68455a01e1298a4f66dd2f96109975b367fac9370d69f42735e362",
+    "tests/test_dev_pools.py": "316eea5ef71ab93a785120fe2d3510888730b46f60a12db066af40aa7ebf8b09"
+  }
+}

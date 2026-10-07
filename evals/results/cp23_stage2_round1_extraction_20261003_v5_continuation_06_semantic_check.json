@@ -1,0 +1,13 @@
+{
+  "job_id": "deepseek-flash/F00018",
+  "result_sha256": "d12e72ecb344c20ca336712aa84db4c7e9ecd0376921d1018788af632dceab6d",
+  "checks": {
+    "quotes": "pass",
+    "coverage": "fail",
+    "grouping": "fail",
+    "qualifiers": "fail",
+    "importance": "pass"
+  },
+  "notes": "Delegated full-source review of 23 final units versus 24 reviewed logical references. Exact quotes and required/preferred context are retained. U18 combines general cloud-platform experience and the distinct AWS-stack preference; the gold records P04-U18 and P04-U18-AWS are independent reviewed obligations. U18 also classifies the generic cloud-platform requirement as skill_tool rather than gold knowledge_area. U11 retains 'practical experience' in its parent but its NLP/LLM/recommendation branches omit that shared experience qualifier, as do the taxonomies/ontologies and Spark/Dask branches. These differences remain source-semantic/grouping failures under the same branch-qualifier protocol used earlier. No gold correction, semantic TP or human alignment approval is inferred; continue only under the authorized v5 policy.",
+  "checked_by": "delegated_source_semantic_QA_2026-10-03"
+}

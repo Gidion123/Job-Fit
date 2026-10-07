@@ -1,0 +1,400 @@
+{
+  "job_id": "F00189",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "cache_hit": false,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "wall_ms": 29376,
+  "extraction": {
+    "job_id": "F00189",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "At least 8 years of professional experience in data science, analytics, or statistical modelling within banking, payments, or financial services.",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "8 years experience in data science, analytics, or statistical modelling within banking, payments, or financial services",
+        "min_years": 8.0,
+        "branches": [],
+        "source_quotes": [
+          "You have at least 8 years of professional experience in data science, analytics, or statistical modelling within banking, payments, or financial services."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Bachelor's or master's degree in a quantitative discipline such as Statistics, Mathematics, Computer Science, Engineering, or Economics.",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "Bachelor's or master's degree in a quantitative discipline",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Bachelor's or master's degree in Statistics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Bachelor's or master's degree in Mathematics",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Bachelor's or master's degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Bachelor's or master's degree in Engineering",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Bachelor's or master's degree in Economics",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "You hold a bachelor’s or master’s degree in a quantitative discipline such as Statistics, Mathematics, Computer Science, Engineering, or Economics."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Proficient in Python",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Python proficiency",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are proficient in Python, R, and SQL."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Proficient in R",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "R proficiency",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are proficient in Python, R, and SQL."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Proficient in SQL",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "SQL proficiency",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are proficient in Python, R, and SQL."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Experience with big data platform Hadoop",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Hadoop experience",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You have experience with big data platforms such as Hadoop, Spark, and Hive."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Experience with big data platform Spark",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Spark experience",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You have experience with big data platforms such as Hadoop, Spark, and Hive."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Experience with big data platform Hive",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Hive experience",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You have experience with big data platforms such as Hadoop, Spark, and Hive."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Familiar with cloud environment GCP",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "GCP familiarity",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are familiar with cloud environments including GCP, AWS, and Azure."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Familiar with cloud environment AWS",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "AWS familiarity",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are familiar with cloud environments including GCP, AWS, and Azure."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Familiar with cloud environment Azure",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Azure familiarity",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You are familiar with cloud environments including GCP, AWS, and Azure."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Solid understanding of statistical and machine learning method: regression",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Regression knowledge",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You have a solid understanding of statistical and machine learning methods such as regression, classification, clustering, gradient boosting, and neural networks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Solid understanding of statistical and machine learning method: classification",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Classification knowledge",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You have a solid understanding of statistical and machine learning methods such as regression, classification, clustering, gradient boosting, and neural networks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Solid understanding of statistical and machine learning method: clustering",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Clustering knowledge",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You have a solid understanding of statistical and machine learning methods such as regression, classification, clustering, gradient boosting, and neural networks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Solid understanding of statistical and machine learning method: gradient boosting",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Gradient boosting knowledge",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You have a solid understanding of statistical and machine learning methods such as regression, classification, clustering, gradient boosting, and neural networks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Solid understanding of statistical and machine learning method: neural networks",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Neural networks knowledge",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You have a solid understanding of statistical and machine learning methods such as regression, classification, clustering, gradient boosting, and neural networks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Experienced with data visualisation tools such as Tableau or Power BI",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Data visualisation tool experience",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Tableau",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Power BI",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "You are experienced with data visualisation tools such as Tableau or Power BI."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Can manage multiple concurrent analytics projects with diverse stakeholders",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Managing concurrent analytics projects",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You can manage multiple concurrent analytics projects with diverse stakeholders."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Communicate complex analytical concepts clearly to non-technical audiences",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Communicating complex analytical concepts",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You communicate complex analytical concepts clearly to non-technical audiences."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Demonstrate strong analytical thinking",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Analytical thinking",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You demonstrate strong analytical thinking, problem-solving ability, and attention to detail."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Demonstrate strong problem-solving ability",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Problem-solving ability",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You demonstrate strong analytical thinking, problem-solving ability, and attention to detail."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Demonstrate attention to detail",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Attention to detail",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "You demonstrate strong analytical thinking, problem-solving ability, and attention to detail."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

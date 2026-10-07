@@ -1,0 +1,27 @@
+{
+  "schema_version": "prompt-version-inventory-v2",
+  "date": "2026-10-03",
+  "historical_inventory": "evals/results/cp23_prompt_version_inventory_20261003_v1.json",
+  "historical_inventory_sha256": "3a6d7bccc8eca0b48145d4627c81d6c663ef630db29f3b6700a167caafdb7cf0",
+  "first_call_rubrics_changed": false,
+  "repair_instruction_wording_changed": false,
+  "repair_instruction_template": "The previous response failed validation ({code}). Return a fresh complete result. Verify IDs, required fields, exact source substrings and dates. Preserve literal newlines in quotes. Do not invent missing facts. This is the only repair attempt.",
+  "old_repair_roles": [
+    "system",
+    "user",
+    "assistant",
+    "system"
+  ],
+  "new_repair_roles": [
+    "system",
+    "user",
+    "assistant",
+    "user"
+  ],
+  "implementation_path": "src/jobfit/llm/structured.py",
+  "implementation_sha256": "edd1b3faf8d8471aa8c1b78a57c156be40165df3444d347f5e9dc91fc115e122",
+  "run_id": "cp23_stage2_repair_rerun_20261004_v1",
+  "plan_sha256": "752dffd6a9691cb957f131f2f2c912938d972f295d4ad8e4086f4b5a6e355aea",
+  "approval_sha256": "ca5a8bb3239b8a8908ce0bac0f5fcee7831ec0d4fb5a7f1f8c0c3b0855d58e0c",
+  "scope": "Repair-only request framing. Original first drafts, prompt files and schemas preserved. No new rubric or prompt-wording experiment."
+}

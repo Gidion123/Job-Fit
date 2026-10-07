@@ -1,0 +1,108 @@
+{
+ "label_version": "test_v13_cp24_r1",
+ "split": "test",
+ "decision": "D-088",
+ "labeling_mode": "ai_assisted_human_reviewed_blind_to_ranking",
+ "label_source": "ai_assisted_human_reviewed",
+ "annotator": {
+  "name": "Dion (Gidion Depari)",
+  "role": "final decision on every label"
+ },
+ "assistant": {
+  "tool": "ChatGPT",
+  "provider_family": "OpenAI",
+  "role": "assessed CV-JD pairs and drafted recommendations, reasons and notes"
+ },
+ "blind_to_ranking": true,
+ "hidden_during_labeling": [
+  "JobFit rank",
+  "JobFit score",
+  "retriever method",
+  "JobFit model suggestions",
+  "pool_provenance.json"
+ ],
+ "independent_human_annotation": false,
+ "pure_human_gold": false,
+ "annotators_count": 1,
+ "inter_annotator_agreement": "not_measured",
+ "authoritative_sheet": "C_Relevance",
+ "sheets_not_used": {
+  "Items": "relevance_0_3 and main_reason empty; not the label source",
+  "A_Extraction/B_Evidence": "labeling support only; not imported"
+ },
+ "freeze": {
+  "receipt": "evals/freeze/cp23_freeze_draft_v2",
+  "decision": "D-087",
+  "frozen_before_labeling": true
+ },
+ "test_used_for_tuning": false,
+ "change_summary": {
+  "relevance_label_changes": {
+   "count": 1,
+   "items": [
+    {
+     "item_id": "T68",
+     "before": 2,
+     "after": "UNJUDGED"
+    }
+   ]
+  },
+  "text_only_corrections": {
+   "count": 5,
+   "items": [
+    "T17",
+    "T21",
+    "T23",
+    "T43",
+    "T50"
+   ],
+   "field": "main_reason",
+   "score_changed": false
+  },
+  "other_relevance_or_score_changes": {
+   "count": 0,
+   "items": []
+  },
+  "statement": "1 relevance-label change (T68 2 -> UNJUDGED); 5 text-only corrections (T17, T21, T23, T43, T50); 0 other relevance/score changes."
+ },
+ "counts": {
+  "items": 68,
+  "judged": 67,
+  "unjudged": 1,
+  "per_cv": {
+   "CV1": {
+    "judged": 14,
+    "unjudged": 0
+   },
+   "CV2": {
+    "judged": 13,
+    "unjudged": 0
+   },
+   "CV3": {
+    "judged": 14,
+    "unjudged": 0
+   },
+   "CV4": {
+    "judged": 12,
+    "unjudged": 0
+   },
+   "CV5": {
+    "judged": 14,
+    "unjudged": 1
+   }
+  }
+ },
+ "required_disclosures": [
+  "Labels are AI-assisted (ChatGPT) and human-reviewed by one reviewer; they are not independent human annotation and no inter-annotator agreement was measured.",
+  "Because the labeling assistant and matcher are both OpenAI-family models, correlated model preferences may inflate apparent agreement. The direction and magnitude of this bias were not independently measured.",
+  "This deviates from the D-053 wording \"no model suggestions\"; recorded in D-088.",
+  "The headline covers three synthetic CVs (CV3-CV5); results are indicative only.",
+  "Unscorable pairs are unjudged, never counted as 0 (D-052)."
+ ],
+ "notes": [
+  {
+   "item_id": "T68",
+   "note": "pilot_id empty in C_Relevance; pair is uniquely identified by (cv_id, job_id) and item_id; evaluator does not read pilot_id"
+  }
+ ]
+}

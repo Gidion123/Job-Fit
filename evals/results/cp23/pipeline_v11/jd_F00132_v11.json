@@ -1,0 +1,786 @@
+{
+  "job_id": "F00132",
+  "status": "done",
+  "attempts": 2,
+  "error_code": null,
+  "cache_hit": false,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 11,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 11,
+    "inventory_mappings": [
+      {
+        "source_id": "Q01",
+        "unit_ids": [
+          "U01"
+        ]
+      },
+      {
+        "source_id": "Q02",
+        "unit_ids": [
+          "U02",
+          "U03"
+        ]
+      },
+      {
+        "source_id": "Q03",
+        "unit_ids": [
+          "U04",
+          "U05"
+        ]
+      },
+      {
+        "source_id": "Q04",
+        "unit_ids": [
+          "U06",
+          "U07",
+          "U08",
+          "U09",
+          "U10",
+          "U11",
+          "U12"
+        ]
+      },
+      {
+        "source_id": "Q05",
+        "unit_ids": [
+          "U13",
+          "U14"
+        ]
+      },
+      {
+        "source_id": "Q06",
+        "unit_ids": [
+          "U15",
+          "U16",
+          "U17",
+          "U18",
+          "U19"
+        ]
+      },
+      {
+        "source_id": "Q07",
+        "unit_ids": [
+          "U20",
+          "U21"
+        ]
+      },
+      {
+        "source_id": "Q08",
+        "unit_ids": [
+          "U22"
+        ]
+      },
+      {
+        "source_id": "Q09",
+        "unit_ids": [
+          "U23",
+          "U24"
+        ]
+      },
+      {
+        "source_id": "Q10",
+        "unit_ids": [
+          "U25",
+          "U26",
+          "U27"
+        ]
+      },
+      {
+        "source_id": "Q11",
+        "unit_ids": [
+          "U28",
+          "U29",
+          "U30",
+          "U31"
+        ]
+      }
+    ],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "wall_ms": 208999,
+  "extraction": {
+    "job_id": "F00132",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "Bachelor's degree in Computer Science, Information Systems, Informatics Engineering, or a related quantitative field",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Bachelor's degree in Computer Science",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Bachelor's degree in Information Systems",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Bachelor's degree in Informatics Engineering",
+            "field": "education",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Bachelor's degree in a related quantitative field",
+            "field": "education",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Bachelor's degree in Computer Science, Information Systems, Informatics Engineering, or a related quantitative field."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Minimum 5 years of experience in Data Engineering or Data Integration",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "5 years of experience in Data Engineering",
+            "field": "experience_duration",
+            "min_years": 5.0
+          },
+          {
+            "branch_id": "B2",
+            "text": "5 years of experience in Data Integration",
+            "field": "experience_duration",
+            "min_years": 5.0
+          }
+        ],
+        "source_quotes": [
+          "Minimum 5 years of experience in Data Engineering or Data Integration, with proven experience in migrating unstructured data (Excel/CSV) into centralized relational databases."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Experience migrating unstructured data (Excel/CSV) into centralized relational databases",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Minimum 5 years of experience in Data Engineering or Data Integration, with proven experience in migrating unstructured data (Excel/CSV) into centralized relational databases."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Hands-on experience designing large-scale (enterprise-level) ETL/ELT solutions",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Hands-on experience in designing and developing large-scale (enterprise-level) ETL/ELT solutions."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Hands-on experience developing large-scale (enterprise-level) ETL/ELT solutions",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Hands-on experience in designing and developing large-scale (enterprise-level) ETL/ELT solutions."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Strong expertise in Microsoft SQL Server",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong expertise in Microsoft SQL Server, Oracle, and PostgreSQL, including Stored Procedures, Indexing, Query Optimization, and complex SQL development."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Strong expertise in Oracle",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong expertise in Microsoft SQL Server, Oracle, and PostgreSQL, including Stored Procedures, Indexing, Query Optimization, and complex SQL development."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Strong expertise in PostgreSQL",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong expertise in Microsoft SQL Server, Oracle, and PostgreSQL, including Stored Procedures, Indexing, Query Optimization, and complex SQL development."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Strong expertise in Stored Procedures",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong expertise in Microsoft SQL Server, Oracle, and PostgreSQL, including Stored Procedures, Indexing, Query Optimization, and complex SQL development."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Strong expertise in Indexing",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong expertise in Microsoft SQL Server, Oracle, and PostgreSQL, including Stored Procedures, Indexing, Query Optimization, and complex SQL development."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Strong expertise in Query Optimization",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong expertise in Microsoft SQL Server, Oracle, and PostgreSQL, including Stored Procedures, Indexing, Query Optimization, and complex SQL development."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Strong expertise in complex SQL development",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong expertise in Microsoft SQL Server, Oracle, and PostgreSQL, including Stored Procedures, Indexing, Query Optimization, and complex SQL development."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Proficient in writing advanced SQL queries for large-scale data processing",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficient in writing advanced SQL queries for large-scale data processing and transformation."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Proficient in writing advanced SQL queries for large-scale data transformation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Proficient in writing advanced SQL queries for large-scale data processing and transformation."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Strong Python programming skills for data processing",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong Python programming skills for data processing and automation, particularly using Pandas, NumPy, and related integration frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Strong Python programming skills for automation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong Python programming skills for data processing and automation, particularly using Pandas, NumPy, and related integration frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Using Pandas with Python for data processing and automation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong Python programming skills for data processing and automation, particularly using Pandas, NumPy, and related integration frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Using NumPy with Python for data processing and automation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong Python programming skills for data processing and automation, particularly using Pandas, NumPy, and related integration frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Using related integration frameworks with Python for data processing and automation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Strong Python programming skills for data processing and automation, particularly using Pandas, NumPy, and related integration frameworks."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U20",
+        "text": "Experience consuming RESTful APIs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience in consuming and developing RESTful APIs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U21",
+        "text": "Experience developing RESTful APIs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Experience in consuming and developing RESTful APIs."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U22",
+        "text": "Solid experience with ETL tools such as Talend or SSIS",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience with ETL tool Talend",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience with ETL tool SSIS",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Solid experience with ETL tools such as Talend (preferred) or SSIS."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U23",
+        "text": "Familiarity with orchestration tools such as Apache Airflow for scheduling data pipelines",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with orchestration tools such as Apache Airflow for scheduling and managing data pipelines."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U24",
+        "text": "Familiarity with orchestration tools such as Apache Airflow for managing data pipelines",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Familiarity with orchestration tools such as Apache Airflow for scheduling and managing data pipelines."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U25",
+        "text": "Good understanding of Star Schema",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good understanding of Data Warehousing concepts, including Star Schema, Snowflake Schema, and Data Modeling."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U26",
+        "text": "Good understanding of Snowflake Schema",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good understanding of Data Warehousing concepts, including Star Schema, Snowflake Schema, and Data Modeling."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U27",
+        "text": "Good understanding of Data Modeling",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Good understanding of Data Warehousing concepts, including Star Schema, Snowflake Schema, and Data Modeling."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U28",
+        "text": "Knowledge of Data Lineage",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of Data Governance practices, including Data Lineage, Data Cataloging, Metadata Management, and automated data quality validation."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U29",
+        "text": "Knowledge of Data Cataloging",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of Data Governance practices, including Data Lineage, Data Cataloging, Metadata Management, and automated data quality validation."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U30",
+        "text": "Knowledge of Metadata Management",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of Data Governance practices, including Data Lineage, Data Cataloging, Metadata Management, and automated data quality validation."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U31",
+        "text": "Knowledge of automated data quality validation",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Knowledge of Data Governance practices, including Data Lineage, Data Cataloging, Metadata Management, and automated data quality validation."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U32",
+        "text": "Experience with Robotic Process Automation (RPA) tools such as UiPath, Power Automate, Selenium, Playwright, or similar technologies for automating repetitive business processes",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Experience with RPA tool UiPath for automating repetitive business processes",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Experience with RPA tool Power Automate for automating repetitive business processes",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Experience with RPA tool Selenium for automating repetitive business processes",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B4",
+            "text": "Experience with RPA tool Playwright for automating repetitive business processes",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B5",
+            "text": "Experience with similar RPA technologies for automating repetitive business processes",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Experience with Robotic Process Automation (RPA) tools such as UiPath, Power Automate, Selenium, Playwright, or similar technologies for automating repetitive business processes."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U33",
+        "text": "Familiarity with modern Data Cataloging platforms such as OpenMetadata, DataHub, or equivalent tools",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Familiarity with Data Cataloging platform OpenMetadata",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Familiarity with Data Cataloging platform DataHub",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Familiarity with equivalent Data Cataloging tools",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Familiarity with modern Data Cataloging platforms such as OpenMetadata, DataHub, or equivalent tools."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U34",
+        "text": "Understanding of real-time data architectures",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "Understanding of real-time data architectures and streaming technologies such as Kafka or Spark Streaming."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U35",
+        "text": "Understanding of streaming technologies such as Kafka or Spark Streaming",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Understanding of streaming technology Kafka",
+            "field": "knowledge_area",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Understanding of streaming technology Spark Streaming",
+            "field": "knowledge_area",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Understanding of real-time data architectures and streaming technologies such as Kafka or Spark Streaming."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U36",
+        "text": "Relevant professional certifications, such as Talend Certified Developer, Microsoft SQL Server Certification, or other related certifications",
+        "kind": "alternative_group",
+        "importance": "preferred",
+        "field": "certification",
+        "normalized_name": null,
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "B1",
+            "text": "Certification Talend Certified Developer",
+            "field": "certification",
+            "min_years": null
+          },
+          {
+            "branch_id": "B2",
+            "text": "Certification Microsoft SQL Server Certification",
+            "field": "certification",
+            "min_years": null
+          },
+          {
+            "branch_id": "B3",
+            "text": "Other related professional certification",
+            "field": "certification",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "Relevant professional certifications, such as Talend Certified Developer, Microsoft SQL Server Certification, or other related certifications."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

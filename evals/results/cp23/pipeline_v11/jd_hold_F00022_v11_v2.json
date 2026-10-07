@@ -1,0 +1,310 @@
+{
+  "job_id": "F00022",
+  "status": "done",
+  "attempts": 1,
+  "error_code": null,
+  "wall_ms": 60692,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "no_uncovered_bullets",
+    "bullet_count": 6,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00022",
+    "units": [
+      {
+        "unit_id": "U01",
+        "text": "1-2 years of professional experience in Data Science fields; fresh graduates welcome.",
+        "kind": "qualified",
+        "importance": "unknown",
+        "field": "experience_duration",
+        "normalized_name": "Data Science experience",
+        "min_years": 1.0,
+        "branches": [],
+        "source_quotes": [
+          "• 1-2 years of professional experiences in Data Science fields. Fresh graduate are welcome to apply."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U02",
+        "text": "Experienced using Python to manipulate data and draw insights from large data sets.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Mandatory: Experienced using programming languages (at least Python and SQL) to manipulate data and draw insights from large data sets."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U03",
+        "text": "Experienced using SQL to manipulate data and draw insights from large data sets.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "SQL",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Mandatory: Experienced using programming languages (at least Python and SQL) to manipulate data and draw insights from large data sets."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U04",
+        "text": "Intermediate mathematical, statistical, and/or machine learning skills, including their real-world advantages/drawbacks.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Mathematical, statistical, and/or machine learning skills",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Intermediate Mathematical, Statistical, and/or Machine Learning skills required, and their real-world advantages/drawbacks."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U05",
+        "text": "Knowledge and/or experience working with structured and/or unstructured data sets.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Structured and/or unstructured data sets",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Knowledge and/or experience in working with structured and/or unstructured data sets."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U06",
+        "text": "Knowledge and/or experience in Data Architecture and Engineering.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "knowledge_area",
+        "normalized_name": "Data Architecture and Engineering",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform."
+        ],
+        "needs_review": true,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U07",
+        "text": "Google Cloud Platform.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "Google Cloud Platform",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Knowledge and/or experience in Data Architecture and Engineering is a plus, especially Google Cloud Platform."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U08",
+        "text": "Familiar with Data Visualization Tools.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Data Visualization Tools",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Familiar with Data Visualization Tools, Google Data Studio is a plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U09",
+        "text": "Google Data Studio.",
+        "kind": "simple",
+        "importance": "preferred",
+        "field": "skill_tool",
+        "normalized_name": "Google Data Studio",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Familiar with Data Visualization Tools, Google Data Studio is a plus."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U10",
+        "text": "Problem-solving skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Problem-solving",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Problem-solving skills, structured thinking and scientific approach required."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U11",
+        "text": "Structured thinking.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Structured thinking",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Problem-solving skills, structured thinking and scientific approach required."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U12",
+        "text": "Scientific approach.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Scientific approach",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Problem-solving skills, structured thinking and scientific approach required."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U13",
+        "text": "Ability to work with minimal supervision.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Work with minimal supervision",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Ability to work with minimal supervision and keep supervisors informed."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U14",
+        "text": "Ability to keep supervisors informed.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Keep supervisors informed",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Ability to work with minimal supervision and keep supervisors informed."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U15",
+        "text": "Ability to work well in a team environment.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Teamwork",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Ability to work well in a team environment."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U16",
+        "text": "Ability to communicate in clear and concise terms.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Clear communication",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Ability to communicate in clear and concise terms."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U17",
+        "text": "Willing to learn new skills.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Willingness to learn",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Willing to learn new skills and able to do so independently."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U18",
+        "text": "Able to learn new skills independently.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Independent learning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Willing to learn new skills and able to do so independently."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U19",
+        "text": "Ability to take initiative.",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Initiative",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Ability to take initiative."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

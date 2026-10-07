@@ -1,0 +1,1156 @@
+{
+  "date": "2026-10-03",
+  "status": "preflight_only_no_execution_authorization",
+  "api_calls": 0,
+  "model": "deepseek/deepseek-v4.1-flash",
+  "guideline_version": "v1.3",
+  "proposed_prompt_version": "jd-prompt-v1.3",
+  "model_selection": false,
+  "default_runtime_prompt": "jd-prompt-v1.2",
+  "price_ceiling_per_m": {
+    "input": 0.3,
+    "output": 1.2
+  },
+  "source_hashes": {
+    "dev_job_ids.txt": "3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6",
+    "jobs_features.jsonl": "758cf42ce9f57a237f563034666b7c1649d63942281adc480b29ad2eca44d194",
+    "experimental_prompt": "0afe4b95155c7225bafd62e9216344cd886a4d6ba2e005fd746652b6ed97a224"
+  },
+  "budget": {
+    "project_hard_stop_usd": 8.5,
+    "ledger_including_reservations_usd": "0.290770384",
+    "remaining_project_usd": "8.209229616",
+    "uncertain_prior_reservation_usd": "0.0210861"
+  },
+  "conservative_bound": {
+    "max_input_tokens_per_attempt": 100000,
+    "max_output_tokens_per_attempt": 16000,
+    "maximum_attempts_per_JD": 2,
+    "maximum_usd_per_JD": 0.0984,
+    "not_an_average_bill": true
+  },
+  "observed_extraction": {
+    "jobs": 2,
+    "calls": 4,
+    "cost_usd": "0.041919840",
+    "interpretation": "Two difficult assisted cases only; not a corpus cost/quality estimate."
+  },
+  "proposed_next_small_scope": {
+    "job_ids": [
+      "F00016",
+      "F00073",
+      "F00103",
+      "F00074",
+      "F00012"
+    ],
+    "documents": 5,
+    "maximum_input_tokens_including_repair": 1000000,
+    "maximum_output_tokens_including_repair": 160000,
+    "conservative_upper_usd": 0.492,
+    "spending_ceiling_proposal_usd": 0.5,
+    "run": false,
+    "purpose": "Remaining priority development extraction outcomes under one explicitly versioned protocol; source compatibility must be reviewed before metrics."
+  },
+  "full_development": {
+    "documents": 214,
+    "maximum_input_tokens_including_repair": 42800000,
+    "maximum_output_tokens_including_repair": 6848000,
+    "conservative_upper_usd": 21.0576,
+    "fits_project_guard": false,
+    "run": false
+  },
+  "development_inventory": [
+    {
+      "job_id": "F00001",
+      "source_sha256": "3fe2741ecec6d0e461ef5a83304e145d8b5ce93053f4b80e14fb3f3bb82bbfcf",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00003",
+      "source_sha256": "b4b1249e2eb4da23c32d6c6b53aa237284cee9156da21faf6c3bf0fd616c718f",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00005",
+      "source_sha256": "c4ce704a8ed0cf36043872fa3c4dc8bb3490c62e626769ac0def4ca14964853c",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00006",
+      "source_sha256": "5a844c36f9db8894323df046c61f749d9e84af6355ff3a58442a864f1c897e1f",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00010",
+      "source_sha256": "7f372007cee58f0d52443ea003aa4e7b44f6b42758f42e95af6f5a74603bd29e",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00011",
+      "source_sha256": "a6411b0e4c433488ddb4179dca278f299c2f1b86689c9b5d6f4dfc02602ce38f",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00012",
+      "source_sha256": "39941597ee2702c94db1d20ff99b5af4716ac44fc708d3b29cd305cc294bd47a",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00015",
+      "source_sha256": "13b93de5bf0783a379360c6f729781ab1b7036f68e2ec04d5f022d1e0d98e9ee",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00016",
+      "source_sha256": "7ce15548520a18d87416f5fb8c3b959a2d40aca3199086ab17822c6add18d477",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00017",
+      "source_sha256": "c41c2462096874aab0c1c14105208ce1e6ff311e771fdf32f69c0bd0440f44ff",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00018",
+      "source_sha256": "f409e9a55d3bc70109c69b1ee7aa779e5e866428ca42e6439a4901fa3187d3d4",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00020",
+      "source_sha256": "e12b2333449d47e67365bf2a2c19d28651a9733c426e4f6f05bc809158dd1cf6",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00021",
+      "source_sha256": "fd431db922d6e183f96cdb6ca384d7e8f1ae98446ee9285bcf7729cb0dc92c65",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00022",
+      "source_sha256": "5096de1762a4d7d373d8df4780441a254189e009e03927c9945a56c858a54345",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00023",
+      "source_sha256": "00864feda2366c179b2761fa4058cda380556b2aed213d2ba431546e2ca1b46b",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00029",
+      "source_sha256": "5d0a447cd1b07c92d823d9a06e4ea124876ba13c474fef35dbe44412da32cb3e",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00030",
+      "source_sha256": "7e098d45330a7439afe211a2c5983a7bdfddcea46a67dfdfca70751cefb2d958",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00033",
+      "source_sha256": "cd1105627b8e9948965f58fafd808e83e352f34c3ae07f4551d1e83517e11382",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00034",
+      "source_sha256": "8cdbfad2b5803545eb155c346253249dd72d4015024018e34706e3ddf9552826",
+      "status": "source_reviewed_experiment_output"
+    },
+    {
+      "job_id": "F00036",
+      "source_sha256": "831248e3faf86e60196bb7d56ce63270d790903be72c185c746c1f20faf19b7d",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00052",
+      "source_sha256": "4acc7c56beae65fb53259114b0d91e5d6deaa4ca80a28544d3228078c6c4be45",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00055",
+      "source_sha256": "be42b962ffd473b7efc54175eb1eafd49110a053f6be58f255ff710949f73dd5",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00059",
+      "source_sha256": "ee4c9c9b561cf136ccd17bb55db4baf148d7239f6e19bd1f6a54cf7f3b807593",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00060",
+      "source_sha256": "13fab58276ff600b0de47d976f8b06b879353f552c1c20a05d0261bda367e7d2",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00066",
+      "source_sha256": "7d693f0a8bfebb16c4996e43f209723d5c3f52afc373b397e7e750d6c4f67766",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00067",
+      "source_sha256": "2e6e5f04591115c35bbfa65372a63e79383b9a6e854226ac1a916dff97944a8d",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00073",
+      "source_sha256": "408a099f8f221bd4fca5a07ed93fbccda6b23f796111ee3efe105397570cc23f",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00074",
+      "source_sha256": "3a01e9edec1c5735cc6c4594f90ffd0d3265ebd2b4a0cfb7be308c68779455cb",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00075",
+      "source_sha256": "0949482fca87a93fe34937c0cc1bf588c1244ca4746a55ff6791f560d2d86876",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00077",
+      "source_sha256": "95d1d2c1d29b19260c33092e9604873a0e50cb4b96161cbf56dfa1ef9d50500c",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00082",
+      "source_sha256": "1faab2677c5519888e76cc6d05afe3e5a2ab72f59a81cd53a9f1da4ec5277589",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00090",
+      "source_sha256": "e1416cd2615eaec5bfe5d183f56a580ae6f86b48998f17692a2e3c5f72057663",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00103",
+      "source_sha256": "56e66b9de78af8f02537e4e29ffcf9d5f50beafaabeb5c4aac2a368fdb38027a",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00104",
+      "source_sha256": "3694abaaa41778cb2111a3ff87984cb47b26dd4054efff32e43a295036b8ce95",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00108",
+      "source_sha256": "98a09d13f92038a9f73ba8210ce01ffe5259a6374401f25797dd0dd65e348c41",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00114",
+      "source_sha256": "9142b5e96143a367f19583a241180844e43bbc1cfb62198c22aafa75f8a4f0f8",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00117",
+      "source_sha256": "7e2d7560579e086bcd3ec3f7b26a27adfd205558b0611521b3250f425529974c",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00123",
+      "source_sha256": "8ccd226e8a9483a4bb023f860e4899306a409194a52ed77b521f9e1e234508c1",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00126",
+      "source_sha256": "eb4e033d682048ddaf6edcb5d3ab4efad0089446e68188ad3166342b6e7e9044",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00129",
+      "source_sha256": "c2dc58bb4546d20809f64d8ced2165f2075229ffbecc53c5f03512925ffad346",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00130",
+      "source_sha256": "d19d1ba6c9bee0a32a68b42a80a704edb2b44798ecef4df8ed3e9edb684ec4a2",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00132",
+      "source_sha256": "cb12c3099b0cbcfdd7033ebc2f5fabe566bcab19b1e5cb3a19ac5dbb91ce7578",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00151",
+      "source_sha256": "1ed1179df26253d23eb4b744116c5a87a7758803b895a791646e8851663f14bf",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00153",
+      "source_sha256": "0f0a0da1d338bf360b357bbea98410989cec3c805543945dfba0eb2bcbcc48b6",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00166",
+      "source_sha256": "77e7b4817bd1ca7faeaa060834629d77e75cc2c89307dfe99fadaaa106823d9c",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00176",
+      "source_sha256": "a33a590443d15a5b2ac29bb81f6f6b46cf08018814f3a8628d1bbd42afcd9548",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00177",
+      "source_sha256": "ae29bb6bf7a378daca40c12f898ffb8d871e5b3dde4fd041e03f193651291f3c",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00183",
+      "source_sha256": "8e819126c0ac42eac401afd350251b0d0afcbd26fa42e24e007172b3f8bb9e0f",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00184",
+      "source_sha256": "963b38e7c68dce137cab02d29e344bf431e0879948e6c6a4e19bd353170a419a",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00187",
+      "source_sha256": "37c5e8dd77962429b3080c063f76c3b6506da1c3ed1d9397169b8878b4a1541d",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00188",
+      "source_sha256": "3003ee023308350d80a0db4f00b12f869850b8746f56bd1e824b4c99f133b736",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00189",
+      "source_sha256": "429b60cff8e1f21068cc46c50d2db35d8476aff039dc0fdd2de3e50c80e838f9",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00208",
+      "source_sha256": "d10ec9ff03eebcc0d3ff8da3b026913cdea3cf8e559c57b35e3dd64b78712ee2",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00210",
+      "source_sha256": "2a3d7d5f311ad65eaa9572b2fb5d607d539a0063eff7938c2a588f688cb41621",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00212",
+      "source_sha256": "9bf584ac8a1f1cab49c5d694564039e8278929d3da38a1276035039bec92ce1e",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00247",
+      "source_sha256": "39936094380ba1f292170ff2a0b5dfad51eb713d3e175bd7a0a2588e97a956c5",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00257",
+      "source_sha256": "ca55ec98b801e4d684482163e5d7211e1e3ff085d9ec0003e2b0248ae995f62b",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00284",
+      "source_sha256": "41371e2761e1bd954747674e4637722d351f031c95123b15fe213cb6d1736348",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00287",
+      "source_sha256": "aa918add500448ca279dc8228434eedc81cb77eda50801e021c48ec6ba5aaa1c",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00292",
+      "source_sha256": "5257f0b88e1347985527b224a2a400277c1d80ed22eaaabff711b5926ceb98af",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00298",
+      "source_sha256": "c1c7c72fa5705ceb9ddee35860d29618c1c18ba931297cb2b19a361c2fe0f48e",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00300",
+      "source_sha256": "6687886a6a871790c3798f7a97658074e66110418216b71468c09bbb8c067cb3",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00301",
+      "source_sha256": "81e1b011a1fda904d60b672ece5d9d4774aced192610708685fd50e881ec67d5",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00303",
+      "source_sha256": "ccddd8dff659432c49d260325eab32335b54bc6e2c910a0c70d6f50d4d9b28dc",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00309",
+      "source_sha256": "bebe8392865ea77ac7453db73d0e6d688608b2ae539397073ec2f77538b0a8a3",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00310",
+      "source_sha256": "cf6834ec90ea68c3560f87b4262918bb118e3ddebef56ce350e7ffc5819bf927",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00311",
+      "source_sha256": "2f20afbaeee8e138da61bc804c8f4c795acf3428b4300e10cd1eef201635a2c9",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00312",
+      "source_sha256": "502c3c507ce107c75388ecd4651cd341d46c99aa437bf141ba0eda067ee2bff7",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00314",
+      "source_sha256": "0c15a0a44cb8ee50ed7781365b3037c3e219dbb31acc80417ac63b46246be0bd",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00315",
+      "source_sha256": "96e1b4e7a39efcf75eecacf07c0c6ae7d83d7ac75010ee8fabe41bb781e92a50",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00320",
+      "source_sha256": "822effde136ee252ead89e5a4ed492c2ed77297fc9f1510ff1f4c5fa0b5b73c4",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00321",
+      "source_sha256": "1ef1bfa4662c23cd944f28709f8d8ab13160c9d6ffebf04e891250c2d00d8f9a",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00327",
+      "source_sha256": "82196ae8109a1b627aa73d4399af908daf75eeeb0fc6dadabb017e909cee1eb8",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00330",
+      "source_sha256": "cffe90859922357650a716e145c0c7cdb4395145d6fa5fd7534b53bc2ffcfe50",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00332",
+      "source_sha256": "9113fae9a5efa7be34c475f2ddca9a2adc34a2edd2b57f7a78da494ef1381619",
+      "status": "source_reviewed_experiment_output"
+    },
+    {
+      "job_id": "F00333",
+      "source_sha256": "634a21d36f4610a680d18a7ffe9a54662eb67aa25ca4e6f0d91c8bff8b9636af",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00339",
+      "source_sha256": "73f448df03dfc09ec8fa61052f2c98faec360beaaf659566711acf396d96ca17",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00343",
+      "source_sha256": "a62fcf4b09c63690c3cffbefabadf74a7e4da41c03793a9863d5a62b90ae3c19",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00347",
+      "source_sha256": "6041b4b9f966fe2b2138baefbcc1c7a329a8e368e05d0a39bbf614659b2daa79",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00350",
+      "source_sha256": "62e550df4f3b7d6a9a81855bc4880cb5a2d84efc8cd5e1e8cfb956735294bdf1",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00351",
+      "source_sha256": "b8f174992233b6525077277fefdd968da3b478c2a91bd269c7e04185da1eec3e",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00352",
+      "source_sha256": "f13fb465f285853b4814e00509798dd81004f55ee4d8aa837c07ee589f3fb424",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00354",
+      "source_sha256": "1031ae0641ebd36ed68e1075546b2db8b761489fabd6fef3001c46b8780d467c",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00356",
+      "source_sha256": "cf7440b94999d08fe05d8eb117357512072ce126c5068c9ce69dad9a738dd597",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00357",
+      "source_sha256": "746da6cf966cb7a2b577a562f9645e100515f343f0321aebc4177e66d13be95f",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00362",
+      "source_sha256": "7a0fe8ce199cf2d7b031254513ff6e752ccb4da3b23705dd40ad62518e4009ed",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00363",
+      "source_sha256": "de9cdda39a97d817eb0de49bb0f1c86b56d2cbd92f75396532f22fe172db91f3",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00364",
+      "source_sha256": "86f2344d8a28cb5374d45af625e9ec25a8a42250a374cbba9462343cd7110c6b",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00365",
+      "source_sha256": "c0ae99f77bed4016410e02a680eec13c2e9a624f9479c094335018c6d7f72c69",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00366",
+      "source_sha256": "e1eb66d01304c4b33e67f418567f59a677eea5c03a4f74fece0a1be662b76047",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00368",
+      "source_sha256": "fd69491cea40c28f924bb8b41c9b630350c8e2f670ed08409a0cb7fffb3bc2e8",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00369",
+      "source_sha256": "86ed12356cc5d1b910b7b7750a1e8335a807380da15a8e1ac5570b81198dac8b",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00370",
+      "source_sha256": "93eeeed34bef1da3d8864d8e478fc4cbb379566b36ef581abe6c3f5009fbdcc8",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00377",
+      "source_sha256": "bb81116e30f3c0979f18c84a5129814212542805e07eb0fde1b46d36e3663792",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00378",
+      "source_sha256": "31d437e49dbb9891f583a8b5eddbaf4a1071d2a240892e2cb0f2c8b6469bb9a1",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00394",
+      "source_sha256": "c5fea0abbe37ef8224f099912986bcb9fdf5385fabbd2bac40755c9c2c6b756d",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00396",
+      "source_sha256": "67bcef49206b731a06bcbece34b643e28467367683dfdff5f063b056d5da9ae2",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00404",
+      "source_sha256": "20c75a8bcb568c4bb191879e7020c0e47d6e1a1f3c608ea1934a71e36d12421c",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00412",
+      "source_sha256": "3da007faf99f301bfd38526fe9edbd31b5c64fb59c9e29727f6d13fe316314a2",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00415",
+      "source_sha256": "54e03b356d89f55054789708bed99fdab97814eef98043e309528b34122a8e9b",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00418",
+      "source_sha256": "c1485285a9947cb5c3cd86b428be349ee675c8ec0fecf352860f09feaac66e13",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00423",
+      "source_sha256": "9361bee823cb321e149b0961256212ed446dfbd53577e236baf78f902752fad8",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00425",
+      "source_sha256": "3f0706569f3b1b8f1f148ac82d81923b8b06c1b1d4b3512db62f827f455d5036",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00427",
+      "source_sha256": "c6a070d655901fd778672e970c4e9b7ec3cb6d022d89e6b910ffd97fb2a30b9c",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00436",
+      "source_sha256": "db9b29ddcd207848d7e9ea20758478f1391f2002c3a1ddb3edc18acba5863722",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00437",
+      "source_sha256": "e2aee450f8e9bd99ea3522e1fd2def550ce2db9cc4af890f1cec07ceb52f3a4e",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00438",
+      "source_sha256": "c4699a2b4764cef03ad13cf8ec5be508f9f894a64fae80ff8d0bd69322c0fd16",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00442",
+      "source_sha256": "b22ad38668a04ed8eae27334b2c1057d1cd993861e66e10402fe79f323a1cbea",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00463",
+      "source_sha256": "edca0a3c729d5be9c4bd79781eb74eb669508876e36def4ef3cadd99e42f6742",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00464",
+      "source_sha256": "8397def71f0035e64df9e2b1256ba8e0c9927887d8b732c9c25178a4f3e75f1d",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00468",
+      "source_sha256": "b142760bb2a982c72732594ba00880ed4a17a18edfbe90983a078644b9a81a72",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00471",
+      "source_sha256": "499d723f86c25076f817dc5d6e0764db8447944eef69e5724545048d770df8be",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00474",
+      "source_sha256": "03e3d90b103aa44285f9043e2785877658ba501d22e6846146957c56a8f87e36",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00476",
+      "source_sha256": "ec64fcd7663b73b3b90fceca0159e9aeed685461f1ad86a258fab0cc78bd2d50",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00477",
+      "source_sha256": "8af7ef29582ece65d43974e9372f64de54b85ad5188c06d6ae28025aeb8dc6ee",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00479",
+      "source_sha256": "80ddb644e71cd1fbc39c0bd9a4a8fdf8414cadf08a1ccd278917645a1a1ad91c",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00505",
+      "source_sha256": "e7b344f715953ca8cbcc6e56b7ed666573ca619e8ea51f93649ad52d42dbf1de",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00514",
+      "source_sha256": "8b7ce9d40ecbf08a2f106ce5e895eab0294a46fa0bb01688df47799c785d732e",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00515",
+      "source_sha256": "ab4c6922172a5292bae6e527b6e8f881622f5369aec77db5d1eb703ab87eb782",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00523",
+      "source_sha256": "a41900cc55d31f5626ccf73fc7a0773c695f0867f5c27bb2a8437efb8e0737fb",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00527",
+      "source_sha256": "d4b3f1881a4892fabefe15af1b01626210bf57cb3a2095c084fae6d341dca1ae",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00528",
+      "source_sha256": "7ee149a9dae90cb312bbc7cf58499adea196fffdd9acbc3f9745f86d93479f5a",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00531",
+      "source_sha256": "fb3c6a3dbae2d92f5b387af7e627d5b94c2159f5d2fbaedd657bd8c0d5fdc9f4",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00533",
+      "source_sha256": "896c70d15475890d16de365eb45c118e1dd16c005adb07d16d772b29b2a9538f",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00536",
+      "source_sha256": "a02196339556a4629428d95543f66fa190a35e3090145574983f95a55a11833e",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00537",
+      "source_sha256": "c00624ed78295c0f153ef8ba80bb8d4ed09e42b86dff3eaf02195a9ac3b479c7",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00541",
+      "source_sha256": "c26558469627486cbd1aa7f2a8da68040fcf2417f220992a1f85a1ecf5934ddb",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00542",
+      "source_sha256": "ea83d1e4a7dc0d977c5838fb04be3fe8d6812cfe69a9f1a2dd9ba7bfa8f869a8",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00547",
+      "source_sha256": "7a41fe9a0d39ca458a3e22641e2faea40cf0706d11fa33f1d2d09c30637440ea",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00554",
+      "source_sha256": "5bf7ba44fe110f9fc246e79a9db70e5feb53a43019109dfaf2f368c705ed38a8",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00556",
+      "source_sha256": "b16245f02da1e0fe55e6bc11b0a0dbcf5cf617e893b42ff2d24a7dd0c8c103f7",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00558",
+      "source_sha256": "1d688f2bc0649ba58826e2418e7dc149571215a362684c68ce4c95d96fd49e75",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00559",
+      "source_sha256": "375331541f2ed1b4c63eb9416e771ff8db8a8c59ff85a773b9173fea12906882",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00563",
+      "source_sha256": "58118c120efc2b68aec067aecb1540d8027ee05ea73327715fe1ffa39acb8a11",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00564",
+      "source_sha256": "7066251ed619204fe947bf51d9ec3594c8aaf86c637055bbcd5f3c3888d39340",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00571",
+      "source_sha256": "2748e986c5f846fc0b9bea5fd35922a4d9fd474258d183c9b508b64920872173",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00574",
+      "source_sha256": "1c7fd761b4cc1aebcbb1e37db056427cb6f0dd3b945f8a7eb4d055c1fd3afa0c",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00601",
+      "source_sha256": "a36ebe6aa7036c9be8747ea44fa71d5b5cfcfa22bde928d319e0e4b608144553",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00602",
+      "source_sha256": "de6948122318a057a2afd2a60768cb69be3bd5c8604e8c0394212c96af77bf33",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00609",
+      "source_sha256": "c6e110fecb071c60532bda1008d85211cbc06361fcb90ad3b1f63a304fbfb3e5",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00610",
+      "source_sha256": "f39ee8755c0cc2179009e1e8fb258ffe674d0e37e12a3a1fee4f2d30d44224c8",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00624",
+      "source_sha256": "fe46305d5d05a4601806ee795eb5aa080911814494008a0a9b0b4524edba5f1e",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00625",
+      "source_sha256": "e9005cac1673a2f8ce30c6d6bc8a507d65ca1d477ea5051ded7d03e71c179928",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00629",
+      "source_sha256": "973850dc49143ac22c2569f19aab5631a0c239ffa48cb671c6c90a70aeb60b27",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00637",
+      "source_sha256": "fc350b8071297cdeb2b1c36afd91d7dfcedda4170e421f0e23cb1f53754ce8c4",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00638",
+      "source_sha256": "65a856cd73d23a756ddc3e84039bccad9ef543bbe86c3bcdaff1acf92d6df4e1",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00643",
+      "source_sha256": "7bba08f02e4f44ae6c5997546d17d0e1488f92d9f819a9dbdde41d35ad43ce10",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00645",
+      "source_sha256": "fa09fa688b101b1e654601aef9da5dc65c6e79e5a36dd1035514bec56f82299f",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00650",
+      "source_sha256": "b0138c2afce4a4b02cb88342aad9c1955992f37d7b4fcf74034edff10f2ee210",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00654",
+      "source_sha256": "0aa43cb31622fc2bc9946d62904787b1bf53b6236b642a2c9c7febcc54632d6a",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00655",
+      "source_sha256": "fd2227b7c2745c7c83f52c58f33624e3bd82222f88ba31a36db668c8590cd514",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00657",
+      "source_sha256": "d70832f5cf84f4ffce75e6e60f61a58d180600076cdf434b117169013abaee95",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00663",
+      "source_sha256": "b095ea603d7c1963146688fdfe083fa968c3f8aac489f0e1586f62472ab9c31b",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00666",
+      "source_sha256": "f225d4d457bf903a16ad03b4ef836a63754c08b140bde6bad0135eca1a6d45ee",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00677",
+      "source_sha256": "0066e9e5e6855908b3d643aa33617df55670549f24b9484cf1191db3a979e22f",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00678",
+      "source_sha256": "7e3a3062beb0c8f37da8dabc628187dcdc428d12ecba39d423a4d55a72441b26",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00679",
+      "source_sha256": "29ba68c6629fa242286eb448d29aeffd85dcbd30f4aecbbeb7bd01ee3597bd9b",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00681",
+      "source_sha256": "453b5d216f341b76c4c78f1638da50a07c0455c95948a82d3b01baf885343b5b",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00682",
+      "source_sha256": "3d285026ca8ca3ba3a26e8f1c9879f3c6cf9a24e85a0c5ddc8def5d9277b7f19",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00683",
+      "source_sha256": "1bce534b50e5d5e3b1962840defdf8c3a55f7c85710d04674d6052fa7738d246",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00684",
+      "source_sha256": "fe85cbf0e791b54801c478955b2d6e0ddbafcf11c06fb526770b3b87a99aa26f",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00686",
+      "source_sha256": "446607d0361e7bf04ed412da3232fcab5b06f131579f03f022bd0d632ff83e3a",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00688",
+      "source_sha256": "68c65406bf80ef8dfedebc0f09428769f25b27ddc9bd613f771d16b0e74f7914",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00689",
+      "source_sha256": "e30f925c74d63cf05c341ce7663c84fdb104672ff560cc64797927da340ae8b6",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00690",
+      "source_sha256": "75df908ec8ed03debf1a736f6a5fb46f0163daf35e1f2d9fe0b57cdb235a4bd1",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00691",
+      "source_sha256": "fb65e50f8741bc35d8787bfaddc2125e265cf350a4815198b73cca69b08d4ead",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00692",
+      "source_sha256": "aabec95fce07450e953d13ee9f134fd206d97b93bee5e6594369f0fea39bb3b2",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00693",
+      "source_sha256": "97acadba81d9e980c7e805318fa94a83618cc4c130a04ff26981c39731b7351d",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00694",
+      "source_sha256": "a3cf6d1e86415ed6396de15244664bd1866d0df0e5883aea34442083e0aee2bc",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00696",
+      "source_sha256": "1e8595767fff70cb82fb6a5f3b7ecaeef5252b02f4b8b5efe3efa6b76d830ed0",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00697",
+      "source_sha256": "b6d7ebffa947ac092bc149b4e927982fae335443979b2d952d69ad15743a1d08",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00698",
+      "source_sha256": "7c89a372b9df31fb5c89ac0ddbe7c3159b521a5f2d51a8aed5b83def0809d419",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00699",
+      "source_sha256": "9044926dff4caf8b5c7df474abc8936ff9e47b90263a40e5b6e868ed810d3133",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00702",
+      "source_sha256": "7bb6b4c6247e75f960978f04e0644dcc59ddceb1f867639a2cf297cdca4c4628",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00720",
+      "source_sha256": "3b9bbbbd0c8c884d4ddae3a8b4f5d6e91f2f40716d0cf073077fc0030d965def",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00725",
+      "source_sha256": "a8694d53dd3734eac2da3197796736b1ee5475ae404ea4a622142d89fd433921",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00728",
+      "source_sha256": "c6aa5d7fd011bdb02610ce6fc477dc0b1b6373b01fc797495e2320511c79eaaf",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00736",
+      "source_sha256": "33d37ddc8e986feb95749587033c21fef7a3b137c41e0efcf8fbc3a2c5db9c36",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00740",
+      "source_sha256": "dae7596322fe889c60553106bdc590e440fe0c1401dad178391731c4c28742fa",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00742",
+      "source_sha256": "c8645eac62c974e74197664c1b5a89579e24456a2fbb28362276959c181ae113",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00767",
+      "source_sha256": "e54e8459c8bed8ba2b17981384e0fb8d12544e0ab3cede44e587d4cbce2ece18",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00768",
+      "source_sha256": "bd7fb78b45c1795d0ee37613623edf49fb87cd1b21526b6f271042879a46b659",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00779",
+      "source_sha256": "5c59f3425819ab9ce2dfaa45b2b57584b923520574b7980cc28813bf2e26a19d",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00782",
+      "source_sha256": "1aabddbfb0471531426a4a0a733d874d028a1a6613edc5c5bdd57e391a30d643",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00784",
+      "source_sha256": "1cd746ce3e6d3c80ef26200bedceb75bc8355ad48bae07afb8aff328b8f58d33",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00785",
+      "source_sha256": "bafd8ba0e2809be055a4a353bb0b1d6b9ced7ad53f85b8d794127109fc41f97e",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00786",
+      "source_sha256": "5c2ff1502b032d4630d3e08fe6a827fbef67d6434b7bbcdd604a079e1fb5140a",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00790",
+      "source_sha256": "a384917d2842d0b53b23d3fae9af786ba5e9a7808b6b74787d8dc8598d639eb0",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00795",
+      "source_sha256": "360a29c2dbad4593eaac0446a486d99d3e19cc80c1481bd6c45333a83fb960b4",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00798",
+      "source_sha256": "691e23b56bb8d35fe983a49a9ab1291a676873cf5d02b661fe7bc0ea19a251d9",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00799",
+      "source_sha256": "dca8cf78f3bcf76840b2359aa37140a2d97ef26ea09109a23d229c6e1ebf435d",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00805",
+      "source_sha256": "fbfc6929a021d5ac0eb8fd0b18c2b3139177107f0a07f894c4cab21bf8ded1e7",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00806",
+      "source_sha256": "d16c5fbc7dc92ea86662ec5ce08c71af75441f434e73eef5bb8d85079e917a60",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00808",
+      "source_sha256": "004dd18cb5c7464c593854d7e74ce7742ef4ba85beb1b45c2d092683e322772e",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00815",
+      "source_sha256": "5e1c8a9d4a1f5b64c510e7e21ff5484a4ae0f298a972fffbd57081fe2d68ca09",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00816",
+      "source_sha256": "dfbf3ef2401752cd8e238d1d3fc1dbe0477af7ee56515b56eb8784842992dd4b",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00818",
+      "source_sha256": "03e091f64159e2c0fc693b441fd446b9cc0903c29654995e23809f4d0dc02331",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00822",
+      "source_sha256": "ada7755029110eeb98a61e063c630ae2a785e66e2b0023d827154920fc12be88",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00825",
+      "source_sha256": "485f36e334f33f544d5df81b1442046a41338ac0674aa1df62de80dad2a2cb33",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00827",
+      "source_sha256": "ead85e59553a94a4357ff966c89f44eeb78d428fa4df50d6483339b29c37eceb",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00830",
+      "source_sha256": "e5f451602a582b8b3322389bc93d69b381529e5e69a312b41fd77c01ea2aed2d",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00845",
+      "source_sha256": "73aa9ede95185114232c8000bb666fae0bf0a0b4405660c3942c0a6fc002213a",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00847",
+      "source_sha256": "e635c8ad027fc0577ccee752f1eba1c579a635cab7dad061644d0361031f9c31",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00848",
+      "source_sha256": "6691e37a68c419fccaf280afa3f577f4cddb8230a312ae1d2310083dc4627e6d",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00850",
+      "source_sha256": "45dd65d1f97f89c3896e981e9d55f11a3f8ff1e2c96af4181d81526a104aeef1",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00851",
+      "source_sha256": "956164f57845279f5b376d36cad74bfce3104e1a9b1613735f7a873e91ccfb8a",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00856",
+      "source_sha256": "b70bbb23604b453c72b5fdfb6f2c4288edce7924690c9a131f732bf5a22444ec",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00866",
+      "source_sha256": "6f5c17d48b1f829b536e53046765878cd284bd0c79b572a979cc5773c78887fb",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00921",
+      "source_sha256": "e2dcdafd2904a0b4518132c1e2f271a803fc6729de50131752cc02b2d815aff2",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00924",
+      "source_sha256": "3b3c02a105a774a86b3fa909a3ae755354ee2fd0fc00292cabfff36156d755d5",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00929",
+      "source_sha256": "5ad425f681f1036b13c5f2a0c9072a5dd62bb08c14a90fada3a67c1a286dedf7",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00930",
+      "source_sha256": "0bae59244cbfd93d26c5653fcbd9c1464cc118316cc215418202b4a795830944",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00933",
+      "source_sha256": "00c6b87cf6335c43fcecfdba2f3a58d22ef9cc07cdfd545e56a3f40ce69694f5",
+      "status": "not_run_under_experimental_version"
+    },
+    {
+      "job_id": "F00935",
+      "source_sha256": "8a98e4009e04a58e3c8d4ced85a2262496b51bd878607b38e3abc0f31c4f1164",
+      "status": "not_run_under_experimental_version"
+    }
+  ],
+  "reusable_evidence": [
+    {
+      "job_id": "F00034",
+      "result_sha256": "04aa96129e6ac7f6fffa36cfed7ec9d4d017fed36ed8b12dcc9814613f60b54c",
+      "status": "accepted_for_this_experiment",
+      "reuse": "Exact versioned artifact for offline replay only; public cache admission is not automatic after semantic repair."
+    },
+    {
+      "job_id": "F00332_paste",
+      "result_sha256": "39d4bf45127a07436147d13131b9889d40138f5a60af8723055867c443f40cf4",
+      "status": "accepted_for_this_experiment",
+      "reuse": "Exact versioned artifact for offline replay only; public cache admission is not automatic after semantic repair."
+    }
+  ],
+  "cache_limits": [
+    "F00034 raw public cache contains the first draft, not the source-reviewed semantic repair; never call it semantically accepted.",
+    "F00332 paste extraction and CV/evidence remain session-only.",
+    "No current automatic-batch command adopts the experimental wire schema. Add explicit spec and semantic checkpoint support before dispatch; do not run the legacy default command.",
+    "Before a future call recheck official endpoint prices, source/config hashes and ledger; use one aggregate run ceiling, one repair/stage, stop on uncertainty, incomplete coverage, or important semantic loss."
+  ],
+  "scaling_decision": "Do not run all214 or silently divide them to evade approval. Next small run is a proposal outside the closed US$0.40 experiment. Full scale needs a validated quality/cost plan that fits the unchanged project guard.",
+  "reference_limits": "Gold record approval does not certify complete source-to-model alignment. F00369 and existing held records remain excluded; no test data used."
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "cp23-stage1-gold-amendment-v1",
+  "base_bundle": "evals/gold/development_v13_reviewed_20261002_r2",
+  "base_manifest_sha256": "183ac9ff07ddb7b34c0bfda2138d7569a94a0fea1938d5fc9a9bb47a83d6f9cc",
+  "review_packet": "evals/labeling/drafts/cp23_stage1_relevance_review_20261003_v1.json",
+  "review_packet_sha256": "f2b00f0d66ee7fb0b966ce856c15fa319343a513305e6d5275fef041d0507bcf",
+  "user_review_receipt": "evals/results/cp23_stage1_user_review_receipt_20261003_v2.json",
+  "held_C_review_packet": "evals/labeling/drafts/cp23_stage1_held_C_review_20261003_v1.json",
+  "held_C_review_packet_sha256": "2cbe69a9cf24eee33019df75509cf194ce95fd93c9eca01f7a6ff8e63aaeda7d",
+  "user_review_receipt_sha256": "a90dcd15be04abadf61fa1a204feb4c2c47b94803de75f4e97a72077b8681bfb",
+  "dependent_C_recheck_receipt": "evals/results/cp23_F00332_C_recheck_20261003_v1.json",
+  "dependent_C_recheck_sha256": "adf71d2e3888e76e10291c504860b6339748d693538308bf08745601a60777b2",
+  "changes": [
+    {
+      "sheet": "B_Evidence",
+      "cv_id": "CV1",
+      "job_id": "F00332",
+      "unit_no": "P30-U08",
+      "before": "MATCH",
+      "after": "PARTIAL",
+      "prior_row_sha256": "99e0b8d8a3ac6f57ec6ae3aa3b768f523e3dcd86605d6a34178ac2db914f92a4"
+    },
+    {
+      "sheet": "B_Evidence",
+      "cv_id": "CV1",
+      "job_id": "F00332",
+      "unit_no": "P30-U15",
+      "before": "MATCH",
+      "after": "PARTIAL",
+      "prior_row_sha256": "b7f96be64a3aed163417a80367e6c84a66ff864216e0957c10a875b7ac83244d"
+    },
+    {
+      "sheet": "C_Relevance",
+      "cv_id": "CV1",
+      "job_id": "F00010",
+      "before": null,
+      "after": 1,
+      "draft_row_sha256": "10575c4938627028b782709f83463b256483a15e5333aedae40062040db3da8a"
+    },
+    {
+      "sheet": "C_Relevance",
+      "cv_id": "CV1",
+      "job_id": "F00132",
+      "before": null,
+      "after": 1,
+      "draft_row_sha256": "5bd1e1df8f66168dc1d90acb13ba21ed86a45105521db048b24b9226c10376fc"
+    },
+    {
+      "sheet": "C_Relevance",
+      "cv_id": "CV1",
+      "job_id": "F00284",
+      "before": null,
+      "after": 1,
+      "draft_row_sha256": "cf903d7610adb650f3a59caa4e16bee2c3fea158c95e93ae6ad92d801e21b0fb"
+    },
+    {
+      "sheet": "C_Relevance",
+      "cv_id": "CV1",
+      "job_id": "F00312",
+      "before": null,
+      "after": 2,
+      "draft_row_sha256": "718a705a1987949eba5524a3832b304ee6e5639c08fe953e0ae1a5c14d5ba2de"
+    },
+    {
+      "sheet": "C_Relevance",
+      "cv_id": "CV2",
+      "job_id": "F00090",
+      "before": null,
+      "after": 1,
+      "draft_row_sha256": "c5d24979afa9754c3074225fbcee80fd0ae1758b78e245b58472197b50c192a6"
+    },
+    {
+      "sheet": "C_Relevance",
+      "cv_id": "CV2",
+      "job_id": "F00559",
+      "before": null,
+      "after": 2,
+      "draft_row_sha256": "c04305870641b32d824a25fd82181c7dd2f51e802c5d20790328b1fe0eef1931"
+    },
+    {
+      "sheet": "C_Relevance",
+      "cv_id": "CV1",
+      "job_id": "F00022",
+      "before": "held_historical_C",
+      "after": 3,
+      "prior_held_C_row_sha256": "debd9293275ab90a889b982dc5359888b70b41b3d62b9092a7ddb3476a2d39a8"
+    },
+    {
+      "sheet": "C_Relevance",
+      "cv_id": "CV2",
+      "job_id": "F00114",
+      "before": "held_historical_C",
+      "after": 1,
+      "prior_held_C_row_sha256": "24cddd9cc681d4d754786876a6acfefd9ece01635925183a268d6672ce8c584c"
+    },
+    {
+      "sheet": "C_Relevance",
+      "cv_id": "CV1",
+      "job_id": "F00369",
+      "before": "held_historical_C",
+      "after": 1,
+      "prior_held_C_row_sha256": "69f7c19875e3c40e85b80dcbb655665fb95ed94377edb7f35d8797353a452c08"
+    }
+  ],
+  "resolved_held_C_count": 3,
+  "A_B_holds_released": 0,
+  "workbook_changed": false,
+  "historical_bundle_changed": false
+}

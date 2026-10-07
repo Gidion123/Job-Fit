@@ -7,6 +7,8 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass, field
 from pathlib import Path
+import hashlib
+import yaml
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -14,8 +16,24 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 SNAPSHOT_ID = "CP1_20260926"
 SCHEMA_VERSION = "v1"
 SCORE_VERSION = "v1"  # PARTIAL weight 0.5; soft skills and constraints outside the % (D-032, D-033)
-GUIDELINE_VERSION = "v1.2"
-PROMPT_VERSION = "v1"
+_PIPELINE = yaml.safe_load((REPO_ROOT / 'config/pipeline_v1.yaml').read_text())
+GUIDELINE_VERSION = _PIPELINE['guideline_version']
+GUIDELINE_FILE = REPO_ROOT / _PIPELINE['guideline_file']
+JD_PROMPT_FILE = REPO_ROOT / _PIPELINE['jd_prompt_file']
+JD_PROMPT_VERSION = _PIPELINE['jd_prompt_version']
+EVIDENCE_PROMPT_FILE = REPO_ROOT / _PIPELINE['evidence_prompt_file']
+EVIDENCE_PROMPT_VERSION = _PIPELINE['evidence_prompt_version']
+EVIDENCE_VALIDATOR = _PIPELINE.get('evidence_validator', 'quote-check-v1.0')
+EVIDENCE_GUARDRAILS = tuple(_PIPELINE.get('evidence_guardrails', []))
+PROMPT_VERSION = JD_PROMPT_VERSION  # compatibility alias; metadata names each stage explicitly
+
+def runtime_versions() -> dict:
+    """Actual runtime provenance; never use this to relabel historical artifacts."""
+    files={'guideline':GUIDELINE_FILE,'jd_prompt':JD_PROMPT_FILE,'evidence_prompt':EVIDENCE_PROMPT_FILE}
+    return {'guideline_version':GUIDELINE_VERSION,'jd_prompt_version':JD_PROMPT_VERSION,
+            'evidence_prompt_version':EVIDENCE_PROMPT_VERSION,'schema_version':SCHEMA_VERSION,'score_version':SCORE_VERSION,
+            **{k+'_file':str(p.relative_to(REPO_ROOT)) for k,p in files.items()},
+            **{k+'_sha256':hashlib.sha256(p.read_bytes()).hexdigest() for k,p in files.items()}}
 
 
 def _load_dotenv() -> None:

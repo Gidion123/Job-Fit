@@ -1,0 +1,650 @@
+{
+  "job_id": "F00851",
+  "status": "done",
+  "attempts": 2,
+  "cache_hit": false,
+  "error_code": null,
+  "key": "b2c6c7ed008f90c2ef739f5605d460f43092444529cdd85346b81d934730fd4b",
+  "wall_ms": 143513,
+  "coverage": {
+    "version": "qualification-bullet-coverage-v1",
+    "status": "not_assessed",
+    "bullet_count": 0,
+    "uncovered_bullet_indices": [],
+    "semantic_completeness_verified": false,
+    "inventory_contract": "qualification-inventory-v1",
+    "inventory_count": 0,
+    "inventory_mappings": [],
+    "extraction_prompt_version": "jd-prompt-v1.4-experimental"
+  },
+  "extraction": {
+    "job_id": "F00851",
+    "units": [
+      {
+        "unit_id": "U001",
+        "text": "5+ years of professional experience as a Machine Learning Engineer",
+        "kind": "qualified",
+        "importance": "required",
+        "field": "experience_duration",
+        "normalized_name": "5+ years of professional experience as a Machine Learning Engineer",
+        "min_years": 5.0,
+        "branches": [],
+        "source_quotes": [
+          "• 5+ years of professional experience as a Machine Learning Engineer."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U002",
+        "text": "Advanced English",
+        "kind": "simple",
+        "importance": "required",
+        "field": "language",
+        "normalized_name": "Advanced English",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Advanced English is required."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U003",
+        "text": "Successful completion of a four-year college degree",
+        "kind": "simple",
+        "importance": "required",
+        "field": "education",
+        "normalized_name": "Successful completion of a four-year college degree",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Successful completion of a four-year college degree is required."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U004",
+        "text": "Proven experience designing machine learning models",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Proven experience designing machine learning models",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Proven experience designing, developing, and optimizing machine learning models."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U005",
+        "text": "Proven experience developing machine learning models",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Proven experience developing machine learning models",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Proven experience designing, developing, and optimizing machine learning models."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U006",
+        "text": "Proven experience optimizing machine learning models",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Proven experience optimizing machine learning models",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Proven experience designing, developing, and optimizing machine learning models."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U007",
+        "text": "Hands-on experience integrating machine learning solutions into production systems",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Hands-on experience integrating machine learning solutions into production systems",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Hands-on experience integrating machine learning solutions into production systems and applications."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U008",
+        "text": "Hands-on experience integrating machine learning solutions into applications",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Hands-on experience integrating machine learning solutions into applications",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Hands-on experience integrating machine learning solutions into production systems and applications."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U009",
+        "text": "Strong background in Python",
+        "kind": "simple",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong background in Python",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Strong background in Python and machine learning frameworks such as TensorFlow, PyTorch, or Scikit-learn."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U010",
+        "text": "Strong background in machine learning frameworks such as TensorFlow, PyTorch, or Scikit-learn",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Strong background in machine learning frameworks such as TensorFlow, PyTorch, or Scikit-learn",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "b1",
+            "text": "Strong background in TensorFlow",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "b2",
+            "text": "Strong background in PyTorch",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "b3",
+            "text": "Strong background in Scikit-learn",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "• Strong background in Python and machine learning frameworks such as TensorFlow, PyTorch, or Scikit-learn."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U011",
+        "text": "Demonstrated experience building scalable ML pipelines in cloud environments",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Demonstrated experience building scalable ML pipelines in cloud environments",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Demonstrated experience building and deploying scalable ML pipelines in cloud environments."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U012",
+        "text": "Demonstrated experience deploying scalable ML pipelines in cloud environments",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Demonstrated experience deploying scalable ML pipelines in cloud environments",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Demonstrated experience building and deploying scalable ML pipelines in cloud environments."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U013",
+        "text": "Proven experience with data preprocessing",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Proven experience with data preprocessing",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Proven experience with data preprocessing, feature engineering, and model evaluation techniques."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U014",
+        "text": "Proven experience with feature engineering",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Proven experience with feature engineering",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Proven experience with data preprocessing, feature engineering, and model evaluation techniques."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U015",
+        "text": "Proven experience with model evaluation techniques",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Proven experience with model evaluation techniques",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Proven experience with data preprocessing, feature engineering, and model evaluation techniques."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U016",
+        "text": "Deep experience in working with large datasets",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Deep experience in working with large datasets",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Deep experience in working with large datasets and distributed data processing tools."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U017",
+        "text": "Deep experience in working with distributed data processing tools",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Deep experience in working with distributed data processing tools",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Deep experience in working with large datasets and distributed data processing tools."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U018",
+        "text": "Practical experience with model versioning",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Practical experience with model versioning",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Practical experience with MLOps practices, including model versioning, monitoring, and CI/CD for ML systems."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U019",
+        "text": "Practical experience with monitoring",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Practical experience with monitoring",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Practical experience with MLOps practices, including model versioning, monitoring, and CI/CD for ML systems."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U020",
+        "text": "Practical experience with CI/CD for ML systems",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Practical experience with CI/CD for ML systems",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Practical experience with MLOps practices, including model versioning, monitoring, and CI/CD for ML systems."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U021",
+        "text": "Familiarity with cloud platforms such as AWS, GCP, or Azure for ML model deployment and scaling",
+        "kind": "alternative_group",
+        "importance": "required",
+        "field": "skill_tool",
+        "normalized_name": "Familiarity with cloud platforms such as AWS, GCP, or Azure for ML model deployment and scaling",
+        "min_years": null,
+        "branches": [
+          {
+            "branch_id": "b1",
+            "text": "Familiarity with AWS for ML model deployment and scaling",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "b2",
+            "text": "Familiarity with GCP for ML model deployment and scaling",
+            "field": "skill_tool",
+            "min_years": null
+          },
+          {
+            "branch_id": "b3",
+            "text": "Familiarity with Azure for ML model deployment and scaling",
+            "field": "skill_tool",
+            "min_years": null
+          }
+        ],
+        "source_quotes": [
+          "• Familiarity with cloud platforms such as AWS, GCP, or Azure for ML model deployment and scaling."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U022",
+        "text": "Solid understanding of APIs",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Solid understanding of APIs",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Solid understanding of APIs and integrating ML models into backend services."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U023",
+        "text": "Solid understanding of integrating ML models into backend services",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Solid understanding of integrating ML models into backend services",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Solid understanding of APIs and integrating ML models into backend services."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U024",
+        "text": "Knowledgeable in performance optimization",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Knowledgeable in performance optimization",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Knowledgeable in performance optimization, scalability, and reliability of ML-driven systems."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U025",
+        "text": "Knowledgeable in scalability",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Knowledgeable in scalability",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Knowledgeable in performance optimization, scalability, and reliability of ML-driven systems."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U026",
+        "text": "Knowledgeable in reliability of ML-driven systems",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Knowledgeable in reliability of ML-driven systems",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Knowledgeable in performance optimization, scalability, and reliability of ML-driven systems."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U027",
+        "text": "Ability to work through new and difficult issues",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Ability to work through new and difficult issues",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Ability to work through new and difficult issues and contribute to libraries as needed."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U028",
+        "text": "Ability to contribute to libraries as needed",
+        "kind": "simple",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": "Ability to contribute to libraries as needed",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Ability to work through new and difficult issues and contribute to libraries as needed."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U029",
+        "text": "Ability to create continuous integration and delivery of applications",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Ability to create continuous integration and delivery of applications",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Ability to create and maintain continuous integration and delivery of applications."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U030",
+        "text": "Ability to maintain continuous integration and delivery of applications",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Ability to maintain continuous integration and delivery of applications",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Ability to create and maintain continuous integration and delivery of applications."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U031",
+        "text": "Forensic attention to detail",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Forensic attention to detail",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Forensic attention to detail."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U032",
+        "text": "A positive mindset",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "A positive mindset",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• A positive mindset and a can-do attitude."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U033",
+        "text": "A can-do attitude",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "A can-do attitude",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• A positive mindset and a can-do attitude."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U034",
+        "text": "Experience working on Agile/Scrum teams",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Experience working on Agile/Scrum teams",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Experience working on Agile/Scrum teams."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U035",
+        "text": "Meaningful experience working on large, complex systems",
+        "kind": "simple",
+        "importance": "required",
+        "field": "knowledge_area",
+        "normalized_name": "Meaningful experience working on large, complex systems",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Meaningful experience working on large, complex systems."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U036",
+        "text": "Ability to take extreme ownership over your work",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Ability to take extreme ownership over your work",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Ability to take extreme ownership over your work. Every day is a challenge to ensure you are performing to the expectations you and your team have agreed upon."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U037",
+        "text": "Ability to identify with the goals of clients",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Ability to identify with the goals of clients",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Ability to identify with the goals of reputed company's clients, and dedicate yourself to delivering on the commitments you and your team make to them."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U038",
+        "text": "Ability to dedicate yourself to delivering on commitments to clients",
+        "kind": "simple",
+        "importance": "required",
+        "field": "soft_skill",
+        "normalized_name": "Ability to dedicate yourself to delivering on commitments to clients",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Ability to identify with the goals of reputed company's clients, and dedicate yourself to delivering on the commitments you and your team make to them."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      },
+      {
+        "unit_id": "U039",
+        "text": "Ability to consistently work 40 hours per week",
+        "kind": "simple",
+        "importance": "required",
+        "field": "other",
+        "normalized_name": "Ability to consistently work 40 hours per week",
+        "min_years": null,
+        "branches": [],
+        "source_quotes": [
+          "• Ability to consistently work 40 hours per week."
+        ],
+        "needs_review": false,
+        "label_source": "model_draft"
+      }
+    ],
+    "jd_quality": "ok",
+    "extractor_version": "jd-prompt-v1.4-experimental/deepseek-flash"
+  }
+}

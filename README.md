@@ -1,21 +1,23 @@
+> Current status: CP2.2 DONE under D-050. CP2.3 IN PROGRESS: D-068 provisionally selects Hybrid Qwen and DeepSeek Flash on development. Pipeline v1.1 raised usable score coverage to 42/60 under D-071's provisional H2 rule, below its 54/60 target. K, PARTIAL weight and one-CV latency remain unconfirmed. D-050 extraction, privacy impact and held-out confirmation remain open. [Current v1.1 report](docs/checkpoint_2/supporting/CP23_Pipeline_v11_20261004.md).
+
 # JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis
 
 JobFit helps early-career job seekers in AI and data find jobs that fit their real profile. From a CV, it gives a ranked list of jobs best supported by the CV evidence, shows which requirements are met, partly met, or missing, and points to the exact CV text behind each result. The goal is honest matching: no match claim without evidence.
 
 Final project for the Data Science and Machine Learning bootcamp at Dibimbing (Batch 42).
 
-![Status](https://img.shields.io/badge/status-CP2.1%20complete-brightgreen)
+![Status](https://img.shields.io/badge/status-CP2.3%20in%20progress-blue)
 ![Next](https://img.shields.io/badge/next-CP2%20in%20progress-blue)
 ![Python](https://img.shields.io/badge/python-3.11-blue)
-![Tests](https://img.shields.io/badge/tests-80%20passing-brightgreen)
+
 
 ## Project status
 
 | Checkpoint | Focus | Dates | Status |
 | --- | --- | --- | --- |
 | CP1 | Data collection, cleaning, feature transformation, EDA | until 27 Sep 2026 | Done |
-| CP2 | Guideline and gold set, search baselines, evidence matching, recommendation list, evaluation | 28 Sep to 4 Oct 2026 | In progress: CP2.1 done on 1 Oct (guideline, scoring, pilot labels, database, baselines); CP2.2 next |
-| CP3 | API, database, app, testing, deployment | 5 to 11 Oct 2026 | Planned |
+| CP2 | Guideline and gold set, search baselines, evidence matching, recommendation list, evaluation | 28 Sep to 6 Oct 2026 | Development done: freeze candidate D-086 (Hybrid Qwen, seniority rule, K 10, DeepSeek Flash extraction, GPT-6 Sol matching, H2v2, experience block). Held-out test (CP2.4) waits for the freeze approval |
+| CP3 | API, database, app, testing, deployment | 5 to 11 Oct 2026 | API, UI, CV coach, Docker and CI done locally; hosting deploy and deployed checks pending |
 
 This README is updated at the end of every checkpoint.
 
@@ -149,6 +151,16 @@ cp .env.example .env                   # then fill OPENROUTER_API_KEY and the bu
 docker compose up -d db                # local PostgreSQL with pgvector
 ```
 
+Run the app (saved demo, no API key and no cost):
+
+```bash
+docker compose up -d --build           # database, API (port 8000) and UI (port 8501)
+open http://127.0.0.1:8501
+python scripts/e2e_check.py            # end-to-end checks against the running API
+```
+
+Without Docker: `uvicorn jobfit.api.wiring:create_default_app --factory --app-dir src` and, in a second terminal, `streamlit run ui/streamlit_app.py`. Live analysis (paid model calls) runs only outside Docker by default. Step-by-step for the freeze, the held-out test and deployment: [runbook](docs/checkpoint_3/Runbook_Freeze_Test_Deploy_20261006.md).
+
 Reproduce CP1 (runs offline, no API key needed). The notebook needs the raw JSearch snapshot, which is not included in this public repository (see [Data](#data)). All notebook outputs, processed files, and figures are already committed, so the results can be read without running anything.
 
 ```bash
@@ -183,3 +195,8 @@ Gidion Depari, Dibimbing Data Science and Machine Learning Batch 42
 ## License
 
 The code is released under the [MIT License](LICENSE). The license does not cover the job posting content in `data/` and `evidence/` (it belongs to the original publishers) or the third-party screenshots in `evidence/`. The CVs in `data/synthetic_cvs/` are fictional.
+
+
+## Current development review
+
+All A/B/C review was submitted on2October2026. [Review result and follow-ups](docs/checkpoint_2/supporting/Development_Labeling_Review_20261002.md); [current workbook index](evals/labeling/README.md). Runtime guideline v1.3 is adopted and tested offline. Reviewed-record gold is exported with explicit holds. CP2.2 implementation acceptance is DONE under D-050 following the scoped repaired live chain; broad extraction follows CP2.3 configuration evaluation. Formal tuning has not run. See the [current CP2.2 report](docs/checkpoint_2/CP2_02_Modeling_Pipeline.md).

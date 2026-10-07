@@ -1,0 +1,165 @@
+{
+  "schema_version": "cp23-dev-luna-comparison-v1",
+  "model": "gpt-6-sol",
+  "latency_reference": {
+    "gpt-6-sol_cv1_top20_pair_wall": {
+      "n": 18,
+      "p50_ms": 15069.0,
+      "p95_ms": 21258,
+      "max_ms": 22698
+    },
+    "deepseek_v1_8_parallel_calls_pair_wall": {
+      "n": 8,
+      "p50_ms": 31775.5,
+      "p95_ms": 112646,
+      "max_ms": 112646
+    },
+    "deepseek_v11_4_worker_pair_wall": {
+      "n": 14,
+      "p50_ms": 38728.5,
+      "p95_ms": 81095,
+      "max_ms": 112557
+    },
+    "note": "Phase wall times are in latency_and_cost.phases. DeepSeek one-CV wall time is not measured with 20 workers; with full parallelism it is bounded by its slowest pair."
+  },
+  "split": "development",
+  "api_calls": 0,
+  "hold_policy": "H2v2",
+  "partial_weight": 0.5,
+  "usable_pairs_of_60": {
+    "deepseek": 33,
+    "gpt-6-sol": 40
+  },
+  "unit_label_agreement": {
+    "units_compared": 889,
+    "same_label": 784,
+    "candidate_stronger_than_deepseek": 41,
+    "candidate_weaker_than_deepseek": 64
+  },
+  "product_order": [
+    {
+      "cv_id": "CV1",
+      "k": 10,
+      "matcher": "deepseek",
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.3581954967076954,
+      "unscored_in_top_k": 3,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 10,
+      "matcher": "gpt-6-sol",
+      "p_at_5": 0.2,
+      "ndcg_at_10": 0.3557029254053963,
+      "unscored_in_top_k": 2,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 20,
+      "matcher": "deepseek",
+      "p_at_5": 0.4,
+      "ndcg_at_10": 0.4193839124175744,
+      "unscored_in_top_k": 9,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV1",
+      "k": 20,
+      "matcher": "gpt-6-sol",
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.41888666169038363,
+      "unscored_in_top_k": 6,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV2",
+      "k": 10,
+      "matcher": "deepseek",
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.7445530561574183,
+      "unscored_in_top_k": 2,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV2",
+      "k": 10,
+      "matcher": "gpt-6-sol",
+      "p_at_5": 0.6,
+      "ndcg_at_10": 0.7390788259162826,
+      "unscored_in_top_k": 1,
+      "unjudged_final_top10": []
+    },
+    {
+      "cv_id": "CV2",
+      "k": 20,
+      "matcher": "deepseek",
+      "p_at_5": 0.6,
+      "ndcg_at_10": null,
+      "unscored_in_top_k": 8,
+      "unjudged_final_top10": [
+        "F00629"
+      ]
+    },
+    {
+      "cv_id": "CV2",
+      "k": 20,
+      "matcher": "gpt-6-sol",
+      "p_at_5": null,
+      "ndcg_at_10": null,
+      "unscored_in_top_k": 5,
+      "unjudged_final_top10": [
+        "F00645"
+      ]
+    }
+  ],
+  "latency_and_cost": {
+    "run_id": "cp23_matcher_coverage_gpt-6-sol_20261004_v1",
+    "phases": [
+      {
+        "phase": "P0_canary",
+        "model": "gpt-6-sol",
+        "workers": 1,
+        "pairs": 1,
+        "called": 1,
+        "phase_wall_ms": 14595,
+        "pair_wall_ms_p50": 14594,
+        "pair_wall_ms_max": 14594,
+        "done": 1,
+        "stop": null
+      },
+      {
+        "phase": "A_cv1_top20",
+        "model": "gpt-6-sol",
+        "workers": 9,
+        "pairs": 20,
+        "called": 18,
+        "phase_wall_ms": 35397,
+        "pair_wall_ms_p50": 15069.0,
+        "pair_wall_ms_max": 22698,
+        "done": 18,
+        "stop": null
+      },
+      {
+        "phase": "C_remaining39",
+        "model": "gpt-6-sol",
+        "workers": 8,
+        "pairs": 39,
+        "called": 35,
+        "phase_wall_ms": 75059,
+        "pair_wall_ms_p50": 16176,
+        "pair_wall_ms_max": 24340,
+        "done": 35,
+        "stop": null
+      }
+    ],
+    "run_cost_usd": 1.4807958,
+    "ledger_total_usd": 6.71051,
+    "completed": true
+  },
+  "limits": [
+    "Label agreement compares two models, not a model with gold; it shows direction only.",
+    "Two development CVs; indicative."
+  ]
+}

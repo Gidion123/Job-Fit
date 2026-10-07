@@ -1,0 +1,15 @@
+{
+ "schema_version": "cp24-failed-attempt-receipt-v1",
+ "record_id": "F00206",
+ "attempt": 1,
+ "original_path": "evals/results/cp24/test_run_v1/jd_F00206.json",
+ "archived_path": "evals/results/cp24/test_run_v1/failed_attempts/jd_F00206_attempt1.json",
+ "sha256": "4d3b1fe9c1bd93b0f8e8c2eca198586ae528dcaecbc3fc268eeb2449b4366945",
+ "bytes": 132,
+ "failure": [
+  "jd_extraction: APITimeoutError (1 attempt(s))"
+ ],
+ "masked_digest": null,
+ "reason": "Operational provider timeout only. Retried by the unchanged frozen phase with the same model, prompt, schema, validator and settings (D-087). No test outcome was read.",
+ "archived_at_utc": "2026-10-06T15:20:06+00:00"
+}

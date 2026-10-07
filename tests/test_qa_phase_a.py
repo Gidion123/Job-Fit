@@ -335,7 +335,10 @@ def test_pick_finalist_prefers_fewer_unsupported_then_f1():
     assert qa.pick_finalist({'QA-E01': card(40, 0.9, ok=False)}) is None
 
 
-def test_budget_plan_stays_below_hard_stop_and_covers_need():
+def test_budget_plan_stays_below_hard_stop_and_covers_need(monkeypatch):
+    # Use the public .env.example budget, not the git-ignored .env or the code default (FAIL-35).
+    monkeypatch.setenv('API_BUDGET_USD', '19')
+    monkeypatch.setenv('API_HARD_STOP_USD', '18.5')
     b = cli.budget_plan()
     assert b['recommended_key_limit_usd'] < b['project_hard_stop_usd']
     assert b['covered'] and b['recommended_key_limit_usd'] >= b['needed_total_usd']

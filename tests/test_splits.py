@@ -1,10 +1,15 @@
 """Duplicate leakage and reproducibility gates for the T03 split."""
-from scripts.make_splits import PILOT, load_inputs, split_jobs
+from scripts.make_splits import INPUTS, PILOT, ROOT, load_inputs, split_jobs
 import copy
 import json
 import pytest
 
+# The raw JSearch snapshot is git-ignored (privacy), so CI and clean clones skip these two tests.
+needs_raw_snapshot = pytest.mark.skipif(not (ROOT / INPUTS[3]).exists(),
+                                        reason="requires git-ignored raw snapshot " + INPUTS[3])
 
+
+@needs_raw_snapshot
 def test_real_split_coverage_pilot_duplicates_and_reproducibility():
     jobs, pairs, _ = load_inputs()
     dev, test, _ = split_jobs(jobs, pairs)
@@ -47,6 +52,7 @@ def test_modified_split_file_is_rejected(tmp_path):
         validate_frozen({}, {}, tmp_path, {"dev_job_ids.txt": "EXPECTED\n"})
 
 
+@needs_raw_snapshot
 def test_all_stratum_counts_and_saved_hashes_are_correct():
     from collections import Counter
     from scripts.make_splits import ROOT, sha

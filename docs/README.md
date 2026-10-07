@@ -24,4 +24,4 @@ Project logs:
 The project reference documents (Canonical v2.1, Execution Playbook v2.1, Research v2, PRE-CP0 v2) and the system design history (v1.0 to v1.3) are in the project folder outside this repository.
 
 
-Historical labeling record (2 October):[review submission and follow-ups](checkpoint_2/supporting/Development_Labeling_Review_20261002.md). Evaluation navigation:[evals README](../evals/README.md). Historical versions with provenance are retained; use current indexes rather than older preparation instructions.
+Historical labeling record (2 October): [review submission and follow-ups](checkpoint_2/supporting/Development_Labeling_Review_20261002.md). Evaluation files: [evals README](../evals/README.md). Older versions are kept for provenance; use the current indexes, not older preparation instructions.

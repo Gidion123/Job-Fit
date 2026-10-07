@@ -1,6 +1,6 @@
 # CP2.3 Model Comparison
 
-> **Historical report (4 October 2026).** The comparisons below remain valid development evidence, but the provisional configuration in section 8 was later changed: matching moved from DeepSeek Flash to GPT-6 Sol with a Luna fallback (D-077, then D-083), K moved from 20 to 10 and the seniority rule and experience block were added (D-086). The frozen configuration is D-087; see the [CP2.3 final status](CP2_03_System_Tuning.md#final-status-closeout-audit-7-october-2026) and the [CP2.6 final summary](CP2_06_Recommendation_and_Summary.md#final-summary-after-the-held-out-test-7-october-2026).
+> **Historical report (4 October 2026).** The comparisons below are still valid development evidence, but the configuration in section 8 changed later: matching moved from DeepSeek Flash to GPT-6 Sol with a Luna fallback (D-077, then D-083), K went from 20 to 10, and the seniority rule and experience block were added (D-086). The frozen configuration is D-087; see the [CP2.3 final status](CP2_03_System_Tuning.md#final-status-7-october-2026) and the [CP2.6 final summary](CP2_06_Recommendation_and_Summary.md#final-summary-after-the-held-out-test-7-october-2026).
 
 **Date:** 4 October 2026. **Status:** development choice recorded in D-068; end-to-end check and held-out confirmation are separate gates. This is the main CP2.3 comparison report. All quality numbers here use development data.
 

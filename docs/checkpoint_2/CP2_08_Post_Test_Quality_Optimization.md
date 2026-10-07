@@ -174,7 +174,9 @@ Figures A3 and A4 (development only; QA-DEV-FI-v1 optimization subset, 411 units
 
 `python scripts/qa_phase_a.py select` -> no provisional finalist (`analysis/wave1_selection_v1.json`). QA-E03 not run (adaptive stopping); no finalist repeat; confirmation subset sealed and unused.
 
-### 8.3 Budget plan for the rest of Phase A (historical, computed before QA-E02; most of it was not spent, section 11) (`python scripts/qa_phase_a.py budget-plan`)
+### 8.3 Budget plan for the rest of Phase A (historical)
+
+Computed with `python scripts/qa_phase_a.py budget-plan` after the two baseline runs and before QA-E01 (spend US$9.03). Most of it was never spent; see section 11.
 
 | Item | US$ |
 | --- | --- |
@@ -222,5 +224,5 @@ Future hypothesis QA-H04 (Phase A2, not created, not run): keep QA-E02's direct-
 
 Deployment and the final deck use the D-087 baseline. Phase A2 (QA-H04) is optional and only with its own decision; Phase B (efficiency) can start from the baseline because Phase A selected it.
 
-**Claim boundary (closeout, 7 October 2026):** Phase A is post-test development work. It never read CP2.4 labels, results, CV3-CV5 or test jobs (`LeakageError`, tested), and it does not modify the CP2.4 held-out claim. CLOSED with KEEP BASELINE; QA-H04 / Phase A2 is not created and not run. Receipt hashes for the figures and notebook were rechecked in the [CP2 closeout audit](CP2_Closeout_Audit_20261007.md#7-notebook-verification).
+**What Phase A does not change.** Phase A ran after the held-out test, on development data only. It never read the CP2.4 labels or results, CV3-CV5 or any test job (`LeakageError`, tested), so the CP2.4 result stands as reported. Phase A is closed with KEEP BASELINE, and QA-H04 / Phase A2 was neither created nor run. The figure and notebook hashes were rechecked in the [CP2 closeout audit](CP2_Closeout_Audit_20261007.md#7-notebooks).
 

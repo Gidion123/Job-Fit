@@ -22,7 +22,7 @@ Reduce the risk of the demo or the presentation failing.
 2. Rehearse with timing; prepare backup screenshots and video.
 3. Proofread the README and the documents.
 4. Release candidate tag (Dion runs git).
-5. Upload the deck to the LMS (Dion).
+5. Upload the deck to the LMS (Dion). This is a bootcamp task handled outside the repository and is not tracked here.
 
 ## 4. Planned outputs
 
@@ -39,7 +39,6 @@ Reduce the risk of the demo or the presentation failing.
 ## 6. Evidence to keep
 
 - regression output
-- LMS proof
 - tag link
 
 ## 7. Estimate and dependencies
@@ -57,7 +56,6 @@ If a bug appears, fix only if it is critical; otherwise note it as a known issue
 - [ ] Rehearse with timing; prepare backup screenshots and video.
 - [ ] Proofread the README and the documents.
 - [ ] Release candidate tag (Dion runs git).
-- [ ] Upload the deck to the LMS (Dion).
 - [ ] Acceptance: No new features.
 - [ ] Acceptance: The live app, the backup demo, and the metrics are consistent.
 

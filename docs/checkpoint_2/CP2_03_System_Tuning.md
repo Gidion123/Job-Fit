@@ -1,40 +1,41 @@
 # CP2.3: System Tuning
 
-## Final status (closeout audit, 7 October 2026)
+## Final status (7 October 2026)
 
-**Status:** DONE. Development tuning, the configuration/protocol freeze (D-087) and both carry-over dispositions (D-091, D-092) are complete. CP2.3 no longer blocks CP2 closure ([closeout audit](CP2_Closeout_Audit_20261007.md), sections 3 and 4).
+**Status:** DONE. The configuration was chosen on development data and frozen before the held-out test (D-087), and the two items left open at the end of CP2.3 are settled (D-091, D-092).
 
-**Objective and why.** Choose every system setting (retriever, embedding, K, PARTIAL weight, models, prompts, hold and order rules) by measurement on the development split, then freeze configuration and test protocol before the held-out test (D-053), so the CP2.4 result is not tuned on test data.
+**Goal.** Pick every setting by measurement on the development split (retriever, embedding, K, PARTIAL weight, models, prompts, hold and order rules), then freeze the configuration and the test protocol (D-053), so that nothing in CP2.4 is tuned on test data.
 
-**Scope.** Development split only: 214 target-role JDs, synthetic CV1 (Indonesian) and CV2 (English), reviewed development gold (r3, then r4 with 46 gap labels, D-085), seven extraction reference JDs and four evidence pairs (73 units). The 214 test JDs, CV3-CV5 and all test labels were not used.
+**Data.** Development split only: 214 target-role JDs, synthetic CV1 (Indonesian) and CV2 (English), reviewed development gold (r3, then r4 with 46 gap labels, D-085), seven extraction reference JDs and four evidence pairs (73 units). I did not touch the 214 test JDs, CV3-CV5 or any test label.
 
-**Method.** Each component was compared with a rule fixed before its deciding numbers: D-044 (embedding), D-029 as amended by D-066 (models), D-078 (K, weight, seniority rule), D-084 (retriever change). Metrics follow D-052 and D-073 (original positions, unjudged never zero, holds kept in the product order). Uncertainty is reported with D-075 bootstrap intervals.
+**Method.** For each component I fixed the selection rule before computing the deciding numbers: D-044 (embedding), D-029 as amended by D-066 (models), D-078 (K, weight, seniority rule) and D-084 (retriever change). Metrics follow D-052 and D-073: original positions, unjudged jobs never counted as 0, and held jobs kept in the product order. D-075 adds bootstrap intervals.
 
-| Item | Outcome | Evidence |
+| Setting | Final choice | Evidence |
 | --- | --- | --- |
-| Stage-1 retriever | Hybrid FTS + Qwen3 dense, RRF k 60 (D-044 embedding rule; D-084 kept it against all challengers on gold r4) | `evals/results/cp23/post_labeling_development_v13_reviewed_20261004_gap_r4_v1/summary.json` |
+| Stage-1 retriever | Hybrid FTS + Qwen3 dense, RRF k 60 (Qwen won the D-044 rule; D-084 kept hybrid against every challenger on gold r4) | `evals/results/cp23/post_labeling_development_v13_reviewed_20261004_gap_r4_v1/summary.json` |
 | Seniority rule | `seniority-demote-3y-v1` over the stage-1 top 30 (D-074, D-078) | same summary |
-| K and PARTIAL weight | K = 10, weight 0.5 by the pre-registered D-078 rule (D-086) | same summary |
+| K and PARTIAL weight | K = 10, weight 0.5, from the D-078 rule (D-086) | same summary |
 | JD extraction | DeepSeek Flash, JD prompt v1.4 experimental (D-068, kept by D-077 and D-083) | [Model comparison](CP2_03_Model_Comparison.md) |
-| Evidence matching | GPT-6 Sol, Luna fallback (D-083), evidence prompt v1.1, quote check v1.1, G1/G2 | D-079, D-082, D-083 |
+| Evidence matching | GPT-6 Sol with Luna fallback (D-083), evidence prompt v1.1, quote check v1.1, G1/G2 | D-079, D-082, D-083 |
 | Holds and order | H2v2 (D-072), experience block (D-086), product order (D-073) | D-086 |
-| Freeze | Receipt `evals/freeze/cp23_freeze_draft_v2/` approved as D-087 on 6 Oct (57 file hashes; v1 superseded) | `freeze_receipt_APPROVED.json`; `prepare_cp23_freeze.py --verify` ok on 7 Oct |
-| Development result | Final product order macro P@5 0.70, NDCG@10 0.552 (0.568 with the experience block); stage 1 with the seniority rule alone reaches P@5 0.70, NDCG@10 0.550 | D-086 |
-| Test leakage | None: the test split was used only after the D-087 freeze | D-087, CP2.4 |
-| D-050 carried extraction | **Resolved by D-091 (approved disposition).** Development split 214 JDs; per-JD inventory of all 214 on 3 Oct (`evals/results/cp22_development_extraction_plan_20261003.json`). Extraction for configuration selection covered the 52 distinct JDs in the Hybrid Qwen top 30 of CV1/CV2: 51 attempted, 48 process-valid, F00369 source-held (`evals/results/cp23/pipeline_v11/coverage_summary_v2.json`). 162 development JDs were never extracted. The scope was sufficient because every K, weight and order cell (D-078) lies inside the reordered top 30; exhaustive extraction stays optional future work | D-091 |
-| D-051 CP2.3 privacy work | **Resolved by D-092 (approved deferral).** Implemented: local masking, consent bound to the masked text, session controls; all CP2.4 parses ran on masked text. Component/unit tested: privacy-control, masked-quote and API-layer tests with a fake run (PR-01 to PR-07, PR-09; not a deployed host), plus the mechanical masked-quote check (`evals/results/cp23_masking_quote_compatibility_20261004_v1.json`). **Not performed:** end-to-end privacy validation of the integrated system, and the paired original-versus-masked quality comparison (preflight `tests/test_cp23_masking_pairs_preflight.py` only). Both deferred: CP3.4 runs them, CP3.5 reports them. No claim that privacy is validated end-to-end or that masking has no quality effect; real-CV processing stays disabled | D-092 |
+| Freeze | Receipt `evals/freeze/cp23_freeze_draft_v2/`, approved as D-087 on 6 Oct (57 file hashes; v1 superseded) | `freeze_receipt_APPROVED.json`; `prepare_cp23_freeze.py --verify` ok on 7 Oct |
+| Development result | Final order macro P@5 0.70, NDCG@10 0.552 (0.568 with the experience block). Stage 1 with the seniority rule alone already reaches P@5 0.70, NDCG@10 0.550 | D-086 |
 
-**Audit trail.** The first closeout pass (commit `de53544`) recorded both carry-overs as PARTIAL with no approved disposition, which blocked CP2 closure. Dion approved D-091 and D-092 on 7 October; the PASS status above rests on those decisions, not on new runs. No paid call was made.
+**Extraction scope (D-091).** D-050 had moved full development extraction into CP2.3. In the end I only extracted the 52 JDs that appear in the Hybrid Qwen top 30 for CV1 or CV2: 51 were attempted, 48 came back process-valid, and F00369 is held at source (`evals/results/cp23/pipeline_v11/coverage_summary_v2.json`). The other 162 development JDs were never extracted; the 3 October per-JD inventory of all 214 is in `evals/results/cp22_development_extraction_plan_20261003.json`. I did not run them because they could not change any CP2 choice: every K, weight and order cell in D-078 sits inside the reordered top 30. I recorded this scope as D-091. Extracting the rest stays optional.
 
-**Figures (development).** Retrieval methods ([fig 1](../../reports/figures/cp2/fig01_retrieval_methods.png)), embedding rule ([fig 2](../../reports/figures/cp2/fig02_embedding_recall20.png)), LLM quality ([fig 3](../../reports/figures/cp2/fig03_llm_quality.png)), cost and latency ([fig 6](../../reports/figures/cp2/fig06_cost_latency.png)) and pipeline v1.1 coverage ([fig 8](../../reports/figures/cp2/fig08_pipeline_v11_coverage_20261004_v3.png)). Denominators and limits are in [CP2.5](CP2_05_Evaluation_Visualization.md). All are development-only and two-CV.
+**Privacy (D-092).** Local masking, consent tied to the exact masked text and the session controls are implemented, and all CP2.4 parses ran on masked text. They are covered by component/unit tests: the privacy-control and masked-quote tests, and API-level tests with a fake run (PR-01 to PR-07 and PR-09, not a deployed host). The masked-quote receipt (`evals/results/cp23_masking_quote_compatibility_20261004_v1.json`) only shows that quotes can still be traced. I have not validated privacy end to end, and the original-vs-masked quality comparison did not run (only the offline preflight `tests/test_cp23_masking_pairs_preflight.py` exists). Both move to CP3: CP3.4 runs them and CP3.5 reports them. Until then there is no claim that masking has no effect on matching, and real-CV processing stays off.
 
-**Limitations.** Two development CVs; assisted single-annotator labels; ranking gains on development came mostly from the seniority rule (D-086); privacy is implemented and component/unit tested only; end-to-end privacy validation and the paired masking effect are not measured (D-092).
+**Test leakage.** None. The test split was opened only after D-087.
 
-**Reproducibility.** `scripts/run_post_labeling.py` produced the D-078/D-084 result; `python scripts/prepare_cp23_freeze.py --verify evals/freeze/cp23_freeze_draft_v2` checks the 57 frozen hashes.
+**Figures (development, two CVs).** [Retrieval methods](../../reports/figures/cp2/fig01_retrieval_methods.png), [embedding rule](../../reports/figures/cp2/fig02_embedding_recall20.png), [LLM quality](../../reports/figures/cp2/fig03_llm_quality.png), [cost and latency](../../reports/figures/cp2/fig06_cost_latency.png) and [pipeline v1.1 coverage](../../reports/figures/cp2/fig08_pipeline_v11_coverage_20261004_v3.png). Denominators and limits are in [CP2.5](CP2_05_Evaluation_Visualization.md).
 
-**Handoff.** CP2.4 ran the D-087 configuration once on the held-out split without changes.
+**Limitations.** Only two development CVs; labels are assisted and come from one reviewer; most of the development ranking gain came from the seniority rule (D-086); privacy is not validated end to end (D-092).
 
-The sections below are the 3-6 October record, kept as written. Historical status as of 3-6 October 2026: their provisional statements (DeepSeek matching, K = 20, "not DONE", open D-050/D-051) are historical and were superseded by D-083, D-086 and D-087.
+**Reproducibility.** `scripts/run_post_labeling.py` produces the D-078/D-084 result. `python scripts/prepare_cp23_freeze.py --verify evals/freeze/cp23_freeze_draft_v2` checks the 57 frozen hashes.
+
+**Next.** CP2.4 ran the D-087 configuration once on the held-out split, unchanged.
+
+Everything below is the 3-6 October record, kept as written. Its provisional statements (DeepSeek matching, K = 20, "not DONE", open D-050/D-051) were replaced later by D-083, D-086, D-087, D-091 and D-092.
 
 ## Historical record (3-6 October 2026)
 

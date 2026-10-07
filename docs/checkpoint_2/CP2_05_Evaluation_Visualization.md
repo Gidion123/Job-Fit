@@ -4,11 +4,11 @@
 
 ## Summary
 
-**Current (7 October 2026):** figures 1-8 show development results; figures 9-11 show the CP2.4 held-out result (headline CV3-CV5 in figure 9, supplementary CV1-CV2 in figure 10, post-hoc decomposition in figure 11); figures A1-A4 show Phase A on development data. Every held-out figure states its split, coverage (NDCG@10 is 2/3 CVs) and the D-088 label provenance. All receipt hashes were rechecked in the [closeout audit](CP2_Closeout_Audit_20261007.md#7-notebook-verification).
+**Current (7 October 2026):** figures 1-8 are development results. Figures 9-11 are the CP2.4 held-out result: the CV3-CV5 headline (figure 9), the CV1-CV2 supplementary view (figure 10) and the post-hoc decomposition (figure 11). Figures A1-A4 are Phase A, on development data. Each held-out figure states its split, its coverage (NDCG@10 covers 2 of 3 CVs) and the D-088 label provenance. The receipt hashes were rechecked in the [closeout audit](CP2_Closeout_Audit_20261007.md#7-notebooks).
 
 ## Development figures (4 October 2026)
 
-The rest of this section and the next three are the 4 October text, kept as written. Its statements that no held-out result is shown and that the final-order chart is unavailable were true then; the held-out sections at the end supersede them.
+This section and the next three are the 4 October text, kept as written. When they say no held-out result is shown and the final-order chart is unavailable, that was true on 4 October; the held-out sections at the end replace those statements.
 
 Six comparison figures present retrieval, embedding, LLM quality, evidence errors, guardrails and cost/latency. A seventh shows original Part B coverage. An eighth compares H1 and H2 pipeline v1.1 coverage on the same 60 pairs. Each caption states the split and denominator or measured planning basis. No held-out test result is shown. The stage-1 versus final-order chart remains unavailable: the gold-input exercise lacks A/B for 104 distinct CV/JD pairs in the top-30 union, and every pipeline v1.1 top-K contains held or failed analyses.
 

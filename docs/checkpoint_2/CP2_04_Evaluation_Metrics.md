@@ -70,7 +70,7 @@ If labels are incomplete, report only eligible CV/metric combinations, planned/c
 ## 9. Checklist
 
 - [x] Original-rank NDCG@10/P@5 for stage-1 versus final application order, with common judged pool and paired eligible CV coverage.
-- [ ] Evidence Macro-F1, precision and recall per class, confusion matrix, share of assessed units. Not measured on test (reason in 10b); development values in CP2.3/CP2.5. Deferred, not dropped: D-045 ("What is reported when") reports extraction and evidence on development gold at CP2.4 and the test extraction/evidence results in the final report (CP3.5). No test A/B gold exists yet.
+- [ ] Evidence Macro-F1, precision and recall per class, confusion matrix, share of assessed units. Not measured on test (reason in 10b); the development values are in CP2.3 and CP2.5. This was planned: D-045 reports these metrics on development gold at CP2.4 and leaves the test numbers for the final report (CP3.5). No test A/B gold exists yet.
 - [x] Extraction schema validity (FAIL-33; held jobs in 10b). Extraction precision/recall/F1 not measured on test (reason in 10b).
 - [x] Recall limitations and coverage reported (labeled-pool Recall@10 in 10b); filter recall marked not measured.
 - [x] Safety: hard negatives in the top 10 and quote validity (10b). Unsupported claims not measurable without test evidence gold.
@@ -163,7 +163,7 @@ One-CV wall time (matching, K = 10, parallel): median 80.6 s (min 37.2, max 87.2
 
 - Evidence Macro-F1 and extraction F1: the test workbook's A/B sheets were AI-assisted drafts that D-088 did not import (C only), and pipeline units differ from gold units (needs alignment). Development values stand: CP2.3 and CP2.5 (figures 3 and 4).
 - Unsupported claims: needs unit-level evidence gold on test.
-- Reproducibility record: freeze receipt `cp23_freeze_draft_v2` (57 file hashes, D-087), git HEAD at reporting time `8cfb359d` (Dion commits the reports; the CP2.4 artifacts were first committed in `8ca6b41`, 7 Oct 2026, and the 57 freeze hashes identify the evaluated files), prompt and model versions in `config/versions/pipeline_cp23_freeze_candidate_v4_20261006.yaml`.
+- Reproducibility record: freeze receipt `cp23_freeze_draft_v2` (57 file hashes, D-087), git HEAD at reporting time `8cfb359d` (the CP2.4 files were committed later, in `8ca6b41` on 7 Oct 2026; the 57 freeze hashes identify the evaluated files), prompt and model versions in `config/versions/pipeline_cp23_freeze_candidate_v4_20261006.yaml`.
 
 ## 11. Interpretation and limitations
 
@@ -181,7 +181,7 @@ None. The result is reported as is under D-087 and D-088; no model, prompt, K, w
 
 ## 13. Next step
 
-Final status (7 October 2026): DONE; acceptance evidence is checked in the [CP2 closeout audit](CP2_Closeout_Audit_20261007.md). Later CP2 work did not change this result: Phase A (CP2.8, D-089, D-090) is development-only, and the CP2 mentor feedback (D-093) is CP3 input.
+Final status (7 October 2026): DONE; the [CP2 closeout audit](CP2_Closeout_Audit_20261007.md) checks the acceptance evidence. Nothing after the test changed this result: Phase A (CP2.8, D-089, D-090) only used development data, and the mentor feedback (D-093) is CP3 work.
 
 
 Done: CP2.5 figures 9-11 and the CP2.6 summary. CP2.4 stays locked from optimization (D-089).

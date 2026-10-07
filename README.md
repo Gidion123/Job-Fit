@@ -8,7 +8,7 @@ Final project for the Data Science and Machine Learning bootcamp at Dibimbing (B
 ![Next](https://img.shields.io/badge/next-deploy%20%2B%20CP3.4%20E2E%20checks-blue)
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 
-> **Current status (7 October 2026):** CP1 and CP2 are closed. CP2 closed on 7 October ([D-094](docs/decisions.md), [closeout audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md)). CP3 is in progress: the API, the Streamlit app and Docker run locally; hosting, deployed end-to-end checks and end-to-end privacy validation are not done yet.
+> **Current status (7 October 2026):** CP1 and CP2 are closed ([D-094](docs/decisions.md), [CP2 closeout audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md)). CP3 is in progress: the API, the Streamlit app and Docker run locally, but the app is not deployed yet and privacy has not been validated end to end.
 
 ## Project status
 
@@ -30,7 +30,7 @@ Job boards show many postings, but early-career candidates cannot easily tell wh
 
 JobFit uses pretrained models; it does not train a neural network. The matching pipeline was chosen by measurement on development data and frozen before the held-out test ([D-087](docs/decisions.md); diagram in [CP2.6](docs/checkpoint_2/CP2_06_Recommendation_and_Summary.md#final-v1-architecture-d-087-freeze)):
 
-1. **CV in:** a synthetic demo CV, or an upload that is masked locally and shown for consent before anything leaves the app.
+1. **CV in:** a synthetic demo CV. Uploaded CVs are masked locally and shown for consent, but they are not sent to the models yet (see [Privacy status](#privacy-status)).
 2. **Candidate search:** hybrid PostgreSQL full-text search plus Qwen3 dense embeddings, fused with RRF; a seniority rule moves jobs asking for 3+ years down; the top 10 are analyzed.
 3. **Requirements:** each job description is turned into requirement units by an LLM (DeepSeek Flash), checked against the source text and cached per job.
 4. **Evidence matching:** an LLM (GPT-6 Sol, with GPT-6 Luna as fallback) labels each requirement MATCH, PARTIAL or NO_MATCH and must quote the CV word for word; quotes are verified.
@@ -90,7 +90,7 @@ Built and tested locally on synthetic CVs (not deployed yet):
 - Session controls: masked preview with consent, heartbeat, expiry and "stop and delete session"; feedback stored as categories only.
 - Live analysis with paid model calls, when enabled and an OpenRouter key is set: a fresh recommendation run, and analysis of a pasted job description against a demo CV (pasted text stays in the session).
 
-Kept closed on purpose: provider processing of uploaded real CVs (`/cv/parse` answers 403) until the privacy validation below is done.
+Real CV uploads are not sent to the models yet (`/cv/parse` returns 403). That stays off until the privacy checks below are done.
 
 ## Privacy status
 
@@ -101,7 +101,7 @@ Kept closed on purpose: provider processing of uploaded real CVs (`/cv/parse` an
 | End-to-end privacy validation | **Not performed yet**; planned for CP3.4 |
 | Original-vs-masked matching comparison | **Not performed yet**; planned for CP3.4, reported in CP3.5 |
 
-See [D-092](docs/decisions.md) and the [privacy threat model](docs/privacy-threat-model.md). JobFit does not yet claim end-to-end privacy validation or that masking has no effect on matching quality.
+Details: [D-092](docs/decisions.md) and the [privacy threat model](docs/privacy-threat-model.md). Until the CP3.4 checks are done, JobFit makes no claim that privacy is validated end to end or that masking leaves matching quality unchanged.
 
 ## CP3 progress
 
@@ -113,7 +113,10 @@ See [D-092](docs/decisions.md) and the [privacy threat model](docs/privacy-threa
 | CP3.4 End-to-end testing | Partial | Local scripted check passed 27 of 27 (6 Oct). Pending: deployed run, live run, privacy end-to-end validation, original-vs-masked comparison, latency/cost on the deployed app, feature freeze ([report](docs/checkpoint_3/CP3_04_End_to_End_Testing.md)) |
 | CP3.5-CP3.7 Final report, rehearsal, presentation | Not started | Includes the final privacy report and the test extraction/evidence results still owed by D-045 |
 
-CP3 also carries the CP2 mentor feedback (D-093): a clear waiting state for the long LLM analysis (about 95 s at the CP2 presentation; this improves the wait experience, it does not make the model faster), and, once the core flow is stable, vacancy-specific CV improvement guidance grounded in the real CV and job description. Better CV evidence can raise the evidence-coverage score; it does not guarantee a better real fit.
+CP3 also picks up the mentor feedback from the CP2 presentation (D-093):
+
+- The LLM analysis took about 95 s, so the app needs a clear waiting state (progress or a "thinking" indicator). This makes the wait easier, not the model faster.
+- Once the core flow is stable, add CV improvement suggestions for a specific vacancy, based on the real CV and job description. Adding true evidence to a CV can raise the evidence-coverage score; it does not guarantee a better real fit.
 
 ## Getting started
 

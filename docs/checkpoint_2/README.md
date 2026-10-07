@@ -12,7 +12,7 @@ Every report starts as a plan (status PLANNED / NOT RUN). Results, interpretatio
 | CP2.4 | 11. Modeling + Evaluation Metrics | [Evaluation Metrics](CP2_04_Evaluation_Metrics.md) | 1 Oct 2026 | 3 Oct 2026 (actual 6-7 Oct) | DONE: held-out report `heldout_report_v1.json` (D-087, D-088) |
 | CP2.5 | 12. Visualisasi Evaluation Result | [Evaluation Result Visualization](CP2_05_Evaluation_Visualization.md) | 2 Oct 2026 | 3 to 4 Oct 2026 (held-out 7 Oct) | DONE: figures 1-11, Phase A A1-A4 |
 | CP2.6 | 13. Recommendation & Summary | [Recommendation and Summary](CP2_06_Recommendation_and_Summary.md) | 3 Oct 2026 | 4 Oct 2026 (final 7 Oct) | DONE: final summary after the held-out test |
-| CP2.7 | 14. PPT Check Point 2 + Mentoring | [CP2 Presentation and Mentoring](CP2_07_Presentation_and_Mentoring.md) | 4 Oct 2026 | 3-4 Oct 2026 (deck draft on 3 Oct) | Presented and mentored 4 Oct; feedback recorded (D-093). LMS proof not saved: blocks CP2 closure |
+| CP2.7 | 14. PPT Check Point 2 + Mentoring | [CP2 Presentation and Mentoring](CP2_07_Presentation_and_Mentoring.md) | 4 Oct 2026 | 3-4 Oct 2026 (deck draft on 3 Oct) | DONE: presented and mentored 4 Oct; feedback recorded (D-093); LMS upload owner-confirmed (evidence in the LMS) |
 | CP2.8 | Phase A: post-test quality optimization (development only) | [CP2.8 Post-Test Quality Optimization](CP2_08_Post_Test_Quality_Optimization.md) | after CP2.4 | 7 Oct 2026 | CLOSED: KEEP BASELINE (D-090) |
 
 The plan behind these reports is the [CP2-CP3 master plan](../master-plan.md).
@@ -20,7 +20,7 @@ The plan behind these reports is the [CP2-CP3 master plan](../master-plan.md).
 Supporting record for CP2.1: [model-draft stage of the pilot](supporting/archive/preparation/CP2_01_Pilot_Draft_Review.md) (synthetic CV check and first label drafts, 29 Sep 2026; the decisions that followed are D-032 to D-043).
 
 
-**CP2 closure (7 October 2026, second pass): NOT YET CLOSED, one evidence item open.** The [CP2 closeout audit](CP2_Closeout_Audit_20261007.md) checks every CP2.1-CP2.7 acceptance criterion against saved files. All acceptance criteria now pass or are resolved by explicit decisions (D-091 extraction scope, D-092 privacy-validation deferral, D-093 mentor feedback). The only open item is the CP2.7 LMS upload proof, an "evidence to keep" item that the master plan requires before a stage is DONE; Dion names its location or records that no upload was required. Rehearsal is not a closure item.
+**CP2 — CLOSED (7 October 2026, [D-094](../decisions.md)).** The [CP2 closeout audit](CP2_Closeout_Audit_20261007.md) checks every CP2.1-CP2.7 acceptance criterion against saved files and records three passes: the first found four open items, the second resolved all but the LMS proof (D-091 extraction scope, D-092 privacy-validation deferral, D-093 mentor feedback), and the final pass closed CP2 after Dion confirmed the LMS upload, whose evidence stays in the LMS. Privacy is implemented and component/unit tested only; end-to-end privacy validation and the original-vs-masked comparison are CP3.4/CP3.5 work (D-092). The CP3 handoff is in the audit, section 12.
 
 **Story of CP2:** CP2.1 fixed the rules, gold pilot, baselines and selection rule; CP2.2 built the source-grounded pipeline (CV, JD extraction, evidence matching, retrieval); CP2.3 chose every setting on development data and froze it (D-087), with the D-050/D-051 carry-overs resolved by D-091/D-092 (privacy implemented and component/unit tested; end-to-end privacy validation deferred to CP3); CP2.4 ran the frozen system once on the held-out split; CP2.5 visualized development and held-out results with their denominators; CP2.6 gave the final architecture, keep/remove decisions and error analysis; CP2.7 presented the work and handed the mentor feedback to CP3 (D-093); CP2.8 tested prompt changes on development data only and kept the baseline (D-090). CP2.8 does not modify the CP2.4 held-out claim.
 
@@ -32,7 +32,7 @@ Supporting record for CP2.1: [model-draft stage of the pilot](supporting/archive
 | CP2.4 | [Evaluation Metrics](CP2_04_Evaluation_Metrics.md) | DONE | Yes | Yes |
 | CP2.5 | [Evaluation Visualization](CP2_05_Evaluation_Visualization.md) | DONE | Yes | Yes |
 | CP2.6 | [Recommendation and Summary](CP2_06_Recommendation_and_Summary.md) | DONE | Yes | Yes |
-| CP2.7 | [Presentation and Mentoring](CP2_07_Presentation_and_Mentoring.md) | Acceptance met; LMS proof open | Yes | Yes |
+| CP2.7 | [Presentation and Mentoring](CP2_07_Presentation_and_Mentoring.md) | DONE (D-093; LMS owner-confirmed) | Yes | Yes |
 | CP2.8 | [Post-Test Quality Optimization](CP2_08_Post_Test_Quality_Optimization.md) | CLOSED, KEEP BASELINE | Yes | Yes |
 
 **Held-out headline (CP2.4, CV3-CV5 only):** P@5 0.533 -> 0.733 (3/3 CVs); NDCG@10 0.805 -> 0.960 for CV3 and CV4 only (CV5 unavailable: F00070 unjudged). CV1-CV2 are a separate diagnostic. Labels are AI-assisted, human-reviewed and blind to ranking (D-088), with the OpenAI-family limitation stated in the CP2.4 report.

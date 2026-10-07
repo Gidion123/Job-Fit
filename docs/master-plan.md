@@ -2,13 +2,24 @@
 
 ## Current outcome, 7 October 2026 (CP2 closeout audit)
 
-**CP2 is NOT YET CLOSED: one evidence item is open (CP2.7 LMS upload proof).** Source: [CP2 closeout audit](checkpoint_2/CP2_Closeout_Audit_20261007.md) (second pass, 7 Oct), which checks every CP2.1-CP2.7 acceptance criterion against saved files and every CP2.1-CP2.8 report for completeness.
+**CP2 — CLOSED (7 October 2026, D-094).** Source: [CP2 closeout audit](checkpoint_2/CP2_Closeout_Audit_20261007.md) (final pass, 7 Oct), which checks every CP2.1-CP2.7 acceptance criterion against saved files and every CP2.1-CP2.8 report for completeness.
+
+| Stage | Final status |
+| --- | --- |
+| CP2.1 Model and System Selection | DONE |
+| CP2.2 Modeling Pipeline | DONE (D-050; carry-over closed by D-091) |
+| CP2.3 System Tuning | DONE (D-087 freeze; D-091; D-092) |
+| CP2.4 Evaluation Metrics | DONE |
+| CP2.5 Evaluation Visualization | DONE |
+| CP2.6 Recommendation and Summary | DONE |
+| CP2.7 Presentation and Mentoring | DONE (session 4 Oct; D-093; LMS upload owner-confirmed) |
+| CP2.8 Phase A (post-test, development only) | CLOSED, KEEP BASELINE (D-090) |
 
 - **Done with evidence:** CP2.1; CP2.2 (under D-050); CP2.3 development tuning and the D-053 freeze, approved as D-087 on 6 Oct; CP2.4 held-out evaluation (7 Oct, `evals/results/cp24/heldout_report_v1.json`, contract `cp24-report-contract-v1`); CP2.5 figures 1-11; CP2.6 final summary; CP2.7 presentation and mentoring session on 4 Oct 2026 (confirmed by Dion; feedback recorded as D-093). CP2.8 Phase A closed on 7 Oct with KEEP BASELINE (D-090). It is post-test development work and does not change CP2.4.
 - **Frozen system (D-087):** Hybrid FTS + Qwen3 dense with RRF, seniority rule over the stage-1 top 30, K = 10 analyzed, DeepSeek Flash JD extraction (JD prompt v1.4 experimental), GPT-6 Sol matching with GPT-6 Luna fallback, evidence prompt v1.1, quote check v1.1 with G1/G2, H2v2 holds, PARTIAL weight 0.5, experience block, product order.
 - **Held-out headline (CV3-CV5 only):** P@5 0.533 -> 0.733 (3/3 CVs). NDCG@10 0.805 -> 0.960 for **CV3 and CV4 only** (2/3 CVs); CV5 final NDCG is unavailable because F00070 is unjudged, never 0. CV1-CV2 are a separate familiar-profile diagnostic and are never pooled. Labels are AI-assisted, human-reviewed by one reviewer and blind to ranking (D-088); the labeling assistant and the matcher are both OpenAI-family models, so correlated preferences may inflate apparent agreement, with direction and size not measured.
-- **Resolved on 7 Oct (second pass):** D-091 accepts the 52-JD development extraction scope used for CP2.3 and defers exhaustive extraction of the other 162 development JDs (closes the D-050 carry-over). D-092 records privacy as implemented and component/unit tested only, and defers end-to-end privacy validation and the paired masked-vs-original quality comparison to CP3.4 (run) and CP3.5 (report); privacy is not claimed validated end-to-end (closes the CP2.3 D-051 item). D-093 records the mentor feedback and hands it to CP3: a waiting-state UX for the ~95 s LLM wait, and vacancy-specific CV improvement guidance after the core flow is stable. None of these changes D-087 or the CP2.4 result.
-- **What still blocks closure (Dion):** CP2.7 "Evidence to keep" lists LMS proof, and the status rule below requires saved evidence for DONE. Name where the LMS proof is kept, or record that no LMS upload was required for checkpoint 14. Rehearsal is a plan step only and does not block. First-pass blockers and their resolution: audit section 4.
+- **Resolved on 7 Oct (second pass, historical step):** D-091 accepts the 52-JD development extraction scope used for CP2.3 and defers exhaustive extraction of the other 162 development JDs (closes the D-050 carry-over). D-092 records privacy as implemented and component/unit tested only, and defers end-to-end privacy validation and the paired masked-vs-original quality comparison to CP3.4 (run) and CP3.5 (report); privacy is not claimed validated end-to-end (closes the CP2.3 D-051 item). D-093 records the mentor feedback and hands it to CP3: a waiting-state UX for the ~95 s LLM wait, and vacancy-specific CV improvement guidance after the core flow is stable. None of these changes D-087 or the CP2.4 result.
+- **Final pass (7 Oct):** Dion confirmed that the CP2.7 material was uploaded to the LMS; the submission evidence is kept in the LMS, outside this repository. That was the last open item, so CP2 is closed (D-094). Privacy remains implemented and component/unit tested only (D-092); end-to-end privacy validation and the original-vs-masked comparison are CP3.4/CP3.5 work. CP3 handoff: audit section 12.
 - **Ledger:** US$10.53 (including US$0.25 uncertain reservations) against the US$18.5 hard stop.
 
 The status notes below are dated snapshots, kept for provenance. Where they disagree with this section, this section and the linked evidence are current.
@@ -107,7 +118,7 @@ This section is kept as it was on 2 October. The current state is in [Current ou
 | 11 | CP2.4 | Modeling + Evaluation Metrics | [Evaluation Metrics](checkpoint_2/CP2_04_Evaluation_Metrics.md) | 1 Oct 2026 | 3 Oct 2026 | 6-7 Oct: test run after the D-087 freeze, labels D-088, report `heldout_report_v1.json` on 7 Oct | DONE |
 | 12 | CP2.5 | Visualisasi Evaluation Result | [Evaluation Result Visualization](checkpoint_2/CP2_05_Evaluation_Visualization.md) | 2 Oct 2026 | 3 Oct 2026 | 4 Oct: development figures 1-8; 7 Oct: held-out figures 9-11 (notebook 02) | DONE |
 | 13 | CP2.6 | Recommendation & Summary | [Recommendation and Summary](checkpoint_2/CP2_06_Recommendation_and_Summary.md) | 3 Oct 2026 | 3 Oct 2026 | 4 Oct: provisional development summary; 7 Oct: final summary after the held-out test | DONE |
-| 14 | CP2.7 | PPT Check Point 2 + Mentoring | [CP2 Presentation and Mentoring](checkpoint_2/CP2_07_Presentation_and_Mentoring.md) | 4 Oct 2026 | 3-4 Oct 2026 (deck draft on 3 Oct) | 4 Oct: deck v3 prepared (outside the repository); presented and mentored on 4 Oct (confirmed by Dion, dated by repository traces); feedback recorded 7 Oct as D-093. Rehearsal not recorded (non-blocking); LMS proof not saved | Acceptance criteria met · LMS proof open (blocks CP2 closure) |
+| 14 | CP2.7 | PPT Check Point 2 + Mentoring | [CP2 Presentation and Mentoring](checkpoint_2/CP2_07_Presentation_and_Mentoring.md) | 4 Oct 2026 | 3-4 Oct 2026 (deck draft on 3 Oct) | 4 Oct: deck v3 prepared (outside the repository); presented and mentored on 4 Oct (confirmed by Dion, dated by repository traces); feedback recorded 7 Oct as D-093; LMS upload confirmed by Dion 7 Oct (evidence kept in the LMS). Rehearsal not recorded (non-blocking) | DONE |
 | 15 | CP3.1 | Deployment API menggunakan Flask/FastAPI | [API Deployment with FastAPI](checkpoint_3/CP3_01_FastAPI_Service.md) | 5 Oct 2026 | 5 Oct 2026 | 6 Oct: all endpoints, privacy controls and tests (local) | DONE LOCALLY |
 | 16 | CP3.2 | Integrasi Database & GitHub Actions CI/CD | [Database Integration and CI/CD](checkpoint_3/CP3_02_Database_and_CICD.md) | 6 Oct 2026 | 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) | 6 Oct: Docker, compose and CI ready; hosting deploy waits for Dion | PARTIAL |
 | 17 | CP3.3 | Build Streamlit UI | [Streamlit UI](checkpoint_3/CP3_03_Streamlit_UI.md) | 7 Oct 2026 | 7 Oct 2026 | 6 Oct: full UI with privacy UX (local) | DONE LOCALLY |
@@ -118,7 +129,7 @@ This section is kept as it was on 2 October. The current state is in [Current ou
 
 **CP2.8 (not a bootcamp checkpoint):** Phase A post-test quality optimization on development data, 7 Oct 2026, CLOSED with KEEP BASELINE (D-089, D-090); [report](checkpoint_2/CP2_08_Post_Test_Quality_Optimization.md). It never changes the CP2.4 result.
 
-**CP2 closure (7 Oct 2026):** NOT YET CLOSED; one evidence item open (CP2.7 LMS proof); see the [closeout audit](checkpoint_2/CP2_Closeout_Audit_20261007.md).
+**CP2 closure (7 Oct 2026):** CLOSED (D-094); see the [closeout audit](checkpoint_2/CP2_Closeout_Audit_20261007.md).
 
 **Tightest day: 3 October** (checkpoints 11, 12, 13, and the deck draft). If it slips, the checks of the minimal features move to checkpoint 18. Core evaluation is not cut.
 
@@ -440,7 +451,7 @@ JobFit version: Same as the template: CP2 presentation and mentoring.
 6. **Evidence to keep.** deck file; LMS proof; feedback notes.
 7. **Estimate and dependencies.** About half a day for the deck, plus the session. Depends on: Checkpoints 11 to 13.
 8. **Fallback.** If a result is not ready, present the method and what is missing, with the reason.
-9. **Status and next step.** Presentation and mentoring held on 4 Oct 2026; both acceptance criteria met (mentor saw the measured process; feedback recorded as D-093). Rehearsal not recorded (a step, not an acceptance or evidence item; non-blocking). **LMS proof (evidence to keep) is not saved and blocks CP2 closure** until Dion names its location or records that no upload was required. Historical: on 7 Oct the first closeout pass found no session record; an earlier version of this line said "DONE (presented and mentored 4-5 Oct). Mentor notes to be added" without a source. Next: CP3.1 takes D-093 as its checkpoint-14 input.
+9. **Status and next step.** DONE. Presentation and mentoring held on 4 Oct 2026; both acceptance criteria met (mentor saw the measured process; feedback recorded as D-093). Evidence: deck v3 in `04_Checkpoint_2/` (outside the repository), feedback notes in the CP2.7 report and D-093, LMS upload confirmed by Dion on 7 Oct with the submission evidence kept in the LMS. Rehearsal not recorded (a step, not an acceptance or evidence item; non-blocking). Historical: the first closeout pass found no session record, and an earlier version of this line said "DONE (presented and mentored 4-5 Oct). Mentor notes to be added" without a source; the second pass left only the LMS proof open. Next: CP3.1 takes D-093 as its checkpoint-14 input.
 
 ### CP3.1: API Deployment with FastAPI (checkpoint 15)
 

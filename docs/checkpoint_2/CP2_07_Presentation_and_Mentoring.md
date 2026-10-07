@@ -3,8 +3,8 @@
 **Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
 **Bootcamp checkpoint:** 14. PPT Check Point 2 + Mentoring · official date 4 Oct 2026  
 **JobFit version of this checkpoint:** Same as the template: CP2 presentation and mentoring.  
-**Planned work:** 3 to 4 Oct 2026 · **Actual:** deck, figures and one-page summary prepared on 4 Oct; presentation and mentoring session held on 4 Oct 2026 (exact time not captured); feedback recorded on 7 Oct (D-093)  
-**Status:** Presentation and mentoring DONE; both acceptance criteria met. **One evidence item is still open: LMS upload proof** (section 9 and section 14). Design basis: System Design v1.3 and measured CP2 development results.
+**Planned work:** 3 to 4 Oct 2026 · **Actual:** deck, figures and one-page summary prepared on 4 Oct; presentation and mentoring session held on 4 Oct 2026 (exact time not captured); feedback recorded on 7 Oct (D-093); deck uploaded to the LMS (confirmed by Dion on 7 Oct; the submission evidence is kept in the LMS, outside this repository)  
+**Status:** DONE (7 Oct 2026). Both acceptance criteria are met and all three evidence-to-keep items are accounted for (section 14). Design basis: System Design v1.3 and measured CP2 development results.
 
 > The plan for all stages is in the [master plan](../master-plan.md). Sections 1 to 8 are the plan as written. Final status and evidence are in sections 9 to 14.
 
@@ -60,7 +60,7 @@ If a result is not ready, present the method and what is missing, with the reaso
 - [x] Show real metrics, failures, and limitations; missing results are shown as missing, not estimated (development results only; CP2.4 had not run, as the fallback allows).
 - [ ] Rehearse once with timing. Not recorded. A plan step, not an acceptance criterion or evidence item, so it does not block (section 14).
 - [x] Present, then write down the mentor's feedback (session 4 Oct; feedback recorded 7 Oct, section 10).
-- [ ] Upload the deck to the LMS (Dion). No proof in the repository and not confirmed by Dion. **Open** (section 14).
+- [x] Upload the deck to the LMS (Dion). Completed; confirmed by Dion on 7 Oct. The LMS submission evidence stays in the LMS and is not committed to this repository; no screenshot, receipt ID, timestamp or URL is recorded here.
 - [x] Acceptance: The mentor sees a measurable selection, tuning, and evaluation process (session confirmed by Dion; the deck presented the measured CP2.1-CP2.3 development comparisons).
 - [x] Acceptance: The mentor's feedback is recorded in docs/decisions.md as new entries ([D-093](../decisions.md)).
 
@@ -89,16 +89,17 @@ If a result is not ready, present the method and what is missing, with the reaso
 ## 12. Decisions from this stage
 
 - [D-093](../decisions.md): CP2 mentor feedback recorded and accepted as CP3 input (latency waiting-state UX; vacancy-specific CV improvement guidance).
+- [D-094](../decisions.md): CP2 formally closed, including the owner-confirmed LMS submission.
 
 ## 13. Next step and handoff
 
-CP3.1 takes the mentor feedback from this checkpoint as an input (master plan, CP3.1 prerequisites). CP3 inherits D-093 A and B; see the [CP2 closeout audit, section 12](CP2_Closeout_Audit_20261007.md#12-cp2-to-cp3-handoff). Before CP2.7 can be marked fully DONE, Dion adds the LMS upload proof or states that no upload was required (section 14).
+CP3.1 takes the mentor feedback from this checkpoint as an input (master plan, CP3.1 prerequisites). CP3 inherits D-093 A and B; see the [CP2 closeout audit, section 12](CP2_Closeout_Audit_20261007.md#12-cp2-to-cp3-handoff). CP2.7 is DONE; CP2 is closed by [D-094](../decisions.md).
 
 ## 14. Closeout audit trail
 
 **First pass (7 October, commit `de53544`), historical:** the repository had no record of the session, the feedback, a decision entry, a rehearsal or LMS proof. The master plan's earlier line "presented and mentored 4-5 Oct; mentor notes to be added" had no source. This report then said "mentor session not recorded yet" and was IN PROGRESS. The first pass also missed the two dated traces of the 4 October session cited in section 10.
 
-**Second pass (7 October), current:**
+**Second pass (7 October), historical:** session, feedback and D-093 resolved; LMS proof still open (table below, last row as it stood then).
 
 | Item | Requirement source | Previous status | New evidence | Final status |
 | --- | --- | --- | --- | --- |
@@ -109,4 +110,10 @@ CP3.1 takes the mentor feedback from this checkpoint as an input (master plan, C
 | Rehearsal with timing | Master plan CP2.7, step 4 only | Missing | None | Not recorded. Non-blocking: not an acceptance criterion and not an evidence item |
 | LMS upload proof | Master plan CP2.7, step 6 and evidence to keep; the plan's status rule says a stage is DONE only when its acceptance criteria are met **and its evidence is saved** | Missing | None; not confirmed by Dion | **Open. Blocks CP2 closure** |
 
-**To close:** Dion adds the LMS proof (screenshot or receipt, kept with the project evidence, with its location named here), or records that the bootcamp did not require an LMS upload for checkpoint 14. Either statement resolves the item; nothing else in CP2.7 is open.
+**Final pass (7 October), current:** Dion confirmed that the CP2.7 material was uploaded to the LMS.
+
+| Item | Requirement source | Second-pass status | Final status | Evidence |
+| --- | --- | --- | --- | --- |
+| LMS upload and proof | Master plan CP2.7, step 6 and "Evidence to keep: LMS proof" | Missing, blocking | **PASS: owner-confirmed external LMS submission** | Dion's confirmation (7 Oct). The submission record is kept in the LMS, outside the Git repository, in the same way the deck file is kept in `04_Checkpoint_2/` and proof of work goes to the Timeline file (master plan section 9). No LMS artifact, ID, timestamp or URL is reproduced here |
+
+All CP2.7 acceptance criteria and evidence items are now met. **CP2.7: DONE.**

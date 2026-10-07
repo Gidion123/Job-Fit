@@ -1,4 +1,4 @@
-> Current status (7 October 2026): CP2 work is done (freeze D-087, held-out evaluation CP2.4, figures, final summary, CP2 presentation and mentoring on 4 Oct with feedback recorded as D-093, Phase A closed with KEEP BASELINE; CP2.3 carry-overs resolved by D-091 and D-092). CP2 is **not yet closed** only because the CP2.7 LMS upload proof is not recorded. [CP2 closeout audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md).
+> Current status (7 October 2026): **CP2 is closed** (D-094): freeze D-087, held-out evaluation CP2.4, figures, final summary, CP2 presentation and mentoring on 4 Oct with feedback recorded as D-093 and the LMS upload confirmed, Phase A closed with KEEP BASELINE, CP2.3 carry-overs resolved by D-091 and D-092. CP3 continues from the [handoff](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md#12-cp2-to-cp3-handoff).
 
 # JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis
 
@@ -6,7 +6,7 @@ JobFit helps early-career job seekers in AI and data find jobs that fit their re
 
 Final project for the Data Science and Machine Learning bootcamp at Dibimbing (Batch 42).
 
-![Status](https://img.shields.io/badge/status-CP2%20closeout%20pending-orange)
+![Status](https://img.shields.io/badge/status-CP2%20closed-green)
 ![Next](https://img.shields.io/badge/next-CP3%20deployment-blue)
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 
@@ -16,7 +16,7 @@ Final project for the Data Science and Machine Learning bootcamp at Dibimbing (B
 | Checkpoint | Focus | Dates | Status |
 | --- | --- | --- | --- |
 | CP1 | Data collection, cleaning, feature transformation, EDA | until 27 Sep 2026 | Done |
-| CP2 | Guideline and gold set, search baselines, evidence matching, recommendation list, evaluation | 28 Sep to 7 Oct 2026 | Technical work done: freeze D-087 (Hybrid Qwen, seniority rule, K 10, DeepSeek Flash extraction, GPT-6 Sol matching with Luna fallback, evidence prompt v1.1, H2v2, experience block), held-out evaluation done (CP2.4). CP2.7 presentation and mentoring done (D-093); carry-overs resolved (D-091, D-092). Not yet closed: CP2.7 LMS proof not recorded ([audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md)) |
+| CP2 | Guideline and gold set, search baselines, evidence matching, recommendation list, evaluation | 28 Sep to 7 Oct 2026 | Closed 7 Oct (D-094): freeze D-087 (Hybrid Qwen, seniority rule, K 10, DeepSeek Flash extraction, GPT-6 Sol matching with Luna fallback, evidence prompt v1.1, H2v2, experience block), held-out evaluation (CP2.4), presentation and mentoring (D-093). [Closeout audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md) |
 | CP3 | API, database, app, testing, deployment | 5 to 11 Oct 2026 | API, UI, CV coach, Docker and CI done locally; hosting deploy and deployed checks pending |
 
 This README is updated at the end of every checkpoint.
@@ -80,7 +80,7 @@ The configuration was frozen before any test processing (D-087). Headline on thr
 
 The CP2 and CP3 plan follows the design update after the CP1 mentor feedback. Every decision is in the [decision log](docs/decisions.md), and every stage has a report in [docs/](docs/README.md).
 
-### CP2: Matching and evaluation (technical work done; closure pending)
+### CP2: Matching and evaluation (closed 7 Oct 2026)
 
 - Write an annotation guideline, run a timed labeling pilot, and build development and held-out test sets.
 - Compare search baselines for the first stage: keyword, full-text search, dense embeddings, and hybrid search (RRF).

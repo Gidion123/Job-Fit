@@ -3,7 +3,7 @@
 | Purpose | Read |
 | --- | --- |
 | Project progress and schedule | [Master plan](master-plan.md) (current outcome at the top) |
-| CP2 closure status and requirements-to-evidence matrix | [CP2 closeout audit, 7 Oct 2026](checkpoint_2/CP2_Closeout_Audit_20261007.md) |
+| CP2 closure (CLOSED, D-094) and requirements-to-evidence matrix | [CP2 closeout audit, 7 Oct 2026](checkpoint_2/CP2_Closeout_Audit_20261007.md) |
 | CP2 mentor feedback and CP3 inputs | [CP2.7 report](checkpoint_2/CP2_07_Presentation_and_Mentoring.md), D-093 in the decision log |
 | Decisions and scope | [Decision log](decisions.md) |
 | CP1 conclusions | [CP1 reports](checkpoint_1/README.md) |

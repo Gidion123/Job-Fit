@@ -119,6 +119,7 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-091 | 7 Oct 2026 | Accept the evaluated development extraction scope for CP2.3; defer exhaustive corpus extraction (closes the D-050 carry-over) | Approved by Dion |
 | D-092 | 7 Oct 2026 | Privacy status for CP2: implemented and component/unit tested only; end-to-end privacy validation and the paired masked-vs-original comparison deferred to CP3.4/CP3.5 (closes the CP2.3 D-051 item) | Approved by Dion |
 | D-093 | 7 Oct 2026 | CP2 mentor feedback recorded and accepted as CP3 input: waiting-state UX for long LLM latency; vacancy-specific CV improvement guidance | Approved by Dion |
+| D-094 | 7 Oct 2026 | CP2 formally closed (CP2.1-CP2.7 acceptance met, reports reconciled, freeze integrity verified); handoff to CP3 | Approved by Dion |
 
 ---
 
@@ -1347,4 +1348,12 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 - **Decision B, vacancy-specific CV improvement guidance (CP3, after the core flow is stable):** suggestions are grounded in the user's actual CV evidence, the target JD requirements and the identified gaps. They never invent experience or encourage misrepresenting skills. Editing a CV can raise the evidence-coverage percentage only when it adds truthful evidence; it does not guarantee a higher true suitability. This extends the existing CV coach plan (D-036, [cv-coach-plan.md](cv-coach-plan.md)) and CV coach v1 (EXP-20261006-CP3); no second feature is created.
 - **Boundary:** neither item changes the CP2.4 evaluation, D-087, the held-out result, evaluation thresholds or CP2 tuning, and neither authorizes paid inference.
 - **Status:** Approved. Satisfies the CP2.7 acceptance criterion "the mentor's feedback is recorded in docs/decisions.md as new entries".
+
+## D-094. CP2 formally closed
+
+- **Date/source:** 7 October 2026. Final pass of the [CP2 closeout audit](checkpoint_2/CP2_Closeout_Audit_20261007.md), after Dion confirmed that the CP2.7 material was uploaded to the LMS, the last open item of the second pass.
+- **Basis:** every CP2.1-CP2.7 acceptance criterion and evidence item in the [master plan](master-plan.md) is PASS or resolved by an approved decision: held-out evaluation under the D-087 freeze and `cp24-report-contract-v1` (CP2.4), reproducibility of the report, tables, figures and notebooks from saved artifacts (21/21 receipt hashes), freeze integrity (`prepare_cp23_freeze.py --verify` with no changed file), the D-091 extraction-scope disposition, the D-092 privacy deferral, the D-093 mentor feedback and CP3 handoff, and the owner-confirmed LMS submission (evidence kept in the LMS, not in this repository). Every CP2.1-CP2.8 primary report is current, with historical text labeled.
+- **Carried into CP3, not CP2 gaps:** D-092 privacy validation (end-to-end and original-vs-masked comparison in CP3.4, final privacy report in CP3.5); D-093 items A and B; the D-045 test extraction/evidence results for CP3.5; FAIL-35 (three environment-dependent tests keep the full suite and CI red; CP2 evidence is unaffected).
+- **Unchanged:** D-087, the CP2.4 held-out result and its frozen files, D-090 (KEEP BASELINE). The CP2 claims stay as reported: CV3-CV5 headline P@5 0.5333 -> 0.7333 (3/3 CVs), NDCG@10 0.8047 -> 0.9604 for CV3-CV4 only, F00070 unjudged, CV1-CV2 supplementary, privacy not validated end-to-end.
+- **Status:** Approved. CP2 is CLOSED; CP3 continues from the handoff in the closeout audit, section 12.
 

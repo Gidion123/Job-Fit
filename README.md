@@ -1,4 +1,4 @@
-> Current status: CP2.2 DONE under D-050. CP2.3 IN PROGRESS: D-068 provisionally selects Hybrid Qwen and DeepSeek Flash on development. Pipeline v1.1 raised usable score coverage to 42/60 under D-071's provisional H2 rule, below its 54/60 target. K, PARTIAL weight and one-CV latency remain unconfirmed. D-050 extraction, privacy impact and held-out confirmation remain open. [Current v1.1 report](docs/checkpoint_2/supporting/CP23_Pipeline_v11_20261004.md).
+> Current status (7 October 2026): CP2 technical work is done (freeze D-087, held-out evaluation CP2.4, figures, final summary, Phase A closed with KEEP BASELINE). CP2 is **not yet closed**: the CP2.7 mentor/LMS evidence and two CP2.3 carry-over decisions are missing. [CP2 closeout audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md).
 
 # JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis
 
@@ -6,8 +6,8 @@ JobFit helps early-career job seekers in AI and data find jobs that fit their re
 
 Final project for the Data Science and Machine Learning bootcamp at Dibimbing (Batch 42).
 
-![Status](https://img.shields.io/badge/status-CP2.3%20in%20progress-blue)
-![Next](https://img.shields.io/badge/next-CP2%20in%20progress-blue)
+![Status](https://img.shields.io/badge/status-CP2%20closeout%20pending-orange)
+![Next](https://img.shields.io/badge/next-CP3%20deployment-blue)
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 
 
@@ -16,7 +16,7 @@ Final project for the Data Science and Machine Learning bootcamp at Dibimbing (B
 | Checkpoint | Focus | Dates | Status |
 | --- | --- | --- | --- |
 | CP1 | Data collection, cleaning, feature transformation, EDA | until 27 Sep 2026 | Done |
-| CP2 | Guideline and gold set, search baselines, evidence matching, recommendation list, evaluation | 28 Sep to 6 Oct 2026 | Development done: freeze candidate D-086 (Hybrid Qwen, seniority rule, K 10, DeepSeek Flash extraction, GPT-6 Sol matching, H2v2, experience block). Held-out test (CP2.4) waits for the freeze approval |
+| CP2 | Guideline and gold set, search baselines, evidence matching, recommendation list, evaluation | 28 Sep to 7 Oct 2026 | Technical work done: freeze D-087 (Hybrid Qwen, seniority rule, K 10, DeepSeek Flash extraction, GPT-6 Sol matching with Luna fallback, evidence prompt v1.1, H2v2, experience block), held-out evaluation done (CP2.4). Not yet closed: CP2.7 mentor/LMS evidence and two CP2.3 carry-over decisions ([audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md)) |
 | CP3 | API, database, app, testing, deployment | 5 to 11 Oct 2026 | API, UI, CV coach, Docker and CI done locally; hosting deploy and deployed checks pending |
 
 This README is updated at the end of every checkpoint.
@@ -60,11 +60,25 @@ All CP1 role, level, and skill labels are rule-based v0. Their accuracy will be 
 
 Full reports: [CP1.1 to CP1.6](docs/checkpoint_1/README.md).
 
+## CP2 results (held-out test, 7 October 2026)
+
+The configuration was frozen before any test processing (D-087). Headline on three synthetic held-out CVs (CV3-CV5) and held-out jobs:
+
+| Metric | Stage-1 retrieval order | Final product order | Coverage |
+| --- | ---: | ---: | --- |
+| P@5 (macro) | 0.533 | 0.733 | 3/3 CVs |
+| NDCG@10 (macro) | 0.805 | 0.960 | **CV3 and CV4 only**; CV5 unavailable because one job (F00070) is unjudged, never counted as 0 |
+
+- Relevance labels are AI-assisted (ChatGPT), reviewed by one human, and blind to the ranking (D-088). They are not independent human gold. Because the labeling assistant and the matcher are both OpenAI-family models, correlated model preferences may inflate apparent agreement; the direction and size of this bias were not measured.
+- Familiar development CVs (CV1-CV2) on held-out jobs are a separate diagnostic and are never pooled with the headline.
+- Three CVs and one run per CV: the result is indicative, not a general accuracy claim. Details: [CP2.4](docs/checkpoint_2/CP2_04_Evaluation_Metrics.md), [figures](docs/checkpoint_2/CP2_05_Evaluation_Visualization.md), [summary](docs/checkpoint_2/CP2_06_Recommendation_and_Summary.md).
+- After the test, a development-only prompt optimization (Phase A) found no eligible challenger, so evidence prompt v1.1 stays (D-090). It does not change the held-out result.
+
 ## Roadmap
 
 The CP2 and CP3 plan follows the design update after the CP1 mentor feedback. Every decision is in the [decision log](docs/decisions.md), and every stage has a report in [docs/](docs/README.md).
 
-### CP2: Matching and evaluation (in progress)
+### CP2: Matching and evaluation (technical work done; closure pending)
 
 - Write an annotation guideline, run a timed labeling pilot, and build development and held-out test sets.
 - Compare search baselines for the first stage: keyword, full-text search, dense embeddings, and hybrid search (RRF).
@@ -104,7 +118,7 @@ project-job-fit/
 ├── evals/                Annotation guideline, fixtures, pilot, gold labels, splits, results
 ├── evidence/             CP1 collection evidence, provider benchmark, related work
 ├── migrations/           Database migrations
-├── notebooks/            CP1 research notebook
+├── notebooks/            CP1 research notebook; CP2 held-out evaluation and Phase A notebooks
 ├── prompts/              Versioned LLM prompts
 ├── reports/              Figures (CP1 to CP3) and the API usage ledger
 ├── scripts/              CP1 collection scripts and CP2/CP3 batch, experiment, and evaluation scripts
@@ -185,7 +199,7 @@ The collection scripts in `scripts/` are kept for provenance. They are not neede
 ## Tech stack
 
 - CP1: Python, pandas, NumPy, matplotlib, Jupyter, pytest
-- CP2 (in progress): Pydantic, OpenRouter (LLM and embedding gateway), PostgreSQL with pgvector in Docker
+- CP2: Pydantic, OpenRouter (LLM and embedding gateway), PostgreSQL with pgvector in Docker
 - Planned for CP3: FastAPI, Streamlit, GitHub Actions, Railway
 
 ## Author
@@ -197,6 +211,6 @@ Gidion Depari, Dibimbing Data Science and Machine Learning Batch 42
 The code is released under the [MIT License](LICENSE). The license does not cover the job posting content in `data/` and `evidence/` (it belongs to the original publishers) or the third-party screenshots in `evidence/`. The CVs in `data/synthetic_cvs/` are fictional.
 
 
-## Current development review
+## Historical: development review (2 October 2026)
 
 All A/B/C review was submitted on2October2026. [Review result and follow-ups](docs/checkpoint_2/supporting/Development_Labeling_Review_20261002.md); [current workbook index](evals/labeling/README.md). Runtime guideline v1.3 is adopted and tested offline. Reviewed-record gold is exported with explicit holds. CP2.2 implementation acceptance is DONE under D-050 following the scoped repaired live chain; broad extraction follows CP2.3 configuration evaluation. Formal tuning has not run. See the [current CP2.2 report](docs/checkpoint_2/CP2_02_Modeling_Pipeline.md).

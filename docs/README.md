@@ -7,7 +7,7 @@
 | [`checkpoint_1/supporting/`](checkpoint_1/supporting/) | CP1 inventory, insights, audit, handoff, and API policy | CP1 |
 | [`repo-structure.md`](repo-structure.md) | What every folder and file of the application is for, and in which stage it is filled | CP2 and CP3 |
 | [`master-plan.md`](master-plan.md) | Dates, dependencies, budget, labeling plan, and the plan for every CP2 and CP3 stage | CP2 and CP3 |
-| [`checkpoint_2/`](checkpoint_2/README.md) | CP2.1 to CP2.7 reports (bootcamp checkpoints 8 to 14) | CP2 |
+| [`checkpoint_2/`](checkpoint_2/README.md) | CP2.1 to CP2.7 reports (bootcamp checkpoints 8 to 14), CP2.8 Phase A and the [CP2 closeout audit](checkpoint_2/CP2_Closeout_Audit_20261007.md) | CP2 (technical work done; closure pending, 7 Oct 2026) |
 | [`checkpoint_2/supporting/`](checkpoint_2/supporting/) | Versioned implementation, audits and review evidence; historical preparation in archive/ | CP2 |
 | [`checkpoint_3/`](checkpoint_3/README.md) | CP3.1 to CP3.7 reports (bootcamp checkpoints 15 to 21) | CP3 |
 
@@ -24,4 +24,4 @@ Project logs:
 The project reference documents (Canonical v2.1, Execution Playbook v2.1, Research v2, PRE-CP0 v2) and the system design history (v1.0 to v1.3) are in the project folder outside this repository.
 
 
-Current labeling:[review submission and follow-ups](checkpoint_2/supporting/Development_Labeling_Review_20261002.md). Evaluation navigation:[evals README](../evals/README.md). Historical versions with provenance are retained; use current indexes rather than older preparation instructions.
+Historical labeling record (2 October):[review submission and follow-ups](checkpoint_2/supporting/Development_Labeling_Review_20261002.md). Evaluation navigation:[evals README](../evals/README.md). Historical versions with provenance are retained; use current indexes rather than older preparation instructions.

@@ -70,7 +70,7 @@ If labels are incomplete, report only eligible CV/metric combinations, planned/c
 ## 9. Checklist
 
 - [x] Original-rank NDCG@10/P@5 for stage-1 versus final application order, with common judged pool and paired eligible CV coverage.
-- [ ] Evidence Macro-F1, precision and recall per class, confusion matrix, share of assessed units. Not measured on test (reason in 10b); development values in CP2.3/CP2.5.
+- [ ] Evidence Macro-F1, precision and recall per class, confusion matrix, share of assessed units. Not measured on test (reason in 10b); development values in CP2.3/CP2.5. Deferred, not dropped: D-045 ("What is reported when") reports extraction and evidence on development gold at CP2.4 and the test extraction/evidence results in the final report (CP3.5). No test A/B gold exists yet.
 - [x] Extraction schema validity (FAIL-33; held jobs in 10b). Extraction precision/recall/F1 not measured on test (reason in 10b).
 - [x] Recall limitations and coverage reported (labeled-pool Recall@10 in 10b); filter recall marked not measured.
 - [x] Safety: hard negatives in the top 10 and quote validity (10b). Unsupported claims not measurable without test evidence gold.
@@ -153,7 +153,7 @@ One-CV wall time (matching, K = 10, parallel): median 80.6 s (min 37.2, max 87.2
 
 - Evidence Macro-F1 and extraction F1: the test workbook's A/B sheets were AI-assisted drafts that D-088 did not import (C only), and pipeline units differ from gold units (needs alignment). Development values stand: CP2.3 and CP2.5 (figures 3 and 4).
 - Unsupported claims: needs unit-level evidence gold on test.
-- Reproducibility record: freeze receipt `cp23_freeze_draft_v2` (57 file hashes, D-087), git HEAD at reporting time `8cfb359d` (Dion commits the reports), prompt and model versions in `config/versions/pipeline_cp23_freeze_candidate_v4_20261006.yaml`.
+- Reproducibility record: freeze receipt `cp23_freeze_draft_v2` (57 file hashes, D-087), git HEAD at reporting time `8cfb359d` (Dion commits the reports; the CP2.4 artifacts were first committed in `8ca6b41`, 7 Oct 2026, and the 57 freeze hashes identify the evaluated files), prompt and model versions in `config/versions/pipeline_cp23_freeze_candidate_v4_20261006.yaml`.
 
 ## 11. Interpretation and limitations
 
@@ -162,7 +162,7 @@ One-CV wall time (matching, K = 10, parallel): median 80.6 s (min 37.2, max 87.2
 - Because the labeling assistant and matcher are both OpenAI-family models, correlated model preferences may inflate apparent agreement. The direction and magnitude of this bias were not independently measured. This matters most for the part of the gain that comes from the LLM match order (see CP2.5 figure 11).
 - CV5 has 5 of 10 final top-10 jobs without a score (4 held, 1 no score). Three of them come from the runner's cost cap (FAIL-34), one from an incomplete JD, and one is F00070 (no requirements). The product order puts them last; this is a coverage limit, not a relevance claim.
 - 14 of 44 Sol calls were refused by the run cap and went to Luna or a hold (FAIL-34), so the headline is the system as run with fallback, not a pure Sol measurement.
-- Synthetic CVs, one job snapshot, single run per CV (no repeated-run variance).
+- Synthetic CVs, one job snapshot, single run per CV (no repeated-run variance). Per-CV values are shown; the bootstrap intervals that D-045 planned for ranking were not computed for the test.
 - Evidence Macro-F1 and extraction F1 are not measured on test (section 10b); latency, cost, quote validity and hard negatives are in 10b.
 
 ## 12. Decisions from this stage
@@ -175,7 +175,9 @@ Done: CP2.5 figures 9-11 and the CP2.6 summary. CP2.4 stays locked from optimiza
 
 Protocol authority: [D-053 held-out confirmation](../evaluation.md#7-held-out-confirmation-protocol-d-053). Test exposure followed by configuration changes makes reuse a regression check, not new independent confirmation.
 
-## Readiness (6 Oct 2026)
+## Historical: readiness before the test run (6 Oct 2026)
+
+Kept as written before the freeze approval; the run and its result are in sections 10 and 10b.
 
 - Freeze candidate and draft receipt: D-086, `evals/freeze/cp23_freeze_draft_v2/`.
 - Runner: `scripts/run_cp24_test.py` in six phases (parse CV3-CV5, query vectors, stage 1 on the 214 test jobs, extraction of the analyzed jobs, matching, pool file). Every phase refuses to run without `freeze_receipt_APPROVED.json` and with any file drift. Caps: parse and queries US$0.20 each, extraction US$1.00, matching US$2.50.

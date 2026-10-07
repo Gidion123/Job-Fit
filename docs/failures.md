@@ -282,3 +282,10 @@ The recovery helper refuses any failure that is not a timeout, so it cannot retr
 - **Effect on CP2.4:** of 50 analyzed jobs, 30 were matched by Sol, 11 by Luna, 3 became holds because of this, and 6 were held before matching (extraction). Three of CV5's five unscored jobs (F00071, F00599, F00651) come from this cap, not from the model or the JD. The headline numbers stay as measured (they describe the system as run, fallback included, contract `cp24-report-contract-v1`), but they are not a pure Sol measurement and the CV5 hold count overstates the product's hold rate.
 - **Not a test change:** nothing is rerun or replaced (D-087, D-089). Phase A runs used a separate cap and had no `RunCapReached`.
 - **Fix for later runs (not applied to CP2.4):** size the in-flight reservation from observed cost (or lower the concurrency) so a cap guard cannot change which model answers; record any guard refusal as an operational failure, as amendment 1 of D-089 does.
+
+### FAIL-35. Three tests fail in a fresh clone, so CI is red on the CP2 snapshot
+
+- **Found:** 7 October 2026, offline, during the [CP2 closeout audit](checkpoint_2/CP2_Closeout_Audit_20261007.md). GitHub Actions run 37604915026 on commit `8ca6b41` shows the same result: 3 failed, 671 passed, 9 skipped.
+- **What happens:** `tests/test_splits.py` (two tests) opens the git-ignored raw snapshot `data/interim/snapshots/CP1_20260926/jsearch_records.jsonl` and has no skip guard when it is missing. `tests/test_qa_phase_a.py::test_budget_plan_stays_below_hard_stop_and_covers_need` reads the budget from the environment; without the git-ignored `.env` the code default hard stop is US$4.5, so the Phase A budget plan is not covered. With the `.env.example` values (19 / 18.5) that test passes.
+- **Effect:** none on CP2 evidence. The split hashes are verified by the D-087 freeze check, and the Phase A results are saved. The earlier statement that CI is ready (CP3.2) does not hold for this snapshot.
+- **Not fixed in the closeout:** the fix is a CP3.2 CI change (skip when the raw snapshot is absent, and pass the budget values to the test or CI explicitly). No frozen file is involved.

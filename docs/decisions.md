@@ -123,7 +123,7 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-095 | 7 Oct 2026 | CP3 deployment target (SumoPod VPS), full public live product scope and branch lifecycle | Approved by Dion and Codex; planned, not deployed |
 | D-096 | 7 Oct 2026 | Public live cost and abuse controls: US$5 validation budget, US$2/day cap, deterministic phase bounds, 1 analysis per IP per 24 h, one live analysis at a time | Approved by Dion and Codex; planned |
 | D-097 | 7 Oct 2026 | CP3 runtime changes go through non-frozen adapters; the D-087 files stay byte-identical | Approved by Dion and Codex; planned |
-| D-098 | 7 Oct 2026 | Mutable production job corpus: twice-monthly JSearch sync, dedupe, lifecycle, lazy extraction cache, minimal Alembic baseline | Approved by Dion and Codex; Alembic 0001/0002 implemented 8 Oct (schema only); sync and seed planned |
+| D-098 | 7 Oct 2026 | Mutable production job corpus: twice-monthly JSearch sync, dedupe, lifecycle, lazy extraction cache, minimal Alembic baseline | Approved by Dion and Codex; Alembic 0001/0002 implemented 8 Oct (schema only) and independently verified and closed at `ac30594`; Dion's local CP2 database not yet verified; sync and seed planned |
 | D-099 | 7 Oct 2026 | CP3 observability: Prometheus and Grafana with email alerts, Langfuse Cloud (Japan) metadata only | Approved by Dion and Codex; planned |
 | D-100 | 7 Oct 2026 | CP3 evaluation obligations and feature freeze: D-045 to be completed with option B, PR-10, freeze at the end of 9 Oct | Approved by Dion and Codex; planned, not completed |
 

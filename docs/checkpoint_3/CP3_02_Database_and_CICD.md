@@ -246,7 +246,7 @@ Local and CI only. No production database exists yet, nothing is deployed, and t
 **Database-gated** (`tests/test_migrations_db.py`): 53 tests in the first version, 69 after the 8 Oct audit corrections, 77 after the `alembic_version` follow-up. All passed locally on PostgreSQL 16.15 with pgvector 0.6.0, and in CI on PostgreSQL 17.11 (`pgvector/pgvector:pg17`):
 - first version: 67 passed, 0 skipped, offline and database together (run [37720321946](https://github.com/Gidion123/Job-Fit/actions/runs/37720321946));
 - after the corrections: 83 passed, 0 skipped (run [37727182136](https://github.com/Gidion123/Job-Fit/actions/runs/37727182136));
-- after the `alembic_version` follow-up: 92 passed, 0 skipped locally on PostgreSQL 16.15.
+- after the `alembic_version` follow-up: 92 passed, 0 skipped locally on PostgreSQL 16.15, and in CI (run [37729333801](https://github.com/Gidion123/Job-Fit/actions/runs/37729333801)).
 
 The pins were generated on PostgreSQL 16 and match PostgreSQL 17 exactly:
 
@@ -290,6 +290,19 @@ The pins were generated on PostgreSQL 16 and match PostgreSQL 17 exactly:
 **After the audit corrections** (`4f45cd4`, `801f0bd`), run [37727182136](https://github.com/Gidion123/Job-Fit/actions/runs/37727182136) passed all three jobs. Locally the default suite gives 809 passed, 80 skipped (the 69 gated database tests skip without a server), 0 failed; ruff is clean and freeze verify is `"ok": true`.
 
 **After the `alembic_version` follow-up** (the independent audit of `3e65dab..bffdacc`), the default suite gives 810 passed, 88 skipped (the 77 gated database tests skip without a server), 0 failed; the gated matrix gives 92 passed locally; ruff is clean and freeze verify is `"ok": true`.
+
+### Independent closure (8 Oct 2026)
+
+**Alembic implementation correctness: CLOSED.** The independent Codex audit of `bffdacc..ac30594` returned **ALEMBIC IMPLEMENTATION VERIFIED & CLOSED**. The `0001`/`0002` implementation is accepted as the storage foundation for Phase 2B.
+
+- **Accepted head:** `ac30594`. The final residual fix was `ac30594 fix(db): trust a pre-existing alembic_version in 0001 only by exact structure`.
+- **Final CI:** run [37729333801](https://github.com/Gidion123/Job-Fit/actions/runs/37729333801) passed all three jobs:
+  - 92 migration tests (77 database, 15 offline) passed on PostgreSQL 17.11;
+  - the Docker image reports `alembic heads` = `0002 (head)`.
+- **Freeze:** the D-087 freeze is intact (freeze verify `"ok": true`), and `src/jobfit/db/models.py` is unchanged.
+- **Scope:** local and CI only; nothing was deployed to production.
+
+**Dion's local CP2 database compatibility: NOT YET VERIFIED.** `db_baseline.py verify` has not been run on it. No stamp, seed or migration has been run against it, and none may be until that read-only verification passes and its output has been reviewed.
 
 ### Not done yet
 

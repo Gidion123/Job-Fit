@@ -29,6 +29,7 @@ CONSUME_SQL = ('INSERT INTO live_quota (ip_hmac, consumed_at) VALUES (%s, now())
 RETENTION_SQL = "DELETE FROM live_quota WHERE consumed_at < now() - interval '48 hours'"
 SESSION_LIMIT = 10                  # new sessions per IP pseudonym ...
 SESSION_WINDOW_SECONDS = 3600.0     # ... per rolling hour (in memory; one API process)
+UPLOAD_LIMIT = 10                   # CV uploads per IP pseudonym per rolling hour (in memory; one API process)
 
 
 def _purge(conn) -> int:
@@ -125,6 +126,9 @@ class LiveRequest:
     # Public flow: finalizes the session's recommendation allowance at the first durable intent;
     # returns True only on a proven pending(op) -> used(op) (or already used(op)). None for the owner.
     on_first_billable: Callable[[], bool] | None = None
+    # Real-CV public beta: the durable ticket callable for the operation's first billable call
+    # (BetaAllowances, only while the session holds no proven ticket). None otherwise.
+    quota: Callable[[], str] | None = None
 
 
 class SessionAllowances:
@@ -300,6 +304,7 @@ class Ingress:
         self._internal, self._owner, self._ip_key = internal_token, owner_token, ip_hmac_key
         self.session_limit, self.session_window, self.clock = session_limit, session_window, clock
         self._sessions: dict[str, deque] = {}
+        self._uploads: dict[str, deque] = {}
         self._lock = threading.Lock()
 
     def internal_ok(self, token: str | None) -> bool:
@@ -315,13 +320,20 @@ class Ingress:
         return hmac.new(self._ip_key.encode(), ip.encode(), hashlib.sha256).hexdigest()
 
     def allow_session(self, pseudonym: str | None) -> bool:
+        return self._allow(self._sessions, pseudonym, self.session_limit)
+
+    def allow_upload(self, pseudonym: str | None) -> bool:
+        """At most UPLOAD_LIMIT CV uploads per IP pseudonym per rolling hour (checked before the body)."""
+        return self._allow(self._uploads, pseudonym, UPLOAD_LIMIT)
+
+    def _allow(self, buckets: dict, pseudonym: str | None, limit: int) -> bool:
         key = pseudonym or 'unknown'
         now = self.clock()
         with self._lock:
-            q = self._sessions.setdefault(key, deque())
+            q = buckets.setdefault(key, deque())
             while q and now - q[0] > self.session_window:
                 q.popleft()
-            if len(q) >= self.session_limit:
+            if len(q) >= limit:
                 return False
             q.append(now)
             return True

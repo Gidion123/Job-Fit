@@ -73,6 +73,9 @@ INTERNAL_TOKEN_HEADER, CLIENT_IP_HEADER, OWNER_TOKEN_HEADER = ('x-jobfit-interna
                                                              'x-jobfit-owner-token')
 MAX_RUNS_PER_SESSION = 3
 MAX_ANALYSES_PER_SESSION = 3
+MAX_PREVIEWS_PER_SESSION = 5         # CV uploads plus preview edits per session (upload abuse control)
+REAL_ERROR_STATUS = {'input_too_large': 413, 'parse_required': 409, 'search_required': 409,
+                     'consent_required': 409, 'production_retrieval_unavailable': 503}
 MAX_FEEDBACK = 5000
 
 
@@ -113,6 +116,16 @@ class AppDeps:
     analyze_one: Callable | None = None
     job_analysis_refusal: Callable | None = None
     search_limit: int = 10
+    # Real-CV public-beta adapter (CP3). Off in every shipped configuration: real_cv_enabled stays False
+    # until the D-051 gates (FAIL-37 masking, provider ZDR compatibility) pass; public_beta_open is True
+    # only with public live, real_cv_enabled and the D-103 per-phase eligibility. Hooks:
+    # real_parse(store, handle, lease, *, live) -> ParsedCV (reserved parse);
+    # real_search(store, handle, lease, filters, *, live) -> retrieval rows (reserved search);
+    # consume_ticket(ip_pseudonym) -> 'consumed' | 'refused' | 'unavailable' | 'unknown'.
+    real_parse: Callable | None = None
+    real_search: Callable | None = None
+    consume_ticket: Callable | None = None
+    public_beta_open: bool = False
 
 
 @dataclass
@@ -123,6 +136,7 @@ class _Run:
     done: list = field(default_factory=list)
     result: dict | None = None
     error: str | None = None
+    real: bool = False          # derived from the uploaded CV: dropped when the preview changes
 
 
 def create_app(deps: AppDeps) -> FastAPI:
@@ -131,10 +145,15 @@ def create_app(deps: AppDeps) -> FastAPI:
     feedback: list[dict] = []
     lock = threading.Lock()
     stop = threading.Event()
+    upload_slot = threading.BoundedSemaphore(1)    # one /cv/upload in flight per API process (one API process)
+    previews: dict[str, int] = {}                  # session -> CV uploads plus preview edits
 
     def drop_owner(owner: str) -> None:
         if allowances is not None:
             allowances.drop(owner)
+        if beta is not None:
+            beta.drop(owner)
+        previews.pop(owner, None)
         for key in [k for k, r in runs.items() if r.owner == owner]:
             runs.pop(key)
         for key in [k for k, (o, _) in pastes.items() if o == owner]:
@@ -152,7 +171,8 @@ def create_app(deps: AppDeps) -> FastAPI:
                 except Exception:
                     log.warning('maintenance failed; retried at the next interval')
             with lock:   # results and pasted JDs of an expired session are dropped with it
-                owners = {r.owner for r in runs.values()} | {o for o, _ in pastes.values()}
+                owners = {r.owner for r in runs.values()} | {o for o, _ in pastes.values()} | set(previews)
+                owners |= beta.sessions() if beta is not None else set()
                 for owner in owners | (allowances.sessions() if allowances is not None else set()):
                     if not deps.store.exists(owner):
                         drop_owner(owner)
@@ -168,12 +188,13 @@ def create_app(deps: AppDeps) -> FastAPI:
                   description='Evidence-grounded job matching for early-career AI/data job seekers. '
                               'Match % is CV evidence coverage, not a hiring probability.')
     app.add_middleware(upload_guard.UploadBodyLimit)    # raw body limit of POST /cv/upload only
-    idempotency = allowances = None
+    idempotency = allowances = beta = None
     if deps.ingress is not None:
         from jobfit.live.operation import IdempotencyRegistry
-        from jobfit.live.quota import SessionAllowances
+        from jobfit.live.quota import BetaAllowances, SessionAllowances
         idempotency = IdempotencyRegistry()
-        allowances = app.state.allowances = SessionAllowances()   # the Phase 3 parse marks ticket_held
+        allowances = app.state.allowances = SessionAllowances()   # legacy 10-job recommendation (never admitted)
+        beta = app.state.beta_allowances = BetaAllowances()       # D-103: 1 parse, 1 search, 3 job analyses
 
         @app.middleware('http')
         async def internal_only(request: Request, call_next):
@@ -202,13 +223,13 @@ def create_app(deps: AppDeps) -> FastAPI:
         return state
 
     def start_job(h: SessionHandle, kind: str, limit: int, work: Callable[[_Run], dict],
-                  run_id: str | None = None) -> str:
+                  run_id: str | None = None, real: bool = False) -> str:
         with lock:
             mine = [r for r in runs.values() if r.owner == h.session_id and r.kind == kind]
             if any(r.status == 'running' for r in mine) or len(mine) >= limit:
                 raise HTTPException(429, 'Run limit for this session reached')
             run_id = run_id or secrets.token_urlsafe(12)
-            runs[run_id] = state = _Run(owner=h.session_id, kind=kind)
+            runs[run_id] = state = _Run(owner=h.session_id, kind=kind, real=real)
 
         def target():
             try:
@@ -274,18 +295,37 @@ def create_app(deps: AppDeps) -> FastAPI:
             raise HTTPException(404, 'Unknown demo CV')
         return deps.demo_summaries[cv_id]
 
+    def count_preview(request: Request, h: SessionHandle) -> str | None:
+        """Upload abuse control (before any body is read): per session, then per IP pseudonym."""
+        with lock:
+            if previews.get(h.session_id, 0) >= MAX_PREVIEWS_PER_SESSION:
+                return 'upload_rate_limited'
+            if deps.ingress is not None and not deps.ingress.allow_upload(
+                    deps.ingress.ip_pseudonym(request.headers.get(CLIENT_IP_HEADER))):
+                return 'upload_rate_limited'
+            previews[h.session_id] = previews.get(h.session_id, 0) + 1
+        return None
+
     @app.post('/cv/upload')
     async def upload(request: Request, h: SessionHandle = Depends(handle)):
+        if not upload_slot.acquire(blocking=False):       # global: before the body is consumed
+            return upload_guard.rejection_response('upload_busy')
         data = None
         try:
-            ext, data = await upload_guard.read_upload(request)
-            upload_guard.check_container(data, ext)
-            text = await run_in_threadpool(upload_guard.bounded_extract, data, ext)
-        except upload_guard.UploadRejected as exc:   # fixed message and code; nothing kept or sent anywhere
-            return upload_guard.rejection_response(exc.code)
+            code = count_preview(request, h)
+            if code is not None:
+                return upload_guard.rejection_response(code)
+            try:
+                ext, data = await upload_guard.read_upload(request)
+                upload_guard.check_container(data, ext)
+                text = await run_in_threadpool(upload_guard.bounded_extract, data, ext)
+            except upload_guard.UploadRejected as exc:   # fixed message and code; nothing kept or sent anywhere
+                return upload_guard.rejection_response(exc.code)
+            finally:
+                del data   # original bytes are not kept (D-051 section 2.7)
+            return _set_preview(h, text.text, list(text.warnings), text.layout)
         finally:
-            del data   # original bytes are not kept (D-051 section 2.7)
-        return _set_preview(h, text.text, list(text.warnings), text.layout)
+            upload_slot.release()
 
     def _set_preview(h: SessionHandle, raw: str, warnings: list, layout: str | None) -> dict:
         try:
@@ -293,17 +333,23 @@ def create_app(deps: AppDeps) -> FastAPI:
         except ValueError:
             raise HTTPException(422, 'No usable text after masking; nothing was sent anywhere')
         try:
-            deps.store.set_preview(h, preview)
+            deps.store.set_preview(h, preview)       # clears consent, the parsed CV and search results
         except SessionDenied:
             raise HTTPException(401, 'Session unavailable')
+        with lock:                                   # results derived from the earlier CV are dropped
+            for key in [k for k, r in runs.items() if r.owner == h.session_id and r.real]:
+                runs.pop(key)
         return {'masked_text': preview.text, 'digest': preview.digest, 'masked_counts': preview.counts,
                 'warnings': warnings + list(preview.warnings), 'layout': layout,
                 'provider_processing': 'enabled' if deps.real_cv_enabled else 'disabled',
                 'message': None if deps.real_cv_enabled else REAL_CV_MESSAGE}
 
     @app.post('/cv/preview')
-    def edit_preview(body: PreviewEdit, h: SessionHandle = Depends(handle)):
+    def edit_preview(body: PreviewEdit, request: Request, h: SessionHandle = Depends(handle)):
         """The user corrects the masked text; masking runs again and earlier consent is cleared."""
+        code = count_preview(request, h)
+        if code is not None:
+            return upload_guard.rejection_response(code)
         return _set_preview(h, body.text, ['Edited by the user; earlier consent no longer applies.'], 'edited')
 
     @app.post('/cv/consent')
@@ -315,11 +361,121 @@ def create_app(deps: AppDeps) -> FastAPI:
         return {'consented': True, 'provider_processing': 'enabled' if deps.real_cv_enabled else 'disabled',
                 'message': None if deps.real_cv_enabled else REAL_CV_MESSAGE}
 
-    @app.post('/cv/parse')
-    def parse(h: SessionHandle = Depends(handle)):
+    # ---------- real-CV public beta (consented upload -> reserved parse -> search -> Analyze Fit) ----------
+    def real_cv_gate() -> None:
         if not deps.real_cv_enabled:
             raise HTTPException(403, REAL_CV_MESSAGE)
-        raise HTTPException(501, 'Real-CV parsing is not wired in v1')
+
+    def consented_lease(h: SessionHandle):
+        try:
+            return deps.store.consented_lease(h)
+        except SessionDenied:
+            raise HTTPException(409, 'consent_required')
+
+    def parsed_state(h: SessionHandle):
+        from jobfit.recommend.real_cv_flow import RealCVRefused, consented_parsed_cv
+        lease = consented_lease(h)
+        try:
+            return lease, consented_parsed_cv(deps.store, h, lease)
+        except RealCVRefused as exc:
+            raise HTTPException(409, exc.code)
+        except SessionDenied:
+            raise HTTPException(409, 'consent_required')
+
+    def real_http_error(exc: Exception) -> HTTPException:
+        """A safe status and code for a real-CV refusal; never a payload or exception text."""
+        code = getattr(exc, 'code', None)
+        if isinstance(exc, SessionDenied):
+            return HTTPException(409, 'consent_required')
+        if code in REAL_ERROR_STATUS:
+            return HTTPException(REAL_ERROR_STATUS[code], code)
+        if code is not None and hasattr(exc, 'status'):
+            return HTTPException(exc.status, code)
+        return HTTPException(503, 'unavailable')
+
+    def real_live_request(request: Request, h: SessionHandle, phase: str, action: tuple[str, dict]):
+        """Admission for a real-CV operation: idempotency bound to the action; owner (no ticket, no
+        allowance) or, only when the public beta is open, the durable ticket and the session allowance."""
+        from jobfit.live.keys import action_fingerprint, operation_key
+        from jobfit.live.operation import LiveRefused
+        from jobfit.live.quota import LiveRequest
+        if deps.ingress is None:
+            raise HTTPException(503, LIVE_OFF_MESSAGE)         # the real-CV path runs only on the prod runtime
+        try:
+            op = operation_key(request.headers.get('idempotency-key') or '')
+        except ValueError as exc:
+            raise HTTPException(422, str(exc))
+        owner = deps.ingress.is_owner(request.headers.get(OWNER_TOKEN_HEADER))
+        if not owner and not deps.public_beta_open:
+            raise HTTPException(503, PUBLIC_BETA_CLOSED_MESSAGE)
+        kind, identity = action
+        try:
+            entry, new = idempotency.claim(op, h.session_id, phase, action_fingerprint(kind, **identity))
+        except LiveRefused as exc:
+            raise HTTPException(exc.status, exc.code)
+        if not new:
+            return {'run_id': entry.run_id, 'duplicate': True}
+        pseudonym = deps.ingress.ip_pseudonym(request.headers.get(CLIENT_IP_HEADER))
+        quota = finalize = None
+        if not owner:
+            if pseudonym is None or deps.consume_ticket is None:
+                idempotency.release(op)
+                raise HTTPException(403, 'ticket_required')
+            claim = beta.claim(h.session_id, phase, op, functools.partial(deps.consume_ticket, pseudonym))
+            if isinstance(claim, str):
+                idempotency.release(op)
+                raise HTTPException(403 if claim == 'phase_not_admitted' else 429, claim)
+            quota, finalize = claim.quota, claim.on_first_intent
+        return LiveRequest(operation_key=op, owner=owner, ip_pseudonym=pseudonym, session_id=h.session_id,
+                           run_id=entry.run_id, on_first_billable=finalize, quota=quota)
+
+    def settle_live(h: SessionHandle, live, exc: Exception | None) -> None:
+        if live is None:
+            return
+        if beta is not None:
+            beta.release_if_pending(h.session_id, live.operation_key)   # no-op once counted
+        if exc is None:
+            idempotency.update(live.operation_key, state='done')
+        else:
+            unknown = getattr(exc, 'code', None) == 'admission_outcome_unknown'
+            idempotency.update(live.operation_key, state='admission_unknown' if unknown else 'failed')
+
+    def start_real_job(h: SessionHandle, kind: str, limit: int, live, call, present) -> dict:
+        def work(state: _Run) -> dict:
+            try:
+                out = call()
+            except Exception as exc:
+                settle_live(h, live, exc)
+                raise
+            settle_live(h, live, None)
+            return present(out)
+        try:
+            run_id = start_job(h, kind, limit, work, run_id=live.run_id if live else None, real=True)
+        except Exception:
+            if live is not None:
+                if beta is not None:
+                    beta.release_if_pending(h.session_id, live.operation_key)
+                idempotency.release(live.operation_key)
+            raise
+        return {'run_id': run_id}
+
+    @app.post('/cv/parse')
+    def parse(request: Request, h: SessionHandle = Depends(handle)):
+        """Reserved parse of the exact consented masked CV (D-103 parse phase); polled as a run."""
+        real_cv_gate()
+        if deps.real_parse is None:
+            raise HTTPException(503, LIVE_OFF_MESSAGE)
+        lease = consented_lease(h)
+        live = real_live_request(request, h, 'parse', ('real_parse', {'cv': lease.text_digest}))
+        if isinstance(live, dict):
+            return live
+
+        def call():
+            return deps.real_parse(deps.store, h, lease, live=live)
+
+        def present(parsed) -> dict:
+            return {'stage': 'parsed', 'source': 'live', 'summary': parsed.summary()}
+        return start_real_job(h, 'parse', MAX_RUNS_PER_SESSION, live, call, present)
 
     # ---------- recommendations ----------
     @app.post('/recommendations')
@@ -478,6 +634,16 @@ def create_app(deps: AppDeps) -> FastAPI:
             owner, text = pastes.get(body.paste_id, (None, None))
         if owner != h.session_id:
             raise HTTPException(404, 'Pasted JD not found')
+        if body.cv_source == 'upload':                  # Check a Job with the consented, parsed CV
+            real_cv_gate()
+            if not deps.live_enabled or deps.analyze_one is None:
+                raise HTTPException(503, LIVE_OFF_MESSAGE)
+            lease, parsed = parsed_state(h)
+            return start_job_analysis(request, h, parsed, job_id='pasted', jd_text=text,
+                                      meta={'title': 'Pasted job description'},
+                                      note='Pasted JDs are analyzed for this session only.',
+                                      action=('pasted_jd', {'cv': lease.text_digest, 'paste': body.paste_id}),
+                                      real=True)
         cv = deps.demo_cvs.get(body.demo_cv_id)
         if cv is None:
             raise HTTPException(404, 'Unknown demo CV')
@@ -507,15 +673,17 @@ def create_app(deps: AppDeps) -> FastAPI:
 
     @app.post('/jobs/search')
     def search_jobs(body: SearchRequest, request: Request, h: SessionHandle = Depends(handle)):
-        cv = deps.demo_cvs.get(body.demo_cv_id)
-        if cv is None:
-            raise HTTPException(404, 'Unknown demo CV')
         try:
             filters = JobFilters(role_family=body.role_family, country_code=body.country_code, city=body.city,
                                  work_mode=body.work_mode, posted_within_days=body.posted_within_days,
                                  include_unknown=body.include_unknown)
         except ValueError as exc:
             raise HTTPException(422, str(exc))
+        if body.cv_source == 'upload':
+            return real_search_jobs(request, h, filters)
+        cv = deps.demo_cvs.get(body.demo_cv_id)
+        if cv is None:
+            raise HTTPException(404, 'Unknown demo CV')
         if not deps.live_enabled or deps.search is None:
             raise HTTPException(503, LIVE_OFF_MESSAGE)
         beta_owner_only(request)
@@ -524,12 +692,52 @@ def create_app(deps: AppDeps) -> FastAPI:
         except Exception as exc:          # a safe code or the class name; never a payload
             raise HTTPException(503, getattr(exc, 'code', None) or type(exc).__name__)
         return {'stage': 'retrieval', 'final_order': False, 'label': SEARCH_STAGE_LABEL,
-                'analysis_limit': MAX_ANALYSES_PER_SESSION,
-                'jobs': [retrieval_card(j, i + 1, deps.job_meta.get(j) or deps.jobs.get(j)) for i, j in enumerate(ids)]}
+                'analysis_limit': MAX_ANALYSES_PER_SESSION, 'cv_source': 'demo',
+                'jobs': [retrieval_card(j, i + 1, {**deps.jobs.get(j, {}), **deps.job_meta.get(j, {})})
+                         for i, j in enumerate(ids)]}
+
+    def real_search_jobs(request: Request, h: SessionHandle, filters: JobFilters) -> dict:
+        """Reserved query embedding (D-103 search phase), then production retrieval; synchronous."""
+        from jobfit.recommend.real_cv_flow import SEARCH_KEY
+        real_cv_gate()
+        if not deps.live_enabled or deps.real_search is None:
+            raise HTTPException(503, LIVE_OFF_MESSAGE)
+        lease, _parsed = parsed_state(h)
+        live = real_live_request(request, h, 'search', ('real_search', {'cv': lease.text_digest}))
+        if isinstance(live, dict):                      # the same search again: its stored results
+            try:
+                rows = deps.store.read(h, lease, SEARCH_KEY)
+            except (KeyError, SessionDenied):
+                raise HTTPException(409, 'search_not_available')
+        else:
+            try:
+                rows = deps.real_search(deps.store, h, lease, filters, live=live)
+            except Exception as exc:
+                settle_live(h, live, exc)
+                raise real_http_error(exc) from None
+            settle_live(h, live, None)
+        return {'stage': 'retrieval', 'final_order': False, 'label': SEARCH_STAGE_LABEL,
+                'analysis_limit': MAX_ANALYSES_PER_SESSION, 'cv_source': 'upload',
+                'jobs': [retrieval_card(r['job_id'], r['retrieval_rank'], r) for r in rows[:deps.search_limit]]}
 
     @app.post('/jobs/{job_id}/analyze')
     def analyze_corpus_job(job_id: str, body: JobAnalyzeRequest, request: Request,
                            h: SessionHandle = Depends(handle)):
+        if body.cv_source == 'upload':                  # Analyze Fit on a job from this session's Relevant Jobs
+            from jobfit.recommend.real_cv_flow import SEARCH_KEY
+            real_cv_gate()
+            if not deps.live_enabled or deps.analyze_one is None:
+                raise HTTPException(503, LIVE_OFF_MESSAGE)
+            lease, parsed = parsed_state(h)
+            try:
+                rows = deps.store.read(h, lease, SEARCH_KEY)
+            except (KeyError, SessionDenied):
+                raise HTTPException(409, 'search_required')
+            row = next((r for r in rows if r['job_id'] == job_id), None)
+            if row is None:
+                raise HTTPException(404, 'Analyze Fit needs a job from your Relevant Jobs')
+            return start_job_analysis(request, h, parsed, job_id=job_id, jd_text=None, meta=row, note=None,
+                                      action=('corpus_job', {'cv': lease.text_digest, 'job': job_id}), real=True)
         if job_id not in deps.jobs:
             raise HTTPException(404, 'Job not in the searchable corpus')
         cv = deps.demo_cvs.get(body.demo_cv_id)
@@ -542,18 +750,31 @@ def create_app(deps: AppDeps) -> FastAPI:
                                   action=('corpus_job', {'cv': body.demo_cv_id, 'job': job_id}))
 
     def start_job_analysis(request: Request, h: SessionHandle, cv, *, job_id: str, jd_text: str | None,
-                           meta, note: str | None, action: tuple[str, dict]) -> dict:
+                           meta, note: str | None, action: tuple[str, dict], real: bool = False) -> dict:
         """One job_analysis operation: owner-only in production, envelope check before any reservation.
 
         ``action`` names the intended action by non-sensitive ids only (the CV id and the corpus job
         id or the opaque paste id); the idempotency key is bound to its fingerprint. The real-CV
-        adapter binds the consented-CV digest the same way.
+        adapter binds the consented-CV digest the same way. ``real``: the session's consented, parsed
+        CV, admitted for the owner or (public beta open) through the ticket and the session allowance.
         """
-        beta_owner_only(request)
+        if not real:
+            beta_owner_only(request)
         if deps.job_analysis_refusal is not None:
-            refusal = deps.job_analysis_refusal(cv, job_id=job_id, jd_text=jd_text)
+            try:
+                refusal = deps.job_analysis_refusal(cv, job_id=job_id, jd_text=jd_text)
+            except Exception as exc:            # e.g. the job is not an eligible production job
+                raise real_http_error(exc) from None
             if refusal is not None:
                 raise HTTPException(413, refusal)
+        if real:
+            live = real_live_request(request, h, 'job_analysis', action)
+            if isinstance(live, dict):
+                return live
+            return start_real_job(h, 'analysis', MAX_ANALYSES_PER_SESSION, live,
+                                  lambda: deps.analyze_one(cv, job_id=job_id, jd_text=jd_text, live=live),
+                                  lambda r: {**analyzed_job(r, meta), 'source': 'live', 'cv_source': 'upload',
+                                             **({'session_note': note} if note else {})})
         live = None
         if deps.ingress is not None:
             from jobfit.live.keys import action_fingerprint

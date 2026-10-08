@@ -92,10 +92,12 @@ def build_runtime(settings):
     import logging
     from jobfit.live.operation import LiveRuntime
     from jobfit.live.storage import StorageUnavailable
+    from jobfit.live.runtime_client import build_public_beta_client
     from jobfit.llm.public_beta_bounds import compute_public_beta_bounds
+    # Every live provider request (chat and embeddings) is sent with data_collection=deny and zdr=true.
     runtime = LiveRuntime(settings, compute_public_beta_bounds(), pipeline_config=CONFIG,
-                          client_factory=lambda op: build_runtime_client(settings.client_settings(), CONFIG,
-                                                                         run_id=op))
+                          client_factory=lambda op: build_public_beta_client(settings.client_settings(), CONFIG,
+                                                                             run_id=op))
     try:
         runtime.storage.validate()
     except StorageUnavailable as exc:
@@ -225,7 +227,17 @@ def build_deps() -> AppDeps:
         return runtime.bounds.envelopes if runtime is not None else compute_public_beta_bounds().envelopes
 
     def job_source(job_id: str, jd_text: str | None) -> dict:
-        return {'jd_text': jd_text} if jd_text is not None else {'cached': extraction_from_record(_extraction_record(job_id))}
+        """Pasted text, a matchable saved extraction, or (production) the eligible production JD text
+        for a live extraction inside the same job_analysis operation. No development fallback."""
+        if jd_text is not None:
+            return {'jd_text': jd_text}
+        cached = extraction_from_record(_extraction_record(job_id))
+        if cached[0] is not None or not prod:
+            return {'cached': cached}
+        import psycopg
+        from jobfit.search.production import eligible_job_text
+        with psycopg.connect(settings.database_url, autocommit=True) as conn:
+            return {'jd_text': eligible_job_text(conn, job_id)}
 
     def job_analysis_refusal(cv: ParsedCV, *, job_id: str, jd_text: str | None):
         from jobfit.recommend.beta_analysis import job_analysis_refusal as refusal
@@ -247,9 +259,39 @@ def build_deps() -> AppDeps:
                                    spec=spec, extraction_model=raw_cfg['extraction_model'], scope='session_jd',
                                    constraints=constraints, **job_source(job_id, jd_text))
         if prod:
-            result, _ = runtime.run('job_analysis', live.operation_key, work, on_first_intent=live.on_first_billable)
+            result, _ = runtime.run('job_analysis', live.operation_key, work, quota=getattr(live, 'quota', None),
+                                    on_first_intent=live.on_first_billable)
             return result
         return work(model_client())
+
+    # --- real-CV public beta (CP3): every hook runs only on the production runtime -------------------
+    def real_parse(store, handle, lease, *, live):
+        from jobfit.recommend.real_cv_flow import reserved_parse
+        if runtime is None or live is None:
+            raise LiveUnavailable('production live runs only through the Phase 2B runtime')
+        parse_model = yaml.safe_load((REPO_ROOT / 'config/cp3/public_beta_bounds_v1.yaml').read_text())['parse_model']
+        return reserved_parse(runtime, store, handle, lease, operation_key=live.operation_key, model=parse_model,
+                              envelopes=runtime.bounds.envelopes, quota=live.quota,
+                              on_first_intent=live.on_first_billable)
+
+    def real_search(store, handle, lease, filters, *, live):
+        import psycopg
+        from jobfit.recommend.real_cv_flow import reserved_search
+        from jobfit.search.embeddings import load_specs
+        if runtime is None or live is None:
+            raise LiveUnavailable('production live runs only through the Phase 2B runtime')
+        models = yaml.safe_load((REPO_ROOT / 'config/models_v1.yaml').read_text())['embeddings']
+        model_id = models[raw_cfg['embedding_model']]['id']
+        spec = next(s for s in load_specs() if s.model == model_id)
+        return reserved_search(runtime, store, handle, lease, operation_key=live.operation_key, spec=spec,
+                               connect=lambda: psycopg.connect(settings.database_url, autocommit=True),
+                               filters=filters, depth=config.stage1_k, envelopes=runtime.bounds.envelopes,
+                               quota=live.quota, on_first_intent=live.on_first_billable)
+
+    def consume_ticket(pseudonym: str) -> str:
+        import psycopg
+        from jobfit.live.quota import consume_ticket as consume
+        return consume(lambda: psycopg.connect(settings.database_url, autocommit=True), pseudonym)
 
     jobs = {j: {'job_id': j, 'title': r['title'], 'company': r['company'], 'location': r.get('location_raw'),
                 'work_mode': r.get('work_mode'), 'posted_at': r.get('posted_at'),
@@ -278,7 +320,12 @@ def build_deps() -> AppDeps:
                    demo_summaries=summaries, analyzed_k=config.stage1_k, ingress=ingress,
                    public_live=settings.public_live, maintenance=maintenance,
                    live_storage_ready=runtime.storage_ready if runtime is not None else None,
-                   search=search, analyze_one=analyze_one, job_analysis_refusal=job_analysis_refusal)
+                   search=search, analyze_one=analyze_one, job_analysis_refusal=job_analysis_refusal,
+                   # Real CVs stay off until the D-051 gates (FAIL-37 masking, provider ZDR compatibility)
+                   # pass; the public beta opens only with public live, real CVs and D-103 eligibility.
+                   real_cv_enabled=False, public_beta_open=False,
+                   real_parse=real_parse if prod else None, real_search=real_search if prod else None,
+                   consume_ticket=consume_ticket if prod else None)
 
 
 def create_default_app():

@@ -224,6 +224,8 @@ def test_prod_runtime_uses_the_production_client_settings(tmp_path, monkeypatch)
     runtime = wiring.build_runtime(settings)          # startup reconciliation fails closed without a database
     client = runtime.client_factory('idem:x')
     assert client.settings.usage_ledger == settings.usage_ledger and client.run_id == 'idem:x'
+    from jobfit.live.runtime_client import PublicBetaRuntimeClient
+    assert isinstance(client, PublicBetaRuntimeClient)           # every live request carries deny + ZDR
     assert client.settings.api_hard_stop_usd == 4.5 and runtime.windows['parse'].window == 720.0
     # D-103: the production runtime admits the public-beta phases only, never the legacy 10-job phase
     assert runtime.beta and set(runtime.bound) == {'parse', 'search', 'job_analysis'}

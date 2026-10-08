@@ -37,12 +37,14 @@ class PasteRequest(BaseModel):
 
 class AnalyzeRequest(BaseModel):
     paste_id: str
-    demo_cv_id: str
+    demo_cv_id: str | None = None
+    cv_source: Literal['demo', 'upload'] = 'demo'      # upload: the session's consented, parsed CV
 
 
 class SearchRequest(BaseModel):
     """D-103 search stage: relevant jobs in retrieval order, not JobFit match rankings."""
-    demo_cv_id: str
+    demo_cv_id: str | None = None
+    cv_source: Literal['demo', 'upload'] = 'demo'      # upload: never posted back; resolved from the session
     role_family: str | None = None
     country_code: str | None = None
     city: str | None = None
@@ -53,7 +55,8 @@ class SearchRequest(BaseModel):
 
 class JobAnalyzeRequest(BaseModel):
     """D-103 job_analysis of one corpus job."""
-    demo_cv_id: str
+    demo_cv_id: str | None = None
+    cv_source: Literal['demo', 'upload'] = 'demo'
 
 
 class TailorRequest(BaseModel):

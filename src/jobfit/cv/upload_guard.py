@@ -72,6 +72,7 @@ ERRORS = {
     'document_unreadable': (422, 'The document could not be read. Upload a text PDF/DOCX or paste text.'),
     'upload_timeout': (422, 'Reading the document took too long.'),
     'upload_busy': (503, 'Another document is being read. Please try again in a moment.'),
+    'upload_rate_limited': (429, 'Too many uploads. Please try again later.'),
 }
 
 

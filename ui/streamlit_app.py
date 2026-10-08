@@ -9,9 +9,11 @@ from __future__ import annotations
 
 import time
 
+import httpx
 import streamlit as st
 
 from api_client import ApiClient, ApiError
+from live_action import LiveActions, action_fingerprint
 from components import job_card, safe, suggestions
 
 st.set_page_config(page_title='JobFit', layout='wide')
@@ -122,14 +124,23 @@ with demo_tab:
     with st.expander('Show CV text'):
         st.text(next(c['text'] for c in cvs if c['cv_id'] == chosen))
     if st.button('Find matching jobs'):
-        import uuid
-        action_key = str(uuid.uuid4())       # one key per click; a retry of this action reuses it
+        action_key = None
+        if live_mode:   # one key per user action, kept until the server acknowledges it
+            if 'live_actions' not in st.session_state:
+                st.session_state.live_actions = LiveActions()
+            action_key = st.session_state.live_actions.key_for(action_fingerprint(chosen, seniority, filters))
         try:
             run_id = call(api.start_run, chosen, seniority, filters if live_mode else None,
                           mode='live' if live_mode else 'saved', action_key=action_key)
         except ApiError as exc:
             st.error(exc.detail)
             st.stop()
+        except httpx.HTTPError:
+            st.error('Connection problem: press the button again to retry the same request '
+                     '(it will not run twice).')
+            st.stop()
+        if live_mode:
+            st.session_state.live_actions.acknowledged(run_id)
         bar = st.progress(0.0, text='Analyzing jobs...')
         progress_box = st.empty()
         body = call(api.poll, run_id)

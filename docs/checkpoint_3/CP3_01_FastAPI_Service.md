@@ -514,3 +514,39 @@ Implemented at `d6e84d5` (local and CI, offline tests only, zero provider calls)
 ### Tests and totals
 
 `tests/test_upload_guard.py` (48): valid files of each type give the same masked preview as before; a ~4.5 MiB valid DOCX succeeds with temporary-file rollover forbidden; the raw cap holds for declared, missing and false `Content-Length` and stops reading early; a 5 MiB + 1 file is refused; malformed multipart; type and content mismatches without a worker; hostile DOCX archives (entry, ratio, total, entry count, paths, `vbaProject.bin`) refused with no entry opened; macro-enabled content type refused after only the bounded `[Content_Types].xml` read; unreadable DOCX and broken, encrypted, 11-page and image-only PDFs; NUL, invalid UTF-8, control-heavy and empty text; BOM accepted; 100,000 characters accepted and 100,001 refused (not truncated); a timed-out or failing worker (error exit, garbage, malformed result, killed) is killed, reaped, its pipes closed and the slot released, then a valid extraction succeeds; one extraction at a time; the worker environment contains none of the set secrets; on Linux the 512 MiB allocation and a file write are refused inside the worker; rejections leak no canary, filename or parser text, start no run and leave no preview. Updated: `tests/test_api.py` (`.exe` → 415) and PR-06 in `tests/test_api_privacy.py` (oversized → 413 `upload_too_large`, broken PDF → `document_unreadable`, `.exe` → 415; no temporary residue and no calls kept). Default suite 1094 passed, 199 skipped, 0 failed; the gated run 1282 passed, 11 skipped, 0 failed (PostgreSQL 16.15); ruff clean; freeze verify `"ok": true`.
+
+## Results (8 Oct 2026, real-CV consent public-beta adapter)
+
+Implemented dark in five commits (local and CI, fake providers and scratch PostgreSQL only, zero provider calls): `e7762a1` (consent adapter and server-side lease), `a9539e6` (ZDR client), `2f0e115` (production retrieval), `8f69f3d` (reserved parse and search), `0fbf37a` (API contract). **Nothing is enabled:** `real_cv_enabled` and `public_beta_open` are False in the shipped wiring, and production and public live stay off. No Streamlit, Langfuse, VPS, job-sync or provider-paid work; no migration; no frozen, D-103, `text_extract.py` or `models.py` change.
+
+### Flow and state
+
+`safe upload → local masking → review/edit → exact consent → reserved parse → session-bound ParsedCV → reserved search embedding → production retrieval → Relevant Jobs (metadata, no score) → optional local filtering → explicit Analyze Fit → reserved job_analysis`, and `consented CV + pasted JD → Check a Job → reserved job_analysis`.
+
+| State | Where | Cleared by |
+| --- | --- | --- |
+| Original file bytes | request scope only (upload hardening) | end of the request, every path |
+| Masked text, digest, generation, consent | `SessionStore` | a new preview (upload or edit), delete, expiry |
+| Consent lease | rebuilt server-side by `SessionStore.consented_lease`; never sent to the browser | any change to the preview or consent |
+| ParsedCV (opaque `cv_id`, captured `analysis_date`) and retrieval-stage results | session data under the lease | a new preview, delete, expiry; a result that arrives after a change is discarded |
+| Runs derived from the uploaded CV | API run table, marked `real` | a new preview, delete, expiry |
+
+### What was built
+
+- **Consent adapter (D-097 adapter 2)** `src/jobfit/privacy/real_cv.py`: entered only through `SessionStore.dispatch`; no raw-text parameter; the frozen `parse_cv` receives exactly the consented masked text (its `is_synthetic=True` is only the frozen guard: the captured provider payload is the frozen prompt and `{cv_text}` only, with no synthetic marker and no session identifier); the profile is relabelled `is_synthetic=False`; the `cv_id` is a random opaque id. The Asia/Jakarta analysis date is captured once when a parse starts (injectable clock) and travels with the ParsedCV; search, recency and analysis reuse it. Demo and evaluation keep their frozen date.
+- **Per-request ZDR (C1)** `src/jobfit/live/runtime_client.py`: every production live request, chat and embeddings, carries `provider.data_collection = "deny"` and `provider.zdr = true` on top of the frozen request; price ceilings and routing are unchanged; no fallback to a non-ZDR endpoint (a provider refusal fails the call; weaker routing is refused before the SDK). The client is embedding-capable, so the search embedding runs through the reserved client. Account-level ZDR may be added later as defence in depth.
+- **Production retrieval** `src/jobfit/search/production.py`: active, canonical, target-role production jobs with a current embedding of the frozen profile; the frozen hybrid retriever restricted to them; optional preferences keep UNKNOWN jobs; target role is not a strict pre-filter; each result carries role family, country, city, work mode, posted date and filter status. No dev fallback: missing seed, 0001-only schema, incomplete or stale or incompatible index, missing tokenizer or an ineligible retrieved id fail closed as `production_retrieval_unavailable`.
+- **Reserved operations** `src/jobfit/recommend/real_cv_flow.py`: the parse in the D-103 `parse` reservation and the query embedding in the `search` reservation, both through `LiveRuntime.run` and the consent adapter. Refusals decided before any reservation: stale consent, a CV above the D-103 envelope, no successful parse, production retrieval or tokenizer not ready.
+- **API** (`src/jobfit/api/main.py`, `wiring.py`): `POST /cv/parse`; `cv_source = demo | upload` on `/jobs/search`, `/jobs/{job_id}/analyze` and `/analyze` (the uploaded CV is never posted back); Analyze Fit only on a job from the session's Relevant Jobs; corpus jobs without a saved extraction use the eligible production JD text for a live extraction inside the same `job_analysis`; idempotency bound to the consent digest and the job or paste. Admission: the owner skips only the ticket and the allowance; non-owners only when the public beta is open, through the durable ticket and `BetaAllowances` (1 parse, 1 search, 3 job analyses; `refused`, `unavailable` and `unknown` make no call).
+- **Upload abuse controls** (before any body is read; in memory; one API process): one `/cv/upload` in flight per process (503 `upload_busy`), at most 5 previews (uploads plus edits) per session and 10 uploads per IP pseudonym per hour (429 `upload_rate_limited`).
+
+### Tests and totals
+
+`tests/test_real_cv_adapter.py` 14 (the seven D-097 cases, payload semantics, cv_id, Jakarta date, consented embedding), `tests/test_zdr_client.py` 9, `tests/test_production_retrieval.py` 2, `tests/test_production_retrieval_db.py` 7 (gated), `tests/test_real_cv_runtime_db.py` 8 (gated: reservations, settlement and real-phase evidence for parse and search, zero calls before consent or for an oversized CV, discarded late results, production-only results, the ticket at the parse), `tests/test_real_cv_api.py` 15 (gates, owner flow, Check a Job, order and invalidation, delete, the public 1/1/3 allowance, unproven tickets, idempotency, upload limits, no CV text in logs or errors). Default suite 1134 passed, 214 skipped, 0 failed; gated run 1337 passed, 11 skipped, 0 failed (PostgreSQL 16.15); ruff clean; freeze verify `"ok": true`.
+
+### Activation prerequisites (not part of this step)
+
+- **FAIL-37** name and address masking: a mandatory privacy gate before `real_cv_enabled` or the public beta.
+- **Provider ZDR compatibility** for the frozen models and the embedding model, validated explicitly later (an approved validation step); until then `real_cv_enabled` stays False.
+- **Production corpus seed** and the **tokenizer and index artifacts** in the API image (Phase 6); the retriever fails closed without them.
+- The CP3.4 privacy release gate, `public_beta_phase_eligible`, Langfuse (P1) and the Phase 3b UI.

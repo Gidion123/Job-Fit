@@ -123,8 +123,8 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-095 | 7 Oct 2026 | CP3 deployment target (SumoPod VPS), full public live product scope and branch lifecycle | Approved by Dion and Codex; planned, not deployed; clarified by D-102 |
 | D-096 | 7 Oct 2026 | Public live cost and abuse controls: US$5 validation budget, US$2/day cap, deterministic phase bounds, 1 analysis per IP per 24 h, one live analysis at a time | Approved by Dion and Codex; planned |
 | D-097 | 7 Oct 2026 | CP3 runtime changes go through non-frozen adapters; the D-087 files stay byte-identical | Approved by Dion and Codex; planned |
-| D-098 | 7 Oct 2026 | Mutable production job corpus: twice-monthly JSearch sync, dedupe, lifecycle, lazy extraction cache, minimal Alembic baseline | Approved by Dion and Codex; Alembic 0001/0002 implemented 8 Oct (schema only) and independently verified and closed at `ac30594`; Dion's local CP2 database not yet verified; sync and seed planned |
-| D-099 | 7 Oct 2026 | CP3 observability: Prometheus and Grafana with email alerts, Langfuse Cloud (Japan) metadata only | Approved by Dion and Codex; planned |
+| D-098 | 7 Oct 2026 | Mutable production job corpus: twice-monthly JSearch sync, dedupe, lifecycle, lazy extraction cache, minimal Alembic baseline | Approved by Dion and Codex; Alembic 0001/0002 implemented 8 Oct (schema only) and independently verified and closed at `ac30594`; Dion's local CP2 database not yet verified; sync and seed planned; sync automation P2 (post-beta) since 8 Oct |
+| D-099 | 7 Oct 2026 | CP3 observability: Prometheus and Grafana with email alerts, Langfuse Cloud (Japan) metadata only | Approved by Dion and Codex; planned; Langfuse and email alerts P2 (post-beta) since 8 Oct |
 | D-100 | 7 Oct 2026 | CP3 evaluation obligations and feature freeze: D-045 to be completed with option B, PR-10, freeze at the end of 9 Oct | Approved by Dion and Codex; planned, not completed |
 | D-101 | 8 Oct 2026 | Phase 2B dark runtime safety semantics: safety layer built while public live stays blocked by the D-096 bound | Approved by Dion and Codex; implemented 8 Oct (dark, local and CI only) |
 | D-102 | 8 Oct 2026 | CP3 portfolio / controlled public beta scope principle: north star, two first-class flows (Find Jobs, Check a Job), stage-aware progress, "Improve My CV for This Job" with a hard anti-fabrication rule, public-beta engineering bar, complexity budget | Approved by Dion as the scope direction; documentation pending independent review; nothing implemented |
@@ -1480,6 +1480,7 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
   - Production deploys upgrade only after a verified backup.
   - Downgrade is not a recovery strategy; recovery is the previous app tag plus a database restore.
   - The CP2 `SCHEMA_SQL` and loader stay unchanged.
+- **Update (8 Oct 2026, priority only):** under the D-102 anti-overengineering correction, the sync automation (the query manifest, `jobfit.jobs.sync`, the forced-command SSH user, the scheduled `job-sync.yml` and dedupe-review automation) is P2 (post-beta). The design above is unchanged; the seeded corpus serves the CP3 controlled public beta, and a one-time manual refresh may be run before the demo.
 - **Status:** Approved. The Alembic baseline (`0001`, exact `SCHEMA_SQL`) and production schema (`0002`) are implemented and tested (8 Oct, [CP3.2 report](checkpoint_3/CP3_02_Database_and_CICD.md#results-8-oct-2026-alembic-00010002)); the seed, the sync and the extraction-cache provider are planned, not implemented.
 
 ## D-099. CP3 observability
@@ -1496,6 +1497,7 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 - **Logs:** JSON lines with `request_id`, `run_id`, a session hash, route, status, duration and error code, with Docker log rotation. No CV content, quotes, raw IPs or tokens.
 - **Cost figures:** Prometheus and Langfuse cost numbers are not authoritative (D-096).
 - **No CORS:** the browser only talks to Streamlit, so no cross-origin call to FastAPI exists.
+- **Update (8 Oct 2026, priority only):** under the D-102 anti-overengineering correction, the beta release bar is structured logs, Prometheus metrics and Grafana with application, AI-pipeline, LLM and cost, and basic VPS health visibility. The Langfuse adapter, Grafana email alerts and additional dashboards are P2 (post-beta). The privacy rules above are unchanged.
 - **Status:** Approved. Planned, not implemented.
 
 ## D-100. CP3 evaluation obligations and feature freeze

@@ -17,6 +17,7 @@ From 8 October the remaining CP3 work follows [D-102](../decisions.md): JobFit i
 - **API additions planned by D-102:** stage events that drive both the progress UI and the per-stage latency metrics; refusal codes mapped to honest user-facing states ("Live AI analysis is temporarily unavailable"); the inputs for "Improve My CV for This Job" (JD requirements, CV evidence, the match and gap result) under the anti-fabrication rule.
 - **Public is not admin:** no operator or administrative endpoint is reachable by public users; the owner mechanism never weakens the cap, consent or safety controls.
 - **Still blocked:** public live, until a separate decision resolves the D-096 bound (US$84.7704449 > US$2/day).
+- **Anti-overengineering correction (8 Oct):** the public-live cost/profile decision is the first unresolved governance blocker and comes before large Phase 3 work; this documentation does not lower the bound, change the frozen model, K, retrieval or scoring, or raise the cap. Upload hardening stays lean but real: PDF header/signature sanity; DOCX valid OOXML/ZIP structure with decompression limits; TXT/MD text-versus-binary sanity, decoding, size and character limits (no invented signature scheme for plain text); timeout; safe errors.
 
 ## CP3 final plan for this stage (7 Oct 2026, D-095 to D-100)
 

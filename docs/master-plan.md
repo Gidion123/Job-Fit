@@ -15,8 +15,9 @@
 - **Priority filter:** about 70% AI and product value, 30% infrastructure. Essential safety, privacy and evaluation are never cut.
 - **Public-beta bar:** safe for controlled public use, cost bounded, privacy aware, testable, observable, maintainable, deployable and honest about limits. Unknown → fail closed → log or metric → manual review is acceptable for rare uncertain states. Enterprise HA, multi-region and distributed recovery are out of scope.
 - **Public is not admin:** public users get only the end-user app; every operator, database, secret and dashboard interface stays private.
-- **Recommended order of the remaining work:** A foundation closeout → B real-user AI path → C product experience → D evaluation and performance → E production packaging → F monitoring → G controlled public beta validation. Details and rows: [CP3 execution plan](checkpoint_3/CP3_Execution_Plan.md#remaining-work-in-recommended-order-d-102).
-- **Open gates (separate decisions needed):** the public-live cost bound (US$84.7704449 > US$2/day, D-096 still blocks public live); Flow B in production (D-101 keeps `/analyze` closed until a pasted-JD bound exists); any LLM-written CV wording; the D-100 dates stay as they are unless a decision moves them.
+- **Recommended order of the remaining work (anti-overengineering correction, 8 Oct):** foundation closeout → **public-live cost/profile decision** → real-user AI path → product UX → lean production packaging → lean monitoring → dark VPS deploy → privacy, quality and cost validation (including PR-10 and D-045 option B) → controlled public beta → final portfolio and reporting. Details and rows: [CP3 execution plan](checkpoint_3/CP3_Execution_Plan.md#remaining-work-in-recommended-order-d-102-anti-overengineering-correction-8-oct).
+- **Post-beta (not blockers):** automated job sync, forced-command SSH, scheduled `job-sync.yml` and dedupe-review automation (D-098 design kept; the seeded corpus is enough, with an optional one-time manual refresh); Langfuse, email alerts and extra dashboards; automated nightly backups (a verified backup and restore test is still required); LLM-written CV rewriting.
+- **Open gates (separate decisions needed):** first, the public-live cost/profile decision, the next explicit Dion and Codex architecture decision before large Phase 3 work (US$84.7704449 > US$2/day; D-096 still blocks public live; the bound, the frozen configuration and the cap stay unchanged until then); Flow B in production (D-101 keeps `/analyze` closed until a pasted-JD bound exists); any LLM-written CV wording; the D-100 dates stay as they are unless a decision moves them.
 
 ## Current outcome, 7 October 2026
 
@@ -192,8 +193,8 @@ This section is kept as it was on 2 October. For the current state, see [Current
 | Railway account on the Trial credit (D-023) | Dion | 1 Oct | Smoke deploy, checkpoint 16 | Superseded by D-095 (SumoPod VPS); no Railway account was created |
 | SumoPod VPS (Singapore, Ubuntu 24.04, 2 vCPU / 8 GB / 80 GB), SSH keys, ufw, Docker, domain (`JOBFIT_PUBLIC_HOST`) | Dion + Codex | 8 Oct | First deploy (CP3.2) | Open |
 | Production OpenRouter key with a credit limit; recorded per-route privacy settings | Dion + Codex | 9 Oct | Public live (CP3.4 gate) | Open |
-| SMTP sender and receiver for alerts (`GRAFANA_SMTP_*`, `GRAFANA_ALERT_*`) | Dion + Codex | 9 Oct | Email alerts (CP3.2) | Open |
-| Langfuse Cloud project in the Japan region (Hobby) | Dion + Codex | 9 Oct | Tracing (CP3.1) | Open |
+| SMTP sender and receiver for alerts (`GRAFANA_SMTP_*`, `GRAFANA_ALERT_*`) | Dion + Codex | 9 Oct | Email alerts (CP3.2) | Open; optional since 8 Oct (email alerts are P2 (post-beta)) |
+| Langfuse Cloud project in the Japan region (Hobby) | Dion + Codex | 9 Oct | Tracing (CP3.1) | Open; optional since 8 Oct (Langfuse is P2 (post-beta)) |
 | Development labels reviewed (gold) | Dion | 2 Oct morning | Checkpoint 10 | Reviewed-record bundle exported and validated; only compatible complete references may be used for each metric; held/unjudged records remain explicit |
 | Test relevance labels, blind (D-045 phase 2) | Dion | 3 Oct | Checkpoint 11 | Done 7 Oct: D-053 top-10 union, 68 pairs over CV1-CV5, 67 judged + 1 held (F00070); AI-assisted, human-reviewed, blind to ranking (D-088, `test_v13_cp24_r1`) |
 | Test extraction and evidence (D-045 phase 3) | Dion | 10 Oct | Final report (CP3.5) | Open, method final (D-100, option B): blind candidates F00398, F00237 and CV3 × F00398 selected by ID on 7 Oct; Dion labels them blind first, then the frozen pipeline runs (about US$0.10); the CP2.4 workbook stays MODEL-ASSISTED, HUMAN-REVIEWED and is reported separately. PLANNED / NOT YET COMPLETED |
@@ -212,8 +213,9 @@ in parallel: schemas + scoring + fixtures → CP2.2 parser/extraction/matcher + 
 in parallel: hosting smoke deploy (1-2 Oct) → API (5 Oct) → database + CI (6 Oct) → Streamlit (7 Oct) → E2E + freeze (8 Oct)   [original plan]
 CP3 (D-095 to D-100): docs freeze + CI green (7 Oct) → P0 hardening + public path + packaging + dark deploy (8 Oct)
                       → sync + monitoring + privacy gate + public live + PR-10 + freeze (9 Oct) → reports/deck/rehearsal (10 Oct) → present (11 Oct)
-CP3 order after D-102 (8 Oct): foundation closeout → real-user AI path (both flows) → product experience → evaluation and performance
-                      → packaging → monitoring → controlled public beta validation; the D-100 dates are unchanged
+CP3 order after D-102 (8 Oct, with the anti-overengineering correction): foundation closeout → public-live cost/profile decision
+                      → real-user AI path (both flows) → product UX → lean packaging → lean monitoring → dark VPS deploy
+                      → privacy, quality and cost validation → controlled public beta → final portfolio and reporting; the D-100 dates are unchanged
 ```
 
 Labeling is the longest chain and depends on one person. It starts on day one and runs next to the implementation (D-015).
@@ -568,6 +570,7 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
      - `/metrics` with bounded labels;
      - a Langfuse Japan adapter, metadata only;
      - canary tests for logs, metrics and Langfuse payloads.
+     - *(8 Oct, anti-overengineering correction under D-102: the beta needs the JSON logs and `/metrics`; the Langfuse adapter is P2 (post-beta).)*
    - **Mentor additions, planned (D-093 A):** stage events for the waiting UX.
 4. **Files and outputs.**
    - The FastAPI app in `src/`.
@@ -642,13 +645,14 @@ Template name: Integrasi Database & GitHub Actions CI/CD · Official: 6 Oct 2026
        - a report;
      - a dedupe review command;
      - a GitHub Actions trigger, twice a month (about every two weeks), using a forced-command SSH key. JSearch and database secrets stay on the VPS.
+     - *(8 Oct, anti-overengineering correction under D-102: this sync automation is P2 (post-beta). The design stays; the seeded corpus is enough for the beta, with an optional one-time manual refresh before the demo.)*
    - **Deployment, planned (D-095):**
      - `docker-compose.prod.yml` with Caddy (only 80/443 public), restart policies, log rotation and healthchecks;
      - a runtime artifact manifest and verifier (the tokenizer built into the API image);
-     - a restore-tested initial dump before the first deploy; nightly backups before the freeze;
+     - a restore-tested initial dump before the first deploy; nightly backups before the freeze *(8 Oct: a verified backup and a successful restore test are required before the beta; nightly scheduling is P2 (post-beta) unless trivial)*;
      - manual tagged deploys;
      - a VPS runbook.
-   - **Monitoring, planned (D-099):** Prometheus, Grafana and node_exporter; email alerts through `GRAFANA_SMTP_*`; a backup-age metric; sync gauges.
+   - **Monitoring, planned (D-099):** Prometheus, Grafana and node_exporter; email alerts through `GRAFANA_SMTP_*`; a backup-age metric; sync gauges. *(8 Oct lean beta bar: structured logs, Prometheus, Grafana with application, AI-pipeline, LLM and cost, and basic VPS health are required; email alerts, extra dashboards and sync gauges are P2 (post-beta).)*
 4. **Files and outputs.**
    - CI workflows (`tests.yml`, `job-sync.yml`), Alembic revisions, the sync module, deploy files, the runbook, `production-corpus.md`.
    - This stage report.

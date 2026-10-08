@@ -20,6 +20,8 @@ The user picks a matched job (Find Jobs) or uses a pasted JD (Check a Job) and g
 
 **How it builds on v1:** type B is the existing question-and-answer coach; type C comes from the matching result and the experience rule; type A is new. Whether type A wording is deterministic (built from the matched evidence quotes) or written by an LLM is an open design question. An LLM call would need its own D-096 phase bound and reservation, an anti-fabrication evaluation (0 invented items; every suggestion cites existing CV evidence) and a decision; until then "no LLM coach in CP3" below stands.
 
+**Sufficient for CP3 (8 Oct anti-overengineering correction):** the deterministic, evidence-grounded version (type A built from the matched evidence quotes, type B from the v1 question flow, type C from the matching result). LLM-generated rewriting is deferred (P2 (post-beta)) unless separately approved after a cost bound and an anti-fabrication evaluation.
+
 **Scope limit:** coaching and recommendations only. No graphical CV editor, PDF/DOCX resume builder, ATS template marketplace, cover-letter generator, interview generator or career platform in CP3.
 
 ## Why

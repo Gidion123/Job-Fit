@@ -17,6 +17,8 @@ Production code never writes to CP2 evaluation paths (`evals/freeze/`, `evals/go
 
 **Pasted job descriptions are not corpus input (8 Oct 2026, D-102).** A JD that a user pastes for "Check a Job" is a session or request input only. It is never inserted into the production corpus automatically; the corpus changes only through the seed and the controlled sync below, with dedupe, provenance and lifecycle rules.
 
+**Beta priority (8 Oct 2026, anti-overengineering correction under D-102).** The seeded production corpus (632 rows; 428 target-role jobs active) is sufficient for the CP3 controlled public beta. The sync automation in sections 3 to 5 (query manifest, `jobfit.jobs.sync`, forced-command SSH trigger, scheduled `job-sync.yml`) and the dedupe-review automation are P2 (post-beta). The design stays as written. A one-time, operator-run refresh with the same dedupe and provenance rules may be done before the demo if needed.
+
 ## 2. Seed
 
 - **Source:** a `pg_dump` of the verified local database (632 CP1 rows with Qwen3-Embedding-8B vectors). Its SHA-256 and row counts are recorded, and it is restore-tested before the first deployment.

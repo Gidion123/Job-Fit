@@ -16,6 +16,7 @@ What each document is for:
 - **P1:** before the feature freeze and public validation.
 - **P2:** before the final report.
 - **P3:** not before the presentation.
+- **P2 (post-beta):** an optional enhancement after the controlled public beta (8 Oct anti-overengineering correction under D-102); never a beta or final-report blocker. Plain P2 rows stay required before the final report.
 
 **Timeline:**
 - 8 Oct: core engineering and the dark deployment.
@@ -36,21 +37,24 @@ What each document is for:
 - **Public is not admin:** public users reach only the end-user app. SSH, Docker, PostgreSQL, secrets, deploy and restart controls, budget and gate configuration, operator recovery, admin endpoints, private logs and Grafana stay private (D-095 network boundary).
 - **Open gates (each needs its own decision; D-102 resolves none of them):** the public-live cost bound (US$84.7704449 > US$2/day, D-096); Flow B in production (D-101 keeps `/analyze` closed until a pasted-JD bound and reservation exist); any LLM-generated CV wording (own bound, reservation and anti-fabrication evaluation); the D-100 dates, which are unchanged.
 
-### Remaining work in recommended order (D-102)
+### Remaining work in recommended order (D-102; anti-overengineering correction 8 Oct)
 
-Completed rows below keep their status and evidence. The remaining rows are worked in this order; the phase numbers are unchanged.
+Completed rows below keep their status and evidence. The remaining rows are worked in this order; the phase numbers are unchanged. Only what the single-VPS controlled public beta needs is a blocker; the rest is **P2 (post-beta)**.
 
-| Order | Goal | Rows (phase) |
+| Step | Goal | Rows (phase) |
 | --- | --- | --- |
-| A | Close the infrastructure foundation | Persistent ledger (DONE); lean public-beta upload hardening and API hardening; Phase 2 closeout (Phase 2) |
-| B | Real-user AI path | Public-live cost bound decision; FAIL-37 masking; consent adapter; `cv_source` contract; runtime embedding; production retriever; extraction cache; Flow B pasted-JD path decision and wiring (Phase 3) |
-| C | Product experience | Find Jobs / Check a Job UI, stage-aware progress, result presentation, public-beta states, "Improve My CV for This Job" (Phases 3 and 3b) |
-| D | Evaluation and performance | D-045 option B, PR-10, coaching anti-fabrication evaluation, latency and cost baseline and optimization (Phases 7-8 and 9-11) |
-| E | Production packaging | Compose, Caddy, artifact manifest, backup and restore, runbook, private admin interfaces (Phase 6) |
-| F | Monitoring | Metrics, pipeline-stage latency, LLM usage, spend and budget state, infrastructure and storage health, dashboards, alerts (Phase 5) |
-| G | Controlled public beta validation | VPS, dark deploy, privacy gate, real-host persistence, owner live runs, public beta enablement, limited user trial, portfolio readiness (Phases 7-8) |
+| 1 | Foundation closeout | Persistent ledger (DONE); lean upload hardening; API hardening; Phase 2 closeout (Phase 2) |
+| 2 | **Public-live cost/profile decision** (first unresolved governance blocker) | Dion and Codex decide how a real-user live flow fits the US$2/day cap; `full_analysis_upper_bound` is US$84.7704449. Nothing is lowered, changed or raised in this correction (Phase 3, first row) |
+| 3 | Real-user AI path | FAIL-37 masking; consent adapter; `cv_source` contract; runtime embedding; production retriever; extraction cache; Flow B pasted JD (Phase 3) |
+| 4 | Product UX | Upload flow UI, landing, Find Jobs / Check a Job, stage-aware progress, results, public-beta states, deterministic "Improve My CV for This Job" (Phases 3 and 3b) |
+| 5 | Lean production packaging | Compose, Caddy, artifact manifest, a verified backup with a successful restore test, runbook, private admin interfaces (Phase 6) |
+| 6 | Lean monitoring | Structured logs, `/metrics`, Prometheus, Grafana with application, AI-pipeline, LLM and cost, and basic VPS health (Phase 5) |
+| 7 | Dark VPS deploy | VPS provisioning, first dark deploy, real-host persistence (Phases 7-8) |
+| 8 | Privacy, quality and cost validation | Per-route privacy record, privacy release gate, owner live runs with latency and cost, PR-10, D-045 option B (Phases 7-8 and 9-11) |
+| 9 | Controlled public beta | Enable public live if its gates pass; limited trial (Phases 7-8) |
+| 10 | Final portfolio and reporting | Feature freeze, reports, README, deck, video, rehearsal, presentation (Phases 9-11) |
 
-The production job sync (Phase 4) stays P1: the seeded corpus already serves Flow A, and the sync runs after B, C and E.
+**Explicitly post-beta (P2 (post-beta)):** the automated twice-monthly job sync, the forced-command SSH user and scheduled `job-sync.yml`, dedupe-review automation (the D-098 design stays documented; the seeded production corpus is enough for the CP3 beta, and a one-time manual refresh may be run before the demo if needed); the Langfuse adapter; Grafana email alerts and dashboards beyond the one beta dashboard; automated nightly backup scheduling (unless trivial); LLM-written CV rewriting (deferred until a separate decision with a cost bound and an anti-fabrication evaluation).
 
 ## Phase 0. Documentation and plan freeze (7 Oct)
 
@@ -77,7 +81,7 @@ The production job sync (Phase 4) stays P1: the seeded corpus already serves Flo
 | Concurrency-safe app client with separate parse and recommendation reservations (F2, FAIL-36) | P0 | Phase bounds | Dion (AI-assisted) | DONE (8 Oct, dark, D-101; local and CI, fake SDK only) | Serial and concurrent outputs identical; no call without a reservation; embedding only in the recommendation reservation; settled plus outstanding never above the cap; one ledger line per call; settlement only after the durable ledger record; settled whenever the ledger shows spend or an uncertain record, released only with zero; outstanding from the persisted `active_until`; per-call refusal above the modelled attempt; the four crash tests ([CP3.2 report](CP3_02_Database_and_CICD.md#recorded-for-phase-2b-implemented-8-oct-d-101)) | CP3.1 report |
 | Persistent production ledger volume | P0 | — | Dion (AI-assisted) | DONE for Phase 2 acceptance (local/CI); deployed host persistence validation pending Phase 8 (independently verified and closed 8 Oct at `f5d6cf7`) | Crash-recovery test: deterministic application-level restart matrix R1-R7 on real PostgreSQL (`tests/test_live_restart_db.py`, SIGKILLed worker) and the storage-continuity tests passed (gated suite 194 passed); offline suite 936 passed, 190 skipped; CI Docker named-volume smoke passed (same `storage_id` after container replacement); freeze verify `"ok": true`; no migration or `models.py` change; production and public live stay off. Deployed-host persistence is a Phase 8 obligation; production compose and backup/restore packaging are Phase 6 | Commits `2cfd087`, `a9c6020`, `66b166c`, `39f74a8`, `f5d6cf7`; CI run [37759368396](https://github.com/Gidion123/Job-Fit/actions/runs/37759368396) (lint-and-test, db-migrations, docker-build green); [CP3.1 report](CP3_01_FastAPI_Service.md#results-8-oct-2026-persistent-production-ledger-storage) |
 | Global live gate (1), per-IP ticket (HMAC, 48 h), internal service token, owner override, session rate limit | P0 | Schema | Dion (AI-assisted) | DONE (8 Oct, dark, D-101; audit corrections: committed 48 h retention, one-recommendation allowance; client-IP acquisition and provenance are deployment prerequisites) | Quota fairness tests (refusals before billing don't consume the ticket) | CP3.1 report |
-| Upload hardening (public-beta standard, D-102): `.pdf`/`.docx`/`.txt`/`.md` only, signature check, streamed size limit, page and character bounds, **DOCX decompression gate**, timeout, safe errors | P0 | — | Dion (AI-assisted) | TODO | Failure-path tests with canaries; 6 DOCX gate tests | CP3.1 report |
+| Upload hardening, lean but real (public-beta standard, D-102): `.pdf`/`.docx`/`.txt`/`.md` only; PDF header/signature sanity; DOCX valid OOXML/ZIP structure with a **decompression gate** (size and ratio limits); TXT/MD text-versus-binary sanity, decoding, size and character limits (no invented signature scheme for plain text); streamed size limit; page and character bounds; timeout; safe errors | P0 | — | Dion (AI-assisted) | TODO | Failure-path tests with canaries; 6 DOCX gate tests | CP3.1 report |
 | `/docs` off, proxy headers, readiness with a database check, error taxonomy, request IDs and minimal JSON logs | P0 | — | Dion (AI-assisted) | TODO | API tests | CP3.1 report |
 | Phase 2 closeout: confirm every Phase 2 row against its validation, record the closeout in the CP3.1 report (public-beta standard, D-102) | P0 | All Phase 2 rows | Dion (AI-assisted) | TODO | Closeout table with evidence links | CP3.1 report |
 
@@ -87,7 +91,7 @@ The production job sync (Phase 4) stays P1: the seeded corpus already serves Flo
 
 | Task | Pri | Depends on | Owner | Status | Validation | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Public-live cost bound decision: `full_analysis_upper_bound` US$84.7704449 > US$2/day cap (D-096). A separate decision by Dion and Codex; D-102 does not change the cap or the bounds | P0 | Phase 2A bounds | Dion and Codex | TODO | Decision recorded; `public_live_eligible` follows it | Decision log |
+| **Public-live cost/profile decision (the next explicit architecture decision; first unresolved governance blocker before large Phase 3 work):** `full_analysis_upper_bound` US$84.7704449 > US$2/day cap (D-096), so the current real-user live flow cannot serve the D-102 beta. Dion and Codex decide; this documentation does not lower the deterministic bound, change the frozen model, K, retrieval or scoring, or raise the cap | P0 | Phase 2A bounds | Dion and Codex | TODO (next decision) | Decision recorded; `public_live_eligible` follows it | Decision log |
 | Name and address hints, correct masking text (FAIL-37) | P0 | — | Dion (AI-assisted) | TODO | Canary test; UI text test | CP3.1 and CP3.3 reports |
 | Consent lease stored server-side; consent compatibility parse adapter (D-097), after checking `is_synthetic` use (stop if other dependencies exist) | P0 | Hardening | Dion (AI-assisted) | TODO | The 7 adapter tests; freeze verify | CP3.1 report |
 | Public API contract `cv_source = demo / upload` (one pipeline) | P0 | Adapter | Dion (AI-assisted) | TODO | Backward-compatible API tests; no CV posted back | CP3.1 report |
@@ -106,22 +110,29 @@ The production job sync (Phase 4) stays P1: the seeded corpus already serves Flo
 | Stage-aware progress UI driven by the stage events (completed, current, pending; honest messages; no fake percentages) | P1 | Stage events | Dion (AI-assisted) | TODO | Streamlit tests per flow | CP3.3 report |
 | Result presentation: job cards, match score with its meaning, strengths, gaps, supporting evidence, explanations, job detail; consistent typography, spacing and components; reasonable mobile and desktop layout | P1 | Public path | Dion (AI-assisted) | TODO | Streamlit tests; screenshots | CP3.3 report |
 | Public-beta states: empty, failure, quota, busy, "Live AI analysis is temporarily unavailable" and budget-exhausted, each with the saved-demo fallback | P1 | Phase 2B refusals | Dion (AI-assisted) | TODO | Streamlit tests per refusal code | CP3.3 report |
-| "Improve My CV for This Job" for a matched job or a pasted JD: representation improvement (existing evidence only), possibly missing (add only if real), true gap (stated plainly); current statement → suggestion → why → supporting evidence; hard anti-fabrication rule. Builds on the deterministic coach v1; any LLM-written wording needs its own bound, reservation, evaluation and decision | P1 | Matching result | Dion (AI-assisted) | TODO | Anti-fabrication evaluation: 0 invented items; no suggestion without supporting evidence for type A; "not done" gives no bullet | CP3.3 report; [CV coach plan](../cv-coach-plan.md) |
+| "Improve My CV for This Job" for a matched job or a pasted JD: representation improvement (existing evidence only), possibly missing (add only if real), true gap (stated plainly); current statement → suggestion → why → supporting evidence; hard anti-fabrication rule. The deterministic, evidence-grounded version is sufficient for CP3 (builds on coach v1); LLM-generated rewriting is deferred (P2 (post-beta)) unless separately approved after a cost bound and an anti-fabrication evaluation | P1 | Matching result | Dion (AI-assisted) | TODO | Anti-fabrication evaluation: 0 invented items; no suggestion without supporting evidence for type A; "not done" gives no bullet | CP3.3 report; [CV coach plan](../cv-coach-plan.md) |
 
-## Phase 4. Production job data lifecycle (9 Oct)
+## Phase 4. Production job data lifecycle (post-beta; D-098 design kept)
 
-| Task | Pri | Depends on | Owner | Status | Validation | Evidence |
-| --- | --- | --- | --- | --- | --- | --- |
-| Production query manifest (at most 80 requests per sync) | P1 | — | Dion (AI-assisted) | TODO | Manifest hash in the report | [production-corpus.md](../production-corpus.md) |
-| `jobfit.jobs.sync` (normalize, exact dedupe, fuzzy `review_required`, classify, transaction, lifecycle, incremental embeddings, report) and the dedupe review command | P1 | Schema | Dion (AI-assisted) | TODO | Sync test suite including "the same vacancy never appears twice" | CP3.2 report |
-| Forced-command SSH user and `job-sync.yml` (twice a month, about every two weeks) | P1 | Sync | Dion (AI-assisted); VPS steps Dion and Codex | TODO | One real sync and an idempotent re-run on the VPS | Sync reports |
-
-## Phase 5. Observability (9 Oct)
+The seeded production corpus (632 rows, 428 target-role jobs active) is sufficient for the CP3 controlled public beta. The D-098 sync architecture stays documented in [production-corpus.md](../production-corpus.md); its automation is not a beta blocker.
 
 | Task | Pri | Depends on | Owner | Status | Validation | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| `/metrics` (bounded labels), Langfuse Japan metadata-only adapter | P1 | Phase 2 | Dion (AI-assisted) | TODO | Canary tests on the metrics and Langfuse payloads | CP3.1 report |
-| Prometheus, Grafana, node_exporter, two dashboards, email alerts (`GRAFANA_SMTP_*`) | P1 | VPS | Dion (AI-assisted); VPS steps Dion and Codex | TODO | One test email; screenshots | CP3.2 and CP3.4 reports |
+| Production query manifest (at most 80 requests per sync) | P2 (post-beta) | — | Dion (AI-assisted) | TODO | Manifest hash in the report | [production-corpus.md](../production-corpus.md) |
+| `jobfit.jobs.sync` (normalize, exact dedupe, fuzzy `review_required`, classify, transaction, lifecycle, incremental embeddings, report) and the dedupe review command | P2 (post-beta) | Schema | Dion (AI-assisted) | TODO | Sync test suite including "the same vacancy never appears twice" | CP3.2 report |
+| Forced-command SSH user and `job-sync.yml` (twice a month, about every two weeks) | P2 (post-beta) | Sync | Dion (AI-assisted); VPS steps Dion and Codex | TODO | One real sync and an idempotent re-run on the VPS | Sync reports |
+| One-time manual corpus refresh before the demo, only if needed (operator-run; same dedupe and provenance rules; no scheduler) | P2 | Seed | Dion and Codex | TODO (optional) | Refresh report | Sync report |
+
+## Phase 5. Observability (9 Oct; lean beta release bar)
+
+**Required for the beta:** structured JSON logs, Prometheus metrics, Grafana, and visibility of the application, the AI pipeline, LLM usage and cost, and basic VPS health. Langfuse, email alerting and extra dashboards are optional **P2 (post-beta)** enhancements.
+
+| Task | Pri | Depends on | Owner | Status | Validation | Evidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| `/metrics` (bounded labels) and structured JSON logs (`request_id`, `run_id`, session hash, route, status, duration, error code; no CV content) | P1 | Phase 2 | Dion (AI-assisted) | TODO | Canary tests on the metrics and log payloads | CP3.1 report |
+| Prometheus, Grafana, node_exporter and one beta dashboard (application, AI pipeline, LLM and cost, basic VPS health) | P1 | VPS | Dion (AI-assisted); VPS steps Dion and Codex | TODO | Dashboard screenshots with live data | CP3.2 and CP3.4 reports |
+| Langfuse Japan metadata-only adapter (D-099) | P2 (post-beta) | `/metrics` | Dion (AI-assisted) | TODO (optional) | Canary tests on the Langfuse payloads | CP3.1 report |
+| Grafana email alerts (`GRAFANA_SMTP_*`) and additional dashboards (D-099) | P2 (post-beta) | Grafana | Dion (AI-assisted); VPS steps Dion and Codex | TODO (optional) | One test email; screenshots | CP3.2 and CP3.4 reports |
 | AI-pipeline and LLM observability (D-102): per-stage latency (CV parse, embedding, retrieval, requirement extraction, matching, recommendation, total), analysis completions and refusals, LLM calls, failures, fallbacks and latency by model, estimated and settled spend, budget state; ledger storage and disk health. Existing metric naming conventions; bounded labels; no CV content | P1 | `/metrics` | Dion (AI-assisted) | TODO | Metric tests with privacy canaries | CP3.1 and CP3.2 reports |
 
 ## Phase 6. Deployment packaging (8 Oct)
@@ -130,7 +141,7 @@ The production job sync (Phase 4) stays P1: the seeded corpus already serves Flo
 | --- | --- | --- | --- | --- | --- | --- |
 | `docker-compose.prod.yml`, Caddyfile, restart policies, log rotation, healthchecks | P0 | — | Dion (AI-assisted) | TODO | `docker compose … config` | CP3.2 report |
 | Runtime artifact manifest and verifier; tokenizer built into the API image | P0 | — | Dion (AI-assisted) | TODO | Readiness fails on a mismatch | CP3.2 report |
-| Backup and restore scripts; restore-tested initial dump; nightly backup (P1) | P0 / P1 | — | Dion (AI-assisted) | TODO | Row counts after restore (632 / 428) | CP3.2 report |
+| Backup and restore scripts: a verified backup and a successful restore test of the database and the whole ledger root before the beta (nightly scheduling is P2 (post-beta) unless trivial) | P0 | — | Dion (AI-assisted) | TODO | Row counts after restore (632 / 428) | CP3.2 report |
 | VPS runbook with the two-layer validation commands and backup-before-migrate | P0 | — | Dion (AI-assisted) | TODO | Review | Runbook |
 | Public is not admin (D-102): only Caddy publishes ports and serves only the end-user app; FastAPI, PostgreSQL, Prometheus, Grafana and every operator interface stay private (SSH tunnel); no admin endpoint reachable anonymously | P0 | Compose, Caddyfile | Dion (AI-assisted) | TODO | `docker compose … config` port check; external scan shows only 80/443 | CP3.2 and CP3.4 reports |
 
@@ -138,21 +149,21 @@ The production job sync (Phase 4) stays P1: the seeded corpus already serves Flo
 
 | Task | Pri | Depends on | Owner | Status | Validation | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Provision SumoPod VPS (SSH, ufw, Docker, DNS, SMTP, production key with limit, Langfuse Japan project) | P0 | — | Dion and Codex | TODO | Runbook checklist | CP3.2 report |
+| Provision SumoPod VPS (SSH, ufw, Docker, DNS, production key with limit; SMTP and the Langfuse Japan project only if the P2 (post-beta) items are taken up) | P0 | — | Dion and Codex | TODO | Runbook checklist | CP3.2 report |
 | First deploy, dark (saved demo only) | P0 | Phase 6 | Dion and Codex | TODO | **A:** external public smoke through Caddy and Streamlit. **B:** internal API `e2e_check` inside the Docker network or over an SSH tunnel; FastAPI stays private | CP3.4 report |
 | OpenRouter per-route privacy record (parse, embedding, extraction, matching) | P0 | VPS | Dion and Codex | TODO | Recorded; gaps reported before public live | Privacy model |
 | Privacy release gate with canaries in every sink, including upload failure paths | P1 | Deploy | Dion (AI-assisted) | TODO | 0 hits | CP3.4 report |
 | Owner live runs, latency baseline, F2 measurement, quota, cap and busy tests, mentor UX check | P1 | Gate | Dion (AI-assisted) | TODO | Latency and cost table | CP3.4 report |
 | Real-host persistence validation of the ledger storage (restart, container recreate, host reboot: same `storage_id`, lifetime spend unchanged) | P0 | First deploy | Dion and Codex | TODO | Recorded checks on the VPS | CP3.4 report |
-| Enable public live, the controlled public beta (`JOBFIT_PUBLIC_LIVE=1`) | P1 | Gate passed; `full_analysis_upper_bound` ≤ cap | Dion | TODO | Gate record | CP3.4 report |
+| Enable public live, the controlled public beta (`JOBFIT_PUBLIC_LIVE=1`) | P1 | Gate passed; the public-live cost/profile decision satisfied (D-096) | Dion | TODO | Gate record | CP3.4 report |
 | Limited public-beta trial and portfolio readiness (a few real users through Find Jobs and Check a Job; LinkedIn and portfolio link check) | P2 | Public beta enabled | Dion | TODO | Trial notes; no privacy or cost incident | CP3.4 and CP3.5 reports |
 
 ## Phases 9-11. Quality validation, freeze, final stages (9-11 Oct)
 
 | Task | Pri | Depends on | Owner | Status | Validation | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| PR-10 original vs masked (CV1/CV2, about US$2) | P2 | Deploy | Dion (AI-assisted) | TODO | D-100 thresholds | CP3.4 and CP3.5 reports |
-| D-045 option B: Dion blind-labels F00398, F00237 and CV3 × F00398, locks the hash, then the frozen pipeline runs (about US$0.10) | P2 | Phase 0 selection | Dion (AI-assisted) | TODO | Strict metrics; groups reported separately | CP3.5 report |
+| PR-10 original vs masked (CV1/CV2, about US$2) | P2 (required before the final report; high-value AI evidence) | Deploy | Dion (AI-assisted) | TODO | D-100 thresholds | CP3.4 and CP3.5 reports |
+| D-045 option B: Dion blind-labels F00398, F00237 and CV3 × F00398, locks the hash, then the frozen pipeline runs (about US$0.10) | P2 (required before the final report; high-value AI evidence) | Phase 0 selection | Dion (AI-assisted) | TODO | Strict metrics; groups reported separately | CP3.5 report |
 | D-045 workbook (MODEL-ASSISTED, HUMAN-REVIEWED) import, alignment and scoring | P2 | — | Dion (AI-assisted) | TODO | Human-verified alignment | CP3.5 report |
 | Coach refinement (source requirement, CV status, no-invention wording): now part of "Improve My CV for This Job" in Phase 3b (D-102) | P1 | — | Dion (AI-assisted) | TODO (moved to Phase 3b) | 0 invented items; "not done" gives no bullet | CP3.3 report |
 | Formal feature freeze (end of 9 Oct) | P1 | All P0 and P1 | Dion (AI-assisted) | TODO | Final validation table | CP3.4 report |

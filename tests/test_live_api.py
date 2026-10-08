@@ -209,6 +209,7 @@ def test_prod_wiring_is_dark_and_has_no_development_fallback(tmp_path, monkeypat
     deps = wiring.build_deps()
     assert deps.live_enabled and deps.ingress is not None and not deps.public_live
     assert deps.analyze_pasted is None                              # /analyze closed in production
+    assert deps.maintenance is not None                             # hourly 48 h quota purge
     with pytest.raises(wiring.LiveUnavailable):                      # never the development client
         deps.run(deps.demo_cvs['CV1'], True, lambda r: None, None)
 
@@ -223,3 +224,31 @@ def test_prod_runtime_uses_the_production_client_settings(tmp_path, monkeypatch)
     assert client.settings.usage_ledger == settings.usage_ledger and client.run_id == 'idem:x'
     assert client.settings.api_hard_stop_usd == 4.5 and runtime.windows['parse'].window == 720.0
     assert runtime.bound['recommendation'] > settings.daily_budget_usd > runtime.bound['parse']
+
+
+# --- retention maintenance from the sweeper ----------------------------------------------------------------
+
+def test_a_failing_maintenance_purge_never_stops_the_session_sweeper():
+    class CountingStore(SessionStore):
+        sweeps = 0
+
+        def sweep(self):
+            CountingStore.sweeps += 1
+            return super().sweep()
+    calls = []
+
+    def maintenance():
+        calls.append(time.monotonic())
+        if len(calls) == 1:
+            raise RuntimeError('database down')          # first purge fails
+    deps = AppDeps(store=CountingStore(), demo_cvs={'CV1': CV}, run=fake_rec, sweep_seconds=0.02,
+                   maintenance=maintenance, maintenance_seconds=0.05)
+    with TestClient(create_app(deps)):
+        deadline = time.monotonic() + 10
+        while len(calls) < 3 and time.monotonic() < deadline:
+            time.sleep(0.02)
+        sweeps_after_retry = CountingStore.sweeps
+        time.sleep(0.1)
+        assert len(calls) >= 3                            # failed once, retried, succeeded again
+        assert CountingStore.sweeps > sweeps_after_retry  # expiry sweeping still runs
+    assert all(b - a >= 0.04 for a, b in zip(calls, calls[1:]))   # at most once per interval

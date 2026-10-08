@@ -201,14 +201,23 @@ def build_deps() -> AppDeps:
                       'history_confirmed': DEMO_HISTORY_CONFIRMED,
                       'note': 'Synthetic demo CV; work history is complete by design, so it counts as confirmed.'}
                  for cv, p in demo.items()}
-    ingress = None
+    ingress = maintenance = None
     if prod:
-        from jobfit.live.quota import Ingress
+        import psycopg
+        from jobfit.live.quota import Ingress, purge_expired
         ingress = Ingress(settings.internal_token, settings.owner_token, settings.ip_hmac_key)
+
+        def maintenance():
+            """D-096: quota rows are deleted after 48 h (startup and hourly; consume purges too)."""
+            purge_expired(lambda: psycopg.connect(settings.database_url, autocommit=True))
+        try:
+            maintenance()
+        except Exception:
+            pass        # retried hourly by the sweeper; a consume purges before it runs anyway
     return AppDeps(store=SessionStore(), demo_cvs=demo, run=run, job_meta=meta, saved_demo=load_saved_demo(),
                    live_enabled=settings.live_enabled, analyze_pasted=None if prod else analyze_pasted, jobs=jobs,
                    demo_summaries=summaries, analyzed_k=config.stage1_k, ingress=ingress,
-                   public_live=settings.public_live)
+                   public_live=settings.public_live, maintenance=maintenance)
 
 
 def create_default_app():

@@ -274,6 +274,46 @@ def test_ticket_consumed_once_then_refused_and_old_rows_are_deleted(db):
         assert conn.execute('SELECT ip_hmac FROM live_quota').fetchall() == [(HMAC,)]
 
 
+def old_row(db, ip_hmac, hours):
+    with conn_for(db) as conn:
+        conn.execute("INSERT INTO live_quota VALUES (%s, now() - make_interval(secs => %s))", (ip_hmac, hours * 3600.0))
+
+
+def quota_rows(db):
+    with conn_for(db) as conn:
+        return sorted(r[0] for r in conn.execute('SELECT ip_hmac FROM live_quota').fetchall())
+
+
+def test_a_clean_refusal_never_undoes_the_48_hour_retention(db):
+    old_row(db, HMAC, 1)                                  # this IP is within its 24 hours
+    old_row(db, 'c' * 64, 50)                             # unrelated rows past 48 hours
+    old_row(db, 'd' * 64, 49)
+    assert quota.consume_ticket(lambda: conn_for(db), HMAC) == 'refused'
+    assert quota_rows(db) == [HMAC]
+
+
+def test_retention_purge_runs_without_any_ticket_consumption(db):
+    old_row(db, 'c' * 64, 50)
+    old_row(db, 'd' * 64, 48.5)
+    old_row(db, 'e' * 64, 30)                             # between 24 and 48 hours: kept
+    old_row(db, HMAC, 0)
+    assert quota.purge_expired(lambda: conn_for(db)) == 2
+    assert quota_rows(db) == sorted([HMAC, 'e' * 64])
+    assert quota.purge_expired(lambda: conn_for(db)) == 0
+
+
+def test_a_failed_purge_fails_the_ticket_closed_and_consumes_nothing(db):
+    class PurgeFails(_CommitFails):
+        def execute(self, sql, *a, **kw):
+            if sql.startswith('DELETE FROM live_quota'):
+                raise psycopg.OperationalError('connection lost')
+            return self.conn.execute(sql, *a, **kw)
+    assert quota.consume_ticket(lambda: PurgeFails(conn_for(db)), HMAC) == 'unavailable'
+    assert quota_rows(db) == []
+    with pytest.raises(psycopg.OperationalError):
+        quota.purge_expired(lambda: PurgeFails(conn_for(db)))
+
+
 def test_two_concurrent_consumptions_for_one_ip_consume_exactly_one(db):
     barrier, out = threading.Barrier(2), []
 
@@ -289,13 +329,19 @@ def test_two_concurrent_consumptions_for_one_ip_consume_exactly_one(db):
 
 
 class _CommitFails:
-    """Delegates to a real connection; COMMIT really commits, then raises (outcome unknown)."""
+    """Delegates to a real connection; COMMIT really commits, then raises (outcome unknown).
 
-    def __init__(self, conn, after=True):
-        self.conn, self.after = conn, after
+    With ``only_after``, only the COMMIT of a transaction that ran a statement containing that
+    text fails (e.g. the ticket consume, not the separately committed retention purge).
+    """
+
+    def __init__(self, conn, after=True, only_after=None):
+        self.conn, self.after, self.only_after, self.armed = conn, after, only_after, only_after is None
 
     def execute(self, sql, *a, **kw):
-        if sql == 'COMMIT':
+        if self.only_after and self.only_after in sql:
+            self.armed = True
+        if sql == 'COMMIT' and self.armed:
             if self.after:
                 self.conn.execute(sql)
             raise psycopg.OperationalError('connection lost during COMMIT')
@@ -306,7 +352,8 @@ class _CommitFails:
 
 
 def test_ticket_commit_outcome_unknown_is_reported_and_the_ticket_may_be_consumed(db):
-    assert quota.consume_ticket(lambda: _CommitFails(conn_for(db)), HMAC) == 'unknown'
+    consume_commit_fails = lambda: _CommitFails(conn_for(db), only_after='INSERT INTO live_quota')
+    assert quota.consume_ticket(consume_commit_fails, HMAC) == 'unknown'
     assert quota.consume_ticket(lambda: conn_for(db), HMAC) == 'refused'      # it had committed
 
 

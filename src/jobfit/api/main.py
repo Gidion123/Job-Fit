@@ -26,8 +26,10 @@ from __future__ import annotations
 from collections.abc import Callable, Mapping
 from contextlib import asynccontextmanager
 from dataclasses import dataclass, field
+import logging
 import secrets
 import threading
+import time
 
 from fastapi import Depends, FastAPI, File, Header, HTTPException, Request, UploadFile
 from fastapi.responses import JSONResponse
@@ -44,6 +46,7 @@ from jobfit.support.cv_coach import bullet, gaps_for_job
 from jobfit.support.cv_suggestions import suggestions
 from jobfit.support.market_insight import skill_counts
 
+log = logging.getLogger('jobfit.api')
 REAL_CV_MESSAGE = ('Analysis of uploaded CVs is not enabled yet. Masking, preview and consent work, but the '
                    'provider privacy checks (D-051) are still open. Use a demo CV for now.')
 LIVE_OFF_MESSAGE = 'Live analysis is switched off in this deployment. Use the saved demo.'
@@ -79,6 +82,10 @@ class AppDeps:
     # Production ingress (Phase 2B): jobfit.live.quota.Ingress; None in dev and in tests.
     ingress: object | None = None
     public_live: bool = False
+    # Periodic upkeep from the sweeper thread (prod: the 48 h quota-row purge); failures are logged
+    # and retried at the next interval, and never stop the session sweeper.
+    maintenance: Callable | None = None
+    maintenance_seconds: float = 3600.0
 
 
 @dataclass
@@ -105,8 +112,16 @@ def create_app(deps: AppDeps) -> FastAPI:
             pastes.pop(key)
 
     def sweeper():
+        last_maintenance = None
         while not stop.wait(deps.sweep_seconds):
             deps.store.sweep()
+            now = time.monotonic()
+            if deps.maintenance and (last_maintenance is None or now - last_maintenance >= deps.maintenance_seconds):
+                last_maintenance = now
+                try:
+                    deps.maintenance()
+                except Exception:
+                    log.warning('maintenance failed; retried at the next interval')
             with lock:   # results and pasted JDs of an expired session are dropped with it
                 for owner in {r.owner for r in runs.values()} | {o for o, _ in pastes.values()}:
                     if not deps.store.exists(owner):

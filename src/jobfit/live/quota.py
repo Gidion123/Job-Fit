@@ -8,6 +8,10 @@ only HMAC-SHA256(JOBFIT_IP_HMAC_KEY, ip), with IPv6 reduced to its /64.
 The ticket is consumed by one conditional upsert, in its own short transaction on its own
 connection, at the first billable call of an ordinary public parse. A proven commit consumes it
 for good (no refund); an unproven commit is 'unknown' and is never repeated in the operation.
+
+Retention (D-096: IP-HMAC rows are deleted after 48 hours) has its own committed lifecycle:
+``purge_expired`` runs at startup, hourly from the API sweeper, and as a separate committed
+transaction before every consume, so a quota refusal (ROLLBACK) can never undo a deletion.
 """
 from __future__ import annotations
 
@@ -27,6 +31,29 @@ SESSION_LIMIT = 10                  # new sessions per IP pseudonym ...
 SESSION_WINDOW_SECONDS = 3600.0     # ... per rolling hour (in memory; one API process)
 
 
+def _purge(conn) -> int:
+    try:
+        conn.execute('BEGIN')
+        deleted = conn.execute(RETENTION_SQL).rowcount
+        conn.execute('COMMIT')
+    except Exception:
+        _rollback(conn)
+        raise
+    return deleted
+
+
+def purge_expired(connect: Callable) -> int:
+    """Delete quota rows older than 48 hours in their own committed transaction; raises on failure."""
+    conn = connect()
+    try:
+        return _purge(conn)
+    finally:
+        try:
+            conn.close()
+        except Exception:
+            pass
+
+
 def consume_ticket(connect: Callable, ip_hmac: str) -> str:
     """'consumed' | 'refused' | 'unavailable' (failed before COMMIT) | 'unknown' (COMMIT not proven)."""
     try:
@@ -35,8 +62,11 @@ def consume_ticket(connect: Callable, ip_hmac: str) -> str:
         return 'unavailable'
     try:
         try:
+            _purge(conn)                    # committed on its own: a refusal below cannot undo it
+        except Exception:
+            return 'unavailable'            # fail closed: no consume, no provider call
+        try:
             conn.execute('BEGIN')
-            conn.execute(RETENTION_SQL)
             row = conn.execute(CONSUME_SQL, (ip_hmac,)).fetchone()
         except Exception:
             _rollback(conn)

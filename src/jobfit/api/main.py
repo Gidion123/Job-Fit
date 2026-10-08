@@ -11,6 +11,15 @@ Privacy follows D-051 and D-021:
   enforces server expiry even if the user never sends another request;
 - feedback has categories only, no free text.
 All dependencies are injected (`AppDeps`), so tests run with fakes and no cost.
+
+Production ingress (CP3 Phase 2B, D-096/D-101; ``AppDeps.ingress`` set by the prod wiring):
+- every route except /health needs the internal service token (constant-time check);
+- the client IP is accepted only with that token and becomes an HMAC pseudonym, never stored raw;
+- POST /session is rate-limited per IP pseudonym;
+- a live recommendation needs a canonical UUIDv4 Idempotency-Key: a retry of the same action gets
+  the same run, never a second execution; another session or phase with that key gets 409;
+- the owner token bypasses only the per-IP ticket; non-owner live needs public live and a ticket;
+- pasted-JD /analyze stays closed in production live (no reservation phase is defined for it).
 """
 from __future__ import annotations
 
@@ -20,7 +29,8 @@ from dataclasses import dataclass, field
 import secrets
 import threading
 
-from fastapi import Depends, FastAPI, File, Header, HTTPException, UploadFile
+from fastapi import Depends, FastAPI, File, Header, HTTPException, Request, UploadFile
+from fastapi.responses import JSONResponse
 
 from jobfit.api.presenter import job_card, recommendation
 from jobfit.cv.parser import ParsedCV
@@ -37,6 +47,10 @@ from jobfit.support.market_insight import skill_counts
 REAL_CV_MESSAGE = ('Analysis of uploaded CVs is not enabled yet. Masking, preview and consent work, but the '
                    'provider privacy checks (D-051) are still open. Use a demo CV for now.')
 LIVE_OFF_MESSAGE = 'Live analysis is switched off in this deployment. Use the saved demo.'
+PUBLIC_LIVE_OFF_MESSAGE = 'Public live analysis is not enabled yet. Use the saved demo.'
+ANALYZE_CLOSED_MESSAGE = 'Pasted job descriptions cannot be analyzed live in this deployment yet.'
+INTERNAL_TOKEN_HEADER, CLIENT_IP_HEADER, OWNER_TOKEN_HEADER = ('x-jobfit-internal-token', 'x-jobfit-client-ip',
+                                                             'x-jobfit-owner-token')
 MAX_RUNS_PER_SESSION = 3
 MAX_ANALYSES_PER_SESSION = 3
 MAX_FEEDBACK = 5000
@@ -53,7 +67,7 @@ class AppDeps:
     # D-022: saved_demo(cv_id, seniority) -> presented result, or None when the saved
     # bundle does not match the current CV, configuration and rules.
     saved_demo: Callable | None = None
-    live_enabled: bool = True
+    live_enabled: bool = False            # fail closed (FAIL-38); the wiring passes the real value
     sweep_seconds: float | None = 30.0   # D-051 server expiry; None turns the sweeper off (tests)
     # analyze_pasted(cv, jd_text) -> JobResult (live; extraction with no disk cache)
     analyze_pasted: Callable | None = None
@@ -62,6 +76,9 @@ class AppDeps:
     # demo parse summaries (ParsedCV.summary() plus the location suggestion)
     demo_summaries: Mapping[str, dict] = field(default_factory=dict)
     analyzed_k: int | None = None
+    # Production ingress (Phase 2B): jobfit.live.quota.Ingress; None in dev and in tests.
+    ingress: object | None = None
+    public_live: bool = False
 
 
 @dataclass
@@ -105,6 +122,16 @@ def create_app(deps: AppDeps) -> FastAPI:
     app = FastAPI(title='JobFit API', version='1.0', lifespan=lifespan,
                   description='Evidence-grounded job matching for early-career AI/data job seekers. '
                               'Match % is CV evidence coverage, not a hiring probability.')
+    idempotency = None
+    if deps.ingress is not None:
+        from jobfit.live.operation import IdempotencyRegistry
+        idempotency = IdempotencyRegistry()
+
+        @app.middleware('http')
+        async def internal_only(request: Request, call_next):
+            if request.url.path != '/health' and not deps.ingress.internal_ok(request.headers.get(INTERNAL_TOKEN_HEADER)):
+                return JSONResponse({'detail': 'Unauthorized'}, status_code=401)
+            return await call_next(request)
 
     def _auth(x_session_id: str, x_session_token: str, activity: bool) -> SessionHandle:
         h = SessionHandle(x_session_id, x_session_token)
@@ -126,12 +153,13 @@ def create_app(deps: AppDeps) -> FastAPI:
             raise HTTPException(404, 'Run not found')
         return state
 
-    def start_job(h: SessionHandle, kind: str, limit: int, work: Callable[[_Run], dict]) -> str:
+    def start_job(h: SessionHandle, kind: str, limit: int, work: Callable[[_Run], dict],
+                  run_id: str | None = None) -> str:
         with lock:
             mine = [r for r in runs.values() if r.owner == h.session_id and r.kind == kind]
             if any(r.status == 'running' for r in mine) or len(mine) >= limit:
                 raise HTTPException(429, 'Run limit for this session reached')
-            run_id = secrets.token_urlsafe(12)
+            run_id = run_id or secrets.token_urlsafe(12)
             runs[run_id] = state = _Run(owner=h.session_id, kind=kind)
 
         def target():
@@ -142,8 +170,8 @@ def create_app(deps: AppDeps) -> FastAPI:
                         state.result, state.status = out, 'done'
             except Exception as exc:  # shown as a run error, never as a score; no payload in the message
                 with lock:
-                    if runs.get(run_id) is state:
-                        state.status, state.error = 'failed', type(exc).__name__
+                    if runs.get(run_id) is state:   # a safe refusal code (busy, budget ...) or the class name
+                        state.status, state.error = 'failed', getattr(exc, 'code', None) or type(exc).__name__
         threading.Thread(target=target, daemon=True).start()
         return run_id
 
@@ -154,7 +182,11 @@ def create_app(deps: AppDeps) -> FastAPI:
                 'saved_demo': deps.saved_demo is not None, 'analyzed_k': deps.analyzed_k}
 
     @app.post('/session')
-    def new_session():
+    def new_session(request: Request):
+        if deps.ingress is not None:
+            pseudonym = deps.ingress.ip_pseudonym(request.headers.get(CLIENT_IP_HEADER))
+            if not deps.ingress.allow_session(pseudonym):
+                raise HTTPException(429, 'Too many new sessions; try again later')
         h = deps.store.create()
         return {'session_id': h.session_id, 'token': h.credential}
 
@@ -226,7 +258,7 @@ def create_app(deps: AppDeps) -> FastAPI:
 
     # ---------- recommendations ----------
     @app.post('/recommendations')
-    def start(body: RunRequest, h: SessionHandle = Depends(handle)):
+    def start(body: RunRequest, request: Request, h: SessionHandle = Depends(handle)):
         cv = deps.demo_cvs.get(body.demo_cv_id)
         if cv is None:
             raise HTTPException(404, 'Unknown demo CV')
@@ -249,15 +281,61 @@ def create_app(deps: AppDeps) -> FastAPI:
             return {'run_id': run_id}
         if not deps.live_enabled:
             raise HTTPException(503, LIVE_OFF_MESSAGE)
+        live = None
+        if deps.ingress is not None:
+            live = live_request(request, h, 'recommendation')
+            if isinstance(live, dict):          # the same action again: its run, never a second execution
+                return live
 
         def work(state: _Run) -> dict:
             def on_result(r):
                 with lock:
                     if any(v is state for v in runs.values()):   # not after deletion
                         state.done.append(job_card(r, deps.job_meta.get(r.job_id)))
-            rec = deps.run(cv, body.seniority_rule, on_result, filters)
+            if live is None:
+                rec = deps.run(cv, body.seniority_rule, on_result, filters)
+            else:
+                try:
+                    rec = deps.run(cv, body.seniority_rule, on_result, filters, live=live)
+                except Exception as exc:
+                    unknown = getattr(exc, 'code', None) == 'admission_outcome_unknown'
+                    idempotency.update(live.operation_key, state='admission_unknown' if unknown else 'failed')
+                    raise
+                idempotency.update(live.operation_key, state='done')
             return {**recommendation(rec, deps.job_meta), 'source': 'live', 'label': 'Live analysis'}
-        return {'run_id': start_job(h, 'recommendations', MAX_RUNS_PER_SESSION, work)}
+        if live is None:
+            return {'run_id': start_job(h, 'recommendations', MAX_RUNS_PER_SESSION, work)}
+        try:
+            run_id = start_job(h, 'recommendations', MAX_RUNS_PER_SESSION, work, run_id=live.run_id)
+        except HTTPException:
+            idempotency.release(live.operation_key)          # nothing started: the key is free again
+            raise
+        return {'run_id': run_id}
+
+    def live_request(request: Request, h: SessionHandle, phase: str):
+        """Production live admission at the API: idempotency, owner, public live and the ticket."""
+        from jobfit.live.keys import operation_key
+        from jobfit.live.operation import LiveRefused
+        from jobfit.live.quota import LiveRequest
+        try:
+            op = operation_key(request.headers.get('idempotency-key') or '')
+        except ValueError as exc:
+            raise HTTPException(422, str(exc))
+        owner = deps.ingress.is_owner(request.headers.get(OWNER_TOKEN_HEADER))
+        if not owner:
+            if not deps.public_live:
+                raise HTTPException(503, PUBLIC_LIVE_OFF_MESSAGE)
+            # D-096: the ticket is consumed by the parse; a recommendation needs the session's ticket.
+            # The public parse is not wired before the Phase 3 consent adapter, so none exists yet.
+            raise HTTPException(403, 'ticket_required')
+        try:
+            entry, new = idempotency.claim(op, h.session_id, phase)
+        except LiveRefused as exc:
+            raise HTTPException(exc.status, exc.code)
+        if not new:
+            return {'run_id': entry.run_id, 'duplicate': True}
+        return LiveRequest(operation_key=op, owner=owner, session_id=h.session_id, run_id=entry.run_id,
+                           ip_pseudonym=deps.ingress.ip_pseudonym(request.headers.get(CLIENT_IP_HEADER)))
 
     @app.get('/recommendations/{run_id}')
     def poll(run_id: str, h: SessionHandle = Depends(handle)):
@@ -328,6 +406,8 @@ def create_app(deps: AppDeps) -> FastAPI:
             raise HTTPException(404, 'Unknown demo CV')
         if not deps.live_enabled or deps.analyze_pasted is None:
             raise HTTPException(503, LIVE_OFF_MESSAGE)
+        if deps.ingress is not None:
+            raise HTTPException(503, ANALYZE_CLOSED_MESSAGE)
 
         def work(state: _Run) -> dict:
             r = deps.analyze_pasted(cv, text)

@@ -122,9 +122,11 @@ with demo_tab:
     with st.expander('Show CV text'):
         st.text(next(c['text'] for c in cvs if c['cv_id'] == chosen))
     if st.button('Find matching jobs'):
+        import uuid
+        action_key = str(uuid.uuid4())       # one key per click; a retry of this action reuses it
         try:
             run_id = call(api.start_run, chosen, seniority, filters if live_mode else None,
-                          mode='live' if live_mode else 'saved')
+                          mode='live' if live_mode else 'saved', action_key=action_key)
         except ApiError as exc:
             st.error(exc.detail)
             st.stop()

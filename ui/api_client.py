@@ -1,7 +1,14 @@
-"""Small HTTP client for the JobFit API. The UI holds no business logic."""
+"""Small HTTP client for the JobFit API. The UI holds no business logic.
+
+Production contract (CP3 Phase 2B, D-101): every request carries the internal service token
+(JOBFIT_INTERNAL_TOKEN in the UI container) and the normalized client IP taken from the header
+Caddy sets; a live run carries one idempotency key per user action, reused by any retry of that
+action. The Caddy header and how Streamlit reads it are a deployment detail, validated there.
+"""
 from __future__ import annotations
 
 import os
+import uuid
 
 import httpx
 
@@ -13,13 +20,24 @@ class ApiClient:
         self.base_url = base_url
         self.http = http or httpx.Client(base_url=base_url, timeout=30.0)
         self.headers: dict[str, str] = {}
+        self.internal_token = os.environ.get('JOBFIT_INTERNAL_TOKEN') or None
+        self.client_ip: str | None = None
+
+    def _ingress(self) -> dict[str, str]:
+        out = {}
+        if self.internal_token:
+            out['X-JobFit-Internal-Token'] = self.internal_token
+        if self.client_ip:
+            out['X-JobFit-Client-IP'] = self.client_ip
+        return out
 
     def start_session(self) -> None:
-        s = self.http.post('/session').json()
+        s = self.http.post('/session', headers=self._ingress()).json()
         self.headers = {'X-Session-Id': s['session_id'], 'X-Session-Token': s['token']}
 
-    def _call(self, method: str, path: str, **kw):
-        r = self.http.request(method, path, headers=self.headers, **kw)
+    def _call(self, method: str, path: str, extra_headers: dict | None = None, **kw):
+        headers = {**self._ingress(), **self.headers, **(extra_headers or {})}
+        r = self.http.request(method, path, headers=headers, **kw)
         if r.status_code >= 400:
             detail = r.json().get('detail') if r.headers.get('content-type', '').startswith('application/json') else r.text
             raise ApiError(r.status_code, str(detail))
@@ -37,9 +55,12 @@ class ApiClient:
     def consent(self, digest: str):
         return self._call('POST', '/cv/consent', json={'digest': digest, 'affirmative': True})
 
-    def start_run(self, cv_id: str, seniority_rule: bool, filters: dict | None = None, mode: str = 'saved'):
+    def start_run(self, cv_id: str, seniority_rule: bool, filters: dict | None = None, mode: str = 'saved',
+                  action_key: str | None = None):
+        """``action_key``: one UUIDv4 per user action; pass the same key again to retry that action."""
         body = {'demo_cv_id': cv_id, 'seniority_rule': seniority_rule, 'mode': mode, **(filters or {})}
-        return self._call('POST', '/recommendations', json=body)['run_id']
+        extra = {'Idempotency-Key': action_key or str(uuid.uuid4())} if mode == 'live' else None
+        return self._call('POST', '/recommendations', extra_headers=extra, json=body)['run_id']
 
     def poll(self, run_id: str):
         return self._call('GET', f'/recommendations/{run_id}')

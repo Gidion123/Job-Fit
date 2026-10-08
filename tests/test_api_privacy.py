@@ -41,6 +41,7 @@ def app(run=fake_rec, store=None, **kw):
     def spy(*a, **k):
         calls.append(1)
         return run(*a, **k)
+    kw.setdefault('live_enabled', True)
     deps = AppDeps(store=store or SessionStore(), demo_cvs={'CV1': CV}, run=spy, sweep_seconds=None, **kw)
     return TestClient(create_app(deps)), deps, calls
 

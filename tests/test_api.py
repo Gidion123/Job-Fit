@@ -32,7 +32,7 @@ def fake_rec(cv, seniority, on_result, filters=None):
 
 
 def make(run=fake_rec, saved_demo=None):
-    deps = AppDeps(store=SessionStore(), demo_cvs={'CV1': CV}, run=run,
+    deps = AppDeps(store=SessionStore(), demo_cvs={'CV1': CV}, run=run, live_enabled=True,
                    job_meta={'A': {'title': 'Junior DS', 'company': 'X'}}, sweep_seconds=None,
                    saved_demo=saved_demo)
     client = TestClient(create_app(deps))

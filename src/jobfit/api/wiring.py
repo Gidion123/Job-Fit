@@ -6,6 +6,12 @@ synthetic CV1 and CV2 with the parse that the CP2.3 runs used, and their cached
 query embeddings (no embedding call). Matching calls Sol through the runtime
 client, so each demo run costs money (about US$0.55 for K=20) and is counted by
 the project budget guard.
+
+Production (JOBFIT_ENV=prod, CP3 Phase 2B, D-101): every live operation goes through the Phase 2B
+runtime (reservation, correlated ledger, phase-scoped gate) with the production settings'
+client_settings(); there is no fallback to the development wiring. With the accepted bounds a
+recommendation (US$84.30) is refused at the US$2/day cap, pasted-JD analysis stays closed, and
+public live stays off: the deployment is dark.
 """
 from __future__ import annotations
 
@@ -75,7 +81,24 @@ def live_enabled() -> bool:
     return get_production_settings().live_enabled
 
 
+def build_runtime(settings):
+    """The Phase 2B runtime for prod live; startup reconciliation of expired, unowned reservations."""
+    from jobfit.live.operation import LiveRuntime
+    from jobfit.llm.phase_bounds import compute_phase_bounds
+    runtime = LiveRuntime(settings, compute_phase_bounds(), pipeline_config=CONFIG,
+                          client_factory=lambda op: build_runtime_client(settings.client_settings(), CONFIG,
+                                                                         run_id=op))
+    try:
+        runtime.reconcile()
+    except Exception:
+        pass        # admission still decides from persisted state (any open reservation refuses)
+    return runtime
+
+
 def build_deps() -> AppDeps:
+    settings = get_production_settings()
+    prod = settings.environment == 'prod'
+    runtime = build_runtime(settings) if prod and settings.live_enabled else None
     config = RecommendConfig.from_yaml(CONFIG)
     features = _features()
     dev = set((REPO_ROOT / 'evals/splits/dev_job_ids.txt').read_text().split())
@@ -89,8 +112,8 @@ def build_deps() -> AppDeps:
     live_state: dict = {}
     lock = threading.Lock()
 
-    def live():
-        """Built on the first live run only: DB, tokenizer, query cache and model client."""
+    def live_inputs():
+        """Built on the first live run only: DB, tokenizer, query cache and (dev only) model client."""
         if not live_enabled():
             raise LiveUnavailable('Live analysis is switched off in this deployment')
         with lock:
@@ -109,25 +132,34 @@ def build_deps() -> AppDeps:
                     queries[cv] = (keyword.cv_skills(text), dense.QueryEmbedding(spec.profile_id, cache.get(spec, doc)))
             except (OSError, ValueError, KeyError) as exc:
                 raise LiveUnavailable(f'Local retrieval inputs are missing: {type(exc).__name__}') from exc
-            live_state.update(spec=spec, queries=queries,
-                              client=build_runtime_client(get_settings(), CONFIG, run_id='app_demo'))
+            live_state.update(spec=spec, queries=queries)
+            if not prod:      # development only; prod builds one reserved client per operation
+                live_state['client'] = build_runtime_client(get_settings(), CONFIG, run_id='app_demo')
             return live_state
 
-    def run(cv: ParsedCV, seniority_enabled: bool, on_result, filters: JobFilters | None = None):
+    def run(cv: ParsedCV, seniority_enabled: bool, on_result, filters: JobFilters | None = None, live=None):
         from jobfit.db.session import connect
-        state = live()
+        if prod and (runtime is None or live is None):
+            raise LiveUnavailable('production live runs only through the Phase 2B runtime')
+        state = live_inputs()
         filtered = filter_jobs(target, filters or JobFilters(), analysis_date=analysis_date)
         eligible = list(filtered.eligible_ids)
-        stage1 = []
-        if eligible:
-            skills, query = state['queries'][cv.profile.cv_id]
-            with connect() as conn:
-                retrieve = hybrid_retriever(conn, skills, query, state['spec'], job_ids=eligible)
-                stage1 = retrieve(min(config.stage1_candidate_depth, len(eligible)))
-        return recommend(cv, retrieve=lambda depth: stage1[:depth], buckets=buckets,
-                         extraction_for=lambda j: extraction_from_record(_extraction_record(j)),
-                         client=state['client'], config=config, seniority_enabled=seniority_enabled,
-                         on_result=on_result, filtered=filtered, history_confirmed=DEMO_HISTORY_CONFIRMED)
+
+        def pipeline(client):
+            stage1 = []
+            if eligible:
+                skills, query = state['queries'][cv.profile.cv_id]
+                with connect(settings.database_url if prod else None) as conn:
+                    retrieve = hybrid_retriever(conn, skills, query, state['spec'], job_ids=eligible)
+                    stage1 = retrieve(min(config.stage1_candidate_depth, len(eligible)))
+            return recommend(cv, retrieve=lambda depth: stage1[:depth], buckets=buckets,
+                             extraction_for=lambda j: extraction_from_record(_extraction_record(j)),
+                             client=client, config=config, seniority_enabled=seniority_enabled,
+                             on_result=on_result, filtered=filtered, history_confirmed=DEMO_HISTORY_CONFIRMED)
+        if prod:
+            result, _ = runtime.run('recommendation', live.operation_key, pipeline)
+            return result
+        return pipeline(state['client'])
 
     client_state: dict = {}
 
@@ -169,9 +201,14 @@ def build_deps() -> AppDeps:
                       'history_confirmed': DEMO_HISTORY_CONFIRMED,
                       'note': 'Synthetic demo CV; work history is complete by design, so it counts as confirmed.'}
                  for cv, p in demo.items()}
+    ingress = None
+    if prod:
+        from jobfit.live.quota import Ingress
+        ingress = Ingress(settings.internal_token, settings.owner_token, settings.ip_hmac_key)
     return AppDeps(store=SessionStore(), demo_cvs=demo, run=run, job_meta=meta, saved_demo=load_saved_demo(),
-                   live_enabled=live_enabled(), analyze_pasted=analyze_pasted, jobs=jobs,
-                   demo_summaries=summaries, analyzed_k=config.stage1_k)
+                   live_enabled=settings.live_enabled, analyze_pasted=None if prod else analyze_pasted, jobs=jobs,
+                   demo_summaries=summaries, analyzed_k=config.stage1_k, ingress=ingress,
+                   public_live=settings.public_live)
 
 
 def create_default_app():

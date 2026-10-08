@@ -93,3 +93,25 @@ def test_streamlit_full_saved_demo_flow_against_real_wiring(monkeypatch):
     assert not at.exception
     assert any('Never add a skill' in c.value for c in at.caption)
     assert any('searchable postings' in m.value for m in at.markdown)
+
+
+def test_client_sends_the_ingress_headers_and_one_key_per_live_action(monkeypatch):
+    import uuid as _uuid
+    from tests.test_live_api import OWNER, TOKEN, make as make_prod
+    test_client, calls = make_prod()
+    monkeypatch.setenv('JOBFIT_INTERNAL_TOKEN', TOKEN)
+    api = ApiClient(http=test_client)
+    api.client_ip = '203.0.113.5'
+    api.start_session()
+    api.headers['X-JobFit-Owner-Token'] = OWNER      # owner transport is a CP3.3 UI detail
+    key = str(_uuid.uuid4())
+    first = api.start_run('CV1', True, mode='live', action_key=key)
+    assert api.start_run('CV1', True, mode='live', action_key=key) == first      # a retry: same run
+    for _ in range(300):
+        if api.poll(first)['status'] != 'running':
+            break
+        time.sleep(0.01)
+    assert len(calls) == 1 and calls[0].operation_key == 'idem:' + key
+    monkeypatch.delenv('JOBFIT_INTERNAL_TOKEN')
+    with pytest.raises(KeyError):            # without the internal token the API answers 401
+        ApiClient(http=test_client).start_session()

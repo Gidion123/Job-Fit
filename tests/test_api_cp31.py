@@ -29,6 +29,7 @@ def pasted_fake(cv, text):
 
 
 def make(store=None, **kw):
+    kw.setdefault('live_enabled', True)
     deps = AppDeps(store=store or SessionStore(), demo_cvs={'CV1': CV}, run=fake_rec, sweep_seconds=None,
                    jobs=JOBS, analyze_pasted=pasted_fake, demo_summaries={'CV1': {'parse_status': 'ok'}},
                    analyzed_k=10, **kw)

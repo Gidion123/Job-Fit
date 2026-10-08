@@ -304,7 +304,8 @@ The recovery helper refuses any failure that is not a timeout, so it cannot retr
 - **What happens:** `OpenRouterClient.chat_structured` holds an exclusive file lock (`ledger.exclusive()`, `fcntl.flock`) for the whole network call (`src/jobfit/llm/client.py:110-112`), and `RuntimeClient` does not override it. So the 10 matching workers in `recommend()` (`src/jobfit/recommend/service.py:200`) queue on the lock. The CP2.4 test scripts used `CappedClient` with real parallelism, so the app's live latency is probably closer to the sum of the per-job times than to their maximum.
 - **Effect:** impact on wall time not measured yet. It is not claimed to explain the mentor's 95 s figure. No CP2 result changes; CP2.4 ran in parallel through the scripts.
 - **Fix (CP3.1, planned):** a non-frozen concurrency-safe app client with budget reservations (D-096, D-097), proven first offline with a fake SDK (serial versus concurrent, identical outputs), then measured live.
-- **Status:** OPEN.
+- **Progress (8 Oct 2026, CP3 Phase 2B, D-101):** the production runtime calls the frozen attempt directly, without the whole-call lock, with per-attempt correlation and short synchronized ledger I/O. Fake-SDK tests show overlapping calls, identical serial and concurrent outputs, and request arguments identical to the frozen path (commit `52ff892`). The development wiring is unchanged, and live latency is not measured yet (CP3.4).
+- **Status:** OPEN (fixed offline in the production runtime; live measurement pending).
 
 ### FAIL-37. The upload screen says names are masked, but uploads get no name or address masking
 
@@ -333,4 +334,5 @@ The recovery helper refuses any failure that is not a timeout, so it cannot retr
     - wiring the live client to `client_settings()` (it still uses `get_settings()`);
     - daily-cap enforcement with persisted reservations;
     - the per-IP ticket and the global live gate.
+- **Progress (8 Oct 2026, CP3 Phase 2B, D-101):** in `prod`, every live operation now runs through the dark runtime with `client_settings()`: persisted reservations under the US$2/day cap and the lifetime hard stop, the phase-scoped gate with a persisted backstop, the per-IP ticket, the internal token and the owner override; `AppDeps.live_enabled` defaults to off (commits `44f93b2` to `a38db69`). Still missing: the production ledger volume (deployment).
 - **Status:** OPEN.

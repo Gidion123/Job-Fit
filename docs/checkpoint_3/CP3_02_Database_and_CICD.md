@@ -265,7 +265,10 @@ The pins were generated on PostgreSQL 16 and match PostgreSQL 17 exactly:
 | Quota | Two concurrent ticket consumptions for one IP: exactly one succeeds, both from no row and from a row older than 24 hours |
 | Downgrade | Refused without the flag and under `JOBFIT_ENV=prod`; with the flag, `0002 → 0001 → base → head` returns to the pinned schemas |
 
-### Recorded for Phase 2B (not implemented)
+### Recorded for Phase 2B (implemented 8 Oct, D-101)
+
+The notes below are the original plan. The implementation ([CP3.1 report](CP3_01_FastAPI_Service.md#results-8-oct-2026-phase-2b-dark-safety-layer), D-101) follows them with these accepted refinements: any `reserved` row refuses a new admission (persisted gate backstop), earlier-day rows that crossed today's start count for the whole day, the lifetime limit counts recorded spend plus open reservations plus the new bound, every production ledger line carries `operation_key` and `attempt_id` and is paired with a durable intent written before the SDK call, and the ticket is consumed at the first billable call itself.
+
 
 - **Admission:** `settled_spend_today + outstanding + new_bound <= daily cap`, under a transaction-level advisory lock.
   - Outstanding counts:
@@ -311,4 +314,4 @@ The pins were generated on PostgreSQL 16 and match PostgreSQL 17 exactly:
   - It builds its reference in a separate scratch database on the same server, created and dropped by `verify`, which needs the CREATEDB privilege.
   - The CP2 database itself is not modified.
 - There is no production database, backup or restore yet.
-- The sync, the seed command, the extraction-cache provider and all Phase 2B runtime work are still to do.
+- The sync, the seed command and the extraction-cache provider are still to do. The Phase 2B runtime is implemented (8 Oct, dark; D-101); the production ledger volume belongs to the deployment.

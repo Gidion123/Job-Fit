@@ -4,7 +4,7 @@
 **Bootcamp checkpoint:** 15. Deployment API menggunakan Flask/FastAPI · official date 5 Oct 2026  
 **JobFit version of this checkpoint:** FastAPI (Flask is not used).  
 **Planned work:** 5 Oct 2026 · **Actual:** 6 Oct 2026  
-**Status:** PARTIAL · demo-CV flow DONE LOCALLY (6 Oct); public live path and safety controls PLANNED / NOT YET VALIDATED (D-095 to D-097) · design basis: System Design v1.3
+**Status:** PARTIAL · demo-CV flow DONE LOCALLY (6 Oct); Phase 2B dark cost-safety layer DONE (8 Oct, D-101; local and CI only); public live path PLANNED and public live BLOCKED by the D-096 bound · design basis: System Design v1.3
 
 > Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
 
@@ -63,7 +63,7 @@
 - **Failures:** FAIL-36, FAIL-37 and FAIL-38 are OPEN and are fixed in this stage; FAIL-38 is partly addressed in Phase 2A. FAIL-35 was resolved in Phase 1.
 - **Acceptance:** see the master plan, CP3.1 points 5 and 10.
 - **Limitations:** one API process with in-memory sessions; latency is not claimed until measured.
-- **Status:** PARTIAL. Phase 1 is done (FAIL-35 resolved). Phase 2A (fail-closed settings and phase bounds) is done and was corrected after the 8 Oct review; see "Results (7 Oct 2026, Phase 2A)" below. The full bound is above the cap, so public live is not eligible. Next: a decision by Dion and Codex, then Phase 2B.
+- **Status:** PARTIAL. Phase 1 is done (FAIL-35 resolved). Phase 2A (fail-closed settings and phase bounds) is done and was corrected after the 8 Oct review; see "Results (7 Oct 2026, Phase 2A)" below. The full bound is above the cap, so public live is not eligible. Next: a decision by Dion and Codex, then Phase 2B. Phase 2B (the dark cost-safety runtime, D-101) is done; see "Results (8 Oct 2026, Phase 2B dark safety layer)" below. Public live stays blocked by the D-096 bound.
 
 ## 1. Goal of this stage
 
@@ -295,3 +295,60 @@ Codex reviewed the first version. A read-only investigation (frozen code driven 
   - the `AppDeps.live_enabled` default (`True` in `src/jobfit/api/main.py`; production wiring always passes `live_enabled()`).
 
 All of these are Phase 2B. The Alembic schema they need (`budget_reservations`, `live_quota`) exists since 8 Oct ([CP3.2 report](CP3_02_Database_and_CICD.md#results-8-oct-2026-alembic-00010002)).
+
+## Results (8 Oct 2026, Phase 2B dark safety layer)
+
+Local and CI only, with fake SDKs: no paid call, nothing deployed, no D-087 frozen file changed (freeze verify `"ok": true`), no migration change. The decision is [D-101](../decisions.md).
+
+**Status: dark, fail-closed safety layer DONE. Public live stays BLOCKED by the current D-096 bound** (`full_analysis_upper_bound` US$84.7704449 > US$2/day; `public_live_eligible` false). Under the real configuration a parse passes admission, but `/cv/parse` stays unwired until the Phase 3 consent adapter; a recommendation (US$84.2988050) is always refused with `budget`, owner included; `/analyze` is closed in production. No paid production path is enabled.
+
+### What was built (commits `44f93b2`, `52ff892`, `7d0715b`, `a38db69`)
+
+New non-frozen package `src/jobfit/live/`:
+
+| Module | Responsibility |
+| --- | --- |
+| `keys.py` | 64-bit advisory keys (live gate, budget lock, per-operation owner lock); `idem:` + canonical UUIDv4 operation keys |
+| `deadlines.py` | Per-call wall W (frozen timeout + 30 s) and the operation horizon from the reachable Phase 2A call model: parse 660 s (window 720 s), recommendation 24,990 s (window 25,050 s) |
+| `budget_store.py` | Admission under the budget lock: duplicate key, **any open reservation refuses** (persisted gate backstop), untrusted evidence, the daily cap with cross-midnight carry-over, the lifetime hard stop (recorded spend + open liability + new bound); settlement and release; unknown COMMIT outcomes reported, never guessed |
+| `evidence.py` | Durable intent journal, correlated production ledger (frozen format + `operation_key` + `attempt_id`, short synchronized I/O), breach marker, per-attempt settlement |
+| `reserved_client.py` | The D-097 concurrency-safe client: one frozen `RuntimeClient` per operation with only that instance's `guard` and `ledger` rebound; calls go straight to the frozen `_chat_attempt`/`_embed_attempt` (no whole-call lock: FAIL-36), are checked against the modelled attempt, the phase and the horizon, and carry a call-scoped attempt context; fatal, sticky `RuntimeError` refusals |
+| `operation.py` | The runner: phase-scoped gate, preflight, reconciliation of expired unowned rows, owner lock, admission, watchdog, drain, settlement; the idempotency registry |
+| `quota.py` | The per-IP ticket (one conditional upsert, 48 h retention), IP HMAC (IPv6 by /64), constant-time token checks, the session rate limit (10 new sessions per IP pseudonym per hour, in memory) |
+
+API (`src/jobfit/api/main.py`, `wiring.py`) and UI client:
+- in `prod`, every route but `/health` needs the internal service token; the client IP is accepted only with it; `POST /session` is rate-limited;
+- a live recommendation needs an `Idempotency-Key`: a retry gets the same run, another session or phase gets 409;
+- the owner token bypasses only the ticket; non-owner live needs public live and the parse ticket, so it is refused for now;
+- `prod` live runs only through the runtime with `ProductionSettings.client_settings()` (production ledger and lifetime budgets); `dev` keeps the CP2 behaviour;
+- `AppDeps.live_enabled` now defaults to off;
+- the UI client sends the token, the client IP and one key per user action.
+
+### Evidence and settlement rules
+
+- No provider call without a durable intent; an attempt is in flight only once its intent is durable and is closed exactly once.
+- A ledger line wins over its intent (no double counting). An intent with no line counts its upper bound and is uncertain. Released only with zero spend, nothing uncertain and every intent ledgered; otherwise settled. A provider exception never leads to a release.
+- Duplicate, orphan, unattributed, torn or corrupt evidence fails closed: no settlement, no admission.
+- A reported cost above the intent's upper bound is kept (never clamped), settled at full value, and writes the breach marker.
+
+### Test results
+
+- **Offline** (every CI run): `tests/test_live_unit.py` (38: keys, derived windows, correlation under out-of-order concurrent completion, serial and concurrent outputs identical, request kwargs byte-identical to the frozen path, sticky fatal refusals including the frozen Luna fallback refused with 0 SDK calls after a Sol intent failure, corrupt-ledger normalization with no validation repair, quota outcomes, horizon, phase and model refusals, ledger-write and `done` failures, the evidence rules, synchronized I/O under concurrent reads), `tests/test_live_api.py` (16: ingress, rate limit, IP pseudonyms, owner-only dark live, idempotency, closed `/analyze`, prod wiring with no development fallback) and one UI-client test.
+- **Database-gated** (CI `db-migrations` job): `tests/test_live_db.py` (22: real bounds admit parse and refuse recommendation at US$2, inclusive cap boundary, the open-row backstop, global key conflicts, lifetime formula, carry-over, admission time after the lock, settlement, concurrency, the ticket, ambiguous commits) and `tests/test_live_runtime_db.py` (12: the runner end to end, the gate between operations, a lost coordinator never letting a second operation overlap, the watchdog, an unwritable breach marker, restart idempotency, ambiguous admission and settlement commits).
+- **Local totals:** default suite 865 passed, 122 skipped (the gated tests), 0 failed; gated matrix 126 passed on PostgreSQL 16.15 (92 migration + 34 live); ruff clean; freeze verify `"ok": true`.
+
+### Manual review of a breach marker
+
+A breach marker (`<JOBFIT_USAGE_LEDGER>.breach.jsonl`), an unreadable or corrupt ledger or journal, or a `reserved` row that cannot be reconciled stops all live admission. Clearing it is a manual, recorded procedure:
+1. Keep the app running in its dark state (no admission happens anyway). Copy the ledger, the intent journal and the breach file aside, read-only.
+2. Read the breach rows (reason, operation key, attempt id) and the matching ledger lines and intents. Compare the reported cost with the OpenRouter production-key activity for that request.
+3. Settle every affected open reservation from that evidence only (`jobfit.live.budget_store.close` in a reviewed one-off session; never release unless zero spend is proven), and record the case in `docs/failures.md`.
+4. Never edit or truncate the authoritative ledger. A torn final line is moved to a separate quarantine file only after step 2, with its hash recorded.
+5. Move the breach file aside (renamed with the date) only after the review is recorded. Admission resumes on its own once no breach file exists and the evidence parses.
+
+### Findings and not done yet
+
+- **Finding:** the frozen `RuntimeClient` adapter has no `embeddings` endpoint, so the Phase 3 runtime query embedding must wrap the base frozen `OpenRouterClient` (as the embedding test does).
+- The production ledger volume (FAIL-38) is a deployment item; the variables are documented in `.env.example`.
+- The Caddy header and the Streamlit header access are deployment details: client-IP provenance is not claimed end to end until the deployed Caddy validation passes.
+- The public parse (consent adapter), runtime embedding, the extraction cache and live latency measurement are Phase 3 and CP3.4 work. The idempotency registry and the session rate limit are in memory (one API process).

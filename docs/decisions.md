@@ -126,6 +126,7 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-098 | 7 Oct 2026 | Mutable production job corpus: twice-monthly JSearch sync, dedupe, lifecycle, lazy extraction cache, minimal Alembic baseline | Approved by Dion and Codex; Alembic 0001/0002 implemented 8 Oct (schema only) and independently verified and closed at `ac30594`; Dion's local CP2 database not yet verified; sync and seed planned |
 | D-099 | 7 Oct 2026 | CP3 observability: Prometheus and Grafana with email alerts, Langfuse Cloud (Japan) metadata only | Approved by Dion and Codex; planned |
 | D-100 | 7 Oct 2026 | CP3 evaluation obligations and feature freeze: D-045 to be completed with option B, PR-10, freeze at the end of 9 Oct | Approved by Dion and Codex; planned, not completed |
+| D-101 | 8 Oct 2026 | Phase 2B dark runtime safety semantics: safety layer built while public live stays blocked by the D-096 bound | Approved by Dion and Codex; implemented 8 Oct (dark, local and CI only) |
 
 ---
 
@@ -1515,3 +1516,21 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
   - Later paid inference is about US$0.10, inside the US$5 validation budget.
   - **Phase 0 stop condition:** if 2 eligible unseen test JDs and 1 eligible unseen CV3 pair could not be verified, the work stops and is reported; no seen item is used, no non-blind item is substituted, and D-045 is not redefined. Phase 0 found eligible candidates (see the [CP3.5 report](checkpoint_3/CP3_05_Final_Presentation_and_Portfolio.md)).
 - **Status:** Approved. PLANNED / NOT YET COMPLETED.
+
+## D-101. Phase 2B dark runtime safety semantics
+
+- **Date/source:** 8 October 2026. Dion and Codex accepted the Phase 2B plan after four review rounds (B1 resolved for the safety layer only).
+- **Dark, fail-closed safety layer (resolves B1 for implementation only):**
+  - The US$2/day cap, the Phase 2A bounds (parse US$0.4716399, recommendation US$84.2988050, full US$84.7704449), the model, prompt, K, retrieval and scoring stay unchanged. The owner token never bypasses the cap.
+  - Under the real configuration a parse passes admission, a recommendation is always refused (`budget`), `JOBFIT_PUBLIC_LIVE` stays off and `public_live_eligible` stays false. Tests use isolated caps and fake SDKs only.
+  - **The public-live release stays blocked by the current D-096 bound.** Unblocking it needs a separate explicit decision.
+- **Gate:** "one live analysis at a time" means at most one billable live phase operation (one parse or one recommendation) at a time, never held across user think-time; calls inside one recommendation may run concurrently. The advisory lock is the fast mutex; the persisted backstop is authoritative: any `reserved` row refuses every new admission until it is settled or released (over-blocking and manual review are intended).
+- **`/analyze`:** pasted-JD analysis stays closed in production live. No new reservation phase, no `0003`; a future bound needs its own decision.
+- **Cross-midnight:** an earlier-day reservation whose possible activity window crossed today's Jakarta start counts for the whole day at its reserved (open) or settled amount. This is stronger than `active_until > now()`.
+- **Ticket:** one ticket is the full CV-analysis allowance and is consumed by one conditional upsert at the first billable call of an ordinary public parse. **Ticket window (a narrow clarification of D-096 for the unavoidable post-quota, pre-provider window; D-096 itself is unchanged):** once the quota transaction has provably committed, the ticket stays consumed even if a local failure or crash happens before the SDK call. There is no refund. The provider is never called after such a failure, and the reservation is settled or released only from actual evidence (no intent and no ledger line: released; an intent without a ledger line: settled at its upper bound).
+- **Evidence:** no provider call without a durable intent. Every production ledger line carries `operation_key` and `attempt_id`. A ledger line wins over its intent; a missing line counts the intent's upper bound; duplicate, orphan, unattributed, torn or corrupt evidence fails closed for manual review; a reported cost above the upper bound is never clamped, is settled at full value and writes a durable breach marker that blocks admission. The ledger is never edited automatically.
+- **Unknown outcomes fail closed:** an unknown quota COMMIT means no provider call and no repeated consume; an unknown admission COMMIT means the pipeline is not entered and a retry is resolved by the global operation key (`idem:` + UUIDv4); an unknown settlement COMMIT means a re-read on a new connection or the reconciler, never a blind retry.
+- **Fatal refusals:** every Phase 2B safety refusal is a `RuntimeError`, operation-fatal and sticky, so the frozen repair, continuation and Luna fallback never reach the SDK after one. Genuine provider or model failures keep the frozen, modelled behaviour.
+- **Deadlines and watchdog:** per-call wall W = frozen timeout + 30 s; horizon = Σ W over the reachable call model + orchestration (120 s parse, 600 s recommendation); `active_until` = admission time + horizon + 60 s (parse 720 s, recommendation 25 050 s). These are operating thresholds, not proofs that a request terminates. The watchdog detects a call past W, sets the operation fatal and writes the breach marker; it does not cancel the call. If the marker cannot be written, the reservation stays open and admission is disabled.
+- **Environments:** `JOBFIT_ENV=dev` keeps the CP2 local behaviour; every `prod` live operation uses the Phase 2B runtime with no fallback.
+- **Status:** Approved. Implemented 8 Oct 2026 (dark; local and CI only; nothing deployed). Evidence: [CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-phase-2b-dark-safety-layer).

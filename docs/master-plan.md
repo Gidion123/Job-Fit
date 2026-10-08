@@ -16,7 +16,7 @@ Everything below for CP3.1-CP3.7 is **PLANNED** unless a line says it is done lo
 
 | Stage (official name) | JobFit scope | Status |
 | --- | --- | --- |
-| CP3.1 API Deployment with FastAPI | Public live API, safety controls and instrumentation | PARTIAL: demo flow done locally; Phase 2A fail-closed settings and phase bounds done (7 Oct; the full bound is above the US$2/day cap, so public live is not eligible); public path PLANNED |
+| CP3.1 API Deployment with FastAPI | Public live API, safety controls and instrumentation | PARTIAL: demo flow done locally; Phase 2A fail-closed settings and phase bounds done (7 Oct; the full bound is above the US$2/day cap, so public live is not eligible); Phase 2B dark cost-safety runtime done (8 Oct, D-101); public path PLANNED |
 | CP3.2 Database Integration and CI/CD | Production corpus, job sync, VPS and delivery | PARTIAL: CI green after Phase 1 (FAIL-35 resolved); Alembic `0001`/`0002` done with migration tests (8 Oct); not deployed |
 | CP3.3 Streamlit UI | Public upload flow, waiting experience and coach | PARTIAL: demo flow done locally |
 | CP3.4 End-to-End Testing | Deployed validation, privacy release gate and feature freeze | PARTIAL: local 27/27; deployed checks PLANNED |
@@ -568,6 +568,7 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
    - DONE (7 Oct, Phase 2A; corrected 8 Oct): fail-closed settings and the deterministic phase bounds. The full bound (US$84.7704449) is above the US$2/day cap, so public live is not eligible. The live client is not yet wired to `client_settings()` (Phase 2B).
    - PLANNED / NOT YET VALIDATED: the rest of the public live path and the safety controls.
    - Next: Dion and Codex decide on the bound result, then Phase 2B (reservations, quota, upload hardening, adapter). The Alembic schema it needs is in place (CP3.2, 8 Oct).
+   - DONE (8 Oct, Phase 2B, D-101): the dark, fail-closed cost-safety runtime (reservations, correlated ledger, phase-scoped gate, ticket, internal token, owner override, idempotency). A recommendation is refused at the US$2/day cap; public live stays blocked by the D-096 bound ([results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-phase-2b-dark-safety-layer)). Upload hardening and the consent adapter remain.
 10. **Definition of Done.**
     - All P0 items implemented with their tests.
     - Offline suite: 0 unexpected failures.

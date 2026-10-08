@@ -4,6 +4,7 @@ Keys are never printed, logged, or written anywhere else. repr() hides them.
 """
 from __future__ import annotations
 
+import math
 import os
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -97,16 +98,55 @@ def _money(env, name: str) -> float:
         value = float(raw)
     except ValueError:
         raise ConfigurationError(f'{name} must be a number') from None
-    if not (value > 0 and value != float('inf')):
+    return _check_money(value, name)
+
+
+def _check_money(value, name: str) -> float:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ConfigurationError(f'{name} must be a number')
+    if not (value > 0 and math.isfinite(value)):
         raise ConfigurationError(f'{name} must be finite and greater than 0')
     return value
 
 
-def _secret(env, name: str) -> str:
-    value = env.get(name) or ''
-    if len(value) < MIN_SECRET_LENGTH:
+def _check_secret(value, name: str) -> None:
+    if not isinstance(value, str) or len(value) < MIN_SECRET_LENGTH:
         raise ConfigurationError(f'{name} must be set (at least {MIN_SECRET_LENGTH} characters)')
-    return value
+
+
+def check_production_invariants(s: 'ProductionSettings') -> None:
+    """The one set of production rules. Runs on every construction and again before eligibility."""
+    if s.environment not in ('dev', 'prod'):
+        raise ConfigurationError('JOBFIT_ENV must be dev or prod')
+    for name, flag in (('JOBFIT_LIVE_ENABLED', s.live_enabled), ('JOBFIT_PUBLIC_LIVE', s.public_live)):
+        if not isinstance(flag, bool):
+            raise ConfigurationError(f'{name} must be 0 or 1')
+    prod = s.environment == 'prod'
+    if s.public_live and not s.live_enabled:
+        raise ConfigurationError('JOBFIT_PUBLIC_LIVE=1 requires JOBFIT_LIVE_ENABLED=1')
+    if s.public_live and not prod:
+        raise ConfigurationError('JOBFIT_PUBLIC_LIVE=1 requires JOBFIT_ENV=prod')
+    if prod:
+        if not isinstance(s.database_url, str) or not s.database_url:
+            raise ConfigurationError('DATABASE_URL must be set explicitly in prod')
+        if s.database_url == Settings.database_url:
+            raise ConfigurationError('DATABASE_URL must not be the local development default in prod')
+        _check_secret(s.internal_token, 'JOBFIT_INTERNAL_TOKEN')
+    if s.live_enabled and not s.openrouter_api_key:
+        raise ConfigurationError('OPENROUTER_API_KEY must be set when live analysis is enabled')
+    if s.live_enabled and prod:
+        _check_secret(s.owner_token, 'JOBFIT_OWNER_TOKEN')
+        if Path(s.usage_ledger).resolve() == REPO_USAGE_LEDGER.resolve():
+            raise ConfigurationError('JOBFIT_USAGE_LEDGER must not be the repository development ledger')
+        daily = _check_money(s.daily_budget_usd, 'JOBFIT_DAILY_BUDGET_USD')
+        budget = _check_money(s.api_budget_usd, 'API_BUDGET_USD')
+        hard_stop = _check_money(s.api_hard_stop_usd, 'API_HARD_STOP_USD')
+        if hard_stop > budget:
+            raise ConfigurationError('API_HARD_STOP_USD must not be above API_BUDGET_USD')
+        if daily > hard_stop:
+            raise ConfigurationError('JOBFIT_DAILY_BUDGET_USD must not be above API_HARD_STOP_USD')
+    if s.public_live:
+        _check_secret(s.ip_hmac_key, 'JOBFIT_IP_HMAC_KEY')
 
 
 @dataclass(frozen=True)
@@ -126,15 +166,23 @@ class ProductionSettings:
     api_budget_usd: float = Settings.api_budget_usd
     api_hard_stop_usd: float = Settings.api_hard_stop_usd
 
+    def __post_init__(self):
+        # Direct construction and dataclasses.replace() are validated too, not only get_production_settings().
+        check_production_invariants(self)
+
     def client_settings(self) -> Settings:
-        """Settings for the frozen OpenRouter client: lifetime guard over this ledger."""
+        """Settings for the frozen OpenRouter client: lifetime guard over this ledger.
+
+        Not yet used by the live client: the API wiring still builds it from get_settings();
+        switching it to these settings is Phase 2B work.
+        """
         return Settings(openrouter_api_key=self.openrouter_api_key, database_url=self.database_url,
                         api_budget_usd=self.api_budget_usd, api_hard_stop_usd=self.api_hard_stop_usd,
                         usage_ledger=self.usage_ledger)
 
 
 def get_production_settings(env=None) -> ProductionSettings:
-    """Read and validate the production settings; raise ConfigurationError instead of guessing."""
+    """Parse the production settings from the environment; the dataclass enforces the rules."""
     if env is None:
         _load_dotenv()
         env = os.environ
@@ -144,43 +192,26 @@ def get_production_settings(env=None) -> ProductionSettings:
     prod = environment == 'prod'
     live = _flag(env, 'JOBFIT_LIVE_ENABLED')
     public = _flag(env, 'JOBFIT_PUBLIC_LIVE')
-    if public and not live:
-        raise ConfigurationError('JOBFIT_PUBLIC_LIVE=1 requires JOBFIT_LIVE_ENABLED=1')
-    if public and not prod:
-        raise ConfigurationError('JOBFIT_PUBLIC_LIVE=1 requires JOBFIT_ENV=prod')
 
     values: dict = {'environment': environment, 'live_enabled': live, 'public_live': public}
     database_url = env.get('DATABASE_URL') or ''
-    if prod:
-        if not database_url:
-            raise ConfigurationError('DATABASE_URL must be set explicitly in prod')
-        if database_url == Settings.database_url:
-            raise ConfigurationError('DATABASE_URL must not be the local development default in prod')
-        values['internal_token'] = _secret(env, 'JOBFIT_INTERNAL_TOKEN')
     if database_url:
         values['database_url'] = database_url
+    elif prod:
+        raise ConfigurationError('DATABASE_URL must be set explicitly in prod')
+    if prod:
+        values['internal_token'] = env.get('JOBFIT_INTERNAL_TOKEN') or None
     if live:
-        key = env.get('OPENROUTER_API_KEY') or ''
-        if not key:
-            raise ConfigurationError('OPENROUTER_API_KEY must be set when live analysis is enabled')
-        values['openrouter_api_key'] = key
+        values['openrouter_api_key'] = env.get('OPENROUTER_API_KEY') or None
     if live and prod:
-        values['owner_token'] = _secret(env, 'JOBFIT_OWNER_TOKEN')
+        values['owner_token'] = env.get('JOBFIT_OWNER_TOKEN') or None
         ledger = (env.get('JOBFIT_USAGE_LEDGER') or '').strip()
         if not ledger:
             raise ConfigurationError('JOBFIT_USAGE_LEDGER must be set when live analysis is enabled in prod')
-        ledger_path = Path(ledger).resolve()
-        if ledger_path == REPO_USAGE_LEDGER.resolve():
-            raise ConfigurationError('JOBFIT_USAGE_LEDGER must not be the repository development ledger')
-        values['usage_ledger'] = ledger_path
-        daily = _money(env, 'JOBFIT_DAILY_BUDGET_USD')
-        budget = _money(env, 'API_BUDGET_USD')
-        hard_stop = _money(env, 'API_HARD_STOP_USD')
-        if hard_stop > budget:
-            raise ConfigurationError('API_HARD_STOP_USD must not be above API_BUDGET_USD')
-        if daily > hard_stop:
-            raise ConfigurationError('JOBFIT_DAILY_BUDGET_USD must not be above API_HARD_STOP_USD')
-        values.update(daily_budget_usd=daily, api_budget_usd=budget, api_hard_stop_usd=hard_stop)
+        values['usage_ledger'] = Path(ledger).resolve()
+        values.update(daily_budget_usd=_money(env, 'JOBFIT_DAILY_BUDGET_USD'),
+                      api_budget_usd=_money(env, 'API_BUDGET_USD'),
+                      api_hard_stop_usd=_money(env, 'API_HARD_STOP_USD'))
     if public:
-        values['ip_hmac_key'] = _secret(env, 'JOBFIT_IP_HMAC_KEY')
+        values['ip_hmac_key'] = env.get('JOBFIT_IP_HMAC_KEY') or None
     return ProductionSettings(**values)

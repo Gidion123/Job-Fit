@@ -193,12 +193,25 @@ class PhaseBounds:
 
 
 def public_live_eligible(settings, bounds: PhaseBounds) -> bool:
-    """D-096: eligible only in complete prod public-live settings with a derived bound within the cap."""
-    if not (getattr(settings, 'public_live', False) and getattr(settings, 'environment', None) == 'prod'):
+    """D-096: eligible only in complete prod public-live settings with a derived bound within the cap.
+
+    Fails closed: any doubt returns False. The settings invariants are checked again here, so an
+    object built without validation (e.g. object.__new__) cannot pass.
+    """
+    from jobfit.config import ProductionSettings, check_production_invariants
+    if not isinstance(settings, ProductionSettings) or not isinstance(bounds, PhaseBounds):
         return False
-    if bounds.bound_basis != DERIVED or settings.daily_budget_usd is None:
+    try:
+        check_production_invariants(settings)
+    except (ConfigurationError, AttributeError, TypeError, ValueError):
         return False
-    return bounds.full_analysis_upper_bound <= Decimal(str(settings.daily_budget_usd))
+    if not (settings.live_enabled is True and settings.public_live is True and settings.environment == 'prod'):
+        return False
+    values = (bounds.parse_max, bounds.embed_max, bounds.extraction_max, bounds.matching_max, bounds.fallback_max)
+    if bounds.bound_basis != DERIVED or not all(isinstance(v, Decimal) and v.is_finite() and v >= 0 for v in values):
+        return False
+    cap = settings.daily_budget_usd   # already checked finite and > 0 by the invariants
+    return bounds.full_analysis_upper_bound <= Decimal(str(cap))
 
 
 def guard_input_bytes(messages: list[dict], output_model: type[BaseModel]) -> int:

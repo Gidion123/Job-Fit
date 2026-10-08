@@ -664,3 +664,66 @@ def test_guard_input_bytes_is_the_frozen_client_formula():
     assert pb.guard_input_bytes(messages, Out) == expected
     source = inspect.getsource(__import__('jobfit.llm.client', fromlist=['x']).OpenRouterClient._chat_attempt)
     assert 'len(json.dumps(messages, ensure_ascii=False).encode()) + len(json.dumps(schema).encode()) + 512' in source
+
+
+# --- F4: public-live eligibility fails closed ----------------------------------------------------------------
+
+def eligible_settings(tmp_path, daily='100'):
+    return get_production_settings({
+        'JOBFIT_ENV': 'prod', 'DATABASE_URL': 'postgresql://u:p@db/prod', 'JOBFIT_INTERNAL_TOKEN': 'i' * 32,
+        'JOBFIT_LIVE_ENABLED': '1', 'JOBFIT_PUBLIC_LIVE': '1', 'OPENROUTER_API_KEY': 'sk-test',
+        'JOBFIT_OWNER_TOKEN': 'o' * 32, 'JOBFIT_IP_HMAC_KEY': 'h' * 32,
+        'JOBFIT_USAGE_LEDGER': str(tmp_path / 'l.jsonl'), 'JOBFIT_DAILY_BUDGET_USD': daily,
+        'API_BUDGET_USD': '1000', 'API_HARD_STOP_USD': '900'})
+
+
+def unvalidated(settings, **changes):
+    """A ProductionSettings that never ran __init__ or __post_init__ (a genuine validation bypass)."""
+    import dataclasses
+    from jobfit.config import ProductionSettings
+    s = object.__new__(ProductionSettings)
+    for f in dataclasses.fields(ProductionSettings):
+        object.__setattr__(s, f.name, changes.get(f.name, getattr(settings, f.name)))
+    return s
+
+
+def small_bounds(**changes):
+    values = dict(parse_max=Decimal('0.1'), embed_max=Decimal('0.1'), extraction_max=Decimal('0.1'),
+                  matching_max=Decimal('0.1'), fallback_max=Decimal('0.1'), bound_basis=pb.DERIVED, config_sha256='x')
+    return pb.PhaseBounds(**{**values, **changes})
+
+
+def test_only_fully_valid_public_settings_with_a_derived_bound_within_the_cap_are_eligible(tmp_path):
+    good = eligible_settings(tmp_path)
+    assert pb.public_live_eligible(good, small_bounds()) is True
+    assert pb.public_live_eligible(unvalidated(good), small_bounds()) is True     # same values, still valid
+    assert pb.public_live_eligible(eligible_settings(tmp_path, daily='0.4'), small_bounds()) is False
+
+
+@pytest.mark.parametrize('changes', [
+    {'live_enabled': False}, {'public_live': False}, {'environment': 'dev'}, {'environment': 'production'},
+    {'live_enabled': 'yes'}, {'openrouter_api_key': None}, {'ip_hmac_key': None}, {'owner_token': None},
+    {'internal_token': 'short'}, {'database_url': ''}, {'usage_ledger': pb.REPO_ROOT / 'reports/usage/usage_ledger.jsonl'},
+    {'api_hard_stop_usd': 0.1}, {'daily_budget_usd': float('nan')}, {'daily_budget_usd': float('inf')},
+    {'daily_budget_usd': None}, {'daily_budget_usd': '100'}, {'daily_budget_usd': -1.0},
+])
+def test_unvalidated_contradictory_settings_are_never_eligible(tmp_path, changes):
+    assert pb.public_live_eligible(unvalidated(eligible_settings(tmp_path), **changes), small_bounds()) is False
+
+
+def test_incomplete_or_foreign_objects_are_never_eligible(tmp_path):
+    from jobfit.config import ProductionSettings
+
+    class Duck:
+        environment, live_enabled, public_live, daily_budget_usd = 'prod', True, True, 100.0
+    assert pb.public_live_eligible(Duck(), small_bounds()) is False
+    assert pb.public_live_eligible(object.__new__(ProductionSettings), small_bounds()) is False   # no fields set
+    assert pb.public_live_eligible(eligible_settings(tmp_path), object()) is False
+
+
+@pytest.mark.parametrize('changes', [
+    {'parse_max': Decimal('-100')}, {'matching_max': Decimal('NaN')}, {'fallback_max': Decimal('Infinity')},
+    {'extraction_max': 0.1}, {'bound_basis': pb.SUPREMUM}, {'bound_basis': 'anything'},
+])
+def test_invalid_or_supremum_bounds_are_never_eligible(tmp_path, changes):
+    assert pb.public_live_eligible(eligible_settings(tmp_path), small_bounds(**changes)) is False

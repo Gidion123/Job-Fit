@@ -145,3 +145,43 @@ def test_wiring_live_is_off_by_default_and_follows_the_settings(monkeypatch):
     monkeypatch.setenv('JOBFIT_PUBLIC_LIVE', '1')
     with pytest.raises(ConfigurationError):
         wiring.live_enabled()
+
+
+def valid_public(tmp_path):
+    return get_production_settings(live_prod_env(tmp_path, JOBFIT_PUBLIC_LIVE='1', JOBFIT_IP_HMAC_KEY='h' * 32))
+
+
+@pytest.mark.parametrize('changes, message', [
+    ({'live_enabled': False}, 'requires JOBFIT_LIVE_ENABLED=1'),
+    ({'environment': 'dev'}, 'requires JOBFIT_ENV=prod'),
+    ({'environment': 'production'}, 'JOBFIT_ENV'),
+    ({'live_enabled': 1}, 'JOBFIT_LIVE_ENABLED'),
+    ({'database_url': ''}, 'DATABASE_URL must be set'),
+    ({'database_url': Settings.database_url}, 'development default'),
+    ({'internal_token': None}, 'JOBFIT_INTERNAL_TOKEN'),
+    ({'owner_token': 'short'}, 'JOBFIT_OWNER_TOKEN'),
+    ({'openrouter_api_key': None}, 'OPENROUTER_API_KEY'),
+    ({'ip_hmac_key': None}, 'JOBFIT_IP_HMAC_KEY'),
+    ({'usage_ledger': REPO_USAGE_LEDGER}, 'repository development ledger'),
+    ({'daily_budget_usd': None}, 'JOBFIT_DAILY_BUDGET_USD'),
+    ({'daily_budget_usd': float('nan')}, 'JOBFIT_DAILY_BUDGET_USD'),
+    ({'daily_budget_usd': -1.0}, 'JOBFIT_DAILY_BUDGET_USD'),
+    ({'api_budget_usd': float('inf')}, 'API_BUDGET_USD'),
+    ({'api_hard_stop_usd': 0.1}, 'JOBFIT_DAILY_BUDGET_USD must not be above'),
+    ({'api_hard_stop_usd': 11.0}, 'API_HARD_STOP_USD must not be above'),
+])
+def test_construction_and_replace_enforce_the_invariants(tmp_path, changes, message):
+    import dataclasses
+    good = valid_public(tmp_path)
+    fields = {f.name: getattr(good, f.name) for f in dataclasses.fields(good)}
+    with pytest.raises(ConfigurationError, match=message):
+        ProductionSettings(**{**fields, **changes})          # direct construction
+    with pytest.raises(ConfigurationError, match=message):
+        dataclasses.replace(good, **changes)                 # replace() runs __post_init__ too
+
+
+def test_direct_construction_keeps_the_safe_default_and_valid_settings(tmp_path):
+    import dataclasses
+    assert ProductionSettings() == get_production_settings({})
+    good = valid_public(tmp_path)
+    assert dataclasses.replace(good) == good

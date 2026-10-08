@@ -19,7 +19,7 @@ from jobfit.live.operation import LiveRefused
 from jobfit.live.quota import Ingress
 from jobfit.llm.runtime import build_runtime_client
 from jobfit.privacy import real_cv
-from jobfit.recommend.real_cv_flow import PARSED_KEY, SEARCH_KEY
+from jobfit.recommend.real_cv_flow import PARSED_KEY, SEARCH_KEY, search_result_key, store_search_results
 from jobfit.session.store import SessionStore
 from tests.test_api import CV as DEMO_CV, fake_rec
 from tests.test_live_api import HMAC_KEY, OWNER, TOKEN
@@ -63,8 +63,10 @@ class Fakes:
 
     def real_search(self, store, handle, lease, filters, *, live):
         self.billable(live)
-        store.put(handle, lease, SEARCH_KEY, ROWS)
-        return ROWS
+        self.searches = getattr(self, 'searches', 0) + 1
+        rows = ROWS if self.searches == 1 else [dict(r, retrieval_rank=4 - r['retrieval_rank']) for r in ROWS[::-1]]
+        store_search_results(store, handle, lease, live.operation_key, rows)
+        return rows
 
     def analyze_one(self, cv, *, job_id, jd_text, live):
         assert cv.profile.is_synthetic is False or live.owner
@@ -332,3 +334,93 @@ def test_no_cv_text_in_logs_or_error_bodies(tmp_path, caplog):
         r = search(client, h, work_mode='remote')
         bad = analyze(client, h, 'NOT_IN_RESULTS')
     assert CANARY not in caplog.text and CANARY not in bad.text and CANARY not in json.dumps(r.json())
+
+
+# --- search idempotency: the action is the CV plus every normalized filter; retries replay their own result --
+
+BASE = {'role_family': 'data_science', 'country_code': 'ID', 'city': 'Medan', 'work_mode': 'remote',
+        'posted_within_days': 30, 'include_unknown': True}
+
+
+def handle_of(h):
+    from jobfit.session.store import SessionHandle
+    return SessionHandle(h['X-Session-Id'], h['X-Session-Token'])
+
+
+def parsed_session(client, owner=True):
+    h = session(client)
+    upload_and_consent(client, h)
+    assert parse(client, h, owner=owner)['status'] == 'done'
+    return h
+
+
+def test_the_same_key_and_filters_replay_the_original_results_without_a_call(tmp_path):
+    client, f, _ = make(tmp_path)
+    h, key = parsed_session(client), str(uuid.uuid4())
+    first = search(client, h, key=key, **BASE)
+    calls = len(f.provider_calls)
+    again = search(client, h, key=key, **BASE)
+    assert first.status_code == again.status_code == 200 and again.json() == first.json()
+    assert len(f.provider_calls) == calls
+
+
+@pytest.mark.parametrize('field,value', [('role_family', 'genai_llm'), ('country_code', 'SG'), ('city', 'Jakarta'),
+                                         ('work_mode', 'hybrid'), ('posted_within_days', 7),
+                                         ('include_unknown', False)])
+def test_the_same_key_with_any_changed_filter_is_refused_without_a_call_ticket_or_allowance(tmp_path, field, value):
+    client, f, _ = make(tmp_path, public=True)
+    h, key = parsed_session(client, owner=False), str(uuid.uuid4())
+    assert search(client, h, owner=False, key=key, **BASE).status_code == 200
+    calls, tickets = len(f.provider_calls), len(f.tickets)
+    remaining = client.app.state.beta_allowances.remaining(h['X-Session-Id'])
+    r = search(client, h, owner=False, key=key, **{**BASE, field: value})
+    assert (r.status_code, r.json()['detail']) == (409, 'idempotency_key_mismatch')
+    assert len(f.provider_calls) == calls and len(f.tickets) == tickets
+    assert client.app.state.beta_allowances.remaining(h['X-Session-Id']) == remaining
+
+
+@pytest.mark.parametrize('first,retry', [({'country_code': 'id'}, {'country_code': 'ID'}),
+                                         ({'city': ' Medan '}, {'city': 'medan'})])
+def test_equivalent_filters_after_normalization_replay_the_original_result(tmp_path, first, retry):
+    client, f, _ = make(tmp_path, public=True)
+    h, key = parsed_session(client, owner=False), str(uuid.uuid4())
+    original = search(client, h, owner=False, key=key, **{**BASE, **first})
+    assert original.status_code == 200
+    calls, tickets = len(f.provider_calls), len(f.tickets)
+    remaining = client.app.state.beta_allowances.remaining(h['X-Session-Id'])
+    again = search(client, h, owner=False, key=key, **{**BASE, **retry})
+    assert again.status_code == 200 and again.json() == original.json()
+    assert len(f.provider_calls) == calls and len(f.tickets) == tickets
+    assert client.app.state.beta_allowances.remaining(h['X-Session-Id']) == remaining
+
+
+def test_a_retry_returns_its_own_search_not_the_latest_one(tmp_path):
+    client, f, deps = make(tmp_path)
+    h = parsed_session(client)
+    k1, k2 = str(uuid.uuid4()), str(uuid.uuid4())
+    a = search(client, h, key=k1).json()['jobs']
+    b = search(client, h, key=k2, work_mode='remote').json()['jobs']
+    assert [j['job_id'] for j in a] != [j['job_id'] for j in b]
+    calls = len(f.provider_calls)
+    assert search(client, h, key=k1).json()['jobs'] == a                  # K1 replays A, not the later B
+    assert len(f.provider_calls) == calls
+    handle = handle_of(h)
+    lease = deps.store.consented_lease(handle)
+    assert [r['job_id'] for r in deps.store.read(handle, lease, SEARCH_KEY)] == [j['job_id'] for j in b]
+
+
+def test_an_edit_clears_the_current_and_the_per_operation_search_results(tmp_path):
+    client, f, deps = make(tmp_path)
+    h, key = parsed_session(client), str(uuid.uuid4())
+    search(client, h, key=key)
+    client.post('/cv/preview', json={'text': CV_TEXT + '\nAirflow'}, headers=h)
+    assert search(client, h, key=key).json()['detail'] == 'consent_required'
+    handle = handle_of(h)
+    text, digest = deps.store.preview(handle)
+    client.post('/cv/consent', json={'digest': digest, 'affirmative': True}, headers=h)
+    lease = deps.store.consented_lease(handle)
+    from jobfit.live.keys import operation_key
+    for k in (SEARCH_KEY, search_result_key(operation_key(key))):
+        with pytest.raises(KeyError):
+            deps.store.read(handle, lease, k)
+    assert search(client, h, key=key).status_code == 409                  # parse required again, no replay

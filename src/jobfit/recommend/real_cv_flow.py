@@ -18,7 +18,18 @@ from jobfit.privacy.real_cv import embed_consented_cv, jakarta_date, new_cv_id, 
 from jobfit.session.store import SessionDenied
 
 PARSED_KEY = 'parsed_cv'
-SEARCH_KEY = 'search_results'
+SEARCH_KEY = 'search_results'            # the current Relevant Jobs (the latest search; used by Analyze Fit)
+SEARCH_BY_OPERATION = 'search_results:'  # + the opaque operation key: that search's own results
+
+
+def search_result_key(operation_key: str) -> str:
+    return SEARCH_BY_OPERATION + operation_key
+
+
+def store_search_results(store, handle, lease, operation_key: str, results: list[dict]) -> None:
+    """Session-only: the operation's own results (for an exact retry) and the current results."""
+    store.put(handle, lease, search_result_key(operation_key), results)
+    store.put(handle, lease, SEARCH_KEY, results)
 
 
 class RealCVRefused(Exception):
@@ -84,5 +95,5 @@ def reserved_search(runtime, store, handle, lease, *, operation_key: str, spec, 
     with connect() as conn:
         results = production.production_search(conn, keyword.cv_skills(parsed.profile.raw_text), query, spec,
                                                 filters, analysis_date=parsed.analysis_date, depth=depth)
-    store.put(handle, lease, SEARCH_KEY, results)
+    store_search_results(store, handle, lease, operation_key, results)
     return results

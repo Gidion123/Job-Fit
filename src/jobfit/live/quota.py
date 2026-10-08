@@ -29,7 +29,8 @@ CONSUME_SQL = ('INSERT INTO live_quota (ip_hmac, consumed_at) VALUES (%s, now())
 RETENTION_SQL = "DELETE FROM live_quota WHERE consumed_at < now() - interval '48 hours'"
 SESSION_LIMIT = 10                  # new sessions per IP pseudonym ...
 SESSION_WINDOW_SECONDS = 3600.0     # ... per rolling hour (in memory; one API process)
-UPLOAD_LIMIT = 10                   # CV uploads per IP pseudonym per rolling hour (in memory; one API process)
+UPLOAD_LIMIT = 10                   # CV preview mutations (uploads and preview edits) per IP pseudonym per
+                                    # rolling hour (in memory; one API process)
 
 
 def _purge(conn) -> int:
@@ -323,7 +324,8 @@ class Ingress:
         return self._allow(self._sessions, pseudonym, self.session_limit)
 
     def allow_upload(self, pseudonym: str | None) -> bool:
-        """At most UPLOAD_LIMIT CV uploads per IP pseudonym per rolling hour (checked before the body)."""
+        """At most UPLOAD_LIMIT CV preview mutations (uploads and preview edits) per IP pseudonym per rolling
+        hour; checked before an upload body is read."""
         return self._allow(self._uploads, pseudonym, UPLOAD_LIMIT)
 
     def _allow(self, buckets: dict, pseudonym: str | None, limit: int) -> bool:

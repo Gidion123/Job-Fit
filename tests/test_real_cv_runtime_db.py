@@ -166,6 +166,7 @@ def test_the_search_embedding_runs_in_its_reservation_and_returns_only_productio
     results = search(rt, store, h, lease, db, op=op)
     assert {r['job_id'] for r in results} == {'P1', 'P2', 'P3'}
     assert store.read(h, lease, flow.SEARCH_KEY) == results
+    assert store.read(h, lease, flow.search_result_key(op)) == results      # the operation's own result
     embed_calls = [c for c in rt.sdk.calls if 'input' in c]
     assert len(embed_calls) == 1 and embed_calls[0]['extra_body']['provider']['zdr'] is True
     assert embed_calls[0]['input'] == [mask_local(CV_TEXT).text]

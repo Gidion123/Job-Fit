@@ -30,9 +30,10 @@ D-103 public-beta contract (API semantics only; the Streamlit UI follows in Phas
   no CP2.4 final-order claim applies to it;
 - POST /jobs/{job_id}/analyze and the pasted-JD POST /analyze run one ``job_analysis`` operation
   (stage 'analyzed'); inputs above the D-103 envelopes are refused (413) before any reservation;
-- in production these routes are owner-only for now: the public (non-owner) beta flow stays
-  closed until the real-CV consent adapter connects the session's uploaded CV, whatever
-  JOBFIT_PUBLIC_LIVE says. Demo CVs are synthetic and never stand in for that flow.
+- in production the public (non-owner) beta flow runs only with the session's consented, uploaded
+  CV (``cv_source=upload``); the real-CV adapter is connected, but activation stays blocked
+  (``public_beta_open`` False) until the remaining privacy, artifact and release gates pass,
+  whatever JOBFIT_PUBLIC_LIVE says. Demo CVs are synthetic and never stand in for that flow.
 """
 from __future__ import annotations
 
@@ -40,6 +41,7 @@ from collections.abc import Callable, Mapping
 from contextlib import asynccontextmanager
 from dataclasses import dataclass, field
 import functools
+import json
 import logging
 import secrets
 import threading
@@ -67,8 +69,8 @@ REAL_CV_MESSAGE = ('Analysis of uploaded CVs is not enabled yet. Masking, previe
 LIVE_OFF_MESSAGE = 'Live analysis is switched off in this deployment. Use the saved demo.'
 PUBLIC_LIVE_OFF_MESSAGE = 'Public live analysis is not enabled yet. Use the saved demo.'
 ANALYZE_CLOSED_MESSAGE = 'Pasted job descriptions cannot be analyzed live in this deployment yet.'
-PUBLIC_BETA_CLOSED_MESSAGE = ('The public beta needs the uploaded-CV consent flow, which is not connected yet. '
-                              'Use the saved demo.')
+PUBLIC_BETA_CLOSED_MESSAGE = ('The public beta is not open yet. The uploaded-CV flow is connected, but activation '
+                              'waits for the remaining privacy, artifact and release checks. Use the saved demo.')
 INTERNAL_TOKEN_HEADER, CLIENT_IP_HEADER, OWNER_TOKEN_HEADER = ('x-jobfit-internal-token', 'x-jobfit-client-ip',
                                                              'x-jobfit-owner-token')
 MAX_RUNS_PER_SESSION = 3
@@ -296,7 +298,8 @@ def create_app(deps: AppDeps) -> FastAPI:
         return deps.demo_summaries[cv_id]
 
     def count_preview(request: Request, h: SessionHandle) -> str | None:
-        """Upload abuse control (before any body is read): per session, then per IP pseudonym."""
+        """Upload abuse control for preview mutations (uploads and preview edits), before any upload body is
+        read: at most MAX_PREVIEWS_PER_SESSION per session, then the per-IP-pseudonym hourly limit."""
         with lock:
             if previews.get(h.session_id, 0) >= MAX_PREVIEWS_PER_SESSION:
                 return 'upload_rate_limited'
@@ -667,7 +670,7 @@ def create_app(deps: AppDeps) -> FastAPI:
 
     # ---------- D-103 public-beta contract: search stage, then one job_analysis per chosen job ----------
     def beta_owner_only(request: Request) -> None:
-        """Production: the public beta flow needs the real-CV consent adapter (not connected yet)."""
+        """Production, demo CV: owner only. The public flow uses the consented uploaded CV, and only once open."""
         if deps.ingress is not None and not deps.ingress.is_owner(request.headers.get(OWNER_TOKEN_HEADER)):
             raise HTTPException(503, PUBLIC_BETA_CLOSED_MESSAGE)
 
@@ -696,18 +699,39 @@ def create_app(deps: AppDeps) -> FastAPI:
                 'jobs': [retrieval_card(j, i + 1, {**deps.jobs.get(j, {}), **deps.job_meta.get(j, {})})
                          for i, j in enumerate(ids)]}
 
+    def search_identity(filters: JobFilters) -> str:
+        """Canonical form of every search filter and preference (role family included), for the action.
+
+        The same normalization the filters apply (search.filters.filter_status): country uppercased,
+        city stripped and casefolded; everything else unchanged. Sorted keys, compact separators.
+        """
+        canonical = {
+            'role_family': filters.role_family,
+            'country_code': filters.country_code.upper() if filters.country_code is not None else None,
+            'city': filters.city.strip().casefold() if filters.city is not None else None,
+            'experience_bucket': filters.experience_bucket,
+            'work_mode': filters.work_mode,
+            'posted_within_days': filters.posted_within_days,
+            'include_unknown': bool(filters.include_unknown),
+        }
+        return json.dumps(canonical, sort_keys=True, separators=(',', ':'))
+
     def real_search_jobs(request: Request, h: SessionHandle, filters: JobFilters) -> dict:
         """Reserved query embedding (D-103 search phase), then production retrieval; synchronous."""
-        from jobfit.recommend.real_cv_flow import SEARCH_KEY
+        from jobfit.live.keys import operation_key
+        from jobfit.recommend.real_cv_flow import search_result_key
         real_cv_gate()
         if not deps.live_enabled or deps.real_search is None:
             raise HTTPException(503, LIVE_OFF_MESSAGE)
         lease, _parsed = parsed_state(h)
-        live = real_live_request(request, h, 'search', ('real_search', {'cv': lease.text_digest}))
-        if isinstance(live, dict):                      # the same search again: its stored results
+        # the action: the consented CV plus every normalized filter and preference (no CV or JD text)
+        live = real_live_request(request, h, 'search',
+                                 ('real_search', {'cv': lease.text_digest, 'filters': search_identity(filters)}))
+        if isinstance(live, dict):                      # an exact retry: that operation's own results
             try:
-                rows = deps.store.read(h, lease, SEARCH_KEY)
-            except (KeyError, SessionDenied):
+                op = operation_key(request.headers.get('idempotency-key') or '')
+                rows = deps.store.read(h, lease, search_result_key(op))
+            except (KeyError, ValueError, SessionDenied):
                 raise HTTPException(409, 'search_not_available')
         else:
             try:

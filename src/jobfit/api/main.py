@@ -87,6 +87,8 @@ class AppDeps:
     # and retried at the next interval, and never stop the session sweeper.
     maintenance: Callable | None = None
     maintenance_seconds: float = 3600.0
+    # Prod live only: () -> bool, the persistent ledger storage root is provisioned and writable.
+    live_storage_ready: Callable | None = None
 
 
 @dataclass
@@ -205,8 +207,15 @@ def create_app(deps: AppDeps) -> FastAPI:
     # ---------- health and session ----------
     @app.get('/health')
     def health():
+        storage = None
+        if deps.live_storage_ready is not None:
+            try:
+                storage = bool(deps.live_storage_ready())
+            except Exception:
+                storage = False
         return {'ok': True, 'real_cv_enabled': deps.real_cv_enabled, 'live_enabled': deps.live_enabled,
-                'saved_demo': deps.saved_demo is not None, 'analyzed_k': deps.analyzed_k}
+                'saved_demo': deps.saved_demo is not None, 'analyzed_k': deps.analyzed_k,
+                'live_storage_ready': storage}
 
     @app.post('/session')
     def new_session(request: Request):

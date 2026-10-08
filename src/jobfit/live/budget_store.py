@@ -7,14 +7,25 @@ read after the lock); they are not assumed monotonic. Amounts are numeric/Decima
 
 Admission, under the lock, refuses in this order:
 - duplicate_operation: the operation key exists (one idempotency key conflicts globally);
+- ledger_storage_mismatch: any row (whatever its status) has a malformed process_id or one bound
+  to another ledger storage root (persistent ledger contract C7: every reservation must be
+  settleable from the current storage's evidence);
 - busy: ANY reservation is still 'reserved' (the persisted backstop of the live gate: an
   unresolved row is evidence that an earlier billable operation was not safely closed);
-- evidence_fail_closed: the ledger, intent journal or breach marker cannot be trusted;
+- evidence_fail_closed: the ledger, intent journal or breach marker cannot be trusted, or the
+  settled history in the database exceeds the recorded spend (evidence was lost or reset);
 - budget: the day's liability (with the conservative carry-over) plus the new bound exceeds the cap;
 - lifetime: recorded spend plus open liability plus the new bound exceeds API_HARD_STOP_USD.
+``recorded_spend()`` is read exactly once per admission transaction; the evidence check and the
+lifetime check use that one snapshot.
+
+process_id grammar: ``<storage_id>:<pid>``, 32 lowercase hex characters, a colon, a decimal pid
+without sign or leading zero. Closed rows are the database witness of the settled history and are
+never purged by this code (D-101 retention invariant).
 """
 from __future__ import annotations
 
+import re
 from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import date, datetime
@@ -36,6 +47,27 @@ INSERT_SQL = ('INSERT INTO budget_reservations (operation_key, phase, reserved_u
               'production_day, active_until) VALUES (%(op)s, %(phase)s, %(bound)s, %(pid)s, %(ts)s, %(today)s, '
               '%(ts)s + make_interval(secs => %(window)s)) ON CONFLICT (operation_key) DO NOTHING '
               'RETURNING reservation_id, created_at, active_until, production_day')
+
+
+PROCESS_ID_RE = re.compile(r'([0-9a-f]{32}):([1-9][0-9]*)')
+PROCESS_ID_SQL = '^[0-9a-f]{32}:[1-9][0-9]*$'        # the same grammar, as a PostgreSQL regular expression
+FOREIGN_STORAGE_SQL = ("SELECT 1 FROM budget_reservations WHERE process_id !~ %(grammar)s "
+                       'OR substr(process_id, 1, 32) <> %(sid)s LIMIT 1')
+SETTLED_TOTAL_SQL = "SELECT coalesce(sum(settled_usd), 0) FROM budget_reservations WHERE status = 'settled'"
+
+
+def parse_process_id(value) -> tuple[str, int]:
+    """(storage_id, pid) of a well-formed process_id; ValueError for anything else."""
+    m = PROCESS_ID_RE.fullmatch(value) if isinstance(value, str) else None
+    if m is None:
+        raise ValueError('malformed reservation process_id')
+    return m.group(1), int(m.group(2))
+
+
+def process_id_for(storage_id: str, pid: int) -> str:
+    value = f'{storage_id}:{pid}'
+    parse_process_id(value)
+    return value
 
 
 class AdmissionRefused(RuntimeError):
@@ -81,10 +113,16 @@ def _now(conn, at=None):
 
 
 def admit(conn, *, operation_key: str, phase: str, bound: Decimal, daily_cap: Decimal, hard_stop: Decimal,
-          window_seconds: float, process_id: str, recorded_spend: Callable[[], Decimal], at=None) -> Admission:
-    """One admission transaction. ``recorded_spend()`` reads the ledger and journal after the lock."""
+          window_seconds: float, process_id: str, storage_id: str, recorded_spend: Callable[[], Decimal],
+          at=None) -> Admission:
+    """One admission transaction. ``recorded_spend()`` reads the ledger and journal after the lock, once."""
     if not (isinstance(bound, Decimal) and bound.is_finite() and bound > 0):
         raise AdmissionRefused('budget')
+    try:
+        if parse_process_id(process_id)[0] != storage_id:
+            raise ValueError('process_id is not bound to the admitted storage')
+    except ValueError:
+        raise AdmissionRefused('ledger_storage_mismatch') from None
     try:
         conn.execute('BEGIN')
         conn.execute('SELECT pg_advisory_xact_lock(%s)', (BUDGET_KEY,))
@@ -92,10 +130,15 @@ def admit(conn, *, operation_key: str, phase: str, bound: Decimal, daily_cap: De
         refusal = None
         if conn.execute('SELECT 1 FROM budget_reservations WHERE operation_key = %s', (operation_key,)).fetchone():
             refusal = 'duplicate_operation'
+        elif conn.execute(FOREIGN_STORAGE_SQL, {'grammar': PROCESS_ID_SQL, 'sid': storage_id}).fetchone():
+            refusal = 'ledger_storage_mismatch'
         elif conn.execute("SELECT 1 FROM budget_reservations WHERE status = 'reserved' LIMIT 1").fetchone():
             refusal = 'busy'
         else:
-            spend = recorded_spend()
+            spend = recorded_spend()                     # the one evidence snapshot of this admission
+            settled_total = conn.execute(SETTLED_TOTAL_SQL).fetchone()[0]
+            if settled_total > spend:
+                raise EvidenceError('the settled history exceeds the recorded spend: evidence was lost')
             day = conn.execute(DAY_LIABILITY_SQL, {'today': today, 'day_start': day_start}).fetchone()[0]
             open_liability = conn.execute(OPEN_LIABILITY_SQL).fetchone()[0]
             if day + bound > daily_cap:
@@ -165,11 +208,20 @@ def status_of(conn, operation_key: str) -> str | None:
     return row[0] if row else None
 
 
-def expired_open(conn) -> list[str]:
-    """Open reservations whose possible activity window has ended (reconciliation candidates)."""
+def process_of(conn, operation_key: str) -> str | None:
+    row = conn.execute('SELECT process_id FROM budget_reservations WHERE operation_key = %s',
+                       (operation_key,)).fetchone()
+    return row[0] if row else None
+
+
+def expired_open(conn, *, at=None) -> list[str]:
+    """Open reservations whose possible activity window has ended (reconciliation candidates).
+
+    ``at`` is a test seam only: None (production) compares with the database clock_timestamp().
+    """
     return [r[0] for r in conn.execute(
         "SELECT operation_key FROM budget_reservations WHERE status = 'reserved' "
-        'AND active_until < clock_timestamp() ORDER BY created_at').fetchall()]
+        'AND active_until < coalesce(%s::timestamptz, clock_timestamp()) ORDER BY created_at', (at,)).fetchall()]
 
 
 def try_gate(conn) -> bool:

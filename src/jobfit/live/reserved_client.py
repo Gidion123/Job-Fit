@@ -10,7 +10,8 @@ only that instance's ``guard`` and ``ledger`` attributes are replaced:
 - the frozen attempt calls ``guard.check(upper)`` immediately before the SDK. ``ReservationGuard``
   runs the frozen lifetime guard (normalized: no ValueError ever reaches validated_call), reserves
   the upper cost inside the admitted reservation, resolves the ticket at the first billable call,
-  writes the durable intent, and only then marks the attempt in flight;
+  writes the durable intent, finalizes the allowance at the first intent, checks that the current
+  ledger storage is still the admitted one (every attempt), and only then marks the attempt in flight;
 - the frozen attempt appends its record in ``finally``; ``CorrelatedLedger`` writes it with the
   attempt id and closes the attempt exactly once.
 
@@ -39,6 +40,7 @@ CHAIN_PHASE = {'parse': 'parse', 'extraction': 'recommendation', 'matching': 're
                'fallback': 'recommendation', 'embed': 'recommendation'}
 TASK_SUFFIXES = (('_validation_repair', 'validation_repair'), ('_length_continuation', 'length_continuation'))
 QUOTA_FATAL = {'refused': 'quota_refused', 'unavailable': 'quota_unavailable', 'unknown': 'quota_outcome_unknown'}
+STORAGE_FATAL = ('ledger_storage_mismatch', 'ledger_storage_unavailable')
 
 
 class OperationState:
@@ -46,7 +48,8 @@ class OperationState:
 
     def __init__(self, operation_key: str, phase: str, reserved_usd: Decimal, window: PhaseWindow, *,
                  anchor_mono: float, quota: Callable[[], str] | None = None,
-                 on_first_intent: Callable[[], bool] | None = None, clock=time.monotonic):
+                 on_first_intent: Callable[[], bool] | None = None,
+                 storage_check: Callable[[], str | None] | None = None, clock=time.monotonic):
         self.operation_key, self.phase, self.reserved_usd, self.window = operation_key, phase, reserved_usd, window
         self.anchor_mono, self.clock = anchor_mono, clock
         self.lock = threading.Lock()
@@ -62,6 +65,11 @@ class OperationState:
         self.on_first_intent = on_first_intent
         self.first_intent_lock = threading.Lock()
         self.first_intent_callback_attempted = False
+        # Storage continuity (persistent ledger C11): checked after every durable intent, before the SDK.
+        # The flag is independent of the first-fatal slot; once set, this operation is never settled
+        # or released in this process.
+        self.storage_check = storage_check
+        self.storage_continuity_failed = False
 
     # --- fatal state ---------------------------------------------------------------------------
     def set_fatal(self, reason: str) -> None:
@@ -72,6 +80,16 @@ class OperationState:
     def fatal(self, reason: str):
         self.set_fatal(reason)
         raise LiveSafetyRefusal(self.fatal_refusal)
+
+    def fail_storage(self, reason: str) -> None:
+        """Record a storage-continuity failure: one acquisition of ``lock``, inline first-fatal-wins.
+
+        Never calls set_fatal() (the lock is not reentrant), takes no other lock, calls nothing.
+        """
+        with self.lock:
+            self.storage_continuity_failed = True
+            if self.fatal_refusal is None:
+                self.fatal_refusal = reason
 
     def check_fatal(self) -> None:
         if self.fatal_refusal is not None:
@@ -228,6 +246,15 @@ class ReservationGuard:
                     ok = False
                 if not ok:
                     op.set_fatal('allowance_finalize_failed')    # sticky; seen by every waiter below
+        if op.storage_check is not None:      # every attempt: the CURRENT storage is still the admitted one
+            try:
+                reason = op.storage_check()
+            except Exception:
+                reason = 'ledger_storage_unavailable'
+            if reason is not None:
+                if reason not in STORAGE_FATAL:
+                    reason = 'ledger_storage_unavailable'
+                op.fail_storage(reason)
         op.check_fatal()
         op.open_attempt(ctx)       # in flight only once the intent is durable (and the allowance final)
 

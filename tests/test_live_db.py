@@ -5,6 +5,7 @@ test uses its own scratch database upgraded to head, dropped afterwards.
 """
 import os
 import threading
+import uuid
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 
@@ -24,6 +25,8 @@ pytestmark = pytest.mark.skipif(os.environ.get('JOBFIT_MIGRATION_TESTS') != '1' 
                                 reason='requires JOBFIT_MIGRATION_TESTS=1 and a disposable pgvector server')
 CAP, HARD_STOP = Decimal('2'), Decimal('4.5')
 UTC = timezone.utc
+SID = uuid.uuid4().hex                       # the ledger storage every reservation here belongs to
+PID = store.process_id_for(SID, 4242)
 
 
 @pytest.fixture
@@ -37,12 +40,19 @@ def conn_for(url):
     return psycopg.connect(url, autocommit=True)
 
 
-def admit(url, op, phase='parse', bound='0.4716399', spend='0', at=None, cap=CAP, hard_stop=HARD_STOP,
+def settled_total(url):
+    with conn_for(url) as conn:
+        return conn.execute(store.SETTLED_TOTAL_SQL).fetchone()[0]
+
+
+def admit(url, op, phase='parse', bound='0.4716399', spend=None, at=None, cap=CAP, hard_stop=HARD_STOP,
           window=720.0):
+    """spend=None: evidence consistent with the database (the recorded spend equals the settled history)."""
+    recorded = (lambda: settled_total(url)) if spend is None else (lambda: Decimal(spend))
     with conn_for(url) as conn:
         return store.admit(conn, operation_key=op, phase=phase, bound=Decimal(bound), daily_cap=cap,
-                           hard_stop=hard_stop, window_seconds=window, process_id='test',
-                           recorded_spend=lambda: Decimal(spend), at=at)
+                           hard_stop=hard_stop, window_seconds=window, process_id=PID, storage_id=SID,
+                           recorded_spend=recorded, at=at)
 
 
 def refused(url, *args, **kw):
@@ -56,13 +66,14 @@ def close(url, op, amount):
         return store.close(conn, op, None if amount is None else Decimal(amount))
 
 
-def insert_row(url, op, created, active_until, status='reserved', reserved='0.5', settled=None, phase='parse'):
+def insert_row(url, op, created, active_until, status='reserved', reserved='0.5', settled=None, phase='parse',
+               process_id=PID):
     """A historical row with explicit times (production_day must be the Jakarta date of created_at)."""
     with conn_for(url) as conn:
         conn.execute('INSERT INTO budget_reservations (operation_key, phase, reserved_usd, process_id, created_at, '
-                     "production_day, active_until) VALUES (%s, %s, %s, 'old', %s, "
+                     "production_day, active_until) VALUES (%s, %s, %s, %s, %s, "
                      "(%s::timestamptz AT TIME ZONE 'Asia/Jakarta')::date, %s)",
-                     (op, phase, Decimal(reserved), created, created, active_until))
+                     (op, phase, Decimal(reserved), process_id, created, created, active_until))
         if status != 'reserved':
             conn.execute("UPDATE budget_reservations SET status = %s, settled_usd = %s, closed_at = %s "
                          'WHERE operation_key = %s', (status, Decimal(settled or '0'), active_until, op))
@@ -119,7 +130,8 @@ def test_untrusted_evidence_refuses_admission(db):
         raise EvidenceError('corrupt')
     with conn_for(db) as conn, pytest.raises(store.AdmissionRefused) as exc:
         store.admit(conn, operation_key='idem:e', phase='parse', bound=Decimal('0.1'), daily_cap=CAP,
-                    hard_stop=HARD_STOP, window_seconds=720.0, process_id='t', recorded_spend=broken)
+                    hard_stop=HARD_STOP, window_seconds=720.0, process_id=PID, storage_id=SID,
+                    recorded_spend=broken)
     assert exc.value.code == 'evidence_fail_closed' and rows(db) == []
 
 
@@ -370,14 +382,14 @@ def test_ticket_failure_before_commit_is_unavailable_and_consumes_nothing(db):
 def test_admission_commit_outcome_unknown_never_guesses(db):
     with pytest.raises(store.AdmissionOutcomeUnknown):
         store.admit(_CommitFails(conn_for(db)), operation_key='idem:u', phase='parse', bound=Decimal('0.1'),
-                    daily_cap=CAP, hard_stop=HARD_STOP, window_seconds=720.0, process_id='t',
-                    recorded_spend=lambda: Decimal(0))
+                    daily_cap=CAP, hard_stop=HARD_STOP, window_seconds=720.0, process_id=PID,
+                    storage_id=SID, recorded_spend=lambda: Decimal(0))
     assert refused(db, 'idem:u') == 'duplicate_operation'        # it had committed: a retry never re-runs
     close(db, 'idem:u', None)
     with pytest.raises(store.AdmissionOutcomeUnknown):
         store.admit(_CommitFails(conn_for(db), after=False), operation_key='idem:v', phase='parse',
                     bound=Decimal('0.1'), daily_cap=CAP, hard_stop=HARD_STOP, window_seconds=720.0,
-                    process_id='t', recorded_spend=lambda: Decimal(0))
+                    process_id=PID, storage_id=SID, recorded_spend=lambda: Decimal(0))
     admit(db, 'idem:v')                                           # it had not committed: a retry admits
 
 
@@ -387,3 +399,132 @@ def test_settlement_commit_outcome_unknown_is_reported(db):
         store.close(_CommitFails(conn_for(db)), 'idem:w', Decimal('0.1'))
     with conn_for(db) as conn:
         assert store.status_of(conn, 'idem:w') == 'settled'
+
+
+# --- persistent ledger storage: process_id grammar, admission order, one spend snapshot (C7) -----------------
+
+GRAMMAR_CASES = [
+    (PID, True),
+    (f'{SID}:1', True),
+    ('1234', False),                          # a bare pid (the pre-storage format)
+    (f'{SID}:', False),
+    (SID, False),
+    (f'{SID}:0', False),
+    (f'{SID}:01', False),
+    (f'{SID}:-1', False),
+    (f'{SID.upper()}:12', False),
+    (f'{SID[:31]}:12', False),
+    (f'{SID}a:12', False),
+    (f'{SID}:12\n', False),
+    (f'{SID}:12 ', False),
+    (f'{SID}:1:2', False),
+]
+
+
+@pytest.mark.parametrize('value, ok', GRAMMAR_CASES)
+def test_process_id_grammar_is_strict_in_python_and_in_sql(db, value, ok):
+    try:
+        store.parse_process_id(value)
+        py_ok = True
+    except ValueError:
+        py_ok = False
+    with conn_for(db) as conn:
+        sql_ok = conn.execute('SELECT %s ~ %s', (value, store.PROCESS_ID_SQL)).fetchone()[0]
+    assert py_ok is ok and sql_ok is ok
+
+
+@pytest.mark.parametrize('bad', ['1234', 'old', f'{SID}:0', f'{uuid.uuid4().hex}:77'])
+def test_a_foreign_or_malformed_storage_witness_refuses_before_busy(db, bad):
+    now = datetime.now(UTC)
+    insert_row(db, 'foreign', now - timedelta(minutes=2), now + timedelta(minutes=10), process_id=bad)  # reserved
+    assert refused(db, 'idem:f') == 'ledger_storage_mismatch'          # not 'busy': the order is explicit
+
+
+@pytest.mark.parametrize('status', ['settled', 'released'])
+def test_a_closed_row_from_another_storage_also_refuses(db, status):
+    now = datetime.now(UTC)
+    insert_row(db, 'closed', now - timedelta(hours=2), now - timedelta(hours=1), status=status,
+               settled='0.1' if status == 'settled' else '0',
+               process_id=f'{uuid.uuid4().hex}:9')
+    assert refused(db, 'idem:g', spend='5') == 'ledger_storage_mismatch'
+
+
+def test_duplicate_comes_before_the_storage_witness(db):
+    now = datetime.now(UTC)
+    insert_row(db, 'idem:dup', now - timedelta(minutes=2), now + timedelta(minutes=10), process_id='1234')
+    assert refused(db, 'idem:dup') == 'duplicate_operation'
+
+
+def test_admit_refuses_a_process_id_not_bound_to_its_storage(db):
+    other = uuid.uuid4().hex
+    with conn_for(db) as conn:
+        for pid, sid in ((PID, other), ('4242', SID), (f'{SID}:0', SID)):
+            with pytest.raises(store.AdmissionRefused, match='ledger_storage_mismatch'):
+                store.admit(conn, operation_key='idem:b', phase='parse', bound=Decimal('0.1'), daily_cap=CAP,
+                            hard_stop=HARD_STOP, window_seconds=720.0, process_id=pid, storage_id=sid,
+                            recorded_spend=lambda: Decimal(0))
+    assert rows(db) == []
+
+
+def test_settled_history_above_the_recorded_spend_fails_closed_before_budget_and_lifetime(db):
+    now = datetime.now(UTC)
+    insert_row(db, 'hist', now - timedelta(hours=30), now - timedelta(hours=29), status='settled', settled='0.3')
+    assert refused(db, 'idem:h', spend='0.2999999999') == 'evidence_fail_closed'   # evidence lost
+    admit(db, 'idem:h2', spend='0.3')                                              # consistent: admitted
+
+
+class CountingSpend:
+    def __init__(self, *values):
+        self.values, self.calls = list(values), 0
+
+    def __call__(self):
+        self.calls += 1
+        return Decimal(self.values[min(self.calls, len(self.values)) - 1])
+
+
+def admit_with(url, op, spend, bound='0.1', hard_stop=HARD_STOP, cap=CAP):
+    with conn_for(url) as conn:
+        return store.admit(conn, operation_key=op, phase='parse', bound=Decimal(bound), daily_cap=cap,
+                           hard_stop=hard_stop, window_seconds=720.0, process_id=PID, storage_id=SID,
+                           recorded_spend=spend)
+
+
+def test_recorded_spend_is_read_exactly_once_per_admission(db):
+    ok = CountingSpend('0')
+    admit_with(db, 'idem:once', ok)
+    assert ok.calls == 1
+    close(db, 'idem:once', '0.05')
+    for spend, kw, code in ((CountingSpend('0'), {}, 'evidence_fail_closed'),            # 0.05 settled > 0
+                            (CountingSpend('0.05'), {'bound': '3'}, 'budget'),
+                            (CountingSpend('4.45'), {'bound': '0.1'}, 'lifetime')):
+        with pytest.raises(store.AdmissionRefused, match=code):
+            admit_with(db, 'idem:x', spend, **kw)
+        assert spend.calls == 1
+    for code, setup in (('duplicate_operation', None), ('busy', 'open'), ('ledger_storage_mismatch', 'foreign')):
+        spend = CountingSpend('0.05')
+        op = 'idem:once' if code == 'duplicate_operation' else f'idem:{code}'
+        now = datetime.now(UTC)
+        if setup == 'open':
+            insert_row(db, 'open', now, now + timedelta(minutes=10))
+        if setup == 'foreign':
+            close(db, 'open', '0')
+            insert_row(db, 'foreign', now - timedelta(hours=2), now - timedelta(hours=1), status='released',
+                       process_id='99')
+        with pytest.raises(store.AdmissionRefused, match=code):
+            admit_with(db, op, spend)
+        assert spend.calls == 0                         # refused before the evidence snapshot
+
+
+def test_lifetime_uses_the_same_snapshot_as_the_evidence_check(db):
+    spend = CountingSpend('0', '4.45')        # a second read would trip lifetime (4.45 + 0.1 > 4.5)
+    admit_with(db, 'idem:snap', spend)
+    assert spend.calls == 1 and rows(db)[0][2] == 'reserved'
+
+
+def test_expired_open_uses_the_database_clock_unless_a_test_time_is_given(db):
+    now = datetime.now(UTC)
+    insert_row(db, 'soon', now - timedelta(minutes=1), now + timedelta(minutes=10))
+    with conn_for(db) as conn:
+        assert store.expired_open(conn) == []
+        assert store.expired_open(conn, at=now + timedelta(minutes=11)) == ['soon']
+        assert store.process_of(conn, 'soon') == PID and store.process_of(conn, 'none') is None

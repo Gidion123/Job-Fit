@@ -4,6 +4,7 @@ Covers the phase-scoped gate, the persisted backstop after a lost coordinator, t
 ticket at the first call, restart idempotency and ambiguous commits. Each test has its own scratch
 database (upgraded to head) and its own temporary production ledger.
 """
+import json
 import os
 import threading
 import time
@@ -22,6 +23,7 @@ from jobfit.live import budget_store as store
 from jobfit.live.deadlines import PhaseWindow
 from jobfit.live.evidence import BreachMarker
 from jobfit.live.operation import LiveRefused, LiveRuntime
+from jobfit.live.storage import MARKER_NAME, LiveStorage, init_storage
 from jobfit.llm.phase_bounds import compute_phase_bounds
 from jobfit.llm.runtime import build_runtime_client
 from tests.test_live_unit import MSGS, Answer, FakeSDK, response
@@ -78,8 +80,16 @@ class Conn:
         self.close()
 
 
+def provision(root):
+    """A provisioned ledger storage root (the operator's init step); idempotent for one root."""
+    root.mkdir(parents=True, exist_ok=True)            # the live evidence code never creates directories
+    if not (root / MARKER_NAME).exists():
+        init_storage(root / 'ledger.jsonl')
+    return LiveStorage(root / 'ledger.jsonl').validate()
+
+
 def runtime(db, tmp_path, sdk=None, cap=2.0, hard_stop=4.5, window=None, plan=None, **kw):
-    tmp_path.mkdir(parents=True, exist_ok=True)           # the live evidence code never creates directories
+    provision(tmp_path)
     sdk = sdk if sdk is not None else FakeSDK()
     s = SimpleNamespace(usage_ledger=tmp_path / 'ledger.jsonl', database_url=db, daily_budget_usd=cap,
                         api_hard_stop_usd=hard_stop)
@@ -234,7 +244,7 @@ def test_a_lost_coordinator_never_lets_a_second_operation_overlap(db, tmp_path):
     assert in_call.wait(30)
     with psycopg.connect(ADMIN, autocommit=True) as admin:          # drop A's coordinator connection S
         admin.execute('SELECT pg_terminate_backend(%s)', (rt_a.plan['pids'][0],))
-    rt_b = runtime(db, tmp_path / 'b', window=window)
+    rt_b = runtime(db, tmp_path, window=window)                     # same storage root as A
     with pytest.raises(LiveRefused, match='busy'):                    # B gets the advisory gate, not admission
         rt_b.run('parse', key(), parse_work)
     release.set()
@@ -281,9 +291,12 @@ def test_an_unwritable_breach_marker_keeps_the_row_open_and_disables_admission(d
     assert rows(db) == [(op, 'parse', 'reserved', None)]
     with pytest.raises(LiveRefused, match='admission_disabled'):
         rt.run('parse', key(), parse_work)
-    other = runtime(db, tmp_path / 'o')                      # another process: the open row blocks it
+    other = runtime(db, tmp_path)                            # another process: the open row blocks it
     with pytest.raises(LiveRefused, match='busy'):
         other.run('parse', key(), parse_work)
+    foreign = runtime(db, tmp_path / 'o')                    # another storage root: refused before 'busy'
+    with pytest.raises(LiveRefused, match='ledger_storage_mismatch'):
+        foreign.run('parse', key(), parse_work)
 
 
 def test_the_real_cap_refuses_a_recommendation_without_finalizing_the_allowance(db, tmp_path):
@@ -299,3 +312,271 @@ def test_the_real_cap_refuses_a_recommendation_without_finalizing_the_allowance(
     assert finalized == [] and rt.sdk.calls == [] and rows(db) == []
     allowances.release_if_pending('s1', op)                  # what the API worker does afterwards
     assert allowances.state('s1') == (SessionAllowances.TICKET_HELD, None)
+
+
+# --- persistent ledger storage: preflight, admission, continuity and settlement (C3, C6, C11) -----------------
+
+def swap_root(root):
+    """Replace the root's contents with a freshly provisioned storage B (a new storage_id)."""
+    for p in root.iterdir():
+        p.unlink()
+    return init_storage(root / 'ledger.jsonl')
+
+
+def snapshot(root):
+    return {p.name: p.read_bytes() for p in root.iterdir()}
+
+
+def restore(root, snap):
+    for p in root.iterdir():
+        p.unlink()
+    for name, data in snap.items():
+        (root / name).write_bytes(data)
+
+
+def intents_in(root, op=None):
+    path = root / 'ledger.jsonl.intents.jsonl'
+    if not path.exists():
+        return []
+    rows_ = [json.loads(line) for line in path.read_text().splitlines() if line.strip()]
+    return [r for r in rows_ if r.get('type') == 'intent' and (op is None or r['operation_key'] == op)]
+
+
+class CloseSpy:
+    def __init__(self, monkeypatch):
+        self.calls, real = [], store.close
+
+        def spy(conn, op, amount):
+            self.calls.append(op)
+            return real(conn, op, amount)
+        monkeypatch.setattr(store, 'close', spy)
+
+
+def counting_factory(rt):
+    calls, real = [], rt.client_factory
+
+    def factory(op):
+        calls.append(op)
+        return real(op)
+    rt.client_factory = factory
+    return calls
+
+
+@pytest.mark.parametrize('how', ['marker_missing', 'root_missing', 'unwritable'])
+def test_an_unprovisioned_or_unwritable_root_refuses_before_any_reservation(db, tmp_path, how):
+    rt = runtime(db, tmp_path)
+    if how == 'marker_missing':
+        (tmp_path / MARKER_NAME).unlink()
+    elif how == 'root_missing':
+        rt.ledger_path = tmp_path / 'gone' / 'ledger.jsonl'
+        rt.storage = LiveStorage(rt.ledger_path)
+    else:
+        rt.storage = LiveStorage(rt.ledger_path, probe=lambda root: (_ for _ in ()).throw(PermissionError('ro')))
+    factory = counting_factory(rt)
+    with pytest.raises(LiveRefused, match='ledger_storage_unavailable') as exc:
+        rt.run('parse', key(), parse_work, quota=lambda: pytest.fail('ticket consumed'))
+    assert exc.value.status == 503 and factory == [] and rt.sdk.calls == [] and rows(db) == []
+    assert not (tmp_path / 'gone').exists()
+
+
+@pytest.mark.parametrize('how', ['swap', 'marker_lost'])
+def test_storage_replaced_between_preflight_and_admission_is_refused_before_inserting(db, tmp_path, monkeypatch, how):
+    rt, op = runtime(db, tmp_path), key()
+    real = store.take_owner
+
+    def take_owner_then_swap(conn, operation_key):
+        real(conn, operation_key)
+        if how == 'swap':
+            swap_root(tmp_path)
+        else:
+            (tmp_path / MARKER_NAME).unlink()
+    monkeypatch.setattr(store, 'take_owner', take_owner_then_swap)
+    code = 'ledger_storage_mismatch' if how == 'swap' else 'ledger_storage_unavailable'
+    with pytest.raises(LiveRefused, match=code):
+        rt.run('parse', op, parse_work, quota=lambda: pytest.fail('ticket consumed'))
+    assert rows(db) == [] and rt.sdk.calls == [] and intents_in(tmp_path) == []
+
+
+def test_storage_swapped_before_the_first_attempt_stops_it_after_the_durable_intent(db, tmp_path, monkeypatch):
+    from tests.test_live_unit import Counting
+    rt, op, spy = runtime(db, tmp_path), key(), CloseSpy(monkeypatch)
+    hook = Counting(lambda: True)
+
+    def work(client):
+        swap_root(tmp_path)
+        return parse_work(client)
+    with pytest.raises(LiveRefused, match='ledger_storage_mismatch'):
+        rt.run('parse', op, work, on_first_intent=hook)
+    assert hook.count == 1                                       # the first durable intent finalized it
+    assert len(intents_in(tmp_path, op)) == 1 and rt.sdk.calls == []
+    assert rows(db) == [(op, 'parse', 'reserved', None)] and spy.calls == []
+    assert op in rt.settlement_blocked
+
+
+def test_storage_swapped_between_attempts_stops_every_later_attempt(db, tmp_path, monkeypatch):
+    from jobfit.llm.structured import StageFailure, validated_call
+    rt, op, spy = runtime(db, tmp_path), key(), CloseSpy(monkeypatch)
+    seen = {}
+
+    def work(client):
+        assert parse_work(client) == 'ok'                        # first attempt on A
+        seen['a'] = snapshot(tmp_path)
+        swap_root(tmp_path)
+        for _ in range(2):
+            with pytest.raises(Exception):
+                parse_work(client)
+        with pytest.raises(StageFailure):                        # the frozen repair path is refused too
+            validated_call(client, model='deepseek-flash', prompt='p', payload={}, output_model=Answer,
+                           task='cv_parsing', validate=lambda o: None, max_tokens=16000)
+        return 'done'
+    with pytest.raises(LiveRefused, match='ledger_storage_mismatch'):
+        rt.run('parse', op, work)
+    assert len(rt.sdk.calls) == 1 and spy.calls == []
+    assert rows(db) == [(op, 'parse', 'reserved', None)]
+    assert len(intents_in(tmp_path, op)) == 1                    # the second attempt's intent, in B
+
+
+# A lost root fails the frozen lifetime check's ledger read first (evidence_fail_closed), before any intent.
+@pytest.mark.parametrize('how, code', [('marker', 'ledger_storage_unavailable'), ('root', 'evidence_fail_closed')])
+def test_marker_lost_before_an_attempt_is_storage_unavailable_and_a_lost_root_fails_the_intent(db, tmp_path,
+                                                                                            monkeypatch, how, code):
+    import shutil
+    rt, op, spy = runtime(db, tmp_path), key(), CloseSpy(monkeypatch)
+
+    def work(client):
+        if how == 'marker':
+            (tmp_path / MARKER_NAME).unlink()
+        else:
+            shutil.rmtree(tmp_path)
+        return parse_work(client)
+    with pytest.raises(LiveRefused, match=code):
+        rt.run('parse', op, work)
+    assert rt.sdk.calls == [] and spy.calls == []
+    assert rows(db) == [(op, 'parse', 'reserved', None)]
+    if how == 'root':
+        assert not tmp_path.exists()                             # never recreated, no intent anywhere
+    else:
+        assert len(intents_in(tmp_path, op)) == 1                # the intent was durable before the check
+
+
+def test_a_stable_storage_is_checked_once_per_attempt_and_changes_nothing(db, tmp_path, monkeypatch):
+    rt, op = runtime(db, tmp_path), key()
+    real, checks = rt._continuity_check, []
+
+    def counting(admitted):
+        inner = real(admitted)
+
+        def check():
+            checks.append(1)
+            return inner()
+        return check
+    monkeypatch.setattr(rt, '_continuity_check', counting)
+
+    def work(client):
+        return [parse_work(client) for _ in range(3)]
+    result, report = rt.run('parse', op, work)
+    assert result == ['ok'] * 3 and len(checks) == len(rt.sdk.calls) == 3
+    assert report.outcome == 'settled' and rows(db)[0][2] == 'settled'
+    assert not rt.settlement_blocked
+
+
+# --- C11-D: a continuity failure blocks settlement for the rest of the process ------------------------------
+
+def test_restored_storage_never_settles_an_operation_whose_first_attempt_hit_another_storage(db, tmp_path,
+                                                                                            monkeypatch):
+    rt, op, spy = runtime(db, tmp_path), key(), CloseSpy(monkeypatch)
+    settles, owner_released_with = [], []
+    real_settle, real_release = rt.settle, store.release_owner
+    monkeypatch.setattr(rt, 'settle', lambda *a, **kw: settles.append(a) or real_settle(*a, **kw))
+
+    def release(conn, operation_key):
+        owner_released_with.append(operation_key in rt.settlement_blocked)
+        return real_release(conn, operation_key)
+    monkeypatch.setattr(store, 'release_owner', release)
+    a = snapshot(tmp_path)
+
+    def work(client):
+        swap_root(tmp_path)
+        with pytest.raises(Exception):
+            parse_work(client)                                   # durable intent on B, mismatch, SDK 0
+        restore(tmp_path, a)                                     # A is back before settlement
+        return 'done'
+    with pytest.raises(LiveRefused, match='ledger_storage_mismatch'):
+        rt.run('parse', op, work)
+    assert rt.storage.validate() == LiveStorage(tmp_path / 'ledger.jsonl').validate()     # A valid again
+    assert settles == [] and spy.calls == [] and rt.sdk.calls == []
+    assert rows(db) == [(op, 'parse', 'reserved', None)]
+    assert op in rt.settlement_blocked and owner_released_with == [True]
+
+
+def test_restored_storage_with_partial_evidence_never_closes_the_operation(db, tmp_path, monkeypatch):
+    window = PhaseWindow('parse', chat_wall=6.0, embed_wall=6.0, calls_wall=6.0, horizon=8.0, window=9.0)
+    rt, op, spy = runtime(db, tmp_path, window=window), key(), CloseSpy(monkeypatch)
+    snap = {}
+
+    def work(client):
+        assert parse_work(client) == 'ok'                        # first call on A: one intent, one line
+        snap['a'] = snapshot(tmp_path)
+        swap_root(tmp_path)
+        with pytest.raises(Exception):
+            parse_work(client)                                   # second intent on B, SDK 0
+        restore(tmp_path, snap['a'])
+        return 'done'
+    with pytest.raises(LiveRefused, match='ledger_storage_mismatch'):
+        rt.run('parse', op, work)
+    assert len(rt.sdk.calls) == 1 and spy.calls == []
+    assert rows(db) == [(op, 'parse', 'reserved', None)]
+    assert len(intents_in(tmp_path, op)) == 1                    # A's evidence alone would settle it
+    from datetime import datetime, timedelta, timezone
+    reports = rt.reconcile(at=datetime.now(timezone.utc) + timedelta(seconds=30))     # same process, expired
+    assert [(r.operation_key, r.outcome) for r in reports] == [(op, 'deferred')]
+    assert spy.calls == [] and rows(db) == [(op, 'parse', 'reserved', None)]
+
+
+def test_a_continuity_failure_blocks_settlement_even_when_another_fatal_won_the_slot(db, tmp_path, monkeypatch):
+    from tests.test_live_unit import Counting
+    rt, op, spy = runtime(db, tmp_path), key(), CloseSpy(monkeypatch)
+    hook = Counting(lambda: False)                               # allowance_finalize_failed wins the slot
+    a = snapshot(tmp_path)
+
+    def work(client):
+        swap_root(tmp_path)
+        with pytest.raises(Exception):
+            parse_work(client)
+        restore(tmp_path, a)
+        return 'done'
+    with pytest.raises(LiveRefused, match='allowance_finalize_failed'):
+        rt.run('parse', op, work, on_first_intent=hook)
+    assert hook.count == 1 and rt.sdk.calls == [] and spy.calls == []
+    assert rows(db) == [(op, 'parse', 'reserved', None)] and op in rt.settlement_blocked
+
+
+# --- C6: settlement revalidates the current storage (swap after preflight, no continuity failure) -----------
+
+@pytest.mark.parametrize('variant', ['zero_attempts', 'one_call', 'marker_deleted', 'between_read_and_bracket'])
+def test_settlement_after_a_storage_swap_is_deferred_never_released(db, tmp_path, monkeypatch, variant):
+    import jobfit.live.operation as operation_module
+    rt, op, spy = runtime(db, tmp_path), key(), CloseSpy(monkeypatch)
+    if variant == 'between_read_and_bracket':
+        real_ev = operation_module.operation_evidence
+
+        def read_then_swap(*a, **kw):
+            ev = real_ev(*a, **kw)
+            swap_root(tmp_path)
+            return ev
+        monkeypatch.setattr(operation_module, 'operation_evidence', read_then_swap)
+
+    def work(client):
+        if variant in ('one_call', 'between_read_and_bracket'):
+            assert parse_work(client) == 'ok'
+        if variant in ('zero_attempts', 'one_call'):
+            swap_root(tmp_path)
+        if variant == 'marker_deleted':
+            (tmp_path / MARKER_NAME).unlink()
+        return 'done'
+    result, report = rt.run('parse', op, work)
+    assert result == 'done' and report.outcome == 'deferred' and spy.calls == []
+    assert rows(db) == [(op, 'parse', 'reserved', None)] and not rt.settlement_blocked
+    nxt = 'ledger_storage_unavailable' if variant == 'marker_deleted' else 'ledger_storage_mismatch'
+    with pytest.raises(LiveRefused, match=nxt):
+        rt.run('parse', key(), parse_work)

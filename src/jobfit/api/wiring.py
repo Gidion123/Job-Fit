@@ -82,12 +82,23 @@ def live_enabled() -> bool:
 
 
 def build_runtime(settings):
-    """The Phase 2B runtime for prod live; startup reconciliation of expired, unowned reservations."""
+    """The Phase 2B runtime for prod live; startup reconciliation of expired, unowned reservations.
+
+    Reconciliation runs only on a provisioned, writable ledger storage root with trustworthy
+    evidence (it checks both itself). A missing or invalid root never stops the app: the saved demo
+    keeps working and every live operation is refused (ledger_storage_unavailable).
+    """
+    import logging
     from jobfit.live.operation import LiveRuntime
+    from jobfit.live.storage import StorageUnavailable
     from jobfit.llm.phase_bounds import compute_phase_bounds
     runtime = LiveRuntime(settings, compute_phase_bounds(), pipeline_config=CONFIG,
                           client_factory=lambda op: build_runtime_client(settings.client_settings(), CONFIG,
                                                                          run_id=op))
+    try:
+        runtime.storage.validate()
+    except StorageUnavailable as exc:
+        logging.getLogger('jobfit.live').warning('ledger storage not ready at startup: %s', exc.reason)
     try:
         runtime.reconcile()
     except Exception:
@@ -218,7 +229,8 @@ def build_deps() -> AppDeps:
     return AppDeps(store=SessionStore(), demo_cvs=demo, run=run, job_meta=meta, saved_demo=load_saved_demo(),
                    live_enabled=settings.live_enabled, analyze_pasted=None if prod else analyze_pasted, jobs=jobs,
                    demo_summaries=summaries, analyzed_k=config.stage1_k, ingress=ingress,
-                   public_live=settings.public_live, maintenance=maintenance)
+                   public_live=settings.public_live, maintenance=maintenance,
+                   live_storage_ready=runtime.storage_ready if runtime is not None else None)
 
 
 def create_default_app():

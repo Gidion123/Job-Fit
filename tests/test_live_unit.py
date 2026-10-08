@@ -98,7 +98,7 @@ class Live:
     """One admitted operation: the frozen runtime client rebound to a reservation (as the runner does)."""
 
     def __init__(self, tmp_path, phase='parse', sdk=None, reserved=None, quota=None, clock=None, plain=False,
-                 op_key=None, on_first_intent=None, **settings_kw):
+                 op_key=None, on_first_intent=None, storage_check=None, **settings_kw):
         tmp_path.mkdir(parents=True, exist_ok=True)       # the live evidence code never creates directories
         self.sdk = sdk if sdk is not None else FakeSDK()
         self.op_key = op_key or 'idem:' + str(uuid.uuid4())
@@ -112,7 +112,8 @@ class Live:
             reserved = bounds().parse_max if phase == 'parse' else bounds().recommendation_upper_bound
         clock = clock or time.monotonic
         self.op = OperationState(self.op_key, phase, Decimal(reserved), window, anchor_mono=clock(),
-                                 quota=quota, on_first_intent=on_first_intent, clock=clock)
+                                 quota=quota, on_first_intent=on_first_intent, storage_check=storage_check,
+                                 clock=clock)
         self.ledger_path = tmp_path / 'ledger.jsonl'
         self.client = bind_reserved_client(self.inner, self.op, call_model(), self.ledger_path)
         self.journal = IntentJournal(journal_path(self.ledger_path))
@@ -700,3 +701,123 @@ def test_allowance_state_machine_and_immutable_live_request():
     req = LiveRequest('idem:3', False, None, 's', 'r', on_first_billable=lambda: True)
     with pytest.raises(dataclasses.FrozenInstanceError):
         req.on_first_billable = None
+
+
+# --- persistent ledger storage continuity (C11) ------------------------------------------------------------
+
+class StorageProbe:
+    """A storage_check: None while the storage is the admitted one, else the fatal reason."""
+
+    def __init__(self, reasons=None):
+        self.reasons, self.count, self.lock = list(reasons or []), 0, threading.Lock()
+
+    def __call__(self):
+        with self.lock:
+            self.count += 1
+            return self.reasons.pop(0) if self.reasons else None
+
+
+def test_the_storage_check_runs_once_per_attempt_and_changes_nothing_when_stable(tmp_path):
+    probe = StorageProbe()
+    live = Live(tmp_path / 'a', phase='recommendation', storage_check=probe)
+    plain = Live(tmp_path / 'b', phase='recommendation')
+    for lv in (live, plain):
+        frozen_match(lv, None)
+        sol_call(lv)
+    assert probe.count == len(live.sdk.calls) == len(plain.sdk.calls) > 1
+    assert [c['model'] for c in live.sdk.calls] == [c['model'] for c in plain.sdk.calls]
+    assert len(live.intents()) == len(live.ledger_rows()) == len(live.sdk.calls)
+    assert not live.op.storage_continuity_failed and live.op.fatal_refusal is None
+
+
+@pytest.mark.parametrize('reason', ['ledger_storage_mismatch', 'ledger_storage_unavailable'])
+def test_a_storage_continuity_failure_after_the_intent_makes_no_sdk_call_and_is_sticky(tmp_path, reason):
+    probe = StorageProbe([None, reason])
+    live, allowances, hook = allowance_live(tmp_path, sdk=FakeSDK())
+    live.op.storage_check = probe
+    sol_call(live)                                                   # first attempt: storage stable, SDK 1
+    with pytest.raises(LiveSafetyRefusal, match=reason):
+        sol_call(live)                                               # second attempt: intent durable, SDK 0
+    frozen_match(live, None)                                         # frozen fallback and repair: SDK 0
+    with pytest.raises(StageFailure):
+        validated_call(live.client, model='gpt-6-sol', prompt='p', payload={}, output_model=Answer,
+                       task='evidence_matching', validate=lambda o: None)
+    assert len(live.sdk.calls) == 1 and live.op.storage_continuity_failed and live.op.fatal_refusal == reason
+    assert len(live.intents()) == 2 and not live.op.inflight
+    assert hook.count == 1 and allowances.state('s1') == (SessionAllowances.USED, live.op_key)
+
+
+def test_the_first_intent_finalizes_the_allowance_before_a_continuity_failure(tmp_path):
+    live, allowances, hook = allowance_live(tmp_path)
+    live.op.storage_check = StorageProbe(['ledger_storage_mismatch'])
+    with pytest.raises(LiveSafetyRefusal, match='ledger_storage_mismatch'):
+        sol_call(live)
+    assert hook.count == 1 and live.sdk.calls == [] and len(live.intents()) == 1
+    assert allowances.state('s1') == (SessionAllowances.USED, live.op_key)
+
+
+@pytest.mark.parametrize('check, expected', [
+    (lambda: 'ledger_storage_mismatch', 'ledger_storage_mismatch'),
+    (lambda: (_ for _ in ()).throw(OSError('probe crashed')), 'ledger_storage_unavailable'),
+    (lambda: 'something_else', 'ledger_storage_unavailable'),
+])
+def test_concurrent_attempts_after_a_continuity_failure_make_no_sdk_call(tmp_path, check, expected):
+    live, _, _ = allowance_live(tmp_path, finalize=lambda: True, sdk=FakeSDK(delay=0.02))
+    live.op.storage_check = check
+    done, errors = concurrent_first_calls(live)
+    assert done == [] and errors == [expected] * 8
+    assert live.sdk.calls == [] and not live.op.inflight and live.op.storage_continuity_failed
+
+
+def test_fail_storage_sets_its_flag_independently_of_the_first_fatal_slot(tmp_path):
+    live = Live(tmp_path)
+    live.op.set_fatal('allowance_finalize_failed')
+    live.op.fail_storage('ledger_storage_mismatch')
+    assert live.op.storage_continuity_failed and live.op.fatal_refusal == 'allowance_finalize_failed'
+    fresh = Live(tmp_path / 'f')
+    fresh.op.fail_storage('ledger_storage_mismatch')
+    assert fresh.op.storage_continuity_failed and fresh.op.fatal_refusal == 'ledger_storage_mismatch'
+    fresh.op.fail_storage('ledger_storage_unavailable')
+    assert fresh.op.fatal_refusal == 'ledger_storage_mismatch'          # first fatal wins
+
+
+def test_concurrent_fail_storage_never_deadlocks(tmp_path):
+    live = Live(tmp_path)
+    op = live.op
+    barrier = threading.Barrier(21)
+    reasons = ('ledger_storage_mismatch', 'ledger_storage_unavailable', 'call_wall_exceeded')
+
+    def storage(i):
+        barrier.wait()
+        op.fail_storage(reasons[i % 2])
+
+    def fatal():
+        barrier.wait()
+        op.set_fatal('call_wall_exceeded')
+
+    def waiter():
+        barrier.wait()
+        op.wait_drained(0.2)                       # the drained Condition shares op.lock
+    threads = ([threading.Thread(target=storage, args=(i,), daemon=True) for i in range(16)]
+               + [threading.Thread(target=fatal, daemon=True) for _ in range(4)]
+               + [threading.Thread(target=waiter, daemon=True)])
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join(timeout=5)
+    assert all(not t.is_alive() for t in threads), 'fail_storage deadlocked'
+    assert op.storage_continuity_failed and op.fatal_refusal in reasons
+    first = op.fatal_refusal
+    op.fail_storage('ledger_storage_unavailable')
+    op.set_fatal('deadline_exceeded')
+    assert op.fatal_refusal == first
+    assert op.lock.acquire(timeout=1)
+    op.lock.release()
+
+
+def test_fail_storage_is_never_entered_while_holding_the_operation_lock():
+    import jobfit.live.reserved_client as rc
+    check = inspect.getsource(rc.ReservationGuard.check)
+    body = check.split('if op.storage_check is not None:')[1]
+    assert 'op.fail_storage(reason)' in body and 'with op.lock' not in check
+    assert '.set_fatal(' not in inspect.getsource(rc.OperationState.fail_storage)

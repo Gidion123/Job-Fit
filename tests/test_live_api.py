@@ -408,3 +408,39 @@ def test_the_owner_never_touches_the_public_allowance():
     wait(client, headers, live(client, headers).json()['run_id'])
     assert seen[0].owner and seen[0].on_first_billable is None
     assert allowances.state(headers['X-Session-Id']) == (HELD, None)
+
+
+# --- persistent ledger storage readiness (C3) ---------------------------------------------------------------
+
+def test_health_reports_ledger_storage_readiness_as_a_boolean_only():
+    def broken():
+        raise OSError('volume gone')
+    for ready, expected in ((None, None), (lambda: True, True), (lambda: False, False), (broken, False)):
+        client, _ = make(live_storage_ready=ready)
+        assert client.get('/health').json()['live_storage_ready'] is expected
+
+
+def test_prod_with_an_unprovisioned_root_keeps_the_saved_demo_and_reports_storage_not_ready(tmp_path, monkeypatch):
+    from jobfit.api import wiring
+    prod_env(tmp_path, monkeypatch)
+    deps = wiring.build_deps()                          # startup never fails on an unprovisioned root
+    client = TestClient(create_app(deps))
+    assert client.get('/health').json()['live_storage_ready'] is False
+    headers = session(client)
+    r = client.post('/recommendations', json={'demo_cv_id': 'CV1', 'mode': 'saved'}, headers=headers)
+    assert r.status_code == 200
+    assert sorted(p.name for p in tmp_path.iterdir()) == []      # nothing was created in the root
+
+
+def test_reconciliation_on_invalid_storage_touches_no_database(tmp_path, monkeypatch):
+    from jobfit.api import wiring
+    from jobfit.config import get_production_settings
+    from jobfit.live.storage import init_storage
+    prod_env(tmp_path, monkeypatch)
+    runtime = wiring.build_runtime(get_production_settings())
+    connects = []
+    runtime.connect = lambda: connects.append(1) or (_ for _ in ()).throw(AssertionError('no DB call'))
+    assert runtime.reconcile() == [] and connects == []           # no marker
+    init_storage(runtime.ledger_path)
+    runtime.breach.write('call_wall_exceeded', 'idem:x', 'a1')
+    assert runtime.storage_ready() and runtime.reconcile() == [] and connects == []   # breach: global gate

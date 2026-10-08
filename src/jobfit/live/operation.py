@@ -2,12 +2,23 @@
 
 Order (connection S is owned by the runner thread only; worker threads never touch it):
  1. S opens; the advisory gate is tried (busy -> refused, nothing reserved, no ticket consumed);
- 2. preflight: process admission not disabled, breach marker absent, evidence readable, the frozen
-    client and its SDK object built; then expired, unowned reservations are reconciled;
- 3. the owner lock is taken, ``anchor_mono`` is read, then the admission transaction runs;
- 4. the frozen pipeline runs with a ReservedClient; a watchdog flags any call past W(call);
- 5. drain, then settle or release from per-attempt evidence (deferred when it cannot be trusted);
+ 2. preflight: process admission not disabled, the ledger storage root provisioned and writable,
+    breach marker absent, evidence readable, the frozen client and its SDK object built; then
+    expired, unowned reservations are reconciled;
+ 3. the owner lock is taken, the storage is validated again (same storage id or refused before any
+    reservation), ``anchor_mono`` is read, then the admission transaction runs with the process_id
+    ``<storage_id>:<pid>``;
+ 4. the frozen pipeline runs with a ReservedClient; every attempt re-checks the storage after its
+    durable intent; a watchdog flags any call past W(call);
+ 5. drain, then settle or release from per-attempt evidence (deferred when it cannot be trusted, and
+    always deferred after a storage-continuity failure);
  6. a fatal refusal discards the pipeline result; finally the locks are released and S closed.
+
+Settlement (run and reconciliation alike) validates the CURRENT storage, checks the reservation's
+storage binding, reads the evidence, validates the storage again, and only then closes the row.
+Reconciliation runs only on valid storage with globally trustworthy evidence, and never releases an
+expired reservation that has no evidence at all (a crash before the first intent and lost evidence
+are indistinguishable after a restart).
 
 The gate is phase-scoped: it is held for one parse or one recommendation operation only, never
 across user think-time. The persisted backstop (any 'reserved' row refuses admission) keeps
@@ -33,6 +44,7 @@ from jobfit.live.deadlines import PhaseWindow, chat_timeout_seconds, phase_windo
 from jobfit.live.evidence import (BreachMarker, CorrelatedLedger, IntentJournal, breach_path, journal_path,
                                   operation_evidence, recorded_spend)
 from jobfit.live.reserved_client import CallModel, OperationState, ReservedClient, bind_reserved_client
+from jobfit.live.storage import LiveStorage, StorageUnavailable
 
 log = logging.getLogger('jobfit.live')
 REFUSAL_STATUS = {'busy': 429, 'budget': 429, 'lifetime': 429, 'quota_refused': 429, 'ticket_required': 403,
@@ -62,7 +74,7 @@ class LiveRuntime:
 
     def __init__(self, settings, bounds, *, pipeline_config: Path, client_factory: Callable[[str], object],
                  connect: Callable[[], psycopg.Connection] | None = None, clock=time.monotonic,
-                 watchdog_interval: float = 0.5, drain_grace: float = 5.0):
+                 watchdog_interval: float = 0.5, drain_grace: float = 5.0, storage: LiveStorage | None = None):
         self.settings, self.bounds = settings, bounds
         self.ledger_path = Path(settings.usage_ledger)
         self.journal = IntentJournal(journal_path(self.ledger_path))
@@ -76,15 +88,65 @@ class LiveRuntime:
         self.connect = connect or (lambda: psycopg.connect(settings.database_url, autocommit=True))
         self.clock, self.watchdog_interval, self.drain_grace = clock, watchdog_interval, drain_grace
         self.admission_disabled: str | None = None
-        self.process_id = f'{os.getpid()}'
+        self.storage = storage if storage is not None else LiveStorage(self.ledger_path)
+        self.pid = os.getpid()
+        # Operations whose storage continuity failed: never settled or released by this process.
+        # Process-local defence in depth; never cleared by code. Its lock is never held with op.lock.
+        self.settlement_blocked: set[str] = set()
+        self.settlement_blocked_lock = threading.Lock()
 
     # --- evidence and settlement ---------------------------------------------------------------
     def recorded_spend(self) -> Decimal:
         return recorded_spend(self.journal, self.ledger, self.breach)
 
-    def settle(self, conn, operation_key: str) -> OperationReport:
-        """Settle or release one reservation from its evidence. EvidenceError leaves it reserved."""
-        ev = operation_evidence(operation_key, self.journal, self.ledger)
+    def storage_ready(self) -> bool:
+        try:
+            self.storage.validate()
+            return True
+        except StorageUnavailable:
+            return False
+
+    def _current_storage(self) -> str:
+        try:
+            return self.storage.validate()
+        except StorageUnavailable as exc:
+            raise EvidenceError(f'ledger storage unavailable: {exc.reason}') from None
+
+    def _continuity_check(self, admitted: str) -> Callable[[], str | None]:
+        def check() -> str | None:
+            try:
+                current = self.storage.validate()
+            except Exception:
+                return 'ledger_storage_unavailable'
+            return None if current == admitted else 'ledger_storage_mismatch'
+        return check
+
+    def settle(self, conn, operation_key: str, *, reconciling: bool = False) -> OperationReport:
+        """Settle or release one reservation from its evidence. EvidenceError leaves it reserved.
+
+        Order: blocked check, current storage, reservation binding, evidence, storage again, close.
+        """
+        with self.settlement_blocked_lock:
+            blocked = operation_key in self.settlement_blocked
+        if blocked:
+            raise EvidenceError('storage continuity failed for this operation: manual review')
+        current = self._current_storage()
+        try:
+            bound_to, _ = store.parse_process_id(store.process_of(conn, operation_key))
+        except ValueError:
+            raise EvidenceError('reservation process_id is malformed or missing') from None
+        if bound_to != current:
+            raise EvidenceError('ledger storage mismatch: the reservation belongs to another storage')
+        try:
+            ev = operation_evidence(operation_key, self.journal, self.ledger)
+        except EvidenceError:
+            raise
+        except Exception:
+            raise EvidenceError('evidence unreadable') from None
+        if reconciling and ev.attempts == 0:
+            raise EvidenceError('no evidence for an expired reservation: manual review')
+        if self._current_storage() != current:
+            raise EvidenceError('ledger storage changed during settlement')
         for attempt, reported, upper in ev.breaches:
             try:
                 self.breach.write('reported_cost_above_upper_bound', operation_key, attempt,
@@ -101,16 +163,30 @@ class LiveRuntime:
             outcome = status if status in ('settled', 'released') else 'deferred'
         return OperationReport(operation_key, '', outcome, ev.spend)
 
-    def reconcile(self) -> list[OperationReport]:
-        """Expired reservations whose owner lock is free and whose evidence is readable."""
+    def reconcile(self, *, at=None) -> list[OperationReport]:
+        """Expired reservations whose owner lock is free and whose evidence is readable.
+
+        Gated: storage valid, then the global evidence (breach marker absent, ledger and journal
+        strictly parsable); otherwise no row is touched. ``at`` is a test seam (None: DB clock).
+        """
+        try:
+            self.storage.validate()
+        except StorageUnavailable as exc:
+            log.warning('reconciliation skipped: ledger storage unavailable (%s)', exc.reason)
+            return []
+        try:
+            self.recorded_spend()
+        except Exception:
+            log.warning('reconciliation skipped: evidence cannot be trusted (manual review)')
+            return []
         reports = []
         with self.connect() as conn:
-            for op in store.expired_open(conn):
+            for op in store.expired_open(conn, at=at):
                 if not store.try_owner(conn, op):
                     log.warning('reservation %s is owned past active_until: manual review', op)
                     continue
                 try:
-                    reports.append(self.settle(conn, op))
+                    reports.append(self.settle(conn, op, reconciling=True))
                 except EvidenceError as exc:
                     log.warning('reservation %s kept open for manual review: %s', op, exc)
                     reports.append(OperationReport(op, '', 'deferred'))
@@ -142,8 +218,12 @@ class LiveRuntime:
             if self.admission_disabled:
                 raise LiveRefused('admission_disabled')
             try:
+                preflight_storage = self.storage.validate()
+            except StorageUnavailable:
+                raise LiveRefused('ledger_storage_unavailable') from None
+            try:
                 self.recorded_spend()
-            except EvidenceError:
+            except (EvidenceError, OSError):
                 raise LiveRefused('evidence_fail_closed') from None
             try:
                 inner = self.client_factory(operation_key)
@@ -156,13 +236,19 @@ class LiveRuntime:
                 log.warning('reconciliation failed; admission decides from persisted state')
             store.take_owner(conn, operation_key)
             owned = True
+            try:                                        # immediately before admission: same storage
+                storage_id = self.storage.validate()
+            except StorageUnavailable:
+                raise LiveRefused('ledger_storage_unavailable') from None
+            if storage_id != preflight_storage:
+                raise LiveRefused('ledger_storage_mismatch')
             anchor = self.clock()                       # before the admission statement is sent
             try:
                 store.admit(conn, operation_key=operation_key, phase=phase, bound=self.bound[phase],
                             daily_cap=Decimal(str(self.settings.daily_budget_usd)),
                             hard_stop=Decimal(str(self.settings.api_hard_stop_usd)),
-                            window_seconds=window.window, process_id=self.process_id,
-                            recorded_spend=self.recorded_spend)
+                            window_seconds=window.window, process_id=store.process_id_for(storage_id, self.pid),
+                            storage_id=storage_id, recorded_spend=self.recorded_spend)
             except store.AdmissionRefused as exc:
                 raise LiveRefused(exc.code) from None
             except store.AdmissionOutcomeUnknown:
@@ -170,7 +256,8 @@ class LiveRuntime:
             except store.AdmissionUnavailable:
                 raise LiveRefused('unavailable') from None
             op = OperationState(operation_key, phase, self.bound[phase], window, anchor_mono=anchor,
-                                quota=quota, on_first_intent=on_first_intent, clock=self.clock)
+                                quota=quota, on_first_intent=on_first_intent,
+                                storage_check=self._continuity_check(storage_id), clock=self.clock)
             client = bind_reserved_client(inner, op, self.call_model, self.ledger_path)
             watchdog = threading.Thread(target=self._watch, args=(op, stop), daemon=True)
             watchdog.start()
@@ -183,8 +270,15 @@ class LiveRuntime:
             drained = op.wait_drained(remaining)
             with op.lock:
                 op.closing = True
+                storage_failed = op.storage_continuity_failed       # snapshot; op.lock released below
             report = OperationReport(operation_key, phase, 'deferred', None, op.fatal_refusal)
-            if drained and not self.admission_disabled:   # an unwritten breach marker keeps the row open
+            if storage_failed:
+                # Never settled or released by this process, even if the original storage comes back.
+                # Registered while this runner still holds the owner lock, so no reconciler can close it.
+                with self.settlement_blocked_lock:
+                    self.settlement_blocked.add(operation_key)
+                log.warning('operation %s kept reserved: ledger storage continuity failed', operation_key)
+            elif drained and not self.admission_disabled:   # an unwritten breach marker keeps the row open
                 try:
                     report = self.settle(conn, operation_key)
                     report.phase, report.fatal_refusal = phase, op.fatal_refusal

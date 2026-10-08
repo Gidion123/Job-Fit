@@ -361,12 +361,12 @@ The audit returned TARGETED REVISION REQUIRED. The architecture, cap, bounds and
   - the owner never touches the allowance.
 - **Accepted operational constants:** 10 new sessions per IP pseudonym per hour (provisional MVP default), the hourly quota purge and the startup purge.
 - **Tests now:** `tests/test_live_unit.py` 48, `tests/test_live_api.py` 26, `tests/test_live_recommend_equivalence.py` 1, `tests/test_ui_client.py` 9, `tests/test_live_db.py` 25, `tests/test_live_runtime_db.py` 13. Default suite 890 passed, 126 skipped (the gated tests), 0 failed; gated matrix 130 passed on PostgreSQL 16.15 (92 migration + 38 live); ruff clean; freeze verify `"ok": true`.
-- **Deployment prerequisites (not part of Phase 2B code):** the persistent production ledger volume; acquiring the client IP (the Caddy header and Streamlit access to it). Phase 2B is not declared closed; that follows the independent correction audit.
+- **Deployment prerequisites (not part of Phase 2B code):** the persistent production ledger volume (its storage contract was later closed for Phase 2 acceptance at `f5d6cf7`; mounting it on the deployed host remains); acquiring the client IP (the Caddy header and Streamlit access to it). Phase 2B is not declared closed; that follows the independent correction audit.
 
 ### Findings and not done yet
 
 - **Finding:** the frozen `RuntimeClient` adapter has no `embeddings` endpoint, so the Phase 3 runtime query embedding must wrap the base frozen `OpenRouterClient` (as the embedding test does).
-- The production ledger volume (FAIL-38): the storage contract, its validation and the crash/restart tests are implemented (see the next section); the production compose volume line and deployed-host persistence remain Phase 6 and Phase 8 items.
+- The production ledger volume (FAIL-38): closed for Phase 2 acceptance (local/CI) at `f5d6cf7` (see the next section); the production compose volume is Phase 6 and deployed-host persistence validation is Phase 8.
 - The Caddy header and the Streamlit header access are deployment details: client-IP provenance is not claimed end to end until the deployed Caddy validation passes.
 - The public parse (consent adapter), runtime embedding, the extraction cache and live latency measurement are Phase 3 and CP3.4 work. The idempotency registry and the session rate limit are in memory (one API process).
 
@@ -374,11 +374,15 @@ The audit returned TARGETED REVISION REQUIRED. The architecture, cap, bounds and
 
 Local and CI only, fake SDKs: no paid call, nothing deployed, no D-087 frozen file changed (freeze verify `"ok": true`), no migration, `models.py` unchanged. Production live and public live stay off; public live stays blocked by the D-096 bound. Plan revision 7 was independently accepted before implementation; the decision text is the D-101 addition "persistent production ledger storage".
 
-**Status (Execution Plan row stays TODO until the independent audit):**
-- implementation complete (commits `2cfd087`, `a9c6020`, `66b166c`, `39f74a8` and this docs commit);
-- deterministic application-level restart evidence: the R1-R7 matrix below passes locally on PostgreSQL 16.15 and in the CI `db-migrations` job;
-- Docker named-volume persistence: the CI `docker-build` smoke (below);
-- **not claimed:** persistence on a deployed host (Phase 8). The production compose service, Caddy, restart policy, logging, healthcheck packaging and backup/restore packaging stay Phase 6.
+**Status: DONE for Phase 2 acceptance (local/CI); deployed host persistence validation pending Phase 8.** Independently verified and closed on 8 Oct 2026 at final HEAD `f5d6cf76cd588623b88d322a0dd5371f52d51b19` (audit range `9dc8ac8..f5d6cf7`).
+- Implementation: commits `2cfd087`, `a9c6020`, `66b166c`, `39f74a8`, `f5d6cf7`.
+- CI green: run [37759368396](https://github.com/Gidion123/Job-Fit/actions/runs/37759368396) (lint-and-test, db-migrations, docker-build including the named-volume smoke).
+- Crash/restart evidence: the deterministic application-level R1-R7 matrix and the storage-continuity tests passed (gated suite 194 passed locally on PostgreSQL 16.15 and in CI on pg17); offline suite 936 passed, 190 skipped.
+- Named-volume persistence: the CI `docker-build` smoke passed (same `storage_id` after container replacement, intent line survived, a container without the volume is unprovisioned).
+- D-087 freeze intact (`"ok": true`); no migration; `models.py` unchanged; no paid call.
+- Production live and public live stay off; public live stays blocked by the D-096 bound.
+- **Still open:** persistence on a deployed host is a Phase 8 obligation; the production compose service, Caddy, restart policy, logging, healthcheck packaging and backup/restore packaging stay Phase 6.
+- The residual limitations below stay documented and accepted.
 
 ### Storage contract
 

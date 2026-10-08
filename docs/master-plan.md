@@ -511,7 +511,7 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
      - fail-closed settings, with live and public live off by default (commit `1574e31`);
      - deterministic phase bounds from versioned config (commit `9286fd9`, corrected in `3f20f55` and `aa33f10` after the 8 Oct Codex review). `full_analysis_upper_bound` = US$84.7704449, which is US$82.7704449 above the US$2/day cap, so public live is **not eligible** under D-096. D-096 is unchanged; Dion and Codex decide the next step.
    - **Owner additions, planned (D-095, D-096):**
-     - a persistent production ledger;
+     - a persistent production ledger: **DONE for Phase 2 acceptance (local/CI); deployed host persistence validation pending Phase 8** (independently closed 8 Oct at `f5d6cf7`; [CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-persistent-production-ledger-storage));
      - the D-096 condition `full_analysis_upper_bound` ≤ US$2/day cap. The bounds now exist (see Completed above), and the condition is **not met**;
      - **separate parse and recommendation reservations** (reserve, settle, release; embedding only in the recommendation reservation; no billable call without a reservation);
      - one live analysis at a time;

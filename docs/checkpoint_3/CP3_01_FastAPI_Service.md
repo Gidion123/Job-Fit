@@ -46,7 +46,7 @@ From 8 October the remaining CP3 work follows [D-102](../decisions.md): JobFit i
     - a concurrency-safe app client (FAIL-36).
   - **Privacy:**
     - name and address hints with correct masking text (FAIL-37);
-    - upload hardening, limited to the formats the current extractor supports: `.pdf` (text only, ≤ 30 pages, not encrypted), `.docx`, `.txt`, `.md`; ≤ 10 MB; ≤ 100,000 characters;
+    - upload hardening, limited to the formats the current extractor supports: `.pdf` (text only, ≤ 30 pages, not encrypted), `.docx`, `.txt`, `.md`; ≤ 10 MB; ≤ 100,000 characters; *(implemented 8 Oct with tighter beta limits: ≤ 10 pages and ≤ 5 MiB; see [the results](#results-8-oct-2026-lean-public-beta-cv-upload-hardening))*
     - an allow-list and a signature check;
     - a streamed size limit before buffering;
     - a **DOCX decompression gate** (entry count, total uncompressed size, compression ratio, `word/document.xml` required);
@@ -485,3 +485,32 @@ Config sha256 `ccb1254a92147a26e0392e4394cd9a59824bda0b7a7e1a3fb2ef609d424335a3`
 - The real-CV public path (consent adapter, `cv_source`, runtime query embedding, production retriever) is not built: public Find Jobs and Check a Job stay closed. The `search` phase is exercised by tests; the demo-CV search uses cached query embeddings and makes no provider call.
 - No real-provider validation: any live check of the bounds needs its own approved validation step and budget.
 - Langfuse (required for the final beta since D-103) is a separate P1 task.
+
+## Results (8 Oct 2026, lean public-beta CV upload hardening)
+
+Implemented at `d6e84d5` (local and CI, offline tests only, zero provider calls). The real-CV provider path, consent wiring, Streamlit and deployment are not part of this step. `src/jobfit/cv/text_extract.py` (its `MAX_CHARACTERS` feeds the Phase 2A and D-103 bounds), the frozen `cv/parser.py`, D-103, migrations, `models.py` and `ui/` are unchanged.
+
+### Limits and where they are enforced (`src/jobfit/cv/upload_guard.py`, `src/jobfit/cv/upload_worker.py`)
+
+| Limit | Value | Enforced by |
+| --- | --- | --- |
+| Raw multipart request | 5 MiB + 64 KiB (`UPLOAD_REQUEST_MAX_BYTES`) | Starlette `RequestBodyLimitMiddleware` on `POST /cv/upload` only (`UploadBodyLimit`): counts received bytes; a declared, missing or false `Content-Length` is capped; every 413 rewritten to the JobFit body |
+| Actual CV file | 5 MiB (`UPLOAD_FILE_MAX_BYTES`) | explicit check after the memory-only parse |
+| Multipart spool | `spool_max_size` above the raw cap; one `file` part, no other field | `_MemoryMultiPart` over the bounded stream: no temporary file |
+| Types | `.pdf`, `.docx`, `.txt`, `.md` | extension allow-list (415) |
+| PDF | `%PDF-` in the first 1,024 bytes; not encrypted; ≤ 10 pages; every page has text | header in the API process; the rest in the worker |
+| DOCX | ≤ 200 entries; Σ declared size ≤ 20 MiB; entry ≤ 10 MiB; ratio ≤ 100 (entries ≥ 1 MiB); no absolute, drive or `..` paths; `[Content_Types].xml` and `word/document.xml` present; then one `[Content_Types].xml` read (≤ 256 KiB); macro-enabled refused | central-directory (`ZipInfo`) checks before any decompression |
+| TXT/MD | strict UTF-8 (BOM allowed); no NUL; control characters ≤ 1%; no invented signature | API process |
+| Text | ≤ 100,000 characters (unchanged `MAX_CHARACTERS`); never truncated | worker, with the unchanged `extract_text` |
+| Bounded work | 20 s wall timeout; `RLIMIT_AS` 512 MiB (Linux); `RLIMIT_CPU` 20 s; `RLIMIT_FSIZE` 0 | separate interpreter (`python -I`) with an allow-listed environment |
+| Concurrency | 1 extraction at a time per API process (503 `upload_busy`) | `BoundedSemaphore(1)` |
+
+**Deployment assumptions.** The controlled beta runs **one API application worker process**, so the per-process slot means one CV extraction at a time for the service. There is no cross-process lock; Phase 6 may reconsider the worker or concurrency count only from measured VPS CPU, RAM and real demand. The worker is **resource isolation, not a security sandbox**: its environment is an allow-list (no provider, database, owner, internal or observability secrets), it runs in isolated mode and cannot write files, but there is no seccomp, network namespace or container-in-container. Phase 6 packaging keeps the edge limits aligned: the Caddy request-body limit must allow the multipart overhead and match `UPLOAD_REQUEST_MAX_BYTES`, Streamlit `server.maxUploadSize` is set accordingly, and the application file limit stays 5 MiB.
+
+**Deviation from the plan text.** The plan named `multiprocessing` with `spawn`. `multiprocessing` cannot give its child a scrubbed environment (it inherits `os.environ`), so the same fresh-interpreter worker is started with `subprocess` and an explicit allow-listed environment, which the scrubbing guardrail requires. Bytes and results still move only through pipes, and cleanup is the same.
+
+**Error contract.** Every rejection is `{"detail": "<fixed message>", "code": "<code>"}` with codes `upload_too_large` (413), `upload_malformed`, `unsupported_type` (415), `content_mismatch`, `pdf_encrypted`, `pdf_too_many_pages`, `pdf_no_text`, `docx_invalid`, `docx_expansion_limit`, `docx_macro_enabled`, `text_not_utf8`, `text_binary`, `text_too_long`, `no_text`, `document_unreadable`, `upload_timeout` (422) and `upload_busy` (503). Messages carry no filename, parser text or CV content; a rejected file never reaches masking, the session or a provider. The success response is unchanged.
+
+### Tests and totals
+
+`tests/test_upload_guard.py` (48): valid files of each type give the same masked preview as before; a ~4.5 MiB valid DOCX succeeds with temporary-file rollover forbidden; the raw cap holds for declared, missing and false `Content-Length` and stops reading early; a 5 MiB + 1 file is refused; malformed multipart; type and content mismatches without a worker; hostile DOCX archives (entry, ratio, total, entry count, paths, `vbaProject.bin`) refused with no entry opened; macro-enabled content type refused after only the bounded `[Content_Types].xml` read; unreadable DOCX and broken, encrypted, 11-page and image-only PDFs; NUL, invalid UTF-8, control-heavy and empty text; BOM accepted; 100,000 characters accepted and 100,001 refused (not truncated); a timed-out or failing worker (error exit, garbage, malformed result, killed) is killed, reaped, its pipes closed and the slot released, then a valid extraction succeeds; one extraction at a time; the worker environment contains none of the set secrets; on Linux the 512 MiB allocation and a file write are refused inside the worker; rejections leak no canary, filename or parser text, start no run and leave no preview. Updated: `tests/test_api.py` (`.exe` → 415) and PR-06 in `tests/test_api_privacy.py` (oversized → 413 `upload_too_large`, broken PDF → `document_unreadable`, `.exe` → 415; no temporary residue and no calls kept). Default suite 1094 passed, 199 skipped, 0 failed; the gated run 1282 passed, 11 skipped, 0 failed (PostgreSQL 16.15); ruff clean; freeze verify `"ok": true`.

@@ -567,6 +567,7 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
        - a **DOCX decompression gate** (entry count, uncompressed size, compression ratio, `word/document.xml` required);
        - an extraction timeout;
        - safe errors with no file content.
+       - *(DONE 8 Oct at `d6e84d5`, awaiting independent audit: 5 MiB file and 5 MiB + 64 KiB raw request limits, memory-only multipart, PDF ≤ 10 pages, the DOCX central-directory gate, TXT/MD sanity, a bounded worker with a 20 s timeout and an allow-listed environment, one extraction at a time per process, stable error codes; [results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-lean-public-beta-cv-upload-hardening).)*
    - **Monitoring, planned (D-099):**
      - request IDs and JSON logs (minimal version in P0);
      - `/metrics` with bounded labels;
@@ -597,7 +598,7 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
    - PLANNED / NOT YET VALIDATED: the rest of the public live path and the safety controls.
    - Next: Dion and Codex decide on the bound result, then Phase 2B (reservations, quota, upload hardening, adapter). The Alembic schema it needs is in place (CP3.2, 8 Oct).
    - DONE (8 Oct, Phase 2B, D-101): the dark, fail-closed cost-safety runtime (reservations, correlated ledger, phase-scoped gate, ticket, internal token, owner override, idempotency). A recommendation is refused at the US$2/day cap; public live stays blocked by the D-096 bound ([results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-phase-2b-dark-safety-layer)). Upload hardening and the consent adapter remain.
-   - DONE dark (8 Oct, D-103; awaiting independent audit): the public-beta cost profile (per-phase bounds, canonical byte envelopes, ticket-gated session allowance, label compatibility mapping) and the owner-only API contract for the search stage and `job_analysis`; the production runtime admits `parse`, `search` and `job_analysis` only ([results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-d-103-public-beta-cost-profile)). Next: upload hardening, API hardening and the real-CV consent adapter.
+   - DONE dark (8 Oct, D-103; awaiting independent audit): the public-beta cost profile (per-phase bounds, canonical byte envelopes, ticket-gated session allowance, label compatibility mapping) and the owner-only API contract for the search stage and `job_analysis`; the production runtime admits `parse`, `search` and `job_analysis` only ([results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-d-103-public-beta-cost-profile)). DONE (8 Oct, awaiting independent audit): lean public-beta CV upload hardening at `d6e84d5` ([results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-lean-public-beta-cv-upload-hardening)). Next: API hardening and the real-CV consent adapter.
 10. **Definition of Done.**
     - All P0 items implemented with their tests.
     - Offline suite: 0 unexpected failures.

@@ -718,7 +718,8 @@ Template name: Build Streamlit UI · Official: 7 Oct 2026 · Planned work: 7 Oct
    - **Product experience, planned (D-102):**
      - a landing with public-beta wording and the two primary actions, **Find Jobs** and **Check a Job** (pasted JD);
      - stage-aware progress driven by the real pipeline stages of each flow (completed, current, pending), aligned with the latency metrics;
-     - job cards and detail with the match score, strengths, gaps, supporting evidence and explanations;
+     - Find Jobs: optional preferences (target role as a preference, location, work mode, recency; all default to *Any*, the CV stays the primary signal, unknown metadata kept), then retrieval-stage **Relevant Jobs** without a match score, local refinement, sorting and reset over the returned list (no new search, extraction, Sol/Luna or `job_analysis`; filter metadata comes with the search response, no per-result calls), and **Analyze Fit** as the only path to `job_analysis` ([details](checkpoint_3/CP3_03_Streamlit_UI.md#find-jobs-filters-and-results-phase-3b-acceptance-clarification-8-oct-2026));
+     - job cards and detail with the match score (for analyzed jobs only), strengths, gaps, supporting evidence and explanations;
      - empty, failure, unavailable and budget-exhausted states with the saved-demo fallback;
      - "Improve My CV for This Job": representation improvement from existing evidence only, possibly missing (add only if real), true gap stated plainly; current statement → suggestion → why → supporting evidence; the hard anti-fabrication rule. Any LLM-written wording needs its own bound, reservation, evaluation and decision;
      - consistent typography, spacing and components; reasonable mobile and desktop layout. Priority: clarity > trust > usability > polish > decoration.
@@ -732,6 +733,7 @@ Template name: Build Streamlit UI · Official: 7 Oct 2026 · Planned work: 7 Oct
    - Coach checks: 0 invented items, and "not done" gives no bullet.
    - Both flows are reachable from the first screen, and each refusal code has a specific, honest message (D-102).
    - "Improve My CV for This Job": 0 invented skills, experience, metrics or tools; every representation suggestion cites existing CV evidence (D-102).
+   - Find Jobs works with every preference left at *Any*; no job is excluded only for missing metadata; unanalyzed Relevant Jobs show no match score; changing result filters, sorting or resetting makes no new search and no paid or deep-analysis call; the zero-results state offers Reset filters; only Analyze Fit starts `job_analysis` (Phase 3b).
 6. **Evidence to keep.** Screenshots (including the waiting states and upload errors); a short recording.
 7. **Estimate and dependencies.** The upload flow on 8 Oct; waiting UX and coach on 9 Oct. Depends on: the CP3.1 public path and stage events.
 8. **Fallback.** Core flow first; styling last.

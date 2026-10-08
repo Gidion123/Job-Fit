@@ -14,12 +14,46 @@
 
 - **First screen:** a short explanation of JobFit, public-beta wording, the privacy and consent explanation, and two obvious primary actions: **Find Jobs** (discovery) and **Check a Job** (paste a job description found elsewhere).
 - **Stage-aware progress (refines Mentor A below):** real stages from the API. Find Jobs: analyzing your CV → searching relevant jobs → reading job requirements → matching your experience → preparing recommendations. Check a Job: analyzing your CV → reading job requirements → matching your experience → preparing your result. Completed, current and pending steps; counts such as "job i of N" only where real; no fake percentages.
-- **Results:** job cards with the match score and what it means, strengths, gaps, supporting CV evidence and explanations; job detail; clear calls to action.
+- **Results:** Find Jobs first shows retrieval-stage **Relevant Jobs** without a match score; after the user chooses Analyze Fit, the analyzed job card shows the match score and what it means, strengths, gaps, supporting CV evidence and explanations; job detail; clear calls to action. See "Find Jobs filters and results" below.
 - **"Improve My CV for This Job" (refines Mentor B below):** for a matched job or a pasted JD. Three kinds of suggestion: representation improvement (existing evidence only), possibly missing from the CV (add it only if you really did it, with its real context), true gap (stated plainly; wording cannot fix it). Shown as current statement → suggestion → why it helps → supporting CV evidence. JobFit never suggests inventing skills, experience, employers, years, certifications, projects, achievements, metrics, tools or impact. Coaching only: no CV editor, resume builder or cover-letter generator in CP3. See the [CV coach plan](../cv-coach-plan.md).
 - **Coach scope (8 Oct anti-overengineering correction):** the deterministic, evidence-grounded version is sufficient for CP3. LLM-generated rewriting is P2 (post-beta) unless separately approved after a cost bound and an anti-fabrication evaluation.
 - **States:** empty, failure, quota, busy, budget-exhausted and "Live AI analysis is temporarily unavailable. Please try again later.", each with the saved-demo fallback.
 - **Layout:** consistent typography, spacing and components; reasonable on mobile and desktop.
 - **Tests:** Streamlit test-runner cases for both flows, each progress sequence, each refusal state and the coaching anti-fabrication checks; screenshots of the deployed app.
+
+### Find Jobs filters and results (Phase 3b acceptance; clarification, 8 Oct 2026)
+
+A clarification of the accepted Find Jobs UX (D-010 optional filters, D-102 flows, D-103 search stage), not a new decision. Streamlit implementation is Phase 3b.
+
+1. **Optional preferences before Find Jobs.**
+   - Before running Find Jobs, the user may set supported preferences: target role (`role_family`, where the corpus metadata supports it); location or country; work mode (remote, hybrid or on-site, where available); posting recency (`posted_at`).
+   - All of them are optional and default to *Any*. With nothing set, Find Jobs works normally: real CV → embedding → retrieval from the eligible production corpus → relevant jobs. The user is never forced to choose a location or role before using Find Jobs.
+   - The CV stays the primary retrieval signal. Target role is a preference and refinement by default, not an automatic strict exclusion: related roles may still appear when retrieval finds them relevant, unless the UI explicitly offers and the user turns on a strict, exact-role mode. Location or country, work mode and recency may act as explicit constraints when the user chooses them.
+   - The existing UNKNOWN / missing-metadata behaviour is preserved (D-010, `include_unknown` on by default): a job is never silently excluded only because optional metadata is missing, and an unknown value is shown as unknown.
+2. **Retrieval-stage results.**
+   - The first list is labelled **Relevant Jobs** (search-stage results), never as JobFit match rankings or CP2.4 final order.
+   - An unanalyzed job shows no evidence-grounded match score.
+   - Only the user's explicit **Analyze Fit** on a chosen job starts `job_analysis` (within the D-103 allowance).
+3. **Refining the displayed results.**
+   - After the list is shown, the user can refine the current results by role family, location, work mode and recency, and sort them.
+   - Refinement is local and in-memory over the current retrieval-stage result set. Ordinary filter changes never trigger retrieval.
+   - Under the D-103 allowance of one `search` per accepted session, changing result filters never consumes another search. If an explicit **Search again** action is added later, it must be visibly distinct from local result filtering and must respect the D-103 search allowance and the budget.
+   - A clear **Reset filters** action restores the full returned list.
+   - A refinement that leaves no jobs shows an understandable zero-results state, for example: "No jobs in these results match your filters. Clear filters to see all relevant jobs."
+   - The filterable metadata for local refinement (`role_family`, location or country, `work_mode`, `posted_at`) comes with the Find Jobs search response. The UI does not call `GET /jobs/{job_id}` once per result just to get filter metadata (no N+1 calls); that endpoint stays for genuine job-detail views. Any API addition for this belongs to the Phase 3b or real-CV task.
+4. **Cost semantics.**
+   - Selecting or changing optional preferences by itself makes no provider call.
+   - The explicit Find Jobs action runs one D-103 `search` phase and may incur its already bounded embedding cost (`search_max` US$0.0001648).
+   - Once retrieval results exist, local filtering, sorting, reset and the zero-results state make no additional paid or deep-analysis call: no new search, no extraction, no Sol or Luna call, no `job_analysis`.
+   - Paid, evidence-grounded analysis begins only when the user selects a job and chooses Analyze Fit.
+5. **Tests (Phase 3b).** Streamlit tests cover:
+   - Find Jobs with every preference left at *Any*;
+   - target role used as a preference, not a strict exclusion (unless strict mode is on);
+   - unknown-metadata jobs kept;
+   - Relevant Jobs labelling with no match score on unanalyzed cards;
+   - local refinement, sorting and reset making no API search, extraction or analysis call and no per-result metadata call (fake API call counter);
+   - the zero-results state;
+   - Analyze Fit as the only path to `job_analysis`.
 
 ## CP3 final plan for this stage (7 Oct 2026, D-095 to D-100)
 

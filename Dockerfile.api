@@ -26,6 +26,10 @@ COPY evals/annotation_guideline_v1_3.md evals/annotation_guideline_v1_3.md
 COPY evals/splits/ evals/splits/
 COPY evals/demo/ evals/demo/
 COPY evals/results/cp23/ evals/results/cp23/
+# Alembic revisions and the guarded baseline stamp, so the VPS can migrate from this image (D-098).
+COPY alembic.ini ./
+COPY migrations/ migrations/
+COPY scripts/db_baseline.py scripts/db_baseline.py
 # Run from /app/src (PYTHONPATH), not as an installed package: config.py finds
 # config/, data/ and evals/ relative to the source folder (REPO_ROOT).
 # Files copied from a Mac folder can be owner-only (mode 600); make them readable for the

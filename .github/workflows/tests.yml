@@ -24,6 +24,35 @@ jobs:
       # CP2 freeze: every D-087 file must still match its frozen hash (exit 2 on drift).
       - run: python scripts/prepare_cp23_freeze.py --verify evals/freeze/cp23_freeze_draft_v2
       - run: python -m pytest -q
+  # Alembic 0001/0002 on a disposable pgvector service (D-098). The service and its password exist only
+  # inside this job; no production database or credential is involved.
+  db-migrations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: lint-and-test
+    services:
+      postgres:
+        image: pgvector/pgvector:pg17
+        env:
+          POSTGRES_USER: jobfit_ci
+          POSTGRES_PASSWORD: jobfit_ci
+          POSTGRES_DB: jobfit_ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U jobfit_ci -d jobfit_ci"
+          --health-interval 5s --health-timeout 3s --health-retries 20
+    env:
+      JOBFIT_MIGRATION_TESTS: '1'
+      JOBFIT_MIGRATION_ADMIN_URL: postgresql://jobfit_ci:jobfit_ci@127.0.0.1:5432/jobfit_ci
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt -r requirements-dev.txt
+      - run: python -m pytest -q tests/test_migrations_offline.py tests/test_migrations_db.py
   docker-build:
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -32,6 +61,8 @@ jobs:
       - uses: actions/checkout@v4
       - run: docker build -f Dockerfile.api -t jobfit-api .
       - run: docker build -f Dockerfile.ui -t jobfit-ui .
+      # The API image carries the Alembic revisions (no database needed to list them).
+      - run: docker run --rm jobfit-api alembic heads | grep -q '^0002 (head)'
       # Smoke: the API image must start and answer /health with the saved demo available.
       - run: |
           docker run -d --name api -p 8000:8000 jobfit-api

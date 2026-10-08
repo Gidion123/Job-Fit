@@ -42,6 +42,10 @@ def retrieval_card(job_id: str, rank: int, meta: Mapping | None = None) -> dict:
     meta = meta or {}
     return {'job_id': job_id, 'title': meta.get('title'), 'company': meta.get('company'),
             'location': meta.get('location'), 'url': meta.get('url'), 'retrieval_rank': rank,
+            # lightweight metadata for local refinement (no per-job request); unknown stays None
+            'role_family': meta.get('role_family'), 'country_code': meta.get('country_code'),
+            'city': meta.get('city'), 'work_mode': meta.get('work_mode'), 'posted_at': meta.get('posted_at'),
+            'filter_status': meta.get('filter_status'),
             'stage': 'retrieval', 'analyzed': False, 'match_score': None}
 
 

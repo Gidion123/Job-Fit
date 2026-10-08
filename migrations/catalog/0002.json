@@ -14,7 +14,7 @@
    [
     "budget_reservations_guard",
     "f",
-    "CREATE OR REPLACE FUNCTION public.budget_reservations_guard()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\nBEGIN\n    IF TG_OP = 'DELETE' THEN\n        IF OLD.status = 'reserved' THEN\n            RAISE EXCEPTION 'an open budget reservation cannot be deleted';\n        END IF;\n        RETURN OLD;\n    END IF;\n    IF OLD.status <> 'reserved' THEN\n        RAISE EXCEPTION 'a closed budget reservation is immutable';\n    END IF;\n    IF NEW.reservation_id <> OLD.reservation_id OR NEW.operation_key <> OLD.operation_key\n            OR NEW.phase <> OLD.phase OR NEW.production_day <> OLD.production_day\n            OR NEW.reserved_usd <> OLD.reserved_usd OR NEW.process_id <> OLD.process_id\n            OR NEW.created_at <> OLD.created_at THEN\n        RAISE EXCEPTION 'budget reservation identity and amount are immutable';\n    END IF;\n    RETURN NEW;\nEND;\n$function$\n"
+    "CREATE OR REPLACE FUNCTION public.budget_reservations_guard()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\nBEGIN\n    IF TG_OP = 'DELETE' THEN\n        IF OLD.status = 'reserved' THEN\n            RAISE EXCEPTION 'an open budget reservation cannot be deleted';\n        END IF;\n        RETURN OLD;\n    END IF;\n    IF OLD.status <> 'reserved' THEN\n        RAISE EXCEPTION 'a closed budget reservation is immutable';\n    END IF;\n    IF NEW.reservation_id <> OLD.reservation_id OR NEW.operation_key <> OLD.operation_key\n            OR NEW.phase <> OLD.phase OR NEW.production_day <> OLD.production_day\n            OR NEW.reserved_usd <> OLD.reserved_usd OR NEW.process_id <> OLD.process_id\n            OR NEW.created_at <> OLD.created_at OR NEW.active_until <> OLD.active_until THEN\n        RAISE EXCEPTION 'budget reservation identity, amount, day and lifetime are immutable';\n    END IF;\n    RETURN NEW;\nEND;\n$function$\n"
    ]
   ],
   "tables": {
@@ -102,6 +102,15 @@
       null
      ],
      [
+      "active_until",
+      "timestamp with time zone",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
       "closed_at",
       "timestamp with time zone",
       false,
@@ -112,6 +121,11 @@
      ]
     ],
     "constraints": [
+     [
+      "budget_reservations_active_until_check",
+      "c",
+      "CHECK (active_until > created_at)"
+     ],
      [
       "budget_reservations_closed_order_check",
       "c",
@@ -131,6 +145,11 @@
       "budget_reservations_pkey",
       "p",
       "PRIMARY KEY (reservation_id)"
+     ],
+     [
+      "budget_reservations_production_day_check",
+      "c",
+      "CHECK (production_day = (created_at AT TIME ZONE 'Asia/Jakarta'::text)::date)"
      ],
      [
       "budget_reservations_reserved_check",

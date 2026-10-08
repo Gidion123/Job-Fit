@@ -5,10 +5,18 @@ Additive only (D-098): no 0001 column, constraint or index changes, so the froze
 columns have defaults that keep rows out of production retrieval until the seed or the sync
 sets them.
 
-Budget reservations (D-096) are settled from the authoritative production ledger. A reservation
-can be released only with zero spend, and once closed it can never change, so a reservation
-that recorded spend can never become a zero-spend release. An open reservation cannot be
-deleted, because it must keep counting against the daily cap.
+Budget reservations (D-096). What this schema enforces by itself:
+- a released reservation has settled_usd = 0; a closed reservation (settled or released) can
+  never change, so a settled reservation can never be rewritten as released;
+- an open reservation cannot be deleted, because it keeps counting against the daily cap;
+- production_day is the Asia/Jakarta date of created_at;
+- active_until, the persisted end of the reservation's possible activity, is supplied by the
+  reservation creator, lies after created_at and never changes. Whether an earlier-day
+  reservation is still outstanding is therefore decided from stored state, never from the
+  current deployment's configuration.
+What it cannot prove: the database has no access to the authoritative production ledger, so it
+cannot show that a reservation had zero ledger spend and no uncertain upper-bound record. That
+check, before any release, belongs to the Phase 2B runtime.
 
 Revision ID: 0002
 Revises: 0001
@@ -122,6 +130,7 @@ CREATE TABLE budget_reservations (
     status text NOT NULL DEFAULT 'reserved',
     process_id text NOT NULL,
     created_at timestamptz NOT NULL DEFAULT now(),
+    active_until timestamptz NOT NULL,
     closed_at timestamptz,
     CONSTRAINT budget_reservations_phase_check CHECK (phase IN ('parse', 'recommendation')),
     CONSTRAINT budget_reservations_reserved_check CHECK (reserved_usd > 0 AND reserved_usd <> 'NaN'),
@@ -130,7 +139,10 @@ CREATE TABLE budget_reservations (
         (status = 'reserved' AND settled_usd IS NULL AND closed_at IS NULL)
         OR (status = 'settled' AND settled_usd IS NOT NULL AND closed_at IS NOT NULL)
         OR (status = 'released' AND settled_usd = 0 AND closed_at IS NOT NULL)),
-    CONSTRAINT budget_reservations_closed_order_check CHECK (closed_at >= created_at)
+    CONSTRAINT budget_reservations_closed_order_check CHECK (closed_at >= created_at),
+    CONSTRAINT budget_reservations_active_until_check CHECK (active_until > created_at),
+    CONSTRAINT budget_reservations_production_day_check
+        CHECK (production_day = (created_at AT TIME ZONE 'Asia/Jakarta')::date)
 );
 CREATE INDEX budget_reservations_day_status_idx ON budget_reservations (production_day, status);
 
@@ -148,8 +160,8 @@ BEGIN
     IF NEW.reservation_id <> OLD.reservation_id OR NEW.operation_key <> OLD.operation_key
             OR NEW.phase <> OLD.phase OR NEW.production_day <> OLD.production_day
             OR NEW.reserved_usd <> OLD.reserved_usd OR NEW.process_id <> OLD.process_id
-            OR NEW.created_at <> OLD.created_at THEN
-        RAISE EXCEPTION 'budget reservation identity and amount are immutable';
+            OR NEW.created_at <> OLD.created_at OR NEW.active_until <> OLD.active_until THEN
+        RAISE EXCEPTION 'budget reservation identity, amount, day and lifetime are immutable';
     END IF;
     RETURN NEW;
 END;

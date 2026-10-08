@@ -8,7 +8,7 @@ import json
 import os
 import threading
 import time
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from decimal import Decimal
 
 import psycopg
@@ -311,26 +311,26 @@ def test_complete_cache_states_are_accepted_and_every_stage_failure_code_fits(pr
     assert prod.execute(fresh, ('failed', T0 + timedelta(days=8))).fetchone()[0] == 0
 
 
+RESERVE = ('INSERT INTO budget_reservations (operation_key, phase, reserved_usd, process_id, active_until) '
+           "VALUES (%s, %s, %s::numeric, 'p1', now() + interval '1 hour') RETURNING reservation_id")
+
+
 def reserve(conn, key, usd='0.4716399', phase='parse'):
-    return conn.execute('INSERT INTO budget_reservations (operation_key, phase, reserved_usd, process_id) '
-                        "VALUES (%s, %s, %s, 'p1') RETURNING reservation_id", (key, phase, Decimal(usd))).fetchone()[0]
+    return conn.execute(RESERVE, (key, phase, usd)).fetchone()[0]
 
 
 def test_reservation_amounts_and_states(prod):
     for bad in ('0', '-1', 'NaN', 'Infinity'):
-        rejects(prod, "INSERT INTO budget_reservations (operation_key, phase, reserved_usd, process_id) "
-                      "VALUES ('k', 'parse', %s::numeric, 'p')", (bad,))
-    rejects(prod, "INSERT INTO budget_reservations (operation_key, phase, reserved_usd, process_id) "
-                  "VALUES ('k', 'embedding', 1, 'p')")
+        rejects(prod, RESERVE, ('k', 'parse', bad))
+    rejects(prod, RESERVE, ('k', 'embedding', '1'))
     rid = reserve(prod, 'op-1')
-    rejects(prod, "INSERT INTO budget_reservations (operation_key, phase, reserved_usd, process_id) "
-                  "VALUES ('op-1', 'parse', 1, 'p')")                              # idempotency key
+    rejects(prod, RESERVE, ('op-1', 'parse', '1'))                                    # idempotency key
     row = prod.execute("SELECT status, settled_usd, closed_at, production_day = (now() AT TIME ZONE 'Asia/Jakarta')::date "
                        'FROM budget_reservations WHERE reservation_id = %s', (rid,)).fetchone()
     assert row == ('reserved', None, None, True)
     rejects(prod, "UPDATE budget_reservations SET status = 'settled' WHERE reservation_id = %s", (rid,))
     rejects(prod, "UPDATE budget_reservations SET status = 'released', settled_usd = 0.01, closed_at = now() "
-                  'WHERE reservation_id = %s', (rid,))           # spend can never be released as zero-spend
+                  'WHERE reservation_id = %s', (rid,))           # a release must record exactly zero
     rejects(prod, 'UPDATE budget_reservations SET reserved_usd = 0.1 WHERE reservation_id = %s', (rid,))
     rejects(prod, "UPDATE budget_reservations SET settled_usd = 'NaN', status = 'settled', closed_at = now() "
                   'WHERE reservation_id = %s', (rid,))
@@ -347,6 +347,49 @@ def test_reservation_amounts_and_states(prod):
                  'WHERE reservation_id = %s', (zero,))
     rejects(prod, "UPDATE budget_reservations SET status = 'settled', settled_usd = 0.5 WHERE reservation_id = %s", (zero,))
     prod.execute('DELETE FROM budget_reservations WHERE reservation_id = %s', (rid,))    # closed rows may be purged
+    # The database cannot see the ledger: whether a release is allowed (zero ledger spend and no
+    # uncertain upper-bound record) is decided by the Phase 2B runtime before it closes the row.
+
+
+INSERT_AT = ('INSERT INTO budget_reservations (operation_key, phase, reserved_usd, process_id, created_at, '
+             "production_day, active_until) VALUES (%s, 'parse', 1, 'p1', %s, %s, %s) RETURNING reservation_id")
+
+
+def test_reservation_lifetime_is_required_valid_and_immutable(prod):
+    rejects(prod, "INSERT INTO budget_reservations (operation_key, phase, reserved_usd, process_id) "
+                  "VALUES ('no-deadline', 'parse', 1, 'p1')")                       # no default: required
+    created = datetime(2026, 10, 8, 3, 0, tzinfo=timezone.utc)
+    day = date(2026, 10, 8)
+    for bad in (created, created - timedelta(seconds=1)):
+        rejects(prod, INSERT_AT, ('bad-deadline', created, day, bad))
+    rid = prod.execute(INSERT_AT, ('ok', created, day, created + timedelta(minutes=10))).fetchone()[0]
+    assert prod.execute('SELECT active_until FROM budget_reservations WHERE reservation_id = %s',
+                        (rid,)).fetchone()[0] == created + timedelta(minutes=10)
+    for value in (created + timedelta(minutes=20), created + timedelta(minutes=5)):
+        rejects(prod, 'UPDATE budget_reservations SET active_until = %s WHERE reservation_id = %s', (value, rid))
+    prod.execute("UPDATE budget_reservations SET status = 'settled', settled_usd = 0.2, closed_at = %s "
+                 'WHERE reservation_id = %s', (created + timedelta(minutes=1), rid))
+    rejects(prod, 'UPDATE budget_reservations SET active_until = %s WHERE reservation_id = %s',
+            (created + timedelta(hours=1), rid))
+
+
+def test_production_day_is_the_jakarta_date_of_created_at(prod):
+    rid = reserve(prod, 'default-day')                                      # defaults stay consistent
+    assert prod.execute("SELECT production_day = (created_at AT TIME ZONE 'Asia/Jakarta')::date "
+                        'FROM budget_reservations WHERE reservation_id = %s', (rid,)).fetchone()[0] is True
+    before = datetime(2026, 10, 8, 16, 59, 59, 999999, tzinfo=timezone.utc)   # 23:59:59.999999 WIB, 8 Oct
+    after = datetime(2026, 10, 8, 17, 0, 0, tzinfo=timezone.utc)              # 00:00:00 WIB, 9 Oct
+    for key, created, good, wrong in (('before', before, date(2026, 10, 8), date(2026, 10, 9)),
+                                      ('after', after, date(2026, 10, 9), date(2026, 10, 8))):
+        rejects(prod, INSERT_AT, (key + '-wrong', created, wrong, created + timedelta(hours=1)))
+        rid = prod.execute(INSERT_AT, (key, created, good, created + timedelta(hours=1))).fetchone()[0]
+        assert prod.execute('SELECT production_day FROM budget_reservations WHERE reservation_id = %s',
+                            (rid,)).fetchone()[0] == good
+        rejects(prod, 'UPDATE budget_reservations SET production_day = %s WHERE reservation_id = %s', (wrong, rid))
+    # An explicit past created_at with the default (today's) production_day is inconsistent: rejected.
+    old = datetime(2020, 1, 1, tzinfo=timezone.utc)
+    rejects(prod, "INSERT INTO budget_reservations (operation_key, phase, reserved_usd, process_id, created_at, "
+                  "active_until) VALUES ('stale-default', 'parse', 1, 'p1', %s, %s)", (old, old + timedelta(hours=1)))
 
 
 def test_job_delete_cascades_except_versioned_vectors(prod):

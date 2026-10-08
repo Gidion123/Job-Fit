@@ -139,4 +139,3 @@ def compare(expected: dict, actual: dict) -> list[str]:
 
     walk('', expected['objects'], actual['objects'])
     return differences
-

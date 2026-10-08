@@ -20,9 +20,9 @@ The plan behind these reports is the [CP2-CP3 master plan](../master-plan.md).
 
 **CP3 plan frozen (7 Oct 2026, D-095 to D-100):**
 - **Product:** full public live JobFit on a SumoPod VPS, with the saved demo as the fallback (framing clarified on 8 Oct by D-102: controlled public beta, see above).
-- **Budgets and limits:** a US$5 CP3 validation budget; a US$2/day production cap with deterministic phase bounds; one live analysis per IP per 24 h; one live analysis at a time.
+- **Budgets and limits:** a US$5 CP3 validation budget; a US$2/day production cap with deterministic phase bounds; one live analysis per IP per 24 h; one live analysis at a time. *(Amended for the public beta by D-103, 8 Oct: US$5/day and US$25 lifetime, per-phase beta bounds.)*
 - **Job corpus:** a production corpus refreshed from JSearch twice a month (about every two weeks).
-- **Monitoring:** Prometheus and Grafana with email alerts; Langfuse Cloud (Japan) with metadata only.
+- **Monitoring:** Prometheus and Grafana with email alerts; Langfuse Cloud (Japan) with metadata only. *(8 Oct, D-103: self-hosted Prometheus and Grafana OSS with node_exporter, Grafana private through an SSH tunnel; email alerts P2 (post-beta); Langfuse Cloud free tier required for the final beta.)*
 - **Evaluation:** D-045 to be completed with option B (planned, not yet completed).
 - **Freeze:** the formal feature freeze is at the end of 9 October.
 

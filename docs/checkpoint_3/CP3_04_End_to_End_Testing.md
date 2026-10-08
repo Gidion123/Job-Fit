@@ -27,7 +27,7 @@ The deployed checks use the [D-102](../decisions.md) public-beta bar: safe enoug
   - **A, external public:** Internet → Caddy → Streamlit. Checks HTTPS, page availability, the saved demo, the real-CV UI journey once enabled, and user-visible failure states.
   - **B, internal API:** `scripts/e2e_check.py` against the private FastAPI, run inside the VPS Docker network or through an SSH tunnel to a localhost-only port. FastAPI is never exposed publicly for testing.
 - **Privacy release gate** (for public real-CV live, D-095):
-  - PR-01 to PR-10 with synthetic canaries in every sink enabled for the beta: responses, provider payloads, logs, database dump, temporary files, `/metrics` and upload failure paths (including DOCX gate rejections); the Langfuse export only if Langfuse is enabled (Langfuse is P2 (post-beta));
+  - PR-01 to PR-10 with synthetic canaries in every sink enabled for the beta: responses, provider payloads, logs, database dump, temporary files, `/metrics` and upload failure paths (including DOCX gate rejections); the Langfuse export (Langfuse is required for the final beta since D-103);
   - PR-08 fail-closed;
   - the **OpenRouter per-route privacy record** (CV parse, query embedding, JD extraction, evidence matching). A gap is reported before public live and never fixed by changing the model, prompt, K or weights.
   - `JOBFIT_PUBLIC_LIVE=1` only after the gate passes.

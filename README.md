@@ -219,7 +219,7 @@ Folder-by-folder detail: [docs/repo-structure.md](docs/repo-structure.md).
 ## Tech stack
 
 - **In use:** Python 3.11, pandas, NumPy, matplotlib, Jupyter, Pydantic, PostgreSQL 17 with pgvector, OpenRouter (LLM and embedding gateway), FastAPI, Streamlit, Docker and Docker Compose, pytest, ruff, GitHub Actions.
-- **Planned (D-095, D-099):** hosting on a SumoPod VPS behind Caddy, Prometheus and Grafana with email alerts, Langfuse Cloud (metadata only).
+- **Planned (D-095, D-099, D-103):** hosting on a SumoPod VPS behind Caddy; self-hosted Prometheus and Grafana OSS with node_exporter (Grafana private through an SSH tunnel); Langfuse Cloud free tier for LLM tracing (metadata only, required for the final beta).
 
 ## Next steps
 

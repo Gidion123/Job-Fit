@@ -15,9 +15,11 @@
 - **Priority filter:** about 70% AI and product value, 30% infrastructure. Essential safety, privacy and evaluation are never cut.
 - **Public-beta bar:** safe for controlled public use, cost bounded, privacy aware, testable, observable, maintainable, deployable and honest about limits. Unknown → fail closed → log or metric → manual review is acceptable for rare uncertain states. Enterprise HA, multi-region and distributed recovery are out of scope.
 - **Public is not admin:** public users get only the end-user app; every operator, database, secret and dashboard interface stays private.
-- **Recommended order of the remaining work (anti-overengineering correction, 8 Oct):** foundation closeout → **public-live cost/profile decision** → real-user AI path → product UX → lean production packaging → lean monitoring → dark VPS deploy → privacy, quality and cost validation (including PR-10 and D-045 option B) → controlled public beta → final portfolio and reporting. Details and rows: [CP3 execution plan](checkpoint_3/CP3_Execution_Plan.md#remaining-work-in-recommended-order-d-102-anti-overengineering-correction-8-oct).
-- **Post-beta (not blockers):** automated job sync, forced-command SSH, scheduled `job-sync.yml` and dedupe-review automation (D-098 design kept; the seeded corpus is enough, with an optional one-time manual refresh); Langfuse, email alerts and extra dashboards; automated nightly backups (a verified backup and restore test is still required); LLM-written CV rewriting.
-- **Open gates (separate decisions needed):** first, the public-live cost/profile decision, the next explicit Dion and Codex architecture decision before large Phase 3 work (US$84.7704449 > US$2/day; D-096 still blocks public live; the bound, the frozen configuration and the cap stay unchanged until then); Flow B in production (D-101 keeps `/analyze` closed until a pasted-JD bound exists); any LLM-written CV wording; the D-100 dates stay as they are unless a decision moves them.
+- **Recommended order of the remaining work (anti-overengineering correction, 8 Oct):** foundation closeout → **public-live cost/profile decision** (D-103, implemented dark 8 Oct) → real-user AI path → product UX → lean production packaging → lean monitoring → dark VPS deploy → privacy, quality and cost validation (including PR-10 and D-045 option B) → controlled public beta → final portfolio and reporting. Details and rows: [CP3 execution plan](checkpoint_3/CP3_Execution_Plan.md#remaining-work-in-recommended-order-d-102-anti-overengineering-correction-8-oct).
+- **Post-beta (not blockers):** automated job sync, forced-command SSH, scheduled `job-sync.yml` and dedupe-review automation (D-098 design kept; the seeded corpus is enough, with an optional one-time manual refresh); email alerts and extra dashboards; automated nightly backups (a verified backup and restore test is still required); LLM-written CV rewriting.
+- **Public-beta cost profile (D-103, 8 Oct, implemented dark, awaiting independent audit):** a separate versioned profile with exact canonical byte envelopes and per-phase bounds (`parse` US$0.0614679, `search` US$0.0001648, `job_analysis` US$4.0012836) under a US$5/day cap and a US$25 lifetime stop; Find Jobs shows search-stage results (never a match ranking) and analyzes up to three chosen jobs; Check a Job is one `job_analysis`; one durable ticket per IP per 24 h opens 1 parse, 1 search and 3 job analyses per session. The Phase 2A bound (US$84.7704449) stays as history. The public real-CV flow stays closed until the consent adapter exists.
+- **Monitoring (D-103 clarification):** self-hosted Prometheus and Grafana OSS with node_exporter; Grafana private through an SSH tunnel; **Langfuse required for the final controlled public beta** (Langfuse Cloud free hosted tier, no raw CV or PII, separate P1 task; a paid plan needs a decision).
+- **Open gates (separate decisions needed):** the public-live cost bound and Flow B in production are resolved by D-103; still open: any LLM-written CV wording; the D-100 dates stay as they are unless a decision moves them.
 
 ## Current outcome, 7 October 2026
 
@@ -25,9 +27,9 @@
 
 Dion and Codex approved the CP3 final execution plan:
 - **Product:** full public live JobFit on a SumoPod VPS (Singapore), with the saved demo as the zero-cost fallback. *(Framing clarified on 8 Oct by D-102: a production-grade AI engineering portfolio with a controlled public beta; see above.)*
-- **Budgets:** a US$5 CP3 validation budget; a US$2/day production cap with deterministic phase bounds; one live analysis per IP per 24 h; one live analysis at a time.
+- **Budgets:** a US$5 CP3 validation budget; a US$2/day production cap with deterministic phase bounds; one live analysis per IP per 24 h; one live analysis at a time. *(Amended for the public beta on 8 Oct by D-103: US$5/day and US$25 lifetime, per-phase beta bounds, ticket then session allowance.)*
 - **Job corpus:** a production corpus refreshed from JSearch twice a month (about every two weeks), with exact dedupe and fuzzy suspects held back for review.
-- **Monitoring:** Prometheus and Grafana with email alerts; Langfuse Cloud (Japan) with metadata only.
+- **Monitoring:** Prometheus and Grafana with email alerts; Langfuse Cloud (Japan) with metadata only. *(8 Oct: email alerts are P2 (post-beta); Langfuse is required for the final beta, D-103.)*
 - **Evaluation:** D-045 to be completed with option B (planned, not yet completed).
 - **Freeze:** the formal feature freeze is at the end of 9 October. The presentation stays on 11 October.
 
@@ -35,7 +37,7 @@ Everything below for CP3.1-CP3.7 is **PLANNED** unless a line says it is done lo
 
 | Stage (official name) | JobFit scope | Status |
 | --- | --- | --- |
-| CP3.1 API Deployment with FastAPI | Public-beta API for both flows, safety controls and instrumentation | PARTIAL: demo flow done locally; Phase 2A fail-closed settings and phase bounds done (7 Oct; the full bound is above the US$2/day cap, so public live is not eligible); Phase 2B dark cost-safety runtime done (8 Oct, D-101); persistent production ledger DONE for Phase 2 acceptance (local/CI; deployed-host validation pending Phase 8); public path PLANNED |
+| CP3.1 API Deployment with FastAPI | Public-beta API for both flows, safety controls and instrumentation | PARTIAL: demo flow done locally; Phase 2A fail-closed settings and phase bounds done (7 Oct; the full bound is above the US$2/day cap, so public live is not eligible); Phase 2B dark cost-safety runtime done (8 Oct, D-101); persistent production ledger DONE for Phase 2 acceptance (local/CI; deployed-host validation pending Phase 8); D-103 public-beta cost profile and owner-only API contract implemented dark (8 Oct, awaiting audit); public real-CV path PLANNED |
 | CP3.2 Database Integration and CI/CD | Production corpus, job sync, VPS and delivery | PARTIAL: CI green after Phase 1 (FAIL-35 resolved); Alembic `0001`/`0002` done with migration tests (8 Oct); not deployed |
 | CP3.3 Streamlit UI | Product experience: Find Jobs and Check a Job, stage-aware progress, "Improve My CV for This Job" (D-102) | PARTIAL: demo flow done locally |
 | CP3.4 End-to-End Testing | Controlled public beta validation, privacy release gate and feature freeze | PARTIAL: local 27/27; deployed checks PLANNED |
@@ -194,7 +196,7 @@ This section is kept as it was on 2 October. For the current state, see [Current
 | SumoPod VPS (Singapore, Ubuntu 24.04, 2 vCPU / 8 GB / 80 GB), SSH keys, ufw, Docker, domain (`JOBFIT_PUBLIC_HOST`) | Dion + Codex | 8 Oct | First deploy (CP3.2) | Open |
 | Production OpenRouter key with a credit limit; recorded per-route privacy settings | Dion + Codex | 9 Oct | Public live (CP3.4 gate) | Open |
 | SMTP sender and receiver for alerts (`GRAFANA_SMTP_*`, `GRAFANA_ALERT_*`) | Dion + Codex | 9 Oct | Email alerts (CP3.2) | Open; optional since 8 Oct (email alerts are P2 (post-beta)) |
-| Langfuse Cloud project in the Japan region (Hobby) | Dion + Codex | 9 Oct | Tracing (CP3.1) | Open; optional since 8 Oct (Langfuse is P2 (post-beta)) |
+| Langfuse Cloud project, free hosted tier (Japan region if available) | Dion + Codex | 9 Oct | Tracing (CP3.1) | Open; required for the final controlled public beta since 8 Oct (D-103); stop for a decision if the free tier is unavailable or unsuitable |
 | Development labels reviewed (gold) | Dion | 2 Oct morning | Checkpoint 10 | Reviewed-record bundle exported and validated; only compatible complete references may be used for each metric; held/unjudged records remain explicit |
 | Test relevance labels, blind (D-045 phase 2) | Dion | 3 Oct | Checkpoint 11 | Done 7 Oct: D-053 top-10 union, 68 pairs over CV1-CV5, 67 judged + 1 held (F00070); AI-assisted, human-reviewed, blind to ranking (D-088, `test_v13_cp24_r1`) |
 | Test extraction and evidence (D-045 phase 3) | Dion | 10 Oct | Final report (CP3.5) | Open, method final (D-100, option B): blind candidates F00398, F00237 and CV3 × F00398 selected by ID on 7 Oct; Dion labels them blind first, then the frozen pipeline runs (about US$0.10); the CP2.4 workbook stays MODEL-ASSISTED, HUMAN-REVIEWED and is reported separately. PLANNED / NOT YET COMPLETED |
@@ -213,7 +215,7 @@ in parallel: schemas + scoring + fixtures → CP2.2 parser/extraction/matcher + 
 in parallel: hosting smoke deploy (1-2 Oct) → API (5 Oct) → database + CI (6 Oct) → Streamlit (7 Oct) → E2E + freeze (8 Oct)   [original plan]
 CP3 (D-095 to D-100): docs freeze + CI green (7 Oct) → P0 hardening + public path + packaging + dark deploy (8 Oct)
                       → sync + monitoring + privacy gate + public live + PR-10 + freeze (9 Oct) → reports/deck/rehearsal (10 Oct) → present (11 Oct)
-CP3 order after D-102 (8 Oct, with the anti-overengineering correction): foundation closeout → public-live cost/profile decision
+CP3 order after D-102 (8 Oct, with the anti-overengineering correction): foundation closeout → public-live cost/profile decision (D-103, done)
                       → real-user AI path (both flows) → product UX → lean packaging → lean monitoring → dark VPS deploy
                       → privacy, quality and cost validation → controlled public beta → final portfolio and reporting; the D-100 dates are unchanged
 ```
@@ -260,7 +262,7 @@ Labeling is the longest chain and depends on one person. It starts on day one an
 - **Hosting:** originally Railway (D-023); now a SumoPod VPS (D-095), paid by Dion outside the LLM budget.
 - **CP3 budgets (D-096):**
   - **CP3 validation:** US$5 in total, counted on the development ledger. I report before anything would cross it.
-  - **Production:** a US$2/day hard cap on a dedicated OpenRouter key with its own credit limit. It is enforced by deterministic phase bounds and persisted reservations, and the production ledger is authoritative.
+  - **Production:** a US$2/day hard cap on a dedicated OpenRouter key with its own credit limit. It is enforced by deterministic phase bounds and persisted reservations, and the production ledger is authoritative. *(D-103, 8 Oct, for the controlled public beta: US$5/day and a US$25 lifetime stop; the provider key credit limit is optional defence in depth, never a dependency.)*
   - **JSearch:** sync requests use the free tier (≤ 80 requests per sync); the pay-as-you-go fallback is about US$0.40 per sync.
 
 ---
@@ -536,7 +538,7 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
      - deterministic phase bounds from versioned config (commit `9286fd9`, corrected in `3f20f55` and `aa33f10` after the 8 Oct Codex review). `full_analysis_upper_bound` = US$84.7704449, which is US$82.7704449 above the US$2/day cap, so public live is **not eligible** under D-096. D-096 is unchanged; Dion and Codex decide the next step.
    - **Owner additions, planned (D-095, D-096):**
      - a persistent production ledger: **DONE for Phase 2 acceptance (local/CI); deployed host persistence validation pending Phase 8** (independently closed 8 Oct at `f5d6cf7`; [CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-persistent-production-ledger-storage));
-     - the D-096 condition `full_analysis_upper_bound` ≤ US$2/day cap. The bounds now exist (see Completed above), and the condition is **not met**;
+     - the D-096 condition `full_analysis_upper_bound` ≤ US$2/day cap. The bounds now exist (see Completed above), and the condition is **not met**; *(for the public beta, D-103 replaces it with per-phase beta bounds, each ≤ the US$5/day cap: `public_beta_phase_eligible`)*;
      - **separate parse and recommendation reservations** (reserve, settle, release; embedding only in the recommendation reservation; no billable call without a reservation);
      - one live analysis at a time;
      - one ticket per IP per 24 h (HMAC, consumed at the first billable call);
@@ -571,6 +573,7 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
      - a Langfuse Japan adapter, metadata only;
      - canary tests for logs, metrics and Langfuse payloads.
      - *(8 Oct, anti-overengineering correction under D-102: the beta needs the JSON logs and `/metrics`; the Langfuse adapter is P2 (post-beta).)*
+     - *(8 Oct, D-103: the Langfuse Cloud adapter (free hosted tier, metadata only, no raw CV or PII) is required for the final controlled public beta, as a separate P1 task before public-beta activation.)*
    - **Mentor additions, planned (D-093 A):** stage events for the waiting UX.
 4. **Files and outputs.**
    - The FastAPI app in `src/`.
@@ -594,6 +597,7 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
    - PLANNED / NOT YET VALIDATED: the rest of the public live path and the safety controls.
    - Next: Dion and Codex decide on the bound result, then Phase 2B (reservations, quota, upload hardening, adapter). The Alembic schema it needs is in place (CP3.2, 8 Oct).
    - DONE (8 Oct, Phase 2B, D-101): the dark, fail-closed cost-safety runtime (reservations, correlated ledger, phase-scoped gate, ticket, internal token, owner override, idempotency). A recommendation is refused at the US$2/day cap; public live stays blocked by the D-096 bound ([results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-phase-2b-dark-safety-layer)). Upload hardening and the consent adapter remain.
+   - DONE dark (8 Oct, D-103; awaiting independent audit): the public-beta cost profile (per-phase bounds, canonical byte envelopes, ticket-gated session allowance, label compatibility mapping) and the owner-only API contract for the search stage and `job_analysis`; the production runtime admits `parse`, `search` and `job_analysis` only ([results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-d-103-public-beta-cost-profile)). Next: upload hardening, API hardening and the real-CV consent adapter.
 10. **Definition of Done.**
     - All P0 items implemented with their tests.
     - Offline suite: 0 unexpected failures.
@@ -670,7 +674,7 @@ Template name: Integrasi Database & GitHub Actions CI/CD · Official: 6 Oct 2026
 6. **Evidence to keep.** CI links; the row-count table; the restore log; deploy-tag notes; sync reports only if the post-beta sync (or the optional manual refresh) runs.
 7. **Estimate and dependencies.** CI on 7 Oct; schema and packaging on 8 Oct; sync on 9 Oct. Depends on: VPS provisioning, DNS and the production OpenRouter key (Dion and Codex). SMTP is needed only for the P2 (post-beta) email alerts and does not block packaging, the dark deploy or beta validation.
 8. **Fallback.** The scheduled sync is P2 (post-beta); the beta and the presentation use the verified seeded corpus (an optional one-time manual refresh may be run before the demo). If the VPS is blocked, the saved demo runs locally and the report states the limit.
-9. **Status and next step.** PARTIAL. Docker, compose and the CI workflow exist; CI is green after Phase 1 (FAIL-35 resolved; run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567)); nothing is deployed; the production corpus and sync are PLANNED. Alembic `0001` (exact CP2 baseline) and `0002` (production schema) are DONE with a verified-stamp path and migration tests in CI (8 Oct, [results](checkpoint_3/CP3_02_Database_and_CICD.md#results-8-oct-2026-alembic-00010002)). Next: `verify` on the local CP2 database, then packaging and the sync.
+9. **Status and next step.** PARTIAL. Docker, compose and the CI workflow exist; CI is green after Phase 1 (FAIL-35 resolved; run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567)); nothing is deployed; the production corpus and sync are PLANNED. Alembic `0001` (exact CP2 baseline) and `0002` (production schema) are DONE with a verified-stamp path and migration tests in CI (8 Oct, [results](checkpoint_3/CP3_02_Database_and_CICD.md#results-8-oct-2026-alembic-00010002)). Next: `verify` on the local CP2 database, then production packaging (the job sync is post-beta, P2).
 10. **Definition of Done.**
     - CI green.
     - The production stack deployed and checked through both validation layers.
@@ -754,7 +758,7 @@ Template name: Testing End-to-End Application · Official: 8 Oct 2026 · Planned
      - A: external public smoke and journey through Caddy and Streamlit (HTTPS, saved demo, the real-CV journey once enabled, user-visible failures);
      - B: the internal API `e2e_check.py` inside the VPS Docker network or through an SSH tunnel. FastAPI stays private.
    - **Privacy release gate:**
-     - PR-01 to PR-10, with synthetic canaries through every sink enabled for the beta: responses, provider payloads, logs, database, temporary files, `/metrics` and upload failure paths, plus the Langfuse export only if Langfuse is enabled (Langfuse itself is P2 (post-beta));
+     - PR-01 to PR-10, with synthetic canaries through every sink enabled for the beta: responses, provider payloads, logs, database, temporary files, `/metrics` and upload failure paths, plus the Langfuse export (Langfuse is required for the final beta since D-103);
      - PR-08 fail-closed;
      - the OpenRouter per-route privacy record (parse, embedding, extraction, matching). A gap is reported before public live and never fixed by changing the model, prompt, K or weights.
    - **Cost and abuse:**

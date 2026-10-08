@@ -12,11 +12,11 @@
 
 From 8 October the remaining CP3 work follows [D-102](../decisions.md): JobFit is a production-grade AI engineering portfolio with a **controlled public beta** on one VPS, not an enterprise SaaS. For this report that means:
 
-- **Two API flows:** Find Jobs (`cv_source` demo or upload → runtime embedding → production retrieval → matching) and Check a Job (CV + pasted JD → extraction → matching, no retrieval). The pasted JD stays a session input and is never written to the production corpus. In production, Check a Job stays closed (D-101) until a pasted-JD phase bound and reservation are decided.
+- **Two API flows:** Find Jobs (`cv_source` demo or upload → runtime embedding → production retrieval → matching) and Check a Job (CV + pasted JD → extraction → matching, no retrieval). The pasted JD stays a session input and is never written to the production corpus. In production, Check a Job is one `job_analysis` operation with its own bound and reservation (D-103); the public flow stays closed until the real-CV consent adapter exists.
 - **Acceptance bar for the remaining rows (upload hardening, API hardening, the public path):** safe enough for controlled public use, cost bounded, privacy aware, testable, observable, maintainable, deployable and honest about residual limitations. Rare uncertain infrastructure states may end in safe refusal + logs and metrics + manual operator recovery. Enterprise availability and automatic recovery from every theoretical failure are not acceptance criteria. The completed Phase 2A, Phase 2B and persistent-ledger work is not reopened.
 - **API additions planned by D-102:** stage events that drive both the progress UI and the per-stage latency metrics; refusal codes mapped to honest user-facing states ("Live AI analysis is temporarily unavailable"); the inputs for "Improve My CV for This Job" (JD requirements, CV evidence, the match and gap result) under the anti-fabrication rule.
 - **Public is not admin:** no operator or administrative endpoint is reachable by public users; the owner mechanism never weakens the cap, consent or safety controls.
-- **Still blocked:** public live, until a separate decision resolves the D-096 bound (US$84.7704449 > US$2/day).
+- **Still blocked:** public live. The cost gate is resolved by [D-103](#results-8-oct-2026-d-103-public-beta-cost-profile) (per-phase beta bounds under US$5/day); public live still needs the real-CV consent adapter, the CP3.4 privacy release gate and `public_beta_phase_eligible`.
 - **Anti-overengineering correction (8 Oct):** the public-live cost/profile decision is the first unresolved governance blocker and comes before large Phase 3 work; this documentation does not lower the bound, change the frozen model, K, retrieval or scoring, or raise the cap. Upload hardening stays lean but real: PDF header/signature sanity; DOCX valid OOXML/ZIP structure with decompression limits; TXT/MD text-versus-binary sanity, decoding, size and character limits (no invented signature scheme for plain text); timeout; safe errors.
 
 ## CP3 final plan for this stage (7 Oct 2026, D-095 to D-100)
@@ -58,7 +58,7 @@ From 8 October the remaining CP3 work follows [D-102](../decisions.md): JobFit i
     - an error taxonomy;
     - request IDs and JSON logs;
     - `/metrics`;
-    - a Langfuse Japan adapter, metadata only (D-099);
+    - a Langfuse Cloud adapter, metadata only (D-099; required for the final beta since D-103, separate P1 task, free hosted tier);
     - stage events for the waiting UX (D-093 A).
 - **Architecture:** Browser → Caddy → Streamlit → (internal token and client IP) → FastAPI → PostgreSQL / OpenRouter / Langfuse. FastAPI is never public.
 - **Tests to add:**
@@ -444,3 +444,42 @@ A named volume is provisioned with `init` in one container; a second container a
 - `settlement_blocked` is process-local: if the process crashes after detecting a temporary storage swap and the original storage is restored before the restart, nothing durable records the mismatch.
 - An expired reservation with no evidence blocks all live admission (`busy`) until an operator closes it (manual review above). This is deliberate.
 - These are outside the Phase 2 guarantee (accidental volume loss and misconfiguration). Phase 6 backup and restore must treat the PostgreSQL database and the entire ledger root as one recovery set.
+
+## Results (8 Oct 2026, D-103 public-beta cost profile)
+
+[D-103](../decisions.md#d-103-controlled-public-beta-cost-profile-amends-d-096-for-the-public-beta) was implemented dark in three commits (local and CI, fake SDKs only, zero provider calls): `5d07b0c` (bounds), `c3a718e` (runtime and quota), `40ed823` (API contract). Production and public live stay off; nothing is deployed.
+
+### Exact public-beta bounds (`config/cp3/public_beta_bounds_v1.yaml`, `cp3-public-beta-bounds-v1`)
+
+| Item | Bound (US$) | Dominant region | Notes |
+| --- | --- | --- | --- |
+| `parse` | 0.0614679 | fixed limit | CV ≤ 16,384 canonical bytes |
+| `search` | 0.0001648 | — | one Qwen3 embedding of ≤ 16,380 + 100 guard bytes |
+| extraction | 0.4141854 | envelope (initial allowance 55,878) | JD ≤ 16,384 bytes, inventory ≤ 32 |
+| matching (Sol) | 3.416284 | envelope (initial allowance 55,271) | extraction ≤ 24,576 bytes, ≤ 48 units |
+| fallback (Luna) | 0.1708142 | envelope (initial allowance 55,271) | same request as Sol |
+| **`job_analysis`** | **4.0012836** | | extraction + matching + fallback |
+| Phase 2A full analysis | 84.7704449 | | historical, unchanged |
+
+Config sha256 `ccb1254a92147a26e0392e4394cd9a59824bda0b7a7e1a3fb2ef609d424335a3`. Every beta phase fits the US$5 cap; `job_analysis` does not fit US$2. The legacy `public_live_eligible()` is still false at US$2 and US$5.
+
+**Envelope coverage (reported, not tuned).** 637/637 corpus JDs fit the JD envelope (bytes and ≤ 32 inventory items) and 47/47 matchable saved extractions fit the extraction envelope. Provenance: the 637 are every `role_group == 'target'` row (all with a non-empty `description_clean`) of the CP2 snapshot `data/processed/jobs_features.jsonl` (910 rows, all splits; the development split holds 214 of them). This is not the seeded production corpus (632 rows, 428 active target-role jobs, CP3.2) and not the D-091 extraction scope. The 47 are the matchable records (status `done` and `jd_quality` `ok`, the frozen `extraction_from_record` rule) among the 51 saved extraction records that `load_record` finds for those rows (48 `done`, 3 `failed`; one `done` record is not `ok`).
+
+### Runtime and API (what was built)
+
+- **Canonical bytes:** `jobfit.llm.document_bytes` is proven equal to the frozen `validated_call` → `OpenRouterClient` measure (ASCII, multibyte, CJK, emoji, quotes, backslashes, control characters, mixed), and the guard's recorded upper cost uses that number. A CV, JD and extraction exactly at their envelopes fit the modelled parse, extraction, Sol and Luna attempts through the real frozen `parse_cv`, `extract_jd` and `match_evidence`; one byte more is refused.
+- **Runtime:** `LiveRuntime` with `PublicBetaBounds` admits `parse`, `search` and `job_analysis` with their own windows (search 90 s of calls + 60 s; job_analysis 9 × W(chat) + 120 s) and call model; `recommendation` is refused `phase_not_admitted` before any connection.
+- **Reservation labels:** one mapping keeps the unchanged `0002` CHECK constraint: `search` and `job_analysis` are stored as `recommendation`, at their exact beta bound; the real phase is in the intents, the ledger, the report and the admission log.
+- **Envelopes:** refused before reservation (`input_too_large`); an extraction above its envelope is held (`beta_envelope_exceeded`) with 0 Sol and 0 Luna calls and the extraction settled from evidence.
+- **Session allowance:** created only on a proven `consumed` ticket; `refused`, `unavailable`, `unknown` (and an exception) create none and stop the call before the SDK; then 1 parse, 1 search, ≤ 3 job analyses; refusals before the first intent never count; a restart gives no second durable ticket.
+- **API contract (no Streamlit change):** `POST /jobs/search` (stage `retrieval`, `final_order: false`, `analyzed: false`, `match_score: null`), `POST /jobs/{job_id}/analyze` and production `POST /analyze` (one `job_analysis`, stage `analyzed`, `match_score` only when scored). In production these routes are owner-only (non-owners get 503) until the real-CV consent adapter exists; the owner bypasses only the ticket and the allowance. Production wiring builds the runtime with the beta bounds.
+
+### Tests and totals
+
+`tests/test_public_beta_bounds.py` 47, `tests/test_public_beta_runtime.py` 43, `tests/test_public_beta_runtime_db.py` 9 (real PostgreSQL), `tests/test_public_beta_api.py` 13; `tests/test_live_api.py` 29 (the production-wiring assertion now checks the beta phases). Default suite 1039 passed, 199 skipped (the gated tests), 0 failed; the full gated run 1227 passed, 11 skipped, 0 failed on PostgreSQL 16.15; ruff clean; freeze verify `"ok": true`. No change to D-087 frozen files, migrations, `src/jobfit/db/models.py`, `config/cp3/phase_bounds_v1.yaml` or `src/jobfit/llm/phase_bounds.py`.
+
+### Not done (by design)
+
+- The real-CV public path (consent adapter, `cv_source`, runtime query embedding, production retriever) is not built: public Find Jobs and Check a Job stay closed. The `search` phase is exercised by tests; the demo-CV search uses cached query embeddings and makes no provider call.
+- No real-provider validation: any live check of the bounds needs its own approved validation step and budget.
+- Langfuse (required for the final beta since D-103) is a separate P1 task.

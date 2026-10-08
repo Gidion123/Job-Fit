@@ -71,7 +71,11 @@ python scripts/e2e_check.py --live --write
 1. Confirm the monthly cost and set a hard usage limit in Railway.
 2. Push the repository to GitHub yourself; the CI workflow (`.github/workflows/tests.yml`) must be green.
 3. In Railway create two services from the repository: one with `Dockerfile.api`, one with `Dockerfile.ui`. On the UI service set `JOBFIT_API_URL` to the API's private URL. Railway sets `PORT`; both images use it.
-4. Keep `JOBFIT_LIVE_ENABLED=0` (the default) unless you add a persistent volume for `reports/usage` and a separate OpenRouter key with its own spending limit. The deployed demo then uses the saved results only.
+4. Keep `JOBFIT_LIVE_ENABLED=0` (the default) unless you add a persistent named volume at `/var/lib/jobfit/ledger` and a separate OpenRouter key with its own spending limit. The deployed demo then uses the saved results only. Production live additionally needs (CP3 Phase 2, D-101 persistent-ledger addition):
+   - `JOBFIT_USAGE_LEDGER=/var/lib/jobfit/ledger/usage_ledger.jsonl`, provisioned once with `python -m jobfit.live.storage init --ledger /var/lib/jobfit/ledger/usage_ledger.jsonl` inside the API container (it refuses an existing marker or unmarked evidence; check with `... storage check ...`);
+   - backups of the PostgreSQL database and the whole ledger root (marker, ledger, journal, breach and lock files) taken and restored together, as one recovery set;
+   - no purge of closed `budget_reservations` rows (they are the witness of the settled spend) until an approved durable lifetime watermark replaces them;
+   - manual review for any reservation the runtime keeps `reserved` (breach marker, damaged evidence, storage mismatch, an expired reservation without evidence); see the CP3.1 manual-review procedure.
 5. Run `python scripts/e2e_check.py --base https://<api-url> --write` and record the result in CP3.4.
 
 ## What stays closed

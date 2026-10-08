@@ -342,7 +342,7 @@ API (`src/jobfit/api/main.py`, `wiring.py`) and UI client:
 A breach marker (`<JOBFIT_USAGE_LEDGER>.breach.jsonl`), an unreadable or corrupt ledger or journal, or a `reserved` row that cannot be reconciled stops all live admission. Clearing it is a manual, recorded procedure:
 1. Keep the app running in its dark state (no admission happens anyway). Copy the ledger, the intent journal and the breach file aside, read-only.
 2. Read the breach rows (reason, operation key, attempt id) and the matching ledger lines and intents. Compare the reported cost with the OpenRouter production-key activity for that request.
-3. Settle every affected open reservation from that evidence only (`jobfit.live.budget_store.close` in a reviewed one-off session; never release unless zero spend is proven), and record the case in `docs/failures.md`.
+3. Settle every affected open reservation from that evidence only (`jobfit.live.budget_store.close` in a reviewed one-off session; never release unless zero spend is proven), and record the case in `docs/failures.md`. An expired reservation with no evidence at all (kept `reserved` by the reconciler since the persistent-ledger change) is closed conservatively at its `reserved_usd` unless zero spend is proven from the provider's activity.
 4. Never edit or truncate the authoritative ledger. A torn final line is moved to a separate quarantine file only after step 2, with its hash recorded.
 5. Move the breach file aside (renamed with the date) only after the review is recorded. Admission resumes on its own once no breach file exists and the evidence parses.
 
@@ -366,6 +366,66 @@ The audit returned TARGETED REVISION REQUIRED. The architecture, cap, bounds and
 ### Findings and not done yet
 
 - **Finding:** the frozen `RuntimeClient` adapter has no `embeddings` endpoint, so the Phase 3 runtime query embedding must wrap the base frozen `OpenRouterClient` (as the embedding test does).
-- The production ledger volume (FAIL-38) is a deployment item; the variables are documented in `.env.example`.
+- The production ledger volume (FAIL-38): the storage contract, its validation and the crash/restart tests are implemented (see the next section); the production compose volume line and deployed-host persistence remain Phase 6 and Phase 8 items.
 - The Caddy header and the Streamlit header access are deployment details: client-IP provenance is not claimed end to end until the deployed Caddy validation passes.
 - The public parse (consent adapter), runtime embedding, the extraction cache and live latency measurement are Phase 3 and CP3.4 work. The idempotency registry and the session rate limit are in memory (one API process).
+
+## Results (8 Oct 2026, persistent production ledger storage)
+
+Local and CI only, fake SDKs: no paid call, nothing deployed, no D-087 frozen file changed (freeze verify `"ok": true`), no migration, `models.py` unchanged. Production live and public live stay off; public live stays blocked by the D-096 bound. Plan revision 7 was independently accepted before implementation; the decision text is the D-101 addition "persistent production ledger storage".
+
+**Status (Execution Plan row stays TODO until the independent audit):**
+- implementation complete (commits `2cfd087`, `a9c6020`, `66b166c`, `39f74a8` and this docs commit);
+- deterministic application-level restart evidence: the R1-R7 matrix below passes locally on PostgreSQL 16.15 and in the CI `db-migrations` job;
+- Docker named-volume persistence: the CI `docker-build` smoke (below);
+- **not claimed:** persistence on a deployed host (Phase 8). The production compose service, Caddy, restart policy, logging, healthcheck packaging and backup/restore packaging stay Phase 6.
+
+### Storage contract
+
+| Item | Rule |
+| --- | --- |
+| Root | `/var/lib/jobfit/ledger` (`config.PROD_LEDGER_ROOT`); prod live requires `JOBFIT_USAGE_LEDGER` absolute (checked before any `resolve()`, in the parser and in the invariant layer) and directly in that root; a symlinked root that resolves elsewhere fails. No new environment variable. |
+| Co-location | The ledger, `<ledger>.intents.jsonl`, `<ledger>.breach.jsonl`, `.lock` files and `.io.lock` are all in the root. |
+| Provisioning | `python -m jobfit.live.storage init --ledger /var/lib/jobfit/ledger/usage_ledger.jsonl` writes the marker `.jobfit-ledger-storage.json` (`format` 1, uuid4 `storage_id`, ledger name) with `O_EXCL` and fsync; it never creates directories and refuses an existing marker or unmarked existing evidence. `check` prints the `storage_id`. The image has no marker. |
+| Validation | Root exists → marker strictly valid → co-located → write probe (create, fsync, unlink). Reasons: `missing_directory`, `missing_marker`, `invalid_marker`, `ledger_name_mismatch`, `not_writable` (logs only). |
+| No implicit mkdir | `append_durable()` and `FileLock.hold()` no longer create directories. (The frozen `UsageLedger` mkdir sites are unreachable in live.) |
+| Image | `Dockerfile.api` creates `/var/lib/jobfit/ledger` (owner `jobfit`, mode 700, no marker) and declares it a `VOLUME`. |
+| Startup | The app always starts; `/health` reports `live_storage_ready` (true/false; null when live is off); the saved demo works with invalid storage; startup reconciliation runs only on valid storage. |
+| Live operation | Preflight validation (`ledger_storage_unavailable`, 503, nothing reserved, no ticket); revalidation immediately before admission (`ledger_storage_mismatch` if the id changed, before any insert); `process_id` = `<storage_id>:<pid>`. |
+| Every attempt | After the durable intent and the first-intent allowance finalize, before the SDK: the current storage must still be the admitted one, else sticky `ledger_storage_unavailable` / `ledger_storage_mismatch` with no SDK call for this and every later attempt; the independent `storage_continuity_failed` flag makes the runner skip settlement (row stays `reserved`) and registers the operation in the process-local `settlement_blocked` set. |
+| Settlement | Blocked check → current storage → reservation binding → evidence → storage again → close; any failure leaves the row `reserved`. |
+| Reconciliation | Only on valid storage with trustworthy global evidence; never releases an expired reservation without evidence. `reconcile(at=)` / `expired_open(at=)` are test seams (None = database clock). |
+| Admission | `duplicate_operation` → `ledger_storage_mismatch` → `busy` → `evidence_fail_closed` (including settled history above recorded spend) → `budget` → `lifetime`, with one `recorded_spend()` snapshot per transaction. |
+| DB witness | Closed reservation rows are never purged by code; a purge needs an approved durable lifetime watermark first. |
+
+### Crash and restart matrix (verified)
+
+| ID | Scenario (subprocess worker killed with SIGKILL at a flushed barrier; fresh runtime over the same root) | Result |
+| --- | --- | --- |
+| R1 | Completed operation, worker exited | Marker unchanged; 1 intent and 1 ledger line visible; `recorded_spend()` = settled US$0.01; a same-key replay is `duplicate_operation` with 0 SDK calls; with a test hard stop of c + parse bound − 1e-10 a new admission is refused `lifetime`, while the same limit on an empty root and database admits |
+| R2 | Killed inside the provider call (exactly one durable intent, no ledger line, checked before and after the kill) | Before expiry `busy`; `reconcile(at=active_until+1s)` settles at exactly the intent's upper bound, never releases; 0 SDK calls during recovery; the next operation runs once |
+| R2b | Killed after admission, before any client call (zero intents before and after); and evidence deleted while the marker survives | Reconciliation defers twice; row stays `reserved` with `settled_usd` NULL; admission `busy` |
+| R3 | Breach marker after restart | `evidence_fail_closed`; reconciliation closes nothing |
+| R4 | Torn ledger tail / corrupt intent line / unattributed ledger line | `evidence_fail_closed`; reconciliation closes nothing |
+| R5a1 | Ledger line lost, intent and marker kept | `recorded_spend()` = upper bound U ≥ actual c (no downward reset); C7(b) does not fire; a hard stop that c would fit and U would not refuses `lifetime` |
+| R5a2 | Ledger line and intent lost, marker and settled DB row kept | `evidence_fail_closed` from the database witness, before budget and lifetime |
+| R5b | Root re-initialized (new `storage_id`) with an open old-storage row; bare or malformed `process_id` rows | `ledger_storage_mismatch` before `busy`; the old row stays `reserved` |
+| R6 | Marker deleted / root removed / probe failure | `ledger_storage_unavailable`; reconciliation touches nothing; a removed root is not recreated |
+| R7 | Development ledger, relative path, `/tmp`, in-repository path | `ConfigurationError` before any runtime exists |
+
+Storage-continuity tests (real PostgreSQL): a swap between preflight and admission refuses with 0 rows; a swap before the first attempt leaves one intent, 0 SDK calls, the allowance finalized once, the row `reserved`; a swap between attempts stops every later attempt including the frozen repair; a lost marker before an attempt is `ledger_storage_unavailable`; a lost root fails the frozen lifetime check's ledger read first (`evidence_fail_closed`) with no intent written; restoring the original storage before settlement never settles or releases the operation, in the runner or in same-process reconciliation, also when another fatal reason won the first slot; a swap after preflight without any attempt failure defers settlement (four variants, including a swap between the evidence read and the bracket check). Offline: the check runs once per attempt with identical results on stable storage; concurrent attempts after a failure make no SDK call; the frozen Luna fallback and repair stay blocked; a bounded 21-thread `fail_storage`/`set_fatal`/`wait_drained` regression shows no deadlock and first-fatal-wins.
+
+### Docker named-volume smoke (CI `docker-build`)
+
+A named volume is provisioned with `init` in one container; a second container appends an intent line and is removed; a third, new container's `check` prints the same `storage_id` and reads the intent back; a container without the volume reports `missing_marker`. This proves survival across container replacement on a named volume only.
+
+### Tests and totals
+
+`tests/test_live_storage.py` 23 (new), `tests/test_production_settings.py` 57 (+10), `tests/test_live_unit.py` 58 (+10), `tests/test_live_api.py` 29 (+3), `tests/test_live_db.py` 51 (+26), `tests/test_live_runtime_db.py` 30 (+17), `tests/test_live_restart_db.py` 21 (new) with the worker `tests/live_restart_worker.py`. Default suite 936 passed, 190 skipped (the gated tests), 0 failed; gated matrix 194 passed on PostgreSQL 16.15 (92 migration + 102 live); ruff clean; freeze verify `"ok": true`.
+
+### Residual limitations (accepted)
+
+- With the current ledger and journal format there is no independent durable attempt count: a clean removal of one matching intent-and-ledger pair from an open crashed operation, while other valid evidence and the same marker remain, is not detectable from the remaining files.
+- `settlement_blocked` is process-local: if the process crashes after detecting a temporary storage swap and the original storage is restored before the restart, nothing durable records the mismatch.
+- An expired reservation with no evidence blocks all live admission (`busy`) until an operator closes it (manual review above). This is deliberate.
+- These are outside the Phase 2 guarantee (accidental volume loss and misconfiguration). Phase 6 backup and restore must treat the PostgreSQL database and the entire ledger root as one recovery set.

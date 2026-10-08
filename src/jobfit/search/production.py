@@ -93,3 +93,18 @@ def production_search(conn, cv_skills, query, spec, filters, *, analysis_date: d
         raise ProductionRetrievalUnavailable('retrieval returned a job outside the eligible production set')
     return [{'job_id': job_id, 'retrieval_rank': rank, 'filter_status': status[job_id],
              **card_metadata(by_id[job_id])} for rank, job_id in enumerate(ids, 1)]
+
+
+JOB_TEXT_SQL = ("SELECT description_clean FROM jobs WHERE job_id = %s AND is_active "
+                "AND dedupe_status = 'canonical' AND role_group = 'target'")
+
+
+def eligible_job_text(conn, job_id: str) -> str:
+    """The production JD text of one eligible job (for a live extraction); fail closed otherwise."""
+    try:
+        row = conn.execute(JOB_TEXT_SQL, (job_id,)).fetchone()
+    except Exception:
+        raise ProductionRetrievalUnavailable('production schema unavailable') from None
+    if row is None or not (row[0] or '').strip():
+        raise ProductionRetrievalUnavailable('job is not an eligible production job')
+    return row[0]

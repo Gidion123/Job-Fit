@@ -37,7 +37,7 @@ class Tok:
         return list(text)
 
 
-def insert(conn, rows=JOBS):
+def insert(conn, rows=JOBS, spec=SPEC):
     for job_id, active, group, family, country, mode, posted, _ in rows:
         conn.execute(
             "INSERT INTO jobs (job_id, content_hash, snapshot_id, title, company, description_clean, role_group, "
@@ -47,7 +47,7 @@ def insert(conn, rows=JOBS):
             (job_id, f'Engineer {job_id}', group, family, country, 'Jakarta' if country == 'ID' else None, mode,
              posted, f'https://jobs.example/{job_id}', active))
     store = JobEmbeddingStore(conn, 'fixture')
-    store.save_batch(SPEC, [(prepare(r[0], 'python sql ' + r[0], SPEC, Tok(), 'current'), r[7]) for r in rows])
+    store.save_batch(spec, [(prepare(r[0], 'python sql ' + r[0], spec, Tok(), 'current'), r[7]) for r in rows])
 
 
 @pytest.fixture

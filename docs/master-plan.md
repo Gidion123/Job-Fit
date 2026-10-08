@@ -509,7 +509,7 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
      - API tests covering PR-01 to PR-07 and PR-09 with a fake run.
    - **Completed (7 Oct, Phase 2A, local and CI; see the [CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-7-oct-2026-phase-2a)):**
      - fail-closed settings, with live and public live off by default (commit `1574e31`);
-     - deterministic phase bounds from versioned config (commit `9286fd9`). `full_analysis_upper_bound` = US$84.7655888, which is US$82.7655888 above the US$2/day cap, so public live is **not eligible** under D-096. D-096 is unchanged; Dion and Codex decide the next step.
+     - deterministic phase bounds from versioned config (commit `9286fd9`, corrected in `3f20f55` and `aa33f10` after the 8 Oct Codex review). `full_analysis_upper_bound` = US$84.7704449, which is US$82.7704449 above the US$2/day cap, so public live is **not eligible** under D-096. D-096 is unchanged; Dion and Codex decide the next step.
    - **Owner additions, planned (D-095, D-096):**
      - a persistent production ledger;
      - the D-096 condition `full_analysis_upper_bound` ≤ US$2/day cap. The bounds now exist (see Completed above), and the condition is **not met**;
@@ -565,7 +565,7 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
 8. **Fallback.** If the public path is not ready by the freeze, public live stays off. The VPS then serves the saved demo, plus owner-token live runs, and the report says so.
 9. **Status and next step.** PARTIAL.
    - DONE LOCALLY: the demo-CV flow (6 Oct, EXP-20261006-CP3).
-   - DONE (7 Oct, Phase 2A): fail-closed settings and the deterministic phase bounds. The full bound (US$84.7655888) is above the US$2/day cap, so public live is not eligible.
+   - DONE (7 Oct, Phase 2A; corrected 8 Oct): fail-closed settings and the deterministic phase bounds. The full bound (US$84.7704449) is above the US$2/day cap, so public live is not eligible. The live client is not yet wired to `client_settings()` (Phase 2B).
    - PLANNED / NOT YET VALIDATED: the rest of the public live path and the safety controls.
    - Next: Dion and Codex decide on the bound result, then Phase 2B (reservations, quota, upload hardening, adapter). Alembic needs its own approval.
 10. **Definition of Done.**

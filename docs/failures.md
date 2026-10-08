@@ -326,6 +326,11 @@ The recovery helper refuses any failure that is not a timeout, so it cannot retr
 - **Fix (CP3.1, planned, P0):** fail-closed settings with live off by default, a persistent production ledger on a volume, the US$2/day cap with deterministic phase bounds and persisted reservations, a per-IP ticket and a global live gate (D-096).
 - **Progress (7 Oct 2026, CP3 Phase 2A):** partly addressed.
   - Commit `1574e31`: fail-closed production settings. Live mode is now off by default in code. `prod` requires an explicit database URL and tokens. Live in `prod` requires a non-repository ledger and explicit budgets.
-  - Commit `9286fd9`: deterministic phase bounds. `full_analysis_upper_bound` = US$84.7655888, above the US$2/day cap, so public live is not eligible under D-096 ([CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-7-oct-2026-phase-2a)).
-  - Still missing: the ledger volume, daily-cap enforcement with persisted reservations, the per-IP ticket and the global live gate (Phase 2B).
+  - Commits `9286fd9`, `3f20f55`: deterministic phase bounds over every reachable allowance (corrected 8 Oct). `full_analysis_upper_bound` = US$84.7704449, above the US$2/day cap, so public live is not eligible under D-096 ([CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-7-oct-2026-phase-2a)).
+  - Commit `aa33f10`: the settings invariants are enforced on every construction, and public-live eligibility fails closed.
+  - Still missing (Phase 2B):
+    - the ledger volume;
+    - wiring the live client to `client_settings()` (it still uses `get_settings()`);
+    - daily-cap enforcement with persisted reservations;
+    - the per-IP ticket and the global live gate.
 - **Status:** OPEN.

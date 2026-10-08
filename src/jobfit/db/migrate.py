@@ -7,6 +7,9 @@ from jobfit.config import REPO_ROOT
 
 ALEMBIC_INI = REPO_ROOT / 'alembic.ini'
 ALEMBIC_VERSION_TABLE = 'alembic_version'
+# Advisory-lock key that serializes every cooperating JobFit schema operation: migrations/env.py
+# takes it per migration transaction, and the guarded baseline stamp holds it for its whole run.
+SCHEMA_LOCK_KEY = 5363645930281649010
 
 
 def sqlalchemy_url(url: str) -> str:

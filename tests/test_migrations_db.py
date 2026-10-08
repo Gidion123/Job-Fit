@@ -488,3 +488,160 @@ def test_downgrade_is_refused_unless_explicitly_allowed_outside_prod(db, monkeyp
     upgrade(db, 'head')
     state, fp = state_and_fingerprint(db)
     assert state == '0002' and catalog.compare(PIN['0002'], fp) == []
+
+
+# --- R3: the guarded stamp is race-safe and its compensation is conservative ------------------------------
+
+def test_verify_report_contract_is_unchanged(db):
+    cp2(db)
+    report = baseline.verify(db)
+    assert set(report) == {'ok', 'revision_state', 'differences', 'environment'} and report['ok']
+    assert set(report['environment']) == {'target', 'reference'}
+
+
+def wrap_alembic_stamp(monkeypatch, before):
+    original = command.stamp
+
+    def wrapped(config, revision, *a, **kw):
+        before()
+        return original(config, revision, *a, **kw)
+    monkeypatch.setattr(command, 'stamp', wrapped)
+
+
+def commit_elsewhere(url, sql):
+    with psycopg.connect(url, autocommit=True) as other:
+        other.execute(sql)
+
+
+def test_drift_between_validation_and_version_write_aborts_the_stamp(db, monkeypatch):
+    cp2(db)
+    assert baseline.verify(db)['ok']
+    wrap_alembic_stamp(monkeypatch, lambda: commit_elsewhere(db, 'CREATE TABLE stale_drift (id int)'))
+    with pytest.raises(baseline.StampAborted, match='rolled back'):
+        baseline.stamp(db)
+    state, fp = state_and_fingerprint(db)
+    assert state == 'absent'                                    # no version table left behind
+    assert 'stale_drift' in fp['objects']['tables']
+
+
+def test_ddl_on_cp2_tables_is_blocked_during_the_stamp(db, monkeypatch):
+    cp2(db)
+    blocked = []
+
+    def try_alter():
+        with psycopg.connect(db, autocommit=True) as other:
+            other.execute("SET lock_timeout = '1s'")
+            try:
+                other.execute('ALTER TABLE jobs ADD COLUMN sneaky text')
+            except psycopg.errors.LockNotAvailable:
+                blocked.append(True)
+    wrap_alembic_stamp(monkeypatch, try_alter)
+    assert baseline.stamp(db)['stamped'] and blocked == [True]
+    state, fp = state_and_fingerprint(db)
+    assert state == '0001' and catalog.compare(PIN['0001'], fp) == []
+
+
+def test_cooperating_migrations_wait_until_the_post_commit_check_is_done(db, monkeypatch):
+    cp2(db)
+    committed, release, seen, outcome = threading.Event(), threading.Event(), [], {}
+    original = baseline._post_commit_check
+
+    def paused(pg, expected):
+        committed.set()
+        assert release.wait(60)
+        differences = original(pg, expected)
+        seen.append(catalog.revision_state(pg))
+        return differences
+    monkeypatch.setattr(baseline, '_post_commit_check', paused)
+
+    def run_stamp():
+        outcome['stamp'] = baseline.stamp(db)
+
+    def run_upgrade():
+        command.upgrade(alembic_config(db), 'head')
+        outcome['upgrade'] = time.monotonic()
+    a = threading.Thread(target=run_stamp)
+    a.start()
+    assert committed.wait(60)                                   # A committed 0001, still holds the lock
+    b = threading.Thread(target=run_upgrade)
+    b.start()
+    time.sleep(1.5)
+    assert b.is_alive() and 'upgrade' not in outcome            # B waits on the advisory key
+    assert state_and_fingerprint(db)[0] == '0001'
+    release.set()
+    a.join(60)
+    b.join(60)
+    assert outcome['stamp']['stamped'] and seen == ['0001']     # A's post-check saw its own stamp
+    state, fp = state_and_fingerprint(db)
+    assert state == '0002' and catalog.compare(PIN['0002'], fp) == []
+
+
+def patch_post_check(monkeypatch, before=None, result=None):
+    original = baseline._post_commit_check
+
+    def patched(pg, expected):
+        if before:
+            before()
+        return result if result is not None else original(pg, expected)
+    monkeypatch.setattr(baseline, '_post_commit_check', patched)
+
+
+def test_post_commit_drift_removes_only_this_operations_stamp(db, monkeypatch):
+    cp2(db)
+    patch_post_check(monkeypatch, before=lambda: commit_elsewhere(db, 'CREATE TABLE late_drift (id int)'))
+    with pytest.raises(baseline.StampAborted, match='stamp was removed'):
+        baseline.stamp(db)
+    state, fp = state_and_fingerprint(db)
+    assert state == 'absent' and 'late_drift' in fp['objects']['tables']
+
+
+@pytest.mark.parametrize('case', ['advanced_revision', 'recreated_table'])
+def test_compensation_never_touches_a_state_it_cannot_prove_is_its_own(db, monkeypatch, case):
+    cp2(db)
+    if case == 'advanced_revision':
+        sql = "UPDATE alembic_version SET version_num = '0002'"
+        expected_state = '0002'
+    else:
+        sql = ('DROP TABLE alembic_version; ' + VERSION_TABLE + "; INSERT INTO alembic_version VALUES ('0001'); "
+               'CREATE TABLE late_drift (id int)')
+        expected_state = '0001'
+    patch_post_check(monkeypatch, before=lambda: commit_elsewhere(db, sql))
+    with pytest.raises(baseline.StampBlocker, match='nothing changed'):
+        baseline.stamp(db)
+    assert state_and_fingerprint(db)[0] == expected_state      # revision metadata left untouched
+
+
+def test_transient_post_check_difference_is_a_blocker_not_a_success(db, monkeypatch):
+    cp2(db)
+    patch_post_check(monkeypatch, result=['/tables/ghost: unexpected'])
+    with pytest.raises(baseline.StampBlocker, match='manual review'):
+        baseline.stamp(db)
+    state, fp = state_and_fingerprint(db)
+    assert state == '0001' and catalog.compare(PIN['0001'], fp) == []   # left in place, not dropped
+
+
+# --- R4: the 0001 fresh path refuses any existing application object ------------------------------------
+
+STALE_OBJECTS = {
+    'table': 'CREATE TABLE stale_table (id int)',
+    'sequence': 'CREATE SEQUENCE stale_seq',
+    'view': 'CREATE VIEW stale_view AS SELECT 1 AS x',
+    'function': "CREATE FUNCTION stale_fn() RETURNS int LANGUAGE sql AS 'SELECT 1'",
+    'enum_type': "CREATE TYPE stale_enum AS ENUM ('a')",
+}
+
+
+@pytest.mark.parametrize('kind', sorted(STALE_OBJECTS))
+def test_0001_refuses_a_database_with_unexpected_objects(db, kind):
+    commit_elsewhere(db, STALE_OBJECTS[kind])
+    before = state_and_fingerprint(db)
+    with pytest.raises(RuntimeError, match='database is not empty'):
+        upgrade(db, '0001')
+    assert state_and_fingerprint(db) == before and before[0] == 'absent'    # nothing stamped or created
+
+
+def test_0001_accepts_a_fresh_database_with_only_the_vector_extension(db):
+    commit_elsewhere(db, 'CREATE EXTENSION vector')                         # extension-owned objects only
+    upgrade(db, 'head')
+    state, fp = state_and_fingerprint(db)
+    assert state == '0002' and catalog.compare(PIN['0002'], fp) == []

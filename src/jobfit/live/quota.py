@@ -116,12 +116,67 @@ def _same(given: str | None, expected: str | None) -> bool:
 
 @dataclass(frozen=True)
 class LiveRequest:
-    """What the API passes to a live operation: never a raw IP."""
+    """What the API passes to a live operation: never a raw IP. Immutable once built."""
     operation_key: str
     owner: bool
     ip_pseudonym: str | None
     session_id: str
     run_id: str
+    # Public flow: finalizes the session's recommendation allowance at the first durable intent;
+    # returns True only on a proven pending(op) -> used(op) (or already used(op)). None for the owner.
+    on_first_billable: Callable[[], bool] | None = None
+
+
+class SessionAllowances:
+    """D-096: one ticket covers one recommendation run. In memory, like the sessions (one API process).
+
+    no_ticket -> ticket_held -> pending(op) -> used(op); pending(op) -> ticket_held when the operation
+    provably stopped before its first durable provider intent. used(op) never goes back.
+    """
+    TICKET_HELD, PENDING, USED = 'ticket_held', 'recommendation_pending', 'recommendation_used'
+
+    def __init__(self):
+        self._state: dict[str, tuple[str, str | None]] = {}
+        self._lock = threading.Lock()
+
+    def mark_ticket_held(self, session: str) -> None:
+        """Phase 3 parse hook: called only after the parse ticket was consumed."""
+        with self._lock:
+            if session not in self._state:
+                self._state[session] = (self.TICKET_HELD, None)
+
+    def state(self, session: str) -> tuple[str, str | None]:
+        with self._lock:
+            return self._state.get(session, ('no_ticket', None))
+
+    def claim(self, session: str, op: str) -> bool:
+        with self._lock:
+            state, owner_op = self._state.get(session, ('no_ticket', None))
+            if state == self.TICKET_HELD:
+                self._state[session] = (self.PENDING, op)
+                return True
+            return state in (self.PENDING, self.USED) and owner_op == op     # an idempotent retry
+
+    def finalize(self, session: str, op: str) -> bool:
+        with self._lock:
+            state, owner_op = self._state.get(session, ('no_ticket', None))
+            if owner_op != op or state not in (self.PENDING, self.USED):
+                return False
+            self._state[session] = (self.USED, op)
+            return True
+
+    def release_if_pending(self, session: str, op: str) -> None:
+        with self._lock:
+            if self._state.get(session) == (self.PENDING, op):
+                self._state[session] = (self.TICKET_HELD, None)
+
+    def drop(self, session: str) -> None:
+        with self._lock:
+            self._state.pop(session, None)
+
+    def sessions(self) -> set[str]:
+        with self._lock:
+            return set(self._state)
 
 
 class Ingress:

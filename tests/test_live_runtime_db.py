@@ -283,3 +283,18 @@ def test_an_unwritable_breach_marker_keeps_the_row_open_and_disables_admission(d
     other = runtime(db, tmp_path / 'o')                      # another process: the open row blocks it
     with pytest.raises(LiveRefused, match='busy'):
         other.run('parse', key(), parse_work)
+
+
+def test_the_real_cap_refuses_a_recommendation_without_finalizing_the_allowance(db, tmp_path):
+    from jobfit.live.quota import SessionAllowances
+    allowances, op = SessionAllowances(), key()
+    allowances.mark_ticket_held('s1')
+    assert allowances.claim('s1', op)
+    finalized = []
+    rt = runtime(db, tmp_path)
+    with pytest.raises(LiveRefused, match='budget'):
+        rt.run('recommendation', op, lambda client: pytest.fail('no pipeline may run'),
+               on_first_intent=lambda: finalized.append(1) or allowances.finalize('s1', op))
+    assert finalized == [] and rt.sdk.calls == [] and rows(db) == []
+    allowances.release_if_pending('s1', op)                  # what the API worker does afterwards
+    assert allowances.state('s1') == (SessionAllowances.TICKET_HELD, None)

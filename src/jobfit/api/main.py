@@ -26,6 +26,7 @@ from __future__ import annotations
 from collections.abc import Callable, Mapping
 from contextlib import asynccontextmanager
 from dataclasses import dataclass, field
+import functools
 import logging
 import secrets
 import threading
@@ -106,6 +107,8 @@ def create_app(deps: AppDeps) -> FastAPI:
     stop = threading.Event()
 
     def drop_owner(owner: str) -> None:
+        if allowances is not None:
+            allowances.drop(owner)
         for key in [k for k, r in runs.items() if r.owner == owner]:
             runs.pop(key)
         for key in [k for k, (o, _) in pastes.items() if o == owner]:
@@ -123,7 +126,8 @@ def create_app(deps: AppDeps) -> FastAPI:
                 except Exception:
                     log.warning('maintenance failed; retried at the next interval')
             with lock:   # results and pasted JDs of an expired session are dropped with it
-                for owner in {r.owner for r in runs.values()} | {o for o, _ in pastes.values()}:
+                owners = {r.owner for r in runs.values()} | {o for o, _ in pastes.values()}
+                for owner in owners | (allowances.sessions() if allowances is not None else set()):
                     if not deps.store.exists(owner):
                         drop_owner(owner)
 
@@ -137,10 +141,12 @@ def create_app(deps: AppDeps) -> FastAPI:
     app = FastAPI(title='JobFit API', version='1.0', lifespan=lifespan,
                   description='Evidence-grounded job matching for early-career AI/data job seekers. '
                               'Match % is CV evidence coverage, not a hiring probability.')
-    idempotency = None
+    idempotency = allowances = None
     if deps.ingress is not None:
         from jobfit.live.operation import IdempotencyRegistry
+        from jobfit.live.quota import SessionAllowances
         idempotency = IdempotencyRegistry()
+        allowances = app.state.allowances = SessionAllowances()   # the Phase 3 parse marks ticket_held
 
         @app.middleware('http')
         async def internal_only(request: Request, call_next):
@@ -187,7 +193,13 @@ def create_app(deps: AppDeps) -> FastAPI:
                 with lock:
                     if runs.get(run_id) is state:   # a safe refusal code (busy, budget ...) or the class name
                         state.status, state.error = 'failed', getattr(exc, 'code', None) or type(exc).__name__
-        threading.Thread(target=target, daemon=True).start()
+        try:
+            threading.Thread(target=target, daemon=True).start()
+        except Exception:
+            with lock:                          # never leave a "running" run that no worker owns
+                if runs.get(run_id) is state:
+                    runs.pop(run_id)
+            raise
         return run_id
 
     # ---------- health and session ----------
@@ -316,13 +328,16 @@ def create_app(deps: AppDeps) -> FastAPI:
                     unknown = getattr(exc, 'code', None) == 'admission_outcome_unknown'
                     idempotency.update(live.operation_key, state='admission_unknown' if unknown else 'failed')
                     raise
+                finally:   # no-op once finalized at the first durable intent; otherwise no billable call ran
+                    allowances.release_if_pending(h.session_id, live.operation_key)
                 idempotency.update(live.operation_key, state='done')
             return {**recommendation(rec, deps.job_meta), 'source': 'live', 'label': 'Live analysis'}
         if live is None:
             return {'run_id': start_job(h, 'recommendations', MAX_RUNS_PER_SESSION, work)}
         try:
             run_id = start_job(h, 'recommendations', MAX_RUNS_PER_SESSION, work, run_id=live.run_id)
-        except HTTPException:
+        except Exception:                                   # any failure before a worker owns the job
+            allowances.release_if_pending(h.session_id, live.operation_key)
             idempotency.release(live.operation_key)          # nothing started: the key is free again
             raise
         return {'run_id': run_id}
@@ -337,20 +352,25 @@ def create_app(deps: AppDeps) -> FastAPI:
         except ValueError as exc:
             raise HTTPException(422, str(exc))
         owner = deps.ingress.is_owner(request.headers.get(OWNER_TOKEN_HEADER))
-        if not owner:
-            if not deps.public_live:
-                raise HTTPException(503, PUBLIC_LIVE_OFF_MESSAGE)
-            # D-096: the ticket is consumed by the parse; a recommendation needs the session's ticket.
-            # The public parse is not wired before the Phase 3 consent adapter, so none exists yet.
-            raise HTTPException(403, 'ticket_required')
+        if not owner and not deps.public_live:
+            raise HTTPException(503, PUBLIC_LIVE_OFF_MESSAGE)
         try:
             entry, new = idempotency.claim(op, h.session_id, phase)
         except LiveRefused as exc:
             raise HTTPException(exc.status, exc.code)
-        if not new:
+        if not new:                         # the same action again: its run, no allowance touched
             return {'run_id': entry.run_id, 'duplicate': True}
+        finalize = None
+        if not owner:
+            # D-096: one ticket covers one recommendation run. The parse (Phase 3 consent adapter)
+            # marks ticket_held; until then no session holds a ticket, so this refuses.
+            if not allowances.claim(h.session_id, op):
+                idempotency.release(op)
+                raise HTTPException(403, 'ticket_required')
+            finalize = functools.partial(allowances.finalize, h.session_id, op)
         return LiveRequest(operation_key=op, owner=owner, session_id=h.session_id, run_id=entry.run_id,
-                           ip_pseudonym=deps.ingress.ip_pseudonym(request.headers.get(CLIENT_IP_HEADER)))
+                           ip_pseudonym=deps.ingress.ip_pseudonym(request.headers.get(CLIENT_IP_HEADER)),
+                           on_first_billable=finalize)
 
     @app.get('/recommendations/{run_id}')
     def poll(run_id: str, h: SessionHandle = Depends(handle)):

@@ -98,9 +98,9 @@ class Live:
     """One admitted operation: the frozen runtime client rebound to a reservation (as the runner does)."""
 
     def __init__(self, tmp_path, phase='parse', sdk=None, reserved=None, quota=None, clock=None, plain=False,
-                 **settings_kw):
+                 op_key=None, on_first_intent=None, **settings_kw):
         self.sdk = sdk if sdk is not None else FakeSDK()
-        self.op_key = 'idem:' + str(uuid.uuid4())
+        self.op_key = op_key or 'idem:' + str(uuid.uuid4())
         if plain:   # the frozen RuntimeClient adapter has no embeddings endpoint; embedding uses the base client
             self.inner = OpenRouterClient(settings(tmp_path, **settings_kw), sdk_client=self.sdk, run_id=self.op_key)
         else:
@@ -111,7 +111,7 @@ class Live:
             reserved = bounds().parse_max if phase == 'parse' else bounds().recommendation_upper_bound
         clock = clock or time.monotonic
         self.op = OperationState(self.op_key, phase, Decimal(reserved), window, anchor_mono=clock(),
-                                 quota=quota, clock=clock)
+                                 quota=quota, on_first_intent=on_first_intent, clock=clock)
         self.ledger_path = tmp_path / 'ledger.jsonl'
         self.client = bind_reserved_client(self.inner, self.op, call_model(), self.ledger_path)
         self.journal = IntentJournal(journal_path(self.ledger_path))
@@ -556,3 +556,146 @@ def test_a_call_landing_during_an_evidence_read_never_looks_like_an_orphan_line(
         return rows
     monkeypatch.setattr(CorrelatedLedger, 'raw_lines', read_then_a_call_lands)
     assert recorded_spend(journal, ledger, breach) == Decimal('0.5')       # the late intent counts at its upper bound
+
+
+# --- correction D: the recommendation allowance is finalized fail-closed at the first durable intent ---------
+
+from jobfit.live.quota import LiveRequest, SessionAllowances  # noqa: E402
+
+SOL_MSGS = [{'role': 'user', 'content': 'synthetic evidence request'}]
+
+
+def sol_call(live, msgs=SOL_MSGS):
+    return live.client.chat_structured('gpt-6-sol', msgs, Answer, 'evidence_matching', max_tokens=1000)
+
+
+class Counting:
+    def __init__(self, fn):
+        self.fn, self.count, self.lock = fn, 0, threading.Lock()
+
+    def __call__(self):
+        with self.lock:
+            self.count += 1
+        return self.fn()
+
+
+def allowance_live(tmp_path, claimed=True, finalize=None, sdk=None):
+    allowances, op = SessionAllowances(), 'idem:' + str(uuid.uuid4())
+    allowances.mark_ticket_held('s1')
+    if claimed:
+        assert allowances.claim('s1', op)
+    hook = Counting(finalize or (lambda: allowances.finalize('s1', op)))
+    live = Live(tmp_path, phase='recommendation', sdk=sdk, op_key=op, on_first_intent=hook)
+    return live, allowances, hook
+
+
+def test_finalize_success_lets_the_sdk_call_proceed_and_uses_the_allowance(tmp_path):
+    live, allowances, hook = allowance_live(tmp_path)
+    assert sol_call(live).answer == 'ok'
+    sol_call(live)                                                   # later calls do not finalize again
+    assert hook.count == 1 and len(live.sdk.calls) == 2
+    assert allowances.state('s1') == (SessionAllowances.USED, live.op_key)
+
+
+@pytest.mark.parametrize('failure', ['returns_false', 'raises'])
+def test_a_failed_finalize_makes_no_sdk_call_and_is_sticky(tmp_path, failure):
+    def raising():
+        raise RuntimeError('allowance store unavailable')
+    live, allowances, hook = allowance_live(tmp_path, finalize=(lambda: False) if failure == 'returns_false' else raising)
+    with pytest.raises(LiveSafetyRefusal, match='allowance_finalize_failed'):
+        sol_call(live)
+    with pytest.raises(LiveSafetyRefusal, match='allowance_finalize_failed'):
+        sol_call(live)                                               # sticky
+    assert hook.count == 1 and live.sdk.calls == [] and not live.op.inflight
+    (intent,) = live.intents()                                       # the intent is durable
+    ev = live.evidence()
+    assert ev.uncertain and ev.settlement() == Decimal(intent['upper_cost'])   # settled conservatively
+
+
+def test_after_a_failed_finalize_the_frozen_fallback_and_repair_make_no_sdk_call(tmp_path):
+    live, _, hook = allowance_live(tmp_path, finalize=lambda: False)
+    result = frozen_match(live, None)
+    assert [a['model'] for a in result.attempts] == ['gpt-6-sol', 'gpt-6-luna'] and result.hold_reason
+    with pytest.raises(StageFailure):
+        validated_call(live.client, model='gpt-6-sol', prompt='p', payload={}, output_model=Answer,
+                       task='evidence_matching', validate=lambda o: None)
+    assert hook.count == 1 and live.sdk.calls == [] and live.op.fatal_refusal == 'allowance_finalize_failed'
+
+
+def test_a_session_dropped_before_the_first_intent_cannot_finalize(tmp_path):
+    live, allowances, hook = allowance_live(tmp_path)
+    allowances.drop('s1')                                            # deleted or expired after claim()
+    with pytest.raises(LiveSafetyRefusal, match='allowance_finalize_failed'):
+        sol_call(live)
+    assert live.sdk.calls == [] and allowances.state('s1') == ('no_ticket', None)
+
+
+def concurrent_first_calls(live, n=8):
+    barrier, errors, done = threading.Barrier(n), [], []
+
+    def one(i):
+        barrier.wait()
+        try:
+            done.append(sol_call(live, [{'role': 'user', 'content': f'request {i}'}]).answer)
+        except LiveSafetyRefusal as exc:
+            errors.append(exc.reason)
+    threads = [threading.Thread(target=one, args=(i,)) for i in range(n)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join(30)
+    return done, errors
+
+
+def test_concurrent_first_intents_finalize_exactly_once(tmp_path):
+    live, allowances, hook = allowance_live(tmp_path, sdk=FakeSDK(delay=0.02))
+    done, errors = concurrent_first_calls(live)
+    assert hook.count == 1 and errors == [] and len(done) == 8 and len(live.sdk.calls) == 8
+    assert allowances.state('s1') == (SessionAllowances.USED, live.op_key)
+
+
+@pytest.mark.parametrize('failure', ['returns_false', 'raises'])
+def test_concurrent_first_intents_with_a_failed_finalize_make_no_sdk_call(tmp_path, failure):
+    def raising():
+        raise RuntimeError('boom')
+    live, _, hook = allowance_live(tmp_path, finalize=(lambda: False) if failure == 'returns_false' else raising)
+    done, errors = concurrent_first_calls(live)
+    assert hook.count == 1 and done == [] and errors == ['allowance_finalize_failed'] * 8
+    assert live.sdk.calls == [] and not live.op.inflight
+    frozen_match(live, None)                                         # Luna and repair stay blocked
+    assert live.sdk.calls == []
+
+
+def test_finalize_is_never_attempted_without_a_durable_intent(tmp_path, monkeypatch):
+    live, _, hook = allowance_live(tmp_path)
+    with pytest.raises(LiveSafetyRefusal, match='call_outside_model'):           # refused before the guard
+        live.client.chat_structured('unknown-model', SOL_MSGS, Answer, 'evidence_matching', max_tokens=10)
+    assert hook.count == 0
+    live2, _, hook2 = allowance_live(tmp_path / 'b')
+    monkeypatch.setattr(IntentJournal, 'append_intent', lambda self, ctx: (_ for _ in ()).throw(OSError('fsync')))
+    with pytest.raises(LiveSafetyRefusal, match='intent_write_failed'):
+        sol_call(live2)
+    assert hook2.count == 0 and live2.sdk.calls == []
+    monkeypatch.undo()
+    hook3 = Counting(lambda: True)
+    live3 = Live(tmp_path / 'c', quota=lambda: 'refused', on_first_intent=hook3)
+    with pytest.raises(LiveSafetyRefusal, match='quota_refused'):
+        parse_call(live3)
+    assert hook3.count == 0 and live3.sdk.calls == []
+
+
+def test_allowance_state_machine_and_immutable_live_request():
+    import dataclasses
+    a = SessionAllowances()
+    assert not a.claim('s', 'idem:1')                                # no ticket
+    a.mark_ticket_held('s')
+    assert a.claim('s', 'idem:1') and a.claim('s', 'idem:1')         # pending, idempotent
+    assert not a.claim('s', 'idem:2') and not a.finalize('s', 'idem:2')
+    a.release_if_pending('s', 'idem:1')
+    assert a.state('s') == (SessionAllowances.TICKET_HELD, None) and not a.finalize('s', 'idem:1')
+    assert a.claim('s', 'idem:3') and a.finalize('s', 'idem:3') and a.finalize('s', 'idem:3')
+    a.release_if_pending('s', 'idem:3')                              # used never goes back
+    assert a.state('s') == (SessionAllowances.USED, 'idem:3') and not a.claim('s', 'idem:4')
+    req = LiveRequest('idem:3', False, None, 's', 'r', on_first_billable=lambda: True)
+    with pytest.raises(dataclasses.FrozenInstanceError):
+        req.on_first_billable = None

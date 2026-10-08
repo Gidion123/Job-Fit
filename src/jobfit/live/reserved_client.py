@@ -45,7 +45,8 @@ class OperationState:
     """Admitted state of one billable phase operation, shared by its worker threads (no DB access)."""
 
     def __init__(self, operation_key: str, phase: str, reserved_usd: Decimal, window: PhaseWindow, *,
-                 anchor_mono: float, quota: Callable[[], str] | None = None, clock=time.monotonic):
+                 anchor_mono: float, quota: Callable[[], str] | None = None,
+                 on_first_intent: Callable[[], bool] | None = None, clock=time.monotonic):
         self.operation_key, self.phase, self.reserved_usd, self.window = operation_key, phase, reserved_usd, window
         self.anchor_mono, self.clock = anchor_mono, clock
         self.lock = threading.Lock()
@@ -57,6 +58,10 @@ class OperationState:
         self.inflight: dict[str, tuple[float, float]] = {}
         self.admitted, self.closing = True, False
         self.embed_calls = 0
+        # Safety-critical, exactly once: finalizes the session allowance at the first durable intent.
+        self.on_first_intent = on_first_intent
+        self.first_intent_lock = threading.Lock()
+        self.first_intent_callback_attempted = False
 
     # --- fatal state ---------------------------------------------------------------------------
     def set_fatal(self, reason: str) -> None:
@@ -214,8 +219,17 @@ class ReservationGuard:
             self.journal.append_intent(ctx)
         except Exception:
             op.fatal('intent_write_failed')
+        with op.first_intent_lock:
+            if op.on_first_intent is not None and not op.first_intent_callback_attempted:
+                op.first_intent_callback_attempted = True      # set before the callback: exactly once
+                try:
+                    ok = op.on_first_intent() is True
+                except Exception:
+                    ok = False
+                if not ok:
+                    op.set_fatal('allowance_finalize_failed')    # sticky; seen by every waiter below
         op.check_fatal()
-        op.open_attempt(ctx)       # in flight only once the intent is durable
+        op.open_attempt(ctx)       # in flight only once the intent is durable (and the allowance final)
 
 
 class ReservedClient:

@@ -252,3 +252,157 @@ def test_a_failing_maintenance_purge_never_stops_the_session_sweeper():
         assert len(calls) >= 3                            # failed once, retried, succeeded again
         assert CountingStore.sweeps > sweeps_after_retry  # expiry sweeping still runs
     assert all(b - a >= 0.04 for a, b in zip(calls, calls[1:]))   # at most once per interval
+
+
+# --- correction D: one recommendation per ticket, consumed only at the first durable intent ---------------
+
+from jobfit.live.quota import SessionAllowances  # noqa: E402
+
+USED, HELD = SessionAllowances.USED, SessionAllowances.TICKET_HELD
+
+
+def public_app(run):
+    client, _ = make(run=run, public_live=True)
+    headers = session(client)
+    allowances = client.app.state.allowances
+    allowances.mark_ticket_held(headers['X-Session-Id'])     # as the Phase 3 parse will after its ticket
+    return client, headers, allowances
+
+
+def billable_run(seen, then=None):
+    def run(cv, seniority, on_result, filters=None, live=None):
+        seen.append(live)
+        assert live.on_first_billable() is True              # the first durable provider intent
+        if then:
+            raise then
+        return fake_rec(cv, seniority, on_result, filters)
+    return run
+
+
+def test_the_first_recommendation_uses_the_ticket_allowance_and_a_second_is_refused():
+    seen = []
+    client, headers, allowances = public_app(billable_run(seen))
+    key = str(uuid.uuid4())
+    run_id = live(client, headers, key, owner=False).json()['run_id']
+    wait(client, headers, run_id)
+    sid = headers['X-Session-Id']
+    assert allowances.state(sid) == (USED, 'idem:' + key)
+    assert live(client, headers, key, owner=False).json() == {'run_id': run_id, 'duplicate': True}   # same action
+    second = live(client, headers, owner=False)
+    assert second.status_code == 403 and second.json()['detail'] == 'ticket_required'
+    assert len(seen) == 1 and allowances.state(sid) == (USED, 'idem:' + key)
+
+
+def test_a_retry_while_running_reuses_the_run_without_a_second_allowance():
+    gate, seen = threading.Event(), []
+
+    def slow(cv, seniority, on_result, filters=None, live=None):
+        seen.append(live)
+        assert live.on_first_billable() is True
+        assert gate.wait(10)
+        return fake_rec(cv, seniority, on_result, filters)
+    client, headers, allowances = public_app(slow)
+    key = str(uuid.uuid4())
+    first = live(client, headers, key, owner=False).json()['run_id']
+    assert live(client, headers, key, owner=False).json()['run_id'] == first
+    gate.set()
+    wait(client, headers, first)
+    assert len(seen) == 1 and allowances.state(headers['X-Session-Id']) == (USED, 'idem:' + key)
+
+
+def test_a_new_session_without_a_ticket_is_refused():
+    client, calls = make(public_live=True)
+    r = live(client, session(client), owner=False)
+    assert r.status_code == 403 and r.json()['detail'] == 'ticket_required' and calls == []
+
+
+def test_run_limit_refusal_leaves_the_ticket_held_and_frees_the_key():
+    client, headers, allowances = public_app(fake_rec_live)
+    for _ in range(3):                                         # the session's run limit, filled by owner runs
+        wait(client, headers, live(client, headers).json()['run_id'])
+    key = str(uuid.uuid4())
+    r = live(client, headers, key, owner=False)
+    assert r.status_code == 429
+    assert allowances.state(headers['X-Session-Id']) == (HELD, None)
+    assert live(client, headers, key, owner=False).status_code == 429      # not answered as a duplicate
+
+
+def fake_rec_live(cv, seniority, on_result, filters=None, live=None):
+    return fake_rec(cv, seniority, on_result, filters)
+
+
+def test_a_synchronous_start_failure_releases_the_allowance_and_the_key(monkeypatch):
+    import types as _types
+    import jobfit.api.main as api_main
+    seen = []
+    client, _ = make(run=billable_run(seen), public_live=True)
+    client = TestClient(client.app, raise_server_exceptions=False)
+    headers = session(client)
+    allowances = client.app.state.allowances
+    allowances.mark_ticket_held(headers['X-Session-Id'])
+
+    class NoThread:
+        def __init__(self, *a, **kw):
+            pass
+
+        def start(self):
+            raise RuntimeError('cannot start a thread')
+    real = api_main.threading
+    monkeypatch.setattr(api_main, 'threading', _types.SimpleNamespace(Thread=NoThread, Lock=real.Lock,
+                                                                      Event=real.Event))
+    key = str(uuid.uuid4())
+    assert live(client, headers, key, owner=False).status_code == 500
+    assert allowances.state(headers['X-Session-Id']) == (HELD, None) and seen == []
+    monkeypatch.setattr(api_main, 'threading', real)
+    run_id = live(client, headers, key, owner=False).json()['run_id']        # the same key starts normally
+    wait(client, headers, run_id)
+    assert len(seen) == 1 and allowances.state(headers['X-Session-Id']) == (USED, 'idem:' + key)
+
+
+def test_busy_and_budget_refusals_before_any_billable_call_keep_the_ticket():
+    for code in ('busy', 'budget'):
+        def refused(cv, seniority, on_result, filters=None, live=None, code=code):
+            raise LiveRefused(code)                        # refused before the first durable intent
+        client, headers, allowances = public_app(refused)
+        body = wait(client, headers, live(client, headers, owner=False).json()['run_id'])
+        assert body['error'] == code
+        assert allowances.state(headers['X-Session-Id']) == (HELD, None)
+
+
+def test_a_failure_after_the_first_durable_intent_keeps_the_allowance_used():
+    seen = []
+    client, headers, allowances = public_app(billable_run(seen, then=RuntimeError('provider failed')))
+    key = str(uuid.uuid4())
+    body = wait(client, headers, live(client, headers, key, owner=False).json()['run_id'])
+    assert body['status'] == 'failed'
+    assert allowances.state(headers['X-Session-Id']) == (USED, 'idem:' + key)
+
+
+def test_session_delete_and_expiry_drop_the_allowance():
+    client, headers, allowances = public_app(fake_rec_live)
+    assert client.delete('/session', headers=headers).json() == {'deleted': True}
+    assert allowances.state(headers['X-Session-Id']) == ('no_ticket', None)
+    now = [0.0]
+    store = SessionStore(clock=lambda: now[0])
+    deps = AppDeps(store=store, demo_cvs={'CV1': CV}, run=fake_rec_live, sweep_seconds=0.02, live_enabled=True,
+                   ingress=Ingress(TOKEN, OWNER, HMAC_KEY), public_live=True)
+    with TestClient(create_app(deps)) as c:
+        h = session(c)
+        c.app.state.allowances.mark_ticket_held(h['X-Session-Id'])
+        now[0] = 10_000.0                                  # past every session limit
+        deadline = time.monotonic() + 5
+        while c.app.state.allowances.state(h['X-Session-Id'])[0] != 'no_ticket' and time.monotonic() < deadline:
+            time.sleep(0.02)
+        assert c.app.state.allowances.state(h['X-Session-Id']) == ('no_ticket', None)
+
+
+def test_the_owner_never_touches_the_public_allowance():
+    seen = []
+
+    def owner_run(cv, seniority, on_result, filters=None, live=None):
+        seen.append(live)
+        return fake_rec(cv, seniority, on_result, filters)
+    client, headers, allowances = public_app(owner_run)
+    wait(client, headers, live(client, headers).json()['run_id'])
+    assert seen[0].owner and seen[0].on_first_billable is None
+    assert allowances.state(headers['X-Session-Id']) == (HELD, None)

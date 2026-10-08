@@ -123,7 +123,8 @@ class LiveRuntime:
 
     # --- one operation ---------------------------------------------------------------------------
     def run(self, phase: str, operation_key: str, work: Callable[[ReservedClient], object], *,
-            quota: Callable[[], str] | None = None) -> tuple[object, OperationReport]:
+            quota: Callable[[], str] | None = None,
+            on_first_intent: Callable[[], bool] | None = None) -> tuple[object, OperationReport]:
         if phase not in self.windows:
             raise ValueError('unknown phase')
         window: PhaseWindow = self.windows[phase]
@@ -169,7 +170,7 @@ class LiveRuntime:
             except store.AdmissionUnavailable:
                 raise LiveRefused('unavailable') from None
             op = OperationState(operation_key, phase, self.bound[phase], window, anchor_mono=anchor,
-                                quota=quota, clock=self.clock)
+                                quota=quota, on_first_intent=on_first_intent, clock=self.clock)
             client = bind_reserved_client(inner, op, self.call_model, self.ledger_path)
             watchdog = threading.Thread(target=self._watch, args=(op, stop), daemon=True)
             watchdog.start()

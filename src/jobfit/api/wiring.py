@@ -157,7 +157,8 @@ def build_deps() -> AppDeps:
                              client=client, config=config, seniority_enabled=seniority_enabled,
                              on_result=on_result, filtered=filtered, history_confirmed=DEMO_HISTORY_CONFIRMED)
         if prod:
-            result, _ = runtime.run('recommendation', live.operation_key, pipeline)
+            result, _ = runtime.run('recommendation', live.operation_key, pipeline,
+                                    on_first_intent=live.on_first_billable)
             return result
         return pipeline(state['client'])
 

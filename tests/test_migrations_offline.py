@@ -2,6 +2,7 @@
 import ast
 import hashlib
 import importlib.util
+import json
 
 import pytest
 from alembic import command
@@ -9,6 +10,7 @@ from alembic.config import Config
 from alembic.script import ScriptDirectory
 
 from jobfit.config import REPO_ROOT
+from jobfit.db import catalog
 from jobfit.db.migrate import ALEMBIC_INI, alembic_config, sqlalchemy_url
 from jobfit.db.models import SCHEMA_SQL
 
@@ -79,3 +81,24 @@ def test_destructive_downgrade_is_guarded(monkeypatch, name):
     monkeypatch.setenv('JOBFIT_ALLOW_DESTRUCTIVE_DOWNGRADE', '1')
     monkeypatch.setenv('JOBFIT_ENV', 'dev')
     guard()
+
+
+def test_pinned_fingerprint_describes_only_application_objects():
+    pin = json.loads((REPO_ROOT / 'migrations/catalog/0001.json').read_text())
+    assert pin['revision'] == '0001' and set(pin) == {'revision', 'objects'}
+    assert set(pin['objects']['tables']) == {'jobs', 'job_embeddings', 'job_embedding_versions'}
+    assert ['vector', 'public'] in pin['objects']['extensions']
+
+
+def test_compare_reports_structure_without_row_data():
+    base = {'objects': {'tables': {'jobs': {'kind': 'r', 'columns': [['job_id', 'text', True, None, '', '', None]]}},
+                        'extensions': [['vector', 'public']]}}
+    same = json.loads(json.dumps(base))
+    assert catalog.compare(base, same) == []
+    other = json.loads(json.dumps(base))
+    other['objects']['tables']['jobs']['columns'][0][1] = 'integer'
+    other['objects']['tables']['extra'] = {'kind': 'r'}
+    del other['objects']['extensions']
+    diffs = catalog.compare(base, other)
+    assert any(d.startswith('/tables/jobs/columns') for d in diffs)
+    assert '/tables/extra: unexpected' in diffs and '/extensions: missing' in diffs

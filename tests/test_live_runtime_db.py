@@ -79,6 +79,7 @@ class Conn:
 
 
 def runtime(db, tmp_path, sdk=None, cap=2.0, hard_stop=4.5, window=None, plan=None, **kw):
+    tmp_path.mkdir(parents=True, exist_ok=True)           # the live evidence code never creates directories
     sdk = sdk if sdk is not None else FakeSDK()
     s = SimpleNamespace(usage_ledger=tmp_path / 'ledger.jsonl', database_url=db, daily_budget_usd=cap,
                         api_hard_stop_usd=hard_stop)

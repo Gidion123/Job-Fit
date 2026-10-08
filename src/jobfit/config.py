@@ -81,6 +81,10 @@ class ConfigurationError(ValueError):
 
 MIN_SECRET_LENGTH = 32
 REPO_USAGE_LEDGER = Settings.usage_ledger
+# The one production ledger storage root (CP3 Phase 2, persistent ledger; D-101). The Dockerfile VOLUME,
+# .env.example and the CP3.1 report name this same directory. With JOBFIT_ENV=prod and live enabled the
+# ledger must be a file directly in it; the intent journal, breach marker and lock files sit next to it.
+PROD_LEDGER_ROOT = Path('/var/lib/jobfit/ledger')
 
 
 def _flag(env, name: str) -> bool:
@@ -136,8 +140,16 @@ def check_production_invariants(s: 'ProductionSettings') -> None:
         raise ConfigurationError('OPENROUTER_API_KEY must be set when live analysis is enabled')
     if s.live_enabled and prod:
         _check_secret(s.owner_token, 'JOBFIT_OWNER_TOKEN')
-        if Path(s.usage_ledger).resolve() == REPO_USAGE_LEDGER.resolve():
+        try:
+            ledger = Path(s.usage_ledger)
+        except TypeError:
+            raise ConfigurationError('JOBFIT_USAGE_LEDGER must be a path') from None
+        if not ledger.is_absolute():            # before any resolve(): never relative to the working directory
+            raise ConfigurationError('JOBFIT_USAGE_LEDGER must be an absolute path')
+        if ledger.resolve() == REPO_USAGE_LEDGER.resolve():
             raise ConfigurationError('JOBFIT_USAGE_LEDGER must not be the repository development ledger')
+        if ledger.resolve().parent != PROD_LEDGER_ROOT:
+            raise ConfigurationError(f'JOBFIT_USAGE_LEDGER must be a file directly in {PROD_LEDGER_ROOT}')
         daily = _check_money(s.daily_budget_usd, 'JOBFIT_DAILY_BUDGET_USD')
         budget = _check_money(s.api_budget_usd, 'API_BUDGET_USD')
         hard_stop = _check_money(s.api_hard_stop_usd, 'API_HARD_STOP_USD')
@@ -208,6 +220,8 @@ def get_production_settings(env=None) -> ProductionSettings:
         ledger = (env.get('JOBFIT_USAGE_LEDGER') or '').strip()
         if not ledger:
             raise ConfigurationError('JOBFIT_USAGE_LEDGER must be set when live analysis is enabled in prod')
+        if not Path(ledger).is_absolute():
+            raise ConfigurationError('JOBFIT_USAGE_LEDGER must be an absolute path')
         values['usage_ledger'] = Path(ledger).resolve()
         values.update(daily_budget_usd=_money(env, 'JOBFIT_DAILY_BUDGET_USD'),
                       api_budget_usd=_money(env, 'API_BUDGET_USD'),

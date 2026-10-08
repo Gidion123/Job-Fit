@@ -53,8 +53,11 @@ CURRENT_ATTEMPT: contextvars.ContextVar[AttemptContext | None] = contextvars.Con
 
 
 def append_durable(path: Path, line: str) -> None:
-    """Append one line and fsync it (and the directory when the file is new)."""
-    path.parent.mkdir(parents=True, exist_ok=True)
+    """Append one line and fsync it (and the directory when the file is new).
+
+    The directory is never created: a missing storage root fails instead of silently recreating
+    the evidence on an ephemeral filesystem (persistent ledger contract, C4).
+    """
     new = not path.exists()
     with path.open('a', encoding='utf-8') as f:
         f.write(line + '\n')
@@ -88,8 +91,7 @@ class FileLock:
     @contextmanager
     def hold(self, exclusive: bool):
         with self.thread_lock:
-            self.path.parent.mkdir(parents=True, exist_ok=True)
-            with self.path.open('a') as f:
+            with self.path.open('a') as f:          # never creates the directory (C4)
                 fcntl.flock(f.fileno(), fcntl.LOCK_EX if exclusive else fcntl.LOCK_SH)
                 try:
                     yield

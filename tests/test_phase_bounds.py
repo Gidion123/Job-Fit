@@ -22,6 +22,13 @@ CONTINUATION_MARK = 'This is the only length continuation.'
 REPAIR_MARK = 'This is the only repair attempt.'
 
 
+@pytest.fixture(autouse=True)
+def _ledger_root(tmp_path, monkeypatch):
+    """The prod-live settings below put the ledger in tmp_path: it stands in for the fixed root."""
+    import jobfit.config
+    monkeypatch.setattr(jobfit.config, 'PROD_LEDGER_ROOT', tmp_path.resolve())
+
+
 @pytest.fixture(scope='module')
 def real():
     return pb.compute_phase_bounds()

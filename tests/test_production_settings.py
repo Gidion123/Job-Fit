@@ -1,4 +1,6 @@
 """Fail-closed CP3 production settings (D-095, D-096; FAIL-38). No provider call is made."""
+from pathlib import Path
+
 import pytest
 
 from jobfit.config import (REPO_USAGE_LEDGER, ConfigurationError, ProductionSettings, Settings,
@@ -6,6 +8,14 @@ from jobfit.config import (REPO_USAGE_LEDGER, ConfigurationError, ProductionSett
 
 TOKEN = 'x' * 32
 PROD_DB = 'postgresql://jobfit:secret@db:5432/jobfit_prod'
+
+
+@pytest.fixture(autouse=True)
+def ledger_root(tmp_path, monkeypatch):
+    """Tests use tmp_path as the fixed production ledger root; the production rule itself is unchanged."""
+    import jobfit.config
+    monkeypatch.setattr(jobfit.config, 'PROD_LEDGER_ROOT', tmp_path.resolve())
+    return tmp_path.resolve()
 
 
 def prod_env(tmp_path, **extra):
@@ -185,3 +195,60 @@ def test_direct_construction_keeps_the_safe_default_and_valid_settings(tmp_path)
     assert ProductionSettings() == get_production_settings({})
     good = valid_public(tmp_path)
     assert dataclasses.replace(good) == good
+
+
+# --- persistent ledger storage root (C1) ------------------------------------------------------------------
+
+def test_the_production_ledger_root_is_the_fixed_mount_point(monkeypatch):
+    import jobfit.config
+    monkeypatch.undo()
+    assert jobfit.config.PROD_LEDGER_ROOT == Path('/var/lib/jobfit/ledger')
+
+
+def test_a_relative_ledger_path_is_rejected_before_it_is_resolved(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)          # 'ledger.jsonl' would resolve INTO the root: still rejected
+    with pytest.raises(ConfigurationError, match='absolute path'):
+        get_production_settings(live_prod_env(tmp_path, JOBFIT_USAGE_LEDGER='ledger.jsonl'))
+
+
+@pytest.mark.parametrize('where', ['tmp', 'repo', 'nested', 'sibling'])
+def test_a_ledger_outside_the_fixed_root_is_rejected(tmp_path, where):
+    from jobfit.config import REPO_ROOT
+    path = {'tmp': Path('/tmp/jobfit-ledger.jsonl'), 'repo': REPO_ROOT / 'reports/usage/other.jsonl',
+            'nested': tmp_path / 'sub' / 'ledger.jsonl', 'sibling': tmp_path.parent / 'ledger.jsonl'}[where]
+    with pytest.raises(ConfigurationError, match='directly in'):
+        get_production_settings(live_prod_env(tmp_path, JOBFIT_USAGE_LEDGER=str(path)))
+
+
+def test_a_symlinked_root_that_resolves_elsewhere_is_rejected(tmp_path, monkeypatch):
+    import jobfit.config
+    real = tmp_path / 'real'
+    real.mkdir()
+    link = tmp_path / 'link'
+    link.symlink_to(real)
+    monkeypatch.setattr(jobfit.config, 'PROD_LEDGER_ROOT', link)
+    with pytest.raises(ConfigurationError, match='directly in'):
+        get_production_settings(live_prod_env(tmp_path, JOBFIT_USAGE_LEDGER=str(link / 'ledger.jsonl')))
+
+
+def test_a_ledger_directly_in_the_root_is_accepted(tmp_path, ledger_root):
+    s = get_production_settings(live_prod_env(tmp_path, JOBFIT_USAGE_LEDGER=str(ledger_root / 'usage_ledger.jsonl')))
+    assert s.usage_ledger == ledger_root / 'usage_ledger.jsonl'
+
+
+def test_dev_and_dark_prod_do_not_need_the_ledger_root(tmp_path, monkeypatch):
+    import jobfit.config
+    monkeypatch.setattr(jobfit.config, 'PROD_LEDGER_ROOT', Path('/nonexistent/root'))
+    assert not get_production_settings(prod_env(tmp_path)).live_enabled
+    dev = get_production_settings({'JOBFIT_LIVE_ENABLED': '1', 'OPENROUTER_API_KEY': 'sk-test'})
+    assert dev.live_enabled and dev.usage_ledger == REPO_USAGE_LEDGER
+
+
+def test_direct_construction_and_replace_reject_a_relative_ledger(tmp_path):
+    import dataclasses
+    good = get_production_settings(live_prod_env(tmp_path))
+    fields = {f.name: getattr(good, f.name) for f in dataclasses.fields(good)}
+    with pytest.raises(ConfigurationError, match='absolute path'):
+        ProductionSettings(**{**fields, 'usage_ledger': Path('usage.jsonl')})
+    with pytest.raises(ConfigurationError, match='absolute path'):
+        dataclasses.replace(good, usage_ledger=Path('usage.jsonl'))

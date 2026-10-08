@@ -193,6 +193,8 @@ def test_the_saved_demo_still_works_without_any_live_operation():
 # --- production wiring: every live operation goes through the Phase 2B runtime ---------------------------
 
 def prod_env(tmp_path, monkeypatch, live='1'):
+    import jobfit.config
+    monkeypatch.setattr(jobfit.config, 'PROD_LEDGER_ROOT', tmp_path.resolve())   # tmp_path stands in for the root
     env = {'JOBFIT_ENV': 'prod', 'JOBFIT_LIVE_ENABLED': live, 'JOBFIT_PUBLIC_LIVE': '0',
            'DATABASE_URL': 'postgresql://nobody@127.0.0.1:1/none', 'JOBFIT_INTERNAL_TOKEN': TOKEN,
            'OPENROUTER_API_KEY': 'k' * 40, 'JOBFIT_OWNER_TOKEN': OWNER,

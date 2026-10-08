@@ -99,6 +99,7 @@ class Live:
 
     def __init__(self, tmp_path, phase='parse', sdk=None, reserved=None, quota=None, clock=None, plain=False,
                  op_key=None, on_first_intent=None, **settings_kw):
+        tmp_path.mkdir(parents=True, exist_ok=True)       # the live evidence code never creates directories
         self.sdk = sdk if sdk is not None else FakeSDK()
         self.op_key = op_key or 'idem:' + str(uuid.uuid4())
         if plain:   # the frozen RuntimeClient adapter has no embeddings endpoint; embedding uses the base client

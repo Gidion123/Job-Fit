@@ -123,7 +123,7 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-095 | 7 Oct 2026 | CP3 deployment target (SumoPod VPS), full public live product scope and branch lifecycle | Approved by Dion and Codex; planned, not deployed |
 | D-096 | 7 Oct 2026 | Public live cost and abuse controls: US$5 validation budget, US$2/day cap, deterministic phase bounds, 1 analysis per IP per 24 h, one live analysis at a time | Approved by Dion and Codex; planned |
 | D-097 | 7 Oct 2026 | CP3 runtime changes go through non-frozen adapters; the D-087 files stay byte-identical | Approved by Dion and Codex; planned |
-| D-098 | 7 Oct 2026 | Mutable production job corpus: twice-monthly JSearch sync, dedupe, lifecycle, lazy extraction cache, minimal Alembic baseline | Approved by Dion and Codex; planned |
+| D-098 | 7 Oct 2026 | Mutable production job corpus: twice-monthly JSearch sync, dedupe, lifecycle, lazy extraction cache, minimal Alembic baseline | Approved by Dion and Codex; Alembic 0001/0002 implemented 8 Oct (schema only); sync and seed planned |
 | D-099 | 7 Oct 2026 | CP3 observability: Prometheus and Grafana with email alerts, Langfuse Cloud (Japan) metadata only | Approved by Dion and Codex; planned |
 | D-100 | 7 Oct 2026 | CP3 evaluation obligations and feature freeze: D-045 to be completed with option B, PR-10, freeze at the end of 9 Oct | Approved by Dion and Codex; planned, not completed |
 
@@ -1474,7 +1474,7 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
   - Production deploys upgrade only after a verified backup.
   - Downgrade is not a recovery strategy; recovery is the previous app tag plus a database restore.
   - The CP2 `SCHEMA_SQL` and loader stay unchanged.
-- **Status:** Approved. Planned, not implemented.
+- **Status:** Approved. The Alembic baseline (`0001`, exact `SCHEMA_SQL`) and production schema (`0002`) are implemented and tested (8 Oct, [CP3.2 report](checkpoint_3/CP3_02_Database_and_CICD.md#results-8-oct-2026-alembic-00010002)); the seed, the sync and the extraction-cache provider are planned, not implemented.
 
 ## D-099. CP3 observability
 

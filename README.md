@@ -178,7 +178,7 @@ Job-Fit/
 ├── docs/                 Master plan, decision/experiment/failure logs, one report per checkpoint stage
 ├── evals/                Guideline, fixtures, gold labels, splits, freeze receipts, results, saved demo
 ├── evidence/             CP1 collection evidence, provider benchmark, related work
-├── migrations/           Alembic scaffolding (no migration versions; the snapshot loader creates the schema)
+├── migrations/           Alembic: 0001 exact CP2 baseline, 0002 production schema, pinned fingerprints
 ├── notebooks/            CP1 research, CP2 held-out evaluation, CP2.8 Phase A
 ├── prompts/              Versioned LLM prompts
 ├── reports/              Figures (CP1, CP2, Phase A) and the API usage ledger

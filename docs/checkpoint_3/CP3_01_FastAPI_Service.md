@@ -294,4 +294,4 @@ Codex reviewed the first version. A read-only investigation (frozen code driven 
   - the global live gate and the per-IP ticket;
   - the `AppDeps.live_enabled` default (`True` in `src/jobfit/api/main.py`; production wiring always passes `live_enabled()`).
 
-All of these are Phase 2B. The Alembic migrations are design only and wait for separate approval.
+All of these are Phase 2B. The Alembic schema they need (`budget_reservations`, `live_quota`) exists since 8 Oct ([CP3.2 report](CP3_02_Database_and_CICD.md#results-8-oct-2026-alembic-00010002)).

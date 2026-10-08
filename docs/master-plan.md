@@ -17,7 +17,7 @@ Everything below for CP3.1-CP3.7 is **PLANNED** unless a line says it is done lo
 | Stage (official name) | JobFit scope | Status |
 | --- | --- | --- |
 | CP3.1 API Deployment with FastAPI | Public live API, safety controls and instrumentation | PARTIAL: demo flow done locally; Phase 2A fail-closed settings and phase bounds done (7 Oct; the full bound is above the US$2/day cap, so public live is not eligible); public path PLANNED |
-| CP3.2 Database Integration and CI/CD | Production corpus, job sync, VPS and delivery | PARTIAL: CI green after Phase 1 (FAIL-35 resolved); not deployed |
+| CP3.2 Database Integration and CI/CD | Production corpus, job sync, VPS and delivery | PARTIAL: CI green after Phase 1 (FAIL-35 resolved); Alembic `0001`/`0002` done with migration tests (8 Oct); not deployed |
 | CP3.3 Streamlit UI | Public upload flow, waiting experience and coach | PARTIAL: demo flow done locally |
 | CP3.4 End-to-End Testing | Deployed validation, privacy release gate and feature freeze | PARTIAL: local 27/27; deployed checks PLANNED |
 | CP3.5 Final Presentation and Portfolio | Final evidence, D-045, privacy and latency reports, deck and video | PLANNED |
@@ -567,7 +567,7 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
    - DONE LOCALLY: the demo-CV flow (6 Oct, EXP-20261006-CP3).
    - DONE (7 Oct, Phase 2A; corrected 8 Oct): fail-closed settings and the deterministic phase bounds. The full bound (US$84.7704449) is above the US$2/day cap, so public live is not eligible. The live client is not yet wired to `client_settings()` (Phase 2B).
    - PLANNED / NOT YET VALIDATED: the rest of the public live path and the safety controls.
-   - Next: Dion and Codex decide on the bound result, then Phase 2B (reservations, quota, upload hardening, adapter). Alembic needs its own approval.
+   - Next: Dion and Codex decide on the bound result, then Phase 2B (reservations, quota, upload hardening, adapter). The Alembic schema it needs is in place (CP3.2, 8 Oct).
 10. **Definition of Done.**
     - All P0 items implemented with their tests.
     - Offline suite: 0 unexpected failures.
@@ -643,7 +643,7 @@ Template name: Integrasi Database & GitHub Actions CI/CD · Official: 6 Oct 2026
 6. **Evidence to keep.** CI links; the row-count table; the restore log; sync reports; deploy-tag notes.
 7. **Estimate and dependencies.** CI on 7 Oct; schema and packaging on 8 Oct; sync on 9 Oct. Depends on: VPS provisioning, DNS, SMTP, and the production OpenRouter key (Dion and Codex).
 8. **Fallback.** If the scheduled sync is not on `main` before the presentation, the sync is shown with a manual SSH-triggered run. If the VPS is blocked, the saved demo runs locally and the report states the limit.
-9. **Status and next step.** PARTIAL. Docker, compose and the CI workflow exist; CI is green after Phase 1 (FAIL-35 resolved; run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567)); nothing is deployed; the production corpus and sync are PLANNED. Next: Alembic and packaging (Phase 2 onward).
+9. **Status and next step.** PARTIAL. Docker, compose and the CI workflow exist; CI is green after Phase 1 (FAIL-35 resolved; run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567)); nothing is deployed; the production corpus and sync are PLANNED. Alembic `0001` (exact CP2 baseline) and `0002` (production schema) are DONE with a verified-stamp path and migration tests in CI (8 Oct, [results](checkpoint_3/CP3_02_Database_and_CICD.md#results-8-oct-2026-alembic-00010002)). Next: `verify` on the local CP2 database, then packaging and the sync.
 10. **Definition of Done.**
     - CI green.
     - The production stack deployed and checked through both validation layers.

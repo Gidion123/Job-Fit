@@ -16,7 +16,8 @@ import yaml
 
 GRACE_SECONDS = 30.0
 EMBED_TIMEOUT_SECONDS = 60.0          # literal in the frozen OpenRouterClient._embed_attempt (pinned by a test)
-ORCHESTRATION_SECONDS = {'parse': 120.0, 'recommendation': 600.0}
+ORCHESTRATION_SECONDS = {'parse': 120.0, 'recommendation': 600.0,
+                         'search': 60.0, 'job_analysis': 120.0}      # D-103 public-beta phases
 PERSISTENCE_MARGIN_SECONDS = 60.0
 MAX_WINDOW_SECONDS = 24 * 3600.0      # carry-over rows can then only come from the previous day
 
@@ -54,6 +55,10 @@ def phase_window(phase: str, bounds, chat_timeout: float) -> PhaseWindow:
         k = int(bounds.details['k'])
         chat_calls = k * sum(max_attempts(chains[c]) for c in ('extraction', 'matching', 'fallback'))
         calls = embed_wall + chat_calls * chat_wall
+    elif phase == 'search':                       # D-103: one CV query embedding, no LLM call
+        calls = embed_wall
+    elif phase == 'job_analysis':                 # D-103: one JD: extraction, Sol matching, Luna fallback
+        calls = sum(max_attempts(chains[c]) for c in ('extraction', 'matching', 'fallback')) * chat_wall
     else:
         raise ValueError(f'unknown phase {phase}')
     horizon = calls + ORCHESTRATION_SECONDS[phase]

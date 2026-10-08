@@ -179,6 +179,118 @@ class SessionAllowances:
             return set(self._state)
 
 
+BETA_LIMITS = {'parse': 1, 'search': 1, 'job_analysis': 3}
+
+
+@dataclass(frozen=True)
+class BetaClaim:
+    """What one admitted public-beta operation gets from BetaAllowances.
+
+    ``quota`` is the ticket callable for the operation's first billable call when the session holds no
+    proven ticket yet (None once it does); ``on_first_intent`` counts the operation against the
+    session allowance at its first durable provider intent.
+    """
+    quota: Callable[[], str] | None
+    on_first_intent: Callable[[], bool]
+
+
+class _BetaSession:
+    def __init__(self):
+        self.pending: dict[str, str] = {}     # operation -> phase, not yet at its first durable intent
+        self.used: dict[str, str] = {}        # operation -> phase, counted for good
+
+
+class BetaAllowances:
+    """D-103 session allowance, in memory (no migration, no new persistent store).
+
+    The durable per-IP ticket (``live_quota``, one per IP pseudonym per 24 hours) is unchanged and
+    consumed at the first billable call of the session's first public operation. A session gets an
+    allowance only when that consume returns a PROVEN 'consumed': 'refused', 'unavailable' and
+    'unknown' create nothing, and the operation's own guard then stops it before any provider call.
+    With the allowance, the same session may run 1 parse, 1 search and up to 3 job_analysis
+    operations; an operation counts at its first durable provider intent and is never refunded after
+    it. A restart loses the allowance; the IP gets no new durable ticket within 24 hours.
+    """
+
+    def __init__(self, limits: dict[str, int] | None = None):
+        self.limits = dict(BETA_LIMITS if limits is None else limits)
+        self._sessions: dict[str, _BetaSession] = {}      # only sessions with a proven ticket
+        self._acquiring: dict[str, tuple[str, str]] = {}   # session -> (operation, phase) consuming the ticket
+        self._lock = threading.Lock()
+
+    def claim(self, session: str, phase: str, op: str, consume: Callable[[], str]) -> BetaClaim | str:
+        """A BetaClaim, or a refusal code: phase_not_admitted, allowance_exhausted or busy."""
+        if phase not in self.limits:
+            return 'phase_not_admitted'
+        on_first_intent = lambda: self.finalize(session, op)   # noqa: E731
+        with self._lock:
+            s = self._sessions.get(session)
+            if s is None:
+                acquiring = self._acquiring.get(session)
+                if acquiring is not None and acquiring != (op, phase):
+                    return 'busy'                # one ticket attempt per session at a time
+                self._acquiring[session] = (op, phase)
+                return BetaClaim(lambda: self._consume(session, phase, op, consume), on_first_intent)
+            if s.pending.get(op) == phase or s.used.get(op) == phase:
+                return BetaClaim(None, on_first_intent)          # the same operation again
+            taken = sum(p == phase for p in s.pending.values()) + sum(p == phase for p in s.used.values())
+            if taken >= self.limits[phase]:
+                return 'allowance_exhausted'
+            s.pending[op] = phase
+            return BetaClaim(None, on_first_intent)
+
+    def _consume(self, session: str, phase: str, op: str, consume: Callable[[], str]) -> str:
+        try:
+            outcome = consume()
+        except Exception:
+            outcome = 'unknown'
+        with self._lock:
+            if self._acquiring.get(session) == (op, phase):
+                self._acquiring.pop(session)
+            if outcome == 'consumed' and session not in self._sessions:
+                s = self._sessions[session] = _BetaSession()
+                s.pending[op] = phase
+        return outcome
+
+    def finalize(self, session: str, op: str) -> bool:
+        """pending(op) -> used(op) at the first durable intent; True only when op is proven counted."""
+        with self._lock:
+            s = self._sessions.get(session)
+            if s is None:
+                return False
+            if op in s.pending:
+                s.used[op] = s.pending.pop(op)
+                return True
+            return op in s.used
+
+    def release_if_pending(self, session: str, op: str) -> None:
+        """The operation provably stopped before its first durable provider intent."""
+        with self._lock:
+            if self._acquiring.get(session, (None,))[0] == op:
+                self._acquiring.pop(session)
+            s = self._sessions.get(session)
+            if s is not None:
+                s.pending.pop(op, None)
+
+    def remaining(self, session: str) -> dict[str, int] | None:
+        """Per-phase operations left, or None while the session holds no proven ticket."""
+        with self._lock:
+            s = self._sessions.get(session)
+            if s is None:
+                return None
+            return {p: n - sum(q == p for q in (*s.pending.values(), *s.used.values()))
+                    for p, n in self.limits.items()}
+
+    def drop(self, session: str) -> None:
+        with self._lock:
+            self._sessions.pop(session, None)
+            self._acquiring.pop(session, None)
+
+    def sessions(self) -> set[str]:
+        with self._lock:
+            return set(self._sessions) | set(self._acquiring)
+
+
 class Ingress:
     def __init__(self, internal_token: str | None, owner_token: str | None = None, ip_hmac_key: str | None = None,
                  *, session_limit: int = SESSION_LIMIT, session_window: float = SESSION_WINDOW_SECONDS,

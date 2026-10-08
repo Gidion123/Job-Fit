@@ -55,6 +55,21 @@ FOREIGN_STORAGE_SQL = ("SELECT 1 FROM budget_reservations WHERE process_id !~ %(
                        'OR substr(process_id, 1, 32) <> %(sid)s LIMIT 1')
 SETTLED_TOTAL_SQL = "SELECT coalesce(sum(settled_usd), 0) FROM budget_reservations WHERE status = 'settled'"
 
+# D-103 compatibility mapping (no migration): the 0002 schema's CHECK constraint allows only the
+# reservation labels 'parse' and 'recommendation'. A label is a coarse reservation category; the
+# reserved amount is always the bound of the real phase. The real public-beta phase ('search',
+# 'job_analysis') stays in the intent journal, the ledger records, the operation report and the logs.
+RESERVATION_LABEL = {'parse': 'parse', 'recommendation': 'recommendation',
+                     'search': 'recommendation', 'job_analysis': 'recommendation'}
+
+
+def reservation_label(phase: str) -> str:
+    """The persisted budget_reservations.phase label of a runtime phase; ValueError for any other."""
+    try:
+        return RESERVATION_LABEL[phase]
+    except (KeyError, TypeError):
+        raise ValueError(f'no reservation label for phase {phase!r}') from None
+
 
 def parse_process_id(value) -> tuple[str, int]:
     """(storage_id, pid) of a well-formed process_id; ValueError for anything else."""
@@ -115,7 +130,11 @@ def _now(conn, at=None):
 def admit(conn, *, operation_key: str, phase: str, bound: Decimal, daily_cap: Decimal, hard_stop: Decimal,
           window_seconds: float, process_id: str, storage_id: str, recorded_spend: Callable[[], Decimal],
           at=None) -> Admission:
-    """One admission transaction. ``recorded_spend()`` reads the ledger and journal after the lock, once."""
+    """One admission transaction. ``recorded_spend()`` reads the ledger and journal after the lock, once.
+
+    ``phase`` is the runtime phase; the row stores its ``reservation_label`` (D-103).
+    """
+    label = reservation_label(phase)
     if not (isinstance(bound, Decimal) and bound.is_finite() and bound > 0):
         raise AdmissionRefused('budget')
     try:
@@ -147,7 +166,7 @@ def admit(conn, *, operation_key: str, phase: str, bound: Decimal, daily_cap: De
                 refusal = 'lifetime'
         row = None
         if refusal is None:
-            row = conn.execute(INSERT_SQL, {'op': operation_key, 'phase': phase, 'bound': bound, 'pid': process_id,
+            row = conn.execute(INSERT_SQL, {'op': operation_key, 'phase': label, 'bound': bound, 'pid': process_id,
                                             'ts': ts, 'today': today, 'window': window_seconds}).fetchone()
             if row is None:
                 refusal = 'duplicate_operation'

@@ -38,6 +38,10 @@ from jobfit.llm.phase_bounds import DEFAULT_CONFIG, EMBED_OVERHEAD_BYTES, MODELS
 
 CHAIN_PHASE = {'parse': 'parse', 'extraction': 'recommendation', 'matching': 'recommendation',
                'fallback': 'recommendation', 'embed': 'recommendation'}
+# D-103 controlled public beta: the same accepted chains, admitted under the beta phases only (the
+# legacy 10-job 'recommendation' phase is never admitted by a beta runtime).
+BETA_CHAIN_PHASE = {'parse': 'parse', 'extraction': 'job_analysis', 'matching': 'job_analysis',
+                    'fallback': 'job_analysis', 'embed': 'search'}
 TASK_SUFFIXES = (('_validation_repair', 'validation_repair'), ('_length_continuation', 'length_continuation'))
 QUOTA_FATAL = {'refused': 'quota_refused', 'unavailable': 'quota_unavailable', 'unknown': 'quota_outcome_unknown'}
 STORAGE_FATAL = ('ledger_storage_mismatch', 'ledger_storage_unavailable')
@@ -164,7 +168,7 @@ class CallModel:
     """Classifies a call against the accepted Phase 2A chains and checks it fits a modelled attempt."""
 
     def __init__(self, bounds, pipeline_config: Path, *, phase_config: Path = DEFAULT_CONFIG,
-                 models_file: Path = MODELS_FILE):
+                 models_file: Path = MODELS_FILE, chain_phase: dict[str, str] = CHAIN_PHASE):
         cfg = yaml.safe_load(Path(pipeline_config).read_text())
         pcfg = yaml.safe_load(Path(phase_config).read_text())
         registry = yaml.safe_load(Path(models_file).read_text())
@@ -175,7 +179,11 @@ class CallModel:
                        'fallback': {cfg['matching_fallback_model'], ch['fallback'].price.model_id}}
         emb = cfg['embedding_model']
         self.embed_models = {emb, registry['embeddings'][emb]['id']}
-        self.embed_max_tokens = 4 * int(bounds.details['cv_max_chars']) + EMBED_OVERHEAD_BYTES
+        if 'embed_max_bytes' in bounds.details:          # D-103: the exact canonical-byte envelope
+            self.embed_max_tokens = int(bounds.details['embed_max_bytes'])
+        else:
+            self.embed_max_tokens = 4 * int(bounds.details['cv_max_chars']) + EMBED_OVERHEAD_BYTES
+        self.chain_phase = dict(chain_phase)
 
     def classify(self, model: str, task: str) -> tuple[str, str] | None:
         base, kind = task, 'initial'
@@ -285,7 +293,7 @@ class ReservedClient:
         if found is None:
             op.fatal('call_outside_model')
         chain, kind = found
-        if CHAIN_PHASE[chain] != op.phase:
+        if self._model.chain_phase[chain] != op.phase:
             op.fatal('phase_mismatch')
         if not self._model.chat_fits(chain, kind, messages, output_model, max_tokens):
             op.fatal('call_outside_model')
@@ -303,7 +311,7 @@ class ReservedClient:
             raise ValueError('embedding inputs must be non-empty strings')      # same as the frozen embed()
         if dimensions < 1:
             raise ValueError('dimensions must be positive')
-        if CHAIN_PHASE['embed'] != op.phase:
+        if self._model.chain_phase['embed'] != op.phase:
             op.fatal('phase_mismatch')
         with op.lock:
             op.embed_calls += 1

@@ -43,12 +43,16 @@ from jobfit.live.common import EvidenceError
 from jobfit.live.deadlines import PhaseWindow, chat_timeout_seconds, phase_window
 from jobfit.live.evidence import (BreachMarker, CorrelatedLedger, IntentJournal, breach_path, journal_path,
                                   operation_evidence, recorded_spend)
-from jobfit.live.reserved_client import CallModel, OperationState, ReservedClient, bind_reserved_client
+from jobfit.live.reserved_client import (BETA_CHAIN_PHASE, CallModel, OperationState, ReservedClient,
+                                         bind_reserved_client)
 from jobfit.live.storage import LiveStorage, StorageUnavailable
+from jobfit.llm.public_beta_bounds import DEFAULT_BETA_CONFIG, PublicBetaBounds
 
 log = logging.getLogger('jobfit.live')
 REFUSAL_STATUS = {'busy': 429, 'budget': 429, 'lifetime': 429, 'quota_refused': 429, 'ticket_required': 403,
-                  'duplicate_operation': 409, 'idempotency_key_mismatch': 409}   # every other code: 503
+                  'duplicate_operation': 409, 'idempotency_key_mismatch': 409, 'phase_not_admitted': 403,
+                  'allowance_exhausted': 429, 'input_too_large': 413}   # every other code: 503
+KNOWN_PHASES = ('parse', 'recommendation', 'search', 'job_analysis')
 
 
 class LiveRefused(RuntimeError):
@@ -70,7 +74,13 @@ class OperationReport:
 
 
 class LiveRuntime:
-    """Process-wide production runtime: settings, accepted bounds, evidence files, DB connections."""
+    """Process-wide production runtime: settings, accepted bounds, evidence files, DB connections.
+
+    ``bounds`` selects the admitted phases: the Phase 2A ``PhaseBounds`` admit ``parse`` and the
+    10-job ``recommendation``; the D-103 ``PublicBetaBounds`` admit ``parse``, ``search`` and
+    ``job_analysis`` only, each with its own calculated bound and window. Any other known phase is
+    refused (``phase_not_admitted``) before any connection, reservation or ticket.
+    """
 
     def __init__(self, settings, bounds, *, pipeline_config: Path, client_factory: Callable[[str], object],
                  connect: Callable[[], psycopg.Connection] | None = None, clock=time.monotonic,
@@ -80,10 +90,16 @@ class LiveRuntime:
         self.journal = IntentJournal(journal_path(self.ledger_path))
         self.ledger = CorrelatedLedger(self.ledger_path, self.journal)
         self.breach = BreachMarker(breach_path(self.ledger_path))
-        self.call_model = CallModel(bounds, pipeline_config)
+        self.beta = isinstance(bounds, PublicBetaBounds)
+        if self.beta:                                   # D-103 controlled public beta
+            self.call_model = CallModel(bounds, pipeline_config, phase_config=DEFAULT_BETA_CONFIG,
+                                        chain_phase=BETA_CHAIN_PHASE)
+            self.bound = bounds.phase_bounds()
+        else:
+            self.call_model = CallModel(bounds, pipeline_config)
+            self.bound = {'parse': bounds.parse_max, 'recommendation': bounds.recommendation_upper_bound}
         timeout = chat_timeout_seconds(pipeline_config)
-        self.windows = {p: phase_window(p, bounds, timeout) for p in ('parse', 'recommendation')}
-        self.bound = {'parse': bounds.parse_max, 'recommendation': bounds.recommendation_upper_bound}
+        self.windows = {p: phase_window(p, bounds, timeout) for p in self.bound}
         self.client_factory = client_factory
         self.connect = connect or (lambda: psycopg.connect(settings.database_url, autocommit=True))
         self.clock, self.watchdog_interval, self.drain_grace = clock, watchdog_interval, drain_grace
@@ -202,6 +218,8 @@ class LiveRuntime:
             quota: Callable[[], str] | None = None,
             on_first_intent: Callable[[], bool] | None = None) -> tuple[object, OperationReport]:
         if phase not in self.windows:
+            if phase in KNOWN_PHASES:
+                raise LiveRefused('phase_not_admitted')
             raise ValueError('unknown phase')
         window: PhaseWindow = self.windows[phase]
         try:
@@ -255,6 +273,8 @@ class LiveRuntime:
                 raise LiveRefused('admission_outcome_unknown') from None
             except store.AdmissionUnavailable:
                 raise LiveRefused('unavailable') from None
+            log.info('live operation %s admitted: phase=%s reservation_label=%s bound=%s', operation_key, phase,
+                     store.reservation_label(phase), self.bound[phase])
             op = OperationState(operation_key, phase, self.bound[phase], window, anchor_mono=anchor,
                                 quota=quota, on_first_intent=on_first_intent,
                                 storage_check=self._continuity_check(storage_id), clock=self.clock)

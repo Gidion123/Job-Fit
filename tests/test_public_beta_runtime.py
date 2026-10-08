@@ -418,3 +418,27 @@ def test_a_live_extraction_above_the_envelope_is_settled_and_matching_is_held(tm
     assert len(live.sdk.calls) == 1 and live.op.fatal_refusal is None
     assert [(i['phase'], i['chain']) for i in live.intents()] == [('job_analysis', 'extraction')]
     assert Decimal(0) < live.op.committed_upper <= beta().extraction_max
+
+
+# --- idempotency bound to the intended action (in memory, no migration) ----------------------------------
+
+def test_the_registry_binds_a_key_to_session_phase_and_action():
+    from jobfit.live.keys import action_fingerprint
+    from jobfit.live.operation import IdempotencyRegistry, LiveRefused
+    reg = IdempotencyRegistry()
+    a, b = action_fingerprint('corpus_job', cv='CV1', job='A'), action_fingerprint('corpus_job', cv='CV1', job='B')
+    entry, new = reg.claim('idem:k', 's', 'job_analysis', a)
+    assert new and entry.action == a
+    again, new = reg.claim('idem:k', 's', 'job_analysis', a)
+    assert not new and again.run_id == entry.run_id
+    for args in (('s', 'job_analysis', b), ('s', 'job_analysis', None), ('t', 'job_analysis', a), ('s', 'parse', a)):
+        with pytest.raises(LiveRefused) as exc:
+            reg.claim('idem:k', *args)
+        assert exc.value.code == 'idempotency_key_mismatch' and exc.value.status == 409
+    reg.update('idem:k', state='admission_unknown')         # a retry after an unknown admission: same action only
+    with pytest.raises(LiveRefused):
+        reg.claim('idem:k', 's', 'job_analysis', b)
+    retry, new = reg.claim('idem:k', 's', 'job_analysis', a)
+    assert new and retry.action == a
+    legacy, new = reg.claim('idem:r', 's', 'recommendation')  # callers without an action keep the old binding
+    assert new and reg.claim('idem:r', 's', 'recommendation')[1] is False

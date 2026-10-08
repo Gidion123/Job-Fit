@@ -372,8 +372,12 @@ def create_app(deps: AppDeps) -> FastAPI:
             raise
         return {'run_id': run_id}
 
-    def live_request(request: Request, h: SessionHandle, phase: str):
-        """Production live admission at the API: idempotency, owner, public live and the ticket."""
+    def live_request(request: Request, h: SessionHandle, phase: str, action: str | None = None):
+        """Production live admission at the API: idempotency, owner, public live and the ticket.
+
+        ``action`` (keys.action_fingerprint) binds the key to the intended action, not only to the
+        session and phase; the same key for another action is refused (409).
+        """
         from jobfit.live.keys import operation_key
         from jobfit.live.operation import LiveRefused
         from jobfit.live.quota import LiveRequest
@@ -385,7 +389,7 @@ def create_app(deps: AppDeps) -> FastAPI:
         if not owner and not deps.public_live:
             raise HTTPException(503, PUBLIC_LIVE_OFF_MESSAGE)
         try:
-            entry, new = idempotency.claim(op, h.session_id, phase)
+            entry, new = idempotency.claim(op, h.session_id, phase, action)
         except LiveRefused as exc:
             raise HTTPException(exc.status, exc.code)
         if not new:                         # the same action again: its run, no allowance touched
@@ -476,7 +480,8 @@ def create_app(deps: AppDeps) -> FastAPI:
                 raise HTTPException(503, ANALYZE_CLOSED_MESSAGE)
             return start_job_analysis(request, h, cv, job_id='pasted', jd_text=text,
                                       meta={'title': 'Pasted job description'},
-                                      note='Pasted JDs are analyzed for this session only.')
+                                      note='Pasted JDs are analyzed for this session only.',
+                                      action=('pasted_jd', {'cv': body.demo_cv_id, 'paste': body.paste_id}))
         if deps.analyze_pasted is None:
             raise HTTPException(503, LIVE_OFF_MESSAGE)
 
@@ -525,11 +530,17 @@ def create_app(deps: AppDeps) -> FastAPI:
         if not deps.live_enabled or deps.analyze_one is None:
             raise HTTPException(503, LIVE_OFF_MESSAGE)
         return start_job_analysis(request, h, cv, job_id=job_id, jd_text=None,
-                                  meta=deps.job_meta.get(job_id) or deps.jobs[job_id], note=None)
+                                  meta=deps.job_meta.get(job_id) or deps.jobs[job_id], note=None,
+                                  action=('corpus_job', {'cv': body.demo_cv_id, 'job': job_id}))
 
     def start_job_analysis(request: Request, h: SessionHandle, cv, *, job_id: str, jd_text: str | None,
-                           meta, note: str | None) -> dict:
-        """One job_analysis operation: owner-only in production, envelope check before any reservation."""
+                           meta, note: str | None, action: tuple[str, dict]) -> dict:
+        """One job_analysis operation: owner-only in production, envelope check before any reservation.
+
+        ``action`` names the intended action by non-sensitive ids only (the CV id and the corpus job
+        id or the opaque paste id); the idempotency key is bound to its fingerprint. The real-CV
+        adapter binds the consented-CV digest the same way.
+        """
         beta_owner_only(request)
         if deps.job_analysis_refusal is not None:
             refusal = deps.job_analysis_refusal(cv, job_id=job_id, jd_text=jd_text)
@@ -537,7 +548,9 @@ def create_app(deps: AppDeps) -> FastAPI:
                 raise HTTPException(413, refusal)
         live = None
         if deps.ingress is not None:
-            live = live_request(request, h, 'job_analysis')
+            from jobfit.live.keys import action_fingerprint
+            kind, identity = action
+            live = live_request(request, h, 'job_analysis', action_fingerprint(kind, **identity))
             if isinstance(live, dict):          # the same action again: its run, never a second execution
                 return live
 

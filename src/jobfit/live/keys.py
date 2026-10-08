@@ -25,6 +25,16 @@ def owner_key(operation_key: str) -> int:
     return key
 
 
+def action_fingerprint(kind: str, **identity: str) -> str:
+    """An opaque, in-memory identity of the intended action behind one idempotency key (D-103).
+
+    Built only from non-sensitive identifiers (a CV id or consented-CV digest, a corpus job id, an
+    opaque paste id); never from CV or JD text. SHA-256, so the identifiers themselves are not kept.
+    """
+    parts = [kind] + [f'{k}={identity[k]}' for k in sorted(identity)]
+    return hashlib.sha256('\x1f'.join(parts).encode()).hexdigest()
+
+
 def operation_key(idempotency_key: str) -> str:
     """'idem:<canonical uuid4>'. The phase lives in its own column, so one key conflicts globally."""
     try:

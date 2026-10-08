@@ -87,6 +87,14 @@ def test_every_beta_phase_fits_the_five_dollar_cap_and_none_fits_two():
     assert phase['job_analysis'] > Decimal('2')
 
 
+def test_a_fresh_find_jobs_first_analysis_fits_the_configured_daily_cap(prod_root):
+    """parse + search + the first job_analysis of a new Find Jobs session, all on one day."""
+    b, settings = bounds(), beta_settings(prod_root)
+    first = b.parse_max + b.search_max + b.job_analysis_max
+    assert first == Decimal('4.0629163')
+    assert first <= Decimal(str(settings.daily_budget_usd)) == Decimal('5')
+
+
 def test_the_beta_uses_the_same_frozen_sources_as_phase_2a():
     legacy, cfg = (yaml.safe_load(p.read_text()) for p in (pb.DEFAULT_CONFIG, beta.DEFAULT_BETA_CONFIG))
     for key in ('pipeline_config', 'route_rules', 'parse_model', 'parse_dynamic_output'):

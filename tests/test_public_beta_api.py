@@ -183,8 +183,68 @@ def test_owner_job_analysis_needs_a_canonical_idempotency_key_and_never_runs_twi
     wait(client, h, first['run_id'])
     again = client.post('/jobs/A/analyze', json={'demo_cv_id': 'CV1'}, headers=owner(h, key)).json()
     assert again == {'run_id': first['run_id'], 'duplicate': True} and len(calls['analyze']) == 1
-    other = client.post('/jobs/B/analyze', json={'demo_cv_id': 'CV1'}, headers=owner(h, key))
-    assert other.status_code == 200 and other.json()['run_id'] == first['run_id']    # same key: same action
+
+
+# --- the idempotency key is bound to the intended action (session, phase and action) ----------------------
+
+def mismatch(r):
+    return r.status_code == 409 and r.json()['detail'] == 'idempotency_key_mismatch'
+
+
+def test_the_same_key_for_the_same_corpus_job_returns_the_original_run():
+    client, calls = make()
+    h, key = session(client), str(uuid.uuid4())
+    first = client.post('/jobs/A/analyze', json={'demo_cv_id': 'CV1'}, headers=owner(h, key)).json()
+    wait(client, h, first['run_id'])
+    for _ in range(2):
+        again = client.post('/jobs/A/analyze', json={'demo_cv_id': 'CV1'}, headers=owner(h, key))
+        assert again.status_code == 200 and again.json() == {'run_id': first['run_id'], 'duplicate': True}
+    assert [c[0] for c in calls['analyze']] == ['A']
+
+
+def test_the_same_key_for_another_corpus_job_is_refused():
+    client, calls = make()
+    h, key = session(client), str(uuid.uuid4())
+    first = client.post('/jobs/A/analyze', json={'demo_cv_id': 'CV1'}, headers=owner(h, key)).json()
+    wait(client, h, first['run_id'])
+    assert mismatch(client.post('/jobs/B/analyze', json={'demo_cv_id': 'CV1'}, headers=owner(h, key)))
+    assert [c[0] for c in calls['analyze']] == ['A']
+    # the original action is still answered with its run
+    assert client.post('/jobs/A/analyze', json={'demo_cv_id': 'CV1'}, headers=owner(h, key)).json()['run_id'] == \
+        first['run_id']
+
+
+def test_the_same_key_for_another_pasted_jd_is_refused():
+    client, calls = make()
+    h, key = session(client), str(uuid.uuid4())
+    one, two = paste(client, h), paste(client, h, JD + ' Docker and Kubernetes.')
+    first = client.post('/analyze', json={'paste_id': one, 'demo_cv_id': 'CV1'}, headers=owner(h, key)).json()
+    wait(client, h, first['run_id'])
+    assert mismatch(client.post('/analyze', json={'paste_id': two, 'demo_cv_id': 'CV1'}, headers=owner(h, key)))
+    again = client.post('/analyze', json={'paste_id': one, 'demo_cv_id': 'CV1'}, headers=owner(h, key))
+    assert again.json() == {'run_id': first['run_id'], 'duplicate': True}
+    # a pasted JD and a corpus job are different actions too
+    assert mismatch(client.post('/jobs/A/analyze', json={'demo_cv_id': 'CV1'}, headers=owner(h, key)))
+    assert [c[1] for c in calls['analyze']] == [JD]
+
+
+def test_another_session_or_phase_with_the_same_key_is_still_refused():
+    client, calls = make()
+    h, key = session(client), str(uuid.uuid4())
+    first = client.post('/jobs/A/analyze', json={'demo_cv_id': 'CV1'}, headers=owner(h, key)).json()
+    wait(client, h, first['run_id'])
+    other = session(client)
+    assert mismatch(client.post('/jobs/A/analyze', json={'demo_cv_id': 'CV1'}, headers=owner(other, key)))
+    r = client.post('/recommendations', json={'demo_cv_id': 'CV1', 'mode': 'live'}, headers=owner(h, key))
+    assert mismatch(r)
+    assert len(calls['analyze']) == 1
+
+
+def test_the_action_fingerprint_holds_no_raw_identifier():
+    from jobfit.live.keys import action_fingerprint
+    a = action_fingerprint('corpus_job', cv='CV1', job='A')
+    assert a == action_fingerprint('corpus_job', job='A', cv='CV1') != action_fingerprint('corpus_job', cv='CV1', job='B')
+    assert a != action_fingerprint('pasted_jd', cv='CV1', paste='A') and len(a) == 64 and 'CV1' not in a
 
 
 def test_the_owner_never_bypasses_budget_or_the_gate():

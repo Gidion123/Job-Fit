@@ -348,24 +348,30 @@ class _Entry:
     phase: str
     run_id: str | None = None
     state: str = 'starting'          # starting | running | done | failed | admission_unknown
+    action: str | None = None        # opaque fingerprint of the intended action (keys.action_fingerprint)
 
 
 @dataclass
 class IdempotencyRegistry:
-    """In-memory binding of one idempotency key to (session, phase, run). The DB key is the backstop."""
+    """In-memory binding of one idempotency key to (session, phase, action, run). The DB key is the backstop.
+
+    D-103: a session may run several job_analysis operations, so a key is also bound to its intended
+    action (for example the CV and the corpus job or paste); reusing it for another action is refused.
+    """
     entries: dict[str, _Entry] = field(default_factory=dict)
     lock: threading.Lock = field(default_factory=threading.Lock)
 
-    def claim(self, operation_key: str, session: str, phase: str) -> tuple[_Entry, bool]:
+    def claim(self, operation_key: str, session: str, phase: str, action: str | None = None) -> tuple[_Entry, bool]:
         """(entry, True): a new claim with a pre-assigned run id, go ahead. (entry, False): the same
-        action again, return its run and never re-run. Another session or phase: refused."""
+        action again, return its run and never re-run. Another session, phase or action: refused."""
         with self.lock:
             entry = self.entries.get(operation_key)
-            if entry is not None and (entry.session != session or entry.phase != phase):
+            if entry is not None and (entry.session != session or entry.phase != phase or entry.action != action):
                 raise LiveRefused('idempotency_key_mismatch')
             if entry is None or entry.state == 'admission_unknown':
                 # a retry after an unknown admission resolves through the DB key: duplicate or new admission
-                entry = self.entries[operation_key] = _Entry(session, phase, run_id=secrets.token_urlsafe(12))
+                entry = self.entries[operation_key] = _Entry(session, phase, run_id=secrets.token_urlsafe(12),
+                                                             action=action)
                 return entry, True
             return entry, False
 

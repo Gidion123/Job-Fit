@@ -102,6 +102,17 @@ class SessionStore:
             state.consent_digest = exact_digest; state.activity = self.clock()
             return Lease(handle.session_id, state.generation, exact_digest)
 
+    def consented_lease(self, handle):
+        """The current consent lease, rebuilt server-side; never sent to the browser (CP3).
+
+        Valid only while the stored consent covers the current preview generation and digest.
+        """
+        with self._lock:
+            state = self._get(handle)
+            if not state.text or state.consent_digest is None or state.consent_digest != state.text_digest:
+                raise SessionDenied('Affirmative consent for the current preview required')
+            return Lease(handle.session_id, state.generation, state.consent_digest)
+
     def _authorized(self, handle, lease):
         state = self._get(handle)
         if (lease.session_id != handle.session_id or lease.generation != state.generation

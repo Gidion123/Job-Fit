@@ -124,7 +124,10 @@ def test_pr06_oversized_and_malformed_uploads_rejected_without_temp_residue():
     big = client.post('/cv/upload', files={'file': ('cv.txt', b'a' * (10 * 1024 * 1024 + 1))}, headers=h)
     bad_pdf = client.post('/cv/upload', files={'file': ('cv.pdf', b'%PDF-1.4 broken')}, headers=h)
     exe = client.post('/cv/upload', files={'file': ('cv.exe', b'MZ')}, headers=h)
-    assert big.status_code == bad_pdf.status_code == exe.status_code == 422
+    # upload hardening (CP3): stable codes; 413 above the raw request cap, 415 for an unsupported type
+    assert (big.status_code, big.json()['code']) == (413, 'upload_too_large')
+    assert (bad_pdf.status_code, bad_pdf.json()['code']) == (422, 'document_unreadable')
+    assert (exe.status_code, exe.json()['code']) == (415, 'unsupported_type')
     assert set(os.listdir(tmp)) - before == set() and calls == []
 
 

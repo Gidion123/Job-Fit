@@ -3,7 +3,9 @@
 Privacy follows D-051 and D-021:
 - every request needs the session id and token from POST /session; data is owner-scoped;
 - the heartbeat keeps the liveness lease only and never resets the idle age;
-- an uploaded CV is read and masked locally; the user can edit the masked text, and
+- an uploaded CV goes through the bounded, memory-only upload boundary (``jobfit.cv.upload_guard``:
+  raw body and file size limits, container checks, a bounded extraction worker, fixed error codes),
+  then it is read and masked locally; the user can edit the masked text, and
   consent is bound to that exact text; provider processing of uploaded (real) CVs stays
   disabled until the D-051 release gates pass, so analysis runs on the synthetic demo CVs;
 - a pasted JD lives only in the session; it never enters the corpus or a disk cache;
@@ -43,12 +45,13 @@ import secrets
 import threading
 import time
 
-from fastapi import Depends, FastAPI, File, Header, HTTPException, Request, UploadFile
+from fastapi import Depends, FastAPI, Header, HTTPException, Request
 from fastapi.responses import JSONResponse
+from starlette.concurrency import run_in_threadpool
 
 from jobfit.api.presenter import SEARCH_STAGE_LABEL, analyzed_job, job_card, recommendation, retrieval_card
+from jobfit.cv import upload_guard
 from jobfit.cv.parser import ParsedCV
-from jobfit.cv.text_extract import extract_text
 from jobfit.privacy.masking import mask_local
 from jobfit.schemas.api import (AnalyzeRequest, CoachAnswer, ConsentRequest, FeedbackRequest, JobAnalyzeRequest,
                                 MarketQuery, PasteRequest, PreviewEdit, RunRequest, SearchRequest, TailorRequest)
@@ -164,6 +167,7 @@ def create_app(deps: AppDeps) -> FastAPI:
     app = FastAPI(title='JobFit API', version='1.0', lifespan=lifespan,
                   description='Evidence-grounded job matching for early-career AI/data job seekers. '
                               'Match % is CV evidence coverage, not a hiring probability.')
+    app.add_middleware(upload_guard.UploadBodyLimit)    # raw body limit of POST /cv/upload only
     idempotency = allowances = None
     if deps.ingress is not None:
         from jobfit.live.operation import IdempotencyRegistry
@@ -271,12 +275,16 @@ def create_app(deps: AppDeps) -> FastAPI:
         return deps.demo_summaries[cv_id]
 
     @app.post('/cv/upload')
-    async def upload(file: UploadFile = File(...), h: SessionHandle = Depends(handle)):
-        data = await file.read()
-        text = extract_text(data, file.filename or 'upload.txt')
-        del data   # original bytes are not kept (D-051 section 2.7)
-        if text.status != 'ok':
-            raise HTTPException(422, text.warnings[0] if text.warnings else 'The document could not be read')
+    async def upload(request: Request, h: SessionHandle = Depends(handle)):
+        data = None
+        try:
+            ext, data = await upload_guard.read_upload(request)
+            upload_guard.check_container(data, ext)
+            text = await run_in_threadpool(upload_guard.bounded_extract, data, ext)
+        except upload_guard.UploadRejected as exc:   # fixed message and code; nothing kept or sent anywhere
+            return upload_guard.rejection_response(exc.code)
+        finally:
+            del data   # original bytes are not kept (D-051 section 2.7)
         return _set_preview(h, text.text, list(text.warnings), text.layout)
 
     def _set_preview(h: SessionHandle, raw: str, warnings: list, layout: str | None) -> dict:

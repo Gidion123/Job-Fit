@@ -92,7 +92,7 @@ def test_upload_is_masked_locally_and_real_cv_processing_stays_off():
 def test_unreadable_upload_fails_before_anything_else():
     client, headers = make()
     r = client.post('/cv/upload', files={'file': ('cv.exe', b'xx', 'application/octet-stream')}, headers=headers)
-    assert r.status_code == 422
+    assert r.status_code == 415 and r.json()['code'] == 'unsupported_type'    # upload hardening (CP3)
 
 
 def test_delete_session_drops_late_results():

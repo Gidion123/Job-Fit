@@ -322,7 +322,7 @@ API (`src/jobfit/api/main.py`, `wiring.py`) and UI client:
 - the owner token bypasses only the ticket; non-owner live needs public live and the parse ticket, so it is refused for now;
 - `prod` live runs only through the runtime with `ProductionSettings.client_settings()` (production ledger and lifetime budgets); `dev` keeps the CP2 behaviour;
 - `AppDeps.live_enabled` now defaults to off;
-- the UI client sends the token, the client IP and one key per user action.
+- the UI client sends the internal token and one key per user action. It **supports** forwarding a client IP, but nothing populates it yet: acquiring the IP (the Caddy header, Streamlit access to it) is a deployment prerequisite.
 
 ### Evidence and settlement rules
 
@@ -345,6 +345,23 @@ A breach marker (`<JOBFIT_USAGE_LEDGER>.breach.jsonl`), an unreadable or corrupt
 3. Settle every affected open reservation from that evidence only (`jobfit.live.budget_store.close` in a reviewed one-off session; never release unless zero spend is proven), and record the case in `docs/failures.md`.
 4. Never edit or truncate the authoritative ledger. A torn final line is moved to a separate quarantine file only after step 2, with its hash recorded.
 5. Move the breach file aside (renamed with the date) only after the review is recorded. Admission resumes on its own once no breach file exists and the evidence parses.
+
+### Audit corrections (8 Oct 2026, after the independent audit of `3223b16..1f76ad7`)
+
+The audit returned TARGETED REVISION REQUIRED. The architecture, cap, bounds and D-101 design are unchanged; these gaps were closed (commits `6c04247`, `b1efa4d`, `e9faf12`, `1f856dd`):
+
+- **48 h quota retention (D-096).** The purge ran in the same transaction as the ticket consume, so a clean refusal rolled it back. It now has its own committed lifecycle: a separate committed purge before every consume (a purge failure fails the ticket closed), a startup purge, and an hourly purge from the API sweeper (failures are logged and retried, and never stop session expiry).
+- **UI idempotency.** Streamlit made a new key on every click. A pending live-action key now stays in the Streamlit session until the server acknowledges the action with a run id, so a retry after a lost response reuses it and the action runs once. The fingerprint is an opaque SHA-256 of the demo CV id, the seniority switch and the canonical filters, never CV content.
+- **D-097 acceptance.** A new test runs the frozen `recommend()` (the frozen `match_evidence`, `validated_call`, Sol then Luna, scoring and product order) twice on a deterministic fake SDK: serialized through the frozen client and concurrently through the reserved client. The `Recommendation` objects are equal, including scored, held and fallback jobs; calls overlap only in the concurrent run.
+- **One recommendation per ticket (D-096).** A session allowance follows `no_ticket → ticket_held → pending(op) → used(op)`:
+  - the Phase 3 parse will mark `ticket_held`;
+  - a non-owner recommendation claims `pending(op)` after its idempotency claim; a retry of the same action never claims again;
+  - the claim becomes `used(op)` only at the first durable provider intent, through a callback attempted exactly once before the attempt opens. A failed finalize is a sticky `allowance_finalize_failed` refusal with no SDK call;
+  - a busy, budget, run-limit or other pre-billing stop returns `pending(op)` to `ticket_held`; session delete and expiry drop the state;
+  - the owner never touches the allowance.
+- **Accepted operational constants:** 10 new sessions per IP pseudonym per hour (provisional MVP default), the hourly quota purge and the startup purge.
+- **Tests now:** `tests/test_live_unit.py` 48, `tests/test_live_api.py` 26, `tests/test_live_recommend_equivalence.py` 1, `tests/test_ui_client.py` 9, `tests/test_live_db.py` 25, `tests/test_live_runtime_db.py` 13. Default suite 890 passed, 126 skipped (the gated tests), 0 failed; gated matrix 130 passed on PostgreSQL 16.15 (92 migration + 38 live); ruff clean; freeze verify `"ok": true`.
+- **Deployment prerequisites (not part of Phase 2B code):** the persistent production ledger volume; acquiring the client IP (the Caddy header and Streamlit access to it). Phase 2B is not declared closed; that follows the independent correction audit.
 
 ### Findings and not done yet
 

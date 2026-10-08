@@ -139,23 +139,23 @@ def test_the_3c_accounting_envelope_is_not_a_reachable_sequence():
     assert sum(a.max_tokens for a in at_limit) == 2 * C
 
 
-def test_appended_messages_fit_the_configured_envelopes():
-    appended = CONFIG['envelopes']['appended_message_max_bytes'] + pb.MESSAGE_FRAMING_BYTES
+def test_appended_messages_fit_the_computed_bounds():
+    appended = {m: pb.appended_message_bound(m, CONFIG['envelopes']['max_list_index_digits']) for m in (Out, Prior)}
     repair_context = 2 * REPAIR_CONTEXT_MAX_BYTES + pb.MESSAGE_FRAMING_BYTES
     prior = {'text': '"\\' * ((REPAIR_CONTEXT_MAX_BYTES - 20) // 4)}
     assert len(Prior.model_validate(prior).model_dump_json().encode()) <= REPAIR_CONTEXT_MAX_BYTES
-    clients = [run_chain(C // 4, C, ['truncated', 'schema', 'truncated']),
-               run_chain(C // 4, C, ['invalid', 'truncated']),
-               run_chain(C // 4, C, ['invalid', 'invalid'], output_model=Prior, invalid=prior)]
+    clients = [(Out, run_chain(C // 4, C, ['truncated', 'schema', 'truncated'])),
+               (Out, run_chain(C // 4, C, ['invalid', 'truncated'])),
+               (Prior, run_chain(C // 4, C, ['invalid', 'invalid'], output_model=Prior, invalid=prior))]
     seen_assistant = False
-    for client in clients:
+    for model, client in clients:
         for m in client.calls[-1]['messages'][2:]:
-            size = len(json.dumps(m, ensure_ascii=False).encode())
+            size = len(json.dumps(m, ensure_ascii=False).encode()) + pb.MESSAGE_SEPARATOR_BYTES
             if m['role'] == 'assistant':
                 seen_assistant = True
                 assert size <= repair_context
             else:
-                assert size <= appended
+                assert size <= appended[model]
     assert seen_assistant
 
 
@@ -224,6 +224,8 @@ def test_phase_totals_keep_parse_and_recommendation_separate():
     assert pb.PhaseBounds(**{**b.__dict__, 'parse_max': Decimal('1')}).recommendation_upper_bound == Decimal('3.26')
 
 
+
+
 # --- the real configuration -------------------------------------------------------------------------
 
 def test_real_configuration_gives_a_derived_bound(real):
@@ -240,13 +242,20 @@ def test_real_configuration_gives_a_derived_bound(real):
     assert real.recommendation_upper_bound == (real.embed_max + real.extraction_max + real.matching_max
                                                + real.fallback_max)
     assert real.full_analysis_upper_bound == real.parse_max + real.recommendation_upper_bound
-    assert d['parse']['sequences'] == {'initial_then_repair': [16000, 16000]}
+    assert d['parse']['regions']['fixed_limit']['sequences'] == {'initial_then_repair': [16000, 16000]}
     for task in ('extraction', 'matching', 'fallback'):
-        assert d[task]['reachable'] is True
-        assert d[task]['sequences'] == {'initial_then_repair': [C, C]}   # derived L = C: 2C, no continuation
+        regions = d[task]['regions']
+        assert d[task]['reachable'] is True and set(regions) == {'envelope', 'below_limit'}
+        # envelope: derived L = C, so 2C and no continuation; below the limit: L <= C - 1, up to 3C - 1
+        assert regions['envelope']['sequences'] == {'initial_then_repair': [C, C]}
+        assert regions['below_limit']['sequences'] == {'continuation_first': [C - 1, C, C],
+                                                       'repair_first': [C - 1, C - 1, C]}
+        chain = real.chains[task]
+        assert chain.cost() == max(r.cost() for r in chain.regions.values())
+        assert d[task]['dominant_region'] == 'envelope'
     assert d['matching']['model'] == 'openai/gpt-6-sol' and d['fallback']['model'] == 'openai/gpt-6-luna'
     # Recorded in docs/checkpoint_3 (Phase 2A). A change here must update the report.
-    assert out['full_analysis_upper_bound'] == '84.7655888' and out['within_cap'] is False
+    assert out['full_analysis_upper_bound'] == '84.7704449' and out['within_cap'] is False
 
 
 def test_bound_above_the_daily_cap_makes_public_live_ineligible(real, tmp_path):
@@ -267,7 +276,8 @@ def test_missing_unit_envelopes_fall_back_to_the_3c_supremum(real, tmp_path):
     assert sup.bound_basis == pb.SUPREMUM
     for task in ('extraction', 'matching', 'fallback'):
         assert sup.details[task]['reachable'] is False
-        assert sup.details[task]['sequences'] == {'accounting_envelope_3C': [C, C, C]}
+        assert sup.details[task]['regions'] == {'accounting_envelope_3C': sup.details[task]['regions']['accounting_envelope_3C']}
+        assert sup.details[task]['regions']['accounting_envelope_3C']['sequences'] == {'accounting_envelope_3C': [C, C, C]}
     assert 'not reachable attempts' in sup.details['note']
     assert sup.parse_max == real.parse_max and sup.full_analysis_upper_bound > real.full_analysis_upper_bound
     huge = get_production_settings({
@@ -289,6 +299,9 @@ def test_missing_unit_envelopes_fall_back_to_the_3c_supremum(real, tmp_path):
     ({'envelopes': {'max_units': 0}}, 'max_units'),
     ({'envelopes': {'max_inventory_items': -1}}, 'max_inventory_items'),
     ({'envelopes': {'appended_message_max_bytes': None}}, 'appended_message_max_bytes'),
+    ({'envelopes': {'appended_message_max_bytes': 4096}}, 'AuditedExtraction repair message bound'),
+    ({'envelopes': {'max_list_index_digits': None}}, 'max_list_index_digits'),
+    ({'envelopes': {'max_list_index_digits': 0}}, 'max_list_index_digits'),
     ({'envelopes': {'extraction_json_max_bytes': 1.5}}, 'extraction_json_max_bytes'),
 ])
 def test_invalid_configuration_fails_closed(tmp_path, changes, message):
@@ -338,67 +351,316 @@ def test_parse_model_matches_the_frozen_cp24_runner_and_ledger():
     assert {r['task'] for r in rows} <= {'cv_parsing', 'cv_parsing_validation_repair'}
 
 
-# --- the envelopes cover requests built by the frozen stage code ------------------------------------------
+# --- every reachable attempt of the frozen stages fits the bound --------------------------------------------
 
-class RecordingClient:
-    def __init__(self):
-        self.calls = []
+class StageClient:
+    """Plays a script against a real frozen stage and records every call as the frozen guard sees it.
+
+    Steps: 'truncated' (finish_reason=length), 'prior' (a schema-valid output, up to the repair
+    context limit, that fails the stage's validation, so it is sent back as the assistant prior) or
+    'schema' (a schema-invalid output).
+    """
+
+    def __init__(self, steps, prior, invalid):
+        self.steps, self.prior, self.invalid, self.calls = list(steps), prior, invalid, []
 
     def chat_structured(self, model, messages, output_model, task, max_tokens=2000, temperature=0.0):
-        self.calls.append((max_tokens, len(json.dumps(messages, ensure_ascii=False).encode()),
-                           len(json.dumps(strict_schema(output_model.model_json_schema())).encode())))
-        if len(self.calls) == 1:
+        users = [m['content'] for m in messages if m['role'] == 'user']
+        self.calls.append({'input_bytes': pb.guard_input_bytes(messages, output_model),
+                           'attempt': pb.Attempt(max_tokens, sum(CONTINUATION_MARK in u for u in users),
+                                                 sum(REPAIR_MARK in u for u in users))})
+        step = self.steps.pop(0) if self.steps else 'schema'
+        if step == 'truncated':
             raise TruncatedStructuredResponse('length')
-        raise ValueError('assessment_coverage')
+        return self.prior if step == 'prior' else self.invalid
 
 
-def assert_within(client, chain):
-    sequence = max(chain['sequences'].values(), key=len)
-    for i, (max_tokens, message_bytes, schema_bytes) in enumerate(client.calls):
-        assert max_tokens <= sequence[min(i, len(sequence) - 1)]
-        assert schema_bytes == chain['schema_bytes']
-        if i == 0:
-            assert message_bytes <= chain['base_message_bytes']
+def largest_prior(model, build):
+    """A quote-heavy valid output whose JSON is just under the frozen repair context limit."""
+    n = (REPAIR_CONTEXT_MAX_BYTES - len(build('').model_dump_json().encode())) // 4
+    prior = build('"\\' * n)
+    assert REPAIR_CONTEXT_MAX_BYTES - 4 < len(prior.model_dump_json().encode()) <= REPAIR_CONTEXT_MAX_BYTES
+    return prior.model_dump(mode='json')
+
+
+def evidence_prior():
+    from jobfit.matching.evidence_matcher import EvidenceResponse
+    from jobfit.schemas.analysis import UnitAssessment
+    return largest_prior(EvidenceResponse, lambda s: EvidenceResponse(assessments=[UnitAssessment(unit_id='z' + s)]))
+
+
+def extraction_prior():
+    from jobfit.extraction.audited import AuditedExtraction
+    return largest_prior(AuditedExtraction, lambda s: AuditedExtraction(job_id='z' + s, qualification_coverage=[]))
+
+
+EVIDENCE_INVALID = {'assessments': [{'unit_id': 1, 'branches': [{'branch_id': 1}] * 3}] * 13}
+EXTRACTION_INVALID = {'job_id': 1, 'units': [{'unit_id': 1, 'branches': [{'branch_id': 1}] * 3}] * 13,
+                      'qualification_coverage': [{'source_id': 1}] * 13}
+
+
+def guard_cost(client, price):
+    return sum((Decimal(c['input_bytes']) * price.input_per_m + Decimal(c['attempt'].max_tokens) * price.output_per_m)
+               / pb.ONE_MILLION for c in client.calls)
+
+
+def assert_sequence_within(client, chain, region):
+    spec = chain.regions[region]
+    seen = [c['attempt'] for c in client.calls]
+    assert any(seen == s[:len(seen)] for s in spec.sequences.values()), seen
+    for c in client.calls:          # every attempt, not only the first
+        assert c['input_bytes'] <= spec.attempt_input_bytes(c['attempt'])
+    assert guard_cost(client, spec.price) <= spec.cost() <= chain.cost()
 
 
 HARD_TEXT = 'Data "x" \\ é\x01 ' * 10
 
 
-def test_frozen_extract_jd_request_fits_the_extraction_envelope(real):
+def run_extract(text, steps):
     from jobfit.extraction.audited import ExtractionSpec
     from jobfit.extraction.jd_extractor import extract_jd
-    items = CONFIG['envelopes']['max_inventory_items']
-    bullets = ''.join(f'- {HARD_TEXT[:500]}\n' for _ in range(items))
-    text = 'Requirements:\n' + bullets
-    text += 'x' * (CONFIG['jd_text_max_chars'] - len(text))
-    assert len(text) == CONFIG['jd_text_max_chars']
-    client = RecordingClient()
+    client = StageClient(steps, extraction_prior(), EXTRACTION_INVALID)
     spec = ExtractionSpec(REPO_ROOT / PIPELINE['jd_prompt_file'], PIPELINE['jd_prompt_version'])
-    extract_jd(text, job_id='J' * CONFIG['envelopes']['short_field_max_chars'], client=client,
-               model=PIPELINE['extraction_model'], spec=spec, dynamic_output=True)
-    assert len(client.calls) >= 1
-    assert_within(client, real.details['extraction'])
+    result = extract_jd(text, job_id='J' * CONFIG['envelopes']['short_field_max_chars'], client=client,
+                        model=PIPELINE['extraction_model'], spec=spec, dynamic_output=True)
+    assert result.status == 'failed'
+    return client
 
 
-def test_frozen_match_evidence_request_fits_the_matching_envelope(real):
+def run_match(cv_text, extraction, model, steps, durations=None):
     from jobfit.cv.parser import ParsedCV
     from jobfit.matching.evidence_matcher import match_evidence
     from jobfit.schemas.cv import CVProfile
+    cv = ParsedCV(profile=CVProfile(cv_id='C' * CONFIG['envelopes']['short_field_max_chars'], raw_text=cv_text),
+                  analysis_date=date(2026, 10, 7))
+    client = StageClient(steps, evidence_prior(), EVIDENCE_INVALID)
+    result = match_evidence(cv, extraction, client=client, model=model, duration_years=durations,
+                            validator_version=PIPELINE['evidence_validator'],
+                            guardrail_ids=tuple(PIPELINE['evidence_guardrails']), dynamic_output=True)
+    assert result.status == 'failed'
+    return client
+
+
+def one_unit_extraction():
+    from jobfit.schemas.requirements import JDExtraction
+    return JDExtraction.model_validate({'job_id': 'J', 'units': [
+        {'unit_id': 'u1', 'text': 'x', 'importance': 'required', 'source_quotes': ['x']}]})
+
+
+ENVELOPE_SCRIPTS = [['prior', 'schema'], ['schema', 'prior'], ['truncated'], ['prior', 'truncated']]
+BELOW_LIMIT_SCRIPTS = [['truncated', 'prior', 'truncated'],     # continuation first: C-1, C, C
+                       ['prior', 'truncated', 'schema'],        # repair first: C-1, C-1, C
+                       ['schema', 'truncated', 'prior'],
+                       ['truncated', 'schema', 'schema']]
+
+
+def test_every_attempt_of_frozen_extract_jd_at_the_envelope_fits(real):
+    items = CONFIG['envelopes']['max_inventory_items']
+    text = 'Requirements:\n' + ''.join(f'- {HARD_TEXT[:500]}\n' for _ in range(items))
+    text += 'x' * (CONFIG['jd_text_max_chars'] - len(text))
+    for steps in ENVELOPE_SCRIPTS:
+        client = run_extract(text, steps)
+        assert client.calls[0]['attempt'].max_tokens == C
+        assert_sequence_within(client, real.chains['extraction'], 'envelope')
+
+
+def test_every_attempt_of_frozen_match_evidence_at_the_envelope_fits(real):
+    from jobfit.cv.text_extract import MAX_CHARACTERS
     from jobfit.schemas.requirements import JDExtraction
     env = CONFIG['envelopes']
-    from jobfit.cv.text_extract import MAX_CHARACTERS
-    cv_text = (HARD_TEXT * MAX_CHARACTERS)[:MAX_CHARACTERS]
     units = [{'unit_id': f'u{i}', 'text': HARD_TEXT[:60], 'importance': 'required',
               'source_quotes': [HARD_TEXT[:60]]} for i in range(env['max_units'])]
     extraction = JDExtraction.model_validate({'job_id': 'J', 'units': units})
     assert len(json.dumps(extraction.model_dump(mode='json'), ensure_ascii=False).encode()) <= env['extraction_json_max_bytes']
-    cv = ParsedCV(profile=CVProfile(cv_id='C' * env['short_field_max_chars'], raw_text=cv_text),
-                  analysis_date=date(2026, 10, 7))
+    cv_text = (HARD_TEXT * MAX_CHARACTERS)[:MAX_CHARACTERS]
     durations = {f'u{i}': 2.2250738585072014e-308 for i in range(env['max_units'])}
     for model, chain in ((PIPELINE['matching_model'], 'matching'), (PIPELINE['matching_fallback_model'], 'fallback')):
-        client = RecordingClient()
-        result = match_evidence(cv, extraction, client=client, model=model, duration_years=durations,
-                                validator_version=PIPELINE['evidence_validator'],
-                                guardrail_ids=tuple(PIPELINE['evidence_guardrails']), dynamic_output=True)
-        assert result.status == 'failed' and len(client.calls) >= 1
-        assert_within(client, real.details[chain])
+        for steps in ENVELOPE_SCRIPTS:
+            client = run_match(cv_text, extraction, model, steps, durations)
+            assert client.calls[0]['attempt'].max_tokens == C
+            assert_sequence_within(client, real.chains[chain], 'envelope')
+
+
+def largest_below_limit(first_limit):
+    """Largest number of '"' characters whose frozen request still gets L < C (binary search)."""
+    lo, hi = 1, 100_000
+    assert first_limit(hi) == C and first_limit(lo) < C
+    while hi - lo > 1:
+        mid = (lo + hi) // 2
+        lo, hi = (mid, hi) if first_limit(mid) < C else (lo, mid)
+    return lo
+
+
+def test_every_attempt_of_frozen_extract_jd_below_the_limit_fits(real):
+    n = largest_below_limit(lambda n: run_extract('"' * n, ['truncated']).calls[0]['attempt'].max_tokens)
+    assert run_extract('"' * n, ['truncated']).calls[0]['attempt'].max_tokens == C - 1
+    for steps in BELOW_LIMIT_SCRIPTS:
+        client = run_extract('"' * n, steps)
+        assert_sequence_within(client, real.chains['extraction'], 'below_limit')
+    seen = [c['attempt'].max_tokens for c in run_extract('"' * n, BELOW_LIMIT_SCRIPTS[0]).calls]
+    assert seen == [C - 1, C, C]
+
+
+def test_every_attempt_of_frozen_match_evidence_below_the_limit_fits(real):
+    ext = one_unit_extraction()
+    sol, luna = PIPELINE['matching_model'], PIPELINE['matching_fallback_model']
+    n = largest_below_limit(lambda n: run_match('"' * n, ext, sol, ['truncated']).calls[0]['attempt'].max_tokens)
+    for model, chain in ((sol, 'matching'), (luna, 'fallback')):
+        for steps in BELOW_LIMIT_SCRIPTS:
+            client = run_match('"' * n, ext, model, steps)
+            assert client.calls[0]['attempt'].max_tokens == C - 1
+            assert_sequence_within(client, real.chains[chain], 'below_limit')
+    seen = [c['attempt'].max_tokens for c in run_match('"' * n, ext, sol, BELOW_LIMIT_SCRIPTS[1]).calls]
+    assert seen == [C - 1, C - 1, C]
+
+
+def test_below_limit_region_covers_every_allowance_under_the_limit(real):
+    for task in ('extraction', 'matching', 'fallback'):
+        chain = real.chains[task]
+        below = chain.regions['below_limit']
+        grid = list(range(1, C, 997)) + [C // 2, C // 2 + 1, C - 1]
+        costs = [pb.ChainSpec(**{**below.__dict__, 'sequences': pb.reachable_sequences(L, C)}).cost() for L in grid]
+        assert max(costs) == below.cost() <= chain.cost()
+
+
+# --- C1: the smallest reachable unit count is 1 ---------------------------------------------------------------
+
+def test_expected_units_reaching_output_allowance_are_at_least_one(monkeypatch):
+    from jobfit.extraction import jd_extractor
+    from jobfit.matching import evidence_matcher
+    from jobfit.llm.output_policy import output_allowance
+    from jobfit.schemas.requirements import JDExtraction
+    seen = []
+
+    def recorder(task, input_tokens, expected_units, *a):
+        seen.append((task, expected_units))
+        return output_allowance(task, input_tokens, expected_units, *a)
+    monkeypatch.setattr(jd_extractor, 'output_allowance', recorder)
+    monkeypatch.setattr(evidence_matcher, 'output_allowance', recorder)
+    run_extract('A job description with no requirement list.', ['schema'])
+    assert seen == [('jd_extraction', 1)]
+    seen.clear()
+    client = StageClient([], None, {})
+    from jobfit.cv.parser import ParsedCV
+    from jobfit.schemas.cv import CVProfile
+    cv = ParsedCV(profile=CVProfile(cv_id='CV', raw_text='Python'), analysis_date=date(2026, 10, 7))
+    result = evidence_matcher.match_evidence(cv, JDExtraction.model_validate({'job_id': 'J', 'units': []}),
+                                             client=client, model='m', dynamic_output=True)
+    assert result.status == 'done' and seen == [] and client.calls == []      # zero units: no call at all
+    unit = {'unit_id': 'u1', 'text': 'x', 'importance': 'required', 'source_quotes': ['x']}
+    with pytest.raises(ValueError, match='unique'):         # duplicate IDs cannot shrink len(units)
+        JDExtraction.model_validate({'job_id': 'J', 'units': [unit] * 2})
+    run_match('Python', one_unit_extraction(), 'm', ['schema'])
+    assert seen == [('evidence_matching', 1)]
+
+
+def test_t_max_is_the_largest_estimate_below_the_limit_for_every_reachable_unit_count(real):
+    from jobfit.llm.output_policy import output_allowance
+    for chain, task in (('extraction', 'jd_extraction'), ('matching', 'evidence_matching')):
+        t_max = real.details[chain]['below_limit_max_estimate_tokens']
+        assert t_max == pb.max_tokens_below_limit(task, C)
+        assert output_allowance(task, t_max, 1) < C == output_allowance(task, t_max + 1, 1)
+        for units in range(1, CONFIG['envelopes']['max_units'] + 1):
+            assert output_allowance(task, t_max + 1, units) == C     # more units never allow a larger T
+
+
+# --- F2: the inventory envelope -----------------------------------------------------------------------------
+
+def test_frozen_inventory_quotes_never_exceed_the_jd_length():
+    import random
+    from jobfit.extraction.audited import qualification_inventory
+    rng = random.Random(7)
+    separators = ['\n', '\r\n', '\r', '\x0b', '\x0c', '\x1c', '\x85', ' ', ' ']
+    headings = ['Requirements:', '## Qualifications', 'Kualifikasi', 'About you', 'requirement']
+    for _ in range(1500):
+        lines = []
+        for _ in range(rng.randint(1, 60)):
+            r = rng.random()
+            if r < 0.15:
+                line = rng.choice(headings)
+            elif r < 0.6:
+                line = rng.choice(['- ', '* ', '• ', '1. ', '12) ', '  -   ']) + ''.join(
+                    rng.choice('ab"\\ é\t') for _ in range(rng.randint(1, 40)))
+            elif r < 0.85:
+                line = rng.choice([' ', '\t']) + ''.join(rng.choice('ab"\\') for _ in range(rng.randint(1, 40)))
+            else:
+                line = ''.join(rng.choice('ab ') for _ in range(rng.randint(0, 20)))
+            lines.append(line + rng.choice(separators))
+        text = ''.join(lines)
+        assert sum(len(r['source_quote']) for r in qualification_inventory(text)) <= len(text)
+
+
+def test_inventory_envelope_quotes_total_exactly_the_jd_limit():
+    jd_chars, items = CONFIG['jd_text_max_chars'], CONFIG['envelopes']['max_inventory_items']
+    records = pb.inventory_envelope(jd_chars, items)
+    lengths = [len(r['source_quote']) for r in records]
+    assert len(records) == items and sum(lengths) == jd_chars and max(lengths) - min(lengths) <= 1
+    assert sum(len(r['source_quote']) for r in pb.inventory_envelope(jd_chars, 1)) == jd_chars
+
+
+# --- C2: the repair-message bound ---------------------------------------------------------------------------
+
+def frozen_repair_message(model, invalid, *, code=None):
+    """The instruction the frozen validated_call appends after ``invalid`` (or a ValueError code)."""
+    client = ScriptedClient([], invalid)
+    validate = (lambda out: (_ for _ in ()).throw(ValueError(code))) if code else (lambda out: None)
+    with pytest.raises(StageFailure):
+        validated_call(client, model='m', prompt='p', payload={}, output_model=model, task='t',
+                       validate=validate, max_tokens=1, model_output_limit=None)
+    return client.calls[1]['messages'][-1]
+
+
+def test_frozen_message_texts_are_captured_from_validated_call():
+    texts = pb.frozen_message_texts()
+    assert CONTINUATION_MARK in texts['continuation'] and REPAIR_MARK in texts['repair_suffix']
+    assert texts['schema_repair_prefix'].startswith(texts['repair_prefix'] + 'schema_validation')
+
+
+def test_real_frozen_repair_messages_fit_the_computed_bound():
+    from jobfit.cv.parser import CVWire
+    from jobfit.extraction.audited import AuditedExtraction
+    from jobfit.matching.evidence_matcher import EvidenceResponse
+    digits = CONFIG['envelopes']['max_list_index_digits']
+    cases = [(EvidenceResponse, EVIDENCE_INVALID), (EvidenceResponse, {}),
+             (AuditedExtraction, EXTRACTION_INVALID), (AuditedExtraction, {'zz': 1}),
+             (CVWire, {'skills_list': ['a'] * 999_999 + [5]}),             # an error at list index 999,999
+             (CVWire, {'sections': [{'x': 1}] * 13, 'employment': [{'x': 1}] * 13})]
+    for model, invalid in cases:
+        message = frozen_repair_message(model, invalid)
+        assert 'Schema errors' in message['content']
+        assert pb._json_bytes(message) + pb.MESSAGE_SEPARATOR_BYTES <= pb.appended_message_bound(model, digits)
+    assert '999999' in frozen_repair_message(CVWire, cases[4][1])['content']
+    longest = 'unbounded_required_duration_needs_clarification'
+    message = frozen_repair_message(Out, {'value': 1}, code=longest)
+    assert longest in message['content']
+    assert pb._json_bytes(message) + pb.MESSAGE_SEPARATOR_BYTES <= pb.appended_message_bound(Out, digits)
+
+
+def test_a_path_element_beyond_the_envelope_exceeds_the_modelled_attempt_and_would_be_refused():
+    from jobfit.extraction.audited import AuditedExtraction
+    digits = CONFIG['envelopes']['max_list_index_digits']
+    model = AuditedExtraction
+    base = [{'role': 'system', 'content': 'p'}, {'role': 'user', 'content': '{}'}]
+    repair_context = 2 * REPAIR_CONTEXT_MAX_BYTES + pb.MESSAGE_FRAMING_BYTES
+    content = '"' * ((repair_context - pb.MESSAGE_SEPARATOR_BYTES - pb._json_bytes(
+        {'role': 'assistant', 'content': ''})) // 2)
+    prior = {'role': 'assistant', 'content': content}
+    spec = pb.ChainSpec('t', pb.Price('m', Decimal(1), Decimal(1)), pb._json_bytes(base), pb._strict_schema_bytes(model),
+                        pb.appended_message_bound(model, digits), repair_context, {}, True)
+    attempt = pb.Attempt(C, repairs=1)
+    # Path elements are modelled as long as the longest property name or the index digits, whichever
+    # is longer (22 characters here, which already covers a 7-digit index). One more is not covered.
+    covered = max(pb._schema_names_and_depth(model)[0], digits)
+    within = base + [prior, pb.worst_repair_message(model, covered)]
+    beyond = base + [prior, pb.worst_repair_message(model, covered + 1)]
+    assert pb.guard_input_bytes(within, model) <= spec.attempt_input_bytes(attempt)
+    assert pb.guard_input_bytes(beyond, model) > spec.attempt_input_bytes(attempt)   # the Phase 2B wrapper refuses
+
+
+def test_guard_input_bytes_is_the_frozen_client_formula():
+    messages = [{'role': 'system', 'content': 'p'}, {'role': 'user', 'content': 'ü"' * 50}]
+    expected = (len(json.dumps(messages, ensure_ascii=False).encode())
+                + len(json.dumps(strict_schema(Out.model_json_schema())).encode()) + 512)
+    assert pb.guard_input_bytes(messages, Out) == expected
+    source = inspect.getsource(__import__('jobfit.llm.client', fromlist=['x']).OpenRouterClient._chat_attempt)
+    assert 'len(json.dumps(messages, ensure_ascii=False).encode()) + len(json.dumps(schema).encode()) + 512' in source

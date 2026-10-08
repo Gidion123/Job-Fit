@@ -24,5 +24,11 @@ envelopes:
   max_units: 120                     # requirement units per extraction sent to matching
   max_inventory_items: 120           # qualification inventory items per JD sent to extraction
   extraction_json_max_bytes: 131072  # JSON bytes of one extraction inside the matching payload
-  appended_message_max_bytes: 4096   # one continuation or repair instruction message
   short_field_max_chars: 64          # cv_id, job_id and similar identifiers
+  # Repair messages are bounded from the frozen code and schemas, except list-index digits in
+  # error paths: those grow with the provider's response and no frozen limit bounds them. This is
+  # an ENFORCED envelope, not a proof: the Phase 2B wrapper must refuse any call whose exact guard
+  # input bytes exceed the modelled attempt bytes (phase_bounds.guard_input_bytes against
+  # ChainSpec.attempt_input_bytes) before it reaches the provider.
+  max_list_index_digits: 6           # list indices below 1,000,000 in a repair message's error paths
+  appended_message_max_bytes: 8192   # ceiling: loading fails if a computed message bound is above it

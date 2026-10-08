@@ -29,6 +29,7 @@ The deployed checks use the [D-102](../decisions.md) public-beta bar: safe enoug
 - **Privacy release gate** (for public real-CV live, D-095):
   - PR-01 to PR-10 with synthetic canaries in every sink enabled for the beta: responses, provider payloads, logs, database dump, temporary files, `/metrics` and upload failure paths (including DOCX gate rejections); the Langfuse export (Langfuse is required for the final beta since D-103);
   - PR-08 fail-closed;
+  - the [D-104](../decisions.md#d-104-structural-cv-data-minimization-boundary-for-the-real-cv-public-beta) structural boundary checks: header, Summary-family and privacy-section removal, start at the first evidence-bearing section, `professional_boundary_not_found` fail-closed, and no Summary text in provider payloads. PR-10's masked arm will use the D-104 sanitized text; the D-100 thresholds are unchanged (6 of 781 quoted CV1/CV2 gold evidence rows cite Summary and are disclosed);
   - the **OpenRouter per-route privacy record** (CV parse, query embedding, JD extraction, evidence matching). A gap is reported before public live and never fixed by changing the model, prompt, K or weights.
   - `JOBFIT_PUBLIC_LIVE=1` only after the gate passes.
 - **Cost and abuse checks:**

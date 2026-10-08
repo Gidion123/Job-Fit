@@ -60,10 +60,11 @@ A clarification of the accepted Find Jobs UX (D-010 optional filters, D-102 flow
 **JobFit scope:** public upload flow, waiting experience and coach. Everything in this section is **PLANNED / NOT YET VALIDATED** unless marked otherwise. Stage definition: [master plan](../master-plan.md#cp33-streamlit-ui-checkpoint-17). Tasks: [CP3 execution plan](CP3_Execution_Plan.md).
 
 - **Already done (local, 6 Oct):** see "Results (6 Oct 2026)" below.
-- **Known defect:** FAIL-37. The upload text says names are masked, but uploads get no name or address masking today.
+- **Known defect:** FAIL-37. The upload text says names are masked, but uploads get no name or address masking today. Revised design: [D-104](../decisions.md#d-104-structural-cv-data-minimization-boundary-for-the-real-cv-public-beta) (8 Oct), OPEN / REVISED DESIGN.
 - **Public upload flow:**
-  - a required name field and an optional address field (passed as reviewed identifiers);
-  - masking text that lists exactly what is masked;
+  - ~~a required name field and an optional address field (passed as reviewed identifiers)~~ superseded by D-104 (never implemented); no name or address fields;
+  - masking text that lists exactly what D-104 removes (the contact header, the Summary/Profile/Objective family, privacy-only sections such as references, interests and organizations) and what it masks (emails, phones, identity numbers, profile links, detailed addresses, repeated owner names, labelled person names);
+  - a safe message for `professional_boundary_not_found`; manual boundary correction comes later (Phase 3b);
   - consent text naming OpenRouter and the routed providers, as recorded in CP3.4;
   - the upload allow-list `pdf`, `docx`, `txt`, `md` (unchanged from today);
   - `server.maxUploadSize` plus the Caddy body limit;

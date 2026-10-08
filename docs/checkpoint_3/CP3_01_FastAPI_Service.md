@@ -45,7 +45,7 @@ From 8 October the remaining CP3 work follows [D-102](../decisions.md): JobFit i
     - a lazy extraction cache with parallel prefetch;
     - a concurrency-safe app client (FAIL-36).
   - **Privacy:**
-    - name and address hints with correct masking text (FAIL-37);
+    - the [D-104](../decisions.md#d-104-structural-cv-data-minimization-boundary-for-the-real-cv-public-beta) structural privacy boundary with correct masking text (FAIL-37; supersedes the earlier name and address hints);
     - upload hardening, limited to the formats the current extractor supports: `.pdf` (text only, ≤ 30 pages, not encrypted), `.docx`, `.txt`, `.md`; ≤ 10 MB; ≤ 100,000 characters; *(implemented 8 Oct with tighter beta limits: ≤ 10 pages and ≤ 5 MiB; see [the results](#results-8-oct-2026-lean-public-beta-cv-upload-hardening))*
     - an allow-list and a signature check;
     - a streamed size limit before buffering;
@@ -546,7 +546,7 @@ Implemented dark in five commits (local and CI, fake providers and scratch Postg
 
 ### Activation prerequisites (not part of this step)
 
-- **FAIL-37** name and address masking: a mandatory privacy gate before `real_cv_enabled` or the public beta.
+- **FAIL-37**, revised by [D-104](../decisions.md#d-104-structural-cv-data-minimization-boundary-for-the-real-cv-public-beta) (8 Oct): the structural data-minimization boundary (identity/contact header, Summary family and privacy-only sections dropped; the provider text starts at the first evidence-bearing section; deterministic backstops; fail closed when no start is found). A mandatory privacy gate before `real_cv_enabled` or the public beta; OPEN / REVISED DESIGN.
 - **Provider ZDR compatibility** for the frozen models and the embedding model, validated explicitly later (an approved validation step); until then `real_cv_enabled` stays False.
 - **Production corpus seed** and the **tokenizer and index artifacts** in the API image (Phase 6); the retriever fails closed without them.
 - The CP3.4 privacy release gate, `public_beta_phase_eligible`, Langfuse (P1) and the Phase 3b UI.

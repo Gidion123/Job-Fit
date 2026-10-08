@@ -19,6 +19,7 @@
 - **Post-beta (not blockers):** automated job sync, forced-command SSH, scheduled `job-sync.yml` and dedupe-review automation (D-098 design kept; the seeded corpus is enough, with an optional one-time manual refresh); email alerts and extra dashboards; automated nightly backups (a verified backup and restore test is still required); LLM-written CV rewriting.
 - **Public-beta cost profile (D-103, 8 Oct, implemented dark, independently verified and closed at `d30255d`):** a separate versioned profile with exact canonical byte envelopes and per-phase bounds (`parse` US$0.0614679, `search` US$0.0001648, `job_analysis` US$4.0012836) under a US$5/day cap and a US$25 lifetime stop; Find Jobs shows search-stage results (never a match ranking) and analyzes up to three chosen jobs; Check a Job is one `job_analysis`; one durable ticket per IP per 24 h opens 1 parse, 1 search and 3 job analyses per session. The Phase 2A bound (US$84.7704449) stays as history. The public real-CV flow stays closed until the consent adapter exists.
 - **Monitoring (D-103 clarification):** self-hosted Prometheus and Grafana OSS with node_exporter; Grafana private through an SSH tunnel; **Langfuse required for the final controlled public beta** (Langfuse Cloud free hosted tier, no raw CV or PII, separate P1 task; a paid plan needs a decision).
+- **Real-CV privacy boundary (D-104, 8 Oct, approved design, implementation planned):** FAIL-37 is fixed by a structural data-minimization boundary, not by name and address fields: the identity/contact header, the Summary/Profile/Objective family (structural delimiter only, not evidence) and privacy-only sections (including Interests and Organizations) are dropped locally; the provider text starts at the first evidence-bearing section; deterministic backstops mask surviving identifiers; no start found means fail closed. No geography data, owner-review gate or identifier subsystem. FAIL-37 stays OPEN / REVISED DESIGN until implemented and independently audited.
 - **Open gates (separate decisions needed):** the public-live cost bound and Flow B in production are resolved by D-103; still open: any LLM-written CV wording; the D-100 dates stay as they are unless a decision moves them.
 
 ## Current outcome, 7 October 2026
@@ -106,7 +107,7 @@ Detailed source: [privacy-threat-model.md](privacy-threat-model.md). Design appr
 | Stage | Newly explicit privacy work | Completion evidence |
 | --- | --- | --- |
 | CP2.3 | Local masking/consent boundary, session primitives, synthetic CV1/CV2 masking impact and policy feasibility | Versioned tests/paired results; no real CV, source-gold overwrite or test use |
-| CP3.1 | Session authorization, TTL/lease/delete, task revocation, provider gates and upload cleanup. CP3 additions (planned): name and address hints, consent lease stored server-side, consent compatibility parse adapter entered only through `SessionStore.dispatch`, `cv_source` contract, upload hardening with the DOCX decompression gate, IP pseudonymisation | API isolation/failure tests; the 7 adapter tests; upload failure-path canaries |
+| CP3.1 | Session authorization, TTL/lease/delete, task revocation, provider gates and upload cleanup. CP3 additions (planned): the D-104 structural privacy boundary (supersedes the name and address hints), consent lease stored server-side, consent compatibility parse adapter entered only through `SessionStore.dispatch`, `cv_source` contract, upload hardening with the DOCX decompression gate, IP pseudonymisation | API isolation/failure tests; the 7 adapter tests; upload failure-path canaries |
 | CP3.2 | Volatile private state, no database/backup persistence, safe hosting/logs/secrets/TLS; FastAPI private behind Caddy; quota table stores only HMACs | Storage and deployment inspection |
 | CP3.3 | Notices, masked preview, consent naming the recorded providers, correct masking text, safe upload errors, stop/delete, browser liveness and honest reload/expiry UX | Browser checks |
 | CP3.4 | PR-01-PR-10 deployed privacy acceptance (the release gate for public real-CV live, D-095); OpenRouter per-route privacy record | Two-user isolation, payload/log/metrics/Langfuse/database checks with canaries, upload failure paths, measured deletion timing |
@@ -558,7 +559,7 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
      - a lazy JD extraction cache with parallel prefetch;
      - a concurrency-safe app client (FAIL-36).
    - **Privacy requirements, planned:**
-     - name and address hints and correct masking text (FAIL-37);
+     - the D-104 structural privacy boundary and correct masking text (FAIL-37; supersedes the earlier name and address hints);
      - **upload hardening:**
        - only `.pdf` / `.docx` / `.txt` / `.md`, which the current extractor already supports;
        - an extension allow-list and a signature check;
@@ -705,8 +706,8 @@ Template name: Build Streamlit UI · Official: 7 Oct 2026 · Planned work: 7 Oct
      - feedback and delete;
      - the privacy notice, an editable masked preview and consent.
    - **Public-live and privacy additions, planned:**
-     - a required name field and an optional address field (FAIL-37);
-     - masking text that lists exactly what is masked;
+     - masking text that lists exactly what is removed and masked under D-104 (FAIL-37; the earlier required name field and optional address field are superseded);
+     - a safe message for `professional_boundary_not_found` (manual boundary correction later, Phase 3b);
      - consent text naming the providers as recorded;
      - an upload allow-list matching the API (`pdf`, `docx`, `txt`, `md`);
      - Streamlit `maxUploadSize` and the Caddy body limit;
@@ -763,6 +764,7 @@ Template name: Testing End-to-End Application · Official: 8 Oct 2026 · Planned
    - **Privacy release gate:**
      - PR-01 to PR-10, with synthetic canaries through every sink enabled for the beta: responses, provider payloads, logs, database, temporary files, `/metrics` and upload failure paths, plus the Langfuse export (Langfuse is required for the final beta since D-103);
      - PR-08 fail-closed;
+     - the D-104 structural boundary checks (header, Summary-family and privacy-section removal; `professional_boundary_not_found` fail-closed; no Summary text in provider payloads); PR-10's masked arm uses the D-104 sanitized text with the D-100 thresholds unchanged;
      - the OpenRouter per-route privacy record (parse, embedding, extraction, matching). A gap is reported before public live and never fixed by changing the model, prompt, K or weights.
    - **Cost and abuse:**
      - `full_analysis_upper_bound` ≤ the cap;

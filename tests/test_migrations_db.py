@@ -645,3 +645,39 @@ def test_0001_accepts_a_fresh_database_with_only_the_vector_extension(db):
     upgrade(db, 'head')
     state, fp = state_and_fingerprint(db)
     assert state == '0002' and catalog.compare(PIN['0002'], fp) == []
+
+
+# --- 0001 trusts a pre-existing alembic_version only by structure ----------------------------------------
+
+def test_0001_accepts_the_exact_empty_alembic_version_table(db):
+    commit_elsewhere(db, VERSION_TABLE)                                     # what Alembic itself creates
+    assert state_and_fingerprint(db)[0] == 'empty'
+    upgrade(db, 'head')
+    state, fp = state_and_fingerprint(db)
+    assert state == '0002' and catalog.compare(PIN['0002'], fp) == []
+
+
+SUSPECT_VERSION_TABLES = {
+    'missing_pk': 'CREATE TABLE alembic_version (version_num varchar(32) NOT NULL)',
+    'extra_column': ('CREATE TABLE alembic_version (version_num varchar(32) NOT NULL, extra text, '
+                     'CONSTRAINT alembic_version_pkc PRIMARY KEY (version_num))'),
+    'wrong_type': ('CREATE TABLE alembic_version (version_num varchar(64) NOT NULL, '
+                   'CONSTRAINT alembic_version_pkc PRIMARY KEY (version_num))'),
+    'wrong_pk_name': ('CREATE TABLE alembic_version (version_num varchar(32) NOT NULL, '
+                      'CONSTRAINT other_pk PRIMARY KEY (version_num))'),
+    'extra_check': VERSION_TABLE + "; ALTER TABLE alembic_version ADD CHECK (version_num <> '')",
+    'extra_index': VERSION_TABLE + '; CREATE INDEX alembic_version_extra_idx ON alembic_version (version_num)',
+    'view': "CREATE VIEW alembic_version AS SELECT NULL::varchar(32) AS version_num WHERE false",
+}
+
+
+@pytest.mark.parametrize('name', sorted(SUSPECT_VERSION_TABLES))
+def test_0001_refuses_a_non_standard_alembic_version(db, name):
+    commit_elsewhere(db, SUSPECT_VERSION_TABLES[name])
+    before = state_and_fingerprint(db)
+    assert before[0] == 'malformed'
+    with pytest.raises(RuntimeError, match=r'database is not empty \(relation alembic_version'):
+        upgrade(db, 'head')
+    assert state_and_fingerprint(db) == before                              # rolled back: no row, no schema
+    with psycopg.connect(db) as conn:
+        assert conn.execute("SELECT to_regclass('public.jobs')").fetchone() == (None,)

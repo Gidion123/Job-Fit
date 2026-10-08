@@ -43,6 +43,13 @@ def test_0001_is_an_immutable_literal_copy_of_the_cp2_schema_sql():
     assert hashlib.sha256(m.SCHEMA_SQL.encode()).hexdigest() == m.SCHEMA_SQL_SHA256 == SCHEMA_SQL_SHA256
 
 
+def test_0001_accepts_the_same_alembic_version_structure_as_the_catalog():
+    m = revision_module('0001_cp2_baseline')
+    assert m.VERSION_COLUMNS == catalog._ALEMBIC_COLUMNS
+    assert m.VERSION_CONSTRAINTS == catalog._ALEMBIC_CONSTRAINTS
+    assert m.VERSION_INDEXES == catalog._ALEMBIC_INDEXES
+
+
 @pytest.mark.parametrize('name', ['0001_cp2_baseline', '0002_cp3_production'])
 def test_revisions_never_import_application_code(name):
     tree = ast.parse((VERSIONS / f'{name}.py').read_text())

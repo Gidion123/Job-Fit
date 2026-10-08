@@ -184,7 +184,7 @@ Local and CI only. No production database exists yet, nothing is deployed, and t
   - **No offline mode:** offline SQL generation is refused.
 - **`0001` (exact CP2 baseline):**
   - It holds an immutable literal copy of today's `SCHEMA_SQL` (SHA-256 `38abfee0…50b3`) and never imports application code. `src/jobfit/db/models.py` and the CP2 loader are unchanged.
-  - It refuses to run if `public` already holds any application object (table, view, sequence, function or type; extension-owned objects such as pgvector's are allowed). Such a database, including an existing CP2 database, is verified and stamped instead. The refusal rolls back the whole Alembic transaction, so no version table remains.
+  - It refuses to run if `public` already holds any application object (table, view, sequence, function or type; extension-owned objects such as pgvector's are allowed). A pre-existing `alembic_version` is accepted only when it is the exact, empty table Alembic itself creates (the same structure the catalog accepts); a malformed one (missing primary key, extra column, other type, constraint or index, or a view) is refused like any other object. Such a database, including an existing CP2 database, is verified and stamped instead. The refusal rolls back the whole Alembic transaction, so no version table remains.
   - The downgrade drops the three tables. It runs only with `JOBFIT_ALLOW_DESTRUCTIVE_DOWNGRADE=1` and `JOBFIT_ENV != prod`.
 - **Catalog verification and guarded stamp:**
   - **`src/jobfit/db/catalog.py`** (read-only) fingerprints the application schema in `public`: relations, columns (type, nullability, default, generated expression, identity, collation), constraints, indexes, triggers, functions, user types and extensions. Extension-owned objects are excluded.
@@ -232,7 +232,7 @@ Local and CI only. No production database exists yet, nothing is deployed, and t
 
 ### Test results
 
-**Offline (every CI run):** 14 tests. They cover:
+**Offline (every CI run):** 15 tests. They cover:
 - the revision chain;
 - the immutable literal and its hash;
 - no application imports in the revisions;
@@ -240,11 +240,13 @@ Local and CI only. No production database exists yet, nothing is deployed, and t
 - the downgrade guards;
 - every `StageFailure` code against the cache constraint;
 - the pins;
+- `0001` and the catalog accepting the same `alembic_version` structure;
 - `0002` as a strict addition to `0001`.
 
-**Database-gated** (`tests/test_migrations_db.py`): 53 tests in the first version, 69 after the 8 Oct audit corrections. All passed locally on PostgreSQL 16.15 with pgvector 0.6.0, and in CI on PostgreSQL 17.11 (`pgvector/pgvector:pg17`):
+**Database-gated** (`tests/test_migrations_db.py`): 53 tests in the first version, 69 after the 8 Oct audit corrections, 77 after the `alembic_version` follow-up. All passed locally on PostgreSQL 16.15 with pgvector 0.6.0, and in CI on PostgreSQL 17.11 (`pgvector/pgvector:pg17`):
 - first version: 67 passed, 0 skipped, offline and database together (run [37720321946](https://github.com/Gidion123/Job-Fit/actions/runs/37720321946));
-- after the corrections: 83 passed, 0 skipped (run [37727182136](https://github.com/Gidion123/Job-Fit/actions/runs/37727182136)).
+- after the corrections: 83 passed, 0 skipped (run [37727182136](https://github.com/Gidion123/Job-Fit/actions/runs/37727182136));
+- after the `alembic_version` follow-up: 92 passed, 0 skipped locally on PostgreSQL 16.15.
 
 The pins were generated on PostgreSQL 16 and match PostgreSQL 17 exactly:
 
@@ -258,7 +260,7 @@ The pins were generated on PostgreSQL 16 and match PostgreSQL 17 exactly:
 | `0002` constraints | Lifecycle and dedupe; sources and sync runs; 23 invalid partial cache states rejected, both complete states accepted; reservation amounts, states, immutability and the release-means-zero rule; cascades (versioned vectors must be deleted explicitly) |
 | Reservation lifetime and day (audit) | `active_until` required, accepted when later than `created_at`, rejected when equal or earlier, immutable while open and after closing. `production_day` equals the Jakarta date of `created_at`: default insert accepted, inconsistent day rejected, and at the boundary 16:59:59.999999 UTC belongs to 8 Oct while 17:00:00 UTC belongs to 9 Oct; still immutable |
 | Guarded stamp (audit) | The `verify` report contract is unchanged. Drift committed between the stamp's validation and its version write rolls the stamp back (no version table). DDL on a CP2 table during the stamp is blocked. **Two connections:** a normal `alembic upgrade` waits on the advisory key until the stamp's post-commit check has finished, then upgrades to `0002`. Post-commit drift removes only the stamp's own version table. An advanced revision, a replaced version table, or a difference that vanishes on recheck are all left untouched (blocker) |
-| `0001` fresh guard (audit) | A stale table, sequence, view, function or enum type makes `0001` refuse, with nothing created and no version table. A database holding only the pgvector extension upgrades to the pinned `0002` |
+| `0001` fresh guard (audit) | A stale table, sequence, view, function or enum type makes `0001` refuse, with nothing created and no version table. A database holding only the pgvector extension upgrades to the pinned `0002`. A pre-created exact, empty `alembic_version` upgrades; seven malformed variants (missing primary key, extra column, `varchar(64)`, other primary-key name, extra check, extra index, a view) are refused and rolled back |
 | Retention | The 60-day cleanup deletes only the expired lifecycle-managed row. Both retained non-target rows survive and are never retrieved |
 | Quota | Two concurrent ticket consumptions for one IP: exactly one succeeds, both from no row and from a row older than 24 hours |
 | Downgrade | Refused without the flag and under `JOBFIT_ENV=prod`; with the flag, `0002 → 0001 → base → head` returns to the pinned schemas |
@@ -286,6 +288,8 @@ The pins were generated on PostgreSQL 16 and match PostgreSQL 17 exactly:
 **CI:** run [37720133032](https://github.com/Gidion123/Job-Fit/actions/runs/37720133032) (`fc9d236`) and run [37720321946](https://github.com/Gidion123/Job-Fit/actions/runs/37720321946) (`a04a629`: lint-and-test, db-migrations, docker-build with `alembic heads` = `0002 (head)` inside the API image) both passed.
 
 **After the audit corrections** (`4f45cd4`, `801f0bd`), run [37727182136](https://github.com/Gidion123/Job-Fit/actions/runs/37727182136) passed all three jobs. Locally the default suite gives 809 passed, 80 skipped (the 69 gated database tests skip without a server), 0 failed; ruff is clean and freeze verify is `"ok": true`.
+
+**After the `alembic_version` follow-up** (the independent audit of `3e65dab..bffdacc`), the default suite gives 810 passed, 88 skipped (the 77 gated database tests skip without a server), 0 failed; the gated matrix gives 92 passed locally; ruff is clean and freeze verify is `"ok": true`.
 
 ### Not done yet
 

@@ -184,13 +184,17 @@ Local and CI only. No production database exists yet, nothing is deployed, and t
   - **No offline mode:** offline SQL generation is refused.
 - **`0001` (exact CP2 baseline):**
   - It holds an immutable literal copy of today's `SCHEMA_SQL` (SHA-256 `38abfee0…50b3`) and never imports application code. `src/jobfit/db/models.py` and the CP2 loader are unchanged.
-  - If any CP2 table already exists, it refuses to run. An existing database is verified and stamped instead.
+  - It refuses to run if `public` already holds any application object (table, view, sequence, function or type; extension-owned objects such as pgvector's are allowed). Such a database, including an existing CP2 database, is verified and stamped instead. The refusal rolls back the whole Alembic transaction, so no version table remains.
   - The downgrade drops the three tables. It runs only with `JOBFIT_ALLOW_DESTRUCTIVE_DOWNGRADE=1` and `JOBFIT_ENV != prod`.
 - **Catalog verification and guarded stamp:**
   - **`src/jobfit/db/catalog.py`** (read-only) fingerprints the application schema in `public`: relations, columns (type, nullability, default, generated expression, identity, collation), constraints, indexes, triggers, functions, user types and extensions. Extension-owned objects are excluded.
   - **Alembic's version table is excluded only when it has exactly Alembic's structure.** Any other table of that name, or a look-alike such as `alembic_versions`, stays in the fingerprint and fails. The revision is checked separately by `revision_state()`, which returns `absent`, `empty`, `malformed` or the revision.
   - **`scripts/db_baseline.py verify`** is read-only. It compares the target with a reference built fresh on the same server: a scratch database upgraded to `0001`, fingerprinted, then dropped. It requires `revision_state = absent`.
-  - **`scripts/db_baseline.py stamp`** verifies again and only then stamps `0001`. It then checks that the revision is `0001` and the schema is unchanged.
+  - **`scripts/db_baseline.py stamp`** (race-safe since the 8 Oct audit correction) runs on one dedicated connection:
+    1. It takes the JobFit schema advisory lock at session level. `migrations/env.py` takes the same key in every migration transaction, so no cooperating JobFit migration can run until the stamp has finished, including its post-commit check.
+    2. In one transaction it locks the three CP2 tables (`EXCLUSIVE`: no DDL or writes on them until commit). It re-validates the exact baseline with no version table, writes the version row through Alembic on the same connection, and validates again (revision `0001`, exact baseline) before committing. Any difference rolls the whole transaction back.
+    3. After the commit, still holding the lock, it checks once more. On drift it removes the stamp only if it is provably its own: the same version table it created (same oid), holding `0001`, with a schema that really differs. In any other case (the revision changed, the table was replaced, or the difference has vanished on recheck) it changes nothing and reports a blocker (exit 3) for manual review.
+    - **Assumption:** during the maintenance window the app is stopped and schema changes are made only through JobFit tooling. PostgreSQL cannot stop an unrelated session from creating new objects in `public`. Such drift is detected; the only way it could survive is a crash of the stamp process between its commit and its post-commit check.
   - Any difference fails closed, reported structurally with no row data. A pgvector version difference also fails unless `--allow-vector-version` is passed.
   - **Pinned fingerprints:** `migrations/catalog/0001.json` and `0002.json`. Neither contains `alembic_version`.
 - **`0002` (additive production schema):**
@@ -212,10 +216,15 @@ Local and CI only. No production database exists yet, nothing is deployed, and t
 - **`budget_reservations`:**
   - `numeric(20,10)` amounts; no NaN, infinity, zero or negative reservation;
   - `phase` is `parse` or `recommendation`;
-  - `production_day` defaults to the Asia/Jakarta date;
+  - **`production_day`** defaults to the Asia/Jakarta date, and a CHECK requires it to equal the Asia/Jakarta date of `created_at` (audit correction). An explicit `created_at` therefore needs a matching `production_day`;
+  - **`active_until timestamptz NOT NULL`** (audit correction) has no default. The reservation creator supplies it, and it must be later than `created_at`. It persists how long the reservation can still be active, so whether an earlier-day reservation still counts is decided from stored state, never from the current deployment's configuration;
   - `operation_key` is unique;
   - state checks: reserved means not closed; settled means closed with an amount; released means closed with exactly 0.
-  - **A guard trigger** (an addition to the proposal) makes a closed reservation immutable, keeps its identity and amount fixed while open, and forbids deleting an open reservation. A reservation with recorded spend can therefore never become a zero-spend release, and an open one always keeps counting.
+  - **A guard trigger** (an addition to the proposal):
+    - keeps the identity, amount, `production_day`, `created_at` and `active_until` fixed while a reservation is open;
+    - makes a closed reservation immutable, so a settled reservation can never be rewritten as released;
+    - forbids deleting an open reservation, so it always keeps counting.
+  - **What the database cannot prove:** it has no access to the authoritative production ledger, so it cannot show that a reservation had zero ledger spend and no `uncertain_upper_bound` record. That check, before any release, belongs to Phase 2B (see below).
 - **`src/jobfit/db/lifecycle.py`** (an addition, used by the retention test) holds the production retrieval filter and the 60-day hard delete. It deletes the versioned vectors first, because the `0001` foreign key has no cascade, and never touches rows with `inactive_since` NULL. Those are the retained non-target CP1 rows, which the seed leaves inactive.
 - **CI:**
   - a `db-migrations` job runs the offline and database tests against a disposable `pgvector/pgvector:pg17` service; its password exists only inside that job;
@@ -233,7 +242,11 @@ Local and CI only. No production database exists yet, nothing is deployed, and t
 - the pins;
 - `0002` as a strict addition to `0001`.
 
-**Database-gated** (`tests/test_migrations_db.py`, 53 tests): all passed locally on PostgreSQL 16.15 with pgvector 0.6.0, and in CI on PostgreSQL 17.11 (`pgvector/pgvector:pg17`). In CI, the offline and database tests together gave 67 passed, 0 skipped (run [37720321946](https://github.com/Gidion123/Job-Fit/actions/runs/37720321946)). The pins were generated on PostgreSQL 16 and match PostgreSQL 17 exactly:
+**Database-gated** (`tests/test_migrations_db.py`): 53 tests in the first version, 69 after the 8 Oct audit corrections. All passed locally on PostgreSQL 16.15 with pgvector 0.6.0, and in CI on PostgreSQL 17.11 (`pgvector/pgvector:pg17`):
+- first version: 67 passed, 0 skipped, offline and database together (run [37720321946](https://github.com/Gidion123/Job-Fit/actions/runs/37720321946));
+- after the corrections: 83 passed, 0 skipped (run [37727182136](https://github.com/Gidion123/Job-Fit/actions/runs/37727182136)).
+
+The pins were generated on PostgreSQL 16 and match PostgreSQL 17 exactly:
 
 | Area | Tests |
 | --- | --- |
@@ -242,7 +255,10 @@ Local and CI only. No production database exists yet, nothing is deployed, and t
 | Fail closed | 15 mismatches are never stamped and nothing is written:<br>• index missing or extra; extra column<br>• nullability, vector type, CHECK, default, generated column, FK action<br>• extra table; a look-alike version table; extra function<br>• empty, stamped and malformed version tables<br>An empty database without the extension also fails |
 | `0001` guard | An existing CP2 database is refused and left unchanged, with no version table |
 | Frozen-code compatibility | Dense, full-text and hybrid search give identical results on `0001` and `0002`; the CP2 loader still works |
-| `0002` constraints | Lifecycle and dedupe; sources and sync runs; 23 invalid partial cache states rejected, both complete states accepted; reservation amounts, states, immutability and the zero-spend release rule; cascades (versioned vectors must be deleted explicitly) |
+| `0002` constraints | Lifecycle and dedupe; sources and sync runs; 23 invalid partial cache states rejected, both complete states accepted; reservation amounts, states, immutability and the release-means-zero rule; cascades (versioned vectors must be deleted explicitly) |
+| Reservation lifetime and day (audit) | `active_until` required, accepted when later than `created_at`, rejected when equal or earlier, immutable while open and after closing. `production_day` equals the Jakarta date of `created_at`: default insert accepted, inconsistent day rejected, and at the boundary 16:59:59.999999 UTC belongs to 8 Oct while 17:00:00 UTC belongs to 9 Oct; still immutable |
+| Guarded stamp (audit) | The `verify` report contract is unchanged. Drift committed between the stamp's validation and its version write rolls the stamp back (no version table). DDL on a CP2 table during the stamp is blocked. **Two connections:** a normal `alembic upgrade` waits on the advisory key until the stamp's post-commit check has finished, then upgrades to `0002`. Post-commit drift removes only the stamp's own version table. An advanced revision, a replaced version table, or a difference that vanishes on recheck are all left untouched (blocker) |
+| `0001` fresh guard (audit) | A stale table, sequence, view, function or enum type makes `0001` refuse, with nothing created and no version table. A database holding only the pgvector extension upgrades to the pinned `0002` |
 | Retention | The 60-day cleanup deletes only the expired lifecycle-managed row. Both retained non-target rows survive and are never retrieved |
 | Quota | Two concurrent ticket consumptions for one IP: exactly one succeeds, both from no row and from a row older than 24 hours |
 | Downgrade | Refused without the flag and under `JOBFIT_ENV=prod`; with the flag, `0002 → 0001 → base → head` returns to the pinned schemas |
@@ -252,11 +268,13 @@ Local and CI only. No production database exists yet, nothing is deployed, and t
 - **Admission:** `settled_spend_today + outstanding + new_bound <= daily cap`, under a transaction-level advisory lock.
   - Outstanding counts:
     - every `reserved` row of today, including crashed rows, until the end of its day;
-    - earlier-day `reserved` rows only within W = the enforced operation deadline + `request_timeout_seconds` (240 s, frozen v4).
-  - If either value is missing, admission is refused.
+    - earlier-day `reserved` rows while their persisted `active_until` is in the future.
+
+    In SQL terms: `status = 'reserved' AND (production_day = today_jakarta OR active_until > now())`.
+  - The reservation creator sets `active_until` at insert from its enforced operation deadline plus `request_timeout_seconds` (240 s, frozen v4). Later configuration changes never change an existing reservation's meaning.
 - **Settlement order:** provider call → durable ledger record (`UsageLedger.append` fsyncs; the frozen client writes one record per call, including `uncertain_upper_bound` on failure) → database settle or release.
   - A crash in between double-counts spend, which is acceptable and fails closed.
-  - Release only when the ledger shows zero spend for that reservation.
+  - Settle or release by ledger evidence. Ledger spend above zero, or any `uncertain_upper_bound` record, means **settled**. Only zero spend with no uncertain billable record may be **released**. The database enforces only that a release records exactly 0 and that closed rows never change.
   - Crash tests:
     - a kill after the ledger write;
     - a kill before any call;
@@ -265,7 +283,9 @@ Local and CI only. No production database exists yet, nothing is deployed, and t
 - **Per-call refusal:** before forwarding, the 2B wrapper refuses any call whose exact guard input bytes exceed the modelled attempt (`phase_bounds.guard_input_bytes` against `ChainSpec.attempt_input_bytes`).
 - **Ticket:** consumed by the single conditional upsert tested above, only at the first billable parse; the owner token never calls it.
 
-**CI:** run [37720133032](https://github.com/Gidion123/Job-Fit/actions/runs/37720133032) (`fc9d236`) and run [37720321946](https://github.com/Gidion123/Job-Fit/actions/runs/37720321946) (`a04a629`: lint-and-test, db-migrations, docker-build with `alembic heads` = `0002 (head)` inside the API image) both passed. Locally, the default suite gave 809 passed, 64 skipped (the 53 gated database tests skip without a server), 0 failed. ruff is clean and freeze verify is `"ok": true`.
+**CI:** run [37720133032](https://github.com/Gidion123/Job-Fit/actions/runs/37720133032) (`fc9d236`) and run [37720321946](https://github.com/Gidion123/Job-Fit/actions/runs/37720321946) (`a04a629`: lint-and-test, db-migrations, docker-build with `alembic heads` = `0002 (head)` inside the API image) both passed.
+
+**After the audit corrections** (`4f45cd4`, `801f0bd`), run [37727182136](https://github.com/Gidion123/Job-Fit/actions/runs/37727182136) passed all three jobs. Locally the default suite gives 809 passed, 80 skipped (the 69 gated database tests skip without a server), 0 failed; ruff is clean and freeze verify is `"ok": true`.
 
 ### Not done yet
 

@@ -8,7 +8,7 @@ Final project for the Data Science and Machine Learning bootcamp at Dibimbing (B
 ![Next](https://img.shields.io/badge/next-CP3%20implementation%20(plan%20frozen)-blue)
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 
-> **Current status (7 October 2026):** CP1 and CP2 are closed ([D-094](docs/decisions.md), [CP2 closeout audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md)). CP3 is in progress: the API, the Streamlit app and Docker run locally, but the app is not deployed yet and privacy has not been validated end to end. On 7 October the CP3 plan was frozen ([D-095 to D-100](docs/decisions.md)): full public live JobFit on a VPS, behind a privacy release gate, is **planned**, not built.
+> **Current status (8 October 2026):** CP1 and CP2 are closed ([D-094](docs/decisions.md), [CP2 closeout audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md)). CP3 is in progress: the API, the Streamlit app and Docker run locally, the dark cost-safety runtime and the persistent production ledger are done and tested (local and CI), but the app is not deployed yet and privacy has not been validated end to end. CP3 aims for a **production-grade AI engineering portfolio with a controlled public beta** on one VPS ([D-102](docs/decisions.md)); public live is **planned**, not built, and still blocked by the cost bound.
 
 ## Project status
 
@@ -27,6 +27,8 @@ Job boards show many postings, but early-career candidates cannot easily tell wh
 3. Which gaps matter most for the jobs I want?
 
 ## How it works
+
+JobFit has two flows (planned for public use in CP3, [D-102](docs/decisions.md)): **Find Jobs** (CV → search the job corpus → match) and **Check a Job** (CV + a job description you paste → match directly; the pasted text is never added to the corpus). Both end in evidence per requirement, strengths and gaps, and job-specific CV advice that never invents experience.
 
 JobFit uses pretrained models; it does not train a neural network. The matching pipeline was chosen by measurement on development data and frozen before the held-out test ([D-087](docs/decisions.md); diagram in [CP2.6](docs/checkpoint_2/CP2_06_Recommendation_and_Summary.md#final-v1-architecture-d-087-freeze)):
 
@@ -223,7 +225,7 @@ Folder-by-folder detail: [docs/repo-structure.md](docs/repo-structure.md).
 
 1. Harden the API and build the public live path (budget caps, upload hardening, consent adapter, runtime embedding, extraction cache), then deploy to the VPS with public live off.
 2. Run the CP3.4 checks on the deployed app, including the privacy release gate and the original-vs-masked comparison. Switch public live on only if the gate passes, then record the feature freeze (end of 9 Oct).
-3. Address the CP2 mentor feedback (waiting-state UX; vacancy-specific CV guidance) within the feature freeze.
+3. Build the product experience ([D-102](docs/decisions.md)): Find Jobs and Check a Job, stage-aware progress instead of an unexplained spinner, and "Improve My CV for This Job" with a strict no-invention rule.
 4. Final report, rehearsal and presentation (CP3.5-CP3.7).
 
 This README is the public progress snapshot. It is updated at every checkpoint closeout and at major implementation or deployment milestones, and it never claims more than the stage reports.

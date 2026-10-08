@@ -4,9 +4,21 @@
 **Bootcamp checkpoint:** 17. Build Streamlit UI · official date 7 Oct 2026  
 **JobFit version of this checkpoint:** Same as the template.  
 **Planned work:** 7 Oct 2026 · **Actual:** 6 Oct 2026  
-**Status:** PARTIAL · demo flow DONE LOCALLY (6 Oct); public upload flow and mentor refinements PLANNED / NOT YET VALIDATED · design basis: System Design v1.3
+**Status:** PARTIAL · demo flow DONE LOCALLY (6 Oct); public upload flow and mentor refinements PLANNED / NOT YET VALIDATED; product-experience scope set by D-102 (8 Oct) · design basis: System Design v1.3
 
 > Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
+
+## Product experience target (8 Oct 2026, D-102): PLANNED
+
+[D-102](../decisions.md) makes the UI part of the product goal: the public app should feel like a small, intentionally designed product, not a select box and raw JSON. Priority: clarity > trust > usability > product polish > decoration. Streamlit stays the technology.
+
+- **First screen:** a short explanation of JobFit, public-beta wording, the privacy and consent explanation, and two obvious primary actions: **Find Jobs** (discovery) and **Check a Job** (paste a job description found elsewhere).
+- **Stage-aware progress (refines Mentor A below):** real stages from the API. Find Jobs: analyzing your CV → searching relevant jobs → reading job requirements → matching your experience → preparing recommendations. Check a Job: analyzing your CV → reading job requirements → matching your experience → preparing your result. Completed, current and pending steps; counts such as "job i of N" only where real; no fake percentages.
+- **Results:** job cards with the match score and what it means, strengths, gaps, supporting CV evidence and explanations; job detail; clear calls to action.
+- **"Improve My CV for This Job" (refines Mentor B below):** for a matched job or a pasted JD. Three kinds of suggestion: representation improvement (existing evidence only), possibly missing from the CV (add it only if you really did it, with its real context), true gap (stated plainly; wording cannot fix it). Shown as current statement → suggestion → why it helps → supporting CV evidence. JobFit never suggests inventing skills, experience, employers, years, certifications, projects, achievements, metrics, tools or impact. Coaching only: no CV editor, resume builder or cover-letter generator in CP3. See the [CV coach plan](../cv-coach-plan.md).
+- **States:** empty, failure, quota, busy, budget-exhausted and "Live AI analysis is temporarily unavailable. Please try again later.", each with the saved-demo fallback.
+- **Layout:** consistent typography, spacing and components; reasonable on mobile and desktop.
+- **Tests:** Streamlit test-runner cases for both flows, each progress sequence, each refusal state and the coaching anti-fabrication checks; screenshots of the deployed app.
 
 ## CP3 final plan for this stage (7 Oct 2026, D-095 to D-100)
 

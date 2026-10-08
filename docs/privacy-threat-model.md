@@ -2,7 +2,7 @@
 
 **Version:** privacy-design-v1, 3 October 2026.  
 **Decision:** [D-051](decisions.md#d-051-session-only-cv-privacy-and-security).  
-**Status:** Design approved by Dion; implementation and security acceptance NOT RUN. **CP3 update (7 Oct 2026):** full public live analysis of real CVs is planned (D-095). It may be enabled only after the CP3.4 release gate in section 11 passes on the deployed stack. Under D-092, privacy remains implemented and component/unit tested only; end-to-end validation and the original-vs-masked comparison are NOT performed yet. CP2.3 adds synthetic development implementation/testing; public API/UI integration and deployment checks remain CP3. This document is the detailed source for privacy behavior. It is not a security certification or permission to send a real CV.
+**Status:** Design approved by Dion; implementation and security acceptance NOT RUN. **CP3 update (7 Oct 2026):** full public live analysis of real CVs is planned (D-095); on 8 Oct D-102 framed it as a controlled public beta (section 11). It may be enabled only after the CP3.4 release gate in section 11 passes on the deployed stack. Under D-092, privacy remains implemented and component/unit tested only; end-to-end validation and the original-vs-masked comparison are NOT performed yet. CP2.3 adds synthetic development implementation/testing; public API/UI integration and deployment checks remain CP3. This document is the detailed source for privacy behavior. It is not a security certification or permission to send a real CV.
 
 ## 1. Scope and trust boundaries
 
@@ -122,6 +122,8 @@ Log only counts/statuses and synthetic fixtures in test evidence. An acceptance 
 - [Presidio](https://github.com/data-privacy-stack/presidio): automated PII detection has incomplete coverage; no library choice is implied.
 
 ## 11. CP3 public live privacy model (7 Oct 2026, D-095 to D-099): PLANNED / NOT YET VALIDATED
+
+**Controlled public beta (8 Oct 2026, D-102).** Public access means the end-user app only. Public users never get SSH or shell access, container or database administration, direct database connections, environment variables or secrets, deploy or restart controls, budget or live-gate configuration, operator or recovery controls, internal admin endpoints, private operational logs, or Grafana and admin dashboards. Only Caddy publishes ports; every operator and observability interface stays private (D-095). The owner mechanism never weakens the budget, privacy, consent or safety controls. Pasted JDs stay session-only and are never written to the production corpus. Metrics and normal logs carry no CV text, candidate data or raw private content, only pseudonymous correlation ids (D-099).
 
 This section adds the controls for full public live analysis of arbitrary CVs. Every row is a plan. A row is marked validated only when its CP3.4 evidence exists.
 

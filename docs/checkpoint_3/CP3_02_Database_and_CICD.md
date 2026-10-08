@@ -4,9 +4,15 @@
 **Bootcamp checkpoint:** 16. Integrasi Database & GitHub Actions CI/CD · official date 6 Oct 2026  
 **JobFit version of this checkpoint:** PostgreSQL with pgvector, and GitHub Actions for CI/CD.  
 **Planned work:** 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) · **Actual:** 6 Oct 2026  
-**Status:** PARTIAL · Docker and compose work locally; CI green since Phase 1 (7 Oct, FAIL-35 resolved); Alembic `0001`/`0002` DONE with migration tests (8 Oct); SumoPod VPS and job sync PLANNED (D-095, D-098); nothing deployed · design basis: System Design v1.3
+**Status:** PARTIAL · Docker and compose work locally; CI green since Phase 1 (7 Oct, FAIL-35 resolved); Alembic `0001`/`0002` DONE with migration tests (8 Oct); SumoPod VPS and job sync PLANNED (D-095, D-098); nothing deployed; deployment and monitoring target clarified by D-102 (8 Oct) · design basis: System Design v1.3
 
 > Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
+
+## Deployment and monitoring target (8 Oct 2026, D-102): PLANNED
+
+- **Target:** one VPS for a controlled public beta (low to moderate traffic, bounded LLM cost), built to a public-beta standard: PostgreSQL, Alembic, Docker, persistent storage, HTTPS through Caddy, CI/CD, health checks, structured logs, monitoring and alerts. Multi-region, active-active failover, enterprise HA and distributed recovery are out of scope. Rare uncertain states fail closed, are visible in logs and metrics, and are recovered manually by the operator.
+- **Public is not admin:** only Caddy publishes ports and it serves only the end-user app. FastAPI, PostgreSQL, Prometheus, Grafana, the ledger volume and every operator command stay private (Grafana through an SSH tunnel, D-095). No public user gets shell, container, database, secret, deploy, budget, gate or recovery access.
+- **Monitoring target (with the D-099 stack):** application requests, outcomes, status codes, latency, completions and refusals; AI-pipeline stage latency (CV parse, embedding, retrieval, requirement extraction, matching, recommendation, total); LLM calls, failures, fallbacks, latency, estimated and settled spend, budget state; process and container health, CPU, memory, disk, PostgreSQL and ledger-storage health. No CV text or candidate data in metrics or normal logs.
 
 ## CP3 final plan for this stage (7 Oct 2026, D-095 to D-100)
 
@@ -314,4 +320,4 @@ The notes below are the original plan. The implementation ([CP3.1 report](CP3_01
   - It builds its reference in a separate scratch database on the same server, created and dropped by `verify`, which needs the CREATEDB privilege.
   - The CP2 database itself is not modified.
 - There is no production database, backup or restore yet.
-- The sync, the seed command and the extraction-cache provider are still to do. The Phase 2B runtime is implemented (8 Oct, dark; D-101); the production ledger volume belongs to the deployment.
+- The sync, the seed command and the extraction-cache provider are still to do. The Phase 2B runtime is implemented (8 Oct, dark; D-101). The persistent production ledger storage contract is done for Phase 2 acceptance (local/CI, `f5d6cf7`); mounting the named volume on the VPS is Phase 6 and its real-host validation is Phase 8.

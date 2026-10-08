@@ -4,9 +4,19 @@
 **Bootcamp checkpoint:** 18. Testing End-to-End Application · official date 8 Oct 2026  
 **JobFit version of this checkpoint:** Same as the template, on the deployed app.  
 **Planned work:** 8 Oct 2026 (feature freeze at the end of the day); moved to 9 Oct with the formal freeze at the end of 9 Oct (D-100) · **Actual:** 6 Oct 2026 (local part)\
-**Status:** PARTIAL · local checks passed (27/27); deployed validation, privacy release gate and freeze PLANNED for 9 Oct (D-100) · design basis: System Design v1.3
+**Status:** PARTIAL · local checks passed (27/27); deployed validation, privacy release gate and freeze PLANNED for 9 Oct (D-100); controlled public beta acceptance bar set by D-102 (8 Oct) · design basis: System Design v1.3
 
 > Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
+
+## Controlled public beta validation (8 Oct 2026, D-102): PLANNED
+
+The deployed checks use the [D-102](../decisions.md) public-beta bar: safe enough for controlled public use, cost bounded, privacy aware, testable, observable, deployable and honest about residual limitations; not enterprise availability.
+
+- **Flows:** Find Jobs and Check a Job end to end on the deployed stack (owner token while dark), including stage-aware progress and "Improve My CV for This Job" with its anti-fabrication checks.
+- **States:** quota, busy, budget-exhausted and "temporarily unavailable" refusals show honest messages and the saved demo.
+- **Real-host persistence:** the ledger storage survives an API restart, a container recreate and a host reboot with the same `storage_id` and unchanged lifetime spend (the Phase 8 obligation from the persistent-ledger work).
+- **Boundary:** an external check shows only ports 80 and 443; no admin or observability interface is reachable anonymously.
+- **Limited beta trial:** a few real users try both flows after public live is allowed by its gate and the separate cost-bound decision.
 
 ## CP3 final plan for this stage (7 Oct 2026, D-095 to D-100)
 

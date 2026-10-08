@@ -1,11 +1,29 @@
 # JobFit CP2-CP3 Master Plan
 
+## Current outcome, 8 October 2026: CP3 scope clarified (D-102)
+
+**North star:** JobFit is a production-grade AI engineering portfolio with a controlled public beta. It shows end-to-end AI engineering on one real VPS that real public users can try in a limited, controlled way, and it should feel like a small real product. It is not an enterprise SaaS. [D-102](decisions.md) clarifies D-026, D-036, D-093 and D-095; it changes no frozen or accepted work (D-087, D-096 bounds and cap, D-097 to D-101, the Alembic work, the persistent production ledger).
+
+- **Two first-class flows:**
+  ```text
+  Flow A, Find Jobs:    CV → parse / mask / consent → runtime embedding → production retrieval → requirement extraction
+                           → evidence matching → scoring and ranking → explanation → job cards → optional CV improvement
+  Flow B, Check a Job:  CV + pasted JD → requirement extraction → evidence matching → scoring → explanation
+                           → strengths and gaps → CV improvement          (no retrieval; the JD is never added to the corpus)
+  ```
+- **New product requirements:** stage-aware analysis progress from real pipeline stages (no fake percentages); "Improve My CV for This Job" with a hard anti-fabrication rule (representation improvement, possibly missing, true gap); a portfolio-ready UI. UI priority: clarity > trust > usability > polish > decoration.
+- **Priority filter:** about 70% AI and product value, 30% infrastructure. Essential safety, privacy and evaluation are never cut.
+- **Public-beta bar:** safe for controlled public use, cost bounded, privacy aware, testable, observable, maintainable, deployable and honest about limits. Unknown → fail closed → log or metric → manual review is acceptable for rare uncertain states. Enterprise HA, multi-region and distributed recovery are out of scope.
+- **Public is not admin:** public users get only the end-user app; every operator, database, secret and dashboard interface stays private.
+- **Recommended order of the remaining work:** A foundation closeout → B real-user AI path → C product experience → D evaluation and performance → E production packaging → F monitoring → G controlled public beta validation. Details and rows: [CP3 execution plan](checkpoint_3/CP3_Execution_Plan.md#remaining-work-in-recommended-order-d-102).
+- **Open gates (separate decisions needed):** the public-live cost bound (US$84.7704449 > US$2/day, D-096 still blocks public live); Flow B in production (D-101 keeps `/analyze` closed until a pasted-JD bound exists); any LLM-written CV wording; the D-100 dates stay as they are unless a decision moves them.
+
 ## Current outcome, 7 October 2026
 
 ### CP3 plan frozen (7 Oct 2026, D-095 to D-100)
 
 Dion and Codex approved the CP3 final execution plan:
-- **Product:** full public live JobFit on a SumoPod VPS (Singapore), with the saved demo as the zero-cost fallback.
+- **Product:** full public live JobFit on a SumoPod VPS (Singapore), with the saved demo as the zero-cost fallback. *(Framing clarified on 8 Oct by D-102: a production-grade AI engineering portfolio with a controlled public beta; see above.)*
 - **Budgets:** a US$5 CP3 validation budget; a US$2/day production cap with deterministic phase bounds; one live analysis per IP per 24 h; one live analysis at a time.
 - **Job corpus:** a production corpus refreshed from JSearch twice a month (about every two weeks), with exact dedupe and fuzzy suspects held back for review.
 - **Monitoring:** Prometheus and Grafana with email alerts; Langfuse Cloud (Japan) with metadata only.
@@ -16,10 +34,10 @@ Everything below for CP3.1-CP3.7 is **PLANNED** unless a line says it is done lo
 
 | Stage (official name) | JobFit scope | Status |
 | --- | --- | --- |
-| CP3.1 API Deployment with FastAPI | Public live API, safety controls and instrumentation | PARTIAL: demo flow done locally; Phase 2A fail-closed settings and phase bounds done (7 Oct; the full bound is above the US$2/day cap, so public live is not eligible); Phase 2B dark cost-safety runtime done (8 Oct, D-101); public path PLANNED |
+| CP3.1 API Deployment with FastAPI | Public-beta API for both flows, safety controls and instrumentation | PARTIAL: demo flow done locally; Phase 2A fail-closed settings and phase bounds done (7 Oct; the full bound is above the US$2/day cap, so public live is not eligible); Phase 2B dark cost-safety runtime done (8 Oct, D-101); persistent production ledger DONE for Phase 2 acceptance (local/CI; deployed-host validation pending Phase 8); public path PLANNED |
 | CP3.2 Database Integration and CI/CD | Production corpus, job sync, VPS and delivery | PARTIAL: CI green after Phase 1 (FAIL-35 resolved); Alembic `0001`/`0002` done with migration tests (8 Oct); not deployed |
-| CP3.3 Streamlit UI | Public upload flow, waiting experience and coach | PARTIAL: demo flow done locally |
-| CP3.4 End-to-End Testing | Deployed validation, privacy release gate and feature freeze | PARTIAL: local 27/27; deployed checks PLANNED |
+| CP3.3 Streamlit UI | Product experience: Find Jobs and Check a Job, stage-aware progress, "Improve My CV for This Job" (D-102) | PARTIAL: demo flow done locally |
+| CP3.4 End-to-End Testing | Controlled public beta validation, privacy release gate and feature freeze | PARTIAL: local 27/27; deployed checks PLANNED |
 | CP3.5 Final Presentation and Portfolio | Final evidence, D-045, privacy and latency reports, deck and video | PLANNED |
 | CP3.6 Finalization and Rehearsal | Regression, rehearsal and release tag | PLANNED |
 | CP3.7 Final Presentation and Submission | Present deployed JobFit with the saved-demo fallback | PLANNED |
@@ -194,6 +212,8 @@ in parallel: schemas + scoring + fixtures → CP2.2 parser/extraction/matcher + 
 in parallel: hosting smoke deploy (1-2 Oct) → API (5 Oct) → database + CI (6 Oct) → Streamlit (7 Oct) → E2E + freeze (8 Oct)   [original plan]
 CP3 (D-095 to D-100): docs freeze + CI green (7 Oct) → P0 hardening + public path + packaging + dark deploy (8 Oct)
                       → sync + monitoring + privacy gate + public live + PR-10 + freeze (9 Oct) → reports/deck/rehearsal (10 Oct) → present (11 Oct)
+CP3 order after D-102 (8 Oct): foundation closeout → real-user AI path (both flows) → product experience → evaluation and performance
+                      → packaging → monitoring → controlled public beta validation; the D-100 dates are unchanged
 ```
 
 Labeling is the longest chain and depends on one person. It starts on day one and runs next to the implementation (D-015).
@@ -206,6 +226,8 @@ Labeling is the longest chain and depends on one person. It starts on day one an
 2. **Cut first:** UI polish.
 3. **Then:** extra experiments (fewer configurations, fewer model comparisons).
 4. **Only with a new docs/decisions.md entry:** the minimal market insight or CV suggestions.
+
+**CP3 clarification (D-102, 8 Oct 2026):** the list above is kept as the original rule. For CP3, decorative polish is still cut first, but product clarity (the two primary flows, honest progress, result presentation, failure and unavailable states) is part of the product goal, and job-specific CV improvement is a first-class requirement (recorded in D-093 and D-102). Core evaluation, tests, privacy, deployment and the explanation of limitations are still never cut.
 
 ---
 
@@ -491,13 +513,13 @@ JobFit version: Same as the template: CP2 presentation and mentoring.
 
 Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 · Planned work: 5 Oct 2026; CP3 additions 8 Oct 2026 · Report: [CP3_01_FastAPI_Service.md](checkpoint_3/CP3_01_FastAPI_Service.md)
 
-**JobFit scope:** public live API, safety controls and instrumentation. JobFit version: FastAPI (Flask is not used). Daily checklist: [CP3 execution plan](checkpoint_3/CP3_Execution_Plan.md).
+**JobFit scope:** public-beta API for both flows (Find Jobs; Check a Job with a pasted JD), safety controls and instrumentation (D-102). JobFit version: FastAPI (Flask is not used). Daily checklist: [CP3 execution plan](checkpoint_3/CP3_Execution_Plan.md).
 
 1. **Goal.** Make the business logic callable through a consistent, tested API, safe enough for arbitrary public CVs.
 2. **Inputs and prerequisites.**
    - Modules frozen in checkpoint 13 (D-087)
    - Mentor feedback from checkpoint 14 (D-093)
-   - CP3 decisions D-095 to D-100
+   - CP3 decisions D-095 to D-100, D-101 (Phase 2B safety semantics) and D-102 (portfolio / controlled public beta scope)
 3. **Steps.**
    - **Completed (6 Oct, local only):**
      - all planned endpoints;
@@ -581,7 +603,7 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
 
 Template name: Integrasi Database & GitHub Actions CI/CD · Official: 6 Oct 2026 · Planned work: 6 Oct 2026; CP3 additions 8-9 Oct 2026 · Report: [CP3_02_Database_and_CICD.md](checkpoint_3/CP3_02_Database_and_CICD.md)
 
-**JobFit scope:** production corpus, job sync, VPS and delivery. JobFit version: PostgreSQL with pgvector, GitHub Actions, and a SumoPod VPS (D-095 replaces the Railway target of D-023).
+**JobFit scope:** production corpus, job sync, VPS and delivery. JobFit version: PostgreSQL with pgvector, GitHub Actions, and a SumoPod VPS (D-095 replaces the Railway target of D-023). Target (D-102): one VPS for a controlled public beta, built to a public-beta standard, with every operator and observability interface private.
 
 1. **Goal.** Make the system reproducible from a fresh clone and deployable, with a production job corpus that stays fresh.
 2. **Inputs and prerequisites.**
@@ -656,12 +678,12 @@ Template name: Integrasi Database & GitHub Actions CI/CD · Official: 6 Oct 2026
 
 Template name: Build Streamlit UI · Official: 7 Oct 2026 · Planned work: 7 Oct 2026; CP3 additions 8-9 Oct 2026 · Report: [CP3_03_Streamlit_UI.md](checkpoint_3/CP3_03_Streamlit_UI.md)
 
-**JobFit scope:** public upload flow, waiting experience and coach. JobFit version: the template, with no business logic in the UI.
+**JobFit scope:** product experience: Find Jobs and Check a Job, public upload flow, stage-aware progress and "Improve My CV for This Job" (D-102). JobFit version: the template (Streamlit), with no business logic in the UI.
 
 1. **Goal.** A demo that shows the value in under 3 minutes, and a safe, honest public upload flow.
 2. **Inputs and prerequisites.**
    - The deployed API from checkpoint 16
-   - D-093 mentor feedback
+   - D-093 mentor feedback, refined by D-102 (stage-aware progress; "Improve My CV for This Job")
 3. **Steps.**
    - **Completed (6 Oct, local):**
      - demo CVs and the saved demo;
@@ -684,7 +706,14 @@ Template name: Build Streamlit UI · Official: 7 Oct 2026 · Planned work: 7 Oct
      - client-IP forwarding with the internal token.
    - **Mentor additions, planned (D-093):**
      - A: stage text, job i of K, elapsed time, a measured typical range, graceful timeout and error states, and cancel where safe. No fake percentages.
-     - B: each coach item shows its source requirement and the CV evidence status, with no-invention and no-guarantee wording. No LLM coach.
+     - B: each coach item shows its source requirement and the CV evidence status, with no-invention and no-guarantee wording. No LLM coach (stands until a D-102 gate decision on LLM-written CV wording).
+   - **Product experience, planned (D-102):**
+     - a landing with public-beta wording and the two primary actions, **Find Jobs** and **Check a Job** (pasted JD);
+     - stage-aware progress driven by the real pipeline stages of each flow (completed, current, pending), aligned with the latency metrics;
+     - job cards and detail with the match score, strengths, gaps, supporting evidence and explanations;
+     - empty, failure, unavailable and budget-exhausted states with the saved-demo fallback;
+     - "Improve My CV for This Job": representation improvement from existing evidence only, possibly missing (add only if real), true gap stated plainly; current statement → suggestion → why → supporting evidence; the hard anti-fabrication rule. Any LLM-written wording needs its own bound, reservation, evaluation and decision;
+     - consistent typography, spacing and components; reasonable mobile and desktop layout. Priority: clarity > trust > usability > polish > decoration.
 4. **Files and outputs.** The Streamlit app; screenshots; a short recording; this stage report.
 5. **Tests and acceptance criteria.**
    - A mentor understands the value in under 3 minutes.
@@ -693,6 +722,8 @@ Template name: Build Streamlit UI · Official: 7 Oct 2026 · Planned work: 7 Oct
    - The screen never looks frozen longer than the poll interval.
    - Every upload failure shows a safe, specific message.
    - Coach checks: 0 invented items, and "not done" gives no bullet.
+   - Both flows are reachable from the first screen, and each refusal code has a specific, honest message (D-102).
+   - "Improve My CV for This Job": 0 invented skills, experience, metrics or tools; every representation suggestion cites existing CV evidence (D-102).
 6. **Evidence to keep.** Screenshots (including the waiting states and upload errors); a short recording.
 7. **Estimate and dependencies.** The upload flow on 8 Oct; waiting UX and coach on 9 Oct. Depends on: the CP3.1 public path and stage events.
 8. **Fallback.** Core flow first; styling last.
@@ -707,7 +738,7 @@ Template name: Build Streamlit UI · Official: 7 Oct 2026 · Planned work: 7 Oct
 
 Template name: Testing End-to-End Application · Official: 8 Oct 2026 · Planned work: 9 Oct 2026 (formal feature freeze at the end of 9 Oct, D-100) · Report: [CP3_04_End_to_End_Testing.md](checkpoint_3/CP3_04_End_to_End_Testing.md)
 
-**JobFit scope:** deployed validation, privacy release gate and feature freeze. JobFit version: the template, on the deployed VPS stack.
+**JobFit scope:** controlled public beta validation (both flows, real-host persistence, public-beta states), privacy release gate and feature freeze. Acceptance uses the D-102 public-beta bar, not enterprise reliability. JobFit version: the template, on the deployed VPS stack.
 
 1. **Goal.** Test the real public journey and the critical failure paths on the deployed app, pass the privacy release gate, then freeze features.
 2. **Inputs and prerequisites.**
@@ -756,7 +787,7 @@ Template name: Testing End-to-End Application · Official: 8 Oct 2026 · Planned
 
 Template name: PPT Final Project / Portfolio · Official: 9 Oct 2026 · Planned work: 10 Oct 2026 (after the freeze) · Report: [CP3_05_Final_Presentation_and_Portfolio.md](checkpoint_3/CP3_05_Final_Presentation_and_Portfolio.md)
 
-**JobFit scope:** final evidence, D-045 results, privacy and latency reports, deck and video. JobFit version: the template.
+**JobFit scope:** final evidence, D-045 results, privacy and latency reports, deck and video. The story keeps the AI system at the center: design, pipelines, retrieval, LLM orchestration, evidence grounding, evaluation, cost engineering, then deployment and monitoring (D-102). JobFit version: the template.
 
 1. **Goal.** Build the final story from evidence: problem, data, experiments, final system, evaluation, deployment, limitations.
 2. **Inputs and prerequisites.**

@@ -4,9 +4,19 @@
 **Bootcamp checkpoint:** 15. Deployment API menggunakan Flask/FastAPI · official date 5 Oct 2026  
 **JobFit version of this checkpoint:** FastAPI (Flask is not used).  
 **Planned work:** 5 Oct 2026 · **Actual:** 6 Oct 2026  
-**Status:** PARTIAL · demo-CV flow DONE LOCALLY (6 Oct); Phase 2B dark cost-safety layer DONE (8 Oct, D-101; local and CI only); public live path PLANNED and public live BLOCKED by the D-096 bound · design basis: System Design v1.3
+**Status:** PARTIAL · demo-CV flow DONE LOCALLY (6 Oct); Phase 2B dark cost-safety layer DONE (8 Oct, D-101; local and CI only); persistent production ledger DONE for Phase 2 acceptance (local/CI; deployed-host validation pending Phase 8); public live path PLANNED and public live BLOCKED by the D-096 bound; scope clarified by D-102 (8 Oct) · design basis: System Design v1.3
 
 > Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
+
+## Scope clarification (8 Oct 2026, D-102): public-beta acceptance criteria
+
+From 8 October the remaining CP3 work follows [D-102](../decisions.md): JobFit is a production-grade AI engineering portfolio with a **controlled public beta** on one VPS, not an enterprise SaaS. For this report that means:
+
+- **Two API flows:** Find Jobs (`cv_source` demo or upload → runtime embedding → production retrieval → matching) and Check a Job (CV + pasted JD → extraction → matching, no retrieval). The pasted JD stays a session input and is never written to the production corpus. In production, Check a Job stays closed (D-101) until a pasted-JD phase bound and reservation are decided.
+- **Acceptance bar for the remaining rows (upload hardening, API hardening, the public path):** safe enough for controlled public use, cost bounded, privacy aware, testable, observable, maintainable, deployable and honest about residual limitations. Rare uncertain infrastructure states may end in safe refusal + logs and metrics + manual operator recovery. Enterprise availability and automatic recovery from every theoretical failure are not acceptance criteria. The completed Phase 2A, Phase 2B and persistent-ledger work is not reopened.
+- **API additions planned by D-102:** stage events that drive both the progress UI and the per-stage latency metrics; refusal codes mapped to honest user-facing states ("Live AI analysis is temporarily unavailable"); the inputs for "Improve My CV for This Job" (JD requirements, CV evidence, the match and gap result) under the anti-fabrication rule.
+- **Public is not admin:** no operator or administrative endpoint is reachable by public users; the owner mechanism never weakens the cap, consent or safety controls.
+- **Still blocked:** public live, until a separate decision resolves the D-096 bound (US$84.7704449 > US$2/day).
 
 ## CP3 final plan for this stage (7 Oct 2026, D-095 to D-100)
 

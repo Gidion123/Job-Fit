@@ -8,6 +8,10 @@
 
 > This report is a plan. It contains no results yet. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
 
+## Portfolio signal (8 Oct 2026, D-102)
+
+The final story keeps the AI system at the center: system design, the data and AI pipelines, retrieval, LLM orchestration, evidence grounding, evaluation, debugging and cost engineering, then deployment, monitoring and the safe user experience. Infrastructure work supports that story and does not replace it. The deployed app is presented as a controlled public beta with honest limits.
+
 ## CP3 final plan for this stage (7 Oct 2026, D-095 to D-100)
 
 **JobFit scope:** final evidence, D-045 results, privacy and latency reports, deck and video. Planned work moves to 10 October, after the feature freeze (D-100). Stage definition: [master plan](../master-plan.md#cp35-final-presentation-and-portfolio-checkpoint-19).

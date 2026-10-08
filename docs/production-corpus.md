@@ -15,6 +15,8 @@ This document describes the job database that the public JobFit deployment will 
 
 Production code never writes to CP2 evaluation paths (`evals/freeze/`, `evals/gold/`, `evals/results/`, `evals/splits/`, the snapshot). A CI test will check that the sync module neither imports nor writes them. **CP2 held-out and test labels are never used** for prompt, threshold, ranking, model-selection or retrieval tuning (D-046 rule 4, D-089), even though historical test jobs are served in production.
 
+**Pasted job descriptions are not corpus input (8 Oct 2026, D-102).** A JD that a user pastes for "Check a Job" is a session or request input only. It is never inserted into the production corpus automatically; the corpus changes only through the seed and the controlled sync below, with dedupe, provenance and lifecycle rules.
+
 ## 2. Seed
 
 - **Source:** a `pg_dump` of the verified local database (632 CP1 rows with Qwen3-Embedding-8B vectors). Its SHA-256 and row counts are recorded, and it is restore-tested before the first deployment.

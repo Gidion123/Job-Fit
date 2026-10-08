@@ -1,8 +1,26 @@
 # CV Coach Plan
 
-**Decision:** [D-036](decisions.md) · **Status:** v1 BUILT (deterministic, no model call; 6 Oct 2026, EXP-20261006-CP3); CP3 refinements PLANNED (D-093 B) · **Proposed by:** Dion, 30 September 2026
+**Decision:** [D-036](decisions.md), extended by [D-102](decisions.md) · **Status:** v1 BUILT (deterministic, no model call; 6 Oct 2026, EXP-20261006-CP3); CP3 refinements PLANNED (D-093 B); "Improve My CV for This Job" PLANNED (D-102) · **Proposed by:** Dion, 30 September 2026
 
 **CP2 mentor feedback (D-093, 4 Oct 2026):** the mentor asked for CV improvement suggestions for the target vacancy once the core features work. This plan covers that request, so there is no separate feature. Suggestions come from the user's real CV evidence, the JD requirements and the gaps found, and they do not promise a better real fit.
+
+## CP3 requirement: "Improve My CV for This Job" (8 Oct 2026, D-102): PLANNED
+
+The user picks a matched job (Find Jobs) or uses a pasted JD (Check a Job) and gets coaching for that job only, built from the JD requirements, the existing CV evidence and the JobFit match and gap result. It is not a generic "rewrite my CV" feature.
+
+**Hard anti-fabrication rule.** JobFit never recommends inventing skills, experience, employers, responsibilities, years of experience, certifications, project work, achievements, metrics, tools or impact. It may improve how existing evidence is represented; it never manufactures evidence.
+
+| Type | When | What JobFit says |
+| --- | --- | --- |
+| A. Representation improvement | The CV has the evidence but states it vaguely or without the relevant terms | A more specific wording that uses only evidence present in the CV, with that evidence shown |
+| B. Possibly missing from the CV | The job needs a skill or tool and the CV shows no evidence | "I could not find evidence of X in your CV. If you really used X, add it with its real context." The v1 question flow helps write that bullet from the user's answers; nothing is added for them |
+| C. True gap | The requirement cannot be met by wording, such as years of professional experience | It is stated plainly as a gap that a rewrite cannot fix |
+
+**Presentation:** current CV statement → suggested improvement → why it helps for this job → supporting CV evidence (only when that evidence really exists).
+
+**How it builds on v1:** type B is the existing question-and-answer coach; type C comes from the matching result and the experience rule; type A is new. Whether type A wording is deterministic (built from the matched evidence quotes) or written by an LLM is an open design question. An LLM call would need its own D-096 phase bound and reservation, an anti-fabrication evaluation (0 invented items; every suggestion cites existing CV evidence) and a decision; until then "no LLM coach in CP3" below stands.
+
+**Scope limit:** coaching and recommendations only. No graphical CV editor, PDF/DOCX resume builder, ATS template marketplace, cover-letter generator, interview generator or career platform in CP3.
 
 ## Why
 
@@ -79,4 +97,4 @@ Example bullet, built only from the user's answers:
 
 ## Priority
 
-Matching, evaluation, testing, privacy, and deployment come first. In the cut order of System Design v1.3 section 18, the CV suggestions feature is the first to be cut when time is short.
+Matching, evaluation, testing, privacy, and deployment come first. In the cut order of System Design v1.3 section 18, the CV suggestions feature is the first to be cut when time is short. *(8 Oct 2026, D-102: for CP3, job-specific CV improvement is a first-class product requirement, ordered after the real-user AI path; this original cut-order statement is kept for history.)*

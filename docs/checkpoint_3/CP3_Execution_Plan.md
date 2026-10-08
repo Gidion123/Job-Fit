@@ -139,7 +139,7 @@ The seeded production corpus (632 rows, 428 target-role jobs active) is sufficie
 
 | Task | Pri | Depends on | Owner | Status | Validation | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| `docker-compose.prod.yml`, Caddyfile, restart policies, log rotation, healthchecks | P0 | — | Dion (AI-assisted) | TODO | `docker compose … config` | CP3.2 report |
+| `docker-compose.prod.yml`, Caddyfile, restart policies, log rotation, healthchecks (no SMTP or Langfuse dependency for the beta) | P0 | — | Dion (AI-assisted) | TODO | `docker compose … config` | CP3.2 report |
 | Runtime artifact manifest and verifier; tokenizer built into the API image | P0 | — | Dion (AI-assisted) | TODO | Readiness fails on a mismatch | CP3.2 report |
 | Backup and restore scripts: a verified backup and a successful restore test of the database and the whole ledger root before the beta (nightly scheduling is P2 (post-beta) unless trivial) | P0 | — | Dion (AI-assisted) | TODO | Row counts after restore (632 / 428) | CP3.2 report |
 | VPS runbook with the two-layer validation commands and backup-before-migrate | P0 | — | Dion (AI-assisted) | TODO | Review | Runbook |
@@ -152,7 +152,7 @@ The seeded production corpus (632 rows, 428 target-role jobs active) is sufficie
 | Provision SumoPod VPS (SSH, ufw, Docker, DNS, production key with limit; SMTP and the Langfuse Japan project only if the P2 (post-beta) items are taken up) | P0 | — | Dion and Codex | TODO | Runbook checklist | CP3.2 report |
 | First deploy, dark (saved demo only) | P0 | Phase 6 | Dion and Codex | TODO | **A:** external public smoke through Caddy and Streamlit. **B:** internal API `e2e_check` inside the Docker network or over an SSH tunnel; FastAPI stays private | CP3.4 report |
 | OpenRouter per-route privacy record (parse, embedding, extraction, matching) | P0 | VPS | Dion and Codex | TODO | Recorded; gaps reported before public live | Privacy model |
-| Privacy release gate with canaries in every sink, including upload failure paths | P1 | Deploy | Dion (AI-assisted) | TODO | 0 hits | CP3.4 report |
+| Privacy release gate with canaries in every sink enabled for the beta, including upload failure paths (Langfuse only if enabled) | P1 | Deploy | Dion (AI-assisted) | TODO | 0 hits | CP3.4 report |
 | Owner live runs, latency baseline, F2 measurement, quota, cap and busy tests, mentor UX check | P1 | Gate | Dion (AI-assisted) | TODO | Latency and cost table | CP3.4 report |
 | Real-host persistence validation of the ledger storage (restart, container recreate, host reboot: same `storage_id`, lifetime spend unchanged) | P0 | First deploy | Dion and Codex | TODO | Recorded checks on the VPS | CP3.4 report |
 | Enable public live, the controlled public beta (`JOBFIT_PUBLIC_LIVE=1`) | P1 | Gate passed; the public-live cost/profile decision satisfied (D-096) | Dion | TODO | Gate record | CP3.4 report |

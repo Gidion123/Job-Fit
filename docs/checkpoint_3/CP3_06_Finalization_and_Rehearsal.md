@@ -15,7 +15,7 @@
   - offline and database-gated pytest; ruff; freeze verify; both Docker builds; prod compose config;
   - Alembic; restore;
   - validation layers A (external public) and B (internal API);
-  - the canary scan; sync idempotency; phase bounds within the cap;
+  - the canary scan; phase bounds within the cap; sync idempotency only if the post-beta sync exists;
   - green GitHub Actions.
 - **Rehearsal:** includes the owner-token step for a shared presentation network.
 - **After review:** Dion merges the CP3 work into `main` (D-095).

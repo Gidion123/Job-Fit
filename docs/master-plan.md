@@ -608,7 +608,7 @@ Template name: Integrasi Database & GitHub Actions CI/CD · Official: 6 Oct 2026
 
 **JobFit scope:** production corpus, job sync, VPS and delivery. JobFit version: PostgreSQL with pgvector, GitHub Actions, and a SumoPod VPS (D-095 replaces the Railway target of D-023). Target (D-102): one VPS for a controlled public beta, built to a public-beta standard, with every operator and observability interface private.
 
-1. **Goal.** Make the system reproducible from a fresh clone and deployable, with a production job corpus that stays fresh.
+1. **Goal.** Make the system reproducible from a fresh clone and deployable, with a verified production job corpus. For the controlled beta the verified seeded corpus is sufficient; automated freshness (the scheduled sync) is P2 (post-beta).
 2. **Inputs and prerequisites.**
    - The checkpoint 15 API
    - A SumoPod VPS (Singapore, Ubuntu 24.04 LTS, 2 vCPU / 8 GB / 80 GB), bought and configured by Dion and Codex
@@ -665,17 +665,17 @@ Template name: Integrasi Database & GitHub Actions CI/CD · Official: 6 Oct 2026
      - B: the internal API `e2e_check.py` passes inside the VPS Docker network or through an SSH tunnel. FastAPI is never public.
    - Alembic works on an empty and a restored database.
    - The restore test matches the row counts.
-   - A real sync and an idempotent re-run give 0 NEW, 0 CONTENT_CHANGED and 0 METADATA_CHANGED, with exact duplicates counted and no second row.
+   - *Conditional, post-beta (only once the P2 (post-beta) sync is built):* a real sync and an idempotent re-run give 0 NEW, 0 CONTENT_CHANGED and 0 METADATA_CHANGED, with exact duplicates counted and no second row. Not a beta or checkpoint blocker.
    - **The same vacancy never appears twice in production retrieval.**
-6. **Evidence to keep.** CI links; the row-count table; the restore log; sync reports; deploy-tag notes.
-7. **Estimate and dependencies.** CI on 7 Oct; schema and packaging on 8 Oct; sync on 9 Oct. Depends on: VPS provisioning, DNS, SMTP, and the production OpenRouter key (Dion and Codex).
-8. **Fallback.** If the scheduled sync is not on `main` before the presentation, the sync is shown with a manual SSH-triggered run. If the VPS is blocked, the saved demo runs locally and the report states the limit.
+6. **Evidence to keep.** CI links; the row-count table; the restore log; deploy-tag notes; sync reports only if the post-beta sync (or the optional manual refresh) runs.
+7. **Estimate and dependencies.** CI on 7 Oct; schema and packaging on 8 Oct; sync on 9 Oct. Depends on: VPS provisioning, DNS and the production OpenRouter key (Dion and Codex). SMTP is needed only for the P2 (post-beta) email alerts and does not block packaging, the dark deploy or beta validation.
+8. **Fallback.** The scheduled sync is P2 (post-beta); the beta and the presentation use the verified seeded corpus (an optional one-time manual refresh may be run before the demo). If the VPS is blocked, the saved demo runs locally and the report states the limit.
 9. **Status and next step.** PARTIAL. Docker, compose and the CI workflow exist; CI is green after Phase 1 (FAIL-35 resolved; run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567)); nothing is deployed; the production corpus and sync are PLANNED. Alembic `0001` (exact CP2 baseline) and `0002` (production schema) are DONE with a verified-stamp path and migration tests in CI (8 Oct, [results](checkpoint_3/CP3_02_Database_and_CICD.md#results-8-oct-2026-alembic-00010002)). Next: `verify` on the local CP2 database, then packaging and the sync.
 10. **Definition of Done.**
     - CI green.
     - The production stack deployed and checked through both validation layers.
     - Backup and restore tested.
-    - A sync run and an idempotent re-run recorded.
+    - *(Post-beta, conditional: a sync run and an idempotent re-run recorded, once the P2 (post-beta) sync exists. Not part of the CP3 beta Definition of Done.)*
     - The runbook and this report updated with evidence.
 
 ### CP3.3: Streamlit UI (checkpoint 17)
@@ -754,7 +754,7 @@ Template name: Testing End-to-End Application · Official: 8 Oct 2026 · Planned
      - A: external public smoke and journey through Caddy and Streamlit (HTTPS, saved demo, the real-CV journey once enabled, user-visible failures);
      - B: the internal API `e2e_check.py` inside the VPS Docker network or through an SSH tunnel. FastAPI stays private.
    - **Privacy release gate:**
-     - PR-01 to PR-10, with synthetic canaries through every sink: responses, provider payloads, logs, database, temporary files, `/metrics`, Langfuse export and upload failure paths;
+     - PR-01 to PR-10, with synthetic canaries through every sink enabled for the beta: responses, provider payloads, logs, database, temporary files, `/metrics` and upload failure paths, plus the Langfuse export only if Langfuse is enabled (Langfuse itself is P2 (post-beta));
      - PR-08 fail-closed;
      - the OpenRouter per-route privacy record (parse, embedding, extraction, matching). A gap is reported before public live and never fixed by changing the model, prompt, K or weights.
    - **Cost and abuse:**
@@ -763,8 +763,8 @@ Template name: Testing End-to-End Application · Official: 8 Oct 2026 · Planned
      - the daily cap;
      - the busy gate.
    - **Owner-run paid checks** (inside the US$5): public-live E2E, a latency baseline with stage timings, and FAIL-36 confirmation (offline fake proof plus a live measurement).
-   - **Sync:** a VPS sync test, with no duplicate vacancy in retrieval.
-   - **Monitoring:** one test alert email; screenshots.
+   - **Retrieval:** no duplicate vacancy in production retrieval on the verified seeded corpus. (A VPS sync test is post-beta; an optional manual corpus refresh before the demo is allowed, not required.)
+   - **Monitoring:** metrics and the beta Grafana dashboard checked with live data; screenshots. (A test alert email is P2 (post-beta).)
    - **Mentor A/B validation** on the deployed app.
    - **PR-10** (original vs masked, CV1/CV2, about US$2).
    - **Enable public live** only after the gate passes.
@@ -836,7 +836,7 @@ Template name: Finalisasi Portfolio & Rehearsal Presentation · Official: 10 Oct
       - offline and database-gated pytest; ruff; freeze verify; both Docker builds; prod compose config;
       - Alembic; restore;
       - validation layers A and B;
-      - the canary scan; sync idempotency; the phase bounds;
+      - the canary scan; the phase bounds; sync idempotency only if the post-beta sync exists;
       - green GitHub Actions.
    2. Rehearse with timing, including the owner-token step for a shared presentation network; prepare backup screenshots and video.
    3. Proofread the README and the documents.

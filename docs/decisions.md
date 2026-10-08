@@ -127,7 +127,7 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-099 | 7 Oct 2026 | CP3 observability: Prometheus and Grafana with email alerts, Langfuse Cloud (Japan) metadata only | Approved by Dion and Codex; planned; Langfuse and email alerts P2 (post-beta) since 8 Oct |
 | D-100 | 7 Oct 2026 | CP3 evaluation obligations and feature freeze: D-045 to be completed with option B, PR-10, freeze at the end of 9 Oct | Approved by Dion and Codex; planned, not completed |
 | D-101 | 8 Oct 2026 | Phase 2B dark runtime safety semantics: safety layer built while public live stays blocked by the D-096 bound | Approved by Dion and Codex; implemented 8 Oct (dark, local and CI only) |
-| D-102 | 8 Oct 2026 | CP3 portfolio / controlled public beta scope principle: north star, two first-class flows (Find Jobs, Check a Job), stage-aware progress, "Improve My CV for This Job" with a hard anti-fabrication rule, public-beta engineering bar, complexity budget | Approved by Dion as the scope direction; documentation pending independent review; nothing implemented |
+| D-102 | 8 Oct 2026 | CP3 portfolio / controlled public beta scope principle: north star, two first-class flows (Find Jobs, Check a Job), stage-aware progress, "Improve My CV for This Job" with a hard anti-fabrication rule, public-beta engineering bar, complexity budget | Approved and independently reviewed; authoritative CP3 scope direction (nothing implemented yet) |
 
 ---
 
@@ -1593,4 +1593,4 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
   3. **Representation-improvement generation.** If suggested wording needs an LLM call, that call needs its own phase bound and reservation (D-096), an anti-fabrication evaluation and a decision. Until then the deterministic coach (D-036 v1) is the baseline and "no LLM coach in CP3" in the coach plan stands.
   4. **Timeline.** The D-100 dates (freeze at the end of 9 Oct, presentation 11 Oct) are unchanged. The remaining work is ordered by priority; moving any date needs a separate decision.
 - **Clarifies (does not supersede):** D-026 (cut order), D-036 (coach), D-093 (mentor feedback A and B), D-095 (product framing). Their history stays as recorded.
-- **Status:** Approved by Dion as the CP3 scope direction. Documentation pending independent review; nothing implemented.
+- **Status:** Approved and independently reviewed (8 Oct 2026): the D-102 scope direction and the anti-overengineering correction (`84fea29`) were independently accepted; this is the authoritative CP3 scope direction. Nothing is implemented yet.

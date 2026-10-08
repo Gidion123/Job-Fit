@@ -52,7 +52,7 @@
     - recovery = the previous tag plus a restore.
     - The CP2 `SCHEMA_SQL` and loader stay unchanged.
   - **Seed:** a restore-tested dump of 632 rows. The 428 target-role rows are active; all rows are canonical.
-  - **Sync:**
+  - **Sync (P2 (post-beta) since 8 Oct; the verified seeded corpus is sufficient for the beta):**
     - twice a month (about every two weeks) through a GitHub Actions SSH forced command; credentials stay on the VPS;
     - a production query manifest (≤ 80 requests);
     - exact duplicates map to the canonical job with no new row;
@@ -64,13 +64,13 @@
   - **Deployment:**
     - `docker-compose.prod.yml` with Caddy (only 80/443 public), restart policies, log rotation and healthchecks;
     - a runtime artifact manifest and verifier (the tokenizer built into the API image);
-    - a restore-tested initial dump; nightly backups;
+    - a restore-tested initial dump (a verified backup and restore test is required before the beta); nightly backups (P2 (post-beta) unless trivial);
     - manual tagged deploys;
     - a VPS runbook.
   - **Monitoring (D-099):**
     - Prometheus, Grafana and node_exporter;
-    - email alerts through `GRAFANA_SMTP_*` / `GRAFANA_ALERT_*` placeholders;
-    - sync gauges;
+    - email alerts through `GRAFANA_SMTP_*` / `GRAFANA_ALERT_*` placeholders (P2 (post-beta); SMTP does not block packaging, the dark deploy or beta validation);
+    - sync gauges (P2 (post-beta), with the sync);
     - a backup-age metric.
 - **Validation layers:**
   - A: external public smoke through Caddy and Streamlit (HTTPS, saved demo);
@@ -78,7 +78,8 @@
   - FastAPI is never exposed publicly.
 - **Tests to add:**
   - Alembic on an empty and a restored database;
-  - the sync suite (normalization parity, identity order, exact-duplicate idempotency, `review_required` exclusion, **the same vacancy never appears twice in retrieval**, classification, coverage, lifecycle, rollback, dry run, no CP2 path writes);
+  - the sync suite (normalization parity, identity order, exact-duplicate idempotency, `review_required` exclusion, classification, coverage, lifecycle, rollback, dry run, no CP2 path writes), with the P2 (post-beta) sync;
+  - **the same vacancy never appears twice in retrieval** (required for the beta, on the verified seeded corpus);
   - the artifact verifier.
 - **Costs:** JSearch uses the free tier (≤ 80 requests per sync); embeddings cost about US$0.0000064 per job (capped at US$0.10 per sync); VPS hosting is outside the LLM budget.
 - **Acceptance:** see the master plan, CP3.2 points 5 and 10.

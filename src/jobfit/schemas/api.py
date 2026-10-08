@@ -40,6 +40,22 @@ class AnalyzeRequest(BaseModel):
     demo_cv_id: str
 
 
+class SearchRequest(BaseModel):
+    """D-103 search stage: relevant jobs in retrieval order, not JobFit match rankings."""
+    demo_cv_id: str
+    role_family: str | None = None
+    country_code: str | None = None
+    city: str | None = None
+    work_mode: str | None = None
+    posted_within_days: int | None = None
+    include_unknown: bool = True
+
+
+class JobAnalyzeRequest(BaseModel):
+    """D-103 job_analysis of one corpus job."""
+    demo_cv_id: str
+
+
 class TailorRequest(BaseModel):
     run_id: str
     job_id: str | None = None     # with a job: CV coach v1 questions for that job (D-036)

@@ -34,6 +34,24 @@ def job_card(r: JobResult, meta: Mapping | None = None) -> dict:
             'requirements': rows, 'matcher_model': r.matcher_model, 'used_fallback': r.used_fallback}
 
 
+SEARCH_STAGE_LABEL = 'Relevant jobs (search stage). Not JobFit match rankings: analyze a job to get its match.'
+
+
+def retrieval_card(job_id: str, rank: int, meta: Mapping | None = None) -> dict:
+    """D-103: one search-stage job. It carries no match score until the job is analyzed."""
+    meta = meta or {}
+    return {'job_id': job_id, 'title': meta.get('title'), 'company': meta.get('company'),
+            'location': meta.get('location'), 'url': meta.get('url'), 'retrieval_rank': rank,
+            'stage': 'retrieval', 'analyzed': False, 'match_score': None}
+
+
+def analyzed_job(r: JobResult, meta: Mapping | None = None) -> dict:
+    """D-103: one analyzed job; only a scored analysis has a match score."""
+    card = job_card(r, meta)
+    return {'stage': 'analyzed', 'analyzed': True, 'match_score': card['score_pct'] if card['scored'] else None,
+            'card': card, 'note': NOTE}
+
+
 def _groups(rec: Recommendation, ids: list[str], cards: dict) -> dict:
     conflict = [j for j in ids if cards[j]['scored'] and cards[j]['explicit_conflicts']]
     return {'matches': [cards[j] for j in ids if cards[j]['scored'] and j not in conflict],

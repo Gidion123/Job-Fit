@@ -18,8 +18,19 @@ Production ingress (CP3 Phase 2B, D-096/D-101; ``AppDeps.ingress`` set by the pr
 - POST /session is rate-limited per IP pseudonym;
 - a live recommendation needs a canonical UUIDv4 Idempotency-Key: a retry of the same action gets
   the same run, never a second execution; another session or phase with that key gets 409;
-- the owner token bypasses only the per-IP ticket; non-owner live needs public live and a ticket;
-- pasted-JD /analyze stays closed in production live (no reservation phase is defined for it).
+- the owner token bypasses only the per-IP ticket and the session allowance; non-owner live needs
+  public live and a ticket. The owner never bypasses the budgets, the one-operation gate,
+  idempotency, the evidence and storage checks, the per-call bounds or the input envelopes.
+
+D-103 public-beta contract (API semantics only; the Streamlit UI follows in Phase 3b):
+- POST /jobs/search returns relevant jobs in retrieval order, labelled as the search stage
+  (stage 'retrieval', analyzed false, match_score null); it is never a JobFit match ranking and
+  no CP2.4 final-order claim applies to it;
+- POST /jobs/{job_id}/analyze and the pasted-JD POST /analyze run one ``job_analysis`` operation
+  (stage 'analyzed'); inputs above the D-103 envelopes are refused (413) before any reservation;
+- in production these routes are owner-only for now: the public (non-owner) beta flow stays
+  closed until the real-CV consent adapter connects the session's uploaded CV, whatever
+  JOBFIT_PUBLIC_LIVE says. Demo CVs are synthetic and never stand in for that flow.
 """
 from __future__ import annotations
 
@@ -35,12 +46,12 @@ import time
 from fastapi import Depends, FastAPI, File, Header, HTTPException, Request, UploadFile
 from fastapi.responses import JSONResponse
 
-from jobfit.api.presenter import job_card, recommendation
+from jobfit.api.presenter import SEARCH_STAGE_LABEL, analyzed_job, job_card, recommendation, retrieval_card
 from jobfit.cv.parser import ParsedCV
 from jobfit.cv.text_extract import extract_text
 from jobfit.privacy.masking import mask_local
-from jobfit.schemas.api import (AnalyzeRequest, CoachAnswer, ConsentRequest, FeedbackRequest, MarketQuery, PasteRequest,
-                                PreviewEdit, RunRequest, TailorRequest)
+from jobfit.schemas.api import (AnalyzeRequest, CoachAnswer, ConsentRequest, FeedbackRequest, JobAnalyzeRequest,
+                                MarketQuery, PasteRequest, PreviewEdit, RunRequest, SearchRequest, TailorRequest)
 from jobfit.search.filters import JobFilters
 from jobfit.session.store import SessionDenied, SessionHandle, SessionStore
 from jobfit.support.cv_coach import bullet, gaps_for_job
@@ -53,6 +64,8 @@ REAL_CV_MESSAGE = ('Analysis of uploaded CVs is not enabled yet. Masking, previe
 LIVE_OFF_MESSAGE = 'Live analysis is switched off in this deployment. Use the saved demo.'
 PUBLIC_LIVE_OFF_MESSAGE = 'Public live analysis is not enabled yet. Use the saved demo.'
 ANALYZE_CLOSED_MESSAGE = 'Pasted job descriptions cannot be analyzed live in this deployment yet.'
+PUBLIC_BETA_CLOSED_MESSAGE = ('The public beta needs the uploaded-CV consent flow, which is not connected yet. '
+                              'Use the saved demo.')
 INTERNAL_TOKEN_HEADER, CLIENT_IP_HEADER, OWNER_TOKEN_HEADER = ('x-jobfit-internal-token', 'x-jobfit-client-ip',
                                                              'x-jobfit-owner-token')
 MAX_RUNS_PER_SESSION = 3
@@ -89,6 +102,14 @@ class AppDeps:
     maintenance_seconds: float = 3600.0
     # Prod live only: () -> bool, the persistent ledger storage root is provisioned and writable.
     live_storage_ready: Callable | None = None
+    # D-103 public-beta contract. search(cv, filters) -> job ids in retrieval order (no provider call
+    # for a demo CV); analyze_one(cv, *, job_id, jd_text, live) -> JobResult of one job_analysis
+    # operation; job_analysis_refusal(cv, *, job_id, jd_text) -> 'input_too_large' or None, checked
+    # before any reservation.
+    search: Callable | None = None
+    analyze_one: Callable | None = None
+    job_analysis_refusal: Callable | None = None
+    search_limit: int = 10
 
 
 @dataclass
@@ -440,7 +461,7 @@ def create_app(deps: AppDeps) -> FastAPI:
                 'note': 'The pasted text is kept only in this session and is treated as data, never as instructions.'}
 
     @app.post('/analyze')
-    def analyze(body: AnalyzeRequest, h: SessionHandle = Depends(handle)):
+    def analyze(body: AnalyzeRequest, request: Request, h: SessionHandle = Depends(handle)):
         with lock:
             owner, text = pastes.get(body.paste_id, (None, None))
         if owner != h.session_id:
@@ -448,16 +469,97 @@ def create_app(deps: AppDeps) -> FastAPI:
         cv = deps.demo_cvs.get(body.demo_cv_id)
         if cv is None:
             raise HTTPException(404, 'Unknown demo CV')
-        if not deps.live_enabled or deps.analyze_pasted is None:
+        if not deps.live_enabled:
             raise HTTPException(503, LIVE_OFF_MESSAGE)
-        if deps.ingress is not None:
-            raise HTTPException(503, ANALYZE_CLOSED_MESSAGE)
+        if deps.ingress is not None:        # production: one job_analysis operation (D-103)
+            if deps.analyze_one is None:
+                raise HTTPException(503, ANALYZE_CLOSED_MESSAGE)
+            return start_job_analysis(request, h, cv, job_id='pasted', jd_text=text,
+                                      meta={'title': 'Pasted job description'},
+                                      note='Pasted JDs are analyzed for this session only.')
+        if deps.analyze_pasted is None:
+            raise HTTPException(503, LIVE_OFF_MESSAGE)
 
         def work(state: _Run) -> dict:
             r = deps.analyze_pasted(cv, text)
             card = job_card(r, {'title': 'Pasted job description'})
             return {'card': card, 'source': 'live', 'note': 'Pasted JDs are analyzed for this session only.'}
         return {'run_id': start_job(h, 'analysis', MAX_ANALYSES_PER_SESSION, work)}
+
+    # ---------- D-103 public-beta contract: search stage, then one job_analysis per chosen job ----------
+    def beta_owner_only(request: Request) -> None:
+        """Production: the public beta flow needs the real-CV consent adapter (not connected yet)."""
+        if deps.ingress is not None and not deps.ingress.is_owner(request.headers.get(OWNER_TOKEN_HEADER)):
+            raise HTTPException(503, PUBLIC_BETA_CLOSED_MESSAGE)
+
+    @app.post('/jobs/search')
+    def search_jobs(body: SearchRequest, request: Request, h: SessionHandle = Depends(handle)):
+        cv = deps.demo_cvs.get(body.demo_cv_id)
+        if cv is None:
+            raise HTTPException(404, 'Unknown demo CV')
+        try:
+            filters = JobFilters(role_family=body.role_family, country_code=body.country_code, city=body.city,
+                                 work_mode=body.work_mode, posted_within_days=body.posted_within_days,
+                                 include_unknown=body.include_unknown)
+        except ValueError as exc:
+            raise HTTPException(422, str(exc))
+        if not deps.live_enabled or deps.search is None:
+            raise HTTPException(503, LIVE_OFF_MESSAGE)
+        beta_owner_only(request)
+        try:
+            ids = list(deps.search(cv, filters))[:deps.search_limit]
+        except Exception as exc:          # a safe code or the class name; never a payload
+            raise HTTPException(503, getattr(exc, 'code', None) or type(exc).__name__)
+        return {'stage': 'retrieval', 'final_order': False, 'label': SEARCH_STAGE_LABEL,
+                'analysis_limit': MAX_ANALYSES_PER_SESSION,
+                'jobs': [retrieval_card(j, i + 1, deps.job_meta.get(j) or deps.jobs.get(j)) for i, j in enumerate(ids)]}
+
+    @app.post('/jobs/{job_id}/analyze')
+    def analyze_corpus_job(job_id: str, body: JobAnalyzeRequest, request: Request,
+                           h: SessionHandle = Depends(handle)):
+        if job_id not in deps.jobs:
+            raise HTTPException(404, 'Job not in the searchable corpus')
+        cv = deps.demo_cvs.get(body.demo_cv_id)
+        if cv is None:
+            raise HTTPException(404, 'Unknown demo CV')
+        if not deps.live_enabled or deps.analyze_one is None:
+            raise HTTPException(503, LIVE_OFF_MESSAGE)
+        return start_job_analysis(request, h, cv, job_id=job_id, jd_text=None,
+                                  meta=deps.job_meta.get(job_id) or deps.jobs[job_id], note=None)
+
+    def start_job_analysis(request: Request, h: SessionHandle, cv, *, job_id: str, jd_text: str | None,
+                           meta, note: str | None) -> dict:
+        """One job_analysis operation: owner-only in production, envelope check before any reservation."""
+        beta_owner_only(request)
+        if deps.job_analysis_refusal is not None:
+            refusal = deps.job_analysis_refusal(cv, job_id=job_id, jd_text=jd_text)
+            if refusal is not None:
+                raise HTTPException(413, refusal)
+        live = None
+        if deps.ingress is not None:
+            live = live_request(request, h, 'job_analysis')
+            if isinstance(live, dict):          # the same action again: its run, never a second execution
+                return live
+
+        def work(state: _Run) -> dict:
+            if live is None:
+                r = deps.analyze_one(cv, job_id=job_id, jd_text=jd_text, live=None)
+            else:
+                try:
+                    r = deps.analyze_one(cv, job_id=job_id, jd_text=jd_text, live=live)
+                except Exception as exc:
+                    unknown = getattr(exc, 'code', None) == 'admission_outcome_unknown'
+                    idempotency.update(live.operation_key, state='admission_unknown' if unknown else 'failed')
+                    raise
+                idempotency.update(live.operation_key, state='done')
+            return {**analyzed_job(r, meta), 'source': 'live', **({'session_note': note} if note else {})}
+        try:
+            run_id = start_job(h, 'analysis', MAX_ANALYSES_PER_SESSION, work, run_id=live.run_id if live else None)
+        except Exception:
+            if live is not None:
+                idempotency.release(live.operation_key)      # nothing started: the key is free again
+            raise
+        return {'run_id': run_id}
 
     # ---------- market and feedback ----------
     @app.get('/market/skills')

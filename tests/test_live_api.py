@@ -225,7 +225,9 @@ def test_prod_runtime_uses_the_production_client_settings(tmp_path, monkeypatch)
     client = runtime.client_factory('idem:x')
     assert client.settings.usage_ledger == settings.usage_ledger and client.run_id == 'idem:x'
     assert client.settings.api_hard_stop_usd == 4.5 and runtime.windows['parse'].window == 720.0
-    assert runtime.bound['recommendation'] > settings.daily_budget_usd > runtime.bound['parse']
+    # D-103: the production runtime admits the public-beta phases only, never the legacy 10-job phase
+    assert runtime.beta and set(runtime.bound) == {'parse', 'search', 'job_analysis'}
+    assert runtime.bound['parse'] < settings.daily_budget_usd
 
 
 # --- retention maintenance from the sweeper ----------------------------------------------------------------

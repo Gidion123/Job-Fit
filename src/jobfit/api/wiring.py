@@ -7,11 +7,12 @@ query embeddings (no embedding call). Matching calls Sol through the runtime
 client, so each demo run costs money (about US$0.55 for K=20) and is counted by
 the project budget guard.
 
-Production (JOBFIT_ENV=prod, CP3 Phase 2B, D-101): every live operation goes through the Phase 2B
-runtime (reservation, correlated ledger, phase-scoped gate) with the production settings'
-client_settings(); there is no fallback to the development wiring. With the accepted bounds a
-recommendation (US$84.30) is refused at the US$2/day cap, pasted-JD analysis stays closed, and
-public live stays off: the deployment is dark.
+Production (JOBFIT_ENV=prod, CP3 Phase 2B, D-101, D-103): every live operation goes through the
+Phase 2B runtime (reservation, correlated ledger, phase-scoped gate) with the production settings'
+client_settings(); there is no fallback to the development wiring. The runtime uses the D-103
+public-beta bounds: it admits parse, search and job_analysis only, and refuses the legacy 10-job
+recommendation (phase_not_admitted). Search and job analysis are owner-only until the real-CV
+consent adapter exists, and public live stays off: the deployment is dark.
 """
 from __future__ import annotations
 
@@ -91,8 +92,8 @@ def build_runtime(settings):
     import logging
     from jobfit.live.operation import LiveRuntime
     from jobfit.live.storage import StorageUnavailable
-    from jobfit.llm.phase_bounds import compute_phase_bounds
-    runtime = LiveRuntime(settings, compute_phase_bounds(), pipeline_config=CONFIG,
+    from jobfit.llm.public_beta_bounds import compute_public_beta_bounds
+    runtime = LiveRuntime(settings, compute_public_beta_bounds(), pipeline_config=CONFIG,
                           client_factory=lambda op: build_runtime_client(settings.client_settings(), CONFIG,
                                                                          run_id=op))
     try:
@@ -204,6 +205,52 @@ def build_deps() -> AppDeps:
         return analyze_job(cv, 'pasted', 1, extraction, reason, client=client, fallback_client=None,
                            config=config, constraints=constraints)
 
+    def search(cv: ParsedCV, filters: JobFilters | None = None) -> list[str]:
+        """D-103 search stage for a demo CV: hybrid retrieval with its cached query embedding (no
+        provider call), in retrieval order. A real CV's query embedding (the 'search' phase) comes
+        with the real-CV consent adapter."""
+        from jobfit.db.session import connect
+        state = live_inputs()
+        filtered = filter_jobs(target, filters or JobFilters(), analysis_date=analysis_date)
+        eligible = list(filtered.eligible_ids)
+        if not eligible:
+            return []
+        skills, query = state['queries'][cv.profile.cv_id]
+        with connect(settings.database_url if prod else None) as conn:
+            retrieve = hybrid_retriever(conn, skills, query, state['spec'], job_ids=eligible)
+            return list(retrieve(min(config.stage1_k, len(eligible))))
+
+    def beta_envelopes():
+        from jobfit.llm.public_beta_bounds import compute_public_beta_bounds
+        return runtime.bounds.envelopes if runtime is not None else compute_public_beta_bounds().envelopes
+
+    def job_source(job_id: str, jd_text: str | None) -> dict:
+        return {'jd_text': jd_text} if jd_text is not None else {'cached': extraction_from_record(_extraction_record(job_id))}
+
+    def job_analysis_refusal(cv: ParsedCV, *, job_id: str, jd_text: str | None):
+        from jobfit.recommend.beta_analysis import job_analysis_refusal as refusal
+        return refusal(beta_envelopes(), cv, job_id, **job_source(job_id, jd_text))
+
+    def analyze_one(cv: ParsedCV, *, job_id: str, jd_text: str | None, live=None):
+        """D-103 job_analysis: one JD through the frozen steps (no disk cache for a pasted JD)."""
+        from jobfit.extraction.audited import ExtractionSpec
+        from jobfit.matching.experience_rule import constraint_lookup
+        from jobfit.recommend.beta_analysis import analyze_one_job
+        if prod and (runtime is None or live is None):
+            raise LiveUnavailable('production live runs only through the Phase 2B runtime')
+        spec = ExtractionSpec(REPO_ROOT / raw_cfg['jd_prompt_file'], raw_cfg['jd_prompt_version'])
+        constraints = (constraint_lookup(cv, history_confirmed=DEMO_HISTORY_CONFIRMED)
+                       if config.experience_conflict_rule else None)
+
+        def work(client):
+            return analyze_one_job(cv, job_id, envelopes=beta_envelopes(), client=client, config=config,
+                                   spec=spec, extraction_model=raw_cfg['extraction_model'], scope='session_jd',
+                                   constraints=constraints, **job_source(job_id, jd_text))
+        if prod:
+            result, _ = runtime.run('job_analysis', live.operation_key, work, on_first_intent=live.on_first_billable)
+            return result
+        return work(model_client())
+
     jobs = {j: {'job_id': j, 'title': r['title'], 'company': r['company'], 'location': r.get('location_raw'),
                 'work_mode': r.get('work_mode'), 'posted_at': r.get('posted_at'),
                 'experience_bucket': r.get('experience_bucket'), 'role_family': r.get('role_family'),
@@ -230,7 +277,8 @@ def build_deps() -> AppDeps:
                    live_enabled=settings.live_enabled, analyze_pasted=None if prod else analyze_pasted, jobs=jobs,
                    demo_summaries=summaries, analyzed_k=config.stage1_k, ingress=ingress,
                    public_live=settings.public_live, maintenance=maintenance,
-                   live_storage_ready=runtime.storage_ready if runtime is not None else None)
+                   live_storage_ready=runtime.storage_ready if runtime is not None else None,
+                   search=search, analyze_one=analyze_one, job_analysis_refusal=job_analysis_refusal)
 
 
 def create_default_app():

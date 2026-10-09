@@ -1,6 +1,40 @@
 # CP3 evidence-matching LLM comparison: cost, quality and latency
 
-**STATUS: PREPARED / NOT EXECUTED.** No paid call has been made for this experiment. The scripts, the config and the offline tests exist; the paid run is the owner's to start. Choosing a model afterwards is also the owner's decision. Nothing here changes the production model, the frozen D-087 pipeline or the held-out test.
+**STATUS: COMPLETED / EXECUTED** (owner Local Mac, 9 Oct 2026; total paid cost about US$0.182). The paid run and the offline evaluation were done by the owner, who also made the model decision below. No production or runtime configuration change is authorized. The frozen D-087 pipeline and the held-out test are unchanged.
+
+## Results
+
+The figures below are from the owner's local run and its offline evaluation. All 73 units are in every denominator.
+
+| Model | Valid pairs | Macro-F1 | Overclaims | Quote validity | Cost (US$) | p50 (s) | p95 (s) |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| GPT-6 Sol (baseline) | 4/4 | 0.877 | 2 | 1.000 | 0.1513 | 20.6 | 21.2 |
+| GPT-6 Luna | 4/4 | 0.751 | 3 | 1.000 | 0.0079 | 25.7 | 27.6 |
+| Claude Haiku 5.5 | 3/4 | 0.694 | 1 | 1.000 | 0.0224 | 24.7 | 26.4 |
+
+**Versus Sol:**
+
+| Challenger | ΔMacro-F1 | Cost ratio vs Sol | Historical reference (≥ Sol − 0.03) |
+| --- | ---: | ---: | --- |
+| GPT-6 Luna | −0.126 | 0.052 | not met |
+| Claude Haiku 5.5 | −0.182 | 0.198 | not met |
+
+**Total paid cost:** 0.1513 + 0.0079 + 0.0224 ≈ **US$0.182**.
+
+**What the run shows:**
+- **Quotes:** every output that was assessed had 100% exact-quote validity.
+- **Haiku 5.5's failed pair:** the CV1/F00332 pair failed at pair level with `invalid_structured_output_or_source`. Its 16 units count as false negatives, so Haiku 5.5 had 3/4 valid pairs.
+- **Luna:** about 19× cheaper than Sol, but 0.126 lower in Macro-F1 and slower at p50 and p95.
+- **Haiku 5.5:** the fewest overclaims, but the lowest Macro-F1 and one failed pair.
+- **Run-to-run variation:** Sol scored 0.877 here against 0.846 in D-079 on the same benchmark (+0.031). One run per model cannot separate small differences.
+
+**Conclusion (owner decision):**
+- Keep GPT-6 Sol as the primary evidence matcher.
+- Keep GPT-6 Luna as the existing fallback.
+- Do not promote Claude Haiku 5.5.
+- No production or runtime configuration change is authorized.
+- D-087 remains unchanged.
+- Conditional cheap-model routing may be considered later as a separate optimization experiment.
 
 ## Question and hypothesis
 
@@ -15,6 +49,8 @@ The earlier D-079 sweep found:
 
 Claude Haiku 5.5 is new.
 
+**Outcome:** the hypothesis was not supported. Neither challenger stayed within Sol − 0.03, and Haiku 5.5 did not reach 4/4 valid pairs.
+
 ## Candidates
 
 The same request settings apply to every model. No model-specific reasoning or effort setting is configured; reasoning tokens are recorded when the provider reports them.
@@ -27,7 +63,7 @@ The same request settings apply to every model. No model-specific reasoning or e
 
 The ceilings are sent to OpenRouter as `max_price` and also drive the cost bound.
 
-**Required before `--execute`:** the runtime network preflight on the owner's machine must find every id with a structured-output endpoint priced at or below its ceiling. If any check fails, the run stops and names the model. No other model is substituted. This container could not reach openrouter.ai, so no id was verified while the experiment was prepared.
+**Required before `--execute`:** the runtime network preflight on the owner's machine must find every id with a structured-output endpoint priced at or below its ceiling. If any check fails, the run stops and names the model. No other model is substituted. The preparation container could not reach openrouter.ai. `--execute` refuses to start without a passing network preflight, so the ids and prices were checked on the owner's machine at run time.
 
 ## Benchmark (development only, fixed inputs)
 
@@ -151,7 +187,19 @@ How the cap is built:
 
 The estimate uses the D-079 method: 4 pairs × 1.5 × the median reported cost per call in the development ledger. Haiku 5.5 has no history, so it uses 11k input and 6k output tokens at the ceiling.
 
-## Execution (owner machine, not run here)
+**Actual (provider-reported): about US$0.182.**
+
+| Model | Actual (US$) |
+| --- | ---: |
+| Sol | 0.1513 |
+| Luna | 0.0079 |
+| Haiku 5.5 | 0.0224 |
+
+The actual cost stayed close to the estimate and far below the cap.
+
+## Execution (run on the owner's machine)
+
+The commands below are kept as the record of how the run was made.
 
 1. **Preflight, no paid call.** This includes the network metadata check: ids, structured endpoints and prices.
    ```sh
@@ -174,9 +222,9 @@ The estimate uses the D-079 method: 4 pairs × 1.5 × the median reported cost p
    python scripts/evaluate_cp3_llm_cost_quality_comparison.py --write
    ```
 
-## Expected outputs
+## Outputs
 
-These are written to `evals/results/cp3_llm_cost_quality_comparison/cp3_llm_cost_quality_comparison_v1/`:
+These are kept locally on the owner's Mac in `evals/results/cp3_llm_cost_quality_comparison/cp3_llm_cost_quality_comparison_v1/`. They are not committed to the repository.
 - `plan.json`: the preflight receipt;
 - `pairs/<model>__<cv>_<job>.json`: 12 files, one per model and pair, including failures;
 - `requests.jsonl`: one metadata row per provider attempt, with no CV text, prompt or output;
@@ -193,13 +241,13 @@ These are written to `evals/results/cp3_llm_cost_quality_comparison/cp3_llm_cost
 
 ## Limitations
 
-- **Small sample:** 4 pairs, 2 synthetic development CVs and 73 units. A few points of Macro-F1 are noise.
-- **Single run:** one run per model, and model outputs vary between runs.
+- **Small sample:** only 4 development pairs (2 synthetic CVs) and 73 units. A few points of Macro-F1 are noise.
+- **Single run:** one run per model, and model outputs vary between runs. Sol moved by +0.031 against D-079 on the same benchmark.
+- **Latency:** sequential single-worker latency on one machine. It is not a load or concurrency benchmark.
 - **Moving targets:** prices, routes and serving providers change over time.
-- **Latency:** sequential single-worker latency, not a load test.
-- **Earlier failures do not carry over:** Haiku 4.5's D-079 failures do not predict Haiku 5.5.
+- **Earlier failures do not carry over:** Haiku 4.5's D-079 failures did not predict Haiku 5.5.
 - **Matching only:** extraction is fixed to the reviewed requirements, so end-to-end quality with DeepSeek extraction is not measured here.
-- **Unverified here:** the Haiku 5.5 OpenRouter id and the prices could not be checked from the preparation environment.
+- **Source of the figures:** the results come from the owner's local run, and its artifacts are not in the repository.
 
 ## Files
 

@@ -152,7 +152,44 @@ class OwnerMarks:
 
 
 _EMAIL_LOCAL = re.compile(r'(?i)(?<![\w.+-])([\w.+-]+)@[\w.-]+\.[a-z]{2,}(?![\w-])')
-_HANDLE = re.compile(r'(?i)(?:linkedin\.com/in|github\.com)/([\w%-]+)')
+# URL candidates: one character class (no alternation or nesting), so Markdown links, parentheses and
+# angle brackets split off and the scan stays linear. Only http(s) or no scheme, and exact hosts.
+_URL_PIECE = re.compile(r'[^\s()<>\[\]"\'`]+')
+_GITHUB_HOSTS = frozenset({'github.com', 'www.github.com'})
+_LINKEDIN_HOSTS = frozenset({'linkedin.com', 'www.linkedin.com'})
+_GITHUB_HANDLE = re.compile(r'[A-Za-z0-9-]+')
+_LINKEDIN_HANDLE = re.compile(r'[\w%-]+')
+
+
+def _url_parts(start: int, piece: str) -> tuple[str, str, int] | None:
+    """(lowercase host, path, source offset of the path) for a scheme-less or http(s) URL piece."""
+    head = piece[:8].casefold()
+    skip = 8 if head.startswith('https://') else 7 if head.startswith('http://') else 0
+    if not skip and '://' in piece:
+        return None
+    host, sep, path = piece[skip:].partition('/')
+    if not sep:
+        return None
+    return host.casefold(), path, start + skip + len(host) + 1
+
+
+def _header_handles(header: str) -> list[str]:
+    """Profile handles established from the header: GitHub profile roots and LinkedIn /in/ only."""
+    handles = []
+    for m in _URL_PIECE.finditer(header):
+        parts = _url_parts(m.start(), m.group())
+        if parts is None:
+            continue
+        host, path, _ = parts
+        segments = path.rstrip('.,;:').split('/')
+        if segments and segments[-1] == '':
+            segments = segments[:-1]                     # one trailing slash
+        if host in _GITHUB_HOSTS and len(segments) == 1 and _GITHUB_HANDLE.fullmatch(segments[0]):
+            handles.append(segments[0])                  # github.com/<handle> only, never github.com/<org>/<repo>
+        elif host in _LINKEDIN_HOSTS and len(segments) == 2 and segments[0].casefold() == 'in' \
+                and _LINKEDIN_HANDLE.fullmatch(segments[1]):
+            handles.append(segments[1])
+    return handles
 _OWNER_LABEL = re.compile(r'(?i)^\s*' + _BULLET + r'(?:nama lengkap|nama|full name|name)\s*[:\-–]\s*(.+)$')
 
 
@@ -161,14 +198,18 @@ def _contact_lines(lines: list[str]) -> set[int]:
             if any(_PATTERNS[k].search(line) for k in ('email', 'phone', 'profile'))}
 
 
-def owner_values(dropped_prefix: str) -> list[str]:
-    """High-confidence owner name sequences and profile handles from the dropped header only."""
+def owner_values(header: str) -> list[str]:
+    """High-confidence owner name sequences and profile handles, from the identity/contact header only.
+
+    `header` is the region before the first recognised heading (see `structure.header_region`); the
+    Summary, earlier dropped sections and privacy sections never reach this function.
+    """
     from jobfit.privacy.structure import classify
-    lines = dropped_prefix.split('\n')
+    lines = header.split('\n')
     contacts = _contact_lines(lines)
-    handles = [m.group(1) for m in _HANDLE.finditer(dropped_prefix)]
+    handles = _header_handles(header)
     hint_tokens = set()
-    for local in (m.group(1) for m in _EMAIL_LOCAL.finditer(dropped_prefix)):
+    for local in (m.group(1) for m in _EMAIL_LOCAL.finditer(header)):
         hint_tokens |= {t for t in re.split(r'[^a-z]+', local.casefold()) if len(t) > 1}
     for handle in handles:
         hint_tokens |= {t for t in re.split(r'[^a-z]+', handle.casefold()) if len(t) > 1}
@@ -202,7 +243,6 @@ def owner_values(dropped_prefix: str) -> list[str]:
 
 
 _WORD = re.compile(r"[^\W\d_]+(?:['’-][^\W\d_]+)*")
-_URL_TOKEN = re.compile(r'\S+')
 
 
 def _owner_spans(text: str, marks: OwnerMarks | None) -> list[tuple[int, int, str]]:
@@ -224,16 +264,14 @@ def _owner_spans(text: str, marks: OwnerMarks | None) -> list[tuple[int, int, st
                 break
         else:
             i += 1
-    for token in _URL_TOKEN.finditer(text):         # path segments of URL-like tokens: linear, no backtracking
-        host, _, path = token.group().partition('/')
-        if not path or '.' not in host:
+    for m in _URL_PIECE.finditer(text):             # GitHub repository URLs: only the account segment
+        parts = _url_parts(m.start(), m.group())
+        if parts is None or parts[0] not in _GITHUB_HOSTS:
             continue
-        cursor = token.start() + len(host) + 1
-        for segment in path.split('/'):
-            name = segment.rstrip('.,;:)')
-            if name and marks.knows(f'h:{name}'):
-                spans.append((cursor, cursor + len(name), 'profile'))
-            cursor += len(segment) + 1
+        _, path, offset = parts
+        account = path.split('/', 1)[0].rstrip('.,;:')
+        if account and marks.knows(f'h:{account}'):     # a known owner handle; repository path preserved
+            spans.append((offset, offset + len(account), 'profile'))
     return spans
 
 
@@ -339,7 +377,7 @@ def sanitize_upload(text: str, *, marks: OwnerMarks | None = None) -> MaskedPrev
     failed = False
     try:
         structured = split_structure(normalize_source(text))
-        owner = (marks if marks is not None else OwnerMarks()).extended(owner_values(structured.dropped_prefix))
+        owner = (marks if marks is not None else OwnerMarks()).extended(owner_values(structured.header))
         retained = structured.retained
         spans = _pattern_spans(retained) + _owner_spans(retained, owner) + _label_spans(retained) + \
             _address_spans(retained)

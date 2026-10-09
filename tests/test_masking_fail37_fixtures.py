@@ -267,12 +267,12 @@ def test_the_v1_baseline_receipt_is_reproducible_and_shows_the_gap():
 # --- holdout discipline -----------------------------------------------------------------------------------
 
 @pytest.mark.parametrize('adapter', sorted(report.ADAPTERS))
-def test_no_detector_may_run_on_the_locked_holdout_without_the_single_run_approval(adapter, capsys):
-    assert mc.HOLDOUT_RUN_ALLOWED == frozenset({'v2'})
-    with pytest.raises(PermissionError):
-        mc.build_receipt('heldout', adapter, report.ADAPTERS[adapter], date='2026-10-09')
-    assert report.main(['--adapter', adapter, '--set', 'heldout', '--date', '2026-10-09']) == 2
-    assert 'refused' in capsys.readouterr().err
-    if adapter != 'v2':                              # v1 and identity: refused even with the flag
+def test_the_holdout_execution_gate_is_closed_for_every_adapter(adapter, capsys):
+    """The single first-pass D-104 run happened at 8257f17; no detector may run on the holdout again."""
+    assert mc.HOLDOUT_RUN_ALLOWED == frozenset()
+    for single_run in (False, True):
         with pytest.raises(PermissionError):
-            mc.check_holdout_run('heldout', adapter, single_run=True)
+            mc.build_receipt('heldout', adapter, report.ADAPTERS[adapter], date='2026-10-09', single_run=single_run)
+    for flags in ([], ['--single-holdout-run']):
+        assert report.main(['--adapter', adapter, '--set', 'heldout', '--date', '2026-10-09', *flags]) == 2
+        assert 'refused' in capsys.readouterr().err

@@ -13,6 +13,7 @@ import unicodedata
 BOUNDARY_NOT_FOUND = 'professional_boundary_not_found'
 MASKING_FAILED = 'masking_failed'
 MAX_HEADING_CHARS = 60
+MAX_HEADER_LINES = 8          # non-empty lines of the identity/contact header used for owner provenance
 
 SUMMARY_DELIMITER = frozenset({
     'summary', 'professional summary', 'career summary', 'profile', 'professional profile', 'personal profile',
@@ -89,7 +90,7 @@ def classify(line: str) -> str | None:
 @dataclass(frozen=True)
 class Structured:
     retained: str
-    dropped_prefix: str = field(repr=False)     # pre-start text, transient: only for the owner-name candidate
+    header: str = field(repr=False)     # identity/contact header only; transient, for the owner candidate
     removed: dict = field(default_factory=dict)
 
 
@@ -118,4 +119,22 @@ def split_structure(text: str) -> Structured:
             retained.append(line)
     if not any(line.strip() and kind is None for line, kind in zip(retained, map(classify, retained))):
         raise SanitizeRefused(BOUNDARY_NOT_FOUND)
-    return Structured('\n'.join(retained), '\n'.join(lines[:start]), removed)
+    return Structured('\n'.join(retained), header_region(lines, kinds), removed)
+
+
+def header_region(lines: list[str], kinds: list[str | None]) -> str:
+    """Lines before the first recognised heading of any kind, capped at MAX_HEADER_LINES non-empty lines.
+
+    The Summary block, earlier dropped sections and privacy sections are never part of it, so they can
+    never establish the owner's identity.
+    """
+    header, count = [], 0
+    for line, kind in zip(lines, kinds):
+        if kind is not None:
+            break
+        if line.strip():
+            count += 1
+            if count > MAX_HEADER_LINES:
+                break
+        header.append(line)
+    return '\n'.join(header)

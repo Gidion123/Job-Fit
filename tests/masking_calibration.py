@@ -539,9 +539,16 @@ def v1_golden_ok(dev_cases: list[Case]) -> bool:
 
 # --- holdout discipline -----------------------------------------------------------------------------------
 
-# Only the D-104 sanitizer may run on the locked holdout, and only as the explicit single
-# post-implementation run (commit 2). v1, identity and the oracle receipts are always refused.
-HOLDOUT_RUN_ALLOWED: frozenset[str] = frozenset({'v2'})
+# The holdout execution gate is closed. The single approved first-pass run of the D-104 sanitizer
+# happened at commit 8257f17 (sanitizer sha eba16fc5...); its receipt is historical evidence and no
+# detector may run on the holdout again.
+HOLDOUT_RUN_ALLOWED: frozenset[str] = frozenset()
+HISTORICAL_HOLDOUT = {
+    'receipt': 'evals/results/fail37_structural_calibration_20261009_v2_heldout_v1_first_pass.json',
+    'receipt_sha256': '8fac62281176892b095d53c96c970c99d8dae9ba722048bd114fe922ccb37d6d',
+    'sanitizer_sha256': 'eba16fc539941c587083e525c47927ba4225c33293f9d7ad5a1b1f8111b9bd8b',
+    'fixture_sha256': 'b892c45f6b100b352b36da2be0ba5ea78286757f6056609647c42227e97e3cf9',
+}
 SANITIZER_SOURCES = ('src/jobfit/privacy/structure.py', 'src/jobfit/privacy/masking.py')
 
 

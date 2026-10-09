@@ -1,8 +1,9 @@
 """Write a counts-only FAIL-37 / D-104 calibration receipt.
 
 The receipt holds gate results, counts and case ids only, never fixture text. The locked
-holdout is refused for every adapter except the D-104 sanitizer (v2), and for v2 only with the
-explicit --single-holdout-run flag. Synthetic fixtures; not a privacy guarantee.
+holdout is closed: its single first-pass D-104 run is recorded at commit 8257f17 and every
+adapter is now refused on it, with or without --single-holdout-run. Synthetic fixtures; not a
+privacy guarantee.
 
 Example: python scripts/report_fail37_masking.py --adapter v1 --set dev --date 2026-10-09 \
     --out evals/results/fail37_structural_calibration_20261009_v1_baseline.json
@@ -33,7 +34,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument('--date', required=True)
     parser.add_argument('--out', type=Path)
     parser.add_argument('--single-holdout-run', action='store_true',
-                        help='the one approved first-pass D-104 run on the locked holdout (v2 only)')
+                        help='historical: the first-pass holdout run is done; the holdout is now always refused')
     args = parser.parse_args(argv)
     try:
         receipt = mc.build_receipt(args.set, args.adapter, ADAPTERS[args.adapter], date=args.date,

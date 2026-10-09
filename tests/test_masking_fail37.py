@@ -43,12 +43,23 @@ def test_every_dev_hard_gate_passes_and_the_dev_receipt_is_reproducible():
     assert receipt['sanitizer_sha256'] == mc.sanitizer_sha256()
 
 
-def test_the_first_pass_holdout_receipt_matches_the_locked_holdout_and_this_sanitizer():
-    """The single approved holdout run is recorded, never re-run here; a sanitizer change shows up."""
+def test_the_historical_first_pass_holdout_receipt_is_preserved_as_evidence():
+    """The single first-pass holdout run (8257f17, sanitizer eba16fc5...) is historical evidence: the file is
+    byte-identical and is never re-run or re-attributed to a later sanitizer."""
+    hist = mc.HISTORICAL_HOLDOUT
+    assert hashlib.sha256(HOLDOUT_RECEIPT.read_bytes()).hexdigest() == hist['receipt_sha256']
+    assert mc.sha256_file(mc.fixture_path('heldout')) == hist['fixture_sha256']
     receipt = json.loads(HOLDOUT_RECEIPT.read_text(encoding='utf-8'))
-    assert receipt['holdout_run'] == 'first_pass' and receipt['adapter'] == 'v2'
-    assert receipt['fixture_sha256'] == 'b892c45f6b100b352b36da2be0ba5ea78286757f6056609647c42227e97e3cf9'
-    assert receipt['sanitizer_sha256'] == mc.sanitizer_sha256()
+    assert receipt['holdout_run'] == 'first_pass' and receipt['adapter'] == 'v2' and receipt['set'] == 'heldout'
+    assert receipt['fixture_sha256'] == hist['fixture_sha256']
+    assert receipt['sanitizer_sha256'] == hist['sanitizer_sha256']
+    gates = receipt['gates']
+    assert all(gates[g]['status'] == 'PASS' for g in CALIBRATION)
+    assert gates['exact_expected_output']['passed'] == gates['exact_expected_output']['total'] == 40
+    assert gates['mask_local_v1_byte_identical']['status'] == 'PASS'
+    assert {g for g, v in gates.items() if v['status'] == 'NOT_APPLICABLE_YET'} == \
+        {g for g, v in mc.HARD_GATES.items() if v[0] == 'api'}
+    assert mc.sanitizer_sha256() != hist['sanitizer_sha256']      # corrective 2A changed the sanitizer
 
 
 def test_the_production_sanitizer_does_not_depend_on_the_test_harness():
@@ -246,6 +257,13 @@ ADVERSARIAL = {
     'intl_street': H + '1 ' + 'A' * N + ' Street',
     'rt_tokens': H + 'RT ' * (N // 3),
     'headings': '## Summary\n' * (N // 22) + '## References\n' * (N // 30) + '## Skills\nPython',
+    'scheme_slashes': H + 'https://' + 'a/' * (N // 2),
+    'scheme_long_host': H + 'https://' + 'a' * N,
+    'scheme_repeats': H + 'x://' * (N // 4),
+    'markdown_links': H + '[a](' * (N // 4),
+    'wrappers': H + '(<' * (N // 2),
+    'github_segments': 'Alice Example\nalice@example.com\nhttps://github.com/example-alice\n## Projects\n'
+                       + 'https://github.com/example-alice/' * (N // 33),
 }
 
 
@@ -257,3 +275,101 @@ def test_100k_adversarial_inputs_finish_within_the_hard_bound(name):
     except SanitizeRefused:
         pass
     assert time.perf_counter() - started < 3.0
+
+
+# --- corrective 2A: owner provenance only from the header; GitHub-specific known-owner URL masking --------
+
+ALICE = 'Alice Example\nalice.example@example.com\nhttps://github.com/example-alice\n'
+
+
+def test_a_summary_handle_never_becomes_an_owner_mark():
+    summary = '## Summary\nI maintain github.com/acme-labs/project and https://github.com/acme-labs\n'
+    evidence = '## Projects\nContributor to github.com/acme-labs/another\n'
+    with_owner = sanitize_upload(ALICE + summary + evidence + 'Fork: github.com/example-alice/another\n')
+    assert 'github.com/acme-labs/another' in with_owner.text and with_owner.owner_repeat_guard == 'active'
+    assert 'github.com/[PROFILE]/another' in with_owner.text
+    without_owner = sanitize_upload(summary + evidence)
+    assert without_owner.owner_repeat_guard == 'not_established'
+    assert 'github.com/acme-labs/another' in without_owner.text
+
+
+def test_an_earlier_dropped_section_before_a_later_summary_never_establishes_the_owner():
+    text = ('## Skills\nBuilt by Carol Example, carol@example.com, github.com/carol-x\n## Summary\nAnalyst.\n'
+            '## Experience\nCarol Example maintains github.com/carol-x/etl\n')
+    preview = sanitize_upload(text)
+    assert preview.owner_repeat_guard == 'not_established'
+    assert preview.text == '## Experience\nCarol Example maintains github.com/carol-x/etl\n'
+
+
+def test_a_privacy_section_before_the_start_never_establishes_the_owner():
+    text = 'Emergency Contact\nName: Bob Example\nbob@example.com\n## Experience\nBob Example tested it.\n'
+    preview = sanitize_upload(text)
+    assert preview.owner_repeat_guard == 'not_established' and 'Bob Example tested it.' in preview.text
+
+
+def test_the_first_recognised_heading_is_a_hard_stop_for_owner_provenance():
+    text = ('Alice Example\nalice@example.com\nSUMMARY\nBuilt by Bob Example, bob@example.com\n'
+            '## Experience\nAlice Example and Bob Example\n')
+    assert sanitize_upload(text).text == '## Experience\n[NAME] and Bob Example\n'
+
+
+def test_the_owner_header_is_capped_at_eight_non_empty_lines():
+    filler = ''.join(f'Line {i}\n' for i in range(8))
+    late = sanitize_upload(filler + 'Alice Example\nalice@example.com\n## Experience\nAlice Example\n')
+    assert late.owner_repeat_guard == 'not_established' and late.text.endswith('Alice Example\n')
+    early = sanitize_upload('Alice Example\nalice@example.com\n' + filler + '## Experience\nAlice Example\n')
+    assert early.text == '## Experience\n[NAME]\n'
+
+
+@pytest.mark.parametrize('header_url', ['github.com/example-alice', 'github.com/example-alice/',
+                                        'https://github.com/example-alice', 'https://github.com/example-alice/',
+                                        'https://www.github.com/example-alice', '<https://github.com/example-alice>'])
+def test_a_github_profile_root_in_the_header_establishes_the_handle(header_url):
+    preview = sanitize_upload(f'Alice Example\n{header_url}\n## Projects\nhttps://github.com/example-alice/rag-app\n')
+    assert preview.text == '## Projects\nhttps://github.com/[PROFILE]/rag-app\n'
+
+
+def test_a_linkedin_in_profile_in_the_header_establishes_the_handle():
+    preview = sanitize_upload('Alice Example\nhttps://www.linkedin.com/in/example-alice/\n## Projects\n'
+                              'https://github.com/example-alice/rag-app\n')
+    assert preview.text == '## Projects\nhttps://github.com/[PROFILE]/rag-app\n'
+
+
+@pytest.mark.parametrize('header_url', ['https://github.com/acme-labs/jobfit', 'github.com/acme-labs/jobfit/',
+                                        'https://example.com/acme-labs', 'https://evilgithub.com/acme-labs',
+                                        'https://linkedin.com/company/acme-labs'])
+def test_a_repository_or_foreign_url_in_the_header_establishes_nothing(header_url):
+    preview = sanitize_upload(f'Alice Example\nalice@example.com\n{header_url}\n## Projects\n'
+                              'https://github.com/acme-labs/another\n')
+    assert preview.text == '## Projects\nhttps://github.com/acme-labs/another\n'
+
+
+@pytest.mark.parametrize('url,expected', [
+    ('github.com/example-alice/repo', 'github.com/[PROFILE]/repo'),
+    ('https://github.com/example-alice/repo', 'https://github.com/[PROFILE]/repo'),
+    ('http://github.com/example-alice/repo', 'http://github.com/[PROFILE]/repo'),
+    ('https://www.github.com/example-alice/repo', 'https://www.github.com/[PROFILE]/repo'),
+    ('HTTPS://GitHub.com/example-alice/repo/tree/main', 'HTTPS://GitHub.com/[PROFILE]/repo/tree/main'),
+    ('[Repo](https://github.com/example-alice/repo)', '[Repo](https://github.com/[PROFILE]/repo)'),
+    ('(https://github.com/example-alice/repo)', '(https://github.com/[PROFILE]/repo)'),
+    ('<https://github.com/example-alice/repo>', '<https://github.com/[PROFILE]/repo>'),
+    ('see https://github.com/example-alice/repo.', 'see https://github.com/[PROFILE]/repo.'),
+    ('https://github.com/acme-labs/repo', 'https://github.com/acme-labs/repo'),
+    ('[Repo](https://github.com/acme-labs/repo)', '[Repo](https://github.com/acme-labs/repo)'),
+    ('(https://github.com/acme-labs/repo)', '(https://github.com/acme-labs/repo)'),
+    ('<https://github.com/acme-labs/repo>', '<https://github.com/acme-labs/repo>'),
+    ('https://github.com/acme-labs/example-alice', 'https://github.com/acme-labs/example-alice'),
+    ('https://example.com/example-alice/repo', 'https://example.com/example-alice/repo'),
+    ('https://github.com.evil.example/example-alice/repo', 'https://github.com.evil.example/example-alice/repo'),
+    ('https://evilgithub.com/example-alice/repo', 'https://evilgithub.com/example-alice/repo'),
+    ('ftp://github.com/example-alice/repo', 'ftp://github.com/example-alice/repo'),
+])
+def test_known_owner_github_urls_mask_only_the_account_segment(url, expected):
+    assert sanitize_upload(ALICE + f'## Projects\n{url}\n').text == f'## Projects\n{expected}\n'
+
+
+def test_an_edit_reintroducing_a_wrapped_owner_repository_url_is_masked_with_the_upload_marks():
+    upload = sanitize_upload(ALICE + '## Projects\nETL\n')
+    edited = upload.text + '[etl](https://github.com/example-alice/etl)\n'
+    assert sanitize_upload(edited, marks=upload.marks).text.endswith('[etl](https://github.com/[PROFILE]/etl)\n')
+    assert 'example-alice' in sanitize_upload(edited).text

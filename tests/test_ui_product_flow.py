@@ -522,3 +522,44 @@ def test_untrusted_text_is_escaped_before_markdown_rendering():
     for body in untrusted:
         assert '[x](' not in body and '![i](' not in body, body                 # never live Markdown
         assert r'\[x\]\(https' in body and r'\!\[i\]\(https' in body, body       # escaped, shown as text
+
+
+# ---- the Analyze Fit result panel sits above the Relevant Jobs list, shown once -----------------------------
+
+def panel_titles(at):
+    return [m.value for m in at.markdown if m.value.startswith('#### ')]
+
+
+def first_card_index(md):
+    return next(i for i, m in enumerate(md) if m.startswith('**#'))
+
+
+def test_a_finished_analyze_fit_appears_in_the_panel_above_the_job_list(app):
+    at = app
+    upload_and_parse(at)
+    find_jobs(at)
+    button(at, 'Analyze Fit').click().run()                     # J1
+    assert not at.exception
+    assert [s.value for s in at.subheader].count('Analyze Fit result') == 1
+    md = [m.value for m in at.markdown]
+    assert md.index('#### Role J1') < first_card_index(md)      # in view: before every job card
+    assert panel_titles(at) == ['#### Role J1'] and [m.label for m in at.metric].count('Evidence coverage') == 1
+    assert any(c.value == 'Analyze Fit result shown above.' for c in at.caption)
+
+
+def test_show_analyze_fit_result_switches_the_panel_at_once_without_a_post(app):
+    at = app
+    upload_and_parse(at)
+    find_jobs(at)
+    button(at, 'Analyze Fit').click().run()                     # J1
+    button(at, 'Analyze Fit').click().run()                     # J2 (J1 already analyzed)
+    assert panel_titles(at) == ['#### Role J2']
+    keys = [c[1][2] for c in names('analyze_job')]
+    at.button(key='show_J1').click().run()                      # one interaction: the panel shows J1 at once
+    assert panel_titles(at) == ['#### Role J1']
+    assert [s.value for s in at.subheader].count('Analyze Fit result') == 1       # never duplicated
+    assert [m.label for m in at.metric].count('Evidence coverage') == 1
+    at.run()
+    at.run()                                                    # plain reruns
+    assert panel_titles(at) == ['#### Role J1']
+    assert len(names('analyze_job')) == 2 and [c[1][2] for c in names('analyze_job')] == keys

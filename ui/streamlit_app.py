@@ -274,6 +274,54 @@ if preview and st.session_state.get('cv_ready'):
             st.rerun()                     # the counter updates; the result section below polls the run
         st.session_state.selected_job = job_id
 
+    def corpus_job(job_id: str) -> bool:
+        return not job_id.startswith('pasted:')
+
+    def pasted_job(job_id: str) -> bool:
+        return job_id.startswith('pasted:')
+
+    def result_panel(owned) -> None:
+        """The one place an Analyze Fit result is shown, for the selected job of this flow (``owned``).
+
+        A pending run is only polled here (never posted again) and the finished result renders in this same
+        panel, in view: Find Jobs shows it above the Relevant Jobs list, Check a Job below its button.
+        """
+        selected = st.session_state.get('selected_job')
+        entry = analyses.get(selected) if selected and owned(selected) else None
+        if entry is None:
+            return
+        if entry['result'] is None:                 # started (now or before a rerun): poll, never re-post
+            body = wait_run(entry['run_id'], 'Analyzing this job against your CV…',
+                            ['Extracting the job requirements…', 'Checking your CV evidence for each requirement…'])
+            if body['status'] != 'done':
+                analyses.pop(selected, None)
+                return
+            entry['result'] = body['result']        # the panel is already in view: render it right here
+        with st.container(border=True):
+            st.subheader('Analyze Fit result')
+            title = safe(entry['result']['card'].get('title') or entry['result']['card']['job_id'])
+            st.caption(f'Showing the analysis of {title}.' + (
+                ' Other analyzed jobs: press "Show Analyze Fit result" on their card.' if owned is corpus_job else ''))
+            analysis_view(entry['result'])
+            if entry['result']['card']['scored']:
+                with st.expander('Improve My CV for This Job'):
+                    st.caption('Built only from your CV evidence and your own answers. Nothing is invented, and '
+                               'answers never change the score; the score changes only after you update and '
+                               're-upload your CV.')
+                    card_id = entry['result']['card']['job_id']
+                    coach_key = f"{entry['run_id']}:{card_id}"
+                    coach = st.session_state.setdefault('coach', {})
+                    if coach_key not in coach:
+                        coach[coach_key] = call(api.coach, entry['run_id'], card_id)
+
+                    def answer(gap_index, done, answers, run_id=entry['run_id'], job=card_id):
+                        try:
+                            return call(api.coach_answer, run_id, job, gap_index, done, answers)
+                        except ApiError as exc:
+                            st.error(exc.detail)
+                            return None
+                    coach_view(coach[coach_key], on_answer=answer)
+
     if st.session_state.get('flow') == 'find':
         st.subheader('Find Jobs')
         with st.form('find_jobs'):
@@ -311,6 +359,7 @@ if preview and st.session_state.get('cv_ready'):
         if result is not None:
             cards = result['jobs']
             st.markdown(f"**Relevant Jobs** (search stage): {safe(result['label'])}")
+            result_panel(corpus_job)                # the selected job's result, above the list (in view)
             if not cards:
                 st.warning('No jobs match these filters. Change the filters and search again; '
                            'nothing was widened automatically.')
@@ -349,8 +398,11 @@ if preview and st.session_state.get('cv_ready'):
                         relevant_job_card(card)
                         job_id = card['job_id']
                         if job_id in analyses:
-                            if st.button('Show Analyze Fit result', key=f'show_{job_id}'):
+                            if st.session_state.get('selected_job') == job_id:
+                                st.caption('Analyze Fit result shown above.')
+                            elif st.button('Show Analyze Fit result', key=f'show_{job_id}'):
                                 st.session_state.selected_job = job_id
+                                st.rerun()          # the panel above already rendered: show the new choice
                         elif st.button('Analyze Fit', key=f'analyze_{job_id}', disabled=used >= MAX_ANALYSES):
                             analyze('corpus_job', job_id,
                                     lambda key, hist, j=job_id: api.analyze_job(j, hist, key), job=job_id)
@@ -375,38 +427,7 @@ if preview and st.session_state.get('cv_ready'):
                             lambda key, hist: api.analyze_pasted(paste_id, hist, key), paste=paste_id)
                 except ApiError as exc:
                     st.error(exc.detail)
-
-    selected = st.session_state.get('selected_job')
-    entry = analyses.get(selected) if selected else None
-    if entry and entry['result'] is None:                 # started (now or before a rerun): poll, never re-post
-        body = wait_run(entry['run_id'], 'Analyzing this job against your CV…',
-                        ['Extracting the job requirements…', 'Checking your CV evidence for each requirement…'])
-        if body['status'] == 'done':
-            entry['result'] = body['result']
-        else:
-            analyses.pop(selected, None)
-            entry = None
-    if entry and entry['result']:
-        st.subheader('Analyze Fit')
-        analysis_view(entry['result'])
-        if entry['result']['card']['scored']:
-            with st.expander('Improve My CV for This Job'):
-                st.caption('Built only from your CV evidence and your own answers. Nothing is invented, and '
-                           'answers never change the score; the score changes only after you update and '
-                           're-upload your CV.')
-                card_id = entry['result']['card']['job_id']
-                coach_key = f"{entry['run_id']}:{card_id}"
-                coach = st.session_state.setdefault('coach', {})
-                if coach_key not in coach:
-                    coach[coach_key] = call(api.coach, entry['run_id'], card_id)
-
-                def answer(gap_index, done, answers, run_id=entry['run_id'], job=card_id):
-                    try:
-                        return call(api.coach_answer, run_id, job, gap_index, done, answers)
-                    except ApiError as exc:
-                        st.error(exc.detail)
-                        return None
-                coach_view(coach[coach_key], on_answer=answer)
+        result_panel(pasted_job)                    # the pasted JD's result, directly below this flow
 
 # ---------------------------------------------------------------- secondary: demo and market -----------------
 st.divider()

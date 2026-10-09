@@ -234,4 +234,6 @@ CP3.4 (checkpoint 18): end-to-end testing and feature freeze.
 - **Escaping.** CV quotes, conflict messages, coach question labels and ideas are escaped like other untrusted text.
 - **Tests.** `tests/test_ui_product_flow.py` now has 22 tests, including the lost-response history lock, the grouping, the country options and a Markdown-injection regression.
 
+**Owner-local UX correction (9 Oct 2026):** a finished Analyze Fit result had rendered below the whole Relevant Jobs list, so it looked as if nothing happened. It now shows in one "Analyze Fit result" panel at the top of Relevant Jobs, above the cards. "Show Analyze Fit result" switches that panel at once (a rerun, no request). A Check a Job result stays directly below its button. Each result is shown in one place only; the backend is unchanged.
+
 **Not done:** the owner Local Mac run, screenshots of a real session, mobile layout review, the deployed UI.

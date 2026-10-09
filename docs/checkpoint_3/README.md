@@ -41,5 +41,6 @@ How the documents divide the work:
 | [Decision log](../decisions.md) | Why each choice was made |
 | [Failure log](../failures.md) | Known defects (FAIL-35 resolved in Phase 1; FAIL-36 to FAIL-38 are open) |
 | [Runbook, 6 Oct](Runbook_Freeze_Test_Deploy_20261006.md) | Freeze and held-out test steps. Its Railway deploy section is superseded by D-095 |
+| [Copy update prompt](design/JobFit_Copy_Update_Prompt.md) | Voice and tone guide, glossary and bilingual (ID/EN, demo/live) copy for the Open Design prototype; a design input, not a test result |
 
 **Inputs from CP2 (closed 7 Oct 2026, D-094):** the frozen configuration D-087 with evidence prompt v1.1 (D-090), and two follow-ups from CP2. First, the mentor feedback in [D-093](../decisions.md): a clear waiting state for the long LLM analysis (check the existing progress bar and spinner first), and vacancy-specific CV guidance once the core flow is stable (part of the [CV coach plan](../cv-coach-plan.md)). Second, the privacy work deferred by [D-092](../decisions.md): privacy is implemented and covered by component tests only, so CP3.4 runs the end-to-end privacy checks and the original-vs-masked comparison, and CP3.5 reports them. Full list: [CP2 closeout audit, section 11](../checkpoint_2/CP2_Closeout_Audit_20261007.md#11-what-cp3-inherits).

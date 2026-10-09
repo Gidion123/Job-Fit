@@ -1,6 +1,20 @@
 # JobFit CP2-CP3 Master Plan
 
-## Current outcome, 8 October 2026: CP3 scope clarified (D-102)
+## Current outcome, 9 October 2026: ready for owner Local Mac validation (D-104 accepted, D-105 implemented)
+
+- **Privacy lifecycle (D-104):** the structural sanitizer and its API, session, consent and provider lifecycle are implemented and independently accepted for their measured scope (`e4c69ab`; sanitizer sha256 `49b748aa…5341`). The deployed privacy release gate is still pending.
+- **Real-user flow (D-105, implemented with fakes and disposable databases only; no paid call):**
+  ```text
+  Upload CV → local D-104 sanitizer → exact preview → optional edit (sanitized again) → consent → parse → CV ready
+  Find Jobs:   optional pre-search filters → hybrid retrieval over the eligible corpus (no LLM) → Relevant Jobs (no score)
+               → local refine (zero calls) → the user chooses a job → Analyze Fit (one job_analysis) → Improve My CV
+  Check a Job: pasted JD (session only) → Analyze Fit (one job_analysis) → Improve My CV
+  ```
+  Requirement extraction and evidence matching run **only for a job the user selects** (at most 3 per session, D-103); search never analyzes every job. The browse list uses the frozen stage-1 candidate depth (30).
+- **Owner-only activation:** `JOBFIT_REAL_CV_ENABLED` (needs prod and live) turns on uploaded CVs on the production runtime for the owner. The public beta stays closed (non-owners 503), and `JOBFIT_PUBLIC_LIVE` stays off. `docker-compose.owner-local.yml` is a separate local stack. The one-time corpus seed is `python -m jobfit.db.seed_production`.
+- **Next gate:** the owner's Local Mac validation ([runbook](checkpoint_3/Runbook_Owner_Local_Validation.md)), after independent review. VPS, monitoring and public activation come only after that.
+
+## Earlier outcome, 8 October 2026: CP3 scope clarified (D-102)
 
 **North star:** JobFit is a production-grade AI engineering portfolio with a controlled public beta. It shows end-to-end AI engineering on one real VPS that real public users can try in a limited, controlled way, and it should feel like a small real product. It is not an enterprise SaaS. [D-102](decisions.md) clarifies D-026, D-036, D-093 and D-095; it changes no frozen or accepted work (D-087, D-096 bounds and cap, D-097 to D-101, the Alembic work, the persistent production ledger).
 
@@ -11,6 +25,7 @@
   Flow B, Check a Job:  CV + pasted JD → requirement extraction → evidence matching → scoring → explanation
                            → strengths and gaps → CV improvement          (no retrieval; the JD is never added to the corpus)
   ```
+  *(Refined by D-103 and D-105: Find Jobs stops at retrieval-stage Relevant Jobs; extraction, matching and scoring run only for a job the user selects with Analyze Fit. The flow above is the 8 Oct wording.)*
 - **New product requirements:** stage-aware analysis progress from real pipeline stages (no fake percentages); "Improve My CV for This Job" with a hard anti-fabrication rule (representation improvement, possibly missing, true gap); a portfolio-ready UI. UI priority: clarity > trust > usability > polish > decoration.
 - **Priority filter:** about 70% AI and product value, 30% infrastructure. Essential safety, privacy and evaluation are never cut.
 - **Public-beta bar:** safe for controlled public use, cost bounded, privacy aware, testable, observable, maintainable, deployable and honest about limits. Unknown → fail closed → log or metric → manual review is acceptable for rare uncertain states. Enterprise HA, multi-region and distributed recovery are out of scope.
@@ -19,7 +34,7 @@
 - **Post-beta (not blockers):** automated job sync, forced-command SSH, scheduled `job-sync.yml` and dedupe-review automation (D-098 design kept; the seeded corpus is enough, with an optional one-time manual refresh); email alerts and extra dashboards; automated nightly backups (a verified backup and restore test is still required); LLM-written CV rewriting.
 - **Public-beta cost profile (D-103, 8 Oct, implemented dark, independently verified and closed at `d30255d`):** a separate versioned profile with exact canonical byte envelopes and per-phase bounds (`parse` US$0.0614679, `search` US$0.0001648, `job_analysis` US$4.0012836) under a US$5/day cap and a US$25 lifetime stop; Find Jobs shows search-stage results (never a match ranking) and analyzes up to three chosen jobs; Check a Job is one `job_analysis`; one durable ticket per IP per 24 h opens 1 parse, 1 search and 3 job analyses per session. The Phase 2A bound (US$84.7704449) stays as history. The public real-CV flow stays closed until the consent adapter exists.
 - **Monitoring (D-103 clarification):** self-hosted Prometheus and Grafana OSS with node_exporter; Grafana private through an SSH tunnel; **Langfuse required for the final controlled public beta** (Langfuse Cloud free hosted tier, no raw CV or PII, separate P1 task; a paid plan needs a decision).
-- **Real-CV privacy boundary (D-104, 8 Oct, approved design, implementation planned):** FAIL-37 is fixed by a structural data-minimization boundary, not by name and address fields: the identity/contact header, the Summary/Profile/Objective family (structural delimiter only, not evidence) and privacy-only sections (including Interests and Organizations) are dropped locally; the provider text starts at the first evidence-bearing section; deterministic backstops mask surviving identifiers; no start found means fail closed. No geography data, owner-review gate or identifier subsystem. FAIL-37 stays OPEN / REVISED DESIGN until implemented and independently audited.
+- **Real-CV privacy boundary (D-104, 8 Oct, approved design; implemented and accepted for its measured scope on 9 Oct at `e4c69ab`, deployed gate pending):** FAIL-37 is fixed by a structural data-minimization boundary, not by name and address fields: the identity/contact header, the Summary/Profile/Objective family (structural delimiter only, not evidence) and privacy-only sections (including Interests and Organizations) are dropped locally; the provider text starts at the first evidence-bearing section; deterministic backstops mask surviving identifiers; no start found means fail closed. No geography data, owner-review gate or identifier subsystem. FAIL-37 stays OPEN / REVISED DESIGN until implemented and independently audited.
 - **Open gates (separate decisions needed):** the public-live cost bound and Flow B in production are resolved by D-103; still open: any LLM-written CV wording; the D-100 dates stay as they are unless a decision moves them.
 
 ## Current outcome, 7 October 2026
@@ -38,10 +53,10 @@ Everything below for CP3.1-CP3.7 is **PLANNED** unless a line says it is done lo
 
 | Stage (official name) | JobFit scope | Status |
 | --- | --- | --- |
-| CP3.1 API Deployment with FastAPI | Public-beta API for both flows, safety controls and instrumentation | PARTIAL: demo flow done locally; Phase 2A fail-closed settings and phase bounds done (7 Oct; the full bound is above the US$2/day cap, so public live is not eligible); Phase 2B dark cost-safety runtime done (8 Oct, D-101); persistent production ledger DONE for Phase 2 acceptance (local/CI; deployed-host validation pending Phase 8); D-103 public-beta cost profile and owner-only API contract implemented dark (8 Oct, verified and closed); real-CV consent public-beta adapter implemented dark (8 Oct, awaiting audit; real CVs and the public beta stay off) |
-| CP3.2 Database Integration and CI/CD | Production corpus, job sync, VPS and delivery | PARTIAL: CI green after Phase 1 (FAIL-35 resolved); Alembic `0001`/`0002` done with migration tests (8 Oct); not deployed |
-| CP3.3 Streamlit UI | Product experience: Find Jobs and Check a Job, stage-aware progress, "Improve My CV for This Job" (D-102) | PARTIAL: demo flow done locally |
-| CP3.4 End-to-End Testing | Controlled public beta validation, privacy release gate and feature freeze | PARTIAL: local 27/27; deployed checks PLANNED |
+| CP3.1 API Deployment with FastAPI | Public-beta API for both flows, safety controls and instrumentation | PARTIAL: demo flow done locally; Phase 2A fail-closed settings and phase bounds done (7 Oct; the full bound is above the US$2/day cap, so public live is not eligible); Phase 2B dark cost-safety runtime done (8 Oct, D-101); persistent production ledger DONE for Phase 2 acceptance (local/CI; deployed-host validation pending Phase 8); D-103 public-beta cost profile and owner-only API contract implemented dark (8 Oct, verified and closed); real-CV consent public-beta adapter implemented dark (8 Oct); D-104 privacy lifecycle accepted (9 Oct, `e4c69ab`); D-105 contract (all pre-search filters, stage-1 browse depth 30, digest-bound work-history confirmation, job-specific coach, owner-only `JOBFIT_REAL_CV_ENABLED`) implemented 9 Oct, awaiting review; public beta closed |
+| CP3.2 Database Integration and CI/CD | Production corpus, job sync, VPS and delivery | PARTIAL: CI green after Phase 1 (FAIL-35 resolved); Alembic `0001`/`0002` done with migration tests (8 Oct); one-time production corpus seed for a restored copy (9 Oct, D-105); owner-local compose profile; not deployed; job sync not built |
+| CP3.3 Streamlit UI | Product experience: Find Jobs and Check a Job, stage-aware progress, "Improve My CV for This Job" (D-102) | PARTIAL: D-105 real-user flow implemented (9 Oct; AppTest and fake API evidence); owner Local Mac validation pending |
+| CP3.4 End-to-End Testing | Controlled public beta validation, privacy release gate and feature freeze | PARTIAL: local 27/27; D-105 automated in-process flow evidence (9 Oct); owner Local Mac validation and deployed checks PENDING |
 | CP3.5 Final Presentation and Portfolio | Final evidence, D-045, privacy and latency reports, deck and video | PLANNED |
 | CP3.6 Finalization and Rehearsal | Regression, rehearsal and release tag | PLANNED |
 | CP3.7 Final Presentation and Submission | Present deployed JobFit with the saved-demo fallback | PLANNED |

@@ -550,3 +550,38 @@ Implemented dark in five commits (local and CI, fake providers and scratch Postg
 - **Provider ZDR compatibility** for the frozen models and the embedding model, validated explicitly later (an approved validation step); until then `real_cv_enabled` stays False.
 - **Production corpus seed** and the **tokenizer and index artifacts** in the API image (Phase 6); the retriever fails closed without them.
 - The CP3.4 privacy release gate, `public_beta_phase_eligible`, Langfuse (P1) and the Phase 3b UI.
+
+## Results (9 Oct 2026, D-104 accepted; D-105 real-user API contract and owner-only activation)
+
+**Commit 3 accepted.** The D-104 API, session, consent and provider privacy lifecycle (`e4c69ab`) was independently accepted for its measured scope:
+- `sanitize_upload` v2 on upload and edit, volatile owner marks, and fail-closed 422 codes;
+- `consented_lease(masking_version=v2)` on all four uploaded-CV operations;
+- the provider-payload and raw-canary sink gates.
+
+The deployed privacy release gate is still pending.
+
+### D-105 contract (what changed, no migration, no frozen file)
+
+- **Owner-only switch:**
+  - `JOBFIT_REAL_CV_ENABLED` (0/1, default 0; `src/jobfit/config.py`) requires `JOBFIT_ENV=prod` and `JOBFIT_LIVE_ENABLED=1`, so the owner token, the ledger root and the budgets are all enforced.
+  - `wiring.py` sets `real_cv_enabled` only with this switch and the production runtime. `public_beta_open` stays hardcoded False: a request without the owner token gets 503 `PUBLIC_BETA_CLOSED_MESSAGE` before any ticket, reservation or provider call. `JOBFIT_PUBLIC_LIVE` stays off.
+  - Every owner operation still goes through the reservation, the ledger, ZDR (`data_collection=deny`, `zdr=true`), the input envelopes, idempotency and the exact D-104 consent lease. The owner bypasses only the durable ticket and the session allowance (D-103).
+- **Search:**
+  - `/jobs/search` takes `role_family`, `country_code`, `city`, `experience_bucket`, `work_mode`, `posted_within_days` and `include_unknown`, all optional. Invalid values give 422 before any call.
+  - Every selected filter narrows the eligible production pool before the frozen hybrid retriever (`search/production.py` no longer drops `role_family`). Blank filters leave the whole active, canonical, target-role, indexed pool.
+  - The browse depth is the frozen stage-1 candidate depth (`config.stage1_candidate_depth` = 30), not the analyzed K.
+  - Cards carry `experience_bucket` and the filter-effective country (the frozen `_country` rule). The real search response carries `analysis_date` for zero-call local refinement. There is still no score at the search stage.
+- **Analyze Fit and Check a Job:**
+  - They take `history_confirmed` (default False), bound into the idempotency action (`history` 0/1) and passed to the D-086 experience rule. Uploaded CVs no longer reuse the demo constant.
+  - The D-103 allowance is unchanged (parse 1 / search 1 / job_analysis 3 for the public beta). The owner may repeat searches during local validation.
+- **Coach:** `/tailor` and `/tailor/answer` accept a finished Analyze Fit run. The job-specific response adds `representation` (A), `true_gaps` (C) and `not_verified` to the existing `gaps` (B), in mutually exclusive categories (`support/cv_coach.py`).
+- **Provider ZDR compatibility:** the owner's local run is the first live use of the ZDR routing for the frozen models. It is fail-closed by construction: a provider route without ZDR is refused, never silently downgraded. Public activation still needs the CP3.4 privacy release gate.
+
+### Tests (fakes only; zero provider calls)
+
+- `tests/test_cp3_product_api.py` 21: switch invariants, wiring, owner versus non-owner, every filter, invalid values, the action identity, browse depth 30, history binding, the coach on corpus and pasted analyses.
+- `tests/test_production_retrieval.py` 3 and `tests/test_production_retrieval_db.py` (PostgreSQL-gated): each filter narrows before retrieval, `role_family` included.
+- `tests/test_cv_coach.py` 15: A/B/C/not-verified exclusivity and the AWS anti-fabrication regression.
+- `tests/test_seed_production_db.py` (PostgreSQL-gated): the one-time seed.
+
+Totals are in the CP3.4 report.

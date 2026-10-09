@@ -61,6 +61,13 @@ For real-CV paths, verify the gateway and actual endpoint policies for **both** 
 
 No private result may enter a cross-user Streamlit cache or a shared conversation history. Preserve only content-free diagnostics; review infrastructure logs and feedback fields too. Treat CV/JD text as untrusted data, validate outputs and render safely without executable HTML or automatic remote-resource loading. Model instructions cannot grant access to another session; access control is enforced in application code. API keys remain server-side.
 
+**Owner-only activation (9 Oct 2026, D-105):**
+- Uploaded CVs reach a provider only when `JOBFIT_REAL_CV_ENABLED=1`, which requires `JOBFIT_ENV=prod` and `JOBFIT_LIVE_ENABLED=1`, and only for the owner token.
+- The public beta is hardcoded closed (`public_beta_open=False`): non-owners get 503 before any ticket, reservation or provider call. `JOBFIT_PUBLIC_LIVE` stays off.
+- The owner path keeps every control: the D-104 sanitizer and exact-digest consent, ZDR with `data_collection=deny`, input envelopes, reservations, ledger and idempotency.
+- The owner token is forwarded by the Streamlit server only when the owner-local profile sets it, and never reaches the browser.
+- The owner's Local Mac run is pending. The deployed privacy release gate (CP3.4) is still required before any public activation.
+
 ## 6. Upload and abuse controls
 
 **Real-CV adapter (8 Oct 2026, dark, `e7762a1`..`0fbf37a`):** the consent lease is rebuilt server-side; provider processing of an uploaded CV runs only through `SessionStore.dispatch` with the exact consented masked text; every real-CV-capable provider request (chat and embeddings) carries `provider.data_collection = "deny"` and `provider.zdr = true` per request, with no fallback to a non-ZDR endpoint; the session identifier is never sent (opaque `cv_id`); upload abuse limits apply before any body is read. `real_cv_enabled` stays False until FAIL-37 masking and provider ZDR compatibility pass. Details: [CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-real-cv-consent-public-beta-adapter).

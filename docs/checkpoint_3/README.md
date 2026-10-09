@@ -16,6 +16,8 @@ Every report starts as a plan (status PLANNED / NOT RUN). Results, interpretatio
 
 The plan behind these reports is the [CP2-CP3 master plan](../master-plan.md).
 
+**9 Oct 2026 ([D-105](../decisions.md)):** the real-user flow is implemented with automated evidence. The D-104 privacy lifecycle was accepted at `e4c69ab`. The status is **ready for owner Local Mac validation** (pending; [runbook](Runbook_Owner_Local_Validation.md)). Nothing is deployed, monitored or public.
+
 **CP3 scope clarified (8 Oct 2026, [D-102](../decisions.md)):** JobFit is a production-grade AI engineering portfolio with a controlled public beta on one VPS, not an enterprise SaaS. Two first-class flows: **Find Jobs** (CV → retrieval → matching) and **Check a Job** (CV + pasted JD → matching; the JD is never added to the corpus). New requirements: stage-aware analysis progress and "Improve My CV for This Job" with a hard anti-fabrication rule. Tasks use the public-beta acceptance bar (safe, cost bounded, privacy aware, observable, honest about limits; manual recovery acceptable for rare uncertain states). Public live is still blocked by the D-096 bound until a separate decision.
 
 **CP3 plan frozen (7 Oct 2026, D-095 to D-100):**

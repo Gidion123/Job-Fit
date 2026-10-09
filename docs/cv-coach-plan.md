@@ -1,6 +1,6 @@
 # CV Coach Plan
 
-**Decision:** [D-036](decisions.md), extended by [D-102](decisions.md) · **Status:** v1 BUILT (deterministic, no model call; 6 Oct 2026, EXP-20261006-CP3); CP3 refinements PLANNED (D-093 B); "Improve My CV for This Job" PLANNED (D-102) · **Proposed by:** Dion, 30 September 2026
+**Decision:** [D-036](decisions.md), extended by [D-102](decisions.md) · **Status:** v1 BUILT (deterministic, no model call; 6 Oct 2026, EXP-20261006-CP3); "Improve My CV for This Job" WIRED for one Analyze Fit result (D-105, 9 Oct 2026; deterministic, automated evidence only; owner Local Mac validation pending); LLM rewriting stays post-beta · **Proposed by:** Dion, 30 September 2026
 
 **CP2 mentor feedback (D-093, 4 Oct 2026):** the mentor asked for CV improvement suggestions for the target vacancy once the core features work. This plan covers that request, so there is no separate feature. Suggestions come from the user's real CV evidence, the JD requirements and the gaps found, and they do not promise a better real fit.
 
@@ -90,6 +90,19 @@ Example bullet, built only from the user's answers:
 - Explicit wording: the coach never invents skills or experience, a CV edit only helps when it adds true evidence, and a better real-world fit is not guaranteed.
 - Validation: unsupported words = 0; "not done" gives no bullet; 2-3 screenshots from the deployed app.
 - No LLM-based coach in CP3. It would add cost, latency and hallucination risk before the feature freeze.
+
+### Built for CP3 (9 Oct 2026, D-105): job-specific and mutually exclusive
+
+For one Analyze Fit result (a selected corpus job or a pasted JD), `/tailor` with `job_id` returns four categories. Each required requirement appears in at most one (`src/jobfit/support/cv_coach.py`):
+
+| Category | Rows | What the user sees |
+| --- | --- | --- |
+| **A** Representation improvement (`representation_items`) | required PARTIAL, editable field | "This job asks for: …" (the job's words), the exact current CV evidence and one fixed guidance sentence. No rewritten line, so a JD term (for example AWS) never becomes a claim about the candidate. |
+| **B** Possibly missing (`gaps_for_job`) | required NO_MATCH, editable field (at most 3) | "Have you worked on …?", then the four fixed questions; a bullet built only from the answers (unsupported words = 0); "not done" gives learning ideas only. |
+| **C** True gap (`true_gaps`) | confirmed D-086 experience conflict only (needs the user's confirmed complete work history) | The conflict and "a fact about your background, not wording". No learning or project advice. |
+| **Not verified** (`not_verified`) | required years, location or work-permit requirement without a confirmed conflict | "Not verified from this CV." Absence is never shown as a gap. |
+
+**Final CP3 refinement of v1:** v1 also put PARTIAL requirements into the question flow (B). D-105 moves PARTIAL to A, so the categories never overlap. Answers stay in the session and never change the score; the score changes only after the user updates and re-uploads the CV. Tests: `tests/test_cv_coach.py` (including the AWS regression), `tests/test_cp3_product_api.py`, `tests/test_ui_product_flow.py`.
 
 ### Optional future work (not CP3)
 

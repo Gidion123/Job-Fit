@@ -1,0 +1,79 @@
+# Owner-only Local Mac validation profile (D-105). NOT a deployment, NOT the public beta.
+#
+#   docker compose -f docker-compose.owner-local.yml -p jobfit-owner --env-file .env.owner-local up -d --build
+#
+# A standalone stack with its own containers, ports and volumes: it never touches the CP2 evaluation
+# database (docker-compose.yml, volume jobfit_pgdata, port 5434). The database is a restored COPY in
+# jobfit_owner_pgdata, seeded once with python -m jobfit.db.seed_production (see
+# docs/checkpoint_3/Runbook_Owner_Local_Validation.md).
+#
+# The API runs the production runtime (JOBFIT_ENV=prod, live on, persistent ledger, budgets, ZDR,
+# idempotency, exact consent) with uploaded CVs switched on for the OWNER ONLY: JOBFIT_PUBLIC_LIVE=0,
+# and the public beta is hardcoded closed, so a request without the owner token gets 503.
+# Every secret and every budget comes from your env file; there are no defaults and no values here.
+# Paid calls happen only when you press the buttons; admission uses the D-103 deterministic bounds.
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    container_name: jobfit-owner-db
+    environment:
+      POSTGRES_USER: jobfit
+      POSTGRES_PASSWORD: jobfit          # local, bound to 127.0.0.1 only; a restored copy, never the CP2 DB
+      POSTGRES_DB: jobfit
+    ports:
+      - "127.0.0.1:5435:5432"
+    volumes:
+      - jobfit_owner_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U jobfit -d jobfit"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: jobfit-owner-api
+    environment:
+      JOBFIT_ENV: "prod"
+      JOBFIT_LIVE_ENABLED: "1"
+      JOBFIT_PUBLIC_LIVE: "0"
+      JOBFIT_REAL_CV_ENABLED: "1"
+      DATABASE_URL: postgresql://jobfit:jobfit@db:5432/jobfit
+      JOBFIT_USAGE_LEDGER: /var/lib/jobfit/ledger/usage_ledger.jsonl
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:?set OPENROUTER_API_KEY in your env file}
+      JOBFIT_INTERNAL_TOKEN: ${JOBFIT_INTERNAL_TOKEN:?set JOBFIT_INTERNAL_TOKEN (32+ characters)}
+      JOBFIT_OWNER_TOKEN: ${JOBFIT_OWNER_TOKEN:?set JOBFIT_OWNER_TOKEN (32+ characters)}
+      JOBFIT_DAILY_BUDGET_USD: ${JOBFIT_DAILY_BUDGET_USD:?choose the daily budget deliberately}
+      API_HARD_STOP_USD: ${API_HARD_STOP_USD:?choose the hard stop deliberately}
+      API_BUDGET_USD: ${API_BUDGET_USD:?choose the lifetime budget deliberately}
+    ports:
+      - "127.0.0.1:8010:8000"
+    volumes:
+      - jobfit_owner_ledger:/var/lib/jobfit/ledger
+      - ./reports/tokenizers:/app/reports/tokenizers:ro     # pinned query tokenizer (setup_embedding_tokenizers.py)
+    depends_on:
+      db:
+        condition: service_healthy
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    container_name: jobfit-owner-ui
+    environment:
+      JOBFIT_API_URL: http://api:8000
+      JOBFIT_INTERNAL_TOKEN: ${JOBFIT_INTERNAL_TOKEN:?set JOBFIT_INTERNAL_TOKEN (32+ characters)}
+      # Owner-local only: the Streamlit server forwards it to the internal API; never sent to the browser.
+      # A public UI deployment never sets this variable.
+      JOBFIT_OWNER_TOKEN: ${JOBFIT_OWNER_TOKEN:?set JOBFIT_OWNER_TOKEN (32+ characters)}
+    ports:
+      - "127.0.0.1:8511:8501"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  jobfit_owner_pgdata:
+  jobfit_owner_ledger:

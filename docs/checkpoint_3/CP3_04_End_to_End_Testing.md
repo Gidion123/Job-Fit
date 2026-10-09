@@ -4,7 +4,7 @@
 **Bootcamp checkpoint:** 18. Testing End-to-End Application · official date 8 Oct 2026  
 **JobFit version of this checkpoint:** Same as the template, on the deployed app.  
 **Planned work:** 8 Oct 2026 (feature freeze at the end of the day); moved to 9 Oct with the formal freeze at the end of 9 Oct (D-100) · **Actual:** 6 Oct 2026 (local part)\
-**Status:** PARTIAL · local checks passed (27/27); deployed validation, privacy release gate and freeze PLANNED for 9 Oct (D-100); controlled public beta acceptance bar set by D-102 (8 Oct) · design basis: System Design v1.3
+**Status:** PARTIAL · local checks passed (27/27); D-105 automated in-process evidence (9 Oct); **owner Local Mac validation PENDING; deployed validation PENDING**; deployed validation, privacy release gate and freeze PLANNED for 9 Oct (D-100); controlled public beta acceptance bar set by D-102 (8 Oct) · design basis: System Design v1.3
 
 > Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
 
@@ -138,3 +138,25 @@ CP3.5 (checkpoint 19): final deck and portfolio.
 - **Script:** `scripts/e2e_check.py --base <url> [--live] [--write]` writes a report without CV text or canary values.
 - **Local run (API started from exactly the image file set, live off):** 27 of 27 checks passed: saved demo for CV1 and CV2, no invented score for held jobs, suggestions with the claim guard, coach bullets from answers only, job detail, market, feedback, invalid inputs, masking canaries, wrong-digest consent refused, upload parsing gated, delete and no access after delete. The server log had no canary.
 - **Pending:** the same script on the deployed URL; `--live` for one live run and the prompt-injection fixture (about US$0.30); p50/p95 latency and cost for live runs; recording the feature freeze.
+
+## Results (9 Oct 2026, D-105 pre-local evidence: automated, fake providers, in-process only)
+
+This is **not** the owner's Local Mac validation and **not** a deployed check. Every test below uses fake SDKs or recording clients, the in-process FastAPI app, Streamlit AppTest, and disposable PostgreSQL databases. No paid call was made and no real CV was used.
+
+| Area | Evidence |
+| --- | --- |
+| Upload → preview → edit → consent → parse | `tests/test_ui_product_flow.py` (AppTest), `tests/test_fail37_api_privacy.py`, `tests/test_real_cv_api.py` |
+| Parse required before search and analysis; Find Jobs; Analyze Fit; Check a Job; coach; delete session | `tests/test_cp3_product_api.py`, `tests/test_ui_product_flow.py` |
+| Every pre-search filter; blank = whole eligible pool; invalid values refused; never widened | `tests/test_cp3_product_api.py`, `tests/test_production_retrieval_db.py` (PostgreSQL) |
+| Browse depth = frozen stage-1 candidate depth 30, no config change | `tests/test_cp3_product_api.py`; freeze verify `"ok": true` |
+| Local refinement: pure, zero API/provider calls, order kept, D-010 semantics equal to the frozen filter | `tests/test_ui_product_flow.py` |
+| Idempotency: lost-response retry reuses the key; reruns never post again; history bound into the action | `tests/test_ui_product_flow.py`, `tests/test_cp3_product_api.py` |
+| Honest progress: `st.status` while waiting; no numeric progress for parse or analysis | `tests/test_ui_product_flow.py` |
+| Privacy regression: provider payloads and every sink free of raw canaries | `tests/test_fail37_api_privacy.py` (unchanged, green) |
+| Public beta closed: owner-only mode works on fakes; non-owner 503 with no ticket or call; `public_beta_open` False | `tests/test_cp3_product_api.py`, `tests/test_owner_local_compose.py` |
+| Corpus seed on a restored copy | `tests/test_seed_production_db.py` (PostgreSQL) |
+
+**Pending:**
+- the owner Local Mac validation with one real CV on the production runtime ([runbook](Runbook_Owner_Local_Validation.md); the next gate, after independent review);
+- deployed validation, the privacy release gate, latency and cost on real hardware;
+- the controlled public beta.

@@ -8,7 +8,9 @@ Final project for the Data Science and Machine Learning bootcamp at Dibimbing (B
 ![Next](https://img.shields.io/badge/next-CP3%20implementation%20(plan%20frozen)-blue)
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 
-> **Current status (8 October 2026):** CP1 and CP2 are closed ([D-094](docs/decisions.md), [CP2 closeout audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md)). CP3 is in progress: the API, the Streamlit app and Docker run locally, the dark cost-safety runtime and the persistent production ledger are done and tested (local and CI), but the app is not deployed yet and privacy has not been validated end to end. CP3 aims for a **production-grade AI engineering portfolio with a controlled public beta** on one VPS ([D-102](docs/decisions.md)); public live is **planned**, not built, and still blocked by the cost bound.
+> **Current status (9 October 2026): ready for owner Local Mac validation.** On branch `cp3-development-20261007` (after the independently accepted privacy lifecycle at `e4c69ab`), the complete real-user flow is implemented and tested with fake providers: upload → local sanitizer → exact preview → consent → parse → **Find Jobs** (Relevant Jobs, then Analyze Fit on a chosen job) or **Check a Job** → **Improve My CV for This Job**. Uploaded CVs can be switched on **for the owner only** ([D-105](docs/decisions.md)); the public beta stays closed. Not yet done: the owner's local run with a real CV, deployment, monitoring and the public beta.
+>
+> **Earlier status (8 October 2026):** CP1 and CP2 are closed ([D-094](docs/decisions.md), [CP2 closeout audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md)). CP3 is in progress: the API, the Streamlit app and Docker run locally, the dark cost-safety runtime and the persistent production ledger are done and tested (local and CI), but the app is not deployed yet and privacy has not been validated end to end. CP3 aims for a **production-grade AI engineering portfolio with a controlled public beta** on one VPS ([D-102](docs/decisions.md)); public live is **planned**, not built, and still blocked by the cost bound.
 
 ## Project status
 
@@ -32,8 +34,8 @@ JobFit has two flows (planned for public use in CP3, [D-102](docs/decisions.md))
 
 JobFit uses pretrained models; it does not train a neural network. The matching pipeline was chosen by measurement on development data and frozen before the held-out test ([D-087](docs/decisions.md); diagram in [CP2.6](docs/checkpoint_2/CP2_06_Recommendation_and_Summary.md#final-v1-architecture-d-087-freeze)):
 
-1. **CV in:** a synthetic demo CV. Uploaded CVs are masked locally and shown for consent, but they are not sent to the models yet (see [Privacy status](#privacy-status)).
-2. **Candidate search:** hybrid PostgreSQL full-text search plus Qwen3 dense embeddings, fused with RRF; a seniority rule moves jobs asking for 3+ years down; the top 10 are analyzed.
+1. **CV in:** a synthetic demo CV, or (owner-only since 9 Oct) an uploaded CV after the local D-104 sanitizer removes identity, contact, Summary and privacy-only sections and the user consents to the exact text (see [Privacy status](#privacy-status)).
+2. **Candidate search:** hybrid PostgreSQL full-text search plus Qwen3 dense embeddings, fused with RRF. In the frozen CP2 pipeline and the saved demo, a seniority rule moves jobs asking for 3+ years down and the top 10 are analyzed. **In the real-user Find Jobs flow (D-103/D-105) search does not analyze anything:** it returns up to 30 Relevant Jobs (the frozen stage-1 depth) with no score, optionally pre-filtered, and only a job the user picks with **Analyze Fit** goes through steps 3-5 (at most 3 per session).
 3. **Requirements:** each job description is turned into requirement units by an LLM (DeepSeek Flash), checked against the source text and cached per job.
 4. **Evidence matching:** an LLM (GPT-6 Sol, with GPT-6 Luna as fallback) labels each requirement MATCH, PARTIAL or NO_MATCH and must quote the CV word for word; quotes are verified.
 5. **Score and order:** match % = (MATCH + 0.5 × PARTIAL) / required units. Jobs with unclear analysis are held in a "not fully analyzed" group instead of getting a misleading score; explicit experience conflicts get their own group.
@@ -91,16 +93,23 @@ Built and tested locally on synthetic CVs (not deployed yet):
 - Market skill counts, CV suggestions and a deterministic CV coach v1 that writes bullets only from the user's answers ([CV coach plan](docs/cv-coach-plan.md)).
 - Session controls: masked preview with consent, heartbeat, expiry and "stop and delete session"; feedback stored as categories only.
 - Live analysis with paid model calls, when enabled and an OpenRouter key is set: a fresh recommendation run, and analysis of a pasted job description against a demo CV (pasted text stays in the session).
+- **Real-user flow (9 Oct, D-105; tested with fake providers, not yet run with a real CV):**
+  - upload → exact sanitized preview → optional edit → consent → **Continue** (parse) → **CV ready**;
+  - **Find Jobs** with optional pre-search filters (role family, country, city, experience requirement, work mode, posted within) → **Relevant Jobs** (search relevance, no score) → **Refine these results** locally (no new request) → **Analyze Fit** on a chosen job (evidence coverage, requirement-by-requirement evidence, strengths, gaps);
+  - **Check a Job** with a pasted job description;
+  - **Improve My CV for This Job** (existing evidence made clearer; questions for possibly missing items; confirmed gaps; "not verified");
+  - honest progress states.
 
-Real CV uploads are not sent to the models yet (`/cv/parse` returns 403). That stays off until the privacy checks below are done.
+**What works locally today:** the saved demo, and the owner-only real-CV flow through `docker-compose.owner-local.yml` (production runtime, persistent ledger, budgets, ZDR, owner token). It needs your OpenRouter key and a restored, seeded corpus copy; see the [owner-local runbook](docs/checkpoint_3/Runbook_Owner_Local_Validation.md). **Still blocked:** uploaded CVs for anyone but the owner (the public beta is closed), a deployed app, monitoring.
 
 ## Privacy status
 
 | Level | Status |
 | --- | --- |
-| Implemented | Local masking, editable preview with consent bound to the exact masked text, owner-scoped sessions with expiry and delete, upload cleanup |
+| Implemented | D-104 structural data minimization (identity/contact header, Summary family and privacy-only sections removed locally; deterministic backstops), editable preview sanitized again on every edit, consent bound to the exact sanitized digest, fail-closed refusals, ZDR provider routing, owner-scoped sessions with expiry and delete, upload cleanup. Uploaded CVs reach a provider only owner-only (`JOBFIT_REAL_CV_ENABLED`, D-105) |
+| Measured (offline, independently accepted at `e4c69ab`) | Synthetic calibration gates and API/provider-payload/sink canary gates: no Summary or raw canary reaches a provider payload, response, log or session state |
 | Component/unit tested | Yes: privacy-control, masking and API-level tests (the API tests use a fake run, not a deployed host) |
-| End-to-end privacy validation | **Not performed yet**; planned for CP3.4 |
+| End-to-end privacy validation | **Not performed yet**: the owner's Local Mac run and the deployed CP3.4 privacy release gate are pending |
 | Original-vs-masked matching comparison | **Not performed yet**; planned for CP3.4, reported in CP3.5 |
 
 Details: [D-092](docs/decisions.md) and the [privacy threat model](docs/privacy-threat-model.md). Until the CP3.4 checks are done, JobFit makes no claim that privacy is validated end to end or that masking leaves matching quality unchanged.
@@ -111,8 +120,8 @@ Details: [D-092](docs/decisions.md) and the [privacy threat model](docs/privacy-
 | --- | --- | --- |
 | CP3.1 FastAPI service | Partial | Demo-CV flow done locally: all original endpoints, privacy controls and API tests. Since 7 Oct (CP3 Phase 2A), live mode fails closed: it is off by default and refuses incomplete production settings. The deterministic worst-case cost bound is US$84.77, above the US$2/day cap, so public live is not eligible yet. Since 8 Oct (Phase 2B, D-101) production live runs only through a dark, fail-closed cost-safety runtime (persisted reservations, correlated usage ledger, one live operation at a time, per-IP ticket, internal service token); under the US$2/day cap it refuses every recommendation. Planned: the public live path (real-CV parse through a consent adapter, runtime embedding, extraction cache), budget and abuse controls, upload hardening ([report](docs/checkpoint_3/CP3_01_FastAPI_Service.md)) |
 | CP3.2 Database and CI/CD | Partial | Docker images and compose work locally; PostgreSQL + pgvector holds the corpus and embeddings. The GitHub Actions workflow is green since CP3 Phase 1 on 7 Oct: the three environment-dependent tests ([FAIL-35](docs/failures.md)) are fixed, and CI now also runs the Pyflakes `F` check on `src`/`ui` and the CP2 freeze check (run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567)). No hosted deployment yet. Planned: SumoPod VPS (replaces Railway), Alembic, and a production job corpus refreshed from JSearch twice a month ([report](docs/checkpoint_3/CP3_02_Database_and_CICD.md), [production corpus](docs/production-corpus.md)) |
-| CP3.3 Streamlit UI | Partial | Demo flow with privacy UX done locally. Planned: public upload flow, waiting UX and coach refinements; screenshots and recording pending ([report](docs/checkpoint_3/CP3_03_Streamlit_UI.md)) |
-| CP3.4 End-to-end testing | Partial | Local scripted check passed 27 of 27 (6 Oct). Pending: deployed run, live run, privacy end-to-end validation, original-vs-masked comparison, latency/cost on the deployed app, the privacy release gate for public live, and the feature freeze at the end of 9 Oct ([report](docs/checkpoint_3/CP3_04_End_to_End_Testing.md)) |
+| CP3.3 Streamlit UI | Partial | Demo flow done locally; the D-105 real-user flow (upload → consent → parse → Find Jobs / Check a Job → Analyze Fit → Improve My CV, zero-call local refinement, honest progress) implemented with automated evidence on 9 Oct. Pending: the owner's Local Mac run, screenshots and recording ([report](docs/checkpoint_3/CP3_03_Streamlit_UI.md)) |
+| CP3.4 End-to-end testing | Partial | Local scripted check passed 27 of 27 (6 Oct); D-105 in-process flow evidence with fakes (9 Oct). Pending: the owner Local Mac validation, deployed run, live run, privacy end-to-end validation, original-vs-masked comparison, latency/cost on the deployed app, the privacy release gate for public live, and the feature freeze at the end of 9 Oct ([report](docs/checkpoint_3/CP3_04_End_to_End_Testing.md)) |
 | CP3.5-CP3.7 Final report, rehearsal, presentation | Not started | Includes the final privacy report and the D-045 test extraction/evidence results (option B: blind items labeled first; planned) |
 
 CP3 also picks up the mentor feedback from the CP2 presentation (D-093):
@@ -223,10 +232,9 @@ Folder-by-folder detail: [docs/repo-structure.md](docs/repo-structure.md).
 
 ## Next steps
 
-1. Harden the API and build the public live path (budget caps, upload hardening, consent adapter, runtime embedding, extraction cache), then deploy to the VPS with public live off.
-2. Run the CP3.4 checks on the deployed app, including the privacy release gate and the original-vs-masked comparison. Switch public live on only if the gate passes, then record the feature freeze (end of 9 Oct).
-3. Build the product experience ([D-102](docs/decisions.md)): Find Jobs and Check a Job, stage-aware progress instead of an unexplained spinner, and "Improve My CV for This Job" with a strict no-invention rule.
-4. Final report, rehearsal and presentation (CP3.5-CP3.7).
+1. **Next gate:** after independent review, the owner runs the [Local Mac validation](docs/checkpoint_3/Runbook_Owner_Local_Validation.md) with one real CV (owner-only, public beta closed).
+2. Then deploy to the VPS with public live off, add lean monitoring, and run the CP3.4 checks on the deployed app, including the privacy release gate and the original-vs-masked comparison. Switch public live on only if the gate passes, then record the feature freeze (end of 9 Oct).
+3. Final report, rehearsal and presentation (CP3.5-CP3.7).
 
 This README is the public progress snapshot. It is updated at every checkpoint closeout and at major implementation or deployment milestones, and it never claims more than the stage reports.
 

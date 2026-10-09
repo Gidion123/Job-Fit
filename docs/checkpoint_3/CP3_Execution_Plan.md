@@ -1,6 +1,6 @@
 # CP3 Execution Plan (Daily Checklist)
 
-**Created:** 7 Oct 2026 (Phase 0, documentation and plan freeze) · **Decisions:** [D-095 to D-103](../decisions.md) · **Scope clarified:** 8 Oct 2026 by D-102 (portfolio / controlled public beta) · **Public-beta cost profile:** D-103 (8 Oct)
+**Created:** 7 Oct 2026 (Phase 0, documentation and plan freeze) · **Decisions:** [D-095 to D-105](../decisions.md) · **Scope clarified:** 8 Oct 2026 by D-102 (portfolio / controlled public beta) · **Public-beta cost profile:** D-103 (8 Oct)
 
 What each document is for:
 - The [master plan](../master-plan.md) is the source of truth for what each CP3 stage must achieve.
@@ -45,8 +45,9 @@ Completed rows below keep their status and evidence. The remaining rows are work
 | --- | --- | --- |
 | 1 | Foundation closeout | Persistent ledger (DONE); lean upload hardening; API hardening; Phase 2 closeout (Phase 2) |
 | 2 | **Public-live cost/profile decision** | DECIDED and implemented dark (D-103, 8 Oct): separate public-beta profile, per-phase bounds, US$5/day and US$25 lifetime, search-stage labelling, owner-only API contract until the real-CV adapter (Phase 3, first row) |
-| 3 | Real-user AI path | FAIL-37 masking; consent adapter; `cv_source` contract; runtime embedding; production retriever; extraction cache; Flow B pasted JD (Phase 3) |
-| 4 | Product UX | Upload flow UI, landing, Find Jobs / Check a Job, stage-aware progress, results, public-beta states, deterministic "Improve My CV for This Job" (Phases 3 and 3b) |
+| 3 | Real-user AI path | FAIL-37 masking; consent adapter; `cv_source` contract; runtime embedding; production retriever; extraction cache; Flow B pasted JD (Phase 3). **9 Oct:** D-104 lifecycle accepted (`e4c69ab`); D-105 filters, browse depth, owner-only switch and seed implemented (awaiting review); the persistent extraction cache stays deferred (lazy extraction is used) |
+| 4 | Product UX | Upload flow UI, landing, Find Jobs / Check a Job, stage-aware progress, results, public-beta states, deterministic "Improve My CV for This Job" (Phases 3 and 3b). **9 Oct:** D-105 flow implemented with AppTest evidence (awaiting review) |
+| 4b | **Owner Local Mac validation (next gate)** | After independent review: the owner runs the [runbook](Runbook_Owner_Local_Validation.md) with one real CV on the production runtime, owner-only, public beta closed. PENDING, not run |
 | 5 | Lean production packaging | Compose, Caddy, artifact manifest, a verified backup with a successful restore test, runbook, private admin interfaces (Phase 6) |
 | 6 | Lean monitoring | Structured logs, `/metrics`, Prometheus, Grafana with application, AI-pipeline, LLM and cost, and basic VPS health (Phase 5) |
 | 7 | Dark VPS deploy | VPS provisioning, first dark deploy, real-host persistence (Phases 7-8) |
@@ -55,6 +56,22 @@ Completed rows below keep their status and evidence. The remaining rows are work
 | 10 | Final portfolio and reporting | Feature freeze, reports, README, deck, video, rehearsal, presentation (Phases 9-11) |
 
 **Explicitly post-beta (P2 (post-beta)):** the automated twice-monthly job sync, the forced-command SSH user and scheduled `job-sync.yml`, dedupe-review automation (the D-098 design stays documented; the seeded production corpus is enough for the CP3 beta, and a one-time manual refresh may be run before the demo if needed); Grafana email alerts and dashboards beyond the one beta dashboard; automated nightly backup scheduling (unless trivial); LLM-written CV rewriting (deferred until a separate decision with a cost bound and an anti-fabrication evaluation).
+
+## Status 9 Oct 2026 (D-105): ready for owner Local Mac validation
+
+Only what is implemented and tested is marked here; nothing is deployed, monitored, locally validated or public.
+
+| Row | Status | Evidence |
+| --- | --- | --- |
+| D-104 API, session, consent and provider privacy lifecycle | DONE for the measured scope (independently accepted at `e4c69ab`); deployed privacy gate PENDING | [CP3.1](CP3_01_FastAPI_Service.md), `tests/test_fail37_api_privacy.py` |
+| Owner-only real-CV switch `JOBFIT_REAL_CV_ENABLED` (public beta closed) | IMPLEMENTED, awaiting review | `tests/test_cp3_product_api.py` |
+| Pre-search filters (all narrow before retrieval), browse depth 30, filter-effective card metadata | IMPLEMENTED, awaiting review | `tests/test_cp3_product_api.py`, `tests/test_production_retrieval*.py` |
+| Digest-bound work-history confirmation; job-specific A/B/C coach on Analyze Fit | IMPLEMENTED, awaiting review | `tests/test_cp3_product_api.py`, `tests/test_cv_coach.py` |
+| One-time production corpus seed (restored copy) | IMPLEMENTED, awaiting review | `tests/test_seed_production_db.py` (disposable PostgreSQL) |
+| Streamlit real-user flow, zero-call local refinement, honest progress, idempotent actions | IMPLEMENTED, awaiting review | [CP3.3](CP3_03_Streamlit_UI.md), `tests/test_ui_product_flow.py` |
+| Owner-local compose profile and runbook | READY, not run | `docker-compose.owner-local.yml`, `tests/test_owner_local_compose.py`, [runbook](Runbook_Owner_Local_Validation.md) |
+| **Owner Local Mac validation** | **PENDING (next gate)** | runbook checklist |
+| VPS, Caddy, monitoring, Langfuse, deployed privacy gate, public activation, PR-10, D-045 | NOT STARTED (deferred until after the owner's local acceptance) | |
 
 ## Phase 0. Documentation and plan freeze (7 Oct)
 

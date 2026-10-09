@@ -21,14 +21,15 @@
   "evals/results/cp24/test_run_v1/final_CV2.json": "0c92c4f5d1ab7e668234e0a4a7661492abdb8c64e04ca4b545c0c4e25982e2a8"
  },
  "outputs_sha256": {
-  "reports/figures/cp2/fig09_cp24_heldout_primary_v1.png": "d67b62fbd44509cd6121ab4a606683826b661abd69433064f8b1b8992daa09b4",
-  "reports/figures/cp2/fig10_cp24_supplementary_familiar_v1.png": "44a49421d251bab19853c3ba3d98b289459cb2810bc4cbb0c8cbde70e738afba",
-  "reports/figures/cp2/fig11_cp24_order_decomposition_v1.png": "988a1e1041207b0486f89ddb14c29d8b90565887fc56b1ca83fbc36413e4119d",
+  "reports/figures/cp2/fig09_cp24_heldout_primary_v1.png": "2dbf958f9515ea60c3589ab50774ca80aa09329cb40e8271f80e1b2ff1e89e1e",
+  "reports/figures/cp2/fig10_cp24_supplementary_familiar_v1.png": "d0abca7850b606d96b4ddbe2ca8afb987cf782c44d59581bb833afc569e4e3b8",
+  "reports/figures/cp2/fig11_cp24_order_decomposition_v1.png": "2b9b0b4f61e77ae5aacca26864b6eaed36960bb448d43e0fc1cff63f07a15c0a",
+  "evals/results/cp24/cp25_tables_v1/per_cv.csv": "3b28a9301fb3ccc646c989fb42fbcfde73539f91df3db70e755a7115d26a087d",
   "evals/results/cp24/cp25_tables_v1/group_macros.csv": "6802a6a42ca45aa3be990368787ce67b7c65446fd216f7900bab514fd0c1c467",
-  "evals/results/cp24/cp25_tables_v1/order_decomposition_posthoc.csv": "12fdbd5eb384a76c1d7f5c92841643d82a9aa27d6f8e81867edb40ad7b25208c",
-  "evals/results/cp24/cp25_tables_v1/per_cv.csv": "3b28a9301fb3ccc646c989fb42fbcfde73539f91df3db70e755a7115d26a087d"
+  "evals/results/cp24/cp25_tables_v1/order_decomposition_posthoc.csv": "12fdbd5eb384a76c1d7f5c92841643d82a9aa27d6f8e81867edb40ad7b25208c"
  },
  "notes": [
-  "Figure 11 and order_decomposition_posthoc.csv are post-hoc diagnostics, not part of the frozen contract and not used to change anything."
+  "Figure 11 and order_decomposition_posthoc.csv are post-hoc diagnostics, not part of the frozen contract and not used to change anything.",
+  "Figure layout refreshed in place; inputs, labels, contract and metrics unchanged."
  ]
 }

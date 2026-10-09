@@ -1,0 +1,75 @@
+# CP3 evidence-matching cost/quality/latency comparison (prepared, not executed).
+# Read by scripts/run_cp3_llm_cost_quality_comparison.py and the matching evaluator.
+# Development data only: CV1/CV2 and the four D-079 pairs. No D-087 file is changed.
+# Model selection after the run is the owner's decision; nothing here promotes a model.
+run_id: cp3_llm_cost_quality_comparison_v1
+output_dir: evals/results/cp3_llm_cost_quality_comparison
+baseline: gpt-6-sol
+
+# OpenRouter ids and per-1M price ceilings (USD). The ceilings are sent as provider
+# max_price and used for the conservative cost bound. The runtime network preflight
+# must find each id with a structured-output endpoint at or below its ceiling before
+# --execute; a failed check stops the run and no other model is substituted.
+# No model-specific reasoning/effort setting: every candidate gets the same request.
+candidates:
+  gpt-6-sol:
+    model_id: openai/gpt-6-sol
+    ceiling_in_per_m: 2.00
+    ceiling_out_per_m: 10.00
+    role: baseline (D-083 matcher)
+  gpt-6-luna:
+    model_id: openai/gpt-6-luna
+    ceiling_in_per_m: 0.10
+    ceiling_out_per_m: 0.50
+    role: cheap OpenAI challenger (D-083 fallback)
+  claude-haiku-5.5:
+    model_id: anthropic/claude-haiku-5.5
+    ceiling_in_per_m: 0.10
+    ceiling_out_per_m: 0.50
+    role: cheap Anthropic challenger
+
+# The D-079 method, identical for every candidate.
+method:
+  prompt: prompts/evidence_matching_v1_1.md
+  validator: quote-check-v1.1
+  dynamic_output: true
+  timeout_s: 240
+  max_validation_repairs: 1
+  max_length_continuations: 1
+  workers: 1
+  cache: none
+  guardrails_in_run: []
+  guardrails_in_evaluation: [G1, G2]
+  reference: D-067
+
+# The canonical development evidence benchmark (D-062/D-063): 4 pairs, 73 units.
+benchmark:
+  plan: evals/results/cp23_stage2_fixed_matching_20261003_v1_plan.json
+  gold_bundle: evals/gold/development_v13_reviewed_20261003_stage1_r3
+  units: 73
+  classes: {MATCH: 35, PARTIAL: 22, NO_MATCH: 16}   # r3 gold; the D-067 reference makes it 36/21/16
+  pairs:
+    - [CV1, F00332]
+    - [CV1, F00036]
+    - [CV2, F00815]
+    - [CV2, F00018]
+
+# Exact sha256 of every fixed input. The first six match the D-063 approval receipt.
+protected_sha256:
+  evals/gold/development_v13_reviewed_20261003_stage1_r3/evidence_gold.jsonl: 510bbe15bd02ed370b2a94982582169c6c9d38f62b5e6e27311bb55a0f3ef49e
+  evals/gold/development_v13_reviewed_20261003_stage1_r3/extraction_gold.jsonl: f69fe7de750358d285b120e7c00c0f5941bef054912abda5e04020d156491a84
+  evals/results/cp23_stage2_fixed_matching_20261003_v1_plan.json: 360e16a8ed41a3c357b15c8b019f262adfcb6b2942344f677c92b8d8f9d4ccdd
+  src/jobfit/eval/fixed_requirements.py: c947d63fac6418dd3eb1a03c9838dfbabc97d601e5e90dfc87190a92136ec955
+  prompts/evidence_matching_v1_1.md: 19576d1940ad74015954f7014ba816f428ac835e726d89b3bfd107eb93e81d1f
+  evals/annotation_guideline_v1_3.md: 3d964a28fd105e16b24ad51b8b0a22b34bb9255e438b51e4e6e0eda551c57645
+  data/synthetic_cvs/cv_01_fresh_graduate_data_science_id.md: 6ab96764175536fea1f8d6bb56b0671ad947eebda01dd98a697cc821ee0d396a
+  data/synthetic_cvs/cv_02_career_switcher_ai_engineer_en.md: 63dd7aabb355d46a55ddf5cf3874a86b0a263e74fe84192e1a23ac96d9d36469
+  evals/results/cp22_extraction_repair_v13_20261003_02.json: 644ae3e531f37512b61f5f6f703d5fd34d2c6599a5e77306ffc2bf92d3f1702e
+  evals/splits/dev_job_ids.txt: 3e1a6bb9ac784381bbe94a659248a2c5f4642cb5374337e344dbdb3ddb0955e6
+  evals/splits/test_job_ids.txt: b4fe01b3cf9f8f265e976eef9d1bb1549d3e25b1bb7c0a9433b5ca4058ea3435
+
+# Descriptive reporting only (no automatic promotion).
+reporting:
+  historical_reference_margin: 0.03     # D-029 rule 3 / D-066: challenger >= sol - 0.03
+  materially_lower_cost_ratio: 0.5      # flag when challenger cost per valid pair <= 0.5 x Sol
+  bootstrap_seed: 20261004

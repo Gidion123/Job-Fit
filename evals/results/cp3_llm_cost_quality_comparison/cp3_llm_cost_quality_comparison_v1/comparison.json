@@ -1,0 +1,473 @@
+{
+ "api_calls": 0,
+ "baseline": "gpt-6-sol",
+ "classes": {
+  "MATCH": 36,
+  "NO_MATCH": 16,
+  "PARTIAL": 21
+ },
+ "estimated_cost_preflight": {
+  "conservative_max_usd": {
+   "basis": "per pair: main + length continuation (2x output) + validation repair (2x output), input as UTF-8 bytes (>= tokens), every attempt at the price ceiling",
+   "by_model_usd": {
+    "claude-haiku-5.5": 0.2986,
+    "gpt-6-luna": 0.2986,
+    "gpt-6-sol": 5.9719
+   },
+   "total_usd": 6.5691
+  },
+  "estimate_usd": {
+   "basis": "informational, not the cap: 4 pairs x 1.5 x median reported evidence_matching cost per call in the ledger, else 11k/6k tokens at the ceiling (D-079 method)",
+   "by_model_usd": {
+    "claude-haiku-5.5": 0.0246,
+    "gpt-6-luna": 0.0112,
+    "gpt-6-sol": 0.1652
+   },
+   "total_usd": 0.201
+  }
+ },
+ "integrity": {
+  "reasoning_param_sent": false,
+  "same_inputs_for_all_models": true,
+  "same_prompt_for_all_requests": true,
+  "system_prompt_sha256": [
+   "342866df713e3834041a7e5d2fb774dca2f544d87e95b4f6755dd6d81634ced2"
+  ]
+ },
+ "latency_note": "Sequential single-worker latency on one machine and one network path; not a load or concurrency benchmark.",
+ "limits": [
+  "Four CV/JD pairs (two synthetic development CVs) and 73 units: a few points of Macro-F1 are within noise; see the bootstrap intervals.",
+  "One run per model; outputs are not deterministic across runs.",
+  "Prices and routes change; costs are what the provider reported for this run.",
+  "Sequential single-worker latency on one machine and one network path; not a load or concurrency benchmark."
+ ],
+ "models": {
+  "claude-haiku-5.5": {
+   "cost": {
+    "actual_usd": 0.0224488,
+    "estimated_or_uncertain_usd": 0,
+    "ledger_requests": 5,
+    "per_assessed_unit_usd": 0.000393839,
+    "per_reference_unit_usd": 0.000307518,
+    "per_request_usd": 0.00448976,
+    "per_valid_pair_usd": 0.007482933,
+    "reconciled_with_ledger": true,
+    "reported_by_requests_usd": 0.0224488,
+    "tokens": {
+     "input_tokens": 73893,
+     "output_tokens": 30119,
+     "reasoning_tokens": 20382,
+     "total_tokens": 104012
+    }
+   },
+   "latency": {
+    "attempt_ms_p50": 24749,
+    "attempt_ms_p95": 26398,
+    "attempts_measured": 5,
+    "model_wall_ms": 113836,
+    "pair_wall_ms": [
+     37511,
+     24786,
+     26422,
+     25117
+    ],
+    "pair_wall_ms_p50": 25117,
+    "pair_wall_ms_p95": 37511
+   },
+   "model_id": "anthropic/claude-haiku-5.5",
+   "pair_status": {
+    "CV1/F00036": "done",
+    "CV1/F00332": "failed:invalid_structured_output_or_source",
+    "CV2/F00018": "done",
+    "CV2/F00815": "done"
+   },
+   "process": {
+    "assessed_units": 57,
+    "continuation_attempts": 0,
+    "failed_requests": 0,
+    "main_requests": 4,
+    "model_fallbacks": 0,
+    "pairs": 4,
+    "providers": [
+     "Azure"
+    ],
+    "repair_attempts": 1,
+    "requests": 5,
+    "structured_output_failures": 0,
+    "transport_or_admission_failures": 0,
+    "truncations": 0,
+    "unassessed_units": 16,
+    "units": 73,
+    "valid_pairs": 3,
+    "validation_failures": 2
+   },
+   "quality": {
+    "confusion": {
+     "MATCH": {
+      "MATCH": 20,
+      "NO_MATCH": 2,
+      "PARTIAL": 7,
+      "not_assessed": 7
+     },
+     "NO_MATCH": {
+      "MATCH": 0,
+      "NO_MATCH": 12,
+      "PARTIAL": 1,
+      "not_assessed": 3
+     },
+     "PARTIAL": {
+      "MATCH": 0,
+      "NO_MATCH": 2,
+      "PARTIAL": 13,
+      "not_assessed": 6
+     }
+    },
+    "invalid_quotes": 0,
+    "macro_f1": 0.6944444444444445,
+    "macro_f1_unguarded_diagnostic": 0.6944444444444445,
+    "match_overclaims": 0,
+    "overclaims": 1,
+    "per_class": {
+     "MATCH": {
+      "f1": 0.7142857142857143,
+      "precision": 1.0,
+      "recall": 0.5555555555555556,
+      "support": 36
+     },
+     "NO_MATCH": {
+      "f1": 0.75,
+      "precision": 0.75,
+      "recall": 0.75,
+      "support": 16
+     },
+     "PARTIAL": {
+      "f1": 0.6190476190476191,
+      "precision": 0.6190476190476191,
+      "recall": 0.6190476190476191,
+      "support": 21
+     }
+    },
+    "positive_items": 48,
+    "positive_on_gold_no_match": 1,
+    "quote_validity": 1.0,
+    "unassessed_units": 16,
+    "underclaims": 11,
+    "unsupported_positives": 1
+   },
+   "role": "cheap Anthropic challenger"
+  },
+  "gpt-6-luna": {
+   "cost": {
+    "actual_usd": 0.007899785,
+    "estimated_or_uncertain_usd": 0,
+    "ledger_requests": 4,
+    "per_assessed_unit_usd": 0.000108216,
+    "per_reference_unit_usd": 0.000108216,
+    "per_request_usd": 0.001974946,
+    "per_valid_pair_usd": 0.001974946,
+    "reconciled_with_ledger": true,
+    "reported_by_requests_usd": 0.007899785,
+    "tokens": {
+     "input_tokens": 36210,
+     "output_tokens": 11134,
+     "reasoning_tokens": 6083,
+     "total_tokens": 47344
+    }
+   },
+   "latency": {
+    "attempt_ms_p50": 25736,
+    "attempt_ms_p95": 27648,
+    "attempts_measured": 4,
+    "model_wall_ms": 97388,
+    "pair_wall_ms": [
+     17540,
+     25765,
+     26406,
+     27677
+    ],
+    "pair_wall_ms_p50": 25765,
+    "pair_wall_ms_p95": 27677
+   },
+   "model_id": "openai/gpt-6-luna",
+   "pair_status": {
+    "CV1/F00036": "done",
+    "CV1/F00332": "done",
+    "CV2/F00018": "done",
+    "CV2/F00815": "done"
+   },
+   "process": {
+    "assessed_units": 73,
+    "continuation_attempts": 0,
+    "failed_requests": 0,
+    "main_requests": 4,
+    "model_fallbacks": 0,
+    "pairs": 4,
+    "providers": [
+     "OpenAI"
+    ],
+    "repair_attempts": 0,
+    "requests": 4,
+    "structured_output_failures": 0,
+    "transport_or_admission_failures": 0,
+    "truncations": 0,
+    "unassessed_units": 0,
+    "units": 73,
+    "valid_pairs": 4,
+    "validation_failures": 0
+   },
+   "quality": {
+    "confusion": {
+     "MATCH": {
+      "MATCH": 28,
+      "NO_MATCH": 2,
+      "PARTIAL": 6,
+      "not_assessed": 0
+     },
+     "NO_MATCH": {
+      "MATCH": 0,
+      "NO_MATCH": 15,
+      "PARTIAL": 1,
+      "not_assessed": 0
+     },
+     "PARTIAL": {
+      "MATCH": 2,
+      "NO_MATCH": 6,
+      "PARTIAL": 13,
+      "not_assessed": 0
+     }
+    },
+    "invalid_quotes": 0,
+    "macro_f1": 0.7506206530596775,
+    "macro_f1_unguarded_diagnostic": 0.7506206530596775,
+    "match_overclaims": 2,
+    "overclaims": 3,
+    "per_class": {
+     "MATCH": {
+      "f1": 0.8484848484848485,
+      "precision": 0.9333333333333333,
+      "recall": 0.7777777777777778,
+      "support": 36
+     },
+     "NO_MATCH": {
+      "f1": 0.7692307692307693,
+      "precision": 0.6521739130434783,
+      "recall": 0.9375,
+      "support": 16
+     },
+     "PARTIAL": {
+      "f1": 0.6341463414634146,
+      "precision": 0.65,
+      "recall": 0.6190476190476191,
+      "support": 21
+     }
+    },
+    "positive_items": 57,
+    "positive_on_gold_no_match": 1,
+    "quote_validity": 1.0,
+    "unassessed_units": 0,
+    "underclaims": 14,
+    "unsupported_positives": 1
+   },
+   "role": "cheap OpenAI challenger (D-083 fallback)"
+  },
+  "gpt-6-sol": {
+   "cost": {
+    "actual_usd": 0.1513401,
+    "estimated_or_uncertain_usd": 0,
+    "ledger_requests": 5,
+    "per_assessed_unit_usd": 0.002073152,
+    "per_reference_unit_usd": 0.002073152,
+    "per_request_usd": 0.03026802,
+    "per_valid_pair_usd": 0.037835025,
+    "reconciled_with_ledger": true,
+    "reported_by_requests_usd": 0.1513401,
+    "tokens": {
+     "input_tokens": 47224,
+     "output_tokens": 9881,
+     "reasoning_tokens": 2990,
+     "total_tokens": 57105
+    }
+   },
+   "latency": {
+    "attempt_ms_p50": 20627,
+    "attempt_ms_p95": 21244,
+    "attempts_measured": 5,
+    "model_wall_ms": 90795,
+    "pair_wall_ms": [
+     13681,
+     20652,
+     21272,
+     35190
+    ],
+    "pair_wall_ms_p50": 20652,
+    "pair_wall_ms_p95": 35190
+   },
+   "model_id": "openai/gpt-6-sol",
+   "pair_status": {
+    "CV1/F00036": "done",
+    "CV1/F00332": "done",
+    "CV2/F00018": "done",
+    "CV2/F00815": "done"
+   },
+   "process": {
+    "assessed_units": 73,
+    "continuation_attempts": 0,
+    "failed_requests": 0,
+    "main_requests": 4,
+    "model_fallbacks": 0,
+    "pairs": 4,
+    "providers": [
+     "OpenAI"
+    ],
+    "repair_attempts": 1,
+    "requests": 5,
+    "structured_output_failures": 0,
+    "transport_or_admission_failures": 0,
+    "truncations": 0,
+    "unassessed_units": 0,
+    "units": 73,
+    "valid_pairs": 4,
+    "validation_failures": 1
+   },
+   "quality": {
+    "confusion": {
+     "MATCH": {
+      "MATCH": 31,
+      "NO_MATCH": 0,
+      "PARTIAL": 5,
+      "not_assessed": 0
+     },
+     "NO_MATCH": {
+      "MATCH": 0,
+      "NO_MATCH": 16,
+      "PARTIAL": 0,
+      "not_assessed": 0
+     },
+     "PARTIAL": {
+      "MATCH": 2,
+      "NO_MATCH": 2,
+      "PARTIAL": 17,
+      "not_assessed": 0
+     }
+    },
+    "invalid_quotes": 0,
+    "macro_f1": 0.8768082898815072,
+    "macro_f1_unguarded_diagnostic": 0.8768082898815072,
+    "match_overclaims": 2,
+    "overclaims": 2,
+    "per_class": {
+     "MATCH": {
+      "f1": 0.8985507246376812,
+      "precision": 0.9393939393939394,
+      "recall": 0.8611111111111112,
+      "support": 36
+     },
+     "NO_MATCH": {
+      "f1": 0.9411764705882353,
+      "precision": 0.8888888888888888,
+      "recall": 1.0,
+      "support": 16
+     },
+     "PARTIAL": {
+      "f1": 0.7906976744186046,
+      "precision": 0.7727272727272727,
+      "recall": 0.8095238095238095,
+      "support": 21
+     }
+    },
+    "positive_items": 62,
+    "positive_on_gold_no_match": 0,
+    "quote_validity": 1.0,
+    "unassessed_units": 0,
+    "underclaims": 7,
+    "unsupported_positives": 0
+   },
+   "role": "baseline (D-083 matcher)"
+  }
+ },
+ "reference": "D-067; all 73 units; failed/unassessed units count as false negatives; G1/G2 in evaluation",
+ "run": {
+  "stopped": [
+   {
+    "model": "gpt-6-sol",
+    "stopped_model_after": null
+   },
+   {
+    "model": "gpt-6-luna",
+    "stopped_model_after": null
+   },
+   {
+    "model": "claude-haiku-5.5",
+    "stopped_model_after": null
+   }
+  ],
+  "total_wall_ms": 302049
+ },
+ "run_id": "cp3_llm_cost_quality_comparison_v1",
+ "schema_version": "cp3-llm-cost-quality-comparison-v1",
+ "selection": "Owner decision. This report does not promote or change the production model.",
+ "split": "development",
+ "units": 73,
+ "versus_baseline": {
+  "claude-haiku-5.5": {
+   "cost_ratio_per_valid_pair": 0.19777793195590593,
+   "decision": "owner",
+   "delta_macro_f1": -0.18236384543706263,
+   "delta_macro_f1_bootstrap": {
+    "pair_bootstrap_95": [
+     -0.43991820768136547,
+     -0.11247324050393126
+    ],
+    "unit_bootstrap_95": [
+     -0.30333290183807116,
+     -0.06778361180844472
+    ]
+   },
+   "delta_overclaims": -1,
+   "flags": {
+    "all_pairs_valid": false,
+    "cost_materially_lower": true,
+    "quote_validity_100": true,
+    "unsupported_positives_not_increased": false
+   },
+   "historical_reference": {
+    "applied": false,
+    "met": false,
+    "note": "D-029 rule 3 / D-066, descriptive only; no automatic promotion",
+    "rule": "challenger_macro_f1 >= sol_macro_f1 - 0.03"
+   },
+   "latency_ratio_attempt_p50": 1.1998351674989092,
+   "latency_ratio_attempt_p95": 1.242609678026737
+  },
+  "gpt-6-luna": {
+   "cost_ratio_per_valid_pair": 0.0521988818561637,
+   "decision": "owner",
+   "delta_macro_f1": -0.12618763682182965,
+   "delta_macro_f1_bootstrap": {
+    "pair_bootstrap_95": [
+     -0.2229488944482808,
+     -0.04347013407912104
+    ],
+    "unit_bootstrap_95": [
+     -0.2235210118319052,
+     -0.03826549047137284
+    ]
+   },
+   "delta_overclaims": 1,
+   "flags": {
+    "all_pairs_valid": true,
+    "cost_materially_lower": true,
+    "quote_validity_100": true,
+    "unsupported_positives_not_increased": false
+   },
+   "historical_reference": {
+    "applied": false,
+    "met": false,
+    "note": "D-029 rule 3 / D-066, descriptive only; no automatic promotion",
+    "rule": "challenger_macro_f1 >= sol_macro_f1 - 0.03"
+   },
+   "latency_ratio_attempt_p50": 1.2476850729626219,
+   "latency_ratio_attempt_p95": 1.301449821125965
+  }
+ }
+}

@@ -1,0 +1,24 @@
+{
+  "run_id": "cp3_llm_cost_quality_comparison_v1",
+  "models": [
+    {
+      "model": "gpt-6-sol",
+      "stopped_model_after": null
+    },
+    {
+      "model": "gpt-6-luna",
+      "stopped_model_after": null
+    },
+    {
+      "model": "claude-haiku-5.5",
+      "stopped_model_after": null
+    }
+  ],
+  "total_wall_ms": 302049,
+  "ledger_cost_usd_by_model": {
+    "gpt-6-sol": 0.15134,
+    "gpt-6-luna": 0.0079,
+    "claude-haiku-5.5": 0.022449
+  },
+  "ledger_total_after_usd": 10.710183
+}

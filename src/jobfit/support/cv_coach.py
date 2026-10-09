@@ -1,10 +1,22 @@
-"""CV coach v1 (D-036, docs/cv-coach-plan.md). Deterministic, no model call.
+"""CV coach (D-036 v1, refined by D-105; docs/cv-coach-plan.md). Deterministic, no model call.
 
-For one analyzed job: at most three of the most important gaps (required, not found or only
-partly supported, excluding years, location and work permits), each with the four fixed
-questions. A bullet is assembled only from the user's own answers, with every part linked to
-the answer it came from; the only added words are the fixed connectors in TEMPLATE_WORDS.
-"Not done" gives no bullet, only learning or project ideas. Answers never change the score.
+"Improve My CV for This Job" puts every required requirement of one analyzed job in at most one
+of four categories (mutually exclusive):
+
+- A, representation improvement (``representation_items``): PARTIAL, editable field. Shows the
+  exact CV evidence, the job's requirement as the job's words, and one fixed guidance sentence. No
+  rewritten CV line is produced, so a JD term can never become a claim about the candidate.
+- B, possibly missing from the CV (``gaps_for_job``): NOT FOUND, editable field; at most three,
+  each with the four fixed questions. A bullet is assembled only from the user's own answers, with
+  every part linked to the answer it came from; the only added words are the fixed connectors in
+  TEMPLATE_WORDS. "Not done" gives no bullet, only learning ideas. (v1 also put PARTIAL here; D-105
+  moves PARTIAL to A.)
+- C, true gap (``true_gaps``): only a confirmed factual conflict (the D-086 experience conflict,
+  which needs a confirmed complete work history). No learning or project advice.
+- Not verified (``not_verified``): a years, location or work-permit requirement this CV does not
+  establish, with no confirmed conflict. Absence is never presented as a gap.
+
+Answers stay in the session and never change the score.
 """
 from __future__ import annotations
 
@@ -19,15 +31,55 @@ NOT_EDITABLE = {'experience_duration', 'location', 'work_authorization'}
 MAX_ANSWER = 300
 
 
+REPRESENTATION_GUIDANCE = ('If accurate, make this line more specific: what you did, which tool or method, and '
+                           'the result. Name a tool or skill only if you actually used it.')
+TRUE_GAP_NOTE = 'A fact about your background, not wording; changing the CV cannot fix it.'
+NOT_VERIFIED_NOTE = 'Not verified from this CV.'
+
+
+def _required(card: dict, labels: tuple[str, ...]) -> list[dict]:
+    return [r for r in card.get('requirements', [])
+            if r.get('importance') == 'required' and r.get('label') in labels]
+
+
+def _dedupe(texts) -> list[str]:
+    seen, out = set(), []
+    for text in texts:
+        key = ' '.join(str(text).split()).casefold()
+        if key and key not in seen:
+            seen.add(key)
+            out.append(text)
+    return out
+
+
 def gaps_for_job(card: dict, *, limit: int = 3) -> list[dict]:
-    rows = [r for r in card.get('requirements', [])
-            if r.get('importance') == 'required' and r.get('label') in ('NO_MATCH', 'PARTIAL')
-            and r.get('field') not in NOT_EDITABLE]
-    # Not found before partly supported (bigger gap first); keep the JD order inside each group.
-    rows = sorted(rows, key=lambda r: 0 if r['label'] == 'NO_MATCH' else 1)[:limit]
+    """B: required, not found in the CV, editable field; JD order; at most ``limit``."""
+    rows = [r for r in _required(card, ('NO_MATCH',)) if r.get('field') not in NOT_EDITABLE][:limit]
     return [{'gap_index': i, 'requirement': r['requirement'], 'label': r['label'],
              'question_first': f"Have you worked on: {r['requirement']}?", 'questions': QUESTIONS}
             for i, r in enumerate(rows)]
+
+
+def representation_items(card: dict) -> list[dict]:
+    """A: required, partly supported, editable field. Evidence and fixed guidance only, never a rewrite."""
+    return [{'requirement': r['requirement'], 'asked': f"This job asks for: {r['requirement']}",
+             'current': list(r.get('cv_quotes', [])), 'guidance': REPRESENTATION_GUIDANCE,
+             'evidence': list(r.get('cv_quotes', []))}
+            for r in _required(card, ('PARTIAL',)) if r.get('field') not in NOT_EDITABLE]
+
+
+def true_gaps(card: dict) -> list[dict]:
+    """C: confirmed factual conflicts only (D-086 explicit conflicts), deduplicated; no advice."""
+    return [{'conflict': c, 'note': TRUE_GAP_NOTE} for c in _dedupe(card.get('explicit_conflicts') or [])]
+
+
+def not_verified(card: dict) -> list[dict]:
+    """Years, location or work-permit requirements this CV does not establish, without a confirmed conflict."""
+    # a D-086 conflict message starts with its unit id ("U3: the JD asks for ..."): that unit is C, not here
+    conflicted = {str(c).split(':', 1)[0].strip() for c in card.get('explicit_conflicts') or []}
+    rows = [r for r in _required(card, ('NO_MATCH', 'PARTIAL'))
+            if r.get('field') in NOT_EDITABLE and r.get('unit_id') not in conflicted]
+    return [{'requirement': text, 'note': NOT_VERIFIED_NOTE} for text in _dedupe(r['requirement'] for r in rows)]
 
 
 def _clean(text: str | None) -> str:

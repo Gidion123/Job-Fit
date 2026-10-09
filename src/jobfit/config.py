@@ -122,7 +122,8 @@ def check_production_invariants(s: 'ProductionSettings') -> None:
     """The one set of production rules. Runs on every construction and again before eligibility."""
     if s.environment not in ('dev', 'prod'):
         raise ConfigurationError('JOBFIT_ENV must be dev or prod')
-    for name, flag in (('JOBFIT_LIVE_ENABLED', s.live_enabled), ('JOBFIT_PUBLIC_LIVE', s.public_live)):
+    for name, flag in (('JOBFIT_LIVE_ENABLED', s.live_enabled), ('JOBFIT_PUBLIC_LIVE', s.public_live),
+                       ('JOBFIT_REAL_CV_ENABLED', s.real_cv_enabled)):
         if not isinstance(flag, bool):
             raise ConfigurationError(f'{name} must be 0 or 1')
     prod = s.environment == 'prod'
@@ -130,6 +131,9 @@ def check_production_invariants(s: 'ProductionSettings') -> None:
         raise ConfigurationError('JOBFIT_PUBLIC_LIVE=1 requires JOBFIT_LIVE_ENABLED=1')
     if s.public_live and not prod:
         raise ConfigurationError('JOBFIT_PUBLIC_LIVE=1 requires JOBFIT_ENV=prod')
+    # D-105: the uploaded-CV path runs only on the production runtime (owner-only while the public beta is closed).
+    if s.real_cv_enabled and not (prod and s.live_enabled):
+        raise ConfigurationError('JOBFIT_REAL_CV_ENABLED=1 requires JOBFIT_ENV=prod and JOBFIT_LIVE_ENABLED=1')
     if prod:
         if not isinstance(s.database_url, str) or not s.database_url:
             raise ConfigurationError('DATABASE_URL must be set explicitly in prod')
@@ -166,6 +170,7 @@ class ProductionSettings:
     environment: str = 'dev'
     live_enabled: bool = False
     public_live: bool = False
+    real_cv_enabled: bool = False      # D-105 uploaded-CV switch; the public beta stays closed (owner only)
     database_url: str = field(default=Settings.database_url, repr=False)
     openrouter_api_key: str | None = field(default=None, repr=False)
     internal_token: str | None = field(default=None, repr=False)
@@ -204,8 +209,10 @@ def get_production_settings(env=None) -> ProductionSettings:
     prod = environment == 'prod'
     live = _flag(env, 'JOBFIT_LIVE_ENABLED')
     public = _flag(env, 'JOBFIT_PUBLIC_LIVE')
+    real_cv = _flag(env, 'JOBFIT_REAL_CV_ENABLED')
 
-    values: dict = {'environment': environment, 'live_enabled': live, 'public_live': public}
+    values: dict = {'environment': environment, 'live_enabled': live, 'public_live': public,
+                    'real_cv_enabled': real_cv}
     database_url = env.get('DATABASE_URL') or ''
     if database_url:
         values['database_url'] = database_url

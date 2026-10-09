@@ -68,9 +68,10 @@ class Fakes:
         store_search_results(store, handle, lease, live.operation_key, rows)
         return rows
 
-    def analyze_one(self, cv, *, job_id, jd_text, live):
+    def analyze_one(self, cv, *, job_id, jd_text, live, history_confirmed=False):
         assert cv.profile.is_synthetic is False or live.owner
         self.billable(live)
+        self.history = getattr(self, 'history', []) + [history_confirmed]
         return scored(job_id)
 
     def consume_ticket(self, pseudonym):

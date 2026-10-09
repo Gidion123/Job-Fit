@@ -220,7 +220,8 @@ def build_deps() -> AppDeps:
         skills, query = state['queries'][cv.profile.cv_id]
         with connect(settings.database_url if prod else None) as conn:
             retrieve = hybrid_retriever(conn, skills, query, state['spec'], job_ids=eligible)
-            return list(retrieve(min(config.stage1_k, len(eligible))))
+            # D-105: the browse list uses the frozen stage-1 candidate depth (30), not the analyzed K
+            return list(retrieve(min(config.stage1_candidate_depth, len(eligible))))
 
     def beta_envelopes():
         from jobfit.llm.public_beta_bounds import compute_public_beta_bounds
@@ -243,15 +244,20 @@ def build_deps() -> AppDeps:
         from jobfit.recommend.beta_analysis import job_analysis_refusal as refusal
         return refusal(beta_envelopes(), cv, job_id, **job_source(job_id, jd_text))
 
-    def analyze_one(cv: ParsedCV, *, job_id: str, jd_text: str | None, live=None):
-        """D-103 job_analysis: one JD through the frozen steps (no disk cache for a pasted JD)."""
+    def analyze_one(cv: ParsedCV, *, job_id: str, jd_text: str | None, live=None,
+                    history_confirmed: bool = DEMO_HISTORY_CONFIRMED):
+        """D-103 job_analysis: one JD through the frozen steps (no disk cache for a pasted JD).
+
+        ``history_confirmed``: synthetic demo CVs are complete by design; an uploaded CV passes the user's
+        own confirmation for its current digest (D-105), so its history is never assumed complete.
+        """
         from jobfit.extraction.audited import ExtractionSpec
         from jobfit.matching.experience_rule import constraint_lookup
         from jobfit.recommend.beta_analysis import analyze_one_job
         if prod and (runtime is None or live is None):
             raise LiveUnavailable('production live runs only through the Phase 2B runtime')
         spec = ExtractionSpec(REPO_ROOT / raw_cfg['jd_prompt_file'], raw_cfg['jd_prompt_version'])
-        constraints = (constraint_lookup(cv, history_confirmed=DEMO_HISTORY_CONFIRMED)
+        constraints = (constraint_lookup(cv, history_confirmed=history_confirmed)
                        if config.experience_conflict_rule else None)
 
         def work(client):
@@ -285,7 +291,7 @@ def build_deps() -> AppDeps:
         spec = next(s for s in load_specs() if s.model == model_id)
         return reserved_search(runtime, store, handle, lease, operation_key=live.operation_key, spec=spec,
                                connect=lambda: psycopg.connect(settings.database_url, autocommit=True),
-                               filters=filters, depth=config.stage1_k, envelopes=runtime.bounds.envelopes,
+                               filters=filters, depth=config.stage1_candidate_depth, envelopes=runtime.bounds.envelopes,
                                quota=live.quota, on_first_intent=live.on_first_billable)
 
     def consume_ticket(pseudonym: str) -> str:
@@ -321,9 +327,10 @@ def build_deps() -> AppDeps:
                    public_live=settings.public_live, maintenance=maintenance,
                    live_storage_ready=runtime.storage_ready if runtime is not None else None,
                    search=search, analyze_one=analyze_one, job_analysis_refusal=job_analysis_refusal,
-                   # Real CVs stay off until the D-051 gates (FAIL-37 masking, provider ZDR compatibility)
-                   # pass; the public beta opens only with public live, real CVs and D-103 eligibility.
-                   real_cv_enabled=False, public_beta_open=False,
+                   search_limit=config.stage1_candidate_depth,
+                   # D-105: uploaded CVs only with the explicit JOBFIT_REAL_CV_ENABLED switch on the production
+                   # runtime; the public beta stays closed (non-owners get 503), whatever JOBFIT_PUBLIC_LIVE says.
+                   real_cv_enabled=settings.real_cv_enabled and runtime is not None, public_beta_open=False,
                    real_parse=real_parse if prod else None, real_search=real_search if prod else None,
                    consume_ticket=consume_ticket if prod else None)
 

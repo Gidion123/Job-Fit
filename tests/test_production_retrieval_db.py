@@ -1,8 +1,9 @@
 """Production retrieval contract on real PostgreSQL (scratch database, fixture rows). No API calls.
 
 Only active, canonical, target-role production jobs with a current embedding of the frozen profile
-are retrievable; optional preferences keep UNKNOWN jobs; target role is not a strict pre-filter;
-results carry the metadata local filtering needs; a missing seed, schema or index fails closed and
+are retrievable; every optional pre-search filter narrows the eligible pool before retrieval (D-105,
+role family included) and keeps UNKNOWN jobs unless asked; results carry the filter-effective metadata
+local refinement needs; a missing seed, schema or index fails closed and
 nothing falls back to development data.
 """
 import os
@@ -32,6 +33,9 @@ JOBS = [  # job_id, active, role_group, role_family, country, work_mode, posted_
 ]
 
 
+BUCKET = {'P1': 'entry', 'P2': '3-4y'}         # P3 states no experience requirement (unknown)
+
+
 class Tok:
     def encode(self, text):
         return list(text)
@@ -41,10 +45,11 @@ def insert(conn, rows=JOBS, spec=SPEC):
     for job_id, active, group, family, country, mode, posted, _ in rows:
         conn.execute(
             "INSERT INTO jobs (job_id, content_hash, snapshot_id, title, company, description_clean, role_group, "
-            "role_family, country_code, city_normalized, work_mode, posted_at, apply_url, is_active, "
-            "first_seen_at, last_seen_at) VALUES (%s, 'current', 'fixture', %s, 'Acme', "
-            "'python sql machine learning pipelines', %s, %s, %s, %s, %s, %s, %s, %s, now(), now())",
-            (job_id, f'Engineer {job_id}', group, family, country, 'Jakarta' if country == 'ID' else None, mode,
+            "role_family, country_code, city_normalized, analysis_geo, experience_bucket, work_mode, posted_at, "
+            "apply_url, is_active, first_seen_at, last_seen_at) VALUES (%s, 'current', 'fixture', %s, 'Acme', "
+            "'python sql machine learning pipelines', %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now(), now())",
+            (job_id, f'Engineer {job_id}', group, family, country, 'Jakarta' if country == 'ID' else None,
+             'indonesia' if country == 'ID' else 'foreign' if country else 'unknown', BUCKET.get(job_id), mode,
              posted, f'https://jobs.example/{job_id}', active))
     store = JobEmbeddingStore(conn, 'fixture')
     store.save_batch(spec, [(prepare(r[0], 'python sql ' + r[0], spec, Tok(), 'current'), r[7]) for r in rows])
@@ -72,19 +77,38 @@ def test_only_eligible_production_jobs_are_retrieved_with_their_metadata(conn):
     assert {r['job_id'] for r in out} == {'P1', 'P2', 'P3'}
     assert [r['retrieval_rank'] for r in out] == [1, 2, 3]
     p1 = next(r for r in out if r['job_id'] == 'P1')
-    assert {k: p1[k] for k in ('role_family', 'country_code', 'city', 'work_mode', 'posted_at', 'url')} == {
-        'role_family': 'ai_ml_engineering', 'country_code': 'ID', 'city': 'Jakarta', 'work_mode': 'remote',
-        'posted_at': '2026-10-05', 'url': 'https://jobs.example/P1'}
+    assert {k: p1[k] for k in ('role_family', 'country_code', 'city', 'experience_bucket', 'work_mode', 'posted_at',
+                               'url')} == {
+        'role_family': 'ai_ml_engineering', 'country_code': 'ID', 'city': 'Jakarta', 'experience_bucket': 'entry',
+        'work_mode': 'remote', 'posted_at': '2026-10-05', 'url': 'https://jobs.example/P1'}
+    assert all(r['filter_status'] == 'matches' for r in out)       # blank filters: no narrowing, no unknown
 
 
-def test_optional_preferences_keep_unknown_jobs_and_target_role_is_not_a_strict_filter(conn):
+def test_optional_filters_keep_unknown_jobs_and_role_family_narrows_before_retrieval(conn):
     insert(conn)
     remote = search(conn, JobFilters(work_mode='remote'))
     assert {r['job_id']: r['filter_status'] for r in remote} == {'P1': 'matches', 'P3': 'unknown'}
     strict = search(conn, JobFilters(work_mode='remote', include_unknown=False))
     assert [r['job_id'] for r in strict] == ['P1']
     role = search(conn, JobFilters(role_family='data_science'))
-    assert {r['job_id'] for r in role} == {'P1', 'P2', 'P3'}       # a preference for local refinement only
+    assert {r['job_id'] for r in role} == {'P2'}                   # D-105: a pre-search filter, never widened
+
+
+@pytest.mark.parametrize('filters,expected', [
+    (JobFilters(country_code='sg'), {'P2': 'matches', 'P3': 'unknown'}),
+    (JobFilters(city=' jakarta '), {'P1': 'matches', 'P2': 'unknown', 'P3': 'unknown'}),
+    (JobFilters(city=' jakarta ', include_unknown=False), {'P1': 'matches'}),
+    (JobFilters(experience_bucket='3-4y'), {'P2': 'matches', 'P3': 'unknown'}),
+    (JobFilters(posted_within_days=7), {'P1': 'matches', 'P3': 'unknown'}),
+    (JobFilters(posted_within_days=7, include_unknown=False), {'P1': 'matches'}),
+    (JobFilters(role_family='genai_llm', experience_bucket='entry'), {'P3': 'unknown'}),
+    (JobFilters(role_family='genai_llm', experience_bucket='entry', include_unknown=False), {}),
+])
+def test_each_pre_search_filter_narrows_the_pool_before_retrieval(conn, filters, expected):
+    insert(conn)
+    out = search(conn, filters)
+    assert {r['job_id']: r['filter_status'] for r in out} == expected
+    assert [r['retrieval_rank'] for r in out] == list(range(1, len(out) + 1))
 
 
 def test_no_seed_fails_closed_and_never_falls_back_to_development_rows(conn):

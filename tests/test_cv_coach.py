@@ -2,7 +2,8 @@
 "not done" gives no bullet, at most three gaps, years/location never coached."""
 import pytest
 
-from jobfit.support.cv_coach import bullet, gaps_for_job, unsupported_words
+from jobfit.support.cv_coach import (NOT_VERIFIED_NOTE, REPRESENTATION_GUIDANCE, TRUE_GAP_NOTE, bullet, gaps_for_job,
+                                     not_verified, representation_items, true_gaps, unsupported_words)
 
 CARD = {'job_id': 'A', 'requirements': [
     {'requirement': 'Docker', 'label': 'NO_MATCH', 'importance': 'required', 'field': 'skill_tool'},
@@ -57,3 +58,61 @@ def test_missing_core_answers_refused():
 def test_no_number_is_added_when_none_given():
     out = bullet('SQL', True, SCENARIOS[1])
     assert not any(ch.isdigit() for ch in out['bullet'].replace('2026', ''))
+
+
+# ---- D-105: "Improve My CV for This Job", four mutually exclusive categories ----
+
+def categories(card):
+    """requirement text -> the set of categories it appears in."""
+    out = {}
+    for name, items, key in (('A', representation_items(card), 'requirement'), ('B', gaps_for_job(card, limit=99),
+                             'requirement'), ('V', not_verified(card), 'requirement')):
+        for item in items:
+            out.setdefault(item[key], set()).add(name)
+    return out
+
+
+def test_partial_with_evidence_is_a_only_and_no_match_is_b_only():
+    card = {**CARD, 'requirements': [dict(r, cv_quotes=['Wrote SQL for weekly reports.'])
+                                     if r['requirement'] == 'SQL' else r for r in CARD['requirements']]}
+    cats = categories(card)
+    assert cats['SQL'] == {'A'}                                    # PARTIAL + quote: A only, never the questions
+    assert cats['Docker'] == cats['Computer vision'] == cats['Airflow'] == {'B'}
+    assert 'SQL' not in [g['requirement'] for g in gaps_for_job(card)]
+    item = representation_items(card)[0]
+    assert item['current'] == ['Wrote SQL for weekly reports.'] and item['guidance'] == REPRESENTATION_GUIDANCE
+    assert item['asked'] == 'This job asks for: SQL'
+    assert all(len(v) == 1 for v in cats.values())                # every requirement in at most one category
+
+
+def test_a_never_turns_a_job_term_into_a_candidate_claim():
+    """JD asks for AWS; the CV only says cloud infrastructure: nothing may say the candidate used AWS."""
+    card = {'job_id': 'J', 'explicit_conflicts': [], 'requirements': [
+        {'unit_id': 'U1', 'requirement': 'AWS', 'label': 'PARTIAL', 'importance': 'required', 'field': 'skill_tool',
+         'cv_quotes': ['Deployed backend services to cloud infrastructure.']}]}
+    (item,) = representation_items(card)
+    candidate_side = ' '.join(item['current'] + item['evidence'] + [item['guidance']])
+    assert 'aws' not in candidate_side.casefold()
+    assert item['requirement'] == 'AWS' and item['asked'].startswith('This job asks for:')
+    assert set(item) == {'requirement', 'asked', 'current', 'guidance', 'evidence'}   # no rewritten CV line
+
+
+def test_unconfirmed_years_and_location_are_not_verified_never_true_gaps():
+    card = dict(CARD, explicit_conflicts=[])                        # history not confirmed: no D-086 conflict
+    assert true_gaps(card) == []
+    assert [v['requirement'] for v in not_verified(card)] == ['3 years of ML', 'Based in Jakarta']
+    assert all(v['note'] == NOT_VERIFIED_NOTE for v in not_verified(card))
+    assert categories(card)['3 years of ML'] == {'V'} and categories(card)['Based in Jakarta'] == {'V'}
+
+
+def test_a_confirmed_conflict_is_c_only_deduplicated_and_without_advice():
+    rows = [dict(r, unit_id=f'U{i}') for i, r in enumerate(CARD['requirements'])]
+    message = 'U2: the JD asks for at least 3 years; the whole CV work history is about 1 years. JD: 3 years of ML'
+    card = {'job_id': 'A', 'requirements': rows, 'explicit_conflicts': [message, message]}
+    (gap,) = true_gaps(card)
+    assert gap == {'conflict': message, 'note': TRUE_GAP_NOTE}
+    assert 'project' not in gap['note'].casefold() and 'learn' not in gap['note'].casefold()
+    assert '3 years of ML' not in [v['requirement'] for v in not_verified(card)]     # C, not "not verified"
+    assert '3 years of ML' not in [g['requirement'] for g in gaps_for_job(card)]      # nor B
+    assert '3 years of ML' not in [a['requirement'] for a in representation_items(card)]   # nor A
+    assert [v['requirement'] for v in not_verified(card)] == ['Based in Jakarta']    # location absence is no conflict

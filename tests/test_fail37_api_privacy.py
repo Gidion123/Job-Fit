@@ -114,7 +114,7 @@ class SpyFakes(Fakes):
         store_search_results(store, handle, lease, live.operation_key, ROWS)
         return ROWS
 
-    def analyze_one(self, cv, *, job_id, jd_text, live):
+    def analyze_one(self, cv, *, job_id, jd_text, live, history_confirmed=False):
         self.billable(live)
         self.analyzed_cvs.append(cv)
         config = RecommendConfig.from_yaml(CONFIG)

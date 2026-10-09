@@ -62,7 +62,7 @@ from jobfit.schemas.api import (AnalyzeRequest, CoachAnswer, ConsentRequest, Fee
                                 MarketQuery, PasteRequest, PreviewEdit, RunRequest, SearchRequest, TailorRequest)
 from jobfit.search.filters import JobFilters
 from jobfit.session.store import SessionDenied, SessionHandle, SessionStore
-from jobfit.support.cv_coach import bullet, gaps_for_job
+from jobfit.support.cv_coach import bullet, gaps_for_job, not_verified, representation_items, true_gaps
 from jobfit.support.cv_suggestions import suggestions
 from jobfit.support.market_insight import skill_counts
 
@@ -638,9 +638,12 @@ def create_app(deps: AppDeps) -> FastAPI:
                     'partial': list(state.done), 'result': state.result, 'error': state.error}
 
     def run_cards(run_id: str, h: SessionHandle) -> list[dict]:
+        """The analyzed cards of a finished run: a demo recommendation run, or one Analyze Fit result (D-105)."""
         state = owned_run(run_id, h)
+        if state.status == 'done' and state.kind == 'analysis':
+            return [state.result['card']]
         if state.status != 'done' or state.kind != 'recommendations':
-            raise HTTPException(409, 'Suggestions need a finished recommendation run')
+            raise HTTPException(409, 'Suggestions need a finished recommendation run or Analyze Fit result')
         return [c for b in state.result['blocks'] for g in b['groups'].values() for c in g]
 
     @app.post('/tailor')
@@ -652,7 +655,8 @@ def create_app(deps: AppDeps) -> FastAPI:
         card = next((c for c in cards if c['job_id'] == body.job_id), None)
         if card is None or not card.get('scored'):
             raise HTTPException(404, 'Pick a scored job from this run')
-        return {'job_id': body.job_id, 'gaps': gaps_for_job(card),
+        return {'job_id': body.job_id, 'gaps': gaps_for_job(card), 'representation': representation_items(card),
+                'true_gaps': true_gaps(card), 'not_verified': not_verified(card),
                 'rules': 'Bullets use only your answers; "not done" gives learning ideas, never a bullet; '
                          'answers stay in this session and never change the score.'}
 
@@ -699,11 +703,13 @@ def create_app(deps: AppDeps) -> FastAPI:
             if not deps.live_enabled or deps.analyze_one is None:
                 raise HTTPException(503, LIVE_OFF_MESSAGE)
             lease, parsed = parsed_state(h)
+            history = '1' if body.history_confirmed else '0'
             return start_job_analysis(request, h, parsed, job_id='pasted', jd_text=text,
                                       meta={'title': 'Pasted job description'},
                                       note='Pasted JDs are analyzed for this session only.',
-                                      action=('pasted_jd', {'cv': lease.text_digest, 'paste': body.paste_id}),
-                                      real=True)
+                                      action=('pasted_jd', {'cv': lease.text_digest, 'paste': body.paste_id,
+                                                            'history': history}),
+                                      real=True, history_confirmed=body.history_confirmed)
         cv = deps.demo_cvs.get(body.demo_cv_id)
         if cv is None:
             raise HTTPException(404, 'Unknown demo CV')
@@ -735,8 +741,8 @@ def create_app(deps: AppDeps) -> FastAPI:
     def search_jobs(body: SearchRequest, request: Request, h: SessionHandle = Depends(handle)):
         try:
             filters = JobFilters(role_family=body.role_family, country_code=body.country_code, city=body.city,
-                                 work_mode=body.work_mode, posted_within_days=body.posted_within_days,
-                                 include_unknown=body.include_unknown)
+                                 experience_bucket=body.experience_bucket, work_mode=body.work_mode,
+                                 posted_within_days=body.posted_within_days, include_unknown=body.include_unknown)
         except ValueError as exc:
             raise HTTPException(422, str(exc))
         if body.cv_source == 'upload':
@@ -780,7 +786,7 @@ def create_app(deps: AppDeps) -> FastAPI:
         real_cv_gate()
         if not deps.live_enabled or deps.real_search is None:
             raise HTTPException(503, LIVE_OFF_MESSAGE)
-        lease, _parsed = parsed_state(h)
+        lease, parsed = parsed_state(h)
         # the action: the consented CV plus every normalized filter and preference (no CV or JD text)
         live = real_live_request(request, h, 'search',
                                  ('real_search', {'cv': lease.text_digest, 'filters': search_identity(filters)}))
@@ -797,8 +803,10 @@ def create_app(deps: AppDeps) -> FastAPI:
                 settle_live(h, live, exc)
                 raise real_http_error(exc) from None
             settle_live(h, live, None)
+        # analysis_date: the date the filters used (posted window), for zero-call local refinement in the UI
         return {'stage': 'retrieval', 'final_order': False, 'label': SEARCH_STAGE_LABEL,
                 'analysis_limit': MAX_ANALYSES_PER_SESSION, 'cv_source': 'upload',
+                'analysis_date': parsed.analysis_date.isoformat(),
                 'jobs': [retrieval_card(r['job_id'], r['retrieval_rank'], r) for r in rows[:deps.search_limit]]}
 
     @app.post('/jobs/{job_id}/analyze')
@@ -817,8 +825,11 @@ def create_app(deps: AppDeps) -> FastAPI:
             row = next((r for r in rows if r['job_id'] == job_id), None)
             if row is None:
                 raise HTTPException(404, 'Analyze Fit needs a job from your Relevant Jobs')
+            history = '1' if body.history_confirmed else '0'
             return start_job_analysis(request, h, parsed, job_id=job_id, jd_text=None, meta=row, note=None,
-                                      action=('corpus_job', {'cv': lease.text_digest, 'job': job_id}), real=True)
+                                      action=('corpus_job', {'cv': lease.text_digest, 'job': job_id,
+                                                             'history': history}),
+                                      real=True, history_confirmed=body.history_confirmed)
         if job_id not in deps.jobs:
             raise HTTPException(404, 'Job not in the searchable corpus')
         cv = deps.demo_cvs.get(body.demo_cv_id)
@@ -831,13 +842,16 @@ def create_app(deps: AppDeps) -> FastAPI:
                                   action=('corpus_job', {'cv': body.demo_cv_id, 'job': job_id}))
 
     def start_job_analysis(request: Request, h: SessionHandle, cv, *, job_id: str, jd_text: str | None,
-                           meta, note: str | None, action: tuple[str, dict], real: bool = False) -> dict:
+                           meta, note: str | None, action: tuple[str, dict], real: bool = False,
+                           history_confirmed: bool = False) -> dict:
         """One job_analysis operation: owner-only in production, envelope check before any reservation.
 
         ``action`` names the intended action by non-sensitive ids only (the CV id and the corpus job
         id or the opaque paste id); the idempotency key is bound to its fingerprint. The real-CV
         adapter binds the consented-CV digest the same way. ``real``: the session's consented, parsed
         CV, admitted for the owner or (public beta open) through the ticket and the session allowance.
+        ``history_confirmed`` (real CVs only, D-105): the user's confirmation for the current CV digest that
+        it lists the whole work history; bound into the action, so another answer is another action.
         """
         if not real:
             beta_owner_only(request)
@@ -853,7 +867,8 @@ def create_app(deps: AppDeps) -> FastAPI:
             if isinstance(live, dict):
                 return live
             return start_real_job(h, 'analysis', MAX_ANALYSES_PER_SESSION, live,
-                                  lambda: deps.analyze_one(cv, job_id=job_id, jd_text=jd_text, live=live),
+                                  lambda: deps.analyze_one(cv, job_id=job_id, jd_text=jd_text, live=live,
+                                                           history_confirmed=history_confirmed),
                                   lambda r: {**analyzed_job(r, meta), 'source': 'live', 'cv_source': 'upload',
                                              **({'session_note': note} if note else {})})
         live = None

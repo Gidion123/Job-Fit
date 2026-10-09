@@ -6,15 +6,15 @@ eligible job, and the frozen hybrid retriever (FTS + dense, RRF) restricted to t
 **no fallback to the CP1 development split**: a missing seed, an incomplete or incompatible index,
 a missing tokenizer or an integrity mismatch fails closed as ``production_retrieval_unavailable``.
 
-Optional preferences (D-010 ``JobFilters``) keep the UNKNOWN behaviour. Target role is a preference
-for local refinement, not a strict pre-filter (Find Jobs clarification, 8 Oct): it is dropped
-before retrieval and returned as card metadata. Each result carries the lightweight metadata that
-local filtering needs, so no per-job request is required. Results are retrieval-stage relevant
-jobs, never JobFit match rankings.
+Optional pre-search filters (D-010 ``JobFilters``: role family, country, city, experience requirement,
+work mode, posting window) keep the UNKNOWN behaviour and narrow the eligible pool **before** the
+frozen retriever ranks it (D-105; this supersedes the 8 Oct "target role is a refinement only"
+clarification). Blank filters leave the whole eligible pool. Each result carries the lightweight,
+filter-effective metadata that zero-call local refinement needs, so no per-job request is required.
+Results are retrieval-stage relevant jobs, never JobFit match rankings.
 """
 from __future__ import annotations
 
-from dataclasses import replace
 from datetime import date
 
 ELIGIBLE_SQL = ("SELECT job_id, title, company, role_family, role_group, country_code, city_normalized, "
@@ -67,9 +67,13 @@ def load_query_tokenizer(spec):
 
 
 def card_metadata(row: dict) -> dict:
+    """Card metadata; the country is the value the filters use (the frozen rule: unknown location -> None)."""
+    from jobfit.search.filters import _country
+    country = _country(row)
     return {'title': row.get('title'), 'company': row.get('company'), 'role_family': row.get('role_family'),
-            'country_code': row.get('country_code'), 'city': row.get('city_normalized'),
-            'location': ', '.join(x for x in (row.get('city_normalized'), row.get('country_code')) if x) or None,
+            'country_code': country, 'city': row.get('city_normalized'),
+            'location': ', '.join(x for x in (row.get('city_normalized'), country) if x) or None,
+            'experience_bucket': row.get('experience_bucket'),
             'work_mode': row.get('work_mode'), 'posted_at': row.get('posted_at'), 'url': row.get('apply_url')}
 
 
@@ -82,8 +86,7 @@ def production_search(conn, cv_skills, query, spec, filters, *, analysis_date: d
     rows = eligible_jobs(conn)
     by_id = {r['job_id']: r for r in rows}
     check_index(conn, spec, by_id)
-    pre = replace(filters or JobFilters(), role_family=None)       # target role: preference, not a pre-filter
-    filtered = filter_jobs(rows, pre, analysis_date=analysis_date)
+    filtered = filter_jobs(rows, filters or JobFilters(), analysis_date=analysis_date)   # every filter narrows
     eligible = list(filtered.eligible_ids)
     if not eligible:
         return []

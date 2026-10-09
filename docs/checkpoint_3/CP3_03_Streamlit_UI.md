@@ -227,4 +227,11 @@ CP3.4 (checkpoint 18): end-to-end testing and feature freeze.
   - the client against the real API in owner-only mode.
 - `tests/test_ui_client.py`: 9 (the demo flows still work).
 
+**Audit correction (9 Oct 2026):**
+- **Work-history question.** It moved from CV Ready to just before the first Analyze Fit (in Find Jobs above the Relevant Jobs list, in Check a Job above its button). It defaults to unchecked, with help text saying unchecked is right when older jobs may be missing. It is frozen for the CV digest at the first Analyze Fit attempt, before the request (shown disabled afterwards, also after a lost response), and reused by both flows. A new CV resets it.
+- **Analyze Fit view.** It renders the API's `requirement_groups`: Experience conflict, Strengths, Evidence gaps, and Not verified from this CV.
+- **Country selector.** It now offers Indonesia, Singapore, Malaysia, Philippines and United States (codes ID, SG, MY, PH, US).
+- **Escaping.** CV quotes, conflict messages, coach question labels and ideas are escaped like other untrusted text.
+- **Tests.** `tests/test_ui_product_flow.py` now has 22 tests, including the lost-response history lock, the grouping, the country options and a Markdown-injection regression.
+
 **Not done:** the owner Local Mac run, screenshots of a real session, mobile layout review, the deployed UI.

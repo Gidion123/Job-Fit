@@ -6,6 +6,7 @@ from collections.abc import Mapping
 from jobfit.recommend.service import JobResult, Recommendation
 from jobfit.schemas.analysis import ConstraintState
 from jobfit.scoring.ranking import SCORED
+from jobfit.support.cv_coach import requirement_groups
 
 NOTE = 'Match % is CV evidence coverage of the required items, not a hiring probability.'
 
@@ -54,7 +55,7 @@ def analyzed_job(r: JobResult, meta: Mapping | None = None) -> dict:
     """D-103: one analyzed job; only a scored analysis has a match score."""
     card = job_card(r, meta)
     return {'stage': 'analyzed', 'analyzed': True, 'match_score': card['score_pct'] if card['scored'] else None,
-            'card': card, 'note': NOTE}
+            'card': card, 'requirement_groups': requirement_groups(card), 'note': NOTE}
 
 
 def _groups(rec: Recommendation, ids: list[str], cards: dict) -> dict:

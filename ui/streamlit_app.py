@@ -28,6 +28,11 @@ from refine import options, refine
 
 st.set_page_config(page_title='JobFit', layout='wide')
 POLL_SECONDS = 1.5
+COUNTRY = {'ID': 'Indonesia', 'SG': 'Singapore', 'MY': 'Malaysia', 'PH': 'Philippines', 'US': 'United States'}
+HISTORY_LABEL = 'My CV lists my complete work history (all jobs, with dates)'
+HISTORY_HELP = ('Leave this unchecked if older or less relevant jobs may be missing from your CV: then a "needs N '
+                'years" requirement is shown as not verified instead of being compared with your total experience. '
+                'It never changes the evidence coverage.')
 MAX_ANALYSES = 3
 # Everything derived from the current uploaded CV; cleared whenever the CV (its digest) changes.
 CV_STATE = ('cv_ready', 'parse_run', 'parse_result', 'consented_digest', 'flow', 'search', 'analyses',
@@ -104,10 +109,13 @@ def billable(kind: str, start, **ids):
     try:
         out = call(start, key)
     except ApiError as exc:
+        st.session_state.billable_error = exc.detail
         st.error(exc.detail)
         return None
     except httpx.HTTPError:
-        st.error('Connection problem: press the button again to retry the same request (it will not run twice).')
+        st.session_state.billable_error = ('Connection problem: press the button again to retry the same request '
+                                           '(it will not run twice).')
+        st.error(st.session_state.billable_error)
         return None
     actions.acknowledged(out if isinstance(out, str) else key)
     return out
@@ -212,9 +220,8 @@ if preview:
 if preview and st.session_state.get('cv_ready'):
     digest = preview['digest']
     st.success('CV ready.')
-    history = st.checkbox('My CV lists my complete work history (all jobs, with dates)', key=f'history_{digest}',
-                          help='Only then can a "needs N years" requirement be checked against your total '
-                               'experience. Unchecked, years requirements are shown as not verified.')
+    if st.session_state.get('analyze_error'):          # a failed Analyze Fit attempt, shown after the rerun
+        st.error(st.session_state.pop('analyze_error'))
     analyses = st.session_state.setdefault('analyses', {})
     used = len(analyses)
     st.subheader('What do you want to do?')
@@ -225,12 +232,43 @@ if preview and st.session_state.get('cv_ready'):
         st.session_state.flow = 'check'
     st.caption(f'{used} of {MAX_ANALYSES} job analyses used in this session.')
 
+    def history_control(where: str) -> None:
+        """The D-086 work-history answer, asked only where an Analyze Fit is about to happen (D-105).
+
+        One answer per sanitized-CV digest, shared by Find Jobs and Check a Job. It is frozen at the first
+        Analyze Fit click, before the request is sent, so a retry after a lost response keeps the same action
+        (same answer, same idempotency key) and existing results never change underneath it. A new upload
+        or edit is a new digest and starts unchecked again (reset_cv_state clears every history_ key).
+        """
+        frozen = st.session_state.get('history_locked', {})
+        if digest in frozen:
+            st.checkbox(HISTORY_LABEL, value=frozen[digest], disabled=True, key=f'history_fixed_{where}_{digest}')
+            st.caption('Fixed for this CV version: every analysis of this CV uses the same answer. '
+                       'Upload or edit your CV to change it.')
+            return
+        choice = st.session_state.setdefault('history_choice', {})
+        choice[digest] = st.checkbox(HISTORY_LABEL, value=choice.get(digest, False), key=f'history_{where}_{digest}',
+                                     help=HISTORY_HELP)
+
+    def frozen_history() -> bool:
+        """Freeze the answer for this digest at the first Analyze Fit attempt (before any request)."""
+        frozen = st.session_state.setdefault('history_locked', {})
+        if digest not in frozen:
+            frozen[digest] = bool(st.session_state.get('history_choice', {}).get(digest, False))
+        return frozen[digest]
+
     def analyze(kind: str, job_id: str, start, **ids):
-        """Start one Analyze Fit; its run id is kept, so a rerun resumes polling and never posts again."""
+        """Start one Analyze Fit; its run id is kept, so a rerun resumes polling and never posts again.
+
+        ``start(key, history)`` sends the request; the history answer is frozen before it, so every retry of
+        this action carries the same answer and therefore the same idempotency key.
+        """
         if job_id not in analyses:
-            run_id = billable(kind, start, cv=digest, history=bool(history), **ids)
-            if not run_id:
-                return
+            history = frozen_history()
+            run_id = billable(kind, lambda key: start(key, history), cv=digest, history=history, **ids)
+            if not run_id:                 # rerun so the answer shows as fixed; the error is shown after it
+                st.session_state.analyze_error = st.session_state.pop('billable_error', None)
+                st.rerun()
             analyses[job_id] = {'run_id': run_id, 'result': None}
             st.session_state.selected_job = job_id
             st.rerun()                     # the counter updates; the result section below polls the run
@@ -242,7 +280,8 @@ if preview and st.session_state.get('cv_ready'):
             st.caption('All filters are optional. Leave them on Any to search every eligible job.')
             f1, f2, f3 = st.columns(3)
             family = f1.selectbox('Role family', ['Any', *ROLE_FAMILY], format_func=lambda v: ROLE_FAMILY.get(v, v))
-            country = f2.selectbox('Country', ['Any', 'ID', 'SG', 'MY'])
+            country = f2.selectbox('Country', ['Any', *COUNTRY], format_func=lambda v: COUNTRY.get(v, v),
+                                   key='search_country')
             city = f3.text_input('City (blank = any)', max_chars=60)
             f4, f5, f6 = st.columns(3)
             experience = f4.selectbox('Experience requirement', ['Any', *EXPERIENCE],
@@ -304,6 +343,7 @@ if preview and st.session_state.get('cv_ready'):
                                include_unknown=keep_unknown)
                 st.caption(f'Showing {len(shown)} of {len(cards)} relevant jobs, in search-relevance order. '
                            'Analyze a job to see how well your CV supports it.')
+                history_control('find')
                 for card in shown:
                     with st.container(border=True):
                         relevant_job_card(card)
@@ -312,14 +352,15 @@ if preview and st.session_state.get('cv_ready'):
                             if st.button('Show Analyze Fit result', key=f'show_{job_id}'):
                                 st.session_state.selected_job = job_id
                         elif st.button('Analyze Fit', key=f'analyze_{job_id}', disabled=used >= MAX_ANALYSES):
-                            analyze('corpus_job', job_id, lambda key, j=job_id: api.analyze_job(j, history, key),
-                                    job=job_id)
+                            analyze('corpus_job', job_id,
+                                    lambda key, hist, j=job_id: api.analyze_job(j, hist, key), job=job_id)
 
     if st.session_state.get('flow') == 'check':
         st.subheader('Check a Job')
         st.caption('Paste a job description you found elsewhere. It stays in this session only, is treated as '
                    'data (never as instructions) and is never added to the job corpus.')
         jd = st.text_area('Job description', height=250, max_chars=20000, key='check_jd')
+        history_control('check')
         if st.button('Analyze Fit for this job', type='primary', disabled=used >= MAX_ANALYSES):
             if len(jd.strip()) < 200:
                 st.error('Please paste the full job description (at least 200 characters).')
@@ -331,7 +372,7 @@ if preview and st.session_state.get('cv_ready'):
                     paste_ids[text_key] = paste_id
                     st.session_state.pasted = f'pasted:{paste_id}'
                     analyze('pasted_jd', st.session_state.pasted,
-                            lambda key: api.analyze_pasted(paste_id, history, key), paste=paste_id)
+                            lambda key, hist: api.analyze_pasted(paste_id, hist, key), paste=paste_id)
                 except ApiError as exc:
                     st.error(exc.detail)
 

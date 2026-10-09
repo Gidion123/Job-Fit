@@ -97,10 +97,13 @@ def analyzed(job_id, title):
                 {'unit_id': 'u2', 'requirement': 'AWS', 'importance': 'required', 'field': 'skill_tool',
                  'label': 'PARTIAL', 'check_status': 'ok', 'cv_quotes': ['Deployed services to cloud infrastructure.']},
                 {'unit_id': 'u3', 'requirement': 'Docker', 'importance': 'required', 'field': 'skill_tool',
-                 'label': 'NO_MATCH', 'check_status': 'ok', 'cv_quotes': []}],
+                 'label': 'NO_MATCH', 'check_status': 'ok', 'cv_quotes': []},
+                {'unit_id': 'u4', 'requirement': '3 years of ML engineering', 'importance': 'required',
+                 'field': 'experience_duration', 'label': 'NO_MATCH', 'check_status': 'ok', 'cv_quotes': []}],
             'matcher_model': 'fake', 'used_fallback': False}
-    return {'stage': 'analyzed', 'analyzed': True, 'match_score': 50.0, 'card': card, 'note': 'note',
-            'source': 'live', 'cv_source': 'upload'}
+    from jobfit.support.cv_coach import requirement_groups     # the API's grouping, as the presenter adds it
+    return {'stage': 'analyzed', 'analyzed': True, 'match_score': 50.0, 'card': card,
+            'requirement_groups': requirement_groups(card), 'note': 'note', 'source': 'live', 'cv_source': 'upload'}
 
 
 class Fake(ApiClient):
@@ -286,14 +289,41 @@ def test_local_refinement_makes_no_call_and_keeps_the_order(app):
     assert Recorder.calls == before                                              # zero API calls, zero keys
 
 
+def history_box(at, where, digest):
+    return at.checkbox(key=f'history_{where}_{digest}')
+
+
+def test_no_work_history_question_until_an_analyze_fit_is_near(app):
+    at = app
+    upload_and_parse(at)
+    assert not any(c.label.startswith('My CV lists my complete work history') for c in at.checkbox)   # CV Ready
+    find_jobs(at)
+    digest = names('consent')[0][1][0]
+    assert history_box(at, 'find', digest).value is False                       # contextual, default False
+
+
+def test_unconfirmed_first_analyze_fit_sends_false_and_the_answer_is_then_fixed(app):
+    at = app
+    upload_and_parse(at)
+    find_jobs(at)
+    digest = names('consent')[0][1][0]
+    button(at, 'Analyze Fit').click().run()
+    assert names('analyze_job')[-1][1][1] is False
+    fixed = at.checkbox(key=f'history_fixed_find_{digest}')
+    assert fixed.disabled and fixed.value is False                              # cannot change under the result
+
+
 def test_check_a_job_reuses_the_history_answer_and_a_new_cv_resets_everything(app):
     at = app
     upload_and_parse(at)
     digest_a = names('consent')[0][1][0]
-    at.checkbox(key=f'history_{digest_a}').check().run()
     find_jobs(at)
+    history_box(at, 'find', digest_a).check().run()                            # chosen before the first Analyze Fit
     button(at, 'Analyze Fit').click().run()
+    assert names('analyze_job')[-1][1][1] is True
     at.button(key='choose_check').click().run()
+    fixed = at.checkbox(key=f'history_fixed_check_{digest_a}')
+    assert fixed.disabled and fixed.value is True                               # the same fixed answer
     at.text_area(key='check_jd').input('Machine learning engineer. ' * 20).run()
     button(at, 'Analyze Fit for this job').click().run()
     assert not at.exception
@@ -306,16 +336,65 @@ def test_check_a_job_reuses_the_history_answer_and_a_new_cv_resets_everything(ap
     assert not any(c.value.startswith('Showing ') for c in at.caption)
     assert not any(m.label == 'Evidence coverage' for m in at.metric)
     assert not any('This job asks for' in m.value for m in at.markdown)
-    for key in ('analyses', 'search', 'coach', 'pasted', 'paste_ids', 'cv_ready', 'parse_run', 'flow'):
+    for key in ('analyses', 'search', 'coach', 'pasted', 'paste_ids', 'cv_ready', 'parse_run', 'flow',
+                'history_choice', 'history_locked'):
         assert key not in at.session_state
     next(c for c in at.checkbox if c.label.startswith('I checked this text')).check().run()
     button(at, 'Continue: analyze my CV').click().run()
     digest_b = names('consent')[-1][1][0]
     assert digest_b != digest_a
-    assert at.checkbox(key=f'history_{digest_b}').value is False
     find_jobs(at)
+    box = history_box(at, 'find', digest_b)
+    assert box.value is False and not box.disabled
     button(at, 'Analyze Fit').click().run()
     assert names('analyze_job')[-1][1][1] is False                               # never carried across CVs
+
+
+def test_a_lost_first_response_keeps_the_history_locked_and_the_retry_identical(app):
+    at = app
+    upload_and_parse(at)
+    find_jobs(at)
+    digest = names('consent')[0][1][0]
+    history_box(at, 'find', digest).check().run()
+    Recorder.lose_next_analyze = True
+    button(at, 'Analyze Fit').click().run()
+    assert any('Connection problem' in e.value for e in at.error)
+    assert 'analyses' not in at.session_state or not at.session_state['analyses']   # no entry: response lost
+    fixed = at.checkbox(key=f'history_fixed_find_{digest}')
+    assert fixed.disabled and fixed.value is True                               # still locked to the chosen answer
+    button(at, 'Analyze Fit').click().run()
+    first, second = names('analyze_job')
+    assert first[1][1] is True and second[1][1] is True                         # same history value
+    assert first[1][2] == second[1][2]                                          # same Idempotency-Key
+
+
+def test_analyze_fit_separates_gaps_not_verified_and_strengths(app):
+    at = app
+    upload_and_parse(at)
+    find_jobs(at)
+    button(at, 'Analyze Fit').click().run()
+    md = [m.value for m in at.markdown]
+    heads = {h: md.index(h) for h in ('**Strengths (supported by your CV)**',
+                                      '**Evidence gaps (partly supported or not found)**',
+                                      '**Not verified from this CV**')}
+    after = lambda h: md[heads[h] + 1:]                                          # noqa: E731
+    gaps = [m for m in after('**Evidence gaps (partly supported or not found)**')
+            if m.startswith('- ')][:2]
+    assert [g.split(':')[0] for g in gaps] == ['- AWS', '- Docker']             # editable PARTIAL and NO_MATCH
+    assert next(m for m in after('**Not verified from this CV**') if m.startswith('- ')) == \
+        '- 3 years of ML engineering'
+    assert not any(m.startswith('- 3 years of ML engineering:') for m in md)     # never listed as a gap
+
+
+def test_the_country_selector_covers_the_seeded_snapshot(app):
+    at = app
+    upload_and_parse(at)
+    at.button(key='choose_find').click().run()
+    assert at.selectbox(key='search_country').options == ['Any', 'Indonesia', 'Singapore', 'Malaysia', 'Philippines',
+                                                          'United States']
+    at.selectbox(key='search_country').set_value('PH')
+    at.button(key='search_submit').click().run()                               # a form submits its values together
+    assert names('search_jobs')[-1][1][0]['country_code'] == 'PH'
 
 
 def test_a_successful_edit_is_a_new_cv_too(app):
@@ -396,3 +475,50 @@ def test_the_client_runs_the_owner_flow_against_the_real_api(tmp_path, monkeypat
         api.search_jobs({'experience_bucket': 'senior'}, '3f0b6a52-3c4e-4c43-9d1e-6a1f3cc0a105')
     assert exc.value.status == 422
     api.delete_session()
+
+
+# ---- untrusted CV/JD text renders as text, never as user-controlled Markdown ------------------------------------
+
+EVIL = '[x](https://evil.example) ![i](https://evil.example/p.png)'
+
+
+def render_untrusted():
+    """Run inside AppTest: product views fed with Markdown-looking CV/JD-derived strings."""
+    import sys
+    sys.path.insert(0, 'ui')
+    from components import analysis_view, coach_view, job_card
+    evil = '[x](https://evil.example) ![i](https://evil.example/p.png)'
+    card = {'job_id': 'J', 'title': evil, 'company': evil, 'location': evil, 'url': None, 'score_pct': 50.0,
+            'status': 'final', 'scored': True, 'matched': 1, 'partial': 0, 'required_total': 2,
+            'soft_skills': {'total': 0, 'matched': 0, 'partial': 0}, 'reasons': [], 'hold_reason': None,
+            'explicit_conflicts': [f'u1: {evil}'], 'excluded_units': [],
+            'requirements': [{'unit_id': 'u1', 'requirement': evil, 'importance': 'required',
+                              'field': 'experience_duration', 'label': 'NO_MATCH', 'check_status': 'ok',
+                              'cv_quotes': []},
+                             {'unit_id': 'u2', 'requirement': evil, 'importance': 'required', 'field': 'skill_tool',
+                              'label': 'PARTIAL', 'check_status': 'ok', 'cv_quotes': [evil]}],
+            'matcher_model': 'fake', 'used_fallback': False}
+    analysis_view({'card': card, 'requirement_groups': {'conflict': ['u1'], 'not_verified': [], 'strengths': [],
+                                                        'gaps': ['u2']}})
+    coach_view({'job_id': 'J', 'rules': 'rules',
+                'representation': [{'requirement': evil, 'asked': f'This job asks for: {evil}', 'current': [evil],
+                                    'guidance': 'fixed', 'evidence': [evil]}],
+                'gaps': [{'gap_index': 0, 'requirement': evil, 'label': 'NO_MATCH',
+                          'question_first': f'Have you worked on: {evil}?', 'questions': {}}],
+                'true_gaps': [{'conflict': f'u1: {evil}', 'note': 'fact'}],
+                'not_verified': [{'requirement': evil, 'unit_ids': ['u9'], 'note': 'Not verified from this CV.'}]},
+               on_answer=lambda *a: None)
+    job_card(card, 1)
+
+
+def test_untrusted_text_is_escaped_before_markdown_rendering():
+    from streamlit.testing.v1 import AppTest
+    at = AppTest.from_function(render_untrusted, default_timeout=30).run()
+    assert not at.exception
+    bodies = ([m.value for m in at.markdown] + [c.value for c in at.caption] + [w.value for w in at.warning]
+              + [r.label for r in at.radio])
+    untrusted = [b for b in bodies if 'evil' in b]
+    assert len(untrusted) >= 8                     # title, company, conflicts, gaps, quotes, questions, C, not verified
+    for body in untrusted:
+        assert '[x](' not in body and '![i](' not in body, body                 # never live Markdown
+        assert r'\[x\]\(https' in body and r'\!\[i\]\(https' in body, body       # escaped, shown as text

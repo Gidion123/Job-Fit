@@ -3,7 +3,8 @@
 import pytest
 
 from jobfit.support.cv_coach import (NOT_VERIFIED_NOTE, REPRESENTATION_GUIDANCE, TRUE_GAP_NOTE, bullet, gaps_for_job,
-                                     not_verified, representation_items, true_gaps, unsupported_words)
+                                     not_verified, representation_items, requirement_groups, true_gaps,
+                                     unsupported_words)
 
 CARD = {'job_id': 'A', 'requirements': [
     {'requirement': 'Docker', 'label': 'NO_MATCH', 'importance': 'required', 'field': 'skill_tool'},
@@ -116,3 +117,46 @@ def test_a_confirmed_conflict_is_c_only_deduplicated_and_without_advice():
     assert '3 years of ML' not in [g['requirement'] for g in gaps_for_job(card)]      # nor B
     assert '3 years of ML' not in [a['requirement'] for a in representation_items(card)]   # nor A
     assert [v['requirement'] for v in not_verified(card)] == ['Based in Jakarta']    # location absence is no conflict
+
+
+# ---- the Analyze Fit view grouping (conflict > not verified > strengths / evidence gaps) ----
+
+def rows(*specs):
+    return [{'unit_id': u, 'requirement': text, 'label': label, 'importance': 'required', 'field': field,
+             'cv_quotes': ['Some evidence.'] if label == 'PARTIAL' else []} for u, text, label, field in specs]
+
+
+GROUP_CARD = {'job_id': 'G', 'explicit_conflicts': [], 'requirements': rows(
+    ('u1', 'Python', 'MATCH', 'skill_tool'),
+    ('u2', 'SQL', 'PARTIAL', 'skill_tool'),
+    ('u3', 'Docker', 'NO_MATCH', 'skill_tool'),
+    ('u4', '3 years of ML', 'NO_MATCH', 'experience_duration'),
+    ('u5', '2 years of analytics', 'PARTIAL', 'experience_duration'),
+    ('u6', 'Based in Jakarta', 'NO_MATCH', 'location'))}
+
+
+def test_unconfirmed_background_requirements_are_not_verified_never_gaps():
+    groups = requirement_groups(GROUP_CARD)
+    assert groups == {'conflict': [], 'not_verified': ['u4', 'u5', 'u6'], 'strengths': ['u1'], 'gaps': ['u2', 'u3']}
+    assert {u for item in not_verified(GROUP_CARD) for u in item['unit_ids']} == {'u4', 'u5', 'u6'}
+    assert [a['requirement'] for a in representation_items(GROUP_CARD)] == ['SQL']        # editable PARTIAL: A too
+
+
+def test_a_confirmed_conflict_is_only_a_conflict_with_explicit_precedence():
+    card = dict(GROUP_CARD, explicit_conflicts=['u4: the JD asks for at least 3 years; the CV history is 1 year.',
+                                                'u1: an evidence-labelled unit with a confirmed constraint'])
+    groups = requirement_groups(card)
+    assert groups['conflict'] == ['u1', 'u4']                                 # conflict wins over MATCH and not verified
+    assert groups['not_verified'] == ['u5', 'u6'] and groups['strengths'] == [] and groups['gaps'] == ['u2', 'u3']
+    every = [u for g in groups.values() for u in g]
+    assert len(every) == len(set(every))                                      # exclusive
+
+
+def test_groups_cover_each_required_unit_once_and_skip_unchecked_and_preferred_rows():
+    card = dict(GROUP_CARD, requirements=GROUP_CARD['requirements'] + [
+        {'unit_id': 'u7', 'requirement': 'Spark', 'label': 'NO_MATCH', 'importance': 'preferred',
+         'field': 'skill_tool', 'cv_quotes': []},
+        {'unit_id': 'u8', 'requirement': 'Kafka', 'label': None, 'importance': 'required', 'field': 'skill_tool',
+         'cv_quotes': []}])
+    every = [u for g in requirement_groups(card).values() for u in g]
+    assert sorted(every) == ['u1', 'u2', 'u3', 'u4', 'u5', 'u6']

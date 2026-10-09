@@ -33,7 +33,7 @@ def job_card(card: dict, rank: int, *, api=None, run_id: str | None = None) -> N
         else:
             right.markdown(f"**{STATUS[card['status']]}**")
         for msg in card['explicit_conflicts']:
-            st.warning('Possible conflict: ' + msg)
+            st.warning('Possible conflict: ' + safe(msg))
         if card.get('hold_reason'):
             st.info(card['hold_reason'])
         if card.get('excluded_units'):
@@ -81,7 +81,7 @@ def suggestions(out: dict) -> None:
             st.markdown(f"**{safe(item['requirement'])}** · asked by {item['jobs_asking']} analyzed job(s)")
             st.write(item['advice'])
             for q in item['cv_quotes']:
-                st.caption('From your CV: ' + q)
+                st.caption('From your CV: ' + safe(q))
 
 
 # --- D-105 product flow: Relevant Jobs (search stage) and Analyze Fit (evidence stage) ---------------------
@@ -97,7 +97,7 @@ def relevant_job_card(card: dict) -> None:
             safe(card.get('location') or 'location not stated'),
             WORK_MODE.get(card.get('work_mode'), 'work mode not stated'),
             'Experience requirement: ' + EXPERIENCE.get(card.get('experience_bucket'), 'not stated'),
-            'posted ' + str(card.get('posted_at') or 'date not stated')[:10]]
+            'posted ' + safe(str(card.get('posted_at') or 'date not stated')[:10])]
     st.markdown(f"**#{card['retrieval_rank']} {safe(card.get('title') or card['job_id'])}**  \n"
                 f"{safe(card.get('company') or '')}")
     st.caption(' · '.join(meta) + ('  ·  some filter information is missing in this posting'
@@ -120,19 +120,35 @@ def analysis_view(result: dict) -> None:
         st.warning('This job could not be fully analyzed, so no score is shown (none was made up).')
         if card.get('hold_reason'):
             st.info(card['hold_reason'])
-    for msg in card['explicit_conflicts']:
-        st.warning('Experience conflict: ' + msg)
-    required = [r for r in card['requirements'] if r.get('importance') == 'required']
-    strengths = [r for r in required if r['label'] == 'MATCH']
-    gaps = [r for r in required if r['label'] in ('PARTIAL', 'NO_MATCH')]
+    # The API's deterministic grouping (conflict > not verified > strengths / evidence gaps): rendering only.
+    by_unit = {r['unit_id']: r for r in card['requirements'] if r.get('unit_id')}
+    groups = result.get('requirement_groups')
+    if groups is None:                   # an older result without the grouping: the previous two sections
+        required = [r for r in card['requirements'] if r.get('importance') == 'required']
+        groups = {'strengths': [r['unit_id'] for r in required if r['label'] == 'MATCH'],
+                  'gaps': [r['unit_id'] for r in required if r['label'] in ('PARTIAL', 'NO_MATCH')],
+                  'not_verified': [], 'conflict': []}
+    strengths = [by_unit[u] for u in groups['strengths'] if u in by_unit]
+    gaps = [by_unit[u] for u in groups['gaps'] if u in by_unit]
+    unverified = [by_unit[u] for u in groups['not_verified'] if u in by_unit]
+    if card['explicit_conflicts']:
+        st.markdown('**Experience conflict (a confirmed fact, not wording)**')
+        for msg in card['explicit_conflicts']:
+            st.warning('Experience conflict: ' + safe(msg))
     if strengths:
         st.markdown('**Strengths (supported by your CV)**')
         for r in strengths:
             st.markdown(f"- {safe(r['requirement'])}")
     if gaps:
-        st.markdown('**Gaps (partly supported or not found)**')
+        st.markdown('**Evidence gaps (partly supported or not found)**')
         for r in gaps:
             st.markdown(f"- {safe(r['requirement'])}: {LABEL.get(r['label'], r['label'])}")
+    if unverified:
+        st.markdown('**Not verified from this CV**')
+        st.caption('Years, location or work-permit requirements this CV does not establish. Not a gap: they '
+                   'were not checked against your background.')
+        for r in unverified:
+            st.markdown(f"- {safe(r['requirement'])}")
     if card.get('excluded_units'):
         st.caption(f"{len(card['excluded_units'])} requirement(s) need checking and are listed but not scored.")
     if card['requirements']:                # exact CV quotes per requirement; no posting lookup, no extra request
@@ -154,7 +170,7 @@ def coach_view(coach: dict, *, on_answer) -> None:
             with st.container(border=True):
                 st.markdown(safe(item['asked']))
                 for quote in item['current']:
-                    st.caption('Your CV now: ' + quote)
+                    st.caption('Your CV now: ' + safe(quote))
                 st.write(item['guidance'])
     if coach['gaps']:
         st.markdown('**B. Possibly missing from your CV**')
@@ -162,7 +178,7 @@ def coach_view(coach: dict, *, on_answer) -> None:
             with st.container(border=True):
                 st.markdown(f"**{safe(gap['requirement'])}**")
                 key = f"{coach['job_id']}_{gap['gap_index']}"
-                done = st.radio(gap['question_first'], ['Yes', 'No'], index=None, horizontal=True, key=f'done_{key}')
+                done = st.radio(safe(gap['question_first']), ['Yes', 'No'], index=None, horizontal=True, key=f'done_{key}')
                 answers = {}
                 if done == 'Yes':
                     for qk, qtext in gap['questions'].items():
@@ -174,11 +190,11 @@ def coach_view(coach: dict, *, on_answer) -> None:
                         st.caption(out['note'])
                     elif out:
                         for idea in out['ideas']:
-                            st.write('- ' + idea)
+                            st.markdown('- ' + safe(idea))
     if coach['true_gaps']:
         st.markdown('**C. True gaps (facts, not wording)**')
         for gap in coach['true_gaps']:
-            st.warning(f"{gap['conflict']}  \n{gap['note']}")
+            st.warning(f"{safe(gap['conflict'])}  \n{gap['note']}")
     if coach['not_verified']:
         st.markdown('**Not verified from this CV**')
         for item in coach['not_verified']:

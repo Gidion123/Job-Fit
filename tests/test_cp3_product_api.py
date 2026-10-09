@@ -202,6 +202,9 @@ def test_the_coach_works_on_a_selected_job_and_a_pasted_jd(tmp_path):
         out = client.post('/tailor', json={'run_id': run_id, 'job_id': job_id}, headers=h)
         assert out.status_code == 200, out.text
         assert set(out.json()) == {'job_id', 'gaps', 'representation', 'true_gaps', 'not_verified', 'rules'}
+        groups = result['requirement_groups']                                   # Analyze Fit grouping, from the API
+        assert set(groups) == {'conflict', 'not_verified', 'strengths', 'gaps'}
+        assert groups['strengths'] == ['u1'] and not groups['gaps'] and not groups['not_verified']
         assert client.post('/tailor', json={'run_id': run_id}, headers=h).status_code == 200
         assert wait(client, h, run_id)['result'] == result                       # coaching never changes a score
     assert len(f.provider_calls) == calls                                          # deterministic: no provider call

@@ -16,6 +16,9 @@ of four categories (mutually exclusive):
 - Not verified (``not_verified``): a years, location or work-permit requirement this CV does not
   establish, with no confirmed conflict. Absence is never presented as a gap.
 
+``requirement_groups`` gives the Analyze Fit view the same categorization (conflict > not verified >
+strengths and evidence gaps), so the UI only renders it.
+
 Answers stay in the session and never change the score.
 """
 from __future__ import annotations
@@ -73,13 +76,52 @@ def true_gaps(card: dict) -> list[dict]:
     return [{'conflict': c, 'note': TRUE_GAP_NOTE} for c in _dedupe(card.get('explicit_conflicts') or [])]
 
 
+def _conflicted_units(card: dict) -> set[str]:
+    """Units named by a confirmed D-086 conflict ("U3: the JD asks for ...": the message starts with its unit id)."""
+    return {str(c).split(':', 1)[0].strip() for c in card.get('explicit_conflicts') or []}
+
+
 def not_verified(card: dict) -> list[dict]:
-    """Years, location or work-permit requirements this CV does not establish, without a confirmed conflict."""
-    # a D-086 conflict message starts with its unit id ("U3: the JD asks for ..."): that unit is C, not here
-    conflicted = {str(c).split(':', 1)[0].strip() for c in card.get('explicit_conflicts') or []}
+    """Years, location or work-permit requirements this CV does not establish, without a confirmed conflict.
+
+    Deduplicated by requirement text; ``unit_ids`` lists every unit behind one item.
+    """
+    conflicted = _conflicted_units(card)
     rows = [r for r in _required(card, ('NO_MATCH', 'PARTIAL'))
             if r.get('field') in NOT_EDITABLE and r.get('unit_id') not in conflicted]
-    return [{'requirement': text, 'note': NOT_VERIFIED_NOTE} for text in _dedupe(r['requirement'] for r in rows)]
+    items: dict[str, dict] = {}
+    for r in rows:
+        key = ' '.join(r['requirement'].split()).casefold()
+        item = items.setdefault(key, {'requirement': r['requirement'], 'unit_ids': [], 'note': NOT_VERIFIED_NOTE})
+        if r.get('unit_id') is not None:
+            item['unit_ids'].append(r['unit_id'])
+    return list(items.values())
+
+
+def requirement_groups(card: dict) -> dict[str, list[str]]:
+    """The Analyze Fit view of the required units, each in exactly one group (presentation contract, D-105).
+
+    Precedence: a confirmed D-086 ``conflict`` first, then ``not_verified`` (an unconfirmed years, location
+    or work-permit requirement), then ``strengths`` (MATCH) and ``gaps`` (PARTIAL or NO_MATCH, editable).
+    Unchecked rows stay ungrouped (they remain in the evidence table). Labels and the score are unchanged.
+    """
+    required = [r for r in card.get('requirements', []) if r.get('importance') == 'required' and r.get('unit_id')]
+    conflicted = _conflicted_units(card)
+    groups: dict[str, list[str]] = {'conflict': [], 'not_verified': [], 'strengths': [], 'gaps': []}
+    taken: set[str] = set()
+    groups['conflict'] = [r['unit_id'] for r in required if r['unit_id'] in conflicted]
+    taken.update(groups['conflict'])
+    unverified = {u for item in not_verified(card) for u in item['unit_ids']}
+    groups['not_verified'] = [r['unit_id'] for r in required if r['unit_id'] in unverified and r['unit_id'] not in taken]
+    taken.update(groups['not_verified'])
+    for r in required:
+        if r['unit_id'] in taken:
+            continue
+        if r.get('label') == 'MATCH':
+            groups['strengths'].append(r['unit_id'])
+        elif r.get('label') in ('PARTIAL', 'NO_MATCH'):
+            groups['gaps'].append(r['unit_id'])
+    return groups
 
 
 def _clean(text: str | None) -> str:

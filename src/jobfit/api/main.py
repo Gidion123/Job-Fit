@@ -62,7 +62,8 @@ from jobfit.schemas.api import (AnalyzeRequest, CoachAnswer, ConsentRequest, Fee
                                 MarketQuery, PasteRequest, PreviewEdit, RunRequest, SearchRequest, TailorRequest)
 from jobfit.search.filters import JobFilters
 from jobfit.session.store import SessionDenied, SessionHandle, SessionStore
-from jobfit.support.cv_coach import bullet, gaps_for_job, not_verified, representation_items, true_gaps
+from jobfit.support.cv_coach import (bullet, gaps_for_job, not_verified, representation_items, requirement_groups,
+                                     true_gaps)
 from jobfit.support.cv_suggestions import suggestions
 from jobfit.support.market_insight import skill_counts
 
@@ -728,7 +729,8 @@ def create_app(deps: AppDeps) -> FastAPI:
         def work(state: _Run) -> dict:
             r = deps.analyze_pasted(cv, text)
             card = job_card(r, {'title': 'Pasted job description'})
-            return {'card': card, 'source': 'live', 'note': 'Pasted JDs are analyzed for this session only.'}
+            return {'card': card, 'requirement_groups': requirement_groups(card), 'source': 'live',
+                    'note': 'Pasted JDs are analyzed for this session only.'}
         return {'run_id': start_job(h, 'analysis', MAX_ANALYSES_PER_SESSION, work)}
 
     # ---------- D-103 public-beta contract: search stage, then one job_analysis per chosen job ----------

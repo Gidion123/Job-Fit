@@ -11,7 +11,7 @@ from jobfit.extraction.cache import ExtractionCache
 from jobfit.extraction.paste_jd import preview_pasted_jd
 from jobfit.matching.constraints import experience_years, experience_constraint, location_constraint, work_authorization_constraint
 from jobfit.matching.evidence_matcher import match_evidence
-from jobfit.schemas.analysis import ConstraintResult, ConstraintState, ConstraintKind, ScoreResult, ScoreStatus, UnitAssessment
+from jobfit.schemas.analysis import ConstraintResult, ConstraintKind, ScoreResult, ScoreStatus, UnitAssessment
 from jobfit.schemas.requirements import JDExtraction, Importance, RequirementField, UnitKind
 from jobfit.scoring.score import compute_score
 

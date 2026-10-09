@@ -1,0 +1,29 @@
+# CP3 controlled public-beta phase bounds (D-103). A separate, versioned profile: the historical
+# Phase 2A bound (config/cp3/phase_bounds_v1.yaml, D-096, full analysis US$84.7704449) is not
+# changed or reused for admission here. Read by src/jobfit/llm/public_beta_bounds.py.
+#
+# Frozen sources are the same as in Phase 2A and are checked to be identical to
+# config/cp3/phase_bounds_v1.yaml: the D-087 pipeline config (models, K, one repair, one
+# continuation), the route rules, the models registry, prompts, guideline, schemas and output
+# policy. Only the beta envelopes and phases below are new.
+version: cp3-public-beta-bounds-v1
+decision: D-103
+pipeline_config: config/versions/pipeline_cp23_freeze_candidate_v4_20261006.yaml
+route_rules: config/versions/route_rules_cp23_v1.json
+parse_model: deepseek-flash
+parse_dynamic_output: false
+
+# Byte envelopes use the canonical measure jobfit.llm.document_bytes.document_bytes: the UTF-8
+# bytes a value adds to the frozen guard's measured messages (a string counts its escaped quotes).
+# Runtime admission refuses (or holds) anything above them before the billable call they bound.
+envelopes:
+  cv_document_max_bytes: 16384         # the consented masked CV text (parse and matching payloads)
+  jd_document_max_bytes: 16384         # one pasted or corpus JD text (extraction payload)
+  max_inventory_items: 32              # frozen qualification_inventory(text) records per JD
+  extraction_document_max_bytes: 24576 # extraction.model_dump(mode='json') in the matching payload
+  max_units: 48                        # requirement units in that extraction
+  short_field_max_chars: 64            # job_id, cv_id and unit ids
+  max_list_index_digits: 6             # as in Phase 2A: list indices in repair-message error paths
+  appended_message_max_bytes: 8192     # as in Phase 2A: ceiling for a computed repair-message bound
+
+phases: [parse, search, job_analysis]

@@ -1,6 +1,67 @@
 # JobFit CP2-CP3 Master Plan
 
+## Current outcome, 9 October 2026: ready for owner Local Mac validation (D-104 accepted, D-105 implemented)
+
+- **Privacy lifecycle (D-104):** the structural sanitizer and its API, session, consent and provider lifecycle are implemented and independently accepted for their measured scope (`e4c69ab`; sanitizer sha256 `49b748aa…5341`). The deployed privacy release gate is still pending.
+- **Real-user flow (D-105, implemented with fakes and disposable databases only; no paid call):**
+  ```text
+  Upload CV → local D-104 sanitizer → exact preview → optional edit (sanitized again) → consent → parse → CV ready
+  Find Jobs:   optional pre-search filters → hybrid retrieval over the eligible corpus (no LLM) → Relevant Jobs (no score)
+               → local refine (zero calls) → the user chooses a job → Analyze Fit (one job_analysis) → Improve My CV
+  Check a Job: pasted JD (session only) → Analyze Fit (one job_analysis) → Improve My CV
+  ```
+  Requirement extraction and evidence matching run **only for a job the user selects** (at most 3 per session, D-103); search never analyzes every job. The browse list uses the frozen stage-1 candidate depth (30).
+- **Owner-only activation:** `JOBFIT_REAL_CV_ENABLED` (needs prod and live) turns on uploaded CVs on the production runtime for the owner. The public beta stays closed (non-owners 503), and `JOBFIT_PUBLIC_LIVE` stays off. `docker-compose.owner-local.yml` is a separate local stack. The one-time corpus seed is `python -m jobfit.db.seed_production`.
+- **Next gate:** the owner's Local Mac validation ([runbook](checkpoint_3/Runbook_Owner_Local_Validation.md)), after independent review. VPS, monitoring and public activation come only after that.
+
+## Earlier outcome, 8 October 2026: CP3 scope clarified (D-102)
+
+**North star:** JobFit is a production-grade AI engineering portfolio with a controlled public beta. It shows end-to-end AI engineering on one real VPS that real public users can try in a limited, controlled way, and it should feel like a small real product. It is not an enterprise SaaS. [D-102](decisions.md) clarifies D-026, D-036, D-093 and D-095; it changes no frozen or accepted work (D-087, D-096 bounds and cap, D-097 to D-101, the Alembic work, the persistent production ledger).
+
+- **Two first-class flows:**
+  ```text
+  Flow A, Find Jobs:    CV → parse / mask / consent → runtime embedding → production retrieval → requirement extraction
+                           → evidence matching → scoring and ranking → explanation → job cards → optional CV improvement
+  Flow B, Check a Job:  CV + pasted JD → requirement extraction → evidence matching → scoring → explanation
+                           → strengths and gaps → CV improvement          (no retrieval; the JD is never added to the corpus)
+  ```
+  *(Refined by D-103 and D-105: Find Jobs stops at retrieval-stage Relevant Jobs; extraction, matching and scoring run only for a job the user selects with Analyze Fit. The flow above is the 8 Oct wording.)*
+- **New product requirements:** stage-aware analysis progress from real pipeline stages (no fake percentages); "Improve My CV for This Job" with a hard anti-fabrication rule (representation improvement, possibly missing, true gap); a portfolio-ready UI. UI priority: clarity > trust > usability > polish > decoration.
+- **Priority filter:** about 70% AI and product value, 30% infrastructure. Essential safety, privacy and evaluation are never cut.
+- **Public-beta bar:** safe for controlled public use, cost bounded, privacy aware, testable, observable, maintainable, deployable and honest about limits. Unknown → fail closed → log or metric → manual review is acceptable for rare uncertain states. Enterprise HA, multi-region and distributed recovery are out of scope.
+- **Public is not admin:** public users get only the end-user app; every operator, database, secret and dashboard interface stays private.
+- **Recommended order of the remaining work (anti-overengineering correction, 8 Oct):** foundation closeout → **public-live cost/profile decision** (D-103, implemented dark 8 Oct) → real-user AI path → product UX → lean production packaging → lean monitoring → dark VPS deploy → privacy, quality and cost validation (including PR-10 and D-045 option B) → controlled public beta → final portfolio and reporting. Details and rows: [CP3 execution plan](checkpoint_3/CP3_Execution_Plan.md#remaining-work-in-recommended-order-d-102-anti-overengineering-correction-8-oct).
+- **Post-beta (not blockers):** automated job sync, forced-command SSH, scheduled `job-sync.yml` and dedupe-review automation (D-098 design kept; the seeded corpus is enough, with an optional one-time manual refresh); email alerts and extra dashboards; automated nightly backups (a verified backup and restore test is still required); LLM-written CV rewriting.
+- **Public-beta cost profile (D-103, 8 Oct, implemented dark, independently verified and closed at `d30255d`):** a separate versioned profile with exact canonical byte envelopes and per-phase bounds (`parse` US$0.0614679, `search` US$0.0001648, `job_analysis` US$4.0012836) under a US$5/day cap and a US$25 lifetime stop; Find Jobs shows search-stage results (never a match ranking) and analyzes up to three chosen jobs; Check a Job is one `job_analysis`; one durable ticket per IP per 24 h opens 1 parse, 1 search and 3 job analyses per session. The Phase 2A bound (US$84.7704449) stays as history. The public real-CV flow stays closed until the consent adapter exists.
+- **Monitoring (D-103 clarification):** self-hosted Prometheus and Grafana OSS with node_exporter; Grafana private through an SSH tunnel; **Langfuse required for the final controlled public beta** (Langfuse Cloud free hosted tier, no raw CV or PII, separate P1 task; a paid plan needs a decision).
+- **Real-CV privacy boundary (D-104, 8 Oct, approved design; implemented and accepted for its measured scope on 9 Oct at `e4c69ab`, deployed gate pending):** FAIL-37 is fixed by a structural data-minimization boundary, not by name and address fields: the identity/contact header, the Summary/Profile/Objective family (structural delimiter only, not evidence) and privacy-only sections (including Interests and Organizations) are dropped locally; the provider text starts at the first evidence-bearing section; deterministic backstops mask surviving identifiers; no start found means fail closed. No geography data, owner-review gate or identifier subsystem. FAIL-37 stays OPEN / REVISED DESIGN until implemented and independently audited.
+- **Open gates (separate decisions needed):** the public-live cost bound and Flow B in production are resolved by D-103; still open: any LLM-written CV wording; the D-100 dates stay as they are unless a decision moves them.
+
 ## Current outcome, 7 October 2026
+
+### CP3 plan frozen (7 Oct 2026, D-095 to D-100)
+
+Dion and Codex approved the CP3 final execution plan:
+- **Product:** full public live JobFit on a SumoPod VPS (Singapore), with the saved demo as the zero-cost fallback. *(Framing clarified on 8 Oct by D-102: a production-grade AI engineering portfolio with a controlled public beta; see above.)*
+- **Budgets:** a US$5 CP3 validation budget; a US$2/day production cap with deterministic phase bounds; one live analysis per IP per 24 h; one live analysis at a time. *(Amended for the public beta on 8 Oct by D-103: US$5/day and US$25 lifetime, per-phase beta bounds, ticket then session allowance.)*
+- **Job corpus:** a production corpus refreshed from JSearch twice a month (about every two weeks), with exact dedupe and fuzzy suspects held back for review.
+- **Monitoring:** Prometheus and Grafana with email alerts; Langfuse Cloud (Japan) with metadata only. *(8 Oct: email alerts are P2 (post-beta); Langfuse is required for the final beta, D-103.)*
+- **Evaluation:** D-045 to be completed with option B (planned, not yet completed).
+- **Freeze:** the formal feature freeze is at the end of 9 October. The presentation stays on 11 October.
+
+Everything below for CP3.1-CP3.7 is **PLANNED** unless a line says it is done locally; nothing is deployed or validated on a host yet. The daily checklist is the [CP3 execution plan](checkpoint_3/CP3_Execution_Plan.md), and the corpus design is in [production-corpus.md](production-corpus.md).
+
+| Stage (official name) | JobFit scope | Status |
+| --- | --- | --- |
+| CP3.1 API Deployment with FastAPI | Public-beta API for both flows, safety controls and instrumentation | PARTIAL: demo flow done locally; Phase 2A fail-closed settings and phase bounds done (7 Oct; the full bound is above the US$2/day cap, so public live is not eligible); Phase 2B dark cost-safety runtime done (8 Oct, D-101); persistent production ledger DONE for Phase 2 acceptance (local/CI; deployed-host validation pending Phase 8); D-103 public-beta cost profile and owner-only API contract implemented dark (8 Oct, verified and closed); real-CV consent public-beta adapter implemented dark (8 Oct); D-104 privacy lifecycle accepted (9 Oct, `e4c69ab`); D-105 contract (all pre-search filters, stage-1 browse depth 30, digest-bound work-history confirmation, job-specific coach, owner-only `JOBFIT_REAL_CV_ENABLED`) implemented 9 Oct, awaiting review; public beta closed |
+| CP3.2 Database Integration and CI/CD | Production corpus, job sync, VPS and delivery | PARTIAL: CI green after Phase 1 (FAIL-35 resolved); Alembic `0001`/`0002` done with migration tests (8 Oct); one-time production corpus seed for a restored copy (9 Oct, D-105); owner-local compose profile; not deployed; job sync not built |
+| CP3.3 Streamlit UI | Product experience: Find Jobs and Check a Job, stage-aware progress, "Improve My CV for This Job" (D-102) | PARTIAL: D-105 real-user flow implemented (9 Oct; AppTest and fake API evidence); owner Local Mac validation pending |
+| CP3.4 End-to-End Testing | Controlled public beta validation, privacy release gate and feature freeze | PARTIAL: local 27/27; D-105 automated in-process flow evidence (9 Oct); owner Local Mac validation and deployed checks PENDING |
+| CP3.5 Final Presentation and Portfolio | Final evidence, D-045, privacy and latency reports, deck and video | PLANNED |
+| CP3.6 Finalization and Rehearsal | Regression, rehearsal and release tag | PLANNED |
+| CP3.7 Final Presentation and Submission | Present deployed JobFit with the saved-demo fallback | PLANNED |
+
+### CP2
 
 **CP2 is closed (D-094).** Before starting CP3 I checked every CP2.1-CP2.7 acceptance criterion against the files in the repository; the result is in the [CP2 closeout audit](checkpoint_2/CP2_Closeout_Audit_20261007.md).
 
@@ -19,7 +80,7 @@
 - **Held-out result (CV3-CV5 only):** P@5 0.533 -> 0.733 (3/3 CVs). NDCG@10 0.805 -> 0.960 for CV3 and CV4 only; CV5's final NDCG is unavailable because F00070 is unjudged, and unjudged jobs are never counted as 0. CV1-CV2 are a separate diagnostic and are never pooled with the headline. The labels are AI-assisted, reviewed by one person and blind to the ranking (D-088). Because the labeling assistant and the matcher are both OpenAI-family models, correlated preferences may inflate agreement; I did not measure how much.
 - **Phase A (CP2.8):** a development-only prompt study after the test. No challenger qualified, so prompt v1.1 stays (D-090). It does not change the CP2.4 result.
 - **Closed on 7 Oct:** D-091 accepts the 52 development JDs that were actually extracted; the other 162 could not affect any CP2 choice. D-092 records privacy as implemented and component/unit tested, but not validated end to end; the end-to-end checks and the original-vs-masked comparison move to CP3.4 and CP3.5. D-093 records the mentor feedback for CP3: a waiting-state UX for the ~95 s LLM wait, and vacancy-specific CV guidance once the core flow is stable.
-- **CP3 starts from** section 11 of the closeout audit.
+- **CP3 started from** section 11 of the closeout audit; its scope is now set by D-095 to D-100 (above).
 - **Ledger:** US$10.53, including US$0.25 of uncertain reservations, against the US$18.5 hard stop.
 
 The notes below are dated snapshots, kept to show how the project got here. Where they disagree with this section, this section is current.
@@ -61,14 +122,14 @@ Detailed source: [privacy-threat-model.md](privacy-threat-model.md). Design appr
 | Stage | Newly explicit privacy work | Completion evidence |
 | --- | --- | --- |
 | CP2.3 | Local masking/consent boundary, session primitives, synthetic CV1/CV2 masking impact and policy feasibility | Versioned tests/paired results; no real CV, source-gold overwrite or test use |
-| CP3.1 | Session authorization, TTL/lease/delete, task revocation, provider gates and upload cleanup | API isolation/failure tests |
-| CP3.2 | Volatile private state, no database/backup persistence, safe hosting/logs/secrets/TLS | Storage and deployment inspection |
-| CP3.3 | Notices, masked preview, consent, stop/delete, browser liveness and honest reload/expiry UX | Browser checks |
-| CP3.4 | PR-01-PR-10 deployed privacy acceptance | Two-user isolation, payload/log checks and measured deletion timing |
+| CP3.1 | Session authorization, TTL/lease/delete, task revocation, provider gates and upload cleanup. CP3 additions (planned): the D-104 structural privacy boundary (supersedes the name and address hints), consent lease stored server-side, consent compatibility parse adapter entered only through `SessionStore.dispatch`, `cv_source` contract, upload hardening with the DOCX decompression gate, IP pseudonymisation | API isolation/failure tests; the 7 adapter tests; upload failure-path canaries |
+| CP3.2 | Volatile private state, no database/backup persistence, safe hosting/logs/secrets/TLS; FastAPI private behind Caddy; quota table stores only HMACs | Storage and deployment inspection |
+| CP3.3 | Notices, masked preview, consent naming the recorded providers, correct masking text, safe upload errors, stop/delete, browser liveness and honest reload/expiry UX | Browser checks |
+| CP3.4 | PR-01-PR-10 deployed privacy acceptance (the release gate for public real-CV live, D-095); OpenRouter per-route privacy record | Two-user isolation, payload/log/metrics/Langfuse/database checks with canaries, upload failure paths, measured deletion timing |
 
 **CP2.3 outcome (7 Oct, D-092):** masking, consent and session controls are implemented and covered by component/unit tests (the API tests use a fake run, not a deployed host). I have not validated privacy end to end, and the original-vs-masked quality comparison has not run. Both are CP3 work: CP3.4 runs them and CP3.5 reports the results.
 
-Keep real-CV processing disabled until release gates and separate consent. This adds a defined implementation workstream to CP2.3; it does not reopen CP2.2, change metrics/model-selection rules or authorize new inference. Report schedule impact rather than silently dropping core evaluation or security.
+Keep real-CV processing disabled until release gates and separate consent. In CP3 the release gate is the CP3.4 privacy gate (D-095): `JOBFIT_PUBLIC_LIVE=1` only after it passes. This adds a defined implementation workstream to CP2.3; it does not reopen CP2.2, change metrics/model-selection rules or authorize new inference. Report schedule impact rather than silently dropping core evaluation or security.
 
 
 ## 1. Where the project stands (historical snapshot, 2 October 2026)
@@ -119,11 +180,11 @@ This section is kept as it was on 2 October. For the current state, see [Current
 | 12 | CP2.5 | Visualisasi Evaluation Result | [Evaluation Result Visualization](checkpoint_2/CP2_05_Evaluation_Visualization.md) | 2 Oct 2026 | 3 Oct 2026 | 4 Oct: development figures 1-8; 7 Oct: held-out figures 9-11 (notebook 02) | DONE |
 | 13 | CP2.6 | Recommendation & Summary | [Recommendation and Summary](checkpoint_2/CP2_06_Recommendation_and_Summary.md) | 3 Oct 2026 | 3 Oct 2026 | 4 Oct: provisional development summary; 7 Oct: final summary after the held-out test | DONE |
 | 14 | CP2.7 | PPT Check Point 2 + Mentoring | [CP2 Presentation and Mentoring](checkpoint_2/CP2_07_Presentation_and_Mentoring.md) | 4 Oct 2026 | 3-4 Oct 2026 (deck draft on 3 Oct) | Deck v3 on 4 Oct; presented and mentored 4 Oct; feedback written up 7 Oct (D-093) | DONE |
-| 15 | CP3.1 | Deployment API menggunakan Flask/FastAPI | [API Deployment with FastAPI](checkpoint_3/CP3_01_FastAPI_Service.md) | 5 Oct 2026 | 5 Oct 2026 | 6 Oct: all endpoints, privacy controls and tests (local) | DONE LOCALLY |
-| 16 | CP3.2 | Integrasi Database & GitHub Actions CI/CD | [Database Integration and CI/CD](checkpoint_3/CP3_02_Database_and_CICD.md) | 6 Oct 2026 | 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) | 6 Oct: Docker, compose and CI ready; hosting deploy waits for Dion | PARTIAL |
-| 17 | CP3.3 | Build Streamlit UI | [Streamlit UI](checkpoint_3/CP3_03_Streamlit_UI.md) | 7 Oct 2026 | 7 Oct 2026 | 6 Oct: full UI with privacy UX (local) | DONE LOCALLY |
-| 18 | CP3.4 | Testing End-to-End Application | [End-to-End Testing](checkpoint_3/CP3_04_End_to_End_Testing.md) | 8 Oct 2026 | 8 Oct 2026 (feature freeze at the end of the day) | 6 Oct: local end-to-end 27/27; deployed and live checks pending | PARTIAL |
-| 19 | CP3.5 | PPT Final Project / Portfolio | [Final Presentation and Portfolio](checkpoint_3/CP3_05_Final_Presentation_and_Portfolio.md) | 9 Oct 2026 | 9 Oct 2026 | not run yet | PLANNED / NOT RUN |
+| 15 | CP3.1 | Deployment API menggunakan Flask/FastAPI | [API Deployment with FastAPI](checkpoint_3/CP3_01_FastAPI_Service.md) | 5 Oct 2026 | 5 Oct 2026 | 6 Oct: all endpoints, privacy controls and tests (local); 7 Oct: public live scope planned (D-095 to D-097) | PARTIAL (demo flow done locally; public path PLANNED) |
+| 16 | CP3.2 | Integrasi Database & GitHub Actions CI/CD | [Database Integration and CI/CD](checkpoint_3/CP3_02_Database_and_CICD.md) | 6 Oct 2026 | 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) | 6 Oct: Docker and compose work locally; 7 Oct: SumoPod VPS, Alembic and job sync planned (D-095, D-098); 7 Oct Phase 1: FAIL-35 resolved, CI green (run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567)) | PARTIAL |
+| 17 | CP3.3 | Build Streamlit UI | [Streamlit UI](checkpoint_3/CP3_03_Streamlit_UI.md) | 7 Oct 2026 | 7 Oct 2026 | 6 Oct: full UI with privacy UX (local); public upload flow and mentor refinements planned | PARTIAL (demo flow done locally) |
+| 18 | CP3.4 | Testing End-to-End Application | [End-to-End Testing](checkpoint_3/CP3_04_End_to_End_Testing.md) | 8 Oct 2026 | 9 Oct 2026 (formal feature freeze at the end of 9 Oct, D-100) | 6 Oct: local end-to-end 27/27; deployed and live checks planned | PARTIAL |
+| 19 | CP3.5 | PPT Final Project / Portfolio | [Final Presentation and Portfolio](checkpoint_3/CP3_05_Final_Presentation_and_Portfolio.md) | 9 Oct 2026 | 10 Oct 2026 | 7 Oct: D-045 blind candidates selected (IDs only) | PLANNED / NOT RUN |
 | 20 | CP3.6 | Finalisasi Portfolio & Rehearsal Presentation | [Finalization and Rehearsal](checkpoint_3/CP3_06_Finalization_and_Rehearsal.md) | 10 Oct 2026 | 10 Oct 2026 | not run yet | PLANNED / NOT RUN |
 | 21 | CP3.7 | Final Project Presentation + Pemberian Tugas Portofolio | [Final Presentation and Submission](checkpoint_3/CP3_07_Final_Presentation_and_Submission.md) | 11 Oct 2026 | 11 Oct 2026 | not run yet | PLANNED / NOT RUN |
 
@@ -133,7 +194,7 @@ This section is kept as it was on 2 October. For the current state, see [Current
 
 **Tightest day: 3 October** (checkpoints 11, 12, 13, and the deck draft). If it slips, the checks of the minimal features move to checkpoint 18. Core evaluation is not cut.
 
-**Feature freeze: 8 October 2026** (D-026).
+**Feature freeze:** planned for 8 October 2026 (D-026); moved to the **end of 9 October 2026** by D-100 because the public live scope grew. The 11 October presentation does not move.
 
 ---
 
@@ -147,10 +208,14 @@ This section is kept as it was on 2 October. For the current state, see [Current
 | Labeling pilot (timed) | Dion | Evening of 29 Sep | Gold sizes, guideline v1 | Done on 1 Oct (guideline v1.2) |
 | Gold sizes (D-045) | Dion | 1 Oct evening | Labeling batches | Approved on 1 Oct 2026; D-044 and D-046 approved |
 | Development gold, phase 1 (D-045) | Dion + QA | 2 Oct evening | CP2.3 tuning | Reviewed-record export `development_v13_reviewed_20261002_r2` exists; source/version/whole-JD holds and model alignment still gate quality metrics |
-| Railway account on the Trial credit (D-023 approved) | Dion | 1 Oct | Smoke deploy, checkpoint 16 | Approved; account not created yet |
+| Railway account on the Trial credit (D-023) | Dion | 1 Oct | Smoke deploy, checkpoint 16 | Superseded by D-095 (SumoPod VPS); no Railway account was created |
+| SumoPod VPS (Singapore, Ubuntu 24.04, 2 vCPU / 8 GB / 80 GB), SSH keys, ufw, Docker, domain (`JOBFIT_PUBLIC_HOST`) | Dion + Codex | 8 Oct | First deploy (CP3.2) | Open |
+| Production OpenRouter key with a credit limit; recorded per-route privacy settings | Dion + Codex | 9 Oct | Public live (CP3.4 gate) | Open |
+| SMTP sender and receiver for alerts (`GRAFANA_SMTP_*`, `GRAFANA_ALERT_*`) | Dion + Codex | 9 Oct | Email alerts (CP3.2) | Open; optional since 8 Oct (email alerts are P2 (post-beta)) |
+| Langfuse Cloud project, free hosted tier (Japan region if available) | Dion + Codex | 9 Oct | Tracing (CP3.1) | Open; required for the final controlled public beta since 8 Oct (D-103); stop for a decision if the free tier is unavailable or unsuitable |
 | Development labels reviewed (gold) | Dion | 2 Oct morning | Checkpoint 10 | Reviewed-record bundle exported and validated; only compatible complete references may be used for each metric; held/unjudged records remain explicit |
 | Test relevance labels, blind (D-045 phase 2) | Dion | 3 Oct | Checkpoint 11 | Done 7 Oct: D-053 top-10 union, 68 pairs over CV1-CV5, 67 judged + 1 held (F00070); AI-assisted, human-reviewed, blind to ranking (D-088, `test_v13_cp24_r1`) |
-| Test extraction and evidence (D-045 phase 3) | Dion | 7 Oct | Final report (CP3.5) | Open: D-088 imported only the relevance sheet; no test extraction or evidence gold exists |
+| Test extraction and evidence (D-045 phase 3) | Dion | 10 Oct | Final report (CP3.5) | Open, method final (D-100, option B): blind candidates F00398, F00237 and CV3 × F00398 selected by ID on 7 Oct; Dion labels them blind first, then the frozen pipeline runs (about US$0.10); the CP2.4 workbook stays MODEL-ASSISTED, HUMAN-REVIEWED and is reported separately. PLANNED / NOT YET COMPLETED |
 | Mentor feedback at CP2 | Mentor | 4 Oct | CP3 scope confirmation; CP2 closure | Done: session 4 Oct; feedback recorded 7 Oct as D-093 (CP3 input: waiting-state UX; vacancy-specific CV guidance) |
 
 ---
@@ -163,7 +228,12 @@ guideline v0.1 → pilot (timed) → guideline v1.3 → split frozen → reviewe
                                                               → configuration choice → quality-gated development extraction (D-050)
                                                               → freeze → held-out test evaluation (CP2.4) → charts → CP2 deck
 in parallel: schemas + scoring + fixtures → CP2.2 parser/extraction/matcher + stage-1 search → CP2.3 recommendation list
-in parallel: hosting smoke deploy (1-2 Oct) → API (5 Oct) → database + CI (6 Oct) → Streamlit (7 Oct) → E2E + freeze (8 Oct)
+in parallel: hosting smoke deploy (1-2 Oct) → API (5 Oct) → database + CI (6 Oct) → Streamlit (7 Oct) → E2E + freeze (8 Oct)   [original plan]
+CP3 (D-095 to D-100): docs freeze + CI green (7 Oct) → P0 hardening + public path + packaging + dark deploy (8 Oct)
+                      → sync + monitoring + privacy gate + public live + PR-10 + freeze (9 Oct) → reports/deck/rehearsal (10 Oct) → present (11 Oct)
+CP3 order after D-102 (8 Oct, with the anti-overengineering correction): foundation closeout → public-live cost/profile decision (D-103, done)
+                      → real-user AI path (both flows) → product UX → lean packaging → lean monitoring → dark VPS deploy
+                      → privacy, quality and cost validation → controlled public beta → final portfolio and reporting; the D-100 dates are unchanged
 ```
 
 Labeling is the longest chain and depends on one person. It starts on day one and runs next to the implementation (D-015).
@@ -176,6 +246,8 @@ Labeling is the longest chain and depends on one person. It starts on day one an
 2. **Cut first:** UI polish.
 3. **Then:** extra experiments (fewer configurations, fewer model comparisons).
 4. **Only with a new docs/decisions.md entry:** the minimal market insight or CV suggestions.
+
+**CP3 clarification (D-102, 8 Oct 2026):** the list above is kept as the original rule. For CP3, decorative polish is still cut first, but product clarity (the two primary flows, honest progress, result presentation, failure and unavailable states) is part of the product goal, and job-specific CV improvement is a first-class requirement (recorded in D-093 and D-102). Core evaluation, tests, privacy, deployment and the explanation of limitations are still never cut.
 
 ---
 
@@ -203,7 +275,11 @@ Labeling is the longest chain and depends on one person. It starts on day one an
   | **Total** | **about US$4 to 6 if a low-cost model wins, about US$15 if Claude Haiku 4.5 wins** (before a 1.5x safety buffer) |
 
   The model choice matters more than anything else. If Claude Haiku 4.5 wins by the D-029 rule, CP3 uses cached results for the demo so that a top-up stays small.
-- **Hosting:** Railway (D-023, approved), estimated at US$5-12 per month. The Trial credit is used first; the concrete cost is confirmed with Dion before subscribing to the Hobby plan.
+- **Hosting:** originally Railway (D-023); now a SumoPod VPS (D-095), paid by Dion outside the LLM budget.
+- **CP3 budgets (D-096):**
+  - **CP3 validation:** US$5 in total, counted on the development ledger. I report before anything would cross it.
+  - **Production:** a US$2/day hard cap on a dedicated OpenRouter key with its own credit limit. It is enforced by deterministic phase bounds and persisted reservations, and the production ledger is authoritative. *(D-103, 8 Oct, for the controlled public beta: US$5/day and a US$25 lifetime stop; the provider key credit limit is optional defence in depth, never a dependency.)*
+  - **JSearch:** sync requests use the free tier (≤ 80 requests per sync); the pay-as-you-go fallback is about US$0.40 per sync.
 
 ---
 
@@ -307,7 +383,7 @@ JobFit version: The "deep learning modeling" of JobFit is the pipeline of pretra
 
 **Stage-2 v1.4 offline continuation:** A versioned prompt candidate clarifying approved AND/OR rules and a new same-case v4 preflight are ready; bound US$3.2232974, proposed cap US$3.23. The active runtime prompt remains v1.2. Forty-four selected offline tests pass; no v1.4 inference or winner at this snapshot. The v3 failed output remains preserved. See section 6 of the Stage-2 supporting report.
 
-**Historical documentation boundary (3 October):** The [CP2.3 report](checkpoint_2/CP2_03_System_Tuning.md#current-progress-by-stage-3-october-2026) now tracks all eight stages and gives the Stage-3 retrieval protocol explicitly. The 44-pass count above is an earlier v1.4 snapshot; a later offline matcher-payload preflight passed **45 selected tests** and is documented in [Stage-2 report section 6](checkpoint_2/supporting/CP23_Stage2_Comparison_Preflight_20261003.md#6-new-offline-v14-protocol-pending-its-own-batch-approval). Twelve existing top 30 rankings are input artifacts, not a completed Stage-3 quality comparison. No model, embedding, prompt or K is selected.
+**Historical documentation boundary (3 October):** The [CP2.3 report](checkpoint_2/supporting/CP23_Progress_Log.md) now tracks all eight stages and gives the Stage-3 retrieval protocol explicitly. The 44-pass count above is an earlier v1.4 snapshot; a later offline matcher-payload preflight passed **45 selected tests** and is documented in [Stage-2 report section 6](checkpoint_2/supporting/CP23_Stage2_Comparison_Preflight_20261003.md#6-new-offline-v14-protocol-pending-its-own-batch-approval). Twelve existing top 30 rankings are input artifacts, not a completed Stage-3 quality comparison. No model, embedding, prompt or K is selected.
 
 **Latest Stage-2 execution (D-056):** Dion approved the exact v1.4 US$3.23 extraction plan. DeepSeek/F00332 used two paid attempts (US$0.022156197), but source-semantic QA found an incomplete education alternative and a strict split/merge alignment issue. The v4 batch stopped after 1/28cases, as its quality gate requires. The total ledger is US$0.317713221 including US$0.0210861 historic uncertain reservation. Other models, evidence matching and Stage-3 quality comparison remain unrun. See [Stage-2 report section 7](checkpoint_2/supporting/CP23_Stage2_Comparison_Preflight_20261003.md#7-actual-v14-first-stage-and-source-semantic-stop); earlier preflight/approval language above is historical.
 
@@ -317,7 +393,7 @@ JobFit version: The "deep learning modeling" of JobFit is the pipeline of pretra
 
 **Stage-1 execution receipt (3 October):** the [offline preparation report](checkpoint_2/supporting/CP23_Stage1_Evaluation_Preparation_20261003.md) records seven source-checked development JD candidates, four complete fixed-input evidence pairs, and original-top10 union coverage of 61 judged / 6 new unjudged / 3 held CV-JD pairs. D-052 evaluator changes passed 72 targeted offline tests; no quality metric or winner was produced. Contract, source-reference and implementation preparation are ready; semantic model alignment and complete primary judgment coverage still block formal comparison. D-050 broad extraction remains after configuration evaluation; D-051 synthetic privacy implementation is separate. D-053 affects only the later held-out protocol.
 
-**Stage-1 review handoff (3 October):** six missing original-top10 C cases now have source-checked model-assisted drafts in `evals/labeling/drafts/cp23_stage1_relevance_review_20261003_v1.md`/`.json`, all pending Dion's review; they are neither gold nor a new workbook. The two F00332 label differences, split/merge F1 convention, and holds CV1/F00022, CV2/F00114, CV1/F00369 are itemized in the same [Stage-1 report](checkpoint_2/supporting/CP23_Stage1_Evaluation_Preparation_20261003.md#5-stage-1-closure-audit-and-review-boundary). The follow-up QA receipt verifies six source/CV excerpt sets and 24 protected input hashes. Stage 1 remains **IN PROGRESS** for semantic alignment and complete original-rank judgment coverage; Stage 2 waits for versioned human decisions, dependency checks and regenerated readiness. No paid comparison or configuration selection has run.
+**Stage-1 review handoff (3 October):** six missing original-top10 C cases now have source-checked model-assisted drafts in `evals/labeling/drafts/cp23_stage1_relevance_review_20261003_v1.md`/`.json`, all pending Dion's review; they are neither gold nor a new workbook. The two F00332 label differences, split/merge F1 convention, and holds CV1/F00022, CV2/F00114, CV1/F00369 are itemized in the same [Stage-1 report](checkpoint_2/supporting/CP23_Stage1_Evaluation_Preparation_20261003.md#5-stage-1-closure-audit-and-review-boundary-3-october). The follow-up QA receipt verifies six source/CV excerpt sets and 24 protected input hashes. Stage 1 remains **IN PROGRESS** for semantic alignment and complete original-rank judgment coverage; Stage 2 waits for versioned human decisions, dependency checks and regenerated readiness. No paid comparison or configuration selection has run.
 
 
 Template name: Hyperparameter Tuning · Official: 30 Sep 2026 · Planned work: 2 Oct 2026 · Report: [CP2_03_System_Tuning.md](checkpoint_2/CP2_03_System_Tuning.md)
@@ -455,181 +531,377 @@ JobFit version: Same as the template: CP2 presentation and mentoring.
 
 ### CP3.1: API Deployment with FastAPI (checkpoint 15)
 
-Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 · Planned work: 5 Oct 2026 · Report: [CP3_01_FastAPI_Service.md](checkpoint_3/CP3_01_FastAPI_Service.md)
+Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 · Planned work: 5 Oct 2026; CP3 additions 8 Oct 2026 · Report: [CP3_01_FastAPI_Service.md](checkpoint_3/CP3_01_FastAPI_Service.md)
 
-JobFit version: FastAPI (Flask is not used).
+**JobFit scope:** public-beta API for both flows (Find Jobs; Check a Job with a pasted JD), safety controls and instrumentation (D-102). JobFit version: FastAPI (Flask is not used). Daily checklist: [CP3 execution plan](checkpoint_3/CP3_Execution_Plan.md).
 
-1. **Goal.** Make the business logic callable through a consistent, tested API.
+1. **Goal.** Make the business logic callable through a consistent, tested API, safe enough for arbitrary public CVs.
 2. **Inputs and prerequisites.**
-   - Modules frozen in checkpoint 13
-   - Mentor feedback from checkpoint 14
+   - Modules frozen in checkpoint 13 (D-087)
+   - Mentor feedback from checkpoint 14 (D-093)
+   - CP3 decisions D-095 to D-100, D-101 (Phase 2B safety semantics) and D-102 (portfolio / controlled public beta scope)
 3. **Steps.**
-   1. Endpoints: `/health`, `/cv/parse`, `/recommendations`, `/jobs/{job_id}`, `/jobs/paste`, `/analyze`, `/tailor` (minimal), `/market/query` (minimal), `DELETE /session`, `/feedback`.
-   2. Request and response schemas.
-   3. Session storage with a TTL.
-   4. Timeouts, error mapping, and the rate/cost guard.
-   5. API tests and an OpenAPI check.
-4. **Files and outputs.** FastAPI app in `src/`; API tests; OpenAPI screenshot; this stage report.
+   - **Completed (6 Oct, local only):**
+     - all planned endpoints;
+     - request and response schemas;
+     - session TTL (lease, idle, absolute) with owner checks;
+     - consent bound to the exact masked text;
+     - upload cleanup;
+     - per-session run limits;
+     - API tests covering PR-01 to PR-07 and PR-09 with a fake run.
+   - **Completed (7 Oct, Phase 2A, local and CI; see the [CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-7-oct-2026-phase-2a)):**
+     - fail-closed settings, with live and public live off by default (commit `1574e31`);
+     - deterministic phase bounds from versioned config (commit `9286fd9`, corrected in `3f20f55` and `aa33f10` after the 8 Oct Codex review). `full_analysis_upper_bound` = US$84.7704449, which is US$82.7704449 above the US$2/day cap, so public live is **not eligible** under D-096. D-096 is unchanged; Dion and Codex decide the next step.
+   - **Owner additions, planned (D-095, D-096):**
+     - a persistent production ledger: **DONE for Phase 2 acceptance (local/CI); deployed host persistence validation pending Phase 8** (independently closed 8 Oct at `f5d6cf7`; [CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-persistent-production-ledger-storage));
+     - the D-096 condition `full_analysis_upper_bound` ≤ US$2/day cap. The bounds now exist (see Completed above), and the condition is **not met**; *(for the public beta, D-103 replaces it with per-phase beta bounds, each ≤ the US$5/day cap: `public_beta_phase_eligible`)*;
+     - **separate parse and recommendation reservations** (reserve, settle, release; embedding only in the recommendation reservation; no billable call without a reservation);
+     - one live analysis at a time;
+     - one ticket per IP per 24 h (HMAC, consumed at the first billable call);
+     - an internal service token for the forwarded client IP;
+     - an owner override for the per-IP limit only;
+     - a session rate limit;
+     - `/docs` off;
+     - proxy headers;
+     - readiness with a database check;
+     - an error taxonomy.
+   - **Public-live scope, planned (D-097):**
+     - the consent lease stored server-side;
+     - the **consent compatibility adapter around the frozen CP2 parser** (entered only through `SessionStore.dispatch`; 7 required tests; stop if `is_synthetic` has another dependency);
+     - the `cv_source = demo | upload` API contract (one pipeline; no CV posted back by the browser);
+     - runtime query embedding of the consented masked text;
+     - a production retriever over active, canonical, target-role jobs;
+     - a lazy JD extraction cache with parallel prefetch;
+     - a concurrency-safe app client (FAIL-36).
+   - **Privacy requirements, planned:**
+     - the D-104 structural privacy boundary and correct masking text (FAIL-37; supersedes the earlier name and address hints);
+     - **upload hardening:**
+       - only `.pdf` / `.docx` / `.txt` / `.md`, which the current extractor already supports;
+       - an extension allow-list and a signature check;
+       - a streamed size limit before buffering;
+       - the existing page and character bounds;
+       - a **DOCX decompression gate** (entry count, uncompressed size, compression ratio, `word/document.xml` required);
+       - an extraction timeout;
+       - safe errors with no file content.
+       - *(DONE 8 Oct at `d6e84d5`, independently verified and closed (docs `e3c77b5`): 5 MiB file and 5 MiB + 64 KiB raw request limits, memory-only multipart, PDF ≤ 10 pages, the DOCX central-directory gate, TXT/MD sanity, a bounded worker with a 20 s timeout and an allow-listed environment, one extraction at a time per process, stable error codes; [results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-lean-public-beta-cv-upload-hardening).)*
+   - **Monitoring, planned (D-099):**
+     - request IDs and JSON logs (minimal version in P0);
+     - `/metrics` with bounded labels;
+     - a Langfuse Japan adapter, metadata only;
+     - canary tests for logs, metrics and Langfuse payloads.
+     - *(8 Oct, anti-overengineering correction under D-102: the beta needs the JSON logs and `/metrics`; the Langfuse adapter is P2 (post-beta).)*
+     - *(8 Oct, D-103: the Langfuse Cloud adapter (free hosted tier, metadata only, no raw CV or PII) is required for the final controlled public beta, as a separate P1 task before public-beta activation.)*
+   - **Mentor additions, planned (D-093 A):** stage events for the waiting UX.
+4. **Files and outputs.**
+   - The FastAPI app in `src/`.
+   - New non-frozen modules for the app client, phase bounds, the consent adapter, the observability package and the extraction cache.
+   - API tests.
+   - This stage report.
 5. **Tests and acceptance criteria.**
    - The core flow works without Streamlit.
    - Invalid input fails with a clear error.
-   - The budget guard is active on every LLM call.
-6. **Evidence to keep.** test output; OpenAPI screenshot.
-7. **Estimate and dependencies.** About 1 working day. Depends on: Checkpoint 13 decisions.
-8. **Fallback.** Build the core endpoints first (`/cv/parse`, `/recommendations`, `/analyze`, `/jobs/paste`); the minimal ones follow later the same day or on 6 Oct.
-9. **Status and next step.** DONE LOCALLY (6 Oct 2026, EXP-20261006-CP3). Next: deployed checks in CP3.4.
+   - Every LLM and embedding call needs an active phase reservation, and settled spend plus outstanding reservations never exceeds the cap.
+   - Serial and concurrent `Recommendation` outputs are identical on a fake SDK, with one ledger line per call.
+   - No provider call without a valid consent lease (the 7 adapter tests).
+   - Every upload failure path is safe, including the 6 DOCX gate tests, with canaries.
+   - `prepare_cp23_freeze.py --verify` stays `"ok": true`.
+6. **Evidence to keep.** Test output; the OpenAPI screenshot (taken locally, since `/docs` is off in production); the phase-bound config record.
+7. **Estimate and dependencies.** Core changes on 8 Oct. Depends on: Phase 1 green CI (FAIL-35, done 7 Oct); the CP3.2 Alembic schema for the cache, quota and reservation tables.
+8. **Fallback.** If the public path is not ready by the freeze, public live stays off. The VPS then serves the saved demo, plus owner-token live runs, and the report says so.
+9. **Status and next step.** PARTIAL.
+   - DONE LOCALLY: the demo-CV flow (6 Oct, EXP-20261006-CP3).
+   - DONE (7 Oct, Phase 2A; corrected 8 Oct): fail-closed settings and the deterministic phase bounds. The full bound (US$84.7704449) is above the US$2/day cap, so public live is not eligible. The live client is not yet wired to `client_settings()` (Phase 2B).
+   - PLANNED / NOT YET VALIDATED: the rest of the public live path and the safety controls.
+   - Next: Dion and Codex decide on the bound result, then Phase 2B (reservations, quota, upload hardening, adapter). The Alembic schema it needs is in place (CP3.2, 8 Oct).
+   - DONE (8 Oct, Phase 2B, D-101): the dark, fail-closed cost-safety runtime (reservations, correlated ledger, phase-scoped gate, ticket, internal token, owner override, idempotency). A recommendation is refused at the US$2/day cap; public live stays blocked by the D-096 bound ([results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-phase-2b-dark-safety-layer)). Upload hardening and the consent adapter remain.
+   - DONE dark (8 Oct, D-103; independently verified and closed at `d30255d`): the public-beta cost profile (per-phase bounds, canonical byte envelopes, ticket-gated session allowance, label compatibility mapping) and the owner-only API contract for the search stage and `job_analysis`; the production runtime admits `parse`, `search` and `job_analysis` only ([results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-d-103-public-beta-cost-profile)). DONE (8 Oct, awaiting independent audit): lean public-beta CV upload hardening at `d6e84d5` ([results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-lean-public-beta-cv-upload-hardening)). DONE dark (8 Oct, awaiting independent audit): the real-CV consent public-beta adapter (server-side lease, consent adapter, per-request ZDR, production retrieval, reserved parse and search, `cv_source` API contract, upload abuse limits) at `e7762a1`..`0fbf37a` ([results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-real-cv-consent-public-beta-adapter)). Real CVs stay off until FAIL-37 masking and provider ZDR compatibility pass. Next: FAIL-37, API hardening, the production seed and packaging.
+10. **Definition of Done.**
+    - All P0 items implemented with their tests.
+    - Offline suite: 0 unexpected failures.
+    - Freeze verify passes.
+    - No CV content in logs, metrics, traces or errors (canary tests).
+    - `.env.example` updated.
+    - This report and the execution plan updated with evidence.
 
 ### CP3.2: Database Integration and CI/CD (checkpoint 16)
 
-Template name: Integrasi Database & GitHub Actions CI/CD · Official: 6 Oct 2026 · Planned work: 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) · Report: [CP3_02_Database_and_CICD.md](checkpoint_3/CP3_02_Database_and_CICD.md)
+Template name: Integrasi Database & GitHub Actions CI/CD · Official: 6 Oct 2026 · Planned work: 6 Oct 2026; CP3 additions 8-9 Oct 2026 · Report: [CP3_02_Database_and_CICD.md](checkpoint_3/CP3_02_Database_and_CICD.md)
 
-JobFit version: PostgreSQL with pgvector, and GitHub Actions for CI/CD.
+**JobFit scope:** production corpus, job sync, VPS and delivery. JobFit version: PostgreSQL with pgvector, GitHub Actions, and a SumoPod VPS (D-095 replaces the Railway target of D-023). Target (D-102): one VPS for a controlled public beta, built to a public-beta standard, with every operator and observability interface private.
 
-1. **Goal.** Make the system reproducible from a fresh clone and deployable.
+1. **Goal.** Make the system reproducible from a fresh clone and deployable, with a verified production job corpus. For the controlled beta the verified seeded corpus is sufficient; automated freshness (the scheduled sync) is P2 (post-beta).
 2. **Inputs and prerequisites.**
-   - Checkpoint 15 API
-   - Railway account created by Dion (D-023 approved)
+   - The checkpoint 15 API
+   - A SumoPod VPS (Singapore, Ubuntu 24.04 LTS, 2 vCPU / 8 GB / 80 GB), bought and configured by Dion and Codex
+   - D-098 production corpus decision
 3. **Steps.**
-   1. Migrations for jobs, job_requirements (versioned cache), embeddings, demo_analysis_cache, feedback.
-   2. Idempotent snapshot loading.
-   3. GitHub Actions: lint, tests, Docker build, guideline fixtures.
-   4. Secrets through environment variables only.
-   5. Deploy the database and the API on the chosen host.
-   6. Precompute the saved demo results for the synthetic CVs.
-4. **Files and outputs.** migration files; CI workflow; Dockerfiles; deployed database and API; this stage report.
+   - **Completed:**
+     - idempotent snapshot load;
+     - Docker images and compose (local);
+     - the GitHub Actions workflow.
+     - The workflow was red because of FAIL-35 until Phase 1 (7 Oct, commit `33c5584`); it is now green.
+   - **Planned, CI (P0/P1):**
+     - re-apply the FAIL-35 fix cleanly (DONE, Phase 1);
+     - pin `ruff` and add `F` for `src` and `ui`, with the two D-087 frozen files exempted for F401 (DONE, Phase 1);
+     - freeze verify (DONE, Phase 1);
+     - `docker compose … config`;
+     - a pgvector service job (Alembic up, and down/up where reversible; database-gated tests);
+     - the internal `e2e_check` against the composed stack.
+     - No provider secrets in CI.
+   - **Database, planned (D-098):**
+     - a minimal Alembic baseline (`0001` = current `SCHEMA_SQL`; `0002` = lifecycle, `dedupe_status`, `job_sources` unique on source and source job id, `sync_runs`, extraction cache, quota, reservations);
+     - upgrade-first deploys only after a verified backup;
+     - recovery = the previous tag plus a restore.
+     - The CP2 `SCHEMA_SQL` and loader stay unchanged.
+   - **Production corpus and sync, planned** ([production-corpus.md](production-corpus.md)):
+     - seed from a restore-tested dump (632 rows; 428 target active; all canonical);
+     - a production query manifest (≤ 80 requests per sync);
+     - `jobfit.jobs.sync`:
+       - normalize;
+       - exact duplicates mapped to the canonical job with no new row;
+       - fuzzy suspects `review_required` and inactive, kept out of retrieval;
+       - NEW / CONTENT_CHANGED / METADATA_CHANGED / UNCHANGED / STALE;
+       - coverage-aware lifecycle (2 syncs / 30 d / 60 d);
+       - incremental embeddings;
+       - a report;
+     - a dedupe review command;
+     - a GitHub Actions trigger, twice a month (about every two weeks), using a forced-command SSH key. JSearch and database secrets stay on the VPS.
+     - *(8 Oct, anti-overengineering correction under D-102: this sync automation is P2 (post-beta). The design stays; the seeded corpus is enough for the beta, with an optional one-time manual refresh before the demo.)*
+   - **Deployment, planned (D-095):**
+     - `docker-compose.prod.yml` with Caddy (only 80/443 public), restart policies, log rotation and healthchecks;
+     - a runtime artifact manifest and verifier (the tokenizer built into the API image);
+     - a restore-tested initial dump before the first deploy; nightly backups before the freeze *(8 Oct: a verified backup and a successful restore test are required before the beta; nightly scheduling is P2 (post-beta) unless trivial)*;
+     - manual tagged deploys;
+     - a VPS runbook.
+   - **Monitoring, planned (D-099):** Prometheus, Grafana and node_exporter; email alerts through `GRAFANA_SMTP_*`; a backup-age metric; sync gauges. *(8 Oct lean beta bar: structured logs, Prometheus, Grafana with application, AI-pipeline, LLM and cost, and basic VPS health are required; email alerts, extra dashboards and sync gauges are P2 (post-beta).)*
+4. **Files and outputs.**
+   - CI workflows (`tests.yml`, `job-sync.yml`), Alembic revisions, the sync module, deploy files, the runbook, `production-corpus.md`.
+   - This stage report.
 5. **Tests and acceptance criteria.**
-   - A fresh clone can create the schema and pass the tests without manual database work.
-   - No secrets in the repository.
+   - A fresh clone creates the schema and passes the tests.
+   - No secrets in the repository or the workflows.
    - CI is green.
-6. **Evidence to keep.** CI screenshot; Docker build proof; schema.
-7. **Estimate and dependencies.** About 1 working day. Depends on: Railway account; the smoke deploy on 1-2 Oct; Dion's confirmation of the Hobby cost.
-8. **Fallback.** If the chosen host is blocked, use the free fallback in System Design v1.3 section 16 and note the limits.
-9. **Status and next step.** PARTIAL. Docker, compose and CI are ready (FAIL-29 and FAIL-30 fixed). Hosting deploy waits for Dion's Railway account and cost confirmation (D-023).
+   - **Two-layer deployed validation:**
+     - A: Internet → Caddy → Streamlit over HTTPS shows the page and the saved demo;
+     - B: the internal API `e2e_check.py` passes inside the VPS Docker network or through an SSH tunnel. FastAPI is never public.
+   - Alembic works on an empty and a restored database.
+   - The restore test matches the row counts.
+   - *Conditional, post-beta (only once the P2 (post-beta) sync is built):* a real sync and an idempotent re-run give 0 NEW, 0 CONTENT_CHANGED and 0 METADATA_CHANGED, with exact duplicates counted and no second row. Not a beta or checkpoint blocker.
+   - **The same vacancy never appears twice in production retrieval.**
+6. **Evidence to keep.** CI links; the row-count table; the restore log; deploy-tag notes; sync reports only if the post-beta sync (or the optional manual refresh) runs.
+7. **Estimate and dependencies.** CI on 7 Oct; schema and packaging on 8 Oct; sync on 9 Oct. Depends on: VPS provisioning, DNS and the production OpenRouter key (Dion and Codex). SMTP is needed only for the P2 (post-beta) email alerts and does not block packaging, the dark deploy or beta validation.
+8. **Fallback.** The scheduled sync is P2 (post-beta); the beta and the presentation use the verified seeded corpus (an optional one-time manual refresh may be run before the demo). If the VPS is blocked, the saved demo runs locally and the report states the limit.
+9. **Status and next step.** PARTIAL. Docker, compose and the CI workflow exist; CI is green after Phase 1 (FAIL-35 resolved; run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567)); nothing is deployed; the production corpus and sync are PLANNED. Alembic `0001` (exact CP2 baseline) and `0002` (production schema) are DONE with a verified-stamp path and migration tests in CI (8 Oct, [results](checkpoint_3/CP3_02_Database_and_CICD.md#results-8-oct-2026-alembic-00010002)). Next: `verify` on the local CP2 database, then production packaging (the job sync is post-beta, P2).
+10. **Definition of Done.**
+    - CI green.
+    - The production stack deployed and checked through both validation layers.
+    - Backup and restore tested.
+    - *(Post-beta, conditional: a sync run and an idempotent re-run recorded, once the P2 (post-beta) sync exists. Not part of the CP3 beta Definition of Done.)*
+    - The runbook and this report updated with evidence.
 
 ### CP3.3: Streamlit UI (checkpoint 17)
 
-Template name: Build Streamlit UI · Official: 7 Oct 2026 · Planned work: 7 Oct 2026 · Report: [CP3_03_Streamlit_UI.md](checkpoint_3/CP3_03_Streamlit_UI.md)
+Template name: Build Streamlit UI · Official: 7 Oct 2026 · Planned work: 7 Oct 2026; CP3 additions 8-9 Oct 2026 · Report: [CP3_03_Streamlit_UI.md](checkpoint_3/CP3_03_Streamlit_UI.md)
 
-JobFit version: Same as the template.
+**JobFit scope:** product experience: Find Jobs and Check a Job, public upload flow, stage-aware progress and "Improve My CV for This Job" (D-102). JobFit version: the template (Streamlit), with no business logic in the UI.
 
-1. **Goal.** Build a demo that shows the value in under 3 minutes, without moving business logic into the UI.
+1. **Goal.** A demo that shows the value in under 3 minutes, and a safe, honest public upload flow.
 2. **Inputs and prerequisites.**
-   - Deployed API from checkpoint 16
+   - The deployed API from checkpoint 16
+   - D-093 mentor feedback, refined by D-102 (stage-aware progress; "Improve My CV for This Job")
 3. **Steps.**
-   1. Demo CV or upload, then the parsing summary with the location suggestion.
-   2. Optional filters with the UNKNOWN option.
-   3. Recommendations with statuses and the text "K candidates from the search were analyzed".
-   4. Job detail with evidence per requirement.
-   5. Paste JD compare.
-   6. Minimal market insight and CV suggestions.
-   7. Delete session and feedback.
-   8. The "Demo with saved results" label.
-4. **Files and outputs.** Streamlit app; screenshots; demo script; this stage report.
+   - **Completed (6 Oct, local):**
+     - demo CVs and the saved demo;
+     - filters;
+     - recommendation cards;
+     - job detail with evidence;
+     - paste and compare;
+     - market counts;
+     - CV suggestions and coach v1;
+     - feedback and delete;
+     - the privacy notice, an editable masked preview and consent.
+   - **Public-live and privacy additions, planned:**
+     - masking text that lists exactly what is removed and masked under D-104 (FAIL-37; the earlier required name field and optional address field are superseded);
+     - a safe message for `professional_boundary_not_found` (manual boundary correction later, Phase 3b);
+     - consent text naming the providers as recorded;
+     - an upload allow-list matching the API (`pdf`, `docx`, `txt`, `md`);
+     - Streamlit `maxUploadSize` and the Caddy body limit;
+     - safe messages for unsupported, oversized, encrypted, scanned and malformed files, including rejected DOCX archives;
+     - quota, busy and budget messages with a saved-demo fallback;
+     - client-IP forwarding with the internal token.
+   - **Mentor additions, planned (D-093):**
+     - A: stage text, job i of K, elapsed time, a measured typical range, graceful timeout and error states, and cancel where safe. No fake percentages.
+     - B: each coach item shows its source requirement and the CV evidence status, with no-invention and no-guarantee wording. No LLM coach (stands until a D-102 gate decision on LLM-written CV wording).
+   - **Product experience, planned (D-102):**
+     - a landing with public-beta wording and the two primary actions, **Find Jobs** and **Check a Job** (pasted JD);
+     - stage-aware progress driven by the real pipeline stages of each flow (completed, current, pending), aligned with the latency metrics;
+     - Find Jobs: optional preferences (target role as a preference, location, work mode, recency; all default to *Any*, the CV stays the primary signal, unknown metadata kept), then retrieval-stage **Relevant Jobs** without a match score, local refinement, sorting and reset over the returned list (no new search, extraction, Sol/Luna or `job_analysis`; filter metadata comes with the search response, no per-result calls), and **Analyze Fit** as the only path to `job_analysis` ([details](checkpoint_3/CP3_03_Streamlit_UI.md#find-jobs-filters-and-results-phase-3b-acceptance-clarification-8-oct-2026));
+     - job cards and detail with the match score (for analyzed jobs only), strengths, gaps, supporting evidence and explanations;
+     - empty, failure, unavailable and budget-exhausted states with the saved-demo fallback;
+     - "Improve My CV for This Job": representation improvement from existing evidence only, possibly missing (add only if real), true gap stated plainly; current statement → suggestion → why → supporting evidence; the hard anti-fabrication rule. Any LLM-written wording needs its own bound, reservation, evaluation and decision;
+     - consistent typography, spacing and components; reasonable mobile and desktop layout. Priority: clarity > trust > usability > polish > decoration.
+4. **Files and outputs.** The Streamlit app; screenshots; a short recording; this stage report.
 5. **Tests and acceptance criteria.**
-   - A mentor can understand the value in under 3 minutes.
+   - A mentor understands the value in under 3 minutes.
    - The synthetic demo works.
    - No business logic in the UI.
-6. **Evidence to keep.** screenshots; short screen recording.
-7. **Estimate and dependencies.** About 1 working day. Depends on: Checkpoint 16 deployment.
-8. **Fallback.** Build the core flow first; the minimal features and styling come last.
-9. **Status and next step.** DONE LOCALLY. Screenshots and a short recording are pending.
+   - The screen never looks frozen longer than the poll interval.
+   - Every upload failure shows a safe, specific message.
+   - Coach checks: 0 invented items, and "not done" gives no bullet.
+   - Both flows are reachable from the first screen, and each refusal code has a specific, honest message (D-102).
+   - "Improve My CV for This Job": 0 invented skills, experience, metrics or tools; every representation suggestion cites existing CV evidence (D-102).
+   - Find Jobs works with every preference left at *Any*; no job is excluded only for missing metadata; unanalyzed Relevant Jobs show no match score; changing result filters, sorting or resetting makes no new search and no paid or deep-analysis call; the zero-results state offers Reset filters; only Analyze Fit starts `job_analysis` (Phase 3b).
+6. **Evidence to keep.** Screenshots (including the waiting states and upload errors); a short recording.
+7. **Estimate and dependencies.** The upload flow on 8 Oct; waiting UX and coach on 9 Oct. Depends on: the CP3.1 public path and stage events.
+8. **Fallback.** Core flow first; styling last.
+9. **Status and next step.** PARTIAL: DONE LOCALLY for the demo flow; the public upload flow and the mentor refinements are PLANNED / NOT YET VALIDATED.
+10. **Definition of Done.**
+    - The public upload journey and the waiting UX are checked on the deployed app (CP3.4).
+    - Streamlit tests pass.
+    - Screenshots saved.
+    - This report updated.
 
 ### CP3.4: End-to-End Testing (checkpoint 18)
 
-Template name: Testing End-to-End Application · Official: 8 Oct 2026 · Planned work: 8 Oct 2026 (feature freeze at the end of the day) · Report: [CP3_04_End_to_End_Testing.md](checkpoint_3/CP3_04_End_to_End_Testing.md)
+Template name: Testing End-to-End Application · Official: 8 Oct 2026 · Planned work: 9 Oct 2026 (formal feature freeze at the end of 9 Oct, D-100) · Report: [CP3_04_End_to_End_Testing.md](checkpoint_3/CP3_04_End_to_End_Testing.md)
 
-JobFit version: Same as the template, on the deployed app.
+**JobFit scope:** controlled public beta validation (both flows, real-host persistence, public-beta states), privacy release gate and feature freeze. Acceptance uses the D-102 public-beta bar, not enterprise reliability. JobFit version: the template, on the deployed VPS stack.
 
-1. **Goal.** Test the real user journey and the critical failure paths on the deployed app, then freeze features.
+1. **Goal.** Test the real public journey and the critical failure paths on the deployed app, pass the privacy release gate, then freeze features.
 2. **Inputs and prerequisites.**
-   - Deployed app from checkpoints 16 and 17
-3. **Steps.**
-   1. End-to-end run on the deployed app for each synthetic CV.
-   2. Provider failure: a clear error or an explicit demo-mode offer.
-   3. Prompt-injection fixtures in pasted JDs.
-   4. PII check of the logs.
-   5. p50/p95 latency and cost per run, live and cached separately.
-   6. Record the feature freeze.
-4. **Files and outputs.** E2E checklist; security and reliability results; performance snapshot; this stage report.
+   - The deployed app from checkpoints 16 and 17 (P0 done)
+   - D-092 privacy deferral
+   - D-096 budgets
+3. **Steps (all PLANNED unless noted).**
+   - **Two-layer validation:**
+     - A: external public smoke and journey through Caddy and Streamlit (HTTPS, saved demo, the real-CV journey once enabled, user-visible failures);
+     - B: the internal API `e2e_check.py` inside the VPS Docker network or through an SSH tunnel. FastAPI stays private.
+   - **Privacy release gate:**
+     - PR-01 to PR-10, with synthetic canaries through every sink enabled for the beta: responses, provider payloads, logs, database, temporary files, `/metrics` and upload failure paths, plus the Langfuse export (Langfuse is required for the final beta since D-103);
+     - PR-08 fail-closed;
+     - the D-104 structural boundary checks (header, Summary-family and privacy-section removal; `professional_boundary_not_found` fail-closed; no Summary text in provider payloads); PR-10's masked arm uses the D-104 sanitized text with the D-100 thresholds unchanged;
+     - the OpenRouter per-route privacy record (parse, embedding, extraction, matching). A gap is reported before public live and never fixed by changing the model, prompt, K or weights.
+   - **Cost and abuse:**
+     - `full_analysis_upper_bound` ≤ the cap;
+     - quota fairness;
+     - the daily cap;
+     - the busy gate.
+   - **Owner-run paid checks** (inside the US$5): public-live E2E, a latency baseline with stage timings, and FAIL-36 confirmation (offline fake proof plus a live measurement).
+   - **Retrieval:** no duplicate vacancy in production retrieval on the verified seeded corpus. (A VPS sync test is post-beta; an optional manual corpus refresh before the demo is allowed, not required.)
+   - **Monitoring:** metrics and the beta Grafana dashboard checked with live data; screenshots. (A test alert email is P2 (post-beta).)
+   - **Mentor A/B validation** on the deployed app.
+   - **PR-10** (original vs masked, CV1/CV2, about US$2).
+   - **Enable public live** only after the gate passes.
+   - **Record the feature freeze.**
+4. **Files and outputs.** `evals/results/cp34/*`; the E2E checklist; the latency and cost table; the gate record; this stage report.
 5. **Tests and acceptance criteria.**
-   - The happy path and the critical failure paths pass on the deployed app.
-   - No raw CV in the logs.
-   - The feature freeze is recorded.
-6. **Evidence to keep.** checklist; test outputs; latency and cost table.
-7. **Estimate and dependencies.** About 1 working day. Depends on: Checkpoint 17.
-8. **Fallback.** If the deployment is unstable, record a backup demo video and fix only critical bugs.
-9. **Status and next step.** PARTIAL. Local end-to-end 27 of 27 passed; deployed and live runs pending. Next: feature freeze.
+   - Both validation layers pass.
+   - Canary scan: 0 hits.
+   - The gate passes before `JOBFIT_PUBLIC_LIVE=1`.
+   - The latency and cost table is recorded honestly. No claim about the mentor's 95 s without a measurement.
+   - 0 unexpected offline failures at the freeze.
+   - Freeze verify ok.
+6. **Evidence to keep.** Checklists, test outputs, the gate record, the latency and cost table, alert and dashboard screenshots.
+7. **Estimate and dependencies.** 9 Oct. Depends on: the deployed stack with all P0 items.
+8. **Fallback.** If the gate is not green by the freeze, public live stays off: the presentation uses owner-token live plus the saved demo, and the report says so. A backup video is recorded.
+9. **Status and next step.** PARTIAL. Local end-to-end 27/27 (6 Oct); all deployed checks are PLANNED / NOT YET VALIDATED.
+10. **Definition of Done.**
+    - The final validation table complete (command, passed, skipped, failed, reason for each skip).
+    - The gate status recorded.
+    - The freeze recorded in the decision log.
+    - This report updated.
 
 ### CP3.5: Final Presentation and Portfolio (checkpoint 19)
 
-Template name: PPT Final Project / Portfolio · Official: 9 Oct 2026 · Planned work: 9 Oct 2026 · Report: [CP3_05_Final_Presentation_and_Portfolio.md](checkpoint_3/CP3_05_Final_Presentation_and_Portfolio.md)
+Template name: PPT Final Project / Portfolio · Official: 9 Oct 2026 · Planned work: 10 Oct 2026 (after the freeze) · Report: [CP3_05_Final_Presentation_and_Portfolio.md](checkpoint_3/CP3_05_Final_Presentation_and_Portfolio.md)
 
-JobFit version: Same as the template.
+**JobFit scope:** final evidence, D-045 results, privacy and latency reports, deck and video. The story keeps the AI system at the center: design, pipelines, retrieval, LLM orchestration, evidence grounding, evaluation, cost engineering, then deployment and monitoring (D-102). JobFit version: the template.
 
 1. **Goal.** Build the final story from evidence: problem, data, experiments, final system, evaluation, deployment, limitations.
 2. **Inputs and prerequisites.**
    - All earlier stage reports
    - Playbook section 12 (presentation story)
+   - CP3.4 results
 3. **Steps.**
-   1. Final deck draft.
-   2. README update with CP2 and CP3 results.
-   3. Demo video (2-4 minutes).
-   4. Limitations and what was deliberately not built.
-4. **Files and outputs.** final deck draft in `05_Checkpoint_3/`; updated README; demo video; this stage report.
+   - Final deck draft; README update with CP2 and CP3 results; a 2-4 minute demo video; limitations and what was deliberately not built.
+   - **D-045, option B (D-100), PLANNED / NOT YET COMPLETED:**
+     - Phase 0 selected unseen candidates by job ID only: F00398, F00237 and CV3 × F00398.
+     - Dion labels them blind first and locks the file hash.
+     - Only then does the frozen pipeline run (about US$0.10).
+     - The existing workbook (MODEL-ASSISTED, HUMAN-REVIEWED) is imported, aligned and scored.
+     - The two groups are reported separately.
+     - Test labels are never used for tuning.
+   - **Privacy report** (D-092): the CP3.4 gate results and the PR-10 matching-quality impact.
+   - **Latency and cost report;** monitoring screenshots.
+4. **Files and outputs.** The final deck in `05_Checkpoint_3/`; the updated README; the demo video; the D-045 result files; this stage report.
 5. **Tests and acceptance criteria.**
    - Every big claim has evidence or a metric.
+   - Validated and planned items are clearly separated.
    - The deck is not full of jargon without a story.
-6. **Evidence to keep.** deck file; README commit; video link.
-7. **Estimate and dependencies.** About 1 working day. Depends on: Checkpoint 18 results.
-8. **Fallback.** Use screenshots from checkpoint 18 if a live recording fails.
-9. **Status and next step.** PLANNED / NOT RUN. Next: CP3.6 (checkpoint 20): rehearsal and final fixes.
+6. **Evidence to keep.** The deck file, the README commit, the video link, the D-045 hashes.
+7. **Estimate and dependencies.** 10 Oct. Depends on: the CP3.4 results; Dion's blind-labeling time.
+8. **Fallback.** Use screenshots from CP3.4 if a live recording fails. D-045 is not descoped without Dion's approval.
+9. **Status and next step.** PLANNED / NOT RUN (the D-045 candidate selection is done).
+10. **Definition of Done.**
+    - The D-045, PR-10, privacy, and latency and cost results reported.
+    - The deck, video and README done.
+    - This report updated.
 
 ### CP3.6: Finalization and Rehearsal (checkpoint 20)
 
 Template name: Finalisasi Portfolio & Rehearsal Presentation · Official: 10 Oct 2026 · Planned work: 10 Oct 2026 · Report: [CP3_06_Finalization_and_Rehearsal.md](checkpoint_3/CP3_06_Finalization_and_Rehearsal.md)
 
-JobFit version: Same as the template.
+**JobFit scope:** regression, rehearsal and release tag. JobFit version: the template.
 
 1. **Goal.** Reduce the risk of the demo or the presentation failing.
-2. **Inputs and prerequisites.**
-   - Checkpoint 19 outputs
+2. **Inputs and prerequisites.** Checkpoint 19 outputs.
 3. **Steps.**
-   1. Full regression run.
-   2. Rehearse with timing; prepare backup screenshots and video.
+   1. Full regression run, as the final validation table in the [CP3 execution plan](checkpoint_3/CP3_Execution_Plan.md):
+      - offline and database-gated pytest; ruff; freeze verify; both Docker builds; prod compose config;
+      - Alembic; restore;
+      - validation layers A and B;
+      - the canary scan; the phase bounds; sync idempotency only if the post-beta sync exists;
+      - green GitHub Actions.
+   2. Rehearse with timing, including the owner-token step for a shared presentation network; prepare backup screenshots and video.
    3. Proofread the README and the documents.
-   4. Release candidate tag (Dion runs git).
+   4. Release tag (Dion runs git).
    5. Upload the deck to the LMS (Dion). This is a bootcamp task handled outside the repository and is not tracked here.
-4. **Files and outputs.** final deck; release candidate; rehearsal notes; this stage report.
-5. **Tests and acceptance criteria.**
-   - No new features.
-   - The live app, the backup demo, and the metrics are consistent.
-6. **Evidence to keep.** regression output; tag link.
-7. **Estimate and dependencies.** About half a day plus rehearsal. Depends on: Checkpoint 19.
-8. **Fallback.** If a bug appears, fix only if it is critical; otherwise note it as a known issue.
-9. **Status and next step.** PLANNED / NOT RUN. Next: CP3.7 (checkpoint 21): final presentation and submission.
+4. **Files and outputs.** The final deck; a release candidate; rehearsal notes; this stage report.
+5. **Tests and acceptance criteria.** No new features. The live app, the backup demo and the metrics are consistent.
+6. **Evidence to keep.** Regression output; the tag link.
+7. **Estimate and dependencies.** About half a day plus rehearsal. Depends on: checkpoint 19.
+8. **Fallback.** If a bug appears, fix it only if it is critical; otherwise note it as a known issue.
+9. **Status and next step.** PLANNED / NOT RUN. Next: CP3.7.
+10. **Definition of Done.**
+    - Regression table complete with 0 unexpected failures.
+    - Rehearsal timed.
+    - Tag created.
+    - CP3 work merged to `main` by Dion after review (D-095).
 
 ### CP3.7: Final Presentation and Submission (checkpoint 21)
 
 Template name: Final Project Presentation + Pemberian Tugas Portofolio · Official: 11 Oct 2026 · Planned work: 11 Oct 2026 · Report: [CP3_07_Final_Presentation_and_Submission.md](checkpoint_3/CP3_07_Final_Presentation_and_Submission.md)
 
-JobFit version: Same as the template.
+**JobFit scope:** present the deployed public JobFit, with the saved demo as the safe fallback. JobFit version: the template.
 
-1. **Goal.** Present the value, the process, and the trade-offs, and submit the project and portfolio links.
-2. **Inputs and prerequisites.**
-   - Final deck, live app, backup video
+1. **Goal.** Present the value, the process and the trade-offs, and submit the project and portfolio links.
+2. **Inputs and prerequisites.** Final deck, live app, backup video.
 3. **Steps.**
    1. Present for 15-20 minutes, following the mentor's direction.
-   2. Live demo, with the saved-results demo as the safe option.
-   3. Explain actual results and limitations.
+   2. Live demo on the deployed app (public live if the gate passed; otherwise owner-token live), with the saved demo as the safe option.
+   3. Explain actual results and limitations, including the planned-versus-validated status of every CP3 item.
    4. Submit the links (project, demo, deck, portfolio) as the mentor asks.
    5. Write the mentor's final feedback and a short retrospective.
-4. **Files and outputs.** submission proof; final feedback notes; retrospective draft; this stage report.
-5. **Tests and acceptance criteria.**
-   - Can answer why, alternatives, trade-offs, metrics, and failures for the main components.
-6. **Evidence to keep.** submission proof; links.
-7. **Estimate and dependencies.** The presentation day. Depends on: Checkpoint 20.
+4. **Files and outputs.** Submission proof; final feedback notes; a retrospective draft; this stage report.
+5. **Tests and acceptance criteria.** Can answer why, alternatives, trade-offs, metrics and failures for the main components.
+6. **Evidence to keep.** Submission proof; links.
+7. **Estimate and dependencies.** The presentation day. Depends on: checkpoint 20.
 8. **Fallback.** Use the backup video if the live demo fails.
-9. **Status and next step.** PLANNED / NOT RUN. Next: Project done; possible next-version work is listed in docs/decisions.md.
+9. **Status and next step.** PLANNED / NOT RUN. Next: project done; possible next-version work is listed in docs/decisions.md.
+10. **Definition of Done.**
+    - Presented and links submitted.
+    - Mentor feedback recorded as a decision.
+    - Retrospective written.
 ---
 
 ## 9. After each stage

@@ -289,3 +289,54 @@ The recovery helper refuses any failure that is not a timeout, so it cannot retr
 - **What happens:** `tests/test_splits.py` (two tests) opens the git-ignored raw snapshot `data/interim/snapshots/CP1_20260926/jsearch_records.jsonl` and has no skip guard when it is missing. `tests/test_qa_phase_a.py::test_budget_plan_stays_below_hard_stop_and_covers_need` reads the budget from the environment; without the git-ignored `.env` the code default hard stop is US$4.5, so the Phase A budget plan is not covered. With the `.env.example` values (19 / 18.5) that test passes.
 - **Effect:** none on the CP2 results; the D-087 freeze check still verifies the split hashes, and the Phase A results are saved. But CI is not green on this snapshot, so the earlier note that CI is ready (CP3.2) is wrong for now.
 - **Fix (CP3.2, not done yet):** skip the split tests when the raw snapshot is missing, and pass the budget values to the Phase A test or to CI explicitly. No frozen file is involved.
+- **CP3 status (7 Oct 2026):** still OPEN on `cp3-development-20261007`. A working fix exists on an old side branch. It will be re-applied cleanly as the first implementation batch (Phase 1, [CP3 execution plan](checkpoint_3/CP3_Execution_Plan.md)), not merged from that branch.
+- **Resolved (7 Oct 2026, CP3 Phase 1, commit `33c5584`):**
+  - The two split tests skip with the reason "requires git-ignored raw snapshot data/interim/snapshots/CP1_20260926/jsearch_records.jsonl" when that file is absent. They still run unchanged when it exists.
+  - The Phase A budget test sets the approved budget (`API_BUDGET_USD=19`, `API_HARD_STOP_USD=18.5`) itself. `.env` loading does not override existing variables, so a local `.env` no longer matters.
+  - Only tests changed; no production default or frozen file.
+  - Full offline suite: 672 passed, 11 skipped, 0 failed (683 tests).
+  - GitHub Actions run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567) succeeded (lint-and-test and docker-build).
+- **Status:** RESOLVED.
+
+### FAIL-36. Live matching in the app runs one model call at a time
+
+- **Found:** 7 October 2026, offline code reading during CP3 planning (no run).
+- **What happens:** `OpenRouterClient.chat_structured` holds an exclusive file lock (`ledger.exclusive()`, `fcntl.flock`) for the whole network call (`src/jobfit/llm/client.py:110-112`), and `RuntimeClient` does not override it. So the 10 matching workers in `recommend()` (`src/jobfit/recommend/service.py:200`) queue on the lock. The CP2.4 test scripts used `CappedClient` with real parallelism, so the app's live latency is probably closer to the sum of the per-job times than to their maximum.
+- **Effect:** impact on wall time not measured yet. It is not claimed to explain the mentor's 95 s figure. No CP2 result changes; CP2.4 ran in parallel through the scripts.
+- **Fix (CP3.1, planned):** a non-frozen concurrency-safe app client with budget reservations (D-096, D-097), proven first offline with a fake SDK (serial versus concurrent, identical outputs), then measured live.
+- **Progress (8 Oct 2026, CP3 Phase 2B, D-101):** the production runtime calls the frozen attempt directly, without the whole-call lock, with per-attempt correlation and short synchronized ledger I/O. Fake-SDK tests show overlapping calls, identical serial and concurrent outputs, and request arguments identical to the frozen path (commit `52ff892`). The development wiring is unchanged, and live latency is not measured yet (CP3.4).
+- **Status:** OPEN (fixed offline in the production runtime; live measurement pending).
+
+### FAIL-37. The upload screen says names are masked, but uploads get no name or address masking
+
+- **Found:** 7 October 2026, offline code reading during CP3 planning.
+- **What happens:** `_set_preview` calls `mask_local(raw)` without `reviewed_identifiers` (`src/jobfit/api/main.py:195`), so only emails, phone numbers, ID numbers and profile links are masked. The UI says "Names, emails, phone numbers, profile links and ID numbers are then masked locally" (`ui/streamlit_app.py:251`).
+- **Effect:** no data reached a provider, because `/cv/parse` is gated (403). The preview wording, though, is a privacy claim the code does not keep.
+- **Fix originally planned (7 Oct, CP3.1/CP3.3, P0), superseded by D-104 on 8 Oct and never implemented:** a required name field and an optional address field passed as reviewed identifiers, and UI text that lists exactly what is masked. Canary tests cover it.
+- **Revised design (8 Oct 2026, [D-104](decisions.md#d-104-structural-cv-data-minimization-boundary-for-the-real-cv-public-beta)):** a structural data-minimization boundary on the upload and edit paths. The identity/contact header, the Summary/Profile/Objective family (a structural delimiter only, not evidence) and privacy-only sections (contact, personal details, biodata, emergency contact, references, interests, organizations, declaration, signature) are dropped locally; the provider text starts at the first evidence-bearing section (Experience, Skills, Projects, Education, Certifications, Training, Courses, Publications, Awards, Languages, Volunteering); deterministic backstops mask surviving emails, phones, identity numbers, profile links, detailed addresses, multi-token owner-name repeats and person names after strong labels. No start found means fail closed (`professional_boundary_not_found`). The UI text will list exactly what is removed and masked. Acceptance: synthetic calibration with a locked holdout and hard gates, canary tests and a UI text test. No geography data, owner-review gate or identifier subsystem.
+- **Status (8 Oct):** OPEN / REVISED DESIGN (not implemented; `real_cv_enabled` stays false).
+- **Progress (9 Oct 2026):** the measured API, session, consent and provider lifecycle is **fixed and independently accepted at `e4c69ab`**: the D-104 sanitizer on upload and edit, fail-closed refusals, the exact-digest consent lease bound to the v2 preview, provider payloads and every measured sink free of raw canaries. The sanitizer sha256 is `49b748aa59c6aef56ebf9e05d3e72e62da5a481022a7be7f8c15d3a66c955341`, and the historical holdout is closed. The UI wording now describes removal and masking as bounded ("can miss things"). Uploaded CVs can be switched on only owner-only (`JOBFIT_REAL_CV_ENABLED`, D-105); the public beta stays closed.
+- **Status (9 Oct):** fixed for the measured scope. The **deployed end-to-end privacy release gate (CP3.4) is a separate, pending gate**; no deployed privacy validation is claimed.
+
+### FAIL-38. The budget guard does not protect live runs inside a container
+
+- **Found:** 7 October 2026, offline code reading during CP3 planning.
+- **What happens:**
+  - `reports/` is in `.dockerignore`, so a fresh container starts with an empty usage ledger.
+  - Without `.env`, the code defaults are a US$5 budget and a US$4.5 hard stop (`src/jobfit/config.py:52-53`).
+  - `JOBFIT_LIVE_ENABLED` defaults to on in code (`src/jobfit/api/wiring.py:76`); the Docker image sets it to 0.
+  - There is no daily cap, no per-run cap and no global limit on live runs across sessions.
+- **Effect:** none so far, because live mode is off in the image. A public deployment with live mode on would not be protected.
+- **Fix (CP3.1, planned, P0):** fail-closed settings with live off by default, a persistent production ledger on a volume, the US$2/day cap with deterministic phase bounds and persisted reservations, a per-IP ticket and a global live gate (D-096).
+- **Progress (7 Oct 2026, CP3 Phase 2A):** partly addressed.
+  - Commit `1574e31`: fail-closed production settings. Live mode is now off by default in code. `prod` requires an explicit database URL and tokens. Live in `prod` requires a non-repository ledger and explicit budgets.
+  - Commits `9286fd9`, `3f20f55`: deterministic phase bounds over every reachable allowance (corrected 8 Oct). `full_analysis_upper_bound` = US$84.7704449, above the US$2/day cap, so public live is not eligible under D-096 ([CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-7-oct-2026-phase-2a)).
+  - Commit `aa33f10`: the settings invariants are enforced on every construction, and public-live eligibility fails closed.
+  - Still missing (Phase 2B):
+    - the ledger volume;
+    - wiring the live client to `client_settings()` (it still uses `get_settings()`);
+    - daily-cap enforcement with persisted reservations;
+    - the per-IP ticket and the global live gate.
+- **Progress (8 Oct 2026, CP3 Phase 2B, D-101):** in `prod`, every live operation now runs through the dark runtime with `client_settings()`: persisted reservations under the US$2/day cap and the lifetime hard stop, the phase-scoped gate with a persisted backstop, the per-IP ticket, the internal token and the owner override; `AppDeps.live_enabled` defaults to off (commits `44f93b2` to `a38db69`). Still missing: the production ledger volume (deployment).
+- **Progress (8 Oct 2026, persistent production ledger storage):** fixed storage root `/var/lib/jobfit/ledger` with an explicit provisioning marker and `storage_id`, no implicit directory creation, storage validation before and during every live operation, reservations bound to their storage, reset detection from the database witness, and a crash/restart matrix on real PostgreSQL plus a CI named-volume smoke (D-101 addition). Independently verified and closed at `f5d6cf7` (DONE for Phase 2 acceptance (local/CI); deployed host persistence validation pending Phase 8; CI run [37759368396](https://github.com/Gidion123/Job-Fit/actions/runs/37759368396)). FAIL-38 stays OPEN for the production compose volume (Phase 6), deployed-host persistence validation (Phase 8) and the public-live blockers.
+- **Status:** OPEN.

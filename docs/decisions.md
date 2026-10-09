@@ -48,10 +48,10 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-020 | 29 Sep 2026 | Embedding model: OpenAI `text-embedding-3-small` | Approved (called through OpenRouter, D-030) |
 | D-021 | 29 Sep 2026 | Synthetic CVs by default; real CV only after explicit confirmation | Approved |
 | D-022 | 29 Sep 2026 | Demo path with saved results, honestly labeled | Approved |
-| D-023 | 29 Sep 2026 | Hosting: Railway | Approved (paid plan confirmed before subscribing) |
+| D-023 | 29 Sep 2026 | Hosting: Railway | Superseded by D-095 (SumoPod VPS) |
 | D-024 | 29 Sep 2026 | Local development database with Docker Compose | Approved |
 | D-025 | 29 Sep 2026 | Feature status and the rule for removing minimal features | Approved |
-| D-026 | 29 Sep 2026 | Definition of Done v1 and the cut order | Approved |
+| D-026 | 29 Sep 2026 | Definition of Done v1 and the cut order | Approved; cut order clarified for CP3 by D-102 |
 | D-027 | 29 Sep 2026 | Official dates, revised schedule, and actual dates are tracked separately | Approved |
 | D-028 | 29 Sep 2026 | Scripts may read API keys from a git-ignored local `.env` | Approved (keys changed by D-030 and D-031) |
 | D-029 | 29 Sep 2026 | LLM shortlist across providers and a pre-registered selection rule | Approved (access changed by D-030) |
@@ -61,7 +61,7 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-033 | 30 Sep 2026 | Location and work-authorization requirements are constraints, not score units | Approved |
 | D-034 | 30 Sep 2026 | How a JD list is split into requirement units depends on its wording | Approved (rule simplified by D-039) |
 | D-035 | 30 Sep 2026 | Evidence strength in v1: skills-list-only is PARTIAL; CV truth and depth are not verified | Approved |
-| D-036 | 30 Sep 2026 | CV coach: minimal guided version in v1 after matching is done; full coach as a later upgrade | Approved |
+| D-036 | 30 Sep 2026 | CV coach: minimal guided version in v1 after matching is done; full coach as a later upgrade | Approved; CP3 coaching requirement extended by D-102 |
 | D-037 | 30 Sep 2026 | Relevance labels are judged in automatic mode (all four target role families), from CV evidence and constraints | Approved |
 | D-038 | 30 Sep 2026 | Labeling workflow: a language model drafts, Dion verifies every row, with a blind sample and a recorded review action | Approved |
 | D-039 | 30 Sep 2026 | The conjunction decides how a JD list is split (AND splits; OR, such as, etc give one unit) | Approved |
@@ -118,8 +118,18 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-090 | 7 Oct 2026 | Phase A closed: keep the baseline prompt v1.1 | Decided by the locked rule; confirmed by Dion |
 | D-091 | 7 Oct 2026 | Accept the 52-JD extraction scope used in CP2.3; full development extraction stays optional (closes the D-050 carry-over) | Approved by Dion |
 | D-092 | 7 Oct 2026 | Privacy is implemented and component/unit tested only; end-to-end validation and the original-vs-masked comparison move to CP3.4/CP3.5 | Approved by Dion |
-| D-093 | 7 Oct 2026 | CP2 mentor feedback taken into CP3: waiting-state UX for the long LLM wait; vacancy-specific CV guidance | Approved by Dion |
+| D-093 | 7 Oct 2026 | CP2 mentor feedback taken into CP3: waiting-state UX for the long LLM wait; vacancy-specific CV guidance | Approved by Dion; clarified by D-102 |
 | D-094 | 7 Oct 2026 | CP2 closed: acceptance work complete, reports current, freeze verified; handoff to CP3 | Approved by Dion |
+| D-095 | 7 Oct 2026 | CP3 deployment target (SumoPod VPS), full public live product scope and branch lifecycle | Approved by Dion and Codex; planned, not deployed; clarified by D-102 |
+| D-096 | 7 Oct 2026 | Public live cost and abuse controls: US$5 validation budget, US$2/day cap, deterministic phase bounds, 1 analysis per IP per 24 h, one live analysis at a time | Approved by Dion and Codex; planned; amended for the public beta by D-103 (8 Oct) |
+| D-097 | 7 Oct 2026 | CP3 runtime changes go through non-frozen adapters; the D-087 files stay byte-identical | Approved by Dion and Codex; planned |
+| D-098 | 7 Oct 2026 | Mutable production job corpus: twice-monthly JSearch sync, dedupe, lifecycle, lazy extraction cache, minimal Alembic baseline | Approved by Dion and Codex; Alembic 0001/0002 implemented 8 Oct (schema only) and independently verified and closed at `ac30594`; Dion's local CP2 database not yet verified; sync and seed planned; sync automation P2 (post-beta) since 8 Oct |
+| D-099 | 7 Oct 2026 | CP3 observability: Prometheus and Grafana with email alerts, Langfuse Cloud (Japan) metadata only | Approved by Dion and Codex; planned; email alerts P2 (post-beta) since 8 Oct; Langfuse required for the final controlled public beta (Cloud free tier, separate P1 task) since 8 Oct (D-103) |
+| D-100 | 7 Oct 2026 | CP3 evaluation obligations and feature freeze: D-045 to be completed with option B, PR-10, freeze at the end of 9 Oct | Approved by Dion and Codex; planned, not completed |
+| D-101 | 8 Oct 2026 | Phase 2B dark runtime safety semantics: safety layer built while public live stays blocked by the D-096 bound | Approved by Dion and Codex; implemented 8 Oct (dark, local and CI only) |
+| D-102 | 8 Oct 2026 | CP3 portfolio / controlled public beta scope principle: north star, two first-class flows (Find Jobs, Check a Job), stage-aware progress, "Improve My CV for This Job" with a hard anti-fabrication rule, public-beta engineering bar, complexity budget | Approved and independently reviewed; authoritative CP3 scope direction; open gates 1 and 2 resolved by D-103 |
+| D-103 | 8 Oct 2026 | Controlled public-beta cost profile: separate versioned bounds (parse US$0.0614679, search US$0.0001648, job_analysis US$4.0012836), exact canonical byte envelopes, US$5/day and US$25 lifetime, ticket-gated session allowance (1 parse, 1 search, 3 job analyses), search-stage labelling; Langfuse required for the final beta | Approved by Dion and Codex; implemented dark 8 Oct (`5d07b0c`, `c3a718e`, `40ed823`); public real-CV flow still closed; independently verified and closed at `d30255d` |
+| D-104 | 8 Oct 2026 | Structural CV data-minimization boundary for the real-CV public beta (FAIL-37 revised design): drop the identity/contact header, the Summary/Profile/Objective family (structural delimiter only, not evidence) and privacy-only sections; keep evidence-bearing sections; deterministic PII backstops; fail closed without a boundary; no geography data, owner-review gate or identifier subsystem | Approved design; implementation planned; FAIL-37 OPEN / REVISED DESIGN |
 
 ---
 
@@ -381,6 +391,7 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 - **Cut order when time is short:** first UI polish, then reduce extra experiments (fewer configurations and model comparisons). The reranker, second provider, and automatic refresh are already deferred. Only after that, and with a recorded decision (D-025), the minimal market insight or CV suggestions.
 - **Never cut:** core evaluation, tests, privacy, deployment, and the explanation of limitations.
 - **Feature freeze:** 8 October 2026. Afterwards only bug fixes, documentation, and presentation work.
+- **Update (8 Oct 2026, D-102):** for CP3 the cut order is clarified, not reversed. Decorative polish is still cut first, but product clarity (the two primary flows, honest progress, result presentation, failure and unavailable states) is part of the CP3 product goal. "Never cut" stays as written.
 - **Status:** Approved.
 
 ## D-027. Official dates, revised schedule, and actual dates
@@ -561,6 +572,7 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
   - **Later upgrade (after v1 and after 11 Oct if needed):** free multi-turn coaching, many jobs at once, rewriting whole CV sections, export to .docx, and tests with real users.
 - **Evaluation for v1:** about 10 scenarios; unsupported claims = 0; every bullet cites a user answer; "not done" answers produce no bullet.
 - **Affects:** D-025 (spec of the minimal feature), CP3.1 report, `prompts/cv_suggestions_v1.md`, README roadmap.
+- **Update (8 Oct 2026, D-102):** the CP3 coaching requirement is "Improve My CV for This Job": evidence-grounded, job-specific coaching with three recommendation types (representation improvement, possibly missing from the CV, true gap) and a hard anti-fabrication rule. The deterministic v1 coach stays the baseline; see [cv-coach-plan.md](cv-coach-plan.md).
 - **Status:** Approved.
 
 ## D-037. Relevance labels are judged in automatic mode
@@ -863,6 +875,7 @@ J1-U01 and J2-U08 differ on purpose: in J1 the softener is in the same sentence 
 - **Plan:** CP2.3 implements/tests masking, consent/session primitives and paired quality impact using development synthetic CV1/CV2. CP3 integrates API ownership/TTL/delete, deployment persistence checks, browser UI and security acceptance. Detailed contract, timing targets, open fields and PR-01-PR-10 tests live in [privacy-threat-model.md](privacy-threat-model.md).
 - **Open:** City/country, company/institution treatment; final measured timing/transport behavior; detector choice and endpoint-policy verification. These are not silently resolved by approval of the architecture.
 - **Unchanged:** Synthetic-only current evaluation/demo and separate real-CV consent (D-021); gold/sources/split, score, model-selection contract, budget, D-050 and test isolation. No paid call, real upload, public enablement or dependency installation is authorized by this documentation change.
+- **Update (8 Oct 2026, D-104):** the open city/country and company/institution items and the detector choice are resolved by [D-104](#d-104-structural-cv-data-minimization-boundary-for-the-real-cv-public-beta): the candidate's home location and contact metadata are not needed and are discarded with the header; employer and institution names stay as professional evidence; detection is structural rules plus deterministic patterns, with no library. D-104 amends section 2.2 (header removal is never used alone: Summary-family and privacy-section removal plus document-wide backstops) and section 2.4 (Summary is not evidence for the beta). The rest of D-051 is unchanged.
 - **Status:** Design approved. Implementation/security acceptance NOT RUN. Real-CV provider processing remains disabled until its gates and consent are met.
 
 
@@ -1342,6 +1355,7 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 - **A, waiting-state UX (CP3):** show a clear waiting state for long analyses (progress, current step, a "thinking" indicator). This makes the wait easier to sit through; it does not make the model faster, and no speed-up is claimed unless one is measured. The UI already has a per-job progress bar and a spinner (`ui/streamlit_app.py`); check those first instead of building a second feature.
 - **B, CV improvement guidance (CP3, after the core flow is stable):** suggestions come from the user's real CV evidence, the target JD's requirements and the gaps found. They never invent experience or encourage overstating skills. A CV edit only raises the evidence-coverage score when it adds true evidence, and it does not guarantee a better real fit. This extends the CV coach plan (D-036, [cv-coach-plan.md](cv-coach-plan.md)) and CV coach v1 (EXP-20261006-CP3) rather than adding a new feature.
 - **Unchanged:** the CP2.4 evaluation, D-087, the held-out result, thresholds and CP2 tuning. No paid call is approved here.
+- **Update (8 Oct 2026, D-102):** item A becomes stage-aware analysis progress driven by real pipeline stages (no fake percentages; the same stages are measured for latency). Item B becomes the first-class "Improve My CV for This Job" requirement with the anti-fabrication rule.
 - **Status:** Approved. Meets the CP2.7 criterion that mentor feedback is recorded here as new entries.
 
 ## D-094. CP2 closed
@@ -1351,3 +1365,343 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 - **Moves to CP3 (not CP2 gaps):** privacy validation and the original-vs-masked comparison (CP3.4) and their report (CP3.5), both from D-092; D-093 items A and B; the D-045 test extraction and evidence results (CP3.5); FAIL-35, the three environment-dependent tests that keep the full suite and CI red without affecting CP2 results.
 - **Unchanged:** D-087, the CP2.4 result and its frozen files, and D-090. The CP2 claims stay as reported: CV3-CV5 headline P@5 0.5333 -> 0.7333 (3/3 CVs), NDCG@10 0.8047 -> 0.9604 for CV3-CV4 only, F00070 unjudged, CV1-CV2 supplementary, privacy not validated end to end.
 - **Status:** Approved. CP2 is closed; CP3 starts from section 11 of the closeout audit.
+
+## D-095. CP3 deployment target, public product scope and branch lifecycle
+
+- **Date/source:** 7 October 2026. Dion and Codex approved the CP3 final execution plan after three review rounds.
+- **Hosting (replaces D-023):** a SumoPod VPS in Singapore, Ubuntu Server 24.04 LTS, 2 vCPU / 8 GB RAM / 80 GB storage.
+  - Dion and Codex buy and configure the machine (SSH keys, ufw, Docker, DNS, secrets).
+  - The repository provides the production compose file, the Caddyfile, the runbook and scripts.
+  - Railway is no longer the target.
+- **Reverse proxy:** Caddy with automatic HTTPS.
+  - Only Caddy publishes ports (80/443). FastAPI, PostgreSQL, Prometheus and Grafana stay on internal Docker networks.
+  - FastAPI is never exposed publicly, including for testing. Grafana is reached through an SSH tunnel.
+  - The domain is a placeholder (`JOBFIT_PUBLIC_HOST`) until VPS setup.
+- **Product scope: full public live JobFit.** Anyone can upload a real CV:
+  - safe parsing, local masking with reviewed identifiers, explicit consent bound to the exact masked text;
+  - runtime query embedding, hybrid retrieval, lazy JD extraction with a cache, evidence matching, the experience and seniority rules, scoring and ranking;
+  - recommendations and the CV coach.
+
+  The saved demo stays as the zero-cost demo and as the fallback for the presentation and for any time live mode is unavailable.
+- **Release gate:**
+  - Public real-CV live mode (`JOBFIT_PUBLIC_LIVE=1`) is switched on only after the CP3.4 privacy release gate passes on the deployed stack. That gate includes the recorded OpenRouter per-route privacy configuration and a configured `full_analysis_upper_bound` within the daily cap (D-096).
+  - Until then the VPS is "deployed dark": saved demo for the public, and owner-token live runs for validation.
+- **Deployment:** manual tagged deploys (SSH, check out a tag, `docker compose up -d --build`). Automatic CD stays optional.
+- **Validation layers:**
+  - A, external public checks through Caddy and Streamlit;
+  - B, an internal API `e2e_check.py` run inside the VPS Docker network or through an SSH tunnel.
+- **Branch lifecycle:** `cp3-development-20261007` → implementation → validation → feature freeze → review by Dion and Codex → squash or merge into `main` (Dion) → release. Scheduled production workflows run from `main` after that merge. No CP3 implementation reaches `main` before the final review and freeze.
+- **Update (8 Oct 2026, D-102):** the product framing is clarified as a production-grade AI engineering portfolio with a controlled public beta on this single VPS, not an enterprise SaaS. Hosting, Caddy, the private FastAPI/PostgreSQL/Grafana boundary, the release gate and the branch lifecycle are unchanged.
+- **Update (8 Oct 2026, D-104):** the "local masking with reviewed identifiers" step of the product scope is now the D-104 structural data-minimization boundary (no user-entered name or address fields). The release gate is unchanged.
+- **Status:** Approved. Planned; nothing is deployed yet.
+
+## D-096. Public live cost and abuse controls
+
+- **Date/source:** 7 October 2026, Dion and Codex.
+- **Two budgets:**
+  - **CP3 validation:** US$5 in total (live E2E checks, latency measurements, PR-10, the D-045 blind run). I report the reason, cost, benefit and a no-spend alternative before anything would cross it.
+  - **Production:** a US$2/day global hard cap (Asia/Jakarta calendar day, configurable).
+  - The D-070 project hard stop of US$18.5 covers the development and validation ledger. Production spend is separate and limited by the production key and the daily cap.
+- **Deterministic phase bounds:** computed by a non-frozen module from versioned configuration only: allowed model ids, prices in `config/models_v1.yaml`, maximum input and output tokens per task, and maximum call counts including repairs and allowed fallbacks.
+  - `parse_max`
+  - `recommendation_upper_bound = embed_max + extraction_max + matching_max + fallback_max`
+  - `full_analysis_upper_bound = parse_max + recommendation_upper_bound`
+
+  A missing price, limit or count fails closed. `full_analysis_upper_bound` must be at most the daily cap before `JOBFIT_PUBLIC_LIVE=1`. If it is higher, that is a production configuration blocker, reported to Dion and Codex; the bound is never quietly reduced. The planning estimate (about US$0.25-0.6 per run) is never used for enforcement.
+- **Separate phase reservations:**
+  - `/cv/parse` reserves `parse_max`.
+  - `/recommendations` reserves `recommendation_upper_bound`. Query embedding, extraction, matching and fallback are charged only to this reservation, never to the parse reservation.
+  - Each reservation is settled from the ledger and the unused part is released at completion, failure or cancel.
+  - Admission rule: `settled_spend_today + outstanding_reservations + new_phase_bound <= daily_cap`.
+  - No billable provider call runs without an active reservation of its phase.
+  - Reservations are persisted. A stale reservation from a crashed process counts in full until the end of the day. If the ledger or reservation state can't be trusted, live admission is refused.
+- **Authority:** the persistent production ledger is authoritative, with the provider-side credit limit of a dedicated OpenRouter production key as the outer fail-safe. Prometheus and Langfuse cost figures are telemetry only.
+- **Per IP:**
+  - One full live CV analysis per IP per 24 hours (rolling). One ticket covers the parse, one recommendation run and up to three pasted-JD analyses in that session.
+  - The ticket is consumed at the first billable provider operation (the parse). Refusals before that point (disabled, busy, budget, invalid file, consent failure, preflight failure) do not consume it.
+  - A busy or budget refusal of the recommendation keeps the ticket valid for a retry in the same session.
+  - IPs are stored only as `HMAC-SHA256(key, ip)` (IPv6 by /64), with rows deleted after 48 hours.
+  - The client IP comes from Caddy through Streamlit and is forwarded to the internal API with an internal service token.
+- **Global concurrency:** one live analysis at a time (calls inside a run may run in parallel).
+- **Other controls:**
+  - session creation is rate-limited per IP pseudonym;
+  - an owner override token bypasses only the per-IP limit (for a shared presentation network), never the cap, the gate or consent;
+  - live and public live are off by default.
+- **Status:** Approved. Planned, not implemented.
+- **Update (8 Oct 2026):** for the controlled public beta, D-103 amends the production cap (US$5/day, US$25 lifetime), the phases (parse, search, job_analysis with their own calculated bounds) and the per-IP allowance (one durable ticket, then 1 parse, 1 search and up to 3 job analyses per session). The Phase 2A bounds and the legacy full-analysis eligibility stay unchanged as history.
+
+## D-097. CP3 runtime changes outside the D-087 freeze
+
+- **Date/source:** 7 October 2026, Dion and Codex.
+- **Rule:** CP3 production changes go through non-frozen modules and the dependency-injection seams that already exist (`recommend(..., retrieve, extraction_for, client, matcher)`, `api/wiring.py`). The 57 D-087 files stay byte-identical, and `prepare_cp23_freeze.py --verify` must stay `"ok": true`. No change to the model, prompt, K, weights or retrieval configuration.
+- **Planned adapters:**
+  1. **A concurrency-safe app client** (F2): the frozen client holds a file lock for the whole network call, so live matching runs one call at a time. The adapter keeps request semantics, matching inputs and the model, prompt and config unchanged. It makes the network call outside the long lock, does reservation and in-flight accounting, writes one ledger entry per call and has telemetry hooks. Fake-SDK tests compare serial and concurrent `Recommendation` outputs, and live timing is measured before any latency claim. The mentor's 95 s is not attributed to serialization unless measurement shows it.
+  2. **The CP3 consent compatibility adapter around the frozen CP2 parser.**
+     - The frozen `parse_cv` uses `is_synthetic` as its real-CV guard.
+     - The adapter has no raw-text interface. It is entered only through `SessionStore.dispatch(handle, lease, op)`, passes only the exact consented masked text to the frozen parse logic, and relabels the profile `is_synthetic=False`.
+     - Seven required tests: no lease means no call; a changed preview means no call; raw text can't be passed; the payload equals the consented text; `is_synthetic` is False; a late result after expiry or delete is not stored; frozen files are unchanged.
+     - If inspection finds another semantic dependency on `is_synthetic`, I stop and report instead of forcing the design.
+  3. Runtime query embedding of the consented masked text with the frozen profile.
+  4. A production retriever over active, canonical, target-role DB jobs.
+  5. A lazy JD extraction provider with a persistent cache and parallel prefetch.
+  6. The public recommendation API contract: `cv_source = demo | upload`. The uploaded CV is resolved from the owner's session and never posted back by the browser.
+- **Frozen-file edits:** any edit to a frozen file needs a new decision labelled "POST-FREEZE CP3 PRODUCTION CHANGE", with a new freeze-receipt version.
+- **Status:** Approved. Planned, not implemented.
+- **Update (8 Oct 2026):** adapters 1 (the concurrency-safe client, D-101), 2 (the consent compatibility adapter, with the seven tests; `is_synthetic` has no other semantic dependency), 3 (runtime query embedding inside the D-103 `search` reservation), 4 (the production retriever) and 6 (`cv_source = demo | upload`) are implemented dark; adapter 5 (the persistent extraction cache) is still planned. Every real-CV-capable provider request carries `provider.zdr = true` and `data_collection = deny` through a non-frozen client (C1). Real CVs stay off until FAIL-37 and provider ZDR compatibility pass. Results: [CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-real-cv-consent-public-beta-adapter).
+
+## D-098. Mutable production job corpus
+
+- **Date/source:** 7 October 2026, Dion and Codex.
+- **Separation:**
+  - The frozen CP2 evaluation corpus (the snapshot `CP1_20260926`, splits, gold, freeze receipts and the local CP2 database built by the unchanged loader and `SCHEMA_SQL`) is never touched by production code.
+  - The mutable CP3 production corpus lives only in the VPS database. See [production-corpus.md](production-corpus.md).
+- **Seed:** a restore-tested dump of the verified local database, 632 rows with Qwen vectors.
+  - The 428 target-role rows (dev and test) are active and retrievable.
+  - The 204 non-target rows are kept but excluded from retrieval.
+  - Serving historical test jobs is allowed, but **CP2 held-out and test labels are never used** for prompt, threshold, ranking, model-selection or retrieval tuning (D-046 rule 4, D-089).
+- **Refresh:** JSearch, twice a month (about every two weeks; GitHub cron on the 1st and 15th, not an exact 14-day schedule).
+  - GitHub Actions is only the scheduler and SSH trigger: a forced-command key for a dedicated VPS user.
+  - JSearch and database credentials stay on the VPS.
+  - A versioned production query manifest is required, capped at 80 requests per sync.
+- **Identity and dedupe:**
+  - Provider identity is `job_sources(source, source_job_id)`, unique on that pair.
+  - New IDs are `J` plus 16 hex characters of SHA-256.
+  - Exact duplicates map to the one canonical job with no new row (a `duplicate_exact` report counter).
+  - Fuzzy probable duplicates (the CP1 rules) are not merged automatically. They become `dedupe_status='review_required'` and inactive, so they are excluded from retrieval until a small review command resolves them.
+  - Production retrieval uses only `is_active AND dedupe_status='canonical' AND role_group='target'` with a current embedding.
+  - The same vacancy must never appear twice in retrieval.
+- **Classification:**
+  - NEW;
+  - CONTENT_CHANGED (embedding or extraction inputs changed: re-embed, and the extraction cache is invalidated);
+  - METADATA_CHANGED (row updated, no re-embedding);
+  - UNCHANGED;
+  - STALE / INACTIVE.
+- **Lifecycle (coverage-aware):**
+  - A job counts as missed only when a query that previously found it completed.
+  - It becomes inactive after two covered misses, 30 days without being seen, or a trusted provider expiration (none observed so far).
+  - It is hard-deleted after 60 days inactive.
+  - Embeddings are incremental. There is no extraction during the sync.
+- **JD extraction:** lazy with a persistent Postgres cache keyed by the existing extraction cache key (content hash, model, prompt, schema, guideline, scope, context), with a 7-day negative cache for failures. It is seeded from the development saved records only. CP2 extraction evidence stays separate and historical.
+- **Database:** a minimal Alembic baseline (raw-SQL revisions): `0001` = the current `SCHEMA_SQL`, so restored databases can be stamped; `0002` = lifecycle, dedupe, sources, sync runs, extraction cache, quota and reservations.
+  - Production deploys upgrade only after a verified backup.
+  - Downgrade is not a recovery strategy; recovery is the previous app tag plus a database restore.
+  - The CP2 `SCHEMA_SQL` and loader stay unchanged.
+- **Update (8 Oct 2026, priority only):** under the D-102 anti-overengineering correction, the sync automation (the query manifest, `jobfit.jobs.sync`, the forced-command SSH user, the scheduled `job-sync.yml` and dedupe-review automation) is P2 (post-beta). The design above is unchanged; the seeded corpus serves the CP3 controlled public beta, and a one-time manual refresh may be run before the demo.
+- **Status:** Approved. The Alembic baseline (`0001`, exact `SCHEMA_SQL`) and production schema (`0002`) are implemented and tested (8 Oct, [CP3.2 report](checkpoint_3/CP3_02_Database_and_CICD.md#results-8-oct-2026-alembic-00010002)); the seed, the sync and the extraction-cache provider are planned, not implemented.
+
+## D-099. CP3 observability
+
+- **Date/source:** 7 October 2026, Dion and Codex.
+- **Prometheus and Grafana:** RED metrics for the API, USE metrics for the VPS (node_exporter), and app counters with bounded labels only (no job, session, request or run IDs as labels).
+  - Sync results are exposed as gauges from the latest sync run.
+  - Two dashboards: service with a small corpus/sync row, and VPS.
+  - No cAdvisor in the MVP. The only restart alert is the API restart loop (`process_start_time_seconds`).
+- **Alerts:** Grafana-managed alerts sent by email through an SMTP contact point. The settings are `GRAFANA_SMTP_HOST`, `GRAFANA_SMTP_PORT`, `GRAFANA_SMTP_USER`, `GRAFANA_SMTP_PASSWORD`, `GRAFANA_ALERT_FROM` and `GRAFANA_ALERT_TO`; Dion and Codex choose the account during VPS setup.
+- **Langfuse Cloud:** Japan region, Hobby plan, metadata only.
+  - Input and output capture is off, with a mask function as a backup and a metadata allow-list (run id, stage, model, provider, duration, tokens, cost, retry/fallback, error code, hold status, public job id).
+  - Never sent: CV text, names, contacts, addresses, identifying employer history, evidence quotes, pasted JDs or session tokens.
+- **Logs:** JSON lines with `request_id`, `run_id`, a session hash, route, status, duration and error code, with Docker log rotation. No CV content, quotes, raw IPs or tokens.
+- **Cost figures:** Prometheus and Langfuse cost numbers are not authoritative (D-096).
+- **No CORS:** the browser only talks to Streamlit, so no cross-origin call to FastAPI exists.
+- **Update (8 Oct 2026, priority only):** under the D-102 anti-overengineering correction, the beta release bar is structured logs, Prometheus metrics and Grafana with application, AI-pipeline, LLM and cost, and basic VPS health visibility. The Langfuse adapter, Grafana email alerts and additional dashboards are P2 (post-beta). The privacy rules above are unchanged.
+- **Update (8 Oct 2026, D-103):** Langfuse is now **required for the final controlled public beta and portfolio release**, as a separate P1 task before public-beta activation: Langfuse Cloud hosted free tier (Japan region if available) if privacy-compatible, never self-hosted on the VPS for CP3, never raw CV content or user PII, and no paid plan without a Dion and Codex decision. Grafana stays private (SSH tunnel); node_exporter is allowed; email alerts and extra dashboards stay P2 (post-beta).
+- **Status:** Approved. Planned, not implemented.
+
+## D-100. CP3 evaluation obligations and feature freeze
+
+- **Date/source:** 7 October 2026, Dion and Codex.
+- **Feature freeze:** the formal CP3 feature freeze is at the end of 9 October 2026.
+  - Plan for 8 October: core engineering and the dark deployment substantially complete.
+  - Plan for 9 October: deployed validation, the privacy release gate, public-live enablement, PR-10 and the freeze.
+  - Plan for 10 October: reports, README, deck, video and rehearsal.
+  - The presentation stays on 11 October.
+  - Freeze criteria: 0 unexpected offline failures, freeze verify ok, the privacy gate status recorded, no P3 work before the presentation.
+- **PR-10 (original-vs-masked):** development CV1/CV2 only, on the frozen configuration. It is executed in CP3.4 and reported in CP3.5. Acceptance proposal:
+  - quote validity 1.0;
+  - no canary in any payload;
+  - masked-vs-original agreement within the original-vs-original noise band;
+  - macro-F1 drop of at most 0.02.
+
+  A failure is reported, not tuned away.
+- **D-045 will be completed as originally written, using option B:**
+  - 2 blind test extraction JDs and 1 blind CV3 evidence pair. Dion labels them first, and the frozen pipeline output is produced and shown only after the blind labels are locked (file hash recorded).
+  - The existing CP2.4 workbook (A_Extraction, B_Evidence) stays **MODEL-ASSISTED, HUMAN-REVIEWED** and is never relabelled as blind. It covers the model-draft portion.
+  - The two groups are reported separately in CP3.5.
+  - Later paid inference is about US$0.10, inside the US$5 validation budget.
+  - **Phase 0 stop condition:** if 2 eligible unseen test JDs and 1 eligible unseen CV3 pair could not be verified, the work stops and is reported; no seen item is used, no non-blind item is substituted, and D-045 is not redefined. Phase 0 found eligible candidates (see the [CP3.5 report](checkpoint_3/CP3_05_Final_Presentation_and_Portfolio.md)).
+- **Status:** Approved. PLANNED / NOT YET COMPLETED.
+
+## D-101. Phase 2B dark runtime safety semantics
+
+- **Date/source:** 8 October 2026. Dion and Codex accepted the Phase 2B plan after four review rounds (B1 resolved for the safety layer only).
+- **Dark, fail-closed safety layer (resolves B1 for implementation only):**
+  - The US$2/day cap, the Phase 2A bounds (parse US$0.4716399, recommendation US$84.2988050, full US$84.7704449), the model, prompt, K, retrieval and scoring stay unchanged. The owner token never bypasses the cap.
+  - Under the real configuration a parse passes admission, a recommendation is always refused (`budget`), `JOBFIT_PUBLIC_LIVE` stays off and `public_live_eligible` stays false. Tests use isolated caps and fake SDKs only.
+  - **The public-live release stays blocked by the current D-096 bound.** Unblocking it needs a separate explicit decision.
+- **Gate:** "one live analysis at a time" means at most one billable live phase operation (one parse or one recommendation) at a time, never held across user think-time; calls inside one recommendation may run concurrently. The advisory lock is the fast mutex; the persisted backstop is authoritative: any `reserved` row refuses every new admission until it is settled or released (over-blocking and manual review are intended).
+- **`/analyze`:** pasted-JD analysis stays closed in production live. No new reservation phase, no `0003`; a future bound needs its own decision.
+- **Cross-midnight:** an earlier-day reservation whose possible activity window crossed today's Jakarta start counts for the whole day at its reserved (open) or settled amount. This is stronger than `active_until > now()`.
+- **Ticket:** one ticket is the full CV-analysis allowance and is consumed by one conditional upsert at the first billable call of an ordinary public parse. **Ticket window (a narrow clarification of D-096 for the unavoidable post-quota, pre-provider window; D-096 itself is unchanged):** once the quota transaction has provably committed, the ticket stays consumed even if a local failure or crash happens before the SDK call. There is no refund. The provider is never called after such a failure, and the reservation is settled or released only from actual evidence (no intent and no ledger line: released; an intent without a ledger line: settled at its upper bound).
+- **Evidence:** no provider call without a durable intent. Every production ledger line carries `operation_key` and `attempt_id`. A ledger line wins over its intent; a missing line counts the intent's upper bound; duplicate, orphan, unattributed, torn or corrupt evidence fails closed for manual review; a reported cost above the upper bound is never clamped, is settled at full value and writes a durable breach marker that blocks admission. The ledger is never edited automatically.
+- **Unknown outcomes fail closed:** an unknown quota COMMIT means no provider call and no repeated consume; an unknown admission COMMIT means the pipeline is not entered and a retry is resolved by the global operation key (`idem:` + UUIDv4); an unknown settlement COMMIT means a re-read on a new connection or the reconciler, never a blind retry.
+- **Fatal refusals:** every Phase 2B safety refusal is a `RuntimeError`, operation-fatal and sticky, so the frozen repair, continuation and Luna fallback never reach the SDK after one. Genuine provider or model failures keep the frozen, modelled behaviour.
+- **Deadlines and watchdog:** per-call wall W = frozen timeout + 30 s; horizon = Σ W over the reachable call model + orchestration (120 s parse, 600 s recommendation); `active_until` = admission time + horizon + 60 s (parse 720 s, recommendation 25 050 s). These are operating thresholds, not proofs that a request terminates. The watchdog detects a call past W, sets the operation fatal and writes the breach marker; it does not cancel the call. If the marker cannot be written, the reservation stays open and admission is disabled.
+- **Environments:** `JOBFIT_ENV=dev` keeps the CP2 local behaviour; every `prod` live operation uses the Phase 2B runtime with no fallback.
+- **Additions after the independent audit (8 Oct 2026, commits `6c04247` to `1f856dd`):**
+  - **Retention:** IP-HMAC quota rows older than 48 hours are deleted in their own committed transaction, before every ticket consume (a failed purge fails the ticket closed), at startup and hourly from the API sweeper; a quota refusal can never undo a deletion.
+  - **Recommendation allowance (D-096 "one recommendation run per ticket"):** `no_ticket → ticket_held → pending(op) → used(op)`, in memory like the sessions. It becomes `used(op)` only at the first durable provider intent; a failed finalize is the sticky `allowance_finalize_failed` refusal with no provider call; a proven pre-billing stop returns it to `ticket_held`. The owner bypasses only this allowance and the per-IP ticket.
+  - **UI idempotency:** one key per user action, kept in the Streamlit session until the server acknowledges it; the action fingerprint is an opaque digest, never CV content.
+  - **Client IP:** the API client supports forwarding a client IP with the internal token; acquiring it (Caddy header, Streamlit access) is a deployment prerequisite, and end-to-end provenance is not validated until the deployed Caddy check.
+  - **Operational constant:** 10 new sessions per IP pseudonym per hour, accepted as the provisional MVP default.
+- **Addition: persistent production ledger storage (8 Oct 2026, CP3 Phase 2 P0; plan revision 7 independently accepted; commits `2cfd087` to `39f74a8`):**
+  - **One fixed storage root.** With `JOBFIT_ENV=prod` and live on, `JOBFIT_USAGE_LEDGER` must be absolute as given (checked in `get_production_settings` and again in the invariant layer, so direct construction and `dataclasses.replace()` are covered) and must be a file directly in `PROD_LEDGER_ROOT` = `/var/lib/jobfit/ledger` (resolved, so a symlinked root fails). The ledger, `<ledger>.intents.jsonl`, `<ledger>.breach.jsonl` and their lock files share that root. No new environment variable.
+  - **Explicit provisioning.** The root is usable only with the marker `.jobfit-ledger-storage.json` (`format` 1, a uuid4 `storage_id`, the ledger file name), written once by `python -m jobfit.live.storage init`, which never creates directories and refuses an existing marker or unmarked existing evidence. The image never contains a marker. Validation checks only what the process can prove: the root exists, the marker is strictly valid, a probe file can be written, fsynced and removed. The live evidence code never creates a missing directory.
+  - **Preflight and admission.** Every live operation validates the storage at preflight (`ledger_storage_unavailable`, 503, nothing reserved) and again immediately before admission (a changed `storage_id` is `ledger_storage_mismatch`, refused before inserting). The reservation's `process_id` is `<storage_id>:<pid>` (32 lowercase hex, a colon, a decimal pid without sign or leading zero); anything else is foreign or malformed.
+  - **Admission order (additive):** `duplicate_operation` → `ledger_storage_mismatch` (any row, whatever its status, with a malformed process_id or another storage) → `busy` → `evidence_fail_closed` (untrusted evidence, or the database's settled history above the recorded spend) → `budget` → `lifetime`. `recorded_spend()` is read exactly once per admission transaction and that one value serves both the evidence check and the lifetime check.
+  - **Storage continuity at every attempt.** After the durable intent (and the unchanged first-intent allowance finalize) and before the SDK, every attempt re-checks the current storage: missing, invalid or unwritable → sticky `ledger_storage_unavailable`; another `storage_id` → sticky `ledger_storage_mismatch`; no SDK call for that or any later attempt. `OperationState.fail_storage()` takes the operation lock once and sets an independent `storage_continuity_failed` flag (first fatal reason still wins); it never calls `set_fatal()` and takes no other lock. After drain the runner snapshots the flag under the operation lock, then registers the operation in the process-local `settlement_blocked` set under a separate lock (never both locks at once, and before the owner lock is released) and skips settlement entirely: the row stays `reserved`.
+  - **Settlement** (in the runner and in reconciliation) checks `settlement_blocked`, validates the CURRENT storage, checks the reservation's storage binding, reads the evidence, validates the storage again (same id), and only then closes. Any failure leaves the row `reserved`.
+  - **Reconciliation** runs only on valid storage with trustworthy global evidence (breach marker absent, ledger and journal strictly parsable); otherwise it touches no row. It never releases an expired reservation that has no evidence at all: after a restart a crash before the first intent and lost evidence are indistinguishable, so such a row stays `reserved` for manual review. A same-runtime operation with proven zero attempts may still be released as before.
+  - **Database witness retention.** Closed `budget_reservations` rows are the witness of the settled history for the reset checks. Production closed rows must not be purged until an explicitly approved, durable lifetime-watermark replacement exists; no cleanup path exists.
+  - **Residual limitations (accepted, not engineered in Phase 2):** (1) the ledger and journal have no independent durable attempt count, so a clean removal of one matching intent-and-ledger pair from an open crashed operation, while other valid evidence and the same marker remain, is not detectable from the remaining files; (2) `settlement_blocked` is in memory: if the process crashes after detecting a temporary storage swap and the original storage is restored before the restart, nothing durable records the mismatch. Both are outside the Phase 2 guarantee (accidental volume loss and misconfiguration). Torn, corrupt or unattributed evidence fails closed; all of an operation's evidence absent is deferred; a replaced or re-initialized volume is a storage mismatch; a missing marker or root is storage unavailable.
+  - **Recovery set:** the PostgreSQL database and the entire ledger root (marker, ledger, journal, breach and lock files) are backed up and restored together (Phase 6 packaging).
+- **Status:** Approved. Implemented 8 Oct 2026 (dark; local and CI only; nothing deployed). Evidence: [CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-phase-2b-dark-safety-layer); persistent ledger storage: [CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-persistent-production-ledger-storage). Persistent ledger storage independently verified and closed at `f5d6cf7` (DONE for Phase 2 acceptance (local/CI); deployed host persistence validation pending Phase 8).
+
+## D-102. CP3 portfolio / controlled public beta scope principle
+
+- **Date/source:** 8 October 2026. Project-owner (Dion) scope directive after the persistent production ledger was independently verified and closed (`f5d6cf7`, closeout docs `e107dba`). This entry documents and clarifies the CP3 target; the documentation is independently reviewed before implementation resumes. Nothing in it is implemented yet.
+- **North star:** JobFit is a production-grade AI engineering portfolio with a controlled public beta. Its main purpose is to show end-to-end AI engineering and applied-AI capability to recruiters, hiring managers and engineers who find it through GitHub, LinkedIn, a portfolio or a direct link. It runs on a real VPS, real public users can try it in a limited way, and it should feel like a small real product, not a notebook, JSON demo or internal prototype.
+- **Deployment target:** one VPS (the D-095 SumoPod machine), low to moderate portfolio and public-beta traffic, controlled anonymous access, bounded LLM cost, PostgreSQL, Docker, HTTPS through Caddy, monitoring, careful privacy and failure handling, fail closed where uncertainty matters. Manual operator recovery is acceptable for rare uncertain states.
+- **Out of scope for CP3:** enterprise SaaS, multi-region infrastructure, enterprise high availability, active-active failover, distributed recovery systems, complex microservices, a custom enterprise WAF, 99.99% availability targets, automated recovery from every theoretical infrastructure failure, enterprise malware-analysis infrastructure, large-scale SaaS billing or accounting, and any distributed-systems complexity that the single-VPS beta does not need.
+- **Product success:** a real user goes through the whole flow: real CV → safe parsing, consent and privacy → structured candidate evidence → job discovery or a user-supplied job → requirement extraction → evidence-grounded CV-to-JD matching → deterministic, explainable scoring → strengths, gaps and reasons → job-specific CV improvement advice → a polished result, with production monitoring of cost, latency and reliability behind it.
+- **Two first-class flows:**
+  - **Flow A, Find Jobs for Me:** CV → parse, normalize, mask → runtime embedding → production retrieval → top jobs → requirement extraction → evidence matching → scoring and ranking → explanation → job cards and detail → optional job-specific CV improvement.
+  - **Flow B, Check a Job I Found:** real CV + a pasted job description from elsewhere (LinkedIn, a careers page, JobStreet, Glints, Kalibrr and so on) → requirement extraction → evidence matching → scoring → explanation → strengths and gaps → CV improvement suggestions. No corpus retrieval is needed.
+  - **A pasted JD is a session or request input only.** It is never inserted into the production job corpus automatically; corpus ingestion stays the controlled D-098 lifecycle with dedupe, provenance and activity rules.
+- **Priority principle:** roughly 70% AI and product value, 30% production, deployment and safety infrastructure. It is a prioritization filter, not a budget rule. Every engineering choice is checked against "does this materially improve the AI product or show relevant AI-engineer competence?"; essential safety is never cut by it. High-value AI work: real CV parsing, candidate evidence, runtime embeddings, semantic and production retrieval, JD requirement extraction, evidence matching, scoring, explainability, grounded recommendations, evaluation, latency and LLM-cost optimization, fallback and error behaviour, pasted-JD analysis and evidence-grounded coaching. The frozen D-087 intelligence is never weakened to simplify deployment.
+- **Stage-aware analysis progress (refines D-093 A):** long analyses show real processing stages, not an unexplained spinner. Flow A: analyzing your CV → searching relevant jobs → reading job requirements → matching your experience → preparing recommendations. Flow B: analyzing your CV → reading job requirements → matching your experience → preparing your result. Completed, current and pending steps with honest messages; no fake percentages unless the backend has real deterministic progress (counts such as "job i of N" are real). The UI is driven by actual pipeline state, and the same stages are measured for latency (CV parse, embedding, retrieval, requirement extraction, evidence matching, recommendation, total), named by the repository's metric conventions.
+- **"Improve My CV for This Job" (refines D-093 B and extends D-036):** for a matched job or a pasted JD, coaching built from the JD requirements, the existing CV evidence and the JobFit match and gap result. Not a generic "rewrite my CV".
+  - **Hard anti-fabrication rule:** JobFit never recommends inventing skills, experience, employers, responsibilities, years, certifications, projects, achievements, metrics, tools or impact. It may improve how existing evidence is represented; it never manufactures evidence.
+  - **Recommendation types:** (A) representation improvement, where the CV already has the evidence but states it vaguely, and the suggestion uses only evidence actually present; (B) possibly missing from the CV, where the CV shows no evidence and the user is told to add it only if they really did it, with its real context; (C) true gap, such as a years-of-experience requirement, stated plainly as a gap that wording cannot fix.
+  - **Presentation:** current CV statement → suggested improvement → why it helps for this job → supporting CV evidence, shown only when that evidence exists.
+  - **Scope limit:** coaching and recommendations only. No graphical CV editor, PDF/DOCX resume builder, ATS template marketplace, cover-letter generator, interview generator or full career platform in CP3.
+- **UI/UX target:** an intentionally designed, portfolio-ready public app: a clear landing and explanation, public-beta wording, an intuitive upload flow, the privacy and consent explanation, two obvious primary actions (Find Jobs, Check a Job), stage-aware progress, useful job cards with the match score, strengths, gaps, supporting evidence and explanations, job detail, "Improve My CV for This Job", useful empty, failure, unavailable and budget-exhausted states, reasonable mobile and desktop layout, consistent typography and components, clear calls to action. Priority: clarity > trust > usability > product polish > decoration. Streamlit stays the UI technology unless a justified decision says otherwise.
+- **Controlled public beta:** shared through LinkedIn, GitHub, the portfolio or a direct link; not unlimited anonymous traffic. The accepted controls apply: the global live gate, rate limiting, the per-IP quota, the LLM budget cap, request and input limits, safe upload, privacy and consent, idempotency, persistent usage accounting and structured failure handling. When live AI capacity or budget is unavailable the app says so ("Live AI analysis is temporarily unavailable. Please try again later.") and offers the saved demo. Enterprise uptime is not required.
+- **Public access is not administrative access:** public users reach only the end-user application. They never get SSH or shell access, Docker or container administration, PostgreSQL administration or direct database connections, environment variables or secrets, deploy or restart controls, budget or live-gate configuration, operator or manual-recovery controls, internal administrative endpoints, private operational logs, or Grafana and admin dashboards (unless a later decision creates a safe read-only public view). The infrastructure exposes only what the public app needs (D-095: only Caddy publishes ports; FastAPI, PostgreSQL, Prometheus and Grafana stay internal; Grafana through an SSH tunnel). The owner mechanism may unlock operator capabilities but never weakens budget, privacy, consent or safety controls.
+- **Failure philosophy:** for safety-relevant ambiguity, unknown → fail closed → log or metric → manual operator review. Rare uncertain states do not need elaborate automatic recovery on a single-VPS, low-traffic beta.
+- **Complexity budget:** before adding a reliability subsystem, ask: (1) is the scenario realistic for this single-VPS beta? (2) could it compromise privacy or security? (3) could it create uncontrolled cost? (4) could it corrupt authoritative state? (5) could it materially invalidate AI results? (6) can fail closed + logs and metrics + documented manual recovery handle it safely? (7) what portfolio or product value does the extra complexity add? If (6) is yes and the other risks are controlled, the simpler design wins.
+- **Production engineering that stays in scope** (built to a public-beta standard, not an enterprise one): PostgreSQL, Alembic, Docker, production containers, persistent storage, VPS deployment, HTTPS through Caddy, CI/CD, health checks, structured logging, monitoring with the D-099 stack, cost, request, latency and LLM-usage metrics, system-resource monitoring, API and upload safety, privacy and consent, rate limiting, quota, the budget cap, idempotency and graceful failure.
+- **Observability target:** application (requests, success and failure, status codes, latency, analysis completions, refusals); AI pipeline (CV parsing, embedding, retrieval, JD extraction, matching, recommendation, total duration); LLM (provider and model usage, call counts, failures, fallbacks, latency, estimated and settled spend, budget state); infrastructure (process and container health, CPU, memory, disk, PostgreSQL health, ledger storage health). No CV text, candidate data or raw private content in metrics or normal logs; pseudonymous correlation ids only (D-099 privacy rules).
+- **Evaluation stays high priority:** retrieval, relevance, requirement extraction, evidence matching, scoring, ranking, structured output, regression, golden and human-labelled data, latency, cost, failures and fallbacks. The CP2 and CP3 evaluation baselines are preserved unless a specific later decision supersedes them.
+- **Public-beta acceptance bar:** a CP3 task is good enough when it is safe enough for controlled public use, cost bounded, privacy aware, testable, observable, maintainable, understandable, deployable and honest about residual limitations. It does not need perfect automatic recovery, enterprise availability, massive scale or theoretical completeness. Safe refusal + logs and metrics + manual recovery is acceptable for rare uncertain infrastructure states unless a concrete high-impact risk needs more.
+- **Preserved (not reopened):** D-087 and the frozen CP2 intelligence; D-096 cost principles and the Phase 2A bounds; D-097 adapters; D-098 corpus lifecycle; D-099 observability stack; D-100 evaluation obligations; D-101 Phase 2B safety semantics; the Alembic work; the persistent production ledger.
+- **Open gates this decision does NOT resolve (each needs its own decision before the feature is live):**
+  1. **Public live cost bound.** `full_analysis_upper_bound` (US$84.7704449) is above the US$2/day cap, so D-096 still blocks public real-CV live mode. Real public use of Flows A and B needs a separately approved resolution of that bound; D-102 does not change D-096, the cap or the bounds.
+  2. **Flow B in production.** D-101 keeps `/analyze` closed in production live until a pasted-JD phase bound and reservation are decided. D-096 already allows up to three pasted-JD analyses per ticket.
+  3. **Representation-improvement generation.** If suggested wording needs an LLM call, that call needs its own phase bound and reservation (D-096), an anti-fabrication evaluation and a decision. Until then the deterministic coach (D-036 v1) is the baseline and "no LLM coach in CP3" in the coach plan stands.
+  4. **Timeline.** The D-100 dates (freeze at the end of 9 Oct, presentation 11 Oct) are unchanged. The remaining work is ordered by priority; moving any date needs a separate decision.
+- **Clarifies (does not supersede):** D-026 (cut order), D-036 (coach), D-093 (mentor feedback A and B), D-095 (product framing). Their history stays as recorded.
+- **Status:** Approved and independently reviewed (8 Oct 2026): the D-102 scope direction and the anti-overengineering correction (`84fea29`) were independently accepted; this is the authoritative CP3 scope direction. Nothing is implemented yet.
+- **Update (8 Oct 2026):** open gates 1 (public live cost bound) and 2 (Flow B in production) are resolved by D-103: a separate public-beta profile with a per-job `job_analysis` bound (US$4.0012836) under US$5/day, and `/analyze` as one `job_analysis` operation. The public real-CV flow still waits for the consent adapter; gates 3 and 4 are unchanged.
+
+## D-103. Controlled public-beta cost profile (amends D-096 for the public beta)
+
+- **Date/source:** 8 October 2026, Dion and Codex (architecture Option F, final-approved with execution clarifications; implemented the same day in small audited steps).
+- **Finding.** With the frozen GPT-6 Sol matcher and the frozen output policy, one evidence-matching chain has a deterministic bound of about US$3 or more under any realistic input envelope, so no evidence-matching analysis fits under US$2/day. The historical Phase 2A `full_analysis_upper_bound` (US$84.7704449, `config/cp3/phase_bounds_v1.yaml`, D-096) is not reduced, overwritten or repurposed: it stays reproducible, and the legacy `public_live_eligible()` full-analysis check keeps its meaning (still false at US$2 and at US$5).
+- **Separate versioned profile.** `config/cp3/public_beta_bounds_v1.yaml` (version `cp3-public-beta-bounds-v1`, sha256 `ccb1254a92147a26e0392e4394cd9a59824bda0b7a7e1a3fb2ef609d424335a3`) is read by an additive calculator (`src/jobfit/llm/public_beta_bounds.py`). It reads the same frozen sources as Phase 2A (pipeline config and K, route rules, models registry, prompts, guideline, schemas, output policy; checked to be identical to the Phase 2A profile) and adds only the beta envelopes and phases. `src/jobfit/llm/phase_bounds.py` is unchanged.
+- **Exact canonical byte envelopes.** One shared measure, `jobfit.llm.document_bytes.document_bytes`, is used by the calculator, runtime admission and the tests: the UTF-8 bytes a value adds to the frozen guard's measured messages under the `json.dumps(..., ensure_ascii=False)` construction of `validated_call` and `OpenRouterClient` (a string counts its escaped quotes). Tests prove it equals the actual frozen `validated_call` → `OpenRouterClient` serialization for ASCII, multibyte UTF-8, emoji, quotes, backslashes and control characters (no hand-written approximation). Limits:
+  - masked CV ≤ 16,384 bytes; pasted or corpus JD text ≤ 16,384 bytes; qualification inventory ≤ 32 items;
+  - serialized extraction (`model_dump(mode='json')`, as sent in the matching payload) ≤ 24,576 bytes with ≤ 48 requirement units;
+  - job, CV and unit ids ≤ 64 characters.
+- **Phases.** `parse` (one CV parse), `search` (one CV query embedding; no LLM) and `job_analysis` (exactly one JD: extraction, Sol matching, Luna fallback). Each has its own reservation, window and call model under the D-101 runtime. The legacy 10-job `recommendation` phase stays defined but is never admitted by the beta runtime (`phase_not_admitted`).
+- **Bounds (exact calculator output, pinned by tests):**
+
+  | Phase | Bound (US$) |
+  | --- | --- |
+  | `parse` | 0.0614679 |
+  | `search` | 0.0001648 |
+  | `job_analysis` | **4.0012836** (extraction 0.4141854 + matching 3.416284 + fallback 0.1708142) |
+  | Phase 2A full analysis (historical, unchanged) | 84.7704449 |
+
+  The planning estimate (job_analysis ≈ US$4.1783556) was provisional and is superseded by the calculated value.
+- **Envelope enforcement (fail closed, never truncated).** Inputs above the CV, JD or inventory envelope (or a cached extraction above its envelope) are refused (`input_too_large`, 413) before any reservation, ticket or allowance use. An extraction produced above its envelope holds the job (`beta_envelope_exceeded`) with 0 Sol and 0 Luna calls, and the extraction cost is settled normally from evidence. The Phase 2B per-call refusal above the modelled attempt bytes stays the backstop.
+- **Flows.** **Check a Job** runs one `job_analysis` (this gives `/analyze` the phase bound and reservation that D-101 required). **Find Jobs** runs `parse` and `search`, shows the results labelled as search-stage relevant jobs (not JobFit match rankings), and the user may then run `job_analysis` on up to three chosen jobs. Only an analyzed job shows an evidence-grounded match score and explanation. The saved demo may keep showing the frozen full 10-job product ranking. CP2.4 final-order metrics are never claimed for the search-stage list.
+- **Allowance (no migration, no new persistent quota store).** The durable `live_quota` semantics are unchanged: one ticket per IP pseudonym per 24 hours, consumed at the first billable call. A session allowance (in memory) exists only after `consume_ticket()` returns a proven `consumed`; `refused`, `unavailable` and `unknown` create no allowance and the operation's guard stops it before any provider call. With it, the same session may run one `parse`, one `search` and up to three `job_analysis` operations; an operation counts at its first durable provider intent. A process restart may invalidate the session but never grants the IP another durable ticket. The global daily cap, lifetime stop and one-live-operation gate stay the authoritative cost backstops.
+- **Idempotency is bound to the intended action (audit correction).** A session may run several `job_analysis` operations, so the in-memory idempotency registry binds a key to its session, its phase and an opaque action fingerprint (`jobfit.live.keys.action_fingerprint`, a SHA-256 of non-sensitive ids only): the CV id plus the corpus `job_id`, or the CV id plus the opaque `paste_id`. The same key for the same action returns the original run and never executes twice; the same key for another job, another pasted JD, another session or another phase is refused (409 `idempotency_key_mismatch`). No CV or JD text, no PII, no migration and no persistence; the persisted operation key stays the cross-restart backstop. The real-CV adapter binds the consented-CV digest the same way.
+- **Owner bypass is quota-only.** The owner token bypasses only the durable IP ticket and the beta session allowance. It never bypasses the daily or lifetime budget, the one-operation gate, idempotency, evidence and storage safety, per-call bounds, the beta input and extraction envelopes, or the real-CV privacy, masking and consent requirements.
+- **Budget (existing settings, no new budget subsystem):** `JOBFIT_DAILY_BUDGET_USD=5`, `API_HARD_STOP_USD=25`, `API_BUDGET_USD=25`; the existing invariant `daily ≤ hard stop ≤ budget` holds. Raising the daily cap to US$10 later needs an explicit owner decision based on observed beta demand and metrics; there is no automatic scaling. A provider-side key credit limit is optional defence in depth, set manually only if the account supports it, and never a deployment dependency; the persistent ledger, the daily cap and the lifetime stop stay authoritative.
+- **Observed cost numbers are estimates, not guarantees.** From the development ledger (Sol matching mean US$0.027, max US$0.058; extraction mean US$0.012, max US$0.05; parse about US$0.007–0.021), a settled analysis is about US$0.06–0.10 with its share of parse and search, which suggests roughly 8–13 analyses per day and 200–350 over the beta. These are development-ledger estimates only, not an SLA, acceptance criterion or quota promise. Deterministic admission always uses the calculated phase bounds plus the actual settled and outstanding spend: a `job_analysis` is admitted only while the day's liability plus US$4.0012836 stays ≤ US$5, and while recorded spend plus open liability plus the bound stays ≤ US$25.
+- **Eligibility.** The additive `public_beta_phase_eligible(settings, bounds)` requires complete production settings with live and public live on, the beta profile version, and every beta phase bound finite, positive and ≤ the daily cap. The legacy `public_live_eligible()` is unchanged.
+- **Real-CV public flow stays closed.** D-103 builds the beta runtime, reservations, API contract and tests; it does not build the real-CV path. In production the public (non-owner) `/jobs/search`, `/jobs/{job_id}/analyze` and pasted-JD `/analyze` stay closed (503) until the later real-CV and consent adapter connects the session's uploaded CV, whatever `JOBFIT_PUBLIC_LIVE` says. Synthetic demo CVs are never presented as the public-beta flow.
+- **Implementation compatibility detail (deviation, no migration).** The `0002` schema's CHECK constraint allows only the reservation labels `parse` and `recommendation`. One explicit mapping (`jobfit.live.budget_store.RESERVATION_LABEL`) stores `parse` as `parse` and both `search` and `job_analysis` as the coarse label `recommendation`. The reserved amount is always the real phase's beta bound, admission is phase-agnostic, and the real phase stays in the intent journal, the ledger records, the operation report and the admission log line. A `recommendation`-labelled row therefore does not imply the legacy 10-job phase, which the beta runtime never admits; audit queries read the evidence for the real phase.
+- **Monitoring and deployment (recorded clarification; Langfuse updated the same day).**
+  - Prometheus and Grafana OSS are required and self-hosted on the VPS; lightweight Prometheus exporters for the agreed metrics are allowed, notably node_exporter for basic VPS CPU, memory and disk. No other infrastructure-monitoring platform is added.
+  - Grafana stays private and admin-only, reached through an SSH tunnel from Dion's Mac, never exposed anonymously. PostgreSQL, Prometheus, Grafana, secrets and operator and deployment controls stay private.
+  - **Langfuse is required for the final controlled public beta and portfolio release** (this supersedes the earlier "optional, post-beta" wording). Grafana covers infrastructure and application monitoring; Langfuse complements it with LLM/RAG tracing and AI-request observability. Use the Langfuse Cloud hosted free tier if available and privacy-compatible; do not self-host Langfuse on the VPS for CP3. Langfuse never receives raw CV content or user PII; default telemetry is sanitized and pseudonymous and limited to useful AI observability (trace and session ids, stage, model, latency, token usage, estimated and settled cost, errors, fallback, status). No paid Langfuse plan is introduced silently: if the free hosted tier is unavailable or unsuitable, the work stops for a Dion and Codex decision. The Langfuse implementation is a separate P1 observability task before controlled public-beta activation; it is not part of the D-103 runtime.
+  - Free, open-source and free-tier components stay preferred; paid operating cost is mainly the VPS and actual LLM usage.
+- **Implementation (8 Oct, local and CI, fake SDKs only; zero provider calls):** `5d07b0c` (beta bounds, config, canonical bytes, offline tests), `c3a718e` (runtime phases, envelopes, label mapping, ticket-gated session allowance, one-job analysis, offline and PostgreSQL tests), `40ed823` (API search-stage and job_analysis contract, owner-only in production; prod wiring builds the runtime with the beta bounds). Results: [CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-d-103-public-beta-cost-profile).
+- **Unchanged.** D-087 (models, prompts, K, retrieval, matching, scoring, weights, output policy, frozen files; freeze verify `"ok": true`); the deterministic bound method; `config/cp3/phase_bounds_v1.yaml` and the US$84.7704449 bound; D-101 safety semantics; the persistent ledger semantics; migrations and `src/jobfit/db/models.py`; the development and validation budgets. Production live and public live stay off: `JOBFIT_PUBLIC_LIVE` may be enabled only after the CP3.4 privacy release gate passes, the real-CV consent adapter is connected, and `public_beta_phase_eligible` holds.
+- **Status:** Approved (final approval with execution clarifications, 8 Oct 2026); implemented dark at `40ed823` with the audit correction `d30255d` (action-bound idempotency); **independently verified and closed at `d30255d`** (local and CI only, not deployed).
+
+## D-104. Structural CV data-minimization boundary for the real-CV public beta
+
+- **Date/source:** 8 October 2026, Dion (owner) and Codex (independent reviewer), after several review rounds on FAIL-37.
+- **Principle.** JobFit is an evidence-grounded CV-to-JD matching system. It needs the CV's evidence-bearing professional content, not the candidate's identity or contact metadata and not self-written summary claims. D-104 is a **data-minimization boundary**: keep only the evidence-bearing professional sections, discard the identity/contact header, the Summary family and privacy-only sections locally, and use deterministic masking only as a defensive backstop. Its purpose is not to keep the whole CV and detect every kind of PII.
+- **Boundary rule (bounded Indonesian/English heading sets, exact match after normalization; heading lines kept verbatim):**
+  - **Summary family as a structural delimiter only:** Summary, Professional Summary, Career Summary, Profile, Professional Profile, Personal Profile, About Me, Tentang Saya, Ringkasan, Profil, Profil Profesional, Profil Pribadi, Objective, Career Objective, Tujuan Karier. If one exists, everything before its first occurrence **and the Summary section itself** are dropped; the provider and matching text starts at the first evidence-bearing section after it. Summary content is never sent to a provider and is never matching evidence. A Summary with no later evidence section fails closed.
+  - **Evidence-bearing sections (start or resume points):** Experience, Skills, Projects, Education, Certifications, Training, Courses, Publications, Awards/Achievements, Languages, Volunteering (with their Indonesian equivalents). With no Summary, the text starts at the first of these.
+  - **Privacy/minimization sections (dropped anywhere; never a start):** Contact, Personal Details/Information/Data, Biodata, Data Pribadi, Data Diri, Emergency Contact, References/Referees/Referensi, Interests/Minat, Organizations/Organisasi, Declaration, Signature. A dropped region lasts until the next evidence heading; a later Summary-family block is dropped the same way.
+  - **No start found** (no evidence heading, or only a Summary): the preview is refused with `professional_boundary_not_found`, the current preview is invalidated and no provider call is possible. No guessing and no first-N-lines rule.
+- **Deterministic backstops (safety nets, not features)** over the retained text: the existing email, phone, identity-number and profile-URL patterns; a strong detailed-address backstop without any geography data (a standalone or labelled address line is masked to the line end; an address inside a professional sentence is masked only up to a safe punctuation boundary, keeping the evidence that follows); a multi-token owner-name repeat backstop derived only from high-confidence evidence in the dropped header and held as volatile keyed fingerprints (no raw value, no reversible map, no single-token masking); and person-name-shaped values after strong labels (Supervisor, Reporting Manager, Contact Person, PIC, Mentor and equivalents), with role values such as "Head of Data Science" kept. No NER and no cloud or external PII service.
+- **Lifecycle and consent (unchanged):** the sanitized preview is the source of truth; every edit is sanitized again with a new generation and digest, which invalidates consent and all derived state; consent stays bound to the exact sanitized-preview digest. No owner-name review gate, attestation or `/cv/owner-review` endpoint. A sanitizer failure invalidates the preview and fails closed with a fixed code; never a raw-text fallback.
+- **Location and target role** come from explicit user preferences and Find Jobs filters, not from the CV.
+- **Relation to D-051:** implements its masking requirements mainly by removal. Amends section 2.2 (header removal is never used alone; Summary-family and privacy-section removal plus document-wide backstops) and section 2.4 (Summary is not evidence for the beta; pre-summary headline or tagline loss is intentional). Resolves the section 9 open items (home city/country not needed; employer and institution names kept as evidence; detector = structural rules plus patterns, no library).
+- **Frozen compatibility (read-only audit):** Summary is optional in the frozen parser (it requires at least one section and one evidence fact, and employment quotes inside Experience), in the CV parsing and evidence-matching prompts, the G1 heading guardrail, retrieval, the seniority rule, scoring and ranking. No frozen invariant requires Summary. Disclosed side effect: 6 of the 781 quoted CV1/CV2 evidence rows in the frozen development gold cite `Summary` (all PARTIAL); a later PR-10-style comparison on D-104 text may differ on them. PR-10's masked arm will later use the D-104 sanitized text; the D-100 thresholds are unchanged.
+- **Supersedes:** the unimplemented FAIL-37 proposals (a required name field and optional address field as reviewed identifiers; contextual name detection; a city-preserving address parser with an official BPS/Kemendagri regional list; an owner-review endpoint; a separate government-identifier milestone). None of them was committed as code. Also not adopted: Summary weighting, deduplication, Summary-only retrieval or Summary scoring.
+- **Unchanged:** D-087 (frozen files, models, prompts, K, retrieval, matching, scoring, weights, output policy), D-103, the ZDR client, reservations, quota, idempotency, migrations and `src/jobfit/db/models.py`. `mask_local` v1 stays byte-identical for CP2 reproducibility; the upload path gets an additive v2. `real_cv_enabled`, public live and the public beta stay off.
+- **Status:** APPROVED DESIGN / IMPLEMENTATION PLANNED (synthetic calibration with a locked holdout and hard gates, then independent audit). FAIL-37 stays OPEN / REVISED DESIGN.
+- **Update (9 Oct 2026):** implemented in small audited commits: the docs-only design `064b800`, fixtures and harness `a0e2f04`, the sanitizer `8257f17`, the corrective `a7c291f` (accepted, sanitizer sha256 `49b748aa59c6aef56ebf9e05d3e72e62da5a481022a7be7f8c15d3a66c955341`), and the API/session/consent/provider lifecycle `e4c69ab`. Each was independently accepted for its measured scope (synthetic calibration, offline API and provider-payload gates). The historical holdout (`heldout_v1.yaml`, receipt sha256 `8fac6228…d6d`) is closed and never rerun. The deployed end-to-end privacy release gate (CP3.4) is still pending. FAIL-37: fixed for the measured scope, deployed validation pending.
+
+## D-105. Pre-local real-user product flow and owner-only local activation (refines D-102/D-103 product UX)
+
+- **Date/source:** 9 October 2026. Owner-approved CP3 product-flow refinement (Dion), planned with corrections from the independent reviewer before execution. It refines only the D-102/D-103 product UX and the local activation path. **It does not alter D-087**: frozen models, prompts, K, the retriever, matching, scoring, weights, the output policy, gold data and receipts are unchanged; freeze verify stays `"ok": true` with no changed file.
+- **Final real-user flow:** landing → Upload your CV → local D-104 structural sanitizer → exact sanitized preview → optional edit (sanitized again, new digest) → explicit consent for that exact text → **Continue** (exact-digest consent, then the reserved parse) → **CV ready** → choose **Find Jobs** (primary) or **Check a Job** (first-class). There are no other first-class flows. The saved synthetic demo is a secondary, zero-cost way to try JobFit. Market skills is a secondary expander, not navigation.
+- **Find Jobs:**
+  - **Optional pre-search filters:** role family (`ai_ml_engineering`, `data_science`, `genai_llm`, `software_ai`), country, city, experience requirement (`entry`, `1-2y`, `3-4y`, `5y+`; labelled "Experience requirement", not a seniority classifier), work mode, posted within (7 or 30 days), and an advanced include-missing-info switch (default on, the D-010 semantics).
+  - **Blank filters** mean the whole eligible production pool: active, canonical, target-role jobs with a current embedding of the frozen profile.
+  - **Every selected filter narrows the pool before the frozen hybrid retriever ranks it.** This supersedes the 8 Oct CP3_03 clarification that target role is only a refinement. It is a change to the CP3 adapter (`search/production.py`), not to the frozen retriever. No filter widens itself; an empty result says so honestly.
+- **Search and analysis are separate:**
+  - **"Matching against all jobs in the database" means** cheap hybrid relevance retrieval (FTS + frozen Qwen dense + RRF) over the eligible pool. It never means requirement extraction and LLM evidence matching against every job; that is never done.
+  - **Relevant Jobs are search-stage results, not fit rankings:** no match percentage, no probability.
+  - **Browse depth** is the frozen stage-1 candidate depth (30: `top_k` 30, branch depth 30, RRF 60, as in the freeze receipt), not the analyzed K (10). No config value was changed.
+  - **Only a job the user selects is analyzed** (one D-103 `job_analysis`: extraction, evidence matching, deterministic score), up to 3 per session.
+- **Refine these results:** after Find Jobs, local filters over the already-returned cards only. They make zero API, search, parse, embedding, extraction or matching calls, create no reservation or key, keep retrieval order and never widen beyond the returned set. The card metadata is filter-effective (country by the frozen rule), and the UI semantics are tested against the frozen `filter_status`.
+- **Check a Job:** a pasted JD stays session-only, is never added to the corpus and goes through the same `job_analysis`, the same result view and the same coach. No retrieval.
+- **Analyze Fit result:** evidence coverage (explicitly not a hiring probability), MATCH/PARTIAL/NO_MATCH per requirement with exact CV quotes, strengths, gaps, an experience conflict when one applies, and an honest hold with no score when analysis cannot finish. No second scoring system. No production job-detail lookup: card metadata, the apply URL and the result are enough.
+- **Work history (D-086 input):** uploaded CVs no longer reuse the demo constant. The user may confirm "My CV lists my complete work history" once per sanitized-CV digest; the answer is reused by both flows and bound into the idempotency action. It defaults to false, and a new upload or edit resets it. Unconfirmed, a years requirement is "not verified", never a conflict.
+- **Improve My CV for This Job** (deterministic, no LLM). Four mutually exclusive categories:
+  - **A, representation:** required PARTIAL rows with editable fields. It shows the exact CV evidence, the job's requirement as the job's words, and one fixed guidance sentence. No rewritten line, so a JD term can never become a candidate claim.
+  - **B, possibly missing:** required NO_MATCH rows with editable fields. The fixed questions follow, and a bullet is built only from the user's answers. This refines v1, where PARTIAL also entered the questions.
+  - **C, true gap:** confirmed D-086 conflicts only, with no learning advice.
+  - **"Not verified from this CV":** years, location or work-permit requirements without a confirmed conflict.
+
+  Unsupported claims = 0. Answers stay in the session and never change the score.
+- **Honest progress:** Streamlit `st.status` with the real stage names while a parse, search or analysis runs. `st.progress` only where the backend reports real counts (the demo run). No invented percentage or timer. No WebSockets, SSE, queue or new service.
+- **Idempotency in the UI:** one key per user action, reused on a retry after a lost response. A rerun resumes polling and never posts again.
+- **Owner-only local activation:**
+  - **`JOBFIT_REAL_CV_ENABLED`** (0/1, default 0) is the explicit uploaded-CV switch. It requires `JOBFIT_ENV=prod` and `JOBFIT_LIVE_ENABLED=1`, so every production safeguard applies: owner token, persistent ledger root, budgets, ZDR with `data_collection=deny`, input envelopes, idempotency and the exact D-104 consent lease.
+  - **The public beta stays closed** (`public_beta_open` hardcoded False; non-owners get 503). `JOBFIT_PUBLIC_LIVE` stays off.
+  - **`docker-compose.owner-local.yml`** is a separate, local-only stack (own containers, ports and volumes; never the CP2 database) with every secret and budget required from an untracked env file. The UI forwards `JOBFIT_OWNER_TOKEN` server-side only when it is set; the public UI never sets it.
+- **D-103 allowance unchanged:** the controlled public beta stays parse 1 / search 1 / job_analysis 3. The owner may repeat Find Jobs during local validation (the owner bypasses the session allowance). The public one-search behaviour is reviewed after owner Local Mac UX validation and before public activation; repeated searches are not claimed for beta users.
+- **Corpus seed:** `python -m jobfit.db.seed_production` initializes the 0002 lifecycle of a restored copy once (no migration, no new table).
+  - The source is the 632 `is_auditable` feature rows, which must equal the database job ids exactly.
+  - 428 target rows become active and 204 non-target rows stay inactive; all rows are canonical.
+  - Seen timestamps come from the features when valid. Otherwise both are the single seed-transaction timestamp ("entered the production lifecycle at seed time"; 6 rows, 5 target), reported as `legacy_seen_timestamp_fallback`. The canonical `job_sources` row gets the same effective timestamps.
+  - **Scoped limitation:** only the canonical source identity is seeded (155 jobs stood for several CP1 source slots); member-level alias provenance is deferred and the full D-098 provenance seed is not claimed complete.
+  - It refuses any non-pristine lifecycle (never repairs). `--dry-run` and a read-only `--verify` (including the embedding index) exist.
+- **Deferred (not started):** owner Local Mac validation itself (next gate); `/metrics`, Prometheus, Grafana, node_exporter, Langfuse and email alerts; the VPS, Caddy, SSH deployment, DNS/TLS; public activation and the deployed privacy release gate; job-sync automation, dedupe-review automation, nightly backups; the persistent extraction cache (the existing lazy extraction is used); LLM CV rewriting; accounts or multi-user persistence; the PR-10 and D-045 paid runs; the final presentation.
+- **Clarification (9 Oct 2026, audit correction; no new decision):**
+  - **Work-history confirmation is contextual.** It is asked only next to the first Analyze Fit of a CV version (above Relevant Jobs, or above Check a Job), defaults to unchecked, and is frozen for that sanitized-CV digest at the first Analyze Fit attempt, before the request is sent. Every later analysis and every retry of that CV (Find Jobs and Check a Job) uses the same answer, so a retry after a lost response keeps its idempotency key and existing results never change underneath it. A new upload or edit resets it. It never affects evidence coverage; it only feeds the D-086 conflict inference.
+  - **Analyze Fit separates its groups**, using the API's `requirement_groups` with precedence confirmed conflict > not verified > strengths / evidence gaps: confirmed experience conflicts; strengths; evidence gaps (editable PARTIAL or NO_MATCH); and "Not verified from this CV" (an unconfirmed years, location or work-permit requirement, never shown as a gap).
+  - **Country filter options** cover the seeded snapshot (ID, SG, MY, PH, US).
+  - **Untrusted CV/JD text** is escaped before any Markdown rendering.
+- **Status:** IMPLEMENTED (9 Oct 2026, fakes and disposable databases only; no paid call). READY FOR OWNER LOCAL MAC VALIDATION, pending independent review. Not locally validated, not deployed, the public beta not open. Runbook: [checkpoint_3/Runbook_Owner_Local_Validation.md](checkpoint_3/Runbook_Owner_Local_Validation.md).

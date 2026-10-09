@@ -14,7 +14,13 @@
 | Post-test prompt optimization (development only) | [CP2.8 Phase A](checkpoint_2/CP2_08_Post_Test_Quality_Optimization.md), [notebook 03](../notebooks/03_post_test_quality_optimization.ipynb) |
 | Current labeling rules | [Guideline v1.3](../evals/annotation_guideline_v1_3.md) |
 | Evaluation assets and retained history | [Evaluation index](../evals/README.md) |
-| CP3 work | [CP3 reports](checkpoint_3/README.md) |
+| CP3 stage scope, acceptance and Definition of Done (source of truth) | [Master plan, CP3.1-CP3.7](master-plan.md#cp31-api-deployment-with-fastapi-checkpoint-15) |
+| CP3 daily checklist | [CP3 execution plan](checkpoint_3/CP3_Execution_Plan.md) |
+| CP3 evidence and results | [CP3 reports](checkpoint_3/README.md) |
+| CP3 decisions (plan frozen 7 Oct 2026; Phase 2B semantics 8 Oct; scope clarified 8 Oct) | D-095 to D-101, and D-102 (portfolio / controlled public beta scope) in the [decision log](decisions.md) |
+| Production job corpus and sync (planned) | [Production corpus](production-corpus.md) |
+| Public live privacy model and release gate (planned) | [Privacy model, section 11](privacy-threat-model.md#11-cp3-public-live-privacy-model-7-oct-2026-d-095-to-d-099-planned--not-yet-validated) |
+| Known open defects | [Failure log](failures.md) (FAIL-35 to FAIL-38) |
 
 Historical entry points (2-3 October 2026), kept for provenance:
 

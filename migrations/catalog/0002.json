@@ -1,0 +1,1282 @@
+{
+ "objects": {
+  "extensions": [
+   [
+    "plpgsql",
+    "pg_catalog"
+   ],
+   [
+    "vector",
+    "public"
+   ]
+  ],
+  "functions": [
+   [
+    "budget_reservations_guard",
+    "f",
+    "CREATE OR REPLACE FUNCTION public.budget_reservations_guard()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\nBEGIN\n    IF TG_OP = 'DELETE' THEN\n        IF OLD.status = 'reserved' THEN\n            RAISE EXCEPTION 'an open budget reservation cannot be deleted';\n        END IF;\n        RETURN OLD;\n    END IF;\n    IF OLD.status <> 'reserved' THEN\n        RAISE EXCEPTION 'a closed budget reservation is immutable';\n    END IF;\n    IF NEW.reservation_id <> OLD.reservation_id OR NEW.operation_key <> OLD.operation_key\n            OR NEW.phase <> OLD.phase OR NEW.production_day <> OLD.production_day\n            OR NEW.reserved_usd <> OLD.reserved_usd OR NEW.process_id <> OLD.process_id\n            OR NEW.created_at <> OLD.created_at OR NEW.active_until <> OLD.active_until THEN\n        RAISE EXCEPTION 'budget reservation identity, amount, day and lifetime are immutable';\n    END IF;\n    RETURN NEW;\nEND;\n$function$\n"
+   ]
+  ],
+  "tables": {
+   "budget_reservations": {
+    "columns": [
+     [
+      "reservation_id",
+      "uuid",
+      true,
+      "gen_random_uuid()",
+      "",
+      "",
+      null
+     ],
+     [
+      "operation_key",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "phase",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "production_day",
+      "date",
+      true,
+      "((now() AT TIME ZONE 'Asia/Jakarta'::text))::date",
+      "",
+      "",
+      null
+     ],
+     [
+      "reserved_usd",
+      "numeric(20,10)",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "settled_usd",
+      "numeric(20,10)",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "status",
+      "text",
+      true,
+      "'reserved'::text",
+      "",
+      "",
+      null
+     ],
+     [
+      "process_id",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "created_at",
+      "timestamp with time zone",
+      true,
+      "now()",
+      "",
+      "",
+      null
+     ],
+     [
+      "active_until",
+      "timestamp with time zone",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "closed_at",
+      "timestamp with time zone",
+      false,
+      null,
+      "",
+      "",
+      null
+     ]
+    ],
+    "constraints": [
+     [
+      "budget_reservations_active_until_check",
+      "c",
+      "CHECK (active_until > created_at)"
+     ],
+     [
+      "budget_reservations_closed_order_check",
+      "c",
+      "CHECK (closed_at >= created_at)"
+     ],
+     [
+      "budget_reservations_operation_key_key",
+      "u",
+      "UNIQUE (operation_key)"
+     ],
+     [
+      "budget_reservations_phase_check",
+      "c",
+      "CHECK (phase = ANY (ARRAY['parse'::text, 'recommendation'::text]))"
+     ],
+     [
+      "budget_reservations_pkey",
+      "p",
+      "PRIMARY KEY (reservation_id)"
+     ],
+     [
+      "budget_reservations_production_day_check",
+      "c",
+      "CHECK (production_day = (created_at AT TIME ZONE 'Asia/Jakarta'::text)::date)"
+     ],
+     [
+      "budget_reservations_reserved_check",
+      "c",
+      "CHECK (reserved_usd > 0::numeric AND reserved_usd <> 'NaN'::numeric)"
+     ],
+     [
+      "budget_reservations_settled_check",
+      "c",
+      "CHECK (settled_usd >= 0::numeric AND settled_usd <> 'NaN'::numeric)"
+     ],
+     [
+      "budget_reservations_state_check",
+      "c",
+      "CHECK (status = 'reserved'::text AND settled_usd IS NULL AND closed_at IS NULL OR status = 'settled'::text AND settled_usd IS NOT NULL AND closed_at IS NOT NULL OR status = 'released'::text AND settled_usd = 0::numeric AND closed_at IS NOT NULL)"
+     ]
+    ],
+    "indexes": [
+     [
+      "budget_reservations_day_status_idx",
+      "CREATE INDEX budget_reservations_day_status_idx ON public.budget_reservations USING btree (production_day, status)"
+     ],
+     [
+      "budget_reservations_operation_key_key",
+      "CREATE UNIQUE INDEX budget_reservations_operation_key_key ON public.budget_reservations USING btree (operation_key)"
+     ],
+     [
+      "budget_reservations_pkey",
+      "CREATE UNIQUE INDEX budget_reservations_pkey ON public.budget_reservations USING btree (reservation_id)"
+     ]
+    ],
+    "kind": "r"
+   },
+   "jd_extraction_cache": {
+    "columns": [
+     [
+      "cache_key",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "job_id",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "content_hash",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "scope",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "status",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "value",
+      "jsonb",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "value_hash",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "error_code",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "expires_at",
+      "timestamp with time zone",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "model",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "prompt_version",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "created_at",
+      "timestamp with time zone",
+      true,
+      "now()",
+      "",
+      "",
+      null
+     ]
+    ],
+    "constraints": [
+     [
+      "jd_extraction_cache_job_id_fkey",
+      "f",
+      "FOREIGN KEY (job_id) REFERENCES jobs(job_id) ON DELETE CASCADE"
+     ],
+     [
+      "jd_extraction_cache_key_check",
+      "c",
+      "CHECK (cache_key ~ '^[0-9a-f]{64}$'::text)"
+     ],
+     [
+      "jd_extraction_cache_pkey",
+      "p",
+      "PRIMARY KEY (cache_key)"
+     ],
+     [
+      "jd_extraction_cache_scope_check",
+      "c",
+      "CHECK (scope = 'corpus_jd'::text)"
+     ],
+     [
+      "jd_extraction_cache_state_check",
+      "c",
+      "CHECK (status = 'ok'::text AND value IS NOT NULL AND jsonb_typeof(value) = 'object'::text AND value_hash IS NOT NULL AND value_hash ~ '^[0-9a-f]{64}$'::text AND error_code IS NULL AND expires_at IS NULL OR status = 'failed'::text AND value IS NULL AND value_hash IS NULL AND error_code IS NOT NULL AND error_code ~ '^[A-Za-z_][A-Za-z0-9_]{0,63}$'::text AND expires_at IS NOT NULL AND expires_at > created_at)"
+     ],
+     [
+      "jd_extraction_cache_status_check",
+      "c",
+      "CHECK (status = ANY (ARRAY['ok'::text, 'failed'::text]))"
+     ]
+    ],
+    "indexes": [
+     [
+      "jd_extraction_cache_job_id_idx",
+      "CREATE INDEX jd_extraction_cache_job_id_idx ON public.jd_extraction_cache USING btree (job_id)"
+     ],
+     [
+      "jd_extraction_cache_pkey",
+      "CREATE UNIQUE INDEX jd_extraction_cache_pkey ON public.jd_extraction_cache USING btree (cache_key)"
+     ]
+    ],
+    "kind": "r"
+   },
+   "job_embedding_versions": {
+    "columns": [
+     [
+      "job_id",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "profile_id",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "model",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "dimensions",
+      "integer",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "preprocessing_version",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "profile_spec",
+      "jsonb",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "content_hash",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "input_hash",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "input_tokens",
+      "integer",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "original_tokens",
+      "integer",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "truncated",
+      "boolean",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "embedding",
+      "vector",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "run_id",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "created_at",
+      "timestamp with time zone",
+      true,
+      "now()",
+      "",
+      "",
+      null
+     ]
+    ],
+    "constraints": [
+     [
+      "job_embedding_versions_check",
+      "c",
+      "CHECK (vector_dims(embedding) = dimensions)"
+     ],
+     [
+      "job_embedding_versions_dimensions_check",
+      "c",
+      "CHECK (dimensions > 0)"
+     ],
+     [
+      "job_embedding_versions_job_id_fkey",
+      "f",
+      "FOREIGN KEY (job_id) REFERENCES jobs(job_id)"
+     ],
+     [
+      "job_embedding_versions_pkey",
+      "p",
+      "PRIMARY KEY (job_id, profile_id, content_hash, input_hash)"
+     ]
+    ],
+    "indexes": [
+     [
+      "job_embedding_versions_pkey",
+      "CREATE UNIQUE INDEX job_embedding_versions_pkey ON public.job_embedding_versions USING btree (job_id, profile_id, content_hash, input_hash)"
+     ],
+     [
+      "job_embedding_versions_profile_idx",
+      "CREATE INDEX job_embedding_versions_profile_idx ON public.job_embedding_versions USING btree (profile_id)"
+     ]
+    ],
+    "kind": "r"
+   },
+   "job_embeddings": {
+    "columns": [
+     [
+      "job_id",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "model",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "content_hash",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "embedding",
+      "vector(1536)",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "created_at",
+      "timestamp with time zone",
+      true,
+      "now()",
+      "",
+      "",
+      null
+     ]
+    ],
+    "constraints": [
+     [
+      "job_embeddings_job_id_fkey",
+      "f",
+      "FOREIGN KEY (job_id) REFERENCES jobs(job_id) ON DELETE CASCADE"
+     ],
+     [
+      "job_embeddings_pkey",
+      "p",
+      "PRIMARY KEY (job_id, model)"
+     ]
+    ],
+    "indexes": [
+     [
+      "job_embeddings_pkey",
+      "CREATE UNIQUE INDEX job_embeddings_pkey ON public.job_embeddings USING btree (job_id, model)"
+     ]
+    ],
+    "kind": "r"
+   },
+   "job_query_hits": {
+    "columns": [
+     [
+      "job_id",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "query_id",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "first_hit_at",
+      "timestamp with time zone",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "last_hit_at",
+      "timestamp with time zone",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "last_sync_run_id",
+      "bigint",
+      false,
+      null,
+      "",
+      "",
+      null
+     ]
+    ],
+    "constraints": [
+     [
+      "job_query_hits_job_id_fkey",
+      "f",
+      "FOREIGN KEY (job_id) REFERENCES jobs(job_id) ON DELETE CASCADE"
+     ],
+     [
+      "job_query_hits_last_sync_run_id_fkey",
+      "f",
+      "FOREIGN KEY (last_sync_run_id) REFERENCES sync_runs(sync_run_id)"
+     ],
+     [
+      "job_query_hits_order_check",
+      "c",
+      "CHECK (last_hit_at >= first_hit_at)"
+     ],
+     [
+      "job_query_hits_pkey",
+      "p",
+      "PRIMARY KEY (job_id, query_id)"
+     ]
+    ],
+    "indexes": [
+     [
+      "job_query_hits_pkey",
+      "CREATE UNIQUE INDEX job_query_hits_pkey ON public.job_query_hits USING btree (job_id, query_id)"
+     ],
+     [
+      "job_query_hits_query_id_idx",
+      "CREATE INDEX job_query_hits_query_id_idx ON public.job_query_hits USING btree (query_id)"
+     ]
+    ],
+    "kind": "r"
+   },
+   "job_sources": {
+    "columns": [
+     [
+      "source",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "source_job_id",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "job_id",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "first_seen_at",
+      "timestamp with time zone",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "last_seen_at",
+      "timestamp with time zone",
+      true,
+      null,
+      "",
+      "",
+      null
+     ]
+    ],
+    "constraints": [
+     [
+      "job_sources_identity_check",
+      "c",
+      "CHECK (source <> ''::text AND source_job_id <> ''::text)"
+     ],
+     [
+      "job_sources_job_id_fkey",
+      "f",
+      "FOREIGN KEY (job_id) REFERENCES jobs(job_id) ON DELETE CASCADE"
+     ],
+     [
+      "job_sources_pkey",
+      "p",
+      "PRIMARY KEY (source, source_job_id)"
+     ],
+     [
+      "job_sources_seen_order_check",
+      "c",
+      "CHECK (last_seen_at >= first_seen_at)"
+     ]
+    ],
+    "indexes": [
+     [
+      "job_sources_job_id_idx",
+      "CREATE INDEX job_sources_job_id_idx ON public.job_sources USING btree (job_id)"
+     ],
+     [
+      "job_sources_pkey",
+      "CREATE UNIQUE INDEX job_sources_pkey ON public.job_sources USING btree (source, source_job_id)"
+     ]
+    ],
+    "kind": "r"
+   },
+   "jobs": {
+    "columns": [
+     [
+      "job_id",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "job_uid",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "content_hash",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "snapshot_id",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "title",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "normalized_title",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "company",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "role_family",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "role_group",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "country_code",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "city_normalized",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "analysis_geo",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "work_mode",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "experience_bucket",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "years_min",
+      "integer",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "years_max",
+      "integer",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "jd_language",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "jd_quality",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "posted_at",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "apply_url",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "google_url",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "skills_v0",
+      "text[]",
+      true,
+      "'{}'::text[]",
+      "",
+      "",
+      null
+     ],
+     [
+      "description_clean",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "loaded_at",
+      "timestamp with time zone",
+      true,
+      "now()",
+      "",
+      "",
+      null
+     ],
+     [
+      "search",
+      "tsvector",
+      false,
+      "(setweight(to_tsvector('simple'::regconfig, COALESCE(title, ''::text)), 'A'::\"char\") || setweight(to_tsvector('simple'::regconfig, COALESCE(description_clean, ''::text)), 'B'::\"char\"))",
+      "s",
+      "",
+      null
+     ],
+     [
+      "is_active",
+      "boolean",
+      true,
+      "false",
+      "",
+      "",
+      null
+     ],
+     [
+      "dedupe_status",
+      "text",
+      true,
+      "'canonical'::text",
+      "",
+      "",
+      null
+     ],
+     [
+      "dedupe_suspect_of",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "first_seen_at",
+      "timestamp with time zone",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "last_seen_at",
+      "timestamp with time zone",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "covered_miss_count",
+      "integer",
+      true,
+      "0",
+      "",
+      "",
+      null
+     ],
+     [
+      "inactive_since",
+      "timestamp with time zone",
+      false,
+      null,
+      "",
+      "",
+      null
+     ]
+    ],
+    "constraints": [
+     [
+      "jobs_active_canonical_check",
+      "c",
+      "CHECK (dedupe_status = 'canonical'::text OR NOT is_active)"
+     ],
+     [
+      "jobs_active_inactive_since_check",
+      "c",
+      "CHECK (NOT is_active OR inactive_since IS NULL)"
+     ],
+     [
+      "jobs_active_seen_check",
+      "c",
+      "CHECK (NOT is_active OR first_seen_at IS NOT NULL AND last_seen_at IS NOT NULL)"
+     ],
+     [
+      "jobs_covered_miss_count_check",
+      "c",
+      "CHECK (covered_miss_count >= 0)"
+     ],
+     [
+      "jobs_dedupe_status_check",
+      "c",
+      "CHECK (dedupe_status = ANY (ARRAY['canonical'::text, 'review_required'::text]))"
+     ],
+     [
+      "jobs_dedupe_suspect_check",
+      "c",
+      "CHECK (dedupe_suspect_of IS NULL OR dedupe_status = 'review_required'::text AND dedupe_suspect_of <> job_id)"
+     ],
+     [
+      "jobs_dedupe_suspect_of_fkey",
+      "f",
+      "FOREIGN KEY (dedupe_suspect_of) REFERENCES jobs(job_id) ON DELETE SET NULL"
+     ],
+     [
+      "jobs_pkey",
+      "p",
+      "PRIMARY KEY (job_id)"
+     ],
+     [
+      "jobs_seen_order_check",
+      "c",
+      "CHECK (last_seen_at >= first_seen_at)"
+     ]
+    ],
+    "indexes": [
+     [
+      "jobs_pkey",
+      "CREATE UNIQUE INDEX jobs_pkey ON public.jobs USING btree (job_id)"
+     ],
+     [
+      "jobs_role_group_idx",
+      "CREATE INDEX jobs_role_group_idx ON public.jobs USING btree (role_group)"
+     ],
+     [
+      "jobs_search_idx",
+      "CREATE INDEX jobs_search_idx ON public.jobs USING gin (search)"
+     ]
+    ],
+    "kind": "r"
+   },
+   "live_quota": {
+    "columns": [
+     [
+      "ip_hmac",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "consumed_at",
+      "timestamp with time zone",
+      true,
+      null,
+      "",
+      "",
+      null
+     ]
+    ],
+    "constraints": [
+     [
+      "live_quota_ip_hmac_check",
+      "c",
+      "CHECK (ip_hmac ~ '^[0-9a-f]{64}$'::text)"
+     ],
+     [
+      "live_quota_pkey",
+      "p",
+      "PRIMARY KEY (ip_hmac)"
+     ]
+    ],
+    "indexes": [
+     [
+      "live_quota_consumed_at_idx",
+      "CREATE INDEX live_quota_consumed_at_idx ON public.live_quota USING btree (consumed_at)"
+     ],
+     [
+      "live_quota_pkey",
+      "CREATE UNIQUE INDEX live_quota_pkey ON public.live_quota USING btree (ip_hmac)"
+     ]
+    ],
+    "kind": "r"
+   },
+   "sync_runs": {
+    "columns": [
+     [
+      "sync_run_id",
+      "bigint",
+      true,
+      null,
+      "",
+      "a",
+      null
+     ],
+     [
+      "started_at",
+      "timestamp with time zone",
+      true,
+      "now()",
+      "",
+      "",
+      null
+     ],
+     [
+      "finished_at",
+      "timestamp with time zone",
+      false,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "status",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "manifest_sha256",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "code_version",
+      "text",
+      true,
+      null,
+      "",
+      "",
+      null
+     ],
+     [
+      "query_status",
+      "jsonb",
+      true,
+      "'{}'::jsonb",
+      "",
+      "",
+      null
+     ],
+     [
+      "counts",
+      "jsonb",
+      true,
+      "'{}'::jsonb",
+      "",
+      "",
+      null
+     ],
+     [
+      "error_code",
+      "text",
+      false,
+      null,
+      "",
+      "",
+      null
+     ]
+    ],
+    "constraints": [
+     [
+      "sync_runs_counts_check",
+      "c",
+      "CHECK (jsonb_typeof(counts) = 'object'::text)"
+     ],
+     [
+      "sync_runs_finished_check",
+      "c",
+      "CHECK ((status = 'running'::text) = (finished_at IS NULL))"
+     ],
+     [
+      "sync_runs_finished_order_check",
+      "c",
+      "CHECK (finished_at >= started_at)"
+     ],
+     [
+      "sync_runs_manifest_check",
+      "c",
+      "CHECK (manifest_sha256 ~ '^[0-9a-f]{64}$'::text)"
+     ],
+     [
+      "sync_runs_pkey",
+      "p",
+      "PRIMARY KEY (sync_run_id)"
+     ],
+     [
+      "sync_runs_query_status_check",
+      "c",
+      "CHECK (jsonb_typeof(query_status) = 'object'::text)"
+     ],
+     [
+      "sync_runs_status_check",
+      "c",
+      "CHECK (status = ANY (ARRAY['running'::text, 'succeeded'::text, 'failed'::text, 'aborted'::text]))"
+     ]
+    ],
+    "indexes": [
+     [
+      "sync_runs_one_running_idx",
+      "CREATE UNIQUE INDEX sync_runs_one_running_idx ON public.sync_runs USING btree ((true)) WHERE (status = 'running'::text)"
+     ],
+     [
+      "sync_runs_pkey",
+      "CREATE UNIQUE INDEX sync_runs_pkey ON public.sync_runs USING btree (sync_run_id)"
+     ]
+    ],
+    "kind": "r"
+   },
+   "sync_runs_sync_run_id_seq": {
+    "kind": "S"
+   }
+  },
+  "triggers": [
+   [
+    "budget_reservations",
+    "budget_reservations_guard",
+    "CREATE TRIGGER budget_reservations_guard BEFORE DELETE OR UPDATE ON public.budget_reservations FOR EACH ROW EXECUTE FUNCTION budget_reservations_guard()"
+   ]
+  ],
+  "types": []
+ },
+ "revision": "0002"
+}

@@ -1,0 +1,34 @@
+# CP3 deterministic phase cost bounds (D-096). Only CP3 assumptions live here.
+# Models, K, prices, token limits, repair and continuation counts, prompts and schemas are read
+# from their frozen sources (see src/jobfit/llm/phase_bounds.py). Values that repeat a frozen
+# limit are checked against it and fail closed on mismatch.
+version: cp3-phase-bounds-v1
+decision: D-096
+pipeline_config: config/versions/pipeline_cp23_freeze_candidate_v4_20261006.yaml
+route_rules: config/versions/route_rules_cp23_v1.json
+
+# Runtime source of the CV parse model (no frozen config records it). Tests check that it equals
+# the frozen CP2.4 runner constant and the CP2.4 ledger evidence; runtime only resolves it in
+# config/models_v1.yaml.
+parse_model: deepseek-flash
+parse_dynamic_output: false   # CP2.4 parsed with the parse_cv default (16,000-token cap, no continuation)
+
+# Repeats the literal limit in the frozen extract_jd (len(text) > 100_000 is refused); checked at load.
+jd_text_max_chars: 100000
+
+# Input envelopes with no authoritative source. Phase 2B must enforce them at admission
+# (refuse or hold beyond them). Observed CP2 maxima, for scale: 41 units, 23 inventory items,
+# 22,789 bytes of extraction JSON. If max_units or max_inventory_items is removed, the
+# calculator uses the fail-closed 3C accounting envelope and public live stays ineligible.
+envelopes:
+  max_units: 120                     # requirement units per extraction sent to matching
+  max_inventory_items: 120           # qualification inventory items per JD sent to extraction
+  extraction_json_max_bytes: 131072  # JSON bytes of one extraction inside the matching payload
+  short_field_max_chars: 64          # cv_id, job_id and similar identifiers
+  # Repair messages are bounded from the frozen code and schemas, except list-index digits in
+  # error paths: those grow with the provider's response and no frozen limit bounds them. This is
+  # an ENFORCED envelope, not a proof: the Phase 2B wrapper must refuse any call whose exact guard
+  # input bytes exceed the modelled attempt bytes (phase_bounds.guard_input_bytes against
+  # ChainSpec.attempt_input_bytes) before it reaches the provider.
+  max_list_index_digits: 6           # list indices below 1,000,000 in a repair message's error paths
+  appended_message_max_bytes: 8192   # ceiling: loading fails if a computed message bound is above it

@@ -1,0 +1,296 @@
+{
+  "adapter": "v2",
+  "cases": 41,
+  "categories": {
+    "adversarial": {
+      "correct": 2,
+      "total": 2
+    },
+    "backstop_address_inline": {
+      "correct": 2,
+      "total": 2
+    },
+    "backstop_address_standalone": {
+      "correct": 2,
+      "total": 2
+    },
+    "backstop_contact": {
+      "correct": 2,
+      "total": 2
+    },
+    "edit": {
+      "correct": 3,
+      "total": 3
+    },
+    "evidence_preservation": {
+      "correct": 2,
+      "total": 2
+    },
+    "fallback_start": {
+      "correct": 5,
+      "total": 5
+    },
+    "interests": {
+      "correct": 2,
+      "total": 2
+    },
+    "label_person": {
+      "correct": 2,
+      "total": 2
+    },
+    "label_role": {
+      "correct": 2,
+      "total": 2
+    },
+    "no_start": {
+      "correct": 2,
+      "total": 2
+    },
+    "organizations": {
+      "correct": 2,
+      "total": 2
+    },
+    "owner_repeat": {
+      "correct": 2,
+      "total": 2
+    },
+    "privacy_section": {
+      "correct": 4,
+      "total": 4
+    },
+    "residual": {
+      "correct": 0,
+      "total": 1
+    },
+    "summary_delimiter": {
+      "correct": 5,
+      "total": 5
+    },
+    "summary_only": {
+      "correct": 1,
+      "total": 1
+    }
+  },
+  "date": "2026-10-09",
+  "diagnostics": {
+    "drop_lines_leaked": 0,
+    "exact_correct": 40,
+    "keep_destroyed": 0,
+    "pii_leaked": 1,
+    "placeholder_missing": 1,
+    "refused": 3
+  },
+  "fixture_sha256": "b892c45f6b100b352b36da2be0ba5ea78286757f6056609647c42227e97e3cf9",
+  "gates": {
+    "contact_pattern_leakage_zero": {
+      "description": "no email/phone/identity-number/profile leak",
+      "failing_ids": [],
+      "passed": 37,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 37
+    },
+    "edit_resanitization": {
+      "description": "every edit is sanitized again (API lifecycle checked in commit 3)",
+      "failing_ids": [],
+      "passed": 3,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 3
+    },
+    "exact_expected_output": {
+      "description": "every gated case equals its expected sanitized output",
+      "failing_ids": [],
+      "passed": 40,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 40
+    },
+    "fallback_start": {
+      "description": "without Summary the first evidence section is the start",
+      "failing_ids": [],
+      "passed": 5,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 5
+    },
+    "first_evidence_after_summary_kept": {
+      "description": "output starts at the first evidence section after Summary",
+      "failing_ids": [],
+      "passed": 5,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 5
+    },
+    "header_removed": {
+      "description": "identity/contact header removed",
+      "failing_ids": [],
+      "passed": 16,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 16
+    },
+    "idempotency": {
+      "description": "sanitizing the output again changes nothing",
+      "failing_ids": [],
+      "passed": 37,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 37
+    },
+    "inline_address_evidence_kept": {
+      "description": "evidence next to an inline address kept",
+      "failing_ids": [],
+      "passed": 2,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 2
+    },
+    "interests_removed": {
+      "description": "Interests/Minat removed",
+      "failing_ids": [],
+      "passed": 2,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 2
+    },
+    "labelled_person_masked": {
+      "description": "person-name value after a strong label masked",
+      "failing_ids": [],
+      "passed": 2,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 2
+    },
+    "mask_local_v1_byte_identical": {
+      "description": "historical mask_local v1 output unchanged (golden digests)",
+      "phase": "commit1",
+      "status": "PASS"
+    },
+    "no_start_fails_closed": {
+      "description": "no evidence start fails closed",
+      "failing_ids": [],
+      "passed": 2,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 2
+    },
+    "no_summary_in_provider_payload": {
+      "description": "no Summary claim in the provider spy payload",
+      "phase": "api",
+      "status": "NOT_APPLICABLE_YET"
+    },
+    "organizations_removed": {
+      "description": "Organizations/Organisasi removed",
+      "failing_ids": [],
+      "passed": 3,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 3
+    },
+    "owner_repeat_masked": {
+      "description": "high-confidence multi-token owner repeat masked",
+      "failing_ids": [],
+      "passed": 2,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 2
+    },
+    "pre_summary_removed": {
+      "description": "all pre-summary content removed when Summary exists",
+      "failing_ids": [],
+      "passed": 5,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 5
+    },
+    "privacy_sections_removed": {
+      "description": "privacy-only sections removed",
+      "failing_ids": [],
+      "passed": 4,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 4
+    },
+    "protected_evidence_destroyed_zero": {
+      "description": "no KEEP span destroyed",
+      "failing_ids": [],
+      "passed": 37,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 37
+    },
+    "raw_canary_sinks_zero": {
+      "description": "no raw canary in provider payloads, logs, errors, metrics or responses",
+      "phase": "api",
+      "status": "NOT_APPLICABLE_YET"
+    },
+    "resume_after_dropped_section": {
+      "description": "evidence sections after a dropped section resume",
+      "failing_ids": [],
+      "passed": 8,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 8
+    },
+    "role_after_label_kept": {
+      "description": "role values after person-like labels kept",
+      "failing_ids": [],
+      "passed": 2,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 2
+    },
+    "summary_content_removed": {
+      "description": "Summary/Profile/Objective content removed",
+      "failing_ids": [],
+      "passed": 5,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 5
+    },
+    "summary_delimiter_detected": {
+      "description": "Summary family used as the delimiter",
+      "failing_ids": [],
+      "passed": 5,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 5
+    },
+    "summary_only_fails_closed": {
+      "description": "Summary with no later evidence section fails closed",
+      "failing_ids": [],
+      "passed": 1,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 1
+    },
+    "supported_address_masked": {
+      "description": "supported detailed address masked",
+      "failing_ids": [],
+      "passed": 4,
+      "phase": "calibration",
+      "status": "PASS",
+      "total": 4
+    }
+  },
+  "harness": "fail37-harness-v1",
+  "holdout_run": "first_pass",
+  "normalization": {
+    "compare": "COMPARE_CANON_V1",
+    "render": "ANNOTATION_RENDER_V1",
+    "source": "SOURCE_NORMALIZE_V1"
+  },
+  "note": "Counts and case ids only; no fixture text. Synthetic fixtures; not a privacy guarantee.",
+  "receipt": "fail37-structural-calibration",
+  "residual": {
+    "correct": 0,
+    "ids": [
+      "ho-rs-01"
+    ],
+    "total": 1
+  },
+  "sanitizer_sha256": "eba16fc539941c587083e525c47927ba4225c33293f9d7ad5a1b1f8111b9bd8b",
+  "schema": "fail37-fixtures-v1",
+  "set": "heldout"
+}

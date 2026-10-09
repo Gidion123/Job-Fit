@@ -34,7 +34,7 @@ Why the layout looks like this:
 | `pyproject.toml` | Package metadata (`jobfit`, src layout) and pytest settings (test path `tests/`, import paths `src/` and `.`) | CP2.1 |
 | `LICENSE` | MIT license for the code; data and third-party content are excluded (see the README) | CP2.1 |
 | `config/models_v1.yaml` | OpenRouter model ids and prices used by the budget guard; a new model must be added here and in `docs/experiments.md` first | CP2.1 |
-| `alembic.ini` | Database migration settings | CP3.2 |
+| `alembic.ini` | Alembic settings (raw-SQL revisions; the URL comes only from `DATABASE_URL`) | CP3.2 |
 | `.github/workflows/.gitkeep` | Keeps the folder; `ci.yml` is added in CP3.2 (an empty workflow file would fail on GitHub) | CP3.2 |
 
 ## Application package `src/jobfit/`
@@ -88,6 +88,9 @@ Why the layout looks like this:
 | `src/jobfit/db/models.py` | Tables: jobs, job_requirements, embeddings, demo_analysis_cache, feedback | CP2.1 |
 | `src/jobfit/db/session.py` | Database connection | CP2.1 |
 | `src/jobfit/db/load_snapshot.py` | Loads the CP1 snapshot into PostgreSQL, idempotent | CP2.1 |
+| `src/jobfit/db/migrate.py` | Alembic config for one explicit database URL | CP3.2 |
+| `src/jobfit/db/catalog.py` | Read-only schema fingerprint and Alembic revision state | CP3.2 |
+| `src/jobfit/db/lifecycle.py` | Production retrieval filter and the 60-day hard delete | CP3.2 |
 | `src/jobfit/eval/__init__.py` | Evaluation code | CP2.1 |
 | `src/jobfit/eval/metrics.py` | NDCG@10, P@5, Recall@K, filter recall, Macro-F1, extraction F1, safety checks | CP2.1 |
 | `src/jobfit/eval/run_eval.py` | Runs an evaluation on a split and writes results with versions and git SHA | CP2.4 |
@@ -112,8 +115,11 @@ Why the layout looks like this:
 
 | Path | Purpose | Filled in |
 | --- | --- | --- |
-| `migrations/env.py` | Alembic environment | CP3.2 |
-| `migrations/versions/.gitkeep` | Keeps the folder for migration files | CP3.2 |
+| `migrations/env.py` | Alembic environment (explicit URL, psycopg 3, one transaction per command) | CP3.2 |
+| `migrations/versions/0001_cp2_baseline.py` | Exact CP2 baseline: immutable copy of `SCHEMA_SQL`; refuses an existing database | CP3.2 |
+| `migrations/versions/0002_cp3_production.py` | Additive production schema (lifecycle, dedupe, sources, query hits, sync runs, extraction cache, reservations, quota) | CP3.2 |
+| `migrations/catalog/0001.json`, `0002.json` | Pinned schema fingerprints | CP3.2 |
+| `migrations/script.py.mako` | Revision template | CP3.2 |
 
 ## Prompts `prompts/`
 
@@ -168,6 +174,7 @@ Why the layout looks like this:
 | Path | Purpose | Filled in |
 | --- | --- | --- |
 | `scripts/load_snapshot_to_db.py` | Loads the snapshot into the local database | CP2.1 |
+| `scripts/db_baseline.py` | Verifies an existing CP2 database against Alembic `0001` (read-only) and stamps it only on an exact match | CP3.2 |
 | `scripts/run_baselines.py` | Runs B0 (skill overlap) and B1 (FTS) for the synthetic CVs; writes `evals/results/cp21_baselines.json` | CP2.1 |
 | `scripts/run_batch_extraction.py` | Batch JD extraction with a cost estimate first | CP2.2 |
 | `scripts/build_embeddings.py` | Estimated, guarded, resumable build for 632 job vectors and CV1/CV2 query vectors on both candidate models; development smoke checks | CP2.2 |

@@ -1,0 +1,576 @@
+# D-104 / FAIL-37 LOCKED, PRE-REGISTERED SYNTHETIC HOLDOUT (v1). Written before any detector
+# existed; not a truly blind or independent holdout. Never used for tuning. No detector runs on it
+# until the single post-implementation run; corrections only as a new versioned file.
+# Invented people and identifiers only (example.com/.org emails, +62 800-0000-xxxx phones).
+schema: fail37-fixtures-v1
+set: heldout_v1
+cases:
+
+# --- Summary family as the structural delimiter -------------------------------------------------
+- id: ho-sd-01
+  family: labelled-header-lines-personal-profile-work-experience-education
+  category: summary_delimiter
+  lang: en
+  expect: ok
+  expect_start: WORK EXPERIENCE
+  text: |
+    [[DROP:header]]Name: Laras Kinanti
+    Email: [[PII:email]]laras.kinanti@example.com[[/PII]]
+    Phone: [[PII:phone]]+62 800-0000-0201[[/PII]]
+    City: Yogyakarta
+    [[/DROP]][[DROP:summary]]PERSONAL PROFILE
+    Analyst who enjoys turning survey data into policy briefs.
+    [[/DROP]]WORK EXPERIENCE
+    [[KEEP:title]]Research Analyst[[/KEEP]] | [[KEEP:company]]Lembaga Survei Contoh[[/KEEP]] | [[KEEP:date]]2022 - 2025[[/KEEP]]
+    EDUCATION
+    [[KEEP:institution]]Universitas Contoh Yogyakarta[[/KEEP]] | S1 Sosiologi
+
+- id: ho-sd-02
+  family: headline-pipe-tentang-saya-then-proyek-then-pengalaman
+  category: summary_delimiter
+  lang: id
+  expect: ok
+  expect_start: '## Proyek'
+  text: |
+    [[DROP:header]]# Aditya Firmansyah
+    Data Scientist | NLP | Bahasa Indonesia
+    [[PII:email]]aditya.f@example.com[[/PII]]
+
+    [[/DROP]][[DROP:summary]]## Tentang Saya
+    Saya membangun model klasifikasi teks untuk layanan pelanggan.
+
+    [[/DROP]]## Proyek
+    [[KEEP:project]]Deteksi Sentimen Ulasan Aplikasi[[/KEEP]] dengan [[KEEP:tech]]IndoBERT[[/KEEP]]
+
+    ## Pengalaman
+    [[KEEP:title]]Data Scientist[[/KEEP]], [[KEEP:company]]PT Layanan Contoh[[/KEEP]] ([[KEEP:date]]2023 - sekarang[[/KEEP]])
+
+- id: ho-sd-03
+  family: earlier-projects-section-then-professional-profile-then-certifications
+  category: summary_delimiter
+  lang: en
+  expect: ok
+  expect_start: Certifications
+  text: |
+    [[DROP:header]]Benny Halim | [[PII:phone]]+62 800-0000-0203[[/PII]]
+    Projects
+    Personal website redesign
+    [[/DROP]][[DROP:summary]]Professional Profile
+    Cloud engineer with a passion for automation.
+    [[/DROP]]Certifications
+    [[KEEP:cert]]Certified Kubernetes Administrator[[/KEEP]] ([[KEEP:date]]2024[[/KEEP]])
+    Experience
+    [[KEEP:title]]DevOps Engineer[[/KEEP]], [[KEEP:company]]Contoh Hosting[[/KEEP]]
+
+- id: ho-sd-04
+  family: mixed-profil-profesional-then-skills-and-tools-then-pengalaman-kerja
+  category: summary_delimiter
+  lang: mixed
+  expect: ok
+  expect_start: '### Skills & Tools'
+  text: |
+    [[DROP:header]]### Wulan Sari Dewi
+    [[PII:profile]]linkedin.com/in/example-wulan-dewi[[/PII]]
+    [[/DROP]][[DROP:summary]]### Profil Profesional
+    Spesialis visualisasi data untuk sektor publik.
+    [[/DROP]]### Skills & Tools
+    [[KEEP:skill]]Tableau, Figma, SQL[[/KEEP]]
+    ### Pengalaman Kerja
+    [[KEEP:title]]Data Visualization Specialist[[/KEEP]], [[KEEP:company]]Dinas Contoh Kota[[/KEEP]]
+
+- id: ho-sd-05
+  family: caps-summary-then-experience-objective-block-then-education
+  category: summary_delimiter
+  lang: en
+  expect: ok
+  expect_start: EXPERIENCE
+  text: |
+    [[DROP:header]]GALIH PERMANA
+    [[PII:email]]galih.permana@example.com[[/PII]]
+    [[/DROP]][[DROP:summary]]SUMMARY
+    Operations analyst moving into data engineering.
+    [[/DROP]]EXPERIENCE
+    [[KEEP:title]]Operations Analyst[[/KEEP]], [[KEEP:company]]Contoh Airlines[[/KEEP]], [[KEEP:date]]2019 - 2025[[/KEEP]]
+    [[DROP:summary]]OBJECTIVE
+    Join a modern data platform team.
+    [[/DROP]]EDUCATION
+    [[KEEP:institution]]Universitas Contoh Teknologi[[/KEEP]], S1 Teknik Industri
+
+# --- Summary only: fail closed -------------------------------------------------------------------
+- id: ho-so-01
+  family: tujuan-karier-then-kontak-only
+  category: summary_only
+  lang: id
+  expect: professional_boundary_not_found
+  text: |
+    ## Tujuan Karier
+    Menjadi analis data profesional.
+    ## Kontak
+    tujuan@example.com
+
+# --- Fallback start without Summary --------------------------------------------------------------
+- id: ho-fs-01
+  family: labelled-header-then-projects-colon-heading
+  category: fallback_start
+  lang: en
+  expect: ok
+  expect_start: 'Projects:'
+  text: |
+    [[DROP:header]]Name: Oki Firdaus
+    Mobile: [[PII:phone]]+62 800-0000-0211[[/PII]]
+    [[/DROP]]Projects:
+    [[KEEP:project]]Flood Alert Bot[[/KEEP]] built with [[KEEP:tech]]Telegram API[[/KEEP]] and [[KEEP:tech]]Python[[/KEEP]]
+    Experience:
+    [[KEEP:title]]IT Volunteer[[/KEEP]], [[KEEP:company]]Contoh Relief Foundation[[/KEEP]]
+
+- id: ho-fs-02
+  family: h1-certifications-first-then-skills
+  category: fallback_start
+  lang: en
+  expect: ok
+  expect_start: '# CERTIFICATIONS'
+  text: |
+    [[DROP:header]]Yohana Siregar · [[PII:email]]yohana.s@example.com[[/PII]]
+    [[/DROP]]# CERTIFICATIONS
+    [[KEEP:cert]]Microsoft Certified: Azure Data Fundamentals[[/KEEP]]
+    # SKILLS
+    [[KEEP:skill]]Azure Data Factory, SQL[[/KEEP]]
+
+- id: ho-fs-03
+  family: kursus-first-then-pengalaman
+  category: fallback_start
+  lang: id
+  expect: ok
+  expect_start: Kursus
+  text: |
+    [[DROP:header]]Ilyas Maulana
+    [[PII:phone]]+62 800-0000-0213[[/PII]]
+    [[/DROP]]Kursus
+    [[KEEP:cert]]Kursus Machine Learning Contoh Online[[/KEEP]] ([[KEEP:date]]2025[[/KEEP]])
+    Pengalaman
+    [[KEEP:title]]Guru Matematika[[/KEEP]], [[KEEP:institution]]SMA Contoh 5[[/KEEP]]
+
+- id: ho-fs-04
+  family: prestasi-first-then-pendidikan
+  category: fallback_start
+  lang: id
+  expect: ok
+  expect_start: '## Prestasi'
+  text: |
+    [[DROP:header]]Citra Ramadhani
+    [[PII:email]]citra.r@example.com[[/PII]]
+    [[/DROP]]## Prestasi
+    [[KEEP:evidence]]Juara 2 Kompetisi Data Science Contoh 2024[[/KEEP]]
+    ## Pendidikan
+    [[KEEP:institution]]Universitas Contoh Hasanuddin[[/KEEP]], S1 Sistem Informasi
+
+- id: ho-fs-05
+  family: volunteering-first-then-experience
+  category: fallback_start
+  lang: en
+  expect: ok
+  expect_start: '## Volunteering'
+  text: |
+    [[DROP:header]]Theo Gunadi
+    [[PII:profile]]github.com/example-theo[[/PII]]
+    [[/DROP]]## Volunteering
+    [[KEEP:evidence]]Built a donation tracker for a food bank serving 400 families[[/KEEP]]
+    ## Experience
+    [[KEEP:title]]Junior Developer[[/KEEP]], [[KEEP:company]]Contoh Studio[[/KEEP]]
+
+# --- No evidence start: fail closed --------------------------------------------------------------
+- id: ho-ns-01
+  family: pipe-table-rows-without-heading-lines
+  category: no_start
+  lang: en
+  expect: professional_boundary_not_found
+  text: |
+    Role | Company | Years
+    Data Analyst | PT Contoh | 2022 - 2024
+    Intern | Contoh Labs | 2021
+
+- id: ho-ns-02
+  family: biodata-referensi-minat-only
+  category: no_start
+  lang: id
+  expect: professional_boundary_not_found
+  text: |
+    BIODATA
+    Nama: Joko Susilo
+    REFERENSI
+    Pak Hadi, 0800 0000 0222
+    MINAT
+    Sepak bola
+
+# --- Privacy-only sections -----------------------------------------------------------------------
+- id: ho-pv-01
+  family: referensi-mid-between-pengalaman-and-keahlian
+  category: privacy_section
+  lang: id
+  expect: ok
+  expect_start: '## Pengalaman Kerja'
+  text: |
+    ## Pengalaman Kerja
+    [[KEEP:title]]Admin Database[[/KEEP]], [[KEEP:company]]Rumah Sakit Contoh[[/KEEP]]
+    [[DROP:privacy]]## Referensi
+    [[PII:third]]Hadi Purnomo[[/PII]] - Kepala IT - [[PII:phone]]+62 800-0000-0231[[/PII]]
+    [[/DROP]]## Keahlian
+    [[KEEP:skill]]PostgreSQL, backup and recovery[[/KEEP]]
+
+- id: ho-pv-02
+  family: data-diri-between-pendidikan-and-sertifikasi
+  category: privacy_section
+  lang: id
+  expect: ok
+  expect_start: Pendidikan
+  text: |
+    Pendidikan
+    [[KEEP:institution]]Politeknik Negeri Contoh[[/KEEP]], D4 Teknik Informatika
+    [[DROP:privacy]]Data Diri
+    Jenis kelamin: -
+    Tanggal lahir: 3 Maret 2002
+    NIK: [[PII:id]]0000000000000233[[/PII]]
+    [[/DROP]]Sertifikasi
+    [[KEEP:cert]]Junior Web Developer Contoh[[/KEEP]]
+
+- id: ho-pv-03
+  family: contact-information-at-end-with-trailing-unknown-heading
+  category: privacy_section
+  lang: en
+  expect: ok
+  expect_start: '## Skills'
+  text: |
+    ## Skills
+    [[KEEP:skill]]React, TypeScript[[/KEEP]]
+    ## Projects
+    [[KEEP:project]]Campus Event Planner[[/KEEP]]
+    [[DROP:privacy]]## Contact Information
+    [[PII:email]]nina.k@example.com[[/PII]]
+    ## Availability
+    Immediately
+    [[/DROP]]
+
+- id: ho-pv-04
+  family: emergency-contact-between-projects-and-awards
+  category: privacy_section
+  lang: en
+  expect: ok
+  expect_start: '## Projects'
+  text: |
+    ## Projects
+    [[KEEP:project]]Bike Share Demand Forecast[[/KEEP]]
+    [[DROP:privacy]]## Emergency Contact
+    [[PII:third]]Ratna Sari[[/PII]] (mother), [[PII:phone]]+62 800-0000-0234[[/PII]]
+    [[/DROP]]## Awards
+    [[KEEP:evidence]]Best Capstone Project, Contoh Data Bootcamp 2025[[/KEEP]]
+
+# --- Interests and Organizations sections --------------------------------------------------------
+- id: ho-in-01
+  family: caps-interests-at-very-end
+  category: interests
+  lang: en
+  expect: ok
+  expect_start: EXPERIENCE
+  text: |
+    EXPERIENCE
+    [[KEEP:title]]Quantitative Analyst[[/KEEP]], [[KEEP:company]]Contoh Capital[[/KEEP]]
+    SKILLS
+    [[KEEP:skill]]Python, NumPy, SQL[[/KEEP]]
+    [[DROP:interests]]INTERESTS
+    Political debate club, faith-based charity work
+    [[/DROP]]
+
+- id: ho-in-02
+  family: minat-before-start-and-again-after-experience
+  category: interests
+  lang: id
+  expect: ok
+  expect_start: '## Pengalaman'
+  text: |
+    [[DROP:header]]## Minat
+    Musik
+    [[/DROP]]## Pengalaman
+    [[KEEP:title]]Teknisi Jaringan[[/KEEP]], [[KEEP:company]]PT Kabel Contoh[[/KEEP]]
+    [[DROP:interests]]## Minat
+    Mendaki gunung
+    [[/DROP]]## Pendidikan
+    [[KEEP:institution]]SMK Contoh 1[[/KEEP]], Teknik Komputer dan Jaringan
+
+- id: ho-org-01
+  family: organizations-between-education-and-certifications
+  category: organizations
+  lang: en
+  expect: ok
+  expect_start: '## Education'
+  text: |
+    ## Education
+    [[KEEP:institution]]Contoh State University[[/KEEP]], BSc Economics
+    [[DROP:organizations]]## Organizations
+    Debate Society, vice president
+    [[/DROP]]## Certifications
+    [[KEEP:cert]]Tableau Desktop Specialist[[/KEEP]]
+
+- id: ho-org-02
+  family: organisasi-with-unknown-heading-inside-then-proyek
+  category: organizations
+  lang: id
+  expect: ok
+  expect_start: Keahlian
+  text: |
+    Keahlian
+    [[KEEP:skill]]Python, Excel[[/KEEP]]
+    [[DROP:organizations]]Organisasi
+    BEM Fakultas, anggota
+    Kegiatan Kampus
+    Panitia seminar
+    [[/DROP]]Proyek
+    [[KEEP:project]]Analisis Harga Cabai[[/KEEP]]
+
+# --- Professional evidence preservation ----------------------------------------------------------
+- id: ho-ev-01
+  family: underscore-headings-en-dash-dates-remote-location
+  category: evidence_preservation
+  lang: en
+  expect: ok
+  expect_start: __Experience__
+  text: |
+    [[DROP:header]]Felix Hartanto
+    [[PII:email]]felix.h@example.com[[/PII]]
+    [[/DROP]]__Experience__
+    [[KEEP:title]]Machine Learning Engineer[[/KEEP]] at [[KEEP:company]]Contoh Vision[[/KEEP]] ([[KEEP:joblocation]]Remote[[/KEEP]]), [[KEEP:date]]2019–2021[[/KEEP]]
+    - Shipped an OCR model with [[KEEP:evidence]]97.2% field accuracy[[/KEEP]] using [[KEEP:tech]]PyTorch[[/KEEP]].
+    __Skills__
+    [[KEEP:skill]]PyTorch, ONNX, Triton[[/KEEP]]
+
+- id: ho-ev-02
+  family: id-numbered-bullets-with-locations-and-gpa
+  category: evidence_preservation
+  lang: id
+  expect: ok
+  expect_start: '## Pendidikan'
+  text: |
+    ## Pendidikan
+    1. [[KEEP:institution]]Universitas Contoh Brawijaya[[/KEEP]], S1 Statistika, IPK [[KEEP:evidence]]3,71[[/KEEP]] ([[KEEP:date]]2020 - 2024[[/KEEP]])
+    ## Pengalaman
+    1. [[KEEP:title]]Magang Analis Risiko[[/KEEP]], [[KEEP:company]]PT Bank Contoh Syariah[[/KEEP]], [[KEEP:joblocation]]Malang[[/KEEP]]
+
+# --- Backstops: contact patterns in retained text ------------------------------------------------
+- id: ho-bc-01
+  family: email-inside-project-description-sentence
+  category: backstop_contact
+  lang: en
+  expect: ok
+  expect_start: '## Projects'
+  text: |
+    ## Projects
+    [[KEEP:project]]Open Data Portal Scraper[[/KEEP]] - questions go to [[PII:email]]scraper.team@example.org[[/PII]] or the issue tracker.
+
+- id: ho-bc-02
+  family: paspor-number-in-certifications-and-linkedin-in-awards
+  category: backstop_contact
+  lang: mixed
+  expect: ok
+  expect_start: '## Sertifikasi'
+  text: |
+    ## Sertifikasi
+    [[KEEP:cert]]IELTS Academic 7.0[[/KEEP]] (paspor: [[PII:id]]X0000241[[/PII]])
+    ## Awards
+    [[KEEP:evidence]]Hackathon winner 2024[[/KEEP]], see [[PII:profile]]linkedin.com/in/example-awardee[[/PII]]
+
+# --- Backstops: detailed addresses ---------------------------------------------------------------
+- id: ho-as-01
+  family: address-label-title-case-with-city-in-languages
+  category: backstop_address_standalone
+  lang: en
+  expect: ok
+  expect_start: '## Languages'
+  text: |
+    ## Languages
+    [[KEEP:skill]]English, Indonesian, Mandarin (basic)[[/KEEP]]
+    Address: [[PII:address]]Jl. Mawar No. 12, Medan[[/PII]]
+    ## Experience
+    [[KEEP:title]]Translator[[/KEEP]], [[KEEP:company]]Contoh Language Services[[/KEEP]]
+
+- id: ho-as-02
+  family: perumahan-blok-standalone-line-in-pengalaman
+  category: backstop_address_standalone
+  lang: id
+  expect: ok
+  expect_start: '## Pengalaman'
+  text: |
+    ## Pengalaman
+    [[KEEP:title]]Kurir[[/KEEP]], [[KEEP:company]]CV Antar Contoh[[/KEEP]]
+    [[PII:address]]Perumahan Griya Contoh Blok C2 No. 7[[/PII]]
+    ## Keahlian
+    [[KEEP:skill]]Mengemudi, Google Maps[[/KEEP]]
+
+- id: ho-ai-01
+  family: international-number-first-street-then-semicolon-clause
+  category: backstop_address_inline
+  lang: en
+  expect: ok
+  expect_start: '## Experience'
+  text: |
+    ## Experience
+    [[KEEP:title]]Office Manager[[/KEEP]], [[KEEP:company]]Contoh Consulting[[/KEEP]]
+    - Relocated the team to [[PII:address]]221B Baker Street[[/PII]]; [[KEEP:evidence]]cut average commute time by 30%[[/KEEP]].
+
+- id: ho-ai-02
+  family: inline-jl-address-before-parenthetical-city
+  category: backstop_address_inline
+  lang: en
+  expect: ok
+  expect_start: '## Experience'
+  text: |
+    ## Experience
+    [[KEEP:title]]Branch Analyst[[/KEEP]], [[KEEP:company]]PT Toko Contoh[[/KEEP]]
+    - Opened a branch at [[PII:address]]Jl. Gajah Mada No. 8[[/PII]] (Medan), [[KEEP:evidence]]growing regional sales 15%[[/KEEP]].
+
+# --- Strong labels: person values masked, role values kept ---------------------------------------
+- id: ho-lp-01
+  family: bulleted-mentor-label-person
+  category: label_person
+  lang: en
+  expect: ok
+  expect_start: '## Projects'
+  text: |
+    ## Projects
+    [[KEEP:project]]Thesis: Rice Yield Prediction[[/KEEP]]
+    - Mentor: [[PII:third]]Rina Kartika[[/PII]]
+    - Stack: [[KEEP:tech]]LightGBM[[/KEEP]]
+
+- id: ho-lp-02
+  family: atasan-langsung-label-person-id
+  category: label_person
+  lang: id
+  expect: ok
+  expect_start: Pengalaman
+  text: |
+    Pengalaman
+    [[KEEP:title]]Staf Pelaporan[[/KEEP]], [[KEEP:company]]PT Energi Contoh[[/KEEP]]
+    Atasan Langsung: [[PII:third]]Hendro Wibisono[[/PII]]
+
+- id: ho-lr-01
+  family: atasan-label-indonesian-role-value
+  category: label_role
+  lang: id
+  expect: ok
+  expect_start: Pengalaman
+  text: |
+    Pengalaman
+    [[KEEP:title]]Analis Junior[[/KEEP]], [[KEEP:company]]PT Asuransi Contoh Jiwa[[/KEEP]]
+    Atasan: [[KEEP:role]]Kepala Divisi Data[[/KEEP]]
+
+- id: ho-lr-02
+  family: pic-label-team-value
+  category: label_role
+  lang: en
+  expect: ok
+  expect_start: '## Projects'
+  text: |
+    ## Projects
+    [[KEEP:project]]Data Quality Monitor[[/KEEP]]
+    PIC: [[KEEP:role]]Data Engineering Team[[/KEEP]]
+
+# --- Owner-name repeat backstop ------------------------------------------------------------------
+- id: ho-or-01
+  family: full-name-label-header-repeat-in-awards
+  category: owner_repeat
+  lang: en
+  expect: ok
+  expect_start: '## Awards'
+  text: |
+    [[DROP:header]]Full name: Bagas Aditya
+    [[PII:email]]bagas.aditya@example.com[[/PII]]
+    [[/DROP]]## Awards
+    [[KEEP:evidence]]Dean's List 2023[[/KEEP]], awarded to [[PII:name]]Bagas Aditya[[/PII]]
+    ## Education
+    [[KEEP:institution]]Contoh Institute of Technology[[/KEEP]]
+
+- id: ho-or-02
+  family: name-line-with-phone-adjacency-repeat-in-publications
+  category: owner_repeat
+  lang: en
+  expect: ok
+  expect_start: '## Publications'
+  text: |
+    [[DROP:header]]Putri Ayu Wijaya
+    [[PII:phone]]+62 800-0000-0262[[/PII]]
+    [[/DROP]]## Publications
+    - [[PII:name]]Putri Ayu Wijaya[[/PII]] et al., "[[KEEP:evidence]]Detecting fraud in mobile payments[[/KEEP]]", [[KEEP:date]]2024[[/KEEP]].
+    - Profile: [[PII:profile]]linkedin.com/in/example-putri[[/PII]]
+
+# --- Edits are sanitized again -------------------------------------------------------------------
+- id: ho-ed-01
+  family: edit-prepend-kontak-block-without-summary
+  category: edit
+  lang: id
+  expect: ok
+  expect_start: '## Keahlian'
+  text: |
+    ## Keahlian
+    [[KEEP:skill]]Power BI, DAX[[/KEEP]]
+  edit:
+    prepend: |
+      [[DROP:header]]Kontak
+      [[PII:email]]sinta.m@example.com[[/PII]]
+      [[PII:phone]]+62 800-0000-0271[[/PII]]
+      [[/DROP]]
+
+- id: ho-ed-02
+  family: edit-append-organisasi-section
+  category: edit
+  lang: id
+  expect: ok
+  expect_start: '## Pengalaman'
+  text: |
+    ## Pengalaman
+    [[KEEP:title]]Sekretaris Data[[/KEEP]], [[KEEP:company]]Yayasan Contoh[[/KEEP]]
+  edit:
+    append: |
+      [[DROP:organizations]]## Organisasi
+      Karang Taruna, sekretaris
+      [[/DROP]]
+
+- id: ho-ed-03
+  family: edit-append-on-call-phone-line
+  category: edit
+  lang: en
+  expect: ok
+  expect_start: '## Experience'
+  text: |
+    ## Experience
+    [[KEEP:title]]Site Reliability Engineer[[/KEEP]], [[KEEP:company]]Contoh Payments[[/KEEP]]
+  edit:
+    append: |
+      On-call number: [[PII:phone]]+62 800-0000-0273[[/PII]]
+
+# --- Adversarial inputs --------------------------------------------------------------------------
+- id: ho-ad-01
+  family: windows-line-endings
+  category: adversarial
+  lang: en
+  expect: ok
+  expect_start: '## Experience'
+  text: "[[DROP:header]]Gilang Pratama\r\ngilang.p@example.com\r\n[[/DROP]]## Experience\r\n[[KEEP:title]]Data Analyst[[/KEEP]], [[KEEP:company]]Contoh Freight[[/KEEP]] \r\n## Skills\r\n[[KEEP:skill]]SQL, Python[[/KEEP]] \r\n"
+
+- id: ho-ad-02
+  family: heading-with-inner-and-trailing-spaces
+  category: adversarial
+  lang: en
+  expect: ok
+  expect_start: '##   Work   Experience'
+  text: "##   Work   Experience   \n[[KEEP:title]]Data  Engineer[[/KEEP]], [[KEEP:company]]Contoh Grid[[/KEEP]]\n"
+
+# --- Residuals (reported, not gated) -------------------------------------------------------------
+- id: ho-rs-01
+  family: lowercase-inline-address-in-sentence
+  category: residual
+  lang: en
+  expect: ok
+  expect_start: '## Experience'
+  note: An all-lowercase address embedded in prose is not a supported inline form; a measured residual.
+  text: |
+    ## Experience
+    [[KEEP:title]]Courier Lead[[/KEEP]], [[KEEP:company]]Contoh Express[[/KEEP]]
+    - Worked from [[PII:address]]jl. kenari no. 9[[/PII]], leading a team of six.

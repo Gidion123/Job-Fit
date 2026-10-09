@@ -9,7 +9,7 @@ import hashlib
 import json
 from pathlib import Path
 import yaml
-from jobfit.config import REPO_ROOT, GUIDELINE_FILE, GUIDELINE_VERSION, JD_PROMPT_FILE, EVIDENCE_PROMPT_FILE, runtime_versions
+from jobfit.config import REPO_ROOT, GUIDELINE_FILE, JD_PROMPT_FILE, EVIDENCE_PROMPT_FILE, runtime_versions
 from jobfit.eval.metrics import ranking_metrics, evidence_metrics, extraction_metrics, operational_summary
 from jobfit.eval.contract import validate_metric_contract, comparison_gates_ready
 from jobfit.search.embeddings import load_specs, validate_vector, cv_body, sha256

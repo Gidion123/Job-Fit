@@ -37,7 +37,29 @@ class PasteRequest(BaseModel):
 
 class AnalyzeRequest(BaseModel):
     paste_id: str
-    demo_cv_id: str
+    demo_cv_id: str | None = None
+    cv_source: Literal['demo', 'upload'] = 'demo'      # upload: the session's consented, parsed CV
+    history_confirmed: bool = False     # D-105: the user confirmed the uploaded CV lists the whole work history
+
+
+class SearchRequest(BaseModel):
+    """D-103 search stage: relevant jobs in retrieval order, not JobFit match rankings."""
+    demo_cv_id: str | None = None
+    cv_source: Literal['demo', 'upload'] = 'demo'      # upload: never posted back; resolved from the session
+    role_family: str | None = None
+    country_code: str | None = None
+    city: str | None = None
+    experience_bucket: str | None = None    # D-105: the job's experience requirement (entry, 1-2y, 3-4y, 5y+)
+    work_mode: str | None = None
+    posted_within_days: int | None = None
+    include_unknown: bool = True
+
+
+class JobAnalyzeRequest(BaseModel):
+    """D-103 job_analysis of one corpus job."""
+    demo_cv_id: str | None = None
+    cv_source: Literal['demo', 'upload'] = 'demo'
+    history_confirmed: bool = False     # D-105: the user confirmed the uploaded CV lists the whole work history
 
 
 class TailorRequest(BaseModel):

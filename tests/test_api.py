@@ -32,7 +32,7 @@ def fake_rec(cv, seniority, on_result, filters=None):
 
 
 def make(run=fake_rec, saved_demo=None):
-    deps = AppDeps(store=SessionStore(), demo_cvs={'CV1': CV}, run=run,
+    deps = AppDeps(store=SessionStore(), demo_cvs={'CV1': CV}, run=run, live_enabled=True,
                    job_meta={'A': {'title': 'Junior DS', 'company': 'X'}}, sweep_seconds=None,
                    saved_demo=saved_demo)
     client = TestClient(create_app(deps))
@@ -81,7 +81,8 @@ def test_upload_is_masked_locally_and_real_cv_processing_stays_off():
     client, headers = make()
     text = b'Rina Putri\nrina@example.com +62 812-3456-7890\nExperience\nPython analyst 2025'
     up = client.post('/cv/upload', files={'file': ('cv.txt', text, 'text/plain')}, headers=headers).json()
-    assert 'rina@example.com' not in up['masked_text'] and '[EMAIL]' in up['masked_text']
+    assert 'rina@example.com' not in up['masked_text'] and 'Rina Putri' not in up['masked_text']  # header removed
+    assert up['masked_text'].startswith('Experience') and up['removed']['header_lines'] == 2
     assert up['provider_processing'] == 'disabled' and up['message'] == REAL_CV_MESSAGE
     ok = client.post('/cv/consent', json={'digest': up['digest'], 'affirmative': True}, headers=headers).json()
     assert ok['provider_processing'] == 'disabled'
@@ -92,7 +93,7 @@ def test_upload_is_masked_locally_and_real_cv_processing_stays_off():
 def test_unreadable_upload_fails_before_anything_else():
     client, headers = make()
     r = client.post('/cv/upload', files={'file': ('cv.exe', b'xx', 'application/octet-stream')}, headers=headers)
-    assert r.status_code == 422
+    assert r.status_code == 415 and r.json()['code'] == 'unsupported_type'    # upload hardening (CP3)
 
 
 def test_delete_session_drops_late_results():

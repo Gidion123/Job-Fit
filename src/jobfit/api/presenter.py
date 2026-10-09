@@ -6,6 +6,7 @@ from collections.abc import Mapping
 from jobfit.recommend.service import JobResult, Recommendation
 from jobfit.schemas.analysis import ConstraintState
 from jobfit.scoring.ranking import SCORED
+from jobfit.support.cv_coach import requirement_groups
 
 NOTE = 'Match % is CV evidence coverage of the required items, not a hiring probability.'
 
@@ -32,6 +33,29 @@ def job_card(r: JobResult, meta: Mapping | None = None) -> dict:
             'reasons': list(r.score.reasons), 'hold_reason': r.hold_reason,
             'explicit_conflicts': conflicts, 'excluded_units': r.excluded_units,
             'requirements': rows, 'matcher_model': r.matcher_model, 'used_fallback': r.used_fallback}
+
+
+SEARCH_STAGE_LABEL = 'Relevant jobs (search stage). Not JobFit match rankings: analyze a job to get its match.'
+
+
+def retrieval_card(job_id: str, rank: int, meta: Mapping | None = None) -> dict:
+    """D-103: one search-stage job. It carries no match score until the job is analyzed."""
+    meta = meta or {}
+    return {'job_id': job_id, 'title': meta.get('title'), 'company': meta.get('company'),
+            'location': meta.get('location'), 'url': meta.get('url'), 'retrieval_rank': rank,
+            # lightweight metadata for local refinement (no per-job request); unknown stays None
+            'role_family': meta.get('role_family'), 'country_code': meta.get('country_code'),
+            'city': meta.get('city'), 'experience_bucket': meta.get('experience_bucket'),
+            'work_mode': meta.get('work_mode'), 'posted_at': meta.get('posted_at'),
+            'filter_status': meta.get('filter_status'),
+            'stage': 'retrieval', 'analyzed': False, 'match_score': None}
+
+
+def analyzed_job(r: JobResult, meta: Mapping | None = None) -> dict:
+    """D-103: one analyzed job; only a scored analysis has a match score."""
+    card = job_card(r, meta)
+    return {'stage': 'analyzed', 'analyzed': True, 'match_score': card['score_pct'] if card['scored'] else None,
+            'card': card, 'requirement_groups': requirement_groups(card), 'note': NOTE}
 
 
 def _groups(rec: Recommendation, ids: list[str], cards: dict) -> dict:

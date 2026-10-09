@@ -1,8 +1,11 @@
 # Image for the FastAPI service (CP3.2).
 # Saved demo works out of the box (no database, no model call).
-# Live analysis is off by default: a fresh container has an empty usage ledger, so the
-# project budget guard would not see earlier spending. Turn it on only with a
-# persistent volume for reports/usage and a key with its own spending limit.
+# Live analysis is off by default. Production live (JOBFIT_ENV=prod) keeps its authoritative
+# evidence (usage ledger, intent journal, breach marker, lock files) in ONE storage root, the
+# fixed mount point /var/lib/jobfit/ledger: mount a named volume there and provision it once
+#   python -m jobfit.live.storage init --ledger /var/lib/jobfit/ledger/usage_ledger.jsonl
+# The image never contains the provisioning marker: an unmounted or replaced volume refuses
+# live operations instead of starting from empty evidence.
 FROM python:3.11-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -26,12 +29,20 @@ COPY evals/annotation_guideline_v1_3.md evals/annotation_guideline_v1_3.md
 COPY evals/splits/ evals/splits/
 COPY evals/demo/ evals/demo/
 COPY evals/results/cp23/ evals/results/cp23/
+# Alembic revisions and the guarded baseline stamp, so the VPS can migrate from this image (D-098).
+COPY alembic.ini ./
+COPY migrations/ migrations/
+COPY scripts/db_baseline.py scripts/db_baseline.py
 # Run from /app/src (PYTHONPATH), not as an installed package: config.py finds
 # config/, data/ and evals/ relative to the source folder (REPO_ROOT).
 # Files copied from a Mac folder can be owner-only (mode 600); make them readable for the
-# non-root user that runs the app, and give it a writable folder for the usage ledger.
-RUN chmod -R a+rX /app && useradd --create-home jobfit && mkdir -p reports/usage && chown -R jobfit /app/reports
+# non-root user that runs the app, and give it a writable folder for the development usage ledger
+# and the production ledger storage root (owner-only; no marker in the image).
+RUN chmod -R a+rX /app && useradd --create-home jobfit && mkdir -p reports/usage && chown -R jobfit /app/reports \
+    && mkdir -p /var/lib/jobfit/ledger && chown jobfit /var/lib/jobfit/ledger && chmod 700 /var/lib/jobfit/ledger
 USER jobfit
+# A forgotten named mount still gets an (empty, unprovisioned) anonymous volume, never the image layer.
+VOLUME /var/lib/jobfit/ledger
 
 EXPOSE 8000
 HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=3 CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"

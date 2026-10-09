@@ -6,7 +6,7 @@
 **Planned work:** 1-2 Oct 2026 (moved: CP2.1 ended on 1 Oct) · **Actual:** started 1 Oct 2026  
 **Status:** IN PROGRESS · design basis: System Design v1.3
 
-> Current status, 2 October2026: runtime guideline v1.3, JD prompt v1.2, evidence prompt v1.1. Upload/parser/extractor/matcher/paste backend, versioned cache and two-model retrieval are implemented. Local top30 technical retrieval is verified; v1.3 semantic acceptance and human fixture review remain open. Workbook v1.3 review closure is reported under delegated QA; no actual gold export. Read the [single acceptance/technical summary](supporting/CP22_Acceptance_Review_20261002.md) and closure checklist below. Dated results below preserve their historical scope, versions and costs.
+> Current status, 2 October2026: runtime guideline v1.3, JD prompt v1.2, evidence prompt v1.1. Upload/parser/extractor/matcher/paste backend, versioned cache and two-model retrieval are implemented. Local top30 technical retrieval is verified; v1.3 semantic acceptance and human fixture review remain open. Workbook v1.3 review closure is reported under delegated QA; no actual gold export. Read the [single acceptance/technical summary](../CP22_Acceptance_Review_20261002.md) and closure checklist below. Dated results below preserve their historical scope, versions and costs.
 
 ## 1. Goal of this stage
 
@@ -87,17 +87,17 @@ If the OpenAI embedding fails on the Indonesian-CV cases, use the local `multili
 
 These paragraphs describe earlier snapshots, including old drafts, parser gaps and ledger values. Current status is in the opening summary and closure checklist; do not restore earlier workbook state.
 
-T03 Part 1 is accepted: 214 development and 214 test jobs, all 5 pilot jobs in development, no recorded duplicate crossing. See [split report](supporting/T03_Job_Split_20261001.md).
+T03 Part 1 is accepted: 214 development and 214 test jobs, all 5 pilot jobs in development, no recorded duplicate crossing. See [split report](../T03_Job_Split_20261001.md).
 
-T07 is DONE: CV4/CV5 content version 0.1 was approved by Dion on 1 October. Approved file and unchanged body hashes match the [approval manifest](../../evals/annotation_tasks/T07_approved_cv_manifest_v1.json). Both remain test only. See [T07 review record](supporting/T07_Test_CV_Drafts_20261001.md).
+T07 is DONE: CV4/CV5 content version 0.1 was approved by Dion on 1 October. Approved file and unchanged body hashes match the [approval manifest](../../../../evals/annotation_tasks/T07_approved_cv_manifest_v1.json). Both remain test only. See [T07 review record](../T07_Test_CV_Drafts_20261001.md).
 
 Embedding storage, tokenization, durable receipts, budget controls, exact dense search, and hybrid RRF are implemented. Final database-enabled suite: **123 passed in 8.39 seconds**. Actual corpus estimate: **US$0.01208639**, conservative bound **US$0.06603606** for both models with 632 jobs + CV1/CV2 per model.
 
 The live build is **complete**: 632 job vectors and 2 CV1/CV2 query vectors per model, four valid development-only retrieval checks, unchanged source inventory, no truncation. Post-build preflight finds zero pending inputs and no additional inference cost. The management-key issue was resolved by Dion replacing the local key; native response aliases were fixed with strict per-model allowlists. Historical failures and billed diagnostics are retained.
 
-Successful build cost **US$0.01209273**; total ledger including diagnostics **US$0.01226822**. See [embedding implementation report](supporting/CP22_Embedding_Implementation_20261001.md), [EXP-20261001-04 and05](../experiments.md), and FAIL-03/04.
+Successful build cost **US$0.01209273**; total ledger including diagnostics **US$0.01226822**. See [embedding implementation report](../CP22_Embedding_Implementation_20261001.md), [EXP-20261001-04 and05](../../../experiments.md), and FAIL-03/04.
 
-Development pools are complete: CV1 has 29 rows and CV2 has 34. All mandatory top-five candidates fit the cap of 20 new reviews per CV. T04 extraction drafts (84 units, three JDs) and T05 relevance drafts (60 rows, 40 designated reviews) are ready in `evals/labeling/`. At this historical preparation step new annotations were pending and B_Evidence was empty; the subsequent combined workbook and review receipt supersede that state. Latest database-enabled suite: **125 passed in 7.67 seconds**, additional API cost **US$0**. See [development review report](supporting/T03_T04_T05_Development_Review_20261001.md) and EXP-20261001-06.
+Development pools are complete: CV1 has 29 rows and CV2 has 34. All mandatory top-five candidates fit the cap of 20 new reviews per CV. T04 extraction drafts (84 units, three JDs) and T05 relevance drafts (60 rows, 40 designated reviews) are ready in `evals/labeling/`. At this historical preparation step new annotations were pending and B_Evidence was empty; the subsequent combined workbook and review receipt supersede that state. Latest database-enabled suite: **125 passed in 7.67 seconds**, additional API cost **US$0**. See [development review report](../T03_T04_T05_Development_Review_20261001.md) and EXP-20261001-06.
 
 ## 11. Historical interpretation at the initial embedding/pool stage
 
@@ -105,7 +105,7 @@ Passing local tests establishes implementation behavior, not embedding or rankin
 
 ## 12. Decisions from this stage
 
-D-047: Dion approved complete draft-first review for current expanded development batches. This does not approve labels or change the held-out test procedure. See the [decision log](../decisions.md).
+D-047: Dion approved complete draft-first review for current expanded development batches. This does not approve labels or change the held-out test procedure. See the [decision log](../../../decisions.md).
 
 ## 13. Next step
 
@@ -113,7 +113,7 @@ The user-confirmed coordination closure reports completed review in the active v
 
 ## Initial implementation evidence (1 Oct 2026)
 
-D-045 sizes approved by Dion. Phase 0 tests passed. T03 Part 1 created the frozen 214/214 job split with duplicate safety and stratum checks. See [split report](supporting/T03_Job_Split_20261001.md). This is prerequisite work only; the extraction, matching, and embedding pipeline is not yet complete.
+D-045 sizes approved by Dion. Phase 0 tests passed. T03 Part 1 created the frozen 214/214 job split with duplicate safety and stratum checks. See [split report](../T03_Job_Split_20261001.md). This is prerequisite work only; the extraction, matching, and embedding pipeline is not yet complete.
 
 Fresh verification after the handoff: 81 passed and 1 skipped offline; 82 passed with the local database. The deterministic split rerun changed no frozen file. Cost US$0. Evidence: EXP-20261001-03 and `evals/results/t03_split_verification_20261001.json`.
 
@@ -141,7 +141,7 @@ Review priority remains D-045: A for D1/D2/D3, B for CV1×D1 and CV2×D2, and C 
 
 ## Full first semantic audit (2 October 2026)
 
-The active combined workbook was audited read-only: all 54 development JDs, both CV1/CV2 sources, 1,069 A units, 1,387 B rows and 67 C judgments. This was a full first pass, not sampling or human approval. The audit records 92 finding entries: 51 clear draft errors, 38 ambiguous cases and 3 source/guideline limitations. Detailed row identities, current values, quotations, proposals and dependent B/C records are in the [semantic audit report](supporting/Development_Labeling_Semantic_Audit_20261002.md) and its linked register/JSON/coverage CSV.
+The active combined workbook was audited read-only: all 54 development JDs, both CV1/CV2 sources, 1,069 A units, 1,387 B rows and 67 C judgments. This was a full first pass, not sampling or human approval. The audit records 92 finding entries: 51 clear draft errors, 38 ambiguous cases and 3 source/guideline limitations. Detailed row identities, current values, quotations, proposals and dependent B/C records are in the [semantic audit report](../Development_Labeling_Semantic_Audit_20261002.md) and its linked register/JSON/coverage CSV.
 
 Final read-only mechanical verification passed 27 checks. All source/protected-row hashes and current A fingerprints match preparation; there is no saved A-change staleness. The workbook was saved externally during the audit: two draft-note leading spaces were removed and A's freeze pane changed to A18. Labels, source text, review statuses and counts were unchanged; these legitimate saved differences were retained. Latest audited SHA-256: `8be2b05635cc4175f71e2a38cd39dfaa9f17f2f4e4d78d80b20b57516fe733ad`. Unsaved Excel edits cannot be audited.
 
@@ -152,7 +152,7 @@ STOP before workbook corrections. Resolve priority grouping/duration/importance,
 
 ## Historical record: Authorized pending corrections (2 October 2026)
 
-The user authorized clear pending corrections and deferred new grouping/denominator/equivalence/language decisions. Applied A first: 13 A rows, then 33 B rows and 2 C rationales, all pending. Rechecked 14 linked B rows and 23 C pairs. All 63 approved rows, source sheets, human metadata, counts, groups, score membership and C values remain unchanged. 27 checks passed; no API/export/tuning. [Correction report](supporting/Development_Labeling_Pending_Corrections_20261002.md) and evals/results/development_labeling_pending_corrections_20261002.json record before/after and deferred decisions. Workbook is released for human review; do not write it during independent pipeline implementation. CP2.2 remains IN PROGRESS.
+The user authorized clear pending corrections and deferred new grouping/denominator/equivalence/language decisions. Applied A first: 13 A rows, then 33 B rows and 2 C rationales, all pending. Rechecked 14 linked B rows and 23 C pairs. All 63 approved rows, source sheets, human metadata, counts, groups, score membership and C values remain unchanged. 27 checks passed; no API/export/tuning. [Correction report](../Development_Labeling_Pending_Corrections_20261002.md) and evals/results/development_labeling_pending_corrections_20261002.json record before/after and deferred decisions. Workbook is released for human review; do not write it during independent pipeline implementation. CP2.2 remains IN PROGRESS.
 
 ## Historical record: Latest backend continuation (2 October 2026)
 
@@ -164,15 +164,15 @@ Six diagnostic runs used 17 calls costing **US$0.15938080**; total project ledge
 
 The eight fixtures pass automated checks; planned human acceptance and initial J4 extraction-quality measurement are still open. CP2.2 remains **IN PROGRESS**. The active workbook was not written and still matches the released correction snapshot. Review A D1–D3, B CV1×D1/CV2×D2 and C40 gold_review=yes while pipeline work stays independent.
 
-Read the [implementation and error-analysis report](supporting/CP22_Pipeline_Implementation_20261002.md), [readable synthetic example](supporting/CP22_Synthetic_Example_20261002.md), and [machine verification](../../evals/results/cp22_pipeline_verification_20261002.json). Earlier dated sections are historical, including old placeholder/STOP descriptions.
+Read the [implementation and error-analysis report](../CP22_Pipeline_Implementation_20261002.md), [readable synthetic example](../CP22_Synthetic_Example_20261002.md), and [machine verification](../../../../evals/results/cp22_pipeline_verification_20261002.json). Earlier dated sections are historical, including old placeholder/STOP descriptions.
 
 ## Historical record: Latest continuation: offline pipeline audit (2 October 2026)
 
-The actual backend and prior verification hashes were checked before implementation. Clear cache, empty-extraction heading, non-finite duration/budget and legacy exporter risks were corrected with regression tests. A development alignment helper and approved-only export staging helper were added; the latter was exercised only with temporary fixtures, never the active workbook or actual gold. See [audit report](supporting/CP22_Pipeline_Audit_20261002.md).
+The actual backend and prior verification hashes were checked before implementation. Clear cache, empty-extraction heading, non-finite duration/budget and legacy exporter risks were corrected with regression tests. A development alignment helper and approved-only export staging helper were added; the latter was exercised only with temporary fixtures, never the active workbook or actual gold. See [audit report](../CP22_Pipeline_Audit_20261002.md).
 
 Final selected offline suite: **164 passed, 0 skipped**, five SWIG warnings, 0.55 s. This is a different selection from the earlier 161-test database run; no new database verification or live model-quality claim is made. All protected file hashes, including the active workbook, matched at the final integrity check.
 
-[Full saved-run J1 alignment](supporting/CP22_Pilot_Alignment_Review_20261002.md) proposes 18 one-to-one groups, one merge and one split across all 21 units/assessments. Alignment is not human verified; no F1/Macro-F1 is reported. J4/F00016 has approved development A only, so any next measurement is extraction-only. Three remaining approved pilot JDs have an actual no-inference preflight bound of US$0.1912998; quality-gated execution is only proposed, not run. The full214 batch remains unexecuted.
+[Full saved-run J1 alignment](../CP22_Pilot_Alignment_Review_20261002.md) proposes 18 one-to-one groups, one merge and one split across all 21 units/assessments. Alignment is not human verified; no F1/Macro-F1 is reported. J4/F00016 has approved development A only, so any next measurement is extraction-only. Three remaining approved pilot JDs have an actual no-inference preflight bound of US$0.1912998; quality-gated execution is only proposed, not run. The full214 batch remains unexecuted.
 
 Session API cost US$0; ledger105 records totaling US$0.171649020. No new dependency, rule, configuration, label, split or gold change. D-045 priority human review continues in Excel. **CP2.2 remains IN PROGRESS**: eight-case human acceptance, semantic quality checks and feasible staged extraction outcomes remain open.
 
@@ -185,18 +185,18 @@ Following approved D-049, active runtime now selects guideline v1.3, JD prompt v
 
 Offline CP2.3 metric/comparability/readiness tools are prepared and tested with synthetic examples. Actual quality reporting remains blocked on reviewed labels, completeness, verified alignment, guideline compatibility and metric-contract details. The CLI currently prepares prerequisites, not a formal benchmark. Existing embeddings were inspected and retained.
 
-See [latest audit continuation](supporting/CP22_Pipeline_Audit_20261002.md), [adoption evidence](../../evals/results/cp22_v13_adoption_20261002.json), and [CP2.3 preparation/decision list](CP2_03_System_Tuning.md). Workbook changes made during human review were preserved; no workbook write, gold export, automatic approval, test development, formal tuning or mass extraction occurred. Eight human fixture approvals and semantic acceptance remain open; continue D-045 priority review, not all drafts.
+See [latest audit continuation](../CP22_Pipeline_Audit_20261002.md), [adoption evidence](../../../../evals/results/cp22_v13_adoption_20261002.json), and [CP2.3 preparation/decision list](../../CP2_03_System_Tuning.md). Workbook changes made during human review were preserved; no workbook write, gold export, automatic approval, test development, formal tuning or mass extraction occurred. Eight human fixture approvals and semantic acceptance remain open; continue D-045 priority review, not all drafts.
 
 
 ## Historical development review and QA before closure (2 October 2026)
 
 Superseded by the coordination closure below: the required-cloud suggestion was corrected to preferred, follow-up review statuses/notes were completed under delegation. No workbook rollback is permitted.
 
-Dion submitted review of all 54 development JDs and 67 CV1/CV2 pairs, and confirmed that B/C were checked after the final A changes in that submission. The original receipt is archived unchanged. The active workbook is [JobFit_Development_Labeling_v1.3.xlsx](../../evals/labeling/JobFit_Development_Labeling_v1.3.xlsx).
+Dion submitted review of all 54 development JDs and 67 CV1/CV2 pairs, and confirmed that B/C were checked after the final A changes in that submission. The original receipt is archived unchanged. The active workbook is [JobFit_Development_Labeling_v1.3.xlsx](../../../../evals/labeling/JobFit_Development_Labeling_v1.3.xlsx).
 
 The two explicitly approved QA corrections separate required general cloud experience from preferred AWS experience, and classify debugging as knowledge_area. Active counts are 1,079 A decisions (1,069 retained), 1,406 B rows (1,404 approved, 2 pending; 16 rejected), and 67 C rows (66 approved, 1 pending). Only the two cloud/AWS B rows and their C pair were reopened following the new split. Seven edited A rows still need reasons. F00369 is held from evaluation because its supplemented text came from a similar posting rather than a verified original source.
 
-See the [review report](supporting/Development_Labeling_Review_20261002.md) for row locations, source lineage, historical-version compatibility and group-level OR counting. No expanded gold has been promoted. Existing cell styles, widths, panes, dropdowns and formulas are preserved; JDs/CVs and Timing/Questions/QA_Log are byte-identical worksheet parts. No code, database, corpus, split or billing change was made in this QA stage.
+See the [review report](../Development_Labeling_Review_20261002.md) for row locations, source lineage, historical-version compatibility and group-level OR counting. No expanded gold has been promoted. Existing cell styles, widths, panes, dropdowns and formulas are preserved; JDs/CVs and Timing/Questions/QA_Log are byte-identical worksheet parts. No code, database, corpus, split or billing change was made in this QA stage.
 
 CP2.2 remains **IN PROGRESS**. Remaining gates are the small labeling follow-up list, approved-only candidate validation, human fixture acceptance, v1.3 live quality verification, feasible staged extraction, and evaluation-contract conventions. Formal CP2.3 tuning and held-out evaluation have not begun.
 
@@ -216,4 +216,4 @@ Review closure from the user's coordination note: active `JobFit_Development_Lab
 
 Separate interrupted v1.3 run `cp22_v13_verified_review_live_20261002` ended with exit130; started is an incomplete artifact, no usable pipeline result. Ledger109records totalsUS$0.21270144, includingUS$0.0210861 uncertain reservation, not confirmed provider billing. This execution task made0paidcalls/US$0. Preserve the interrupted artifact and ledger entry. No workbook, gold, source, split, pool or default retrieval config changed.
 
-Validation this task:13targeted runner/pool tests and29scoring/fixture tests passed, separately recorded; actual local DB retrieval succeeded with12top30rankings. No full DB suite rerun. Current [acceptance summary](supporting/CP22_Acceptance_Review_20261002.md) links final rankings, preflight, tests and readiness. CP2.2 remains IN PROGRESS; no acceptance is inferred from test count alone.
+Validation this task:13targeted runner/pool tests and29scoring/fixture tests passed, separately recorded; actual local DB retrieval succeeded with12top30rankings. No full DB suite rerun. Current [acceptance summary](../CP22_Acceptance_Review_20261002.md) links final rankings, preflight, tests and readiness. CP2.2 remains IN PROGRESS; no acceptance is inferred from test count alone.

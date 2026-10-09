@@ -33,7 +33,7 @@ def job_card(card: dict, rank: int, *, api=None, run_id: str | None = None) -> N
         else:
             right.markdown(f"**{STATUS[card['status']]}**")
         for msg in card['explicit_conflicts']:
-            st.warning('Possible conflict: ' + msg)
+            st.warning('Possible conflict: ' + safe(msg))
         if card.get('hold_reason'):
             st.info(card['hold_reason'])
         if card.get('excluded_units'):
@@ -81,4 +81,123 @@ def suggestions(out: dict) -> None:
             st.markdown(f"**{safe(item['requirement'])}** · asked by {item['jobs_asking']} analyzed job(s)")
             st.write(item['advice'])
             for q in item['cv_quotes']:
-                st.caption('From your CV: ' + q)
+                st.caption('From your CV: ' + safe(q))
+
+
+# --- D-105 product flow: Relevant Jobs (search stage) and Analyze Fit (evidence stage) ---------------------
+ROLE_FAMILY = {'ai_ml_engineering': 'AI / ML Engineering', 'data_science': 'Data Science',
+               'genai_llm': 'GenAI / LLM', 'software_ai': 'Software-AI'}
+EXPERIENCE = {'entry': 'Entry', '1-2y': '1–2 years', '3-4y': '3–4 years', '5y+': '5+ years'}
+WORK_MODE = {'onsite': 'Onsite', 'hybrid': 'Hybrid', 'remote': 'Remote'}
+
+
+def relevant_job_card(card: dict) -> None:
+    """One search-stage job: metadata only. No score (retrieval rank is search relevance, not fit)."""
+    meta = [ROLE_FAMILY.get(card.get('role_family'), 'Role family not stated'),
+            safe(card.get('location') or 'location not stated'),
+            WORK_MODE.get(card.get('work_mode'), 'work mode not stated'),
+            'Experience requirement: ' + EXPERIENCE.get(card.get('experience_bucket'), 'not stated'),
+            'posted ' + safe(str(card.get('posted_at') or 'date not stated')[:10])]
+    st.markdown(f"**#{card['retrieval_rank']} {safe(card.get('title') or card['job_id'])}**  \n"
+                f"{safe(card.get('company') or '')}")
+    st.caption(' · '.join(meta) + ('  ·  some filter information is missing in this posting'
+                                   if card.get('filter_status') == 'unknown' else ''))
+    if card.get('url'):
+        st.link_button('Open job posting', card['url'])
+
+
+def analysis_view(result: dict) -> None:
+    """One Analyze Fit result: evidence coverage, per-requirement evidence, strengths, gaps, honest holds."""
+    card = result['card']
+    st.markdown(f"#### {safe(card.get('title') or card['job_id'])}")
+    if card.get('company') or card.get('location'):
+        st.caption(' · '.join(safe(x) for x in (card.get('company'), card.get('location')) if x))
+    if card['scored']:
+        st.metric('Evidence coverage', f"{card['score_pct']:.0f}%")
+        st.caption(f"{card['matched']} supported, {card['partial']} partly supported, of {card['required_total']} "
+                   'required. This is how much of the job your CV evidence supports, not a hiring probability.')
+    else:
+        st.warning('This job could not be fully analyzed, so no score is shown (none was made up).')
+        if card.get('hold_reason'):
+            st.info(card['hold_reason'])
+    # The API's deterministic grouping (conflict > not verified > strengths / evidence gaps): rendering only.
+    by_unit = {r['unit_id']: r for r in card['requirements'] if r.get('unit_id')}
+    groups = result.get('requirement_groups')
+    if groups is None:                   # an older result without the grouping: the previous two sections
+        required = [r for r in card['requirements'] if r.get('importance') == 'required']
+        groups = {'strengths': [r['unit_id'] for r in required if r['label'] == 'MATCH'],
+                  'gaps': [r['unit_id'] for r in required if r['label'] in ('PARTIAL', 'NO_MATCH')],
+                  'not_verified': [], 'conflict': []}
+    strengths = [by_unit[u] for u in groups['strengths'] if u in by_unit]
+    gaps = [by_unit[u] for u in groups['gaps'] if u in by_unit]
+    unverified = [by_unit[u] for u in groups['not_verified'] if u in by_unit]
+    if card['explicit_conflicts']:
+        st.markdown('**Experience conflict (a confirmed fact, not wording)**')
+        for msg in card['explicit_conflicts']:
+            st.warning('Experience conflict: ' + safe(msg))
+    if strengths:
+        st.markdown('**Strengths (supported by your CV)**')
+        for r in strengths:
+            st.markdown(f"- {safe(r['requirement'])}")
+    if gaps:
+        st.markdown('**Evidence gaps (partly supported or not found)**')
+        for r in gaps:
+            st.markdown(f"- {safe(r['requirement'])}: {LABEL.get(r['label'], r['label'])}")
+    if unverified:
+        st.markdown('**Not verified from this CV**')
+        st.caption('Years, location or work-permit requirements this CV does not establish. Not a gap: they '
+                   'were not checked against your background.')
+        for r in unverified:
+            st.markdown(f"- {safe(r['requirement'])}")
+    if card.get('excluded_units'):
+        st.caption(f"{len(card['excluded_units'])} requirement(s) need checking and are listed but not scored.")
+    if card['requirements']:                # exact CV quotes per requirement; no posting lookup, no extra request
+        with st.expander('Evidence per requirement', expanded=True):
+            rows = [{'Requirement': r['requirement'], 'Type': r['importance'],
+                     'Result': LABEL.get(r['label'], r['label']), 'CV quote': ' | '.join(r['cv_quotes'])}
+                    for r in card['requirements']]
+            st.dataframe(rows, hide_index=True, use_container_width=True)
+    if card.get('url'):
+        st.link_button('Open job posting', card['url'])
+
+
+def coach_view(coach: dict, *, on_answer) -> None:
+    """Improve My CV for This Job: four exclusive categories; B builds a bullet only from the answers."""
+    st.caption(coach['rules'])
+    if coach['representation']:
+        st.markdown('**A. Make existing evidence clearer**')
+        for item in coach['representation']:
+            with st.container(border=True):
+                st.markdown(safe(item['asked']))
+                for quote in item['current']:
+                    st.caption('Your CV now: ' + safe(quote))
+                st.write(item['guidance'])
+    if coach['gaps']:
+        st.markdown('**B. Possibly missing from your CV**')
+        for gap in coach['gaps']:
+            with st.container(border=True):
+                st.markdown(f"**{safe(gap['requirement'])}**")
+                key = f"{coach['job_id']}_{gap['gap_index']}"
+                done = st.radio(safe(gap['question_first']), ['Yes', 'No'], index=None, horizontal=True, key=f'done_{key}')
+                answers = {}
+                if done == 'Yes':
+                    for qk, qtext in gap['questions'].items():
+                        answers[qk] = st.text_input(qtext, key=f'{qk}_{key}', max_chars=300)
+                if done and st.button('Draft', key=f'draft_{key}'):
+                    out = on_answer(gap['gap_index'], done == 'Yes', answers)
+                    if out and out.get('bullet'):
+                        st.text_area('Edit if needed, then copy it into your CV', out['bullet'], key=f'bullet_{key}')
+                        st.caption(out['note'])
+                    elif out:
+                        for idea in out['ideas']:
+                            st.markdown('- ' + safe(idea))
+    if coach['true_gaps']:
+        st.markdown('**C. True gaps (facts, not wording)**')
+        for gap in coach['true_gaps']:
+            st.warning(f"{safe(gap['conflict'])}  \n{gap['note']}")
+    if coach['not_verified']:
+        st.markdown('**Not verified from this CV**')
+        for item in coach['not_verified']:
+            st.caption(f"{safe(item['requirement'])}: {item['note']}")
+    if not any(coach[k] for k in ('representation', 'gaps', 'true_gaps', 'not_verified')):
+        st.write('Nothing to improve for this job from the required items.')

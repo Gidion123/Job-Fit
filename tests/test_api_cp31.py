@@ -29,6 +29,7 @@ def pasted_fake(cv, text):
 
 
 def make(store=None, **kw):
+    kw.setdefault('live_enabled', True)
     deps = AppDeps(store=store or SessionStore(), demo_cvs={'CV1': CV}, run=fake_rec, sweep_seconds=None,
                    jobs=JOBS, analyze_pasted=pasted_fake, demo_summaries={'CV1': {'parse_status': 'ok'}},
                    analyzed_k=10, **kw)
@@ -39,8 +40,8 @@ def make(store=None, **kw):
 
 def test_preview_edit_rebinds_consent_and_parse_stays_gated():
     c, h = make()
-    up = c.post('/cv/upload', files={'file': ('cv.txt', b'Ana\nana@example.com\nPython analyst 2025')}, headers=h).json()
-    edited = c.post('/cv/preview', json={'text': up['masked_text'].replace('Ana', '[NAME]')}, headers=h).json()
+    up = c.post('/cv/upload', files={'file': ('cv.txt', b'Ana\nana@example.com\nExperience\nPython analyst 2025')}, headers=h).json()
+    edited = c.post('/cv/preview', json={'text': up['masked_text'] + '\nSQL reporting 2024'}, headers=h).json()
     assert edited['digest'] != up['digest']
     assert c.post('/cv/consent', json={'digest': up['digest'], 'affirmative': True}, headers=h).status_code == 409
     assert c.post('/cv/consent', json={'digest': edited['digest'], 'affirmative': True}, headers=h).status_code == 200

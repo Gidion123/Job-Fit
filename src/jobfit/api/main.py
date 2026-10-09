@@ -43,6 +43,7 @@ from dataclasses import dataclass, field
 import functools
 import json
 import logging
+import os
 import secrets
 import threading
 import time
@@ -86,7 +87,22 @@ PUBLIC_BETA_CLOSED_MESSAGE = ('The public beta is not open yet. The uploaded-CV 
 INTERNAL_TOKEN_HEADER, CLIENT_IP_HEADER, OWNER_TOKEN_HEADER = ('x-jobfit-internal-token', 'x-jobfit-client-ip',
                                                              'x-jobfit-owner-token')
 MAX_RUNS_PER_SESSION = 3
-MAX_ANALYSES_PER_SESSION = 3
+MAX_ANALYSES_PER_SESSION = 3        # default; JOBFIT_SESSION_ANALYSIS_LIMIT overrides it (owner-local demo only)
+SESSION_ANALYSIS_LIMIT_ENV = 'JOBFIT_SESSION_ANALYSIS_LIMIT'
+
+
+def session_analysis_limit() -> int:
+    """Analyze Fit runs (and pasted JDs) per session: 3 unless the deployment sets 1..50 explicitly.
+
+    The owner-local compose file raises it for demos. Non-owner public-beta sessions stay bounded by the
+    D-103 session allowance (3 job_analysis) in jobfit.live.quota whatever this says; budgets are untouched.
+    """
+    raw = os.environ.get(SESSION_ANALYSIS_LIMIT_ENV, '').strip()
+    if not raw:
+        return MAX_ANALYSES_PER_SESSION
+    if not raw.isdigit() or not 1 <= int(raw) <= 50:
+        raise ValueError(f'{SESSION_ANALYSIS_LIMIT_ENV} must be an integer from 1 to 50')
+    return int(raw)
 MAX_PREVIEWS_PER_SESSION = 5         # CV uploads plus preview edits per session (upload abuse control)
 REAL_ERROR_STATUS = {'input_too_large': 413, 'parse_required': 409, 'search_required': 409,
                      'consent_required': 409, 'production_retrieval_unavailable': 503}
@@ -158,6 +174,7 @@ def create_app(deps: AppDeps) -> FastAPI:
     pastes: dict[str, tuple[str, str]] = {}      # paste_id -> (owner, text); session-only
     feedback: list[dict] = []
     lock = threading.Lock()
+    analysis_limit = session_analysis_limit()
     stop = threading.Event()
     upload_slot = threading.BoundedSemaphore(1)    # one /cv/upload in flight per API process (one API process)
     previews: dict[str, int] = {}                  # session -> CV uploads plus preview edits
@@ -275,7 +292,7 @@ def create_app(deps: AppDeps) -> FastAPI:
                 storage = False
         return {'ok': True, 'real_cv_enabled': deps.real_cv_enabled, 'live_enabled': deps.live_enabled,
                 'saved_demo': deps.saved_demo is not None, 'analyzed_k': deps.analyzed_k,
-                'live_storage_ready': storage}
+                'live_storage_ready': storage, 'analysis_limit': analysis_limit}
 
     @app.post('/session')
     def new_session(request: Request):
@@ -358,7 +375,7 @@ def create_app(deps: AppDeps) -> FastAPI:
         try:
             marks = None if upload else deps.store.owner_marks(h)
             try:
-                preview = sanitize_upload(raw, marks=marks)
+                preview = sanitize_upload(raw, marks=marks, edited=not upload)
             except SanitizeRefused as exc:
                 deps.store.invalidate_preview(h, clear_owner_marks=upload)
                 _drop_real_runs(h)
@@ -687,7 +704,7 @@ def create_app(deps: AppDeps) -> FastAPI:
     def paste(body: PasteRequest, h: SessionHandle = Depends(handle)):
         paste_id = secrets.token_urlsafe(12)
         with lock:
-            if sum(o == h.session_id for o, _ in pastes.values()) >= MAX_ANALYSES_PER_SESSION:
+            if sum(o == h.session_id for o, _ in pastes.values()) >= analysis_limit:
                 raise HTTPException(429, 'Paste limit for this session reached')
             pastes[paste_id] = (h.session_id, body.jd_text)
         return {'paste_id': paste_id, 'characters': len(body.jd_text),
@@ -731,7 +748,7 @@ def create_app(deps: AppDeps) -> FastAPI:
             card = job_card(r, {'title': 'Pasted job description'})
             return {'card': card, 'requirement_groups': requirement_groups(card), 'source': 'live',
                     'note': 'Pasted JDs are analyzed for this session only.'}
-        return {'run_id': start_job(h, 'analysis', MAX_ANALYSES_PER_SESSION, work)}
+        return {'run_id': start_job(h, 'analysis', analysis_limit, work)}
 
     # ---------- D-103 public-beta contract: search stage, then one job_analysis per chosen job ----------
     def beta_owner_only(request: Request) -> None:
@@ -760,7 +777,7 @@ def create_app(deps: AppDeps) -> FastAPI:
         except Exception as exc:          # a safe code or the class name; never a payload
             raise HTTPException(503, getattr(exc, 'code', None) or type(exc).__name__)
         return {'stage': 'retrieval', 'final_order': False, 'label': SEARCH_STAGE_LABEL,
-                'analysis_limit': MAX_ANALYSES_PER_SESSION, 'cv_source': 'demo',
+                'analysis_limit': analysis_limit, 'cv_source': 'demo',
                 'jobs': [retrieval_card(j, i + 1, {**deps.jobs.get(j, {}), **deps.job_meta.get(j, {})})
                          for i, j in enumerate(ids)]}
 
@@ -807,7 +824,7 @@ def create_app(deps: AppDeps) -> FastAPI:
             settle_live(h, live, None)
         # analysis_date: the date the filters used (posted window), for zero-call local refinement in the UI
         return {'stage': 'retrieval', 'final_order': False, 'label': SEARCH_STAGE_LABEL,
-                'analysis_limit': MAX_ANALYSES_PER_SESSION, 'cv_source': 'upload',
+                'analysis_limit': analysis_limit, 'cv_source': 'upload',
                 'analysis_date': parsed.analysis_date.isoformat(),
                 'jobs': [retrieval_card(r['job_id'], r['retrieval_rank'], r) for r in rows[:deps.search_limit]]}
 
@@ -868,7 +885,7 @@ def create_app(deps: AppDeps) -> FastAPI:
             live = real_live_request(request, h, 'job_analysis', action)
             if isinstance(live, dict):
                 return live
-            return start_real_job(h, 'analysis', MAX_ANALYSES_PER_SESSION, live,
+            return start_real_job(h, 'analysis', analysis_limit, live,
                                   lambda: deps.analyze_one(cv, job_id=job_id, jd_text=jd_text, live=live,
                                                            history_confirmed=history_confirmed),
                                   lambda r: {**analyzed_job(r, meta), 'source': 'live', 'cv_source': 'upload',
@@ -894,7 +911,7 @@ def create_app(deps: AppDeps) -> FastAPI:
                 idempotency.update(live.operation_key, state='done')
             return {**analyzed_job(r, meta), 'source': 'live', **({'session_note': note} if note else {})}
         try:
-            run_id = start_job(h, 'analysis', MAX_ANALYSES_PER_SESSION, work, run_id=live.run_id if live else None)
+            run_id = start_job(h, 'analysis', analysis_limit, work, run_id=live.run_id if live else None)
         except Exception:
             if live is not None:
                 idempotency.release(live.operation_key)      # nothing started: the key is free again

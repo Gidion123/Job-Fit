@@ -1,11 +1,13 @@
 """D-105 product flow in the Streamlit UI (AppTest) and the UI API client. Fakes only, no paid call.
 
-Upload -> exact preview -> consent -> Continue (consent + parse) -> CV ready -> Find Jobs (optional
-pre-search filters) -> Relevant Jobs -> zero-call local refinement -> Analyze Fit -> Improve My CV,
-and Check a Job. A CV change clears everything derived from the earlier CV and resets the
-work-history confirmation; a rerun or a retry never posts a billable action twice.
+Home -> Upload CV -> exact preview -> consent -> Continue (consent + parse) -> CV ready -> Find Jobs
+(optional pre-search filters) -> Relevant Jobs -> zero-call local refinement -> Analyze Fit -> Improve My
+CV, and Check a Job, one screen at a time (visual design v3; Indonesian copy by default). A CV change
+clears everything derived from the earlier CV and resets the work-history confirmation; a rerun or a retry
+never posts a billable action twice. Content blocks are st.html, so the tests read their HTML.
 """
 import hashlib
+import re
 import sys
 import time
 import types
@@ -122,7 +124,7 @@ class Fake(ApiClient):
         return {}
 
     def health(self):
-        return {'analyzed_k': 10}
+        return {'analyzed_k': 10, 'live_storage_ready': None}
 
     def upload(self, name, data):
         self._rec('upload', name)
@@ -224,51 +226,111 @@ def names(*kinds):
     return [c for c in Recorder.calls if c[0] in kinds]
 
 
-def button(at, label):
-    return next(b for b in at.button if b.label == label)
+def htmls(at) -> list[str]:
+    """The page's HTML content blocks (the stylesheet and the scroll script are not content)."""
+    return [str(h.value) for h in at.get('html') if not str(h.value).startswith(('<style>', '<script>'))]
 
 
-def upload_and_parse(at, content=b'Data Analyst, PT Contoh 2024\nPython and SQL reporting for sales.'):
-    at.file_uploader[0].upload('cv.txt', content, 'text/plain').run()
+def page_text(at) -> str:
+    return '\n'.join(htmls(at))
+
+
+def digest_of(at) -> str:
+    return at.session_state['preview']['digest']
+
+
+def upload_and_parse(at, content=b'Data Analyst, PT Contoh 2024\nPython and SQL reporting for sales.', name='cv.txt'):
+    if at.session_state['page'] == 'landing':
+        at.button(key='cta_upload').click().run()
+    at.file_uploader[0].upload(name, content, 'text/plain').run()
     assert not at.exception
-    next(c for c in at.checkbox if c.label.startswith('I checked this text')).check().run()
-    button(at, 'Continue: analyze my CV').click().run()
+    assert at.session_state['page'] == 'privacy'
+    at.checkbox(key=f'consent_{digest_of(at)}').check().run()
+    at.button(key='parse_go').click().run()
     assert not at.exception
-    assert any(s.value == 'CV ready.' for s in at.success)
+    assert at.session_state['page'] == 'ready' and at.session_state['cv_ready']
+    assert 'CV kamu siap' in page_text(at)
 
 
 def find_jobs(at):
     at.button(key='choose_find').click().run()
     at.button(key='search_submit').click().run()
     assert not at.exception
+    assert at.session_state['page'] == 'results'
 
 
-def shown_caption(at):
-    return next(c.value for c in at.caption if c.value.startswith('Showing '))
+def shown(at) -> tuple[int, int]:
+    """(shown, total) from the Relevant Jobs counter."""
+    m = re.search(r'data-count="(\d+)" data-total="(\d+)"', page_text(at))
+    return int(m.group(1)), int(m.group(2))
+
+
+def ranks(at) -> list[str]:
+    return re.findall(r'data-job="[^"]+" data-rank="(\d+)"', page_text(at))
+
+
+def history_box(at, where, digest):
+    return at.checkbox(key=f'history_{where}_{digest}')
+
+
+def has_history_box(at, where, digest) -> bool:
+    return any(c.key == f'history_{where}_{digest}' for c in at.checkbox)
+
+
+def group(text: str, name: str) -> str:
+    """The HTML of one overview group (data-group="...") up to the next group or the end of its block."""
+    start = text.index(f'data-group="{name}"')
+    end = text.find('data-group=', start + 10)
+    return text[start:end if end > 0 else len(text)]
 
 
 # ---- the full flow -------------------------------------------------------------------------------------------
 
 def test_upload_preview_consent_parse_find_jobs_analyze_fit_and_coach(app):
     at = app
-    assert at.title[0].value == 'JobFit'
+    assert at.button(key='jf_brand').label == 'JobFit'
+    assert 'Cari lowongan.' in page_text(at)                                     # the design's home screen
     upload_and_parse(at)
     assert [c[0] for c in Recorder.calls[:4]] == ['start_session', 'upload', 'consent', 'parse_cv']
     find_jobs(at)
     assert len(names('search_jobs')) == 1
-    assert shown_caption(at).startswith('Showing 4 of 4 relevant jobs')
-    assert not any('%' in m.value for m in at.markdown if 'Relevant Jobs' in m.value)
-    button(at, 'Analyze Fit').click().run()                     # the first card: J1
+    assert shown(at) == (4, 4)
+    assert not any('%' in h for h in htmls(at) if 'data-job=' in h)            # search stage: no score
+    at.button(key='analyze_J1').click().run()                                   # the first card: J1
     assert not at.exception
-    assert at.get('status')                                     # the Analyze Fit wait renders an honest status
-    assert any(m.label == 'Evidence coverage' for m in at.metric)
-    assert any('not a hiring probability' in c.value for c in at.caption)
+    assert at.session_state['page'] == 'analysis'
+    run_id = at.session_state['analyses']['J1']['run_id']
+    assert run_id in at.session_state['run_started']                            # the honest wait screen polled it
+    text = page_text(at)
+    assert 'jf-coverage-value' in text and 'Cakupan Bukti CV' in text
+    assert 'Bukan peluang diterima kerja' in text                               # never a hiring probability
     assert names('analyze_job')[0][1][0] == 'J1'
-    assert any('This job asks for: AWS' in m.value for m in at.markdown)          # A, evidence-only
-    assert any(r.label == 'Have you worked on: Docker?' for r in at.radio)          # B, questions
+    assert not at.get('progress')                                               # no invented numeric progress
+    assert names('job') == []                                                   # no production job-detail lookup
+    assert names('coach') == []                                                 # the coach is its own screen
+    at.button(key='open_coach').click().run()
+    assert not at.exception and at.session_state['page'] == 'coach'
+    text = page_text(at)
+    a_items = [h for h in htmls(at) if 'data-category="A"' in h]
+    assert a_items and 'AWS' in a_items[0] and 'Deployed services to cloud infrastructure.' in a_items[0]
+    assert any('data-category="B"' in h and 'Docker' in h for h in htmls(at))   # B, asked first
+    assert any(b.key.startswith('yes_') for b in at.button) and any(b.key.startswith('no_') for b in at.button)
     assert len(names('coach')) == 1
-    assert not at.get('progress')                                # no invented numeric progress
-    assert names('job') == []                                    # no production job-detail lookup
+
+
+def test_the_coach_drafts_only_from_the_answers_and_not_done_gives_no_draft(app):
+    at = app
+    upload_and_parse(at)
+    find_jobs(at)
+    at.button(key='analyze_J1').click().run()
+    at.button(key='open_coach').click().run()
+    no = next(b for b in at.button if b.key.startswith('no_'))
+    no.click().run()
+    assert not at.exception
+    assert names('coach_answer')                                                # "not done": learning ideas only
+    assert 'Jangan tambahkan klaim ini ke CV' in page_text(at)
+    assert not any(k.startswith('draft_') and (at.session_state[k] or {}).get('bullet')
+                   for k in at.session_state)
 
 
 def test_local_refinement_makes_no_call_and_keeps_the_order(app):
@@ -277,76 +339,93 @@ def test_local_refinement_makes_no_call_and_keeps_the_order(app):
     find_jobs(at)
     before = list(Recorder.calls)
     at.selectbox(key='refine_mode').set_value('remote').run()
-    assert shown_caption(at).startswith('Showing 2 of 4')
+    assert shown(at) == (2, 4)
     at.checkbox(key='refine_unknown').uncheck().run()
-    assert shown_caption(at).startswith('Showing 1 of 4')
+    assert shown(at) == (1, 4)
     at.selectbox(key='refine_mode').set_value('').run()
     at.selectbox(key='refine_role').set_value('data_science').run()
     at.checkbox(key='refine_unknown').check().run()
-    assert shown_caption(at).startswith('Showing 2 of 4')
-    titles = [m.value for m in at.markdown if m.value.startswith('**#')]
-    assert titles[0].startswith('**#2 ') and titles[1].startswith('**#4 ')        # retrieval order kept
-    assert Recorder.calls == before                                              # zero API calls, zero keys
+    assert shown(at) == (2, 4)
+    assert ranks(at) == ['2', '4']                                              # retrieval order kept
+    at.button(key='refine_reset').click().run()
+    assert shown(at) == (4, 4)
+    assert Recorder.calls == before                                             # zero API calls, zero keys
 
 
-def history_box(at, where, digest):
-    return at.checkbox(key=f'history_{where}_{digest}')
+def test_a_refinement_with_no_match_shows_the_empty_state_without_a_call(app):
+    at = app
+    upload_and_parse(at)
+    find_jobs(at)
+    before = list(Recorder.calls)
+    at.selectbox(key='refine_country').set_value('SG').run()
+    at.selectbox(key='refine_mode').set_value('remote').run()
+    assert shown(at) == (1, 4)                                                  # J3: unknown values stay shown
+    at.checkbox(key='refine_unknown').uncheck().run()
+    assert shown(at) == (0, 4)
+    assert 'Tidak ada lowongan dengan filter ini' in page_text(at)
+    assert Recorder.calls == before
 
 
 def test_no_work_history_question_until_an_analyze_fit_is_near(app):
     at = app
     upload_and_parse(at)
-    assert not any(c.label.startswith('My CV lists my complete work history') for c in at.checkbox)   # CV Ready
+    digest = digest_of(at)
+    assert not has_history_box(at, 'find', digest) and not has_history_box(at, 'check', digest)   # CV ready
     find_jobs(at)
-    digest = names('consent')[0][1][0]
-    assert history_box(at, 'find', digest).value is False                       # contextual, default False
+    assert history_box(at, 'find', digest).value is False                      # contextual, default False
 
 
 def test_unconfirmed_first_analyze_fit_sends_false_and_the_answer_is_then_fixed(app):
     at = app
     upload_and_parse(at)
     find_jobs(at)
-    digest = names('consent')[0][1][0]
-    button(at, 'Analyze Fit').click().run()
+    digest = digest_of(at)
+    at.button(key='analyze_J1').click().run()
     assert names('analyze_job')[-1][1][1] is False
-    fixed = at.checkbox(key=f'history_fixed_find_{digest}')
-    assert fixed.disabled and fixed.value is False                              # cannot change under the result
+    assert at.session_state['history_locked'][digest] is False
+    at.button(key='analysis_back').click().run()
+    assert not has_history_box(at, 'find', digest)                              # cannot change under the result
+    assert 'Riwayat kerja: belum dikonfirmasi lengkap' in page_text(at)
 
 
 def test_check_a_job_reuses_the_history_answer_and_a_new_cv_resets_everything(app):
     at = app
     upload_and_parse(at)
-    digest_a = names('consent')[0][1][0]
+    digest_a = digest_of(at)
     find_jobs(at)
     history_box(at, 'find', digest_a).check().run()                            # chosen before the first Analyze Fit
-    button(at, 'Analyze Fit').click().run()
+    at.button(key='analyze_J1').click().run()
     assert names('analyze_job')[-1][1][1] is True
-    at.button(key='choose_check').click().run()
-    fixed = at.checkbox(key=f'history_fixed_check_{digest_a}')
-    assert fixed.disabled and fixed.value is True                               # the same fixed answer
+    at.button(key='nav_check').click().run()
+    assert at.session_state['page'] == 'check'
+    assert not has_history_box(at, 'check', digest_a)                           # the same fixed answer
+    assert 'Riwayat kerja: dikonfirmasi lengkap' in page_text(at)
     at.text_area(key='check_jd').input('Machine learning engineer. ' * 20).run()
-    button(at, 'Analyze Fit for this job').click().run()
+    at.button(key='check_submit').click().run()
     assert not at.exception
     assert names('analyze_job')[-1][1][1] is True and names('analyze_pasted')[-1][1][1] is True
-    assert any('of 3 job analyses used' in c.value for c in at.caption if c.value.startswith('2 '))
+    assert at.session_state['page'] == 'analysis' and at.session_state['return_to'] == 'check'
+    assert 'Sisa 1 dari 3 cek kecocokan' in page_text(at)
     # CV B: nothing from CV A stays visible and the confirmation resets to False
+    at.button(key='nav_cv').click().run()
+    at.button(key='ready_replace').click().run()
+    at.button(key='replace_confirm').click().run()
+    assert at.session_state['page'] == 'upload'
     at.file_uploader[0].upload('cv_b.txt', b'Analyst 2023\nExcel reporting.', 'text/plain').run()
     assert not at.exception
-    assert not any(s.value == 'CV ready.' for s in at.success)
-    assert not any(c.value.startswith('Showing ') for c in at.caption)
-    assert not any(m.label == 'Evidence coverage' for m in at.metric)
-    assert not any('This job asks for' in m.value for m in at.markdown)
-    for key in ('analyses', 'search', 'coach', 'pasted', 'paste_ids', 'cv_ready', 'parse_run', 'flow',
+    assert at.session_state['page'] == 'privacy'
+    assert 'jf-coverage' not in page_text(at)
+    for key in ('analyses', 'search', 'coach', 'pasted', 'paste_ids', 'cv_ready', 'parse_run', 'return_to',
                 'history_choice', 'history_locked'):
         assert key not in at.session_state
-    next(c for c in at.checkbox if c.label.startswith('I checked this text')).check().run()
-    button(at, 'Continue: analyze my CV').click().run()
+    at.checkbox(key=f'consent_{digest_of(at)}').check().run()
+    at.button(key='parse_go').click().run()
     digest_b = names('consent')[-1][1][0]
     assert digest_b != digest_a
     find_jobs(at)
     box = history_box(at, 'find', digest_b)
     assert box.value is False and not box.disabled
-    button(at, 'Analyze Fit').click().run()
+    at.button(key='analyze_J1').click().run()
     assert names('analyze_job')[-1][1][1] is False                               # never carried across CVs
 
 
@@ -354,15 +433,15 @@ def test_a_lost_first_response_keeps_the_history_locked_and_the_retry_identical(
     at = app
     upload_and_parse(at)
     find_jobs(at)
-    digest = names('consent')[0][1][0]
+    digest = digest_of(at)
     history_box(at, 'find', digest).check().run()
     Recorder.lose_next_analyze = True
-    button(at, 'Analyze Fit').click().run()
-    assert any('Connection problem' in e.value for e in at.error)
-    assert 'analyses' not in at.session_state or not at.session_state['analyses']   # no entry: response lost
-    fixed = at.checkbox(key=f'history_fixed_find_{digest}')
-    assert fixed.disabled and fixed.value is True                               # still locked to the chosen answer
-    button(at, 'Analyze Fit').click().run()
+    at.button(key='analyze_J1').click().run()
+    assert 'Koneksi bermasalah' in page_text(at)
+    assert not at.session_state['analyses']                                     # no entry: response lost
+    assert at.session_state['history_locked'][digest] is True                   # still locked to the chosen answer
+    assert not has_history_box(at, 'find', digest)
+    at.button(key='analyze_J1').click().run()
     first, second = names('analyze_job')
     assert first[1][1] is True and second[1][1] is True                         # same history value
     assert first[1][2] == second[1][2]                                          # same Idempotency-Key
@@ -372,26 +451,25 @@ def test_analyze_fit_separates_gaps_not_verified_and_strengths(app):
     at = app
     upload_and_parse(at)
     find_jobs(at)
-    button(at, 'Analyze Fit').click().run()
-    md = [m.value for m in at.markdown]
-    heads = {h: md.index(h) for h in ('**Strengths (supported by your CV)**',
-                                      '**Evidence gaps (partly supported or not found)**',
-                                      '**Not verified from this CV**')}
-    after = lambda h: md[heads[h] + 1:]                                          # noqa: E731
-    gaps = [m for m in after('**Evidence gaps (partly supported or not found)**')
-            if m.startswith('- ')][:2]
-    assert [g.split(':')[0] for g in gaps] == ['- AWS', '- Docker']             # editable PARTIAL and NO_MATCH
-    assert next(m for m in after('**Not verified from this CV**') if m.startswith('- ')) == \
-        '- 3 years of ML engineering'
-    assert not any(m.startswith('- 3 years of ML engineering:') for m in md)     # never listed as a gap
+    at.button(key='analyze_J1').click().run()
+    text = page_text(at)
+    assert 'Python' in group(text, 'strengths')
+    gaps = group(text, 'gaps')
+    assert re.findall(r'<li>([^<]+)</li>', gaps)[:2] == ['AWS', 'Docker']       # editable PARTIAL and NO_MATCH
+    assert '3 years of ML engineering' not in gaps                              # never listed as a gap
+    assert '3 years of ML engineering' in group(text, 'not_verified')
+    statuses = dict(re.findall(r'data-status="(\w+)"><div class="jf-requirement-head"><div><div class="jf-h3" '
+                               r'role="heading" aria-level="3">([^<]+)<', text))
+    assert {v: k for k, v in statuses.items()} == {'Python': 'MATCH', 'AWS': 'PARTIAL', 'Docker': 'NO_MATCH',
+                                                   '3 years of ML engineering': 'UNVERIFIED'}
 
 
 def test_the_country_selector_covers_the_seeded_snapshot(app):
     at = app
     upload_and_parse(at)
     at.button(key='choose_find').click().run()
-    assert at.selectbox(key='search_country').options == ['Any', 'Indonesia', 'Singapore', 'Malaysia', 'Philippines',
-                                                          'United States']
+    assert at.selectbox(key='search_country').options == ['Semua', 'Indonesia', 'Singapura', 'Malaysia', 'Filipina',
+                                                          'Amerika Serikat']
     at.selectbox(key='search_country').set_value('PH')
     at.button(key='search_submit').click().run()                               # a form submits its values together
     assert names('search_jobs')[-1][1][0]['country_code'] == 'PH'
@@ -401,12 +479,16 @@ def test_a_successful_edit_is_a_new_cv_too(app):
     at = app
     upload_and_parse(at)
     find_jobs(at)
-    digest = names('consent')[0][1][0]
+    digest = digest_of(at)
+    at.button(key='nav_cv').click().run()
+    at.button(key='ready_edit').click().run()
+    assert at.session_state['page'] == 'edit'
     at.text_area(key=f'text_{digest}').input('Experience\nData Analyst 2024, Python reporting.').run()
-    button(at, 'Use my corrected text').click().run()
+    at.button(key='edit_save').click().run()
     assert not at.exception and names('edit_preview')
     assert 'search' not in at.session_state and 'cv_ready' not in at.session_state
-    assert not any(c.value.startswith('Showing ') for c in at.caption)
+    assert at.session_state['page'] == 'privacy'
+    assert 'data-count=' not in page_text(at)
 
 
 def test_a_retry_after_a_lost_response_reuses_the_key_and_a_rerun_never_posts_again(app):
@@ -414,9 +496,9 @@ def test_a_retry_after_a_lost_response_reuses_the_key_and_a_rerun_never_posts_ag
     upload_and_parse(at)
     find_jobs(at)
     Recorder.lose_next_analyze = True
-    button(at, 'Analyze Fit').click().run()
-    assert any('Connection problem' in e.value for e in at.error)
-    button(at, 'Analyze Fit').click().run()                     # the retry of the same action
+    at.button(key='analyze_J1').click().run()
+    assert 'Koneksi bermasalah' in page_text(at)
+    at.button(key='analyze_J1').click().run()                   # the retry of the same action
     first, second = names('analyze_job')
     assert first[1][2] == second[1][2]                          # same Idempotency-Key, one execution server-side
     calls = len(Recorder.calls)
@@ -426,11 +508,47 @@ def test_a_retry_after_a_lost_response_reuses_the_key_and_a_rerun_never_posts_ag
     assert len(Recorder.calls) == calls
 
 
+def test_a_short_pasted_job_is_refused_before_any_call(app):
+    at = app
+    upload_and_parse(at)
+    at.button(key='choose_check').click().run()
+    at.text_area(key='check_jd').input('Too short.').run()
+    at.button(key='check_submit').click().run()
+    assert 'minimal 200 karakter' in page_text(at)
+    assert names('paste', 'analyze_pasted') == []
+
+
 def test_delete_session(app):
     at = app
     upload_and_parse(at)
-    button(at, 'Hentikan & hapus sesi').click().run()
-    assert names('delete_session') and any('Session deleted' in s.value for s in at.success)
+    at.button(key='open_delete').click().run()
+    assert 'Hentikan &amp; hapus sesi?' in page_text(at)                        # confirmation first
+    assert names('delete_session') == []
+    at.button(key='delete_confirm').click().run()
+    assert names('delete_session') and at.session_state['page'] == 'deleted'
+    assert 'Sesi sudah dihapus' in page_text(at)
+    assert 'preview' not in at.session_state and 'api' not in at.session_state
+
+
+def test_the_language_switch_changes_the_copy_and_keeps_the_session(app):
+    at = app
+    upload_and_parse(at)
+    digest = digest_of(at)
+    at.button(key='lang_en').click().run()
+    assert not at.exception
+    assert 'Your CV is ready' in page_text(at) and at.session_state['cv_ready']
+    assert digest_of(at) == digest and len(names('upload')) == 1                 # nothing was sent again
+    at.button(key='lang_id').click().run()
+    assert 'CV kamu siap' in page_text(at)
+
+
+def test_help_explains_coverage_honestly(app):
+    at = app
+    at.button(key='open_help').click().run()
+    text = page_text(at)
+    assert 'bukan peluang diterima kerja dan bukan skor ATS' in text
+    at.button(key='help_ok').click().run()
+    assert 'Cara membaca hasil JobFit' not in page_text(at)
 
 
 # ---- the client: owner header and the real API (fakes, owner-only real-CV mode) -----------------------------
@@ -477,17 +595,18 @@ def test_the_client_runs_the_owner_flow_against_the_real_api(tmp_path, monkeypat
     api.delete_session()
 
 
-# ---- untrusted CV/JD text renders as text, never as user-controlled Markdown ------------------------------------
+# ---- untrusted CV/JD text renders as inert text, never as markup ------------------------------------------------
 
-EVIL = '[x](https://evil.example) ![i](https://evil.example/p.png)'
+EVIL = '<img src=x onerror=alert(1)><a href="https://evil.example">x</a> [x](https://evil.example) ![i](https://evil.example/p.png)'
 
 
 def render_untrusted():
-    """Run inside AppTest: product views fed with Markdown-looking CV/JD-derived strings."""
+    """Run inside AppTest: product views fed with markup-looking CV/JD-derived strings."""
     import sys
     sys.path.insert(0, 'ui')
     from components import analysis_view, coach_view, job_card
-    evil = '[x](https://evil.example) ![i](https://evil.example/p.png)'
+    evil = ('<img src=x onerror=alert(1)><a href="https://evil.example">x</a> [x](https://evil.example) '
+            '![i](https://evil.example/p.png)')
     card = {'job_id': 'J', 'title': evil, 'company': evil, 'location': evil, 'url': None, 'score_pct': 50.0,
             'status': 'final', 'scored': True, 'matched': 1, 'partial': 0, 'required_total': 2,
             'soft_skills': {'total': 0, 'matched': 0, 'partial': 0}, 'reasons': [], 'hold_reason': None,
@@ -511,55 +630,155 @@ def render_untrusted():
     job_card(card, 1)
 
 
-def test_untrusted_text_is_escaped_before_markdown_rendering():
+def test_untrusted_text_is_escaped_before_it_reaches_the_page():
     from streamlit.testing.v1 import AppTest
     at = AppTest.from_function(render_untrusted, default_timeout=30).run()
     assert not at.exception
-    bodies = ([m.value for m in at.markdown] + [c.value for c in at.caption] + [w.value for w in at.warning]
-              + [r.label for r in at.radio])
-    untrusted = [b for b in bodies if 'evil' in b]
-    assert len(untrusted) >= 8                     # title, company, conflicts, gaps, quotes, questions, C, not verified
+    bodies = htmls(at) + [m.value for m in at.markdown] + [c.value for c in at.caption]
+    untrusted = [b for b in bodies if 'evil.example' in b]
+    assert len(untrusted) >= 8                     # title, company, conflicts, gaps, quotes, A, B, C, not verified
     for body in untrusted:
-        assert '[x](' not in body and '![i](' not in body, body                 # never live Markdown
-        assert r'\[x\]\(https' in body and r'\!\[i\]\(https' in body, body       # escaped, shown as text
+        assert '<img' not in body and '<a ' not in body and 'onerror=alert' not in body.replace('onerror=alert(1)&gt;', ''), body
+        assert '&lt;img src=x onerror=alert(1)&gt;&lt;a href=&quot;https://evil.example&quot;&gt;' in body, body
+    assert not at.markdown                         # nothing goes through Markdown rendering
 
 
-# ---- the Analyze Fit result panel sits above the Relevant Jobs list, shown once -----------------------------
+# ---- Analyze Fit results open on their own screen; switching between them never posts ----------------------
 
-def panel_titles(at):
-    return [m.value for m in at.markdown if m.value.startswith('#### ')]
-
-
-def first_card_index(md):
-    return next(i for i, m in enumerate(md) if m.startswith('**#'))
+def coverage_title(at) -> str:
+    return re.search(r'<div class="jf-h1" role="heading" aria-level="1">([^<]+)</div>', page_text(at)).group(1)
 
 
-def test_a_finished_analyze_fit_appears_in_the_panel_above_the_job_list(app):
+def test_a_finished_analyze_fit_opens_its_result_screen_once(app):
     at = app
     upload_and_parse(at)
     find_jobs(at)
-    button(at, 'Analyze Fit').click().run()                     # J1
+    at.button(key='analyze_J1').click().run()                   # J1
     assert not at.exception
-    assert [s.value for s in at.subheader].count('Analyze Fit result') == 1
-    md = [m.value for m in at.markdown]
-    assert md.index('#### Role J1') < first_card_index(md)      # in view: before every job card
-    assert panel_titles(at) == ['#### Role J1'] and [m.label for m in at.metric].count('Evidence coverage') == 1
-    assert any(c.value == 'Analyze Fit result shown above.' for c in at.caption)
+    assert at.session_state['page'] == 'analysis' and coverage_title(at) == 'Role J1'
+    assert page_text(at).count('jf-coverage-value') == 1
+    at.button(key='analysis_back').click().run()
+    assert at.session_state['page'] == 'results'
+    assert any(b.key == 'show_J1' for b in at.button) and not any(b.key == 'analyze_J1' for b in at.button)
+    assert 'Sudah dicek' in page_text(at)
 
 
-def test_show_analyze_fit_result_switches_the_panel_at_once_without_a_post(app):
+def test_show_analyze_fit_result_switches_at_once_without_a_post(app):
     at = app
     upload_and_parse(at)
     find_jobs(at)
-    button(at, 'Analyze Fit').click().run()                     # J1
-    button(at, 'Analyze Fit').click().run()                     # J2 (J1 already analyzed)
-    assert panel_titles(at) == ['#### Role J2']
+    at.button(key='analyze_J1').click().run()                   # J1
+    at.button(key='analysis_back').click().run()
+    at.button(key='analyze_J2').click().run()                   # J2 (J1 already analyzed)
+    assert coverage_title(at) == 'Role J2'
     keys = [c[1][2] for c in names('analyze_job')]
-    at.button(key='show_J1').click().run()                      # one interaction: the panel shows J1 at once
-    assert panel_titles(at) == ['#### Role J1']
-    assert [s.value for s in at.subheader].count('Analyze Fit result') == 1       # never duplicated
-    assert [m.label for m in at.metric].count('Evidence coverage') == 1
+    at.button(key='analysis_back').click().run()
+    at.button(key='show_J1').click().run()                      # one interaction: the result screen shows J1
+    assert coverage_title(at) == 'Role J1'
+    assert page_text(at).count('jf-coverage-value') == 1        # never duplicated
     at.run()
     at.run()                                                    # plain reruns
-    assert panel_titles(at) == ['#### Role J1']
+    assert coverage_title(at) == 'Role J1'
     assert len(names('analyze_job')) == 2 and [c[1][2] for c in names('analyze_job')] == keys
+
+
+def test_the_quota_disables_analyze_fit_after_three(app):
+    at = app
+    upload_and_parse(at)
+    find_jobs(at)
+    for job in ('J1', 'J2', 'J3'):
+        at.button(key=f'analyze_{job}').click().run()
+        at.button(key='analysis_back').click().run()
+    assert at.button(key='analyze_J4').disabled
+    assert 'Jatah cek kecocokan habis' in page_text(at)
+    assert len(names('analyze_job')) == 3
+
+
+# ---- an outdated API (before D-104) is named, never a bare "Not Found" ------------------------------------------
+
+def test_an_outdated_api_is_flagged_and_its_not_found_is_explained(monkeypatch):
+    from streamlit.testing.v1 import AppTest
+    Recorder.calls, Recorder.lose_next_analyze, Recorder.poll_running_once = [], False, set()
+
+    class Old(Fake):
+        def health(self):                               # the Oct 4 API: no live_storage_ready
+            return {'ok': True, 'real_cv_enabled': False, 'live_enabled': False, 'saved_demo': True}
+
+        def edit_preview(self, text):
+            raise ApiError(404, 'Not Found')
+    fake_module = types.ModuleType('api_client')
+    fake_module.ApiClient, fake_module.ApiError = Old, ApiError
+    monkeypatch.setitem(sys.modules, 'api_client', fake_module)
+    at = AppTest.from_file(str(ROOT / 'ui/streamlit_app.py'), default_timeout=60).run()
+    assert 'versi lama' in page_text(at)
+    at.button(key='cta_upload').click().run()
+    at.file_uploader[0].upload('cv.txt', b'Data Analyst 2024\nPython reporting.', 'text/plain').run()
+    at.button(key='privacy_edit').click().run()
+    at.text_area(key=f'text_{digest_of(at)}').input('Experience\nAnalyst 2024.').run()
+    at.button(key='edit_save').click().run()
+    assert not at.exception
+    assert 'tidak dikenal oleh API' in page_text(at)
+
+
+def test_the_current_api_shows_no_outdated_warning(app):
+    assert 'versi lama' not in page_text(app)
+
+
+def test_a_held_result_explains_why_with_the_requirement_text():
+    import sys as _sys
+    _sys.path.insert(0, str(ROOT / 'ui'))
+    from components import reason_texts
+    card = {'reasons': ['An experience, level or education requirement needs checking: U04.'],
+            'requirements': [{'unit_id': 'U04', 'requirement': 'Intermediate statistics skills'}]}
+    assert reason_texts(card) == ['Syarat pengalaman, level, atau pendidikan ini perlu dicek dulu: '
+                                  'Intermediate statistics skills']
+
+
+def test_hold_and_provisional_reasons_are_explained_once():
+    import sys as _sys
+    _sys.path.insert(0, str(ROOT / 'ui'))
+    from components import coverage_html, reason_texts
+    held = {'scored': False, 'reasons': ['Evidence matching did not finish: timeout'],
+            'hold_reason': 'Evidence matching did not finish: timeout', 'requirements': []}
+    text = coverage_html(held)
+    assert 'Pencocokan bukti dengan CV belum selesai (timeout)' in text
+    assert text.count('Evidence matching did not finish') == 0              # translated and shown once
+    provisional = {'scored': True, 'status': 'provisional', 'score_pct': 60.0, 'matched': 2, 'partial': 1,
+                   'required_total': 4, 'requirements': [],
+                   'reasons': ['Some requirements need checking; excluded unresolved units are listed separately.',
+                               '2 requirement(s) not clearly required or preferred'],
+                   'excluded_units': [{'unit_id': 'U05', 'text': 'Structured data experience'}]}
+    assert reason_texts(provisional) == ['Beberapa syarat perlu dicek dan tidak dihitung di skor: '
+                                         'Structured data experience',
+                                         '2 syarat belum jelas wajib atau nilai tambah.']
+    assert 'Kenapa skornya sementara' in coverage_html(provisional)
+
+
+def test_the_requirement_behind_a_hold_is_marked_in_its_row():
+    import sys as _sys
+    _sys.path.insert(0, str(ROOT / 'ui'))
+    from components import requirement_html
+    row = {'unit_id': 'U04', 'requirement': 'Intermediate statistics', 'importance': 'required', 'cv_quotes': []}
+    assert 'jf-flagged' in requirement_html(row, 'NO_MATCH', True)
+    assert 'jf-flagged' not in requirement_html(row, 'NO_MATCH')
+
+
+def test_the_ui_follows_the_api_session_analysis_limit(monkeypatch):
+    from streamlit.testing.v1 import AppTest
+    Recorder.calls, Recorder.lose_next_analyze, Recorder.poll_running_once = [], False, set()
+
+    class Ten(Fake):
+        def health(self):
+            return {'analyzed_k': 10, 'live_storage_ready': True, 'analysis_limit': 10}
+    fake_module = types.ModuleType('api_client')
+    fake_module.ApiClient, fake_module.ApiError = Ten, ApiError
+    monkeypatch.setitem(sys.modules, 'api_client', fake_module)
+    at = AppTest.from_file(str(ROOT / 'ui/streamlit_app.py'), default_timeout=60).run()
+    assert '10 cek kecocokan per sesi' in page_text(at)
+    upload_and_parse(at)
+    find_jobs(at)
+    for job in ('J1', 'J2', 'J3'):
+        at.button(key=f'analyze_{job}').click().run()
+        at.button(key='analysis_back').click().run()
+    assert not at.button(key='analyze_J4').disabled                             # past the default of 3
+    assert 'Sisa 7 dari 10 cek kecocokan' in page_text(at)

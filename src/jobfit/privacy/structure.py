@@ -94,18 +94,30 @@ class Structured:
     removed: dict = field(default_factory=dict)
 
 
-def split_structure(text: str) -> Structured:
-    """Apply the D-104 boundary to normalized text; raise SanitizeRefused when no start exists."""
+def split_structure(text: str, *, keep_lead: bool = False) -> Structured:
+    """Apply the D-104 boundary to normalized text; raise SanitizeRefused when no start exists.
+
+    ``keep_lead`` (edits of an already sanitized preview only): the identity header was removed at upload,
+    so the lines before the first recognised heading are kept instead of being treated as a header; the
+    caller decides with the backstops whether they still look like identity data. Summary and privacy
+    sections are dropped as usual, and at least one evidence heading is still required.
+    """
     lines = text.split('\n')
     kinds = [classify(line) for line in lines]
     summary_at = next((i for i, k in enumerate(kinds) if k == 'summary'), None)
-    search_from = 0 if summary_at is None else summary_at + 1
-    start = next((i for i in range(search_from, len(lines)) if kinds[i] == 'evidence'), None)
-    if start is None:
-        raise SanitizeRefused(BOUNDARY_NOT_FOUND)
-    removed = {'header_lines': sum(1 for line in lines[:summary_at if summary_at is not None else start]
-                                   if line.strip()),
-               'summary_sections': int(summary_at is not None)}
+    if keep_lead:
+        if 'evidence' not in kinds:
+            raise SanitizeRefused(BOUNDARY_NOT_FOUND)
+        start = 0
+        removed = {'header_lines': 0, 'summary_sections': 0}
+    else:
+        search_from = 0 if summary_at is None else summary_at + 1
+        start = next((i for i in range(search_from, len(lines)) if kinds[i] == 'evidence'), None)
+        if start is None:
+            raise SanitizeRefused(BOUNDARY_NOT_FOUND)
+        removed = {'header_lines': sum(1 for line in lines[:summary_at if summary_at is not None else start]
+                                       if line.strip()),
+                   'summary_sections': int(summary_at is not None)}
     retained, dropping = [], False
     for line, kind in zip(lines[start:], kinds[start:]):
         if kind == 'summary' or kind == 'privacy':

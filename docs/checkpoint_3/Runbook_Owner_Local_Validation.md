@@ -92,27 +92,27 @@ It runs on the production runtime, owner-only, with the public beta closed.
    ```
    The health check needs `"real_cv_enabled": true`. A request without the internal token gets 401.
 9. **Open the browser** at <http://127.0.0.1:8511>.
-10. **Upload one real CV** (PDF, DOCX or text).
+10. **Upload one real CV** (PDF, DOCX or text): Home → **Unggah CV**. The UI is Indonesian by default; **EN** in the header switches the copy without touching the session.
 11. **Check the sanitized preview.**
     - Name, contact details, Summary/profile and privacy-only sections (references, interests, organizations and similar) are gone or masked.
     - The text starts at a professional section.
-    - Correct anything missed and press "Use my corrected text"; it is sanitized again.
+    - Correct anything missed with **Edit teks** → **Simpan & cek lagi**; it is sanitized again.
 12. **Consent.** Tick the agreement box. This makes no call.
-13. **Parse.** Press **Continue: analyze my CV** (one paid parse), wait for the status, and expect **CV ready**.
-14. **Find Jobs.**
+13. **Parse.** Press **Lanjutkan** (one paid parse), wait on the stage screen, and expect **CV kamu siap**.
+14. **Find Jobs** (**Cari Lowongan**).
     - With all filters on Any: Relevant Jobs, in search-relevance order, with no score.
     - Then one filtered search (for example a role family or experience requirement). The results narrow, and nothing is widened.
-    - Then **Refine these results**: changing it changes "Showing X of Y" with no new request (the API log shows no new call).
-15. **Analyze Fit for one chosen job** (one paid `job_analysis`).
-    - Optionally confirm "My CV lists my complete work history" first.
+    - Then **Saring hasil**: changing it changes "Menampilkan X dari Y lowongan" with no new request (the API log shows no new call).
+15. **Analyze Fit for one chosen job** (**Cek kecocokan**, one paid `job_analysis`). The result opens on its own screen; **Kembali ke hasil** returns to the list, where the job shows **Lihat hasil cek** (no new request).
+    - Optionally confirm "CV ini memuat seluruh riwayat kerja saya" first.
     - Check the evidence coverage (not a hiring probability), the per-requirement MATCH/PARTIAL/NO_MATCH with exact quotes, the strengths and gaps, and any experience conflict.
-16. **Improve My CV for This Job.**
+16. **Improve My CV for This Job** (**Perkuat CV**).
     - A shows only your existing evidence plus fixed guidance.
     - B asks about missing items; a bullet is built only from your answers.
     - C lists confirmed conflicts only.
     - "Not verified" lists years, location or work-permit items your CV does not establish.
-17. **Check a Job.** Paste a real job description (at least 200 characters) and press Analyze Fit (one paid `job_analysis`). You get the same result view and the same coach.
-18. **Delete the session** with "Hentikan & hapus sesi" in the sidebar. The page starts empty, and the server session is gone.
+17. **Check a Job** (**Cek Lowongan**). Paste a real job description (at least 200 characters) and press **Cek kecocokan** (one paid `job_analysis`). You get the same result view and the same coach.
+18. **Delete the session** with **Hapus sesi** in the header, then confirm **Hentikan & hapus sesi**. The page shows "Sesi sudah dihapus", and the server session is gone.
 19. **Inspect local budget and ledger evidence.**
     ```sh
     $C exec api sh -c 'tail -n 5 /var/lib/jobfit/ledger/usage_ledger.jsonl; tail -n 5 /var/lib/jobfit/ledger/usage_ledger.jsonl.intents.jsonl'

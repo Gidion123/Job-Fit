@@ -1,0 +1,3 @@
+IBMPlexSans.ttf: IBM Plex Sans (variable, version 3.201), Copyright © 2017 IBM Corp.
+Licensed under the SIL Open Font License, Version 1.1 (https://openfontlicense.org).
+Bundled unmodified so the UI never loads fonts from a third-party server.

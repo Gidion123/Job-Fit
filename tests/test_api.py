@@ -182,3 +182,17 @@ def test_live_switched_off_is_refused_before_any_run():
     assert c.get('/health').json()['live_enabled'] is False
     assert c.post('/recommendations', json={'demo_cv_id': 'CV1', 'mode': 'live'}, headers=h).status_code == 503
     assert not deps_called
+
+
+def test_the_session_analysis_limit_defaults_to_3_and_is_configurable(monkeypatch):
+    import pytest as _pytest
+    from jobfit.api.main import SESSION_ANALYSIS_LIMIT_ENV
+    monkeypatch.delenv(SESSION_ANALYSIS_LIMIT_ENV, raising=False)
+    client, _ = make()
+    assert client.get('/health').json()['analysis_limit'] == 3
+    monkeypatch.setenv(SESSION_ANALYSIS_LIMIT_ENV, '10')
+    client, _ = make()
+    assert client.get('/health').json()['analysis_limit'] == 10
+    monkeypatch.setenv(SESSION_ANALYSIS_LIMIT_ENV, '0')
+    with _pytest.raises(ValueError):
+        make()

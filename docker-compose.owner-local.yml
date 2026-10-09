@@ -40,6 +40,7 @@ services:
       JOBFIT_LIVE_ENABLED: "1"
       JOBFIT_PUBLIC_LIVE: "0"
       JOBFIT_REAL_CV_ENABLED: "1"
+      JOBFIT_SESSION_ANALYSIS_LIMIT: "10"     # owner demo: 10 Analyze Fit per session (public default stays 3)
       DATABASE_URL: postgresql://jobfit:jobfit@db:5432/jobfit
       JOBFIT_USAGE_LEDGER: /var/lib/jobfit/ledger/usage_ledger.jsonl
       OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:?set OPENROUTER_API_KEY in your env file}

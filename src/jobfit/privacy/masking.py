@@ -365,18 +365,42 @@ def _apply(text: str, spans) -> tuple[str, dict[str, int]]:
     return ''.join(pieces), counts
 
 
-def sanitize_upload(text: str, *, marks: OwnerMarks | None = None) -> MaskedPreview:
+def _lead(text: str) -> str:
+    """The lines before the first recognised heading of any kind."""
+    from jobfit.privacy.structure import classify
+    lead = []
+    for line in text.split('\n'):
+        if classify(line) is not None:
+            break
+        lead.append(line)
+    return '\n'.join(lead)
+
+
+def sanitize_upload(text: str, *, marks: OwnerMarks | None = None, edited: bool = False) -> MaskedPreview:
     """D-104 sanitizer for uploaded or edited CV text. Raises `SanitizeRefused` (fixed code) to fail closed.
 
     `marks` are the owner fingerprints kept from the upload, so an edit that reintroduces the name
     is masked again. The returned preview carries the (possibly extended) marks; never the raw header.
+
+    `edited`: the text is the user's correction of an already sanitized preview. Its identity header was
+    removed at upload, so text before the first recognised heading (for example a first section whose
+    heading the user reworded, such as "TECHNICAL SKILLS & TOOLS") is kept rather than silently dropped,
+    unless it still looks like identity data (a contact pattern, an address or the owner's name), in which
+    case the upload boundary applies as before.
     """
     from jobfit.privacy.structure import MASKING_FAILED, SanitizeRefused, normalize_source, split_structure
     if not isinstance(text, str) or (marks is not None and not isinstance(marks, OwnerMarks)):
         raise SanitizeRefused(MASKING_FAILED)
     failed = False
     try:
-        structured = split_structure(normalize_source(text))
+        source = normalize_source(text)
+        structured = split_structure(source)
+        if edited:
+            lead = _lead(source)
+            identity = (_pattern_spans(lead) or _address_spans(lead) or _owner_spans(lead, marks)
+                        or _label_spans(lead) or owner_values(lead))
+            if not identity:                             # also a Summary added later: drop only that block
+                structured = split_structure(source, keep_lead=True)
         owner = (marks if marks is not None else OwnerMarks()).extended(owner_values(structured.header))
         retained = structured.retained
         spans = _pattern_spans(retained) + _owner_spans(retained, owner) + _label_spans(retained) + \

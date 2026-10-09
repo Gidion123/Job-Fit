@@ -7,8 +7,10 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     JOBFIT_API_URL=http://api:8000
 
 WORKDIR /app
-RUN pip install "streamlit>=1.40" "httpx>=0.27"   # st.fragment(run_every) and bar_chart(horizontal) need 1.40+
+RUN pip install "streamlit>=1.64,<2" "httpx>=0.27"   # UI v3 needs horizontal containers, st.space and icon_position
 COPY ui/ ui/
+# Theme, static font serving (ui/static) and the 5 MB upload limit.
+COPY .streamlit/ .streamlit/
 RUN chmod -R a+rX /app && useradd --create-home jobfit
 USER jobfit
 

@@ -81,7 +81,8 @@ def test_upload_is_masked_locally_and_real_cv_processing_stays_off():
     client, headers = make()
     text = b'Rina Putri\nrina@example.com +62 812-3456-7890\nExperience\nPython analyst 2025'
     up = client.post('/cv/upload', files={'file': ('cv.txt', text, 'text/plain')}, headers=headers).json()
-    assert 'rina@example.com' not in up['masked_text'] and '[EMAIL]' in up['masked_text']
+    assert 'rina@example.com' not in up['masked_text'] and 'Rina Putri' not in up['masked_text']  # header removed
+    assert up['masked_text'].startswith('Experience') and up['removed']['header_lines'] == 2
     assert up['provider_processing'] == 'disabled' and up['message'] == REAL_CV_MESSAGE
     ok = client.post('/cv/consent', json={'digest': up['digest'], 'affirmative': True}, headers=headers).json()
     assert ok['provider_processing'] == 'disabled'

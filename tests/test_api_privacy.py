@@ -55,11 +55,11 @@ def test_pr01_direct_identifiers_masked_and_name_limit_disclosed():
     client, _, _ = app()
     up = client.post('/cv/upload', files={'file': ('cv.txt', UPLOAD)}, headers=session(client)).json()
     text = up['masked_text']
-    for raw in ('sari.contoh@example.com', '812-3456-7890', 'linkedin.com/in/sari-contoh'):
-        assert raw not in text
-    assert {'email', 'phone', 'profile'} <= set(up['masked_counts'])
+    for raw in ('Sari Contoh', CANARY, 'sari.contoh@example.com', '812-3456-7890', 'linkedin.com/in/sari-contoh'):
+        assert raw not in text                                          # D-104: the identity header is removed
+    assert up['removed']['header_lines'] == 2 and text.startswith('Pengalaman')
     assert 'Python, SQL' in text and '2025 - sekarang' in text          # professional evidence kept
-    assert any('may miss identifiers' in w for w in up['warnings'])       # names need reviewed hints
+    assert any('can miss things' in w for w in up['warnings'])           # the limits are disclosed
 
 
 def test_pr02_upload_and_consent_never_start_a_provider_run():

@@ -19,7 +19,7 @@ import pytest
 
 from jobfit.cv import upload_guard as ug
 from jobfit.cv.text_extract import extract_text
-from jobfit.privacy.masking import mask_local
+from jobfit.privacy.masking import sanitize_upload
 from tests.test_api_privacy import CANARY, app, session
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -72,7 +72,8 @@ def pdf_bytes(pages=1, encrypt=False):
     import pymupdf
     doc = pymupdf.open()
     for i in range(pages):
-        doc.new_page().insert_text((72, 72), f'Page {i + 1}: Data Analyst with Python and SQL experience.')
+        heading = 'Experience\n' if i == 0 else ''        # an evidence heading, so the D-104 preview has a start
+        doc.new_page().insert_text((72, 72), f'{heading}Page {i + 1}: Data Analyst with Python and SQL experience.')
     kw = dict(encryption=pymupdf.PDF_ENCRYPT_AES_256, owner_pw='owner', user_pw='user') if encrypt else {}
     data = doc.tobytes(**kw)
     doc.close()
@@ -92,7 +93,7 @@ def test_a_valid_file_of_each_type_gives_the_same_masked_preview(name, data):
     client, _, calls = app()
     r = post(client, session(client), name, data)
     assert r.status_code == 200, r.text
-    assert r.json()['masked_text'] == mask_local(extract_text(data, name).text).text
+    assert r.json()['masked_text'] == sanitize_upload(extract_text(data, name).text).text   # D-104 v2 preview
     assert calls == []
 
 
@@ -304,10 +305,10 @@ def test_bad_text_files_are_refused(name, data, code):
 def test_a_bom_is_accepted_and_long_text_is_refused_never_truncated():
     client, _, _ = app()
     h = session(client)
-    assert post(client, h, 'cv.txt', '\ufeffData Analyst, Python 2025'.encode()).status_code == 200
+    assert post(client, h, 'cv.txt', '\ufeffExperience\nData Analyst, Python 2025'.encode()).status_code == 200
     from jobfit.cv.text_extract import MAX_CHARACTERS
     assert MAX_CHARACTERS == 100_000
-    assert post(client, h, 'cv.txt', b'a' * MAX_CHARACTERS).status_code == 200
+    assert post(client, h, 'cv.txt', b'Skills\n' + b'a' * (MAX_CHARACTERS - 7)).status_code == 200
     assert rejected(post(client, h, 'cv.txt', b'a' * (MAX_CHARACTERS + 1)), 'text_too_long')
 
 

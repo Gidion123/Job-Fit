@@ -481,6 +481,15 @@ HARD_GATES = {
 }
 
 
+# The API-phase gates are proven by these commit-3 tests (provider spies and the sink sweep), not by the
+# text calibration; calibration receipts keep them as NOT_APPLICABLE_YET.
+API_GATE_TESTS = {
+    'no_summary_in_provider_payload':
+        'tests/test_fail37_api_privacy.py::test_no_summary_or_raw_canary_reaches_any_provider_payload',
+    'raw_canary_sinks_zero': 'tests/test_fail37_api_privacy.py::test_raw_canary_sinks_zero_across_the_full_flow',
+}
+
+
 def gate_table(results: list[CaseResult], *, v1_golden_ok: bool | None = None) -> dict:
     gated = [r for r in results if r.case.gated]
     table = {}

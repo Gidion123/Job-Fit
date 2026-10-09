@@ -48,13 +48,16 @@ import threading
 import time
 
 from fastapi import Depends, FastAPI, Header, HTTPException, Request
+from fastapi.exception_handlers import request_validation_exception_handler
+from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from starlette.concurrency import run_in_threadpool
 
 from jobfit.api.presenter import SEARCH_STAGE_LABEL, analyzed_job, job_card, recommendation, retrieval_card
 from jobfit.cv import upload_guard
 from jobfit.cv.parser import ParsedCV
-from jobfit.privacy.masking import mask_local
+from jobfit.privacy.masking import VERSION_V2, sanitize_upload
+from jobfit.privacy.structure import SanitizeRefused
 from jobfit.schemas.api import (AnalyzeRequest, CoachAnswer, ConsentRequest, FeedbackRequest, JobAnalyzeRequest,
                                 MarketQuery, PasteRequest, PreviewEdit, RunRequest, SearchRequest, TailorRequest)
 from jobfit.search.filters import JobFilters
@@ -64,8 +67,16 @@ from jobfit.support.cv_suggestions import suggestions
 from jobfit.support.market_insight import skill_counts
 
 log = logging.getLogger('jobfit.api')
-REAL_CV_MESSAGE = ('Analysis of uploaded CVs is not enabled yet. Masking, preview and consent work, but the '
-                   'provider privacy checks (D-051) are still open. Use a demo CV for now.')
+REAL_CV_MESSAGE = ('Live analysis of uploaded CVs is not enabled yet: the remaining release and activation checks '
+                   'are still pending. Masking, preview and consent work, and nothing is sent to an AI provider. '
+                   'Use a demo CV for now.')
+# D-104 fail-closed preview refusals: fixed codes and messages, never exception or CV text.
+SANITIZE_REFUSALS = {
+    'professional_boundary_not_found': ('No recognised CV section (for example Experience, Skills, Projects or '
+                                        'Education) was found, so nothing can be prepared for analysis. Nothing '
+                                        'was sent anywhere.'),
+    'masking_failed': 'The text could not be prepared safely. Nothing was sent anywhere.',
+}
 LIVE_OFF_MESSAGE = 'Live analysis is switched off in this deployment. Use the saved demo.'
 PUBLIC_LIVE_OFF_MESSAGE = 'Public live analysis is not enabled yet. Use the saved demo.'
 ANALYZE_CLOSED_MESSAGE = 'Pasted job descriptions cannot be analyzed live in this deployment yet.'
@@ -326,26 +337,70 @@ def create_app(deps: AppDeps) -> FastAPI:
                 return upload_guard.rejection_response(exc.code)
             finally:
                 del data   # original bytes are not kept (D-051 section 2.7)
-            return _set_preview(h, text.text, list(text.warnings), text.layout)
+            return _set_preview(h, text.text, list(text.warnings), text.layout, upload=True)
         finally:
             upload_slot.release()
 
-    def _set_preview(h: SessionHandle, raw: str, warnings: list, layout: str | None) -> dict:
-        try:
-            preview = mask_local(raw)
-        except ValueError:
-            raise HTTPException(422, 'No usable text after masking; nothing was sent anywhere')
-        try:
-            deps.store.set_preview(h, preview)       # clears consent, the parsed CV and search results
-        except SessionDenied:
-            raise HTTPException(401, 'Session unavailable')
+    def _drop_real_runs(h: SessionHandle) -> None:
         with lock:                                   # results derived from the earlier CV are dropped
             for key in [k for k, r in runs.items() if r.owner == h.session_id and r.real]:
                 runs.pop(key)
+
+    def _set_preview(h: SessionHandle, raw: str, warnings: list, layout: str | None, *, upload: bool):
+        """D-104: every upload and every edit goes through the full structural sanitizer (v2).
+
+        An upload starts with fresh owner marks; an edit re-sanitizes with the stored marks, so a name or
+        handle the user types back in is masked again. A refusal fails closed: the preview, consent and all
+        derived state are invalidated, a failed fresh upload also clears the previous upload's owner marks,
+        and a fixed code is returned. Owner marks never leave the session store.
+        """
+        try:
+            marks = None if upload else deps.store.owner_marks(h)
+            try:
+                preview = sanitize_upload(raw, marks=marks)
+            except SanitizeRefused as exc:
+                deps.store.invalidate_preview(h, clear_owner_marks=upload)
+                _drop_real_runs(h)
+                code = exc.code if exc.code in SANITIZE_REFUSALS else 'masking_failed'
+                return JSONResponse({'detail': SANITIZE_REFUSALS[code], 'code': code}, status_code=422)
+            deps.store.set_preview(h, preview)       # clears consent and derived data; replaces the owner marks
+        except SessionDenied:
+            raise HTTPException(401, 'Session unavailable') from None
+        _drop_real_runs(h)
         return {'masked_text': preview.text, 'digest': preview.digest, 'masked_counts': preview.counts,
+                'removed': dict(preview.removed), 'owner_repeat_guard': preview.owner_repeat_guard,
                 'warnings': warnings + list(preview.warnings), 'layout': layout,
                 'provider_processing': 'enabled' if deps.real_cv_enabled else 'disabled',
                 'message': None if deps.real_cv_enabled else REAL_CV_MESSAGE}
+
+    @app.exception_handler(RequestValidationError)
+    async def invalid_request(request: Request, exc: RequestValidationError):
+        """An invalid preview edit never echoes the submitted text (FastAPI's default 422 does).
+
+        Text that is not valid Unicode cannot reach the sanitizer, so it fails closed like a masking failure:
+        the current preview, consent and derived state are invalidated (a failed edit keeps the owner marks).
+        Every other route, and every non-body error here (missing session headers), keeps the default handler; body
+        errors are never handed to it, so their `input` (the CV text) never reaches a response.
+        """
+        if request.method != 'POST' or request.url.path != '/cv/preview':
+            return await request_validation_exception_handler(request, exc)
+        body_errors = [e for e in exc.errors() if tuple(e.get('loc', ()))[:1] == ('body',)]
+        other_errors = [e for e in exc.errors() if tuple(e.get('loc', ()))[:1] != ('body',)]
+        if not body_errors:
+            return await request_validation_exception_handler(request, exc)
+        if other_errors:
+            return await request_validation_exception_handler(request, RequestValidationError(other_errors, body=None))
+        if any(error.get('type') == 'string_unicode' for error in body_errors):
+            try:
+                h = _auth(request.headers.get('x-session-id', ''), request.headers.get('x-session-token', ''), True)
+                deps.store.invalidate_preview(h, clear_owner_marks=False)
+                _drop_real_runs(h)
+            except (HTTPException, SessionDenied):
+                return JSONResponse({'detail': 'Session unavailable'}, status_code=401)
+            return JSONResponse({'detail': SANITIZE_REFUSALS['masking_failed'], 'code': 'masking_failed'},
+                                status_code=422)
+        return JSONResponse({'detail': 'The edited text must be 1 to 100,000 characters of text.',
+                             'code': 'preview_invalid'}, status_code=422)
 
     @app.post('/cv/preview')
     def edit_preview(body: PreviewEdit, request: Request, h: SessionHandle = Depends(handle)):
@@ -353,7 +408,8 @@ def create_app(deps: AppDeps) -> FastAPI:
         code = count_preview(request, h)
         if code is not None:
             return upload_guard.rejection_response(code)
-        return _set_preview(h, body.text, ['Edited by the user; earlier consent no longer applies.'], 'edited')
+        return _set_preview(h, body.text, ['Edited by the user; earlier consent no longer applies.'], 'edited',
+                            upload=False)
 
     @app.post('/cv/consent')
     def consent(body: ConsentRequest, h: SessionHandle = Depends(handle)):
@@ -370,8 +426,9 @@ def create_app(deps: AppDeps) -> FastAPI:
             raise HTTPException(403, REAL_CV_MESSAGE)
 
     def consented_lease(h: SessionHandle):
+        """Only a consented D-104 (v2) sanitized preview can reach a real-CV provider operation."""
         try:
-            return deps.store.consented_lease(h)
+            return deps.store.consented_lease(h, masking_version=VERSION_V2)
         except SessionDenied:
             raise HTTPException(409, 'consent_required')
 

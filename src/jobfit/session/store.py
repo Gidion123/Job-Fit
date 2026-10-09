@@ -37,6 +37,7 @@ class _State:
     text_digest: str | None = None
     consent_digest: str | None = None
     masking_version: str | None = None
+    owner_marks: object | None = field(default=None, repr=False)   # D-104 volatile OwnerMarks; never serialized
     data: dict = field(default_factory=dict, repr=False)
 
 class SessionStore:
@@ -61,7 +62,7 @@ class SessionStore:
         state = self._states.pop(identity, None)
         if state:
             state.text = None; state.text_digest = None; state.consent_digest = None
-            state.data.clear(); state.generation += 1
+            state.owner_marks = None; state.data.clear(); state.generation += 1
 
     def _get(self, handle):
         state = self._states.get(handle.session_id)
@@ -86,6 +87,7 @@ class SessionStore:
             state = self._get(handle)
             state.generation += 1; state.data.clear(); state.consent_digest = None
             state.text = preview.text; state.text_digest = preview.digest; state.masking_version = preview.version
+            state.owner_marks = getattr(preview, 'marks', None)    # always replaced: stale marks never survive
             state.activity = self.clock()
             return Lease(handle.session_id, state.generation, preview.digest)
 
@@ -102,16 +104,37 @@ class SessionStore:
             state.consent_digest = exact_digest; state.activity = self.clock()
             return Lease(handle.session_id, state.generation, exact_digest)
 
-    def consented_lease(self, handle):
+    def consented_lease(self, handle, *, masking_version=None):
         """The current consent lease, rebuilt server-side; never sent to the browser (CP3).
 
-        Valid only while the stored consent covers the current preview generation and digest.
+        Valid only while the stored consent covers the current preview generation and digest, and, when
+        ``masking_version`` is given, only for a preview produced by that masking version (D-104).
         """
         with self._lock:
             state = self._get(handle)
             if not state.text or state.consent_digest is None or state.consent_digest != state.text_digest:
                 raise SessionDenied('Affirmative consent for the current preview required')
+            if masking_version is not None and state.masking_version != masking_version:
+                raise SessionDenied('Affirmative consent for the current preview required')
             return Lease(handle.session_id, state.generation, state.consent_digest)
+
+    def owner_marks(self, handle):
+        """The volatile D-104 owner fingerprints of the latest upload (None when there are none)."""
+        with self._lock:
+            return self._get(handle).owner_marks
+
+    def invalidate_preview(self, handle, *, clear_owner_marks):
+        """Fail closed after a refused preview: no text, no consent, no derived state.
+
+        A failed edit keeps the owner marks of the current upload; a failed fresh upload clears them.
+        """
+        with self._lock:
+            state = self._get(handle)
+            state.generation += 1; state.data.clear()
+            state.text = None; state.text_digest = None; state.consent_digest = None; state.masking_version = None
+            if clear_owner_marks:
+                state.owner_marks = None
+            state.activity = self.clock()
 
     def _authorized(self, handle, lease):
         state = self._get(handle)

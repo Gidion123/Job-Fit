@@ -31,6 +31,13 @@ def action_fingerprint(cv_identity: str, seniority: bool, filters: dict | None) 
     return hashlib.sha256(json.dumps(canon, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
 
 
+def fingerprint(kind: str, **ids) -> str:
+    """Generic action identity (D-105) from non-sensitive ids only: the consented-CV digest, a job id, an
+    opaque paste id, canonical filters, the history flag. Never CV or JD text."""
+    canon = {'kind': kind, **{k: ids[k] for k in sorted(ids)}}
+    return hashlib.sha256(json.dumps(canon, sort_keys=True, separators=(',', ':'), default=str).encode()).hexdigest()
+
+
 class LiveActions:
     """Kept in st.session_state. Polling never touches it."""
 

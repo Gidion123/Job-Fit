@@ -289,6 +289,17 @@ def v1_adapter(text: str, marks=None):
         raise Refused('masking_failed') from None
 
 
+def v2_adapter(text: str, marks=None):
+    """The D-104 sanitizer (`sanitize_upload`), on tag-stripped source text; marks carry over to edits."""
+    from jobfit.privacy.masking import sanitize_upload
+    from jobfit.privacy.structure import SanitizeRefused
+    try:
+        preview = sanitize_upload(text, marks=marks)
+    except SanitizeRefused as exc:
+        raise Refused(exc.code) from None
+    return preview.text, preview.marks
+
+
 def identity_adapter(text: str, marks=None):
     return text, None
 
@@ -528,30 +539,42 @@ def v1_golden_ok(dev_cases: list[Case]) -> bool:
 
 # --- holdout discipline -----------------------------------------------------------------------------------
 
-# Detectors allowed to run on the locked holdout. Empty in commit 1: v1 and any detector are refused.
-# Commit 2 may add the D-104 sanitizer for its single post-implementation run.
-HOLDOUT_RUN_ALLOWED: frozenset[str] = frozenset()
+# Only the D-104 sanitizer may run on the locked holdout, and only as the explicit single
+# post-implementation run (commit 2). v1, identity and the oracle receipts are always refused.
+HOLDOUT_RUN_ALLOWED: frozenset[str] = frozenset({'v2'})
+SANITIZER_SOURCES = ('src/jobfit/privacy/structure.py', 'src/jobfit/privacy/masking.py')
 
 
-def check_holdout_run(set_name: str, adapter_name: str) -> None:
-    if set_name != 'dev' and adapter_name not in HOLDOUT_RUN_ALLOWED:
+def check_holdout_run(set_name: str, adapter_name: str, single_run: bool = False) -> None:
+    if set_name != 'dev' and (adapter_name not in HOLDOUT_RUN_ALLOWED or not single_run):
         raise PermissionError(f'{adapter_name!r} may not run on the locked holdout {set_name!r}')
+
+
+def sanitizer_sha256() -> str:
+    """Identity of the sanitizer source a v2 receipt was produced with."""
+    digest = hashlib.sha256()
+    for rel in SANITIZER_SOURCES:
+        digest.update((REPO_ROOT / rel).read_bytes())
+    return digest.hexdigest()
 
 
 # --- receipts (counts and ids only; never text) -----------------------------------------------------------
 
-def build_receipt(set_name: str, adapter_name: str, adapter, *, date: str) -> dict:
-    check_holdout_run(set_name, adapter_name)
+def build_receipt(set_name: str, adapter_name: str, adapter, *, date: str, single_run: bool = False) -> dict:
+    check_holdout_run(set_name, adapter_name, single_run)
     cases = load_cases(set_name)
     results = evaluate(cases, adapter)
-    golden = v1_golden_ok(load_cases('dev')) if adapter_name == 'v1' else None
+    golden = v1_golden_ok(load_cases('dev')) if adapter_name in ('v1', 'v2') else None
     categories: dict[str, dict] = {}
     for r in results:
         c = categories.setdefault(r.case.category, {'total': 0, 'correct': 0})
         c['total'] += 1
         c['correct'] += int(r.correct)
     residual = [r for r in results if not r.case.gated]
-    return {
+    extra = {'sanitizer_sha256': sanitizer_sha256()} if adapter_name == 'v2' else {}
+    if set_name != 'dev':
+        extra['holdout_run'] = 'first_pass'
+    return {**extra,
         'receipt': 'fail37-structural-calibration',
         'schema': SCHEMA, 'harness': HARNESS_VERSION, 'normalization': NORMALIZATION,
         'date': date, 'set': set_name, 'fixture_sha256': sha256_file(fixture_path(set_name)),

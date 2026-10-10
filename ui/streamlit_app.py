@@ -37,7 +37,7 @@ st.set_page_config(page_title='JobFit — Bukti, bukan tebakan', page_icon=':mat
                    initial_sidebar_state='collapsed')
 inject()
 POLL_SECONDS = 1.5
-MAX_ANALYSES = 3                        # default; the API's /health analysis_limit wins
+MAX_ANALYSES = 10                       # default; the API's /health analysis_limit wins
 MIN_JD_CHARS = 200                      # the API's MIN_PASTE_CHARS
 # Everything derived from the current uploaded CV; cleared whenever the CV (its digest) changes.
 CV_STATE = ('cv_ready', 'parse_run', 'parse_result', 'consented_digest', 'search', 'analyses', 'selected_job',

@@ -209,13 +209,14 @@ def test_an_edit_after_the_parse_refuses_the_search_with_no_call(db, tmp_path):
 def test_the_real_parse_consumes_the_ticket_and_only_consumed_opens_the_allowance(db, tmp_path, outcome):
     rt, store, allowances = runtime(db, tmp_path / 'root', fake_sdk()), SessionStore(), BetaAllowances()
     h, lease = consented(store)
-    if outcome == 'refused':
-        assert quota_mod.consume_ticket(lambda: conn_for(db), HMAC) == 'consumed'
+    if outcome == 'refused':                                     # the IP already used all its tickets today
+        for _ in range(quota_mod.TICKETS_PER_IP_PER_DAY):
+            assert quota_mod.consume_ticket(lambda: conn_for(db), HMAC) == 'consumed'
     op = key()
     claim = allowances.claim(h.session_id, 'parse', op, lambda: quota_mod.consume_ticket(lambda: conn_for(db), HMAC))
     if outcome == 'consumed':
         parse(rt, store, h, lease, op=op, quota=claim.quota, on_first_intent=claim.on_first_intent)
-        assert allowances.remaining(h.session_id) == {'parse': 0, 'search': 1, 'job_analysis': 3}
+        assert allowances.remaining(h.session_id) == {'parse': 0, 'search': 1, 'job_analysis': 10}
         assert len(rt.sdk.calls) == 1
     else:
         from jobfit.live.operation import LiveRefused

@@ -161,7 +161,7 @@ class Fake(ApiClient):
     def search_jobs(self, filters, action_key):
         self._rec('search_jobs', dict(filters), action_key)
         return {'stage': 'retrieval', 'final_order': False, 'label': 'Relevant jobs (search stage).',
-                'analysis_limit': 3, 'cv_source': 'upload', 'analysis_date': DAY, 'jobs': [dict(c) for c in CARDS]}
+                'analysis_limit': 10, 'cv_source': 'upload', 'analysis_date': DAY, 'jobs': [dict(c) for c in CARDS]}
 
     def analyze_job(self, job_id, history_confirmed, action_key):
         self._rec('analyze_job', job_id, history_confirmed, action_key)
@@ -405,7 +405,7 @@ def test_check_a_job_reuses_the_history_answer_and_a_new_cv_resets_everything(ap
     assert not at.exception
     assert names('analyze_job')[-1][1][1] is True and names('analyze_pasted')[-1][1][1] is True
     assert at.session_state['page'] == 'analysis' and at.session_state['return_to'] == 'check'
-    assert 'Sisa 1 dari 3 cek kecocokan' in page_text(at)
+    assert 'Sisa 8 dari 10 cek kecocokan' in page_text(at)
     # CV B: nothing from CV A stays visible and the confirmation resets to False
     at.button(key='nav_cv').click().run()
     at.button(key='ready_replace').click().run()
@@ -682,8 +682,17 @@ def test_show_analyze_fit_result_switches_at_once_without_a_post(app):
     assert len(names('analyze_job')) == 2 and [c[1][2] for c in names('analyze_job')] == keys
 
 
-def test_the_quota_disables_analyze_fit_after_three(app):
-    at = app
+def test_the_quota_disables_analyze_fit_at_the_api_limit(monkeypatch):
+    from streamlit.testing.v1 import AppTest
+    Recorder.calls, Recorder.lose_next_analyze, Recorder.poll_running_once = [], False, set()
+
+    class Three(Fake):
+        def health(self):
+            return {'analyzed_k': 10, 'live_storage_ready': True, 'analysis_limit': 3}
+    fake_module = types.ModuleType('api_client')
+    fake_module.ApiClient, fake_module.ApiError = Three, ApiError
+    monkeypatch.setitem(sys.modules, 'api_client', fake_module)
+    at = AppTest.from_file(str(ROOT / 'ui/streamlit_app.py'), default_timeout=60).run()
     upload_and_parse(at)
     find_jobs(at)
     for job in ('J1', 'J2', 'J3'):
@@ -780,7 +789,7 @@ def test_the_ui_follows_the_api_session_analysis_limit(monkeypatch):
     for job in ('J1', 'J2', 'J3'):
         at.button(key=f'analyze_{job}').click().run()
         at.button(key='analysis_back').click().run()
-    assert not at.button(key='analyze_J4').disabled                             # past the default of 3
+    assert not at.button(key='analyze_J4').disabled
     assert 'Sisa 7 dari 10 cek kecocokan' in page_text(at)
 
 

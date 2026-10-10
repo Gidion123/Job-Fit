@@ -2,7 +2,7 @@
 
 Goal: a mentor opens `https://jobfit-demo.duckdns.org`, passes Caddy Basic Auth, uploads a CV, reviews the sanitized text, consents, and runs parse → Find Jobs → Analyze Fit with live LLM calls. No SSH tunnel, no owner token in the public UI.
 
-`docker-compose.public-live.yml` overrides `/opt/jobfit/docker-compose.prod.yml` (api and ui environment only). Non-owners are admitted only when `JOBFIT_PUBLIC_LIVE=1` **and** every gate in `jobfit.api.wiring.public_beta_open` holds: production runtime, live and uploaded-CV switches, every D-103 phase bound within the daily cap, and active metadata-only Langfuse (D-103). Per-IP tickets: 10 per IP per 24 h. Unchanged: session allowance (parse 1, search 1, job_analysis 3), US$5/day and US$25 lifetime budgets, ledger, ZDR (`data_collection: deny`), idempotency, the D-104 consent lease, internal-token API on `127.0.0.1` only.
+`docker-compose.public-live.yml` overrides `/opt/jobfit/docker-compose.prod.yml` (api and ui environment only). Non-owners are admitted only when `JOBFIT_PUBLIC_LIVE=1` **and** every gate in `jobfit.api.wiring.public_beta_open` holds: production runtime, live and uploaded-CV switches, every D-103 phase bound within the daily cap, and active metadata-only Langfuse (D-103). Per-IP tickets: 10 per IP per 24 h. Unchanged: session allowance (parse 1, search 1, job_analysis 10), US$5/day and US$25 lifetime budgets, ledger, ZDR (`data_collection: deny`), idempotency, the D-104 consent lease, internal-token API on `127.0.0.1` only.
 
 ## What is already validated locally (synthetic, no paid call)
 

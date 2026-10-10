@@ -20,7 +20,7 @@ $C up -d --build api ui ui-owner
 
 ## Check
 
-- Inside the API container, `/health` shows `"live_enabled":true,"real_cv_enabled":true,"live_storage_ready":true,"analysis_limit":3`.
+- Inside the API container, `/health` shows `"live_enabled":true,"real_cv_enabled":true,"live_storage_ready":true,"analysis_limit":10`.
 - Public site (Basic Auth): upload a synthetic CV. Consent stays disabled with "Analisis CV asli belum diaktifkan di demo ini"; Saved Demo still works.
 - Owner UI: `ssh -L 8511:127.0.0.1:8511 ubuntu@<vps>`, open `http://127.0.0.1:8511`, upload a **synthetic** CV, consent, Lanjutkan (paid parse), Find Jobs (paid query embedding), Cek kecocokan (paid analysis), Perkuat CV.
 - Grafana: API target up; cost panels move only after paid calls.

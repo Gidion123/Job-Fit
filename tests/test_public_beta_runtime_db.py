@@ -191,8 +191,8 @@ def test_a_proven_ticket_opens_the_allowance_and_a_restart_needs_one_of_the_ips_
     op = key()
     c = allowances.claim('s', 'parse', op, consume(db))
     rt.run('parse', op, parse_work, quota=c.quota, on_first_intent=c.on_first_intent)
-    assert allowances.remaining('s') == {'parse': 0, 'search': 1, 'job_analysis': 3}
-    for _ in range(3):
+    assert allowances.remaining('s') == {'parse': 0, 'search': 1, 'job_analysis': 10}
+    for _ in range(10):
         op = key()
         c = allowances.claim('s', 'job_analysis', op, consume(db))
         assert c.quota is None

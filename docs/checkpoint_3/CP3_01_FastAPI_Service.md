@@ -573,7 +573,7 @@ The deployed privacy release gate is still pending.
   - Cards carry `experience_bucket` and the filter-effective country (the frozen `_country` rule). The real search response carries `analysis_date` for zero-call local refinement. There is still no score at the search stage.
 - **Analyze Fit and Check a Job:**
   - They take `history_confirmed` (default False), bound into the idempotency action (`history` 0/1) and passed to the D-086 experience rule. Uploaded CVs no longer reuse the demo constant.
-  - The D-103 allowance is unchanged (parse 1 / search 1 / job_analysis 3 for the public beta). The owner may repeat searches during local validation.
+  - The D-103 allowance is unchanged (parse 1 / search 1 / job_analysis 10 for the public beta). The owner may repeat searches during local validation.
 - **Coach:** `/tailor` and `/tailor/answer` accept a finished Analyze Fit run. The job-specific response adds `representation` (A), `true_gaps` (C) and `not_verified` to the existing `gaps` (B), in mutually exclusive categories (`support/cv_coach.py`).
 - **Provider ZDR compatibility:** the owner's local run is the first live use of the ZDR routing for the frozen models. It is fail-closed by construction: a provider route without ZDR is refused, never silently downgraded. Public activation still needs the CP3.4 privacy release gate.
 

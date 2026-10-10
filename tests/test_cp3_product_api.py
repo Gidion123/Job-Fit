@@ -125,7 +125,7 @@ def test_the_experience_filter_is_part_of_the_search_action(tmp_path):
 def test_the_real_search_response_carries_the_refinement_date_and_card_metadata(tmp_path):
     client, _f, _deps, h = ready(tmp_path)
     body = search(client, h).json()
-    assert body['stage'] == 'retrieval' and body['final_order'] is False and body['analysis_limit'] == 3
+    assert body['stage'] == 'retrieval' and body['final_order'] is False and body['analysis_limit'] == 10
     assert len(body['analysis_date']) == 10
     for card in body['jobs']:
         assert card['match_score'] is None and 'experience_bucket' in card and 'score_pct' not in card

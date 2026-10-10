@@ -197,7 +197,7 @@ class SessionAllowances:
             return set(self._state)
 
 
-BETA_LIMITS = {'parse': 1, 'search': 1, 'job_analysis': 3}
+BETA_LIMITS = {'parse': 1, 'search': 1, 'job_analysis': 10}
 
 
 @dataclass(frozen=True)
@@ -225,7 +225,7 @@ class BetaAllowances:
     consumed at the first billable call of the session's first public operation. A session gets an
     allowance only when that consume returns a PROVEN 'consumed': 'refused', 'unavailable' and
     'unknown' create nothing, and the operation's own guard then stops it before any provider call.
-    With the allowance, the same session may run 1 parse, 1 search and up to 3 job_analysis
+    With the allowance, the same session may run 1 parse, 1 search and up to 10 job_analysis
     operations; an operation counts at its first durable provider intent and is never refunded after
     it. A restart loses the allowance; a new session then needs one of the IP's remaining tickets.
     """

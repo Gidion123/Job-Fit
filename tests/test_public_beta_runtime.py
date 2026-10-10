@@ -253,18 +253,19 @@ def claim(a, session, phase, op, outcome):
     return got
 
 
-def test_a_proven_consumed_ticket_opens_one_parse_one_search_and_three_job_analyses():
+def test_a_proven_consumed_ticket_opens_one_parse_one_search_and_ten_job_analyses():
     a = BetaAllowances()
-    assert BETA_LIMITS == {'parse': 1, 'search': 1, 'job_analysis': 3}
+    assert BETA_LIMITS == {'parse': 1, 'search': 1, 'job_analysis': 10}
     first = claim(a, 's', 'parse', 'op1', 'consumed')
     assert first.quota is not None and a.remaining('s') is None       # nothing before the proven consume
     assert first.quota() == 'consumed' and first.on_first_intent() is True
-    assert a.remaining('s') == {'parse': 0, 'search': 1, 'job_analysis': 3}
+    assert a.remaining('s') == {'parse': 0, 'search': 1, 'job_analysis': 10}
     assert a.claim('s', 'parse', 'op2', lambda: pytest.fail('no second ticket')) == 'allowance_exhausted'
-    for i in range(3):
+    for i in range(10):                                                # the 10th analysis is admitted ...
         c = a.claim('s', 'job_analysis', f'ja{i}', lambda: pytest.fail('no second ticket'))
         assert c.quota is None and c.on_first_intent() is True
-    assert a.claim('s', 'job_analysis', 'ja3', lambda: 'consumed') == 'allowance_exhausted'
+    assert a.remaining('s')['job_analysis'] == 0
+    assert a.claim('s', 'job_analysis', 'ja10', lambda: 'consumed') == 'allowance_exhausted'   # ... the 11th not
     s = a.claim('s', 'search', 'se', lambda: 'consumed')
     assert s.quota is None and s.on_first_intent()
     assert a.claim('s', 'search', 'se2', lambda: 'consumed') == 'allowance_exhausted'
@@ -294,7 +295,7 @@ def test_the_ticket_outcome_gates_the_provider_call_in_the_operation(tmp_path, o
     msgs = [{'role': 'user', 'content': 'synthetic text'}]
     if outcome == 'consumed':
         assert live.client.chat_structured('deepseek-flash', msgs, Answer, 'cv_parsing', max_tokens=16000).answer == 'ok'
-        assert len(live.sdk.calls) == 1 and a.remaining('s') == {'parse': 0, 'search': 1, 'job_analysis': 3}
+        assert len(live.sdk.calls) == 1 and a.remaining('s') == {'parse': 0, 'search': 1, 'job_analysis': 10}
     else:
         with pytest.raises(LiveSafetyRefusal):
             live.client.chat_structured('deepseek-flash', msgs, Answer, 'cv_parsing', max_tokens=16000)
@@ -310,7 +311,7 @@ def test_a_refusal_before_the_first_intent_never_uses_the_allowance():
     first.on_first_intent()
     ja = claim(a, 's', 'job_analysis', 'ja1', 'consumed')
     a.release_if_pending('s', 'ja1')                       # e.g. busy, budget, input_too_large
-    assert a.remaining('s')['job_analysis'] == 3 and ja.on_first_intent() is False
+    assert a.remaining('s')['job_analysis'] == 10 and ja.on_first_intent() is False
     pending = claim(a, 's', 'search', 'se1', 'consumed')
     assert a.claim('s', 'search', 'se2', lambda: 'consumed') == 'allowance_exhausted'   # one at a time
     a.release_if_pending('s', 'se1')

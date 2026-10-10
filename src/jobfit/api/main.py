@@ -58,6 +58,7 @@ from starlette.concurrency import run_in_threadpool
 from jobfit.api.presenter import SEARCH_STAGE_LABEL, analyzed_job, job_card, recommendation, retrieval_card
 from jobfit.cv import upload_guard
 from jobfit.cv.parser import ParsedCV
+from jobfit.live.quota import BETA_LIMITS
 from jobfit.privacy.masking import VERSION_V2, sanitize_upload
 from jobfit.privacy.structure import SanitizeRefused
 from jobfit.schemas.api import (AnalyzeRequest, CoachAnswer, ConsentRequest, FeedbackRequest, JobAnalyzeRequest,
@@ -88,15 +89,15 @@ PUBLIC_BETA_CLOSED_MESSAGE = ('The public beta is not open yet. The uploaded-CV 
 INTERNAL_TOKEN_HEADER, CLIENT_IP_HEADER, OWNER_TOKEN_HEADER = ('x-jobfit-internal-token', 'x-jobfit-client-ip',
                                                              'x-jobfit-owner-token')
 MAX_RUNS_PER_SESSION = 3
-MAX_ANALYSES_PER_SESSION = 3        # default; JOBFIT_SESSION_ANALYSIS_LIMIT overrides it (owner-local demo only)
+MAX_ANALYSES_PER_SESSION = BETA_LIMITS['job_analysis']   # 10; JOBFIT_SESSION_ANALYSIS_LIMIT overrides it
 SESSION_ANALYSIS_LIMIT_ENV = 'JOBFIT_SESSION_ANALYSIS_LIMIT'
 
 
 def session_analysis_limit() -> int:
-    """Analyze Fit runs (and pasted JDs) per session: 3 unless the deployment sets 1..50 explicitly.
+    """Analyze Fit runs (and pasted JDs) per session: 10 unless the deployment sets 1..50 explicitly.
 
     The owner-local compose file raises it for demos. Non-owner public-beta sessions stay bounded by the
-    D-103 session allowance (3 job_analysis) in jobfit.live.quota whatever this says; budgets are untouched.
+    D-103 session allowance (10 job_analysis) in jobfit.live.quota whatever this says; budgets are untouched.
     """
     raw = os.environ.get(SESSION_ANALYSIS_LIMIT_ENV, '').strip()
     if not raw:

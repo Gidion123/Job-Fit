@@ -56,7 +56,7 @@ def public_beta_open(settings, runtime, telemetry) -> bool:
     the production runtime with live, public live and uploaded CVs switched on, the fail-closed per-phase
     bound check (every beta phase fits the daily cap), and active metadata-only Langfuse tracing (D-103).
     Non-owners then still need the durable per-IP ticket and the session allowance (parse 1, search 1,
-    job_analysis 3) and stay under the daily and lifetime budgets; the D-104 consent lease is unchanged."""
+    job_analysis 10) and stay under the daily and lifetime budgets; the D-104 consent lease is unchanged."""
     if runtime is None or getattr(telemetry, 'tracer', None) is None:
         return False
     if not (settings.live_enabled and settings.public_live and settings.real_cv_enabled):

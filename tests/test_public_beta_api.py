@@ -94,7 +94,7 @@ def test_the_search_stage_is_labelled_and_has_no_match_score():
     h = session(client, prod=False)
     body = client.post('/jobs/search', json={'demo_cv_id': 'CV1'}, headers=h).json()
     assert body['stage'] == 'retrieval' and body['final_order'] is False
-    assert 'not JobFit match rankings' in body['label'].replace('Not', 'not') and body['analysis_limit'] == 3
+    assert 'not JobFit match rankings' in body['label'].replace('Not', 'not') and body['analysis_limit'] == 10
     assert [(j['job_id'], j['retrieval_rank']) for j in body['jobs']] == [('C', 1), ('A', 2), ('B', 3)]
     for j in body['jobs']:
         assert j['stage'] == 'retrieval' and j['analyzed'] is False and j['match_score'] is None

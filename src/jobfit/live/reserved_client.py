@@ -324,14 +324,14 @@ class ReservedClient:
         return self._run(ctx, lambda: self._inner._embed_attempt(texts, model, task, dimensions))
 
 
-def bind_reserved_client(inner, op: OperationState, call_model: CallModel, ledger_path: Path) -> ReservedClient:
+def bind_reserved_client(inner, op: OperationState, call_model: CallModel, ledger_path: Path, *, telemetry=None) -> ReservedClient:
     """Rebind ONE frozen client instance: the synchronized correlated ledger and the reservation guard.
 
     The frozen lifetime BudgetGuard is rebuilt over the correlated ledger, so its total_spent()
     reads through the same synchronized I/O as the appends.
     """
     journal = IntentJournal(journal_path(ledger_path))
-    ledger = CorrelatedLedger(Path(ledger_path), journal)
+    ledger = CorrelatedLedger(Path(ledger_path), journal, telemetry=telemetry)
     inner.ledger = ledger
     inner.guard = ReservationGuard(BudgetGuard(ledger, inner.settings.api_budget_usd,
                                                inner.settings.api_hard_stop_usd), op, journal)

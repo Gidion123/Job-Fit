@@ -1,0 +1,47 @@
+# JobFit UI theme (visual design v3). Streamlit reads this file from the working directory:
+# run the UI from the repository root (`streamlit run ui/streamlit_app.py`), as the Docker image does.
+
+[server]
+enableStaticServing = true      # serves ui/static/ (the self-hosted IBM Plex Sans font) at app/static/
+maxUploadSize = 5               # MB; the API's upload limit (jobfit.cv.upload_guard) is also 5 MB
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+showSidebarNavigation = false
+
+[theme]
+base = "light"
+primaryColor = "#2458A6"
+backgroundColor = "#F7F8FA"
+secondaryBackgroundColor = "#EEF1F5"
+textColor = "#182230"
+linkColor = "#2458A6"
+borderColor = "#D8DEE8"
+showWidgetBorder = true
+baseRadius = "8px"
+buttonRadius = "8px"
+baseFontSize = 16
+font = "'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif"
+headingFont = "'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif"
+codeFont = "'IBM Plex Sans', ui-monospace, monospace"
+greenColor = "#176448"
+greenBackgroundColor = "#EDF7F1"
+greenTextColor = "#176448"
+yellowColor = "#805700"
+yellowBackgroundColor = "#FFF7DF"
+yellowTextColor = "#805700"
+redColor = "#B42332"
+redBackgroundColor = "#FFF0F1"
+redTextColor = "#B42332"
+blueColor = "#294E7C"
+blueBackgroundColor = "#EDF3FC"
+blueTextColor = "#294E7C"
+
+[[theme.fontFaces]]
+family = "IBM Plex Sans"
+url = "app/static/IBMPlexSans.ttf"
+weight = "100 700"
+style = "normal"

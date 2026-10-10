@@ -84,7 +84,8 @@ class LiveRuntime:
 
     def __init__(self, settings, bounds, *, pipeline_config: Path, client_factory: Callable[[str], object],
                  connect: Callable[[], psycopg.Connection] | None = None, clock=time.monotonic,
-                 watchdog_interval: float = 0.5, drain_grace: float = 5.0, storage: LiveStorage | None = None):
+                 watchdog_interval: float = 0.5, drain_grace: float = 5.0, storage: LiveStorage | None = None, telemetry=None):
+        self.telemetry = telemetry
         self.settings, self.bounds = settings, bounds
         self.ledger_path = Path(settings.usage_ledger)
         self.journal = IntentJournal(journal_path(self.ledger_path))
@@ -214,7 +215,12 @@ class LiveRuntime:
         return reports
 
     # --- one operation ---------------------------------------------------------------------------
-    def run(self, phase: str, operation_key: str, work: Callable[[ReservedClient], object], *,
+    def run(self, phase: str, operation_key: str, work, *, quota=None, on_first_intent=None):
+        from jobfit.observability.metrics import observed
+        return observed(self.telemetry, phase, self._run, phase, operation_key, work,
+                        quota=quota, on_first_intent=on_first_intent)
+
+    def _run(self, phase: str, operation_key: str, work: Callable[[ReservedClient], object], *,
             quota: Callable[[], str] | None = None,
             on_first_intent: Callable[[], bool] | None = None) -> tuple[object, OperationReport]:
         if phase not in self.windows:
@@ -278,7 +284,7 @@ class LiveRuntime:
             op = OperationState(operation_key, phase, self.bound[phase], window, anchor_mono=anchor,
                                 quota=quota, on_first_intent=on_first_intent,
                                 storage_check=self._continuity_check(storage_id), clock=self.clock)
-            client = bind_reserved_client(inner, op, self.call_model, self.ledger_path)
+            client = bind_reserved_client(inner, op, self.call_model, self.ledger_path, telemetry=self.telemetry)
             watchdog = threading.Thread(target=self._watch, args=(op, stop), daemon=True)
             watchdog.start()
             result, error = None, None

@@ -365,18 +365,23 @@ def _apply(text: str, spans) -> tuple[str, dict[str, int]]:
     return ''.join(pieces), counts
 
 
-def sanitize_upload(text: str, *, marks: OwnerMarks | None = None) -> MaskedPreview:
+def sanitize_upload(text: str, *, marks: OwnerMarks | None = None, edited: bool = False) -> MaskedPreview:
     """D-104 sanitizer for uploaded or edited CV text. Raises `SanitizeRefused` (fixed code) to fail closed.
 
     `marks` are the owner fingerprints kept from the upload, so an edit that reintroduces the name
     is masked again. The returned preview carries the (possibly extended) marks; never the raw header.
+
+    `edited`: the text is the user's correction of an already sanitized preview. Its identity header was
+    removed at upload. A bounded edit-only heading set recognises reworded professional sections such as
+    "TECHNICAL SKILLS & TOOLS"; arbitrary lead and personal-data labels are never retained as evidence.
     """
     from jobfit.privacy.structure import MASKING_FAILED, SanitizeRefused, normalize_source, split_structure
     if not isinstance(text, str) or (marks is not None and not isinstance(marks, OwnerMarks)):
         raise SanitizeRefused(MASKING_FAILED)
     failed = False
     try:
-        structured = split_structure(normalize_source(text))
+        source = normalize_source(text)
+        structured = split_structure(source, keep_lead=edited)
         owner = (marks if marks is not None else OwnerMarks()).extended(owner_values(structured.header))
         retained = structured.retained
         spans = _pattern_spans(retained) + _owner_spans(retained, owner) + _label_spans(retained) + \

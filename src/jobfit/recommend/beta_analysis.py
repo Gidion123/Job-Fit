@@ -37,20 +37,25 @@ def job_analysis_refusal(envelopes, cv, job_id: str, *, cached=None, jd_text: st
 
 def analyze_one_job(cv, job_id: str, *, envelopes, client, config, cached=None, jd_text: str | None = None,
                     spec=None, extraction_model: str | None = None, scope: str = 'session_jd',
-                    constraints=None) -> JobResult:
+                    constraints=None, telemetry=None) -> JobResult:
     """One JD through the frozen steps; ``client`` is the operation's ReservedClient."""
+    from jobfit.observability.metrics import observed
     if (cached is None) == (jd_text is None):
         raise ValueError('exactly one of cached or jd_text is required')
     if cached is not None:
         extraction, reason = cached
     else:
         from jobfit.extraction.jd_extractor import extract_jd
-        ext = extract_jd(jd_text, job_id=job_id, client=client, model=extraction_model, cache=None, scope=scope,
+        ext = observed(telemetry, 'extraction', extract_jd, jd_text, job_id=job_id, client=client, model=extraction_model, cache=None, scope=scope,
                          spec=spec, dynamic_output=True)
         extraction, reason = (ext.extraction, None) if ext.status == 'done' else (None, ext.error_code or ext.status)
         if extraction is not None and extraction.jd_quality.value != 'ok':
             extraction, reason = None, 'jd_quality_' + extraction.jd_quality.value
     if extraction is not None and not extraction_fits(envelopes, extraction):
         return JobResult(job_id, 1, held_score(HOLD_REASON), hold_reason=HOLD_REASON, extraction=extraction)
+    def measured_match(*args, **kwargs):
+        from jobfit.matching.evidence_matcher import match_evidence
+        return observed(telemetry, 'matching', match_evidence, *args, **kwargs)
+
     return analyze_job(cv, job_id, 1, extraction, reason, client=client, fallback_client=None, config=config,
-                       constraints=constraints)
+                       constraints=constraints, matcher=measured_match if telemetry is not None else None)

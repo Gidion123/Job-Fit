@@ -1,0 +1,103 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_____ test_the_profile_is_owner_only_and_passes_the_production_invariants ______
+
+    def test_the_profile_is_owner_only_and_passes_the_production_invariants():
+        api = env('api')
+        assert (api['JOBFIT_ENV'], api['JOBFIT_LIVE_ENABLED'], api['JOBFIT_PUBLIC_LIVE'],
+                api['JOBFIT_REAL_CV_ENABLED']) == ('prod', '1', '0', '1')
+        resolved = {k: PLACEHOLDER.get(REQUIRED.match(v).group(1)) if REQUIRED.match(v) else v for k, v in api.items()}
+>       settings = get_production_settings(resolved)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_owner_local_compose.py:42:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src/jobfit/config.py:238: in get_production_settings
+    return ProductionSettings(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:16: in __init__
+    ???
+src/jobfit/config.py:188: in __post_init__
+    check_production_invariants(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+s = ProductionSettings(environment='prod', live_enabled=True, public_live=False, real_cv_enabled=True, usage_ledger=PosixP.../private/var/lib/jobfit/ledger/usage_ledger.jsonl'), daily_budget_usd=5.0, api_budget_usd=10.0, api_hard_stop_usd=10.0)
+
+    def check_production_invariants(s: 'ProductionSettings') -> None:
+        """The one set of production rules. Runs on every construction and again before eligibility."""
+        if s.environment not in ('dev', 'prod'):
+            raise ConfigurationError('JOBFIT_ENV must be dev or prod')
+        for name, flag in (('JOBFIT_LIVE_ENABLED', s.live_enabled), ('JOBFIT_PUBLIC_LIVE', s.public_live),
+                           ('JOBFIT_REAL_CV_ENABLED', s.real_cv_enabled)):
+            if not isinstance(flag, bool):
+                raise ConfigurationError(f'{name} must be 0 or 1')
+        prod = s.environment == 'prod'
+        if s.public_live and not s.live_enabled:
+            raise ConfigurationError('JOBFIT_PUBLIC_LIVE=1 requires JOBFIT_LIVE_ENABLED=1')
+        if s.public_live and not prod:
+            raise ConfigurationError('JOBFIT_PUBLIC_LIVE=1 requires JOBFIT_ENV=prod')
+        # D-105: the uploaded-CV path runs only on the production runtime (owner-only while the public beta is closed).
+        if s.real_cv_enabled and not (prod and s.live_enabled):
+            raise ConfigurationError('JOBFIT_REAL_CV_ENABLED=1 requires JOBFIT_ENV=prod and JOBFIT_LIVE_ENABLED=1')
+        if prod:
+            if not isinstance(s.database_url, str) or not s.database_url:
+                raise ConfigurationError('DATABASE_URL must be set explicitly in prod')
+            if s.database_url == Settings.database_url:
+                raise ConfigurationError('DATABASE_URL must not be the local development default in prod')
+            _check_secret(s.internal_token, 'JOBFIT_INTERNAL_TOKEN')
+        if s.live_enabled and not s.openrouter_api_key:
+            raise ConfigurationError('OPENROUTER_API_KEY must be set when live analysis is enabled')
+        if s.live_enabled and prod:
+            _check_secret(s.owner_token, 'JOBFIT_OWNER_TOKEN')
+            try:
+                ledger = Path(s.usage_ledger)
+            except TypeError:
+                raise ConfigurationError('JOBFIT_USAGE_LEDGER must be a path') from None
+            if not ledger.is_absolute():            # before any resolve(): never relative to the working directory
+                raise ConfigurationError('JOBFIT_USAGE_LEDGER must be an absolute path')
+            if ledger.resolve() == REPO_USAGE_LEDGER.resolve():
+                raise ConfigurationError('JOBFIT_USAGE_LEDGER must not be the repository development ledger')
+            if ledger.resolve().parent != PROD_LEDGER_ROOT:
+>               raise ConfigurationError(f'JOBFIT_USAGE_LEDGER must be a file directly in {PROD_LEDGER_ROOT}')
+E               jobfit.config.ConfigurationError: JOBFIT_USAGE_LEDGER must be a file directly in /var/lib/jobfit/ledger
+
+src/jobfit/config.py:156: ConfigurationError
+______ test_the_worker_gets_an_allow_listed_environment_and_isolated_mode ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10bb48bd0>
+
+    def test_the_worker_gets_an_allow_listed_environment_and_isolated_mode(monkeypatch):
+        secrets = {'OPENROUTER_API_KEY': 'sk-secret-1', 'DATABASE_URL': 'postgresql://u:secret-2@db/x',
+                   'JOBFIT_OWNER_TOKEN': 'owner-secret-3', 'JOBFIT_INTERNAL_TOKEN': 'internal-secret-4',
+                   'JOBFIT_IP_HMAC_KEY': 'hmac-secret-5', 'LANGFUSE_SECRET_KEY': 'lf-secret-6'}
+        for k, v in secrets.items():
+            monkeypatch.setenv(k, v)
+        echo = probe('print(json.dumps({"code": None, "text": json.dumps(dict(os.environ)), "pages": 0, '
+                     '"layout": "x", "warnings": []}))')
+        env = json.loads(ug.bounded_extract(b'abc', '.txt', command=echo).text)
+>       assert set(env) <= set(ug.worker_environment())
+E       AssertionError: assert {'LC_ALL', '_...EXT_ENCODING'} <= {'LC_ALL'}
+E
+E         Extra items in the left set:
+E         '__CF_USER_TEXT_ENCODING'
+
+tests/test_upload_guard.py:385: AssertionError
+=============================== warnings summary ===============================
+<frozen importlib._bootstrap>:241
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /Users/gidion/Downloads/Final Project-Job Fit/project-job-fit-observability/reports/validation/observability_20261010/macos_baseline.xml -
+=========================== short test summary info ============================
+FAILED tests/test_owner_local_compose.py::test_the_profile_is_owner_only_and_passes_the_production_invariants
+FAILED tests/test_upload_guard.py::test_the_worker_gets_an_allow_listed_environment_and_isolated_mode
+2 failed, 5 warnings in 0.79s
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

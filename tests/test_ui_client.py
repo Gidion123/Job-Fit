@@ -30,6 +30,16 @@ def test_client_full_flow_against_app():
         api.demo_cvs()
 
 
+def page_text(at) -> str:
+    """The HTML content blocks of the page (st.html), without the stylesheet and the scroll script."""
+    return '\n'.join(str(h.value) for h in at.get('html') if not str(h.value).startswith(('<style>', '<script>')))
+
+
+def open_demo(at):
+    at.button(key='cta_demo').click().run()
+    assert not at.exception and at.session_state['page'] == 'demo'
+
+
 def test_streamlit_app_renders_demo_tab(monkeypatch):
     from streamlit.testing.v1 import AppTest
     test_client, _ = make()
@@ -42,15 +52,15 @@ def test_streamlit_app_renders_demo_tab(monkeypatch):
     monkeypatch.setitem(sys.modules, 'api_client', fake_module)
     at = AppTest.from_file(str(ROOT / 'ui/streamlit_app.py'), default_timeout=20).run()
     assert not at.exception
-    assert at.title[0].value == 'JobFit'
-    assert at.selectbox[0].value == 'CV1'
-    find = lambda: next(b for b in at.button if b.label == "Find matching jobs")
-    find().click().run()                      # saved demo is the default; none is saved in this fake
-    assert any('No saved demo' in e.value for e in at.error)
-    next(t for t in at.toggle if t.label.startswith('Live analysis')).set_value(True).run()
-    find().click().run()
+    assert at.button(key='jf_brand').label == 'JobFit'
+    open_demo(at)
+    assert at.selectbox(key='demo_cv').value == 'CV1'
+    at.button(key='demo_run').click().run()   # saved demo is the default; none is saved in this fake
+    assert 'No saved demo' in page_text(at)
+    at.toggle(key='demo_live').set_value(True).run()
+    at.button(key='demo_run').click().run()
     assert not at.exception
-    assert any('Matches (1)' in s.value for s in at.subheader)
+    assert 'Cocok (1)' in page_text(at)
 
 
 def test_streamlit_shows_message_when_api_is_down(monkeypatch):
@@ -65,7 +75,8 @@ def test_streamlit_shows_message_when_api_is_down(monkeypatch):
     monkeypatch.setitem(sys.modules, 'api_client', fake_module)
     at = AppTest.from_file(str(ROOT / 'ui/streamlit_app.py'), default_timeout=20).run()
     assert not at.exception
-    assert any('Cannot reach the JobFit API' in e.value for e in at.error)
+    assert 'belum bisa dihubungi' in page_text(at)                 # a clear message, never a traceback
+    assert at.button(key='api_retry')
 
 
 def test_streamlit_full_saved_demo_flow_against_real_wiring(monkeypatch):
@@ -84,15 +95,21 @@ def test_streamlit_full_saved_demo_flow_against_real_wiring(monkeypatch):
     monkeypatch.setitem(sys.modules, 'api_client', fake_module)
     at = AppTest.from_file(str(ROOT / 'ui/streamlit_app.py'), default_timeout=30).run()
     assert not at.exception
-    next(b for b in at.button if b.label == 'Find matching jobs').click().run()
+    open_demo(at)
+    at.button(key='demo_run').click().run()
     assert not at.exception
-    assert any('candidates from the search were analyzed' in m.value for m in at.markdown)
-    assert any(s.value.startswith('Matches (') for s in at.subheader)
-    assert any('Demo with saved results' in i.value for i in at.info)
-    next(b for b in at.button if b.label == 'Show suggestions from these results').click().run()
+    text = page_text(at)
+    assert 'kandidat dari pencarian dianalisis' in text
+    assert 'Cocok (' in text
+    assert 'Demo dengan hasil tersimpan' in text
+    at.button(key='demo_suggest').click().run()
     assert not at.exception
     assert any('Never add a skill' in c.value for c in at.caption)
-    assert any('searchable postings' in m.value for m in at.markdown)
+    at.button(key='demo_market').click().run()
+    assert not at.exception and at.session_state['page'] == 'market'
+    assert 'lowongan yang bisa dicari' in page_text(at)
+    at.button(key='lang_en').click().run()
+    assert 'searchable postings' in page_text(at)
 
 
 def test_client_sends_the_ingress_headers_and_one_key_per_live_action(monkeypatch):
@@ -219,10 +236,11 @@ def test_streamlit_reuses_the_pending_key_until_the_server_acknowledges(monkeypa
     fake_module.ApiClient, fake_module.ApiError = Flaky, ApiError
     monkeypatch.setitem(sys.modules, 'api_client', fake_module)
     at = AppTest.from_file(str(ROOT / 'ui/streamlit_app.py'), default_timeout=20).run()
-    next(t for t in at.toggle if t.label.startswith('Live analysis')).set_value(True).run()
-    find = lambda: next(b for b in at.button if b.label == 'Find matching jobs')
+    open_demo(at)
+    at.toggle(key='demo_live').set_value(True).run()
+    find = lambda: at.button(key='demo_run')  # noqa: E731
     find().click().run()
-    assert any('Connection problem' in e.value for e in at.error)
+    assert 'Koneksi bermasalah' in page_text(at)
     find().click().run()                     # the retry of the same action
     assert not at.exception and keys[1] == keys[0]
     find().click().run()                     # acknowledged: a new click is a new action

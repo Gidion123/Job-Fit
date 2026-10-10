@@ -51,6 +51,20 @@ def _extraction_record(job: str) -> dict | None:
     return load_record(job)
 
 
+def public_beta_open(settings, runtime, telemetry) -> bool:
+    """The controlled public beta (D-103) opens only when every gate holds, otherwise it stays closed:
+    the production runtime with live, public live and uploaded CVs switched on, the fail-closed per-phase
+    bound check (every beta phase fits the daily cap), and active metadata-only Langfuse tracing (D-103).
+    Non-owners then still need the durable per-IP ticket and the session allowance (parse 1, search 1,
+    job_analysis 3) and stay under the daily and lifetime budgets; the D-104 consent lease is unchanged."""
+    if runtime is None or getattr(telemetry, 'tracer', None) is None:
+        return False
+    if not (settings.live_enabled and settings.public_live and settings.real_cv_enabled):
+        return False
+    from jobfit.llm.public_beta_bounds import public_beta_phase_eligible
+    return public_beta_phase_eligible(settings, runtime.bounds)
+
+
 def load_saved_demo():
     """Latest saved demo bundle; answers only when its key matches the current files."""
     from hashlib import sha256
@@ -114,8 +128,9 @@ def build_deps() -> AppDeps:
     settings = get_production_settings()
     prod = settings.environment == 'prod'
     from jobfit.observability.metrics import Telemetry
+    from jobfit.observability.langfuse import build_tracer
     from jobfit.observability.cost import CostCollector, DatabaseCollector, production_snapshot
-    telemetry = Telemetry()
+    telemetry = Telemetry(tracer=build_tracer())
     telemetry.registry.register(CostCollector(production_snapshot(settings)))
     if prod:
         import psycopg
@@ -338,8 +353,10 @@ def build_deps() -> AppDeps:
                    search=search, analyze_one=analyze_one, job_analysis_refusal=job_analysis_refusal,
                    search_limit=config.stage1_candidate_depth,
                    # D-105: uploaded CVs only with the explicit JOBFIT_REAL_CV_ENABLED switch on the production
-                   # runtime; the public beta stays closed (non-owners get 503), whatever JOBFIT_PUBLIC_LIVE says.
-                   real_cv_enabled=settings.real_cv_enabled and runtime is not None, public_beta_open=False,
+                   # runtime. The public beta (non-owners) opens only through every gate in public_beta_open();
+                   # otherwise non-owners get 503.
+                   real_cv_enabled=settings.real_cv_enabled and runtime is not None,
+                   public_beta_open=public_beta_open(settings, runtime, telemetry),
                    real_parse=real_parse if prod else None, real_search=real_search if prod else None,
                    consume_ticket=consume_ticket if prod else None)
 

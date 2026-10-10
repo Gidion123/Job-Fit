@@ -9,6 +9,7 @@ SQLAlchemy>=2.0
 alembic>=1.16,<2      # CP3 production schema migrations (D-098), raw SQL only
 pgvector>=0.3
 prometheus-client>=0.26,<0.27
+langfuse>=4.17,<5          # metadata-only, optional at runtime; D-103 public-beta gate
 fastapi>=0.110
 uvicorn[standard]>=0.29
 streamlit>=1.64,<2     # UI v3: horizontal containers, st.space, icon_position, theme.fontFaces

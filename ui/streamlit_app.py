@@ -16,6 +16,7 @@ never runs it twice. Interface copy is Indonesian by default, with an English sw
 from __future__ import annotations
 
 import hashlib
+import os
 import time
 from datetime import date
 
@@ -23,6 +24,7 @@ import httpx
 import streamlit as st
 
 from api_client import ApiClient, ApiError
+from client_ip import client_ip_from
 from components import (COUNTRIES, EXPERIENCE, ROLES, WORK_MODES, analysis_view, coach_view, job_card,
                         metadata_html, option_label, relevant_job_html, suggestions)
 from live_action import LiveActions, action_fingerprint, fingerprint
@@ -68,8 +70,21 @@ ss.setdefault('lang', 'id')
 ss.setdefault('page', 'landing')
 
 
+def apply_client_ip(client) -> None:
+    """Forward the browser IP only from a trusted proxy (client_ip.py); log the source label, never the IP."""
+    try:
+        peer, forwarded = st.context.ip_address, st.context.headers.get('X-Forwarded-For')
+    except Exception:
+        peer = forwarded = None
+    client.client_ip, source = client_ip_from(peer, forwarded, os.environ.get('JOBFIT_TRUSTED_PROXIES'))
+    if ss.get('client_ip_source') != source:
+        ss.client_ip_source = source
+        print(f'jobfit-ui client_ip_source={source}', flush=True)
+
+
 def new_client():
     client = ApiClient()
+    apply_client_ip(client)
     client.start_session()
     return client
 
@@ -301,6 +316,8 @@ if api_down is not None:
         st.button(t('api.retry'), key='api_retry', type='primary')
     st.stop()
 api: ApiClient | None = ss.get('api')
+if api is not None:
+    apply_client_ip(api)                        # every run: the current browser connection
 MAX_ANALYSES = int(ss.get('analysis_limit') or MAX_ANALYSES)
 if 'live_actions' not in ss:
     ss.live_actions = LiveActions()

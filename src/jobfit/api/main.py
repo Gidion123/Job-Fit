@@ -31,9 +31,10 @@ D-103 public-beta contract (API semantics only; the Streamlit UI follows in Phas
 - POST /jobs/{job_id}/analyze and the pasted-JD POST /analyze run one ``job_analysis`` operation
   (stage 'analyzed'); inputs above the D-103 envelopes are refused (413) before any reservation;
 - in production the public (non-owner) beta flow runs only with the session's consented, uploaded
-  CV (``cv_source=upload``); the real-CV adapter is connected, but activation stays blocked
-  (``public_beta_open`` False) until the remaining privacy, artifact and release gates pass,
-  whatever JOBFIT_PUBLIC_LIVE says. Demo CVs are synthetic and never stand in for that flow.
+  CV (``cv_source=upload``); ``public_beta_open`` is computed by ``wiring.public_beta_open`` and stays
+  False unless every gate holds (public live, uploaded CVs, the D-103 phase bounds and metadata-only
+  Langfuse); the owner activates JOBFIT_PUBLIC_LIVE only after the deployed privacy gate
+  (deploy/public-live/README.md). Demo CVs are synthetic and never stand in for that flow.
 """
 from __future__ import annotations
 
@@ -148,7 +149,7 @@ class AppDeps:
     search_limit: int = 10
     # Real-CV public-beta adapter (CP3). Off in every shipped configuration: real_cv_enabled stays False
     # until the D-051 gates (FAIL-37 masking, provider ZDR compatibility) pass; public_beta_open is True
-    # only with public live, real_cv_enabled and the D-103 per-phase eligibility. Hooks:
+    # only with public live, real_cv_enabled, the D-103 per-phase eligibility and Langfuse. Hooks:
     # real_parse(store, handle, lease, *, live) -> ParsedCV (reserved parse);
     # real_search(store, handle, lease, filters, *, live) -> retrieval rows (reserved search);
     # consume_ticket(ip_pseudonym) -> 'consumed' | 'refused' | 'unavailable' | 'unknown'.
@@ -297,9 +298,11 @@ def create_app(deps: AppDeps) -> FastAPI:
         def target():
             try:
                 from jobfit.observability.metrics import observed
-                out = (observed(telemetry, 'overall_analysis', work, state,
-                                classify_result=lambda _: state.analysis_outcome)
-                       if kind == 'analysis' else work(state))
+                out = (telemetry.trace_analysis(
+                    lambda: observed(telemetry, 'overall_analysis', work, state,
+                                     classify_result=lambda _: state.analysis_outcome),
+                    lambda: state.analysis_outcome)
+                    if kind == 'analysis' else work(state))
                 if kind == 'analysis':
                     from jobfit.observability.metrics import safely
                     label = {'success': 'completed', 'held': 'held', 'refused': 'refused',
@@ -613,7 +616,7 @@ def create_app(deps: AppDeps) -> FastAPI:
             return live
 
         def call():
-            return deps.real_parse(deps.store, h, lease, live=live)
+            return telemetry.trace_operation('parse', lambda: deps.real_parse(deps.store, h, lease, live=live))
 
         def present(parsed) -> dict:
             return {'stage': 'parsed', 'source': 'live', 'summary': parsed.summary()}
@@ -885,7 +888,8 @@ def create_app(deps: AppDeps) -> FastAPI:
                 raise HTTPException(409, 'search_not_available')
         else:
             try:
-                rows = deps.real_search(deps.store, h, lease, filters, live=live)
+                rows = telemetry.trace_operation(
+                    'search', lambda: deps.real_search(deps.store, h, lease, filters, live=live))
             except Exception as exc:
                 settle_live(h, live, exc)
                 raise real_http_error(exc) from None

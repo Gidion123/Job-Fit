@@ -48,6 +48,7 @@ def observed(telemetry, stage, fn, *args, classify_result=None, **kwargs):
     """Time the existing boundary; no retries, inputs, or results changed."""
     started = time.monotonic()
     status, error_code = 'failure', None
+    trace_handle = safely(telemetry.trace_stage_start, stage) if telemetry is not None else None
     try:
         result = fn(*args, **kwargs)
         classifier = classify_result or outcome
@@ -64,11 +65,13 @@ def observed(telemetry, stage, fn, *args, classify_result=None, **kwargs):
         raise
     finally:
         if telemetry is not None:
+            safely(telemetry.trace_stage_finish, trace_handle, status, error_code)
             safely(telemetry.stage, stage, status, time.monotonic() - started, error_code)
 
 
 class Telemetry:
-    def __init__(self):
+    def __init__(self, tracer=None):
+        self.tracer = tracer
         self.registry = CollectorRegistry()
         ProcessCollector(registry=self.registry)  # native Linux process start, memory and CPU
         kw = {'registry': self.registry}
@@ -114,6 +117,19 @@ class Telemetry:
     def render(self):
         return generate_latest(self.registry)
 
+    def trace_analysis(self, fn, outcome):
+        return self.tracer.analysis(fn, outcome) if self.tracer is not None else fn()
+
+    def trace_operation(self, phase, fn):
+        return self.tracer.operation(phase, fn, lambda: 'success') if self.tracer is not None else fn()
+
+    def trace_stage_start(self, stage):
+        return self.tracer.start_stage(stage) if self.tracer is not None else None
+
+    def trace_stage_finish(self, handle, status, error_code):
+        if self.tracer is not None:
+            self.tracer.finish_stage(handle, status, error_code)
+
     def stage(self, stage, status, duration, error_code=None):
         labels = (bounded(stage, STAGES), bounded(status, {'success', 'failure', 'refused', 'held', 'discarded', 'unknown'}))
         self.stages.labels(*labels).inc()
@@ -128,6 +144,8 @@ class Telemetry:
         self.rejections.labels(bounded(reason, {'budget', 'lifetime'})).inc()
 
     def attempt(self, record, ctx):
+        if self.tracer is not None:
+            safely(self.tracer.attempt, record, ctx)
         model = bounded(record.model, MODELS)
         chain, kind = bounded(ctx.chain, CHAINS), bounded(ctx.attempt_kind, KINDS)
         self.calls.labels(model, chain, kind, 'success' if record.ok else 'failure').inc()

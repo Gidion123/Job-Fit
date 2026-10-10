@@ -1,0 +1,40 @@
+# LOCAL CHECK ONLY (Mac), never on the VPS: the public mentor path of the Basic Auth demo, without Langfuse,
+# on top of the owner-local stack. A local Caddy stands in for the VPS Caddy (it sets X-Forwarded-For), the UI
+# has NO owner token, and the API opens the public beta exactly as public_beta_open decides on the VPS.
+# Open http://127.0.0.1:8512 (not 8511). Paid calls happen only when you press parse / Find Jobs / Analyze Fit,
+# under the budgets of your env file. See deploy/public-live/README.md, "Local check before the VPS".
+#
+#   docker compose -f docker-compose.owner-local.yml -f deploy/public-live/docker-compose.local-public.yml \
+#     -p jobfit-owner --env-file ../project-job-fit/.env.owner-local up -d --build
+services:
+  api:
+    environment:
+      JOBFIT_PUBLIC_LIVE: "1"
+      JOBFIT_LANGFUSE_ENABLED: "0"
+      JOBFIT_IP_HMAC_KEY: ${JOBFIT_IP_HMAC_KEY:?add JOBFIT_IP_HMAC_KEY (openssl rand -hex 32) to your env file}
+
+  ui:
+    environment:
+      JOBFIT_OWNER_TOKEN: ""                       # the public UI never has the owner token
+      JOBFIT_TRUSTED_PROXIES: 172.31.250.10        # only the local Caddy below
+    networks:
+      default: {}
+      localpublic: {}
+
+  caddy:
+    image: caddy:2.10.2
+    container_name: jobfit-local-caddy
+    command: caddy reverse-proxy --from :8080 --to ui:8501
+    ports:
+      - "127.0.0.1:8512:8080"
+    networks:
+      localpublic:
+        ipv4_address: 172.31.250.10
+    depends_on:
+      - ui
+
+networks:
+  localpublic:
+    ipam:
+      config:
+        - subnet: 172.31.250.0/24

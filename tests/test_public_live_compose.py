@@ -40,3 +40,12 @@ def test_the_public_ui_never_gets_the_owner_token_and_trusts_only_the_configured
     ui = env('ui')
     assert set(ui) == {'JOBFIT_TRUSTED_PROXIES'}
     assert ui['JOBFIT_TRUSTED_PROXIES'].startswith('${JOBFIT_TRUSTED_PROXIES:?')
+
+
+def test_the_local_check_override_is_the_public_path_on_loopback_only():
+    local = yaml.safe_load((ROOT / 'deploy/public-live/docker-compose.local-public.yml').read_text())['services']
+    api, ui, caddy = local['api']['environment'], local['ui']['environment'], local['caddy']
+    assert api['JOBFIT_PUBLIC_LIVE'] == '1' and api['JOBFIT_LANGFUSE_ENABLED'] == '0'
+    assert ui['JOBFIT_OWNER_TOKEN'] == ''                                       # no owner token in the public UI
+    assert ui['JOBFIT_TRUSTED_PROXIES'] == caddy['networks']['localpublic']['ipv4_address']
+    assert caddy['ports'] == ['127.0.0.1:8512:8080']

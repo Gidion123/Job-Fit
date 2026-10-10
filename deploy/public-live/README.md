@@ -21,6 +21,17 @@ For this limited mentor demo behind Caddy Basic Auth the owner decided **not** t
 | Client IP from Caddy only through a trusted proxy peer | `tests/test_client_ip.py` |
 | Upload failure paths (DOCX gates, oversized, malformed) | `tests/test_upload_guard.py` |
 
+## Local check before the VPS (Mac, owner)
+
+`docker-compose.local-public.yml` runs the **public** mentor path on top of the owner-local stack: no owner token in the UI, Langfuse off, a local Caddy that forwards the browser IP like the VPS Caddy (no Basic Auth locally). Paid calls only when you press the buttons.
+
+1. `cp -R ../project-job-fit/reports/tokenizers reports/` and add `JOBFIT_IP_HMAC_KEY=$(openssl rand -hex 32)` to `../project-job-fit/.env.owner-local`.
+2. Start (this replaces the running owner-local api/ui containers; the database and ledger volumes stay):
+   `docker compose -f docker-compose.owner-local.yml -f deploy/public-live/docker-compose.local-public.yml -p jobfit-owner --env-file ../project-job-fit/.env.owner-local up -d --build`
+3. `curl -s http://127.0.0.1:8010/health` shows `"public_beta_open":true,"analysis_limit":10`; `docker logs jobfit-owner-ui | grep client_ip_source` shows `forwarded` after step 4.
+4. Open `http://127.0.0.1:8512` with a synthetic CV: upload → masking preview → consent checkbox enabled → parse → Find Jobs (same extracted CV) → Analyze Fit result.
+5. Back to the owner stack: `docker rm -f jobfit-local-caddy`, then in `../project-job-fit` the usual owner-local `up -d --build`.
+
 ## Deployed gate on the VPS (owner, before `JOBFIT_PUBLIC_LIVE=1`)
 
 1. **Backup:** tag `jobfit-prod-api` and `jobfit-prod-ui` as `rollback-<date>`; `cp -p` `docker-compose.prod.yml` and `.env.prod` aside (never print them); run the usual database + ledger backup.

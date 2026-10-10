@@ -4,9 +4,22 @@
 **Bootcamp checkpoint:** 15. Deployment API menggunakan Flask/FastAPI · official date 5 Oct 2026  
 **JobFit version of this checkpoint:** FastAPI (Flask is not used).  
 **Planned work:** 5 Oct 2026 · **Actual:** 6 Oct 2026  
-**Status:** PARTIAL · demo-CV flow DONE LOCALLY (6 Oct); Phase 2B dark cost-safety layer DONE (8 Oct, D-101; local and CI only); persistent production ledger DONE for Phase 2 acceptance (local/CI; deployed-host validation pending Phase 8); public live path PLANNED and public live BLOCKED by the D-096 bound; scope clarified by D-102 (8 Oct) · design basis: System Design v1.3
+**Status:** DONE · deployed on 10 Oct 2026 as a controlled demo behind Caddy Basic Auth ([D-106](../decisions.md)); demo-CV flow (6 Oct), Phase 2B dark cost-safety layer (8 Oct, D-101), persistent production ledger and the D-104/D-105 real-CV lifecycle are in the deployed API; the deployed canary sweep is not yet recorded (CP3.4) · design basis: System Design v1.3
 
 > Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
+
+## Deployment update (10 Oct 2026)
+
+- **Where:** the API container runs on the SumoPod VPS with `docker-compose.prod.yml`, the [public-live override](../../deploy/public-live/README.md) and the [observability network override](../../deploy/observability/README.md). It listens on `127.0.0.1:8000` only. The UI reaches it with the internal token, and Caddy exposes only the UI at `https://jobfit-demo.duckdns.org` behind Basic Auth.
+- **Unchanged controls:**
+  - per-IP tickets (10 per IP per 24 h);
+  - session allowance (parse 1, search 1, job_analysis up to 10);
+  - US$5/day and US$25 lifetime budgets, with reservations and the persistent ledger;
+  - ZDR routing (`data_collection: deny`);
+  - idempotency and the D-104 consent lease.
+- **Evidence:** live Check a Job on the deployed demo ([figures 14-15](../../reports/figures/cp3/README.md)), and Prometheus metrics from this API in the production Grafana dashboard ([figures 16-19](../../reports/figures/cp3/README.md)). Langfuse is off for this demo ([D-106](../decisions.md)).
+- **Not recorded yet:** the deployed canary sweep and the paid canary run (steps 6-7 of the deployment guide). They belong in [CP3.4](CP3_04_End_to_End_Testing.md).
+
 
 ## Scope clarification (8 Oct 2026, D-102): public-beta acceptance criteria
 

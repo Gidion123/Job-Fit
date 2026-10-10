@@ -1,6 +1,18 @@
 # JobFit CP2-CP3 Master Plan
 
-## Current outcome, 9 October 2026: ready for owner Local Mac validation (D-104 accepted, D-105 implemented)
+## Current outcome, 10 October 2026: deployed as a controlled demo (D-106)
+
+- **Deployment:** JobFit runs on the SumoPod VPS with Docker Compose. Caddy serves `https://jobfit-demo.duckdns.org` behind Basic Auth for invited mentors, and the API, UI and database listen on `127.0.0.1` only.
+- **Owner validation:** the full real-user flow ran with live models: upload, sanitized preview, consent, parse, Find Jobs, Analyze Fit and Improve My CV. Check a Job also ran on the deployed demo. Screenshots are in [reports/figures/cp3](../reports/figures/cp3/README.md).
+- **Monitoring:** Prometheus + Grafana + node_exporter, with the 21-panel *JobFit - Production Monitoring* dashboard. Langfuse is off for this demo (D-106).
+- **Stage status:**
+  - CP3.1-CP3.3: DONE.
+  - CP3.4: PARTIAL. The deployed canary sweep, PR-10 and the latency/cost table are not recorded yet.
+  - CP3.5: PARTIAL. The deck is prepared; D-045 option B is not run.
+  - CP3.6-CP3.7: planned. The presentation is on 11 Oct.
+- **Unchanged:** D-087 freeze verify `ok: true` with no changed file (rechecked 10 Oct).
+
+## Earlier outcome, 9 October 2026: ready for owner Local Mac validation (D-104 accepted, D-105 implemented)
 
 - **Privacy lifecycle (D-104):** the structural sanitizer and its API, session, consent and provider lifecycle are implemented and independently accepted for their measured scope (`e4c69ab`; sanitizer sha256 `49b748aa…5341`). The deployed privacy release gate is still pending.
 - **Real-user flow (D-105, implemented with fakes and disposable databases only; no paid call):**

@@ -4,9 +4,19 @@
 **Bootcamp checkpoint:** 16. Integrasi Database & GitHub Actions CI/CD · official date 6 Oct 2026  
 **JobFit version of this checkpoint:** PostgreSQL with pgvector, and GitHub Actions for CI/CD.  
 **Planned work:** 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) · **Actual:** 6 Oct 2026  
-**Status:** PARTIAL · Docker and compose work locally; CI green since Phase 1 (7 Oct, FAIL-35 resolved); Alembic `0001`/`0002` DONE with migration tests (8 Oct); SumoPod VPS and job sync PLANNED (D-095, D-098); nothing deployed; deployment and monitoring target clarified by D-102 (8 Oct) · design basis: System Design v1.3
+**Status:** DONE · CI green since Phase 1 (7 Oct, FAIL-35 resolved); Alembic `0001`/`0002` with migration tests (8 Oct); deployed with Docker Compose on the SumoPod VPS (10 Oct, [D-106](../decisions.md)); scheduled JSearch refresh still PLANNED (D-098) · design basis: System Design v1.3
 
 > Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
+
+## Deployment update (10 Oct 2026)
+
+- **Host:** SumoPod VPS (Ubuntu 24.04, 2 vCPU, 4 GB), running `docker-compose.prod.yml` with the [public-live](../../deploy/public-live/README.md) and [observability](../../deploy/observability/README.md) overrides.
+- **Database:** PostgreSQL 17 + pgvector on `database_net` only, with no public port. The ledger lives on its own named volume.
+- **Network:** API and UI are bound to `127.0.0.1`. Caddy terminates HTTPS for `https://jobfit-demo.duckdns.org` and applies Basic Auth.
+- **Monitoring:** Prometheus, Grafana OSS and node_exporter on the `monitoring` network. The API joins the shared `jobfit-observability` network so Prometheus can scrape `/metrics`. Grafana stays private (SSH tunnel). The *JobFit - Production Monitoring* dashboard has 21 panels in five groups ([figures 16-19](../../reports/figures/cp3/README.md)).
+- **CI:** the GitHub Actions workflow is unchanged: ruff, offline tests, freeze verify, Docker builds, `/health` and ledger smoke tests.
+- **Still planned:** the scheduled JSearch corpus refresh (D-098) and automated deployment from CI. Deployment is currently run by the owner with Docker Compose.
+
 
 ## Deployment and monitoring target (8 Oct 2026, D-102): PLANNED
 

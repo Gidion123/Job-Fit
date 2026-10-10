@@ -3,10 +3,22 @@
 **Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
 **Bootcamp checkpoint:** 19. PPT Final Project / Portfolio · official date 9 Oct 2026  
 **JobFit version of this checkpoint:** Same as the template.  
-**Planned work:** 9 Oct 2026; moved to 10 Oct (D-100) · **Actual:** not run yet\
-**Status:** PLANNED / NOT RUN · D-045 blind candidates selected by ID (7 Oct); planned work on 10 Oct · design basis: System Design v1.3
+**Planned work:** 9 Oct 2026; moved to 10 Oct (D-100) · **Actual:** 10 Oct 2026 (deck and screenshots)\
+**Status:** PARTIAL · final 10-minute deck with a demo section prepared (10 Oct 2026; kept outside the repository with the other presentation files); CP3 screenshots added to [reports/figures/cp3](../../reports/figures/cp3/README.md); D-045 option B blind items NOT RUN · design basis: System Design v1.3
 
-> This report is a plan. It contains no results yet. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
+> This report started as a plan; progress is added below as it happens. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
+
+## Progress (10 Oct 2026)
+
+- **Deck:** a 10-minute final deck that follows the bootcamp template:
+  - Introduction and portfolio;
+  - the nine main-project sections, with a dedicated prompt-optimization finding, the application architecture, the user flow with the score formula, and a live demo plan;
+  - next improvements and an Appendix.
+
+  Numbers come from the CP1/CP2 reports and the CP3 documents linked here.
+- **Screenshots:** 19 cropped figures of the UI and the Grafana dashboard, in `reports/figures/cp3/`.
+- **Not done:** the D-045 option B blind items, the written privacy report (it depends on the CP3.4 canary sweep) and the demo video.
+
 
 ## Portfolio signal (8 Oct 2026, D-102)
 

@@ -4,9 +4,34 @@
 **Bootcamp checkpoint:** 17. Build Streamlit UI · official date 7 Oct 2026  
 **JobFit version of this checkpoint:** Same as the template.  
 **Planned work:** 7 Oct 2026 · **Actual:** 6 Oct 2026  
-**Status:** PARTIAL · demo flow DONE LOCALLY (6 Oct); D-105 real-user flow IMPLEMENTED with automated in-process evidence (9 Oct, awaiting review); owner Local Mac validation PENDING; deployed UI NOT STARTED · design basis: System Design v1.3
+**Status:** DONE · UI v3 real-user flow (D-105) validated by the owner with live model calls on 10 Oct 2026, and served on the deployed demo behind Basic Auth ([D-106](../decisions.md)); screenshots in [reports/figures/cp3](../../reports/figures/cp3/README.md) · design basis: System Design v1.3
 
 > Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
+
+## Owner validation and screenshots (10 Oct 2026)
+
+The owner ran the full flow with live model calls and captured it ([captions and capture times](../../reports/figures/cp3/README.md)):
+
+| Step | Figure |
+| --- | --- |
+| Landing, upload, sanitized preview, consent | [1](../../reports/figures/cp3/fig01_ui_landing.png), [2](../../reports/figures/cp3/fig02_ui_upload_cv.png), [3](../../reports/figures/cp3/fig03_ui_review_sanitized_text.png), [4](../../reports/figures/cp3/fig04_ui_consent.png) |
+| CV ready, Find Jobs filters, Relevant Jobs (search order, no score) | [5](../../reports/figures/cp3/fig05_ui_cv_ready.png), [6](../../reports/figures/cp3/fig06_ui_find_jobs_filters.png), [7](../../reports/figures/cp3/fig07_ui_relevant_jobs.png) |
+| Honest progress, Analyze Fit (86% evidence coverage), evidence per requirement | [8](../../reports/figures/cp3/fig08_ui_analysis_progress.png), [9](../../reports/figures/cp3/fig09_ui_analyze_fit_score.png), [10](../../reports/figures/cp3/fig10_ui_evidence_per_requirement.png) |
+| Improve My CV: clarify evidence, a draft from the user's answers, a confirmed gap without fabrication | [11](../../reports/figures/cp3/fig11_ui_improve_my_cv.png), [12](../../reports/figures/cp3/fig12_ui_improve_cv_answer_draft.png), [13](../../reports/figures/cp3/fig13_ui_honest_gap_guidance.png) |
+| Check a Job on the deployed demo | [14](../../reports/figures/cp3/fig14_ui_check_a_job_deployed.png), [15](../../reports/figures/cp3/fig15_ui_check_a_job_result_deployed.png) |
+
+![Analyze Fit, evidence coverage](../../reports/figures/cp3/fig09_ui_analyze_fit_score.png)
+
+What the screenshots confirm:
+- the sanitizer runs before the preview ("header lines (3), summary sections (1)" removed);
+- consent is required before any provider call;
+- Relevant Jobs carry no score;
+- the score is labelled as evidence coverage, not a hiring probability;
+- unverifiable requirements are shown as "Belum bisa dipastikan" and not counted;
+- Improve My CV asks before drafting and never adds an unconfirmed claim.
+
+The UI shows the session allowance ("10 cek kecocokan per sesi").
+
 
 ## Product experience target (8 Oct 2026, D-102): PLANNED
 

@@ -9,6 +9,15 @@ What each document is for:
 - The [decision log](../decisions.md) explains why things were chosen.
 - The [failure log](../failures.md) records known defects.
 
+> **Status update (10 Oct 2026, [D-106](../decisions.md)):** the app is deployed on the SumoPod VPS as a controlled demo behind Caddy Basic Auth. The owner validated the real-user flow with live models, and the production Grafana dashboard (21 panels) is live ([screenshots](../../reports/figures/cp3/README.md)).
+>
+> Still open:
+> - the recorded deployed canary sweep and PR-10 (CP3.4);
+> - D-045 option B (CP3.5);
+> - the release tag (CP3.6).
+>
+> The rows below keep their original wording. Use the [CP3 README](README.md) table for the current stage status.
+
 **Status values:** TODO, IN PROGRESS, DONE (only once the validation in the row has passed, with linked evidence), BLOCKED.
 
 **Priorities:**

@@ -3,10 +3,25 @@
 **Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
 **Bootcamp checkpoint:** 18. Testing End-to-End Application · official date 8 Oct 2026  
 **JobFit version of this checkpoint:** Same as the template, on the deployed app.  
-**Planned work:** 8 Oct 2026 (feature freeze at the end of the day); moved to 9 Oct with the formal freeze at the end of 9 Oct (D-100) · **Actual:** 6 Oct 2026 (local part)\
-**Status:** PARTIAL · local checks passed (27/27); D-105 automated in-process evidence (9 Oct); **owner Local Mac validation PENDING; deployed validation PENDING**; deployed validation, privacy release gate and freeze PLANNED for 9 Oct (D-100); controlled public beta acceptance bar set by D-102 (8 Oct) · design basis: System Design v1.3
+**Planned work:** 8 Oct 2026 (feature freeze at the end of the day); moved to 9 Oct with the formal freeze at the end of 9 Oct (D-100) · **Actual:** 6 Oct 2026 (local part); 10 Oct 2026 (owner live and deployed runs)\
+**Status:** PARTIAL · local checks passed (27/27); D-105 automated in-process evidence (9 Oct); owner live runs and deployed Check a Job DONE (10 Oct, screenshots); production monitoring live in Grafana; **deployed canary sweep, PR-10 and the latency/cost table NOT YET RECORDED** · design basis: System Design v1.3
 
 > Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
+
+## Validation update (10 Oct 2026)
+
+| Check | Result | Evidence |
+| --- | --- | --- |
+| Real-user flow with live models (upload → sanitized preview → consent → parse → Find Jobs → Analyze Fit → Improve My CV) | Passed (owner run, served on `127.0.0.1`) | [Figures 1-13](../../reports/figures/cp3/README.md) |
+| Check a Job on the deployed demo (`https://jobfit-demo.duckdns.org`, Basic Auth) | Passed (two pasted JDs scored: 100% and 67% evidence coverage) | [Figures 14-15](../../reports/figures/cp3/README.md) |
+| Production monitoring (Prometheus target up, 21 Grafana panels with data) | Passed for the panels shown; *LLM Retries & Fallbacks* and *Budget Refusals* show "No data" because no retry or refusal happened | [Figures 16-19](../../reports/figures/cp3/README.md) |
+| Automated privacy tests for the public path (canary sinks, gates, client IP, upload failures) | Passed locally | [Deployment guide](../../deploy/public-live/README.md), [validation record](../../reports/validation/observability_20261010/validation.md) |
+| Deployed canary sweep and paid canary run (steps 6-7 of the deployment guide) | **Not recorded** | To be added here with date, commit, pass/fail per item and cost |
+| PR-10 original vs masked comparison | **Not run** | Deferred |
+| Latency and cost table on the deployed app | **Not recorded** | The Grafana panels give live values; a written table is still to be added |
+
+Until the canary sweep is recorded here, the project does not claim that the privacy release gate has passed on the deployed host.
+
 
 ## Controlled public beta validation (8 Oct 2026, D-102): PLANNED
 

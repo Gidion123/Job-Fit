@@ -6,17 +6,33 @@ Every report starts as a plan (status PLANNED / NOT RUN). Results, interpretatio
 
 | Stage | Bootcamp checkpoint (template name) | JobFit scope | Report | Official date | Planned work | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| CP3.1 | 15. Deployment API menggunakan Flask/FastAPI | Public-beta API for both flows, safety controls and instrumentation | [API Deployment with FastAPI](CP3_01_FastAPI_Service.md) | 5 Oct 2026 | 5 Oct; CP3 additions 8 Oct | PARTIAL (demo flow done locally; Phase 2A settings and bounds done, full bound above the cap; Phase 2B dark safety layer and persistent production ledger done (local/CI); public path PLANNED) |
-| CP3.2 | 16. Integrasi Database & GitHub Actions CI/CD | Production corpus, job sync, VPS and delivery | [Database Integration and CI/CD](CP3_02_Database_and_CICD.md) | 6 Oct 2026 | 6 Oct; CP3 additions 8-9 Oct | PARTIAL (CI green after Phase 1; not deployed) |
-| CP3.3 | 17. Build Streamlit UI | Product experience: Find Jobs, Check a Job, stage-aware progress, "Improve My CV for This Job" | [Streamlit UI](CP3_03_Streamlit_UI.md) | 7 Oct 2026 | 7 Oct; CP3 additions 8-9 Oct | PARTIAL (demo flow done locally) |
-| CP3.4 | 18. Testing End-to-End Application | Controlled public beta validation, privacy release gate and feature freeze | [End-to-End Testing](CP3_04_End_to_End_Testing.md) | 8 Oct 2026 | 9 Oct (formal freeze at the end of 9 Oct, D-100) | PARTIAL (local checks passed) |
-| CP3.5 | 19. PPT Final Project / Portfolio | Final evidence, D-045, privacy and latency reports, deck and video | [Final Presentation and Portfolio](CP3_05_Final_Presentation_and_Portfolio.md) | 9 Oct 2026 | 10 Oct | PLANNED / NOT RUN |
-| CP3.6 | 20. Finalisasi Portfolio & Rehearsal Presentation | Regression, rehearsal and release tag | [Finalization and Rehearsal](CP3_06_Finalization_and_Rehearsal.md) | 10 Oct 2026 | 10 Oct | PLANNED / NOT RUN |
+| CP3.1 | 15. Deployment API menggunakan Flask/FastAPI | Public-beta API for both flows, safety controls and instrumentation | [API Deployment with FastAPI](CP3_01_FastAPI_Service.md) | 5 Oct 2026 | 5 Oct; CP3 additions 8 Oct | DONE, deployed 10 Oct (controlled demo behind Caddy Basic Auth); public-path checks in the [deployment guide](../../deploy/public-live/README.md) |
+| CP3.2 | 16. Integrasi Database & GitHub Actions CI/CD | Production corpus, job sync, VPS and delivery | [Database Integration and CI/CD](CP3_02_Database_and_CICD.md) | 6 Oct 2026 | 6 Oct; CP3 additions 8-9 Oct | DONE (CI green; Alembic; SumoPod VPS with Docker Compose since 10 Oct); scheduled JSearch refresh PLANNED |
+| CP3.3 | 17. Build Streamlit UI | Product experience: Find Jobs, Check a Job, stage-aware progress, "Improve My CV for This Job" | [Streamlit UI](CP3_03_Streamlit_UI.md) | 7 Oct 2026 | 7 Oct; CP3 additions 8-9 Oct | DONE (UI v3; owner live runs on 10 Oct, [screenshots](../../reports/figures/cp3/README.md)) |
+| CP3.4 | 18. Testing End-to-End Application | Controlled public beta validation, privacy release gate and feature freeze | [End-to-End Testing](CP3_04_End_to_End_Testing.md) | 8 Oct 2026 | 9 Oct (formal freeze at the end of 9 Oct, D-100) | PARTIAL (local, automated and owner live checks done; Grafana monitoring live; deployed canary sweep and PR-10 not yet recorded) |
+| CP3.5 | 19. PPT Final Project / Portfolio | Final evidence, D-045, privacy and latency reports, deck and video | [Final Presentation and Portfolio](CP3_05_Final_Presentation_and_Portfolio.md) | 9 Oct 2026 | 10 Oct | PARTIAL (final deck prepared 10 Oct; D-045 option B not run) |
+| CP3.6 | 20. Finalisasi Portfolio & Rehearsal Presentation | Regression, rehearsal and release tag | [Finalization and Rehearsal](CP3_06_Finalization_and_Rehearsal.md) | 10 Oct 2026 | 10 Oct | PLANNED (rehearsal and release tag) |
 | CP3.7 | 21. Final Project Presentation + Pemberian Tugas Portofolio | Present deployed JobFit with the saved-demo fallback | [Final Presentation and Submission](CP3_07_Final_Presentation_and_Submission.md) | 11 Oct 2026 | 11 Oct | PLANNED / NOT RUN |
 
 The plan behind these reports is the [CP2-CP3 master plan](../master-plan.md).
 
-**9 Oct 2026 ([D-105](../decisions.md)):** the real-user flow is implemented with automated evidence. The D-104 privacy lifecycle was accepted at `e4c69ab`. The status is **ready for owner Local Mac validation** (pending; [runbook](Runbook_Owner_Local_Validation.md)). Nothing is deployed, monitored or public.
+**10 Oct 2026 ([D-106](../decisions.md)): deployed as a controlled demo.** JobFit runs on the SumoPod VPS (Ubuntu 24.04, 2 vCPU, 4 GB) with Docker Compose. The API, UI and database listen on `127.0.0.1` only, and Caddy serves `https://jobfit-demo.duckdns.org` behind Basic Auth for invited mentors.
+
+Evidence from the owner (captured 10 Oct 2026, [reports/figures/cp3](../../reports/figures/cp3/README.md)):
+
+- **Owner run with live model calls, served on `127.0.0.1`:** upload, sanitized preview and consent, CV ready, Find Jobs with filters and Relevant Jobs, Analyze Fit, and Improve My CV (figures 1-13).
+- **Deployed demo:** Check a Job runs end to end and returns evidence coverage (figures 14-15).
+- **Monitoring:** the production dashboard *JobFit - Production Monitoring* (21 panels, Prometheus + Grafana + node_exporter) shows API, AI-stage, LLM and budget metrics from the deployed runs (figures 16-19).
+
+Langfuse is off for this demo by owner decision ([Langfuse notes](Langfuse_Minimal_Tracing.md)).
+
+Not recorded yet:
+- the deployed canary sweep (steps 6-7 of the [deployment guide](../../deploy/public-live/README.md));
+- PR-10;
+- D-045 option B;
+- the release tag.
+
+**Earlier, 9 Oct 2026 ([D-105](../decisions.md)):** the real-user flow is implemented with automated evidence. The D-104 privacy lifecycle was accepted at `e4c69ab`. At that point the status was **ready for owner Local Mac validation** ([runbook](Runbook_Owner_Local_Validation.md)), with nothing deployed yet; see the 10 Oct note above.
 
 **CP3 scope clarified (8 Oct 2026, [D-102](../decisions.md)):** JobFit is a production-grade AI engineering portfolio with a controlled public beta on one VPS, not an enterprise SaaS. Two first-class flows: **Find Jobs** (CV → retrieval → matching) and **Check a Job** (CV + pasted JD → matching; the JD is never added to the corpus). New requirements: stage-aware analysis progress and "Improve My CV for This Job" with a hard anti-fabrication rule. Tasks use the public-beta acceptance bar (safe, cost bounded, privacy aware, observable, honest about limits; manual recovery acceptable for rare uncertain states). Public live is still blocked by the D-096 bound until a separate decision.
 

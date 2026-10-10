@@ -4,11 +4,13 @@ JobFit ranks AI and data job postings for an early-career candidate's CV and sho
 
 Final project for the Data Science and Machine Learning bootcamp at Dibimbing (Batch 42).
 
-![Status](https://img.shields.io/badge/status-CP3%20in%20progress-blue)
-![Next](https://img.shields.io/badge/next-CP3%20implementation%20(plan%20frozen)-blue)
+![Status](https://img.shields.io/badge/status-CP3%20deployed%20(controlled%20demo)-green)
+![Next](https://img.shields.io/badge/next-final%20presentation%2011%20Oct-blue)
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 
-> **Current status (9 October 2026): ready for owner Local Mac validation.** On branch `cp3-development-20261007` (after the independently accepted privacy lifecycle at `e4c69ab`), the complete real-user flow is implemented and tested with fake providers: upload → local sanitizer → exact preview → consent → parse → **Find Jobs** (Relevant Jobs, then Analyze Fit on a chosen job) or **Check a Job** → **Improve My CV for This Job**. Uploaded CVs can be switched on **for the owner only** ([D-105](docs/decisions.md)); the public beta stays closed. Not yet done: the owner's local run with a real CV, deployment, monitoring and the public beta.
+> **Current status (10 October 2026): deployed as a controlled demo.** JobFit runs on a SumoPod VPS (Ubuntu 24.04, Docker Compose) at `https://jobfit-demo.duckdns.org`, behind Caddy Basic Auth so only invited mentors can reach it. The owner ran the full real-user flow with live model calls (upload → sanitized preview → consent → parse → **Find Jobs** → **Analyze Fit** → **Improve My CV**), ran **Check a Job** on the deployed demo, and monitors the production API in a 21-panel Grafana dashboard ([screenshots](#cp3-screenshots)). Langfuse is not used for this demo; monitoring is Prometheus and Grafana (owner decision, [D-106](docs/decisions.md)). Still open: a recorded deployed privacy canary sweep and the original-vs-masked comparison (CP3.4), the D-045 blind items (CP3.5) and the release tag (CP3.6).
+>
+> **Earlier status (9 October 2026): ready for owner Local Mac validation.** On branch `cp3-development-20261007` (after the independently accepted privacy lifecycle at `e4c69ab`), the complete real-user flow is implemented and tested with fake providers: upload → local sanitizer → exact preview → consent → parse → **Find Jobs** (Relevant Jobs, then Analyze Fit on a chosen job) or **Check a Job** → **Improve My CV for This Job**. Uploaded CVs can be switched on **for the owner only** ([D-105](docs/decisions.md)); the public beta stays closed. Not yet done: the owner's local run with a real CV, deployment, monitoring and the public beta.
 >
 > **Earlier status (8 October 2026):** CP1 and CP2 are closed ([D-094](docs/decisions.md), [CP2 closeout audit](docs/checkpoint_2/CP2_Closeout_Audit_20261007.md)). CP3 is in progress: the API, the Streamlit app and Docker run locally, the dark cost-safety runtime and the persistent production ledger are done and tested (local and CI), but the app is not deployed yet and privacy has not been validated end to end. CP3 aims for a **production-grade AI engineering portfolio with a controlled public beta** on one VPS ([D-102](docs/decisions.md)); public live is **planned**, not built, and still blocked by the cost bound.
 
@@ -18,7 +20,7 @@ Final project for the Data Science and Machine Learning bootcamp at Dibimbing (B
 | --- | --- | --- | --- |
 | CP1 | Data collection, cleaning, feature transformation, EDA | until 27 Sep 2026 | **Closed** |
 | CP2 | Labels, retrieval and LLM comparison, tuning, held-out evaluation | 28 Sep to 7 Oct 2026 | **Closed** (D-094). System frozen before testing (D-087); held-out evaluation done; presentation and mentoring done (D-093); post-test prompt study kept the baseline (D-090). [CP2 reports](docs/checkpoint_2/README.md) |
-| CP3 | API, database, app, testing, deployment, final presentation | 5 to 11 Oct 2026 | **In progress**. See the [CP3 table](#cp3-progress) |
+| CP3 | API, database, app, testing, deployment, final presentation | 5 to 11 Oct 2026 | **Deployed as a controlled demo** (10 Oct); final presentation on 11 Oct. See the [CP3 table](#cp3-progress) |
 
 ## The problem
 
@@ -30,19 +32,19 @@ Job boards show many postings, but early-career candidates cannot easily tell wh
 
 ## How it works
 
-JobFit has two flows (planned for public use in CP3, [D-102](docs/decisions.md)): **Find Jobs** (CV → search the job corpus → match) and **Check a Job** (CV + a job description you paste → match directly; the pasted text is never added to the corpus). Both end in evidence per requirement, strengths and gaps, and job-specific CV advice that never invents experience.
+JobFit has two flows ([D-102](docs/decisions.md), live on the controlled demo since 10 Oct): **Find Jobs** (CV → search the job corpus → match) and **Check a Job** (CV + a job description you paste → match directly; the pasted text is never added to the corpus). Both end in evidence per requirement, strengths and gaps, and job-specific CV advice that never invents experience.
 
 JobFit uses pretrained models; it does not train a neural network. The matching pipeline was chosen by measurement on development data and frozen before the held-out test ([D-087](docs/decisions.md); diagram in [CP2.6](docs/checkpoint_2/CP2_06_Recommendation_and_Summary.md#final-v1-architecture-d-087-freeze)):
 
-1. **CV in:** a synthetic demo CV, or (owner-only since 9 Oct) an uploaded CV after the local D-104 sanitizer removes identity, contact, Summary and privacy-only sections and the user consents to the exact text (see [Privacy status](#privacy-status)).
-2. **Candidate search:** hybrid PostgreSQL full-text search plus Qwen3 dense embeddings, fused with RRF. In the frozen CP2 pipeline and the saved demo, a seniority rule moves jobs asking for 3+ years down and the top 10 are analyzed. **In the real-user Find Jobs flow (D-103/D-105) search does not analyze anything:** it returns up to 30 Relevant Jobs (the frozen stage-1 depth) with no score, optionally pre-filtered, and only a job the user picks with **Analyze Fit** goes through steps 3-5 (at most 3 per session).
+1. **CV in:** a synthetic demo CV, or an uploaded CV after the local D-104 sanitizer removes identity, contact, Summary and privacy-only sections and the user consents to the exact text (see [Privacy status](#privacy-status)).
+2. **Candidate search:** hybrid PostgreSQL full-text search plus Qwen3 dense embeddings, fused with RRF. In the frozen CP2 pipeline and the saved demo, a seniority rule moves jobs asking for 3+ years down and the top 10 are analyzed. **In the real-user Find Jobs flow (D-103/D-105) search does not analyze anything:** it returns up to 30 Relevant Jobs (the frozen stage-1 depth) with no score, optionally pre-filtered, and only a job the user picks with **Analyze Fit** goes through steps 3-5 (up to 10 per session, `JOBFIT_SESSION_ANALYSIS_LIMIT`).
 3. **Requirements:** each job description is turned into requirement units by an LLM (DeepSeek Flash), checked against the source text and cached per job.
 4. **Evidence matching:** an LLM (GPT-6 Sol, with GPT-6 Luna as fallback) labels each requirement MATCH, PARTIAL or NO_MATCH and must quote the CV word for word; quotes are verified.
 5. **Score and order:** match % = (MATCH + 0.5 × PARTIAL) / required units. Jobs with unclear analysis are held in a "not fully analyzed" group instead of getting a misleading score; explicit experience conflicts get their own group.
 
 The match percentage measures evidence coverage of the job's required units. It is not a hiring probability.
 
-**Added in CP3 (product layers, not part of the frozen evaluation):** a FastAPI service, a Streamlit app that calls only the API, session-scoped privacy controls, a saved-results demo, Docker images and a GitHub Actions workflow.
+**Added in CP3 (product layers, not part of the frozen evaluation):** a FastAPI service, a Streamlit app that calls only the API, session-scoped privacy controls, a cost-safety runtime with a persistent usage ledger, a saved-results demo, Docker images, a GitHub Actions workflow, a VPS deployment behind Caddy, and Prometheus/Grafana monitoring.
 
 ## Key results
 
@@ -85,7 +87,7 @@ Details: [CP2.4 evaluation](docs/checkpoint_2/CP2_04_Evaluation_Metrics.md), [fi
 
 ## Current capabilities
 
-Built and tested locally on synthetic CVs (not deployed yet):
+Built and tested locally, then deployed as a controlled demo on 10 Oct 2026:
 
 - Demo CVs with a parsing summary; optional filters with a separate block for jobs missing the filtered value.
 - Ranked recommendations from a saved demo (no API key, no cost), with "K candidates analyzed", scored, conflict and not-fully-analyzed groups.
@@ -93,36 +95,51 @@ Built and tested locally on synthetic CVs (not deployed yet):
 - Market skill counts, CV suggestions and a deterministic CV coach v1 that writes bullets only from the user's answers ([CV coach plan](docs/cv-coach-plan.md)).
 - Session controls: masked preview with consent, heartbeat, expiry and "stop and delete session"; feedback stored as categories only.
 - Live analysis with paid model calls, when enabled and an OpenRouter key is set: a fresh recommendation run, and analysis of a pasted job description against a demo CV (pasted text stays in the session).
-- **Real-user flow (9 Oct, D-105; tested with fake providers, not yet run with a real CV):**
+- **Real-user flow (D-105; automated tests with fake providers on 9 Oct, owner runs with live models on 10 Oct, [figures 1-15](reports/figures/cp3/README.md)):**
   - upload → exact sanitized preview → optional edit → consent → **Continue** (parse) → **CV ready**;
   - **Find Jobs** with optional pre-search filters (role family, country, city, experience requirement, work mode, posted within) → **Relevant Jobs** (search relevance, no score) → **Refine these results** locally (no new request) → **Analyze Fit** on a chosen job (evidence coverage, requirement-by-requirement evidence, strengths, gaps);
   - **Check a Job** with a pasted job description;
   - **Improve My CV for This Job** (existing evidence made clearer; questions for possibly missing items; confirmed gaps; "not verified");
   - honest progress states.
 
-**What works locally today:** the saved demo, and the owner-only real-CV flow through `docker-compose.owner-local.yml` (production runtime, persistent ledger, budgets, ZDR, owner token). It needs your OpenRouter key and a restored, seeded corpus copy; see the [owner-local runbook](docs/checkpoint_3/Runbook_Owner_Local_Validation.md). **Still blocked:** uploaded CVs for anyone but the owner (the public beta is closed), a deployed app, monitoring.
+**Where it runs:** the controlled demo at `https://jobfit-demo.duckdns.org` (Caddy Basic Auth; credentials are shared privately with mentors), the owner-local stack (`docker-compose.owner-local.yml`, see the [owner-local runbook](docs/checkpoint_3/Runbook_Owner_Local_Validation.md)), and the free saved demo. The deployed stack keeps the public-beta controls: per-IP tickets, the session allowance, US$5/day and US$25 lifetime budgets, the persistent ledger, ZDR routing and the D-104 consent lease ([deployment guide](deploy/public-live/README.md)).
 
 ## Privacy status
 
 | Level | Status |
 | --- | --- |
-| Implemented | D-104 structural data minimization (identity/contact header, Summary family and privacy-only sections removed locally; deterministic backstops), editable preview sanitized again on every edit, consent bound to the exact sanitized digest, fail-closed refusals, ZDR provider routing, owner-scoped sessions with expiry and delete, upload cleanup. Uploaded CVs reach a provider only owner-only (`JOBFIT_REAL_CV_ENABLED`, D-105) |
+| Implemented | D-104 structural data minimization (identity/contact header, Summary family and privacy-only sections removed locally; deterministic backstops), editable preview sanitized again on every edit, consent bound to the exact sanitized digest, fail-closed refusals, ZDR provider routing, owner-scoped sessions with expiry and delete, upload cleanup. Uploaded CVs reach a provider only after consent to the exact sanitized text, and only when the live gates allow it (owner-local, or the Basic Auth demo with every public-beta gate holding, D-103/D-105) |
 | Measured (offline, independently accepted at `e4c69ab`) | Synthetic calibration gates and API/provider-payload/sink canary gates: no Summary or raw canary reaches a provider payload, response, log or session state |
 | Component/unit tested | Yes: privacy-control, masking and API-level tests (the API tests use a fake run, not a deployed host) |
-| End-to-end privacy validation | **Not performed yet**: the owner's Local Mac run and the deployed CP3.4 privacy release gate are pending |
+| End-to-end privacy validation | **Partly evidenced:** the owner's live runs show the sanitized preview and consent working on real flows ([figures 3-4](reports/figures/cp3/README.md)). The deployed canary sweep (no canary in logs, `/metrics` or a database dump; [deployment guide](deploy/public-live/README.md), steps 6-7) has **no recorded result yet** in CP3.4 |
 | Original-vs-masked matching comparison | **Not performed yet**; planned for CP3.4, reported in CP3.5 |
 
-Details: [D-092](docs/decisions.md) and the [privacy threat model](docs/privacy-threat-model.md). Until the CP3.4 checks are done, JobFit makes no claim that privacy is validated end to end or that masking leaves matching quality unchanged.
+Details: [D-092](docs/decisions.md) and the [privacy threat model](docs/privacy-threat-model.md). Until the CP3.4 canary sweep and the comparison are recorded, JobFit makes no claim that privacy is validated end to end or that masking leaves matching quality unchanged.
 
 ## CP3 progress
 
 | Stage | Status | Evidence and what is pending |
 | --- | --- | --- |
-| CP3.1 FastAPI service | Partial | Demo-CV flow done locally: all original endpoints, privacy controls and API tests. Since 7 Oct (CP3 Phase 2A), live mode fails closed: it is off by default and refuses incomplete production settings. The deterministic worst-case cost bound is US$84.77, above the US$2/day cap, so public live is not eligible yet. Since 8 Oct (Phase 2B, D-101) production live runs only through a dark, fail-closed cost-safety runtime (persisted reservations, correlated usage ledger, one live operation at a time, per-IP ticket, internal service token); under the US$2/day cap it refuses every recommendation. Planned: the public live path (real-CV parse through a consent adapter, runtime embedding, extraction cache), budget and abuse controls, upload hardening ([report](docs/checkpoint_3/CP3_01_FastAPI_Service.md)) |
-| CP3.2 Database and CI/CD | Partial | Docker images and compose work locally; PostgreSQL + pgvector holds the corpus and embeddings. The GitHub Actions workflow is green since CP3 Phase 1 on 7 Oct: the three environment-dependent tests ([FAIL-35](docs/failures.md)) are fixed, and CI now also runs the Pyflakes `F` check on `src`/`ui` and the CP2 freeze check (run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567)). No hosted deployment yet. Planned: SumoPod VPS (replaces Railway), Alembic, and a production job corpus refreshed from JSearch twice a month ([report](docs/checkpoint_3/CP3_02_Database_and_CICD.md), [production corpus](docs/production-corpus.md)) |
-| CP3.3 Streamlit UI | Partial | Demo flow done locally; the D-105 real-user flow (upload → consent → parse → Find Jobs / Check a Job → Analyze Fit → Improve My CV, zero-call local refinement, honest progress) implemented with automated evidence on 9 Oct. Pending: the owner's Local Mac run, screenshots and recording ([report](docs/checkpoint_3/CP3_03_Streamlit_UI.md)) |
-| CP3.4 End-to-end testing | Partial | Local scripted check passed 27 of 27 (6 Oct); D-105 in-process flow evidence with fakes (9 Oct). Pending: the owner Local Mac validation, deployed run, live run, privacy end-to-end validation, original-vs-masked comparison, latency/cost on the deployed app, the privacy release gate for public live, and the feature freeze at the end of 9 Oct ([report](docs/checkpoint_3/CP3_04_End_to_End_Testing.md)) |
-| CP3.5-CP3.7 Final report, rehearsal, presentation | Not started | Includes the final privacy report and the D-045 test extraction/evidence results (option B: blind items labeled first; planned) |
+| CP3.1 FastAPI service | **Done (deployed)** | Public-beta API for both flows with fail-closed settings, the dark-by-default cost-safety runtime (reservations, correlated ledger, one paid operation at a time, per-IP tickets, internal token), upload hardening and the D-104/D-105 consent lifecycle. Runs on the VPS behind Caddy since 10 Oct, exporting Prometheus metrics ([report](docs/checkpoint_3/CP3_01_FastAPI_Service.md)) |
+| CP3.2 Database and CI/CD | **Done** | PostgreSQL 17 + pgvector with Alembic `0001`/`0002`; GitHub Actions CI (ruff, offline tests, freeze verify, Docker builds, `/health` and ledger smoke tests). Deployed with Docker Compose on a SumoPod VPS (Ubuntu 24.04, 2 vCPU, 4 GB), API/UI/DB bound to `127.0.0.1` behind Caddy. The scheduled JSearch refresh stays planned ([report](docs/checkpoint_3/CP3_02_Database_and_CICD.md)) |
+| CP3.3 Streamlit UI | **Done** | UI v3 in Indonesian (English switch): upload → sanitized preview → consent → CV ready → Find Jobs / Check a Job → Analyze Fit → Improve My CV, with honest progress and a session allowance shown in the UI. Owner runs with live models on 10 Oct ([figures 1-15](reports/figures/cp3/README.md), [report](docs/checkpoint_3/CP3_03_Streamlit_UI.md)) |
+| CP3.4 End-to-end testing | **Partial** | Local scripted checks, automated privacy and public-path tests, owner live runs (local and deployed) and Grafana monitoring of the production API ([figures 16-19](reports/figures/cp3/README.md)). Not yet recorded: the deployed canary sweep, PR-10 original-vs-masked comparison and the latency/cost table ([report](docs/checkpoint_3/CP3_04_End_to_End_Testing.md)) |
+| CP3.5 Final presentation and portfolio | **Partial** | Final 10-minute deck with a demo section prepared on 10 Oct (kept outside the repository). D-045 option B (blind items) not run ([report](docs/checkpoint_3/CP3_05_Final_Presentation_and_Portfolio.md)) |
+| CP3.6-CP3.7 Rehearsal, release tag, presentation | Planned | Presentation on 11 Oct 2026 |
+
+## CP3 screenshots
+
+Captured by the owner on 10 Oct 2026. The full set with captions and capture times is in [reports/figures/cp3](reports/figures/cp3/README.md).
+
+| Analyze Fit: evidence coverage | Evidence per requirement |
+| --- | --- |
+| ![Analyze Fit score](reports/figures/cp3/fig09_ui_analyze_fit_score.png) | ![Evidence per requirement](reports/figures/cp3/fig10_ui_evidence_per_requirement.png) |
+| **Sanitized preview before consent** | **Relevant Jobs (search order, no score)** |
+| ![Sanitized preview](reports/figures/cp3/fig03_ui_review_sanitized_text.png) | ![Relevant jobs](reports/figures/cp3/fig07_ui_relevant_jobs.png) |
+| **Improve My CV: draft only from the user's answers** | **Check a Job on the deployed demo** |
+| ![Improve My CV draft](reports/figures/cp3/fig12_ui_improve_cv_answer_draft.png) | ![Check a Job result](reports/figures/cp3/fig15_ui_check_a_job_result_deployed.png) |
+| **Grafana: LLM attempts, latency and tokens** | **Grafana: budget and cost safety** |
+| ![Grafana LLM](reports/figures/cp3/fig18_grafana_llm.png) | ![Grafana cost and safety](reports/figures/cp3/fig19_grafana_cost_and_safety.png) |
 
 CP3 also picks up the mentor feedback from the CP2 presentation (D-093):
 
@@ -152,7 +169,7 @@ docker compose up -d --build           # database, API (port 8000) and UI (port 
 python scripts/e2e_check.py            # end-to-end checks against the running local API
 ```
 
-In a fresh clone the full offline suite passes: 672 passed, 11 skipped, 0 failed. Two of the skips are split tests that need the git-ignored raw JSearch snapshot; see [FAIL-35](docs/failures.md) (resolved). All CP1 and CP2 notebook outputs, results and figures are committed, so they can be read without running anything.
+Latest recorded full offline run (10 Oct 2026, [validation record](reports/validation/observability_20261010/validation.md)): 1,417 passed, 247 skipped, with 2 macOS-only baseline tests deselected. Database tests skip without the gated test database; split tests that need the git-ignored raw JSearch snapshot skip as described in [FAIL-35](docs/failures.md) (resolved). All CP1 and CP2 notebook outputs, results and figures are committed, so they can be read without running anything.
 
 **May cost money (OpenRouter):**
 
@@ -192,11 +209,12 @@ Job-Fit/
 ├── migrations/           Alembic: 0001 exact CP2 baseline, 0002 production schema, pinned fingerprints
 ├── notebooks/            CP1 research, CP2 held-out evaluation, CP2.8 Phase A
 ├── prompts/              Versioned LLM prompts
-├── reports/              Figures (CP1, CP2, Phase A) and the API usage ledger
+├── reports/              Figures (CP1, CP2, Phase A, CP3 screenshots), validation records and the API usage ledger
 ├── scripts/              Collection, experiment, evaluation, freeze and end-to-end scripts
 ├── src/jobfit/           The Python package: search, extraction, matching, scoring, privacy, session, api, eval
 ├── tests/                Unit, API, UI and pipeline tests
 ├── ui/                   Streamlit app (calls the API only)
+├── deploy/               VPS overrides: controlled public demo (Caddy Basic Auth), owner-live, Prometheus/Grafana observability
 ├── .github/workflows/    CI: lint, offline tests, Docker builds, health check
 ├── docker-compose.yml, Dockerfile.api, Dockerfile.ui
 ├── .env.example          Environment variable names only (copy to .env; never commit .env)
@@ -211,7 +229,7 @@ Folder-by-folder detail: [docs/repo-structure.md](docs/repo-structure.md).
 - Source: JSearch API (OpenWeb Ninja), which returns Google for Jobs results. Snapshot `CP1_20260926`. Scope: AI and data roles, mainly Indonesia, with a foreign comparison group.
 - The corpus is a query-based sample; percentages describe this corpus, not the whole job market.
 - Not included: raw API responses (`data/raw/`) and `jsearch_records.jsonl`, because they contain full responses and recruiter contact details. The processed files have contact details removed. Field definitions: [data contract](docs/data-contract.md).
-- All evaluation CVs are synthetic. Labels come from one reviewer with AI assistance. Real-CV processing is disabled.
+- All evaluation CVs are synthetic. Labels come from one reviewer with AI assistance. Uploaded-CV processing is enabled only on the controlled demo behind Basic Auth (and the owner-local stack), after consent to the sanitized text.
 - Job posting content belongs to the original publishers and is used for this study only.
 
 ## Documentation
@@ -227,14 +245,14 @@ Folder-by-folder detail: [docs/repo-structure.md](docs/repo-structure.md).
 
 ## Tech stack
 
-- **In use:** Python 3.11, pandas, NumPy, matplotlib, Jupyter, Pydantic, PostgreSQL 17 with pgvector, OpenRouter (LLM and embedding gateway), FastAPI, Streamlit, Docker and Docker Compose, pytest, ruff, GitHub Actions.
-- **Planned (D-095, D-099, D-103):** hosting on a SumoPod VPS behind Caddy; self-hosted Prometheus and Grafana OSS with node_exporter (Grafana private through an SSH tunnel); Langfuse Cloud free tier for LLM tracing (metadata only, required for the final beta).
+- **In use:** Python 3.11, pandas, NumPy, matplotlib, Jupyter, Pydantic, PostgreSQL 17 with pgvector, Alembic, OpenRouter (LLM and embedding gateway, ZDR routing), FastAPI, Streamlit, Docker and Docker Compose, pytest, ruff, GitHub Actions, a SumoPod VPS behind Caddy (HTTPS, Basic Auth), Prometheus, Grafana OSS and node_exporter (Grafana private through an SSH tunnel).
+- **Optional, off for the demo:** Langfuse metadata-only LLM tracing (adapter in place, `JOBFIT_LANGFUSE_ENABLED=0`; see [D-106](docs/decisions.md) and [Langfuse notes](docs/checkpoint_3/Langfuse_Minimal_Tracing.md)).
 
 ## Next steps
 
-1. **Next gate:** after independent review, the owner runs the [Local Mac validation](docs/checkpoint_3/Runbook_Owner_Local_Validation.md) with one real CV (owner-only, public beta closed).
-2. Then deploy to the VPS with public live off, add lean monitoring, and run the CP3.4 checks on the deployed app, including the privacy release gate and the original-vs-masked comparison. Switch public live on only if the gate passes, then record the feature freeze (end of 9 Oct).
-3. Final report, rehearsal and presentation (CP3.5-CP3.7).
+1. **Before or right after the presentation:** record the deployed canary sweep and the PR-10 original-vs-masked comparison in CP3.4, and tag the release (CP3.6).
+2. **Next improvements** (details in [CP3.5](docs/checkpoint_3/CP3_05_Final_Presentation_and_Portfolio.md#next-improvements-added-10-oct-2026-dion)): a larger LLM cost comparison with per-user cost estimates; ranking the whole job database by match rate with cheap pre-filtering; cost and latency optimization; a refined scoring formula with stress and performance tests; dynamic JD-specific CV suggestions without fabrication; and fixing the Langfuse integration for per-request tracing.
+3. Evaluate with real CVs (with consent) and at least two human reviewers.
 
 This README is the public progress snapshot. It is updated at every checkpoint closeout and at major implementation or deployment milestones, and it never claims more than the stage reports.
 

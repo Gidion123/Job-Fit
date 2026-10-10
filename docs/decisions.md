@@ -130,6 +130,8 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-102 | 8 Oct 2026 | CP3 portfolio / controlled public beta scope principle: north star, two first-class flows (Find Jobs, Check a Job), stage-aware progress, "Improve My CV for This Job" with a hard anti-fabrication rule, public-beta engineering bar, complexity budget | Approved and independently reviewed; authoritative CP3 scope direction; open gates 1 and 2 resolved by D-103 |
 | D-103 | 8 Oct 2026 | Controlled public-beta cost profile: separate versioned bounds (parse US$0.0614679, search US$0.0001648, job_analysis US$4.0012836), exact canonical byte envelopes, US$5/day and US$25 lifetime, ticket-gated session allowance (1 parse, 1 search, 3 job analyses), search-stage labelling; Langfuse required for the final beta | Approved by Dion and Codex; implemented dark 8 Oct (`5d07b0c`, `c3a718e`, `40ed823`); public real-CV flow still closed; independently verified and closed at `d30255d` |
 | D-104 | 8 Oct 2026 | Structural CV data-minimization boundary for the real-CV public beta (FAIL-37 revised design): drop the identity/contact header, the Summary/Profile/Objective family (structural delimiter only, not evidence) and privacy-only sections; keep evidence-bearing sections; deterministic PII backstops; fail closed without a boundary; no geography data, owner-review gate or identifier subsystem | Approved design; implementation planned; FAIL-37 OPEN / REVISED DESIGN |
+| D-105 | 9 Oct 2026 | Pre-local real-user product flow (upload → sanitized preview → consent → parse → Find Jobs / Check a Job → Analyze Fit → Improve My CV) and owner-only local activation | Approved by Dion; implemented 9 Oct, owner-validated 10 Oct |
+| D-106 | 10 Oct 2026 | Controlled mentor demo behind Caddy Basic Auth on the SumoPod VPS; monitoring with Prometheus and Grafana; Langfuse off for this demo | Owner decision (Dion); deployed 10 Oct |
 
 ---
 
@@ -1705,3 +1707,23 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
   - **Country filter options** cover the seeded snapshot (ID, SG, MY, PH, US).
   - **Untrusted CV/JD text** is escaped before any Markdown rendering.
 - **Status:** IMPLEMENTED (9 Oct 2026, fakes and disposable databases only; no paid call). READY FOR OWNER LOCAL MAC VALIDATION, pending independent review. Not locally validated, not deployed, the public beta not open. Runbook: [checkpoint_3/Runbook_Owner_Local_Validation.md](checkpoint_3/Runbook_Owner_Local_Validation.md).
+
+## D-106. Controlled mentor demo behind Caddy Basic Auth; Langfuse off for this demo
+
+- **Date/source:** 10 October 2026, Dion (owner). This entry records the owner decision already written in [deploy/public-live/README.md](../deploy/public-live/README.md) ("Owner decision: no Langfuse for this demo") and [checkpoint_3/Langfuse_Minimal_Tracing.md](checkpoint_3/Langfuse_Minimal_Tracing.md), together with the owner's deployment and screenshots of 10 October.
+- **Decision:**
+  - **Where it runs:** JobFit is deployed on the SumoPod VPS as a controlled demo for mentors at `https://jobfit-demo.duckdns.org`, behind Caddy Basic Auth. The credentials are shared privately and are never stored in the repository.
+  - **Admission for visitors:** only through the existing public-beta gates (`JOBFIT_PUBLIC_LIVE` and every gate in `jobfit.api.wiring.public_beta_open`). The other controls stay in force:
+    - per-IP tickets (10 per IP per 24 h);
+    - session allowance (parse 1, search 1, job_analysis up to 10);
+    - US$5/day and US$25 lifetime budgets;
+    - ZDR routing, idempotency and the D-104 consent lease.
+  - **Monitoring:** Prometheus, Grafana OSS and node_exporter, with the 21-panel *JobFit - Production Monitoring* dashboard. Grafana stays private.
+  - **Langfuse:** off (`JOBFIT_LANGFUSE_ENABLED=0`). The integration attempt hit an unresolved bug, so fixing it stays a next improvement (CP3.5).
+- **What this is not:**
+  - It is not a claim that every D-103 public-beta gate is met, because metadata-only Langfuse tracing is deliberately absent.
+  - It is not a claim that the deployed privacy canary sweep has passed; that result is not yet recorded in CP3.4.
+  - Basic Auth limits who can reach the site; it does not replace the privacy release gate.
+- **Unchanged:** D-087 (frozen files, models, prompts, retrieval, matching, scoring), the D-103 budgets and bounds, D-104 and D-105.
+- **Evidence:** [reports/figures/cp3](../reports/figures/cp3/README.md), figures 14-19 (deployed Check a Job and the production Grafana dashboard).
+- **Status:** RECORDED (owner decision, 10 Oct 2026).

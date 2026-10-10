@@ -224,7 +224,7 @@ The commands below are kept as the record of how the run was made.
 
 ## Outputs
 
-These are kept locally on the owner's Mac in `evals/results/cp3_llm_cost_quality_comparison/cp3_llm_cost_quality_comparison_v1/`. They are not committed to the repository.
+The executed run artifacts are committed under `evals/results/cp3_llm_cost_quality_comparison/cp3_llm_cost_quality_comparison_v1/` for reproducibility.
 - `plan.json`: the preflight receipt;
 - `pairs/<model>__<cv>_<job>.json`: 12 files, one per model and pair, including failures;
 - `requests.jsonl`: one metadata row per provider attempt, with no CV text, prompt or output;

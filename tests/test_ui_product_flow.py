@@ -782,3 +782,26 @@ def test_the_ui_follows_the_api_session_analysis_limit(monkeypatch):
         at.button(key='analysis_back').click().run()
     assert not at.button(key='analyze_J4').disabled                             # past the default of 3
     assert 'Sisa 7 dari 10 cek kecocokan' in page_text(at)
+
+
+def test_disabled_real_cv_processing_explains_the_disabled_consent_truthfully(monkeypatch):
+    from streamlit.testing.v1 import AppTest
+    Recorder.calls, Recorder.lose_next_analyze, Recorder.poll_running_once = [], False, set()
+
+    class Off(Fake):                                   # production: JOBFIT_REAL_CV_ENABLED=0
+        def upload(self, name, data):
+            return {**super().upload(name, data), 'provider_processing': 'disabled',
+                    'message': 'Live analysis of uploaded CVs is not enabled yet.'}
+    fake_module = types.ModuleType('api_client')
+    fake_module.ApiClient, fake_module.ApiError = Off, ApiError
+    monkeypatch.setitem(sys.modules, 'api_client', fake_module)
+    at = AppTest.from_file(str(ROOT / 'ui/streamlit_app.py'), default_timeout=60).run()
+    at.button(key='cta_upload').click().run()
+    at.file_uploader[0].upload('cv.txt', b'Data Analyst 2024\nPython reporting.', 'text/plain').run()
+    digest = digest_of(at)
+    assert at.checkbox(key=f'consent_{digest}').disabled and at.button(key='parse_go').disabled
+    assert 'Analisis CV asli belum diaktifkan di demo ini' in page_text(at)
+    assert 'Live analysis of uploaded CVs' not in page_text(at)
+    at.button(key='privacy_demo').click().run()
+    assert at.session_state['page'] == 'demo'
+    assert names('consent', 'parse_cv') == []

@@ -365,7 +365,18 @@ def _apply(text: str, spans) -> tuple[str, dict[str, int]]:
     return ''.join(pieces), counts
 
 
-def sanitize_upload(text: str, *, marks: OwnerMarks | None = None, edited: bool = False) -> MaskedPreview:
+_SECTION_WORDS = frozenset({'skill', 'skills', 'technical', 'tech', 'tools', 'stack', 'technologies',
+                            'keahlian', 'teknis', 'kemampuan', 'keterampilan', 'expertise', 'competencies'})
+
+
+def _new_line_is_private(line: str) -> bool:
+    """A new line typed into the kept first block that looks like a person's name (not a section heading)."""
+    words = {w.casefold() for w in re.findall(r'[^\W\d_]+', line)}
+    return _name_tokens(line.strip()) is not None and not words & _SECTION_WORDS
+
+
+def sanitize_upload(text: str, *, marks: OwnerMarks | None = None, edited: bool = False,
+                    approved: str | None = None) -> MaskedPreview:
     """D-104 sanitizer for uploaded or edited CV text. Raises `SanitizeRefused` (fixed code) to fail closed.
 
     `marks` are the owner fingerprints kept from the upload, so an edit that reintroduces the name
@@ -374,6 +385,8 @@ def sanitize_upload(text: str, *, marks: OwnerMarks | None = None, edited: bool 
     `edited`: the text is the user's correction of an already sanitized preview. Its identity header was
     removed at upload. A bounded edit-only heading set recognises reworded professional sections such as
     "TECHNICAL SKILLS & TOOLS"; arbitrary lead and personal-data labels are never retained as evidence.
+    `approved` is the sanitized preview being edited: a first block that still contains approved lines
+    is the user's edited first section and is kept (see `structure.split_structure`).
     """
     from jobfit.privacy.structure import MASKING_FAILED, SanitizeRefused, normalize_source, split_structure
     if not isinstance(text, str) or (marks is not None and not isinstance(marks, OwnerMarks)):
@@ -381,7 +394,10 @@ def sanitize_upload(text: str, *, marks: OwnerMarks | None = None, edited: bool 
     failed = False
     try:
         source = normalize_source(text)
-        structured = split_structure(source, keep_lead=edited)
+        approved_lines = frozenset(line.strip() for line in normalize_source(approved or '').split('\n')
+                                   if line.strip()) if edited else frozenset()
+        structured = split_structure(source, keep_lead=edited, approved=approved_lines,
+                                     drop_new=_new_line_is_private)
         owner = (marks if marks is not None else OwnerMarks()).extended(owner_values(structured.header))
         retained = structured.retained
         spans = _pattern_spans(retained) + _owner_spans(retained, owner) + _label_spans(retained) + \

@@ -116,12 +116,20 @@ class Structured:
     removed: dict = field(default_factory=dict)
 
 
-def split_structure(text: str, *, keep_lead: bool = False) -> Structured:
+def split_structure(text: str, *, keep_lead: bool = False, approved: frozenset[str] = frozenset(),
+                    drop_new=lambda line: False) -> Structured:
     """Apply the D-104 boundary to normalized text; raise SanitizeRefused when no start exists.
 
     ``keep_lead`` (edits of an already sanitized preview only) recognises bounded rewordings of
     professional headings. Unknown lead, inline personal-data labels, Summary and privacy sections
     are dropped; at least one evidence heading is still required.
+
+    ``approved`` (edits only): the stripped lines of the preview the user is editing. When there is no
+    Summary heading and the text before the first evidence heading contains at least one approved line,
+    that block is the user's edited first section (for example with a reworded heading such as "TECH
+    SKILLS"), so it is kept like any other section: privacy labels still drop the rest of the block, and
+    new lines for which ``drop_new`` is true (person-name shaped) are dropped. A block with no approved
+    line (a new note, a personal header) is dropped as before.
     """
     lines = text.split('\n')
     kinds = [classify_edit(line) if keep_lead else classify(line) for line in lines]
@@ -133,8 +141,16 @@ def split_structure(text: str, *, keep_lead: bool = False) -> Structured:
     removed = {'header_lines': sum(1 for line in lines[:summary_at if summary_at is not None else start]
                                    if line.strip()),
                'summary_sections': int(summary_at is not None)}
+    lead_kept = keep_lead and summary_at is None and any(
+        line.strip() and line.strip() in approved for line in lines[:start])
+    lead_end = start
+    if lead_kept:
+        removed['header_lines'], start = 0, 0
     retained, retained_kinds, dropping = [], [], False
-    for line, kind in zip(lines[start:], kinds[start:]):
+    for index, (line, kind) in enumerate(zip(lines[start:], kinds[start:]), start):
+        if index < lead_end and kind is None and line.strip() and line.strip() not in approved and drop_new(line):
+            removed['header_lines'] += 1             # a new person-name shaped line in the kept first block
+            continue
         if kind == 'summary' or kind == 'privacy':
             dropping = True
             category = ('summary_sections' if kind == 'summary' else

@@ -446,7 +446,10 @@ def privacy() -> None:
              f'</pre><p class="jf-small jf-muted jf-mt4">{esc(t("privacy.source"))}</p></div>')
         for warning in preview['warnings']:
             html(f'<p class="jf jf-small jf-muted">{esc(warning)}</p>')
-        if preview.get('message'):
+        if preview.get('provider_processing') != 'enabled':      # real-CV processing is off by deployment design
+            html(notice(t('privacy.disabled'), 'warn'))
+            st.button(t('upload.demo'), key='privacy_demo', type='primary', on_click=go, args=('demo',))
+        elif preview.get('message'):
             html(notice(esc(preview['message']), 'warn'))
         if ss.get('parse_error'):
             show_error(ss.pop('parse_error'))

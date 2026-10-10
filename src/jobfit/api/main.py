@@ -419,8 +419,9 @@ def create_app(deps: AppDeps) -> FastAPI:
         """
         try:
             marks = None if upload else deps.store.owner_marks(h)
+            approved = None if upload else deps.store.preview(h)[0]      # the sanitized text being edited
             try:
-                preview = sanitize_upload(raw, marks=marks, edited=not upload)
+                preview = sanitize_upload(raw, marks=marks, edited=not upload, approved=approved)
             except SanitizeRefused as exc:
                 deps.store.invalidate_preview(h, clear_owner_marks=upload)
                 _drop_real_runs(h)

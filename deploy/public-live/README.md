@@ -41,9 +41,10 @@ For this limited mentor demo behind Caddy Basic Auth the owner decided **not** t
 5. **Start (still closed to the public):**
    ```sh
    cd /opt/jobfit && git fetch origin && git checkout <reviewed commit>
-   C="docker compose -f docker-compose.prod.yml -f deploy/public-live/docker-compose.public-live.yml --env-file .env.prod"
+   C="docker compose -f docker-compose.prod.yml -f deploy/public-live/docker-compose.public-live.yml -f deploy/observability/api-network.override.yml --env-file .env.prod"
    $C config --quiet && $C up -d --build api ui
    ```
+   Keep `deploy/observability/api-network.override.yml` in every API start: without it the API leaves the `jobfit-observability` network, the Prometheus target `jobfit-api` goes DOWN and 17 of the 21 Grafana panels show No data. Check the target with `curl -s http://127.0.0.1:9090/api/v1/targets` on the VPS (`jobfit-api` must be `up`).
    `/health` inside the API: `"live_enabled":true,"real_cv_enabled":true,"live_storage_ready":true,"analysis_limit":10,"public_beta_open":false`.
    **Access checks (required):** from outside the VPS, `curl -sI https://jobfit-demo.duckdns.org` returns `401` without credentials; `curl -s --max-time 5 http://<VPS public IP>:8000/health` and `:8501` fail (API and UI listen on `127.0.0.1` only); on the VPS `ss -ltnp | grep -E ':8000|:8501|:5432'` shows only `127.0.0.1` (no public PostgreSQL port). `docker logs jobfit-prod-ui-1 | grep client_ip_source` shows `forwarded` after opening the site (anything else: fix step 3 before continuing).
 6. **No-cost deployed canary sweep:** run `scripts/e2e_check.py` against the internal API (inside the VPS network); it uploads a synthetic canary CV and checks masking, consent binding, deletion and responses. Then grep for the canary strings in `docker logs` of api/ui, in authorized `/metrics`, and in a `pg_dump` of the production database: zero hits required.
@@ -54,7 +55,7 @@ For this limited mentor demo behind Caddy Basic Auth the owner decided **not** t
 ## Revert
 
 ```sh
-docker compose -f docker-compose.prod.yml --env-file .env.prod up -d api ui
+docker compose -f docker-compose.prod.yml -f deploy/observability/api-network.override.yml --env-file .env.prod up -d api ui
 ```
 
 This restores the dark deployment (live off, consent disabled for everyone). The database and ledger are never rolled back. A stuck `reserved` row or a breach marker follows the CP3.1 manual review procedure (`docs/checkpoint_3/CP3_01_FastAPI_Service.md`).

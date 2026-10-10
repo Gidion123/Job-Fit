@@ -3,7 +3,7 @@
 # An OVERRIDE for the existing /opt/jobfit/docker-compose.prod.yml; it changes nothing else:
 #
 #   docker compose -f docker-compose.prod.yml -f deploy/owner-live/docker-compose.owner-live.yml \
-#     --env-file .env.prod up -d --build api ui-owner
+#     -f deploy/observability/api-network.override.yml --env-file .env.prod up -d --build api ui-owner
 #
 # - api: live and uploaded-CV processing on for the OWNER only. JOBFIT_PUBLIC_LIVE stays 0 and the public
 #   beta is hardcoded closed, so a request without the owner token gets 503 and the public UI keeps its

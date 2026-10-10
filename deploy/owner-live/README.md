@@ -13,7 +13,7 @@
 ```sh
 cd /opt/jobfit
 git fetch origin && git checkout <reviewed commit>        # the checkout must be clean except docker-compose.prod.yml
-C="docker compose -f docker-compose.prod.yml -f deploy/owner-live/docker-compose.owner-live.yml --env-file .env.prod"
+C="docker compose -f docker-compose.prod.yml -f deploy/owner-live/docker-compose.owner-live.yml -f deploy/observability/api-network.override.yml --env-file .env.prod"
 $C config --quiet                                          # merge check; prints nothing on success
 $C up -d --build api ui ui-owner
 ```
@@ -30,7 +30,7 @@ $C up -d --build api ui ui-owner
 ```sh
 docker compose -f docker-compose.prod.yml -f deploy/owner-live/docker-compose.owner-live.yml --env-file .env.prod stop ui-owner
 docker compose -f docker-compose.prod.yml -f deploy/owner-live/docker-compose.owner-live.yml --env-file .env.prod rm -f ui-owner
-docker compose -f docker-compose.prod.yml --env-file .env.prod up -d api ui
+docker compose -f docker-compose.prod.yml -f deploy/observability/api-network.override.yml --env-file .env.prod up -d api ui
 ```
 
 This brings back `JOBFIT_LIVE_ENABLED=0` and `JOBFIT_REAL_CV_ENABLED=0`. The database and ledger are never rolled back. If a paid operation stops with a breach marker or a stuck `reserved` row, follow the CP3.1 manual review procedure (`docs/checkpoint_3/CP3_01_FastAPI_Service.md`); never clear it by hand.

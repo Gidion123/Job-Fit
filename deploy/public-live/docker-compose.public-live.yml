@@ -2,7 +2,7 @@
 # /opt/jobfit/docker-compose.prod.yml; follow deploy/public-live/README.md (gate first, then switch on):
 #
 #   docker compose -f docker-compose.prod.yml -f deploy/public-live/docker-compose.public-live.yml \
-#     --env-file .env.prod up -d --build api ui
+#     -f deploy/observability/api-network.override.yml --env-file .env.prod up -d --build api ui
 #
 # - api: live analysis of uploaded CVs. Non-owners are admitted only when JOBFIT_PUBLIC_LIVE=1 in .env.prod
 #   (default 0) AND every gate in jobfit.api.wiring.public_beta_open holds. Langfuse is optional (owner

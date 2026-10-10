@@ -1,0 +1,64 @@
+# Owner-only live demo on the production VPS (D-105 owner path). Public live stays OFF.
+#
+# An OVERRIDE for the existing /opt/jobfit/docker-compose.prod.yml; it changes nothing else:
+#
+#   docker compose -f docker-compose.prod.yml -f deploy/owner-live/docker-compose.owner-live.yml \
+#     --env-file .env.prod up -d --build api ui-owner
+#
+# - api: live and uploaded-CV processing on for the OWNER only. JOBFIT_PUBLIC_LIVE stays 0 and the public
+#   beta is hardcoded closed, so a request without the owner token gets 503 and the public UI keeps its
+#   disabled consent. Budgets, ledger, database, ZDR, idempotency and the D-104 consent lease are unchanged.
+# - ui-owner: a second Streamlit container WITH the owner token, bound to 127.0.0.1:8511 only and never
+#   routed by Caddy. Reach it with an SSH tunnel: ssh -L 8511:127.0.0.1:8511 ubuntu@<vps>, then open
+#   http://127.0.0.1:8511 on your own machine.
+# - The public `ui` service is not changed and never receives JOBFIT_OWNER_TOKEN.
+#
+# Required in .env.prod (never commit or print them): OPENROUTER_API_KEY, JOBFIT_OWNER_TOKEN (32+ chars).
+# Required file: reports/tokenizers/qwen3-embedding-8b-tokenizer.json (sha256 83cdf8c3...b8d) for Find Jobs.
+# Revert: start api and ui again with docker-compose.prod.yml only and stop ui-owner (see README.md here).
+services:
+  api:
+    environment:
+      JOBFIT_LIVE_ENABLED: "1"
+      JOBFIT_REAL_CV_ENABLED: "1"
+      JOBFIT_PUBLIC_LIVE: "0"
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:?Set OPENROUTER_API_KEY in .env.prod}
+      JOBFIT_OWNER_TOKEN: ${JOBFIT_OWNER_TOKEN:?Set JOBFIT_OWNER_TOKEN (32+ characters) in .env.prod}
+    volumes:
+      - ./reports/tokenizers:/app/reports/tokenizers:ro      # pinned query tokenizer for Find Jobs
+
+  ui-owner:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    restart: unless-stopped
+    init: true
+    environment:
+      JOBFIT_API_URL: http://api:8000
+      JOBFIT_INTERNAL_TOKEN: ${JOBFIT_INTERNAL_TOKEN:?Set JOBFIT_INTERNAL_TOKEN}
+      # Server-side only: Streamlit forwards it to the internal API; it never reaches the browser.
+      JOBFIT_OWNER_TOKEN: ${JOBFIT_OWNER_TOKEN:?Set JOBFIT_OWNER_TOKEN (32+ characters) in .env.prod}
+    ports:
+      - "127.0.0.1:8511:8501"                                 # SSH tunnel only; not published by Caddy
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health', timeout=3)"
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - application_net
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"

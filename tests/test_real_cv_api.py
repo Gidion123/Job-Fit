@@ -425,3 +425,21 @@ def test_an_edit_clears_the_current_and_the_per_operation_search_results(tmp_pat
         with pytest.raises(KeyError):
             deps.store.read(handle, lease, k)
     assert search(client, h, key=key).status_code == 409                  # parse required again, no replay
+
+
+def test_only_the_owner_is_offered_provider_processing_while_the_public_beta_is_closed(tmp_path):
+    """Owner-only live demo: a Basic-Auth visitor of the public UI keeps the honest disabled preview."""
+    client, _, _ = make(tmp_path)
+    visitor = session(client)
+    up = client.post('/cv/upload', files={'file': ('cv.txt', CV_TEXT.encode())}, headers=visitor)
+    assert up.json()['provider_processing'] == 'disabled' and up.json()['message']
+    owner = {**session(client, ip='203.0.113.8'), 'x-jobfit-owner-token': OWNER}
+    up = client.post('/cv/upload', files={'file': ('cv.txt', CV_TEXT.encode())}, headers=owner)
+    assert up.json()['provider_processing'] == 'enabled' and up.json()['message'] is None
+    edited = client.post('/cv/preview', json={'text': up.json()['masked_text']}, headers=owner)
+    assert edited.json()['provider_processing'] == 'enabled'
+    assert client.post('/cv/consent', json={'digest': edited.json()['digest'], 'affirmative': True},
+                       headers=owner).json()['provider_processing'] == 'enabled'
+    public, _, _ = make(tmp_path / 'public', public=True)
+    up = public.post('/cv/upload', files={'file': ('cv.txt', CV_TEXT.encode())}, headers=session(public))
+    assert up.json()['provider_processing'] == 'enabled'                    # an open beta offers it to everyone

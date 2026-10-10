@@ -400,7 +400,8 @@ def create_app(deps: AppDeps) -> FastAPI:
                 return upload_guard.rejection_response(exc.code)
             finally:
                 del data   # original bytes are not kept (D-051 section 2.7)
-            return _set_preview(h, text.text, list(text.warnings), text.layout, upload=True)
+            return _set_preview(h, text.text, list(text.warnings), text.layout, upload=True,
+                                processing=processing_for(request))
         finally:
             upload_slot.release()
 
@@ -409,7 +410,17 @@ def create_app(deps: AppDeps) -> FastAPI:
             for key in [k for k, r in runs.items() if r.owner == h.session_id and r.real]:
                 runs.pop(key)
 
-    def _set_preview(h: SessionHandle, raw: str, warnings: list, layout: str | None, *, upload: bool):
+    def processing_for(request: Request) -> bool:
+        """Whether this requester may send an uploaded CV to a provider: the real-CV switch, and with the
+        production ingress either the owner token or an open public beta. Every other visitor keeps the
+        honest 'disabled' preview (consent off), so a closed beta never offers a consent it would refuse."""
+        if not deps.real_cv_enabled:
+            return False
+        return (deps.ingress is None or deps.public_beta_open
+                or deps.ingress.is_owner(request.headers.get(OWNER_TOKEN_HEADER)))
+
+    def _set_preview(h: SessionHandle, raw: str, warnings: list, layout: str | None, *, upload: bool,
+                     processing: bool):
         """D-104: every upload and every edit goes through the full structural sanitizer (v2).
 
         An upload starts with fresh owner marks; an edit re-sanitizes with the stored marks, so a name or
@@ -434,8 +445,8 @@ def create_app(deps: AppDeps) -> FastAPI:
         return {'masked_text': preview.text, 'digest': preview.digest, 'masked_counts': preview.counts,
                 'removed': dict(preview.removed), 'owner_repeat_guard': preview.owner_repeat_guard,
                 'warnings': warnings + list(preview.warnings), 'layout': layout,
-                'provider_processing': 'enabled' if deps.real_cv_enabled else 'disabled',
-                'message': None if deps.real_cv_enabled else REAL_CV_MESSAGE}
+                'provider_processing': 'enabled' if processing else 'disabled',
+                'message': None if processing else REAL_CV_MESSAGE}
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(request: Request, exc: RequestValidationError):
@@ -473,16 +484,17 @@ def create_app(deps: AppDeps) -> FastAPI:
         if code is not None:
             return upload_guard.rejection_response(code)
         return _set_preview(h, body.text, ['Edited by the user; earlier consent no longer applies.'], 'edited',
-                            upload=False)
+                            upload=False, processing=processing_for(request))
 
     @app.post('/cv/consent')
-    def consent(body: ConsentRequest, h: SessionHandle = Depends(handle)):
+    def consent(body: ConsentRequest, request: Request, h: SessionHandle = Depends(handle)):
         try:
             deps.store.consent(h, exact_digest=body.digest, affirmative=body.affirmative)
         except SessionDenied as exc:
             raise HTTPException(409, str(exc))
-        return {'consented': True, 'provider_processing': 'enabled' if deps.real_cv_enabled else 'disabled',
-                'message': None if deps.real_cv_enabled else REAL_CV_MESSAGE}
+        processing = processing_for(request)
+        return {'consented': True, 'provider_processing': 'enabled' if processing else 'disabled',
+                'message': None if processing else REAL_CV_MESSAGE}
 
     # ---------- real-CV public beta (consented upload -> reserved parse -> search -> Analyze Fit) ----------
     def real_cv_gate() -> None:

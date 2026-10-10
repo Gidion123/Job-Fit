@@ -18,6 +18,7 @@ from __future__ import annotations
 
 from datetime import date
 import json
+import os
 import threading
 
 import yaml
@@ -51,13 +52,17 @@ def _extraction_record(job: str) -> dict | None:
     return load_record(job)
 
 
-def public_beta_open(settings, runtime, telemetry) -> bool:
+def public_beta_open(settings, runtime, telemetry, *, langfuse_required: bool = True) -> bool:
     """The controlled public beta (D-103) opens only when every gate holds, otherwise it stays closed:
-    the production runtime with live, public live and uploaded CVs switched on, the fail-closed per-phase
-    bound check (every beta phase fits the daily cap), and active metadata-only Langfuse tracing (D-103).
-    Non-owners then still need the durable per-IP ticket and the session allowance (parse 1, search 1,
-    job_analysis 10) and stay under the daily and lifetime budgets; the D-104 consent lease is unchanged."""
-    if runtime is None or getattr(telemetry, 'tracer', None) is None:
+    the production runtime with live, public live and uploaded CVs switched on and the fail-closed per-phase
+    bound check (every beta phase fits the daily cap). Non-owners then still need the durable per-IP ticket
+    and the session allowance (parse 1, search 1, job_analysis 10) and stay under the daily and lifetime
+    budgets; the D-104 consent lease is unchanged.
+
+    Langfuse: required when switched on (JOBFIT_LANGFUSE_ENABLED=1: a tracer that failed to start keeps the
+    beta closed). With it off, the beta opens without it: an owner decision for the controlled demo behind
+    Caddy Basic Auth, monitored with Prometheus and Grafana; it does not claim D-103's Langfuse gate."""
+    if runtime is None or (langfuse_required and getattr(telemetry, 'tracer', None) is None):
         return False
     if not (settings.live_enabled and settings.public_live and settings.real_cv_enabled):
         return False
@@ -356,7 +361,9 @@ def build_deps() -> AppDeps:
                    # runtime. The public beta (non-owners) opens only through every gate in public_beta_open();
                    # otherwise non-owners get 503.
                    real_cv_enabled=settings.real_cv_enabled and runtime is not None,
-                   public_beta_open=public_beta_open(settings, runtime, telemetry),
+                   public_beta_open=public_beta_open(
+                       settings, runtime, telemetry,
+                       langfuse_required=os.environ.get('JOBFIT_LANGFUSE_ENABLED') == '1'),
                    real_parse=real_parse if prod else None, real_search=real_search if prod else None,
                    consume_ticket=consume_ticket if prod else None)
 

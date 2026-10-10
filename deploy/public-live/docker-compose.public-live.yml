@@ -5,14 +5,16 @@
 #     --env-file .env.prod up -d --build api ui
 #
 # - api: live analysis of uploaded CVs. Non-owners are admitted only when JOBFIT_PUBLIC_LIVE=1 in .env.prod
-#   (default 0) AND every gate in jobfit.api.wiring.public_beta_open holds, including metadata-only Langfuse.
+#   (default 0) AND every gate in jobfit.api.wiring.public_beta_open holds. Langfuse is optional (owner
+#   decision for this Basic Auth demo; monitoring is Prometheus/Grafana): off by default, and with
+#   JOBFIT_LANGFUSE_ENABLED=1 the beta opens only if the tracer starts.
 #   Per-IP tickets (10 per 24 h). Session allowance (parse 1, search 1, job_analysis 10), budgets, ledger,
 #   ZDR, idempotency and the D-104 consent lease are unchanged. The owner token stays inside the API.
 # - ui: forwards the browser IP from Caddy only when the TCP peer is in JOBFIT_TRUSTED_PROXIES. It never
 #   receives JOBFIT_OWNER_TOKEN.
 #
 # Required in .env.prod (never commit or print): OPENROUTER_API_KEY, JOBFIT_OWNER_TOKEN, JOBFIT_IP_HMAC_KEY,
-# LANGFUSE_PUBLIC_KEY, LANGFUSE_SECRET_KEY, JOBFIT_TRUSTED_PROXIES (the application_net gateway IP).
+# JOBFIT_TRUSTED_PROXIES (the application_net gateway IP). Optional: LANGFUSE_PUBLIC_KEY/SECRET_KEY.
 services:
   api:
     environment:
@@ -22,9 +24,9 @@ services:
       OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:?Set OPENROUTER_API_KEY in .env.prod}
       JOBFIT_OWNER_TOKEN: ${JOBFIT_OWNER_TOKEN:?Set JOBFIT_OWNER_TOKEN (32+ characters) in .env.prod}
       JOBFIT_IP_HMAC_KEY: ${JOBFIT_IP_HMAC_KEY:?Set JOBFIT_IP_HMAC_KEY (32+ characters) in .env.prod}
-      JOBFIT_LANGFUSE_ENABLED: "1"
-      LANGFUSE_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY:?Set LANGFUSE_PUBLIC_KEY in .env.prod}
-      LANGFUSE_SECRET_KEY: ${LANGFUSE_SECRET_KEY:?Set LANGFUSE_SECRET_KEY in .env.prod}
+      JOBFIT_LANGFUSE_ENABLED: ${JOBFIT_LANGFUSE_ENABLED:-0}
+      LANGFUSE_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY:-}
+      LANGFUSE_SECRET_KEY: ${LANGFUSE_SECRET_KEY:-}
     volumes:
       - ./reports/tokenizers:/app/reports/tokenizers:ro      # pinned query tokenizer for Find Jobs
 

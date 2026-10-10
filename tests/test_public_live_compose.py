@@ -23,14 +23,15 @@ def test_public_live_stays_off_until_the_owner_switches_it_after_the_gate():
     api = env('api')
     assert api['JOBFIT_PUBLIC_LIVE'] == '${JOBFIT_PUBLIC_LIVE:-0}'
     assert api['JOBFIT_LIVE_ENABLED'] == '1' and api['JOBFIT_REAL_CV_ENABLED'] == '1'
-    assert api['JOBFIT_LANGFUSE_ENABLED'] == '1'                        # D-103: Langfuse with the public beta
+    assert api['JOBFIT_LANGFUSE_ENABLED'] == '${JOBFIT_LANGFUSE_ENABLED:-0}'   # owner decision: optional, off
 
 
 def test_secrets_come_from_the_env_file_and_budgets_are_unchanged():
     api = env('api')
-    for name in ('OPENROUTER_API_KEY', 'JOBFIT_OWNER_TOKEN', 'JOBFIT_IP_HMAC_KEY', 'LANGFUSE_PUBLIC_KEY',
-                 'LANGFUSE_SECRET_KEY'):
+    for name in ('OPENROUTER_API_KEY', 'JOBFIT_OWNER_TOKEN', 'JOBFIT_IP_HMAC_KEY'):
         assert api[name].startswith('${' + name + ':?')
+    for name in ('LANGFUSE_PUBLIC_KEY', 'LANGFUSE_SECRET_KEY'):                # optional: no Langfuse keys needed
+        assert api[name] == '${' + name + ':-}'
     assert not {'JOBFIT_DAILY_BUDGET_USD', 'API_HARD_STOP_USD', 'API_BUDGET_USD', 'JOBFIT_SESSION_ANALYSIS_LIMIT',
                 'JOBFIT_USAGE_LEDGER', 'DATABASE_URL'} & set(api)
 

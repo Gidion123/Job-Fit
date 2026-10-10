@@ -1,5 +1,10 @@
 # CP3 Langfuse tracing candidate
 
+> **Owner decision (10 Oct 2026):** the controlled mentor demo behind Caddy Basic Auth runs **without**
+> Langfuse (monitoring: Prometheus and Grafana). The public beta gate requires Langfuse only when
+> `JOBFIT_LANGFUSE_ENABLED=1`. This does not claim D-103's Langfuse gate is met; see
+> `deploy/public-live/README.md`.
+
 This adapter is **off by default**. With `JOBFIT_LANGFUSE_ENABLED=1`, nonempty
 `LANGFUSE_PUBLIC_KEY` and `LANGFUSE_SECRET_KEY` enable metadata-only tracing to
 `https://jp.cloud.langfuse.com`. Missing credentials leave tracing off. The

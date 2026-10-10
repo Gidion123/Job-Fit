@@ -341,7 +341,8 @@ def create_app(deps: AppDeps) -> FastAPI:
                 storage = False
         return {'ok': True, 'real_cv_enabled': deps.real_cv_enabled, 'live_enabled': deps.live_enabled,
                 'saved_demo': deps.saved_demo is not None, 'analyzed_k': deps.analyzed_k,
-                'live_storage_ready': storage, 'analysis_limit': analysis_limit}
+                'live_storage_ready': storage, 'analysis_limit': analysis_limit,
+                'public_beta_open': deps.public_beta_open}
 
     @app.post('/session')
     def new_session(request: Request):

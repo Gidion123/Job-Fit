@@ -27,7 +27,9 @@ The adapter never passes CVs, JDs, prompts, outputs, user IDs, request headers,
 raw exceptions, or HTTP bodies to the SDK. The SDK mask is a backup; the export
 filter also refuses any span name, OpenTelemetry attribute, event, link, or
 resource attribute outside the explicit allowlist. A changed SDK payload
-therefore drops the span. Langfuse SDK v4 uses the **public project key**
+therefore drops the span. The SDK's `langfuse.release`/`langfuse.environment`
+(taken from deploy variables such as `GITHUB_SHA`) pass only as a short
+`[A-Za-z0-9._-]{1,64}` token. Langfuse SDK v4 uses the **public project key**
 inside the local OpenTelemetry instrumentation scope for project routing. The
 filter requires the exact configured key, then the final exporter removes scope
 attributes before OTLP serialization. The public and secret keys are used only

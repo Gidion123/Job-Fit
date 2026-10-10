@@ -388,3 +388,17 @@ def test_exporter_failures_are_isolated_and_sensitive_batch_is_never_forwarded(c
     output = capsys.readouterr()
     assert CANARY not in output.out + output.err + caplog.text
     assert 'sk-lf-synthetic-exporter-failure' not in output.out + output.err + caplog.text
+
+
+def test_a_release_token_from_the_deploy_environment_is_exported_but_free_text_is_not():
+    def span(resource, attrs=None):
+        return SimpleNamespace(name='matching', instrumentation_scope=SimpleNamespace(
+            name='langfuse-sdk', attributes={}, version=None, schema_url=''), events=[], links=[],
+            status=SimpleNamespace(description=None), resource=SimpleNamespace(attributes=resource),
+            attributes=attrs or {})
+    release = {'langfuse.release': 'f7d21fd0a1b2'}
+    assert safe_export_span(span({'service.name': 'jobfit-api', **release}, release))
+    assert safe_export_span(span({'langfuse.environment': 'production'}))
+    for bad in (CANARY, 'x' * 65, 7):
+        assert not safe_export_span(span({'langfuse.release': bad}))
+        assert not safe_export_span(span({}, {'langfuse.release': bad}))

@@ -42,6 +42,14 @@ def mask_data(*, data, **_):
     return data if _safe_metadata(data) else None
 
 
+# The SDK adds a release from deploy variables (GITHUB_SHA, GIT_COMMIT, ...): a short token only.
+_DEPLOY_KEYS = ('langfuse.release', 'langfuse.environment')
+
+
+def _deploy_token(value):
+    return isinstance(value, str) and re.fullmatch(r'[A-Za-z0-9._-]{1,64}', value) is not None
+
+
 def safe_export_span(span, *, public_key=None):
     """Reject any unexpected OpenTelemetry data before Langfuse's exporter sees it."""
     try:
@@ -61,9 +69,11 @@ def safe_export_span(span, *, public_key=None):
         if scope.schema_url or (scope.version and not re.fullmatch(r'[0-9.]+', scope.version)):
             return False
         allowed_resource = {'telemetry.sdk.language', 'telemetry.sdk.name', 'telemetry.sdk.version',
-                            'service.instance.id', 'service.name'}
+                            'service.instance.id', 'service.name', *_DEPLOY_KEYS}
         resource = dict(span.resource.attributes)
         if set(resource) - allowed_resource:
+            return False
+        if not all(_deploy_token(resource[k]) for k in _DEPLOY_KEYS if k in resource):
             return False
         if resource.get('service.name') not in (None, 'jobfit-api', 'unknown_service:python',
                                                 'unknown_service:uvicorn'):
@@ -78,7 +88,10 @@ def safe_export_span(span, *, public_key=None):
                 return False
         attrs = dict(span.attributes or {})
         for key, value in attrs.items():
-            if key == 'langfuse.internal.is_app_root':
+            if key in _DEPLOY_KEYS:
+                if not _deploy_token(value):
+                    return False
+            elif key == 'langfuse.internal.is_app_root':
                 if value is not True:
                     return False
             elif key == _PREFIX + 'type':

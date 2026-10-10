@@ -1,6 +1,7 @@
 """Offline observability contract. Synthetic inputs and fake SDK only."""
 import hashlib
 import json
+import re
 import logging
 from contextlib import contextmanager
 from decimal import Decimal
@@ -515,3 +516,321 @@ def test_saved_legacy_recommendation_is_http_traffic_not_analysis_admission():
     assert sample(t, 'jobfit_http_requests_total',
                   {'method': 'POST', 'route': '/recommendations', 'status': '200'}) == 1
     assert sample(t, 'jobfit_analysis_requests_total', {'outcome': 'accepted'}) is None
+
+
+# --- dashboard layout v2: re-arrange the already managed 21-panel file-provisioned dashboard ---------------
+
+def _layout_fixture(wrapper=False, datasource=None, production_exprs=False):
+    """A production-like dashboard: 4 node_exporter panels, then the 17 managed panels appended by merge."""
+    from pathlib import Path
+    from scripts.prepare_observability_dashboard import merge_dashboard
+    root = Path(__file__).resolve().parents[1]
+    panels = json.loads((root / 'deploy/observability/panels.json').read_text())
+    layout = json.loads((root / 'deploy/observability/layout.json').read_text())
+    ds = datasource if datasource is not None else {'type': 'prometheus', 'uid': 'prom-uid-1'}
+    infra = ([('CPU', '100 * (1 - avg(rate(node_cpu_seconds_total{mode="idle"}[5m])))'),
+              ('RAM', '100 * (1 - node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)'),
+              ('Disk', '100 * (1 - node_filesystem_avail_bytes{mountpoint="/"} / '
+               'node_filesystem_size_bytes{mountpoint="/"})'),
+              ('Node Exporter', 'up{job="node"}')] if production_exprs else
+             [('CPU', '100 - (avg(rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)'),
+              ('RAM', '(1 - node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) * 100'),
+              ('Disk', '(1 - node_filesystem_avail_bytes / node_filesystem_size_bytes) * 100'),
+              ('Node Exporter', 'up{job="node-exporter"}')])
+    base = {'uid': 'jobfit-overview', 'title': 'JobFit - Production Monitoring', 'version': 9,
+            'schemaVersion': 39, 'editable': False, 'time': {'from': 'now-6h', 'to': 'now'},
+            'refresh': '30s', 'templating': {'list': [{'name': 'host', 'query': 'node'}]},
+            'annotations': {'list': [{'name': 'Deployments', 'enable': True}]},
+            'panels': [{'id': i, 'type': 'timeseries', 'title': title, 'datasource': ds,
+                        'targets': [{'refId': 'A', 'expr': expr, 'datasource': ds}],
+                        'gridPos': {'x': 0, 'y': i * 4, 'w': 24, 'h': 4}}
+                       for i, (title, expr) in enumerate(infra, 1)]}
+    managed = merge_dashboard({'dashboard': base} if wrapper else base, panels, ds)
+    return managed, layout, panels
+
+
+EXPECTED_ROWS = [
+    ('System health', [('API Scrape & Restarts', 12), ('PostgreSQL & Ledger Health', 12)]),
+    ('System health', [('CPU Usage (%)', 12), ('RAM Usage (%)', 12)]),
+    ('System health', [('Disk Usage (%)', 12), ('Node Exporter Status', 12)]),
+    ('Application & API', [('API Requests per Second', 12), ('HTTP 5xx Error Rate', 12)]),
+    ('Application & API', [('API Latency (p50/p95)', 12), ('Analysis Requests & Outcomes', 12)]),
+    ('AI pipeline', [('AI Stage Latency (p95)', 12), ('AI Stage Outcomes', 12)]),
+    ('LLM', [('LLM Attempts & Errors', 12), ('LLM Call Latency (p95)', 12)]),
+    ('LLM', [('LLM Token Usage', 12), ('LLM Retries & Fallbacks', 12)]),
+    ('Cost & safety', [('Budget Remaining & Liability', 12), ('Persisted Spending & Uncertainty', 12)]),
+    ('Cost & safety', [('Estimated vs Accounted Cost', 12), ('Ledger Evidence Bytes', 6), ('Budget Refusals', 6)]),
+]
+
+
+def test_layout_has_21_unique_panels_in_the_agreed_sections_rows_and_widths():
+    from scripts.prepare_observability_dashboard import layout_dashboard, validate_layout
+    managed, layout, panels = _layout_fixture()
+    out = layout_dashboard(managed, layout, panels)
+    result = out['panels']
+    assert len(result) == 21 and len({p['id'] for p in result}) == 21
+    assert not any(p.get('type') == 'row' for p in result)                   # 21 charts, no row objects
+    rows = {}
+    for p in result:
+        rows.setdefault(p['gridPos']['y'], []).append(p)
+    got = [[(p['title'], p['gridPos']['w']) for p in sorted(r, key=lambda p: p['gridPos']['x'])]
+           for _, r in sorted(rows.items())]
+    assert got == [row for _, row in EXPECTED_ROWS]
+    assert all(sum(w for _, w in row) == 24 for row in got)
+    assert len({p['gridPos']['h'] for p in result}) == 1                      # consistent heights
+    for (section, row), plan in zip(EXPECTED_ROWS, _plan_rows(validate_layout(out, layout))):
+        assert {r['section'] for r in plan} == {section} and [r['title'] for r in plan] == [t for t, _ in row]
+        assert all(p['description'].split('] ')[-1].startswith(section + '.') for p in result
+                   if p['title'] in [t for t, _ in row])
+
+
+def _plan_rows(plan):
+    rows = {}
+    for r in plan:
+        rows.setdefault(r['row'], []).append(r)
+    return [rows[k] for k in sorted(rows)]
+
+
+def test_layout_has_no_overlapping_or_out_of_grid_panels():
+    from scripts.prepare_observability_dashboard import layout_dashboard
+    managed, layout, panels = _layout_fixture()
+    cells = set()
+    for p in layout_dashboard(managed, layout, panels)['panels']:
+        g = p['gridPos']
+        assert 0 <= g['x'] and g['x'] + g['w'] <= 24
+        mine = {(x, y) for x in range(g['x'], g['x'] + g['w']) for y in range(g['y'], g['y'] + g['h'])}
+        assert not mine & cells
+        cells |= mine
+
+
+def test_layout_preserves_uid_metadata_datasources_ids_and_promql():
+    from copy import deepcopy
+    from scripts.prepare_observability_dashboard import layout_dashboard
+    managed, layout, panels = _layout_fixture()
+    saved = deepcopy(managed)
+    out = layout_dashboard(managed, layout, panels)
+    assert managed == saved                                                   # input untouched
+    assert {k: v for k, v in out.items() if k != 'panels'} == {k: v for k, v in managed.items() if k != 'panels'}
+    assert out['uid'] == 'jobfit-overview' and out['version'] == 9
+    before = {p['id']: p for p in managed['panels']}
+    for p in out['panels']:
+        old = before[p['id']]
+        assert p['datasource'] == old['datasource'] == {'type': 'prometheus', 'uid': 'prom-uid-1'}
+        assert [(t['refId'], t['expr']) for t in p['targets']] == [(t['refId'], t['expr']) for t in old['targets']]
+        assert [t.get('datasource') for t in p['targets']] == [t.get('datasource') for t in old['targets']]
+        assert p['type'] == old['type']
+    assert set(before) == {p['id'] for p in out['panels']}
+
+
+def test_layout_formats_http_5xx_as_0_to_100_percent_and_uses_readable_units_and_legends():
+    from scripts.prepare_observability_dashboard import layout_dashboard
+    managed, layout, panels = _layout_fixture()
+    by_title = {p['title']: p for p in layout_dashboard(managed, layout, panels)['panels']}
+    error = by_title['HTTP 5xx Error Rate']
+    assert {'unit': 'percentunit', 'min': 0, 'max': 1}.items() <= error['fieldConfig']['defaults'].items()
+    assert error['targets'][0]['expr'].startswith('(sum(rate(jobfit_http_requests_total')     # fraction 0..1
+    units = {t: p['fieldConfig']['defaults']['unit'] for t, p in by_title.items()}
+    assert units['CPU Usage (%)'] == units['RAM Usage (%)'] == units['Disk Usage (%)'] == 'percent'
+    assert by_title['CPU Usage (%)']['fieldConfig']['defaults']['max'] == 100
+    assert units['API Latency (p50/p95)'] == units['LLM Call Latency (p95)'] == 's'
+    assert units['API Requests per Second'] == 'reqps'
+    assert units['Budget Remaining & Liability'] == units['Estimated vs Accounted Cost'] == 'currencyUSD'
+    assert units['Ledger Evidence Bytes'] == 'bytes'
+    legends = [t['legendFormat'] for p in by_title.values() for t in p['targets'] if 'jobfit_' in t['expr']]
+    assert not any(re.search(r'\b[a-z]+_[a-z_]+_usd\b|jobfit_', legend) for legend in legends)    # no raw names
+    analysis = by_title['Analysis Requests & Outcomes']
+    assert [t['legendFormat'] for t in analysis['targets']] == ['Admission: {{outcome}}', 'Execution: {{outcome}}']
+    assert 'accepted does not mean completed' in analysis['description']
+
+
+def test_layout_explains_missing_ai_data_without_fabricating_values():
+    from scripts.prepare_observability_dashboard import layout_dashboard
+    managed, layout, panels = _layout_fixture()
+    by_title = {p['title']: p for p in layout_dashboard(managed, layout, panels)['panels']}
+    for title in ('AI Stage Latency (p95)', 'AI Stage Outcomes', 'LLM Attempts & Errors', 'LLM Call Latency (p95)'):
+        assert 'No data until' in by_title[title]['description']
+        assert 'noValue' not in by_title[title]['fieldConfig']['defaults']          # never a fake 0
+    assert not any('vector(0)' in t['expr'] for p in by_title.values() for t in p['targets']
+                   if 'jobfit_llm' in t['expr'] or 'jobfit_stage' in t['expr'])
+
+
+def test_layout_is_idempotent_and_keeps_the_append_path_refusing_a_managed_dashboard():
+    from scripts.prepare_observability_dashboard import layout_dashboard, merge_dashboard
+    managed, layout, panels = _layout_fixture()
+    once = layout_dashboard(managed, layout, panels)
+    assert layout_dashboard(once, layout, panels) == once
+    assert len(once['panels']) == 21
+    with pytest.raises(ValueError, match='already present'):
+        merge_dashboard(once, panels, 'prom-uid-1')                       # never appended a second time
+
+
+def test_layout_supports_the_export_wrapper_and_refuses_unexpected_structures():
+    from copy import deepcopy
+    from scripts.prepare_observability_dashboard import layout_dashboard
+    wrapped, layout, panels = _layout_fixture(wrapper=True)
+    assert len(layout_dashboard(wrapped, layout, panels)['dashboard']['panels']) == 21
+    managed, _, _ = _layout_fixture()
+    four = deepcopy(managed)
+    four['panels'] = four['panels'][:4]
+    with pytest.raises(ValueError, match='Expected exactly 21'):
+        layout_dashboard(four, layout, panels)
+    missing = deepcopy(managed)
+    missing['panels'][-1]['description'] = 'not managed'
+    with pytest.raises(ValueError, match='infrastructure panel'):
+        layout_dashboard(missing, layout, panels)
+    edited = deepcopy(managed)
+    edited['panels'][6]['targets'][0]['expr'] += ' * 2'
+    with pytest.raises(ValueError, match='PromQL'):
+        layout_dashboard(edited, layout, panels)
+    duplicate = deepcopy(managed)
+    duplicate['panels'][5]['id'] = duplicate['panels'][4]['id']
+    with pytest.raises(ValueError, match='unique'):
+        layout_dashboard(duplicate, layout, panels)
+    rows = deepcopy(managed)
+    rows['panels'][0]['type'] = 'row'
+    with pytest.raises(ValueError, match='Row panels'):
+        layout_dashboard(rows, layout, panels)
+    other = deepcopy(managed)
+    other['uid'] = 'other'
+    with pytest.raises(ValueError, match='jobfit-overview'):
+        layout_dashboard(other, layout, panels)
+
+
+def test_layout_cli_writes_a_separate_candidate_and_never_overwrites(tmp_path):
+    import subprocess
+    import sys as _sys
+    from pathlib import Path
+    managed, _, _ = _layout_fixture()
+    source = tmp_path / 'jobfit-overview.copy.json'
+    source.write_text(json.dumps(managed))
+    candidate = tmp_path / 'candidate.json'
+    script = Path(__file__).resolve().parents[1] / 'scripts/prepare_observability_dashboard.py'
+    run = lambda *args: subprocess.run([_sys.executable, str(script), *args], capture_output=True, text=True)  # noqa: E731
+    ok = run('--mode', 'layout', '--input', str(source), '--output', str(candidate))
+    assert ok.returncode == 0, ok.stderr
+    out = json.loads(candidate.read_text())
+    assert len(out['panels']) == 21 and json.loads(source.read_text()) == managed
+    assert run('--mode', 'layout', '--input', str(source), '--output', str(candidate)).returncode != 0   # exists
+    assert run('--mode', 'layout', '--input', str(source), '--output', str(source)).returncode != 0      # same file
+    again = tmp_path / 'again.json'
+    assert run('--mode', 'layout', '--input', str(candidate), '--output', str(again)).returncode == 0
+    assert json.loads(again.read_text()) == out                                                           # idempotent
+
+
+@pytest.mark.parametrize('datasource', ['Prometheus', {'type': 'prometheus', 'uid': 'prom-uid-1'}])
+def test_layout_sets_single_series_infrastructure_legends_without_changing_production_queries(datasource):
+    from scripts.prepare_observability_dashboard import layout_dashboard
+    managed, layout, panels = _layout_fixture(datasource=datasource, production_exprs=True)
+    for panel in managed['panels'][:4]:
+        panel['targets'][0].pop('legendFormat', None)
+        panel['targets'][0]['hide'] = False
+    original = {p['id']: p for p in managed['panels']}
+    out = layout_dashboard(managed, layout, panels)
+    expected = {1: 'CPU Usage', 2: 'Memory Usage', 3: 'Disk Usage', 4: 'Node Exporter'}
+    for panel in out['panels']:
+        old = original[panel['id']]
+        assert panel['datasource'] == old['datasource'] == datasource
+        assert [(t['refId'], t['expr'], t.get('datasource')) for t in panel['targets']] == [
+            (t['refId'], t['expr'], t.get('datasource')) for t in old['targets']]
+        if panel['id'] in expected:
+            assert panel['targets'][0]['legendFormat'] == expected[panel['id']]
+            assert panel['targets'][0]['hide'] is False
+    assert {p['id'] for p in out['panels']} == set(original)
+    assert out['refresh'] == '30s' and out['templating'] == managed['templating']
+    assert out['annotations'] == managed['annotations']
+
+
+def test_layout_preserves_every_property_outside_the_presentation_allowlist():
+    from copy import deepcopy
+    from scripts.prepare_observability_dashboard import layout_dashboard
+    managed, layout, panels = _layout_fixture()
+    managed['panels'][0].pop('fieldConfig', None)
+    managed['panels'][1]['fieldConfig'] = {
+        'defaults': {'thresholds': {'steps': [{'color': 'green', 'value': None}]}},
+        'overrides': [{'matcher': {'id': 'byName', 'options': 'RAM'}, 'properties': []}]}
+    managed['panels'][2]['fieldConfig'] = {'defaults': {'custom': {'lineWidth': 3}}}
+    managed['panels'][0]['options'] = {'legend': {'displayMode': 'table'}}
+    managed['panels'][0]['transparent'] = True
+
+    def without_presentation(panel):
+        item = deepcopy(panel)
+        for name in ('title', 'description', 'gridPos'):
+            item.pop(name, None)
+        for target in item.get('targets', []):
+            target.pop('legendFormat', None)
+        if 'fieldConfig' in item:
+            item['fieldConfig'].pop('defaults', None)
+            if not item['fieldConfig']:
+                item.pop('fieldConfig')
+        return item
+
+    out = layout_dashboard(managed, layout, panels)
+    before = {p['id']: p for p in managed['panels']}
+    for panel in out['panels']:
+        assert without_presentation(panel) == without_presentation(before[panel['id']])
+    result = {p['id']: p for p in out['panels']}
+    assert 'overrides' not in result[1]['fieldConfig']
+    assert result[2]['fieldConfig']['overrides'] == before[2]['fieldConfig']['overrides']
+    assert result[2]['fieldConfig']['defaults']['thresholds'] == before[2]['fieldConfig']['defaults']['thresholds']
+    assert 'overrides' not in result[3]['fieldConfig']
+    assert result[3]['fieldConfig']['defaults']['custom'] == {'lineWidth': 3}
+
+
+def test_layout_rejects_ambiguous_infrastructure_targets_and_invalid_ids():
+    from copy import deepcopy
+    from scripts.prepare_observability_dashboard import layout_dashboard
+    managed, layout, panels = _layout_fixture(production_exprs=True)
+    ambiguous = deepcopy(managed)
+    ambiguous['panels'][0]['targets'].append({
+        'refId': 'B', 'expr': 'node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes'})
+    with pytest.raises(ValueError, match='Ambiguous infrastructure targets'):
+        layout_dashboard(ambiguous, layout, panels)
+    inconsistent = deepcopy(managed)
+    inconsistent['panels'][0]['targets'][0]['expr'] += ' + node_memory_MemTotal_bytes'
+    with pytest.raises(ValueError, match='Ambiguous infrastructure PromQL'):
+        layout_dashboard(inconsistent, layout, panels)
+    unknown_scale = deepcopy(managed)
+    unknown_scale['panels'][0]['targets'][0]['expr'] = 'rate(node_cpu_seconds_total{mode="idle"}[5m])'
+    with pytest.raises(ValueError, match='Cannot determine percent scale'):
+        layout_dashboard(unknown_scale, layout, panels)
+    invalid_id = deepcopy(managed)
+    invalid_id['panels'][0]['id'] = -1
+    with pytest.raises(ValueError, match='positive integers'):
+        layout_dashboard(invalid_id, layout, panels)
+    duplicate_managed = deepcopy(managed)
+    duplicate_managed['panels'][-1] = deepcopy(duplicate_managed['panels'][4])
+    duplicate_managed['panels'][-1]['id'] = 999
+    with pytest.raises(ValueError, match='Two panels match'):
+        layout_dashboard(duplicate_managed, layout, panels)
+
+
+def test_validate_layout_rejects_displaced_rows_and_columns_without_overlap():
+    from copy import deepcopy
+    from scripts.prepare_observability_dashboard import layout_dashboard, validate_layout
+    managed, layout, panels = _layout_fixture()
+    out = layout_dashboard(managed, layout, panels)
+    wrong_row = deepcopy(out)
+    wrong_row['panels'][0]['gridPos']['y'] = 80
+    with pytest.raises(ValueError, match='declared grid position'):
+        validate_layout(wrong_row, layout)
+    swapped_columns = deepcopy(out)
+    swapped_columns['panels'][0]['gridPos']['x'] = 12
+    swapped_columns['panels'][1]['gridPos']['x'] = 0
+    with pytest.raises(ValueError, match='declared grid position'):
+        validate_layout(swapped_columns, layout)
+    overlap = deepcopy(out)
+    overlap['panels'][0]['gridPos']['x'] = 6
+    with pytest.raises(ValueError, match='overlaps'):
+        validate_layout(overlap, layout)
+    wrong_height = deepcopy(out)
+    wrong_height['panels'][0]['gridPos']['h'] = 7
+    with pytest.raises(ValueError, match='declared grid position'):
+        validate_layout(wrong_height, layout)
+
+
+def test_layout_handoff_keeps_backups_outside_the_provisioning_directory():
+    from pathlib import Path
+    text = (Path(__file__).resolve().parents[1] / 'deploy/observability/README.md').read_text()
+    assert '/opt/jobfit-monitoring/dashboard-backups/' in text
+    assert 'atomic' in text and 'rollback' in text.casefold()
+    assert '21-panel production dashboard' in text

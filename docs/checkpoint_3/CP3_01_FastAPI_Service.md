@@ -32,7 +32,7 @@ From 8 October the remaining CP3 work follows [D-102](../decisions.md): JobFit i
     - deterministic phase bounds: `parse_max`, `recommendation_upper_bound` and `full_analysis_upper_bound`, which must be at most the US$2/day cap, otherwise a blocker;
     - separate parse and recommendation reservations (reserve, settle, release; embedding is charged only to the recommendation reservation; no billable call without an active reservation);
     - one live analysis at a time;
-    - one ticket per IP per 24 h (HMAC, consumed at the first billable call);
+    - ten tickets per IP per 24 h (HMAC, one consumed at the first billable call of a session);
     - an internal service token;
     - an owner override for the per-IP limit only;
     - a session rate limit.

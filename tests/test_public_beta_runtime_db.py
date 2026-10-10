@@ -186,7 +186,7 @@ def consume(db, conn_factory=None):
     return lambda: quota.consume_ticket(conn_factory or (lambda: conn_for(db)), HMAC)
 
 
-def test_a_proven_ticket_opens_the_allowance_and_a_restart_gets_no_second_ticket(db, tmp_path):
+def test_a_proven_ticket_opens_the_allowance_and_a_restart_needs_one_of_the_ips_remaining_tickets(db, tmp_path):
     rt, allowances = beta_runtime(db, tmp_path / 'root'), BetaAllowances()
     op = key()
     c = allowances.claim('s', 'parse', op, consume(db))
@@ -199,6 +199,8 @@ def test_a_proven_ticket_opens_the_allowance_and_a_restart_gets_no_second_ticket
         rt.run('job_analysis', op, job_work, quota=c.quota, on_first_intent=c.on_first_intent)
     assert allowances.claim('s', 'job_analysis', key(), consume(db)) == 'allowance_exhausted'
     calls = len(rt.sdk.calls)
+    for _ in range(quota.TICKETS_PER_IP_PER_DAY - 1):             # other sessions use the IP's other tickets
+        assert consume(db)() == 'consumed'
     restarted = BetaAllowances()                                  # process restart: the session is gone
     op = key()
     c = restarted.claim('s', 'job_analysis', op, consume(db))
@@ -212,7 +214,8 @@ def test_an_unproven_ticket_creates_no_allowance_and_no_provider_call(db, tmp_pa
     rt, allowances, op = beta_runtime(db, tmp_path / 'root'), BetaAllowances(), key()
     factory = lambda: conn_for(db)                                # noqa: E731
     if outcome == 'refused':
-        assert quota.consume_ticket(factory, HMAC) == 'consumed'      # the IP already used its 24-hour ticket
+        for _ in range(quota.TICKETS_PER_IP_PER_DAY):                 # the IP already used its 24-hour tickets
+            assert quota.consume_ticket(factory, HMAC) == 'consumed'
     elif outcome == 'unavailable':
         def factory():
             raise psycopg.OperationalError('database unreachable')

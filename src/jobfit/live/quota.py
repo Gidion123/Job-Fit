@@ -5,8 +5,10 @@ the forwarded client-IP header; Streamlit forwards the normalized IP with the in
 token; FastAPI accepts the IP only after a constant-time token check. Raw IPs are never stored:
 only HMAC-SHA256(JOBFIT_IP_HMAC_KEY, ip), with IPv6 reduced to its /64.
 
-The ticket is consumed by one conditional upsert, in its own short transaction on its own
-connection, at the first billable call of an ordinary public parse. A proven commit consumes it
+An IP pseudonym has TICKETS_PER_IP_PER_DAY tickets per 24 hours: one ``live_quota`` row per slot (slot 0
+is the pseudonym itself, slot i its SHA-256 with ``:i``; no schema change, no raw IP). A ticket is
+consumed by conditional upserts over the slots, in its own short transaction on its own connection, at
+the first billable call of an ordinary public parse. A proven commit consumes it
 for good (no refund); an unproven commit is 'unknown' and is never repeated in the operation.
 
 Retention (D-096: IP-HMAC rows are deleted after 48 hours) has its own committed lifecycle:
@@ -27,6 +29,7 @@ from dataclasses import dataclass
 CONSUME_SQL = ('INSERT INTO live_quota (ip_hmac, consumed_at) VALUES (%s, now()) ON CONFLICT (ip_hmac) DO UPDATE '
                "SET consumed_at = now() WHERE live_quota.consumed_at <= now() - interval '24 hours' RETURNING 1")
 RETENTION_SQL = "DELETE FROM live_quota WHERE consumed_at < now() - interval '48 hours'"
+TICKETS_PER_IP_PER_DAY = 10         # public live tickets per IP pseudonym per 24 hours
 SESSION_LIMIT = 10                  # new sessions per IP pseudonym ...
 SESSION_WINDOW_SECONDS = 3600.0     # ... per rolling hour (in memory; one API process)
 UPLOAD_LIMIT = 10                   # CV preview mutations (uploads and preview edits) per IP pseudonym per
@@ -56,6 +59,12 @@ def purge_expired(connect: Callable) -> int:
             pass
 
 
+def ticket_slots(ip_hmac: str) -> list[str]:
+    """The ``live_quota`` keys of one IP pseudonym: itself, then one 64-hex digest per extra ticket."""
+    return [ip_hmac] + [hashlib.sha256(f'{ip_hmac}:{i}'.encode()).hexdigest()
+                        for i in range(1, TICKETS_PER_IP_PER_DAY)]
+
+
 def consume_ticket(connect: Callable, ip_hmac: str) -> str:
     """'consumed' | 'refused' | 'unavailable' (failed before COMMIT) | 'unknown' (COMMIT not proven)."""
     try:
@@ -69,7 +78,11 @@ def consume_ticket(connect: Callable, ip_hmac: str) -> str:
             return 'unavailable'            # fail closed: no consume, no provider call
         try:
             conn.execute('BEGIN')
-            row = conn.execute(CONSUME_SQL, (ip_hmac,)).fetchone()
+            row = None
+            for slot in ticket_slots(ip_hmac):      # the first free (or 24-hour old) slot wins
+                row = conn.execute(CONSUME_SQL, (slot,)).fetchone()
+                if row is not None:
+                    break
         except Exception:
             _rollback(conn)
             return 'unavailable'
@@ -208,13 +221,13 @@ class _BetaSession:
 class BetaAllowances:
     """D-103 session allowance, in memory (no migration, no new persistent store).
 
-    The durable per-IP ticket (``live_quota``, one per IP pseudonym per 24 hours) is unchanged and
+    The durable per-IP ticket (``live_quota``, TICKETS_PER_IP_PER_DAY per IP pseudonym per 24 hours) is
     consumed at the first billable call of the session's first public operation. A session gets an
     allowance only when that consume returns a PROVEN 'consumed': 'refused', 'unavailable' and
     'unknown' create nothing, and the operation's own guard then stops it before any provider call.
     With the allowance, the same session may run 1 parse, 1 search and up to 3 job_analysis
     operations; an operation counts at its first durable provider intent and is never refunded after
-    it. A restart loses the allowance; the IP gets no new durable ticket within 24 hours.
+    it. A restart loses the allowance; a new session then needs one of the IP's remaining tickets.
     """
 
     def __init__(self, limits: dict[str, int] | None = None):

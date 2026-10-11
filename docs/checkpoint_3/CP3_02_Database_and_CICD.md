@@ -1,7 +1,7 @@
 # CP3.2: Database Integration and CI/CD
 
 **Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
-**Bootcamp checkpoint:** 16. Integrasi Database & GitHub Actions CI/CD · official date 6 Oct 2026  
+**Bootcamp checkpoint:** 16. Database Integration & GitHub Actions CI/CD · official date 6 Oct 2026  
 **JobFit version of this checkpoint:** PostgreSQL with pgvector, and GitHub Actions for CI/CD.  
 **Planned work:** 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) · **Actual:** 6 Oct 2026  
 **Status:** DONE · CI green since Phase 1 (7 Oct, FAIL-35 resolved); Alembic `0001`/`0002` with migration tests (8 Oct); deployed with Docker Compose on the SumoPod VPS (10 Oct, [D-106](../decisions.md)); scheduled JSearch refresh still PLANNED (D-098) · design basis: System Design v1.3
@@ -26,7 +26,7 @@
 - **Monitoring and deployment (D-103 clarification, 8 Oct):**
   - Prometheus and Grafana OSS are the required monitoring stack, self-hosted on the VPS. Lightweight Prometheus exporters for the agreed metrics are allowed, notably node_exporter for basic VPS CPU, memory and disk; no other infrastructure-monitoring platform is added.
   - Grafana is private and admin-only, reached through an SSH tunnel from Dion's Mac. PostgreSQL, Prometheus, Grafana, secrets and operator and deployment controls stay private.
-  - **Langfuse is required for the final controlled public beta and portfolio release.** Grafana covers infrastructure and application monitoring; Langfuse covers LLM/RAG tracing and AI-request observability. Langfuse Cloud hosted free tier if available and privacy-compatible; not self-hosted on the VPS (no compose service); never raw CV content or user PII; sanitized, pseudonymous telemetry only (trace and session ids, stage, model, latency, tokens, estimated and settled cost, errors, fallback, status). No paid plan without a Dion and Codex decision: if the free tier is unavailable or unsuitable, stop and ask. It is a separate P1 task before public-beta activation.
+  - **Langfuse is required for the final controlled public beta and portfolio release.** Grafana covers infrastructure and application monitoring; Langfuse covers LLM/RAG tracing and AI-request observability. Langfuse Cloud hosted free tier if available and privacy-compatible; not self-hosted on the VPS (no compose service); never raw CV content or user PII; sanitized, pseudonymous telemetry only (trace and session ids, stage, model, latency, tokens, estimated and settled cost, errors, fallback, status). No paid plan without a Dion decision: if the free tier is unavailable or unsuitable, stop and ask. It is a separate P1 task before public-beta activation.
   - Free, open-source and free-tier components are preferred; paid operating cost is mainly the VPS and actual LLM usage. A provider key credit limit is optional defence in depth only (D-103); the persistent ledger, the US$5/day cap and the US$25 lifetime stop are authoritative.
 - **Monitoring target (with the D-099 stack):** application requests, outcomes, status codes, latency, completions and refusals; AI-pipeline stage latency (CV parse, embedding, retrieval, requirement extraction, matching, recommendation, total); LLM calls, failures, fallbacks, latency, estimated and settled spend, budget state; process and container health, CPU, memory, disk, PostgreSQL and ledger-storage health. No CV text or candidate data in metrics or normal logs.
 
@@ -34,7 +34,7 @@
 
 **JobFit scope:** production corpus, job sync, VPS and delivery. Everything in this section is **PLANNED / NOT YET VALIDATED** unless marked otherwise. Stage definition: [master plan](../master-plan.md#cp32-database-integration-and-cicd-checkpoint-16). Tasks: [CP3 execution plan](CP3_Execution_Plan.md). Corpus design: [production-corpus.md](../production-corpus.md).
 
-- **Hosting change:** Railway (D-023) is replaced by a SumoPod VPS: Singapore, Ubuntu 24.04 LTS, 2 vCPU / 8 GB / 80 GB (D-095). Dion and Codex buy and configure it; this repository provides the deploy files and runbook. No Railway account was created.
+- **Hosting change:** Railway (D-023) is replaced by a SumoPod VPS: Singapore, Ubuntu 24.04 LTS, 2 vCPU / 8 GB / 80 GB (D-095). Dion buys and configures it; this repository provides the deploy files and runbook. No Railway account was created.
 - **Already done:** see "Results (6 Oct 2026)" below. CI was red because of FAIL-35 until Phase 1.
 - **Phase 1 result (7 Oct 2026, commit `33c5584`, DONE):**
   - **FAIL-35 resolved (tests only):** the two raw-snapshot split tests skip when that git-ignored file is absent; the Phase A budget test sets its own budget values.
@@ -319,7 +319,7 @@ The notes below are the original plan. The implementation ([CP3.1 report](CP3_01
 
 ### Independent closure (8 Oct 2026)
 
-**Alembic implementation correctness: CLOSED.** The independent Codex audit of `bffdacc..ac30594` returned **ALEMBIC IMPLEMENTATION VERIFIED & CLOSED**. The `0001`/`0002` implementation is accepted as the storage foundation for Phase 2B.
+**Alembic implementation correctness: CLOSED.** The independent audit of `bffdacc..ac30594` returned **ALEMBIC IMPLEMENTATION VERIFIED & CLOSED**. The `0001`/`0002` implementation is accepted as the storage foundation for Phase 2B.
 
 - **Accepted head:** `ac30594`. The final residual fix was `ac30594 fix(db): trust a pre-existing alembic_version in 0001 only by exact structure`.
 - **Final CI:** run [37729333801](https://github.com/Gidion123/Job-Fit/actions/runs/37729333801) passed all three jobs:

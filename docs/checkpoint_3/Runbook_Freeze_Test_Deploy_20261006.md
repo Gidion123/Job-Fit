@@ -1,6 +1,6 @@
 # Runbook: freeze, held-out test and deployment
 
-**Date:** 6 October 2026. **For:** Dion, on the Mac, from the project folder with `env-job-fit` active. Claude never runs git or paid calls; every paid step below is yours, and each one has a dry run first.
+**Date:** 6 October 2026. **For:** Dion, on the Mac, from the project folder with `env-job-fit` active. Every paid step below has a dry run first.
 
 ## 0. Check the project
 
@@ -9,12 +9,12 @@ python -m pytest -q                          # expected: all pass, 2 skipped
 python scripts/prepare_cp23_freeze.py --verify evals/freeze/cp23_freeze_draft_v2
 ```
 
-The second command must print `"ok": true`. If a file changed, tell Claude before going on.
+The second command must print `"ok": true`. If a file changed, stop and find the cause before going on.
 
 ## 1. Approve the freeze (D-053)
 
 1. Read `evals/freeze/cp23_freeze_draft_v2/freeze_receipt.json` (config, call settings, pool rule, 53 file hashes). The choices are explained in D-086. The `report_contract` block fixes how CP2.4 is reported: CV3-CV5 are the headline, CV1-CV2 only a familiar-profile diagnostic, and no pooled CV1-CV5 number exists (`src/jobfit/eval/heldout_report.py`).
-2. Tell Claude in chat that you approve it. Claude writes the decision entry (the next free number, for example D-087).
+2. Record the approval as the next decision entry in `docs/decisions.md` (for example D-087).
 3. Then run:
 
 ```bash
@@ -40,9 +40,9 @@ python scripts/build_cp23_test_workbook.py evals/results/cp24/test_run_v1/test_r
 python scripts/build_cp23_test_workbook.py evals/results/cp24/test_run_v1/test_run.json --write  # after you agree the batch
 ```
 
-If a phase stops on an error, send Claude the output. Records are write-once, so running the same phase again only does what is missing.
+If a phase stops on an error, keep the output and fix the cause first. Records are write-once, so running the same phase again only does what is missing.
 
-Then label the blind workbook (no model drafts this time, D-053), close Excel and tell Claude. Claude imports the labels and runs `scripts/evaluate_cp24_test.py`, which only prints the CV3-CV5 headline and keeps CV1-CV2 separate.
+Then label the blind workbook (no model drafts this time, D-053), close Excel, import the labels with `scripts/import_test_labels_cp24_r1.py` and run `scripts/evaluate_cp24_test.py`, which only prints the CV3-CV5 headline and keeps CV1-CV2 separate.
 
 ## 3. App on the Mac
 

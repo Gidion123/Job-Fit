@@ -1,7 +1,7 @@
 # CP3.1: API Deployment with FastAPI
 
 **Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
-**Bootcamp checkpoint:** 15. Deployment API menggunakan Flask/FastAPI · official date 5 Oct 2026  
+**Bootcamp checkpoint:** 15. API Deployment with Flask/FastAPI · official date 5 Oct 2026  
 **JobFit version of this checkpoint:** FastAPI (Flask is not used).  
 **Planned work:** 5 Oct 2026 · **Actual:** 6 Oct 2026  
 **Status:** DONE · deployed on 10 Oct 2026 as a controlled demo behind Caddy Basic Auth ([D-106](../decisions.md)); demo-CV flow (6 Oct), Phase 2B dark cost-safety layer (8 Oct, D-101), persistent production ledger and the D-104/D-105 real-CV lifecycle are in the deployed API; the deployed canary sweep is not yet recorded (CP3.4) · design basis: System Design v1.3
@@ -87,7 +87,7 @@ From 8 October the remaining CP3 work follows [D-102](../decisions.md): JobFit i
 - **Failures:** FAIL-36, FAIL-37 and FAIL-38 are OPEN and are fixed in this stage; FAIL-38 is partly addressed in Phase 2A. FAIL-35 was resolved in Phase 1.
 - **Acceptance:** see the master plan, CP3.1 points 5 and 10.
 - **Limitations:** one API process with in-memory sessions; latency is not claimed until measured.
-- **Status:** PARTIAL. Phase 1 is done (FAIL-35 resolved). Phase 2A (fail-closed settings and phase bounds) is done and was corrected after the 8 Oct review; see "Results (7 Oct 2026, Phase 2A)" below. The full bound is above the cap, so public live is not eligible. Next: a decision by Dion and Codex, then Phase 2B. Phase 2B (the dark cost-safety runtime, D-101) is done; see "Results (8 Oct 2026, Phase 2B dark safety layer)" below. Public live stays blocked by the D-096 bound.
+- **Status:** PARTIAL. Phase 1 is done (FAIL-35 resolved). Phase 2A (fail-closed settings and phase bounds) is done and was corrected after the 8 Oct review; see "Results (7 Oct 2026, Phase 2A)" below. The full bound is above the cap, so public live is not eligible. Next: a decision by Dion, then Phase 2B. Phase 2B (the dark cost-safety runtime, D-101) is done; see "Results (8 Oct 2026, Phase 2B dark safety layer)" below. Public live stays blocked by the D-096 bound.
 
 ## 1. Goal of this stage
 
@@ -183,7 +183,7 @@ CP3.2 (checkpoint 16): database migrations, CI, and deployment of the database.
 
 ## Results (7 Oct 2026, Phase 2A)
 
-Local and CI only. Nothing is deployed, no paid call was made, and no D-087 frozen file changed (freeze verify `"ok": true`). The first version (commits `1574e31`, `9286fd9`, `0ba10d6`) was corrected on 8 Oct after an independent review by Codex; see "Correctness review (8 Oct 2026)" below. The values in this section are the corrected ones.
+Local and CI only. Nothing is deployed, no paid call was made, and no D-087 frozen file changed (freeze verify `"ok": true`). The first version (commits `1574e31`, `9286fd9`, `0ba10d6`) was corrected on 8 Oct after an independent review; see "Correctness review (8 Oct 2026)" below. The values in this section are the corrected ones.
 
 ### Fail-closed production settings (commit `1574e31`, invariants enforced on construction in `aa33f10`)
 
@@ -282,7 +282,7 @@ The envelope region dominates every chain. The `below_limit` region, costed at i
     - every chain failing and repaired at the maximum allowance;
     - every Sol chain followed by Luna.
   - It is not a typical or measured cost. Typical cost will be measured in CP3.4.
-  - D-096, the cap, the output limits and the admission rules are **unchanged**. Dion and Codex decide the next step before Phase 2B (reservations) starts.
+  - D-096, the cap, the output limits and the admission rules are **unchanged**. Dion decides the next step before Phase 2B (reservations) starts.
 - **Tests:** 76 in `tests/test_phase_bounds.py`. They cover:
   - every failure script of the real `validated_call` at L < C/2, L = C/2, C/2 < L < C and L = C;
   - **every attempt** (initial, continuation, repair, continuation-then-repair, repair-then-continuation) of the real frozen `extract_jd` and `match_evidence` (Sol and Luna), in both regions. The tests check each call's frozen guard bytes against its modelled attempt, and the summed frozen guard cost against the chain bound. The `below_limit` inputs are found by binary search, to the largest input with L = C − 1;
@@ -300,7 +300,7 @@ The envelope region dominates every chain. The `below_limit` region, costed at i
 
 ### Correctness review (8 Oct 2026)
 
-Codex reviewed the first version. A read-only investigation (frozen code driven by fake clients; no provider call) gave:
+An independent review checked the first version. A read-only investigation (frozen code driven by fake clients; no provider call) gave:
 
 | # | Finding | Verdict | Correction |
 | --- | --- | --- | --- |

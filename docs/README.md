@@ -4,7 +4,7 @@
 | --- | --- | --- |
 | [`data-contract.md`](data-contract.md) | Field definitions, data units, and corpus lineage | All checkpoints |
 | [`checkpoint_1/`](checkpoint_1/README.md) | CP1.1 to CP1.6 reports, one file per stage | CP1 (done) |
-| [`checkpoint_1/supporting/`](checkpoint_1/supporting/) | CP1 inventory, insights, audit, handoff, and API policy | CP1 |
+| [`checkpoint_1/supporting/`](checkpoint_1/supporting/) | CP1 inventory, insights, audit and API policy | CP1 |
 | [`repo-structure.md`](repo-structure.md) | What every folder and file of the application is for, and in which stage it is filled | CP2 and CP3 |
 | [`master-plan.md`](master-plan.md) | Dates, dependencies, budget, labeling plan, and the plan for every CP2 and CP3 stage; the source of truth for CP3.1-CP3.7 scope, acceptance and Definition of Done | CP2 and CP3 |
 | [`checkpoint_2/`](checkpoint_2/README.md) | CP2.1 to CP2.7 reports (bootcamp checkpoints 8 to 14), CP2.8 Phase A and the [CP2 closeout audit](checkpoint_2/CP2_Closeout_Audit_20261007.md) | CP2 (closed 7 Oct 2026, D-094) |

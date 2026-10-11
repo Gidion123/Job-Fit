@@ -199,7 +199,6 @@ Use a new output filename. Exit 2 currently means the report successfully identi
 - [Top30 retrieval](../../evals/results/cp22_retrieval_top30_20261002_03.json).
 - [Probe semantic receipt](../../evals/results/cp22_closure_f00034_semantic_check_20261002.json).
 - [Latest verification](../../evals/results/cp22_resume_verification_20261003.json); [historical takeover verification](../../evals/results/cp22_takeover_verification_20261002.json).
-- [Historical report before this takeover](supporting/archive/CP2_02_Modeling_Pipeline_before_takeover_20261002.md). Its old status statements and relative links describe their original location/time; they are not current instructions.
 
 
 ## 13. Review and commit inventory

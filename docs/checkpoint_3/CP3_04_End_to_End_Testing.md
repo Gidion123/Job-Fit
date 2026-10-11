@@ -4,9 +4,22 @@
 **Bootcamp checkpoint:** 18. Testing End-to-End Application · official date 8 Oct 2026  
 **JobFit version of this checkpoint:** Same as the template, on the deployed app.  
 **Planned work:** 8 Oct 2026 (feature freeze at the end of the day); moved to 9 Oct with the formal freeze at the end of 9 Oct (D-100) · **Actual:** 6 Oct 2026 (local part); 10 Oct 2026 (owner live and deployed runs)\
-**Status:** PARTIAL · local checks passed (27/27); D-105 automated in-process evidence (9 Oct); owner live runs and deployed Check a Job DONE (10 Oct, screenshots); production monitoring live in Grafana; **deployed canary sweep, PR-10 and the latency/cost table NOT YET RECORDED** · design basis: System Design v1.3
+**Status:** DONE for the application flow · local checks passed (27/27); D-105 automated in-process evidence (9 Oct); owner live runs and deployed Check a Job (10 Oct); owner validation of the full deployed flow accepted (11 Oct, [D-107](../decisions.md)); production monitoring live in Grafana; **deployed canary sweep, PR-10 and the latency/cost table not run (backlog)** · design basis: System Design v1.3
 
 > Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
+
+## Owner validation (11 Oct 2026)
+
+Dion ran and checked the deployed system himself after the 10 October screenshots and confirmed that it works as documented ([D-107](../decisions.md)). The offline suite was run again on 11 October 2026 in a clean Python 3.11 environment: **1,539 passed, 238 skipped, 0 failed**, ruff CI checks clean and freeze verify `"ok": true`. The skipped tests need a local test database or git-ignored raw data.
+
+| Check | Result |
+| --- | --- |
+| Full real-user flow on the deployed demo | Works as documented (owner, 10-11 Oct) |
+| Production monitoring (21-panel Grafana dashboard) | Live, metrics from deployed runs (figures 16-19) |
+| Offline test suite, ruff, freeze verify | Pass (11 Oct) |
+| Deployed privacy canary sweep | Not run (backlog) |
+| PR-10 original vs sanitized comparison | Not run (backlog) |
+| Latency and cost table | Not recorded |
 
 ## Validation update (10 Oct 2026)
 

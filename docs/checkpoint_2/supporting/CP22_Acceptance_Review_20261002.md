@@ -46,4 +46,4 @@ Current reviewed bundle: `evals/gold/development_v13_reviewed_20261002_r2`, cont
 - Eight revised fixtures pass; source/cache coverage regression and export/readiness safeguards pass.
 - Scoped repaired live acceptance is complete. D-050 explicitly closes CP2.2 implementation and carries broad extraction forward after CP2.3 configuration evaluation; a small-run proposal and full-guard conflict are retained without execution. Complete reference/alignment and metric conventions remain CP2.3 comparison gates.
 
-Readiness is `evals/results/cp23_readiness_after_D050_20261003.json`. Its exit-2 status is intentional; it prevents treating a promoted record bundle as a complete benchmark. No full labeling redo is requested. The archived preflight review is [here](archive/CP22_Acceptance_before_takeover_20261002.md).
+Readiness is `evals/results/cp23_readiness_after_D050_20261003.json`. Its exit-2 status is intentional; it prevents treating a promoted record bundle as a complete benchmark. No full labeling redo is requested.

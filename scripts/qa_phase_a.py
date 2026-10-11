@@ -73,7 +73,7 @@ EXPERIMENTS = {
                    'purpose': f'Repeat of {e} on the same optimization subset, only if {e} is the single provisional finalist.'}
        for e, h in (('QA-E01', 'QA-H01'), ('QA-E02', 'QA-H02'), ('QA-E03', 'QA-H03'))},
 }
-ANALYST_NOTES = {  # Claude's reading of the saved records; to be checked by Dion
+ANALYST_NOTES = {  # analyst reading of the saved records; checked by Dion
     'CV1/F00020': 'Mentoring/teaching role outside the target families (relevance 0); generic tool units match, and two responsibility lines were extracted as units.',
     'CV2/F00020': 'Same mentoring role; generic tool units match.',
     'CV2/F00645': 'Required 2 years is needs_clarification and excluded under H2v2, so the score ignores the main gap.',

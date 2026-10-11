@@ -1,6 +1,6 @@
-# CP3 production observability handoff (10 October 2026)
+# Production observability
 
-This layout review is local and uncommitted on `codex/grafana-layout-review-20261010` at accepted CP3 base `c653438fcc08e20ad5210ce80b68a58fe4403ff7`. It has **not** changed the VPS. The owner verified the production dashboard already has 21 panels (four infrastructure and 17 managed). The repository does not contain the active file-provisioned dashboard JSON, so a copy of that exact file must pass layout validation before any deployment decision. The original repository and integration worktree were left untouched.
+This folder holds what the VPS monitoring stack needs for JobFit: the Prometheus scrape job (`prometheus-job.yml`), two Docker network overrides and the Grafana dashboard layout (`layout.json`, `panels.json`). The production dashboard *JobFit - Production Monitoring* has 21 panels in five groups (four infrastructure panels and 17 application panels). It runs on the VPS since 10 October 2026 and is reached only through a private SSH tunnel; screenshots are in [`reports/figures/cp3`](../../reports/figures/cp3/README.md) (figures 16-19). Langfuse tracing is not used for the demo (D-106).
 
 ## Decision and safety boundary
 
@@ -37,20 +37,20 @@ Allowed stage labels include `cv_parse`, `query_embedding`, `retrieval`, `extrac
 
 Useful PromQL: request rate `sum(rate(jobfit_http_requests_total{job="jobfit-api",route!="/metrics"}[5m]))`; 5xx fraction `(sum(rate(jobfit_http_requests_total{job="jobfit-api",status=~"5..",route!="/metrics"}[5m])) or vector(0)) / sum(rate(jobfit_http_requests_total{job="jobfit-api",route!="/metrics"}[5m]))`; latency p95 `histogram_quantile(0.95,sum by (le)(rate(jobfit_http_duration_seconds_bucket{job="jobfit-api",route!="/metrics"}[5m])))` (substitute 0.5 for p50).
 
-## Local MacBook review and validation
+## Local validation
 
-From this worktree, use the project virtualenv and the existing test commands:
+From the repository root, with the project virtualenv active:
 
 ```sh
-../project-job-fit/env-job-fit/bin/python -m pytest -q tests/test_observability.py tests/test_fail37_api_privacy.py
-../project-job-fit/env-job-fit/bin/python scripts/prepare_cp23_freeze.py --verify evals/freeze/cp23_freeze_draft_v2
-RUFF_CACHE_DIR=/private/tmp/jobfit-ruff-cache ruff check --select E9,F63,F7,F82 src scripts ui tests
-RUFF_CACHE_DIR=/private/tmp/jobfit-ruff-cache ruff check --select F src ui
+python -m pytest -q tests/test_observability.py tests/test_fail37_api_privacy.py
+python scripts/prepare_cp23_freeze.py --verify evals/freeze/cp23_freeze_draft_v2
+ruff check --select E9,F63,F7,F82 src scripts ui tests
+ruff check --select F src ui
 ```
 
-The PostgreSQL integration tests require an isolated local test database and the existing `JOBFIT_MIGRATION_TESTS`/`JOBFIT_MIGRATION_ADMIN_URL` test settings. Never point them at the CP2 or production database. Inspect `git diff --check`, `git status --short`, the metric payload for synthetic canaries, and the dashboard output before integration. No real CV or paid provider call is required.
+The PostgreSQL integration tests require an isolated local test database and the existing `JOBFIT_MIGRATION_TESTS`/`JOBFIT_MIGRATION_ADMIN_URL` test settings. Never point them at the CP2 or production database. Before deploying, inspect the metric payload for synthetic canaries and the dashboard output. No real CV or paid provider call is required.
 
-## Owner-side deployment procedure, after review and integration approval
+## Deployment procedure (owner, on the VPS)
 
 1. On the VPS, identify the **actual** application Compose, monitoring Compose, Prometheus config, Grafana dashboard source/export, datasource name, API token source, and container user IDs. Keep the existing four infrastructure panels and dashboard UID `jobfit-overview`. Make versioned backups of those files, the active dashboard JSON, and the API image/tag. The production database and ledger must be backed up together; the previously reported backup has checksum verification but no restore test, so do not claim recovery is validated.
 2. The owner inspected the VPS network assignments: API=`application_net`+`database_net`, DB=`database_net`, UI=`application_net`, and Prometheus/Grafana/Node Exporter=`monitoring`. The overrides explicitly retain the API's two networks and Prometheus's `monitoring` network while adding only `jobfit_observability` to those two services. The shared external network is named `jobfit-observability`. Merge each override with its **actual** Compose project and inspect `docker compose config --no-interpolate --format json` before applying; the owner's network report is not a substitute for this merged-config check. Verify every service network, unchanged ports, API loopback binding, no database port, and unchanged monitoring services/datasource. Do not replace the projects, remove existing networks, reset Grafana volumes, or run `down -v`.
@@ -62,7 +62,7 @@ The PostgreSQL integration tests require an isolated local test database and the
 
 Rollback: preserve the old image/tag and configuration files first. Restore the previous dashboard JSON with UID `jobfit-overview`, the backed-up Prometheus config and monitoring Compose, then the prior API image and application Compose; restart only affected services and verify existing four infrastructure panels and `/health`. Remove the observability network only after no containers use it. Do not roll back or edit the ledger, database, production seed, or budget rows as part of an observability rollback.
 
-## Dashboard layout v2 (presentation only, prepared locally)
+## Dashboard layout v2
 
 `deploy/observability/layout.json` defines five sections and ten rows for the **already managed 21-panel production dashboard** (17 managed + 4 infrastructure panels): System health, Application & API, AI pipeline, LLM, Cost & safety. `scripts/prepare_observability_dashboard.py --mode layout` changes only titles, descriptions, single-series legends, explicitly declared display defaults and `gridPos`. It preserves the UID, every panel id, datasource reference, PromQL expression, target `refId`, dashboard variable, annotation, time range and refresh setting. Existing panel overrides, thresholds and other properties remain intact. Ambiguous multi-series infrastructure panels are refused for manual review. The validator requires every panel's exact declared x/y/w/h. Re-running layout on its own output gives the same file. The default `--mode append` is unchanged but must never be used on the current 21-panel dashboard.
 
@@ -72,7 +72,7 @@ Prepare a candidate from the current VPS file (owner, after approval; nothing is
 
 1. After owner approval, identify the active provisioned file `/opt/jobfit-monitoring/provisioning/dashboards/json/jobfit-overview.json` and confirm its actual provisioning scan path. Create `/opt/jobfit-monitoring/dashboard-backups/` with owner-only access, **outside** that scan path. Copy the active JSON there with a timestamped filename, preserve its ownership and mode, and compare SHA-256 hashes of source and backup. Do not put a `.bak.json` or any other dashboard copy beside the active file.
 2. Copy the active JSON to the Mac for offline review, e.g. `~/jobfit-dashboard/jobfit-overview.current.json`, and record its SHA-256. Do not edit the active file while preparing the candidate.
-3. From this worktree, run `python scripts/prepare_observability_dashboard.py --mode layout --input ~/jobfit-dashboard/jobfit-overview.current.json --output ~/jobfit-dashboard/jobfit-overview.candidate.json`. The output must be a new path; the script refuses an existing output. Any refusal means the actual VPS file differs from the reviewed fixture and needs a new review.
+3. From the repository root, run `python scripts/prepare_observability_dashboard.py --mode layout --input ~/jobfit-dashboard/jobfit-overview.current.json --output ~/jobfit-dashboard/jobfit-overview.candidate.json`. The output must be a new path; the script refuses an existing output. Any refusal means the actual VPS file differs from the reviewed fixture and needs a new review.
 4. Diff the current and candidate JSON. Only titles, descriptions, `legendFormat`, expressly requested `fieldConfig.defaults` display entries and `gridPos` may change. Verify 21 panel IDs, UID `jobfit-overview`, datasource representation `Prometheus`, all PromQL and target `refId`s, annotations, variables, time range and refresh. Re-run layout from the candidate into a *second* new file and confirm byte-for-byte idempotence. The actual production JSON has not been tested locally in this review; this step is **PENDING**.
 5. After the candidate is independently approved, copy it to the VPS without touching the active file. Preserve the active file's ownership and mode. Stage it on the **same filesystem** under a non-JSON temporary name that the provisioning scan does not read; verify its SHA-256, then use an atomic rename to replace only the active provisioned JSON. If the scan would read the temporary file, stop and choose a safe staging path. Confirm the provider picked up the new file; reload or restart **only Grafana** if its actual provisioning behavior requires it. Do not restart API, UI, PostgreSQL or Prometheus for a dashboard-only change, and do not import through the Grafana UI or API.
 
@@ -80,4 +80,4 @@ Rollback: verify the SHA-256 of the step-1 backup, stage that unchanged backup s
 
 ## Remaining limits
 
-The worktree has not been deployed or checked against the active VPS Compose or dashboard. Grafana panels show no AI samples while live is disabled. The readable gauge is not a filesystem write probe. HTTP accepted and idempotent duplicate counts are separate from actual asynchronous completed, held, failed, and refused counts. A crashed process can lose its in-memory completion sample, so counters are not an authoritative operation ledger. LLM counters are per-process observations and can miss a crash between a durable ledger append and telemetry emission; budget gauges use persisted state. Langfuse, email alerts, and successful backup restore are outside this change. The owner must complete VPS validation and the privacy release gate before claiming production monitoring or public-beta readiness.
+The layout above is the one used by the production dashboard. Grafana panels show no AI samples while live analysis is disabled. The readable gauge is not a filesystem write probe. HTTP accepted and idempotent duplicate counts are separate from actual asynchronous completed, held, failed, and refused counts. A crashed process can lose its in-memory completion sample, so counters are not an authoritative operation ledger. LLM counters are per-process observations and can miss a crash between a durable ledger append and telemetry emission; budget gauges use persisted state. Langfuse, email alerts, and successful backup restore are outside this change. The owner must complete VPS validation and the privacy release gate before claiming production monitoring or public-beta readiness.

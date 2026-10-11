@@ -120,17 +120,18 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
 | D-092 | 7 Oct 2026 | Privacy is implemented and component/unit tested only; end-to-end validation and the original-vs-masked comparison move to CP3.4/CP3.5 | Approved by Dion |
 | D-093 | 7 Oct 2026 | CP2 mentor feedback taken into CP3: waiting-state UX for the long LLM wait; vacancy-specific CV guidance | Approved by Dion; clarified by D-102 |
 | D-094 | 7 Oct 2026 | CP2 closed: acceptance work complete, reports current, freeze verified; handoff to CP3 | Approved by Dion |
-| D-095 | 7 Oct 2026 | CP3 deployment target (SumoPod VPS), full public live product scope and branch lifecycle | Approved by Dion and Codex; planned, not deployed; clarified by D-102 |
-| D-096 | 7 Oct 2026 | Public live cost and abuse controls: US$5 validation budget, US$2/day cap, deterministic phase bounds, 1 analysis per IP per 24 h, one live analysis at a time | Approved by Dion and Codex; planned; amended for the public beta by D-103 (8 Oct) |
-| D-097 | 7 Oct 2026 | CP3 runtime changes go through non-frozen adapters; the D-087 files stay byte-identical | Approved by Dion and Codex; planned |
-| D-098 | 7 Oct 2026 | Mutable production job corpus: twice-monthly JSearch sync, dedupe, lifecycle, lazy extraction cache, minimal Alembic baseline | Approved by Dion and Codex; Alembic 0001/0002 implemented 8 Oct (schema only) and independently verified and closed at `ac30594`; Dion's local CP2 database not yet verified; sync and seed planned; sync automation P2 (post-beta) since 8 Oct |
-| D-099 | 7 Oct 2026 | CP3 observability: Prometheus and Grafana with email alerts, Langfuse Cloud (Japan) metadata only | Approved by Dion and Codex; planned; email alerts P2 (post-beta) since 8 Oct; Langfuse required for the final controlled public beta (Cloud free tier, separate P1 task) since 8 Oct (D-103) |
-| D-100 | 7 Oct 2026 | CP3 evaluation obligations and feature freeze: D-045 to be completed with option B, PR-10, freeze at the end of 9 Oct | Approved by Dion and Codex; planned, not completed |
-| D-101 | 8 Oct 2026 | Phase 2B dark runtime safety semantics: safety layer built while public live stays blocked by the D-096 bound | Approved by Dion and Codex; implemented 8 Oct (dark, local and CI only) |
+| D-095 | 7 Oct 2026 | CP3 deployment target (SumoPod VPS), full public live product scope and branch lifecycle | Approved by Dion; planned, not deployed; clarified by D-102 |
+| D-096 | 7 Oct 2026 | Public live cost and abuse controls: US$5 validation budget, US$2/day cap, deterministic phase bounds, 1 analysis per IP per 24 h, one live analysis at a time | Approved by Dion; planned; amended for the public beta by D-103 (8 Oct) |
+| D-097 | 7 Oct 2026 | CP3 runtime changes go through non-frozen adapters; the D-087 files stay byte-identical | Approved by Dion; planned |
+| D-098 | 7 Oct 2026 | Mutable production job corpus: twice-monthly JSearch sync, dedupe, lifecycle, lazy extraction cache, minimal Alembic baseline | Approved by Dion; Alembic 0001/0002 implemented 8 Oct (schema only) and independently verified and closed at `ac30594`; Dion's local CP2 database not yet verified; sync and seed planned; sync automation P2 (post-beta) since 8 Oct |
+| D-099 | 7 Oct 2026 | CP3 observability: Prometheus and Grafana with email alerts, Langfuse Cloud (Japan) metadata only | Approved by Dion; planned; email alerts P2 (post-beta) since 8 Oct; Langfuse required for the final controlled public beta (Cloud free tier, separate P1 task) since 8 Oct (D-103) |
+| D-100 | 7 Oct 2026 | CP3 evaluation obligations and feature freeze: D-045 to be completed with option B, PR-10, freeze at the end of 9 Oct | Approved by Dion; planned, not completed |
+| D-101 | 8 Oct 2026 | Phase 2B dark runtime safety semantics: safety layer built while public live stays blocked by the D-096 bound | Approved by Dion; implemented 8 Oct (dark, local and CI only) |
 | D-102 | 8 Oct 2026 | CP3 portfolio / controlled public beta scope principle: north star, two first-class flows (Find Jobs, Check a Job), stage-aware progress, "Improve My CV for This Job" with a hard anti-fabrication rule, public-beta engineering bar, complexity budget | Approved and independently reviewed; authoritative CP3 scope direction; open gates 1 and 2 resolved by D-103 |
-| D-103 | 8 Oct 2026 | Controlled public-beta cost profile: separate versioned bounds (parse US$0.0614679, search US$0.0001648, job_analysis US$4.0012836), exact canonical byte envelopes, US$5/day and US$25 lifetime, ticket-gated session allowance (1 parse, 1 search, 3 job analyses), search-stage labelling; Langfuse required for the final beta | Approved by Dion and Codex; implemented dark 8 Oct (`5d07b0c`, `c3a718e`, `40ed823`); public real-CV flow still closed; independently verified and closed at `d30255d` |
+| D-103 | 8 Oct 2026 | Controlled public-beta cost profile: separate versioned bounds (parse US$0.0614679, search US$0.0001648, job_analysis US$4.0012836), exact canonical byte envelopes, US$5/day and US$25 lifetime, ticket-gated session allowance (1 parse, 1 search, 3 job analyses), search-stage labelling; Langfuse required for the final beta | Approved by Dion; implemented dark 8 Oct (`5d07b0c`, `c3a718e`, `40ed823`); public real-CV flow still closed; independently verified and closed at `d30255d` |
 | D-104 | 8 Oct 2026 | Structural CV data-minimization boundary for the real-CV public beta (FAIL-37 revised design): drop the identity/contact header, the Summary/Profile/Objective family (structural delimiter only, not evidence) and privacy-only sections; keep evidence-bearing sections; deterministic PII backstops; fail closed without a boundary; no geography data, owner-review gate or identifier subsystem | Approved design; implementation planned; FAIL-37 OPEN / REVISED DESIGN |
 | D-105 | 9 Oct 2026 | Pre-local real-user product flow (upload → sanitized preview → consent → parse → Find Jobs / Check a Job → Analyze Fit → Improve My CV) and owner-only local activation | Approved by Dion; implemented 9 Oct, owner-validated 10 Oct |
+| D-107 | 11 Oct 2026 | CP3 close-out: owner validation of the deployed flow accepted, final presentation delivered, open validation items moved to the backlog | Owner decision (Dion); recorded 11 Oct |
 | D-106 | 10 Oct 2026 | Controlled mentor demo behind Caddy Basic Auth on the SumoPod VPS; monitoring with Prometheus and Grafana; Langfuse off for this demo | Owner decision (Dion); deployed 10 Oct |
 
 ---
@@ -448,7 +449,7 @@ The full design that these decisions produce is System Design v1.3 (`02_System_D
   5. The same model is used for extraction and evidence matching, unless a split is at least 0.03 better on one task.
 - **Honesty notes:**
   - The development set is small, so differences of a few points can be noise.
-  - The assistant tools used during development include models from OpenAI and Anthropic, and both companies have candidates on this list. The same fixed rule is applied to every candidate, and the results are reported as measured.
+  - Several providers on this list also make the drafting model used for labels. The same fixed rule is applied to every candidate, and the results are reported as measured.
 - **Budget (D-019):**
   - Committed: US$3.47 (DeepSeek) + US$5 (OpenAI) = US$8.47.
   - Anthropic credit, if Dion adds it, would bring this to about US$13.47, still under US$15.
@@ -920,7 +921,7 @@ J1-U01 and J2-U08 differ on purpose: in J1 the softener is in the same sentence 
 
 ## D-056. Bounded experimental v1.4 Stage-2 extraction budget
 
-- **Date/source:** 3 October 2026. After the explicit v1.4 preflight and US$3.23 approval request, Dion replied “Iya saya setuju, ayo selesaikan tahap 2.” The exact [approval receipt](../evals/results/cp23_stage2_extraction_budget_approval_20261003_v2.json) binds plan SHA `b901bad9176e33d45845dcd9748d2c3eb05bbf627b592655e174d697b2e9a0c2` and run ID `cp23_stage2_round1_extraction_20261003_v4`. No exact review time is asserted.
+- **Date/source:** 3 October 2026. After the explicit v1.4 preflight and US$3.23 approval request, Dion approved it in writing (“Yes, I agree, let’s finish stage 2”, translated from Indonesian). The exact [approval receipt](../evals/results/cp23_stage2_extraction_budget_approval_20261003_v2.json) binds plan SHA `b901bad9176e33d45845dcd9748d2c3eb05bbf627b592655e174d697b2e9a0c2` and run ID `cp23_stage2_round1_extraction_20261003_v4`. No exact review time is asserted.
 - **Scope:** At most 28 extraction cases (four D-029 round-one models × the same seven development JDs), one automatic repair per case, aggregate additional cap US$3.23 including failures and uncertain charges. The conservative preflight bound is US$3.2232974. The US$8.50 project hard stop and existing guard/ledger remain. Experimental JD prompt v1.4 is fixed for this plan and is not the active default, a guideline change or a selected prompt.
 - **Exclusions:** Evidence matching, GPT-6 Sol reference, broad development extraction, test data and configuration selection require their own plans. Approval does not migrate from v3 or to a later changed protocol.
 - **Execution:** The first DeepSeek/F00332 stage returned a 17-unit draft after one automatic repair, two calls, US$0.022156197 provider-reported. Source-semantic QA found that the alternative branches do not represent the source's “other disciplines will be considered” path even though the group text repeats it and `needs_review=true` prevents scoring. One reviewed trend/anomaly obligation was split into two model units; D-054's strict mapping applies. The durable run stopped after 1/28 stages under its frozen quality gate. No model winner or extraction F1 is claimed.
@@ -945,14 +946,14 @@ J1-U01 and J2-U08 differ on purpose: in J1 the softener is in the same sentence 
 
 ## D-059. Retain settled process failures and complete unattempted extraction cases
 
-**Approved by Dion, 3 October 2026**, explicit reply “Setuju v7 dalam plafon kumulatif US$3,16”. The terminal v6 Gemini/F00815 failure remains failed and is not replayed. V7 covers only the two remaining Gemini and seven Claude cases, with no request/prompt/privacy change and at most one automatic repair per case. After an exact failure receipt establishes settled charges, a process failure is retained as a comparison outcome and the next original case may proceed. Uncertain charges/reservations, changed source/identity and insufficient budget still stop. V5/v6/v7 share the same cumulative US$3.16 ceiling; the remaining conservative bound is US$2.0236408. No matching, test access, reference model, broad extraction or winner selection is authorized by this decision.
+**Approved by Dion, 3 October 2026**, explicit written approval of v7 within the cumulative US$3.16 cap. The terminal v6 Gemini/F00815 failure remains failed and is not replayed. V7 covers only the two remaining Gemini and seven Claude cases, with no request/prompt/privacy change and at most one automatic repair per case. After an exact failure receipt establishes settled charges, a process failure is retained as a comparison outcome and the next original case may proceed. Uncertain charges/reservations, changed source/identity and insufficient budget still stop. V5/v6/v7 share the same cumulative US$3.16 ceiling; the remaining conservative bound is US$2.0236408. No matching, test access, reference model, broad extraction or winner selection is authorized by this decision.
 
 [Plan](../evals/results/cp23_stage2_round1_extraction_20261003_v7_remaining_cases_preflight.json) and [approval](../evals/results/cp23_stage2_v7_remaining_cases_approval_20261003_v1.json) preserve the predecessor hashes and approval scope.
 
 
 ## D-060. Scoped strict many-to-many accounting for Claude/F00036
 
-- **Date/source:** 3 October 2026, Dion explicitly replied “Setuju dengan hitungan ketat tersebut” to the exact Claude/F00036 question.
+- **Date/source:** 3 October 2026, Dion explicitly approved the strict count for the exact Claude/F00036 question.
 - **Approved case:** reviewed gold P09-U08/P09-U09 (EDA and visualization-tool alternatives) versus model U11/U12/U13. Count **0 TP, 2 FN, 3 FP**, consistent with strict split/merge accounting. This closes that case's previously missing many-to-many convention.
 - **Implementation:** an accounting-only adapter preserves the original complex relation and emits two FN records/three FP records. It adds no source units and does not approve other model-to-gold mappings.
 - **Limits:** no blanket complex-case policy, no field-level-equivalence decision, no paid matching approval, no whole-alignment human verification and no model/configuration winner. Candidate-specific semantic review and the other pending questions remain.
@@ -961,7 +962,7 @@ J1-U01 and J2-U08 differ on purpose: in J1 the softener is in the same sentence 
 
 ## D-061. Primary extraction equivalence and separate category accuracy
 
-- **Date/source:** 3 October 2026, Dion explicitly replied “Setuju dengan definisi tersebut” to the stated evaluation definition.
+- **Date/source:** 3 October 2026, Dion explicitly approved the stated evaluation definition.
 - **Primary extraction F1:** a verified one-to-one semantic equivalent preserves meaning, material qualifiers, AND/OR structure and required/preferred importance. Ordinary proficiency-depth words remain subject to D-035/D-042.
 - **Category errors:** report category accuracy separately; a category mismatch alone does not invalidate a semantically equivalent unit for primary F1. Category effects on denominator/scoring remain visible and are not erased or treated as acceptable production behavior.
 - **Limits:** this is a development evaluation clarification recorded before final metric computation, after outputs had been inspected; report that chronology. No gold, score formula, prompt or test-set change. Candidate-specific mapping acceptance is still required.
@@ -976,7 +977,7 @@ J1-U01 and J2-U08 differ on purpose: in J1 the softener is in the same sentence 
 
 ## D-063. Accepted Stage-2 candidate mappings and fixed matching adapter
 
-- **Date/source:** 3 October 2026, Dion: “Setuju pemetaan rekomendasi dan adapter tetap”.
+- **Date/source:** 3 October 2026, Dion approved the recommendation mapping with the adapter unchanged.
 - **Scope:** recommended relations in the complete v3 packet (27 final extraction drafts and one retained failure, 447 relations), and the source-checked fixed matcher adapter containing 73 logical units across four development pairs. D-060 and D-061 accounting apply.
 - **Provenance:** human acceptance of assisted source QA, not independent human annotation of every candidate output. Original gold, outputs and historical source observations remain unchanged.
 - **Receipt:** `evals/results/cp23_stage2_alignment_and_fixed_adapter_approval_20261003_v1.json`, binding the packet, adapter, plan and reference hashes.
@@ -986,7 +987,7 @@ J1-U01 and J2-U08 differ on purpose: in J1 the softener is in the same sentence 
 
 ## D-064. Separate capped quality-reference and round-two experiment
 
-- **Date/source:** 3 October 2026, Dion: “Setuju protokol dan batas tambahan US$6,40”, followed by an instruction to continue maximally and precisely.
+- **Date/source:** 3 October 2026, Dion approved the protocol and the additional US$6.40 limit, and asked for the work to continue carefully and precisely.
 - **Scope:** eight GPT-6 Sol reference stages (four extraction JDs shared with matching plus four fixed matching pairs), eleven DeepSeek Pro stages (seven original extraction JDs plus four fixed pairs); 19 stages, at most 38 calls including one repair per stage.
 - **Budget:** separate aggregate additional ceiling US$6.40; conservative bound US$6.33582444. Existing US$8.50 project hard stop remains. Unknown charges/reservations, changed inputs or unsafe headroom stop dispatch. Unused D-062 cap is not transferred.
 - **Protocol:** new versioned experiment; portable application-owned repair framing, unchanged first-call rubric/prompts/inputs, omit unsupported temperature only for GPT Sol, and allow only exact dated response IDs published in saved official endpoint metadata. Original failures and paid states remain unchanged. The framing is a compatibility mitigation, not a proven historical HTTP 400 diagnosis. Settled failures remain observations; failed cases are not repeated.
@@ -1263,7 +1264,7 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 
 ## D-088. CP2.4 test labels: provenance correction and import as test_v13_cp24_r1
 
-- **Date/source:** 7 October 2026. Before the gold import, Dion told me in chat that he labeled the CP2.4 test workbook with help from ChatGPT. ChatGPT assessed the CV-JD pairs and gave recommendations; Dion reviewed every pair and made the final decision. During labeling he did not see the JobFit rank, score, retriever method, JobFit model suggestions or `pool_provenance.json`.
+- **Date/source:** 7 October 2026. Before the gold import, Dion reported that he labeled the CP2.4 test workbook with help from ChatGPT. ChatGPT assessed the CV-JD pairs and gave recommendations; Dion reviewed every pair and made the final decision. During labeling he did not see the JobFit rank, score, retriever method, JobFit model suggestions or `pool_provenance.json`.
 - **Provenance:** `ai_assisted_human_reviewed_blind_to_ranking`. The labels are blind to the system output, but they are NOT pure human gold and NOT independent human annotation. One reviewer, no inter-annotator agreement. This deviates from the D-053 wording "no model suggestions". D-053 itself is not edited; this record is the correction.
 - **Why it is still usable:** the configuration was frozen (D-087) before labeling, the labels never saw the system ranking, and the test set was not used for tuning. So it is valid for an internal held-out evaluation, with the disclosures below.
 - **Required disclosures in every CP2.4 report:**
@@ -1349,10 +1350,8 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 
 ## D-093. CP2 mentor feedback taken into CP3
 
-- **Date/source:** the CP2 presentation and mentoring session was on 4 October 2026. The D-069 amendment notes at 08:13 WIB that the presentation was about six hours away, and the 4 October audit report starts with "After the CP2 presentation"; the exact time was not written down. On 7 October Dion confirmed the session and gave the mentor's feedback:
-  > "Latency LLM nya cukup tinggi yaitu 95 s, maka dibuat semacam UI atau animasi menunggu seperti Claude thinking agar user tidak bosan.
-  > Jika core fitur sudah jadi, tambahkan fitur utk memperbaiki CV atau saran perbaikan CV utk lowongan tersebut, sehingga menaikkan matching nya."
-- **In English:** (1) LLM latency is high, about 95 seconds; add a waiting UI or animation, like a "thinking" indicator, so the user does not get bored. (2) Once the core features work, add CV improvement suggestions for the target vacancy so the user can raise the match.
+- **Date/source:** the CP2 presentation and mentoring session was on 4 October 2026. The D-069 amendment notes at 08:13 WIB that the presentation was about six hours away, and the 4 October audit report starts with "After the CP2 presentation"; the exact time was not written down. On 7 October Dion confirmed the session and gave the mentor's feedback (given in Indonesian):
+- **Feedback:** (1) LLM latency is high, about 95 seconds; add a waiting UI or animation, like a "thinking" indicator, so the user does not get bored. (2) Once the core features work, add CV improvement suggestions for the target vacancy so the user can raise the match.
 - **Context:** the 4 October deck showed development results, including a DeepSeek Flash matching request p95 of about 91 s (D-068); 95 s is the mentor's figure. Matching later moved to GPT-6 Sol; in the held-out run, one CV took 37.2 to 87.2 s (median 80.6 s) to match (CP2.4 section 10b).
 - **A, waiting-state UX (CP3):** show a clear waiting state for long analyses (progress, current step, a "thinking" indicator). This makes the wait easier to sit through; it does not make the model faster, and no speed-up is claimed unless one is measured. The UI already has a per-job progress bar and a spinner (`ui/streamlit_app.py`); check those first instead of building a second feature.
 - **B, CV improvement guidance (CP3, after the core flow is stable):** suggestions come from the user's real CV evidence, the target JD's requirements and the gaps found. They never invent experience or encourage overstating skills. A CV edit only raises the evidence-coverage score when it adds true evidence, and it does not guarantee a better real fit. This extends the CV coach plan (D-036, [cv-coach-plan.md](cv-coach-plan.md)) and CV coach v1 (EXP-20261006-CP3) rather than adding a new feature.
@@ -1370,9 +1369,9 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 
 ## D-095. CP3 deployment target, public product scope and branch lifecycle
 
-- **Date/source:** 7 October 2026. Dion and Codex approved the CP3 final execution plan after three review rounds.
+- **Date/source:** 7 October 2026. Dion approved the CP3 final execution plan after three review rounds.
 - **Hosting (replaces D-023):** a SumoPod VPS in Singapore, Ubuntu Server 24.04 LTS, 2 vCPU / 8 GB RAM / 80 GB storage.
-  - Dion and Codex buy and configure the machine (SSH keys, ufw, Docker, DNS, secrets).
+  - Dion buys and configures the machine (SSH keys, ufw, Docker, DNS, secrets).
   - The repository provides the production compose file, the Caddyfile, the runbook and scripts.
   - Railway is no longer the target.
 - **Reverse proxy:** Caddy with automatic HTTPS.
@@ -1392,14 +1391,14 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 - **Validation layers:**
   - A, external public checks through Caddy and Streamlit;
   - B, an internal API `e2e_check.py` run inside the VPS Docker network or through an SSH tunnel.
-- **Branch lifecycle:** `cp3-development-20261007` → implementation → validation → feature freeze → review by Dion and Codex → squash or merge into `main` (Dion) → release. Scheduled production workflows run from `main` after that merge. No CP3 implementation reaches `main` before the final review and freeze.
+- **Branch lifecycle:** `cp3-development-20261007` → implementation → validation → feature freeze → review by Dion → squash or merge into `main` (Dion) → release. Scheduled production workflows run from `main` after that merge. No CP3 implementation reaches `main` before the final review and freeze.
 - **Update (8 Oct 2026, D-102):** the product framing is clarified as a production-grade AI engineering portfolio with a controlled public beta on this single VPS, not an enterprise SaaS. Hosting, Caddy, the private FastAPI/PostgreSQL/Grafana boundary, the release gate and the branch lifecycle are unchanged.
 - **Update (8 Oct 2026, D-104):** the "local masking with reviewed identifiers" step of the product scope is now the D-104 structural data-minimization boundary (no user-entered name or address fields). The release gate is unchanged.
 - **Status:** Approved. Planned; nothing is deployed yet.
 
 ## D-096. Public live cost and abuse controls
 
-- **Date/source:** 7 October 2026, Dion and Codex.
+- **Date/source:** 7 October 2026, Dion.
 - **Two budgets:**
   - **CP3 validation:** US$5 in total (live E2E checks, latency measurements, PR-10, the D-045 blind run). I report the reason, cost, benefit and a no-spend alternative before anything would cross it.
   - **Production:** a US$2/day global hard cap (Asia/Jakarta calendar day, configurable).
@@ -1409,7 +1408,7 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
   - `recommendation_upper_bound = embed_max + extraction_max + matching_max + fallback_max`
   - `full_analysis_upper_bound = parse_max + recommendation_upper_bound`
 
-  A missing price, limit or count fails closed. `full_analysis_upper_bound` must be at most the daily cap before `JOBFIT_PUBLIC_LIVE=1`. If it is higher, that is a production configuration blocker, reported to Dion and Codex; the bound is never quietly reduced. The planning estimate (about US$0.25-0.6 per run) is never used for enforcement.
+  A missing price, limit or count fails closed. `full_analysis_upper_bound` must be at most the daily cap before `JOBFIT_PUBLIC_LIVE=1`. If it is higher, that is a production configuration blocker, reported to Dion; the bound is never quietly reduced. The planning estimate (about US$0.25-0.6 per run) is never used for enforcement.
 - **Separate phase reservations:**
   - `/cv/parse` reserves `parse_max`.
   - `/recommendations` reserves `recommendation_upper_bound`. Query embedding, extraction, matching and fallback are charged only to this reservation, never to the parse reservation.
@@ -1434,7 +1433,7 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 
 ## D-097. CP3 runtime changes outside the D-087 freeze
 
-- **Date/source:** 7 October 2026, Dion and Codex.
+- **Date/source:** 7 October 2026, Dion.
 - **Rule:** CP3 production changes go through non-frozen modules and the dependency-injection seams that already exist (`recommend(..., retrieve, extraction_for, client, matcher)`, `api/wiring.py`). The 57 D-087 files stay byte-identical, and `prepare_cp23_freeze.py --verify` must stay `"ok": true`. No change to the model, prompt, K, weights or retrieval configuration.
 - **Planned adapters:**
   1. **A concurrency-safe app client** (F2): the frozen client holds a file lock for the whole network call, so live matching runs one call at a time. The adapter keeps request semantics, matching inputs and the model, prompt and config unchanged. It makes the network call outside the long lock, does reservation and in-flight accounting, writes one ledger entry per call and has telemetry hooks. Fake-SDK tests compare serial and concurrent `Recommendation` outputs, and live timing is measured before any latency claim. The mentor's 95 s is not attributed to serialization unless measurement shows it.
@@ -1453,7 +1452,7 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 
 ## D-098. Mutable production job corpus
 
-- **Date/source:** 7 October 2026, Dion and Codex.
+- **Date/source:** 7 October 2026, Dion.
 - **Separation:**
   - The frozen CP2 evaluation corpus (the snapshot `CP1_20260926`, splits, gold, freeze receipts and the local CP2 database built by the unchanged loader and `SCHEMA_SQL`) is never touched by production code.
   - The mutable CP3 production corpus lives only in the VPS database. See [production-corpus.md](production-corpus.md).
@@ -1493,12 +1492,12 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 
 ## D-099. CP3 observability
 
-- **Date/source:** 7 October 2026, Dion and Codex.
+- **Date/source:** 7 October 2026, Dion.
 - **Prometheus and Grafana:** RED metrics for the API, USE metrics for the VPS (node_exporter), and app counters with bounded labels only (no job, session, request or run IDs as labels).
   - Sync results are exposed as gauges from the latest sync run.
   - Two dashboards: service with a small corpus/sync row, and VPS.
   - No cAdvisor in the MVP. The only restart alert is the API restart loop (`process_start_time_seconds`).
-- **Alerts:** Grafana-managed alerts sent by email through an SMTP contact point. The settings are `GRAFANA_SMTP_HOST`, `GRAFANA_SMTP_PORT`, `GRAFANA_SMTP_USER`, `GRAFANA_SMTP_PASSWORD`, `GRAFANA_ALERT_FROM` and `GRAFANA_ALERT_TO`; Dion and Codex choose the account during VPS setup.
+- **Alerts:** Grafana-managed alerts sent by email through an SMTP contact point. The settings are `GRAFANA_SMTP_HOST`, `GRAFANA_SMTP_PORT`, `GRAFANA_SMTP_USER`, `GRAFANA_SMTP_PASSWORD`, `GRAFANA_ALERT_FROM` and `GRAFANA_ALERT_TO`; Dion chooses the account during VPS setup.
 - **Langfuse Cloud:** Japan region, Hobby plan, metadata only.
   - Input and output capture is off, with a mask function as a backup and a metadata allow-list (run id, stage, model, provider, duration, tokens, cost, retry/fallback, error code, hold status, public job id).
   - Never sent: CV text, names, contacts, addresses, identifying employer history, evidence quotes, pasted JDs or session tokens.
@@ -1506,12 +1505,12 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 - **Cost figures:** Prometheus and Langfuse cost numbers are not authoritative (D-096).
 - **No CORS:** the browser only talks to Streamlit, so no cross-origin call to FastAPI exists.
 - **Update (8 Oct 2026, priority only):** under the D-102 anti-overengineering correction, the beta release bar is structured logs, Prometheus metrics and Grafana with application, AI-pipeline, LLM and cost, and basic VPS health visibility. The Langfuse adapter, Grafana email alerts and additional dashboards are P2 (post-beta). The privacy rules above are unchanged.
-- **Update (8 Oct 2026, D-103):** Langfuse is now **required for the final controlled public beta and portfolio release**, as a separate P1 task before public-beta activation: Langfuse Cloud hosted free tier (Japan region if available) if privacy-compatible, never self-hosted on the VPS for CP3, never raw CV content or user PII, and no paid plan without a Dion and Codex decision. Grafana stays private (SSH tunnel); node_exporter is allowed; email alerts and extra dashboards stay P2 (post-beta).
+- **Update (8 Oct 2026, D-103):** Langfuse is now **required for the final controlled public beta and portfolio release**, as a separate P1 task before public-beta activation: Langfuse Cloud hosted free tier (Japan region if available) if privacy-compatible, never self-hosted on the VPS for CP3, never raw CV content or user PII, and no paid plan without a Dion decision. Grafana stays private (SSH tunnel); node_exporter is allowed; email alerts and extra dashboards stay P2 (post-beta).
 - **Status:** Approved. Planned, not implemented.
 
 ## D-100. CP3 evaluation obligations and feature freeze
 
-- **Date/source:** 7 October 2026, Dion and Codex.
+- **Date/source:** 7 October 2026, Dion.
 - **Feature freeze:** the formal CP3 feature freeze is at the end of 9 October 2026.
   - Plan for 8 October: core engineering and the dark deployment substantially complete.
   - Plan for 9 October: deployed validation, the privacy release gate, public-live enablement, PR-10 and the freeze.
@@ -1535,7 +1534,7 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 
 ## D-101. Phase 2B dark runtime safety semantics
 
-- **Date/source:** 8 October 2026. Dion and Codex accepted the Phase 2B plan after four review rounds (B1 resolved for the safety layer only).
+- **Date/source:** 8 October 2026. Dion accepted the Phase 2B plan after four review rounds (B1 resolved for the safety layer only).
 - **Dark, fail-closed safety layer (resolves B1 for implementation only):**
   - The US$2/day cap, the Phase 2A bounds (parse US$0.4716399, recommendation US$84.2988050, full US$84.7704449), the model, prompt, K, retrieval and scoring stay unchanged. The owner token never bypasses the cap.
   - Under the real configuration a parse passes admission, a recommendation is always refused (`budget`), `JOBFIT_PUBLIC_LIVE` stays off and `public_live_eligible` stays false. Tests use isolated caps and fake SDKs only.
@@ -1607,7 +1606,7 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 
 ## D-103. Controlled public-beta cost profile (amends D-096 for the public beta)
 
-- **Date/source:** 8 October 2026, Dion and Codex (architecture Option F, final-approved with execution clarifications; implemented the same day in small audited steps).
+- **Date/source:** 8 October 2026, Dion (architecture Option F, final-approved with execution clarifications; implemented the same day in small audited steps).
 - **Finding.** With the frozen GPT-6 Sol matcher and the frozen output policy, one evidence-matching chain has a deterministic bound of about US$3 or more under any realistic input envelope, so no evidence-matching analysis fits under US$2/day. The historical Phase 2A `full_analysis_upper_bound` (US$84.7704449, `config/cp3/phase_bounds_v1.yaml`, D-096) is not reduced, overwritten or repurposed: it stays reproducible, and the legacy `public_live_eligible()` full-analysis check keeps its meaning (still false at US$2 and at US$5).
 - **Separate versioned profile.** `config/cp3/public_beta_bounds_v1.yaml` (version `cp3-public-beta-bounds-v1`, sha256 `ccb1254a92147a26e0392e4394cd9a59824bda0b7a7e1a3fb2ef609d424335a3`) is read by an additive calculator (`src/jobfit/llm/public_beta_bounds.py`). It reads the same frozen sources as Phase 2A (pipeline config and K, route rules, models registry, prompts, guideline, schemas, output policy; checked to be identical to the Phase 2A profile) and adds only the beta envelopes and phases. `src/jobfit/llm/phase_bounds.py` is unchanged.
 - **Exact canonical byte envelopes.** One shared measure, `jobfit.llm.document_bytes.document_bytes`, is used by the calculator, runtime admission and the tests: the UTF-8 bytes a value adds to the frozen guard's measured messages under the `json.dumps(..., ensure_ascii=False)` construction of `validated_call` and `OpenRouterClient` (a string counts its escaped quotes). Tests prove it equals the actual frozen `validated_call` → `OpenRouterClient` serialization for ASCII, multibyte UTF-8, emoji, quotes, backslashes and control characters (no hand-written approximation). Limits:
@@ -1638,7 +1637,7 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 - **Monitoring and deployment (recorded clarification; Langfuse updated the same day).**
   - Prometheus and Grafana OSS are required and self-hosted on the VPS; lightweight Prometheus exporters for the agreed metrics are allowed, notably node_exporter for basic VPS CPU, memory and disk. No other infrastructure-monitoring platform is added.
   - Grafana stays private and admin-only, reached through an SSH tunnel from Dion's Mac, never exposed anonymously. PostgreSQL, Prometheus, Grafana, secrets and operator and deployment controls stay private.
-  - **Langfuse is required for the final controlled public beta and portfolio release** (this supersedes the earlier "optional, post-beta" wording). Grafana covers infrastructure and application monitoring; Langfuse complements it with LLM/RAG tracing and AI-request observability. Use the Langfuse Cloud hosted free tier if available and privacy-compatible; do not self-host Langfuse on the VPS for CP3. Langfuse never receives raw CV content or user PII; default telemetry is sanitized and pseudonymous and limited to useful AI observability (trace and session ids, stage, model, latency, token usage, estimated and settled cost, errors, fallback, status). No paid Langfuse plan is introduced silently: if the free hosted tier is unavailable or unsuitable, the work stops for a Dion and Codex decision. The Langfuse implementation is a separate P1 observability task before controlled public-beta activation; it is not part of the D-103 runtime.
+  - **Langfuse is required for the final controlled public beta and portfolio release** (this supersedes the earlier "optional, post-beta" wording). Grafana covers infrastructure and application monitoring; Langfuse complements it with LLM/RAG tracing and AI-request observability. Use the Langfuse Cloud hosted free tier if available and privacy-compatible; do not self-host Langfuse on the VPS for CP3. Langfuse never receives raw CV content or user PII; default telemetry is sanitized and pseudonymous and limited to useful AI observability (trace and session ids, stage, model, latency, token usage, estimated and settled cost, errors, fallback, status). No paid Langfuse plan is introduced silently: if the free hosted tier is unavailable or unsuitable, the work stops for a Dion decision. The Langfuse implementation is a separate P1 observability task before controlled public-beta activation; it is not part of the D-103 runtime.
   - Free, open-source and free-tier components stay preferred; paid operating cost is mainly the VPS and actual LLM usage.
 - **Implementation (8 Oct, local and CI, fake SDKs only; zero provider calls):** `5d07b0c` (beta bounds, config, canonical bytes, offline tests), `c3a718e` (runtime phases, envelopes, label mapping, ticket-gated session allowance, one-job analysis, offline and PostgreSQL tests), `40ed823` (API search-stage and job_analysis contract, owner-only in production; prod wiring builds the runtime with the beta bounds). Results: [CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-d-103-public-beta-cost-profile).
 - **Unchanged.** D-087 (models, prompts, K, retrieval, matching, scoring, weights, output policy, frozen files; freeze verify `"ok": true`); the deterministic bound method; `config/cp3/phase_bounds_v1.yaml` and the US$84.7704449 bound; D-101 safety semantics; the persistent ledger semantics; migrations and `src/jobfit/db/models.py`; the development and validation budgets. Production live and public live stay off: `JOBFIT_PUBLIC_LIVE` may be enabled only after the CP3.4 privacy release gate passes, the real-CV consent adapter is connected, and `public_beta_phase_eligible` holds.
@@ -1646,7 +1645,7 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 
 ## D-104. Structural CV data-minimization boundary for the real-CV public beta
 
-- **Date/source:** 8 October 2026, Dion (owner) and Codex (independent reviewer), after several review rounds on FAIL-37.
+- **Date/source:** 8 October 2026, Dion (owner), with an independent reviewer, after several review rounds on FAIL-37.
 - **Principle.** JobFit is an evidence-grounded CV-to-JD matching system. It needs the CV's evidence-bearing professional content, not the candidate's identity or contact metadata and not self-written summary claims. D-104 is a **data-minimization boundary**: keep only the evidence-bearing professional sections, discard the identity/contact header, the Summary family and privacy-only sections locally, and use deterministic masking only as a defensive backstop. Its purpose is not to keep the whole CV and detect every kind of PII.
 - **Boundary rule (bounded Indonesian/English heading sets, exact match after normalization; heading lines kept verbatim):**
   - **Summary family as a structural delimiter only:** Summary, Professional Summary, Career Summary, Profile, Professional Profile, Personal Profile, About Me, Tentang Saya, Ringkasan, Profil, Profil Profesional, Profil Pribadi, Objective, Career Objective, Tujuan Karier. If one exists, everything before its first occurrence **and the Summary section itself** are dropped; the provider and matching text starts at the first evidence-bearing section after it. Summary content is never sent to a provider and is never matching evidence. A Summary with no later evidence section fails closed.
@@ -1727,3 +1726,13 @@ Eight calls completed. Actual additional cost **US$0.09795280**, below **US$0.65
 - **Unchanged:** D-087 (frozen files, models, prompts, retrieval, matching, scoring), the D-103 budgets and bounds, D-104 and D-105.
 - **Evidence:** [reports/figures/cp3](../reports/figures/cp3/README.md), figures 14-19 (deployed Check a Job and the production Grafana dashboard).
 - **Status:** RECORDED (owner decision, 10 Oct 2026).
+
+## D-107. CP3 close-out after the final presentation
+
+- **Date/source:** 11 October 2026, Dion (owner). After the final presentation, Dion confirmed that he had run and checked the system himself and that it works as documented.
+- **Decision:**
+  - **Owner validation accepted.** The full real-user flow on the deployed demo (upload, sanitized preview, consent, parse, Find Jobs, Analyze Fit, Improve My CV and Check a Job) and the production Grafana dashboard worked as described in the CP3 reports. Evidence: [reports/figures/cp3](../reports/figures/cp3/README.md).
+  - **Final presentation delivered** on 11 October 2026 with the 10-minute deck and a live demo (CP3.7). The deck is kept outside the repository with the other presentation files.
+  - **Open items move to the backlog**, not to a claim of completion: the deployed privacy canary sweep (steps 6-7 of the [deployment guide](../deploy/public-live/README.md)), the PR-10 original-versus-sanitized comparison, D-045 option B and the release tag. They are listed under next steps in the README and in [CP3.5](checkpoint_3/CP3_05_Final_Presentation_and_Portfolio.md).
+- **Unchanged:** D-087 (frozen files), D-103 budgets and bounds, D-104, D-105 and D-106.
+- **Status:** RECORDED (11 Oct 2026).

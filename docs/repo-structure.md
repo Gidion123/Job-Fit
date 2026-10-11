@@ -17,7 +17,7 @@ Why the layout looks like this:
 - `src/jobfit/` holds all business logic. The API (`src/jobfit/api/`) and the UI (`ui/`) only call it, so the UI never contains business logic (Playbook checkpoint 17).
 - `prompts/` are versioned files, not strings inside code (Canonical section 9).
 - `evals/` keeps the guideline, fixtures, gold labels, and splits together, so the prompt, the code, and the labels use the same rules (System Design v1.3 section 15).
-- `.github/workflows/` has only a `.gitkeep` for now. An empty workflow file would show as a failed workflow on GitHub; `ci.yml` is written in CP3.2.
+- `.github/workflows/tests.yml` is the CI workflow (CP3.2): lint, offline tests, freeze check, migrations, Docker builds and smoke tests.
 - Secrets live only in `.env`, which git ignores (D-028).
 
 ## Root configuration
@@ -35,7 +35,7 @@ Why the layout looks like this:
 | `LICENSE` | MIT license for the code; data and third-party content are excluded (see the README) | CP2.1 |
 | `config/models_v1.yaml` | OpenRouter model ids and prices used by the budget guard; a new model must be added here and in `docs/experiments.md` first | CP2.1 |
 | `alembic.ini` | Alembic settings (raw-SQL revisions; the URL comes only from `DATABASE_URL`) | CP3.2 |
-| `.github/workflows/.gitkeep` | Keeps the folder; `ci.yml` is added in CP3.2 (an empty workflow file would fail on GitHub) | CP3.2 |
+| `.github/workflows/tests.yml` | CI on every push and pull request: ruff, offline tests, freeze verify, Alembic migrations on a disposable database, Docker builds, `/health` and ledger smoke tests | CP3.2 |
 
 ## Application package `src/jobfit/`
 
@@ -328,7 +328,7 @@ Runtime guideline/prompt/schema files, snapshot duplicates, and the working base
 - No new dependencies or changes to requirements. Active workbook is v1.3 per coordination note and was not opened by this work. Sources, gold, frozen split/pool and historical run artifacts are preserved.
 
 
-## CP2.2 takeover additions (2 October 2026)
+## CP2.2 additions (2 October 2026)
 
 - `src/jobfit/extraction/coverage.py`: conservative explicit-list coverage diagnostic; used on fresh and cached extraction before matching.
 - `src/jobfit/eval/development_gold.py`, `scripts/export_development_gold.py`: immutable approved-only bundle and dependency/source holds.
@@ -346,7 +346,7 @@ Runtime guideline/prompt/schema files, snapshot duplicates, and the working base
 - `scripts/run_cp22_repair_probe.py`, `scripts/repair_cp22_semantics.py`, `src/jobfit/llm/semantic_repair.py`: original staged run and bounded source repair, preserving prior results and aggregate spend.
 - `scripts/repair_cp22_matching.py`, `tests/test_matching_semantic_repair.py`: final single-dispatch matching repair through ordinary validators and score code; no workbook or gold write.
 - `src/jobfit/eval/bundle_readiness.py`, `scripts/run_evaluation.py`, `tests/test_bundle_readiness.py`: explicit completed-probe receipt checks; readiness remains blocked for formal metrics.
-- `docs/checkpoint_2/supporting/CP22_Extraction_Repair_20261003.md`: one experiment record across the account handoff, linked from the main CP2.2 report.
+- `docs/checkpoint_2/supporting/CP22_Extraction_Repair_20261003.md`: one experiment record across two work sessions, linked from the main CP2.2 report.
 - `evals/results/cp22_extraction_repair_v13_20261003_*.json`, `cp22_repair_*_20261003.json`: first/repaired model outputs, operational checks and proposed semantic alignment; no human approval fabricated.
 - `evals/results/cp22_development_extraction_plan_20261003.json`, `cp23_readiness_after_repair_20261003.json`, `cp22_resume_verification_20261003.json`, `cp22_resume_final_offline_20261003.xml`: zero-call preflight, readiness and verification. No dependency added.
 

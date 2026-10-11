@@ -39,7 +39,7 @@ All processed files and the 14 PNGs are made by the notebook. The notebook reads
 - `CP1_human_review_queue.jsonl` (the review queue) is not a gold set yet. Development/regression cases are kept separate from the CP2 held-out test.
 - If the rules or data change, check the notebook text, run it again, then regenerate the two documents with `refresh_cp1_docs.py`. The interpretation text still needs review; the script does not treat it as correct automatically.
 
-Read `docs/checkpoint_1/supporting/CP1_Research_Audit.md` and `docs/checkpoint_1/supporting/CP1_Current_Handoff.md` for the status, revisions, and the steps toward the PPT.
+Read `docs/checkpoint_1/supporting/CP1_Research_Audit.md` for the CP1 status, revisions and verification.
 
 ## Companion reports per stage
 

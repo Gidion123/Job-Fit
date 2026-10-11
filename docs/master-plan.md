@@ -1,6 +1,13 @@
 # JobFit CP2-CP3 Master Plan
 
-## Current outcome, 10 October 2026: deployed as a controlled demo (D-106)
+## Final outcome, 11 October 2026: CP3 closed and presented (D-107)
+
+- The full real-user flow on the deployed demo and the production Grafana dashboard were run and checked by the owner, and they work as documented ([screenshots](../reports/figures/cp3/README.md)).
+- The final presentation with a live demo was delivered on 11 October 2026 (CP3.7).
+- Offline test suite on 11 October 2026: 1,539 passed, 238 skipped; freeze verify `"ok": true`.
+- Not done and kept in the backlog: the deployed privacy canary sweep, the PR-10 original-versus-sanitized comparison, D-045 option B and the release tag.
+
+## Earlier outcome, 10 October 2026: deployed as a controlled demo (D-106)
 
 - **Deployment:** JobFit runs on the SumoPod VPS with Docker Compose. Caddy serves `https://jobfit-demo.duckdns.org` behind Basic Auth for invited mentors, and the API, UI and database listen on `127.0.0.1` only.
 - **Owner validation:** the full real-user flow ran with live models: upload, sanitized preview, consent, parse, Find Jobs, Analyze Fit and Improve My CV. Check a Job also ran on the deployed demo. Screenshots are in [reports/figures/cp3](../reports/figures/cp3/README.md).
@@ -53,7 +60,7 @@
 
 ### CP3 plan frozen (7 Oct 2026, D-095 to D-100)
 
-Dion and Codex approved the CP3 final execution plan:
+Dion approved the CP3 final execution plan:
 - **Product:** full public live JobFit on a SumoPod VPS (Singapore), with the saved demo as the zero-cost fallback. *(Framing clarified on 8 Oct by D-102: a production-grade AI engineering portfolio with a controlled public beta; see above.)*
 - **Budgets:** a US$5 CP3 validation budget; a US$2/day production cap with deterministic phase bounds; one live analysis per IP per 24 h; one live analysis at a time. *(Amended for the public beta on 8 Oct by D-103: US$5/day and US$25 lifetime, per-phase beta bounds, ticket then session allowance.)*
 - **Job corpus:** a production corpus refreshed from JSearch twice a month (about every two weeks), with exact dedupe and fuzzy suspects held back for review.
@@ -185,20 +192,20 @@ This section is kept as it was on 2 October. For the current state, see [Current
 
 | # | Stage | Template name | JobFit report | Official | Planned work | Actual | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 8 | CP2.1 | Model Selection (CNN/LSTM/DNN sesuai use case) | [Model and System Selection](checkpoint_2/CP2_01_Model_and_System_Selection.md) | 28 Sep 2026 | 29-30 Sep 2026 (labeling pilot on the evening of 29 Sep) | 29 Sep to 1 Oct 2026 | DONE |
+| 8 | CP2.1 | Model Selection (CNN/LSTM/DNN according to the use case) | [Model and System Selection](checkpoint_2/CP2_01_Model_and_System_Selection.md) | 28 Sep 2026 | 29-30 Sep 2026 (labeling pilot on the evening of 29 Sep) | 29 Sep to 1 Oct 2026 | DONE |
 | 9 | CP2.2 | Modeling Deep Learning | [Modeling the Extraction, Search, and Evidence Pipeline](checkpoint_2/CP2_02_Modeling_Pipeline.md) | 29 Sep 2026 | 1-2 Oct 2026 (moved: CP2.1 ended on 1 Oct) | 1 to 3 Oct 2026; closed under D-050 | DONE |
 | 10 | CP2.3 | Hyperparameter Tuning | [System Tuning](checkpoint_2/CP2_03_System_Tuning.md) | 30 Sep 2026 | 2 Oct 2026 | 3 to 6 Oct: gold r4, D-078/D-084 applied, freeze candidate v4 (D-086); freeze approved 6 Oct (D-087); carry-overs resolved 7 Oct (D-091, D-092) | DONE |
 | 11 | CP2.4 | Modeling + Evaluation Metrics | [Evaluation Metrics](checkpoint_2/CP2_04_Evaluation_Metrics.md) | 1 Oct 2026 | 3 Oct 2026 | 6-7 Oct: test run after the D-087 freeze, labels D-088, report `heldout_report_v1.json` on 7 Oct | DONE |
-| 12 | CP2.5 | Visualisasi Evaluation Result | [Evaluation Result Visualization](checkpoint_2/CP2_05_Evaluation_Visualization.md) | 2 Oct 2026 | 3 Oct 2026 | 4 Oct: development figures 1-8; 7 Oct: held-out figures 9-11 (notebook 02) | DONE |
+| 12 | CP2.5 | Evaluation Result Visualization | [Evaluation Result Visualization](checkpoint_2/CP2_05_Evaluation_Visualization.md) | 2 Oct 2026 | 3 Oct 2026 | 4 Oct: development figures 1-8; 7 Oct: held-out figures 9-11 (notebook 02) | DONE |
 | 13 | CP2.6 | Recommendation & Summary | [Recommendation and Summary](checkpoint_2/CP2_06_Recommendation_and_Summary.md) | 3 Oct 2026 | 3 Oct 2026 | 4 Oct: provisional development summary; 7 Oct: final summary after the held-out test | DONE |
 | 14 | CP2.7 | PPT Check Point 2 + Mentoring | [CP2 Presentation and Mentoring](checkpoint_2/CP2_07_Presentation_and_Mentoring.md) | 4 Oct 2026 | 3-4 Oct 2026 (deck draft on 3 Oct) | Deck v3 on 4 Oct; presented and mentored 4 Oct; feedback written up 7 Oct (D-093) | DONE |
-| 15 | CP3.1 | Deployment API menggunakan Flask/FastAPI | [API Deployment with FastAPI](checkpoint_3/CP3_01_FastAPI_Service.md) | 5 Oct 2026 | 5 Oct 2026 | 6 Oct: all endpoints, privacy controls and tests (local); 7 Oct: public live scope planned (D-095 to D-097) | PARTIAL (demo flow done locally; public path PLANNED) |
-| 16 | CP3.2 | Integrasi Database & GitHub Actions CI/CD | [Database Integration and CI/CD](checkpoint_3/CP3_02_Database_and_CICD.md) | 6 Oct 2026 | 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) | 6 Oct: Docker and compose work locally; 7 Oct: SumoPod VPS, Alembic and job sync planned (D-095, D-098); 7 Oct Phase 1: FAIL-35 resolved, CI green (run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567)) | PARTIAL |
+| 15 | CP3.1 | API Deployment with Flask/FastAPI | [API Deployment with FastAPI](checkpoint_3/CP3_01_FastAPI_Service.md) | 5 Oct 2026 | 5 Oct 2026 | 6 Oct: all endpoints, privacy controls and tests (local); 7 Oct: public live scope planned (D-095 to D-097) | PARTIAL (demo flow done locally; public path PLANNED) |
+| 16 | CP3.2 | Database Integration & GitHub Actions CI/CD | [Database Integration and CI/CD](checkpoint_3/CP3_02_Database_and_CICD.md) | 6 Oct 2026 | 6 Oct 2026 (hosting smoke deploy earlier, on 1-2 Oct) | 6 Oct: Docker and compose work locally; 7 Oct: SumoPod VPS, Alembic and job sync planned (D-095, D-098); 7 Oct Phase 1: FAIL-35 resolved, CI green (run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567)) | PARTIAL |
 | 17 | CP3.3 | Build Streamlit UI | [Streamlit UI](checkpoint_3/CP3_03_Streamlit_UI.md) | 7 Oct 2026 | 7 Oct 2026 | 6 Oct: full UI with privacy UX (local); public upload flow and mentor refinements planned | PARTIAL (demo flow done locally) |
 | 18 | CP3.4 | Testing End-to-End Application | [End-to-End Testing](checkpoint_3/CP3_04_End_to_End_Testing.md) | 8 Oct 2026 | 9 Oct 2026 (formal feature freeze at the end of 9 Oct, D-100) | 6 Oct: local end-to-end 27/27; deployed and live checks planned | PARTIAL |
 | 19 | CP3.5 | PPT Final Project / Portfolio | [Final Presentation and Portfolio](checkpoint_3/CP3_05_Final_Presentation_and_Portfolio.md) | 9 Oct 2026 | 10 Oct 2026 | 7 Oct: D-045 blind candidates selected (IDs only) | PLANNED / NOT RUN |
-| 20 | CP3.6 | Finalisasi Portfolio & Rehearsal Presentation | [Finalization and Rehearsal](checkpoint_3/CP3_06_Finalization_and_Rehearsal.md) | 10 Oct 2026 | 10 Oct 2026 | not run yet | PLANNED / NOT RUN |
-| 21 | CP3.7 | Final Project Presentation + Pemberian Tugas Portofolio | [Final Presentation and Submission](checkpoint_3/CP3_07_Final_Presentation_and_Submission.md) | 11 Oct 2026 | 11 Oct 2026 | not run yet | PLANNED / NOT RUN |
+| 20 | CP3.6 | Portfolio Finalization & Presentation Rehearsal | [Finalization and Rehearsal](checkpoint_3/CP3_06_Finalization_and_Rehearsal.md) | 10 Oct 2026 | 10 Oct 2026 | not run yet | PLANNED / NOT RUN |
+| 21 | CP3.7 | Final Project Presentation + Portfolio Assignment | [Final Presentation and Submission](checkpoint_3/CP3_07_Final_Presentation_and_Submission.md) | 11 Oct 2026 | 11 Oct 2026 | not run yet | PLANNED / NOT RUN |
 
 **CP2.8 (not a bootcamp checkpoint):** Phase A post-test quality optimization on development data, 7 Oct 2026, CLOSED with KEEP BASELINE (D-089, D-090); [report](checkpoint_2/CP2_08_Post_Test_Quality_Optimization.md). It never changes the CP2.4 result.
 
@@ -221,10 +228,10 @@ This section is kept as it was on 2 October. For the current state, see [Current
 | Gold sizes (D-045) | Dion | 1 Oct evening | Labeling batches | Approved on 1 Oct 2026; D-044 and D-046 approved |
 | Development gold, phase 1 (D-045) | Dion + QA | 2 Oct evening | CP2.3 tuning | Reviewed-record export `development_v13_reviewed_20261002_r2` exists; source/version/whole-JD holds and model alignment still gate quality metrics |
 | Railway account on the Trial credit (D-023) | Dion | 1 Oct | Smoke deploy, checkpoint 16 | Superseded by D-095 (SumoPod VPS); no Railway account was created |
-| SumoPod VPS (Singapore, Ubuntu 24.04, 2 vCPU / 8 GB / 80 GB), SSH keys, ufw, Docker, domain (`JOBFIT_PUBLIC_HOST`) | Dion + Codex | 8 Oct | First deploy (CP3.2) | Open |
-| Production OpenRouter key with a credit limit; recorded per-route privacy settings | Dion + Codex | 9 Oct | Public live (CP3.4 gate) | Open |
-| SMTP sender and receiver for alerts (`GRAFANA_SMTP_*`, `GRAFANA_ALERT_*`) | Dion + Codex | 9 Oct | Email alerts (CP3.2) | Open; optional since 8 Oct (email alerts are P2 (post-beta)) |
-| Langfuse Cloud project, free hosted tier (Japan region if available) | Dion + Codex | 9 Oct | Tracing (CP3.1) | Open; required for the final controlled public beta since 8 Oct (D-103); stop for a decision if the free tier is unavailable or unsuitable |
+| SumoPod VPS (Singapore, Ubuntu 24.04, 2 vCPU / 8 GB / 80 GB), SSH keys, ufw, Docker, domain (`JOBFIT_PUBLIC_HOST`) | Dion | 8 Oct | First deploy (CP3.2) | Open |
+| Production OpenRouter key with a credit limit; recorded per-route privacy settings | Dion | 9 Oct | Public live (CP3.4 gate) | Open |
+| SMTP sender and receiver for alerts (`GRAFANA_SMTP_*`, `GRAFANA_ALERT_*`) | Dion | 9 Oct | Email alerts (CP3.2) | Open; optional since 8 Oct (email alerts are P2 (post-beta)) |
+| Langfuse Cloud project, free hosted tier (Japan region if available) | Dion | 9 Oct | Tracing (CP3.1) | Open; required for the final controlled public beta since 8 Oct (D-103); stop for a decision if the free tier is unavailable or unsuitable |
 | Development labels reviewed (gold) | Dion | 2 Oct morning | Checkpoint 10 | Reviewed-record bundle exported and validated; only compatible complete references may be used for each metric; held/unjudged records remain explicit |
 | Test relevance labels, blind (D-045 phase 2) | Dion | 3 Oct | Checkpoint 11 | Done 7 Oct: D-053 top-10 union, 68 pairs over CV1-CV5, 67 judged + 1 held (F00070); AI-assisted, human-reviewed, blind to ranking (D-088, `test_v13_cp24_r1`) |
 | Test extraction and evidence (D-045 phase 3) | Dion | 10 Oct | Final report (CP3.5) | Open, method final (D-100, option B): blind candidates F00398, F00237 and CV3 × F00398 selected by ID on 7 Oct; Dion labels them blind first, then the frozen pipeline runs (about US$0.10); the CP2.4 workbook stays MODEL-ASSISTED, HUMAN-REVIEWED and is reported separately. PLANNED / NOT YET COMPLETED |
@@ -315,7 +322,7 @@ Labeling is the longest chain and depends on one person. It starts on day one an
 
 ### CP2.1: Model and System Selection (checkpoint 8)
 
-Template name: Model Selection (CNN/LSTM/DNN sesuai use case) · Official: 28 Sep 2026 · Planned work: 29-30 Sep 2026 (labeling pilot on the evening of 29 Sep) · Report: [CP2_01_Model_and_System_Selection.md](checkpoint_2/CP2_01_Model_and_System_Selection.md)
+Template name: Model Selection (CNN/LSTM/DNN according to the use case) · Official: 28 Sep 2026 · Planned work: 29-30 Sep 2026 (labeling pilot on the evening of 29 Sep) · Report: [CP2_01_Model_and_System_Selection.md](checkpoint_2/CP2_01_Model_and_System_Selection.md)
 
 JobFit version: For an LLM and retrieval system, model selection means comparing search methods, LLM candidates, and prompt versions, not training a CNN/LSTM/DNN (D-001). This stage also sets the annotation guideline, the scoring rules, and the experiment matrix.
 
@@ -470,7 +477,7 @@ JobFit version: The chosen configuration is measured on the held-out test set wi
 
 ### CP2.5: Evaluation Result Visualization (checkpoint 12)
 
-Template name: Visualisasi Evaluation Result · Official: 2 Oct 2026 · Planned work: 3 Oct 2026 · Report: [CP2_05_Evaluation_Visualization.md](checkpoint_2/CP2_05_Evaluation_Visualization.md)
+Template name: Evaluation Result Visualization · Official: 2 Oct 2026 · Planned work: 3 Oct 2026 · Report: [CP2_05_Evaluation_Visualization.md](checkpoint_2/CP2_05_Evaluation_Visualization.md)
 
 JobFit version: Same as the template: charts of the evaluation results.
 
@@ -543,7 +550,7 @@ JobFit version: Same as the template: CP2 presentation and mentoring.
 
 ### CP3.1: API Deployment with FastAPI (checkpoint 15)
 
-Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 · Planned work: 5 Oct 2026; CP3 additions 8 Oct 2026 · Report: [CP3_01_FastAPI_Service.md](checkpoint_3/CP3_01_FastAPI_Service.md)
+Template name: API Deployment with Flask/FastAPI · Official: 5 Oct 2026 · Planned work: 5 Oct 2026; CP3 additions 8 Oct 2026 · Report: [CP3_01_FastAPI_Service.md](checkpoint_3/CP3_01_FastAPI_Service.md)
 
 **JobFit scope:** public-beta API for both flows (Find Jobs; Check a Job with a pasted JD), safety controls and instrumentation (D-102). JobFit version: FastAPI (Flask is not used). Daily checklist: [CP3 execution plan](checkpoint_3/CP3_Execution_Plan.md).
 
@@ -563,7 +570,7 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
      - API tests covering PR-01 to PR-07 and PR-09 with a fake run.
    - **Completed (7 Oct, Phase 2A, local and CI; see the [CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-7-oct-2026-phase-2a)):**
      - fail-closed settings, with live and public live off by default (commit `1574e31`);
-     - deterministic phase bounds from versioned config (commit `9286fd9`, corrected in `3f20f55` and `aa33f10` after the 8 Oct Codex review). `full_analysis_upper_bound` = US$84.7704449, which is US$82.7704449 above the US$2/day cap, so public live is **not eligible** under D-096. D-096 is unchanged; Dion and Codex decide the next step.
+     - deterministic phase bounds from versioned config (commit `9286fd9`, corrected in `3f20f55` and `aa33f10` after the 8 Oct independent review). `full_analysis_upper_bound` = US$84.7704449, which is US$82.7704449 above the US$2/day cap, so public live is **not eligible** under D-096. D-096 is unchanged; Dion decides the next step.
    - **Owner additions, planned (D-095, D-096):**
      - a persistent production ledger: **DONE for Phase 2 acceptance (local/CI); deployed host persistence validation pending Phase 8** (independently closed 8 Oct at `f5d6cf7`; [CP3.1 report](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-persistent-production-ledger-storage));
      - the D-096 condition `full_analysis_upper_bound` ≤ US$2/day cap. The bounds now exist (see Completed above), and the condition is **not met**; *(for the public beta, D-103 replaces it with per-phase beta bounds, each ≤ the US$5/day cap: `public_beta_phase_eligible`)*;
@@ -624,7 +631,7 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
    - DONE LOCALLY: the demo-CV flow (6 Oct, EXP-20261006-CP3).
    - DONE (7 Oct, Phase 2A; corrected 8 Oct): fail-closed settings and the deterministic phase bounds. The full bound (US$84.7704449) is above the US$2/day cap, so public live is not eligible. The live client is not yet wired to `client_settings()` (Phase 2B).
    - PLANNED / NOT YET VALIDATED: the rest of the public live path and the safety controls.
-   - Next: Dion and Codex decide on the bound result, then Phase 2B (reservations, quota, upload hardening, adapter). The Alembic schema it needs is in place (CP3.2, 8 Oct).
+   - Next: Dion decides on the bound result, then Phase 2B (reservations, quota, upload hardening, adapter). The Alembic schema it needs is in place (CP3.2, 8 Oct).
    - DONE (8 Oct, Phase 2B, D-101): the dark, fail-closed cost-safety runtime (reservations, correlated ledger, phase-scoped gate, ticket, internal token, owner override, idempotency). A recommendation is refused at the US$2/day cap; public live stays blocked by the D-096 bound ([results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-phase-2b-dark-safety-layer)). Upload hardening and the consent adapter remain.
    - DONE dark (8 Oct, D-103; independently verified and closed at `d30255d`): the public-beta cost profile (per-phase bounds, canonical byte envelopes, ticket-gated session allowance, label compatibility mapping) and the owner-only API contract for the search stage and `job_analysis`; the production runtime admits `parse`, `search` and `job_analysis` only ([results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-d-103-public-beta-cost-profile)). DONE (8 Oct, awaiting independent audit): lean public-beta CV upload hardening at `d6e84d5` ([results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-lean-public-beta-cv-upload-hardening)). DONE dark (8 Oct, awaiting independent audit): the real-CV consent public-beta adapter (server-side lease, consent adapter, per-request ZDR, production retrieval, reserved parse and search, `cv_source` API contract, upload abuse limits) at `e7762a1`..`0fbf37a` ([results](checkpoint_3/CP3_01_FastAPI_Service.md#results-8-oct-2026-real-cv-consent-public-beta-adapter)). Real CVs stay off until FAIL-37 masking and provider ZDR compatibility pass. Next: FAIL-37, API hardening, the production seed and packaging.
 10. **Definition of Done.**
@@ -637,14 +644,14 @@ Template name: Deployment API menggunakan Flask/FastAPI · Official: 5 Oct 2026 
 
 ### CP3.2: Database Integration and CI/CD (checkpoint 16)
 
-Template name: Integrasi Database & GitHub Actions CI/CD · Official: 6 Oct 2026 · Planned work: 6 Oct 2026; CP3 additions 8-9 Oct 2026 · Report: [CP3_02_Database_and_CICD.md](checkpoint_3/CP3_02_Database_and_CICD.md)
+Template name: Database Integration & GitHub Actions CI/CD · Official: 6 Oct 2026 · Planned work: 6 Oct 2026; CP3 additions 8-9 Oct 2026 · Report: [CP3_02_Database_and_CICD.md](checkpoint_3/CP3_02_Database_and_CICD.md)
 
 **JobFit scope:** production corpus, job sync, VPS and delivery. JobFit version: PostgreSQL with pgvector, GitHub Actions, and a SumoPod VPS (D-095 replaces the Railway target of D-023). Target (D-102): one VPS for a controlled public beta, built to a public-beta standard, with every operator and observability interface private.
 
 1. **Goal.** Make the system reproducible from a fresh clone and deployable, with a verified production job corpus. For the controlled beta the verified seeded corpus is sufficient; automated freshness (the scheduled sync) is P2 (post-beta).
 2. **Inputs and prerequisites.**
    - The checkpoint 15 API
-   - A SumoPod VPS (Singapore, Ubuntu 24.04 LTS, 2 vCPU / 8 GB / 80 GB), bought and configured by Dion and Codex
+   - A SumoPod VPS (Singapore, Ubuntu 24.04 LTS, 2 vCPU / 8 GB / 80 GB), bought and configured by Dion
    - D-098 production corpus decision
 3. **Steps.**
    - **Completed:**
@@ -701,7 +708,7 @@ Template name: Integrasi Database & GitHub Actions CI/CD · Official: 6 Oct 2026
    - *Conditional, post-beta (only once the P2 (post-beta) sync is built):* a real sync and an idempotent re-run give 0 NEW, 0 CONTENT_CHANGED and 0 METADATA_CHANGED, with exact duplicates counted and no second row. Not a beta or checkpoint blocker.
    - **The same vacancy never appears twice in production retrieval.**
 6. **Evidence to keep.** CI links; the row-count table; the restore log; deploy-tag notes; sync reports only if the post-beta sync (or the optional manual refresh) runs.
-7. **Estimate and dependencies.** CI on 7 Oct; schema and packaging on 8 Oct; sync on 9 Oct. Depends on: VPS provisioning, DNS and the production OpenRouter key (Dion and Codex). SMTP is needed only for the P2 (post-beta) email alerts and does not block packaging, the dark deploy or beta validation.
+7. **Estimate and dependencies.** CI on 7 Oct; schema and packaging on 8 Oct; sync on 9 Oct. Depends on: VPS provisioning, DNS and the production OpenRouter key (Dion). SMTP is needed only for the P2 (post-beta) email alerts and does not block packaging, the dark deploy or beta validation.
 8. **Fallback.** The scheduled sync is P2 (post-beta); the beta and the presentation use the verified seeded corpus (an optional one-time manual refresh may be run before the demo). If the VPS is blocked, the saved demo runs locally and the report states the limit.
 9. **Status and next step.** PARTIAL. Docker, compose and the CI workflow exist; CI is green after Phase 1 (FAIL-35 resolved; run [37641393567](https://github.com/Gidion123/Job-Fit/actions/runs/37641393567)); nothing is deployed; the production corpus and sync are PLANNED. Alembic `0001` (exact CP2 baseline) and `0002` (production schema) are DONE with a verified-stamp path and migration tests in CI (8 Oct, [results](checkpoint_3/CP3_02_Database_and_CICD.md#results-8-oct-2026-alembic-00010002)). Next: `verify` on the local CP2 database, then production packaging (the job sync is post-beta, P2).
 10. **Definition of Done.**
@@ -861,7 +868,7 @@ Template name: PPT Final Project / Portfolio · Official: 9 Oct 2026 · Planned 
 
 ### CP3.6: Finalization and Rehearsal (checkpoint 20)
 
-Template name: Finalisasi Portfolio & Rehearsal Presentation · Official: 10 Oct 2026 · Planned work: 10 Oct 2026 · Report: [CP3_06_Finalization_and_Rehearsal.md](checkpoint_3/CP3_06_Finalization_and_Rehearsal.md)
+Template name: Portfolio Finalization & Presentation Rehearsal · Official: 10 Oct 2026 · Planned work: 10 Oct 2026 · Report: [CP3_06_Finalization_and_Rehearsal.md](checkpoint_3/CP3_06_Finalization_and_Rehearsal.md)
 
 **JobFit scope:** regression, rehearsal and release tag. JobFit version: the template.
 
@@ -892,7 +899,7 @@ Template name: Finalisasi Portfolio & Rehearsal Presentation · Official: 10 Oct
 
 ### CP3.7: Final Presentation and Submission (checkpoint 21)
 
-Template name: Final Project Presentation + Pemberian Tugas Portofolio · Official: 11 Oct 2026 · Planned work: 11 Oct 2026 · Report: [CP3_07_Final_Presentation_and_Submission.md](checkpoint_3/CP3_07_Final_Presentation_and_Submission.md)
+Template name: Final Project Presentation + Portfolio Assignment · Official: 11 Oct 2026 · Planned work: 11 Oct 2026 · Report: [CP3_07_Final_Presentation_and_Submission.md](checkpoint_3/CP3_07_Final_Presentation_and_Submission.md)
 
 **JobFit scope:** present the deployed public JobFit, with the saved demo as the safe fallback. JobFit version: the template.
 

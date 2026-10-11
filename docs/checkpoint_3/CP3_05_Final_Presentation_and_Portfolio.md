@@ -4,7 +4,7 @@
 **Bootcamp checkpoint:** 19. PPT Final Project / Portfolio · official date 9 Oct 2026  
 **JobFit version of this checkpoint:** Same as the template.  
 **Planned work:** 9 Oct 2026; moved to 10 Oct (D-100) · **Actual:** 10 Oct 2026 (deck and screenshots)\
-**Status:** PARTIAL · final 10-minute deck with a demo section prepared (10 Oct 2026; kept outside the repository with the other presentation files); CP3 screenshots added to [reports/figures/cp3](../../reports/figures/cp3/README.md); D-045 option B blind items NOT RUN · design basis: System Design v1.3
+**Status:** DONE · final 10-minute deck with a demo section (10 Oct 2026; kept outside the repository with the other presentation files), presented on 11 Oct 2026 (CP3.7); CP3 screenshots in [reports/figures/cp3](../../reports/figures/cp3/README.md); README rewritten as the portfolio entry point; D-045 option B blind items NOT RUN (backlog, [D-107](../decisions.md)) · design basis: System Design v1.3
 
 > This report started as a plan; progress is added below as it happens. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
 

@@ -1,0 +1,13 @@
+# The VPS monitoring Compose uses `monitoring`, not the implicit `default` network.
+# Keep that network while Prometheus joins the private scrape network.
+services:
+  prometheus:
+    networks:
+      - monitoring
+      - jobfit_observability
+    volumes:
+      - /opt/jobfit-monitoring/secrets/jobfit_internal_token:/run/secrets/jobfit_internal_token:ro
+networks:
+  jobfit_observability:
+    external: true
+    name: jobfit-observability

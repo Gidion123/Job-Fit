@@ -48,7 +48,7 @@ def _consented_text(store, handle, lease) -> str:
 
 
 def reserved_parse(runtime, store, handle, lease, *, operation_key: str, model: str, envelopes,
-                   now: datetime | None = None, quota=None, on_first_intent=None):
+                   now: datetime | None = None, quota=None, on_first_intent=None, telemetry=None):
     """Parse the consented CV in a D-103 ``parse`` reservation; store and return the ParsedCV."""
     store.consented_lease(handle)                        # consent must still cover the current preview
     cv_id, analysis_date = new_cv_id(), jakarta_date(now)       # captured once for this CV generation
@@ -56,7 +56,8 @@ def reserved_parse(runtime, store, handle, lease, *, operation_key: str, model: 
         raise RealCVRefused('input_too_large')
 
     def work(client):
-        return parse_consented_cv(store, handle, lease, client=client, model=model, analysis_date=analysis_date,
+        from jobfit.observability.metrics import observed
+        return observed(telemetry, 'cv_parse', parse_consented_cv, store, handle, lease, client=client, model=model, analysis_date=analysis_date,
                                   cv_id=cv_id)
     parsed, _ = runtime.run('parse', operation_key, work, quota=quota, on_first_intent=on_first_intent)
     store.put(handle, lease, PARSED_KEY, parsed)        # refused (and discarded) if the preview changed
@@ -75,7 +76,7 @@ def consented_parsed_cv(store, handle, lease):
 
 
 def reserved_search(runtime, store, handle, lease, *, operation_key: str, spec, connect, filters, depth: int,
-                    envelopes, tokenizer_loader=None, quota=None, on_first_intent=None) -> list[dict]:
+                    envelopes, tokenizer_loader=None, quota=None, on_first_intent=None, telemetry=None) -> list[dict]:
     """Query embedding in a D-103 ``search`` reservation, then production retrieval (no provider call).
 
     Production readiness (seed, index, tokenizer) is checked before the reservation, so an
@@ -90,10 +91,12 @@ def reserved_search(runtime, store, handle, lease, *, operation_key: str, spec, 
         production.check_index(conn, spec, {r['job_id'] for r in production.eligible_jobs(conn)})
 
     def work(client):
-        return embed_consented_cv(store, handle, lease, parsed, client=client, spec=spec, tokenizer=tokenizer)
+        from jobfit.observability.metrics import observed
+        return observed(telemetry, 'query_embedding', embed_consented_cv, store, handle, lease, parsed, client=client, spec=spec, tokenizer=tokenizer)
     (query, _doc), _ = runtime.run('search', operation_key, work, quota=quota, on_first_intent=on_first_intent)
     with connect() as conn:
-        results = production.production_search(conn, keyword.cv_skills(parsed.profile.raw_text), query, spec,
+        from jobfit.observability.metrics import observed
+        results = observed(telemetry, 'retrieval', production.production_search, conn, keyword.cv_skills(parsed.profile.raw_text), query, spec,
                                                 filters, analysis_date=parsed.analysis_date, depth=depth)
     store_search_results(store, handle, lease, operation_key, results)
     return results

@@ -1,0 +1,128 @@
+{
+  "version": "jobfit-dashboard-layout-v2",
+  "panel_height": 8,
+  "sections": [
+    {
+      "name": "System health",
+      "rows": [
+        [
+          {"match": {"managed": "API scrape and restarts"}, "title": "API Scrape & Restarts", "width": 12,
+           "description": "Scrape status comes from Prometheus (1 = the API answered the last scrape, 0 = it did not). Restarts count changes of the API process start time in the last hour; there is no container exporter.",
+           "unit": "short", "min": 0, "decimals": 0,
+           "legends": {"A": "API scrape up (1 = up)", "B": "API process restarts (last 1h)"}},
+          {"match": {"managed": "PostgreSQL and ledger availability"}, "title": "PostgreSQL & Ledger Health", "width": 12,
+           "description": "1 = available, 0 = unavailable. PostgreSQL is a short read-only SELECT 1; ledger readable means marker, ledger and journal can be read, not that storage is writable or durable. When the accounting snapshot is 0, budget balances are omitted instead of shown as zero.",
+           "unit": "none", "min": 0, "max": 1, "decimals": 0, "mappings": "up_down",
+           "legends": {"C": "PostgreSQL available", "A": "Accounting snapshot available", "B": "Ledger storage readable"}}
+        ],
+        [
+          {"match": {"infra": "cpu"}, "title": "CPU Usage (%)", "width": 12, "percent": true,
+           "description": "VPS CPU in use, from node_exporter."},
+          {"match": {"infra": "ram"}, "title": "RAM Usage (%)", "width": 12, "percent": true,
+           "description": "VPS memory in use, from node_exporter."}
+        ],
+        [
+          {"match": {"infra": "disk"}, "title": "Disk Usage (%)", "width": 12, "percent": true,
+           "description": "VPS filesystem space in use, from node_exporter."},
+          {"match": {"infra": "node"}, "title": "Node Exporter Status", "width": 12,
+           "description": "Prometheus scrape status of node_exporter: 1 = up, 0 = down. The VPS panels above have no data while it is down.",
+           "unit": "none", "min": 0, "max": 1, "decimals": 0, "mappings": "up_down"}
+        ]
+      ]
+    },
+    {
+      "name": "Application & API",
+      "rows": [
+        [
+          {"match": {"managed": "API requests per second"}, "title": "API Requests per Second", "width": 12,
+           "description": "HTTP requests per second by method and route, averaged over 5 minutes. The Prometheus /metrics scrape is excluded.",
+           "unit": "reqps", "min": 0,
+           "legends": {"A": "{{method}} {{route}}"}},
+          {"match": {"managed": "API server error fraction"}, "title": "HTTP 5xx Error Rate", "width": 12,
+           "description": "Share of HTTP responses with a 5xx status over 5 minutes (0-100%). 0% means traffic without server errors; with no traffic at all there is no rate sample, so the panel shows No data rather than 0%.",
+           "unit": "percentunit", "min": 0, "max": 1,
+           "legends": {"A": "5xx share of requests"}}
+        ],
+        [
+          {"match": {"managed": "API latency"}, "title": "API Latency (p50/p95)", "width": 12,
+           "description": "HTTP response time, including sending the response: median (p50) and 95th percentile (p95) over 5 minutes. The /metrics scrape is excluded.",
+           "unit": "s", "min": 0,
+           "legends": {"A": "p50 (median)", "B": "p95"}},
+          {"match": {"managed": "Analysis requests and execution outcomes"}, "title": "Analysis Requests & Outcomes", "width": 12,
+           "description": "Two different events. Admission = the HTTP answer to an Analyze Fit request (accepted, duplicate, refused, failure); accepted does not mean completed. Execution = how the asynchronous run actually ended (completed, held, failed, refused, unknown). Rates per second over 5 minutes; No data until an analysis runs.",
+           "unit": "ops", "min": 0,
+           "legends": {"A": "Admission: {{outcome}}", "B": "Execution: {{outcome}}"}}
+        ]
+      ]
+    },
+    {
+      "name": "AI pipeline",
+      "rows": [
+        [
+          {"match": {"managed": "AI stage p95"}, "title": "AI Stage Latency (p95)", "width": 12,
+           "description": "95th percentile wall time per pipeline stage over 5 minutes. Stages are nested, so do not add them up. A cached JD extraction creates no extraction timing. No data until a live analysis runs (live AI is off); missing data is not zero.",
+           "unit": "s", "min": 0,
+           "legends": {"A": "{{stage}} p95"}},
+          {"match": {"managed": "AI stage outcomes"}, "title": "AI Stage Outcomes", "width": 12,
+           "description": "Executed pipeline stages per second by outcome, over 5 minutes. No data until a live analysis runs (live AI is off); missing data is not zero.",
+           "unit": "ops", "min": 0,
+           "legends": {"A": "{{stage}}: {{outcome}}"}}
+        ]
+      ]
+    },
+    {
+      "name": "LLM",
+      "rows": [
+        [
+          {"match": {"managed": "LLM attempts and errors"}, "title": "LLM Attempts & Errors", "width": 12,
+           "description": "LLM attempts in the last hour after their ledger line is durable, by model, attempt kind and outcome; failed provider attempts count. Unledgered intents appear under accounting uncertainty, not here. No data until a live LLM call happens.",
+           "unit": "short", "min": 0,
+           "legends": {"A": "{{model}} · {{kind}} · {{outcome}}"}},
+          {"match": {"managed": "LLM call p95"}, "title": "LLM Call Latency (p95)", "width": 12,
+           "description": "95th percentile latency of recorded LLM attempts per model, over 5 minutes. No data until a live LLM call happens.",
+           "unit": "s", "min": 0,
+           "legends": {"A": "{{model}} p95"}}
+        ],
+        [
+          {"match": {"managed": "LLM tokens"}, "title": "LLM Token Usage", "width": 12,
+           "description": "Tokens in the last hour by model and direction, only for attempts where the provider reported usage. Missing usage is not zero tokens.",
+           "unit": "short", "min": 0,
+           "legends": {"A": "{{model}} · {{direction}} tokens"}},
+          {"match": {"managed": "LLM retry and fallback"}, "title": "LLM Retries & Fallbacks", "width": 12,
+           "description": "Validation-repair and length-continuation retries, and fallback-model attempts, in the last hour. No data until a live LLM call happens.",
+           "unit": "short", "min": 0,
+           "legends": {"A": "{{model}} · {{kind}}", "B": "{{model}} · fallback"}}
+        ]
+      ]
+    },
+    {
+      "name": "Cost & safety",
+      "rows": [
+        [
+          {"match": {"managed": "Budget liability and remaining"}, "title": "Budget Remaining & Liability", "width": 12,
+           "description": "Persisted budget state from the ledger and PostgreSQL (authoritative). Daily liability includes open reservations and a conservative midnight carryover; lifetime remaining also subtracts open reservations. Omitted, not zero, when the accounting snapshot is unavailable.",
+           "unit": "currencyUSD", "min": 0,
+           "legends": {"A": "Daily liability", "B": "Daily settled", "C": "Recorded spend (lifetime)", "D": "Daily remaining", "E": "Lifetime remaining"}},
+          {"match": {"managed": "Persisted spending and uncertainty"}, "title": "Persisted Spending & Uncertainty", "width": 12,
+           "description": "Persisted cost views of the same spending; they overlap, so do not add them. Settled in DB includes conservative settlements, not only provider-confirmed bills.",
+           "unit": "currencyUSD", "min": 0,
+           "legends": {"A": "Reported by provider", "B": "Token-estimated", "C": "Uncertain", "D": "Settled in DB"}}
+        ],
+        [
+          {"match": {"managed": "Attempt estimated upper bound vs accounted costs"}, "title": "Estimated vs Accounted Cost", "width": 12,
+           "description": "Per-process observations in the last hour: reserved upper-bound estimates (not bills) and accounted cost by source. Counters reset on restart; use the persisted panels for balances. No data until a live LLM call happens.",
+           "unit": "currencyUSD", "min": 0,
+           "legends": {"A": "Upper-bound estimate (not a bill)", "B": "Accounted: {{source}}"}},
+          {"match": {"managed": "Ledger evidence bytes"}, "title": "Ledger Evidence Bytes", "width": 6,
+           "description": "Size of the production usage ledger evidence. 0 bytes means an initialized, still-empty ledger.",
+           "unit": "bytes", "min": 0,
+           "legends": {"A": "Ledger size"}},
+          {"match": {"managed": "Budget refusals"}, "title": "Budget Refusals", "width": 6,
+           "description": "Runtime refusals in the last hour because the daily (budget) or lifetime limit would be exceeded. No data until a refusal happens; that is not an error.",
+           "unit": "short", "min": 0, "decimals": 0,
+           "legends": {"A": "{{reason}} refusals"}}
+        ]
+      ]
+    }
+  ]
+}

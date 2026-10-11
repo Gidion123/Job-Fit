@@ -1,12 +1,12 @@
 # CP3.7: Final Presentation and Submission
 
 **Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
-**Bootcamp checkpoint:** 21. Final Project Presentation + Pemberian Tugas Portofolio · official date 11 Oct 2026  
+**Bootcamp checkpoint:** 21. Final Project Presentation + Portfolio Assignment · official date 11 Oct 2026  
 **JobFit version of this checkpoint:** Same as the template.  
-**Planned work:** 11 Oct 2026 · **Actual:** not run yet  
-**Status:** PLANNED / NOT RUN · design basis: System Design v1.3
+**Planned work:** 11 Oct 2026 · **Actual:** 11 Oct 2026  
+**Status:** DONE · final presentation delivered on 11 Oct 2026 with the 10-minute deck and a live demo of the deployed app ([D-107](../decisions.md)) · design basis: System Design v1.3
 
-> This report is a plan. It contains no results yet. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
+> This report started as a plan. The result is in the status line above and in [D-107](../decisions.md). Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
 
 ## CP3 final plan for this stage (7 Oct 2026, D-095 to D-100)
 

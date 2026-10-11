@@ -22,6 +22,7 @@ from jobfit.live.beta_envelope import cv_fits, extraction_fits, jd_fits
 from jobfit.live.common import LiveSafetyRefusal
 from jobfit.live.deadlines import EMBED_TIMEOUT_SECONDS, GRACE_SECONDS, max_attempts, phase_window
 from jobfit.live.evidence import IntentJournal, journal_path
+from jobfit.live import quota
 from jobfit.live.quota import BETA_LIMITS, BetaAllowances, BetaClaim
 from jobfit.live.reserved_client import (BETA_CHAIN_PHASE, CHAIN_PHASE, CallModel, OperationState,
                                          bind_reserved_client)
@@ -252,18 +253,19 @@ def claim(a, session, phase, op, outcome):
     return got
 
 
-def test_a_proven_consumed_ticket_opens_one_parse_one_search_and_three_job_analyses():
+def test_a_proven_consumed_ticket_opens_one_parse_one_search_and_ten_job_analyses():
     a = BetaAllowances()
-    assert BETA_LIMITS == {'parse': 1, 'search': 1, 'job_analysis': 3}
+    assert BETA_LIMITS == {'parse': 1, 'search': 1, 'job_analysis': 10}
     first = claim(a, 's', 'parse', 'op1', 'consumed')
     assert first.quota is not None and a.remaining('s') is None       # nothing before the proven consume
     assert first.quota() == 'consumed' and first.on_first_intent() is True
-    assert a.remaining('s') == {'parse': 0, 'search': 1, 'job_analysis': 3}
+    assert a.remaining('s') == {'parse': 0, 'search': 1, 'job_analysis': 10}
     assert a.claim('s', 'parse', 'op2', lambda: pytest.fail('no second ticket')) == 'allowance_exhausted'
-    for i in range(3):
+    for i in range(10):                                                # the 10th analysis is admitted ...
         c = a.claim('s', 'job_analysis', f'ja{i}', lambda: pytest.fail('no second ticket'))
         assert c.quota is None and c.on_first_intent() is True
-    assert a.claim('s', 'job_analysis', 'ja3', lambda: 'consumed') == 'allowance_exhausted'
+    assert a.remaining('s')['job_analysis'] == 0
+    assert a.claim('s', 'job_analysis', 'ja10', lambda: 'consumed') == 'allowance_exhausted'   # ... the 11th not
     s = a.claim('s', 'search', 'se', lambda: 'consumed')
     assert s.quota is None and s.on_first_intent()
     assert a.claim('s', 'search', 'se2', lambda: 'consumed') == 'allowance_exhausted'
@@ -293,7 +295,7 @@ def test_the_ticket_outcome_gates_the_provider_call_in_the_operation(tmp_path, o
     msgs = [{'role': 'user', 'content': 'synthetic text'}]
     if outcome == 'consumed':
         assert live.client.chat_structured('deepseek-flash', msgs, Answer, 'cv_parsing', max_tokens=16000).answer == 'ok'
-        assert len(live.sdk.calls) == 1 and a.remaining('s') == {'parse': 0, 'search': 1, 'job_analysis': 3}
+        assert len(live.sdk.calls) == 1 and a.remaining('s') == {'parse': 0, 'search': 1, 'job_analysis': 10}
     else:
         with pytest.raises(LiveSafetyRefusal):
             live.client.chat_structured('deepseek-flash', msgs, Answer, 'cv_parsing', max_tokens=16000)
@@ -309,7 +311,7 @@ def test_a_refusal_before_the_first_intent_never_uses_the_allowance():
     first.on_first_intent()
     ja = claim(a, 's', 'job_analysis', 'ja1', 'consumed')
     a.release_if_pending('s', 'ja1')                       # e.g. busy, budget, input_too_large
-    assert a.remaining('s')['job_analysis'] == 3 and ja.on_first_intent() is False
+    assert a.remaining('s')['job_analysis'] == 10 and ja.on_first_intent() is False
     pending = claim(a, 's', 'search', 'se1', 'consumed')
     assert a.claim('s', 'search', 'se2', lambda: 'consumed') == 'allowance_exhausted'   # one at a time
     a.release_if_pending('s', 'se1')
@@ -442,3 +444,28 @@ def test_the_registry_binds_a_key_to_session_phase_and_action():
     assert new and retry.action == a
     legacy, new = reg.claim('idem:r', 's', 'recommendation')  # callers without an action keep the old binding
     assert new and reg.claim('idem:r', 's', 'recommendation')[1] is False
+
+
+class _QuotaConn:
+    """live_quota as a dict: a slot is free unless consumed (the 24-hour condition is the DB's)."""
+    def __init__(self, rows):
+        self.rows = rows
+
+    def execute(self, sql, params=()):
+        row = None
+        if sql.startswith('INSERT INTO live_quota') and params[0] not in self.rows:
+            self.rows[params[0]], row = 'now', (1,)
+        return SimpleNamespace(fetchone=lambda: row, rowcount=0)
+
+    def close(self):
+        pass
+
+
+def test_an_ip_gets_ten_tickets_per_day_on_distinct_pseudonymous_slots():
+    ip, rows = 'b' * 64, {}
+    slots = quota.ticket_slots(ip)
+    assert slots[0] == ip and len(set(slots)) == quota.TICKETS_PER_IP_PER_DAY == 10
+    assert all(len(s) == 64 and int(s, 16) >= 0 for s in slots)
+    outcomes = [quota.consume_ticket(lambda: _QuotaConn(rows), ip) for _ in range(11)]
+    assert outcomes == ['consumed'] * 10 + ['refused'] and sorted(rows) == sorted(slots)
+    assert quota.consume_ticket(lambda: _QuotaConn(rows), 'c' * 64) == 'consumed'   # another IP is separate

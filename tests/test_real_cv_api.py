@@ -241,7 +241,7 @@ def test_delete_clears_every_cv_derived_state(tmp_path):
 
 # --- public path: the durable ticket opens the session allowance -------------------------------------------
 
-def test_the_public_flow_counts_one_parse_one_search_and_three_analyses(tmp_path):
+def test_the_public_flow_counts_one_parse_one_search_and_ten_analyses(tmp_path):
     client, f, _ = make(tmp_path, public=True)
     h = session(client)
     upload_and_consent(client, h)
@@ -250,11 +250,12 @@ def test_the_public_flow_counts_one_parse_one_search_and_three_analyses(tmp_path
     assert client.post('/cv/parse', headers=key_headers(h, owner=False)).json()['detail'] == 'allowance_exhausted'
     assert search(client, h, owner=False).status_code == 200
     assert search(client, h, owner=False).json()['detail'] == 'allowance_exhausted'
-    for job in ('P1', 'P2', 'P3'):
+    for i in range(10):                                                  # the 10th analysis succeeds
+        job = ('P1', 'P2', 'P3')[i % 3]
         assert wait(client, h, analyze(client, h, job, owner=False).json()['run_id'])['status'] == 'done'
-    fourth = analyze(client, h, 'P1', owner=False)
-    assert (fourth.status_code, fourth.json()['detail']) == (429, 'allowance_exhausted')
-    assert len(f.tickets) == 1 and len(f.provider_calls) == 5
+    eleventh = analyze(client, h, 'P1', owner=False)                     # the 11th is refused by the API
+    assert (eleventh.status_code, eleventh.json()['detail']) == (429, 'allowance_exhausted')
+    assert len(f.tickets) == 1 and len(f.provider_calls) == 12
 
 
 @pytest.mark.parametrize('outcome', ['refused', 'unavailable', 'unknown'])
@@ -425,3 +426,21 @@ def test_an_edit_clears_the_current_and_the_per_operation_search_results(tmp_pat
         with pytest.raises(KeyError):
             deps.store.read(handle, lease, k)
     assert search(client, h, key=key).status_code == 409                  # parse required again, no replay
+
+
+def test_only_the_owner_is_offered_provider_processing_while_the_public_beta_is_closed(tmp_path):
+    """Owner-only live demo: a Basic-Auth visitor of the public UI keeps the honest disabled preview."""
+    client, _, _ = make(tmp_path)
+    visitor = session(client)
+    up = client.post('/cv/upload', files={'file': ('cv.txt', CV_TEXT.encode())}, headers=visitor)
+    assert up.json()['provider_processing'] == 'disabled' and up.json()['message']
+    owner = {**session(client, ip='203.0.113.8'), 'x-jobfit-owner-token': OWNER}
+    up = client.post('/cv/upload', files={'file': ('cv.txt', CV_TEXT.encode())}, headers=owner)
+    assert up.json()['provider_processing'] == 'enabled' and up.json()['message'] is None
+    edited = client.post('/cv/preview', json={'text': up.json()['masked_text']}, headers=owner)
+    assert edited.json()['provider_processing'] == 'enabled'
+    assert client.post('/cv/consent', json={'digest': edited.json()['digest'], 'affirmative': True},
+                       headers=owner).json()['provider_processing'] == 'enabled'
+    public, _, _ = make(tmp_path / 'public', public=True)
+    up = public.post('/cv/upload', files={'file': ('cv.txt', CV_TEXT.encode())}, headers=session(public))
+    assert up.json()['provider_processing'] == 'enabled'                    # an open beta offers it to everyone

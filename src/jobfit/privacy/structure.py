@@ -43,6 +43,11 @@ PRIVACY = {   # heading -> category reported in the removal stats (counts only)
     **dict.fromkeys(('declaration', 'pernyataan', 'signature', 'tanda tangan'), 'declaration'),
 }
 
+# Edits can reword the first professional heading. Recognise only bounded aliases in that path;
+# arbitrary text before an evidence heading is never assumed to be professional content.
+EDIT_EVIDENCE = frozenset({'technical skills & tools', 'technicals skills', 'tech stack'})
+EDIT_PRIVACY_FIELDS = frozenset({'date of birth', 'birth date', 'dob', 'tanggal lahir'})
+
 
 class SanitizeRefused(Exception):
     """Fail closed with a fixed code; the message never carries CV text."""
@@ -87,6 +92,23 @@ def classify(line: str) -> str | None:
     return None
 
 
+def classify_edit(line: str) -> str | None:
+    """Add narrow edit-only headings and inline privacy labels to the D-104 classifier."""
+    kind = classify(line)
+    if kind is not None:
+        return kind
+    label, separator, value = line.partition(':')
+    if separator and heading_key(label) in (PRIVACY.keys() | EDIT_PRIVACY_FIELDS):
+        return 'privacy'
+    key = heading_key(line)
+    if key in EDIT_EVIDENCE:
+        return 'evidence'
+    if key and key.startswith('technical skills:') and not any(
+            value.strip().casefold().startswith(private) for private in EDIT_PRIVACY_FIELDS | PRIVACY.keys()):
+        return 'evidence'
+    return None
+
+
 @dataclass(frozen=True)
 class Structured:
     retained: str
@@ -94,42 +116,53 @@ class Structured:
     removed: dict = field(default_factory=dict)
 
 
-def split_structure(text: str, *, keep_lead: bool = False) -> Structured:
+def split_structure(text: str, *, keep_lead: bool = False, approved: frozenset[str] = frozenset(),
+                    drop_new=lambda line: False) -> Structured:
     """Apply the D-104 boundary to normalized text; raise SanitizeRefused when no start exists.
 
-    ``keep_lead`` (edits of an already sanitized preview only): the identity header was removed at upload,
-    so the lines before the first recognised heading are kept instead of being treated as a header; the
-    caller decides with the backstops whether they still look like identity data. Summary and privacy
-    sections are dropped as usual, and at least one evidence heading is still required.
+    ``keep_lead`` (edits of an already sanitized preview only) recognises bounded rewordings of
+    professional headings. Unknown lead, inline personal-data labels, Summary and privacy sections
+    are dropped; at least one evidence heading is still required.
+
+    ``approved`` (edits only): the stripped lines of the preview the user is editing. When there is no
+    Summary heading and the text before the first evidence heading contains at least one approved line,
+    that block is the user's edited first section (for example with a reworded heading such as "TECH
+    SKILLS"), so it is kept like any other section: privacy labels still drop the rest of the block, and
+    new lines for which ``drop_new`` is true (person-name shaped) are dropped. A block with no approved
+    line (a new note, a personal header) is dropped as before.
     """
     lines = text.split('\n')
-    kinds = [classify(line) for line in lines]
+    kinds = [classify_edit(line) if keep_lead else classify(line) for line in lines]
     summary_at = next((i for i, k in enumerate(kinds) if k == 'summary'), None)
-    if keep_lead:
-        if 'evidence' not in kinds:
-            raise SanitizeRefused(BOUNDARY_NOT_FOUND)
-        start = 0
-        removed = {'header_lines': 0, 'summary_sections': 0}
-    else:
-        search_from = 0 if summary_at is None else summary_at + 1
-        start = next((i for i in range(search_from, len(lines)) if kinds[i] == 'evidence'), None)
-        if start is None:
-            raise SanitizeRefused(BOUNDARY_NOT_FOUND)
-        removed = {'header_lines': sum(1 for line in lines[:summary_at if summary_at is not None else start]
-                                       if line.strip()),
-                   'summary_sections': int(summary_at is not None)}
-    retained, dropping = [], False
-    for line, kind in zip(lines[start:], kinds[start:]):
+    search_from = 0 if summary_at is None else summary_at + 1
+    start = next((i for i in range(search_from, len(lines)) if kinds[i] == 'evidence'), None)
+    if start is None:
+        raise SanitizeRefused(BOUNDARY_NOT_FOUND)
+    removed = {'header_lines': sum(1 for line in lines[:summary_at if summary_at is not None else start]
+                                   if line.strip()),
+               'summary_sections': int(summary_at is not None)}
+    lead_kept = keep_lead and summary_at is None and any(
+        line.strip() and line.strip() in approved for line in lines[:start])
+    lead_end = start
+    if lead_kept:
+        removed['header_lines'], start = 0, 0
+    retained, retained_kinds, dropping = [], [], False
+    for index, (line, kind) in enumerate(zip(lines[start:], kinds[start:]), start):
+        if index < lead_end and kind is None and line.strip() and line.strip() not in approved and drop_new(line):
+            removed['header_lines'] += 1             # a new person-name shaped line in the kept first block
+            continue
         if kind == 'summary' or kind == 'privacy':
             dropping = True
-            category = 'summary_sections' if kind == 'summary' else PRIVACY[heading_key(line)]
+            category = ('summary_sections' if kind == 'summary' else
+                        PRIVACY.get(heading_key(line), 'personal'))
             removed[category] = removed.get(category, 0) + 1
             continue
         if kind == 'evidence':
             dropping = False
         if not dropping:
             retained.append(line)
-    if not any(line.strip() and kind is None for line, kind in zip(retained, map(classify, retained))):
+            retained_kinds.append(kind)
+    if not any(line.strip() and kind is None for line, kind in zip(retained, retained_kinds)):
         raise SanitizeRefused(BOUNDARY_NOT_FOUND)
     return Structured('\n'.join(retained), header_region(lines, kinds), removed)
 

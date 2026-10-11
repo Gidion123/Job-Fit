@@ -94,10 +94,11 @@ class CorrelatedLedger(UsageLedger):
     records/total_spent: thread lock + shared flock, strict parsing (a partial line never parses).
     """
 
-    def __init__(self, path: Path, journal: IntentJournal):
+    def __init__(self, path: Path, journal: IntentJournal, *, telemetry=None):
         super().__init__(path)
         self.io = FileLock.for_path(self.path.with_name(self.path.name + '.io.lock'))
         self.journal = journal
+        self.telemetry = telemetry
 
     def append(self, record: UsageRecord) -> None:
         ctx = CURRENT_ATTEMPT.get()
@@ -116,6 +117,9 @@ class CorrelatedLedger(UsageLedger):
                 self.journal.append_done(ctx)       # only after the ledger line is durable
             except Exception:
                 pass    # 'done' is an in-flight hint only; the durable ledger line is authoritative
+            if self.telemetry is not None:
+                from jobfit.observability.metrics import safely
+                safely(self.telemetry.attempt, record, ctx)
         finally:
             if ctx is not None and ctx.owner is not None:
                 ctx.owner.close_attempt(ctx)

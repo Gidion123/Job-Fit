@@ -6,11 +6,11 @@ Every report starts as a plan (status PLANNED / NOT RUN). Results, interpretatio
 
 | Stage | Bootcamp checkpoint (template name) | Report | Official date | Planned work | Status |
 | --- | --- | --- | --- | --- | --- |
-| CP2.1 | 8. Model Selection (CNN/LSTM/DNN sesuai use case) | [Model and System Selection](CP2_01_Model_and_System_Selection.md) | 28 Sep 2026 | 29-30 Sep 2026 (labeling pilot on the evening of 29 Sep) | DONE |
+| CP2.1 | 8. Model Selection (CNN/LSTM/DNN according to the use case) | [Model and System Selection](CP2_01_Model_and_System_Selection.md) | 28 Sep 2026 | 29-30 Sep 2026 (labeling pilot on the evening of 29 Sep) | DONE |
 | CP2.2 | 9. Modeling Deep Learning | [Modeling the Extraction, Search, and Evidence Pipeline](CP2_02_Modeling_Pipeline.md) | 29 Sep 2026 | 1-3 Oct 2026 | DONE (D-050) |
 | CP2.3 | 10. Hyperparameter Tuning | [System Tuning](CP2_03_System_Tuning.md) and [Model Comparison](CP2_03_Model_Comparison.md) | 30 Sep 2026 | 2 to 6 Oct 2026 | DONE (freeze D-087; D-091; D-092) |
 | CP2.4 | 11. Modeling + Evaluation Metrics | [Evaluation Metrics](CP2_04_Evaluation_Metrics.md) | 1 Oct 2026 | 3 Oct 2026 (ran 6-7 Oct) | DONE |
-| CP2.5 | 12. Visualisasi Evaluation Result | [Evaluation Result Visualization](CP2_05_Evaluation_Visualization.md) | 2 Oct 2026 | 3 to 4 Oct 2026 (held-out figures 7 Oct) | DONE |
+| CP2.5 | 12. Evaluation Result Visualization | [Evaluation Result Visualization](CP2_05_Evaluation_Visualization.md) | 2 Oct 2026 | 3 to 4 Oct 2026 (held-out figures 7 Oct) | DONE |
 | CP2.6 | 13. Recommendation & Summary | [Recommendation and Summary](CP2_06_Recommendation_and_Summary.md) | 3 Oct 2026 | 4 Oct 2026 (final 7 Oct) | DONE |
 | CP2.7 | 14. PPT Check Point 2 + Mentoring | [CP2 Presentation and Mentoring](CP2_07_Presentation_and_Mentoring.md) | 4 Oct 2026 | 3-4 Oct 2026 (deck draft on 3 Oct) | DONE (presented 4 Oct; D-093) |
 | CP2.8 | Phase A: post-test quality optimization (development only) | [CP2.8 Post-Test Quality Optimization](CP2_08_Post_Test_Quality_Optimization.md) | after CP2.4 | 7 Oct 2026 | CLOSED, KEEP BASELINE (D-090) |

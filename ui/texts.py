@@ -100,6 +100,9 @@ COPY: dict[str, dict[str, str]] = {
                                   'pengaturan tanpa penyimpanan data (zero data retention). Hasilnya hanya ada '
                                   'selama sesi ini.'),
         'privacy.continue': 'Lanjutkan →',
+        'privacy.disabled': ('<strong>Analisis CV asli belum diaktifkan di demo ini.</strong> Kamu tetap bisa mengecek '
+                             'dan mengedit teks yang sudah dibersihkan, tetapi persetujuan dan analisis dimatikan, jadi '
+                             'tidak ada yang dikirim ke layanan AI. Coba alur lengkap dengan CV contoh.'),
         'privacy.replace': 'Ganti CV',
         # edit
         'edit.h1': 'Edit teks CV',
@@ -562,6 +565,9 @@ COPY: dict[str, dict[str, str]] = {
         'privacy.consent.small': ('Once you agree, this text is sent to AI services through OpenRouter with '
                                   'zero-data-retention settings. Results exist only for this session.'),
         'privacy.continue': 'Continue →',
+        'privacy.disabled': ('<strong>Analysis of uploaded CVs is not enabled in this demo.</strong> You can still '
+                             'check and edit the cleaned text, but consent and analysis are switched off, so nothing '
+                             'is sent to an AI service. Try the full flow with a sample CV.'),
         'privacy.replace': 'Replace CV',
         'edit.h1': 'Edit CV text',
         'edit.desc': ("When you save, the text is cleaned again and you'll need to approve it again. Your earlier "

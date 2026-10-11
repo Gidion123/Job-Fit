@@ -7,7 +7,6 @@ Real-CV flags stay off in production; these tests enable them only inside an in-
 import json
 import logging
 import pickle
-import uuid
 
 import pytest
 import yaml
@@ -20,7 +19,7 @@ from jobfit.llm.public_beta_bounds import compute_public_beta_bounds
 from jobfit.privacy import masking, real_cv
 from jobfit.privacy.masking import mask_local, sanitize_upload
 from jobfit.recommend.beta_analysis import analyze_one_job
-from jobfit.recommend.real_cv_flow import PARSED_KEY, SEARCH_KEY, store_search_results
+from jobfit.recommend.real_cv_flow import PARSED_KEY, store_search_results
 from jobfit.recommend.service import RecommendConfig
 from jobfit.search.embeddings import EmbeddingSpec
 from jobfit.session.store import SessionDenied, SessionHandle
@@ -416,9 +415,10 @@ def test_raw_canary_sinks_zero_across_the_full_flow(tmp_path, caplog):
     client, f, deps = spy_app(tmp_path)
     h = session(client)
     bodies = run_full_flow(client, f, h, caplog)
-    assert client.get('/metrics', headers=h).status_code == 404     # no metrics sink exists yet; add it here if one does
+    metrics = client.get('/metrics', headers=h)
+    assert metrics.status_code == 200
     state = deps.store._states[h['X-Session-Id']]
-    sinks = {'responses': '\n'.join(bodies), 'logs': caplog.text, 'providers': '\n'.join(payload_texts(f.sdk)),
+    sinks = {'responses': '\n'.join(bodies), 'metrics': metrics.text, 'logs': caplog.text, 'providers': '\n'.join(payload_texts(f.sdk)),
              'state': repr(state) + json.dumps(state.text) + repr(state.data)}
     for sink, text in sinks.items():
         leaked = [k for k, v in RAW.items() if v in text]

@@ -3,10 +3,22 @@
 **Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
 **Bootcamp checkpoint:** 19. PPT Final Project / Portfolio · official date 9 Oct 2026  
 **JobFit version of this checkpoint:** Same as the template.  
-**Planned work:** 9 Oct 2026; moved to 10 Oct (D-100) · **Actual:** not run yet\
-**Status:** PLANNED / NOT RUN · D-045 blind candidates selected by ID (7 Oct); planned work on 10 Oct · design basis: System Design v1.3
+**Planned work:** 9 Oct 2026; moved to 10 Oct (D-100) · **Actual:** 10 Oct 2026 (deck and screenshots)\
+**Status:** DONE · final 10-minute deck with a demo section (10 Oct 2026; kept outside the repository with the other presentation files), presented on 11 Oct 2026 (CP3.7); CP3 screenshots in [reports/figures/cp3](../../reports/figures/cp3/README.md); README rewritten as the portfolio entry point; D-045 option B blind items NOT RUN (backlog, [D-107](../decisions.md)) · design basis: System Design v1.3
 
-> This report is a plan. It contains no results yet. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
+> This report started as a plan; progress is added below as it happens. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
+
+## Progress (10 Oct 2026)
+
+- **Deck:** a 10-minute final deck that follows the bootcamp template:
+  - Introduction and portfolio;
+  - the nine main-project sections, with a dedicated prompt-optimization finding, the application architecture, the user flow with the score formula, and a live demo plan;
+  - next improvements and an Appendix.
+
+  Numbers come from the CP1/CP2 reports and the CP3 documents linked here.
+- **Screenshots:** 19 cropped figures of the UI and the Grafana dashboard, in `reports/figures/cp3/`.
+- **Not done:** the D-045 option B blind items, the written privacy report (it depends on the CP3.4 canary sweep) and the demo video.
+
 
 ## Portfolio signal (8 Oct 2026, D-102)
 
@@ -50,6 +62,22 @@ The stop condition did not trigger: 2 eligible JDs and 1 eligible CV3 pair were 
 - **Latency and cost table** from the CP3.4 measurements.
 - **Monitoring screenshots.**
 - README, deck and a 2-4 minute video. Validated and planned items are kept clearly apart.
+
+## Next improvements (added 10 Oct 2026, Dion)
+
+Planned follow-up work after the final presentation. None of these items has been started or measured yet; any result will be logged in the [experiment log](../experiments.md) and decided in the [decision log](../decisions.md). The D-087 freeze stays unchanged until a new decision says otherwise.
+
+### Next actions (nearest iteration)
+
+1. **Extended LLM cost comparison.** An initial cost-quality comparison already exists: GPT-6 Sol against the more economical GPT-6 Luna and Claude Haiku 5.5 on the same 73 requirement units ([CP3 LLM comparison](supporting/CP3_LLM_Cost_Quality_Comparison.md); decision: keep Sol with the Luna fallback). The next step is a larger sample and a projected LLM cost per user for each model, so the quality-versus-cost trade-off can be judged at production volume.
+2. **Job ranking and pre-filtering.** Research how to sort job results from the highest to the lowest match rate across the whole job database without running LLM extraction and evidence matching on every job (D-105 keeps full-corpus LLM matching out of scope because of cost). Candidate strategies: an early pre-filter based on embedding similarity between the CV's position titles or section headings and the job, or keyword-based filtering, so that LLM analysis runs only on the shortlisted jobs.
+3. **Cost and latency optimization (optional).** Reduce compute cost and analysis waiting time per job (the Phase B efficiency work named in D-089). Done only if time allows.
+
+### Next improvements (later iteration)
+
+4. **Matching system refinement.** Define the best scoring formula, run stress tests, and carry out end-to-end performance testing of the matching system. Moved to a later iteration because of time constraints.
+5. **Dynamic, JD-specific CV improvement suggestions.** Use an LLM to generate CV improvement suggestions that are more dynamic and specific to each job description, helping users surface relevant evidence they already have and so raise their match rate. The anti-fabrication rule still applies: suggestions never add skills or experience the user does not have (see the [CV coach plan](../cv-coach-plan.md) and D-093).
+6. **LLM tracing with Langfuse.** A Langfuse integration was attempted but is still blocked by a bug, so production monitoring currently relies on Prometheus and Grafana only. The next step is to fix the integration and add per-request LLM tracing (metadata only, no CV text), which remains a public-beta gate in the [observability handoff](../../deploy/observability/README.md).
 
 ## 1. Goal of this stage
 

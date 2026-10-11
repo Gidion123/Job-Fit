@@ -16,6 +16,7 @@ never runs it twice. Interface copy is Indonesian by default, with an English sw
 from __future__ import annotations
 
 import hashlib
+import os
 import time
 from datetime import date
 
@@ -23,6 +24,7 @@ import httpx
 import streamlit as st
 
 from api_client import ApiClient, ApiError
+from client_ip import client_ip_from
 from components import (COUNTRIES, EXPERIENCE, ROLES, WORK_MODES, analysis_view, coach_view, job_card,
                         metadata_html, option_label, relevant_job_html, suggestions)
 from live_action import LiveActions, action_fingerprint, fingerprint
@@ -35,7 +37,7 @@ st.set_page_config(page_title='JobFit — Bukti, bukan tebakan', page_icon=':mat
                    initial_sidebar_state='collapsed')
 inject()
 POLL_SECONDS = 1.5
-MAX_ANALYSES = 3                        # default; the API's /health analysis_limit wins
+MAX_ANALYSES = 10                       # default; the API's /health analysis_limit wins
 MIN_JD_CHARS = 200                      # the API's MIN_PASTE_CHARS
 # Everything derived from the current uploaded CV; cleared whenever the CV (its digest) changes.
 CV_STATE = ('cv_ready', 'parse_run', 'parse_result', 'consented_digest', 'search', 'analyses', 'selected_job',
@@ -68,8 +70,21 @@ ss.setdefault('lang', 'id')
 ss.setdefault('page', 'landing')
 
 
+def apply_client_ip(client) -> None:
+    """Forward the browser IP only from a trusted proxy (client_ip.py); log the source label, never the IP."""
+    try:
+        peer, forwarded = st.context.ip_address, st.context.headers.get('X-Forwarded-For')
+    except Exception:
+        peer = forwarded = None
+    client.client_ip, source = client_ip_from(peer, forwarded, os.environ.get('JOBFIT_TRUSTED_PROXIES'))
+    if ss.get('client_ip_source') != source:
+        ss.client_ip_source = source
+        print(f'jobfit-ui client_ip_source={source}', flush=True)
+
+
 def new_client():
     client = ApiClient()
+    apply_client_ip(client)
     client.start_session()
     return client
 
@@ -301,6 +316,8 @@ if api_down is not None:
         st.button(t('api.retry'), key='api_retry', type='primary')
     st.stop()
 api: ApiClient | None = ss.get('api')
+if api is not None:
+    apply_client_ip(api)                        # every run: the current browser connection
 MAX_ANALYSES = int(ss.get('analysis_limit') or MAX_ANALYSES)
 if 'live_actions' not in ss:
     ss.live_actions = LiveActions()
@@ -446,7 +463,10 @@ def privacy() -> None:
              f'</pre><p class="jf-small jf-muted jf-mt4">{esc(t("privacy.source"))}</p></div>')
         for warning in preview['warnings']:
             html(f'<p class="jf jf-small jf-muted">{esc(warning)}</p>')
-        if preview.get('message'):
+        if preview.get('provider_processing') != 'enabled':      # real-CV processing is off by deployment design
+            html(notice(t('privacy.disabled'), 'warn'))
+            st.button(t('upload.demo'), key='privacy_demo', type='primary', on_click=go, args=('demo',))
+        elif preview.get('message'):
             html(notice(esc(preview['message']), 'warn'))
         if ss.get('parse_error'):
             show_error(ss.pop('parse_error'))

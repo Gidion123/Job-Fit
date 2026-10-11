@@ -1,7 +1,7 @@
 # CP2.1: Model and System Selection
 
 **Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
-**Bootcamp checkpoint:** 8. Model Selection (CNN/LSTM/DNN sesuai use case) · official date 28 Sep 2026  
+**Bootcamp checkpoint:** 8. Model Selection (CNN/LSTM/DNN according to the use case) · official date 28 Sep 2026  
 **JobFit version of this checkpoint:** JobFit does not train a CNN, LSTM, or DNN (D-001). For an LLM and retrieval system, model selection means fixing the rules, the labeled data, the baselines, the model shortlist, and the selection rule before any model is compared.  
 **Planned work:** 29 to 30 Sep 2026 · **Actual:** 29 Sep to 1 Oct 2026  
 **Status:** DONE · two items carried over (section 11) · design basis: System Design v1.3
@@ -187,7 +187,7 @@ With soft skills outside the score, the pair labeled 3 and the pair labeled 1 ar
 - **High acceptance rates** (94% and 97%) can mean good drafts or a light review. The review times are totals reported after the work, not timed per row.
 - **Small development set.** 4 JDs, 2 evidence pairs, and 10 relevance labels are enough to set rules, not to measure accuracy. Seven of ten relevance labels are 1, so the pilot cannot test ranking quality.
 - **Synthetic CVs** are cleaner than real ones and were written for this project.
-- **Same model family.** The drafting model is from OpenAI, and two LLM candidates are also from OpenAI. The assistant tools used in development include models from OpenAI and Anthropic. The fixed selection rule is applied to every candidate, and this is stated in the evaluation report.
+- **Same model family.** The drafting model is from OpenAI, and two LLM candidates are also from OpenAI. The fixed selection rule is applied to every candidate, and this is stated in the evaluation report.
 - **The fixtures test the code, not the rules.** They were written by the same person who wrote the rules.
 - **Model ids and prices** were checked on 29 Sep 2026. Two DeepSeek ids must be confirmed before CP2.3.
 

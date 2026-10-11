@@ -365,28 +365,28 @@ def _apply(text: str, spans) -> tuple[str, dict[str, int]]:
     return ''.join(pieces), counts
 
 
-def _lead(text: str) -> str:
-    """The lines before the first recognised heading of any kind."""
-    from jobfit.privacy.structure import classify
-    lead = []
-    for line in text.split('\n'):
-        if classify(line) is not None:
-            break
-        lead.append(line)
-    return '\n'.join(lead)
+_SECTION_WORDS = frozenset({'skill', 'skills', 'technical', 'tech', 'tools', 'stack', 'technologies',
+                            'keahlian', 'teknis', 'kemampuan', 'keterampilan', 'expertise', 'competencies'})
 
 
-def sanitize_upload(text: str, *, marks: OwnerMarks | None = None, edited: bool = False) -> MaskedPreview:
+def _new_line_is_private(line: str) -> bool:
+    """A new line typed into the kept first block that looks like a person's name (not a section heading)."""
+    words = {w.casefold() for w in re.findall(r'[^\W\d_]+', line)}
+    return _name_tokens(line.strip()) is not None and not words & _SECTION_WORDS
+
+
+def sanitize_upload(text: str, *, marks: OwnerMarks | None = None, edited: bool = False,
+                    approved: str | None = None) -> MaskedPreview:
     """D-104 sanitizer for uploaded or edited CV text. Raises `SanitizeRefused` (fixed code) to fail closed.
 
     `marks` are the owner fingerprints kept from the upload, so an edit that reintroduces the name
     is masked again. The returned preview carries the (possibly extended) marks; never the raw header.
 
     `edited`: the text is the user's correction of an already sanitized preview. Its identity header was
-    removed at upload, so text before the first recognised heading (for example a first section whose
-    heading the user reworded, such as "TECHNICAL SKILLS & TOOLS") is kept rather than silently dropped,
-    unless it still looks like identity data (a contact pattern, an address or the owner's name), in which
-    case the upload boundary applies as before.
+    removed at upload. A bounded edit-only heading set recognises reworded professional sections such as
+    "TECHNICAL SKILLS & TOOLS"; arbitrary lead and personal-data labels are never retained as evidence.
+    `approved` is the sanitized preview being edited: a first block that still contains approved lines
+    is the user's edited first section and is kept (see `structure.split_structure`).
     """
     from jobfit.privacy.structure import MASKING_FAILED, SanitizeRefused, normalize_source, split_structure
     if not isinstance(text, str) or (marks is not None and not isinstance(marks, OwnerMarks)):
@@ -394,13 +394,10 @@ def sanitize_upload(text: str, *, marks: OwnerMarks | None = None, edited: bool 
     failed = False
     try:
         source = normalize_source(text)
-        structured = split_structure(source)
-        if edited:
-            lead = _lead(source)
-            identity = (_pattern_spans(lead) or _address_spans(lead) or _owner_spans(lead, marks)
-                        or _label_spans(lead) or owner_values(lead))
-            if not identity:                             # also a Summary added later: drop only that block
-                structured = split_structure(source, keep_lead=True)
+        approved_lines = frozenset(line.strip() for line in normalize_source(approved or '').split('\n')
+                                   if line.strip()) if edited else frozenset()
+        structured = split_structure(source, keep_lead=edited, approved=approved_lines,
+                                     drop_new=_new_line_is_private)
         owner = (marks if marks is not None else OwnerMarks()).extended(owner_values(structured.header))
         retained = structured.retained
         spans = _pattern_spans(retained) + _owner_spans(retained, owner) + _label_spans(retained) + \

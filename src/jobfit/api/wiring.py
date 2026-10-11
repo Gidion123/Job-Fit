@@ -18,6 +18,7 @@ from __future__ import annotations
 
 from datetime import date
 import json
+import os
 import threading
 
 import yaml
@@ -51,6 +52,24 @@ def _extraction_record(job: str) -> dict | None:
     return load_record(job)
 
 
+def public_beta_open(settings, runtime, telemetry, *, langfuse_required: bool = True) -> bool:
+    """The controlled public beta (D-103) opens only when every gate holds, otherwise it stays closed:
+    the production runtime with live, public live and uploaded CVs switched on and the fail-closed per-phase
+    bound check (every beta phase fits the daily cap). Non-owners then still need the durable per-IP ticket
+    and the session allowance (parse 1, search 1, job_analysis 10) and stay under the daily and lifetime
+    budgets; the D-104 consent lease is unchanged.
+
+    Langfuse: required when switched on (JOBFIT_LANGFUSE_ENABLED=1: a tracer that failed to start keeps the
+    beta closed). With it off, the beta opens without it: an owner decision for the controlled demo behind
+    Caddy Basic Auth, monitored with Prometheus and Grafana; it does not claim D-103's Langfuse gate."""
+    if runtime is None or (langfuse_required and getattr(telemetry, 'tracer', None) is None):
+        return False
+    if not (settings.live_enabled and settings.public_live and settings.real_cv_enabled):
+        return False
+    from jobfit.llm.public_beta_bounds import public_beta_phase_eligible
+    return public_beta_phase_eligible(settings, runtime.bounds)
+
+
 def load_saved_demo():
     """Latest saved demo bundle; answers only when its key matches the current files."""
     from hashlib import sha256
@@ -60,7 +79,8 @@ def load_saved_demo():
     if not folders:
         return None
     entries = json.loads((folders[-1] / 'bundle.json').read_text())['entries']
-    digest = lambda p: sha256(p.read_bytes()).hexdigest()
+    def digest(path):
+        return sha256(path.read_bytes()).hexdigest()
 
     def lookup(cv_id: str, seniority: bool):
         if cv_id not in CV_FILES:
@@ -82,7 +102,7 @@ def live_enabled() -> bool:
     return get_production_settings().live_enabled
 
 
-def build_runtime(settings):
+def build_runtime(settings, telemetry=None):
     """The Phase 2B runtime for prod live; startup reconciliation of expired, unowned reservations.
 
     Reconciliation runs only on a provisioned, writable ledger storage root with trustworthy
@@ -95,7 +115,7 @@ def build_runtime(settings):
     from jobfit.live.runtime_client import build_public_beta_client
     from jobfit.llm.public_beta_bounds import compute_public_beta_bounds
     # Every live provider request (chat and embeddings) is sent with data_collection=deny and zdr=true.
-    runtime = LiveRuntime(settings, compute_public_beta_bounds(), pipeline_config=CONFIG,
+    runtime = LiveRuntime(settings, compute_public_beta_bounds(), pipeline_config=CONFIG, telemetry=telemetry,
                           client_factory=lambda op: build_public_beta_client(settings.client_settings(), CONFIG,
                                                                              run_id=op))
     try:
@@ -112,7 +132,16 @@ def build_runtime(settings):
 def build_deps() -> AppDeps:
     settings = get_production_settings()
     prod = settings.environment == 'prod'
-    runtime = build_runtime(settings) if prod and settings.live_enabled else None
+    from jobfit.observability.metrics import Telemetry
+    from jobfit.observability.langfuse import build_tracer
+    from jobfit.observability.cost import CostCollector, DatabaseCollector, production_snapshot
+    telemetry = Telemetry(tracer=build_tracer())
+    telemetry.registry.register(CostCollector(production_snapshot(settings)))
+    if prod:
+        import psycopg
+        telemetry.registry.register(DatabaseCollector(
+            lambda: psycopg.connect(settings.database_url, autocommit=True, connect_timeout=2)))
+    runtime = build_runtime(settings, telemetry=telemetry) if prod and settings.live_enabled else None
     config = RecommendConfig.from_yaml(CONFIG)
     features = _features()
     dev = set((REPO_ROOT / 'evals/splits/dev_job_ids.txt').read_text().split())
@@ -263,7 +292,7 @@ def build_deps() -> AppDeps:
         def work(client):
             return analyze_one_job(cv, job_id, envelopes=beta_envelopes(), client=client, config=config,
                                    spec=spec, extraction_model=raw_cfg['extraction_model'], scope='session_jd',
-                                   constraints=constraints, **job_source(job_id, jd_text))
+                                   constraints=constraints, telemetry=telemetry, **job_source(job_id, jd_text))
         if prod:
             result, _ = runtime.run('job_analysis', live.operation_key, work, quota=getattr(live, 'quota', None),
                                     on_first_intent=live.on_first_billable)
@@ -278,7 +307,7 @@ def build_deps() -> AppDeps:
         parse_model = yaml.safe_load((REPO_ROOT / 'config/cp3/public_beta_bounds_v1.yaml').read_text())['parse_model']
         return reserved_parse(runtime, store, handle, lease, operation_key=live.operation_key, model=parse_model,
                               envelopes=runtime.bounds.envelopes, quota=live.quota,
-                              on_first_intent=live.on_first_billable)
+                              on_first_intent=live.on_first_billable, telemetry=telemetry)
 
     def real_search(store, handle, lease, filters, *, live):
         import psycopg
@@ -292,7 +321,7 @@ def build_deps() -> AppDeps:
         return reserved_search(runtime, store, handle, lease, operation_key=live.operation_key, spec=spec,
                                connect=lambda: psycopg.connect(settings.database_url, autocommit=True),
                                filters=filters, depth=config.stage1_candidate_depth, envelopes=runtime.bounds.envelopes,
-                               quota=live.quota, on_first_intent=live.on_first_billable)
+                               quota=live.quota, on_first_intent=live.on_first_billable, telemetry=telemetry)
 
     def consume_ticket(pseudonym: str) -> str:
         import psycopg
@@ -321,7 +350,7 @@ def build_deps() -> AppDeps:
             maintenance()
         except Exception:
             pass        # retried hourly by the sweeper; a consume purges before it runs anyway
-    return AppDeps(store=SessionStore(), demo_cvs=demo, run=run, job_meta=meta, saved_demo=load_saved_demo(),
+    return AppDeps(telemetry=telemetry, store=SessionStore(), demo_cvs=demo, run=run, job_meta=meta, saved_demo=load_saved_demo(),
                    live_enabled=settings.live_enabled, analyze_pasted=None if prod else analyze_pasted, jobs=jobs,
                    demo_summaries=summaries, analyzed_k=config.stage1_k, ingress=ingress,
                    public_live=settings.public_live, maintenance=maintenance,
@@ -329,12 +358,18 @@ def build_deps() -> AppDeps:
                    search=search, analyze_one=analyze_one, job_analysis_refusal=job_analysis_refusal,
                    search_limit=config.stage1_candidate_depth,
                    # D-105: uploaded CVs only with the explicit JOBFIT_REAL_CV_ENABLED switch on the production
-                   # runtime; the public beta stays closed (non-owners get 503), whatever JOBFIT_PUBLIC_LIVE says.
-                   real_cv_enabled=settings.real_cv_enabled and runtime is not None, public_beta_open=False,
+                   # runtime. The public beta (non-owners) opens only through every gate in public_beta_open();
+                   # otherwise non-owners get 503.
+                   real_cv_enabled=settings.real_cv_enabled and runtime is not None,
+                   public_beta_open=public_beta_open(
+                       settings, runtime, telemetry,
+                       langfuse_required=os.environ.get('JOBFIT_LANGFUSE_ENABLED') == '1'),
                    real_parse=real_parse if prod else None, real_search=real_search if prod else None,
                    consume_ticket=consume_ticket if prod else None)
 
 
 def create_default_app():
+    from jobfit.observability.http import configure_logging
+    configure_logging()
     from jobfit.api.main import create_app
     return create_app(build_deps())

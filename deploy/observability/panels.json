@@ -1,0 +1,463 @@
+[
+  {
+    "title": "API scrape and restarts",
+    "type": "timeseries",
+    "description": "Scrape up is external to the API; process start changes on restart. No container exporter.",
+    "targets": [
+      {
+        "refId": "A",
+        "expr": "up{job=\"jobfit-api\"}",
+        "legendFormat": "API scrape up"
+      },
+      {
+        "refId": "B",
+        "expr": "changes(process_start_time_seconds{job=\"jobfit-api\"}[1h])",
+        "legendFormat": "process restarts / 1h"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "short"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  },
+  {
+    "title": "API requests per second",
+    "type": "timeseries",
+    "description": "",
+    "targets": [
+      {
+        "refId": "A",
+        "expr": "sum by (method,route) (rate(jobfit_http_requests_total{job=\"jobfit-api\",route!=\"/metrics\"}[5m]))",
+        "legendFormat": "{{method}} {{route}}"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "reqps"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  },
+  {
+    "title": "API server error fraction",
+    "type": "timeseries",
+    "description": "0% for healthy traffic; no traffic still has no rate sample.",
+    "targets": [
+      {
+        "refId": "A",
+        "expr": "(sum(rate(jobfit_http_requests_total{job=\"jobfit-api\",status=~\"5..\",route!=\"/metrics\"}[5m])) or vector(0)) / sum(rate(jobfit_http_requests_total{job=\"jobfit-api\",route!=\"/metrics\"}[5m]))",
+        "legendFormat": "5xx"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "percentunit"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  },
+  {
+    "title": "API latency",
+    "type": "timeseries",
+    "description": "",
+    "targets": [
+      {
+        "refId": "A",
+        "expr": "histogram_quantile(0.5, sum by (le) (rate(jobfit_http_duration_seconds_bucket{job=\"jobfit-api\",route!=\"/metrics\"}[5m])))",
+        "legendFormat": "p50"
+      },
+      {
+        "refId": "B",
+        "expr": "histogram_quantile(0.95, sum by (le) (rate(jobfit_http_duration_seconds_bucket{job=\"jobfit-api\",route!=\"/metrics\"}[5m])))",
+        "legendFormat": "p95"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "s"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  },
+  {
+    "title": "Analysis requests and execution outcomes",
+    "type": "timeseries",
+    "description": "HTTP accepted and duplicate are separate from completed, held, failed and refused asynchronous runs.",
+    "targets": [
+      {
+        "refId": "A",
+        "expr": "sum by (outcome) (rate(jobfit_analysis_requests_total{job=\"jobfit-api\"}[5m]))",
+        "legendFormat": "{{outcome}} requests"
+      },
+      {
+        "refId": "B",
+        "expr": "sum by (outcome) (rate(jobfit_analysis_outcomes_total{job=\"jobfit-api\"}[5m]))",
+        "legendFormat": "{{outcome}} executions"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "short"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  },
+  {
+    "title": "AI stage p95",
+    "type": "timeseries",
+    "description": "No samples until actual execution. Cached extraction creates no extraction timing.",
+    "targets": [
+      {
+        "refId": "A",
+        "expr": "histogram_quantile(0.95, sum by (le,stage) (rate(jobfit_stage_duration_seconds_bucket{job=\"jobfit-api\"}[5m])))",
+        "legendFormat": "{{stage}}"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "s"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  },
+  {
+    "title": "AI stage outcomes",
+    "type": "timeseries",
+    "description": "",
+    "targets": [
+      {
+        "refId": "A",
+        "expr": "sum by (stage,outcome) (rate(jobfit_stage_executions_total{job=\"jobfit-api\"}[5m]))",
+        "legendFormat": "{{stage}} {{outcome}}"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "short"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  },
+  {
+    "title": "LLM attempts and errors",
+    "type": "timeseries",
+    "description": "Terminal durably ledgered attempts. Unledgered intents appear in accounting uncertainty, not successful calls.",
+    "targets": [
+      {
+        "refId": "A",
+        "expr": "sum by (model,kind,outcome) (increase(jobfit_llm_attempts_total{job=\"jobfit-api\"}[1h]))",
+        "legendFormat": "{{model}} {{kind}} {{outcome}}"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "short"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  },
+  {
+    "title": "LLM tokens",
+    "type": "timeseries",
+    "description": "Known usage only. Missing provider usage is not zero tokens.",
+    "targets": [
+      {
+        "refId": "A",
+        "expr": "sum by (model,direction) (increase(jobfit_llm_tokens_total{job=\"jobfit-api\"}[1h]))",
+        "legendFormat": "{{model}} {{direction}}"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "short"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  },
+  {
+    "title": "LLM retry and fallback",
+    "type": "timeseries",
+    "description": "",
+    "targets": [
+      {
+        "refId": "A",
+        "expr": "sum by (model,kind) (increase(jobfit_llm_attempts_total{job=\"jobfit-api\",kind=~\"validation_repair|length_continuation\"}[1h]))",
+        "legendFormat": "{{model}} {{kind}}"
+      },
+      {
+        "refId": "B",
+        "expr": "sum by (model) (increase(jobfit_llm_fallbacks_total{job=\"jobfit-api\"}[1h]))",
+        "legendFormat": "{{model}} fallback"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "short"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  },
+  {
+    "title": "LLM call p95",
+    "type": "timeseries",
+    "description": "",
+    "targets": [
+      {
+        "refId": "A",
+        "expr": "histogram_quantile(0.95, sum by (le,model) (rate(jobfit_llm_duration_seconds_bucket{job=\"jobfit-api\"}[5m])))",
+        "legendFormat": "{{model}}"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "s"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  },
+  {
+    "title": "Attempt estimated upper bound vs accounted costs",
+    "type": "timeseries",
+    "description": "Upper estimates are not bills. Process counters reset. Persisted gauges below are used for balances.",
+    "targets": [
+      {
+        "refId": "A",
+        "expr": "sum(increase(jobfit_llm_upper_bound_usd_total{job=\"jobfit-api\"}[1h]))",
+        "legendFormat": "upper estimates"
+      },
+      {
+        "refId": "B",
+        "expr": "sum by (source) (increase(jobfit_llm_accounted_cost_usd_total{job=\"jobfit-api\"}[1h]))",
+        "legendFormat": "{{source}}"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "currencyUSD"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  },
+  {
+    "title": "Persisted spending and uncertainty",
+    "type": "timeseries",
+    "description": "DB settled includes conservative settlements, not only provider-confirmed bills. These series overlap; do not sum them.",
+    "targets": [
+      {
+        "refId": "A",
+        "expr": "jobfit_accounting_reported_cost_usd{job=\"jobfit-api\"}",
+        "legendFormat": "reported_cost_usd"
+      },
+      {
+        "refId": "B",
+        "expr": "jobfit_accounting_token_estimated_cost_usd{job=\"jobfit-api\"}",
+        "legendFormat": "token_estimated_cost_usd"
+      },
+      {
+        "refId": "C",
+        "expr": "jobfit_accounting_uncertain_cost_usd{job=\"jobfit-api\"}",
+        "legendFormat": "uncertain_cost_usd"
+      },
+      {
+        "refId": "D",
+        "expr": "jobfit_accounting_settled_usd{job=\"jobfit-api\"}",
+        "legendFormat": "settled_usd"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "currencyUSD"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  },
+  {
+    "title": "Budget liability and remaining",
+    "type": "timeseries",
+    "description": "Daily liability includes open reservations and conservative midnight carryover. Lifetime remaining also subtracts open reservations.",
+    "targets": [
+      {
+        "refId": "A",
+        "expr": "jobfit_accounting_daily_liability_usd{job=\"jobfit-api\"}",
+        "legendFormat": "daily_liability_usd"
+      },
+      {
+        "refId": "B",
+        "expr": "jobfit_accounting_daily_settled_usd{job=\"jobfit-api\"}",
+        "legendFormat": "daily_settled_usd"
+      },
+      {
+        "refId": "C",
+        "expr": "jobfit_accounting_recorded_spend_usd{job=\"jobfit-api\"}",
+        "legendFormat": "recorded_spend_usd"
+      },
+      {
+        "refId": "D",
+        "expr": "jobfit_accounting_daily_remaining_usd{job=\"jobfit-api\"}",
+        "legendFormat": "daily_remaining_usd"
+      },
+      {
+        "refId": "E",
+        "expr": "jobfit_accounting_lifetime_remaining_usd{job=\"jobfit-api\"}",
+        "legendFormat": "lifetime_remaining_usd"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "currencyUSD"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  },
+  {
+    "title": "PostgreSQL and ledger availability",
+    "type": "timeseries",
+    "description": "Unavailable balances are omitted. Readable is not proof of writable or durable storage.",
+    "targets": [
+      {
+        "refId": "C",
+        "expr": "jobfit_postgres_available{job=\"jobfit-api\"}",
+        "legendFormat": "PostgreSQL read-only SELECT"
+      },
+      {
+        "refId": "A",
+        "expr": "jobfit_accounting_snapshot_available{job=\"jobfit-api\"}",
+        "legendFormat": "jobfit_accounting_snapshot_available"
+      },
+      {
+        "refId": "B",
+        "expr": "jobfit_ledger_storage_readable{job=\"jobfit-api\"}",
+        "legendFormat": "jobfit_ledger_storage_readable"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "short"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  },
+  {
+    "title": "Ledger evidence bytes",
+    "type": "timeseries",
+    "description": "",
+    "targets": [
+      {
+        "refId": "A",
+        "expr": "jobfit_accounting_ledger_bytes{job=\"jobfit-api\"}",
+        "legendFormat": "bytes"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "bytes"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  },
+  {
+    "title": "Budget refusals",
+    "type": "timeseries",
+    "description": "",
+    "targets": [
+      {
+        "refId": "A",
+        "expr": "sum by (reason) (increase(jobfit_budget_rejections_total{job=\"jobfit-api\"}[1h]))",
+        "legendFormat": "{{reason}}"
+      }
+    ],
+    "fieldConfig": {
+      "defaults": {
+        "unit": "short"
+      },
+      "overrides": []
+    },
+    "options": {
+      "legend": {
+        "displayMode": "list"
+      }
+    }
+  }
+]

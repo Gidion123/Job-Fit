@@ -1,0 +1,12 @@
+# Append this job to the EXISTING prometheus.yml scrape_configs. Do not replace that file.
+# The token file is an owner-managed read-only mount, never committed.
+job_name: jobfit-api
+scrape_interval: 30s
+scrape_timeout: 10s
+metrics_path: /metrics
+follow_redirects: false
+http_headers:
+  X-JobFit-Internal-Token:
+    files: [/run/secrets/jobfit_internal_token]
+static_configs:
+  - targets: [jobfit-observability-api:8000]

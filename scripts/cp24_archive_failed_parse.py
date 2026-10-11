@@ -43,7 +43,7 @@ def check(cv: str, out: Path = OUT) -> dict:
         raise SystemExit(f'{path.name} is not a failed record for {cv}; refusing')
     if not warnings or not all(any(m in w for m in TIMEOUT_MARKERS) for w in warnings if 'cv_parsing' in w) \
             or not any('cv_parsing' in w for w in warnings):
-        raise SystemExit('The failure is not a pure API timeout; a retry would not be audit-safe. Ask Claude.')
+        raise SystemExit('The failure is not a pure API timeout; a retry would not be audit-safe. Investigate before retrying.')
     archive = out / 'failed_attempts'
     done = sorted(archive.glob(f'{cv}_parse_attempt*.json')) if archive.exists() else []
     done = [p for p in done if not p.name.endswith('_receipt.json')]

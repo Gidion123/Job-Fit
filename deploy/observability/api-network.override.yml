@@ -1,0 +1,13 @@
+# The API keeps both production networks and joins the private scrape network.
+# Merge with the actual API Compose and inspect `docker compose config`.
+services:
+  api:
+    networks:
+      application_net: {}
+      database_net: {}
+      jobfit_observability:
+        aliases: [jobfit-observability-api]
+networks:
+  jobfit_observability:
+    external: true
+    name: jobfit-observability

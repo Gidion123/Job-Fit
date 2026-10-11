@@ -4,9 +4,34 @@
 **Bootcamp checkpoint:** 17. Build Streamlit UI · official date 7 Oct 2026  
 **JobFit version of this checkpoint:** Same as the template.  
 **Planned work:** 7 Oct 2026 · **Actual:** 6 Oct 2026  
-**Status:** PARTIAL · demo flow DONE LOCALLY (6 Oct); D-105 real-user flow IMPLEMENTED with automated in-process evidence (9 Oct, awaiting review); owner Local Mac validation PENDING; deployed UI NOT STARTED · design basis: System Design v1.3
+**Status:** DONE · UI v3 real-user flow (D-105) validated by the owner with live model calls on 10 Oct 2026, and served on the deployed demo behind Basic Auth ([D-106](../decisions.md)); screenshots in [reports/figures/cp3](../../reports/figures/cp3/README.md) · design basis: System Design v1.3
 
 > Plan sections are kept as written. Results are added below, with links to the [experiment log](../experiments.md). The plan for all stages is in the [master plan](../master-plan.md).
+
+## Owner validation and screenshots (10 Oct 2026)
+
+The owner ran the full flow with live model calls and captured it ([captions and capture times](../../reports/figures/cp3/README.md)):
+
+| Step | Figure |
+| --- | --- |
+| Landing, upload, sanitized preview, consent | [1](../../reports/figures/cp3/fig01_ui_landing.png), [2](../../reports/figures/cp3/fig02_ui_upload_cv.png), [3](../../reports/figures/cp3/fig03_ui_review_sanitized_text.png), [4](../../reports/figures/cp3/fig04_ui_consent.png) |
+| CV ready, Find Jobs filters, Relevant Jobs (search order, no score) | [5](../../reports/figures/cp3/fig05_ui_cv_ready.png), [6](../../reports/figures/cp3/fig06_ui_find_jobs_filters.png), [7](../../reports/figures/cp3/fig07_ui_relevant_jobs.png) |
+| Honest progress, Analyze Fit (86% evidence coverage), evidence per requirement | [8](../../reports/figures/cp3/fig08_ui_analysis_progress.png), [9](../../reports/figures/cp3/fig09_ui_analyze_fit_score.png), [10](../../reports/figures/cp3/fig10_ui_evidence_per_requirement.png) |
+| Improve My CV: clarify evidence, a draft from the user's answers, a confirmed gap without fabrication | [11](../../reports/figures/cp3/fig11_ui_improve_my_cv.png), [12](../../reports/figures/cp3/fig12_ui_improve_cv_answer_draft.png), [13](../../reports/figures/cp3/fig13_ui_honest_gap_guidance.png) |
+| Check a Job on the deployed demo | [14](../../reports/figures/cp3/fig14_ui_check_a_job_deployed.png), [15](../../reports/figures/cp3/fig15_ui_check_a_job_result_deployed.png) |
+
+![Analyze Fit, evidence coverage](../../reports/figures/cp3/fig09_ui_analyze_fit_score.png)
+
+What the screenshots confirm:
+- the sanitizer runs before the preview ("header lines (3), summary sections (1)" removed);
+- consent is required before any provider call;
+- Relevant Jobs carry no score;
+- the score is labelled as evidence coverage, not a hiring probability;
+- unverifiable requirements are shown as "Belum bisa dipastikan" and not counted;
+- Improve My CV asks before drafting and never adds an unconfirmed claim.
+
+The UI shows the session allowance ("10 cek kecocokan per sesi").
+
 
 ## Product experience target (8 Oct 2026, D-102): PLANNED
 
@@ -252,4 +277,4 @@ The Streamlit UI now follows the JobFit v3 visual design ("Bukti, bukan tebakan"
 - **Outdated API guard:** the UI checks `/health` once per session; an API without the D-104 routes (for example an old `jobfit-api` container on port 8000) gets a clear warning, and its `Not Found` is explained instead of shown bare.
 - **Held and provisional results explain why:** the API's score `reasons` are shown in the interface language, with requirement text instead of unit ids, and the requirement behind a hold is marked in its row. Example: F00022 is held for every CV by the frozen H2v2 rule (required unit U04, "Intermediate ... skills", needs review and is a protected level requirement). Of the 47 eligible jobs with a saved extraction, 9 are held by their requirement structure, 5 are provisional and 30 can be scored; the other 381 are extracted live at analysis time.
 - **Edit keeps the first section (sanitizer fix, 9 Oct 2026):** rewording the first section's heading in "Edit teks" (for example "TECHNICAL SKILLS & TOOLS") made the sanitizer treat that whole section as the identity header and drop it; adding a Summary heading later dropped everything above it. `sanitize_upload(..., edited=True)` (called for `POST /cv/preview` only) now keeps the text before the first recognised heading unless it still looks like identity data (contact patterns, an address, a labelled person or the owner's name), and drops only the Summary or privacy block itself. Uploads are unchanged. Tests: `tests/test_privacy_edit_lead.py`; the dev calibration receipt was regenerated (all gates unchanged, new `sanitizer_sha256`).
-- **Owner demo limits (9 Oct 2026):** `JOBFIT_SESSION_ANALYSIS_LIMIT` (1 to 50, default 3) sets the Analyze Fit runs per session; `/health` reports it as `analysis_limit` and the UI follows it. Only `docker-compose.owner-local.yml` sets it (10); non-owner public-beta sessions stay bounded by the D-103 allowance. The owner raised the owner-local budgets to US$10. The wait screens now scroll to the top as soon as they appear. FAIL-39 (a live extraction past its call wall blocked paid operations with `busy`) was reviewed and closed.
+- **Owner demo limits (9 Oct 2026):** `JOBFIT_SESSION_ANALYSIS_LIMIT` (1 to 50, default 10) sets the Analyze Fit runs per session; `/health` reports it as `analysis_limit` and the UI follows it. Only `docker-compose.owner-local.yml` sets it (10); non-owner public-beta sessions stay bounded by the D-103 allowance. The owner raised the owner-local budgets to US$10. The wait screens now scroll to the top as soon as they appear. FAIL-39 (a live extraction past its call wall blocked paid operations with `busy`) was reviewed and closed.

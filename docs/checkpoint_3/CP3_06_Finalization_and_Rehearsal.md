@@ -1,12 +1,12 @@
 # CP3.6: Finalization and Rehearsal
 
 **Project:** JobFit: Evidence-Grounded Job Matching and Skill-Gap Analysis for Early-Career AI & Data Job Seekers  
-**Bootcamp checkpoint:** 20. Finalisasi Portfolio & Rehearsal Presentation · official date 10 Oct 2026  
+**Bootcamp checkpoint:** 20. Portfolio Finalization & Presentation Rehearsal · official date 10 Oct 2026  
 **JobFit version of this checkpoint:** Same as the template.  
-**Planned work:** 10 Oct 2026 · **Actual:** not run yet  
-**Status:** PLANNED / NOT RUN · design basis: System Design v1.3
+**Planned work:** 10 Oct 2026 · **Actual:** 10-11 Oct 2026  
+**Status:** DONE for regression · offline suite 1,539 passed, 238 skipped (11 Oct); freeze verify `"ok": true`; final deck used in the 11 Oct presentation; release tag NOT CREATED (backlog, [D-107](../decisions.md)) · design basis: System Design v1.3
 
-> This report is a plan. It contains no results yet. Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
+> This report started as a plan. The results are in the status line above and in [D-107](../decisions.md). Results, scores, mentor feedback, and deployment evidence are added only after the work is actually done, with links to the [experiment log](../experiments.md) instead of copied numbers. The plan for all stages is in the [master plan](../master-plan.md).
 
 ## CP3 final plan for this stage (7 Oct 2026, D-095 to D-100)
 

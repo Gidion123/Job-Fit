@@ -31,9 +31,10 @@ D-103 public-beta contract (API semantics only; the Streamlit UI follows in Phas
 - POST /jobs/{job_id}/analyze and the pasted-JD POST /analyze run one ``job_analysis`` operation
   (stage 'analyzed'); inputs above the D-103 envelopes are refused (413) before any reservation;
 - in production the public (non-owner) beta flow runs only with the session's consented, uploaded
-  CV (``cv_source=upload``); the real-CV adapter is connected, but activation stays blocked
-  (``public_beta_open`` False) until the remaining privacy, artifact and release gates pass,
-  whatever JOBFIT_PUBLIC_LIVE says. Demo CVs are synthetic and never stand in for that flow.
+  CV (``cv_source=upload``); ``public_beta_open`` is computed by ``wiring.public_beta_open`` and stays
+  False unless every gate holds (public live, uploaded CVs, the D-103 phase bounds and metadata-only
+  Langfuse); the owner activates JOBFIT_PUBLIC_LIVE only after the deployed privacy gate
+  (deploy/public-live/README.md). Demo CVs are synthetic and never stand in for that flow.
 """
 from __future__ import annotations
 
@@ -57,6 +58,7 @@ from starlette.concurrency import run_in_threadpool
 from jobfit.api.presenter import SEARCH_STAGE_LABEL, analyzed_job, job_card, recommendation, retrieval_card
 from jobfit.cv import upload_guard
 from jobfit.cv.parser import ParsedCV
+from jobfit.live.quota import BETA_LIMITS
 from jobfit.privacy.masking import VERSION_V2, sanitize_upload
 from jobfit.privacy.structure import SanitizeRefused
 from jobfit.schemas.api import (AnalyzeRequest, CoachAnswer, ConsentRequest, FeedbackRequest, JobAnalyzeRequest,
@@ -87,15 +89,15 @@ PUBLIC_BETA_CLOSED_MESSAGE = ('The public beta is not open yet. The uploaded-CV 
 INTERNAL_TOKEN_HEADER, CLIENT_IP_HEADER, OWNER_TOKEN_HEADER = ('x-jobfit-internal-token', 'x-jobfit-client-ip',
                                                              'x-jobfit-owner-token')
 MAX_RUNS_PER_SESSION = 3
-MAX_ANALYSES_PER_SESSION = 3        # default; JOBFIT_SESSION_ANALYSIS_LIMIT overrides it (owner-local demo only)
+MAX_ANALYSES_PER_SESSION = BETA_LIMITS['job_analysis']   # 10; JOBFIT_SESSION_ANALYSIS_LIMIT overrides it
 SESSION_ANALYSIS_LIMIT_ENV = 'JOBFIT_SESSION_ANALYSIS_LIMIT'
 
 
 def session_analysis_limit() -> int:
-    """Analyze Fit runs (and pasted JDs) per session: 3 unless the deployment sets 1..50 explicitly.
+    """Analyze Fit runs (and pasted JDs) per session: 10 unless the deployment sets 1..50 explicitly.
 
     The owner-local compose file raises it for demos. Non-owner public-beta sessions stay bounded by the
-    D-103 session allowance (3 job_analysis) in jobfit.live.quota whatever this says; budgets are untouched.
+    D-103 session allowance (10 job_analysis) in jobfit.live.quota whatever this says; budgets are untouched.
     """
     raw = os.environ.get(SESSION_ANALYSIS_LIMIT_ENV, '').strip()
     if not raw:
@@ -148,7 +150,7 @@ class AppDeps:
     search_limit: int = 10
     # Real-CV public-beta adapter (CP3). Off in every shipped configuration: real_cv_enabled stays False
     # until the D-051 gates (FAIL-37 masking, provider ZDR compatibility) pass; public_beta_open is True
-    # only with public live, real_cv_enabled and the D-103 per-phase eligibility. Hooks:
+    # only with public live, real_cv_enabled, the D-103 per-phase eligibility and Langfuse. Hooks:
     # real_parse(store, handle, lease, *, live) -> ParsedCV (reserved parse);
     # real_search(store, handle, lease, filters, *, live) -> retrieval rows (reserved search);
     # consume_ticket(ip_pseudonym) -> 'consumed' | 'refused' | 'unavailable' | 'unknown'.
@@ -156,6 +158,7 @@ class AppDeps:
     real_search: Callable | None = None
     consume_ticket: Callable | None = None
     public_beta_open: bool = False
+    telemetry: object | None = None
 
 
 @dataclass
@@ -167,9 +170,14 @@ class _Run:
     result: dict | None = None
     error: str | None = None
     real: bool = False          # derived from the uploaded CV: dropped when the preview changes
+    analysis_outcome: str = 'unknown'  # classified from JobResult, never from presentation JSON
+    request_id: str | None = None
 
 
 def create_app(deps: AppDeps) -> FastAPI:
+    from jobfit.observability.metrics import Telemetry
+    from jobfit.observability.http import HTTPMetrics
+    telemetry = deps.telemetry or Telemetry()
     runs: dict[str, _Run] = {}
     pastes: dict[str, tuple[str, str]] = {}      # paste_id -> (owner, text); session-only
     feedback: list[dict] = []
@@ -233,6 +241,22 @@ def create_app(deps: AppDeps) -> FastAPI:
                 return JSONResponse({'detail': 'Unauthorized'}, status_code=401)
             return await call_next(request)
 
+    app.state.telemetry = telemetry
+    app.add_middleware(HTTPMetrics, telemetry=telemetry, routes=app.routes)
+
+    @app.get('/metrics', include_in_schema=False)
+    def metrics(request: Request):
+        # Explicit even in development: no ingress is not permission to expose metrics.
+        from starlette.responses import Response
+        from prometheus_client import CONTENT_TYPE_LATEST
+        if deps.ingress is None or not deps.ingress.internal_ok(request.headers.get(INTERNAL_TOKEN_HEADER)):
+            raise HTTPException(401, 'Unauthorized')
+        try:
+            return Response(telemetry.render(), headers={'Content-Type': CONTENT_TYPE_LATEST,
+                                                        'Cache-Control': 'no-store'})
+        except Exception:
+            return JSONResponse({'detail': 'Metrics unavailable'}, status_code=503)
+
     def _auth(x_session_id: str, x_session_token: str, activity: bool) -> SessionHandle:
         h = SessionHandle(x_session_id, x_session_token)
         try:
@@ -253,22 +277,47 @@ def create_app(deps: AppDeps) -> FastAPI:
             raise HTTPException(404, 'Run not found')
         return state
 
+    def mark_analysis_result(state: _Run, result) -> None:
+        from jobfit.recommend.service import JobResult
+        from jobfit.schemas.analysis import ScoreStatus
+        if isinstance(result, JobResult):
+            if result.hold_reason or result.score.status == ScoreStatus.ON_HOLD:
+                state.analysis_outcome = 'held'
+            elif result.score.status == ScoreStatus.FINAL:
+                state.analysis_outcome = 'success'
+            # Provisional and no-score results remain unknown, never completed.
+
     def start_job(h: SessionHandle, kind: str, limit: int, work: Callable[[_Run], dict],
-                  run_id: str | None = None, real: bool = False) -> str:
+                  run_id: str | None = None, real: bool = False, request_id: str | None = None) -> str:
         with lock:
             mine = [r for r in runs.values() if r.owner == h.session_id and r.kind == kind]
             if any(r.status == 'running' for r in mine) or len(mine) >= limit:
                 raise HTTPException(429, 'Run limit for this session reached')
             run_id = run_id or secrets.token_urlsafe(12)
-            runs[run_id] = state = _Run(owner=h.session_id, kind=kind, real=real)
+            runs[run_id] = state = _Run(owner=h.session_id, kind=kind, real=real, request_id=request_id)
 
         def target():
             try:
-                out = work(state)
+                from jobfit.observability.metrics import observed
+                out = (telemetry.trace_analysis(
+                    lambda: observed(telemetry, 'overall_analysis', work, state,
+                                     classify_result=lambda _: state.analysis_outcome),
+                    lambda: state.analysis_outcome)
+                    if kind == 'analysis' else work(state))
+                if kind == 'analysis':
+                    from jobfit.observability.metrics import safely
+                    label = {'success': 'completed', 'held': 'held', 'refused': 'refused',
+                             'failure': 'failed'}.get(state.analysis_outcome, 'unknown')
+                    safely(telemetry.analysis_finished, label, state.request_id)
                 with lock:
                     if runs.get(run_id) is state:      # a deleted session never gets late data
                         state.result, state.status = out, 'done'
             except Exception as exc:  # shown as a run error, never as a score; no payload in the message
+                if kind == 'analysis':
+                    from jobfit.observability.metrics import safely
+                    label = ('refused' if type(exc).__name__ in
+                             {'LiveRefused', 'RealCVRefused', 'LiveSafetyRefusal', 'SessionDenied'} else 'failed')
+                    safely(telemetry.analysis_finished, label, state.request_id)
                 with lock:
                     if runs.get(run_id) is state:   # a safe refusal code (busy, budget ...) or the class name
                         state.status, state.error = 'failed', getattr(exc, 'code', None) or type(exc).__name__
@@ -292,7 +341,8 @@ def create_app(deps: AppDeps) -> FastAPI:
                 storage = False
         return {'ok': True, 'real_cv_enabled': deps.real_cv_enabled, 'live_enabled': deps.live_enabled,
                 'saved_demo': deps.saved_demo is not None, 'analyzed_k': deps.analyzed_k,
-                'live_storage_ready': storage, 'analysis_limit': analysis_limit}
+                'live_storage_ready': storage, 'analysis_limit': analysis_limit,
+                'public_beta_open': deps.public_beta_open}
 
     @app.post('/session')
     def new_session(request: Request):
@@ -355,7 +405,8 @@ def create_app(deps: AppDeps) -> FastAPI:
                 return upload_guard.rejection_response(exc.code)
             finally:
                 del data   # original bytes are not kept (D-051 section 2.7)
-            return _set_preview(h, text.text, list(text.warnings), text.layout, upload=True)
+            return _set_preview(h, text.text, list(text.warnings), text.layout, upload=True,
+                                processing=processing_for(request))
         finally:
             upload_slot.release()
 
@@ -364,7 +415,17 @@ def create_app(deps: AppDeps) -> FastAPI:
             for key in [k for k, r in runs.items() if r.owner == h.session_id and r.real]:
                 runs.pop(key)
 
-    def _set_preview(h: SessionHandle, raw: str, warnings: list, layout: str | None, *, upload: bool):
+    def processing_for(request: Request) -> bool:
+        """Whether this requester may send an uploaded CV to a provider: the real-CV switch, and with the
+        production ingress either the owner token or an open public beta. Every other visitor keeps the
+        honest 'disabled' preview (consent off), so a closed beta never offers a consent it would refuse."""
+        if not deps.real_cv_enabled:
+            return False
+        return (deps.ingress is None or deps.public_beta_open
+                or deps.ingress.is_owner(request.headers.get(OWNER_TOKEN_HEADER)))
+
+    def _set_preview(h: SessionHandle, raw: str, warnings: list, layout: str | None, *, upload: bool,
+                     processing: bool):
         """D-104: every upload and every edit goes through the full structural sanitizer (v2).
 
         An upload starts with fresh owner marks; an edit re-sanitizes with the stored marks, so a name or
@@ -374,8 +435,9 @@ def create_app(deps: AppDeps) -> FastAPI:
         """
         try:
             marks = None if upload else deps.store.owner_marks(h)
+            approved = None if upload else deps.store.preview(h)[0]      # the sanitized text being edited
             try:
-                preview = sanitize_upload(raw, marks=marks, edited=not upload)
+                preview = sanitize_upload(raw, marks=marks, edited=not upload, approved=approved)
             except SanitizeRefused as exc:
                 deps.store.invalidate_preview(h, clear_owner_marks=upload)
                 _drop_real_runs(h)
@@ -388,8 +450,8 @@ def create_app(deps: AppDeps) -> FastAPI:
         return {'masked_text': preview.text, 'digest': preview.digest, 'masked_counts': preview.counts,
                 'removed': dict(preview.removed), 'owner_repeat_guard': preview.owner_repeat_guard,
                 'warnings': warnings + list(preview.warnings), 'layout': layout,
-                'provider_processing': 'enabled' if deps.real_cv_enabled else 'disabled',
-                'message': None if deps.real_cv_enabled else REAL_CV_MESSAGE}
+                'provider_processing': 'enabled' if processing else 'disabled',
+                'message': None if processing else REAL_CV_MESSAGE}
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(request: Request, exc: RequestValidationError):
@@ -427,16 +489,17 @@ def create_app(deps: AppDeps) -> FastAPI:
         if code is not None:
             return upload_guard.rejection_response(code)
         return _set_preview(h, body.text, ['Edited by the user; earlier consent no longer applies.'], 'edited',
-                            upload=False)
+                            upload=False, processing=processing_for(request))
 
     @app.post('/cv/consent')
-    def consent(body: ConsentRequest, h: SessionHandle = Depends(handle)):
+    def consent(body: ConsentRequest, request: Request, h: SessionHandle = Depends(handle)):
         try:
             deps.store.consent(h, exact_digest=body.digest, affirmative=body.affirmative)
         except SessionDenied as exc:
             raise HTTPException(409, str(exc))
-        return {'consented': True, 'provider_processing': 'enabled' if deps.real_cv_enabled else 'disabled',
-                'message': None if deps.real_cv_enabled else REAL_CV_MESSAGE}
+        processing = processing_for(request)
+        return {'consented': True, 'provider_processing': 'enabled' if processing else 'disabled',
+                'message': None if processing else REAL_CV_MESSAGE}
 
     # ---------- real-CV public beta (consented upload -> reserved parse -> search -> Analyze Fit) ----------
     def real_cv_gate() -> None:
@@ -492,6 +555,8 @@ def create_app(deps: AppDeps) -> FastAPI:
         except LiveRefused as exc:
             raise HTTPException(exc.status, exc.code)
         if not new:
+            if phase == 'job_analysis':
+                request.scope['jobfit_analysis_duplicate'] = True
             return {'run_id': entry.run_id, 'duplicate': True}
         pseudonym = deps.ingress.ip_pseudonym(request.headers.get(CLIENT_IP_HEADER))
         quota = finalize = None
@@ -518,7 +583,8 @@ def create_app(deps: AppDeps) -> FastAPI:
             unknown = getattr(exc, 'code', None) == 'admission_outcome_unknown'
             idempotency.update(live.operation_key, state='admission_unknown' if unknown else 'failed')
 
-    def start_real_job(h: SessionHandle, kind: str, limit: int, live, call, present) -> dict:
+    def start_real_job(h: SessionHandle, kind: str, limit: int, live, call, present,
+                       request_id: str | None = None) -> dict:
         def work(state: _Run) -> dict:
             try:
                 out = call()
@@ -526,9 +592,12 @@ def create_app(deps: AppDeps) -> FastAPI:
                 settle_live(h, live, exc)
                 raise
             settle_live(h, live, None)
+            if kind == 'analysis':
+                mark_analysis_result(state, out)
             return present(out)
         try:
-            run_id = start_job(h, kind, limit, work, run_id=live.run_id if live else None, real=True)
+            run_id = start_job(h, kind, limit, work, run_id=live.run_id if live else None, real=True,
+                               request_id=request_id)
         except Exception:
             if live is not None:
                 if beta is not None:
@@ -549,7 +618,7 @@ def create_app(deps: AppDeps) -> FastAPI:
             return live
 
         def call():
-            return deps.real_parse(deps.store, h, lease, live=live)
+            return telemetry.trace_operation('parse', lambda: deps.real_parse(deps.store, h, lease, live=live))
 
         def present(parsed) -> dict:
             return {'stage': 'parsed', 'source': 'live', 'summary': parsed.summary()}
@@ -635,6 +704,8 @@ def create_app(deps: AppDeps) -> FastAPI:
         except LiveRefused as exc:
             raise HTTPException(exc.status, exc.code)
         if not new:                         # the same action again: its run, no allowance touched
+            if phase == 'job_analysis':
+                request.scope['jobfit_analysis_duplicate'] = True
             return {'run_id': entry.run_id, 'duplicate': True}
         finalize = None
         if not owner:
@@ -745,10 +816,12 @@ def create_app(deps: AppDeps) -> FastAPI:
 
         def work(state: _Run) -> dict:
             r = deps.analyze_pasted(cv, text)
+            mark_analysis_result(state, r)
             card = job_card(r, {'title': 'Pasted job description'})
             return {'card': card, 'requirement_groups': requirement_groups(card), 'source': 'live',
                     'note': 'Pasted JDs are analyzed for this session only.'}
-        return {'run_id': start_job(h, 'analysis', analysis_limit, work)}
+        return {'run_id': start_job(h, 'analysis', analysis_limit, work,
+                                    request_id=request.scope.get('jobfit_request_id'))}
 
     # ---------- D-103 public-beta contract: search stage, then one job_analysis per chosen job ----------
     def beta_owner_only(request: Request) -> None:
@@ -817,7 +890,8 @@ def create_app(deps: AppDeps) -> FastAPI:
                 raise HTTPException(409, 'search_not_available')
         else:
             try:
-                rows = deps.real_search(deps.store, h, lease, filters, live=live)
+                rows = telemetry.trace_operation(
+                    'search', lambda: deps.real_search(deps.store, h, lease, filters, live=live))
             except Exception as exc:
                 settle_live(h, live, exc)
                 raise real_http_error(exc) from None
@@ -889,7 +963,8 @@ def create_app(deps: AppDeps) -> FastAPI:
                                   lambda: deps.analyze_one(cv, job_id=job_id, jd_text=jd_text, live=live,
                                                            history_confirmed=history_confirmed),
                                   lambda r: {**analyzed_job(r, meta), 'source': 'live', 'cv_source': 'upload',
-                                             **({'session_note': note} if note else {})})
+                                             **({'session_note': note} if note else {})},
+                                  request_id=request.scope.get('jobfit_request_id'))
         live = None
         if deps.ingress is not None:
             from jobfit.live.keys import action_fingerprint
@@ -909,9 +984,11 @@ def create_app(deps: AppDeps) -> FastAPI:
                     idempotency.update(live.operation_key, state='admission_unknown' if unknown else 'failed')
                     raise
                 idempotency.update(live.operation_key, state='done')
+            mark_analysis_result(state, r)
             return {**analyzed_job(r, meta), 'source': 'live', **({'session_note': note} if note else {})}
         try:
-            run_id = start_job(h, 'analysis', analysis_limit, work, run_id=live.run_id if live else None)
+            run_id = start_job(h, 'analysis', analysis_limit, work, run_id=live.run_id if live else None,
+                               request_id=request.scope.get('jobfit_request_id'))
         except Exception:
             if live is not None:
                 idempotency.release(live.operation_key)      # nothing started: the key is free again

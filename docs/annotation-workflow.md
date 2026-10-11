@@ -23,11 +23,11 @@ JobFit uses **model-assisted labeling** (pre-annotation with human review). A la
 
 | Role | Who | Does | Does not |
 | --- | --- | --- | --- |
-| Pre-annotation | Codex (OpenAI) | Drafts labels in the labeling workbook, following a written task prompt in `evals/annotation_tasks/` | Decide rules, change sources, edit other files |
-| QA check and documentation | Claude (Anthropic) | Checks drafts and the annotator's rows, writes the QA log, guideline, code, and decision entries | Approve labels |
+| Pre-annotation | LLM assistant (OpenAI model) | Drafts labels in the labeling workbook, following a written task prompt in `evals/annotation_tasks/` | Decide rules, change sources, edit other files |
+| QA check | LLM-assisted consistency checks | Flag drafts and rows that break the guideline, and prepare the QA log | Approve labels |
 | Annotator and decision owner | Dion | Reviews and approves every row, labels the blind sample, decides every rule question | |
 
-Only one assistant edits a given file at a time. The workbook must be closed in Excel while an assistant works on it.
+Only one process edits a given file at a time. The workbook must be closed in Excel while a script writes to it.
 
 ## Rules
 
